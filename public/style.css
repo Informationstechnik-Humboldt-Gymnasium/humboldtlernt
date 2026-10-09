@@ -109,6 +109,8 @@ th { color: var(--muted); font-weight: 600; font-size: .82rem; }
 .hero-progress { grid-column: 1; display: flex; gap: 12px; align-items: center; color: var(--muted); }
 .hero .btn { grid-column: 2; grid-row: 1 / span 2; }
 @media (max-width: 600px) { .hero { grid-template-columns: 1fr; } .hero .btn { grid-column: 1; grid-row: auto; justify-self: start; } }
+.subject-grid { display: grid; gap: 14px; margin: 8px 0 18px; }
+.subject-grid .hero { margin: 0; }
 
 .crumbs { display: flex; flex-wrap: wrap; gap: 6px; font-size: .88rem; color: var(--muted); margin-bottom: 10px; }
 .crumbs a { text-decoration: none; }
@@ -236,3 +238,9 @@ input.mark-richtig, input.mark-falsch, textarea.mark-richtig { border-width: 2px
 .panel h3 { margin: 18px 0 4px; font-size: 1rem; }
 
 @media (max-width: 900px) { .interactive iframe { height: 820px; } }
+.sqrt { border-top: 1px solid currentColor; padding: 0 2px; }
+
+/* Programmcode (TIMP Informatik) */
+code { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: .9em; background: var(--chip); padding: 1px 5px; border-radius: 5px; }
+pre.code { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: .9rem; line-height: 1.5; background: var(--chip); border: 1px solid var(--border);
+  border-radius: 10px; padding: 10px 14px; overflow-x: auto; white-space: pre; margin: .6em 0; }

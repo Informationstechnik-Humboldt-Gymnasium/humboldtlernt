@@ -1,4 +1,4 @@
-// Seiten des Physik-Bereichs: Klassenstufe wählen → Themenfelder → Thema (Verstehen / Üben)
+// Seiten eines Fachs (Physik, TIMP, …): Klassenstufe wählen → Themenfelder → Thema (Verstehen / Üben)
 import { layout, esc } from './views.js';
 import { md, mdBlock } from './markup.js';
 import { TYPES, renderExercise } from './exercises.js';
@@ -17,26 +17,59 @@ const crumbs = items => `
     ${items.map((it, i) => i < items.length - 1 ? `<a href="${esc(it.href)}">${esc(it.label)}</a><span aria-hidden="true">›</span>` : `<span aria-current="page">${esc(it.label)}</span>`).join('')}
   </nav>`;
 
-const gradeSwitch = (grades, current) => `
+const gradeSwitch = (fach, grades, current) => `
   <nav class="grade-switch" aria-label="Klassenstufe wechseln">
-    ${grades.map(g => `<a href="/physik/${g.stufe}" class="${g.stufe === current ? 'active' : ''}" ${g.stufe === current ? 'aria-current="page"' : ''}>${g.stufe}</a>`).join('')}
+    ${grades.map(g => `<a href="/${fach.id}/${g.stufe}" class="${g.stufe === current ? 'active' : ''}" ${g.stufe === current ? 'aria-current="page"' : ''}>${g.stufe}</a>`).join('')}
   </nav>`;
+
+// ---------------------------------------------------------------- Fach wählen
+
+export function subjectPickerPage({ user, faecher, own, sets }) {
+  return layout({
+    title: 'Fächer', user, body: `
+    <header class="page-head">
+      <h1>Was möchtest du lernen?</h1>
+      <p class="muted">Wähle ein Fach. Die Inhalte folgen dem schulinternen Curriculum.</p>
+    </header>
+    <div class="subject-grid">${faecher.map(f => subjectCard(f, own, sets)).join('')}</div>`,
+  });
+}
+
+/** Karte eines Fachs: führt direkt zur eigenen Klassenstufe, sonst zur Auswahl. */
+export function subjectCard(fach, own, sets) {
+  const grades = fach.stufen.filter(s => s.themenfelder.length);
+  const grade = grades.find(g => g.stufe === own && topicsOfGrade(g).length);
+  const p = grade ? gradeProgress(grade, sets.solved, sets.understood) : null;
+  const href = grade ? `/${fach.id}/${grade.stufe}` : `/${fach.id}`;
+  const stufen = grades.map(g => g.stufe);
+  return `
+    <a class="hero" href="${esc(href)}">
+      <div class="hero-text">
+        <span class="eyebrow">${esc(fach.fach)}</span>
+        <h2>${grade ? esc(grade.name) : 'Wähle deine Klassenstufe'}</h2>
+        <p>${grade ? `${p.topics} Themen mit Erklärungen und Übungen.` : esc(fach.beschreibung || `Klasse ${stufen.join(', ')}`)}</p>
+      </div>
+      ${p ? `<div class="hero-progress"><div class="bar"><span style="width:${p.prozent}%"></span></div>
+        <span class="small">${p.done} von ${p.total} Übungen gelöst</span></div>` : ''}
+      <span class="btn primary">${p ? (p.done ? 'Weiterlernen' : 'Loslegen') : 'Zur Auswahl'} →</span>
+    </a>`;
+}
 
 // ---------------------------------------------------------------- Klassenstufe wählen
 
-export function gradePickerPage({ user, grades, own, sets }) {
+export function gradePickerPage({ user, fach, grades, own, sets }) {
   return layout({
-    title: 'Physik', user, body: `
+    title: fach.fach, user, body: `
     <header class="page-head">
-      <h1>Physik lernen</h1>
-      <p class="muted">Wähle deine Klassenstufe. Die Inhalte folgen dem schulinternen Curriculum.</p>
+      <h1>${esc(fach.fach)}</h1>
+      <p class="muted">${fach.beschreibung ? `${md(fach.beschreibung)} ` : ''}Wähle deine Klassenstufe. Die Inhalte folgen dem schulinternen Curriculum.</p>
     </header>
     <div class="grade-grid">
       ${grades.map(g => {
         const p = gradeProgress(g, sets.solved, sets.understood);
         const ready = p.topics > 0;
         return `
-        <a class="grade-card ${g.stufe === own ? 'own' : ''}" href="/physik/${g.stufe}">
+        <a class="grade-card ${g.stufe === own ? 'own' : ''}" href="/${fach.id}/${g.stufe}">
           <span class="grade-num" aria-hidden="true">${g.stufe}</span>
           <span class="grade-name">${esc(g.name)}${g.stufe === own ? ' <span class="badge">Deine Klasse</span>' : ''}</span>
           <span class="small muted">${g.themenfelder.length} Themenfeld${g.themenfelder.length === 1 ? '' : 'er'}${ready ? ` · ${p.topics} Themen` : ' · in Vorbereitung'}</span>
@@ -50,17 +83,17 @@ export function gradePickerPage({ user, grades, own, sets }) {
 
 // ---------------------------------------------------------------- Themenfelder einer Klassenstufe
 
-export function gradePage({ user, grade, grades, sets }) {
+export function gradePage({ user, fach, grade, grades, sets }) {
   const p = gradeProgress(grade, sets.solved, sets.understood);
   return layout({
-    title: `Physik ${grade.name}`, user, body: `
-    ${crumbs([{ href: '/physik', label: 'Physik' }, { label: grade.name }])}
+    title: `${fach.kurz} ${grade.name}`, user, body: `
+    ${crumbs([{ href: `/${fach.id}`, label: fach.kurz }, { label: grade.name }])}
     <header class="page-head head-row">
       <div>
         <h1>${esc(grade.name)}</h1>
         ${p.topics ? bar(p.prozent, `${p.done} von ${p.total} Übungen gelöst · ${p.verstanden} von ${p.topics} Themen verstanden`) : ''}
       </div>
-      ${gradeSwitch(grades, grade.stufe)}
+      ${gradeSwitch(fach, grades, grade.stufe)}
     </header>
     ${grade.themenfelder.map(tf => `
     <section class="themenfeld" aria-labelledby="tf-${esc(tf.id)}">
@@ -71,7 +104,7 @@ export function gradePage({ user, grade, grades, sets }) {
         ${tf.topics.map(t => {
           const tp = topicProgress(t, sets.solved, sets.understood);
           return `
-          <a class="card topic ${tp.total && tp.done === tp.total ? 'done' : ''}" href="/physik/${grade.stufe}/${esc(t.id)}">
+          <a class="card topic ${tp.total && tp.done === tp.total ? 'done' : ''}" href="/${fach.id}/${grade.stufe}/${esc(t.id)}">
             <div class="card-top"><h3>${esc(t.titel)}</h3>${tp.verstanden ? '<span class="badge ok" title="Verstehen abgeschlossen">✓ Verstanden</span>' : ''}</div>
             ${t.kurz ? `<p>${md(t.kurz)}</p>` : ''}
             <div class="card-meta">
@@ -93,10 +126,10 @@ export function gradePage({ user, grade, grades, sets }) {
 
 // ---------------------------------------------------------------- Thema: gemeinsamer Kopf
 
-function topicHead({ grade, topic, tab, progress }) {
-  const base = `/physik/${grade.stufe}/${esc(topic.id)}`;
+function topicHead({ fach, grade, topic, tab, progress }) {
+  const base = `/${fach.id}/${grade.stufe}/${esc(topic.id)}`;
   return `
-    ${crumbs([{ href: '/physik', label: 'Physik' }, { href: `/physik/${grade.stufe}`, label: grade.name }, { label: topic.titel }])}
+    ${crumbs([{ href: `/${fach.id}`, label: fach.kurz }, { href: `/${fach.id}/${grade.stufe}`, label: grade.name }, { label: topic.titel }])}
     <header class="page-head topic-head">
       <span class="eyebrow">${esc(topic.themenfeldTitel)}</span>
       <h1>${esc(topic.titel)}</h1>
@@ -126,11 +159,11 @@ const lessonFrame = (l, done) => `
 
 // ---------------------------------------------------------------- Thema: Verstehen
 
-export function topicUnderstandPage({ user, grade, topic, progress, lessons, extras, lessonDone, nextTopic }) {
+export function topicUnderstandPage({ user, fach, grade, topic, progress, lessons, extras, lessonDone, nextTopic }) {
   const v = topic.verstehen;
   return layout({
     title: topic.titel, user, scripts: ['/static/uebung.js'], body: `
-    ${topicHead({ grade, topic, tab: 'verstehen', progress })}
+    ${topicHead({ fach, grade, topic, tab: 'verstehen', progress })}
     <div class="topic-grid" data-topic="${esc(topic.id)}">
       <div class="topic-main">
         ${topic.lernziele.length ? `
@@ -169,7 +202,7 @@ export function topicUnderstandPage({ user, grade, topic, progress, lessons, ext
           <button type="button" class="btn ${progress.verstanden ? 'ok' : ''}" data-understood="${progress.verstanden ? 1 : 0}" data-topic="${esc(topic.id)}">
             ${progress.verstanden ? '✓ Verstanden' : 'Ich habe es verstanden'}
           </button>
-          ${topic.uebungen.length ? `<a class="btn primary" href="/physik/${grade.stufe}/${esc(topic.id)}/ueben">Weiter zu den Übungen →</a>` : ''}
+          ${topic.uebungen.length ? `<a class="btn primary" href="/${fach.id}/${grade.stufe}/${esc(topic.id)}/ueben">Weiter zu den Übungen →</a>` : ''}
         </div>
       </div>
     </div>`,
@@ -178,11 +211,11 @@ export function topicUnderstandPage({ user, grade, topic, progress, lessons, ext
 
 // ---------------------------------------------------------------- Thema: Üben
 
-export function topicPracticePage({ user, grade, topic, progress, solved, stats, nextTopic }) {
+export function topicPracticePage({ user, fach, grade, topic, progress, solved, stats, nextTopic }) {
   const goals = Object.fromEntries(topic.lernziele.map(l => [l.id, l.text]));
   return layout({
     title: `${topic.titel} – Üben`, user, scripts: ['/static/uebung.js'], body: `
-    ${topicHead({ grade, topic, tab: 'ueben', progress })}
+    ${topicHead({ fach, grade, topic, tab: 'ueben', progress })}
     ${topic.uebungen.length ? `
     <div class="filters" role="group" aria-label="Übungen filtern">
       <button type="button" class="chip-btn active" data-filter="alle" aria-pressed="true">Alle</button>
@@ -217,21 +250,21 @@ export function topicPracticePage({ user, grade, topic, progress, solved, stats,
     </div>
     <p class="filter-empty muted" hidden>In dieser Auswahl gibt es keine Aufgaben.</p>` : '<p class="muted">Für dieses Thema gibt es noch keine Übungen.</p>'}
     <div class="next-step">
-      <a class="btn" href="/physik/${grade.stufe}/${esc(topic.id)}">← Zurück zu Verstehen</a>
-      ${nextTopic ? `<a class="btn primary" href="/physik/${grade.stufe}/${esc(nextTopic.id)}">Nächstes Thema: ${esc(nextTopic.titel)} →</a>` : `<a class="btn primary" href="/physik/${grade.stufe}">Zur Übersicht ${esc(grade.name)} →</a>`}
+      <a class="btn" href="/${fach.id}/${grade.stufe}/${esc(topic.id)}">← Zurück zu Verstehen</a>
+      ${nextTopic ? `<a class="btn primary" href="/${fach.id}/${grade.stufe}/${esc(nextTopic.id)}">Nächstes Thema: ${esc(nextTopic.titel)} →</a>` : `<a class="btn primary" href="/${fach.id}/${grade.stufe}">Zur Übersicht ${esc(grade.name)} →</a>`}
     </div>`,
   });
 }
 
-// ---------------------------------------------------------------- Lehrkräfte: Physik-Fortschritt einer Klasse
+// ---------------------------------------------------------------- Lehrkräfte: Fortschritt einer Klasse in einem Fach
 
-export function physicsMatrix({ grade, students, solvedBy, understoodBy }) {
-  if (!grade) return '<p class="muted small">Zu dieser Klasse gibt es keine passende Klassenstufe mit Physik-Inhalten.</p>';
+export function progressMatrix({ fach, grade, students, solvedBy, understoodBy }) {
+  if (!grade) return `<p class="muted small">Zu dieser Klasse gibt es keine passende Klassenstufe mit ${esc(fach.fach)}-Inhalten.</p>`;
   const topics = topicsOfGrade(grade);
   if (!topics.length) return `<p class="muted small">Für ${esc(grade.name)} gibt es noch keine Themen.</p>`;
   const empty = new Set();
   return `
-    <h3>Physik · ${esc(grade.name)}</h3>
+    <h3>${esc(fach.fach)} · ${esc(grade.name)}</h3>
     <p class="small muted">Prozent = gelöste Übungen des Themas, ✓ = „Verstanden“ markiert.</p>
     <div class="table-wrap">
     <table class="matrix heat">

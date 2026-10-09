@@ -1,4 +1,5 @@
 import { config } from './config.js';
+import { visibleFaecher } from './faecher.js';
 
 export const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const fmtDate = s => s ? new Date(s.replace(' ', 'T') + 'Z').toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' }) : '';
@@ -10,7 +11,7 @@ export function layout({ title, user, body, wide = false, bare = false, scripts 
     <nav class="top" aria-label="Hauptmenü">
       <a class="brand" href="/">${esc(config.siteName)}</a>
       <div class="nav-right">
-        <a href="/physik">Physik</a>
+        ${visibleFaecher().map(f => `<a href="/${esc(f.id)}">${esc(f.kurz)}</a>`).join('')}
         ${user.role !== 'student' ? '<a href="/admin">Verwaltung</a>' : ''}
         <span class="who" title="${esc(user.username)}">${esc(user.name || user.username)}${user.klasse ? ` · ${esc(user.klasse)}` : ''}</span>
         <form method="post" action="/auth/logout"><button class="link">Abmelden</button></form>
@@ -61,18 +62,10 @@ export function messagePage({ title, text, user }) {
   return layout({ title, user, body: `<section class="login"><h1>${esc(title)}</h1><p>${text}</p><p><a class="btn" href="/">Zur Startseite</a></p></section>` });
 }
 
-export function homePage({ user, lessons, done, physik = null }) {
-  const hero = physik ? `
-    <a class="hero" href="${esc(physik.href)}">
-      <div class="hero-text">
-        <span class="eyebrow">Physik lernen</span>
-        <h2>${esc(physik.titel)}</h2>
-        <p>${esc(physik.text)}</p>
-      </div>
-      ${physik.progress ? `<div class="hero-progress"><div class="bar"><span style="width:${physik.progress.prozent}%"></span></div>
-        <span class="small">${physik.progress.done} von ${physik.progress.total} Übungen gelöst</span></div>` : ''}
-      <span class="btn primary">${esc(physik.cta)} →</span>
-    </a>` : '';
+/** `subjects`: fertige Karten der Fächer (aus views-fach.js), leer wenn es keine gibt. */
+export function homePage({ user, lessons, done, subjects = '' }) {
+  const physik = Boolean(subjects);
+  const hero = subjects ? `<div class="subject-grid">${subjects}</div>` : '';
   const total = lessons.length, n = lessons.filter(l => done.has(l.slug)).length;
   const bySubject = new Map();
   for (const l of lessons) { if (!bySubject.has(l.subject)) bySubject.set(l.subject, []); bySubject.get(l.subject).push(l); }
@@ -128,7 +121,7 @@ export function lessonPage({ user, lesson, isDone }) {
   });
 }
 
-export function adminPage({ user, lessons, classes, selected, students, progress, roster, users, notice, physikHtml = '' }) {
+export function adminPage({ user, lessons, classes, selected, students, progress, roster, users, notice, fachHtml = '' }) {
   const isAdmin = user.role === 'admin';
   const matrix = selected ? `
     <div class="table-wrap">
@@ -187,7 +180,7 @@ export function adminPage({ user, lessons, classes, selected, students, progress
         </select>
         <noscript><button class="btn">Anzeigen</button></noscript>
       </form>
-      ${physikHtml}
+      ${fachHtml}
       ${selected && lessons.length ? '<h3>Lerneinheiten</h3>' : ''}
       ${matrix}
     </section>

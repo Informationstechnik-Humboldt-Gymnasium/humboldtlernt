@@ -1,0 +1,13 @@
+{
+  "nummer": "8.2",
+  "reihenfolge": 2,
+  "titel": "Logische Schaltungen",
+  "beschreibung": "UND, ODER, NICHT und Wechselschaltung: Schaltungen planen, mit Wahrheitswerttabellen beschreiben und im Alltag wiederfinden.",
+  "inhalte": [
+    "Grundlagen E-Lehre aus Klasse 7: Stromkreis, Parallel- und Reihenschaltung, Kurzschluss",
+    "Anwendungen der UND- sowie ODER-Verknüpfung auf Sachverhalte aus dem Alltag",
+    "Wechselschaltung",
+    "Wahrheitswerttabellen"
+  ],
+  "erweiterung": "Stationenarbeit „logische Schaltungen“ mit den Schülerübungskästen"
+}

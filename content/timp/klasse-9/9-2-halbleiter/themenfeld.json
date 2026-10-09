@@ -1,0 +1,14 @@
+{
+  "nummer": "9.2",
+  "reihenfolge": 2,
+  "titel": "Halbleiter",
+  "beschreibung": "Dotierung, Diode und Kennlinie, Transistor als Schalter und Verstärker, Solarzelle und Lötpraktikum.",
+  "inhalte": [
+    "Aufbau und Eigenschaften von Halbleiterelementen, Dotierung",
+    "Aufbau und Funktion der Halbleiterdiode, Kennlinie",
+    "Transistor: Aufbau und Funktion als Schalter bzw. Verstärker",
+    "Modul 1: Solarzelle",
+    "Modul 2: Lötpraktikum"
+  ],
+  "erweiterung": "Das zeitliche Verhältnis der Module 1 und 2 kann variabel gestaltet werden."
+}

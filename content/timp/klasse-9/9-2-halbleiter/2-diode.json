@@ -1,0 +1,116 @@
+{
+  "id": "timp-k9-diode",
+  "titel": "Die Halbleiterdiode und ihre Kennlinie",
+  "kurz": "Ein Ventil für den Strom: wie der pn-Übergang funktioniert, wie man eine Kennlinie liest und warum eine LED einen Vorwiderstand braucht.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Den Aufbau der Diode aus p- und n-Schicht beschreiben und die Entstehung der Sperrschicht erklären" },
+    { "id": "lz2", "niveau": "G", "text": "Durchlass- und Sperrrichtung unterscheiden und das Schaltzeichen mit Anode und Kathode richtig verwenden" },
+    { "id": "lz3", "niveau": "H", "text": "Die Kennlinie einer Diode auswerten und die Schwellenspannung von Silizium-Dioden und LEDs angeben" },
+    { "id": "lz4", "niveau": "H", "text": "Den Vorwiderstand einer LED mit `R_{V} = (U - U_{LED}) / I` berechnen" },
+    { "id": "lz5", "niveau": "G", "text": "Die Diode als Gleichrichter beschreiben und Sicherheitsaspekte (Polung, Vorwiderstand, Spannungsbereich) beachten" }
+  ],
+  "verstehen": {
+    "einstieg": "Legst du eine LED falsch herum in den Batteriehalter, bleibt sie dunkel. Drehst du sie um, leuchtet sie. Woher „weiß“ sie, wie herum sie eingebaut ist?",
+    "abschnitte": [
+      {
+        "titel": "Der pn-Übergang und die Sperrschicht",
+        "text": "Eine **Diode** besteht aus einem p-dotierten und einem n-dotierten Bereich, die direkt aneinandergrenzen. An der Grenze wandern freie Elektronen aus dem n-Gebiet hinüber und füllen Löcher im p-Gebiet. Dadurch entsteht an der Grenze eine dünne Zone **ohne freie Ladungsträger**: die **Sperrschicht**. Sie wirkt wie ein Isolator.\n\nDie Anschlüsse heißen **Anode** (p-Seite) und **Kathode** (n-Seite)."
+      },
+      {
+        "titel": "Durchlass- und Sperrrichtung",
+        "text": "- **Durchlassrichtung**: Pluspol an der Anode (p), Minuspol an der Kathode (n). Die Elektronen werden vom Minuspol in die Sperrschicht gedrückt, die Löcher vom Pluspol ebenso. Die Sperrschicht wird schmaler und verschwindet ab der **Schwellenspannung**. Dann fließt Strom.\n- **Sperrrichtung**: Pluspol an der Kathode (n). Die Elektronen werden zum Pluspol gezogen, die Löcher zum Minuspol, also beide weg von der Grenze. Die Sperrschicht wird **breiter**, es fließt (fast) **kein Strom**.\n\nIm **Schaltzeichen** zeigt das Dreieck wie ein Pfeil in die technische Stromrichtung (von + nach −) der Durchlassrichtung. Der Strich an der Spitze ist die Kathode. Auf dem Bauteil ist die Kathode mit einem **Ring** markiert."
+      },
+      {
+        "titel": "Die Kennlinie",
+        "text": "Die **Kennlinie** zeigt die Stromstärke `I` in Abhängigkeit von der Spannung `U`. Bei einer Diode ist sie keine Gerade wie beim ohmschen Widerstand:\n\n- Unterhalb der **Schwellenspannung** fließt fast kein Strom.\n- Oberhalb steigt der Strom **sehr steil** an. Schon ein wenig mehr Spannung bedeutet viel mehr Strom.\n\nDie Schwellenspannung beträgt bei **Silizium-Dioden etwa 0,7 V**. Bei **Leuchtdioden (LEDs)** hängt sie von der Lichtfarbe ab: Infrarot etwa 1,3 V, rot etwa 1,8 bis 2,0 V, gelb und grün etwa 2,0 bis 2,2 V, blau und weiß etwa 3,0 bis 3,4 V. Je energiereicher das Licht, desto größer die Spannung."
+      },
+      {
+        "titel": "Der Vorwiderstand",
+        "text": "Weil der Strom oberhalb der Schwellenspannung so steil ansteigt, darf man eine LED **nie direkt** an eine Batterie anschließen. Sie würde sofort zu heiß und zerstört. Ein **Vorwiderstand** in Reihe begrenzt den Strom. Er übernimmt die restliche Spannung:\n\n`R_{V} = \\frac{U - U_{LED}}{I}`\n\nBeispiel: Rote LED (2,0 V, 20 mA) an 9 V: `R_{V} = (9 V - 2 V) / 0,02 A = 350 Ω`. Man nimmt den nächstgrößeren Normwert, z. B. 390 Ω."
+      },
+      {
+        "titel": "Gleichrichtung und Sicherheit",
+        "text": "An Wechselspannung lässt eine Diode nur die Halbwellen in Durchlassrichtung durch. Aus Wechselstrom wird ein pulsierender Gleichstrom. Das nennt man **Gleichrichtung**. Netzteile nutzen dafür meist vier Dioden in einer Brückenschaltung.\n\nSicherheit:\n- auf die **Polung** achten (Ring = Kathode, bei der LED ist das lange Bein die Anode),\n- immer einen **Vorwiderstand** einsetzen,\n- die **maximale Sperrspannung** beachten: Wird sie überschritten, bricht die Diode durch. Bei LEDs liegt sie oft nur bei etwa 5 V."
+      }
+    ],
+    "formeln": [
+      { "formel": "R_{V} = \\frac{U - U_{LED}}{I}", "bedeutung": "Vorwiderstand `R_{V}` in Ω, Betriebsspannung `U` in V, LED-Spannung `U_{LED}` in V, gewünschte Stromstärke `I` in A" }
+    ],
+    "merksatz": "Eine Diode lässt den Strom nur in **eine Richtung** durch: von der Anode (p) zur Kathode (n). Ab der **Schwellenspannung** (Silizium etwa 0,7 V, LED je nach Farbe etwa 1,8 bis 3,4 V) steigt der Strom steil an. Eine LED braucht deshalb immer einen **Vorwiderstand**.",
+    "alltag": "In jedem Ladegerät steckt ein Gleichrichter aus Dioden. Und die Verpolungsschutz-Diode in vielen Geräten verhindert, dass falsch eingelegte Batterien die Elektronik beschädigen."
+  },
+  "interaktiv": ["timp-diode"],
+  "vertiefung": ["dioden-schaltung"],
+  "uebungen": [
+    { "id": "timp-hdi-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Woran erkennst du auf einer Silizium-Diode die Kathode?",
+      "optionen": [
+        { "text": "Am Ring (Strich) auf dem Gehäuse", "richtig": true },
+        { "text": "Am längeren Anschlussdraht", "feedback": "Bei einer LED ist das längere Bein die **Anode**. Bei der Diode ist die Kathode mit einem Ring markiert." },
+        { "text": "An der roten Farbe", "feedback": "Die Farbe des Gehäuses sagt nichts über die Anschlüsse aus." },
+        { "text": "Gar nicht, man kann sie beliebig einbauen", "feedback": "Eine Diode hat eine Durchlass- und eine Sperrrichtung. Die Polung ist entscheidend." }
+      ],
+      "erklaerung": "Der **Ring** auf dem Gehäuse entspricht dem Strich im Schaltzeichen: Dort ist die **Kathode** (n-Seite). Durchlassrichtung bedeutet: Plus an die Anode, Minus an die Kathode." },
+    { "id": "timp-hdi-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Was ist die Sperrschicht einer Diode?",
+      "optionen": [
+        { "text": "Eine dünne Zone an der Grenze von p- und n-Gebiet, in der es keine freien Ladungsträger gibt", "richtig": true },
+        { "text": "Eine Isolierschicht aus Kunststoff zwischen den Anschlüssen", "feedback": "Die Sperrschicht besteht aus Silizium. Sie entsteht von selbst, wenn p- und n-Gebiet aneinandergrenzen." },
+        { "text": "Der Bereich, in dem besonders viele freie Elektronen sind", "feedback": "Gerade umgekehrt: Dort haben Elektronen die Löcher gefüllt. Es fehlen bewegliche Ladungsträger." },
+        { "text": "Eine Schicht, die nur bei Wechselspannung entsteht", "feedback": "Die Sperrschicht ist immer vorhanden, auch ohne angelegte Spannung." }
+      ],
+      "erklaerung": "Freie Elektronen aus dem n-Gebiet wandern über die Grenze und füllen Löcher im p-Gebiet. Zurück bleibt eine **ladungsträgerfreie Zone**, die wie ein Isolator wirkt." },
+    { "id": "timp-hdi-03", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Eine rote LED soll an einer 9-V-Batterie leuchten. Laut Datenblatt hat sie eine Spannung von 2,0 V und soll mit 20 mA betrieben werden. Wie groß muss der Vorwiderstand sein?",
+      "gegeben": "`U = 9 V`, `U_{LED} = 2,0 V`, `I = 20 mA`",
+      "gesucht": "Vorwiderstand `R_{V}`",
+      "gesuchtSymbol": "R_{V}",
+      "loesung": 350, "einheit": "Ω", "alternativEinheiten": { "kΩ": 1000 },
+      "rechenweg": [
+        "Spannung am Widerstand: `U_{R} = U - U_{LED} = 9 V - 2,0 V = 7,0 V`",
+        "Stromstärke in Ampere: `I = 20 mA = 0,020 A`",
+        "`R_{V} = \\frac{U_{R}}{I} = \\frac{7,0 V}{0,020 A} = 350 Ω`"
+      ],
+      "hinweis": "Der Widerstand bekommt nur die Spannung, die die LED nicht braucht. Rechne mA in A um.",
+      "erklaerung": "In der Praxis nimmt man den nächstgrößeren Normwert, also **390 Ω**. Dann fließt etwas weniger Strom und die LED ist sicher." },
+    { "id": "timp-hdi-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "An einer Diode in Durchlassrichtung wurde gemessen:\n\n`U` in V: 0,2 · 0,4 · 0,6 · 0,7 · 0,8\n`I` in mA: 0 · 0 · 1 · 12 · 90\n\nWelche Schwellenspannung hat die Diode ungefähr, und aus welchem Material ist sie vermutlich?",
+      "optionen": [
+        { "text": "Etwa 0,7 V, Silizium", "richtig": true },
+        { "text": "Etwa 0,2 V, Silizium", "feedback": "Bei 0,2 V fließt noch gar kein Strom. Die Schwelle liegt dort, wo der Strom deutlich ansteigt." },
+        { "text": "Etwa 2 V, rote LED", "feedback": "Eine rote LED würde unter etwa 1,8 V noch gar keinen Strom leiten. Hier fließen schon bei 0,8 V 90 mA." },
+        { "text": "Es gibt keine Schwellenspannung, der Strom steigt gleichmäßig.", "feedback": "Schau auf die Zahlen: Von 0,6 V auf 0,8 V wächst der Strom von 1 mA auf 90 mA. Das ist kein gleichmäßiger Anstieg." }
+      ],
+      "erklaerung": "Ab etwa **0,7 V** steigt der Strom steil an. Das ist typisch für eine **Silizium-Diode**. Die Kennlinie ist keine Gerade: Die Diode ist kein ohmscher Widerstand." },
+    { "id": "timp-hdi-05", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Ordne jedem Bauteil seine typische Schwellenspannung zu.",
+      "paare": [
+        { "links": "Silizium-Diode", "rechts": "etwa 0,7 V" },
+        { "links": "Infrarot-LED (Fernbedienung)", "rechts": "etwa 1,3 V" },
+        { "links": "rote LED", "rechts": "etwa 1,9 V" },
+        { "links": "blaue LED", "rechts": "etwa 3,2 V" }
+      ],
+      "extraRechts": ["etwa 12 V"],
+      "erklaerung": "Je **energiereicher** das ausgesandte Licht ist (Infrarot < rot < grün < blau), desto größer ist die Spannung, die die LED zum Leuchten braucht." },
+    { "id": "timp-hdi-06", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz1",
+      "frage": "Erkläre mit dem Leitungsmodell, warum eine Diode in Sperrrichtung keinen Strom leitet.",
+      "stichworte": [
+        { "aspekt": "Sperrrichtung: Pluspol am n-Gebiet (Kathode), Minuspol am p-Gebiet (Anode)", "woerter": ["pluspol am n", "plus am n", "plus an der kathode", "pluspol an der kathode", "pluspol an n", "minuspol am p", "minus am p", "minuspol an der anode"] },
+        { "aspekt": "Elektronen werden zum Pluspol, Löcher zum Minuspol gezogen, also weg von der Grenze", "woerter": ["gezogen", "angezogen", "weg von", "entfernen sich", "wandern weg"] },
+        { "aspekt": "Die Sperrschicht ohne freie Ladungsträger wird breiter und isoliert", "woerter": ["breiter", "groesser", "waechst", "keine freien ladungstraeger", "keine ladungstraeger"] }
+      ],
+      "musterloesung": "In Sperrrichtung liegt der Pluspol am n-Gebiet (Kathode) und der Minuspol am p-Gebiet (Anode). Die freien Elektronen im n-Gebiet werden zum Pluspol gezogen, die Löcher im p-Gebiet zum Minuspol, beide also weg von der Grenze. Dadurch wird die Sperrschicht breiter. In ihr gibt es keine freien Ladungsträger, sie wirkt wie ein Isolator. Deshalb fließt kein Strom.",
+      "erklaerung": "In Durchlassrichtung ist es umgekehrt: Die Ladungsträger werden in die Sperrschicht gedrückt, sie wird abgebaut und ab etwa 0,7 V fließt Strom." },
+    { "id": "timp-hdi-07", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz5",
+      "frage": "Welche Aussagen über Dioden und LEDs sind richtig?",
+      "optionen": [
+        { "text": "Eine LED ohne Vorwiderstand an 9 V wird zerstört, weil oberhalb der Schwellenspannung der Strom sehr stark ansteigt.", "richtig": true },
+        { "text": "An Wechselspannung lässt eine einzelne Diode nur eine Halbwelle durch.", "richtig": true },
+        { "text": "Wird die maximale Sperrspannung überschritten, kann die Diode durchbrechen und kaputtgehen.", "richtig": true },
+        { "text": "Eine falsch gepolte LED leuchtet nur etwas schwächer.", "feedback": "Falsch gepolt sperrt die LED: Sie leuchtet gar nicht. Bei zu großer Sperrspannung kann sie sogar kaputtgehen." },
+        { "text": "Solange die Polung stimmt, darf man eine LED an jede Batterie direkt anschließen.", "feedback": "Ohne Vorwiderstand begrenzt nichts den Strom. Schon wenige Zehntel Volt über der Schwellenspannung reichen, um die LED zu überlasten." }
+      ],
+      "erklaerung": "Die Diode ist ein **Ventil**: Sie leitet nur in Durchlassrichtung und dort erst ab der Schwellenspannung, dann aber sehr stark. Deshalb gilt: **Polung beachten, Vorwiderstand einsetzen, Spannungsbereich einhalten.**" }
+  ]
+}

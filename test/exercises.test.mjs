@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { parseNumber, checkAnswer, revealSolution, renderExercise, validateExercise } from '../src/exercises.js';
-import { md } from '../src/markup.js';
+import { md, mdBlock } from '../src/markup.js';
 
 const base = { schwierigkeit: 'leicht', frage: 'F?', erklaerung: 'E.' };
 
@@ -94,4 +94,31 @@ test('Ungültige Übungen werden erkannt', () => {
   assert.ok(validateExercise({ id: 'x', typ: 'gibtsnicht', schwierigkeit: 'leicht', frage: 'f', erklaerung: 'e' }).length);
   assert.ok(validateExercise({ ...base, id: 'x', typ: 'single', optionen: [{ text: 'a' }, { text: 'b' }] }).length, 'keine richtige Option');
   assert.ok(validateExercise({ ...base, id: 'x', typ: 'zahl', loesung: 'zwölf', einheit: 'V', rechenweg: ['x'] }).length);
+});
+
+test('Formel-Markup: Brüche mit Indizes und Wurzeln', () => {
+  const h = md('`η = \\frac{E_{nutz}}{E_{zu}}`');
+  assert.match(h, /<span class="frac" role="math"><span>E<sub>nutz<\/sub><\/span><span>E<sub>zu<\/sub><\/span><\/span>/);
+  assert.match(md('`T = 2π · \\sqrt{\\frac{l}{g}}`'), /√<span class="sqrt"><span class="frac"/);
+  assert.doesNotMatch(md('`v^{2}`'), /\\|\{/);
+});
+
+test('Absatz-Markup mit Aufzählungen', () => {
+  assert.equal(mdBlock('Ein Stromkreis:\n- **Quelle**\n- Leitung\nEnde.\n\nNeu'),
+    '<p>Ein Stromkreis:</p><ul><li><strong>Quelle</strong></li><li>Leitung</li></ul><p>Ende.</p><p>Neu</p>');
+  assert.equal(mdBlock('a\nb'), '<p>a<br>b</p>');
+});
+
+test('Programmcode im Text und als Block', () => {
+  assert.equal(md('Setze ``x_{1} = 3`` und `x_{1}`'), 'Setze <code>x_{1} = 3</code> und <span class="f">x<sub>1</sub></span>');
+  assert.equal(mdBlock('Programm:\n\n```\nwiederhole 3-mal\n  gehe <10> Schritte\n```'), '<p>Programm:</p><pre class="code">wiederhole 3-mal\n  gehe &lt;10&gt; Schritte</pre>');
+});
+
+test('Zahl mit Punkt: Tausender- oder Dezimalpunkt, je nachdem was passt', () => {
+  const ex = { id: 't', typ: 'zahl', loesung: 25.475, einheit: 'm', rechenweg: ['x'], frage: 'x', erklaerung: 'x', schwierigkeit: 'leicht' };
+  assert.equal(checkAnswer(ex, { wert: '25.475' }).status, 'richtig');
+  assert.equal(checkAnswer(ex, { wert: '25,475' }).status, 'richtig');
+  const big = { ...ex, loesung: 10000 };
+  assert.equal(checkAnswer(big, { wert: '10.000' }).status, 'richtig');
+  assert.notEqual(checkAnswer(big, { wert: '10,000' }).status, 'richtig');
 });

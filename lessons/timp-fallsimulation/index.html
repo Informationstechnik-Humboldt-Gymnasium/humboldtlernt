@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fallsimulation: Bewegung programmieren</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<style>
+  .prog-wrap { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(150px, 1fr); gap: 12px; align-items: start; }
+  @media (max-width: 560px) { .prog-wrap { grid-template-columns: 1fr; } }
+  .code { list-style: none; margin: 0; padding: 6px 0; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: .86rem; background: var(--bg); border-radius: 10px; }
+  .code li { display: flex; align-items: baseline; padding: 2px 8px 2px 4px; border-left: 3px solid transparent; }
+  .code .no { flex: none; width: 1.6em; text-align: right; margin-right: .7em; color: var(--muted); font-size: .8rem; }
+  .code .ind { display: inline-block; width: 1.4em; flex: none; }
+  .code li.cur { background: var(--soft-accent); border-left-color: var(--accent); }
+  .code li.cur .no { color: var(--accent); font-weight: 700; }
+  .code li.wrongpick { background: var(--warn-soft); border-left-color: var(--warn); }
+  .code li.found { background: var(--ok-soft); border-left-color: var(--ok); }
+  .code button.ln { all: unset; display: flex; align-items: baseline; width: 100%; cursor: pointer; border-radius: 4px; }
+  .code button.ln:focus-visible { outline: 3px solid var(--accent); outline-offset: 1px; }
+  .code button.ln:hover code { text-decoration: underline; text-decoration-color: var(--muted); }
+  .code code { font: inherit; white-space: pre-wrap; }
+  .kw { color: var(--accent); font-weight: 650; }
+  table.vars { border-collapse: collapse; width: 100%; font-size: .88rem; font-variant-numeric: tabular-nums; }
+  table.vars td, table.vars th { padding: 4px 6px; border-bottom: 1px solid var(--border); text-align: right; }
+  table.vars th { font-weight: 600; color: var(--muted); font-size: .78rem; }
+  table.vars td:first-child, table.vars th:first-child { text-align: left; font-family: ui-monospace, Menlo, Consolas, monospace; }
+  table.vars tr.changed td { background: var(--soft-accent); }
+  .say { margin-top: 8px; padding: 6px 10px; border-radius: 10px; border: 1px solid var(--border); background: var(--card); font-size: .9rem; }
+  .say b { font-variant-numeric: tabular-nums; }
+  .ball { fill: var(--pos); stroke: var(--line); stroke-width: 1; }
+  .exact-ball { fill: none; stroke: var(--accent); stroke-width: 2; stroke-dasharray: 3 2; }
+  .trail { fill: var(--pos); opacity: .45; }
+  .exact { fill: none; stroke: var(--accent); stroke-width: 2; stroke-dasharray: 6 4; }
+  .simline { fill: none; stroke: var(--pos); stroke-width: 2; }
+  .simpt { fill: var(--pos); }
+  .ground { fill: var(--grid); }
+  .groundline { stroke: var(--line); stroke-width: 2; }
+  .startline { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 2 3; }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: .82rem; margin-top: 6px; }
+  .legend i { display: inline-block; width: 18px; height: 0; border-top: 2px solid; margin-right: 5px; vertical-align: middle; }
+  .bugbar .seg button { padding: 7px 10px; }
+  .found-mark { color: var(--ok); font-weight: 700; }
+  #status:empty { display: none; }
+  #status { margin: 8px 0 0; padding: 8px 10px; border-radius: 10px; background: var(--bg); font-size: .88rem; }
+  #status.bad { background: var(--warn-soft); color: var(--text); }
+  #status.good { background: var(--ok-soft); color: var(--text); }
+  .readouts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bugbar .seg button { min-width: 44px; }
+  @media (max-width: 560px) { #sim text { font-size: 19px; } #sim text.lbl { font-size: 19px; } }
+  .note { font-size: .8rem; color: var(--muted); margin: 10px 0 0; }
+</style>
+</head>
+<body>
+<h1>Fallsimulation: Bewegung programmieren</h1>
+<p class="muted small">Ein kleines Programm berechnet den Fall eines Balls in kleinen Zeitschritten <span class="f">Δt</span>. Führe es Zeile für Zeile aus oder lass es laufen und vergleiche mit der exakten Kurve. Im Fehler-Modus suchst du die falsche Zeile.</p>
+
+<div class="lk-grid">
+  <div>
+    <div class="lk-card">
+      <h2 id="progTitle">Programm</h2>
+      <div class="prog-wrap">
+        <div>
+          <ol class="code" id="code" aria-label="Programmzeilen"></ol>
+          <p id="pickHint" class="small muted" hidden>Tippe auf die Zeile, die falsch ist.</p>
+          <div class="row" id="missingRow" hidden style="margin:6px 0 0">
+            <button type="button" id="bMissing">Hier fehlt eine Zeile</button>
+          </div>
+        </div>
+        <div>
+          <table class="vars" aria-label="Variablen">
+            <thead><tr><th>Variable</th><th>Wert</th><th>Einheit</th></tr></thead>
+            <tbody id="vars"></tbody>
+          </table>
+          <div class="say">Ausgabe (<code>sage</code>): <b id="out">–</b></div>
+        </div>
+      </div>
+      <div class="row" style="margin:12px 0 0">
+        <button type="button" id="bStep">Eine Zeile ausführen</button>
+        <button type="button" id="bRun" class="primary">Start</button>
+        <button type="button" id="bEnd">Bis zum Ende</button>
+        <button type="button" id="bReset">Neu starten</button>
+      </div>
+      <p id="status" aria-live="polite"></p>
+    </div>
+
+    <div class="lk-card">
+      <h2>Ball und Höhe-Zeit-Diagramm</h2>
+      <svg id="sim" viewBox="0 0 520 340" role="img" aria-labelledby="simTitle">
+        <title id="simTitle">Links fällt der Ball, rechts das Diagramm der Höhe y gegen die Zeit t: Punkte vom Programm, gestrichelt die exakte Kurve</title>
+        <defs><clipPath id="clipScene"><rect x="0" y="22" width="520" height="276"/></clipPath></defs>
+        <g id="axes"></g>
+        <g clip-path="url(#clipScene)">
+          <g id="plot"></g>
+          <g id="scene"></g>
+        </g>
+        <g id="marks"></g>
+      </svg>
+      <div class="legend">
+        <span><i style="border-color:var(--pos)"></i>Programm (Punkte nach jedem Schritt)</span>
+        <span><i style="border-color:var(--accent);border-top-style:dashed"></i>exakt: <span class="f">y = y₀ + v₀·t − ½·g·t²</span></span>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="lk-card">
+      <h2>Einstellungen</h2>
+      <div class="row">
+        <div class="seg" role="group" aria-label="Modus wählen">
+          <button type="button" id="mOk" aria-pressed="true">Richtiges Programm</button>
+          <button type="button" id="mBug" aria-pressed="false">Fehler finden</button>
+        </div>
+      </div>
+      <div class="row bugbar" id="bugBar" hidden>
+        <span class="small" style="font-weight:600">Fehler-Programm:</span>
+        <div class="seg" role="group" aria-label="Fehler-Programm wählen" id="bugSeg"></div>
+      </div>
+      <label class="ctrl"><span>Starthöhe <span class="f">y₀</span> <output id="oY"></output></span>
+        <input type="range" id="sY" min="5" max="50" step="1" value="20"></label>
+      <label class="ctrl"><span>Startgeschwindigkeit <span class="f">v₀</span> (nach oben) <output id="oV"></output></span>
+        <input type="range" id="sV" min="0" max="20" step="1" value="0"></label>
+      <label class="ctrl"><span>Zeitschritt <span class="f">Δt</span> <output id="oD"></output></span>
+        <input type="range" id="sD" min="0" max="6" step="1" value="3"></label>
+      <div class="row">
+        <button type="button" id="bSlow" aria-pressed="false">Zeitlupe</button>
+      </div>
+      <div class="readouts">
+        <div class="readout"><span>Landezeit (Programm)</span><b id="rT">–</b></div>
+        <div class="readout"><span>Landezeit (exakt)</span><b id="rTx">–</b></div>
+        <div class="readout"><span>größte Abweichung</span><b id="rDev">–</b></div>
+        <div class="readout"><span>Schleifendurchläufe</span><b id="rN">0</b></div>
+      </div>
+      <p class="note">Vereinfachung: Luftwiderstand wird nicht berücksichtigt, <span class="f">g = 9,81 m/s²</span>. Nach oben ist positiv. Das Programm rechnet in jedem Zeitschritt mit einer festen Geschwindigkeit, obwohl sie sich in Wirklichkeit ständig ändert. Deshalb weicht es von der exakten Kurve ab. Wie in Scratch behalten Variablen ihren Wert vom letzten Programmlauf.</p>
+    </div>
+
+    <div class="lk-card tasks">
+      <h2>Entdecke selbst <span class="small muted" data-task-count></span></h2>
+      <div class="task" data-goal="fall20"><p class="task-q">Lass das richtige Programm mit <span class="f">y₀ = 20 m</span> und <span class="f">v₀ = 0</span> bis zum Ende laufen, Zeile für Zeile oder mit Start.</p></div>
+      <div class="task">
+        <p class="task-q">Nach welcher Zeit landet der Ball, wenn er aus 20 m Höhe fällt?</p>
+        <div class="choices">
+          <button type="button" data-fb="Zu kurz. Vergleiche mit der Anzeige „Landezeit exakt“.">nach etwa 1,0 s</button>
+          <button type="button" data-ok data-fb="Richtig: t = √(2 · 20 m : 9,81 m/s²) ≈ 2,02 s. Das Programm meldet je nach Δt ungefähr 2,0 s.">nach etwa 2,0 s</button>
+          <button type="button" data-fb="Das wäre 2 · 20 m : 9,81 m/s² ohne Wurzel. Schau auf die Anzeige „Landezeit exakt“.">nach etwa 4,1 s</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="task" data-goal="acc"><p class="task-q">Verkleinere <span class="f">Δt</span>, bis die größte Abweichung von der exakten Kurve unter 1 % liegt. Lass das richtige Programm dann bis zum Ende laufen.</p></div>
+      <div class="task">
+        <p class="task-q">Warum wird <span class="f">v</span> im Programm negativ?</p>
+        <div class="choices">
+          <button type="button" data-fb="Der Ball wird beim Fallen schneller, nicht langsamer. Das Minuszeichen gibt nur die Richtung an.">Weil der Ball langsamer wird.</button>
+          <button type="button" data-ok data-fb="Genau: Nach oben ist positiv. Jeder Schritt zieht 9,81 m/s² · Δt ab, also zeigt v nach unten, und der Betrag von v wächst.">Weil nach oben positiv ist und die Schwerkraft nach unten wirkt.</button>
+          <button type="button" data-fb="v ist schon nach dem ersten Schritt negativ, lange bevor y kleiner als 0 ist. Beobachte die Variablentabelle.">Weil y kleiner als 0 wird.</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="task">
+        <p class="task-q">Bei großem <span class="f">Δt</span> liegen die Punkte des Programms immer unter der exakten Kurve. Was für ein Fehler ist das?</p>
+        <div class="choices">
+          <button type="button" data-fb="Starte das Programm mehrmals mit denselben Einstellungen: Das Ergebnis ist jedes Mal genau gleich.">Ein zufälliger Fehler, der jedes Mal anders ausfällt.</button>
+          <button type="button" data-ok data-fb="Richtig: Das Programm rechnet für den ganzen Zeitschritt schon mit der größeren Geschwindigkeit vom Ende des Schritts. Der simulierte Ball fällt daher immer etwas zu schnell. Mit kleinerem Δt wird der Fehler kleiner.">Ein systematischer Fehler: immer in dieselbe Richtung, kleiner bei kleinerem Δt.</button>
+          <button type="button" data-fb="Das richtige Programm hat keinen Tippfehler. Die Abweichung entsteht durch die Zeitschritte selbst.">Ein Tippfehler im Programm.</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="task" data-goal="bugs"><p class="task-q">Schalte auf „Fehler finden“. Finde in allen vier Fehler-Programmen die falsche Stelle. <span id="bugCount" class="small muted"></span></p></div>
+      <div class="all-done">Alles entdeckt! Weiter geht es mit den Übungen.</div>
+    </div>
+  </div>
+</div>
+
+<script src="../../static/lesson-kit.js"></script>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var NS = 'http://www.w3.org/2000/svg';
+  var G = 9.81;
+  var DTS = [0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1];
+  var P = { y0: 20, v0: 0, dt: 0.1 };
+  var S = { mode: 'ok', bug: 1, slow: false };
+  var found = { 1: false, 2: false, 3: false, 4: false };
+  var VARS = [['t', 's'], ['y', 'm'], ['v', 'm/s'], ['Δt', 's']];
+  var V = {};           // Variablen (bleiben wie in Scratch zwischen Läufen erhalten)
+  var R;                // aktueller Programmlauf
+  var lines = [];
+
+  function fd(x) { return LK.fmt(x, x >= 1 ? 0 : (x >= 0.1 ? 1 : 2)); }
+  function num(x) { return x === undefined ? 0 : x; }
+
+  // ------------------------------------------------------------ Programme
+  // k: set | chg | loop | say ;  i: Einrückung
+  function build() {
+    var L = [
+      { i: 0, s: 'setze Δt auf ' + fd(P.dt), k: 'set', n: 'Δt', f: function () { return P.dt; } },
+      { i: 0, s: 'setze t auf 0', k: 'set', n: 't', f: function () { return 0; } },
+      { i: 0, s: 'setze y auf ' + P.y0, k: 'set', n: 'y', f: function () { return P.y0; } },
+      { i: 0, s: 'setze v auf ' + P.v0, k: 'set', n: 'v', f: function () { return P.v0; } },
+      { i: 0, s: 'wiederhole bis y < 0', k: 'loop', c: function (W) { return num(W.y) < 0; } },
+      { i: 1, s: 'ändere v um −9,81 · Δt', k: 'chg', n: 'v', f: function (W) { return -G * num(W['Δt']); } },
+      { i: 1, s: 'ändere y um v · Δt', k: 'chg', n: 'y', f: function (W) { return num(W.v) * num(W['Δt']); } },
+      { i: 1, s: 'ändere t um Δt', k: 'chg', n: 't', f: function (W) { return num(W['Δt']); } },
+      { i: 0, s: 'sage t', k: 'say', n: 't' }
+    ];
+    var wrong = null;
+    if (S.mode === 'bug') {
+      if (S.bug === 1) {
+        L[5] = { i: 1, s: 'ändere v um 9,81 · Δt', k: 'chg', n: 'v', f: function (W) { return G * num(W['Δt']); } };
+        wrong = [5];
+      } else if (S.bug === 2) {
+        var a = L[3], b = L[4];
+        a.i = 1; L[3] = b; L[4] = a;
+        wrong = [3, 4];
+      } else if (S.bug === 3) {
+        L[4] = { i: 0, s: 'wiederhole bis y = 0', k: 'loop', c: function (W) { return num(W.y) === 0; } };
+        wrong = [4];
+      } else {
+        L.splice(3, 1);
+        wrong = 'missing';
+      }
+    }
+    // Schleifenende bestimmen
+    L.forEach(function (l, j) {
+      if (l.k !== 'loop') return;
+      var e = j + 1;
+      while (e < L.length && L[e].i > l.i) e++;
+      l.end = e;
+    });
+    L.forEach(function (l, j) {
+      l.loop = -1;
+      for (var q = j - 1; q >= 0; q--) if (L[q].k === 'loop' && L[q].i < l.i) { l.loop = q; break; }
+    });
+    L.wrong = wrong;
+    return L;
+  }
+
+  // Hilfsgrößen der exakten Bewegung
+  function H() { return P.y0 + P.v0 * P.v0 / (2 * G); }
+  function Tex() { return (P.v0 + Math.sqrt(P.v0 * P.v0 + 2 * G * P.y0)) / G; }
+  function yEx(t) { return P.y0 + P.v0 * t - 0.5 * G * t * t; }
+
+  // ------------------------------------------------------------ Interpreter
+  function newRun() {
+    R = { pc: 0, iter: 0, trail: [], done: false, landed: false, stop: null, out: null, running: false, elapsed: 0, maxDev: 0, changed: null, body: 0 };
+  }
+
+  function record() {
+    if (V.t === undefined || V.y === undefined) return;
+    var last = R.trail[R.trail.length - 1];
+    if (last && last.t === V.t && last.y === V.y) return;
+    R.trail.push({ t: V.t, y: V.y });
+    var dev = Math.abs(V.y - yEx(V.t)) / H();
+    if (dev > R.maxDev) R.maxDev = dev;
+  }
+
+  function step() {
+    if (R.done) return;
+    var l = lines[R.pc];
+    R.changed = null;
+    if (l.k === 'set') { V[l.n] = l.f(V); R.changed = l.n; }
+    else if (l.k === 'chg') { V[l.n] = num(V[l.n]) + l.f(V); R.changed = l.n; }
+    else if (l.k === 'say') { R.out = V[l.n]; }
+    if (l.k === 'loop') {
+      R.iter++;
+      record();
+      if (l.c(V)) R.pc = l.end; else { R.pc = R.pc + 1; R.body++; }
+    } else {
+      var next = R.pc + 1;
+      if (l.loop >= 0 && next >= lines[l.loop].end) next = l.loop;
+      R.pc = next;
+    }
+    if (l.k === 'loop') guard();
+    if (!R.done && R.pc >= lines.length) {
+      R.done = true; R.landed = true; record();
+      finished();
+    }
+  }
+
+  function guard() {
+    if (R.done) return;
+    var h = H();
+    if (V.y !== undefined && V.y > 3 * h + 20) stopRun('Abgebrochen: Der Ball fliegt immer weiter nach oben. Er kommt nie wieder herunter, die Schleife würde endlos laufen.');
+    else if (V.y !== undefined && V.y < -h - 10) stopRun('Abgebrochen: Der Ball ist längst durch den Boden gefallen, aber die Schleife hört nicht auf. Ihre Bedingung wird nie erfüllt: eine Endlosschleife.');
+    else if (V.t !== undefined && V.t > 30) stopRun('Abgebrochen nach 30 s simulierter Zeit: Der Ball ist immer noch nicht gelandet. Hier stimmt etwas nicht.');
+  }
+
+  function stopRun(msg) {
+    R.done = true; R.running = false; R.stop = msg;
+    setStatus(msg, 'bad');
+  }
+
+  function finished() {
+    R.running = false;
+    if (S.mode === 'ok') {
+      var dev = R.maxDev * 100;
+      setStatus('Gelandet: Das Programm meldet t = ' + LK.fmt(R.out, 2) + ' s. Exakt sind es ' + LK.fmt(Tex(), 2) + ' s. Größte Abweichung von der Kurve: ' + LK.fmt(dev, 2) + ' %.', dev < 1 ? 'good' : '');
+      if (P.y0 === 20 && P.v0 === 0) LK.reach('fall20');
+      if (dev < 1) LK.reach('acc');
+    } else {
+      setStatus('Das Programm ist fertig und meldet t = ' + LK.fmt(R.out, 2) + ' s. Exakt wären es ' + LK.fmt(Tex(), 2) + ' s. Passt das?', '');
+    }
+  }
+
+  function setStatus(msg, cls) { var s = $('status'); s.textContent = msg; s.className = cls || ''; }
+
+  // Endwerte des richtigen Programms (für Fehler 4: Variablen vom letzten Lauf)
+  function correctEnd() {
+    var t = 0, y = P.y0, v = P.v0;
+    while (!(y < 0)) { v += -G * P.dt; y += v * P.dt; t += P.dt; }
+    return { 'Δt': P.dt, t: t, y: y, v: v };
+  }
+
+  // ------------------------------------------------------------ Programmanzeige
+  var codeEl = $('code'), lineEls = [];
+  function hl(s) {
+    return s.replace(/^(setze|ändere|wiederhole bis|sage)/, '<span class="kw">$1</span>').replace(/ (auf|um) /, ' <span class="kw">$1</span> ');
+  }
+  function renderCode() {
+    codeEl.innerHTML = '';
+    lineEls = [];
+    var pick = S.mode === 'bug' && !found[S.bug];
+    lines.forEach(function (l, j) {
+      var li = document.createElement('li');
+      var inner = '<span class="no">' + (j + 1) + '</span>' + (l.i ? '<span class="ind"></span>' : '') + '<code>' + hl(l.s) + '</code>';
+      if (pick) {
+        li.innerHTML = '<button type="button" class="ln" aria-label="Zeile ' + (j + 1) + ': ' + l.s + ' als falsch markieren">' + inner + '</button>';
+        li.firstChild.onclick = function () { pickLine(j); };
+      } else li.innerHTML = inner;
+      if (S.mode === 'bug' && found[S.bug] && lines.wrong !== 'missing' && lines.wrong.indexOf(j) >= 0) li.classList.add('found');
+      codeEl.appendChild(li);
+      lineEls.push(li);
+    });
+    $('pickHint').hidden = !pick;
+    $('missingRow').hidden = !pick;
+    $('progTitle').textContent = S.mode === 'ok' ? 'Programm' : 'Fehler-Programm ' + S.bug + (found[S.bug] ? ' (Fehler gefunden)' : '');
+  }
+
+  var EXPLAIN = {
+    1: 'Gefunden: In Zeile 6 fehlt das Minuszeichen. Nach oben ist positiv, die Schwerkraft muss v also in jedem Schritt verkleinern. So wird der Ball immer schneller nach oben, und y wird nie kleiner als 0.',
+    2: 'Gefunden: Die Zeilen 4 und 5 sind vertauscht. „setze v auf …“ steht jetzt in der Schleife, deshalb wird v in jedem Durchlauf zurückgesetzt. Der Ball kann nie schneller werden.',
+    3: 'Gefunden: Zeile 5 ist falsch. y springt in einem Schritt von einem positiven auf einen negativen Wert und ist fast nie genau 0. Die Bedingung „y = 0“ wird deshalb nie erfüllt. Richtig ist „wiederhole bis y < 0“.',
+    4: 'Gefunden: Die Zeile „setze v auf ' + '…“ fehlt. Wie in Scratch behält v den Wert vom letzten Lauf. Der Ball startet deshalb schon mit großer Geschwindigkeit nach unten.'
+  };
+  function pickLine(j) {
+    var ok = lines.wrong !== 'missing' && lines.wrong.indexOf(j) >= 0;
+    if (ok) return foundBug();
+    lineEls.forEach(function (li) { li.classList.remove('wrongpick'); });
+    lineEls[j].classList.add('wrongpick');
+    setStatus('Zeile ' + (j + 1) + ' ist hier in Ordnung. Lass das Programm laufen und beobachte die Variablen und den Ball.', 'bad');
+  }
+  function foundBug() {
+    found[S.bug] = true;
+    renderCode(); renderBugBar(); highlight();
+    setStatus(EXPLAIN[S.bug], 'good');
+    var n = [1, 2, 3, 4].filter(function (k) { return found[k]; }).length;
+    $('bugCount').textContent = '(' + n + ' von 4)';
+    if (n === 4) LK.reach('bugs');
+  }
+  $('bMissing').onclick = function () {
+    if (lines.wrong === 'missing') return foundBug();
+    lineEls.forEach(function (li) { li.classList.remove('wrongpick'); });
+    setStatus('Es fehlt keine Zeile. Eine der vorhandenen Zeilen ist falsch.', 'bad');
+  };
+
+  function highlight() {
+    lineEls.forEach(function (li, j) { li.classList.toggle('cur', !R.done && j === R.pc); });
+  }
+
+  function renderVars() {
+    $('vars').innerHTML = VARS.map(function (a) {
+      var x = V[a[0]];
+      var s = x === undefined ? '–' : (a[0] === 'Δt' ? fd(x) : LK.fmt(x, 2));
+      return '<tr' + (R.changed === a[0] ? ' class="changed"' : '') + '><td>' + a[0] + '</td><td>' + s + '</td><td>' + a[1] + '</td></tr>';
+    }).join('');
+    $('out').textContent = R.out === null ? '–' : LK.fmt(R.out, 2);
+  }
+
+  function renderBugBar() {
+    var seg = $('bugSeg');
+    seg.innerHTML = '';
+    [1, 2, 3, 4].forEach(function (k) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('aria-pressed', S.bug === k);
+      b.setAttribute('aria-label', 'Fehler-Programm ' + k + (found[k] ? ', gefunden' : ''));
+      b.innerHTML = k + (found[k] ? ' <span class="found-mark">✓</span>' : '');
+      b.onclick = function () { S.bug = k; restart(true); };
+      seg.appendChild(b);
+    });
+  }
+
+  // ------------------------------------------------------------ Zeichnung
+  var GY = 260, TY = 34, SX = 78, EX = 128, CX0 = 200, CX1 = 505;
+  var sc = { Hs: 22, tMax: 3 };
+  function ys(y) { return GY - (GY - TY) * y / sc.Hs; }
+  function xs(t) { return CX0 + (CX1 - CX0) * t / sc.tMax; }
+  function el(tag, a, parent) { var e = document.createElementNS(NS, tag); for (var k in a) e.setAttribute(k, a[k]); parent.appendChild(e); return e; }
+  function tx(parent, x, y, s, cls, anchor) { var e = el('text', { x: x, y: y, class: cls || 'val', 'text-anchor': anchor || 'start' }, parent); e.textContent = s; return e; }
+  function niceStep(range, n) {
+    var steps = [0.1, 0.2, 0.5, 1, 2, 5, 10, 20, 50];
+    for (var i = 0; i < steps.length; i++) if (range / steps[i] <= n) return steps[i];
+    return 100;
+  }
+
+  function scales() {
+    sc.Hs = Math.max(H() * 1.12, 3);
+    var tl = R.trail.length ? R.trail[R.trail.length - 1].t : 0;
+    var tm = Math.max(Tex() * 1.12, tl * 1.05);
+    var st = niceStep(tm, 6);
+    sc.tMax = Math.ceil(tm / st) * st;
+    sc.tStep = st;
+  }
+
+  function drawAxes() {
+    var g = $('axes'); g.innerHTML = '';
+    var ystep = niceStep(sc.Hs, 6);
+    for (var y = 0; y <= sc.Hs + 1e-9; y += ystep) {
+      el('line', { x1: CX0, x2: CX1, y1: ys(y), y2: ys(y), class: 'gridline' }, g);
+      tx(g, CX0 - 7, ys(y) + 4, LK.fmt(y, ystep < 1 ? 1 : 0), 'val', 'end');
+    }
+    for (var t = 0; t <= sc.tMax + 1e-9; t += sc.tStep) {
+      el('line', { x1: xs(t), x2: xs(t), y1: TY - 6, y2: 298, class: 'gridline' }, g);
+      tx(g, xs(t), 314, LK.fmt(t, sc.tStep < 1 ? 1 : 0), 'val', 'middle');
+    }
+    el('line', { x1: CX0, x2: CX0, y1: TY - 10, y2: 298, class: 'axis' }, g);
+    tx(g, CX0 - 4, 16, 'y in m', 'lbl', 'middle');
+    tx(g, CX1, 334, 't in s', 'lbl', 'end');
+    // Szene: Boden und Starthöhe
+    el('rect', { x: 40, y: GY, width: 120, height: 40, class: 'ground' }, g);
+    el('line', { x1: 40, x2: 160, y1: GY, y2: GY, class: 'groundline' }, g);
+    el('line', { x1: CX0, x2: CX1, y1: GY, y2: GY, class: 'groundline' }, g);
+    el('line', { x1: 40, x2: CX0, y1: ys(P.y0), y2: ys(P.y0), class: 'startline' }, g);
+    tx(g, 6, ys(P.y0) + 5, 'y₀', 'lbl');
+    tx(g, SX, 314, 'Programm', 'val', 'middle');
+    tx(g, EX, 332, 'exakt', 'val', 'middle');
+  }
+
+  var lastDrawn = -1;
+  function drawPlot(force) {
+    if (!force && R.trail.length === lastDrawn) return;
+    lastDrawn = R.trail.length;
+    var oldT = sc.tMax;
+    scales();
+    if (force || sc.tMax !== oldT) drawAxes();
+    var g = $('plot'); g.innerHTML = '';
+    // exakte Kurve
+    var pts = [], T = Tex();
+    for (var k = 0; k <= 120; k++) { var t = T * k / 120; pts.push(xs(t).toFixed(1) + ',' + ys(yEx(t)).toFixed(1)); }
+    el('polyline', { points: pts.join(' '), class: 'exact' }, g);
+    // Programm
+    var tr = R.trail;
+    if (tr.length > 1) el('polyline', { points: tr.map(function (p) { return xs(p.t).toFixed(1) + ',' + ys(p.y).toFixed(1); }).join(' '), class: 'simline' }, g);
+    var every = Math.max(1, Math.ceil(tr.length / 60));
+    for (var i = 0; i < tr.length; i += every) el('circle', { cx: xs(tr[i].t), cy: ys(tr[i].y), r: 3, class: 'simpt' }, g);
+    if (tr.length) { var q = tr[tr.length - 1]; el('circle', { cx: xs(q.t), cy: ys(q.y), r: 3.5, class: 'simpt' }, g); }
+    // Stroboskop-Spur am Ball
+    var every2 = Math.max(1, Math.ceil(tr.length / 30));
+    for (var j = 0; j < tr.length; j += every2) el('circle', { cx: SX, cy: ys(tr[j].y) - 8, r: 6, class: 'trail' }, g);
+  }
+
+  function drawScene() {
+    var g = $('scene'), m = $('marks');
+    g.innerHTML = ''; m.innerHTML = '';
+    var hasY = V.y !== undefined && R.trail.length > 0;
+    var y = hasY ? V.y : P.y0;
+    var t = hasY && V.t !== undefined ? V.t : 0;
+    var ye = Math.max(0, yEx(Math.min(t, Tex())));
+    el('circle', { cx: EX, cy: ys(ye) - 8, r: 8, class: 'exact-ball' }, g);
+    var top = sc.Hs, bottom = -(298 - GY) / (GY - TY) * sc.Hs;
+    var cy = y > top ? TY - 2 : (y < bottom ? 288 : ys(y) - 8);
+    el('circle', { cx: SX, cy: cy, r: 8, class: 'ball' }, g);
+    if (y > top) tx(m, SX + 13, 37, '↑ y = ' + LK.fmt(y, 0) + ' m', 'lbl');
+    if (y < bottom) tx(m, SX + 13, 293, '↓ y = ' + LK.fmt(y, 0) + ' m', 'lbl');
+  }
+
+  function renderReadouts() {
+    $('rT').textContent = R.out === null ? '–' : LK.fmt(R.out, 2) + ' s';
+    $('rTx').textContent = LK.fmt(Tex(), 2) + ' s';
+    $('rDev').textContent = R.trail.length > 1 && S.mode === 'ok' ? LK.fmt(R.maxDev * 100, 2) + ' %' : '–';
+    $('rN').textContent = R.body;
+    $('bRun').textContent = R.running ? 'Pause' : 'Start';
+    $('bStep').disabled = R.done;
+    $('bRun').disabled = R.done;
+    $('bEnd').disabled = R.done;
+  }
+
+  function render(force) {
+    highlight(); renderVars(); drawPlot(force); drawScene(); renderReadouts();
+  }
+
+  // ------------------------------------------------------------ Steuerung
+  function restart(rebuild) {
+    if (rebuild) {
+      lines = build();
+      if (S.mode === 'bug' && S.bug === 4) V = correctEnd();
+      else if (rebuild === 'mode') V = {};
+      renderCode();
+    }
+    newRun();
+    setStatus(S.mode === 'bug' ? (S.bug === 4 && !found[4]
+      ? 'Das Programm wurde vorher schon einmal gestartet. Lass es laufen und beobachte den Ball. Was ist anders?'
+      : 'Lass das Programm laufen und beobachte. Wo steckt der Fehler?') : '', '');
+    render(true);
+  }
+
+  function setMode(m) {
+    S.mode = m;
+    $('mOk').setAttribute('aria-pressed', m === 'ok');
+    $('mBug').setAttribute('aria-pressed', m === 'bug');
+    $('bugBar').hidden = m !== 'bug';
+    renderBugBar();
+    restart('mode');
+  }
+  $('mOk').onclick = function () { setMode('ok'); };
+  $('mBug').onclick = function () { setMode('bug'); };
+
+  $('bStep').onclick = function () { R.running = false; step(); render(); };
+  $('bRun').onclick = function () {
+    if (R.done) return;
+    R.running = !R.running;
+    if (R.running) R.elapsed = Math.max(R.elapsed, (R.iter - 1) * P.dt);
+    render();
+  };
+  $('bEnd').onclick = function () {
+    R.running = false;
+    var n = 0;
+    while (!R.done && n < 200000) { step(); n++; }
+    render();
+  };
+  $('bReset').onclick = function () { restart(false); };
+  $('bSlow').onclick = function () { S.slow = !S.slow; this.setAttribute('aria-pressed', S.slow); };
+
+  function sliders() {
+    P.y0 = Number($('sY').value);
+    P.v0 = Number($('sV').value);
+    P.dt = DTS[Number($('sD').value)];
+    $('oY').textContent = P.y0 + ' m';
+    $('oV').textContent = P.v0 + ' m/s';
+    $('oD').textContent = fd(P.dt) + ' s';
+  }
+  ['sY', 'sV', 'sD'].forEach(function (id) {
+    $(id).oninput = function () { sliders(); restart(true); };
+  });
+
+  var last = performance.now();
+  function frame(now) {
+    var dtr = Math.min(0.05, (now - last) / 1000); last = now;
+    if (R.running && !R.done) {
+      R.elapsed += dtr * (S.slow ? 0.25 : 1);
+      var n = 0;
+      while (!R.done && n < 5000) {
+        if (lines[R.pc].k === 'loop' && R.iter > 0 && R.iter * P.dt > R.elapsed) break;
+        step(); n++;
+      }
+      render();
+    }
+    requestAnimationFrame(frame);
+  }
+
+  sliders();
+  renderBugBar();
+  restart('mode');
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

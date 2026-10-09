@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solarzellen-Labor</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<style>
+  .ray { stroke: var(--lamp); stroke-width: 2; }
+  .ray.miss { stroke-dasharray: 3 5; }
+  .panel { fill: var(--neg); stroke: var(--line); stroke-width: 1.5; }
+  .panel-div { stroke: var(--card); stroke-width: 1.2; }
+  .normal { stroke: var(--muted); stroke-width: 1.3; stroke-dasharray: 5 4; fill: none; }
+  .arc { stroke: var(--c3); stroke-width: 1.6; fill: none; }
+  .halo { paint-order: stroke; stroke: var(--card); stroke-width: 4px; stroke-linejoin: round; }
+  .meter { fill: var(--card); stroke: var(--line); stroke-width: 2; }
+  .meter-txt { font-size: 13px; font-weight: 700; text-anchor: middle; dominant-baseline: central; }
+  .modbox { fill: none; stroke: var(--muted); stroke-width: 1.2; stroke-dasharray: 5 4; }
+  .res { fill: var(--card); stroke: var(--line); stroke-width: 2.2; }
+  .flow { fill: var(--pos); }
+  .plate { stroke: var(--line); stroke-linecap: butt; }
+  .curve-i { fill: none; stroke: var(--accent); stroke-width: 2.4; }
+  .curve-p { fill: none; stroke: var(--pos); stroke-width: 2.4; }
+  .curve-ref { fill: none; stroke: var(--muted); stroke-width: 1.4; stroke-dasharray: 6 4; }
+  .loadline { stroke: var(--muted); stroke-width: 1.2; stroke-dasharray: 2 4; }
+  .op { fill: var(--text); stroke: var(--card); stroke-width: 2; }
+  .mpp { fill: var(--ok); stroke: var(--card); stroke-width: 1.5; }
+  .mpp-guide { stroke: var(--ok); stroke-width: 1; stroke-dasharray: 3 3; }
+  .tick-i { fill: var(--accent) !important; }
+  .tick-p { fill: var(--pos) !important; }
+  .band { fill: var(--grid); }
+  .edge { fill: none; stroke: var(--line); stroke-width: 2; }
+  .zone { fill: var(--bg); stroke: var(--border); }
+  .photon { fill: none; stroke: var(--c3); stroke-width: 2.2; }
+  .arrow-e { stroke: var(--neg); stroke-width: 2; fill: none; }
+  .arrow-h { stroke: var(--pos); stroke-width: 2; fill: none; }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: .82rem; margin-top: 6px; }
+  .legend i { display: inline-block; width: 18px; height: 0; border-top: 3px solid; margin-right: 5px; vertical-align: middle; }
+  .legend i.dot { width: 10px; height: 10px; border: 0; border-radius: 50%; }
+  .legend i.dia { width: 9px; height: 9px; border: 0; transform: rotate(45deg); }
+  .note { font-size: .82rem; color: var(--muted); border-left: 3px solid var(--border); padding-left: 8px; margin-top: 10px; }
+  .formula { font-size: .9rem; margin: 8px 0 0; }
+  .seg { flex-wrap: wrap; }
+  .readouts { grid-template-columns: repeat(auto-fit, minmax(118px, 1fr)); }
+</style>
+</head>
+<body>
+<h1>Solarzellen-Labor</h1>
+<p class="muted small">Eine Lampe (oder die Sonne) beleuchtet Silizium-Solarzellen mit je 100 cm² Fläche. Stelle Beleuchtung, Winkel, Last und Verschaltung ein und beobachte Spannung, Stromstärke und Leistung.</p>
+
+<div class="lk-grid">
+  <div>
+    <div class="lk-card">
+      <svg id="scene" viewBox="0 0 520 285" role="img" aria-labelledby="sc-title">
+        <title id="sc-title">Lampe beleuchtet ein schräg gestelltes Solarmodul. Rechts der Stromkreis aus Modul, Strommesser, Spannungsmesser und Lastwiderstand.</title>
+        <defs>
+          <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--warn)"/></marker>
+        </defs>
+        <!-- Lampe -->
+        <g id="sun">
+          <circle id="sunDisc" cx="120" cy="32" r="16" fill="var(--lamp)" stroke="var(--line)" stroke-width="1.2"/>
+        </g>
+        <text id="tE" x="146" y="28" class="val"></text>
+        <g id="rays"></g>
+        <!-- Ständer, Boden -->
+        <line x1="120" y1="185" x2="120" y2="250" stroke="var(--line)" stroke-width="3"/>
+        <line x1="20" y1="250" x2="225" y2="250" stroke="var(--muted)" stroke-width="1.5"/>
+        <g id="panel"></g>
+        <path id="normal" class="normal" d=""/>
+        <path id="arc" class="arc" d=""/>
+        <text id="tAlpha" class="lbl halo" text-anchor="middle"></text>
+        <text id="tEff" x="120" y="272" class="val" text-anchor="middle"></text>
+        <!-- Stromkreis -->
+        <path class="wire" d="M335 58 V40 H495 V110"/>
+        <path class="wire" d="M495 190 V250 H335 V232"/>
+        <path id="shortWire" class="wire" d="M495 110 V190"/>
+        <g id="openGap">
+          <rect x="485" y="110" width="20" height="80" fill="var(--card)" stroke="none"/>
+          <path class="wire" d="M495 110 V134 M495 166 V190"/>
+          <circle cx="495" cy="134" r="3.5" fill="var(--card)" stroke="var(--line)" stroke-width="2"/>
+          <circle cx="495" cy="166" r="3.5" fill="var(--card)" stroke="var(--line)" stroke-width="2"/>
+        </g>
+        <path id="loop" d="M335 40 H495 V250 H335" fill="none" stroke="none"/>
+        <g id="dots"></g>
+        <rect id="resistor" class="res" x="485" y="110" width="20" height="80" rx="3"/>
+        <path class="wire thin" d="M430 40 V131 M430 159 V250"/>
+        <circle cx="430" cy="40" r="3" fill="var(--line)"/><circle cx="430" cy="250" r="3" fill="var(--line)"/>
+        <circle cx="400" cy="40" r="14" class="meter"/><text x="400" y="40" class="meter-txt">A</text>
+        <text id="tI" x="400" y="18" class="val" text-anchor="middle"></text>
+        <circle cx="430" cy="145" r="14" class="meter"/><text x="430" y="145" class="meter-txt">V</text>
+        <text id="tU" x="430" y="180" class="val halo" text-anchor="middle"></text>
+        <text id="tR" x="515" y="272" class="val" text-anchor="end"></text>
+        <rect class="modbox" x="276" y="58" width="118" height="174" rx="8"/>
+        <text x="324" y="53" class="lbl">+</text><text x="322" y="247" class="lbl">−</text>
+        <path d="M244 80 L270 100 M244 104 L270 124" stroke="var(--warn)" stroke-width="2" marker-end="url(#ah)"/>
+        <g id="mod"></g>
+        <text id="tMod" x="335" y="272" class="val" text-anchor="middle"></text>
+      </svg>
+      <p class="small muted" style="margin:6px 0 0">Die Punkte zeigen die technische Stromrichtung vom Pluspol durch die Last zum Minuspol. Je schneller sie laufen, desto größer ist die Stromstärke.</p>
+    </div>
+
+    <div class="lk-card">
+      <h2>Kennlinien des Moduls</h2>
+      <svg id="chart" viewBox="0 0 520 285" role="img" aria-label="Diagramm: Stromstärke und Leistung in Abhängigkeit von der Spannung, mit Arbeitspunkt und MPP"></svg>
+      <div class="legend">
+        <span><i style="border-color:var(--accent)"></i><span class="f">I</span>-<span class="f">U</span>-Kennlinie</span>
+        <span><i style="border-color:var(--pos)"></i><span class="f">P</span>-<span class="f">U</span>-Kurve</span>
+        <span><i style="border-color:var(--muted);border-top-style:dashed"></i>volle Sonne, 0°</span>
+        <span><i style="border-color:var(--muted);border-top-style:dotted"></i>Widerstandsgerade</span>
+        <span><i class="dot" style="background:var(--text)"></i>Arbeitspunkt</span>
+        <span><i class="dia" style="background:var(--ok)"></i>MPP (größte Leistung)</span>
+      </div>
+      <p class="formula">Kennlinie einer Zelle: <span class="f">I = I<sub>Ph</sub> − I<sub>0</sub> · (e<sup>U / (n·U<sub>T</sub>)</sup> − 1)</span>. Der Fotostrom <span class="f">I<sub>Ph</sub></span> ist proportional zur wirksamen Bestrahlung <span class="f">E · cos α</span>.</p>
+      <p class="formula">Leistung <span class="f">P = U · I</span>, Wirkungsgrad <span class="f">η = P / P<sub>Licht</sub></span> mit <span class="f">P<sub>Licht</sub> = E · cos α · A</span>.</p>
+    </div>
+
+    <div class="lk-card">
+      <h2>Wie entsteht die Spannung? (Energiemodell)</h2>
+      <svg viewBox="0 0 520 215" role="img" aria-labelledby="bd-title">
+        <title id="bd-title">Energiebänder am pn-Übergang: Licht hebt ein Elektron vom Valenzband ins Leitungsband. Das Elektron wandert ins n-Gebiet, das Loch ins p-Gebiet.</title>
+        <defs>
+          <marker id="ahE" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--neg)"/></marker>
+          <marker id="ahH" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--pos)"/></marker>
+          <marker id="ahP" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--c3)"/></marker>
+          <marker id="ahM" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--muted)"/></marker>
+        </defs>
+        <rect class="zone" x="200" y="22" width="110" height="168" rx="4"/>
+        <text x="110" y="16" class="lbl" text-anchor="middle">p-Gebiet</text>
+        <text x="255" y="16" class="lbl" text-anchor="middle">Sperrschicht</text>
+        <text x="410" y="16" class="lbl" text-anchor="middle">n-Gebiet</text>
+        <!-- Leitungsband -->
+        <path class="band" d="M36 36 H200 L310 76 H492 V58 H310 L200 18 H36 z" transform="translate(0,36)"/>
+        <path class="edge" d="M36 72 H200 L310 112 H492"/>
+        <!-- Valenzband -->
+        <path class="band" d="M36 142 H200 L310 182 H492 V200 H310 L200 160 H36 z" transform="translate(0,-18)"/>
+        <path class="edge" d="M36 124 H200 L310 164 H492"/>
+        <text x="40" y="66" class="val">Leitungsband</text>
+        <text x="40" y="140" class="val">Valenzband</text>
+        <!-- Bandlücke -->
+        <path d="M480 115 V160" stroke="var(--muted)" stroke-width="1.2" marker-start="url(#ahM)" marker-end="url(#ahM)"/>
+        <text x="472" y="142" class="val" text-anchor="end">≈ 1,1 eV</text>
+        <!-- Photon -->
+        <path class="photon" d="M150 34 q6 -8 12 0 t12 0 t12 0 t12 0 t12 0 t12 0 L246 132" marker-end="url(#ahP)"/>
+        <text x="168" y="50" class="val">Licht</text>
+        <!-- Anregung -->
+        <path d="M262 140 V98" stroke="var(--c3)" stroke-width="1.5" stroke-dasharray="3 3" marker-end="url(#ahP)"/>
+        <circle cx="262" cy="86" r="8" fill="var(--neg)"/><text x="262" y="90" text-anchor="middle" style="font-size:13px;font-weight:700;fill:var(--card)">−</text>
+        <circle cx="262" cy="150" r="8" fill="var(--card)" stroke="var(--pos)" stroke-width="2"/><text x="262" y="154" text-anchor="middle" style="font-size:12px;font-weight:700;fill:var(--pos)">+</text>
+        <path class="arrow-e" d="M272 90 L310 103 H400" marker-end="url(#ahE)"/>
+        <path class="arrow-h" d="M252 146 L200 132 H140" marker-end="url(#ahH)"/>
+        <text x="365" y="96" class="val" text-anchor="middle">Elektron</text>
+        <text x="175" y="156" class="val" text-anchor="middle">Loch</text>
+        <text x="110" y="206" class="lbl" text-anchor="middle">Pluspol (+)</text>
+        <text x="410" y="206" class="lbl" text-anchor="middle">Minuspol (−)</text>
+        <path d="M16 190 V30" stroke="var(--muted)" stroke-width="1.2" marker-end="url(#ahM)"/>
+        <text x="12" y="200" class="val">Energie</text>
+      </svg>
+      <p class="small">Eine Solarzelle ist eine großflächige Diode aus Silizium mit einer dünnen n-Schicht und einer p-Schicht. Licht gibt seine Energie an Elektronen im Valenzband ab. Reicht die Energie für die Bandlücke (etwa 1,1 eV), springt ein Elektron ins Leitungsband und wird frei beweglich. Zurück bleibt ein Loch. So entsteht ein <b>Elektron-Loch-Paar</b>.</p>
+      <p class="small">Am pn-Übergang gibt es eine Sperrschicht mit einem elektrischen Feld. Es treibt die Elektronen ins n-Gebiet und die Löcher ins p-Gebiet. Dadurch wird das n-Gebiet zum Minuspol und das p-Gebiet zum Pluspol: Es entsteht eine Spannung von etwa 0,6 V. Schließt du eine Last an, fließen die Elektronen durch den äußeren Stromkreis zurück zum p-Gebiet.</p>
+    </div>
+  </div>
+
+  <div>
+    <div class="lk-card">
+      <h2>Einstellungen</h2>
+      <label class="ctrl"><span>Bestrahlungsstärke <span class="f">E</span> <output id="oE"></output></span>
+        <input type="range" id="sE" min="0" max="1000" step="50" value="1000"></label>
+      <label class="ctrl"><span>Einfallswinkel <span class="f">α</span> <output id="oA"></output></span>
+        <input type="range" id="sA" min="0" max="90" step="5" value="0"></label>
+      <label class="ctrl"><span>Anzahl der Zellen <output id="oN"></output></span>
+        <input type="range" id="sN" min="1" max="6" step="1" value="1"></label>
+      <div class="row">
+        <div class="seg" role="group" aria-label="Verschaltung der Zellen">
+          <button type="button" id="bSer" aria-pressed="true">in Reihe</button>
+          <button type="button" id="bPar" aria-pressed="false">parallel</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="seg" role="group" aria-label="Last wählen">
+          <button type="button" id="bShort" aria-pressed="false">Kurzschluss</button>
+          <button type="button" id="bLoad" aria-pressed="true">Widerstand</button>
+          <button type="button" id="bOpen" aria-pressed="false">Leerlauf</button>
+        </div>
+      </div>
+      <label class="ctrl"><span>Lastwiderstand <span class="f">R</span> <output id="oR"></output></span>
+        <input type="range" id="sR" min="0" max="600" step="1" value="300" aria-describedby="rHint"></label>
+      <p id="rHint" class="small muted" style="margin:-6px 0 8px">Der Regler ist logarithmisch: von 0,01 Ω bis 100 Ω. Die Pfeiltasten verstellen fein.</p>
+      <div class="readouts">
+        <div class="readout"><span>Spannung <span class="f">U</span></span><b id="rU">–</b></div>
+        <div class="readout"><span>Stromstärke <span class="f">I</span></span><b id="rI">–</b></div>
+        <div class="readout"><span>Leistung <span class="f">P</span></span><b id="rP">–</b></div>
+        <div class="readout"><span>Wirkungsgrad <span class="f">η</span></span><b id="rEta">–</b></div>
+        <div class="readout"><span>Lichtleistung</span><b id="rL">–</b></div>
+        <div class="readout"><span>Anteil vom MPP</span><b id="rM">–</b></div>
+      </div>
+      <p id="status" class="small" aria-live="polite" style="min-height:1.4em"></p>
+      <p class="note">Vereinfachungen: ideales Ein-Dioden-Modell (<span class="f">n</span> = 1,2) ohne Leitungswiderstände, feste Zelltemperatur 25 °C, ideale Messgeräte. Reflexion bei schrägem Licht ist nicht berücksichtigt. Echte Zellen werden in der Sonne warm, dann sinkt ihre Spannung etwas.</p>
+    </div>
+
+    <div class="lk-card tasks">
+      <h2>Entdecke selbst <span class="small muted" data-task-count></span></h2>
+      <div class="task" data-goal="vocisc"><p class="task-q">Miss bei 1 Zelle, 1000 W/m² und 0° die Leerlaufspannung <span class="f">U<sub>L</sub></span> und den Kurzschlussstrom <span class="f">I<sub>K</sub></span> (Buttons „Leerlauf“ und „Kurzschluss“).</p></div>
+      <div class="task" data-goal="mpp"><p class="task-q">Stelle den Lastwiderstand so ein, dass die Leistung maximal ist (mindestens 98,5 % vom MPP).</p></div>
+      <div class="task">
+        <p class="task-q">Halbiere die Bestrahlung von 1000 W/m² auf 500 W/m². Was passiert?</p>
+        <div class="choices">
+          <button type="button" data-ok data-fb="Richtig: Der Fotostrom ist proportional zur Bestrahlung. Die Leerlaufspannung sinkt nur um etwa 0,02 V, weil sie nur logarithmisch vom Strom abhängt.">Der Kurzschlussstrom halbiert sich, die Leerlaufspannung sinkt nur wenig.</button>
+          <button type="button" data-fb="Miss nach: Vergleiche die Leerlaufspannung bei 1000 W/m² und bei 500 W/m². Sie ändert sich kaum.">Strom und Spannung halbieren sich beide.</button>
+          <button type="button" data-fb="Miss den Kurzschlussstrom bei beiden Einstellungen. Er ändert sich deutlich.">Die Spannung halbiert sich, der Strom bleibt gleich.</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="task" data-goal="ser3"><p class="task-q">Schalte 3 Zellen in Reihe und miss bei 1000 W/m² und 0° die Leerlaufspannung. Vergleiche mit einer Zelle.</p></div>
+      <div class="task" data-goal="w60"><p class="task-q">Drehe die Zelle bei 1000 W/m² auf 60° und finde dort wieder den MPP. Wie groß ist die Leistung jetzt im Vergleich zu 0°?</p></div>
+      <div class="task">
+        <p class="task-q">Warum laufen die Elektronen in der Solarzelle zum Minuspol und die Löcher zum Pluspol?</p>
+        <div class="choices">
+          <button type="button" data-fb="Licht erzeugt Elektron-Loch-Paare, gibt ihnen aber keine bestimmte Richtung. Schau dir das Energiemodell an.">Das Licht schiebt sie in diese Richtung.</button>
+          <button type="button" data-ok data-fb="Genau: Das elektrische Feld in der Sperrschicht trennt die Paare. Elektronen gehen ins n-Gebiet, Löcher ins p-Gebiet.">Das elektrische Feld in der Sperrschicht des pn-Übergangs trennt sie.</button>
+          <button type="button" data-fb="In der Zelle ist keine Batterie. Die Spannung entsteht erst durch das Licht und den pn-Übergang.">In der Zelle steckt eine kleine Batterie.</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="all-done">Alles entdeckt! Weiter geht es mit den Übungen.</div>
+    </div>
+  </div>
+</div>
+
+<script src="../../static/lesson-kit.js"></script>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var NS = 'http://www.w3.org/2000/svg';
+
+  // Zellmodell: Silizium-Zelle, 100 cm², 25 °C
+  var AREA = 0.01;            // m²
+  var IPH_FULL = 4.15;        // A bei 1000 W/m²
+  var N_ID = 1.2;             // Idealitätsfaktor
+  var UT = 0.025693;          // Temperaturspannung bei 25 °C in V
+  var VOC_FULL = 0.600;       // V bei 1000 W/m²
+  var I0 = IPH_FULL / (Math.exp(VOC_FULL / (N_ID * UT)) - 1);
+
+  var S = { E: 1000, a: 0, N: 1, conn: 'ser', load: 'R', rIdx: 300 };
+  var seen = { voc: false, isc: false };
+  var lastStatus = '';
+
+  function R() { return 0.01 * Math.pow(10, S.rIdx / 150); }
+  function geom() { return S.conn === 'ser' ? { ns: S.N, np: 1 } : { ns: 1, np: S.N }; }
+  function cosA() { return S.a >= 90 ? 0 : Math.cos(S.a * Math.PI / 180); }
+  function Eeff() { return S.E * cosA(); }
+
+  // Modul aus ns Zellen in Reihe und np Zellen parallel
+  function makeModule(E) {
+    var g = geom(), iph = IPH_FULL * E / 1000;
+    var m = {
+      ns: g.ns, np: g.np, iph: iph,
+      I: function (U) { return g.np * (iph - I0 * (Math.exp(U / (g.ns * N_ID * UT)) - 1)); },
+      voc: iph > 0 ? g.ns * N_ID * UT * Math.log(iph / I0 + 1) : 0
+    };
+    m.isc = g.np * iph;
+    // MPP suchen
+    var best = { U: 0, I: 0, P: 0 }, k, U, I;
+    for (k = 0; k <= 400; k++) { U = m.voc * k / 400; I = m.I(U); if (U * I > best.P) best = { U: U, I: I, P: U * I }; }
+    var lo = Math.max(0, best.U - m.voc / 400), hi = Math.min(m.voc, best.U + m.voc / 400);
+    for (k = 0; k < 60; k++) {
+      var a = lo + (hi - lo) * 0.382, b = lo + (hi - lo) * 0.618;
+      if (a * m.I(a) > b * m.I(b)) hi = b; else lo = a;
+    }
+    U = (lo + hi) / 2; I = m.I(U);
+    if (U * I > best.P) best = { U: U, I: I, P: U * I };
+    m.mpp = best;
+    return m;
+  }
+
+  function operatingPoint(m) {
+    if (m.iph <= 0) return { U: 0, I: 0 };
+    if (S.load === 'short') return { U: 0, I: m.isc };
+    if (S.load === 'open') return { U: m.voc, I: 0 };
+    var r = R(), lo = 0, hi = m.voc;
+    for (var k = 0; k < 70; k++) {
+      var u = (lo + hi) / 2;
+      if (m.I(u) > u / r) lo = u; else hi = u;
+    }
+    var U = (lo + hi) / 2;
+    return { U: U, I: U / r };
+  }
+
+  // ---------------------------------------------- Formatierung
+  function fU(u) { return LK.fmt(u, u < 1 ? 3 : 2) + ' V'; }
+  function fI(i) { return i < 0.1 ? LK.fmt(i * 1000, 0) + ' mA' : LK.fmt(i, 2) + ' A'; }
+  function fP(p) { return p < 0.1 ? LK.fmt(p * 1000, 0) + ' mW' : LK.fmt(p, p < 10 ? 2 : 1) + ' W'; }
+  function sig(r) { var d = Math.max(0, 2 - Math.floor(Math.log(r) / Math.LN10)); return LK.fmt(r, d) + ' Ω'; }
+
+  function el(tag, attrs, parent) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+
+  // ---------------------------------------------- Szene
+  var PX = 120, PY = 185, HALF = 84;
+  function drawScene() {
+    var a = S.a * Math.PI / 180, c = cosA(), s = Math.sin(a);
+    var f = S.E / 1000;
+    $('sunDisc').setAttribute('fill-opacity', 0.2 + 0.8 * f);
+    $('tE').textContent = 'E = ' + S.E + ' W/m²';
+    // Strahlen
+    var rays = $('rays'); rays.innerHTML = '';
+    if (S.E > 0) {
+      for (var x = 36; x <= 204; x += 12) {
+        var hit = c > 1e-6 && Math.abs(x - PX) <= HALF * c + 1e-9;
+        var yEnd = hit ? PY + (x - PX) * Math.tan(a) - 5 / Math.max(c, 0.2) : 250;
+        el('line', { x1: x, y1: 56, x2: x, y2: yEnd, class: hit ? 'ray' : 'ray miss', opacity: (hit ? 0.25 + 0.75 * f : 0.25 + 0.3 * f).toFixed(2) }, rays);
+      }
+    }
+    // Paneel
+    var p = $('panel'); p.innerHTML = '';
+    var g = el('g', { transform: 'rotate(' + S.a + ' ' + PX + ' ' + PY + ')' }, p);
+    el('rect', { x: PX - HALF, y: PY - 5, width: 2 * HALF, height: 10, rx: 2, class: 'panel' }, g);
+    for (var k = 1; k < S.N; k++) { var xx = PX - HALF + 2 * HALF * k / S.N; el('line', { x1: xx, x2: xx, y1: PY - 4, y2: PY + 4, class: 'panel-div' }, g); }
+    el('circle', { cx: PX, cy: PY, r: 3, fill: 'var(--line)' }, p);
+    // Lot und Winkel
+    var nx = PX + 72 * s, ny = PY - 72 * c;
+    $('normal').setAttribute('d', 'M' + PX + ' ' + PY + ' L' + nx.toFixed(1) + ' ' + ny.toFixed(1));
+    if (S.a > 0) {
+      $('arc').setAttribute('d', 'M' + PX + ' ' + (PY - 40) + ' A40 40 0 0 1 ' + (PX + 40 * s).toFixed(1) + ' ' + (PY - 40 * c).toFixed(1));
+    } else $('arc').setAttribute('d', '');
+    var h = a / 2;
+    var t = $('tAlpha');
+    t.setAttribute('x', (PX + 54 * Math.sin(h) + (S.a < 20 ? 12 : 0)).toFixed(1));
+    t.setAttribute('y', (PY - 54 * Math.cos(h) + 4).toFixed(1));
+    t.textContent = 'α = ' + S.a + '°';
+    $('tEff').textContent = 'wirksam: E · cos α = ' + Math.round(Eeff()) + ' W/m²';
+  }
+
+  function cell(parent, x, y, w) {
+    // Schaltzeichen einer Solarzelle: langer Strich (+) oben, kurzer dicker Strich (−) unten
+    el('line', { x1: x - w / 2, x2: x + w / 2, y1: y - 3, y2: y - 3, class: 'plate', 'stroke-width': 2 }, parent);
+    el('line', { x1: x - w / 4, x2: x + w / 4, y1: y + 3, y2: y + 3, class: 'plate', 'stroke-width': 5 }, parent);
+  }
+
+  function drawModule() {
+    var g = $('mod'); g.innerHTML = '';
+    var n = S.N, k;
+    if (S.conn === 'ser' || n === 1) {
+      var top = 66, bot = 224, pitch = (bot - top) / n;
+      el('path', { class: 'wire', d: 'M335 58 V' + (top + pitch / 2 - 3) }, g);
+      for (k = 0; k < n; k++) {
+        var yc = top + pitch * (k + 0.5);
+        cell(g, 335, yc, 34);
+        var next = k < n - 1 ? top + pitch * (k + 1.5) - 3 : 232;
+        el('path', { class: 'wire', d: 'M335 ' + (yc + 3) + ' V' + next }, g);
+      }
+    } else {
+      var x0 = 290, x1 = 380, w = Math.min(28, (x1 - x0) / (n - 1) - 4);
+      el('path', { class: 'wire', d: 'M' + x0 + ' 72 H' + x1 + ' M' + x0 + ' 218 H' + x1 + ' M335 58 V72 M335 218 V232' }, g);
+      for (k = 0; k < n; k++) {
+        var xc = x0 + (x1 - x0) * k / (n - 1);
+        el('path', { class: 'wire', d: 'M' + xc + ' 72 V142 M' + xc + ' 148 V218' }, g);
+        cell(g, xc, 145, w);
+        el('circle', { cx: xc, cy: 72, r: 2.5, fill: 'var(--line)' }, g);
+        el('circle', { cx: xc, cy: 218, r: 2.5, fill: 'var(--line)' }, g);
+      }
+    }
+    $('tMod').textContent = n === 1 ? '1 Zelle' : n + ' Zellen ' + (S.conn === 'ser' ? 'in Reihe' : 'parallel');
+  }
+
+  // ---------------------------------------------- Diagramm
+  var X0 = 54, X1 = 462, Y0 = 236, Y1 = 22;
+  function niceStep(max, n) {
+    var raw = max / n, p = Math.pow(10, Math.floor(Math.log(raw) / Math.LN10)), m = raw / p;
+    return (m <= 1 ? 1 : m <= 2 ? 2 : m <= 2.5 ? 2.5 : m <= 5 ? 5 : 10) * p;
+  }
+  function digits(step) { return step >= 1 ? 0 : step >= 0.1 ? 1 : 2; }
+
+  function drawChart(m, ref, op) {
+    var svg = $('chart'); svg.innerHTML = '';
+    var g = geom();
+    var uStep = niceStep(g.ns * 0.65, 6), uMax = Math.ceil(g.ns * 0.65 / uStep - 1e-9) * uStep;
+    var iStep = niceStep(g.np * 4.4, 5), iMax = Math.ceil(g.np * 4.4 / iStep - 1e-9) * iStep;
+    var pTop = g.ns * g.np * 2.1, pStep = niceStep(pTop, 5), pMax = Math.ceil(pTop / pStep - 1e-9) * pStep;
+    var px = function (u) { return X0 + (X1 - X0) * u / uMax; };
+    var pyI = function (i) { return Y0 - (Y0 - Y1) * i / iMax; };
+    var pyP = function (p) { return Y0 - (Y0 - Y1) * p / pMax; };
+    var v, k;
+    for (v = 0; v <= uMax + 1e-9; v += uStep) {
+      el('line', { x1: px(v), x2: px(v), y1: Y1, y2: Y0, class: 'gridline' }, svg);
+      el('text', { x: px(v), y: Y0 + 17, 'text-anchor': 'middle', class: 'val' }, svg).textContent = LK.fmt(v, digits(uStep));
+    }
+    for (v = 0; v <= iMax + 1e-9; v += iStep) {
+      el('line', { x1: X0, x2: X1, y1: pyI(v), y2: pyI(v), class: 'gridline' }, svg);
+      el('text', { x: X0 - 7, y: pyI(v) + 4, 'text-anchor': 'end', class: 'val tick-i' }, svg).textContent = LK.fmt(v, digits(iStep));
+    }
+    for (v = 0; v <= pMax + 1e-9; v += pStep) {
+      el('line', { x1: X1, x2: X1 + 4, y1: pyP(v), y2: pyP(v), class: 'axis' }, svg);
+      el('text', { x: X1 + 7, y: pyP(v) + 4, 'text-anchor': 'start', class: 'val tick-p' }, svg).textContent = LK.fmt(v, digits(pStep));
+    }
+    el('line', { x1: X0, x2: X1, y1: Y0, y2: Y0, class: 'axis' }, svg);
+    el('line', { x1: X0, x2: X0, y1: Y0, y2: Y1, class: 'axis' }, svg);
+    el('line', { x1: X1, x2: X1, y1: Y0, y2: Y1, class: 'axis' }, svg);
+    el('text', { x: X1, y: Y0 + 36, 'text-anchor': 'end', class: 'lbl' }, svg).textContent = 'U in V';
+    el('text', { x: 6, y: 12, class: 'lbl tick-i' }, svg).textContent = 'I in A';
+    el('text', { x: 514, y: 12, 'text-anchor': 'end', class: 'lbl tick-p' }, svg).textContent = 'P in W';
+
+    function curve(mod, fnY, cls) {
+      var pts = [];
+      for (var j = 0; j <= 160; j++) {
+        var u = mod.voc * j / 160, i = Math.max(0, mod.I(u));
+        pts.push(px(u).toFixed(1) + ',' + fnY(u, i).toFixed(1));
+      }
+      return el('polyline', { points: pts.join(' '), class: cls }, svg);
+    }
+    // Referenz: volle Sonne senkrecht
+    curve(ref, function (u, i) { return pyI(i); }, 'curve-ref');
+    curve(ref, function (u, i) { return pyP(u * i); }, 'curve-ref');
+    // Widerstandsgerade
+    if (S.load === 'R') {
+      var r = R(), uEnd = Math.min(uMax, iMax * r);
+      el('line', { x1: px(0), y1: pyI(0), x2: px(uEnd), y2: pyI(uEnd / r), class: 'loadline' }, svg);
+    }
+    if (m.iph > 0) {
+      curve(m, function (u, i) { return pyI(i); }, 'curve-i');
+      curve(m, function (u, i) { return pyP(u * i); }, 'curve-p');
+      // MPP
+      var mx = px(m.mpp.U), myP = pyP(m.mpp.P), myI = pyI(m.mpp.I);
+      el('line', { x1: mx, x2: mx, y1: Math.min(myP, myI), y2: Y0, class: 'mpp-guide' }, svg);
+      [myP, myI].forEach(function (y) { el('rect', { x: mx - 5, y: y - 5, width: 10, height: 10, class: 'mpp', transform: 'rotate(45 ' + mx + ' ' + y + ')' }, svg); });
+      var lx = mx > (X0 + X1) / 2 ? mx - 10 : mx + 10;
+      el('text', { x: lx, y: myP - 10, 'text-anchor': mx > (X0 + X1) / 2 ? 'end' : 'start', class: 'lbl halo' }, svg).textContent = 'MPP ' + fP(m.mpp.P);
+      // Arbeitspunkt
+      el('circle', { cx: px(op.U), cy: pyI(op.I), r: 5.5, class: 'op' }, svg);
+      el('circle', { cx: px(op.U), cy: pyP(op.U * op.I), r: 5.5, class: 'op' }, svg);
+    } else {
+      el('text', { x: (X0 + X1) / 2, y: (Y0 + Y1) / 2, 'text-anchor': 'middle', class: 'lbl' }, svg).textContent = 'Kein Licht auf der Zelle: kein Strom, keine Spannung';
+    }
+  }
+
+  // ---------------------------------------------- Strompunkte
+  var loop = $('loop'), LEN = loop.getTotalLength(), ND = 16, dots = [], offset = 0, curI = 0, curImax = 1;
+  for (var d = 0; d < ND; d++) dots.push(el('circle', { r: 3.5, class: 'flow', opacity: 0 }, $('dots')));
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---------------------------------------------- Aktualisieren
+  function update() {
+    var m = makeModule(Eeff());
+    var ref = makeModule(1000);
+    var op = operatingPoint(m);
+    var P = op.U * op.I, Plicht = Eeff() * AREA * S.N;
+    curI = op.I; curImax = geom().np * IPH_FULL;
+
+    $('oE').textContent = S.E + ' W/m²';
+    $('oA').textContent = S.a + '°';
+    $('oN').textContent = S.N;
+    $('oR').textContent = S.load === 'R' ? sig(R()) : (S.load === 'short' ? '0 Ω' : 'unendlich');
+    $('bSer').setAttribute('aria-pressed', S.conn === 'ser');
+    $('bPar').setAttribute('aria-pressed', S.conn === 'par');
+    $('bShort').setAttribute('aria-pressed', S.load === 'short');
+    $('bLoad').setAttribute('aria-pressed', S.load === 'R');
+    $('bOpen').setAttribute('aria-pressed', S.load === 'open');
+
+    $('rU').textContent = fU(op.U);
+    $('rI').textContent = fI(op.I);
+    $('rP').textContent = fP(P);
+    $('rEta').textContent = Plicht > 0 ? LK.fmt(100 * P / Plicht, 1) + ' %' : '–';
+    $('rL').textContent = fP(Plicht);
+    var share = m.mpp.P > 0 ? P / m.mpp.P : 0;
+    $('rM').textContent = m.mpp.P > 0 ? LK.fmt(100 * share, 1) + ' %' : '–';
+
+    $('tI').textContent = fI(op.I);
+    $('tU').textContent = fU(op.U);
+    $('tR').textContent = S.load === 'R' ? 'R = ' + sig(R()) : (S.load === 'short' ? 'Kurzschluss' : 'Leerlauf (offen)');
+    $('resistor').toggleAttribute('hidden', S.load !== 'R');
+    $('shortWire').toggleAttribute('hidden', S.load === 'open');
+    $('openGap').toggleAttribute('hidden', S.load !== 'open');
+
+    drawScene(); drawModule(); drawChart(m, ref, op);
+
+    // Ziele
+    var full = S.E === 1000 && S.a === 0;
+    if (full && S.N === 1) {
+      if (S.load === 'open') seen.voc = true;
+      if (S.load === 'short') seen.isc = true;
+      if (seen.voc && seen.isc) LK.reach('vocisc');
+    }
+    var atMpp = S.load === 'R' && m.mpp.P > 0 && share >= 0.985;
+    if (atMpp && S.E >= 200) LK.reach('mpp');
+    if (full && S.N === 3 && S.conn === 'ser' && S.load === 'open') LK.reach('ser3');
+    if (atMpp && S.E === 1000 && S.a === 60) LK.reach('w60');
+
+    var msg = '';
+    if (m.iph <= 0) msg = 'Auf die Zelle fällt kein Licht.';
+    else if (atMpp && S.a === 60) msg = 'MPP bei 60°: Wegen cos 60° = 0,5 trifft nur halb so viel Licht auf. Die Leistung (' + fP(m.mpp.P) + ') ist etwa halb so groß wie bei 0° (' + fP(makeModule(S.E).mpp.P) + ').';
+    else if (atMpp) msg = 'Arbeitspunkt im MPP: Die Last entnimmt fast die größtmögliche Leistung (' + fP(m.mpp.P) + ').';
+    else if (S.load === 'open') msg = 'Leerlauf: Es fließt kein Strom, die Spannung ist am größten (U_L = ' + fU(op.U) + '). Leistung 0 W.';
+    else if (S.load === 'short') msg = 'Kurzschluss: Der Strom ist am größten (I_K = ' + fI(op.I) + '), die Spannung ist 0 V. Leistung 0 W.';
+    if (msg !== lastStatus) { $('status').textContent = msg; lastStatus = msg; }
+    if (reduce) frame(performance.now());
+  }
+
+  var last = performance.now();
+  function frame(t) {
+    var dt = Math.min(0.05, (t - last) / 1000); last = t;
+    var rel = curI / curImax;
+    if (!reduce) offset = (offset + dt * rel * 90) % (LEN / ND);
+    dots.forEach(function (dd, j) {
+      var p = loop.getPointAtLength((j * LEN / ND + offset) % LEN);
+      dd.setAttribute('cx', p.x); dd.setAttribute('cy', p.y);
+      dd.setAttribute('opacity', curI > 0.001 ? 0.85 : 0);
+    });
+    if (!reduce) requestAnimationFrame(frame);
+  }
+
+  $('sE').oninput = function () { S.E = Number(this.value); update(); };
+  $('sA').oninput = function () { S.a = Number(this.value); update(); };
+  $('sN').oninput = function () { S.N = Number(this.value); update(); };
+  $('sR').oninput = function () { S.rIdx = Number(this.value); S.load = 'R'; update(); };
+  $('bSer').onclick = function () { S.conn = 'ser'; update(); };
+  $('bPar').onclick = function () { S.conn = 'par'; update(); };
+  $('bShort').onclick = function () { S.load = 'short'; update(); };
+  $('bLoad').onclick = function () { S.load = 'R'; update(); };
+  $('bOpen').onclick = function () { S.load = 'open'; update(); };
+
+  update();
+  if (!reduce) requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+{
+  "id": "timp-k8-leitfaehigkeit-wasser",
+  "titel": "Leitfähigkeit von Wasser und Leitfähigkeitssensor",
+  "kurz": "Warum Wasser mit gelösten Salzen leitet, wie ein Leitfähigkeitssensor funktioniert und was Messwerte über Wasserproben verraten.",
+  "reihenfolge": 3,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Erklären, dass in Wasser gelöste Ionen die Ladungsträger sind" },
+    { "id": "lz2", "niveau": "G", "text": "Leitfähigkeiten in µS/cm angeben und typische Werte von Wasserproben einordnen" },
+    { "id": "lz3", "niveau": "H", "text": "Aufbau und Funktionsweise eines Leitfähigkeitssensors beschreiben (Elektroden, Wechselspannung, Temperatur, Kalibrieren)" },
+    { "id": "lz4", "niveau": "H", "text": "Wasserproben untersuchen und Schlussfolgerungen zur Belastung mit Daten begründen und ihre Grenzen nennen" }
+  ],
+  "verstehen": {
+    "einstieg": "Reines Wasser ist ein sehr schlechter Leiter. Warum ist es trotzdem gefährlich, mit einem Föhn in der Badewanne zu sitzen?",
+    "abschnitte": [
+      {
+        "titel": "Ionen als Ladungsträger",
+        "text": "In Metallen transportieren **freie Elektronen** die Ladung. In Wasser gibt es keine freien Elektronen. Dort übernehmen **Ionen** diese Aufgabe. Ionen sind elektrisch geladene Atome oder Atomgruppen.\n\nLöst sich Kochsalz (Natriumchlorid) in Wasser, zerfällt es in positiv geladene Natrium-Ionen und negativ geladene Chlorid-Ionen. Legt man eine Spannung an, wandern die positiven Ionen zum Minuspol und die negativen Ionen zum Pluspol. So fließt ein Strom.\n\nReines Wasser enthält fast keine Ionen und leitet deshalb kaum. Je **mehr Salze** im Wasser gelöst sind, desto **mehr Ionen** gibt es und desto **besser leitet** das Wasser. Leitungswasser, Mineralwasser oder das Badewasser mit Seife und Schweiß enthalten genug Ionen, um gefährlich gut zu leiten."
+      },
+      {
+        "titel": "Einheit und typische Werte",
+        "text": "Die Leitfähigkeit von Wasser gibt man meist in **Mikrosiemens pro Zentimeter** an: µS/cm. Das Siemens (S) ist der Kehrwert des Ohm: 1 S = 1 / Ω. Es gilt 1 mS/cm = 1000 µS/cm.\n\nTypische Werte bei 25 °C:\n\n- destilliertes Wasser: etwa 1 µS/cm\n- Regenwasser: etwa 5 bis 50 µS/cm\n- Leitungswasser: etwa 300 bis 800 µS/cm (je nach Region)\n- Mineralwasser: etwa 500 bis 2000 µS/cm (je nach Sorte)\n- Meerwasser: etwa 50 000 µS/cm\n\nEin großer Wert bedeutet also: Im Wasser sind viele Ionen gelöst."
+      },
+      {
+        "titel": "Aufbau eines Leitfähigkeitssensors",
+        "text": "Ein Leitfähigkeitssensor besteht aus **zwei Elektroden** (meist aus Edelstahl, Graphit oder Platin) mit **fester Fläche** und **festem Abstand**. Zwischen ihnen befindet sich die Wasserprobe. Das Messgerät legt eine kleine Spannung an und misst die Stromstärke. Daraus berechnet es den Widerstand der Wasserschicht zwischen den Elektroden.\n\nWie beim Draht gilt: Größere Elektrodenfläche und kleinerer Abstand ergeben einen kleineren Widerstand. Weil Fläche und Abstand beim Sensor fest sind, kann das Gerät aus dem Widerstand die Leitfähigkeit des Wassers ausrechnen.\n\nDas Gerät benutzt **Wechselspannung**. Bei Gleichspannung käme es an den Elektroden zur **Elektrolyse**: Es entstehen Gasbläschen und Ablagerungen, die Elektroden verändern sich, und der Messwert wird verfälscht."
+      },
+      {
+        "titel": "Richtig messen: Temperatur und Kalibrieren",
+        "text": "Warmes Wasser leitet besser als kaltes, weil sich die Ionen schneller bewegen. Pro Grad Celsius steigt die Leitfähigkeit um etwa **2 %**. Damit man Proben vergleichen kann, messen die meisten Geräte die Temperatur mit und rechnen den Wert auf **25 °C** um (Temperaturkompensation).\n\nVor einer Messreihe wird der Sensor **kalibriert**: Man taucht ihn in eine Kalibrierlösung mit genau bekannter Leitfähigkeit, z. B. 1413 µS/cm, und stellt das Gerät auf diesen Wert ein.\n\nZwischen zwei Proben spülst du den Sensor mit destilliertem Wasser ab, damit keine Reste der vorigen Probe das Ergebnis verfälschen. Die Elektroden müssen immer ganz eingetaucht sein, und es dürfen keine Luftblasen daran hängen."
+      },
+      {
+        "titel": "Wasserproben untersuchen",
+        "text": "Mit einem Leitfähigkeitssensor kannst du schnell vergleichen, wie viele Stoffe in Wasserproben gelöst sind. Misst du z. B. in einem Bach oberhalb und unterhalb einer Einleitung, zeigt ein deutlicher Anstieg, dass dort zusätzliche gelöste Stoffe ins Wasser gelangen. Das kann ein Hinweis auf eine **Belastung** sein, etwa durch Abwasser, Streusalz oder Dünger.\n\nWichtig ist die **Grenze** dieser Methode: Die Leitfähigkeit zeigt nur, **wie viele** Ionen insgesamt gelöst sind, aber **nicht, welche**. Harmloses Calcium aus Kalkgestein und schädliches Nitrat erhöhen den Wert gleichermaßen. Stoffe ohne Ladung, z. B. viele Pflanzenschutzmittel, Öl oder Bakterien, erfasst der Sensor gar nicht. Für eine sichere Aussage braucht man weitere Untersuchungen, z. B. Teststreifen für Nitrat oder eine Laboranalyse.\n\nBegründe Schlussfolgerungen deshalb immer mit deinen Messdaten und nenne, was die Daten **nicht** zeigen."
+      }
+    ],
+    "formeln": [
+      { "formel": "1 mS/cm = 1000 µS/cm", "bedeutung": "Umrechnung der Einheiten der Leitfähigkeit" },
+      { "formel": "1 S = \\frac{1}{1 Ω}", "bedeutung": "Siemens als Kehrwert des Ohm" }
+    ],
+    "merksatz": "In Wasser leiten **gelöste Ionen** den Strom. Je mehr Ionen, desto größer die Leitfähigkeit (in µS/cm). Ein Leitfähigkeitssensor misst mit Wechselspannung zwischen zwei Elektroden mit festem Abstand und fester Fläche. Er zeigt, **wie viel** gelöst ist, aber nicht, **was**.",
+    "alltag": "Wasserwerke und Umweltämter überwachen die Leitfähigkeit von Flüssen und Trinkwasser ständig. Steigt sie plötzlich an, ist das ein Alarmsignal, dem man mit genaueren Analysen nachgeht."
+  },
+  "interaktiv": ["timp-leitfaehigkeit"],
+  "vertiefung": [],
+  "uebungen": [
+    { "id": "timp-lfw-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Warum leitet Salzwasser viel besser als destilliertes Wasser?",
+      "optionen": [
+        { "text": "Im Salzwasser sind viele Ionen gelöst, die Ladung transportieren.", "richtig": true },
+        { "text": "Im Salzwasser gibt es viele freie Elektronen wie in einem Metall.", "feedback": "Freie Elektronen gibt es in Metallen. In Wasser sind die Ladungsträger Ionen." },
+        { "text": "Salzwasser ist schwerer als destilliertes Wasser.", "feedback": "Die Dichte hat nichts mit der Leitfähigkeit zu tun. Entscheidend sind die geladenen Teilchen." },
+        { "text": "Destilliertes Wasser enthält Luftblasen, die den Strom blockieren.", "feedback": "Destilliertes Wasser leitet schlecht, weil ihm die Ionen fehlen, nicht wegen Luftblasen." }
+      ],
+      "erklaerung": "Gelöstes Salz zerfällt in positive und negative Ionen. Sie wandern im elektrischen Feld zu den Elektroden und transportieren so Ladung." },
+    { "id": "timp-lfw-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Ordne jeder Wasserprobe eine typische Leitfähigkeit zu.",
+      "paare": [
+        { "links": "destilliertes Wasser", "rechts": "etwa 1 µS/cm" },
+        { "links": "Leitungswasser", "rechts": "etwa 500 µS/cm" },
+        { "links": "Meerwasser", "rechts": "etwa 50 000 µS/cm" }
+      ],
+      "extraRechts": ["etwa 5 000 000 µS/cm"],
+      "erklaerung": "Destilliertes Wasser enthält fast keine Ionen. Leitungswasser enthält gelöste Mineralstoffe, und im Meerwasser ist sehr viel Salz gelöst (etwa 35 g pro Liter)." },
+    { "id": "timp-lfw-03", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Ein Messgerät zeigt für eine Wasserprobe 0,65 mS/cm an. Wie viel ist das in µS/cm?",
+      "gegeben": "Leitfähigkeit 0,65 mS/cm", "gesucht": "Leitfähigkeit in µS/cm",
+      "loesung": 650, "einheit": "µS/cm", "toleranz": 0,
+      "rechenweg": ["1 mS/cm = 1000 µS/cm", "0,65 · 1000 µS/cm = 650 µS/cm"],
+      "hinweis": "„Milli“ bedeutet ein Tausendstel, „Mikro“ ein Millionstel.",
+      "erklaerung": "650 µS/cm ist ein typischer Wert für Leitungswasser." },
+    { "id": "timp-lfw-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Warum arbeitet ein Leitfähigkeitssensor mit Wechselspannung und nicht mit Gleichspannung?",
+      "optionen": [
+        { "text": "Bei Gleichspannung würde Elektrolyse an den Elektroden die Messung verfälschen.", "richtig": true },
+        { "text": "Wechselspannung ist größer und deshalb besser messbar.", "feedback": "Die Größe der Spannung ist nicht der Grund. Die Messspannung ist bei beiden Arten klein." },
+        { "text": "Wasser leitet Gleichstrom überhaupt nicht.", "feedback": "Auch Gleichstrom fließt durch salzhaltiges Wasser. Dabei zersetzt er aber Stoffe an den Elektroden." },
+        { "text": "Mit Wechselspannung wird das Wasser erwärmt, das verbessert die Leitfähigkeit.", "feedback": "Eine Erwärmung durch die Messung wäre unerwünscht. Die Messspannung ist dafür viel zu klein." }
+      ],
+      "erklaerung": "Bei Gleichspannung wandern die Ionen immer in dieselbe Richtung und reagieren an den Elektroden. Es entstehen Gasbläschen und Beläge. Bei Wechselspannung ändert sich die Richtung ständig, die Ionen pendeln nur hin und her." },
+    { "id": "timp-lfw-05", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Welche Regeln sind für eine zuverlässige Leitfähigkeitsmessung richtig?",
+      "optionen": [
+        { "text": "Den Sensor vor der Messreihe mit einer Kalibrierlösung bekannter Leitfähigkeit kalibrieren.", "richtig": true },
+        { "text": "Den Sensor zwischen zwei Proben mit destilliertem Wasser abspülen.", "richtig": true },
+        { "text": "Die Temperatur beachten, weil dieselbe Probe warm einen größeren Wert anzeigt.", "richtig": true },
+        { "text": "Den Sensor nur halb eintauchen, damit er geschont wird.", "feedback": "Dann wäre die benetzte Elektrodenfläche kleiner, und der Messwert wäre zu klein." },
+        { "text": "Bei salzigen Proben den Abstand der Elektroden vergrößern.", "feedback": "Fläche und Abstand müssen fest bleiben. Nur so kann das Gerät aus dem Widerstand die Leitfähigkeit berechnen." }
+      ],
+      "erklaerung": "Kalibrieren, Spülen und Temperaturkompensation sorgen dafür, dass Messwerte stimmen und vergleichbar sind. Die Geometrie des Sensors darf sich nicht ändern." },
+    { "id": "timp-lfw-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Eine Klasse misst die Leitfähigkeit eines Baches bei gleicher Wassertemperatur:\n\n- 200 m oberhalb einer Kläranlage: 420 µS/cm\n- 200 m unterhalb der Kläranlage: 980 µS/cm\n\nWelche Schlussfolgerung ist durch die Daten begründet?",
+      "optionen": [
+        { "text": "Unterhalb der Kläranlage sind deutlich mehr Ionen gelöst. Welche Stoffe das sind, muss man mit weiteren Tests klären.", "richtig": true },
+        { "text": "Das Wasser unterhalb der Kläranlage ist giftig.", "feedback": "Die Leitfähigkeit sagt nichts darüber, ob die gelösten Stoffe giftig sind. Auch harmlose Salze erhöhen den Wert." },
+        { "text": "Die Kläranlage leitet Nitrat ein.", "feedback": "Das kann sein, aber der Sensor zeigt nicht, **welche** Ionen gelöst sind. Dazu bräuchtest du z. B. einen Nitrat-Test." },
+        { "text": "Die Messung unterhalb muss falsch sein, weil Bachwasser nie über 900 µS/cm hat.", "feedback": "Solche Werte kommen bei Bächen durchaus vor. Ein Messfehler ist möglich, sollte aber durch eine Wiederholung geprüft werden und nicht einfach angenommen werden." }
+      ],
+      "erklaerung": "Die Leitfähigkeit hat sich mehr als verdoppelt. Das ist ein klarer Hinweis auf zusätzliche gelöste Stoffe. Eine gute Schlussfolgerung nennt die Daten, den Hinweis auf eine mögliche Belastung und die Grenze der Methode." },
+    { "id": "timp-lfw-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Tim sagt: „Mein Brunnenwasser hat nur 300 µS/cm. Also ist es sauber und ich kann es bedenkenlos trinken.“ Bewerte diese Aussage.",
+      "stichworte": [
+        { "aspekt": "Die Leitfähigkeit zeigt nur die Gesamtmenge gelöster Ionen bzw. Salze", "woerter": ["gesamt", "menge", "wie viel", "wieviel", "ionen", "salze"] },
+        { "aspekt": "Sie zeigt nicht, welche Stoffe gelöst sind (z. B. Nitrat, Schwermetalle)", "woerter": ["nicht welche", "nicht, welche", "welche stoffe", "art der", "nitrat", "schwermetall", "blei"] },
+        { "aspekt": "Ungeladene Stoffe und Keime (z. B. Bakterien, Pflanzenschutzmittel) werden gar nicht erfasst", "woerter": ["bakterie", "keim", "pflanzenschutz", "pestizid", "ungeladen", "ohne ladung", "nicht erfasst"] },
+        { "aspekt": "Für eine Aussage zur Trinkbarkeit sind weitere Untersuchungen nötig (Labor, Tests)", "woerter": ["labor", "weitere", "test", "untersuch", "analyse"] }
+      ],
+      "musterloesung": "Die Aussage ist nicht begründet. Ein Wert von 300 µS/cm zeigt nur, dass insgesamt eine mittlere Menge an Ionen gelöst ist. Der Sensor zeigt aber nicht, welche Stoffe das sind. Auch eine kleine Menge Nitrat oder Schwermetalle kann schädlich sein. Ungeladene Stoffe wie Pflanzenschutzmittel und Bakterien erfasst der Sensor gar nicht. Ob das Wasser trinkbar ist, kann man nur mit weiteren Untersuchungen in einem Labor feststellen.",
+      "erklaerung": "Eine niedrige Leitfähigkeit ist kein Beweis für sauberes Wasser, und eine hohe kein Beweis für verschmutztes. Sie ist ein schneller Hinweis, dem man mit genaueren Tests nachgeht." }
+  ]
+}

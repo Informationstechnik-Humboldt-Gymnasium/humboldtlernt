@@ -1,0 +1,116 @@
+{
+  "id": "timp-k9-variablen",
+  "titel": "Variablen und Anweisungen",
+  "kurz": "Wie sich ein Programm Werte merkt, wie man sie ändert und warum die Reihenfolge der Anweisungen wichtig ist.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Eine Variable als benannten Speicherplatz für einen Wert beschreiben" },
+    { "id": "lz2", "niveau": "G", "text": "Die Anweisungen setze und ändere unterscheiden und eine Folge von Anweisungen (Sequenz) Zeile für Zeile nachverfolgen" },
+    { "id": "lz3", "niveau": "G", "text": "Die Datentypen Zahl, Text und Wahrheitswert unterscheiden" },
+    { "id": "lz4", "niveau": "H", "text": "Die Werte zweier Variablen mit einer Hilfsvariable tauschen und begründen, warum sie nötig ist" }
+  ],
+  "verstehen": {
+    "einstieg": "In einem Spiel sammelst du Punkte, verlierst Leben und erreichst neue Level. Woher weiß das Spiel nach jedem Treffer, wie viele Punkte du gerade hast?",
+    "abschnitte": [
+      {
+        "titel": "Variablen: Speicher mit Namen",
+        "text": "Eine **Variable** ist ein Speicherplatz mit einem **Namen**, in dem ein **Wert** steht. Du kannst sie dir wie eine beschriftete Schachtel vorstellen: Auf der Schachtel steht ``punkte``, darin liegt die Zahl 12.\n\nEine Variable enthält immer genau **einen** Wert. Bekommt sie einen neuen Wert, ist der alte weg. Der Name sollte verraten, wofür die Variable da ist: ``punkte`` ist besser als ``p``."
+      },
+      {
+        "titel": "setze und ändere",
+        "text": "Mit ``setze punkte auf 0`` bekommt die Variable einen festen Wert. Der alte Wert wird überschrieben.\n\nMit ``ändere punkte um 5`` wird zum aktuellen Wert etwas **addiert**. Aus 12 wird 17. Mit ``ändere punkte um -3`` wird 3 abgezogen.\n\nRechts von ``auf`` darf auch eine Rechnung stehen, z. B. ``setze gesamt auf punkte * 2``. Der Computer rechnet sie in diesem Moment mit den aktuellen Werten aus. Ändert sich ``punkte`` später, ändert sich ``gesamt`` **nicht** von selbst mit."
+      },
+      {
+        "titel": "Sequenz: eine Zeile nach der anderen",
+        "text": "Ein Programm wird Zeile für Zeile von oben nach unten ausgeführt. Diese Folge heißt **Sequenz**. Um ein Programm zu verstehen, kannst du eine Tabelle führen und nach jeder Zeile die Werte eintragen:\n\n```\nsetze a auf 3\nsetze b auf a + 4\nändere a um 10\nsage b\n```\n\nNach Zeile 1: a = 3. Nach Zeile 2: b = 7. Nach Zeile 3: a = 13, b bleibt 7. Ausgabe: 7."
+      },
+      {
+        "titel": "Datentypen",
+        "text": "Variablen können verschiedene Arten von Werten speichern:\n\n- **Zahl:** z. B. ``12`` oder ``3.5``. Damit kann man rechnen.\n- **Text** (Zeichenkette): z. B. ``\"Lea\"``. Texte stehen in Anführungszeichen.\n- **Wahrheitswert:** nur ``wahr`` oder ``falsch``, z. B. ``setze spielVorbei auf falsch``.\n\nMit Text kann man nicht rechnen: ``\"Lea\" * 2`` ergibt keinen Sinn."
+      },
+      {
+        "titel": "Zwei Werte tauschen",
+        "text": "Sollen ``a`` und ``b`` ihre Werte tauschen, reicht ``setze a auf b`` und ``setze b auf a`` nicht: Nach der ersten Zeile ist der alte Wert von ``a`` schon überschrieben. Man braucht eine **Hilfsvariable**, die ihn vorher aufbewahrt:\n\n```\nsetze hilf auf a\nsetze a auf b\nsetze b auf hilf\n```\n\nDas ist wie beim Tauschen der Getränke in zwei vollen Gläsern: Man braucht ein drittes, leeres Glas."
+      }
+    ],
+    "merksatz": "Eine **Variable** ist ein benannter Speicherplatz für genau einen Wert. ``setze`` überschreibt den Wert, ``ändere … um`` addiert etwas dazu. Anweisungen werden der Reihe nach ausgeführt. Zum Tauschen zweier Werte braucht man eine Hilfsvariable.",
+    "alltag": "Dein Handy speichert in Variablen zum Beispiel die Akkuladung, die Lautstärke und ob das WLAN an ist (ein Wahrheitswert)."
+  },
+  "interaktiv": ["timp-programmierlabor"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "timp-var-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Was ist eine Variable in einem Programm?",
+      "optionen": [
+        { "text": "Ein Speicherplatz mit einem Namen, in dem ein Wert steht", "richtig": true },
+        { "text": "Ein Fehler, der zufällig auftritt", "feedback": "„Variabel“ heißt veränderlich. Gemeint ist ein Speicher, dessen Wert sich ändern kann, kein Fehler." },
+        { "text": "Eine Anweisung, die etwas auf dem Bildschirm ausgibt", "feedback": "Das macht ``sage``. Eine Variable speichert nur einen Wert." },
+        { "text": "Ein Speicher, in dem beliebig viele Werte gleichzeitig stehen", "feedback": "Eine Variable enthält immer genau einen Wert. Ein neuer Wert ersetzt den alten." }
+      ],
+      "erklaerung": "Eine Variable ist wie eine beschriftete Schachtel: Sie hat einen Namen und enthält genau einen Wert, der sich im Lauf des Programms ändern kann."
+    },
+    {
+      "id": "timp-var-02", "typ": "zahl", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Welche Zahl sagt das Programm?\n\n```\nsetze punkte auf 10\nändere punkte um 5\nändere punkte um -3\nsage punkte\n```",
+      "gesucht": "Ausgabe", "gesuchtSymbol": "Ausgabe",
+      "loesung": 12, "einheit": "", "toleranz": 0,
+      "rechenweg": ["Nach Zeile 1: ``punkte`` = 10", "Nach Zeile 2: 10 + 5 = 15", "Nach Zeile 3: 15 + (−3) = 12", "Ausgabe: 12"],
+      "erklaerung": "``ändere … um`` addiert den Wert zum aktuellen Inhalt. Eine negative Zahl wird dabei abgezogen."
+    },
+    {
+      "id": "timp-var-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Was sagt das Programm?\n\n```\nsetze x auf 4\nsetze y auf x * 3\nsetze x auf 10\nsage y\n```",
+      "optionen": [
+        { "text": "12", "richtig": true },
+        { "text": "30", "feedback": "``y`` wurde in Zeile 2 mit dem **damaligen** Wert von ``x`` (4) berechnet. Dass ``x`` später 10 wird, ändert ``y`` nicht mehr." },
+        { "text": "10", "feedback": "Ausgegeben wird ``y``, nicht ``x``." },
+        { "text": "x * 3", "feedback": "Der Computer speichert nicht die Rechnung, sondern ihr Ergebnis." }
+      ],
+      "erklaerung": "In Zeile 2 wird ``x * 3 = 4 · 3 = 12`` ausgerechnet und in ``y`` gespeichert. Danach hat ``y`` keine Verbindung mehr zu ``x``."
+    },
+    {
+      "id": "timp-var-04", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Welcher Datentyp passt am besten zu der Variable?",
+      "paare": [
+        { "links": "``punkte`` im Spiel", "rechts": "Zahl" },
+        { "links": "``spielerName``", "rechts": "Text" },
+        { "links": "``spielVorbei``", "rechts": "Wahrheitswert" }
+      ],
+      "extraRechts": ["Funktion"],
+      "erklaerung": "Mit Punkten wird gerechnet, also Zahl. Ein Name besteht aus Buchstaben, also Text. Ob das Spiel vorbei ist, ist entweder ``wahr`` oder ``falsch``, also ein Wahrheitswert. Eine Funktion ist kein Datentyp, sondern ein Programmteil."
+    },
+    {
+      "id": "timp-var-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Ein Schüler will die Werte von ``a`` und ``b`` tauschen und schreibt:\n\n```\nsetze a auf 3\nsetze b auf 7\nsetze a auf b\nsetze b auf a\n```\n\nWelche Werte haben ``a`` und ``b`` am Ende?",
+      "optionen": [
+        { "text": "a = 7 und b = 7", "richtig": true },
+        { "text": "a = 7 und b = 3", "feedback": "Das wäre der gewünschte Tausch. Aber in Zeile 3 wird der alte Wert 3 von ``a`` überschrieben. In Zeile 4 bekommt ``b`` deshalb den neuen Wert von ``a``, also 7." },
+        { "text": "a = 3 und b = 3", "feedback": "Geh Zeile für Zeile vor: In Zeile 3 bekommt ``a`` den Wert von ``b``, also 7." },
+        { "text": "a = 3 und b = 7", "feedback": "Die Zeilen 3 und 4 verändern die Werte. Verfolge sie in einer Tabelle." }
+      ],
+      "erklaerung": "Nach Zeile 3 ist ``a = 7``, die 3 ist verloren. Zeile 4 kopiert diese 7 nach ``b``. Für einen richtigen Tausch muss man den alten Wert von ``a`` vorher in einer Hilfsvariable sichern."
+    },
+    {
+      "id": "timp-var-06", "typ": "reihenfolge", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Die Werte von ``a`` und ``b`` sollen getauscht werden. Bringe die drei Zeilen in die richtige Reihenfolge.",
+      "elemente": [
+        "``setze hilf auf a``",
+        "``setze a auf b``",
+        "``setze b auf hilf``"
+      ],
+      "erklaerung": "Zuerst wird der Wert von ``a`` in ``hilf`` gesichert. Dann darf ``a`` überschrieben werden. Zum Schluss bekommt ``b`` den gesicherten alten Wert von ``a``. Probiere es im Programmierlabor mit dem Programm „Werte tauschen“ aus."
+    },
+    {
+      "id": "timp-var-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Erkläre, warum man beim Tauschen der Werte zweier Variablen eine dritte Variable (Hilfsvariable) braucht.",
+      "stichworte": [
+        { "aspekt": "Eine Variable speichert nur einen Wert, ein neuer Wert überschreibt den alten", "woerter": ["ueberschrieb", "geht verloren", "verloren", "ersetzt", "nur einen wert"] },
+        { "aspekt": "Die Hilfsvariable sichert den alten Wert vorher", "woerter": ["sicher", "merkt", "aufbewahr", "zwischenspeich", "speichert"] },
+        { "aspekt": "Am Ende bekommt die zweite Variable den gesicherten Wert", "woerter": ["am ende", "zum schluss", "danach", "anschliessend"] }
+      ],
+      "musterloesung": "Eine Variable kann nur einen Wert speichern. Setzt man a auf den Wert von b, wird der alte Wert von a überschrieben und geht verloren. Deshalb speichert man den alten Wert von a vorher in der Hilfsvariable. Danach kann a den Wert von b bekommen, und zum Schluss bekommt b den gesicherten Wert aus der Hilfsvariable.",
+      "erklaerung": "Wie beim Tauschen der Getränke in zwei vollen Gläsern: Ohne ein drittes Glas geht es nicht."
+    }
+  ]
+}

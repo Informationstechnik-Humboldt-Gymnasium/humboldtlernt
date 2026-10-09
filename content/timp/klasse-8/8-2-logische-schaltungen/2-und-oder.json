@@ -1,0 +1,141 @@
+{
+  "id": "timp-k8-und-oder",
+  "titel": "UND, ODER und NICHT",
+  "kurz": "Wie Schalter in Reihe, parallel oder als Öffner logische Verknüpfungen bilden und wie man sie mit 0 und 1 in Wahrheitswerttabellen beschreibt.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Zwei Schalter in Reihe als UND-Schaltung und parallel als ODER-Schaltung erkennen und begründen" },
+    { "id": "lz2", "niveau": "G", "text": "Schaltzustände mit 0 und 1 beschreiben und Wahrheitswerttabellen mit zwei Eingängen aufstellen" },
+    { "id": "lz3", "niveau": "H", "text": "Die NICHT-Verknüpfung mit einem Öffner (Taster) erklären" },
+    { "id": "lz4", "niveau": "H", "text": "UND-, ODER- und NICHT-Verknüpfungen auf Sachverhalte aus dem Alltag anwenden und als logische Aussage formulieren" }
+  ],
+  "verstehen": {
+    "einstieg": "Eine Bohrmaschine läuft nur, wenn der Stecker steckt **und** du den Schalter drückst. Eine Türklingel läutet, wenn jemand an der Haustür **oder** an der Wohnungstür klingelt. Solche Bedingungen kann man mit Schaltern nachbauen.",
+    "abschnitte": [
+      {
+        "titel": "0 und 1",
+        "text": "In der Logik gibt es für jeden Schalter und jede Lampe nur zwei Zustände. Man schreibt sie als **0** und **1**:\n\n- Schalter: **0** = offen (nicht betätigt), **1** = geschlossen (betätigt)\n- Lampe: **0** = aus, **1** = an\n\nDie Schalter heißen **Eingänge** (A, B, …), die Lampe ist der **Ausgang**. Eine **Wahrheitswerttabelle** listet alle möglichen Kombinationen der Eingänge auf und zeigt jeweils den Ausgang. Bei zwei Eingängen gibt es 2 · 2 = **4 Zeilen**: 00, 01, 10 und 11."
+      },
+      {
+        "titel": "UND: Schalter in Reihe",
+        "text": "Liegen zwei Schalter A und B **in Reihe**, gibt es nur einen Stromweg. Er ist nur geschlossen, wenn **A und B** geschlossen sind.\n\n**Logische Aussage:** Die Lampe leuchtet genau dann, wenn A UND B betätigt sind.\n\n```\nA  B | Lampe\n0  0 |  0\n0  1 |  0\n1  0 |  0\n1  1 |  1\n```\n\nNur in **einer** von vier Zeilen ist der Ausgang 1."
+      },
+      {
+        "titel": "ODER: Schalter parallel",
+        "text": "Liegen A und B **parallel**, hat der Strom zwei Wege. Es reicht, wenn **einer** davon geschlossen ist.\n\n**Logische Aussage:** Die Lampe leuchtet, wenn A ODER B betätigt ist.\n\n```\nA  B | Lampe\n0  0 |  0\n0  1 |  1\n1  0 |  1\n1  1 |  1\n```\n\nAchtung: Das logische ODER schließt den Fall „beide“ mit ein. In der Alltagssprache meint „oder“ manchmal „entweder … oder“. Das ist etwas anderes."
+      },
+      {
+        "titel": "NICHT: der Öffner",
+        "text": "Ein normaler Taster ist ein **Schließer**: Drückt man ihn, schließt er den Stromkreis. Es gibt auch **Öffner**: Sie leiten in Ruhe und **unterbrechen** den Stromkreis, solange man sie drückt.\n\nMit einem Öffner wird aus dem Eingang das Gegenteil:\n\n```\nA | Lampe\n0 |  1\n1 |  0\n```\n\n**Logische Aussage:** Die Lampe leuchtet, wenn A NICHT betätigt ist. Das Licht im Kühlschrank funktioniert so: Die geschlossene Tür drückt einen Öffner, das Licht ist aus. Öffnest du die Tür, wird der Öffner losgelassen und das Licht geht an."
+      }
+    ],
+    "merksatz": "**UND** = Schalter in Reihe: Die Lampe leuchtet nur, wenn alle Schalter geschlossen sind.\n**ODER** = Schalter parallel: Die Lampe leuchtet, wenn mindestens ein Schalter geschlossen ist.\n**NICHT** = Öffner: Der Ausgang ist das Gegenteil des Eingangs.\n\nEine Wahrheitswerttabelle mit zwei Eingängen hat 4 Zeilen.",
+    "alltag": "Große Pressen in Werkstätten haben eine Zweihandschaltung: Sie starten nur, wenn beide Hände gleichzeitig je einen Knopf drücken. Das ist eine UND-Schaltung, die verhindert, dass eine Hand unter der Presse ist."
+  },
+  "interaktiv": ["timp-logiklabor"],
+  "vertiefung": ["k7-stromkreis"],
+  "uebungen": [
+    {
+      "id": "timp-undo-01",
+      "typ": "single",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz1",
+      "frage": "Zwei Schalter A und B liegen **in Reihe** mit einer Lampe. Wann leuchtet die Lampe?",
+      "optionen": [
+        { "text": "Nur wenn A und B geschlossen sind.", "richtig": true },
+        { "text": "Wenn A oder B geschlossen ist.", "feedback": "Das wäre die Parallelschaltung. In Reihe unterbricht schon ein offener Schalter den einzigen Weg." },
+        { "text": "Nur wenn beide Schalter offen sind.", "feedback": "Offene Schalter unterbrechen den Stromkreis." },
+        { "text": "Immer, denn die Schalter sind in Reihe.", "feedback": "Die Schalter bestimmen, ob der Kreis geschlossen ist." }
+      ],
+      "erklaerung": "In der Reihenschaltung gibt es nur einen Stromweg. Er ist nur geschlossen, wenn A **und** B geschlossen sind. Das ist die **UND-Schaltung**."
+    },
+    {
+      "id": "timp-undo-02",
+      "typ": "single",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz2",
+      "frage": "Zu welcher Schaltung gehört diese Wahrheitswerttabelle?\n\n```\nA  B | Lampe\n0  0 |  0\n0  1 |  1\n1  0 |  1\n1  1 |  1\n```",
+      "optionen": [
+        { "text": "ODER-Schaltung (A und B parallel)", "richtig": true },
+        { "text": "UND-Schaltung (A und B in Reihe)", "feedback": "Bei UND wäre die Lampe nur in der letzten Zeile (1 1) an." },
+        { "text": "NICHT-Schaltung mit einem Öffner", "feedback": "Eine NICHT-Schaltung hat nur einen Eingang und zwei Zeilen." },
+        { "text": "Keine, so eine Tabelle gibt es nicht.", "feedback": "Prüfe, was passiert, wenn mindestens ein Schalter geschlossen ist." }
+      ],
+      "erklaerung": "Die Lampe leuchtet, sobald **mindestens ein** Schalter geschlossen ist. Das ist die ODER-Verknüpfung, gebaut mit zwei parallelen Schaltern."
+    },
+    {
+      "id": "timp-undo-03",
+      "typ": "zuordnung",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz4",
+      "frage": "Ordne jedem Alltagsbeispiel die passende Verknüpfung zu.",
+      "paare": [
+        { "links": "Eine Presse startet nur, wenn beide Starttaster gedrückt sind.", "rechts": "UND" },
+        { "links": "Die Klingel läutet, wenn jemand an der Haustür oder an der Wohnungstür klingelt.", "rechts": "ODER" },
+        { "links": "Das Kühlschranklicht leuchtet, wenn der Türkontakt nicht gedrückt ist.", "rechts": "NICHT" }
+      ],
+      "erklaerung": "Alle Bedingungen müssen erfüllt sein: UND. Eine Bedingung reicht: ODER. Der Ausgang ist das Gegenteil des Eingangs: NICHT."
+    },
+    {
+      "id": "timp-undo-04",
+      "typ": "zahl",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz2",
+      "frage": "Zwei Schalter A und B sind **parallel** geschaltet. In wie vielen Zeilen der Wahrheitswerttabelle steht bei der Lampe eine 1?",
+      "loesung": 3,
+      "einheit": "",
+      "toleranz": 0,
+      "rechenweg": [
+        "Die Tabelle hat 2 · 2 = 4 Zeilen: 00, 01, 10, 11.",
+        "Bei ODER reicht ein geschlossener Schalter: 01, 10 und 11 ergeben 1.",
+        "Nur bei 00 ist die Lampe aus. Also: 3 Zeilen."
+      ],
+      "hinweis": "Schreibe alle vier Kombinationen von A und B auf.",
+      "erklaerung": "Das logische ODER ist auch dann erfüllt, wenn **beide** Schalter geschlossen sind."
+    },
+    {
+      "id": "timp-undo-05",
+      "typ": "multi",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz3",
+      "frage": "Eine Lampe ist mit einem **Öffner** A in Reihe geschaltet. Welche Aussagen sind richtig?",
+      "optionen": [
+        { "text": "Wird A nicht gedrückt (A = 0), leuchtet die Lampe.", "richtig": true },
+        { "text": "Wird A gedrückt (A = 1), geht die Lampe aus.", "richtig": true },
+        { "text": "Die Schaltung bildet die NICHT-Verknüpfung.", "richtig": true },
+        { "text": "Die Lampe leuchtet nur, solange A gedrückt wird.", "feedback": "So verhält sich ein Schließer. Ein Öffner unterbricht den Stromkreis beim Drücken." },
+        { "text": "Die Wahrheitswerttabelle hat 4 Zeilen.", "feedback": "Bei einem Eingang gibt es nur 2 Zeilen: A = 0 und A = 1." }
+      ],
+      "erklaerung": "Ein Öffner leitet in Ruhe und trennt beim Betätigen. Deshalb ist der Ausgang immer das Gegenteil des Eingangs: Lampe = NICHT A."
+    },
+    {
+      "id": "timp-undo-06",
+      "typ": "single",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz4",
+      "frage": "Im Treppenhaus soll das Licht angehen, wenn man den Taster im Erdgeschoss **oder** den Taster im 1. Stock drückt. Was passiert in dieser ODER-Schaltung, wenn zwei Personen **gleichzeitig** beide Taster drücken?",
+      "optionen": [
+        { "text": "Das Licht geht an.", "richtig": true },
+        { "text": "Das Licht bleibt aus, weil „oder“ nur einen Taster erlaubt.", "feedback": "Das wäre „entweder … oder“. Das logische ODER schließt den Fall „beide“ ein." },
+        { "text": "Es entsteht ein Kurzschluss.", "feedback": "Zwei geschlossene parallele Schalter verbinden nicht die Pole direkt, die Lampe liegt weiterhin im Kreis." },
+        { "text": "Das Licht leuchtet doppelt so hell.", "feedback": "Die Lampe bekommt dieselbe Spannung, egal ob ein oder zwei Wege geschlossen sind." }
+      ],
+      "erklaerung": "Beim logischen ODER ist der Ausgang 1, wenn **mindestens ein** Eingang 1 ist, also auch bei 1 1. In der Parallelschaltung sind dann einfach beide Wege geschlossen."
+    },
+    {
+      "id": "timp-undo-07",
+      "typ": "text",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz1",
+      "frage": "Erkläre mit dem Stromweg, warum zwei Schalter in Reihe eine UND-Schaltung und zwei parallele Schalter eine ODER-Schaltung bilden.",
+      "stichworte": [
+        { "aspekt": "In Reihe gibt es nur einen Stromweg", "woerter": ["einen weg", "einzigen weg", "ein weg", "einen stromweg", "einzigen stromweg", "hintereinander"] },
+        { "aspekt": "Ein offener Schalter in Reihe unterbricht den Kreis, deshalb müssen beide geschlossen sein", "woerter": ["beide geschlossen", "beide schalter geschlossen", "unterbrich", "beide betaetigt"] },
+        { "aspekt": "Parallel gibt es zwei Wege", "woerter": ["zwei wege", "zwei stromwege", "mehrere wege", "eigenen weg", "verzweig"] },
+        { "aspekt": "Parallel reicht ein geschlossener Schalter", "woerter": ["einer reicht", "ein schalter reicht", "reicht es", "mindestens ein", "einer geschlossen", "ein geschlossener"] }
+      ],
+      "musterloesung": "Bei der Reihenschaltung gibt es nur einen einzigen Stromweg, der durch beide Schalter führt. Ist ein Schalter offen, unterbricht er den Kreis. Die Lampe leuchtet also nur, wenn beide geschlossen sind: UND. Bei der Parallelschaltung verzweigt sich der Stromkreis, es gibt zwei Wege. Es reicht, wenn mindestens ein Schalter geschlossen ist, dann ist ein Weg frei: ODER.",
+      "erklaerung": "Der Schaltplan zeigt direkt die Logik: hintereinander bedeutet „alle“, nebeneinander bedeutet „mindestens einer“."
+    }
+  ]
+}

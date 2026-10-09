@@ -1,0 +1,106 @@
+{
+  "id": "timp-k8-schweredruck",
+  "titel": "Schweredruck in Flüssigkeiten",
+  "kurz": "Warum der Druck im Wasser mit der Tiefe zunimmt, wie man ihn berechnet und warum Staumauern unten dicker sind.",
+  "reihenfolge": 3,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Erklären, dass der Schweredruck durch die Gewichtskraft der darüberliegenden Flüssigkeit entsteht, und dies im Teilchenmodell deuten" },
+    { "id": "lz2", "niveau": "H", "text": "Den Schweredruck mit `p = ρ · g · h` berechnen und die Formel nach der Tiefe umstellen" },
+    { "id": "lz3", "niveau": "H", "text": "Begründen, dass der Schweredruck nur von Tiefe und Dichte abhängt, nicht von der Form des Gefäßes" },
+    { "id": "lz4", "niveau": "G", "text": "Den Schweredruck an Beispielen wie Tauchen und Staumauern anwenden" }
+  ],
+  "verstehen": {
+    "einstieg": "Wenn du im Schwimmbad zum Grund des Sprungbeckens tauchst, drückt es in den Ohren. Je tiefer du tauchst, desto stärker. Woher kommt dieser Druck?",
+    "abschnitte": [
+      {
+        "titel": "Woher der Schweredruck kommt",
+        "text": "Wasser hat eine Masse und damit eine Gewichtskraft. Auf jede Stelle unter Wasser drückt das **Gewicht der Wassersäule darüber**. Diesen Druck nennt man **Schweredruck** oder hydrostatischen Druck.\n\nJe tiefer man taucht, desto höher ist die Wassersäule darüber. Der Schweredruck **nimmt mit der Tiefe gleichmäßig zu**. Wie der Kolbendruck wirkt er in einer Flüssigkeit **in alle Richtungen**, also auch von der Seite und von unten."
+      },
+      {
+        "titel": "Deutung im Teilchenmodell",
+        "text": "Stell dir das Wasser als viele übereinanderliegende Schichten aus Teilchen vor. Jede Schicht wird von der Erde nach unten gezogen und drückt auf die Schicht darunter. Eine Schicht tief unten muss das Gewicht **aller Schichten darüber** tragen. Deshalb werden die Teilchen dort stärker zusammengedrückt, und der Druck ist größer.\n\nDie Teilchen geben diesen Druck auch zur Seite an ihre Nachbarn weiter. Deshalb drückt Wasser auch gegen die Wände eines Gefäßes."
+      },
+      {
+        "titel": "Die Formel für den Schweredruck",
+        "text": "Der Schweredruck hängt von drei Größen ab:\n\n`p = ρ · g · h`\n\n- `ρ` (rho): **Dichte** der Flüssigkeit, Wasser: `1000 kg/m^{3}`, Meerwasser: etwa `1025 kg/m^{3}`\n- `g = 9,81 N/kg`: Ortsfaktor\n- `h`: **Tiefe** unter der Oberfläche in m\n\nBeispiel: In 10 m Wassertiefe ist `p = 1000 kg/m^{3} · 9,81 N/kg · 10 m = 98 100 Pa ≈ 1 bar`.\n\nMerke dir: **Pro 10 m Wassertiefe kommt etwa 1 bar dazu.** Ein Taucher in 10 m Tiefe spürt also insgesamt etwa 2 bar: 1 bar Luftdruck und etwa 1 bar Schweredruck."
+      },
+      {
+        "titel": "Die Form des Gefäßes ist egal",
+        "text": "Füllt man ein breites, ein schmales und ein trichterförmiges Gefäß gleich hoch mit Wasser, ist der Druck am Boden **in allen gleich groß**, obwohl unterschiedlich viel Wasser darin ist. Das nennt man das **hydrostatische Paradoxon**.\n\nDer Schweredruck hängt **nur von der Tiefe und der Dichte** ab. Die Wassermenge und die Form spielen keine Rolle. Deshalb steht Wasser in verbundenen Gefäßen (z. B. Gießkanne und Ausguss) immer gleich hoch."
+      },
+      {
+        "titel": "Staumauern und Taucher",
+        "text": "Eine **Staumauer** muss unten den größten Druck aushalten, denn dort ist das Wasser am tiefsten. Deshalb sind Staumauern unten viel dicker als oben. Die Hoover-Talsperre in den USA ist oben etwa 14 m und unten etwa 200 m dick.\n\nFür **Taucher** heißt das: In 30 m Tiefe herrschen schon etwa 4 bar (1 bar Luftdruck + 3 bar Schweredruck). Taucher müssen deshalb langsam auftauchen, und ihre Luft aus der Flasche wird mit dem passenden Druck eingeatmet."
+      }
+    ],
+    "formeln": [
+      { "formel": "p = ρ · g · h", "bedeutung": "Schweredruck in Pa: Dichte in kg/m³, `g = 9,81 N/kg`, Tiefe in m" },
+      { "formel": "h = \\frac{p}{ρ · g}", "bedeutung": "Tiefe aus dem Schweredruck berechnen" }
+    ],
+    "merksatz": "Der Schweredruck in einer Flüssigkeit entsteht durch das Gewicht der Flüssigkeit darüber. Er ist `p = ρ · g · h`, hängt also nur von Dichte und Tiefe ab, nicht von der Form des Gefäßes. In Wasser kommt pro 10 m Tiefe etwa 1 bar hinzu.",
+    "alltag": "Wasserversorger bauen Wassertürme oder Hochbehälter auf Hügeln. Der Schweredruck des hoch stehenden Wassers sorgt dafür, dass das Wasser in den Häusern aus dem Hahn kommt."
+  },
+  "interaktiv": ["timp-schweredruck"],
+  "vertiefung": ["k7-teilchenmodell"],
+  "uebungen": [
+    { "id": "timp-swd-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Warum ist der Druck am Grund eines Sees größer als knapp unter der Oberfläche?",
+      "optionen": [
+        { "text": "Weil am Grund mehr Wasser darüberliegt, dessen Gewichtskraft nach unten drückt.", "richtig": true },
+        { "text": "Weil das Wasser am Grund kälter ist.", "feedback": "Die Temperatur spielt hier kaum eine Rolle. Entscheidend ist die Wassersäule darüber." },
+        { "text": "Weil der Boden von unten gegen das Wasser drückt.", "feedback": "Der Druck entsteht durch das Gewicht des Wassers, nicht durch den Boden." },
+        { "text": "Weil der Luftdruck am Grund größer ist.", "feedback": "Der Luftdruck wirkt auf die Oberfläche und kommt in jeder Tiefe gleich dazu. Die Zunahme kommt vom Wasser." }
+      ],
+      "erklaerung": "Je tiefer man ist, desto höher ist die Wassersäule darüber und desto größer ist ihre Gewichtskraft. Das ist der Schweredruck." },
+    { "id": "timp-swd-02", "typ": "zahl", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Wie groß ist der Schweredruck in 10 m Tiefe in einem Süßwassersee? Gib das Ergebnis in hPa an.",
+      "gegeben": "`ρ = 1000 kg/m^{3}`, `g = 9,81 N/kg`, `h = 10 m`", "gesucht": "`p`", "gesuchtSymbol": "p",
+      "loesung": 981, "einheit": "hPa", "alternativEinheiten": { "Pa": 0.01, "bar": 1000 },
+      "rechenweg": ["`p = ρ · g · h`", "`p = 1000 kg/m^{3} · 9,81 N/kg · 10 m = 98 100 Pa`", "`98 100 Pa = 981 hPa ≈ 1 bar`"],
+      "hinweis": "Setze in `p = ρ · g · h` ein. Das Ergebnis ist in Pa. `1 hPa = 100 Pa`.",
+      "erklaerung": "Das ist fast genau so viel wie der Luftdruck auf Meereshöhe (1013 hPa). Die ganze Lufthülle drückt also etwa so stark wie 10 m Wasser." },
+    { "id": "timp-swd-03", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "In vier Becken steht jeweils eine andere Flüssigkeit 1 m hoch. Ordne nach dem Schweredruck am Boden, beginnend mit dem **kleinsten**.",
+      "elemente": [
+        "Speiseöl (0,92 g/cm³)",
+        "Süßwasser (1,00 g/cm³)",
+        "Meerwasser (1,03 g/cm³)",
+        "Quecksilber (13,5 g/cm³)"
+      ],
+      "erklaerung": "Bei gleicher Tiefe ist der Schweredruck proportional zur Dichte. Quecksilber erzeugt in 1 m Tiefe etwa 13,5-mal so viel Druck wie Wasser." },
+    { "id": "timp-swd-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Drei Gefäße werden 30 cm hoch mit Wasser gefüllt: ein schmales Rohr, ein breiter Eimer und ein Trichter, der oben weit ist. In welchem Gefäß ist der Druck am Boden am größten?",
+      "optionen": [
+        { "text": "In allen drei Gefäßen ist er gleich groß.", "richtig": true },
+        { "text": "Im breiten Eimer, weil dort am meisten Wasser ist.", "feedback": "Mehr Wasser verteilt sich auch auf eine größere Bodenfläche. Der Druck hängt nur von der Tiefe ab." },
+        { "text": "Im schmalen Rohr, weil sich das Gewicht auf eine kleine Fläche konzentriert.", "feedback": "Im schmalen Rohr ist weniger Wasser. Kraft und Fläche sind beide klein, der Druck ist derselbe." },
+        { "text": "Im Trichter, weil das Wasser von den schrägen Wänden zusätzlich nach unten gedrückt wird.", "feedback": "Die schrägen Wände tragen einen Teil des Wassers. Am Boden zählt nur die Wasserhöhe." }
+      ],
+      "erklaerung": "Der Schweredruck `p = ρ · g · h` hängt nur von Dichte und Tiefe ab. Die Form des Gefäßes und die Wassermenge spielen keine Rolle (hydrostatisches Paradoxon)." },
+    { "id": "timp-swd-05", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Welche Aussagen über Staumauern und Taucher sind richtig?",
+      "optionen": [
+        { "text": "Eine Staumauer ist unten dicker, weil der Wasserdruck dort am größten ist.", "richtig": true },
+        { "text": "Ein Taucher in 20 m Tiefe spürt insgesamt etwa 3 bar.", "richtig": true },
+        { "text": "Ein langer, flacher Stausee drückt stärker auf die Mauer als ein kurzer, gleich tiefer.", "feedback": "Der Druck an der Mauer hängt nur von der Tiefe ab, nicht davon, wie weit sich der See nach hinten erstreckt." },
+        { "text": "Der Schweredruck wirkt nur nach unten, deshalb drückt Wasser nicht gegen die Mauer.", "feedback": "Der Schweredruck wirkt in alle Richtungen, also auch zur Seite gegen die Mauer." }
+      ],
+      "erklaerung": "In 20 m Wassertiefe kommen etwa 2 bar Schweredruck zum Luftdruck von etwa 1 bar hinzu. An der Staumauer wächst der Druck von oben nach unten gleichmäßig an." },
+    { "id": "timp-swd-06", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Der Tiefenmesser eines Tauchers zeigt in einem Süßwassersee einen Schweredruck von 1,5 bar an. In welcher Tiefe befindet sich der Taucher?",
+      "gegeben": "`p = 1,5 bar = 150 000 Pa`, `ρ = 1000 kg/m^{3}`, `g = 9,81 N/kg`", "gesucht": "`h`", "gesuchtSymbol": "h",
+      "loesung": 15.29, "einheit": "m",
+      "rechenweg": ["`p = ρ · g · h`, also `h = \\frac{p}{ρ · g}`", "`h = \\frac{150 000 Pa}{1000 kg/m^{3} · 9,81 N/kg} ≈ 15,3 m`"],
+      "hinweis": "Rechne den Druck zuerst in Pa um und stelle `p = ρ · g · h` nach `h` um.",
+      "erklaerung": "Mit der Faustregel „10 m pro bar“ hätte man 15 m geschätzt. Das passt gut zum genauen Ergebnis." },
+    { "id": "timp-swd-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz1",
+      "frage": "Erkläre mit dem Teilchenmodell, warum der Druck im Wasser mit der Tiefe zunimmt.",
+      "stichworte": [
+        { "aspekt": "Die Wasserteilchen haben eine Gewichtskraft und drücken auf die Teilchen darunter", "woerter": ["gewicht", "gewichtskraft", "schwer", "nach unten gezogen", "druecken auf"] },
+        { "aspekt": "Weiter unten liegen mehr Teilchen bzw. Schichten darüber", "woerter": ["mehr teilchen", "mehr schichten", "alle schichten", "alle teilchen darueber", "mehr wasser"] },
+        { "aspekt": "Deshalb werden die Teilchen unten stärker zusammengedrückt, der Druck ist größer", "woerter": ["staerker", "druck groesser", "groesserer druck", "druck nimmt zu", "druck steigt"] }
+      ],
+      "musterloesung": "Jedes Wasserteilchen hat eine Gewichtskraft und drückt auf die Teilchen darunter. Eine Schicht weit unten muss das Gewicht aller Schichten darüber tragen. Je tiefer man ist, desto mehr Teilchen liegen darüber. Deshalb werden die Teilchen unten stärker zusammengedrückt, und der Druck nimmt mit der Tiefe zu.",
+      "erklaerung": "Weil die Teilchen den Druck auch an ihre Nachbarn zur Seite weitergeben, wirkt der Schweredruck in alle Richtungen." }
+  ]
+}

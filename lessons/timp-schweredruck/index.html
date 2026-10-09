@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Schweredruck-Labor: Taucher, Gefäße und Staumauer</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<style>
+  .liquid { fill: var(--neg); }
+  .sky { fill: var(--bg); }
+  .wall { fill: none; stroke: var(--line); stroke-width: 3; stroke-linejoin: round; stroke-linecap: round; }
+  .dam { fill: var(--grid); stroke: var(--line); stroke-width: 2; }
+  .tick { stroke: var(--muted); stroke-width: 1; }
+  .surface { stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 5 4; }
+  .parrow { stroke: var(--pos); fill: var(--pos); }
+  .diver { fill: var(--card); stroke: var(--line); stroke-width: 1.8; }
+  .diver-dark { fill: var(--line); }
+  .pt { stroke: var(--line); stroke-width: .8; }
+  .pt.above { fill: var(--accent); }
+  .pt.here { fill: var(--warn); }
+  .pt.below { fill: var(--card); }
+  .bubble { fill: var(--card); stroke: var(--border); }
+  .seg { flex-wrap: wrap; }
+  .val-strong { font-size: 12.5px; font-weight: 700; font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+<h1>Schweredruck-Labor: Taucher, Gefäße und Staumauer</h1>
+<p class="muted small">Wähle eine Ansicht und eine Flüssigkeit. Verändere die Tiefe oder die Füllhöhe und beobachte den Schweredruck <span class="f">p = ρ · g · h</span>.</p>
+
+<div class="lk-grid">
+  <div>
+    <div class="lk-card">
+      <svg id="svg" viewBox="0 0 560 360" role="img" aria-labelledby="svgTitle">
+        <title id="svgTitle">Simulation zum Schweredruck</title>
+        <defs>
+          <marker id="mP" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="parrow"/></marker>
+          <clipPath id="cp1"><polygon points="40,60 110,60 110,330 40,330"/></clipPath>
+          <clipPath id="cp2"><polygon points="160,60 300,60 255,330 205,330"/></clipPath>
+          <clipPath id="cp3"><polygon points="395,60 425,60 425,180 470,210 470,330 350,330 350,210 395,180"/></clipPath>
+        </defs>
+        <g id="scene"></g>
+      </svg>
+      <p id="caption" class="small muted" style="margin:6px 0 0"></p>
+    </div>
+  </div>
+
+  <div>
+    <div class="lk-card">
+      <h2>Einstellungen</h2>
+      <div class="row">
+        <div class="seg" role="group" aria-label="Ansicht wählen">
+          <button type="button" data-mode="diver" aria-pressed="true">Taucher</button>
+          <button type="button" data-mode="vessels" aria-pressed="false">Gefäße</button>
+          <button type="button" data-mode="dam" aria-pressed="false">Staumauer</button>
+        </div>
+      </div>
+      <div class="row" role="group" aria-label="Flüssigkeit wählen">
+        <button type="button" data-liq="fresh" aria-pressed="true">Süßwasser</button>
+        <button type="button" data-liq="sea" aria-pressed="false">Meerwasser</button>
+        <button type="button" data-liq="dead" aria-pressed="false">Totes Meer</button>
+        <button type="button" data-liq="oil" aria-pressed="false">Speiseöl</button>
+      </div>
+      <label class="ctrl" id="cDepth"><span>Tiefe des Tauchers <span class="f">h</span> <output id="oDepth"></output></span>
+        <input type="range" id="sDepth" min="0" max="40" step="0.5" value="5"></label>
+      <label class="ctrl" id="cFill" hidden><span>Füllhöhe <span class="f">h</span> <output id="oFill"></output></span>
+        <input type="range" id="sFill" min="0" max="50" step="1" value="30"></label>
+      <label class="ctrl" id="cDam" hidden><span>Wasserstand im Stausee <span class="f">h</span> <output id="oDam"></output></span>
+        <input type="range" id="sDam" min="0" max="100" step="5" value="60"></label>
+      <div class="row">
+        <button type="button" id="bAir" aria-pressed="false">Luftdruck mitzählen</button>
+        <button type="button" id="bParticles" aria-pressed="false">Teilchenansicht</button>
+      </div>
+      <div class="readouts">
+        <div class="readout"><span>Dichte <span class="f">ρ</span></span><b id="rRho">–</b></div>
+        <div class="readout"><span>Tiefe <span class="f">h</span></span><b id="rH">–</b></div>
+        <div class="readout"><span>Schweredruck</span><b id="rP">–</b></div>
+        <div class="readout"><span id="rTotLbl">Gesamtdruck</span><b id="rTot">–</b></div>
+      </div>
+      <p id="status" class="small muted" aria-live="polite"></p>
+      <p class="small muted">Vereinfachung: Die Dichte der Flüssigkeit ist überall gleich. <span class="f">g</span> = 9,81 N/kg, Luftdruck an der Oberfläche 1013 hPa.</p>
+    </div>
+
+    <div class="lk-card tasks">
+      <h2>Entdecke selbst <span class="small muted" data-task-count></span></h2>
+      <div class="task" data-goal="ten"><p class="task-q">Taucher in Süßwasser: Finde die Tiefe, in der der Schweredruck etwa 1 bar beträgt.</p></div>
+      <div class="task" data-goal="dense"><p class="task-q">Bringe den Taucher auf 20 m Tiefe. Finde eine Flüssigkeit, in der der Schweredruck dort größer als 2,2 bar ist.</p></div>
+      <div class="task" data-goal="double"><p class="task-q">Schalte „Luftdruck mitzählen“ ein. Tauche so tief, dass der Gesamtdruck doppelt so groß ist wie an der Oberfläche.</p></div>
+      <div class="task">
+        <p class="task-q">Ansicht „Gefäße“: In welchem Gefäß ist der Druck am Boden am größten?</p>
+        <div class="choices">
+          <button type="button" data-fb="Im Trichter ist zwar am meisten Flüssigkeit, aber die schrägen Wände tragen einen Teil davon. Vergleiche die Werte am Boden.">Im Trichter, weil er am meisten Flüssigkeit enthält.</button>
+          <button type="button" data-fb="Vergleiche die Werte am Boden: Das schmale Rohr hat keinen größeren Druck.">Im schmalen Rohr.</button>
+          <button type="button" data-ok data-fb="Richtig: Bei gleicher Füllhöhe ist der Druck am Boden überall gleich. Er hängt nur von Tiefe und Dichte ab.">In allen gleich, wenn die Füllhöhe gleich ist.</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="task">
+        <p class="task-q">Ansicht „Staumauer“: Warum ist die Staumauer unten dicker als oben?</p>
+        <div class="choices">
+          <button type="button" data-ok data-fb="Genau: Der Druck wächst gleichmäßig mit der Tiefe. Am Grund ist er am größten, also muss die Mauer dort am stärksten sein.">Weil der Wasserdruck nach unten immer größer wird.</button>
+          <button type="button" data-fb="Schau dir die Druckpfeile an: Sie sind nicht überall gleich lang.">Weil der Wasserdruck überall gleich ist und die Mauer sonst umkippt.</button>
+          <button type="button" data-fb="Der Druck an der Mauer hängt nur von der Tiefe ab, nicht von der Wassermenge im ganzen See.">Weil hinter der Mauer so viel Wasser liegt.</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="task">
+        <p class="task-q">Schalte die Teilchenansicht ein. Warum ist der Druck in der Tiefe größer?</p>
+        <div class="choices">
+          <button type="button" data-fb="Im einfachen Modell sind die Teilchen überall gleich schwer und gleich schnell. Schau, was sich mit der Tiefe ändert.">Die Teilchen unten sind schwerer.</button>
+          <button type="button" data-ok data-fb="Richtig: Jede Schicht drückt mit ihrer Gewichtskraft auf die darunter. Unten liegen mehr Schichten darüber.">Auf einer tiefen Schicht liegen mehr Teilchenschichten, die mit ihrem Gewicht drücken.</button>
+          <button type="button" data-fb="Der Boden drückt nicht von sich aus. Der Druck kommt von oben, vom Gewicht der Flüssigkeit.">Der Boden drückt die Teilchen nach oben.</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="all-done">Alles entdeckt! Weiter geht es mit den Übungen.</div>
+    </div>
+  </div>
+</div>
+
+<script src="../../static/lesson-kit.js"></script>
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+  var NS = 'http://www.w3.org/2000/svg';
+  var G = 9.81, P0 = 101300;
+  var LIQ = {
+    fresh: { rho: 1000, name: 'Süßwasser' },
+    sea: { rho: 1025, name: 'Meerwasser' },
+    dead: { rho: 1240, name: 'Wasser aus dem Toten Meer' },
+    oil: { rho: 920, name: 'Speiseöl' }
+  };
+  var S = { mode: 'diver', liq: 'fresh', depth: 5, fill: 30, dam: 60, air: false, particles: false };
+  var scene = $('scene');
+
+  function el(tag, a, parent) { var e = document.createElementNS(NS, tag); for (var k in a) e.setAttribute(k, a[k]); (parent || scene).appendChild(e); return e; }
+  function txt(x, y, s, cls, anchor, parent) { var t = el('text', { x: x, y: y, class: cls || 'val', 'text-anchor': anchor || 'start' }, parent); t.textContent = s; return t; }
+  function arrow(x1, y1, x2, y2, parent) { el('line', { x1: x1, y1: y1, x2: x2, y2: y2, class: 'parrow', 'stroke-width': 3, 'marker-end': 'url(#mP)' }, parent); }
+  function rho() { return LIQ[S.liq].rho; }
+  function pS(h) { return rho() * G * h; }                         // Pa, h in m
+  function liqOpacity() { return 0.16 + 0.22 * (rho() - 900) / 340; }
+  function hPa(p) { return LK.fmt(p / 100, 0) + ' hPa'; }
+  function bar(p) { return LK.fmt(p / 1e5, 2) + ' bar'; }
+  function curH() { return S.mode === 'diver' ? S.depth : S.mode === 'vessels' ? S.fill / 100 : S.dam; }
+
+  // ------------------------------------------------ Taucher
+  function drawDiver() {
+    var Y = function (h) { return 40 + h * 7.5; };
+    var water = S.particles ? 400 : 540;
+    el('rect', { x: 0, y: 0, width: 560, height: 40, class: 'sky' });
+    txt(24, 15, S.air ? 'Luft drückt mit 1013 hPa auf das Wasser' : 'Luft', 'val', 'start');
+    if (S.air) for (var ax = 45; ax < water - 10; ax += 50) arrow(ax, 20, ax, 38);
+    el('rect', { x: 20, y: 40, width: water - 20, height: 310, class: 'liquid', opacity: liqOpacity() });
+    el('line', { x1: 20, y1: 40, x2: water, y2: 40, class: 'surface' });
+    for (var d = 0; d <= 40; d += 5) {
+      el('line', { x1: 20, x2: d % 10 ? 28 : 34, y1: Y(d), y2: Y(d), class: 'tick' });
+      if (d % 10 === 0 && d > 0) txt(38, Y(d) + 4, d + ' m');
+    }
+    // Taucher
+    var y = Y(S.depth), x = water / 2 + 10;
+    var p = pS(S.depth), L = 8 + 30 * Math.min(1, p / 5e5);
+    var g = el('g', { transform: 'translate(' + x + ' ' + y + ')' });
+    el('path', { d: 'M-34 -10 L-48 -18 L-46 2 Z M-34 6 L-48 14 L-44 -2 Z', class: 'diver-dark' }, g);
+    el('rect', { x: -20, y: -15, width: 26, height: 8, rx: 4, class: 'diver' }, g);
+    el('ellipse', { cx: -6, cy: 0, rx: 28, ry: 8, class: 'diver' }, g);
+    el('circle', { cx: 26, cy: -3, r: 8, class: 'diver' }, g);
+    el('rect', { x: 26, y: -8, width: 8, height: 6, rx: 2, class: 'diver-dark' }, g);
+    // Druckpfeile von allen Seiten
+    var gap = 14;
+    arrow(0, -gap - 8 - L, 0, -gap - 8, g); arrow(0, gap + 8 + L, 0, gap + 8, g);
+    arrow(-50 - gap - L, 0, -50 - gap, 0, g); arrow(36 + gap + L, 0, 36 + gap, 0, g);
+    // Anzeige
+    var bx = 48 + gap + 8, by = -36;
+    if (x + bx + 100 > water) { bx = -150; }
+    el('rect', { x: bx, y: by, width: 98, height: 22, rx: 6, class: 'bubble' }, g);
+    txt(bx + 49, by + 15, 'p = ' + bar(p + (S.air ? P0 : 0)), 'val-strong', 'middle', g);
+    // Teilchenmodell
+    if (S.particles) {
+      var x0 = 420, n = 16, rowH = 300 / n, here = Math.min(n - 1, Math.floor(S.depth / 2.5 - 1e-9));
+      if (S.depth === 0) here = -1;
+      txt(485, 30, 'Teilchenmodell', 'lbl', 'middle');
+      el('rect', { x: x0, y: 40, width: 130, height: 300, class: 'liquid', opacity: liqOpacity() * 0.6 });
+      for (var r = 0; r < n; r++) {
+        var cls = r < here ? 'above' : r === here ? 'here' : 'below';
+        for (var c = 0; c < 5; c++) el('circle', { cx: x0 + 15 + c * 21 + (r % 2 ? 6 : 0), cy: 40 + rowH * (r + 0.5), r: 7.5, class: 'pt ' + cls });
+      }
+      if (here >= 0) {
+        var yy = 40 + rowH * (here + 0.5);
+        el('line', { x1: x0 - 6, x2: x0 - 6, y1: 42, y2: yy - 8, class: 'parrow', 'stroke-width': 3, 'marker-end': 'url(#mP)' });
+        txt(x0 + 65, 356, 'Rot: ' + here + ' Schichten darüber', 'val-strong', 'middle');
+      }
+    }
+    $('caption').textContent = 'Die orangen Pfeile zeigen den Druck auf den Taucher. Er wirkt von allen Seiten gleich stark.' + (S.particles ? ' Rechts: Blaue Schichten liegen über der roten Schicht in Höhe des Tauchers und drücken mit ihrem Gewicht auf sie.' : '');
+  }
+
+  // ------------------------------------------------ Gefäße
+  function drawVessels() {
+    var top = 330 - S.fill * 5;
+    var shapes = [
+      { cp: 'cp1', pts: '40,60 40,330 110,330 110,60', cx: 75, name: 'Rohr' },
+      { cp: 'cp2', pts: '160,60 205,330 255,330 300,60', cx: 230, name: 'Trichter' },
+      { cp: 'cp3', pts: '395,60 395,180 350,210 350,330 470,330 470,210 425,180 425,60', cx: 410, name: 'Flasche' }
+    ];
+    var p = pS(S.fill / 100);
+    shapes.forEach(function (s) {
+      el('rect', { x: 0, y: top, width: 560, height: 330 - top, class: 'liquid', opacity: liqOpacity() + 0.1, 'clip-path': 'url(#' + s.cp + ')' });
+      el('polyline', { points: s.pts, class: 'wall' });
+      txt(s.cx, 50, s.name, 'lbl', 'middle');
+      el('circle', { cx: s.cx, cy: 324, r: 4, fill: 'var(--pos)' });
+      txt(s.cx, 350, 'p = ' + hPa(p), 'val-strong', 'middle');
+    });
+    if (S.fill > 0) {
+      el('line', { x1: 20, x2: 540, y1: top, y2: top, class: 'surface' });
+      txt(340, top - 6, 'h = ' + S.fill + ' cm', 'val', 'middle');
+    }
+    for (var c = 0; c <= 50; c += 10) {
+      el('line', { x1: 500, x2: 508, y1: 330 - c * 5, y2: 330 - c * 5, class: 'tick' });
+      txt(512, 334 - c * 5, c + ' cm');
+    }
+    $('caption').textContent = 'Die Punkte am Boden sind Drucksonden. Alle drei Gefäße sind gleich hoch gefüllt, enthalten aber unterschiedlich viel Flüssigkeit.';
+  }
+
+  // ------------------------------------------------ Staumauer
+  function drawDam() {
+    var k = 2.6, base = 330, surf = base - S.dam * k;
+    var maxP = 1240 * G * 100;
+    el('rect', { x: 20, y: surf, width: 310, height: base - surf, class: 'liquid', opacity: liqOpacity() });
+    if (S.dam > 0) el('line', { x1: 20, x2: 330, y1: surf, y2: surf, class: 'surface' });
+    el('polygon', { points: '330,50 366,50 520,330 330,330', class: 'dam' });
+    el('line', { x1: 10, x2: 550, y1: base, y2: base, class: 'axis' });
+    txt(440, 44, 'Staumauer', 'lbl', 'middle');
+    for (var h = 0; h <= 100; h += 20) { el('line', { x1: 20, x2: 28, y1: base - h * k, y2: base - h * k, class: 'tick' }); if (h && Math.abs(h - S.dam) > 6) txt(32, base - h * k + 4, h + ' m'); }
+    var Lb = 0;
+    for (var d = 10; d <= S.dam + 1e-9; d += 10) {
+      var y = surf + d * k, L = 150 * pS(d) / maxP;
+      if (y > base - 2) y = base - 4;
+      arrow(328 - L, y, 328, y);
+      Lb = L;
+    }
+    if (S.dam > 0) {
+      el('line', { x1: 328, y1: surf, x2: 328 - 150 * pS(S.dam) / maxP, y2: base, stroke: 'var(--pos)', 'stroke-dasharray': '4 3', 'stroke-width': 1.5 });
+      txt(Math.max(70, 322 - Lb), base + 18, 'am Grund: ' + bar(pS(S.dam)), 'val-strong', 'start');
+    }
+    $('caption').textContent = 'Die orangen Pfeile zeigen den Wasserdruck auf die Mauer in Abständen von 10 m Tiefe.';
+  }
+
+  function update() {
+    scene.innerHTML = '';
+    if (S.mode === 'diver') drawDiver(); else if (S.mode === 'vessels') drawVessels(); else drawDam();
+    var h = curH(), p = pS(h);
+    $('oDepth').textContent = LK.fmt(S.depth, 1) + ' m';
+    $('oFill').textContent = S.fill + ' cm';
+    $('oDam').textContent = S.dam + ' m';
+    $('rRho').textContent = LK.fmt(rho(), 0) + ' kg/m³';
+    $('rH').textContent = S.mode === 'vessels' ? S.fill + ' cm' : LK.fmt(h, 1) + ' m';
+    $('rP').textContent = S.mode === 'vessels' ? hPa(p) : bar(p);
+    $('rTot').textContent = S.air ? (S.mode === 'vessels' ? hPa(p + P0) : bar(p + P0)) : 'ausgeschaltet';
+    $('svgTitle').textContent = S.mode === 'diver' ? 'Taucher in ' + LK.fmt(S.depth, 1) + ' m Tiefe in ' + LIQ[S.liq].name + ', Schweredruck ' + bar(p)
+      : S.mode === 'vessels' ? 'Drei verschieden geformte Gefäße, gleich hoch gefüllt, gleicher Druck am Boden: ' + hPa(p)
+      : 'Staumauer mit ' + S.dam + ' m Wasserstand, Druck am Grund ' + bar(p);
+    $('cDepth').hidden = S.mode !== 'diver';
+    $('cFill').hidden = S.mode !== 'vessels';
+    $('cDam').hidden = S.mode !== 'dam';
+    $('bParticles').hidden = S.mode !== 'diver';
+    // Ziele
+    if (S.mode === 'diver') {
+      if (S.liq === 'fresh' && Math.abs(p - 1e5) <= 6000) { LK.reach('ten'); }
+      if (Math.abs(S.depth - 20) < 0.01 && p > 2.2e5) LK.reach('dense');
+      if (S.air && Math.abs((p + P0) / P0 - 2) <= 0.05) LK.reach('double');
+    }
+  }
+
+  function seg(attr, key) {
+    Array.prototype.forEach.call(document.querySelectorAll('[' + attr + ']'), function (b) {
+      b.onclick = function () {
+        S[key] = b.getAttribute(attr);
+        Array.prototype.forEach.call(document.querySelectorAll('[' + attr + ']'), function (x) { x.setAttribute('aria-pressed', x === b); });
+        update();
+        $('status').textContent = key === 'liq' ? 'Flüssigkeit: ' + LIQ[S.liq].name + ' (' + LK.fmt(rho(), 0) + ' kg/m³).' : '';
+      };
+    });
+  }
+  seg('data-mode', 'mode');
+  seg('data-liq', 'liq');
+  $('sDepth').oninput = function () { S.depth = Number(this.value); update(); };
+  $('sFill').oninput = function () { S.fill = Number(this.value); update(); };
+  $('sDam').oninput = function () { S.dam = Number(this.value); update(); };
+  $('bAir').onclick = function () { S.air = !S.air; this.setAttribute('aria-pressed', S.air); update(); };
+  $('bParticles').onclick = function () { S.particles = !S.particles; this.setAttribute('aria-pressed', S.particles); update(); };
+
+  update();
+})();
+</script>
+</body>
+</html>

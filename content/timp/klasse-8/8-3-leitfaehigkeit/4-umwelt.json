@@ -1,0 +1,115 @@
+{
+  "id": "timp-k8-umwelt",
+  "titel": "Umweltbelastungen",
+  "kurz": "Ozon, Treibhauseffekt, Feinstaub und saurer Regen: Ursachen, Folgen und was fossile Brennstoffe damit zu tun haben.",
+  "reihenfolge": 4,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Die schützende Ozonschicht und das schädliche bodennahe Ozon unterscheiden" },
+    { "id": "lz2", "niveau": "G", "text": "Den natürlichen und den zusätzlichen Treibhauseffekt erklären und mit der Verbrennung fossiler Brennstoffe verbinden" },
+    { "id": "lz3", "niveau": "G", "text": "Ursachen und Folgen von Feinstaub und saurem Regen beschreiben" },
+    { "id": "lz4", "niveau": "H", "text": "Informationen für eine Präsentation aus verlässlichen Quellen auswählen und Quellen richtig angeben" },
+    { "id": "lz5", "niveau": "H", "text": "Das eigene Handeln mithilfe von Daten reflektieren" }
+  ],
+  "verstehen": {
+    "einstieg": "Im Sommer warnt das Radio vor „hohen Ozonwerten“. Gleichzeitig hört man, dass wir die Ozonschicht schützen müssen. Ist Ozon nun gut oder schlecht?",
+    "abschnitte": [
+      {
+        "titel": "Ozon: oben Schutz, unten Reizgas",
+        "text": "**Ozon** (O₃) ist ein Gas aus drei Sauerstoffatomen. Ob es nützt oder schadet, hängt davon ab, **wo** es ist.\n\n**Ozonschicht:** In der Stratosphäre, etwa 15 bis 35 km über dem Boden, filtert Ozon einen großen Teil der gefährlichen **UV-Strahlung** der Sonne heraus. Ohne diesen Schutz gäbe es viel mehr Sonnenbrand, Hautkrebs und Schäden an Pflanzen. Früher benutzte Gase wie **FCKW** (aus Spraydosen und Kühlschränken) haben die Ozonschicht geschädigt, besonders über der Antarktis entstand ein „Ozonloch“. Seit FCKW 1987 durch das Montreal-Protokoll verboten wurden, erholt sich die Ozonschicht langsam.\n\n**Bodennahes Ozon:** An heißen, sonnigen Tagen entsteht Ozon in der Luft, die wir atmen. Es bildet sich unter Sonnenlicht aus **Stickoxiden** (vor allem aus Autoabgasen) und anderen Abgasen. Bodennahes Ozon **reizt Augen und Atemwege** und kann Kopfschmerzen verursachen. Bei hohen Werten sollte man anstrengenden Sport im Freien am Nachmittag vermeiden."
+      },
+      {
+        "titel": "Der Treibhauseffekt",
+        "text": "Sonnenlicht durchdringt die Atmosphäre und erwärmt den Erdboden. Der Boden gibt die Energie als **Wärmestrahlung** (Infrarotstrahlung) wieder ab. **Treibhausgase** wie Wasserdampf, Kohlenstoffdioxid (CO₂) und Methan nehmen einen Teil dieser Wärmestrahlung auf und strahlen ihn auch zurück zur Erde.\n\n**Natürlicher Treibhauseffekt:** Ohne ihn läge die mittlere Temperatur auf der Erde bei etwa **−18 °C**. Mit ihm sind es etwa **+15 °C**. Er ist also lebenswichtig.\n\n**Zusätzlicher Treibhauseffekt:** Seit Beginn der Industrialisierung verbrennt der Mensch große Mengen **fossiler Brennstoffe**. Dabei steigt der CO₂-Anteil der Luft: von etwa 280 ppm vor 1850 auf heute über 420 ppm (ppm: Teilchen pro eine Million Teilchen). Mehr Treibhausgas hält mehr Wärme zurück. Die mittlere Temperatur der Erde ist bereits um mehr als 1 °C gestiegen. Folgen sind z. B. häufigere Hitzewellen, Dürren, Starkregen und ein steigender Meeresspiegel."
+      },
+      {
+        "titel": "Fossile Brennstoffe",
+        "text": "**Kohle, Erdöl und Erdgas** sind vor Millionen von Jahren aus abgestorbenen Pflanzen und Kleinstlebewesen entstanden. Sie enthalten viel **Kohlenstoff**, der lange Zeit im Boden gespeichert war. Beim Verbrennen reagiert er mit Sauerstoff zu **CO₂**, das in die Luft gelangt.\n\nFossile Brennstoffe werden in Kraftwerken, Heizungen, Autos, Flugzeugen und in der Industrie verbrannt. Neben CO₂ entstehen dabei oft weitere Schadstoffe: **Stickoxide** (NOₓ), **Schwefeldioxid** (SO₂, wenn der Brennstoff Schwefel enthält) und **Feinstaub**. Sie sind also an fast allen Umweltproblemen in diesem Thema beteiligt. Außerdem sind ihre Vorräte begrenzt."
+      },
+      {
+        "titel": "Feinstaub",
+        "text": "**Feinstaub** sind winzige Teilchen in der Luft. Man teilt sie nach ihrem Durchmesser ein:\n\n- **PM10**: Teilchen kleiner als 10 µm (ein Haar ist etwa 50 bis 70 µm dick)\n- **PM2,5**: Teilchen kleiner als 2,5 µm\n\nQuellen sind z. B. Verbrennungsmotoren, Reifen- und Bremsabrieb, Holzöfen, Industrie, Landwirtschaft und Feuerwerk. Je **kleiner** die Teilchen sind, desto **tiefer** dringen sie beim Atmen in die Lunge ein. PM2,5 kann bis in die Lungenbläschen und sogar ins Blut gelangen. Feinstaub kann Atemwegs- und Herz-Kreislauf-Erkrankungen verursachen. Messstationen in Städten überwachen deshalb die Werte in µg/m³ (Mikrogramm pro Kubikmeter Luft)."
+      },
+      {
+        "titel": "Saurer Regen",
+        "text": "Auch sauberer Regen ist leicht sauer, weil sich etwas CO₂ aus der Luft darin löst. Sein **pH-Wert** liegt bei etwa **5,6**. Je kleiner der pH-Wert, desto saurer ist eine Lösung. Ein um 1 kleinerer pH-Wert bedeutet eine **10-mal** so saure Lösung.\n\n**Saurer Regen** hat einen pH-Wert unter 5,6, teilweise um 4. Er entsteht, wenn **Schwefeldioxid** (SO₂) und **Stickoxide** (NOₓ) aus Verbrennungen mit Wasser in der Luft zu **Schwefelsäure** und **Salpetersäure** reagieren. Saurer Regen schädigt Wälder, lässt Seen versauern, in denen dann Fische sterben, und greift Gebäude und Denkmäler aus Kalkstein und Marmor an.\n\nIn Deutschland hat man seit den 1980er-Jahren Kraftwerke mit **Rauchgasentschwefelung** und Autos mit **Katalysatoren** ausgestattet. Dadurch ist saurer Regen hier viel seltener geworden. Saurer Regen enthält mehr Ionen als sauberer Regen und hat deshalb auch eine größere Leitfähigkeit."
+      },
+      {
+        "titel": "Präsentieren mit Quellen und eigenes Handeln",
+        "text": "In der Gruppenarbeit stellt ihr ein Umweltthema vor. Achtet dabei auf **verlässliche Quellen**, z. B. das Umweltbundesamt, den Deutschen Wetterdienst, wissenschaftliche Einrichtungen oder Schulbücher. Vergleicht mehrere Quellen. Seid vorsichtig bei Quellen, die etwas verkaufen wollen oder keinen Verfasser nennen.\n\nGebt jede Quelle an: **wer** (Verfasser oder Einrichtung), **was** (Titel), **wo** (Internetadresse oder Buch) und **wann** (Erscheinungsjahr bzw. Abrufdatum). Zahlen und Diagramme brauchen immer eine Quellenangabe.\n\nZum Schluss lohnt ein Blick auf das **eigene Handeln**: Wie komme ich zur Schule? Wie viel Strom und Heizenergie verbrauche ich? Mit Daten (z. B. CO₂ pro Kilometer) kannst du verschiedene Möglichkeiten sachlich vergleichen."
+      }
+    ],
+    "formeln": [
+      { "formel": "C + O_{2} → CO_{2}", "bedeutung": "Bei der Verbrennung reagiert Kohlenstoff mit Sauerstoff zu Kohlenstoffdioxid." }
+    ],
+    "merksatz": "Ozon schützt in der Stratosphäre vor UV-Strahlung, am Boden reizt es die Atemwege. Treibhausgase wie CO₂ halten Wärme zurück. Die Verbrennung fossiler Brennstoffe verstärkt den Treibhauseffekt und setzt Stickoxide, Schwefeldioxid und Feinstaub frei.",
+    "alltag": "Bei einer Autofahrt entstehen pro Liter Benzin etwa 2,3 kg CO₂. Ein Liter Benzin wiegt aber nur etwa 0,75 kg. Das CO₂ ist schwerer, weil der Kohlenstoff beim Verbrennen Sauerstoff aus der Luft aufnimmt."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    { "id": "timp-umw-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Welche Aufgabe hat die Ozonschicht in der Stratosphäre?",
+      "optionen": [
+        { "text": "Sie filtert einen großen Teil der UV-Strahlung der Sonne heraus.", "richtig": true },
+        { "text": "Sie hält die Wärmestrahlung der Erde zurück und verursacht so den Treibhauseffekt.", "feedback": "Das ist die Wirkung der Treibhausgase wie CO₂ und Wasserdampf. Die Ozonschicht schützt vor UV-Strahlung." },
+        { "text": "Sie liefert den Sauerstoff, den wir atmen.", "feedback": "Den Sauerstoff zum Atmen liefern Pflanzen durch Fotosynthese. Ozon in der Stratosphäre ist für uns nicht atembar." },
+        { "text": "Sie reizt die Atemwege an heißen Sommertagen.", "feedback": "Das macht bodennahes Ozon. Die Ozonschicht liegt 15 bis 35 km hoch und ist für uns ein Schutz." }
+      ],
+      "erklaerung": "Ozon ist dasselbe Gas, oben und unten. In der Stratosphäre schützt es vor UV-Strahlung, in der Atemluft ist es ein Reizgas." },
+    { "id": "timp-umw-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz3",
+      "frage": "Ordne jedem Stoff seine wichtigste Umweltwirkung zu.",
+      "paare": [
+        { "links": "Kohlenstoffdioxid (CO₂)", "rechts": "verstärkt den Treibhauseffekt" },
+        { "links": "Schwefeldioxid (SO₂)", "rechts": "bildet Schwefelsäure im Regen" },
+        { "links": "Feinstaub PM2,5", "rechts": "dringt tief in die Lunge ein" },
+        { "links": "FCKW", "rechts": "zerstören die Ozonschicht" },
+        { "links": "bodennahes Ozon", "rechts": "reizt Augen und Atemwege an sonnigen Tagen" }
+      ],
+      "erklaerung": "CO₂ ist ein Treibhausgas, SO₂ ist an saurem Regen beteiligt, kleine Staubteilchen gelangen tief in die Lunge, FCKW bauen Ozon in der Stratosphäre ab, und bodennahes Ozon ist ein Reizgas." },
+    { "id": "timp-umw-03", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Welche Aussagen zum Treibhauseffekt sind richtig?",
+      "optionen": [
+        { "text": "Ohne den natürlichen Treibhauseffekt läge die mittlere Temperatur der Erde bei etwa −18 °C.", "richtig": true },
+        { "text": "Kohlenstoffdioxid und Methan sind Treibhausgase.", "richtig": true },
+        { "text": "Beim Verbrennen von Kohle, Erdöl und Erdgas gelangt Kohlenstoff, der lange im Boden gespeichert war, als CO₂ in die Luft.", "richtig": true },
+        { "text": "Der Treibhauseffekt entsteht durch das Ozonloch.", "feedback": "Das Ozonloch und der Treibhauseffekt sind zwei verschiedene Probleme. Durch das Ozonloch gelangt mehr UV-Strahlung zur Erde." },
+        { "text": "Treibhausgase lassen die Wärmestrahlung der Erde ungehindert ins Weltall.", "feedback": "Genau das tun sie nicht: Sie nehmen einen Teil der Wärmestrahlung auf und strahlen ihn auch zurück zur Erde." }
+      ],
+      "erklaerung": "Der natürliche Treibhauseffekt macht die Erde bewohnbar. Der Mensch verstärkt ihn vor allem durch CO₂ aus fossilen Brennstoffen. Das führt zur Erderwärmung." },
+    { "id": "timp-umw-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "An einer Messstelle hat Regenwasser den pH-Wert 4,6. Sauberer Regen hat etwa den pH-Wert 5,6. Was folgt daraus?",
+      "optionen": [
+        { "text": "Der Regen ist etwa 10-mal so sauer wie sauberer Regen. Das deutet auf Schwefeldioxid oder Stickoxide in der Luft hin.", "richtig": true },
+        { "text": "Der Regen ist weniger sauer, weil der pH-Wert kleiner ist.", "feedback": "Umgekehrt: Je kleiner der pH-Wert, desto saurer ist die Lösung." },
+        { "text": "Der Regen ist nur um etwa 1 % saurer, weil sich der pH-Wert nur um 1 unterscheidet.", "feedback": "Die pH-Skala ist anders aufgebaut: Ein um 1 kleinerer pH-Wert bedeutet eine 10-mal so saure Lösung." },
+        { "text": "Der Regen ist neutral.", "feedback": "Neutral ist der pH-Wert 7. Ein pH-Wert von 4,6 ist sauer." }
+      ],
+      "erklaerung": "Ein Unterschied von 1 auf der pH-Skala bedeutet den Faktor 10. Regen mit pH 4,6 ist saurer Regen. Er entsteht, wenn SO₂ und NOₓ in der Luft zu Säuren reagieren." },
+    { "id": "timp-umw-05", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz5",
+      "frage": "Mias Eltern bringen sie jeden Schultag mit dem Auto zur Schule und holen sie wieder ab. Dabei fährt das Auto insgesamt 20 km pro Tag. Es verbraucht 7 Liter Benzin pro 100 km, ein Liter Benzin erzeugt etwa 2,3 kg CO₂. Wie viel CO₂ entsteht an 200 Schultagen?",
+      "gegeben": "20 km pro Tag, 200 Tage, 7 L pro 100 km, 2,3 kg CO₂ pro Liter", "gesucht": "Masse an CO₂", "gesuchtSymbol": "m",
+      "loesung": 644, "einheit": "kg", "alternativEinheiten": { "t": 1000 },
+      "rechenweg": ["Strecke: `20 km · 200 = 4000 km`", "Benzin: `4000 km · \\frac{7 L}{100 km} = 280 L`", "CO₂: `280 L · 2,3 kg/L = 644 kg`"],
+      "hinweis": "Berechne zuerst die gesamte Strecke, dann den Benzinverbrauch.",
+      "erklaerung": "Es entstehen etwa 640 kg CO₂, also mehr als eine halbe Tonne. Mit Fahrrad, Bus oder zu Fuß wäre es auf dieser Strecke sehr viel weniger. Solche Rechnungen helfen, Möglichkeiten sachlich zu vergleichen." },
+    { "id": "timp-umw-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Eure Gruppe sucht für eine Präsentation aktuelle Feinstaubwerte. Welche Quelle ist am verlässlichsten?",
+      "optionen": [
+        { "text": "Die Messdaten des Umweltbundesamtes mit Angabe von Messstation und Datum", "richtig": true },
+        { "text": "Ein Werbeprospekt eines Herstellers von Luftreinigern", "feedback": "Ein Hersteller will etwas verkaufen. Seine Angaben können einseitig ausgewählt sein." },
+        { "text": "Ein Video ohne Angabe, wer es gemacht hat und woher die Zahlen stammen", "feedback": "Ohne Verfasser und Herkunft der Zahlen kannst du die Angaben nicht überprüfen." },
+        { "text": "Ein Beitrag in einem Forum, in dem jemand seine Meinung schreibt", "feedback": "Eine Meinung ist keine Messung. Für Zahlenwerte brauchst du eine überprüfbare Quelle." }
+      ],
+      "erklaerung": "Verlässliche Quellen nennen, wer die Daten erhoben hat, wie und wann. Behörden wie das Umweltbundesamt betreiben eigene Messstationen und veröffentlichen die Rohdaten. In der Präsentation gibst du diese Quelle mit Abrufdatum an." },
+    { "id": "timp-umw-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz1",
+      "frage": "Ein Mitschüler sagt: „Ozon ist doch gut, es schützt uns. Warum warnt man dann im Sommer vor Ozon?“ Erkläre ihm den Unterschied.",
+      "stichworte": [
+        { "aspekt": "Die Ozonschicht in großer Höhe (Stratosphäre) schützt vor UV-Strahlung", "woerter": ["uv", "stratosphaere", "ozonschicht", "hoehe"] },
+        { "aspekt": "Bodennahes Ozon entsteht bei Sonne aus Stickoxiden bzw. Abgasen", "woerter": ["stickoxid", "abgas", "auto", "verkehr", "nox"] },
+        { "aspekt": "Bodennahes Ozon reizt Augen und Atemwege", "woerter": ["reiz", "atemweg", "lunge", "husten", "augen", "kopfschmerz"] },
+        { "aspekt": "Es ist dasselbe Gas; entscheidend ist, wo es sich befindet", "woerter": ["dasselbe", "gleiche gas", "selbe gas", "wo es", "wo sich"] }
+      ],
+      "musterloesung": "Es ist dasselbe Gas, aber es kommt darauf an, wo es sich befindet. Die Ozonschicht liegt in der Stratosphäre, 15 bis 35 km hoch. Dort filtert Ozon die gefährliche UV-Strahlung der Sonne heraus und schützt uns. Am Boden entsteht an heißen, sonnigen Tagen aus Stickoxiden in Autoabgasen zusätzliches Ozon. Dieses bodennahe Ozon atmen wir ein. Es reizt Augen und Atemwege. Deshalb warnt man bei hohen Werten davor.",
+      "erklaerung": "Merke: „Oben Schutz, unten Reizgas.“ Das bodennahe Ozon steigt auch nicht nach oben und repariert die Ozonschicht. Es wird vorher wieder abgebaut." }
+  ]
+}

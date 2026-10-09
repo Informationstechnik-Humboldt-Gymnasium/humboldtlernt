@@ -1,0 +1,14 @@
+{
+  "nummer": "9.1",
+  "reihenfolge": 1,
+  "titel": "Informatik: Programmieren",
+  "beschreibung": "Variablen, Bedingungen, Schleifen und Funktionen, Programmablaufpläne und physikalische Vorgänge im Programm modellieren.",
+  "inhalte": [
+    "Kontrollstrukturen: Schleifen, Bedingungen, Variablen, Funktionen",
+    "Grafische Darstellungsformen von Programmen, z. B. Programmablaufplan",
+    "Modellierung eigener Ideen und Überführung in Programme, z. B. blockbasiert in Scratch oder CoSpaces",
+    "Geschwindigkeit und Schwerkraft in Programmen modellieren",
+    "Fehler in Programmen finden und verbessern"
+  ],
+  "erweiterung": "Die Inhalte werden anwendungsbezogen und parallel unterrichtet."
+}

@@ -1,0 +1,108 @@
+{
+  "id": "timp-k9-dotierung",
+  "titel": "Halbleiter und Dotierung",
+  "kurz": "Warum Silizium mal leitet und mal nicht und wie wenige Fremdatome daraus ein brauchbares Bauteil machen.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Leiter, Halbleiter und Isolatoren nach ihrer Leitfähigkeit unterscheiden und Beispiele nennen" },
+    { "id": "lz2", "niveau": "G", "text": "Den Aufbau eines Siliziumkristalls mit vier Außenelektronen je Atom beschreiben und die Eigenleitung erklären" },
+    { "id": "lz3", "niveau": "H", "text": "Erklären, warum die Leitfähigkeit eines Halbleiters mit der Temperatur steigt, und dies mit Metallen vergleichen" },
+    { "id": "lz4", "niveau": "G", "text": "Die n-Dotierung mit Phosphor und die p-Dotierung mit Bor beschreiben und die beweglichen Ladungsträger (Elektronen, Löcher) benennen" },
+    { "id": "lz5", "niveau": "H", "text": "Leiter, Halbleiter und Isolatoren mit einem einfachen Energiemodell (Energielücke) vergleichen" }
+  ],
+  "verstehen": {
+    "einstieg": "In jedem Handy stecken Milliarden winziger Schalter aus Silizium, dem Hauptbestandteil von Sand. Wie kann ausgerechnet Sand Strom schalten?",
+    "abschnitte": [
+      {
+        "titel": "Leiter, Halbleiter, Isolatoren",
+        "text": "Damit ein Stoff den Strom leitet, braucht er **bewegliche Ladungsträger**.\n\n- **Leiter** (Metalle wie Kupfer, Aluminium) haben sehr viele freie Elektronen. Sie leiten immer gut.\n- **Isolatoren** (Glas, Kunststoff, Porzellan) haben praktisch keine freien Ladungsträger.\n- **Halbleiter** (Silizium, Germanium) liegen dazwischen: Ganz rein und kalt leiten sie fast nicht. Erwärmt, beleuchtet oder mit Fremdatomen versetzt leiten sie deutlich besser.\n\nGerade diese **Steuerbarkeit** macht Halbleiter so wertvoll für die Elektronik."
+      },
+      {
+        "titel": "Der Siliziumkristall und die Eigenleitung",
+        "text": "Ein Siliziumatom hat **vier Außenelektronen**. Im Kristall teilt jedes Atom diese vier Elektronen mit vier Nachbarn. So entstehen feste **Elektronenpaarbindungen**, und alle Elektronen sind gebunden.\n\nDurch Wärme schwingen die Atome. Dabei kann ab und zu ein Elektron aus seiner Bindung herausgerissen werden. Es wird zum **freien Elektron**. An seinem alten Platz fehlt jetzt ein Elektron: Es entsteht ein **Loch**. Ein Loch verhält sich wie eine **positive Ladung**, denn ein benachbartes Elektron kann hineinspringen. Dann wandert das Loch in die Gegenrichtung weiter.\n\nDiese Leitung durch Elektron-Loch-Paare im reinen Kristall heißt **Eigenleitung**."
+      },
+      {
+        "titel": "Temperatur: Halbleiter gegen Metall",
+        "text": "Je wärmer ein Halbleiter ist, desto mehr Bindungen brechen auf. Es gibt **mehr Ladungsträger**, die Leitfähigkeit steigt und der **Widerstand sinkt**. Halbleiter sind **Heißleiter**.\n\nBei **Metallen** ist es umgekehrt: Die Zahl der freien Elektronen bleibt gleich, aber die stärker schwingenden Atomrümpfe behindern sie mehr. Der Widerstand **steigt** mit der Temperatur. Metalle sind **Kaltleiter**."
+      },
+      {
+        "titel": "Dotierung: n und p",
+        "text": "Beim **Dotieren** baut man gezielt Fremdatome in den Kristall ein, oft nur etwa ein Fremdatom auf eine Million Siliziumatome. Trotzdem steigt die Leitfähigkeit enorm.\n\n- **n-Dotierung**: **Phosphor** hat **fünf** Außenelektronen. Vier davon binden sich an die Nachbarn, das fünfte ist nur locker gebunden und wird schon bei Raumtemperatur zum **freien Elektron**. Die Ladungsträger sind vor allem negative Elektronen (n für negativ).\n- **p-Dotierung**: **Bor** hat nur **drei** Außenelektronen. Eine Bindung bleibt unvollständig, es entsteht ein **Loch**. Die Ladungsträger sind vor allem positive Löcher (p für positiv).\n\nWichtig: Der dotierte Kristall ist insgesamt **elektrisch neutral**. Jedes Phosphoratom hat ja auch ein Proton mehr im Kern als ein Siliziumatom, jedes Boratom eines weniger."
+      },
+      {
+        "titel": "Das Energiemodell",
+        "text": "Man kann sich die Elektronen auf zwei Energie-Etagen vorstellen: Unten im **Valenzband** sind sie in Bindungen festgehalten. Oben im **Leitungsband** sind sie frei beweglich. Dazwischen liegt eine **Energielücke**, die ein Elektron nur mit genug Energie (Wärme, Licht) überspringen kann.\n\n- **Metall**: keine Lücke, die Elektronen sind immer frei.\n- **Halbleiter**: kleine Lücke (Silizium etwa 1,1 eV). Einige Elektronen schaffen den Sprung, mehr bei höherer Temperatur.\n- **Isolator**: große Lücke, praktisch kein Elektron schafft den Sprung.\n\nIm **Leitungsmodell** dagegen stellst du dir den Kristall als Gitter vor, in dem freie Elektronen und Löcher wandern."
+      }
+    ],
+    "merksatz": "Halbleiter leiten umso besser, je wärmer sie sind. Durch **Dotieren** mit Phosphor (fünf Außenelektronen) entsteht ein **n-Halbleiter** mit freien Elektronen, durch Dotieren mit Bor (drei Außenelektronen) ein **p-Halbleiter** mit Löchern. Beide sind insgesamt elektrisch neutral.",
+    "alltag": "Ein Fieberthermometer oder der Temperatursensor im Auto enthält oft einen Heißleiter (NTC) aus Halbleitermaterial. Aus seinem sinkenden Widerstand wird die Temperatur berechnet."
+  },
+  "interaktiv": ["timp-dotierung"],
+  "uebungen": [
+    { "id": "timp-hdo-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Welcher dieser Stoffe ist ein Halbleiter?",
+      "optionen": [
+        { "text": "Silizium", "richtig": true },
+        { "text": "Kupfer", "feedback": "Kupfer ist ein Metall und damit ein sehr guter Leiter." },
+        { "text": "Glas", "feedback": "Glas hat praktisch keine freien Ladungsträger. Es ist ein Isolator." },
+        { "text": "Gummi", "feedback": "Gummi ist ein Isolator. Deshalb sind Kabel damit ummantelt." }
+      ],
+      "erklaerung": "**Silizium** ist der wichtigste Halbleiter. Fast alle Computerchips, Dioden, Transistoren und Solarzellen bestehen daraus." },
+    { "id": "timp-hdo-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Wie viele Außenelektronen hat ein Siliziumatom?",
+      "optionen": [
+        { "text": "4", "richtig": true },
+        { "text": "3", "feedback": "Drei Außenelektronen hat Bor. Es wird für die p-Dotierung verwendet." },
+        { "text": "5", "feedback": "Fünf Außenelektronen hat Phosphor. Es wird für die n-Dotierung verwendet." },
+        { "text": "8", "feedback": "Acht Außenelektronen haben die Edelgase. Silizium steht in der vierten Hauptgruppe." }
+      ],
+      "erklaerung": "Silizium steht in der **IV. Hauptgruppe** und hat **vier Außenelektronen**. Im Kristall bildet jedes Atom mit vier Nachbarn je eine Elektronenpaarbindung." },
+    { "id": "timp-hdo-03", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Ordne jedem Material die passenden beweglichen Ladungsträger zu.",
+      "paare": [
+        { "links": "Silizium mit Phosphor dotiert", "rechts": "vor allem freie Elektronen (n-Halbleiter)" },
+        { "links": "Silizium mit Bor dotiert", "rechts": "vor allem Löcher (p-Halbleiter)" },
+        { "links": "reines Silizium bei Raumtemperatur", "rechts": "wenige Elektron-Loch-Paare (Eigenleitung)" },
+        { "links": "Kupfer", "rechts": "sehr viele freie Elektronen (Metall)" }
+      ],
+      "extraRechts": ["vor allem positive Atomkerne, die wandern"],
+      "erklaerung": "Phosphor bringt ein fünftes, locker gebundenes Elektron mit, Bor hinterlässt ein Loch. Im reinen Silizium entstehen Ladungsträger nur paarweise durch Wärme. Atomkerne sind im Kristall fest und wandern nicht." },
+    { "id": "timp-hdo-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Ein Stück reines Silizium und ein Kupferdraht werden von 20 °C auf 80 °C erwärmt. Was passiert mit ihrem elektrischen Widerstand?",
+      "optionen": [
+        { "text": "Beim Silizium sinkt er, beim Kupfer steigt er.", "richtig": true },
+        { "text": "Bei beiden steigt er.", "feedback": "Beim Kupfer stimmt das. Im Silizium entstehen aber durch die Wärme zusätzliche Ladungsträger." },
+        { "text": "Bei beiden sinkt er.", "feedback": "Beim Silizium stimmt das. Im Kupfer bleibt die Zahl der freien Elektronen gleich, sie werden aber stärker behindert." },
+        { "text": "Beim Silizium steigt er, beim Kupfer sinkt er.", "feedback": "Genau umgekehrt: Halbleiter sind Heißleiter, Metalle sind Kaltleiter." }
+      ],
+      "erklaerung": "Im Halbleiter brechen bei höherer Temperatur mehr Bindungen auf, es gibt **mehr Ladungsträger**. Im Metall ist die Zahl der Elektronen fest, aber die Atomrümpfe schwingen stärker und **bremsen** sie mehr." },
+    { "id": "timp-hdo-05", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Welche Aussagen über n-dotiertes Silizium sind richtig?",
+      "optionen": [
+        { "text": "Jedes Phosphoratom liefert ein locker gebundenes fünftes Elektron.", "richtig": true },
+        { "text": "Die meisten beweglichen Ladungsträger sind Elektronen.", "richtig": true },
+        { "text": "Der Kristall ist insgesamt elektrisch neutral.", "richtig": true },
+        { "text": "Der Kristall ist negativ geladen, weil er zusätzliche Elektronen enthält.", "feedback": "Jedes Phosphoratom hat auch ein Proton mehr im Kern. Elektronen und Protonen gleichen sich aus." },
+        { "text": "Man braucht etwa gleich viele Phosphoratome wie Siliziumatome.", "feedback": "Schon etwa ein Fremdatom auf eine Million Siliziumatome reicht, um die Leitfähigkeit stark zu erhöhen." }
+      ],
+      "erklaerung": "Das „n“ steht für die **negativen** freien Elektronen als Ladungsträger, nicht für eine negative Gesamtladung. Ein n-Halbleiter ist **neutral**." },
+    { "id": "timp-hdo-06", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Erkläre mit dem Leitungsmodell, warum reines Silizium bei höherer Temperatur besser leitet.",
+      "stichworte": [
+        { "aspekt": "Durch Wärme brechen Bindungen auf, Elektronen werden aus ihren Bindungen gelöst", "woerter": ["bindung", "loes", "herausgerissen", "befrei", "brechen"] },
+        { "aspekt": "Dabei entstehen freie Elektronen und Löcher (mehr Ladungsträger)", "woerter": ["loch", "loecher", "ladungstraeger", "freie elektronen", "elektron loch"] },
+        { "aspekt": "Folge: Leitfähigkeit steigt bzw. Widerstand sinkt", "woerter": ["leitfaehigkeit steigt", "besser", "widerstand sinkt", "kleinerer widerstand", "mehr strom", "groessere strom"] }
+      ],
+      "musterloesung": "Im Siliziumkristall sind die Elektronen in Bindungen zwischen den Atomen festgehalten. Bei höherer Temperatur schwingen die Atome stärker, und mehr Bindungen brechen auf. Die herausgelösten Elektronen werden zu freien Elektronen, an ihrem alten Platz bleibt ein Loch zurück. Es gibt also mehr Ladungsträger. Deshalb fließt bei gleicher Spannung mehr Strom, der Widerstand sinkt.",
+      "erklaerung": "Halbleiter sind **Heißleiter**: Ihre Leitfähigkeit hängt vor allem von der Zahl der Ladungsträger ab, und die wächst mit der Temperatur." },
+    { "id": "timp-hdo-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz5",
+      "frage": "Im Energiemodell liegt zwischen Valenzband und Leitungsband eine Energielücke. Warum leitet ein Isolator wie Glas praktisch keinen Strom?",
+      "optionen": [
+        { "text": "Seine Energielücke ist so groß, dass fast kein Elektron sie überspringen kann.", "richtig": true },
+        { "text": "Er hat gar keine Elektronen.", "feedback": "Jedes Atom hat Elektronen. Sie sind im Isolator aber fest gebunden." },
+        { "text": "Er hat keine Energielücke, deshalb sind alle Elektronen fest.", "feedback": "Ohne Lücke wären die Elektronen frei. Das ist der Fall beim Metall." },
+        { "text": "Seine Energielücke ist sehr klein, deshalb fallen die Elektronen zurück.", "feedback": "Eine kleine Lücke haben Halbleiter. Sie leiten deshalb bei Wärme besser." }
+      ],
+      "erklaerung": "Metalle: keine Lücke. Halbleiter: kleine Lücke (Silizium etwa 1,1 eV), Wärme oder Licht reichen für einige Elektronen. Isolatoren: große Lücke, die Elektronen bleiben gebunden." }
+  ]
+}

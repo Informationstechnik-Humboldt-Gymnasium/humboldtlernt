@@ -8,8 +8,8 @@ import { q, replaceRoster, progressSets, understoodSlug } from './src/db.js';
 import { startLogin, finishLogin } from './src/iserv.js';
 import { lessonsFor, isValidSlug } from './src/lessons.js';
 import * as views from './src/views.js';
-import * as pviews from './src/views-physik.js';
-import { content, visibleGrades, getGrade, gradeOf, topicsOfGrade, topicProgress, gradeProgress } from './src/physik.js';
+import * as fviews from './src/views-fach.js';
+import { content, visibleFaecher, getFach, visibleGrades, getGrade, gradeOf, topicsOfGrade, topicProgress } from './src/faecher.js';
 import { checkAnswer, revealSolution } from './src/exercises.js';
 
 const app = express();
@@ -141,13 +141,15 @@ app.post('/auth/logout', (req, res) => { req.session = null; res.redirect('/'); 
 app.get('/', (req, res) => {
   if (!req.user) return res.send(views.loginPage());
   const done = new Set(q.progressOf.all(req.user.id).map(p => p.slug));
-  // Lerneinheiten, die zu einem Physik-Thema gehören, erscheinen dort und nicht doppelt auf der Startseite
+  // Lerneinheiten, die zu einem Thema gehören, erscheinen dort und nicht doppelt auf der Startseite
   const used = usedLessonSlugs();
   const lessons = lessonsFor(req.user).filter(l => !used.has(l.slug));
-  res.send(views.homePage({ user: req.user, lessons, done, physik: physikHero(req.user) }));
+  const sets = progressSets(req.user.id), own = gradeOf(req.user.klasse);
+  const subjects = visibleFaecher().map(f => fviews.subjectCard(f, own, sets)).join('');
+  res.send(views.homePage({ user: req.user, lessons, done, subjects }));
 });
 
-// ---------------------------------------------------------------- Physik
+// ---------------------------------------------------------------- Fächer (Physik, TIMP, …)
 
 function usedLessonSlugs() {
   const used = new Set();
@@ -155,57 +157,7 @@ function usedLessonSlugs() {
   return used;
 }
 
-function physikHero(user) {
-  const grades = visibleGrades();
-  if (!grades.length) return null;
-  const grade = grades.find(g => g.stufe === gradeOf(user.klasse));
-  if (!grade || !topicsOfGrade(grade).length) {
-    return { href: '/physik', titel: 'Wähle deine Klassenstufe', text: 'Interaktive Erklärungen und Übungen nach dem Schulcurriculum.', cta: 'Zur Auswahl' };
-  }
-  const sets = progressSets(user.id);
-  const progress = gradeProgress(grade, sets.solved, sets.understood);
-  return {
-    href: `/physik/${grade.stufe}`, titel: grade.name, progress,
-    text: `${topicsOfGrade(grade).length} Themen mit interaktiven Erklärungen und Übungen.`,
-    cta: progress.done ? 'Weiterlernen' : 'Loslegen',
-  };
-}
-
 const notFound = (req, res, text) => res.status(404).send(views.messagePage({ title: 'Nicht gefunden', text, user: req.user }));
-
-app.get('/physik', requireLogin, (req, res) => {
-  res.send(pviews.gradePickerPage({ user: req.user, grades: visibleGrades(), own: gradeOf(req.user.klasse), sets: progressSets(req.user.id) }));
-});
-
-app.get('/physik/:stufe', requireLogin, (req, res) => {
-  const grade = getGrade(req.params.stufe);
-  if (!grade) return notFound(req, res, 'Für diese Klassenstufe gibt es keine Inhalte.');
-  res.send(pviews.gradePage({ user: req.user, grade, grades: visibleGrades(), sets: progressSets(req.user.id) }));
-});
-
-/** Gemeinsame Daten für beide Themen-Seiten. */
-function topicContext(req, res) {
-  const grade = getGrade(req.params.stufe);
-  const topic = content().topicById.get(req.params.thema);
-  if (!grade || !topic || topic.stufe !== grade.stufe) { notFound(req, res, 'Dieses Thema gibt es nicht.'); return null; }
-  const sets = progressSets(req.user.id);
-  const all = topicsOfGrade(grade);
-  return { grade, topic, sets, progress: topicProgress(topic, sets.solved, sets.understood), nextTopic: all[all.indexOf(topic) + 1] || null };
-}
-
-app.get('/physik/:stufe/:thema', requireLogin, (req, res) => {
-  const ctx = topicContext(req, res); if (!ctx) return;
-  const visible = new Map(lessonsFor(req.user).map(l => [l.slug, l]));
-  const pick = slugs => slugs.map(s => visible.get(s)).filter(Boolean);
-  const lessonDone = new Set(q.progressOf.all(req.user.id).map(p => p.slug));
-  res.send(pviews.topicUnderstandPage({ user: req.user, ...ctx, lessons: pick(ctx.topic.interaktiv), extras: pick(ctx.topic.vertiefung), lessonDone }));
-});
-
-app.get('/physik/:stufe/:thema/ueben', requireLogin, (req, res) => {
-  const ctx = topicContext(req, res); if (!ctx) return;
-  const stats = new Map(q.attemptStatsOf.all(req.user.id, ctx.topic.id).map(r => [r.exercise_id, r]));
-  res.send(pviews.topicPracticePage({ user: req.user, ...ctx, solved: ctx.sets.solved, stats }));
-});
 
 function topicStatus(userId, topicId) {
   const sets = progressSets(userId);
@@ -329,18 +281,21 @@ app.get('/admin', requireStaff, (req, res) => {
       progress.get(p.user_id).set(p.slug, p.done_at);
     }
   }
-  let physikHtml = '';
+  let fachHtml = '';
   if (selected) {
     const solvedBy = new Map(), understoodBy = new Map();
     const add = (m, k, v) => { if (!m.has(k)) m.set(k, new Set()); m.get(k).add(v); };
     for (const r of q.solvedOfClass.all(selected)) add(solvedBy, r.user_id, r.exercise_id);
     for (const r of q.understoodOfClass.all(selected)) add(understoodBy, r.user_id, r.topic_id);
-    physikHtml = pviews.physicsMatrix({ grade: getGrade(gradeOf(selected)), students, solvedBy, understoodBy });
+    fachHtml = visibleFaecher().map(fach => {
+      const grade = getGrade(fach, gradeOf(selected));
+      return grade ? fviews.progressMatrix({ fach, grade, students, solvedBy, understoodBy }) : '';
+    }).join('') || '<p class="muted small">Zu dieser Klasse gibt es keine passende Klassenstufe mit Inhalten.</p>';
   }
   const isAdmin = req.user.role === 'admin';
   const notice = req.session.notice; delete req.session.notice;
   res.send(views.adminPage({
-    user: req.user, lessons, classes, selected, students, progress, notice, physikHtml,
+    user: req.user, lessons, classes, selected, students, progress, notice, fachHtml,
     roster: isAdmin ? q.allRoster.all() : [], users: isAdmin ? q.allUsers.all() : [],
   }));
 });
@@ -356,12 +311,57 @@ app.post('/admin/schuelerliste', requireAdmin, (req, res) => {
   res.redirect('/admin');
 });
 
+// ---------------------------------------------------------------- Fach-Seiten: /<fach>, /<fach>/<stufe>, /<fach>/<stufe>/<thema>[/ueben]
+// Stehen am Ende, damit feste Adressen (/admin, /lektion, …) Vorrang haben.
+
+const fachOf = (req, res, next) => {
+  req.fach = getFach(req.params.fach);
+  return req.fach ? next() : next('route');
+};
+
+app.get('/:fach', fachOf, requireLogin, (req, res) => {
+  res.send(fviews.gradePickerPage({ user: req.user, fach: req.fach, grades: visibleGrades(req.fach), own: gradeOf(req.user.klasse), sets: progressSets(req.user.id) }));
+});
+
+app.get('/:fach/:stufe', fachOf, requireLogin, (req, res) => {
+  const grade = getGrade(req.fach, req.params.stufe);
+  if (!grade) return notFound(req, res, 'Für diese Klassenstufe gibt es keine Inhalte.');
+  res.send(fviews.gradePage({ user: req.user, fach: req.fach, grade, grades: visibleGrades(req.fach), sets: progressSets(req.user.id) }));
+});
+
+/** Gemeinsame Daten für beide Themen-Seiten. */
+function topicContext(req, res) {
+  const grade = getGrade(req.fach, req.params.stufe);
+  const topic = content().topicById.get(req.params.thema);
+  if (!grade || !topic || topic.fach !== req.fach.id || topic.stufe !== grade.stufe) { notFound(req, res, 'Dieses Thema gibt es nicht.'); return null; }
+  const sets = progressSets(req.user.id);
+  const all = topicsOfGrade(grade);
+  return { fach: req.fach, grade, topic, sets, progress: topicProgress(topic, sets.solved, sets.understood), nextTopic: all[all.indexOf(topic) + 1] || null };
+}
+
+app.get('/:fach/:stufe/:thema', fachOf, requireLogin, (req, res) => {
+  const ctx = topicContext(req, res); if (!ctx) return;
+  const visible = new Map(lessonsFor(req.user).map(l => [l.slug, l]));
+  const pick = slugs => slugs.map(s => visible.get(s)).filter(Boolean);
+  const lessonDone = new Set(q.progressOf.all(req.user.id).map(p => p.slug));
+  res.send(fviews.topicUnderstandPage({ user: req.user, ...ctx, lessons: pick(ctx.topic.interaktiv), extras: pick(ctx.topic.vertiefung), lessonDone }));
+});
+
+app.get('/:fach/:stufe/:thema/ueben', fachOf, requireLogin, (req, res) => {
+  const ctx = topicContext(req, res); if (!ctx) return;
+  const stats = new Map(q.attemptStatsOf.all(req.user.id, ctx.topic.id).map(r => [r.exercise_id, r]));
+  res.send(fviews.topicPracticePage({ user: req.user, ...ctx, solved: ctx.sets.solved, stats }));
+});
+
 app.use((req, res) => res.status(404).send(views.messagePage({ title: 'Nicht gefunden', text: 'Diese Seite gibt es nicht.', user: req.user })));
 
 if (!fs.existsSync(config.lessonsDir)) console.warn(`⚠  Lektionsordner ${config.lessonsDir} fehlt.`);
 {
   const c = content();
-  const n = c.stufen.reduce((a, g) => a + topicsOfGrade(g).length, 0);
-  console.log(`✔  Physik: ${visibleGrades().map(g => g.stufe).join(', ') || 'keine'} Klassenstufen, ${n} Themen, ${c.exerciseById.size} Übungen${c.errors.length ? `, ${c.errors.length} Fehler (siehe oben)` : ''}`);
+  for (const f of c.faecher) {
+    const n = f.stufen.reduce((a, g) => a + topicsOfGrade(g).length, 0);
+    console.log(`✔  ${f.fach}: Klasse ${visibleGrades(f).map(g => g.stufe).join(', ') || '–'}, ${n} Themen`);
+  }
+  console.log(`✔  Zusammen ${c.topicById.size} Themen, ${c.exerciseById.size} Übungen${c.errors.length ? `, ${c.errors.length} Fehler (siehe oben)` : ''}`);
 }
 app.listen(config.port, () => console.log(`✔  ${config.siteName} läuft auf Port ${config.port} (${config.baseUrl})`));

@@ -11,7 +11,12 @@ Lerneinheiten sie erledigt haben, und Lehrkräfte sehen den Fortschritt ihrer Kl
 - **Fortschritt:** pro Schüler/in und Lerneinheit, Übersicht als Tabelle pro Klasse.
 - **Physik nach dem Schulcurriculum (SchiC):** Klassenstufe wählen → Themenfeld → Thema mit
   **Verstehen** (Erklärung, Formeln, interaktive Simulation) und **Üben** (Aufgaben mit Feedback,
-  Lösungsweg und Fortschritt). Klasse 9 ist komplett, 7, 8 und 10 sind als Gerüst angelegt.
+  Lösungsweg und Fortschritt). Klassen 7 bis 10 sind komplett: 12 Themenfelder laut SchiC, 45 Themen,
+  343 Übungen und 17 interaktive Erklärungen.
+- **TIMP (Wahlpflichtfach) nach dem Schulcurriculum:** Klasse 8 (Druck, Logische Schaltungen,
+  Leitfähigkeit) und Klasse 9 (Informatik/Programmieren, Halbleiter): 24 Themen, 168 Übungen und
+  11 interaktive Erklärungen, z. B. Logiklabor, Programmierlabor, Dioden- und Solarzellen-Labor.
+- **Weitere Fächer** lassen sich ohne Programmieren ergänzen (siehe Abschnitt 6).
 
 > **Schnellstart:** Wie du das Projekt auf GitHub hochlädst und ohne IServ-Login testest,
 > steht in [ANLEITUNG-GITHUB.md](ANLEITUNG-GITHUB.md).
@@ -201,9 +206,16 @@ Die Diodenschaltung meldet sich z. B. als erledigt, sobald alle vier Schalterste
 
 ---
 
-## 6. Physik-Inhalte (Klassenstufen, Themen, Übungen)
+## 6. Fächer und Inhalte (Klassenstufen, Themen, Übungen)
 
-Die Inhalte liegen als JSON-Dateien in `content/physik/` und folgen dem SchiC:
+Jedes Fach ist ein Ordner unter `content/` mit einer `stufen.json`, z. B. `content/physik/` und
+`content/timp/`. Der Ordnername ist die Adresse (`content/timp` → `/timp`) und erscheint
+automatisch im Menü und auf der Startseite. **Neues Fach:** Ordner anlegen, `stufen.json` mit
+`"fach"` (Name), `"kurz"` (Menü), `"beschreibung"`, `"reihenfolge"` und den Klassenstufen schreiben,
+dann Themenfelder und Themen wie unten. Themen- und Übungs-IDs müssen über **alle** Fächer
+eindeutig sein (z. B. Präfix `timp-`), weil der Fortschritt über sie gespeichert wird.
+
+Aufbau am Beispiel Physik:
 
 ```
 content/physik/
@@ -217,6 +229,10 @@ content/physik/
 Eine Klassenstufe erscheint automatisch, sobald es für sie einen Ordner mit mindestens einem
 Themenfeld gibt (deshalb sind 5 und 6 ausgeblendet). Ein Themenfeld ohne Themen wird als
 „In Vorbereitung“ mit den SchiC-Inhalten angezeigt.
+
+In Erklärtexten kannst du Aufzählungen mit Zeilen schreiben, die mit `- ` beginnen. Programmcode
+steht im Text in doppelten Backticks (` ``x = 1`` `), ganze Programme als eigener Absatz zwischen
+zwei Zeilen mit ```` ``` ```` (ohne Leerzeilen im Programm).
 
 **Ein Thema** (`<name>.json`) enthält:
 
@@ -252,7 +268,7 @@ Eine Übung zählt als gelöst, wenn sie richtig beantwortet wurde, bevor die L�
 `validate`, `render`, `check` und `solution` ergänzen. Formularfelder werden vom Browser
 automatisch eingesammelt (`public/uebung.js`).
 
-**Interaktive Erklärungen** sind normale Lerneinheiten in `lessons/` (z. B. `k9-ohmsches-gesetz`).
+**Interaktive Erklärungen** sind normale Lerneinheiten in `lessons/` (z. B. `k9-ohmsches-gesetz`, `k7-stromkreis`, `k10-pendel`).
 Mit `public/lesson-kit.css` und `public/lesson-kit.js` bekommen sie das gemeinsame Aussehen,
 „Entdecke selbst“-Aufgaben und passen ihre Höhe automatisch an.
 
@@ -291,14 +307,14 @@ src/db.js          SQLite-Datenbank (data/lernseite.db)
 src/iserv.js       IServ-Login (OAuth 2 mit PKCE)
 src/lessons.js     liest die Ordner in lessons/
 src/views.js       HTML der Seiten
-src/physik.js      lädt content/physik, Klassenstufen, Fortschritt
+src/faecher.js     lädt alle Fächer aus content/, Klassenstufen, Fortschritt
 src/exercises.js   Übungs-Engine (Aufgabentypen, Bewertung)
-src/views-physik.js  Seiten des Physik-Bereichs
+src/views-fach.js  Seiten eines Fachs (Klassenstufe, Themenfelder, Verstehen, Üben)
 src/markup.js      Formel-Auszeichnung für Texte
 public/style.css   Aussehen (hell/dunkel automatisch)
 public/uebung.js   Übungen im Browser (Abschicken, Feedback)
 public/lesson-kit.*  gemeinsame Bausteine der interaktiven Erklärungen
-content/physik/    Physik-Inhalte nach SchiC
+content/<fach>/    Inhalte je Fach nach SchiC (physik, timp)
 test/              automatische Tests (npm test)
 ```
 
@@ -307,10 +323,10 @@ test/              automatische Tests (npm test)
 | `/` | Login bzw. Übersicht der Lerneinheiten |
 | `/lektion/<name>` | Lerneinheit mit „Erledigt“-Knopf |
 | `/inhalt/<name>/…` | Dateien der Lerneinheit (nur angemeldet) |
-| `/admin` | Fortschritt pro Klasse (Physik und Lerneinheiten), Schülerliste, Konten |
-| `/physik` | Klassenstufe wählen |
-| `/physik/<stufe>` | Themenfelder und Themen einer Klassenstufe |
-| `/physik/<stufe>/<thema>` | Verstehen; `…/ueben` = Übungen |
+| `/admin` | Fortschritt pro Klasse (alle Fächer und Lerneinheiten), Schülerliste, Konten |
+| `/<fach>` | Klassenstufe wählen, z. B. `/physik`, `/timp` |
+| `/<fach>/<stufe>` | Themenfelder und Themen einer Klassenstufe |
+| `/<fach>/<stufe>/<thema>` | Verstehen; `…/ueben` = Übungen |
 | `POST /api/uebung/<id>` | `{ "antwort": {…} }` → Bewertung; `/loesung`, `/selbst` |
 | `POST /api/verstanden/<thema>` | „Ich habe es verstanden“ |
 | `/api/ich` | eigene Daten und Fortschritt als JSON |

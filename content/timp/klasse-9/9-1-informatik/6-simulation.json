@@ -1,0 +1,120 @@
+{
+  "id": "timp-k9-simulation",
+  "titel": "Bewegung und Schwerkraft programmieren",
+  "kurz": "Wie ein Programm Bewegungen in kleinen Zeitschritten berechnet: gleichförmige Bewegung, freier Fall und der Sprung einer Spielfigur.",
+  "reihenfolge": 6,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Eine gleichförmige Bewegung in Zeitschritten programmieren (``ändere y um v · Δt``)" },
+    { "id": "lz2", "niveau": "H", "text": "Den freien Fall mit den Regeln `v_{neu} = v + g · Δt` und `y_{neu} = y + v · Δt` in einem Programm simulieren" },
+    { "id": "lz3", "niveau": "H", "text": "Einen Sprung in einem Spiel mit Startgeschwindigkeit und Schwerkraft modellieren" },
+    { "id": "lz4", "niveau": "H", "text": "Den Einfluss des Zeitschritts Δt auf die Genauigkeit erklären und die Simulation mit der Formel `s = \\frac{1}{2} · g · t^{2}` vergleichen" }
+  ],
+  "verstehen": {
+    "einstieg": "In einem Jump-and-Run-Spiel springt die Figur hoch, wird langsamer und fällt wieder herunter. Niemand hat diese Kurve gezeichnet. Wie rechnet das Spiel sie aus?",
+    "abschnitte": [
+      {
+        "titel": "Bewegung in Zeitschritten",
+        "text": "Ein Programm kann eine Bewegung nicht „fließend“ berechnen. Es rechnet in kleinen **Zeitschritten** `Δt` (sprich: Delta t), z. B. 0,1 s. In jedem Schritt gilt:\n\n**neuer Ort = alter Ort + Geschwindigkeit · Δt**\n\nBei einer **gleichförmigen Bewegung** bleibt die Geschwindigkeit gleich:\n\n```\nsetze x auf 0\nsetze v auf 3\nsetze Δt auf 0,5\nwiederhole 8-mal\n  ändere x um v · Δt\nsage x\n```\n\nIn jedem Schritt kommen 3 m/s · 0,5 s = 1,5 m dazu. Nach 8 Schritten, also 4 s, ist ``x = 12``. Das stimmt genau mit `s = v · t = 3 m/s · 4 s = 12 m` überein.\n\nIn der Fallsimulation schreiben wir wie hier das Malzeichen als ``·`` und Kommazahlen mit Komma. In Scratch und im Programmierlabor steht dafür ``*`` und ein Punkt. Gemeint ist dasselbe."
+      },
+      {
+        "titel": "Der freie Fall",
+        "text": "Beim Fall ändert sich auch die Geschwindigkeit: Die Schwerkraft macht den Ball in jeder Sekunde um 9,81 m/s schneller (`g = 9,81 m/s^{2}`). Im Programm gibt es deshalb zwei Regeln pro Zeitschritt:\n\n- erst die Geschwindigkeit: `v_{neu} = v + g · Δt`\n- dann der Ort: `y_{neu} = y + v · Δt`\n\nWeil ``y`` die **Höhe** ist und nach oben positiv zählt, zieht die Schwerkraft nach unten. Im Programm steht deshalb −9,81:\n\n```\nsetze Δt auf 0,1\nsetze t auf 0\nsetze y auf 20\nsetze v auf 0\nwiederhole bis y < 0\n  ändere v um −9,81 · Δt\n  ändere y um v · Δt\n  ändere t um Δt\nsage t\n```\n\nDas Programm sagt die Landezeit: etwa 2,0 s. ``v`` wird dabei immer stärker negativ, der Ball fällt immer schneller."
+      },
+      {
+        "titel": "Ein Sprung im Spiel",
+        "text": "Ein Sprung ist ein Wurf nach oben: Die Figur startet mit einer **positiven** Geschwindigkeit. Die Schwerkraft verringert sie in jedem Schritt, bis sie 0 ist. Das ist der höchste Punkt. Danach wird sie negativ, und die Figur fällt.\n\nIn Spielen rechnet man oft nicht in Metern und Sekunden, sondern in Pixeln pro Bild (ein Bild = ein Zeitschritt):\n\n```\nsetze y auf 0\nsetze vy auf 10\nwiederhole bis y < 0\n  ändere y um vy\n  ändere vy um -1\n```\n\nDie Zahl −1 spielt hier die Rolle der Schwerkraft. Mit einer größeren Startgeschwindigkeit springt die Figur höher, mit einer stärkeren „Schwerkraft“ wird der Sprung flacher und kürzer."
+      },
+      {
+        "titel": "Wie genau ist die Simulation?",
+        "text": "Das Programm tut so, als wäre die Geschwindigkeit während eines ganzen Zeitschritts gleich. In Wirklichkeit ändert sie sich ständig. Dadurch entsteht ein kleiner Fehler.\n\nFür den freien Fall aus der Ruhe kennt die Physik die exakte Formel `s = \\frac{1}{2} · g · t^{2}`. Nach 1 s ist der Ball 4,905 m gefallen. Die Simulation liefert:\n\n- mit `Δt = 0,1 s`: 5,40 m (etwa 10 % zu viel)\n- mit `Δt = 0,01 s`: 4,95 m (etwa 1 % zu viel)\n\nDer Fehler ist **systematisch**: Er geht immer in dieselbe Richtung. Je **kleiner** `Δt`, desto genauer wird die Simulation. Dafür braucht der Computer mehr Schritte, also mehr Rechenzeit."
+      }
+    ],
+    "formeln": [
+      { "formel": "v_{neu} = v + g · Δt", "bedeutung": "neue Geschwindigkeit nach einem Zeitschritt `Δt`; im Programm mit Höhe nach oben ist die Beschleunigung −9,81 m/s²" },
+      { "formel": "y_{neu} = y + v · Δt", "bedeutung": "neuer Ort (Höhe) nach einem Zeitschritt" },
+      { "formel": "s = \\frac{1}{2} · g · t^{2}", "bedeutung": "exakte Fallstrecke beim freien Fall aus der Ruhe, `g = 9,81 m/s^{2}`" }
+    ],
+    "merksatz": "Ein Programm simuliert Bewegungen in kleinen Zeitschritten `Δt`: Zuerst wird die Geschwindigkeit geändert (``ändere v um −9,81 · Δt``), dann der Ort (``ändere y um v · Δt``). Je kleiner `Δt`, desto genauer, aber desto mehr Rechenschritte.",
+    "alltag": "Wettervorhersagen, Crashtests im Computer und Raumfahrtmissionen beruhen auf demselben Prinzip: Der Computer rechnet die Zukunft in vielen kleinen Zeitschritten voraus."
+  },
+  "interaktiv": ["timp-fallsimulation"],
+  "vertiefung": ["timp-programmierlabor"],
+  "uebungen": [
+    {
+      "id": "timp-sim-01", "typ": "zahl", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Eine Figur bewegt sich gleichförmig. Welchen Wert sagt das Programm? (``x`` in m, ``v`` in m/s, ``Δt`` in s)\n\n```\nsetze x auf 0\nsetze v auf 3\nsetze Δt auf 0,5\nwiederhole 8-mal\n  ändere x um v · Δt\nsage x\n```",
+      "gesucht": "Ausgabe", "gesuchtSymbol": "x",
+      "loesung": 12, "einheit": "m", "toleranz": 0,
+      "rechenweg": ["Pro Schritt: `v · Δt = 3 m/s · 0,5 s = 1,5 m`", "8 Schritte: `8 · 1,5 m = 12 m`", "Kontrolle: `t = 8 · 0,5 s = 4 s`, `s = v · t = 3 m/s · 4 s = 12 m`"],
+      "erklaerung": "Bei gleichförmiger Bewegung kommt in jedem Zeitschritt dieselbe Strecke dazu. Hier ist die Simulation exakt."
+    },
+    {
+      "id": "timp-sim-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Im Programm für den freien Fall stehen in der Schleife diese Zeilen:\n\n```\nändere v um −9,81 · Δt\nändere y um v · Δt\nändere t um Δt\n```\n\nWelche Zeile sorgt dafür, dass der Ball **immer schneller** wird?",
+      "optionen": [
+        { "text": "``ändere v um −9,81 · Δt``", "richtig": true },
+        { "text": "``ändere y um v · Δt``", "feedback": "Diese Zeile ändert den Ort mit der aktuellen Geschwindigkeit. Die Geschwindigkeit selbst ändert sie nicht." },
+        { "text": "``ändere t um Δt``", "feedback": "Diese Zeile zählt nur die Zeit mit." }
+      ],
+      "erklaerung": "Die Schwerkraft ändert die Geschwindigkeit: In jedem Schritt kommen 9,81 m/s² · Δt nach unten dazu. Deshalb wird ``v`` immer stärker negativ und der Ball immer schneller."
+    },
+    {
+      "id": "timp-sim-03", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Welchen Wert sagt das Programm? (``v`` in m/s)\n\n```\nsetze Δt auf 0,5\nsetze y auf 50\nsetze v auf 0\nwiederhole 4-mal\n  ändere v um −9,81 · Δt\n  ändere y um v · Δt\nsage v\n```",
+      "gesucht": "Ausgabe", "gesuchtSymbol": "v",
+      "loesung": -19.62, "einheit": "m/s", "toleranz": 0.001,
+      "rechenweg": ["Pro Schritt ändert sich ``v`` um `−9,81 · 0,5 = −4,905`", "Nach 4 Schritten: `v = 4 · (−4,905) = −19,62`", "Das Minus bedeutet: Der Ball bewegt sich nach unten."],
+      "hinweis": "Achte auf das Vorzeichen: Nach oben ist positiv.",
+      "erklaerung": "Nach 4 · 0,5 s = 2 s hat der Ball die Geschwindigkeit `g · t = 9,81 m/s² · 2 s = 19,62 m/s` nach unten. Die Geschwindigkeit berechnet das Programm genau richtig."
+    },
+    {
+      "id": "timp-sim-04", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Dasselbe Programm wie eben, aber am Ende steht ``sage y``. Welche Höhe sagt das Programm? Runde auf zwei Nachkommastellen und vergleiche danach mit der Formel.\n\n```\nsetze Δt auf 0,5\nsetze y auf 50\nsetze v auf 0\nwiederhole 4-mal\n  ändere v um −9,81 · Δt\n  ändere y um v · Δt\nsage y\n```",
+      "gesucht": "Höhe nach 4 Schritten", "gesuchtSymbol": "y",
+      "loesung": 25.475, "einheit": "m", "toleranz": 0.002,
+      "rechenweg": [
+        "Die Geschwindigkeiten nach jedem Schritt: −4,905; −9,81; −14,715; −19,62 (in m/s)",
+        "Jede wird mit `Δt = 0,5 s` malgenommen: −2,4525; −4,905; −7,3575; −9,81 (in m)",
+        "`y = 50 − 2,4525 − 4,905 − 7,3575 − 9,81 = 25,475`",
+        "Formel: `s = \\frac{1}{2} · 9,81 m/s^{2} · (2 s)^{2} = 19,62 m`, also exakt `y = 30,38 m`",
+        "Die Simulation lässt den Ball 4,905 m zu weit fallen."
+      ],
+      "erklaerung": "Das Programm rechnet in jedem Schritt mit der Geschwindigkeit vom **Ende** des Schritts. Der simulierte Ball ist deshalb immer etwas zu schnell. Mit großem `Δt = 0,5 s` ist dieser systematische Fehler groß. Mit kleinerem `Δt` wird er kleiner."
+    },
+    {
+      "id": "timp-sim-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Eine Fallsimulation läuft mit `Δt = 0,1 s`. Was passiert, wenn du `Δt` auf 0,05 s halbierst und wieder 2 s simulierst?",
+      "optionen": [
+        { "text": "Das Ergebnis liegt näher an der exakten Formel, aber das Programm braucht doppelt so viele Schritte.", "richtig": true },
+        { "text": "Das Ergebnis wird ungenauer, weil mehr gerechnet wird.", "feedback": "Mehr kleine Schritte bilden die sich ständig ändernde Geschwindigkeit besser nach. Die Simulation wird genauer." },
+        { "text": "Der Ball fällt in der Simulation nur noch halb so weit.", "feedback": "Die Fallstrecke ändert sich nur wenig, sie wird etwas genauer. Halb so weit wäre physikalisch falsch." },
+        { "text": "Das Ergebnis ist dann exakt gleich der Formel.", "feedback": "Der Fehler wird kleiner, aber er verschwindet nie ganz, solange `Δt` größer als 0 ist." }
+      ],
+      "erklaerung": "Je kleiner der Zeitschritt, desto kleiner der systematische Fehler. Für 2 s braucht man mit 0,1 s genau 20 Schritte, mit 0,05 s genau 40. Man muss also zwischen Genauigkeit und Rechenaufwand abwägen."
+    },
+    {
+      "id": "timp-sim-06", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Eine Spielfigur springt. Gerechnet wird in Pixeln pro Bild. Welche größte Höhe sagt das Programm?\n\n```\nsetze y auf 0\nsetze vy auf 12\nsetze höchste auf 0\nwiederhole bis y < 0\n  ändere y um vy\n  ändere vy um -1\n  falls y > höchste dann\n    setze höchste auf y\nsage höchste\n```",
+      "gesucht": "größte Höhe", "gesuchtSymbol": "höchste",
+      "loesung": 78, "einheit": "Pixel", "toleranz": 0,
+      "rechenweg": [
+        "``y`` wächst nacheinander um 12, 11, 10, …, 1, 0.",
+        "Danach wird ``vy`` negativ und ``y`` nimmt wieder ab.",
+        "Größte Höhe: `12 + 11 + 10 + … + 1 = 78`"
+      ],
+      "hinweis": "Schreibe auf, um wie viel ``y`` in jedem Durchlauf wächst. Wann wird ``vy`` negativ?",
+      "erklaerung": "Die Startgeschwindigkeit 12 nimmt in jedem Bild um 1 ab. Solange sie positiv ist, steigt die Figur. Bei ``vy = 0`` ist der höchste Punkt erreicht."
+    },
+    {
+      "id": "timp-sim-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Erkläre mithilfe der Variablen ``y`` (Höhe) und ``vy`` (Geschwindigkeit nach oben), warum die Spielfigur im Sprung-Programm erst langsamer wird, dann umkehrt und wieder herunterfällt.\n\n```\nsetze y auf 0\nsetze vy auf 10\nwiederhole bis y < 0\n  ändere y um vy\n  ändere vy um -1\n```",
+      "stichworte": [
+        { "aspekt": "Die „Schwerkraft“ (−1) verringert ``vy`` in jedem Schritt, die Figur wird langsamer", "woerter": ["kleiner", "verringer", "nimmt ab", "abgebremst", "langsamer", "um 1"] },
+        { "aspekt": "Am höchsten Punkt ist ``vy`` null", "woerter": ["null", "hoechsten punkt", "hoechster punkt", "umkehr", "stillstand"] },
+        { "aspekt": "Danach ist ``vy`` negativ, ``y`` nimmt ab, die Figur fällt", "woerter": ["negativ", "nach unten", "faellt", "sinkt"] }
+      ],
+      "musterloesung": "Am Anfang ist vy = 10, die Figur steigt in jedem Bild um vy nach oben. In jedem Durchlauf wird vy aber um 1 kleiner, das ist die Wirkung der Schwerkraft. Deshalb steigt die Figur immer langsamer. Wenn vy null ist, ist der höchste Punkt erreicht. Danach ist vy negativ: y nimmt in jedem Schritt ab und die Figur fällt immer schneller nach unten, bis y kleiner als 0 ist.",
+      "erklaerung": "Genau so funktioniert auch ein echter Wurf nach oben: Die Schwerkraft verringert die Geschwindigkeit gleichmäßig, bis sie die Richtung wechselt."
+    }
+  ]
+}

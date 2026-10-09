@@ -1,0 +1,13 @@
+{
+  "nummer": "8.3",
+  "reihenfolge": 3,
+  "titel": "Leitfähigkeit",
+  "beschreibung": "Messen im Stromkreis, Widerstandsgesetz, Leitfähigkeitssensor und Wasserproben, Umweltbelastungen.",
+  "inhalte": [
+    "Messungen physikalischer Größen im Stromkreis",
+    "Widerstandsgesetz",
+    "Eigenschaften und Bau eines Leitfähigkeitssensors, Untersuchungen von Wasserproben",
+    "Gruppenarbeit zu Umweltbelastungen: Ozon, Treibhauseffekt, Feinstaub, saurer Regen, fossile Brennstoffe"
+  ],
+  "erweiterung": "Gewässerproben untersuchen und Schlussfolgerungen zur Umweltbelastung ziehen"
+}

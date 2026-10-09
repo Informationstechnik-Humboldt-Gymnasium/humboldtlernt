@@ -3,10 +3,11 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { config } from '../src/config.js';
-import { loadContent, gradeOf, topicProgress } from '../src/physik.js';
+import { loadAll, gradeOf, topicProgress } from '../src/faecher.js';
 import { checkAnswer, TYPES } from '../src/exercises.js';
 
-const c = loadContent();
+const c = loadAll();
+const physik = c.byId.get('physik');
 
 test('Inhalte laden ohne Fehler', () => {
   assert.deepEqual(c.errors, []);
@@ -15,18 +16,38 @@ test('Inhalte laden ohne Fehler', () => {
 });
 
 test('Klassen 5 und 6 sind ohne Inhalte und damit ausgeblendet, 7 bis 10 sind sichtbar', () => {
-  const visible = c.stufen.filter(s => s.themenfelder.length).map(s => s.stufe);
+  const visible = physik.stufen.filter(s => s.themenfelder.length).map(s => s.stufe);
   assert.deepEqual(visible, [7, 8, 9, 10]);
 });
 
-test('Jedes Thema der Klasse 9 hat Lernziele, alle Schwierigkeitsgrade und gültige Verweise', () => {
-  const k9 = c.stufen.find(s => s.stufe === 9);
-  assert.equal(k9.themenfelder.length, 3);
-  for (const tf of k9.themenfelder) for (const t of tf.topics) {
-    assert.ok(t.lernziele.length >= 3, t.id);
-    for (const d of ['leicht', 'mittel', 'schwer']) assert.ok(t.uebungen.some(e => e.schwierigkeit === d), `${t.id}: ${d}`);
-    for (const slug of [...t.interaktiv, ...t.vertiefung]) assert.ok(fs.existsSync(path.join(config.lessonsDir, slug, 'index.html')), `${t.id}: ${slug}`);
-  }
+const SCHIC = {
+  physik: { 7: ['3.1', '3.4', '3.5'], 8: ['3.2', '3.3'], 9: ['3.6', '3.9', '3.10'], 10: ['3.7', '3.8', '3.11', '3.12'] },
+  timp: { 8: ['8.1', '8.2', '8.3'], 9: ['9.1', '9.2'] },
+};
+
+for (const [fachId, plan] of Object.entries(SCHIC)) for (const [stufe, felder] of Object.entries(plan)) {
+  test(`${fachId} Klasse ${stufe}: SchiC-Themenfelder, Lernziele, alle Schwierigkeitsgrade, abgedeckte Lernziele, gültige Verweise`, () => {
+    const fach = c.byId.get(fachId);
+    assert.ok(fach, `Fach ${fachId} fehlt`);
+    const st = fach.stufen.find(s => s.stufe === Number(stufe));
+    assert.deepEqual(st.themenfelder.map(tf => tf.nummer), felder);
+    for (const tf of st.themenfelder) {
+      assert.ok(tf.topics.length >= 2, `${stufe}: Themenfeld mit zu wenigen Themen`);
+      for (const t of tf.topics) {
+        assert.ok(t.lernziele.length >= 3, t.id);
+        assert.ok(t.uebungen.length >= 6, `${t.id}: zu wenige Übungen`);
+        for (const d of ['leicht', 'mittel', 'schwer']) assert.ok(t.uebungen.some(e => e.schwierigkeit === d), `${t.id}: ${d}`);
+        for (const lz of t.lernziele) assert.ok(t.uebungen.some(e => e.lernziel === lz.id), `${t.id}: Lernziel ${lz.id} ohne Übung`);
+        for (const slug of [...t.interaktiv, ...t.vertiefung]) assert.ok(fs.existsSync(path.join(config.lessonsDir, slug, 'index.html')), `${t.id}: ${slug}`);
+      }
+    }
+  });
+}
+
+test('Formeln enthalten keine nicht unterstützten LaTeX-Befehle', () => {
+  const raw = JSON.stringify([...c.topicById.values()]);
+  const cmds = new Set((raw.match(/\\\\[a-zA-Z]+/g) || []).map(m => m.replace(/\\/g, '')));
+  for (const cmd of cmds) assert.ok(['frac', 'sqrt'].includes(cmd), `Unbekannter Befehl \\${cmd}`);
 });
 
 test('Die hinterlegte Lösung jeder Übung wird von der Engine als richtig erkannt', () => {

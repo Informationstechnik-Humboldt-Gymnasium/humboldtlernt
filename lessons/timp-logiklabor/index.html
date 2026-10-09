@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Logiklabor</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<style>
+  #svg .wire.on { stroke: var(--accent); stroke-width: 3.6; }
+  .contact { fill: var(--card); stroke: var(--line); stroke-width: 2; }
+  .dot { fill: var(--line); }
+  .bulb { fill: var(--card); stroke: var(--line); stroke-width: 2.2; }
+  .glow { fill: var(--lamp); }
+  .pole { font-size: 20px; font-weight: 700; }
+  .pole.p { fill: var(--pos); } .pole.n { fill: var(--neg); }
+  #svg .lbl { font-size: 18px; }
+  #svg .val { font-size: 14px; }
+  .hit { fill: var(--card); fill-opacity: 0; cursor: pointer; pointer-events: all; }
+  .clickable:focus { outline: none; }
+  .clickable:focus-visible .hit { stroke: var(--accent); stroke-width: 2; stroke-opacity: 1; }
+  .group-lbl { font-size: .85rem; font-weight: 650; margin: 0 0 6px; }
+  .modes button, .inputs button { min-width: 64px; }
+  #status { font-weight: 650; min-height: 1.5em; }
+  .tt-wrap { overflow-x: auto; margin-top: 8px; }
+  table.tt { border-collapse: collapse; font-variant-numeric: tabular-nums; font-size: .95rem; min-width: 220px; }
+  table.tt th, table.tt td { border: 1px solid var(--border); padding: 4px 12px; text-align: center; }
+  table.tt th { background: var(--bg); font-weight: 650; }
+  table.tt th.out, table.tt td.out { border-left: 3px solid var(--line); }
+  table.tt tr.cur td { background: var(--soft-accent); font-weight: 700; }
+  table.tt td.unk { color: var(--muted); }
+  table.tt td.one.out { color: var(--ok); font-weight: 700; }
+  table.tt td.bad { background: var(--warn-soft); color: var(--warn); }
+  .expr { font-weight: 700; font-size: 1.02rem; }
+  .readout b.expr-b { font-size: 1rem; }
+  #riddleMsg { font-size: .9rem; min-height: 1.3em; }
+  #riddleMsg.ok { color: var(--ok); font-weight: 650; }
+  #riddleMsg.no { color: var(--warn); }
+</style>
+</head>
+<body>
+<h1>Logiklabor</h1>
+<p class="muted small">Wähle eine Schaltung und schalte die Schalter mit den Knöpfen oder direkt im Schaltplan. Jede neue Schalterstellung wird in die Wahrheitswerttabelle eingetragen. Unter „Eigene“ kombinierst du drei Schalter und löst Rätsel.</p>
+
+<div class="lk-grid">
+  <div>
+    <div class="lk-card">
+      <svg id="svg" viewBox="0 0 520 290" role="img" aria-labelledby="svgTitle">
+        <title id="svgTitle">Schaltplan</title>
+        <g id="g"></g>
+      </svg>
+      <p id="status" class="small" aria-live="polite"></p>
+      <p class="small">Logische Aussage: <span class="expr" id="expr"></span></p>
+      <p class="small muted" id="codeNote"></p>
+    </div>
+    <div class="lk-card">
+      <h2>Wahrheitswerttabelle <span class="small muted" id="ttCount"></span></h2>
+      <div class="tt-wrap"><table class="tt" id="tt" aria-describedby="ttCount"></table></div>
+      <p class="small muted">0 bedeutet: aus bzw. nicht betätigt. 1 bedeutet: an bzw. betätigt. Die markierte Zeile ist die aktuelle Schalterstellung.</p>
+      <p class="small muted">Vereinfachung: Schalter und Leitungen sind ideal, die Lampe leuchtet, sobald ein geschlossener Stromkreis besteht. Im Unterricht nur mit Batterie oder Schul-Netzgerät aus dem Schülerübungskasten experimentieren.</p>
+    </div>
+  </div>
+
+  <div>
+    <div class="lk-card">
+      <h2>Einstellungen</h2>
+      <p class="group-lbl" id="modeLbl">Schaltung</p>
+      <div class="row modes" role="group" aria-labelledby="modeLbl">
+        <button type="button" data-mode="und" aria-pressed="true">UND</button>
+        <button type="button" data-mode="oder" aria-pressed="false">ODER</button>
+        <button type="button" data-mode="nicht" aria-pressed="false">NICHT</button>
+        <button type="button" data-mode="wechsel" aria-pressed="false">Wechsel</button>
+        <button type="button" data-mode="eigen" aria-pressed="false">Eigene</button>
+      </div>
+      <p class="group-lbl" id="inLbl">Schalter betätigen</p>
+      <div class="row inputs" role="group" aria-labelledby="inLbl" id="inputs"></div>
+
+      <div id="wechselBox" hidden>
+        <p class="group-lbl" id="wLbl">Verdrahtung der zwei Verbindungsleitungen</p>
+        <div class="row">
+          <div class="seg" role="group" aria-labelledby="wLbl">
+            <button type="button" id="wStraight" aria-pressed="true">nebeneinander</button>
+            <button type="button" id="wCross" aria-pressed="false">gekreuzt</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="eigenBox" hidden>
+        <p class="group-lbl" id="op1Lbl">A und B verknüpfen</p>
+        <div class="row">
+          <div class="seg" role="group" aria-labelledby="op1Lbl">
+            <button type="button" id="op1And" aria-pressed="true">UND (Reihe)</button>
+            <button type="button" id="op1Or" aria-pressed="false">ODER (parallel)</button>
+          </div>
+        </div>
+        <p class="group-lbl" id="op2Lbl">Mit C verknüpfen</p>
+        <div class="row">
+          <div class="seg" role="group" aria-labelledby="op2Lbl">
+            <button type="button" id="op2And" aria-pressed="false">UND (Reihe)</button>
+            <button type="button" id="op2Or" aria-pressed="true">ODER (parallel)</button>
+          </div>
+        </div>
+        <div class="row"><button type="button" id="ncB" aria-pressed="false">B als Öffner (NICHT B)</button></div>
+        <p class="group-lbl" id="rLbl">Rätsel: Baue die Schaltung zur Tabelle</p>
+        <div class="row">
+          <div class="seg" role="group" aria-labelledby="rLbl">
+            <button type="button" data-riddle="-1" aria-pressed="true">frei</button>
+            <button type="button" data-riddle="0" aria-pressed="false">1</button>
+            <button type="button" data-riddle="1" aria-pressed="false">2</button>
+            <button type="button" data-riddle="2" aria-pressed="false">3</button>
+          </div>
+          <button type="button" class="primary" id="check" hidden>Prüfen</button>
+        </div>
+        <p id="riddleMsg" aria-live="polite"></p>
+      </div>
+
+      <div class="readouts">
+        <div class="readout"><span>Lampe</span><b id="rLamp"></b></div>
+        <div class="readout"><span>Zeilen entdeckt</span><b id="rRows"></b></div>
+      </div>
+    </div>
+
+    <div class="lk-card tasks">
+      <h2>Entdecke selbst <span class="small muted" data-task-count></span></h2>
+      <div class="task" data-goal="tables"><p class="task-q">Fülle die Wahrheitswerttabellen für UND, ODER und NICHT vollständig aus. Probiere dazu alle Schalterstellungen.</p></div>
+      <div class="task">
+        <p class="task-q">ODER-Schaltung mit zwei Schaltern: In wie vielen Zeilen der Tabelle leuchtet die Lampe?</p>
+        <div class="choices">
+          <button type="button" data-fb="Bei einer Zeile wäre es die UND-Schaltung. Schau dir die ODER-Tabelle noch einmal an.">in 1 Zeile</button>
+          <button type="button" data-fb="Wenn beide Schalter offen sind, gibt es keinen geschlossenen Weg.">in allen 4 Zeilen</button>
+          <button type="button" data-ok data-fb="Richtig: Es reicht, wenn einer der beiden Schalter geschlossen ist. Nur bei A = 0 und B = 0 bleibt die Lampe aus.">in 3 Zeilen</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="task" data-goal="wechsel"><p class="task-q">Wechselschaltung: Schalte die Lampe einmal mit S1 und einmal mit S2 an und wieder aus.</p></div>
+      <div class="task">
+        <p class="task-q">Wechselschaltung mit nebeneinander liegenden Verbindungsleitungen: Wann leuchtet die Lampe?</p>
+        <div class="choices">
+          <button type="button" data-fb="Das wäre eine UND-Schaltung. Schau in die Tabelle: Was ist bei S1 = 0 und S2 = 0?">nur wenn beide Schalter oben stehen</button>
+          <button type="button" data-ok data-fb="Genau: Nur wenn beide Schalter dieselbe Leitung wählen, ist der Stromkreis geschlossen. Mit gekreuzten Leitungen ist es genau umgekehrt.">wenn beide Schalter gleich stehen</button>
+          <button type="button" data-fb="Das gilt nur, wenn die Verbindungsleitungen gekreuzt sind. Stelle „nebeneinander“ ein und vergleiche.">wenn die Schalter verschieden stehen</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="task">
+        <p class="task-q">Wie viele Zeilen hat die Wahrheitswerttabelle einer Schaltung mit drei Schaltern?</p>
+        <div class="choices">
+          <button type="button" data-fb="Jeder Schalter hat zwei Stellungen. Mit jedem neuen Schalter verdoppelt sich die Zahl der Zeilen.">6</button>
+          <button type="button" data-ok data-fb="Richtig: 2 · 2 · 2 = 8 Möglichkeiten, von 000 bis 111.">8</button>
+          <button type="button" data-fb="Es sind nicht 3 · 3. Jeder Schalter hat nur zwei Stellungen (0 und 1).">9</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="task" data-goal="raetsel"><p class="task-q">Wähle „Eigene“ und löse alle drei Rätsel: Stelle die Schaltung so ein, dass ihre Tabelle zur Ziel-Spalte passt, und drücke „Prüfen“.</p></div>
+      <div class="all-done">Alles entdeckt! Weiter geht es mit den Übungen.</div>
+    </div>
+  </div>
+</div>
+
+<script src="../../static/lesson-kit.js"></script>
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+  var NS = 'http://www.w3.org/2000/svg';
+  var G = $('g'), svg = $('svg');
+
+  var S = { mode: 'und', inp: { A: 0, B: 0, C: 0, S1: 1, S2: 1 }, cross: false, op1: 'und', op2: 'oder', ncB: false, riddle: -1 };
+  var visited = {};
+  var solved = [false, false, false];
+  var wSeen = { S1on: false, S1off: false, S2on: false, S2off: false };
+
+  var RIDDLES = [
+    function (a, b, c) { return (a && b) || c; },
+    function (a, b, c) { return (a || b) && c; },
+    function (a, b, c) { return (a && !b) || c; }
+  ];
+
+  // ---------------------------------------------------------------- Schaltungen als Baum
+  function sw(k, nc) { return { t: 'sw', k: k, nc: !!nc }; }
+  function ser(list) { return { t: 'ser', c: list }; }
+  function par(list) { return { t: 'par', c: list }; }
+
+  function inputs() {
+    if (S.mode === 'wechsel') return ['S1', 'S2'];
+    if (S.mode === 'nicht') return ['A'];
+    if (S.mode === 'eigen') return ['A', 'B', 'C'];
+    return ['A', 'B'];
+  }
+
+  function tree() {
+    if (S.mode === 'und') return ser([sw('A'), sw('B')]);
+    if (S.mode === 'oder') return par([sw('A'), sw('B')]);
+    if (S.mode === 'nicht') return sw('A', true);
+    var ab = [sw('A'), sw('B', S.ncB)];
+    var inner = S.op1 === 'und' ? ser(ab) : par(ab);
+    return S.op2 === 'und' ? ser([inner, sw('C')]) : par([inner, sw('C')]);
+  }
+
+  function closed(e, v) {
+    if (e.t === 'sw') return e.nc ? !v[e.k] : !!v[e.k];
+    if (e.t === 'ser') return e.c.every(function (x) { return closed(x, v); });
+    return e.c.some(function (x) { return closed(x, v); });
+  }
+
+  function lampOn(v) {
+    if (S.mode === 'wechsel') return S.cross ? v.S1 !== v.S2 : v.S1 === v.S2;
+    return closed(tree(), v);
+  }
+
+  function exprOf(e, top) {
+    if (e.t === 'sw') return e.nc ? 'NICHT ' + e.k : e.k;
+    var s = e.c.map(function (x) { return exprOf(x, false); }).join(e.t === 'ser' ? ' UND ' : ' ODER ');
+    return top ? s : '(' + s + ')';
+  }
+
+  function key() {
+    if (S.mode === 'wechsel') return 'wechsel' + (S.cross ? 'X' : '');
+    if (S.mode === 'eigen') return 'eigen-' + S.op1 + '-' + S.op2 + (S.ncB ? '-n' : '');
+    return S.mode;
+  }
+
+  function rowIndex() {
+    var ins = inputs(), i = 0;
+    ins.forEach(function (k) { i = i * 2 + (S.inp[k] ? 1 : 0); });
+    return i;
+  }
+
+  function rowValues(i, ins) {
+    var v = {}, n = ins.length;
+    ins.forEach(function (k, j) { v[k] = (i >> (n - 1 - j)) & 1; });
+    return v;
+  }
+
+  // ---------------------------------------------------------------- Zeichnen
+  function el(tag, a, parent) { var e = document.createElementNS(NS, tag); for (var k in a) e.setAttribute(k, a[k]); (parent || G).appendChild(e); return e; }
+  function txt(x, y, s, cls, anchor, parent) { var t = el('text', { x: x, y: y, class: cls || 'val', 'text-anchor': anchor || 'middle' }, parent); t.textContent = s; return t; }
+  function wire(d, on, parent) { return el('path', { d: d, class: 'wire' + (on ? ' on' : '') }, parent); }
+
+  var LW = 80, LA = 34, LH = 78, GAP = 18, M = 18, VG = 6;
+
+  function size(e) {
+    if (e.t === 'sw') return { w: LW, h: LH, a: LA };
+    var s = e.c.map(size);
+    if (e.t === 'ser') {
+      var w = 0, a = 0, b = 0;
+      s.forEach(function (x) { w += x.w; a = Math.max(a, x.a); b = Math.max(b, x.h - x.a); });
+      return { w: w + GAP * (s.length - 1), h: a + b, a: a };
+    }
+    var mw = 0, h = 0;
+    s.forEach(function (x) { mw = Math.max(mw, x.w); h += x.h; });
+    return { w: mw + 2 * M, h: h + VG * (s.length - 1), a: s[0].a };
+  }
+
+  function clickGroup(k, label) {
+    var grp = el('g', { class: 'clickable', 'data-key': k, tabindex: 0, role: 'button', 'aria-label': label });
+    grp.addEventListener('click', function () { toggle(k); });
+    grp.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); toggle(k); } });
+    return grp;
+  }
+
+  function drawSwitch(e, x, top, active) {
+    var cy = top + LA, v = S.inp[e.k], cl = e.nc ? !v : !!v;
+    wire('M' + x + ' ' + cy + ' H' + (x + 14), active);
+    wire('M' + (x + 66) + ' ' + cy + ' H' + (x + 80), active);
+    var grp = clickGroup(e.k, 'Schalter ' + e.k + (e.nc ? ' (Öffner)' : '') + ': ' + (v ? 'betätigt' : 'nicht betätigt') + '. Umschalten');
+    el('rect', { class: 'hit', x: x + 4, y: top + 4, width: 72, height: LH - 6, rx: 8 }, grp);
+    if (e.nc) {
+      // Öffner: Anschlag oberhalb des rechten Kontakts, die Schaltzunge liegt in Ruhe darunter an
+      el('path', { d: 'M' + (x + 66) + ' ' + (cy - 10) + ' V' + cy, class: 'wire' }, grp);
+      el('path', { d: 'M' + (x + 14) + ' ' + cy + ' L' + (cl ? (x + 70) + ' ' + (cy - 4) : (x + 62) + ' ' + (cy + 8)), class: 'wire' + (active ? ' on' : '') }, grp);
+    } else {
+      el('path', { d: 'M' + (x + 14) + ' ' + cy + ' L' + (cl ? (x + 66) + ' ' + cy : (x + 62) + ' ' + (cy - 22)), class: 'wire' + (active ? ' on' : '') }, grp);
+    }
+    el('circle', { class: 'contact', cx: x + 14, cy: cy, r: 3.5 }, grp);
+    el('circle', { class: 'contact', cx: x + 66, cy: cy, r: 3.5 }, grp);
+    txt(x + 40, cy + 30, e.k + ' = ' + v, 'lbl', 'middle', grp);
+    if (e.nc) txt(x + 40, cy + 44, 'Öffner', 'val', 'middle', grp);
+  }
+
+  function draw(e, x, top, active) {
+    var s = size(e);
+    if (e.t === 'sw') return drawSwitch(e, x, top, active);
+    var cy = top + s.a;
+    if (e.t === 'ser') {
+      var cx = x;
+      e.c.forEach(function (c, i) {
+        var cs = size(c);
+        if (i) { wire('M' + (cx - GAP) + ' ' + cy + ' H' + cx, active); }
+        draw(c, cx, cy - cs.a, active);
+        cx += cs.w + GAP;
+      });
+      return;
+    }
+    var yTop = top, ys = [], ons = [];
+    e.c.forEach(function (c) {
+      var cs = size(c), ccy = yTop + cs.a, on = active && closed(c, S.inp);
+      ys.push(ccy); ons.push(on);
+      wire('M' + x + ' ' + ccy + ' H' + (x + M), on);
+      draw(c, x + M, yTop, on);
+      if (x + M + cs.w < x + s.w - M) wire('M' + (x + M + cs.w) + ' ' + ccy + ' H' + (x + s.w - M), on);
+      wire('M' + (x + s.w - M) + ' ' + ccy + ' H' + (x + s.w), on);
+      yTop += cs.h + VG;
+    });
+    for (var i = 0; i < ys.length - 1; i++) {
+      var below = ons.slice(i + 1).some(Boolean);
+      wire('M' + x + ' ' + ys[i] + ' V' + ys[i + 1], below);
+      wire('M' + (x + s.w) + ' ' + ys[i] + ' V' + ys[i + 1], below);
+      el('circle', { class: 'dot', cx: x, cy: ys[i], r: 4 });
+      el('circle', { class: 'dot', cx: x + s.w, cy: ys[i], r: 4 });
+    }
+  }
+
+  function battery(x, cy, on) {
+    el('line', { x1: x - 20, y1: cy - 8, x2: x + 20, y2: cy - 8, stroke: 'var(--line)', 'stroke-width': 3 });
+    el('line', { x1: x - 10, y1: cy + 8, x2: x + 10, y2: cy + 8, stroke: 'var(--line)', 'stroke-width': 7 });
+    txt(x + 26, cy - 6, '+', 'pole p', 'start'); txt(x + 26, cy + 20, '−', 'pole n', 'start');
+  }
+
+  function lamp(x, cy, on) {
+    if (on) el('circle', { class: 'glow', cx: x, cy: cy, r: 30, opacity: 0.45 });
+    el('circle', { class: 'bulb', cx: x, cy: cy, r: 17 });
+    if (on) el('circle', { class: 'glow', cx: x, cy: cy, r: 15, opacity: 0.9 });
+    var d = 12;
+    el('path', { d: 'M' + (x - d) + ' ' + (cy - d) + ' L' + (x + d) + ' ' + (cy + d) + ' M' + (x + d) + ' ' + (cy - d) + ' L' + (x - d) + ' ' + (cy + d), class: 'wire' });
+    txt(x - 24, cy + 44, 'Lampe', 'lbl', 'end');
+  }
+
+  function frame(on, Y0, Yb, xStart, xEnd) {
+    var bx = 46, lx = 474, mid = (Y0 + Yb) / 2;
+    wire('M' + xStart + ' ' + Y0 + ' H' + bx + ' V' + (mid - 8), on);
+    wire('M' + xEnd + ' ' + Y0 + ' H' + lx + ' V' + (mid - 17), on);
+    wire('M' + lx + ' ' + (mid + 17) + ' V' + Yb + ' H' + bx + ' V' + (mid + 8), on);
+    battery(bx, mid, on);
+    lamp(lx, mid, on);
+  }
+
+  function drawWechsel(on) {
+    var v = S.inp, Y = 90, up = 52, dn = 128;
+    // S1 links: Drehpunkt bei x=150, Kontakte bei x=200. S2 rechts gespiegelt.
+    var x1 = 150, c1 = 200, c2 = 330, x2 = 380;
+    var tUp = S.cross ? (v.S1 === 1 && v.S2 === 0) : (v.S1 === 1 && v.S2 === 1);
+    var tDn = S.cross ? (v.S1 === 0 && v.S2 === 1) : (v.S1 === 0 && v.S2 === 0);
+    frame(on, Y, 250, x1, x2);
+    if (!S.cross) {
+      wire('M' + c1 + ' ' + up + ' H' + c2, tUp);
+      wire('M' + c1 + ' ' + dn + ' H' + c2, tDn);
+    } else {
+      wire('M' + c1 + ' ' + up + ' H235 L295 ' + dn + ' H' + c2, tUp);
+      wire('M' + c1 + ' ' + dn + ' H235 L295 ' + up + ' H' + c2, tDn);
+    }
+    [['S1', x1, c1], ['S2', x2, c2]].forEach(function (p) {
+      var k = p[0], px = p[1], cx = p[2], pos = v[k];
+      var grp = clickGroup(k, 'Wechselschalter ' + k + ': ' + (pos ? 'oben' : 'unten') + '. Umschalten');
+      var left = Math.min(px, cx) - 12;
+      el('rect', { class: 'hit', x: left, y: up - 14, width: 74, height: dn - up + 28, rx: 8 }, grp);
+      var tx = cx + (cx > px ? -3 : 3);
+      el('path', { d: 'M' + px + ' ' + Y + ' L' + tx + ' ' + (pos ? up + 3 : dn - 3), class: 'wire' + (on ? ' on' : '') }, grp);
+      el('circle', { class: 'contact', cx: px, cy: Y, r: 3.5 }, grp);
+      el('circle', { class: 'contact', cx: cx, cy: up, r: 3.5 }, grp);
+      el('circle', { class: 'contact', cx: cx, cy: dn, r: 3.5 }, grp);
+      txt((px + cx) / 2, dn + 40, k + ' = ' + pos, 'lbl', 'middle', grp);
+      txt((px + cx) / 2, dn + 58, pos ? 'oben' : 'unten', 'val', 'middle', grp);
+      txt(cx, up - 10, '1', 'val', 'middle', grp);
+      txt(cx, dn + 20, '0', 'val', 'middle', grp);
+    });
+  }
+
+  function render() {
+    var focused = document.activeElement && document.activeElement.getAttribute && document.activeElement.getAttribute('data-key');
+    G.innerHTML = '';
+    var on = lampOn(S.inp);
+    var vbTop = 22, vbBot = 270;
+    if (S.mode === 'wechsel') drawWechsel(on);
+    else {
+      var t = tree(), s = size(t);
+      var Y0 = 70, x0 = Math.round(260 - s.w / 2);
+      var Yb = Math.max(255, Y0 - s.a + s.h + 22);
+      frame(on, Y0, Yb, x0, x0 + s.w);
+      draw(t, x0, Y0 - s.a, on);
+      vbTop = Math.min(Y0 - s.a - 4, 40); vbBot = Yb + 16;
+    }
+    svg.setAttribute('viewBox', '10 ' + vbTop + ' 500 ' + (vbBot - vbTop));
+    if (focused) { var f = G.querySelector('[data-key="' + focused + '"]'); if (f) f.focus(); }
+  }
+
+  // ---------------------------------------------------------------- Tabelle und Anzeigen
+  function rowLabel(v, ins) { return ins.map(function (k) { return k + ' = ' + v[k]; }).join(', '); }
+
+  function table() {
+    var ins = inputs(), n = 1 << ins.length, k = key(), vis = visited[k] || {}, cur = rowIndex();
+    var target = S.mode === 'eigen' && S.riddle >= 0 ? RIDDLES[S.riddle] : null;
+    var h = '<thead><tr>' + ins.map(function (x) { return '<th scope="col">' + x + '</th>'; }).join('') +
+      '<th scope="col" class="out">Lampe</th>' + (target ? '<th scope="col">Ziel</th>' : '') + '</tr></thead><tbody>';
+    for (var i = 0; i < n; i++) {
+      var v = rowValues(i, ins), known = !!vis[i], out = lampOn(v) ? 1 : 0;
+      h += '<tr' + (i === cur ? ' class="cur" aria-current="true"' : '') + '>' + ins.map(function (x) { return '<td>' + v[x] + '</td>'; }).join('') +
+        '<td class="out ' + (known ? (out ? 'one' : 'zero') : 'unk') + '">' + (known ? out : '?') + '</td>' +
+        (target ? '<td>' + (target(v.A, v.B, v.C) ? 1 : 0) + '</td>' : '') + '</tr>';
+    }
+    $('tt').innerHTML = h + '</tbody>';
+    var cnt = Object.keys(vis).length;
+    $('ttCount').textContent = cnt + ' von ' + n + ' Zeilen';
+    $('rRows').textContent = cnt + ' / ' + n;
+  }
+
+  function sentence() {
+    if (S.mode === 'und') return 'Die Lampe leuchtet nur, wenn A und B geschlossen sind.';
+    if (S.mode === 'oder') return 'Die Lampe leuchtet, wenn A oder B (oder beide) geschlossen sind.';
+    if (S.mode === 'nicht') return 'Die Lampe leuchtet, wenn der Taster A nicht gedrückt ist.';
+    if (S.mode === 'wechsel') return S.cross ? 'Die Lampe leuchtet, wenn S1 und S2 verschieden stehen.' : 'Die Lampe leuchtet, wenn S1 und S2 gleich stehen.';
+    return '';
+  }
+
+  function update() {
+    var k = key(), i = rowIndex();
+    visited[k] = visited[k] || {};
+    visited[k][i] = true;
+    render();
+    table();
+    var on = lampOn(S.inp), ins = inputs();
+    $('rLamp').textContent = on ? 'an (1)' : 'aus (0)';
+    $('expr').textContent = S.mode === 'wechsel' ? (S.cross ? 'Lampe = 1, wenn S1 ≠ S2' : 'Lampe = 1, wenn S1 = S2') : 'Lampe = ' + exprOf(tree(), true);
+    $('codeNote').textContent = S.mode === 'wechsel'
+      ? 'Zwei Wechselschalter sind über zwei Verbindungsleitungen verbunden. 1 = Schaltzunge oben, 0 = Schaltzunge unten. ' + sentence()
+      : S.mode === 'nicht' ? 'A = 1 heißt: Taster gedrückt. Ein Öffner unterbricht den Stromkreis, solange er gedrückt ist. ' + sentence()
+      : S.mode === 'eigen' ? 'Schalter: 1 = betätigt. Ein Schließer leitet bei 1, ein Öffner leitet bei 0.'
+      : '1 = Schalter geschlossen, 0 = Schalter offen. ' + sentence();
+    $('status').textContent = (on ? 'Die Lampe leuchtet' : 'Die Lampe ist aus') + ' (' + rowLabel(S.inp, ins) + ').';
+    $('svgTitle').textContent = 'Schaltplan der ' + ({ und: 'UND-Schaltung', oder: 'ODER-Schaltung', nicht: 'NICHT-Schaltung mit Öffner', wechsel: 'Wechselschaltung', eigen: 'eigenen Schaltung' })[S.mode] + '. ' + $('status').textContent;
+
+    // Bedienelemente
+    document.querySelectorAll('[data-mode]').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-mode') === S.mode); });
+    $('inputs').innerHTML = '';
+    ins.forEach(function (x) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('aria-pressed', S.inp[x] ? 'true' : 'false');
+      b.textContent = x + ': ' + (S.mode === 'wechsel' ? (S.inp[x] ? 'oben (1)' : 'unten (0)') : S.inp[x] ? 'betätigt (1)' : 'aus (0)');
+      b.onclick = function () { toggle(x); };
+      $('inputs').appendChild(b);
+    });
+    $('wechselBox').hidden = S.mode !== 'wechsel';
+    $('eigenBox').hidden = S.mode !== 'eigen';
+    $('wStraight').setAttribute('aria-pressed', !S.cross); $('wCross').setAttribute('aria-pressed', S.cross);
+    $('op1And').setAttribute('aria-pressed', S.op1 === 'und'); $('op1Or').setAttribute('aria-pressed', S.op1 === 'oder');
+    $('op2And').setAttribute('aria-pressed', S.op2 === 'und'); $('op2Or').setAttribute('aria-pressed', S.op2 === 'oder');
+    $('ncB').setAttribute('aria-pressed', S.ncB);
+    document.querySelectorAll('[data-riddle]').forEach(function (b) { b.setAttribute('aria-pressed', Number(b.getAttribute('data-riddle')) === S.riddle); });
+    $('check').hidden = S.riddle < 0;
+
+    // Ziele
+    var full = function (kk, n) { return visited[kk] && Object.keys(visited[kk]).length === n; };
+    if (full('und', 4) && full('oder', 4) && full('nicht', 2)) LK.reach('tables');
+  }
+
+  function toggle(k) {
+    var before = lampOn(S.inp);
+    S.inp[k] = S.inp[k] ? 0 : 1;
+    var after = lampOn(S.inp);
+    if (S.mode === 'wechsel' && before !== after) {
+      wSeen[k + (after ? 'on' : 'off')] = true;
+      if (wSeen.S1on && wSeen.S1off && wSeen.S2on && wSeen.S2off) LK.reach('wechsel');
+    }
+    update();
+  }
+
+  function setRiddleMsg(t, cls) { var m = $('riddleMsg'); m.textContent = t; m.className = cls || ''; }
+
+  function checkRiddle() {
+    var f = RIDDLES[S.riddle], ins = ['A', 'B', 'C'], wrong = null;
+    for (var i = 0; i < 8; i++) {
+      var v = rowValues(i, ins), mine = lampOn(v), goal = !!f(v.A, v.B, v.C);
+      if (mine !== goal) { wrong = { v: v, mine: mine }; break; }
+    }
+    if (!wrong) {
+      solved[S.riddle] = true;
+      var left = solved.filter(function (x) { return !x; }).length;
+      setRiddleMsg('Gelöst! Deine Schaltung passt in allen 8 Zeilen: Lampe = ' + exprOf(tree(), true) + '.' + (left ? ' Noch ' + left + ' Rätsel offen.' : ''), 'ok');
+      if (!left) LK.reach('raetsel');
+    } else {
+      setRiddleMsg('Noch nicht: Bei ' + rowLabel(wrong.v, ins) + ' ist deine Lampe ' + (wrong.mine ? 'an' : 'aus') + ', laut Ziel soll sie ' + (wrong.mine ? 'aus' : 'an') + ' sein.', 'no');
+    }
+  }
+
+  // ---------------------------------------------------------------- Ereignisse
+  document.querySelectorAll('[data-mode]').forEach(function (b) {
+    b.onclick = function () { S.mode = b.getAttribute('data-mode'); setRiddleMsg(''); update(); };
+  });
+  $('wStraight').onclick = function () { S.cross = false; update(); };
+  $('wCross').onclick = function () { S.cross = true; update(); };
+  $('op1And').onclick = function () { S.op1 = 'und'; setRiddleMsg(''); update(); };
+  $('op1Or').onclick = function () { S.op1 = 'oder'; setRiddleMsg(''); update(); };
+  $('op2And').onclick = function () { S.op2 = 'und'; setRiddleMsg(''); update(); };
+  $('op2Or').onclick = function () { S.op2 = 'oder'; setRiddleMsg(''); update(); };
+  $('ncB').onclick = function () { S.ncB = !S.ncB; setRiddleMsg(''); update(); };
+  document.querySelectorAll('[data-riddle]').forEach(function (b) {
+    b.onclick = function () {
+      S.riddle = Number(b.getAttribute('data-riddle'));
+      setRiddleMsg(S.riddle >= 0 ? (solved[S.riddle] ? 'Dieses Rätsel hast du schon gelöst.' : 'Rätsel ' + (S.riddle + 1) + ': Vergleiche die Spalten „Lampe“ und „Ziel“. Stelle die Verknüpfungen ein und drücke „Prüfen“.') : '');
+      update();
+    };
+  });
+  $('check').onclick = checkRiddle;
+
+  update();
+})();
+</script>
+</body>
+</html>

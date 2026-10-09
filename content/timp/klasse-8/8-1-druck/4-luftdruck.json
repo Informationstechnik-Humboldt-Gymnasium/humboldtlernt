@@ -1,0 +1,109 @@
+{
+  "id": "timp-k8-luftdruck",
+  "titel": "Luftdruck und Otto von Guericke",
+  "kurz": "Warum wir am Grund eines Luftmeeres leben, wie groß die Kraft der Luft ist und wie Otto von Guericke sie mit Pferden vorführte.",
+  "reihenfolge": 4,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Den Luftdruck als Schweredruck der Lufthülle beschreiben, seinen Wert auf Meereshöhe angeben und seine Abnahme mit der Höhe erklären" },
+    { "id": "lz2", "niveau": "H", "text": "Kräfte durch den Luftdruck mit `F = p · A` berechnen, z. B. bei den Magdeburger Halbkugeln" },
+    { "id": "lz3", "niveau": "G", "text": "Saugnapf, Trinkhalm und Barometer mit dem äußeren Luftdruck richtig erklären" },
+    { "id": "lz4", "niveau": "H", "text": "Zu Otto von Guericke recherchieren, Quellen prüfen und Untersuchungen protokollieren" }
+  ],
+  "verstehen": {
+    "einstieg": "Über deinem Kopf liegt eine viele Kilometer hohe Schicht aus Luft. Warum wirst du davon nicht platt gedrückt?",
+    "abschnitte": [
+      {
+        "titel": "Wir leben am Grund eines Luftmeeres",
+        "text": "Luft hat eine Masse: Ein Liter Luft wiegt etwa 1,2 g. Die ganze Lufthülle der Erde drückt deshalb mit ihrer Gewichtskraft auf alles darunter. Das ist der **Luftdruck**, ein Schweredruck wie im Wasser.\n\nAuf Meereshöhe beträgt der mittlere Luftdruck etwa **1013 hPa**, also rund 1 bar. Das bedeutet: Auf jeden Quadratzentimeter drückt die Luft mit etwa 10 N.\n\nDu wirst nicht zerdrückt, weil der Luftdruck **von allen Seiten** wirkt und in deinem Körper ein gleich großer Gegendruck herrscht."
+      },
+      {
+        "titel": "Der Luftdruck nimmt mit der Höhe ab",
+        "text": "Je höher du steigst, desto weniger Luft liegt über dir. Deshalb **nimmt der Luftdruck mit der Höhe ab**. In Bodennähe sinkt er um etwa 1 hPa pro 8 m Höhe. Weil Luft zusammendrückbar ist, ist sie unten dichter als oben. Der Druck nimmt deshalb nicht gleichmäßig ab wie im Wasser.\n- Meereshöhe: etwa 1013 hPa\n- Zugspitze (2962 m): etwa 700 hPa\n- Gipfel des Mount Everest (8849 m): etwa 330 hPa\n- Reiseflughöhe eines Flugzeugs (11 km): etwa 230 hPa\n\nGemessen wird der Luftdruck mit einem **Barometer**. In einem Dosenbarometer ist eine fast luftleere Metalldose eingebaut. Steigt der Luftdruck, wird sie stärker eingedrückt, und ein Zeiger bewegt sich."
+      },
+      {
+        "titel": "Otto von Guericke und die Magdeburger Halbkugeln",
+        "text": "**Otto von Guericke** (1602 bis 1686) war Bürgermeister von Magdeburg und Naturforscher. Er baute eine der ersten **Luftpumpen**. Damit konnte er die Luft aus Gefäßen herauspumpen.\n\n1654 führte er seine Versuche auf dem Reichstag in Regensburg vor. Berühmt wurde der Versuch mit den **Magdeburger Halbkugeln** um 1656 in Magdeburg: Zwei Halbkugeln aus Kupfer mit etwa 42 cm Durchmesser wurden aneinandergelegt und luftleer gepumpt. Zwei Gespanne mit zusammen 16 Pferden konnten sie nicht auseinanderreißen. Ließ man Luft hinein, fielen sie von allein auseinander.\n\nDer Grund: Innen fehlt der Gegendruck. Der äußere Luftdruck presst die Halbkugeln zusammen. Die Kraft berechnet man mit `F = p · A`. Dabei zählt die **Querschnittsfläche** der Kugel (ein Kreis mit `A = π · r^{2}`), nicht die gewölbte Oberfläche. Bei 21 cm Radius ergibt sich etwa 14 000 N, so viel wie die Gewichtskraft von 1,4 t."
+      },
+      {
+        "titel": "Saugnapf und Trinkhalm richtig erklärt",
+        "text": "Im Alltag sagt man „ansaugen“. Physikalisch gibt es aber **keine Saugkraft**, die zieht. Es ist immer der **äußere Luftdruck, der drückt**.\n- **Saugnapf**: Beim Andrücken wird Luft unter dem Napf herausgedrückt. Unter dem Napf ist der Druck kleiner als außen. Der äußere Luftdruck presst den Napf an die Wand.\n- **Trinkhalm**: Du vergrößerst deinen Mundraum, der Druck im Halm sinkt. Der äußere Luftdruck drückt auf die Oberfläche des Getränks im Glas und schiebt es im Halm nach oben.\n- Auf dem Mond (ohne Lufthülle) würde beides nicht funktionieren."
+      },
+      {
+        "titel": "Recherchieren und protokollieren",
+        "text": "Bei einer **Recherche** zu Guericke findest du manchmal unterschiedliche Angaben, z. B. zur Zahl der Pferde (16 in Magdeburg, 24 bei einer späteren Vorführung in Berlin). Prüfe deshalb:\n- Wer hat den Text geschrieben (Museum, Lexikon, Lehrbuch, private Seite)?\n- Werden Quellen genannt?\n- Stimmen mehrere unabhängige Quellen überein?\n\nIn deinem **Portfolio** hältst du Versuche als **Protokoll** fest: Fragestellung, Vermutung (Hypothese), Material und Aufbau mit Skizze, Durchführung, Beobachtung bzw. Messwerte und Auswertung mit Antwort auf die Fragestellung."
+      }
+    ],
+    "formeln": [
+      { "formel": "F = p · A", "bedeutung": "Kraft durch einen Druck auf eine Fläche (umgestellt aus `p = F / A`)" },
+      { "formel": "A = π · r^{2}", "bedeutung": "Kreisfläche, z. B. Querschnitt der Halbkugeln" }
+    ],
+    "merksatz": "Der Luftdruck ist der Schweredruck der Lufthülle. Auf Meereshöhe beträgt er etwa 1013 hPa und nimmt mit der Höhe ab. Bei Saugnapf und Trinkhalm zieht nichts: Der äußere Luftdruck drückt.",
+    "alltag": "Eine Chipstüte aus dem Tal ist auf einem hohen Berg prall aufgebläht: Außen ist der Luftdruck dort kleiner, innen ist noch der höhere Druck aus dem Tal."
+  },
+  "interaktiv": [],
+  "vertiefung": ["k7-teilchenmodell"],
+  "uebungen": [
+    { "id": "timp-ldr-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Wie groß ist der mittlere Luftdruck auf Meereshöhe?",
+      "optionen": [
+        { "text": "etwa 1013 hPa", "richtig": true },
+        { "text": "etwa 1013 Pa", "feedback": "Das wäre hundertmal zu wenig. Achte auf die Vorsilbe Hekto (100)." },
+        { "text": "etwa 1013 bar", "feedback": "1013 bar wäre der Druck in etwa 10 km Meerestiefe. Der Luftdruck beträgt etwa 1 bar." },
+        { "text": "etwa 100 hPa", "feedback": "So niedrig ist der Luftdruck erst in etwa 16 km Höhe." }
+      ],
+      "erklaerung": "1013 hPa sind 101 300 Pa, also ungefähr 1 bar." },
+    { "id": "timp-ldr-02", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Ordne jedem Ort den passenden mittleren Luftdruck zu.",
+      "paare": [
+        { "links": "Strand an der Ostsee", "rechts": "etwa 1013 hPa" },
+        { "links": "Gipfel der Zugspitze (2962 m)", "rechts": "etwa 700 hPa" },
+        { "links": "Gipfel des Mount Everest (8849 m)", "rechts": "etwa 330 hPa" },
+        { "links": "Flugzeug in 11 km Höhe (außen)", "rechts": "etwa 230 hPa" }
+      ],
+      "extraRechts": ["etwa 2000 hPa"],
+      "erklaerung": "Je höher man ist, desto weniger Luft liegt darüber und desto kleiner ist der Luftdruck. Weil die Luft unten dichter ist, nimmt der Druck in den unteren Kilometern schneller ab als weiter oben." },
+    { "id": "timp-ldr-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Warum steigt Saft in einem Trinkhalm nach oben, wenn du daran „saugst“?",
+      "optionen": [
+        { "text": "Im Halm wird der Druck kleiner. Der äußere Luftdruck drückt auf die Saftoberfläche im Glas und schiebt den Saft nach oben.", "richtig": true },
+        { "text": "Dein Mund erzeugt eine Saugkraft, die den Saft nach oben zieht.", "feedback": "Eine ziehende Saugkraft gibt es nicht. Ohne äußeren Luftdruck, etwa auf dem Mond, würde kein Saft steigen." },
+        { "text": "Der Saft wird im Halm leichter und steigt deshalb auf.", "feedback": "Der Saft ändert seine Dichte nicht. Er wird von außen nach oben gedrückt." },
+        { "text": "Der Luftdruck im Halm wird größer und drückt den Saft nach oben.", "feedback": "Im Halm wird der Druck kleiner, nicht größer." }
+      ],
+      "erklaerung": "Entscheidend ist der Druckunterschied: außen etwa 1013 hPa, im Halm etwas weniger. Der größere äußere Druck schiebt das Getränk hoch." },
+    { "id": "timp-ldr-04", "typ": "zahl", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Ein Tisch hat eine Platte von 1,2 m mal 0,8 m. Mit welcher Kraft drückt die Luft (1013 hPa) von oben auf die Tischplatte?",
+      "gegeben": "`p = 1013 hPa = 101 300 Pa`, `A = 1,2 m · 0,8 m`", "gesucht": "`F`", "gesuchtSymbol": "F",
+      "loesung": 97248, "einheit": "N", "alternativEinheiten": { "kN": 1000 },
+      "rechenweg": ["`A = 1,2 m · 0,8 m = 0,96 m^{2}`", "`F = p · A = 101 300 Pa · 0,96 m^{2} ≈ 97 250 N ≈ 97 kN`"],
+      "hinweis": "Rechne den Druck in Pa um (`1 hPa = 100 Pa`) und multipliziere mit der Fläche in m².",
+      "erklaerung": "Das entspricht der Gewichtskraft von fast 10 t. Der Tisch bricht trotzdem nicht, weil die Luft von unten mit fast genauso großer Kraft dagegen drückt." },
+    { "id": "timp-ldr-05", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Die Magdeburger Halbkugeln hatten einen Durchmesser von etwa 42 cm. Nimm an, dass die Luft innen vollständig herausgepumpt wurde und außen 1013 hPa herrschen. Mit welcher Kraft muss man an jeder Seite ziehen, um die Halbkugeln zu trennen?",
+      "gegeben": "`d = 42 cm`, also `r = 0,21 m`, `p = 101 300 Pa`", "gesucht": "`F`", "gesuchtSymbol": "F",
+      "loesung": 14034, "einheit": "N", "alternativEinheiten": { "kN": 1000 }, "toleranz": 0.03,
+      "rechenweg": ["Wirksam ist die Querschnittsfläche (Kreis): `A = π · r^{2} = 3,14 · (0,21 m)^{2} ≈ 0,139 m^{2}`", "`F = p · A = 101 300 Pa · 0,139 m^{2} ≈ 14 000 N = 14 kN`"],
+      "hinweis": "Nimm nicht die gewölbte Kugeloberfläche, sondern die Kreisfläche, an der die Halbkugeln aufeinanderliegen.",
+      "erklaerung": "14 kN entsprechen der Gewichtskraft von etwa 1,4 t. Guericke konnte die Luft nicht ganz entfernen, die wirkliche Kraft war also etwas kleiner. Für die Pferde war sie trotzdem zu groß." },
+    { "id": "timp-ldr-06", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Bringe die Teile eines Versuchsprotokolls in die richtige Reihenfolge.",
+      "elemente": [
+        "Fragestellung",
+        "Vermutung (Hypothese)",
+        "Material und Aufbau mit Skizze",
+        "Durchführung",
+        "Beobachtung und Messwerte",
+        "Auswertung mit Antwort auf die Fragestellung"
+      ],
+      "erklaerung": "Die Hypothese wird vor dem Versuch aufgeschrieben. In der Auswertung prüfst du, ob die Beobachtungen sie bestätigen oder widerlegen." },
+    { "id": "timp-ldr-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Tim sagt: „Der Saugnapf hält an der Fliese, weil er sich daran festsaugt.“ Erkläre physikalisch richtig, warum der Saugnapf hält.",
+      "stichworte": [
+        { "aspekt": "Beim Andrücken wird Luft unter dem Napf herausgedrückt", "woerter": ["luft heraus", "luft raus", "luft entweicht", "herausgedrueckt", "rausgedrueckt", "weniger luft"] },
+        { "aspekt": "Unter dem Napf ist der Druck kleiner als außen", "woerter": ["druck kleiner", "kleinerer druck", "geringerer druck", "druck geringer", "unterdruck", "druckunterschied"] },
+        { "aspekt": "Der äußere Luftdruck drückt den Napf an die Fliese (es gibt keine Saugkraft)", "woerter": ["aeussere luftdruck", "aeusserer luftdruck", "luftdruck von aussen", "luftdruck aussen", "luftdruck drueckt"] }
+      ],
+      "musterloesung": "Beim Andrücken wird die Luft unter dem Saugnapf herausgedrückt. Dadurch ist unter dem Napf der Druck kleiner als außen. Der äußere Luftdruck drückt nun stärker von außen auf den Napf als die wenige Luft von innen und presst ihn an die Fliese. Es gibt also keine Saugkraft, sondern der Luftdruck drückt.",
+      "erklaerung": "Wenn Luft unter den Rand gelangt, gleicht sich der Druck aus und der Saugnapf fällt ab." }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "title": "Fallsimulation: Bewegung programmieren",
+  "subject": "TIMP",
+  "description": "Ein kleines Programm berechnet Schritt für Schritt den Fall eines Balls. Vergleiche mit der exakten Kurve, verkleinere den Zeitschritt und finde Fehler in Programmen.",
+  "minutes": 15
+}
