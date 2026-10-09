@@ -20,6 +20,9 @@ Lerneinheiten sie erledigt haben, und Lehrkräfte sehen den Fortschritt ihrer Kl
 
 > **Schnellstart:** Wie du das Projekt auf GitHub hochlädst und ohne IServ-Login testest,
 > steht in [ANLEITUNG-GITHUB.md](ANLEITUNG-GITHUB.md).
+>
+> **Zusammenarbeit:** Die Regeln für Inhalte, IDs, Branches und Pull Requests stehen in
+> [CLAUDE.md](CLAUDE.md). Claude-Sitzungen lesen sie automatisch, Menschen bitte auch.
 
 ---
 
