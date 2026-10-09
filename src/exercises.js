@@ -162,12 +162,18 @@ export const TYPES = {
       for (const u of Object.keys(units).sort((x, y) => y.length - x.length)) {
         if (u && raw.endsWith(u) && raw.length > u.length) { raw = raw.slice(0, -u.length).trim(); if (Object.keys(units).length === 1) unit = u; break; }
       }
-      const v = parseNumber(raw);
+      let v = parseNumber(raw);
       if (!Number.isFinite(v)) return { error: 'Bitte gib eine Zahl ein, z. B. 12,5.' };
-      const value = v * units[unit];
       const target = ex.loesung;
       const tol = ex.toleranz ?? 0.02;
-      const ok = target === 0 ? Math.abs(value) <= (ex.toleranzAbs ?? 1e-9) : Math.abs(value - target) <= Math.abs(target) * tol + (ex.toleranzAbs ?? 0);
+      const near = x => (target === 0 ? Math.abs(x) <= (ex.toleranzAbs ?? 1e-9) : Math.abs(x - target) <= Math.abs(target) * tol + (ex.toleranzAbs ?? 0));
+      // „13.734“ kann 13734 (Tausenderpunkt) oder 13,734 (Dezimalpunkt) heißen: richtig ist, was passt
+      if (/^-?\d{1,3}\.\d{3}$/.test(raw.replace(/\s+/g, '')) && !near(v * units[unit])) {
+        const dec = Number(raw.replace(/\s+/g, ''));
+        if (near(dec * units[unit])) v = dec;
+      }
+      const value = v * units[unit];
+      const ok = near(value);
       if (ok) return { status: 'richtig', feedback: '', marks: { wert: 'richtig' } };
       let tip = '';
       const ratio = target !== 0 && value !== 0 ? value / target : NaN;

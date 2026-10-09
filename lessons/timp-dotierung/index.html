@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kristall-Labor: Halbleiter und Dotierung</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<style>
+  .bond { stroke: var(--border); stroke-width: 2; }
+  .slot { fill: var(--muted); }
+  .slot.hole { fill: var(--card); stroke: var(--pos); stroke-width: 2; }
+  .atom { fill: var(--card); stroke: var(--line); stroke-width: 1.6; }
+  .atom.p { stroke: var(--neg); stroke-width: 2.6; }
+  .atom.b { stroke: var(--pos); stroke-width: 2.6; }
+  .atxt { font-size: 12px; font-weight: 650; text-anchor: middle; dominant-baseline: central; }
+  .ion { font-size: 13px; font-weight: 800; text-anchor: middle; dominant-baseline: central; }
+  .ion.plus { fill: var(--neg) !important; }
+  .ion.minus { fill: var(--pos) !important; }
+  .free { fill: var(--neg); }
+  .flash { fill: none; stroke: var(--lamp); stroke-width: 2.5; }
+  .zone { fill: var(--warn-soft); stroke: var(--warn); stroke-width: 1; stroke-dasharray: 4 3; }
+  .zlbl { font-size: 12px; font-weight: 650; text-anchor: middle; fill: var(--warn) !important; }
+  .side { font-size: 15px; font-weight: 800; text-anchor: middle; }
+  .plate { fill: var(--line); }
+  .pole { font-size: 16px; font-weight: 800; text-anchor: middle; }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: .82rem; margin-top: 8px; align-items: center; }
+  .legend svg { display: inline-block; width: 14px; height: 14px; vertical-align: middle; margin-right: 3px; }
+  .seg.wrap { flex-wrap: wrap; }
+  .bar { height: 10px; border-radius: 5px; background: var(--grid); overflow: hidden; margin-top: 6px; }
+  .bar i { display: block; height: 100%; width: 0; background: var(--accent); transition: width .3s; }
+</style>
+</head>
+<body>
+<h1>Kristall-Labor: Halbleiter und Dotierung</h1>
+<p class="muted small">Wähle einen Kristall, ändere Temperatur und Dotierung und lege eine Spannung an. Beobachte, welche Ladungsträger sich bewegen.</p>
+
+<div class="lk-grid">
+  <div>
+    <div class="lk-card">
+      <svg id="sim" viewBox="0 -26 520 371" role="img" aria-labelledby="sim-title">
+        <title id="sim-title">Ausschnitt aus einem Siliziumkristall in vereinfachter, flacher Darstellung mit Atomen, Bindungselektronen, freien Elektronen und Löchern</title>
+        <rect id="zone" class="zone" x="218" y="10" width="84" height="286" rx="6"/>
+        <text id="zoneLbl" class="zlbl" x="260" y="-10">Sperrschicht</text>
+        <g id="gBonds"></g>
+        <g id="gSlots"></g>
+        <g id="gAtoms"></g>
+        <g id="gFree"></g>
+        <g id="gFx"></g>
+        <g id="gSides">
+          <text class="side" x="120" y="-9">p-Gebiet</text>
+          <text class="side" x="400" y="-9">n-Gebiet</text>
+        </g>
+        <g id="gCircuit">
+          <rect class="plate" x="6" y="12" width="6" height="282" rx="2"/>
+          <rect class="plate" x="508" y="12" width="6" height="282" rx="2"/>
+          <path class="wire" d="M9 294 V330 H252 M268 330 H511 V294"/>
+          <line id="batL" x1="252" y1="316" x2="252" y2="344" stroke="var(--line)" stroke-width="2.4"/>
+          <line id="batR" x1="268" y1="322" x2="268" y2="338" stroke="var(--line)" stroke-width="6"/>
+          <text id="poleL" class="pole" x="232" y="322">+</text>
+          <text id="poleR" class="pole" x="288" y="322">−</text>
+        </g>
+      </svg>
+      <div class="legend" aria-hidden="true">
+        <span><svg viewBox="0 0 14 14"><circle cx="7" cy="7" r="2.6" class="slot"/></svg>gebundenes Elektron</span>
+        <span><svg viewBox="0 0 14 14"><circle cx="7" cy="7" r="4.6" class="free"/></svg>freies Elektron</span>
+        <span><svg viewBox="0 0 14 14"><circle cx="7" cy="7" r="4.6" class="slot hole"/></svg>Loch</span>
+        <span><b style="color:var(--neg)">+</b> / <b style="color:var(--pos)">−</b> ortsfestes Ion</span>
+      </div>
+      <p class="small muted" style="margin:8px 0 0">Vereinfachung: Das echte Gitter ist räumlich, und die Zahlen sind stark übertrieben. In reinem Silizium ist bei 20 °C nur etwa eines von einer Billion Bindungselektronen frei. Schon ein Fremdatom auf eine Million Siliziumatome vervielfacht die Zahl der Ladungsträger etwa um das Millionenfache.</p>
+    </div>
+  </div>
+
+  <div>
+    <div class="lk-card">
+      <h2>Einstellungen</h2>
+      <div class="row">
+        <div class="seg wrap" role="group" aria-label="Kristall wählen">
+          <button type="button" data-mode="pure" aria-pressed="true">rein</button>
+          <button type="button" data-mode="n" aria-pressed="false">n-dotiert</button>
+          <button type="button" data-mode="p" aria-pressed="false">p-dotiert</button>
+          <button type="button" data-mode="pn" aria-pressed="false">pn-Übergang</button>
+        </div>
+      </div>
+      <label class="ctrl" id="tCtrl"><span>Temperatur <span class="f">ϑ</span> <output id="oT"></output></span>
+        <input type="range" id="sT" min="-50" max="150" step="10" value="20"></label>
+      <label class="ctrl" id="dCtrl" hidden><span><span id="dName">Phosphoratome</span> <output id="oD"></output></span>
+        <input type="range" id="sD" min="1" max="5" step="1" value="2"></label>
+      <div class="row" id="fieldRow">
+        <button type="button" id="bField" aria-pressed="false">Spannung anlegen</button>
+      </div>
+      <div class="row" id="biasRow" hidden>
+        <div class="seg" role="group" aria-label="Spannung am pn-Übergang">
+          <button type="button" data-bias="none" aria-pressed="true">keine</button>
+          <button type="button" data-bias="fwd" aria-pressed="false">Durchlass</button>
+          <button type="button" data-bias="rev" aria-pressed="false">Sperrrichtung</button>
+        </div>
+      </div>
+      <div class="readouts">
+        <div class="readout"><span>freie Elektronen</span><b id="rE">0</b></div>
+        <div class="readout"><span>Löcher</span><b id="rH">0</b></div>
+        <div class="readout"><span>Gesamtladung</span><b id="rQ">0</b></div>
+      </div>
+      <div class="readout" style="margin-top:8px"><span id="rIlbl">Stromstärke (Modell)</span><b id="rI">kein Strom</b><div class="bar"><i id="rBar"></i></div></div>
+      <p id="status" class="small muted" aria-live="polite"></p>
+    </div>
+
+    <div class="lk-card tasks">
+      <h2>Entdecke selbst <span class="small muted" data-task-count></span></h2>
+      <div class="task" data-goal="warm"><p class="task-q">Erwärme reines Silizium auf mindestens 100 °C und lege eine Spannung an. Beobachte die Elektron-Loch-Paare.</p></div>
+      <div class="task" data-goal="ndot"><p class="task-q">Dotiere den Kristall bei Raumtemperatur (höchstens 40 °C) mit mindestens 3 Phosphoratomen und lege eine Spannung an.</p></div>
+      <div class="task">
+        <p class="task-q">Wähle „p-dotiert“ und lege eine Spannung an. In welche Richtung wandern die Löcher?</p>
+        <div class="choices">
+          <button type="button" data-ok data-fb="Richtig: Ein Nachbarelektron springt in Richtung Pluspol in das Loch. Dadurch wandert das Loch zum Minuspol, wie eine positive Ladung.">zum Minuspol</button>
+          <button type="button" data-fb="Schau genau hin: Die freien Elektronen wandern zum Pluspol. Die Löcher bewegen sich in die Gegenrichtung.">zum Pluspol</button>
+          <button type="button" data-fb="Ohne Spannung springen sie zufällig. Mit Spannung haben sie eine klare Richtung.">nur zufällig hin und her</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="task">
+        <p class="task-q">Ein n-dotierter Kristall enthält viele freie Elektronen. Ist er deshalb negativ geladen?</p>
+        <div class="choices">
+          <button type="button" data-ok data-fb="Genau: Jedes Phosphoratom hat ein Proton mehr im Kern. Zu jedem freien Elektron gehört ein ortsfestes positives Ion. Die Gesamtladung bleibt 0.">Nein, er ist neutral.</button>
+          <button type="button" data-fb="Schau auf die Anzeige „Gesamtladung“ und auf die Ionen an den Phosphoratomen.">Ja, er ist negativ.</button>
+          <button type="button" data-fb="Positiv wäre er nur, wenn Elektronen fehlen würden. Zähle Ladungen und Ionen.">Nein, er ist positiv.</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="task" data-goal="sperr"><p class="task-q">Wähle den pn-Übergang und lege die Spannung in Sperrrichtung an (Pluspol am n-Gebiet).</p></div>
+      <div class="task">
+        <p class="task-q">Was passiert mit der Sperrschicht, wenn die Spannung in Durchlassrichtung anliegt?</p>
+        <div class="choices">
+          <button type="button" data-ok data-fb="Richtig: Elektronen und Löcher werden in die Grenzschicht gedrückt und rekombinieren dort. Die Sperrschicht verschwindet, es fließt Strom.">Sie wird abgebaut, es fließt Strom.</button>
+          <button type="button" data-fb="Breiter wird sie in Sperrrichtung. Probiere „Durchlass“ aus.">Sie wird breiter.</button>
+          <button type="button" data-fb="Vergleiche die Breite des markierten Bereichs bei „keine“ und bei „Durchlass“.">Sie bleibt gleich.</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="all-done">Alles entdeckt! Weiter geht es mit den Übungen.</div>
+    </div>
+  </div>
+</div>
+
+<script src="../../static/lesson-kit.js"></script>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var NS = 'http://www.w3.org/2000/svg';
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var SPEED = reduced ? 0.5 : 1;
+  function el(tag, attrs, parent) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+
+  // ---------------------------------------------- Gitter
+  var COLS = 8, ROWS = 5, DX = 58, DY = 56, X0 = 260 - 3.5 * DX, Y0 = 40, MID = 260;
+  var XL = 22, XR = 498, YT = 14, YB = 292;
+  var atoms = [], bonds = [], slots = [];
+  function ax(c) { return X0 + c * DX; }
+  function ay(r) { return Y0 + r * DY; }
+  function atomIdx(c, r) { return (c < 0 || r < 0 || c >= COLS || r >= ROWS) ? -1 : r * COLS + c; }
+  for (var r = 0; r < ROWS; r++) for (var c = 0; c < COLS; c++) atoms.push({ c: c, r: r, x: ax(c), y: ay(r), bonds: [], kind: 'si' });
+
+  function addBond(a1, a2, x1, y1, x2, y2, horiz) {
+    var b = { a1: a1, a2: a2, x1: x1, y1: y1, x2: x2, y2: y2, slots: [] };
+    var mx = (x1 + x2) / 2, my = (y1 + y2) / 2;
+    if (a1 < 0 || a2 < 0) { // Stummel am Rand: Elektronen näher am Atom
+      var at = atoms[a1 < 0 ? a2 : a1];
+      mx = horiz ? (at.x + (a1 < 0 ? -DX / 2 : DX / 2)) : at.x;
+      my = horiz ? at.y : (at.y + (a1 < 0 ? -DY / 2 : DY / 2));
+    }
+    var bi = bonds.length;
+    [-1, 1].forEach(function (s) {
+      slots.push({ x: horiz ? mx : mx + s * 4.5, y: horiz ? my + s * 4.5 : my, bond: bi, hole: null, edge: a1 < 0 || a2 < 0 });
+      b.slots.push(slots.length - 1);
+    });
+    bonds.push(b);
+    if (a1 >= 0) atoms[a1].bonds.push(bi);
+    if (a2 >= 0) atoms[a2].bonds.push(bi);
+  }
+  for (r = 0; r < ROWS; r++) for (c = -1; c < COLS; c++) {
+    var a1 = atomIdx(c, r), a2 = atomIdx(c + 1, r);
+    addBond(a1, a2, a1 < 0 ? XL : ax(c), ay(r), a2 < 0 ? XR : ax(c + 1), ay(r), true);
+  }
+  for (c = 0; c < COLS; c++) for (r = -1; r < ROWS; r++) {
+    a1 = atomIdx(c, r); a2 = atomIdx(c, r + 1);
+    addBond(a1, a2, ax(c), a1 < 0 ? YT : ay(r), ax(c), a2 < 0 ? YB : ay(r + 1), false);
+  }
+  // Nachbar-Plätze: alle Bindungsplätze der beiden beteiligten Atome
+  slots.forEach(function (s, i) {
+    var b = bonds[s.bond], set = [];
+    [b.a1, b.a2].forEach(function (a) {
+      if (a < 0) return;
+      atoms[a].bonds.forEach(function (bj) { if (bj !== s.bond) bonds[bj].slots.forEach(function (k) { set.push(k); }); });
+    });
+    s.nb = set;
+  });
+
+  var gBonds = $('gBonds'), gSlots = $('gSlots'), gAtoms = $('gAtoms'), gFree = $('gFree'), gFx = $('gFx');
+  bonds.forEach(function (b) { el('line', { x1: b.x1, y1: b.y1, x2: b.x2, y2: b.y2, class: 'bond' }, gBonds); });
+  slots.forEach(function (s) { s.el = el('circle', { cx: s.x, cy: s.y, r: 2.6, class: 'slot' }, gSlots); });
+  atoms.forEach(function (a) {
+    a.el = el('circle', { cx: a.x, cy: a.y, r: 15, class: 'atom' }, gAtoms);
+    a.txt = el('text', { x: a.x, y: a.y, class: 'atxt' }, gAtoms); a.txt.textContent = 'Si';
+    a.ion = el('text', { x: a.x + 15, y: a.y - 14, class: 'ion' }, gAtoms);
+  });
+
+  // ---------------------------------------------- Zustand
+  var S = { mode: 'pure', T: 20, dop: 2, field: false, bias: 'none' };
+  var SITES = [[2, 1], [5, 3], [4, 0], [1, 3], [6, 1]];
+  var PN_B = [[3, 1], [3, 3], [2, 0], [2, 2], [2, 4], [1, 1], [1, 3], [0, 2]];
+  var PN_P = PN_B.map(function (p) { return [COLS - 1 - p[0], p[1]]; });
+  var electrons = [], holes = [], pairs = [], flashes = [];
+  var zoneHalf = 42, recombs = [], seenRev = 0;
+
+  function rnd(a, b) { return a + Math.random() * (b - a); }
+  function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+  function newElectron(x, y, origin) {
+    var e = { x: x, y: y, vx: rnd(-20, 20), vy: rnd(-20, 20), origin: origin, el: el('circle', { r: 4.6, class: 'free', cx: x, cy: y }, gFree) };
+    electrons.push(e); return e;
+  }
+  function removeElectron(e) { var i = electrons.indexOf(e); if (i >= 0) electrons.splice(i, 1); if (e.el.parentNode) e.el.parentNode.removeChild(e.el); }
+  function setHole(si, h) { slots[si].hole = h; slots[si].el.setAttribute('class', h ? 'slot hole' : 'slot'); slots[si].el.setAttribute('r', h ? 4.6 : 2.6); }
+  function newHole(si, origin) {
+    var h = { slot: si, t: rnd(0.2, 0.8), origin: origin };
+    holes.push(h); setHole(si, h); return h;
+  }
+  function removeHole(h) { var i = holes.indexOf(h); if (i >= 0) holes.splice(i, 1); if (slots[h.slot].hole === h) setHole(h.slot, null); }
+  function flash(x, y) { flashes.push({ x: x, y: y, t: 0, el: el('circle', { cx: x, cy: y, r: 4, class: 'flash' }, gFx) }); }
+
+  function dopedSites() {
+    if (S.mode === 'pn') return { B: PN_B, P: PN_P };
+    if (S.mode === 'n') return { B: [], P: SITES.slice(0, S.dop) };
+    if (S.mode === 'p') return { B: SITES.slice(0, S.dop), P: [] };
+    return { B: [], P: [] };
+  }
+
+  function reset() {
+    electrons.slice().forEach(removeElectron);
+    holes.slice().forEach(removeHole);
+    pairs = []; recombs = [];
+    flashes.forEach(function (f) { gFx.removeChild(f.el); }); flashes = [];
+    atoms.forEach(function (a) { a.kind = 'si'; });
+    var d = dopedSites();
+    d.P.forEach(function (p) { atoms[atomIdx(p[0], p[1])].kind = 'p'; });
+    d.B.forEach(function (p) { atoms[atomIdx(p[0], p[1])].kind = 'b'; });
+    zoneHalf = S.mode === 'pn' ? targetZone() : 0;
+    atoms.forEach(function (a) {
+      a.el.setAttribute('class', 'atom' + (a.kind === 'si' ? '' : ' ' + a.kind));
+      a.txt.textContent = a.kind === 'p' ? 'P' : a.kind === 'b' ? 'B' : 'Si';
+      a.ion.textContent = a.kind === 'p' ? '+' : a.kind === 'b' ? '−' : '';
+      a.ion.setAttribute('class', 'ion ' + (a.kind === 'p' ? 'plus' : 'minus'));
+      // Ladungsträger der Fremdatome
+      if (a.kind === 'p' && carrierAllowed(a.x + 18, true)) newElectron(a.x + 18, a.y - 16, 'P');
+      if (a.kind === 'b' && carrierAllowed(a.x - 20, false)) {
+        // Loch auf einem Bindungsplatz des Boratoms
+        var cand = [];
+        a.bonds.forEach(function (bi) { bonds[bi].slots.forEach(function (k) { if (!slots[k].hole && carrierAllowed(slots[k].x, false)) cand.push(k); }); });
+        if (cand.length) newHole(pick(cand), 'B');
+      }
+    });
+  }
+
+  // pn-Übergang: Wo dürfen sich Elektronen (n-Seite) bzw. Löcher (p-Seite) aufhalten?
+  function targetZone() { return S.bias === 'fwd' ? 0 : S.bias === 'rev' ? 108 : 42; }
+  function carrierAllowed(x, isElectron) {
+    if (S.mode !== 'pn') return true;
+    return isElectron ? x >= MID + zoneHalf + 4 : x <= MID - zoneHalf - 4;
+  }
+
+  function plusSide() {
+    if (S.mode === 'pn') return S.bias === 'fwd' ? 'left' : S.bias === 'rev' ? 'right' : null;
+    return S.field ? 'right' : null;
+  }
+
+  // ---------------------------------------------- Thermische Paare
+  function thermalTarget() {
+    if (S.mode === 'pn') return 0;
+    return S.T < -20 ? 0 : Math.min(8, Math.round(Math.exp((S.T - 20) / 40)));
+  }
+  function generatePair() {
+    var cand = [];
+    slots.forEach(function (s, i) {
+      if (s.hole || s.edge) return;
+      var b = bonds[s.bond];
+      if (atoms[b.a1].kind !== 'si' || atoms[b.a2].kind !== 'si') return;
+      cand.push(i);
+    });
+    if (!cand.length) return;
+    var si = pick(cand), s = slots[si];
+    var h = newHole(si, 'T');
+    var e = newElectron(s.x, s.y, 'T');
+    e.vx = rnd(-40, 40); e.vy = rnd(-40, 40);
+    pairs.push({ e: e, h: h, life: rnd(3, 7), back: false });
+    flash(s.x, s.y);
+  }
+
+  // ---------------------------------------------- Bewegung
+  var genTimer = 0;
+  function step(dt) {
+    var ps = plusSide();
+    var eDir = ps === 'right' ? 1 : ps === 'left' ? -1 : 0;   // Elektronen zum Pluspol
+    var hDir = -eDir;                                         // Löcher zum Minuspol
+
+    // Sperrschicht-Breite nachführen
+    if (S.mode === 'pn') {
+      var tz = targetZone();
+      zoneHalf += Math.max(-60 * dt, Math.min(60 * dt, tz - zoneHalf));
+      if (S.bias === 'rev' && zoneHalf > 95) seenRev += dt; else seenRev = 0;
+    }
+
+    // Paare erzeugen / rekombinieren
+    genTimer -= dt;
+    if (genTimer <= 0) {
+      genTimer = 0.35;
+      var live = pairs.filter(function (p) { return !p.back; }).length;
+      if (live < thermalTarget()) generatePair();
+      else if (live > thermalTarget()) { var p0 = pairs.filter(function (p) { return !p.back; })[0]; if (p0) p0.back = true; }
+    }
+    pairs.slice().forEach(function (p) {
+      p.life -= dt;
+      if (p.life <= 0) p.back = true;
+      if (electrons.indexOf(p.e) < 0 || holes.indexOf(p.h) < 0) { // Partner ging über den Kontakt: Paar auflösen
+        if (electrons.indexOf(p.e) >= 0 && holes.indexOf(p.h) < 0) p.e.origin = 'T';
+        pairs.splice(pairs.indexOf(p), 1);
+        return;
+      }
+      if (p.back) {
+        var s = slots[p.h.slot], dx = s.x - p.e.x, dy = s.y - p.e.y, d = Math.sqrt(dx * dx + dy * dy);
+        if (d < 6) { removeElectron(p.e); removeHole(p.h); flash(s.x, s.y); pairs.splice(pairs.indexOf(p), 1); }
+        else { p.e.x += dx / d * Math.min(d, 160 * dt); p.e.y += dy / d * Math.min(d, 160 * dt); }
+      }
+    });
+
+    // freie Elektronen
+    electrons.slice().forEach(function (e) {
+      var returning = pairs.some(function (p) { return p.back && p.e === e; });
+      if (returning) return;
+      e.vx += rnd(-1, 1) * 260 * dt; e.vy += rnd(-1, 1) * 260 * dt;
+      var sp = Math.sqrt(e.vx * e.vx + e.vy * e.vy), vmax = 45;
+      if (sp > vmax) { e.vx *= vmax / sp; e.vy *= vmax / sp; }
+      e.x += (e.vx + eDir * 38) * dt * SPEED;
+      e.y += e.vy * dt * SPEED;
+      if (e.y < YT) { e.y = YT; e.vy = Math.abs(e.vy); }
+      if (e.y > YB) { e.y = YB; e.vy = -Math.abs(e.vy); }
+      if (S.mode !== 'pn') {
+        if (eDir !== 0 && (e.x > XR || e.x < XL)) { // durch den Stromkreis zurück
+          e.x = eDir > 0 ? XL + 2 : XR - 2; e.y = rnd(YT, YB);
+        }
+        if (e.x < XL) { e.x = XL; e.vx = Math.abs(e.vx); }
+        if (e.x > XR) { e.x = XR; e.vx = -Math.abs(e.vx); }
+      } else {
+        if (e.x > XR) { e.x = XR; e.vx = -Math.abs(e.vx); }
+        var lim = MID + zoneHalf + 4;
+        if (S.bias === 'fwd' && e.x < MID + 2) {
+          // Rekombination an der Grenze mit dem nächstgelegenen Loch
+          var best = null;
+          holes.forEach(function (h) { if (!best || slots[h.slot].x > slots[best.slot].x) best = h; });
+          if (best && slots[best.slot].x > MID - 70) {
+            flash((e.x + slots[best.slot].x) / 2, (e.y + slots[best.slot].y) / 2);
+            removeHole(best); removeElectron(e); recombs.push(now);
+            return;
+          }
+          e.x = MID + 2; e.vx = Math.abs(e.vx);
+        } else if (S.bias !== 'fwd' && e.x < lim) { e.x = lim; e.vx = Math.abs(e.vx); }
+      }
+      e.el.setAttribute('cx', e.x.toFixed(1)); e.el.setAttribute('cy', e.y.toFixed(1));
+    });
+
+    // Löcher springen
+    holes.slice().forEach(function (h) {
+      if (pairs.some(function (p) { return p.back && p.h === h; })) return;
+      var s = slots[h.slot];
+      var forced = S.mode === 'pn' && !carrierAllowed(s.x, false) && S.bias !== 'fwd';
+      h.t -= dt * SPEED * (hDir ? 1.6 : 1);
+      if (h.t > 0 && !forced) return;
+      h.t = rnd(0.35, 0.8);
+      // Am Rand über den Kontakt (nur ohne pn-Übergang)
+      if (S.mode !== 'pn' && hDir !== 0 && s.edge && (hDir < 0 ? s.x < 60 : s.x > 460) && Math.random() < 0.7) {
+        var other = [];
+        slots.forEach(function (o, k) { if (o.edge && !o.hole && (hDir < 0 ? o.x > 480 : o.x < 40)) other.push(k); });
+        if (other.length) {
+          setHole(h.slot, null); h.slot = pick(other); setHole(h.slot, h);
+          return;
+        }
+      }
+      var cand = [], wsum = 0;
+      s.nb.forEach(function (k) {
+        var o = slots[k];
+        if (o.hole) return;
+        if (S.mode === 'pn' && S.bias !== 'fwd' && !carrierAllowed(o.x, false) && !forced) return;
+        if (S.mode === 'pn' && S.bias === 'fwd' && o.x > MID - 2) return;
+        if (forced && o.x >= s.x) return;
+        var w = hDir ? Math.exp(hDir * (o.x - s.x) / 14) : 1;
+        cand.push([k, w]); wsum += w;
+      });
+      if (!cand.length) return;
+      var x = Math.random() * wsum;
+      for (var i = 0; i < cand.length; i++) { x -= cand[i][1]; if (x <= 0) break; }
+      var ns = cand[Math.min(i, cand.length - 1)][0];
+      setHole(h.slot, null); h.slot = ns; setHole(ns, h);
+    });
+
+    // pn: Anzahl der Ladungsträger an die Sperrschicht anpassen (Nachschub / Abfluss an den Kontakten)
+    if (S.mode === 'pn') {
+      var wantE = S.bias === 'fwd' ? PN_P.length : PN_P.filter(function (p) { return ax(p[0]) > MID + zoneHalf; }).length;
+      var wantH = S.bias === 'fwd' ? PN_B.length : PN_B.filter(function (p) { return ax(p[0]) < MID - zoneHalf; }).length;
+      if (electrons.length < wantE && Math.random() < dt * 6) newElectron(XR - 2, rnd(YT + 10, YB - 10), 'P').vx = -30;
+      if (electrons.length > wantE) { var far = electrons.reduce(function (m, e) { return !m || e.x > m.x ? e : m; }, null); if (far) removeElectron(far); }
+      if (holes.length < wantH && Math.random() < dt * 6) {
+        var free = [];
+        slots.forEach(function (o, k) { if (o.edge && !o.hole && o.x < 40) free.push(k); });
+        if (free.length) newHole(pick(free), 'B');
+      }
+      if (holes.length > wantH) { var lft = holes.reduce(function (m, h) { return !m || slots[h.slot].x < slots[m.slot].x ? h : m; }, null); if (lft) removeHole(lft); }
+    }
+
+    // Blitze
+    flashes.slice().forEach(function (f) {
+      f.t += dt;
+      f.el.setAttribute('r', 4 + f.t * 30); f.el.setAttribute('opacity', Math.max(0, 1 - f.t / 0.5));
+      if (f.t > 0.5) { gFx.removeChild(f.el); flashes.splice(flashes.indexOf(f), 1); }
+    });
+  }
+
+  // ---------------------------------------------- Anzeige
+  var now = 0;
+  function counts() {
+    var nP = atoms.filter(function (a) { return a.kind === 'p'; }).length;
+    var nB = atoms.filter(function (a) { return a.kind === 'b'; }).length;
+    return { e: electrons.length, h: holes.length, q: holes.length + nP - electrons.length - nB, nP: nP, nB: nB };
+  }
+  function current() {
+    var ps = plusSide(), k = counts();
+    if (!ps) return 0;
+    if (S.mode === 'pn') {
+      recombs = recombs.filter(function (t) { return now - t < 3; });
+      return S.bias === 'fwd' ? recombs.length / 3 : 0;
+    }
+    return k.e + 0.5 * k.h;   // Löcher sind im Modell etwa halb so beweglich
+  }
+  var shown = { mode: '', e: -1, h: -1 };
+  function readouts() {
+    var k = counts(), I = current(), ps = plusSide();
+    $('rE').textContent = k.e; $('rH').textContent = k.h;
+    $('rQ').textContent = k.q === 0 ? '0 (neutral)' : (k.q > 0 ? '+' : '−') + Math.abs(k.q);
+    var txt, frac;
+    if (!ps) { txt = 'keine Spannung'; frac = 0; }
+    else if (S.mode === 'pn') {
+      if (S.bias === 'rev') { txt = 'kein Strom (sperrt)'; frac = 0; }
+      else { txt = I > 0.2 ? 'Strom fließt' : 'Strom setzt ein …'; frac = Math.min(1, I / 3); }
+    } else {
+      frac = Math.min(1, I / 10);
+      txt = I < 0.5 ? 'fast kein Strom' : I < 2 ? 'sehr kleiner Strom' : I < 4 ? 'kleiner Strom' : I < 7 ? 'mittlerer Strom' : 'großer Strom';
+    }
+    $('rI').textContent = txt;
+    $('rBar').style.width = (frac * 100).toFixed(0) + '%';
+  }
+
+  function layout() {
+    var pn = S.mode === 'pn', ps = plusSide();
+    $('zone').toggleAttribute('hidden', !pn || zoneHalf < 2);
+    $('zoneLbl').toggleAttribute('hidden', !pn || zoneHalf < 12);
+    $('gSides').toggleAttribute('hidden', !pn);
+    $('zone').setAttribute('x', MID - zoneHalf); $('zone').setAttribute('width', Math.max(0, 2 * zoneHalf));
+    $('gCircuit').toggleAttribute('hidden', !ps);
+    if (ps) {
+      var plusLeft = ps === 'left';
+      $('batL').setAttribute('y1', plusLeft ? 316 : 322); $('batL').setAttribute('y2', plusLeft ? 344 : 338); $('batL').setAttribute('stroke-width', plusLeft ? 2.4 : 6);
+      $('batR').setAttribute('y1', plusLeft ? 322 : 316); $('batR').setAttribute('y2', plusLeft ? 338 : 344); $('batR').setAttribute('stroke-width', plusLeft ? 6 : 2.4);
+      $('poleL').textContent = plusLeft ? '+' : '−'; $('poleR').textContent = plusLeft ? '−' : '+';
+    }
+  }
+
+  function status() {
+    var msg = '';
+    if (S.mode === 'pure') msg = S.field ? 'Freie Elektronen wandern zum Pluspol, Löcher zum Minuspol.' : 'Reines Silizium: Ladungsträger entstehen nur paarweise durch Wärme.';
+    if (S.mode === 'n') msg = 'Jedes Phosphoratom gibt ein freies Elektron ab und bleibt als positives Ion zurück.';
+    if (S.mode === 'p') msg = 'Jedem Boratom fehlt ein Elektron für die vierte Bindung: Es entsteht ein Loch. Das Boratom wird zum negativen Ion, sobald das Loch weiterwandert.';
+    if (S.mode === 'pn') msg = S.bias === 'rev' ? 'Sperrrichtung: Elektronen und Löcher werden von der Grenze weggezogen, die Sperrschicht wird breiter.' :
+      S.bias === 'fwd' ? 'Durchlassrichtung: Elektronen und Löcher werden zur Grenze gedrückt und rekombinieren dort.' :
+      'An der Grenze haben Elektronen Löcher gefüllt. Übrig bleiben ortsfeste Ionen ohne freie Ladungsträger.';
+    $('status').textContent = msg;
+  }
+
+  function goals() {
+    var k = counts();
+    if (S.mode === 'pure' && S.T >= 100 && S.field && k.e >= 4) LK.reach('warm');
+    if (S.mode === 'n' && S.dop >= 3 && S.T <= 40 && S.field) LK.reach('ndot');
+    if (S.mode === 'pn' && S.bias === 'rev' && seenRev > 0.3) LK.reach('sperr');
+  }
+
+  function ui() {
+    document.querySelectorAll('[data-mode]').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-mode') === S.mode); });
+    document.querySelectorAll('[data-bias]').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-bias') === S.bias); });
+    var pn = S.mode === 'pn';
+    $('tCtrl').hidden = pn;
+    $('dCtrl').hidden = !(S.mode === 'n' || S.mode === 'p');
+    $('dName').textContent = S.mode === 'p' ? 'Boratome' : 'Phosphoratome';
+    $('fieldRow').hidden = pn; $('biasRow').hidden = !pn;
+    $('oT').textContent = S.T + ' °C';
+    $('oD').textContent = S.dop;
+    $('bField').setAttribute('aria-pressed', S.field);
+    $('bField').textContent = S.field ? 'Spannung abschalten' : 'Spannung anlegen';
+    layout(); status(); readouts();
+  }
+
+  document.querySelectorAll('[data-mode]').forEach(function (b) {
+    b.addEventListener('click', function () { S.mode = b.getAttribute('data-mode'); if (S.mode === 'pn') { S.bias = 'none'; S.T = 20; $('sT').value = 20; } reset(); ui(); });
+  });
+  document.querySelectorAll('[data-bias]').forEach(function (b) {
+    b.addEventListener('click', function () { S.bias = b.getAttribute('data-bias'); recombs = []; ui(); });
+  });
+  $('sT').addEventListener('input', function () { S.T = Number(this.value); ui(); });
+  $('sD').addEventListener('input', function () { S.dop = Number(this.value); reset(); ui(); });
+  $('bField').addEventListener('click', function () { S.field = !S.field; ui(); });
+
+  var last = performance.now(), tick = 0;
+  function frame(t) {
+    var dt = Math.min(0.05, (t - last) / 1000); last = t; now += dt;
+    step(dt);
+    tick += dt;
+    layout();
+    if (tick > 0.2) { tick = 0; readouts(); goals(); }
+    requestAnimationFrame(frame);
+  }
+
+  reset(); ui(); requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

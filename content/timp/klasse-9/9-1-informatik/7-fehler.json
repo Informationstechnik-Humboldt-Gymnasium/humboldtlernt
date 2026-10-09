@@ -1,0 +1,123 @@
+{
+  "id": "timp-k9-fehler",
+  "titel": "Programme testen und Fehler finden",
+  "kurz": "Wie man Programme mit geschickten Testfällen prüft, Fehler Schritt für Schritt findet und zwischen verschiedenen Lösungen begründet entscheidet.",
+  "reihenfolge": 7,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Syntaxfehler und Logikfehler unterscheiden" },
+    { "id": "lz2", "niveau": "G", "text": "Testfälle mit normalen Werten und Randfällen auswählen" },
+    { "id": "lz3", "niveau": "H", "text": "Erwartungswidriges Verhalten deuten und Fehler Schritt für Schritt eingrenzen (Debugging)" },
+    { "id": "lz4", "niveau": "H", "text": "Systematische und zufällige Fehler in Programmergebnissen unterscheiden, z. B. durch Rundung oder Zufallszahlen" },
+    { "id": "lz5", "niveau": "H", "text": "Zwischen verschiedenen Umsetzungen eines Programms begründet entscheiden" }
+  ],
+  "verstehen": {
+    "einstieg": "Dein Spiel startet, aber die Figur fällt durch den Boden. Ein anderes Mal hängt das Programm einfach. Wo fängt man mit der Suche an?",
+    "abschnitte": [
+      {
+        "titel": "Zwei Arten von Fehlern",
+        "text": "- **Syntaxfehler:** Das Programm ist falsch geschrieben, der Computer versteht es nicht, z. B. ``wiederhol 3-mal`` statt ``wiederhole 3-mal`` oder eine fehlende Klammer. Das Programm startet gar nicht oder bricht mit einer Meldung ab. In Scratch passieren solche Fehler kaum, weil die Blöcke nur passend zusammenstecken.\n- **Logikfehler:** Das Programm läuft, macht aber nicht das, was es soll. Zum Beispiel teilt es durch die falsche Zahl, eine Zeile steht an der falschen Stelle oder eine Bedingung ist falsch herum. Diese Fehler sind schwerer zu finden, weil der Computer nicht meckert."
+      },
+      {
+        "titel": "Testen mit Testfällen und Randfällen",
+        "text": "Ein **Testfall** besteht aus Eingabewerten und dem **erwarteten** Ergebnis, das man vorher selbst überlegt. Dann vergleicht man mit dem, was das Programm tatsächlich ausgibt.\n\nBesonders wichtig sind **Randfälle**: Werte genau an einer Grenze und die kleinsten und größten erlaubten Werte. Prüft ein Programm „bestanden ab 50 Punkten“, testet man z. B. 49, 50, 0 und 100, nicht nur 73. Viele Fehler stecken genau an den Grenzen, z. B. ``>`` statt ``=`` oder ``punkte > 50`` statt ``punkte > 49``."
+      },
+      {
+        "titel": "Debugging: Schritt für Schritt",
+        "text": "Verhält sich ein Programm **erwartungswidrig**, geht man planvoll vor:\n\n- Genau beschreiben: Was habe ich erwartet, was passiert stattdessen?\n- Einen Testfall finden, bei dem der Fehler sicher auftritt.\n- Das Programm Zeile für Zeile ausführen und die Variablen beobachten (im Programmierlabor oder mit zusätzlichen ``sage``-Zeilen).\n- Die erste Zeile finden, nach der ein Wert falsch ist.\n- Den Fehler verbessern und **alle** Testfälle noch einmal prüfen.\n\nDas Verhalten gibt oft schon einen Hinweis: Hängt das Programm, ist es meist eine Endlosschleife. Wird der Ball nie schneller, wird ``v`` vielleicht in der Schleife immer wieder zurückgesetzt."
+      },
+      {
+        "titel": "Systematische und zufällige Fehler",
+        "text": "Wie beim Messen in der Physik gibt es auch bei Programmergebnissen zwei Arten von Abweichungen:\n\n- **Zufällige** Abweichungen sind bei jedem Lauf anders. Ein Programm, das 600-mal würfelt, zählt mal 94, mal 107 Sechsen. Das ist kein Programmfehler, sondern Zufall. Man lässt das Programm mehrmals laufen und bildet den Mittelwert.\n- **Systematische** Fehler gehen immer in dieselbe Richtung. Beispiele: ``zufallszahl von 1 bis 5`` liefert nie eine Sechs. Eine Fallsimulation mit großem `Δt` lässt den Ball immer etwas zu schnell fallen.\n\nAuch **Rundung** kann Fehler erzeugen: Der Computer speichert Zahlen im Zweiersystem. 0,1 kann er nicht exakt darstellen. Addiert man zehnmal 0,1, erhält man 0,9999999999999999 und nicht genau 1. Eine Abbruchbedingung wie ``wiederhole bis t = 1`` wird dann nie wahr."
+      },
+      {
+        "titel": "Begründet entscheiden",
+        "text": "Für dieselbe Aufgabe gibt es oft mehrere Programme. Man vergleicht sie zum Beispiel danach,\n\n- ob sie in **allen** Testfällen richtig rechnen,\n- wie **übersichtlich** und **kurz** sie sind (Schleifen und Funktionen statt kopierter Zeilen),\n- wie leicht man sie **ändern** kann,\n- wie **genau** und wie **schnell** sie sind (z. B. kleines oder großes `Δt`).\n\nEine gute Entscheidung nennt die Vor- und Nachteile und gewichtet sie für den Zweck des Programms."
+      }
+    ],
+    "merksatz": "**Syntaxfehler** verhindern, dass ein Programm läuft. **Logikfehler** liefern falsche Ergebnisse. Man findet sie mit Testfällen, besonders **Randfällen**, und durch schrittweises Ausführen. **Zufällige** Abweichungen schwanken von Lauf zu Lauf, **systematische** Fehler gehen immer in dieselbe Richtung.",
+    "alltag": "Der Begriff „Bug“ (Käfer) für Programmfehler wurde berühmt, als 1947 eine echte Motte in einem Großrechner der Harvard-Universität einen Fehler auslöste. Das Team klebte sie in sein Logbuch."
+  },
+  "interaktiv": ["timp-programmierlabor", "timp-fallsimulation"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "timp-dbg-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Um welche Art von Fehler oder Abweichung handelt es sich?",
+      "paare": [
+        { "links": "Im Programm steht ``wiederhol 3-mal``. Das Programm startet nicht.", "rechts": "Syntaxfehler" },
+        { "links": "Ein Programm soll den Durchschnitt von drei Zahlen berechnen, teilt die Summe aber durch 2.", "rechts": "Logikfehler" },
+        { "links": "Ein Würfelprogramm zählt bei 600 Würfen mal 94, mal 107 Sechsen.", "rechts": "zufällige Abweichung, kein Programmfehler" }
+      ],
+      "erklaerung": "Ein Schreibfehler im Befehl ist ein Syntaxfehler. Eine falsche Rechnung in einem lauffähigen Programm ist ein Logikfehler. Schwankende Ergebnisse durch Zufallszahlen sind gewollt."
+    },
+    {
+      "id": "timp-dbg-02", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Ein Programm soll bei 0 bis 100 Punkten „bestanden“ sagen, wenn man **mindestens 50** Punkte hat. Welche Testwerte sind **Randfälle**?",
+      "optionen": [
+        { "text": "49", "richtig": true },
+        { "text": "50", "richtig": true },
+        { "text": "0", "richtig": true },
+        { "text": "100", "richtig": true },
+        { "text": "73", "feedback": "73 ist ein normaler Testfall mitten im Bereich. Er ist sinnvoll, aber kein Randfall." },
+        { "text": "25", "feedback": "25 liegt mitten im Bereich „nicht bestanden“. Es ist ein normaler Testfall." }
+      ],
+      "erklaerung": "49 und 50 liegen direkt an der Grenze. Hier fällt z. B. auf, wenn jemand ``punkte > 50`` statt ``punkte > 49`` geschrieben hat. 0 und 100 sind der kleinste und größte erlaubte Wert."
+    },
+    {
+      "id": "timp-dbg-03", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz3",
+      "frage": "Das Programm soll den Durchschnitt von 4, 6 und 8 berechnen. Erwartet ist 6, es sagt aber 9. In welcher Zeile steckt der Fehler?\n\n```\nsetze a auf 4\nsetze b auf 6\nsetze c auf 8\nsetze summe auf a + b + c\nsetze schnitt auf summe / 2\nsage schnitt\n```",
+      "optionen": [
+        { "text": "Zeile 5: Es muss durch 3 geteilt werden.", "richtig": true },
+        { "text": "Zeile 4: Die Summe ist falsch.", "feedback": "4 + 6 + 8 = 18. Die Summe stimmt." },
+        { "text": "Zeile 6: Es wird die falsche Variable ausgegeben.", "feedback": "``schnitt`` ist die richtige Variable. Ihr Wert ist aber schon falsch berechnet." },
+        { "text": "Zeile 1: Der Startwert ist falsch.", "feedback": "Die Startwerte sind die gegebenen Zahlen. Verfolge die Werte Zeile für Zeile." }
+      ],
+      "erklaerung": "Bis Zeile 4 stimmt alles: ``summe = 18``. In Zeile 5 wird durch 2 statt durch 3 geteilt: 18 / 2 = 9. Bei drei Zahlen muss man durch 3 teilen: 18 / 3 = 6."
+    },
+    {
+      "id": "timp-dbg-04", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Dieses Programm soll nach 10 Schritten anhalten. Es hängt aber in einer Endlosschleife. Woran liegt das?\n\n```\nsetze t auf 0\nwiederhole bis t = 1\n  ändere t um 0.1\nsage t\n```",
+      "optionen": [
+        { "text": "Der Computer kann 0,1 nicht exakt speichern. Nach 10 Schritten ist t = 0,9999999999999999 und nicht genau 1.", "richtig": true },
+        { "text": "``ändere`` darf man nur mit ganzen Zahlen benutzen.", "feedback": "Man darf auch Kommazahlen addieren. Das Problem liegt beim Vergleich mit ``=``." },
+        { "text": "Die Schleife startet nie, weil t am Anfang 0 ist.", "feedback": "``0 = 1`` ist falsch. Also läuft die Schleife los, sie hört nur nicht mehr auf." },
+        { "text": "Das ist ein zufälliger Fehler. Beim nächsten Start klappt es vielleicht.", "feedback": "Der Rundungsfehler tritt bei jedem Lauf genau gleich auf. Er ist systematisch." }
+      ],
+      "erklaerung": "Zahlen werden im Zweiersystem gespeichert, und 0,1 ist dort ein unendlicher Bruch. Es entstehen winzige Rundungsfehler, und ``t = 1`` wird nie genau wahr. Abhilfe: ``wiederhole bis t > 0.95`` oder gleich ``wiederhole 10-mal``. Mit ``=`` sollte man Kommazahlen nie vergleichen."
+    },
+    {
+      "id": "timp-dbg-05", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Welche der folgenden Abweichungen sind **systematische** Fehler?",
+      "optionen": [
+        { "text": "Im Würfelprogramm steht ``zufallszahl von 1 bis 5``. Es kommt nie eine Sechs.", "richtig": true },
+        { "text": "Eine Fallsimulation mit großem `Δt` lässt den Ball immer etwas zu schnell fallen.", "richtig": true },
+        { "text": "Ein Würfelprogramm zählt bei 600 Würfen mal 94, mal 107 Sechsen.", "feedback": "Diese Zahlen schwanken zufällig um den Erwartungswert 100. Das ist eine zufällige Abweichung." },
+        { "text": "Ein Programm zieht zufällig eine Karte. Bei jedem Lauf ist es eine andere.", "feedback": "Das ist gewollter Zufall, kein Fehler." }
+      ],
+      "erklaerung": "Systematische Fehler wirken bei jedem Lauf in dieselbe Richtung. Sie verschwinden nicht, wenn man das Programm öfter laufen lässt. Man muss das Programm ändern (hier: ``zufallszahl von 1 bis 6`` bzw. kleineres `Δt`)."
+    },
+    {
+      "id": "timp-dbg-06", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Bringe die Schritte beim Debugging in eine sinnvolle Reihenfolge.",
+      "elemente": [
+        "Genau beschreiben, was erwartet wurde und was stattdessen passiert",
+        "Einen Testfall finden, bei dem der Fehler sicher auftritt",
+        "Das Programm Zeile für Zeile ausführen und die Variablen beobachten",
+        "Die erste Zeile finden, nach der ein Wert falsch ist",
+        "Den Fehler verbessern und alle Testfälle erneut prüfen"
+      ],
+      "erklaerung": "Wer planvoll vorgeht, findet Fehler schneller als durch wildes Ausprobieren. Der letzte Schritt ist wichtig: Eine Verbesserung kann an anderer Stelle einen neuen Fehler erzeugen."
+    },
+    {
+      "id": "timp-dbg-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz5",
+      "frage": "Zwei Schüler programmieren eine Figur, die ein Quadrat läuft.\n\n```\nUmsetzung A:\ngehe 50 Schritte\ndrehe dich um 90 Grad\ngehe 50 Schritte\ndrehe dich um 90 Grad\ngehe 50 Schritte\ndrehe dich um 90 Grad\ngehe 50 Schritte\ndrehe dich um 90 Grad\n```\n\n```\nUmsetzung B:\nwiederhole 4-mal\n  gehe 50 Schritte\n  drehe dich um 90 Grad\n```\n\nBeide zeichnen dasselbe Quadrat. Entscheide begründet, welche Umsetzung besser ist.",
+      "stichworte": [
+        { "aspekt": "B ist kürzer und übersichtlicher", "woerter": ["kuerzer", "uebersicht", "weniger zeilen", "kompakt"] },
+        { "aspekt": "Änderungen (z. B. Seitenlänge) nur an einer Stelle nötig", "woerter": ["einer stelle", "einmal aendern", "nur einmal", "leichter aendern", "anpassen"] },
+        { "aspekt": "Weniger Gefahr von Fehlern beim Kopieren/Ändern", "woerter": ["fehler", "vergessen", "vertipp"] }
+      ],
+      "musterloesung": "Umsetzung B ist besser. Sie ist kürzer und übersichtlicher, weil die Schleife zeigt, dass sich dieselben zwei Schritte viermal wiederholen. Soll das Quadrat größer werden, muss man die Seitenlänge nur an einer Stelle ändern statt an vier Stellen. Bei A kann man dabei leicht eine Zeile vergessen, und es entsteht ein Fehler, zum Beispiel ein schiefes Viereck. Beide Programme sind gleich schnell und gleich genau, also entscheidet hier die bessere Änderbarkeit.",
+      "erklaerung": "Wenn zwei Programme dasselbe Ergebnis liefern, entscheiden Übersicht, Änderbarkeit und Fehleranfälligkeit. Kopierte Zeilen sind ein Hinweis, dass eine Schleife oder Funktion besser wäre."
+    }
+  ]
+}

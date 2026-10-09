@@ -1,5 +1,5 @@
 // Baut eine eigenständige Testseite (eine einzige HTML-Datei) aus dem echten Code und den echten Inhalten:
-// Klassenstufen, Themen, Verstehen-Seiten mit interaktiven Erklärungen und alle Übungen.
+// Fächer, Klassenstufen, Themen, Verstehen-Seiten mit interaktiven Erklärungen und alle Übungen.
 // Läuft ohne Server, ohne Login und ohne Installation – einfach im Browser öffnen.
 // Der Fortschritt wird nur im Browser gespeichert.
 //
@@ -10,15 +10,18 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { ROOT, config } from '../src/config.js';
-import { loadContent } from '../src/physik.js';
+import { loadAll } from '../src/faecher.js';
 
 const out = process.argv[2] || path.join(ROOT, 'testseite.html');
 const read = f => fs.readFileSync(path.join(ROOT, f), 'utf8');
 
 // ---------------------------------------------------------------- Inhalte
-const content = loadContent();
+const content = loadAll();
 if (content.errors.length) { console.error('Fehler in den Inhalten:\n  ' + content.errors.join('\n  ')); process.exit(1); }
-const stufen = content.stufen.filter(s => s.themenfelder.length);
+const faecher = content.faecher
+  .map(f => ({ id: f.id, fach: f.fach, kurz: f.kurz, beschreibung: f.beschreibung, stufen: f.stufen.filter(s => s.themenfelder.length) }))
+  .filter(f => f.stufen.length);
+const stufen = faecher.flatMap(f => f.stufen);
 
 // ---------------------------------------------------------------- Interaktive Erklärungen einbetten
 const kitCss = read('public/lesson-kit.css');
@@ -37,17 +40,17 @@ for (const slug of slugs) {
 
 // ---------------------------------------------------------------- Echten Code für den Browser zusammensetzen
 const asScript = f => read(f).split('\n').filter(l => !/^import\s/.test(l)).join('\n').replace(/^export\s+(?=(const|function|let|class|async)\b)/gm, '');
-const appCode = ['src/markup.js', 'src/exercises.js', 'src/progress.js', 'src/views-physik.js'].map(f => `// ---- ${f}\n${asScript(f)}`).join('\n\n');
+const appCode = ['src/markup.js', 'src/exercises.js', 'src/progress.js', 'src/views-fach.js'].map(f => `// ---- ${f}\n${asScript(f)}`).join('\n\n');
 const uebung = read('public/uebung.js').replace(/^\(function \(\) \{/m, 'function initUebung() {').replace(/^\}\)\(\);\s*$/m, '}');
 
 const json = v => JSON.stringify(v).replace(/</g, '\\u003c');
 
 const shell = /* js */ `
 // ---------------------------------------------------------------- Testseite: Daten, Speicher, nachgebauter Server
-const STUFEN = ${json(stufen)};
+const FAECHER = ${json(faecher)};
 const LESSONS = ${json(lessons)};
 const topicById = new Map(), exerciseById = new Map();
-for (const g of STUFEN) for (const tf of g.themenfelder) for (const t of tf.topics) { topicById.set(t.id, t); for (const e of t.uebungen) exerciseById.set(e.id, e); }
+for (const f of FAECHER) for (const g of f.stufen) for (const tf of g.themenfelder) for (const t of tf.topics) { topicById.set(t.id, t); for (const e of t.uebungen) exerciseById.set(e.id, e); }
 
 const KEY = 'lernseite-testseite';
 let state = { attempts: [], understood: [], lessons: [], klasse: '9a' };
@@ -107,6 +110,7 @@ window.fetch = async function (url, opts) {
 function layout({ title, body }) {
   document.title = (title ? title + ' · ' : '') + 'Lernseite – Testseite';
   const klassen = ['', '7a', '8a', '9a', '10a'];
+  const fachLinks = FAECHER.map(f => \`<a href="/\${f.id}">\${esc(f.kurz)}</a>\`).join('');
   return \`
   <div class="test-banner">
     <strong>Testseite</strong> · ohne Server und Login · Fortschritt nur in diesem Browser
@@ -114,8 +118,8 @@ function layout({ title, body }) {
     <button type="button" id="tReset" class="link">Fortschritt zurücksetzen</button>
   </div>
   <nav class="top" aria-label="Hauptmenü">
-    <a class="brand" href="/physik">Lernseite</a>
-    <div class="nav-right"><a href="/physik">Physik</a><span class="who">Testschüler\${state.klasse ? ' · ' + esc(state.klasse) : ''}</span></div>
+    <a class="brand" href="/">Lernseite</a>
+    <div class="nav-right">\${fachLinks}<span class="who">Testschüler\${state.klasse ? ' · ' + esc(state.klasse) : ''}</span></div>
   </nav>
   <main id="inhalt">\${body}</main>\`;
 }
@@ -123,21 +127,24 @@ function layout({ title, body }) {
 // ---------------------------------------------------------------- Seiten
 const lessonList = slugs => slugs.map(s => LESSONS[s]).filter(Boolean);
 function page(p) {
-  const s = sets(), grades = STUFEN, parts = p.split('/').filter(Boolean);
+  const s = sets(), parts = p.split('/').filter(Boolean);
   const lessonDone = new Set(state.lessons);
-  if (!parts.length || (parts.length === 1 && parts[0] === 'physik')) return gradePickerPage({ user: user(), grades, own: gradeOf(state.klasse), sets: s });
+  if (!parts.length) return subjectPickerPage({ user: user(), faecher: FAECHER, own: gradeOf(state.klasse), sets: s });
+  const fach = FAECHER.find(f => f.id === parts[0]);
+  const grades = fach ? fach.stufen : [];
+  if (fach && parts.length === 1) return gradePickerPage({ user: user(), fach, grades, own: gradeOf(state.klasse), sets: s });
   if (parts[0] === 'lektion' && LESSONS[parts[1]]) {
     const l = LESSONS[parts[1]];
     return layout({ title: l.title, body: \`<div class="lesson-bar"><a href="javascript:history.back()" class="back">← zurück</a><h1>\${esc(l.title)}</h1></div>
       <iframe id="lesson" data-slug="\${esc(l.slug)}" title="\${esc(l.title)}" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals"></iframe>\` });
   }
-  if (parts[0] === 'physik') {
+  if (fach) {
     const grade = grades.find(g => g.stufe === Number(parts[1]));
-    if (grade && parts.length === 2) return gradePage({ user: user(), grade, grades, sets: s });
+    if (grade && parts.length === 2) return gradePage({ user: user(), fach, grade, grades, sets: s });
     const topic = topicById.get(parts[2]);
-    if (grade && topic && topic.stufe === grade.stufe) {
+    if (grade && topic && topic.fach === fach.id && topic.stufe === grade.stufe) {
       const all = topicsOfGrade(grade);
-      const ctx = { user: user(), grade, topic, sets: s, progress: topicProgress(topic, s.solved, s.understood), nextTopic: all[all.indexOf(topic) + 1] || null };
+      const ctx = { user: user(), fach, grade, topic, sets: s, progress: topicProgress(topic, s.solved, s.understood), nextTopic: all[all.indexOf(topic) + 1] || null };
       if (parts.length === 3) return topicUnderstandPage(Object.assign(ctx, { lessons: lessonList(topic.interaktiv), extras: lessonList(topic.vertiefung), lessonDone }));
       if (parts[3] === 'ueben') {
         const stats = new Map();
@@ -146,11 +153,11 @@ function page(p) {
       }
     }
   }
-  return layout({ title: 'Nicht gefunden', body: '<section class="login"><h1>Nicht gefunden</h1><p><a class="btn" href="/physik">Zur Übersicht</a></p></section>' });
+  return layout({ title: 'Nicht gefunden', body: '<section class="login"><h1>Nicht gefunden</h1><p><a class="btn" href="/">Zur Übersicht</a></p></section>' });
 }
 
 function render() {
-  const p = decodeURIComponent(location.hash.slice(1)) || '/physik';
+  const p = decodeURIComponent(location.hash.slice(1)) || '/';
   const html = page(p);
   const app = document.getElementById('app');
   app.innerHTML = html.replace(/^[\\s\\S]*<body[^>]*>|<\\/body>[\\s\\S]*$/g, '');
@@ -168,7 +175,7 @@ function render() {
   initUebung();
 }
 
-// Interne Links (/physik/…) als Sprungmarken (#/physik/…) behandeln
+// Interne Links (/physik/…, /timp/…) als Sprungmarken (#/physik/…) behandeln
 document.addEventListener('click', e => {
   const a = e.target.closest('a[href^="/"]');
   if (!a || e.ctrlKey || e.metaKey) return;

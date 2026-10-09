@@ -1,0 +1,113 @@
+{
+  "id": "timp-k8-messen",
+  "titel": "Messen im Stromkreis",
+  "kurz": "Wie du Stromstärke und Spannung richtig misst, daraus den Widerstand bestimmst und Messwerte sinnvoll angibst.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Einen Strommesser in Reihe und einen Spannungsmesser parallel zum Bauteil anschließen" },
+    { "id": "lz2", "niveau": "G", "text": "Den Widerstand eines Bauteils mit `R = U / I` aus Messwerten berechnen" },
+    { "id": "lz3", "niveau": "G", "text": "Ein Vielfachmessgerät sicher bedienen und einen passenden Messbereich wählen" },
+    { "id": "lz4", "niveau": "H", "text": "Messwerte und Ergebnisse mit sinnvoller Genauigkeit angeben" },
+    { "id": "lz5", "niveau": "H", "text": "Messwerte in Tabellen und Diagrammen darstellen und auswerten" }
+  ],
+  "verstehen": {
+    "einstieg": "Dein Messgerät zeigt „0,23“ an. Ist das jetzt viel oder wenig? Und was bedeutet es, wenn der Taschenrechner für den Widerstand 26,08695652 Ω ausgibt?",
+    "abschnitte": [
+      {
+        "titel": "Strommesser in Reihe, Spannungsmesser parallel",
+        "text": "Die **Stromstärke** `I` misst du mit einem **Strommesser** (Amperemeter). Der Strom muss durch das Messgerät hindurchfließen. Deshalb baust du den Strommesser **in Reihe** in den Stromkreis ein: Du trennst den Stromkreis an einer Stelle auf und setzt das Messgerät dazwischen.\n\nDie **Spannung** `U` misst du mit einem **Spannungsmesser** (Voltmeter). Er vergleicht zwei Punkte des Stromkreises. Deshalb schließt du ihn **parallel** zum Bauteil an, also an dessen beide Anschlüsse.\n\nEin Strommesser hat einen sehr **kleinen** Widerstand, damit er den Strom kaum behindert. Ein Spannungsmesser hat einen sehr **großen** Widerstand, damit kaum Strom durch ihn fließt. Schließt du einen Strommesser aus Versehen parallel an, entsteht fast ein **Kurzschluss**: Es fließt ein sehr großer Strom, und die Sicherung im Messgerät brennt durch."
+      },
+      {
+        "titel": "Den Widerstand aus Messwerten bestimmen",
+        "text": "Misst du gleichzeitig die Spannung am Bauteil und die Stromstärke durch das Bauteil, kannst du seinen **Widerstand** berechnen:\n\n`R = U / I`\n\nDie Einheit ist das **Ohm** (Ω), 1 Ω = 1 V / 1 A. Beispiel: An einem Draht liegen 3,0 V, es fließen 0,15 A. Dann ist `R = 3,0 V / 0,15 A = 20 Ω`.\n\nViele Vielfachmessgeräte haben auch einen Ohm-Bereich. Dann misst das Gerät den Widerstand direkt. Dafür muss das Bauteil aber **aus dem Stromkreis ausgebaut** sein."
+      },
+      {
+        "titel": "Das Vielfachmessgerät bedienen",
+        "text": "Ein Vielfachmessgerät (Multimeter) kann Spannung, Stromstärke und Widerstand messen. Gehe so vor:\n\n- Baue die Schaltung bei **ausgeschalteter** Spannungsquelle auf.\n- Stelle die richtige **Messgröße** ein (V oder A, Gleichstrom „DC“ oder Wechselstrom „AC“) und stecke die Kabel in die passenden Buchsen.\n- Beginne mit dem **größten Messbereich**, wenn du nicht weißt, welcher Wert zu erwarten ist. So wird das Gerät nicht überlastet.\n- Schalte dann schrittweise in einen **kleineren Messbereich**, bis der Wert gut ablesbar ist. Der beste Messbereich ist der kleinste, der noch nicht überschritten wird.\n- Notiere den Messwert immer **mit Einheit**."
+      },
+      {
+        "titel": "Messgenauigkeit und sinnvolle Stellen",
+        "text": "Jede Messung ist ungenau. Ein Messgerät zeigt nur eine bestimmte Zahl von Stellen an, und auch die Anzeige selbst hat einen kleinen Fehler. Gib deshalb den Messwert so an, wie das Gerät ihn anzeigt. Ein Wert von 6,0 V ist etwas anderes als 6 V: Die Null zeigt, dass du auf ein Zehntel Volt genau gemessen hast.\n\nFür berechnete Ergebnisse gilt: Ein Ergebnis kann **nicht genauer** sein als die Messwerte, aus denen es berechnet wurde. Als Faustregel gibst du das Ergebnis mit so vielen **gültigen Ziffern** an wie der ungenaueste Messwert. Aus 6,0 V und 0,23 A (je 2 gültige Ziffern) folgt `R = 26 Ω` und nicht 26,08695652 Ω.\n\nNullen am Anfang (wie bei 0,23) zählen dabei nicht als gültige Ziffern."
+      },
+      {
+        "titel": "Messreihen in Tabelle und Diagramm",
+        "text": "Eine einzelne Messung kann zufällig danebenliegen. Deshalb nimmst du eine **Messreihe** auf: Du veränderst eine Größe (z. B. die Spannung) schrittweise und misst jedes Mal die andere (die Stromstärke).\n\nTrage die Werte in eine **Tabelle** ein. Schreibe die Einheiten in den Tabellenkopf, z. B. „`U` in V“. Danach zeichnest du ein **Diagramm**: Die Größe, die du einstellst, kommt nach rechts, die gemessene Größe nach oben. Die Achsen bekommen Formelzeichen, Einheit und eine gleichmäßige Einteilung.\n\nMesspunkte werden **nicht** im Zickzack verbunden. Stattdessen zeichnest du eine **Ausgleichsgerade** oder -kurve, die möglichst gut durch die Punktwolke verläuft. Einzelne Punkte, die stark abweichen, sind oft **Messfehler** und sollten noch einmal gemessen werden."
+      }
+    ],
+    "formeln": [
+      { "formel": "R = \\frac{U}{I}", "bedeutung": "Widerstand `R` in Ω, Spannung `U` in V, Stromstärke `I` in A" },
+      { "formel": "1 A = 1000 mA", "bedeutung": "Umrechnung von Ampere in Milliampere" }
+    ],
+    "merksatz": "**Strommesser in Reihe, Spannungsmesser parallel.** Beginne beim Messen mit dem größten Messbereich. Ein berechnetes Ergebnis ist nie genauer als die Messwerte, aus denen es stammt.",
+    "alltag": "Auch Elektrikerinnen und Elektriker prüfen mit einem Vielfachmessgerät, ob an einer Steckdose Spannung anliegt oder ob ein Kabel unterbrochen ist."
+  },
+  "interaktiv": [],
+  "vertiefung": ["k9-ohmsches-gesetz"],
+  "uebungen": [
+    { "id": "timp-mes-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Ordne richtig zu.",
+      "paare": [
+        { "links": "Strommesser", "rechts": "wird in Reihe zum Bauteil geschaltet" },
+        { "links": "Spannungsmesser", "rechts": "wird parallel zum Bauteil geschaltet" },
+        { "links": "Einheit der Stromstärke", "rechts": "Ampere (A)" },
+        { "links": "Einheit der Spannung", "rechts": "Volt (V)" },
+        { "links": "Einheit des Widerstands", "rechts": "Ohm (Ω)" }
+      ],
+      "extraRechts": ["Watt (W)"],
+      "erklaerung": "Durch den Strommesser muss der Strom hindurchfließen, deshalb liegt er in Reihe. Der Spannungsmesser vergleicht die beiden Anschlüsse des Bauteils, deshalb liegt er parallel." },
+    { "id": "timp-mes-02", "typ": "zahl", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Du misst an einem Draht die Spannung 4,5 V und die Stromstärke 0,15 A. Wie groß ist sein Widerstand?",
+      "gegeben": "`U = 4,5 V`, `I = 0,15 A`", "gesucht": "Widerstand `R`", "gesuchtSymbol": "R",
+      "loesung": 30, "einheit": "Ω",
+      "rechenweg": ["Formel: `R = \\frac{U}{I}`", "Einsetzen: `R = \\frac{4,5 V}{0,15 A}`", "Ergebnis: `R = 30 Ω`"],
+      "hinweis": "Widerstand = Spannung geteilt durch Stromstärke.",
+      "erklaerung": "Für 1 A bräuchte man an diesem Draht 30 V. Sein Widerstand beträgt also 30 Ω." },
+    { "id": "timp-mes-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Du erwartest eine Stromstärke von ungefähr 150 mA. Dein Messgerät hat die Messbereiche 20 mA, 200 mA, 2 A und 10 A. Welchen Messbereich wählst du für die genaueste Messung?",
+      "optionen": [
+        { "text": "20 mA", "feedback": "150 mA sind mehr als 20 mA. Der Messbereich wäre überschritten, das Gerät zeigt einen Fehler an oder die Sicherung brennt durch." },
+        { "text": "200 mA", "richtig": true },
+        { "text": "2 A", "feedback": "Das geht, aber das Gerät zeigt dann z. B. nur „0,15“ an. Im kleineren Bereich 200 mA bekommst du mehr Stellen, z. B. „150,3“." },
+        { "text": "10 A", "feedback": "Der Bereich ist viel zu groß. Du würdest nur sehr wenige Stellen ablesen können." }
+      ],
+      "erklaerung": "Der beste Messbereich ist der **kleinste, der noch nicht überschritten** wird. Weißt du nicht, was dich erwartet, beginnst du aber zur Sicherheit beim größten Bereich und schaltest dann herunter." },
+    { "id": "timp-mes-04", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Bringe die Schritte beim Messen einer unbekannten Stromstärke mit einem Vielfachmessgerät in die richtige Reihenfolge.",
+      "elemente": [
+        "Schaltung bei ausgeschalteter Spannungsquelle aufbauen, Messgerät in Reihe",
+        "Messgröße Stromstärke (A, DC) und den größten Messbereich einstellen",
+        "Spannungsquelle einschalten",
+        "Messbereich schrittweise verkleinern, bis der Wert gut ablesbar ist",
+        "Messwert mit Einheit in die Tabelle eintragen"
+      ],
+      "erklaerung": "Erst aufbauen, dann einschalten. Mit dem größten Messbereich zu beginnen schützt das Messgerät vor Überlastung." },
+    { "id": "timp-mes-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Du hast `U = 6,0 V` und `I = 0,23 A` gemessen. Der Taschenrechner zeigt für `R = U / I` den Wert 26,08695652. Wie gibst du das Ergebnis sinnvoll an?",
+      "optionen": [
+        { "text": "`R = 26,08695652 Ω`", "feedback": "So genau hast du nicht gemessen. Die vielen Stellen täuschen eine Genauigkeit vor, die es nicht gibt." },
+        { "text": "`R = 26,09 Ω`", "feedback": "Auch vier gültige Ziffern sind zu viel. Deine Messwerte haben nur je zwei gültige Ziffern." },
+        { "text": "`R = 26 Ω`", "richtig": true },
+        { "text": "`R = 30 Ω`", "feedback": "Das ist zu grob gerundet. Du verschenkst Information, die in deinen Messwerten steckt." }
+      ],
+      "erklaerung": "6,0 V und 0,23 A haben je **zwei gültige Ziffern**. Das Ergebnis gibst du deshalb auch mit zwei gültigen Ziffern an: `R ≈ 26 Ω`." },
+    { "id": "timp-mes-06", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz5",
+      "frage": "Eine Gruppe hat an einem Draht diese Messreihe aufgenommen:\n\n`U` in V: 0 · 2,0 · 4,0 · 6,0 · 8,0\n`I` in A: 0 · 0,10 · 0,21 · 0,29 · 0,40\n\nWelche Aussagen sind richtig?",
+      "optionen": [
+        { "text": "Im `I`-`U`-Diagramm liegen die Punkte ungefähr auf einer Geraden durch den Ursprung.", "richtig": true },
+        { "text": "Die kleinen Abweichungen von der Geraden lassen sich durch zufällige Messfehler erklären.", "richtig": true },
+        { "text": "Der Widerstand des Drahtes beträgt ungefähr 20 Ω.", "richtig": true },
+        { "text": "Im Diagramm verbindet man die Messpunkte mit geraden Strichen im Zickzack.", "feedback": "Man zeichnet eine Ausgleichsgerade, die möglichst gut durch alle Punkte verläuft. Das Zickzack würde Messfehler mitzeichnen." },
+        { "text": "Der Widerstand wird mit steigender Spannung immer größer.", "feedback": "Rechne nach: `U / I` ergibt 20 Ω, 19 Ω, 21 Ω und 20 Ω. Das schwankt nur leicht um 20 Ω." }
+      ],
+      "erklaerung": "Für die Messpaare ergibt `U / I` etwa 20 Ω, 19 Ω, 21 Ω und 20 Ω. Der Widerstand ist also ungefähr konstant, und das Diagramm zeigt eine Ursprungsgerade. Die kleinen Schwankungen sind typische zufällige Messfehler." },
+    { "id": "timp-mes-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz1",
+      "frage": "Lena schließt den Strommesser aus Versehen parallel zur Lampe an, statt in Reihe. Erkläre, was passiert und warum.",
+      "stichworte": [
+        { "aspekt": "Der Strommesser hat einen sehr kleinen Widerstand", "woerter": ["kleinen widerstand", "kleiner widerstand", "geringen widerstand", "geringer widerstand", "fast keinen widerstand", "kaum widerstand"] },
+        { "aspekt": "Es entsteht fast ein Kurzschluss, der Strom fließt am Bauteil vorbei durch das Messgerät", "woerter": ["kurzschluss", "vorbei", "umgeh", "ueberbrueck"] },
+        { "aspekt": "Folge: sehr großer Strom, die Sicherung im Messgerät brennt durch oder das Gerät wird beschädigt; die Lampe leuchtet nicht", "woerter": ["sicherung", "kaputt", "beschaedig", "zerstoer", "sehr gross", "sehr hoher strom", "grosser strom", "leuchtet nicht", "geht aus"] }
+      ],
+      "musterloesung": "Ein Strommesser hat einen sehr kleinen Widerstand, damit er den Strom in einer Reihenschaltung kaum behindert. Liegt er parallel zur Lampe, überbrückt er sie. Es entsteht fast ein Kurzschluss: Der Strom fließt an der Lampe vorbei durch das Messgerät. Die Lampe leuchtet nicht, und weil kaum ein Widerstand im Stromkreis ist, fließt ein sehr großer Strom. Dadurch brennt die Sicherung im Messgerät durch.",
+      "erklaerung": "Deshalb gilt die Regel: Strommesser immer in Reihe. Vor dem Einschalten lässt du die Schaltung am besten noch einmal von jemandem prüfen." }
+  ]
+}

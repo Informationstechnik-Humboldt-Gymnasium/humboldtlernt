@@ -1,0 +1,116 @@
+{
+  "id": "timp-k9-funktionen",
+  "titel": "Funktionen (eigene Blöcke)",
+  "kurz": "Wie man eigene Blöcke mit Parametern definiert, sie mehrfach aufruft und Ergebnisse zurückgibt.",
+  "reihenfolge": 5,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Eigene Blöcke (Funktionen) mit definiere anlegen und aufrufen" },
+    { "id": "lz2", "niveau": "G", "text": "Den Nutzen von Funktionen für Wiederverwendung und Übersicht begründen" },
+    { "id": "lz3", "niveau": "H", "text": "Parameter und Rückgabewerte nutzen und Funktionsaufrufe nachverfolgen" },
+    { "id": "lz4", "niveau": "H", "text": "Die Fachbegriffe Variable, Parameter, Funktion, Aufruf und Rückgabewert voneinander abgrenzen" }
+  ],
+  "verstehen": {
+    "einstieg": "In einem Spiel sollen drei verschiedene Figuren springen können, mal hoch, mal niedrig. Muss man den Sprung dafür dreimal programmieren?",
+    "abschnitte": [
+      {
+        "titel": "Eigene Blöcke definieren",
+        "text": "Eine **Funktion** ist ein Programmteil mit eigenem Namen. In Scratch heißt das „Neuer Block“. Man **definiert** ihn einmal und kann ihn danach beliebig oft **aufrufen**:\n\n```\ndefiniere begrüße()\n  sage \"Hallo!\"\n  sage \"Schön, dass du da bist.\"\nbegrüße()\nbegrüße()\n```\n\nDie Definition allein tut noch nichts. Erst der **Aufruf** ``begrüße()`` führt die eingerückten Zeilen aus. Danach geht es mit der Zeile nach dem Aufruf weiter."
+      },
+      {
+        "titel": "Parameter",
+        "text": "Oft soll eine Funktion nicht immer genau dasselbe tun. Dafür bekommt sie **Parameter**: Platzhalter in der Klammer, die beim Aufruf einen Wert erhalten.\n\n```\ndefiniere springe(höhe)\n  ändere y um höhe\n  ändere y um -höhe\nspringe(30)\nspringe(80)\n```\n\nBeim ersten Aufruf ist ``höhe = 30``, beim zweiten ``höhe = 80``. Ein Parameter gilt nur **innerhalb** der Funktion. Außerhalb gibt es ``höhe`` nicht."
+      },
+      {
+        "titel": "Rückgabewerte",
+        "text": "Eine Funktion kann ein Ergebnis berechnen und mit ``gib … zurück`` an die Stelle des Aufrufs zurückliefern:\n\n```\ndefiniere fläche(länge, breite)\n  gib länge * breite zurück\nsetze boden auf fläche(4, 3)\nsage boden\n```\n\n``fläche(4, 3)`` liefert 12 zurück, ``boden`` bekommt den Wert 12. Mit ``gib … zurück`` endet die Funktion sofort."
+      },
+      {
+        "titel": "Warum Funktionen?",
+        "text": "- **Wiederverwendung:** Den Code nur einmal schreiben und oft benutzen.\n- **Übersicht:** Ein Name wie ``springe(höhe)`` sagt sofort, was passiert. Das Hauptprogramm wird kurz.\n- **Weniger Fehler:** Ist im Sprung ein Fehler, verbessert man ihn an **einer** Stelle, und alle Aufrufe sind repariert.\n\nIm Programmablaufplan zeichnet man einen Aufruf als Rechteck mit doppeltem Rand. Die Funktion bekommt einen eigenen kleinen Ablaufplan."
+      },
+      {
+        "titel": "Fachbegriffe auseinanderhalten",
+        "text": "- **Variable:** benannter Speicher für einen Wert, z. B. ``punkte``\n- **Funktion:** benannter Programmteil, z. B. ``springe``\n- **Parameter:** Platzhalter in der Definition, z. B. ``höhe`` in ``definiere springe(höhe)``\n- **Aufruf:** Anweisung, die die Funktion mit konkreten Werten startet, z. B. ``springe(30)``\n- **Rückgabewert:** Ergebnis, das eine Funktion mit ``gib … zurück`` liefert"
+      }
+    ],
+    "merksatz": "Eine **Funktion** (eigener Block) wird mit ``definiere`` einmal festgelegt und durch einen **Aufruf** ausgeführt. **Parameter** sind Platzhalter, die beim Aufruf Werte bekommen und nur in der Funktion gelten. Mit ``gib … zurück`` liefert eine Funktion einen **Rückgabewert**.",
+    "alltag": "Auch ``zufallszahl von 1 bis 6`` ist eine Funktion: Du gibst zwei Werte hinein und bekommst eine Zahl zurück. Wie sie das macht, musst du nicht wissen."
+  },
+  "interaktiv": ["timp-programmierlabor"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "timp-fkt-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Was sagt das Programm, in der richtigen Reihenfolge?\n\n```\ndefiniere begrüße(name)\n  sage \"Hallo\"\n  sage name\nbegrüße(\"Ali\")\nbegrüße(\"Mia\")\n```",
+      "optionen": [
+        { "text": "Hallo, Ali, Hallo, Mia", "richtig": true },
+        { "text": "Hallo, name, Hallo, name", "feedback": "``name`` steht ohne Anführungszeichen. Ausgegeben wird also der **Wert** des Parameters, nicht das Wort „name“." },
+        { "text": "Hallo, Ali, Mia", "feedback": "Bei jedem Aufruf werden **alle** Zeilen der Funktion ausgeführt, also auch jedes Mal ``sage \"Hallo\"``." },
+        { "text": "Hallo, name, Ali, Mia", "feedback": "Die Definition selbst gibt nichts aus. Erst die beiden Aufrufe führen die Funktion aus." }
+      ],
+      "erklaerung": "Die Definition wird beim Ablauf übersprungen. Beim ersten Aufruf ist ``name = \"Ali\"``, beim zweiten ``name = \"Mia\"``. Jeder Aufruf führt beide Zeilen der Funktion aus."
+    },
+    {
+      "id": "timp-fkt-02", "typ": "multi", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Welche Vorteile haben eigene Funktionen?",
+      "optionen": [
+        { "text": "Man schreibt den Code nur einmal und kann ihn oft benutzen.", "richtig": true },
+        { "text": "Einen Fehler verbessert man an einer Stelle, und alle Aufrufe sind repariert.", "richtig": true },
+        { "text": "Das Hauptprogramm wird kürzer und übersichtlicher.", "richtig": true },
+        { "text": "Das Programm läuft dadurch immer schneller.", "feedback": "Funktionen machen ein Programm nicht schneller. Sie machen es vor allem übersichtlicher." },
+        { "text": "Man braucht dann keine Variablen mehr.", "feedback": "Variablen braucht man weiterhin, auch innerhalb von Funktionen." }
+      ],
+      "erklaerung": "Funktionen helfen beim Programmieren: Wiederverwendung, Übersicht und leichtere Fehlersuche."
+    },
+    {
+      "id": "timp-fkt-03", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Welche Zahl sagt das Programm?\n\n```\ndefiniere doppelt(zahl)\n  gib zahl * 2 zurück\nsetze a auf doppelt(7)\nsetze b auf doppelt(a)\nsage b\n```",
+      "gesucht": "Ausgabe", "gesuchtSymbol": "b",
+      "loesung": 28, "einheit": "", "toleranz": 0,
+      "rechenweg": ["``doppelt(7)``: zahl = 7, Rückgabe 14. Also a = 14.", "``doppelt(a)``: zahl = 14, Rückgabe 28. Also b = 28.", "Ausgabe: 28"],
+      "erklaerung": "Beim zweiten Aufruf wird der **Wert** von ``a`` (14) in den Parameter ``zahl`` übernommen."
+    },
+    {
+      "id": "timp-fkt-04", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Ordne die Fachbegriffe den Beschreibungen zu. Beispiel: ``definiere springe(höhe)`` … ``springe(30)``",
+      "paare": [
+        { "links": "Variable", "rechts": "benannter Speicher für einen Wert, z. B. punkte" },
+        { "links": "Funktion", "rechts": "benannter Programmteil, z. B. springe" },
+        { "links": "Parameter", "rechts": "Platzhalter in der Definition, z. B. höhe" },
+        { "links": "Aufruf", "rechts": "startet die Funktion mit einem Wert, z. B. springe(30)" },
+        { "links": "Rückgabewert", "rechts": "Ergebnis, das mit gib … zurück geliefert wird" }
+      ],
+      "erklaerung": "Die Begriffe hängen zusammen: Beim **Aufruf** ``springe(30)`` bekommt der **Parameter** ``höhe`` den Wert 30, und die **Funktion** ``springe`` wird ausgeführt. Eine **Variable** wie ``punkte`` gilt dagegen im ganzen Programm."
+    },
+    {
+      "id": "timp-fkt-05", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Eine Wand soll gestrichen werden. Wie viele Quadratmeter berechnet das Programm?\n\n```\ndefiniere fläche(länge, breite)\n  gib länge * breite zurück\nsetze wand auf fläche(5, 3)\nsetze tür auf fläche(1, 2)\nsage wand - tür\n```",
+      "gesucht": "Ausgabe", "gesuchtSymbol": "wand - tür",
+      "loesung": 13, "einheit": "m²", "toleranz": 0,
+      "rechenweg": ["``fläche(5, 3)`` = 5 · 3 = 15, also wand = 15", "``fläche(1, 2)`` = 1 · 2 = 2, also tür = 2", "Ausgabe: 15 − 2 = 13"],
+      "erklaerung": "Dieselbe Funktion wird zweimal mit verschiedenen Werten aufgerufen. Die Tür wird nicht gestrichen, ihre Fläche wird abgezogen."
+    },
+    {
+      "id": "timp-fkt-06", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Betrachte dieses Programm. Welche Aussagen sind richtig?\n\n```\ndefiniere springe(höhe)\n  ändere y um höhe\n  ändere y um -höhe\nsetze y auf 0\nspringe(30)\n```",
+      "optionen": [
+        { "text": "``springe`` ist der Name der Funktion.", "richtig": true },
+        { "text": "``höhe`` ist ein Parameter.", "richtig": true },
+        { "text": "``springe(30)`` ist ein Aufruf, bei dem ``höhe`` den Wert 30 bekommt.", "richtig": true },
+        { "text": "``höhe`` kann man auch nach dem Aufruf im Hauptprogramm benutzen.", "feedback": "Ein Parameter gilt nur innerhalb der Funktion. Im Hauptprogramm gibt es ``höhe`` nicht." },
+        { "text": "Die Funktion wird schon ausgeführt, wenn die Zeile ``definiere`` erreicht wird.", "feedback": "``definiere`` legt die Funktion nur fest. Ausgeführt wird sie erst beim Aufruf." },
+        { "text": "``y`` ist ein Parameter.", "feedback": "``y`` ist eine Variable des ganzen Programms. Sie steht nicht in der Klammer der Definition." }
+      ],
+      "erklaerung": "``springe`` ist die Funktion, ``höhe`` ihr Parameter, ``springe(30)`` der Aufruf. ``y`` ist eine normale Variable. Am Ende ist ``y`` wieder 0."
+    },
+    {
+      "id": "timp-fkt-07", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Welche Zahl sagt das Programm?\n\n```\ndefiniere dreieckszahl(n)\n  setze s auf 0\n  setze i auf 1\n  wiederhole n-mal\n    ändere s um i\n    ändere i um 1\n  gib s zurück\nsetze a auf dreieckszahl(4)\nsetze b auf dreieckszahl(3)\nsage a * b\n```",
+      "gesucht": "Ausgabe", "gesuchtSymbol": "a · b",
+      "loesung": 60, "einheit": "", "toleranz": 0,
+      "rechenweg": ["``dreieckszahl(4)`` = 1 + 2 + 3 + 4 = 10, also a = 10", "``dreieckszahl(3)`` = 1 + 2 + 3 = 6, also b = 6", "Ausgabe: 10 · 6 = 60"],
+      "hinweis": "Die Funktion addiert die Zahlen von 1 bis n. Bei jedem Aufruf beginnt ``s`` wieder bei 0.",
+      "erklaerung": "Weil ``s`` und ``i`` am Anfang der Funktion neu gesetzt werden, rechnet jeder Aufruf unabhängig vom vorherigen. Fehlte ``setze s auf 0``, würde der zweite Aufruf mit dem alten Wert 10 weiterrechnen."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "fach": "TIMP",
+  "kurz": "TIMP",
+  "reihenfolge": 2,
+  "beschreibung": "Wahlpflichtfach Technik, Informatik, Mathematik und Physik: Druck, Logik, Leitfähigkeit, Programmieren und Halbleiter.",
+  "quelle": "Schulinternes Curriculum Wahlpflichtfach TIMP, Fachbereich Naturwissenschaften, Stand November 2019",
+  "hinweis": "Die Themenfelder haben im Curriculum keine Nummern. Die Nummern hier (8.1 …) geben nur die Reihenfolge an.",
+  "stufen": [
+    { "stufe": 8, "name": "Klasse 8" },
+    { "stufe": 9, "name": "Klasse 9" }
+  ]
+}

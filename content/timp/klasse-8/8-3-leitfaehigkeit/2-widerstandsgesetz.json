@@ -1,0 +1,101 @@
+{
+  "id": "timp-k8-widerstandsgesetz",
+  "titel": "Widerstandsgesetz",
+  "kurz": "Wovon der Widerstand eines Drahtes abhängt: Länge, Querschnitt und Material.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Beschreiben, wie der Widerstand eines Drahtes von Länge, Querschnittsfläche und Material abhängt" },
+    { "id": "lz2", "niveau": "G", "text": "Den Widerstand eines Drahtes mit `R = ρ · l / A` berechnen" },
+    { "id": "lz3", "niveau": "H", "text": "Mit den Proportionalitäten `R ~ l` und `R ~ 1 / A` Änderungen des Widerstands vorhersagen" },
+    { "id": "lz4", "niveau": "H", "text": "Die Leitfähigkeit als Kehrwert des spezifischen Widerstands deuten und Werkstoffe begründet auswählen" }
+  ],
+  "verstehen": {
+    "einstieg": "Warum ist das Kabel eines Wasserkochers dicker als das eines Handy-Ladegeräts? Und warum bestehen Kabel aus Kupfer und nicht aus Eisen?",
+    "abschnitte": [
+      {
+        "titel": "Länge, Querschnitt und Material",
+        "text": "Miss den Widerstand verschiedener Drähte, dann stellst du fest:\n\n- Je **länger** der Draht, desto **größer** der Widerstand. Doppelte Länge ergibt doppelten Widerstand: `R ~ l`.\n- Je **dicker** der Draht (größere Querschnittsfläche `A`), desto **kleiner** der Widerstand. Doppelte Querschnittsfläche ergibt halben Widerstand: `R ~ 1 / A`.\n- Der Widerstand hängt vom **Material** ab. Ein Eisendraht hat einen größeren Widerstand als ein gleich langer und gleich dicker Kupferdraht.\n\nIm Teilchenmodell: In einem langen Draht stoßen die Elektronen auf ihrem Weg öfter mit Atomrümpfen zusammen. In einem dicken Draht stehen dagegen mehr Wege nebeneinander offen, wie bei einer breiteren Straße."
+      },
+      {
+        "titel": "Das Widerstandsgesetz",
+        "text": "Alle drei Einflüsse fasst das **Widerstandsgesetz** zusammen:\n\n`R = ρ · l / A`\n\nDabei ist `l` die Länge in m und `A` die Querschnittsfläche in mm². Der **spezifische Widerstand** `ρ` (griechisch „rho“) ist eine Materialeigenschaft. Er gibt an, welchen Widerstand ein Draht aus diesem Material mit 1 m Länge und 1 mm² Querschnitt hat. Seine Einheit ist **Ω · mm² / m**.\n\nBeispiel: Ein Kupferdraht ist 10 m lang und hat 0,5 mm² Querschnitt. Dann ist `R = 0,017 Ω · mm²/m · 10 m / 0,5 mm² = 0,34 Ω`.\n\nDas Gesetz gilt bei gleichbleibender Temperatur. Bei Metallen steigt der Widerstand mit der Temperatur etwas an."
+      },
+      {
+        "titel": "Spezifische Widerstände",
+        "text": "Werte bei 20 °C in Ω · mm² / m:\n\n- Kupfer: 0,017\n- Aluminium: 0,028\n- Eisen: etwa 0,1\n- Konstantan (eine Legierung aus Kupfer und Nickel): 0,5\n\nKupfer leitet von diesen Stoffen am besten. Deshalb bestehen fast alle Kabel aus Kupfer. Aluminium ist leichter und billiger und wird z. B. für Freileitungen genutzt. Konstantan hat einen großen spezifischen Widerstand, der sich mit der Temperatur kaum ändert. Daraus baut man Messwiderstände."
+      },
+      {
+        "titel": "Leitfähigkeit als Kehrwert",
+        "text": "Statt zu sagen „Kupfer hat einen kleinen spezifischen Widerstand“, kann man auch sagen „Kupfer hat eine große **Leitfähigkeit**“. Die elektrische Leitfähigkeit `σ` (griechisch „sigma“) ist der **Kehrwert** des spezifischen Widerstands:\n\n`σ = 1 / ρ`\n\nFür Kupfer: `σ = 1 / 0,017 ≈ 59` m / (Ω · mm²). Für Konstantan: `σ = 1 / 0,5 = 2` m / (Ω · mm²). Kupfer leitet also etwa 30-mal so gut wie Konstantan.\n\nDie Leitfähigkeit von Flüssigkeiten wie Wasser misst man genauso. Dort gibt man sie meist in **µS/cm** an. Darum geht es im nächsten Thema."
+      }
+    ],
+    "formeln": [
+      { "formel": "R = ρ · \\frac{l}{A}", "bedeutung": "Widerstand `R` in Ω, spezifischer Widerstand `ρ` in Ω · mm²/m, Länge `l` in m, Querschnittsfläche `A` in mm²" },
+      { "formel": "σ = \\frac{1}{ρ}", "bedeutung": "Leitfähigkeit `σ` als Kehrwert des spezifischen Widerstands" }
+    ],
+    "merksatz": "**Widerstandsgesetz:** `R = ρ · l / A`. Doppelte Länge ergibt doppelten Widerstand, doppelte Querschnittsfläche ergibt halben Widerstand. Je kleiner der spezifische Widerstand `ρ`, desto besser leitet das Material.",
+    "alltag": "Ein Wasserkocher braucht mit etwa 10 A einen großen Strom. Sein Kabel ist dick, damit sein Widerstand klein bleibt und es sich nicht gefährlich erwärmt. Für ein Ladekabel genügen dünne Adern."
+  },
+  "interaktiv": ["timp-leitfaehigkeit"],
+  "vertiefung": [],
+  "uebungen": [
+    { "id": "timp-wid-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Ein Draht wird durch einen gleich dicken Draht aus demselben Material ersetzt, der doppelt so lang ist. Was passiert mit dem Widerstand?",
+      "optionen": [
+        { "text": "Er verdoppelt sich.", "richtig": true },
+        { "text": "Er halbiert sich.", "feedback": "Ein längerer Weg bedeutet mehr Hindernisse für die Elektronen, also mehr Widerstand." },
+        { "text": "Er bleibt gleich, weil das Material gleich ist.", "feedback": "Das Material bestimmt den spezifischen Widerstand `ρ`. Der Widerstand `R` hängt aber zusätzlich von Länge und Querschnitt ab." },
+        { "text": "Er vervierfacht sich.", "feedback": "Der Widerstand ist proportional zur Länge: doppelte Länge, doppelter Widerstand." }
+      ],
+      "erklaerung": "Es gilt `R ~ l`. Ein doppelt so langer Draht ist wie zwei gleiche Drähte in Reihe, deren Widerstände sich addieren." },
+    { "id": "timp-wid-02", "typ": "zahl", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Ein Kupferdraht ist 10 m lang und hat eine Querschnittsfläche von 0,5 mm². Berechne seinen Widerstand. (`ρ_{Kupfer} = 0,017 Ω · mm²/m`)",
+      "gegeben": "`l = 10 m`, `A = 0,5 mm²`, `ρ = 0,017 Ω · mm²/m`", "gesucht": "Widerstand `R`", "gesuchtSymbol": "R",
+      "loesung": 0.34, "einheit": "Ω", "alternativEinheiten": { "mΩ": 0.001 },
+      "rechenweg": ["Formel: `R = ρ · \\frac{l}{A}`", "Einsetzen: `R = 0,017 Ω · mm²/m · \\frac{10 m}{0,5 mm²}`", "Ergebnis: `R = 0,34 Ω`"],
+      "hinweis": "Die Einheiten m und mm² kürzen sich heraus, wenn du `l` in m und `A` in mm² einsetzt.",
+      "erklaerung": "Ein 10 m langes Kupferkabel hat nur einen sehr kleinen Widerstand. Deshalb verwendet man Kupfer für Leitungen." },
+    { "id": "timp-wid-03", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Ein Konstantandraht ist 2,0 m lang und hat eine Querschnittsfläche von 0,20 mm². Wie groß ist sein Widerstand? (`ρ_{Konstantan} = 0,5 Ω · mm²/m`)",
+      "gegeben": "`l = 2,0 m`, `A = 0,20 mm²`, `ρ = 0,5 Ω · mm²/m`", "gesucht": "Widerstand `R`", "gesuchtSymbol": "R",
+      "loesung": 5, "einheit": "Ω",
+      "rechenweg": ["Formel: `R = ρ · \\frac{l}{A}`", "Einsetzen: `R = 0,5 Ω · mm²/m · \\frac{2,0 m}{0,20 mm²}`", "Ergebnis: `R = 5 Ω`"],
+      "erklaerung": "Ein gleich langer und gleich dicker Kupferdraht hätte nur `0,017 · 2,0 / 0,20 Ω = 0,17 Ω`. Konstantan eignet sich deshalb gut, um gezielt einen Widerstand herzustellen." },
+    { "id": "timp-wid-04", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Ordne jedem Material seinen spezifischen Widerstand (in Ω · mm²/m bei 20 °C) zu.",
+      "paare": [
+        { "links": "Kupfer", "rechts": "0,017" },
+        { "links": "Aluminium", "rechts": "0,028" },
+        { "links": "Eisen", "rechts": "etwa 0,1" },
+        { "links": "Konstantan", "rechts": "0,5" }
+      ],
+      "extraRechts": ["17"],
+      "erklaerung": "Kupfer leitet am besten, danach Aluminium. Eisen leitet schlechter, und Konstantan hat den größten spezifischen Widerstand der vier Stoffe." },
+    { "id": "timp-wid-05", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Ein runder Draht wird durch einen Draht aus demselben Material mit gleicher Länge, aber **doppeltem Durchmesser** ersetzt. Wie ändert sich der Widerstand?",
+      "optionen": [
+        { "text": "Er wird halb so groß.", "feedback": "Das gälte, wenn sich die **Querschnittsfläche** verdoppeln würde. Hier verdoppelt sich aber der Durchmesser." },
+        { "text": "Er wird ein Viertel so groß.", "richtig": true },
+        { "text": "Er wird doppelt so groß.", "feedback": "Ein dickerer Draht hat einen kleineren Widerstand, nicht einen größeren." },
+        { "text": "Er bleibt gleich.", "feedback": "Die Querschnittsfläche ändert sich, und davon hängt der Widerstand ab." }
+      ],
+      "erklaerung": "Die Kreisfläche ist `A = π · r^{2}`. Doppelter Durchmesser bedeutet doppelten Radius und damit die **vierfache** Fläche. Wegen `R ~ 1 / A` wird der Widerstand ein Viertel so groß." },
+    { "id": "timp-wid-06", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Welche Aussagen sind richtig?",
+      "optionen": [
+        { "text": "Von Kupfer, Aluminium, Eisen und Konstantan hat Kupfer die größte Leitfähigkeit.", "richtig": true },
+        { "text": "Die Leitfähigkeit ist der Kehrwert des spezifischen Widerstands.", "richtig": true },
+        { "text": "Konstantan eignet sich für Messwiderstände, weil sein Widerstand groß ist und sich mit der Temperatur kaum ändert.", "richtig": true },
+        { "text": "Ein großer spezifischer Widerstand bedeutet eine große Leitfähigkeit.", "feedback": "Umgekehrt: Wegen `σ = 1 / ρ` bedeutet ein großer spezifischer Widerstand eine **kleine** Leitfähigkeit." },
+        { "text": "Ein Aluminiumkabel braucht für denselben Widerstand einen kleineren Querschnitt als ein Kupferkabel.", "feedback": "Aluminium leitet schlechter als Kupfer. Für denselben Widerstand braucht ein Aluminiumkabel deshalb einen **größeren** Querschnitt." }
+      ],
+      "erklaerung": "Gute Leiter haben einen kleinen spezifischen Widerstand und damit eine große Leitfähigkeit. Für Kabel nimmt man gut leitende Stoffe, für Widerstände schlecht leitende mit stabilem Verhalten." },
+    { "id": "timp-wid-07", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Du sollst aus Konstantandraht mit 0,10 mm² Querschnitt einen Widerstand von 10 Ω herstellen. Wie lang muss der Draht sein? (`ρ_{Konstantan} = 0,5 Ω · mm²/m`)",
+      "gegeben": "`R = 10 Ω`, `A = 0,10 mm²`, `ρ = 0,5 Ω · mm²/m`", "gesucht": "Länge `l`", "gesuchtSymbol": "l",
+      "loesung": 2, "einheit": "m", "alternativEinheiten": { "cm": 0.01 },
+      "rechenweg": ["Formel umstellen: `l = \\frac{R · A}{ρ}`", "Einsetzen: `l = \\frac{10 Ω · 0,10 mm²}{0,5 Ω · mm²/m}`", "Ergebnis: `l = 2 m`"],
+      "hinweis": "Stelle `R = ρ · l / A` nach `l` um: Multipliziere mit `A` und teile durch `ρ`.",
+      "erklaerung": "Probe: `R = 0,5 · 2 / 0,10 Ω = 10 Ω`. Damit der Draht nicht so viel Platz braucht, wickelt man ihn z. B. auf einen Keramikkörper." }
+  ]
+}

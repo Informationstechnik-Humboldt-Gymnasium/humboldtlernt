@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hydraulik-Labor: Wagenheber und Hebebühne</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<style>
+  .oil { fill: var(--lamp); opacity: .55; }
+  .metal { fill: var(--grid); stroke: var(--line); stroke-width: 2; }
+  .wall { fill: none; stroke: var(--line); stroke-width: 3; stroke-linejoin: round; }
+  .piston { fill: var(--muted); stroke: var(--line); stroke-width: 1.5; }
+  .gauge { fill: var(--card); stroke: var(--line); stroke-width: 2; }
+  .gauge-txt { font-size: 11px; font-weight: 700; text-anchor: middle; font-variant-numeric: tabular-nums; }
+  .valve { stroke: var(--line); stroke-width: 1.5; }
+  .valve.open { fill: var(--ok); }
+  .valve.shut { fill: var(--warn); }
+  .arr-f1, .arr-f2 { stroke: var(--accent); fill: var(--accent); }
+  .arr-g { stroke: var(--warn); fill: var(--warn); }
+  .parrow { stroke: var(--pos); fill: var(--pos); }
+  .load { fill: var(--card); stroke: var(--line); stroke-width: 2; }
+  .load-dark { fill: var(--line); }
+  .tick { stroke: var(--muted); stroke-width: 1; }
+  .status { min-height: 1.4em; }
+  .status.bad { color: var(--warn); }
+  .status.good { color: var(--ok); }
+</style>
+</head>
+<body>
+<h1>Hydraulik-Labor: Wagenheber und Hebebühne</h1>
+<p class="muted small">Stelle die Flächen der beiden Kolben und deine Kraft ein. Mit „Pumpen“ drückst du den kleinen Kolben 10 cm nach unten. Die Manometer zeigen den Druck im Öl.</p>
+
+<div class="lk-grid">
+  <div>
+    <div class="lk-card">
+      <svg id="svg" viewBox="0 0 560 340" role="img" aria-labelledby="svgTitle">
+        <title id="svgTitle">Hydraulische Hebebühne: links ein Vorratsbehälter, daneben der kleine Pumpkolben, unten eine Leitung mit Ventilen und Manometern, rechts der große Kolben mit der Last.</title>
+        <defs>
+          <marker id="mF" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arr-f1"/></marker>
+          <marker id="mG" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arr-g"/></marker>
+          <marker id="mP" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="parrow"/></marker>
+        </defs>
+        <line x1="8" y1="300" x2="552" y2="300" class="axis"/>
+        <!-- Vorratsbehälter -->
+        <rect x="20" y="236" width="56" height="54" class="oil" id="resOil"/>
+        <path d="M20 200 V290 H76 V200" class="wall"/>
+        <text x="48" y="192" class="lbl" text-anchor="middle">Vorrat</text>
+        <!-- Leitungen -->
+        <rect x="76" y="274" width="60" height="12" class="oil"/>
+        <path d="M76 274 H136 M76 286 H136" class="wall thin" style="stroke-width:1.5"/>
+        <rect id="pipeOil" x="150" y="274" width="250" height="12" class="oil"/>
+        <path id="pipeWall" class="wall" style="stroke-width:1.5" d=""/>
+        <circle id="v1" cx="104" cy="280" r="6" class="valve open"/>
+        <circle id="v2" cx="262" cy="280" r="6" class="valve open"/>
+        <text x="104" y="318" class="val" text-anchor="middle">Ventil 1</text>
+        <text x="262" y="318" class="val" text-anchor="middle">Ventil 2</text>
+        <!-- Manometer -->
+        <line x1="222" y1="263" x2="222" y2="274" class="wall" style="stroke-width:1.5"/>
+        <circle cx="222" cy="240" r="23" class="gauge"/>
+        <text id="m1" x="222" y="240" class="gauge-txt">0</text><text x="222" y="252" class="gauge-txt" style="font-weight:400">bar</text>
+        <line x1="306" y1="263" x2="306" y2="274" class="wall" style="stroke-width:1.5"/>
+        <circle cx="306" cy="240" r="23" class="gauge"/>
+        <text id="m2" x="306" y="240" class="gauge-txt">0</text><text x="306" y="252" class="gauge-txt" style="font-weight:400">bar</text>
+        <text x="264" y="206" class="val" text-anchor="middle">Manometer</text>
+        <!-- kleiner Kolben -->
+        <rect id="smallOil" class="oil" x="0" y="0" width="0" height="0"/>
+        <path id="smallWall" class="wall" d=""/>
+        <line id="rod1" class="wall" x1="0" y1="0" x2="0" y2="0" style="stroke-width:4"/>
+        <rect id="handle" class="metal" x="0" y="0" width="44" height="8" rx="3"/>
+        <rect id="piston1" class="piston" x="0" y="0" width="0" height="10"/>
+        <line id="arrF1" class="arr-f1" x1="0" y1="0" x2="0" y2="0" stroke-width="4" marker-end="url(#mF)"/>
+        <text id="tF1" x="0" y="60" class="lbl">F₁</text>
+        <text id="tA1" x="0" y="168" class="val" text-anchor="middle"></text>
+        <!-- großer Kolben -->
+        <rect id="bigOil" class="oil" x="0" y="0" width="0" height="0"/>
+        <path id="bigWall" class="wall" d=""/>
+        <rect id="ram" class="metal" x="0" y="0" width="0" height="80"/>
+        <text id="tA2" x="430" y="318" class="val" text-anchor="middle"></text>
+        <g id="lift">
+          <rect x="-70" y="-8" width="140" height="8" class="metal"/>
+          <g id="ldBox"><rect x="-32" y="-58" width="64" height="50" rx="3" class="load"/><path d="M-32 -33 H32 M0 -58 V-8" class="wall thin" style="stroke-width:1"/></g>
+          <g id="ldBike"><circle cx="-38" cy="-24" r="15" class="load"/><circle cx="38" cy="-24" r="15" class="load"/><path d="M-38 -24 L-10 -46 H18 L38 -24 M-10 -46 L-2 -24 H22 L18 -46 M18 -46 L26 -60 H36" class="wall" style="stroke-width:3"/></g>
+          <g id="ldCar"><path d="M-64 -14 V-36 Q-60 -42 -40 -44 L-22 -62 H26 L46 -44 Q62 -42 64 -34 V-14 Z" class="load"/><path d="M-16 -56 H-2 V-44 H-30 Z M6 -56 H22 L36 -44 H6 Z" class="load-dark" opacity=".35"/><circle cx="-36" cy="-14" r="11" class="load-dark"/><circle cx="36" cy="-14" r="11" class="load-dark"/></g>
+          <line id="arrG" class="arr-g" x1="88" y1="-30" x2="88" y2="20" stroke-width="4" marker-end="url(#mG)"/>
+          <line id="arrF2" class="arr-f2" x1="112" y1="20" x2="112" y2="-30" stroke-width="4" marker-end="url(#mF)"/>
+          <text id="tG" x="88" y="-40" class="lbl" text-anchor="middle">G</text>
+          <text id="tF2" x="112" y="-40" class="lbl" text-anchor="middle">F₂</text>
+        </g>
+        <!-- Höhenskala -->
+        <g id="scale"></g>
+        <!-- Druckpfeile -->
+        <g id="parrows"></g>
+      </svg>
+      <p class="small muted" style="margin:6px 0 0">Gelb: Öl. Blau: Kräfte der Kolben. Rot: Gewichtskraft der Last. Grüne Ventile sind offen, rote geschlossen.</p>
+    </div>
+  </div>
+
+  <div>
+    <div class="lk-card">
+      <h2>Einstellungen</h2>
+      <div class="row">
+        <div class="seg" role="group" aria-label="Last wählen">
+          <button type="button" data-load="box" aria-pressed="false">Kiste 50 kg</button>
+          <button type="button" data-load="bike" aria-pressed="false">Motorrad 200 kg</button>
+          <button type="button" data-load="car" aria-pressed="true">Auto 1000 kg</button>
+        </div>
+      </div>
+      <label class="ctrl"><span>Fläche kleiner Kolben <span class="f">A<sub>1</sub></span> <output id="oA1"></output></span>
+        <input type="range" id="sA1" min="1" max="10" step="1" value="2"></label>
+      <label class="ctrl"><span>Fläche großer Kolben <span class="f">A<sub>2</sub></span> <output id="oA2"></output></span>
+        <input type="range" id="sA2" min="10" max="200" step="10" value="50"></label>
+      <label class="ctrl"><span>Deine Kraft <span class="f">F<sub>1</sub></span> <output id="oF1"></output></span>
+        <input type="range" id="sF1" min="0" max="300" step="5" value="100"></label>
+      <div class="row">
+        <button type="button" id="bPump" class="primary">Pumpen (1 Hub)</button>
+        <button type="button" id="bPump10">10 Hübe</button>
+        <button type="button" id="bDown">Ablassen</button>
+        <button type="button" id="bArrows" aria-pressed="false">Druckpfeile</button>
+      </div>
+      <p id="status" class="small status" aria-live="polite"></p>
+      <div class="readouts">
+        <div class="readout"><span>Druck <span class="f">p = F<sub>1</sub> / A<sub>1</sub></span></span><b id="rP">–</b></div>
+        <div class="readout"><span>Kraft <span class="f">F<sub>2</sub> = p · A<sub>2</sub></span></span><b id="rF2">–</b></div>
+        <div class="readout"><span>Gewichtskraft <span class="f">G</span></span><b id="rG">–</b></div>
+        <div class="readout"><span>Weg je Hub <span class="f">s<sub>2</sub></span></span><b id="rS2">–</b></div>
+        <div class="readout"><span>Höhe der Last</span><b id="rH">–</b></div>
+        <div class="readout"><span>Hübe</span><b id="rN">0</b></div>
+      </div>
+      <p class="small muted">Vereinfachung: Die Kolben sind gewichtslos, Reibung und Beschleunigung werden vernachlässigt. Hub des kleinen Kolbens: <span class="f">s<sub>1</sub></span> = 10 cm.</p>
+    </div>
+
+    <div class="lk-card tasks">
+      <h2>Entdecke selbst <span class="small muted" data-task-count></span></h2>
+      <div class="task" data-goal="lift"><p class="task-q">Hebe das Auto (1000 kg) um mindestens 2 cm an. Deine Kraft reicht dafür nicht direkt: Verändere die Kolbenflächen.</p></div>
+      <div class="task" data-goal="ratio"><p class="task-q">Stelle die Flächen so ein, dass die Kraft am großen Kolben genau 10-mal so groß ist wie deine Kraft.</p></div>
+      <div class="task" data-goal="light"><p class="task-q">Hebe das Auto mit einer Kraft von höchstens 60 N ein Stück an.</p></div>
+      <div class="task">
+        <p class="task-q">Vergleiche die beiden Manometer, während der große Kolben die Last hebt. Was fällt dir auf?</p>
+        <div class="choices">
+          <button type="button" data-ok data-fb="Richtig: Der Druck breitet sich im Öl überall gleich aus. Nur die Kräfte sind verschieden, weil die Flächen verschieden sind.">Beide zeigen denselben Druck.</button>
+          <button type="button" data-fb="Schau beim Pumpen genau hin: Die beiden Anzeigen stimmen überein. Größer ist am großen Kolben nur die Kraft.">Am großen Kolben ist der Druck größer.</button>
+          <button type="button" data-fb="Der Druck ist überall im Öl gleich groß. Er ist p = F₁ / A₁.">Am kleinen Kolben ist der Druck größer.</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="task">
+        <p class="task-q">Der große Kolben ist 10-mal so groß wie der kleine. Der kleine Kolben wird um 10 cm hineingedrückt. Wie weit hebt sich der große Kolben?</p>
+        <div class="choices">
+          <button type="button" data-ok data-fb="Genau: s₁ · A₁ = s₂ · A₂. Zehnfache Kraft, aber nur ein Zehntel des Weges.">um 1 cm</button>
+          <button type="button" data-fb="Das Öl, das der kleine Kolben hineindrückt, verteilt sich unter dem großen Kolben auf eine 10-mal so große Fläche.">um 10 cm</button>
+          <button type="button" data-fb="Dann käme unten mehr Öl an, als oben hineingedrückt wurde. Das ist unmöglich.">um 100 cm</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="task">
+        <p class="task-q">Warum füllt man hydraulische Anlagen mit Öl und nicht mit Luft?</p>
+        <div class="choices">
+          <button type="button" data-fb="Auch Luft gibt Druck weiter. Das Problem liegt woanders.">Luft kann keinen Druck weitergeben.</button>
+          <button type="button" data-ok data-fb="Richtig: Luft würde beim Pumpen zuerst zusammengedrückt. Ein großer Teil des Kolbenwegs ginge verloren.">Luft lässt sich zusammendrücken, Öl kaum.</button>
+          <button type="button" data-fb="Gewicht spielt hier kaum eine Rolle. Denke an das Teilchenmodell: Wie dicht liegen die Teilchen?">Öl ist schwerer und drückt deshalb stärker.</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="all-done">Alles entdeckt! Weiter geht es mit den Übungen.</div>
+    </div>
+  </div>
+</div>
+
+<script src="../../static/lesson-kit.js"></script>
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+  var NS = 'http://www.w3.org/2000/svg';
+  var G_N = 9.81, S1 = 10, HMAX = 20;          // Hub in cm, maximale Hubhöhe in cm
+  var LOADS = { box: { m: 50, name: 'die Kiste' }, bike: { m: 200, name: 'das Motorrad' }, car: { m: 1000, name: 'das Auto' } };
+  var S = { load: 'car', A1: 2, A2: 50, F1: 100, h: 0, strokes: 0, arrows: false };
+  var anim = null, queue = 0;                  // anim: { phase: 'down'|'up', t: 0..1, lift: bool }
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var CX1 = 170, CX2 = 430;
+
+  function weight() { return LOADS[S.load].m * G_N; }
+  function pressure() { return S.F1 / (S.A1 * 1e-4); }              // Pa
+  function force2() { return pressure() * S.A2 * 1e-4; }             // N
+  function canLift() { return S.F1 > 0 && force2() >= weight(); }
+  function s2() { return S1 * S.A1 / S.A2; }                          // cm
+  function fmtF(f) { return f >= 10000 ? LK.fmt(f / 1000, 1) + ' kN' : LK.fmt(f, 0) + ' N'; }
+  function fmtBar(p) { return LK.fmt(p / 1e5, p < 1e6 ? 2 : 1) + ' bar'; }
+  function fmtNum(p) { return LK.fmt(p / 1e5, p < 1e6 ? 2 : 1); }
+  function w(A) { return 9 * Math.sqrt(A) + 8; }                     // Breite in px (Durchmesser ~ Wurzel der Fläche)
+
+  function el(tag, a, parent) { var e = document.createElementNS(NS, tag); for (var k in a) e.setAttribute(k, a[k]); parent.appendChild(e); return e; }
+  function arrow(parent, x1, y1, x2, y2) { el('line', { x1: x1, y1: y1, x2: x2, y2: y2, class: 'parrow', 'stroke-width': 2.5, 'marker-end': 'url(#mP)' }, parent); }
+
+  function holding() { return S.h > 0 && !canLift() && !(anim && anim.lift); }
+
+  function draw(pistonFrac) {
+    var w1 = w(S.A1), w2 = w(S.A2);
+    // kleiner Kolben
+    var pTop = 170 + 60 * pistonFrac;
+    $('smallWall').setAttribute('d', 'M' + (CX1 - w1 / 2) + ' 150 V274 M' + (CX1 - w1 / 2) + ' 286 V290 H' + (CX1 + w1 / 2) + ' V286 M' + (CX1 + w1 / 2) + ' 274 V150');
+    $('smallOil').setAttribute('x', CX1 - w1 / 2); $('smallOil').setAttribute('width', w1);
+    $('smallOil').setAttribute('y', pTop + 10); $('smallOil').setAttribute('height', 290 - pTop - 10);
+    $('piston1').setAttribute('x', CX1 - w1 / 2 + 1.5); $('piston1').setAttribute('width', w1 - 3); $('piston1').setAttribute('y', pTop);
+    $('rod1').setAttribute('x1', CX1); $('rod1').setAttribute('x2', CX1); $('rod1').setAttribute('y1', pTop); $('rod1').setAttribute('y2', pTop - 60);
+    $('handle').setAttribute('x', CX1 - 22); $('handle').setAttribute('y', pTop - 66);
+    var len = S.F1 > 0 ? 12 + 48 * S.F1 / 300 : 0;
+    $('arrF1').setAttribute('x1', CX1); $('arrF1').setAttribute('x2', CX1);
+    $('arrF1').setAttribute('y1', pTop - 70 - len); $('arrF1').setAttribute('y2', pTop - 70);
+    $('arrF1').toggleAttribute('hidden', S.F1 <= 0);
+    $('tF1').setAttribute('x', CX1 + 10); $('tF1').setAttribute('y', pTop - 76 - len / 2);
+    $('tF1').textContent = 'F₁ = ' + LK.fmt(S.F1, 0) + ' N';
+    $('tA1').setAttribute('x', CX1); $('tA1').setAttribute('y', 318);
+    $('tA1').textContent = 'A₁ = ' + S.A1 + ' cm²';
+    // Leitung
+    $('pipeOil').setAttribute('x', CX1 + w1 / 2); $('pipeOil').setAttribute('width', CX2 - w2 / 2 - CX1 - w1 / 2);
+    $('pipeWall').setAttribute('d', 'M' + (CX1 + w1 / 2) + ' 274 H' + (CX2 - w2 / 2) + ' M' + (CX1 + w1 / 2) + ' 286 H' + (CX2 - w2 / 2));
+    // großer Kolben
+    var hpx = S.h * 3, ramBottom = 250 - hpx, ramTop = ramBottom - 80;
+    $('bigWall').setAttribute('d', 'M' + (CX2 - w2 / 2) + ' 170 V274 M' + (CX2 - w2 / 2) + ' 286 V290 H' + (CX2 + w2 / 2) + ' V170');
+    $('bigOil').setAttribute('x', CX2 - w2 / 2); $('bigOil').setAttribute('width', w2);
+    $('bigOil').setAttribute('y', ramBottom); $('bigOil').setAttribute('height', 290 - ramBottom);
+    $('ram').setAttribute('x', CX2 - w2 / 2 + 2); $('ram').setAttribute('width', w2 - 4); $('ram').setAttribute('y', ramTop);
+    $('tA2').textContent = 'A₂ = ' + S.A2 + ' cm²';
+    $('lift').setAttribute('transform', 'translate(' + CX2 + ' ' + ramTop + ')');
+    $('ldBox').toggleAttribute('hidden', S.load !== 'box');
+    $('ldBike').toggleAttribute('hidden', S.load !== 'bike');
+    $('ldCar').toggleAttribute('hidden', S.load !== 'car');
+    var G = weight(), F2 = S.F1 > 0 ? force2() : 0;
+    var lenG = 46, lenF2 = Math.min(110, 46 * F2 / G);
+    $('arrG').setAttribute('y1', -48); $('arrG').setAttribute('y2', -48 + lenG);
+    $('arrF2').setAttribute('y1', -48 + lenG); $('arrF2').setAttribute('y2', -48 + lenG - lenF2);
+    $('arrF2').toggleAttribute('hidden', lenF2 < 2);
+    $('tG').setAttribute('y', -54);
+    $('tF2').setAttribute('y', Math.min(-54, -48 + lenG - lenF2 - 8));
+    // Ventile und Manometer
+    var pumpP = S.F1 > 0 ? pressure() : 0;
+    var hold = holding();
+    var bigP = hold ? G / (S.A2 * 1e-4) : pumpP;
+    $('v1').setAttribute('class', 'valve ' + (anim && anim.phase === 'up' ? 'open' : 'shut'));
+    $('v2').setAttribute('class', 'valve ' + (hold || (anim && anim.phase === 'up') ? 'shut' : 'open'));
+    if (!anim) $('v1').setAttribute('class', 'valve shut');
+    var shownP1 = anim && anim.phase === 'up' ? 0 : pumpP;
+    $('m1').textContent = fmtNum(shownP1);
+    $('m2').textContent = fmtNum(anim && anim.phase === 'up' ? (S.h > 0 ? G / (S.A2 * 1e-4) : 0) : bigP);
+    // Höhenskala
+    var sc = $('scale'); sc.innerHTML = '';
+    var xs = CX2 - w2 / 2 - 14;
+    for (var c = 0; c <= HMAX; c += 5) {
+      el('line', { x1: xs, x2: xs + 6, y1: 170 - c * 3, y2: 170 - c * 3, class: 'tick' }, sc);
+    }
+    el('text', { x: xs - 3, y: 174, class: 'val', 'text-anchor': 'end' }, sc).textContent = '0';
+    el('text', { x: xs - 3, y: 114, class: 'val', 'text-anchor': 'end' }, sc).textContent = '20 cm';
+    // Druckpfeile
+    var pa = $('parrows'); pa.innerHTML = '';
+    if (S.arrows && shownP1 > 0) {
+      var L = 6 + 14 * Math.min(1, shownP1 / 5e6);
+      var ym1 = (pTop + 10 + 274) / 2;
+      arrow(pa, CX1 - 2, ym1, CX1 - 2 - L, ym1); arrow(pa, CX1 + 2, ym1, CX1 + 2 + L, ym1);
+      arrow(pa, CX1, pTop + 12 + L + 2, CX1, pTop + 12);
+      var xp = (CX1 + w1 / 2 + 222) / 2;
+      arrow(pa, xp, 280, xp, 280 - L); arrow(pa, xp, 280, xp, 280 + L);
+      if (!hold) {
+        var xq = (306 + CX2 - w2 / 2) / 2;
+        arrow(pa, xq, 280, xq, 280 - L); arrow(pa, xq, 280, xq, 280 + L);
+        var ym2 = (ramBottom + 274) / 2;
+        arrow(pa, CX2 - w2 / 2 + 4 + L, ym2, CX2 - w2 / 2 + 4, ym2); arrow(pa, CX2 + w2 / 2 - 4 - L, ym2, CX2 + w2 / 2 - 4, ym2);
+        arrow(pa, CX2, ramBottom + L + 4, CX2, ramBottom + 2);
+      }
+    }
+  }
+
+  function update() {
+    $('oA1').textContent = S.A1 + ' cm²';
+    $('oA2').textContent = S.A2 + ' cm²';
+    $('oF1').textContent = LK.fmt(S.F1, 0) + ' N';
+    var G = weight();
+    $('rP').textContent = S.F1 > 0 ? fmtBar(pressure()) : '0 bar';
+    $('rF2').textContent = fmtF(S.F1 > 0 ? force2() : 0);
+    $('rG').textContent = fmtF(G);
+    $('rS2').textContent = LK.fmt(s2() * 10, s2() * 10 < 10 ? 1 : 0) + ' mm';
+    $('rH').textContent = LK.fmt(S.h, 1) + ' cm';
+    $('rN').textContent = S.strokes;
+    draw(anim ? (anim.phase === 'down' ? anim.t : 1 - anim.t) : 0);
+    if (S.A1 * 10 === S.A2 && S.F1 > 0) LK.reach('ratio');
+  }
+
+  function say(msg, cls) { var s = $('status'); s.textContent = msg; s.className = 'small status ' + (cls || ''); }
+
+  function minF1() { return weight() * S.A1 / S.A2; }
+
+  function startStroke() {
+    if (S.h >= HMAX - 1e-9) { queue = 0; say('Die Hebebühne ist ganz oben (20 cm). Mit „Ablassen“ fährt sie wieder herunter.', 'bad'); return false; }
+    if (!canLift()) {
+      queue = 0;
+      if (S.F1 <= 0) say('Stelle zuerst eine Kraft ein.', 'bad');
+      else say('Die Kraft reicht nicht: F₂ = ' + fmtF(force2()) + ' ist kleiner als G = ' + fmtF(weight()) + '. Du brauchst mindestens F₁ = ' + LK.fmt(Math.ceil(minF1()), 0) + ' N.', 'bad');
+      update();
+      return false;
+    }
+    anim = { phase: 'down', t: 0, lift: true, h0: S.h };
+    say('Der kleine Kolben drückt Öl unter den großen Kolben. ' + LOADS[S.load].name.charAt(0).toUpperCase() + LOADS[S.load].name.slice(1) + ' hebt sich um ' + LK.fmt(s2() * 10, 1) + ' mm.', 'good');
+    if (reduce) { finishDown(); anim = null; afterStroke(); }
+    return true;
+  }
+
+  function finishDown() {
+    S.h = Math.min(HMAX, anim.h0 + s2());
+    S.strokes++;
+    if (S.load === 'car' && S.F1 <= 60) LK.reach('light');
+    if (S.load === 'car' && S.h >= 2 - 1e-9) LK.reach('lift');
+  }
+
+  function afterStroke() {
+    update();
+    if (queue > 0) { queue--; startStroke(); }
+  }
+
+  var last = performance.now();
+  function frame(t) {
+    var dt = Math.min(0.05, (t - last) / 1000); last = t;
+    if (anim) {
+      if (anim.phase === 'down') {
+        anim.t += dt / 0.55;
+        if (anim.t >= 1) { finishDown(); anim.phase = 'up'; anim.t = 0; }
+        else S.h = Math.min(HMAX, anim.h0 + s2() * anim.t);
+      } else {
+        anim.t += dt / 0.3;
+        if (anim.t >= 1) { anim = null; afterStroke(); }
+      }
+      update();
+    }
+    requestAnimationFrame(frame);
+  }
+
+  $('bPump').onclick = function () { if (!anim) { queue = 0; startStroke(); update(); } };
+  $('bPump10').onclick = function () {
+    if (anim) { queue += 10; return; }
+    queue = 9;
+    startStroke();
+    update();
+  };
+  $('bDown').onclick = function () { anim = null; queue = 0; S.h = 0; S.strokes = 0; say('Das Ablassventil wurde geöffnet. Das Öl fließt zurück in den Vorratsbehälter.'); update(); };
+  $('bArrows').onclick = function () { S.arrows = !S.arrows; this.setAttribute('aria-pressed', S.arrows); update(); };
+  $('sA1').oninput = function () { S.A1 = Number(this.value); update(); };
+  $('sA2').oninput = function () { S.A2 = Number(this.value); update(); };
+  $('sF1').oninput = function () { S.F1 = Number(this.value); update(); };
+  Array.prototype.forEach.call(document.querySelectorAll('[data-load]'), function (b) {
+    b.onclick = function () {
+      S.load = b.getAttribute('data-load'); anim = null; queue = 0; S.h = 0; S.strokes = 0;
+      Array.prototype.forEach.call(document.querySelectorAll('[data-load]'), function (x) { x.setAttribute('aria-pressed', x === b); });
+      say(''); update();
+    };
+  });
+
+  update();
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

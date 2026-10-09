@@ -1,0 +1,120 @@
+{
+  "id": "timp-k9-solarzelle",
+  "titel": "Die Solarzelle",
+  "kurz": "Wie Licht in einem pn-Übergang elektrische Energie erzeugt und wie man aus einer Solarzelle die meiste Leistung herausholt.",
+  "reihenfolge": 4,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Aufbau und Funktion einer Solarzelle beschreiben: Licht erzeugt Elektron-Loch-Paare, der pn-Übergang trennt sie" },
+    { "id": "lz2", "niveau": "G", "text": "Leerlaufspannung und Kurzschlussstrom messen und ihre Abhängigkeit von der Bestrahlungsstärke beschreiben" },
+    { "id": "lz3", "niveau": "H", "text": "Die Kennlinie einer Solarzelle auswerten, die Leistung `P = U · I` berechnen und den Punkt maximaler Leistung (MPP) bestimmen" },
+    { "id": "lz4", "niveau": "H", "text": "Reihen- und Parallelschaltung von Solarzellen vergleichen und Modulwerte berechnen" },
+    { "id": "lz5", "niveau": "G", "text": "Den Wirkungsgrad berechnen und die Bedeutung der Ausrichtung zur Sonne beurteilen" }
+  ],
+  "verstehen": {
+    "einstieg": "Ein Taschenrechner läuft jahrelang ohne Batteriewechsel, solange genug Licht auf seinen kleinen dunklen Streifen fällt. Wie wird aus Licht Strom?",
+    "abschnitte": [
+      {
+        "titel": "Aufbau und Funktion",
+        "text": "Eine **Solarzelle** ist eine große, flache Diode. Auf einer dicken p-dotierten Siliziumschicht liegt eine sehr dünne n-dotierte Schicht. An ihrer Grenze befindet sich ein **pn-Übergang** mit Sperrschicht. Oben sorgen dünne Metallstreifen (Kontaktfinger) für den Anschluss, unten eine Metallschicht.\n\nTrifft Licht auf die Zelle, kann es Elektronen aus ihren Bindungen lösen. Es entstehen **Elektron-Loch-Paare**. Am pn-Übergang werden sie **getrennt**: Die Elektronen wandern in die n-Schicht, die Löcher in die p-Schicht. So wird die n-Seite zum **Minuspol** und die p-Seite zum **Pluspol**. Schließt man einen Verbraucher an, fließt Strom."
+      },
+      {
+        "titel": "Leerlaufspannung und Kurzschlussstrom",
+        "text": "Zwei Messwerte beschreiben eine Solarzelle:\n\n- Die **Leerlaufspannung** `U_{L}` misst man ohne Verbraucher. Bei einer Siliziumzelle beträgt sie etwa **0,5 bis 0,6 V**, egal wie groß die Zelle ist. Sie ändert sich mit der Helligkeit nur wenig.\n- Den **Kurzschlussstrom** `I_{K}` misst man, wenn der Strommesser direkt an die Zelle angeschlossen wird. Er ist **proportional zur Bestrahlungsstärke** und zur Fläche der Zelle: doppelt so viel Licht, doppelt so viel Strom.\n\nIm Energiemodell: Jedes Lichtteilchen mit genug Energie kann ein Elektron über die Energielücke heben. Mehr Licht bedeutet mehr Elektron-Loch-Paare und mehr Strom."
+      },
+      {
+        "titel": "Kennlinie und MPP",
+        "text": "Ändert man den Lastwiderstand, erhält man die **Kennlinie** der Solarzelle: Bei kleinen Spannungen bleibt der Strom fast so groß wie der Kurzschlussstrom. Kurz vor der Leerlaufspannung bricht er steil ein.\n\nDie abgegebene **Leistung** ist `P = U · I`. Im Kurzschluss (`U = 0`) und im Leerlauf (`I = 0`) ist sie null. Dazwischen gibt es den **Punkt maximaler Leistung**, den **MPP** (Maximum Power Point). Bei einer Siliziumzelle liegt er meist bei etwa 80 % der Leerlaufspannung. Gute Wechselrichter stellen die Last automatisch so ein, dass das Modul im MPP arbeitet."
+      },
+      {
+        "titel": "Reihen- und Parallelschaltung",
+        "text": "Eine einzelne Zelle liefert zu wenig Spannung. Ein **Solarmodul** besteht deshalb aus vielen Zellen.\n\n- **Reihenschaltung**: Die Spannungen addieren sich, der Strom bleibt so groß wie bei einer Zelle. 36 Zellen mit je 0,6 V ergeben etwa 21,6 V Leerlaufspannung.\n- **Parallelschaltung**: Die Ströme addieren sich, die Spannung bleibt gleich.\n\nVorsicht in Reihe: Wird **eine** Zelle beschattet, liefert sie kaum Strom und bremst die ganze Kette. Deshalb haben Module **Bypass-Dioden**, die beschattete Zellen überbrücken."
+      },
+      {
+        "titel": "Wirkungsgrad und Ausrichtung",
+        "text": "Der **Wirkungsgrad** gibt an, welcher Anteil der eingestrahlten Lichtleistung als elektrische Leistung herauskommt: `η = P_{el} / P_{Licht}`. Gute Siliziummodule erreichen etwa **20 %**. Der Rest wird zum größten Teil zu Wärme.\n\nAn einem klaren Sommertag kommen auf der Erde höchstens etwa **1000 W pro m²** an. Am meisten Licht fängt eine Zelle ein, wenn das Licht **senkrecht** auftrifft. Fällt es schräg ein, verteilt es sich auf eine größere Fläche, und die Zelle liefert weniger Strom. In Deutschland zeigen Dachmodule deshalb meist nach Süden mit etwa 30° bis 35° Neigung.\n\nEnergiekette: Strahlungsenergie des Lichts → elektrische Energie (+ thermische Energie)."
+      }
+    ],
+    "formeln": [
+      { "formel": "P = U · I", "bedeutung": "Elektrische Leistung `P` in W, Spannung `U` in V, Stromstärke `I` in A" },
+      { "formel": "η = \\frac{P_{el}}{P_{Licht}}", "bedeutung": "Wirkungsgrad (ohne Einheit, oft in %)" },
+      { "formel": "P_{Licht} = E · A · cos α", "bedeutung": "Eingestrahlte Leistung aus Bestrahlungsstärke `E` in W/m², Fläche `A` in m² und Einfallswinkel `α` zum Lot (senkrechter Einfall: cos 0° = 1)" }
+    ],
+    "merksatz": "In der Solarzelle erzeugt Licht **Elektron-Loch-Paare**, die der **pn-Übergang** trennt. Eine Siliziumzelle liefert etwa **0,5 bis 0,6 V** Leerlaufspannung. Ihr Kurzschlussstrom ist proportional zur Bestrahlungsstärke. Die größte Leistung `P = U · I` liefert sie im **MPP**.",
+    "alltag": "Ein Balkonkraftwerk mit zwei Modulen von je etwa 2 m² liefert in der Mittagssonne etwa 800 W. Über ein Jahr sind das in Berlin je nach Ausrichtung grob 500 bis 800 kWh, etwa ein Viertel des Strombedarfs eines kleinen Haushalts."
+  },
+  "interaktiv": ["timp-solarzelle"],
+  "uebungen": [
+    { "id": "timp-hso-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Was passiert in einer Solarzelle, wenn Licht auf sie fällt?",
+      "optionen": [
+        { "text": "Das Licht erzeugt Elektron-Loch-Paare, die am pn-Übergang getrennt werden.", "richtig": true },
+        { "text": "Das Licht erwärmt die Zelle, und die Wärme treibt einen Generator an.", "feedback": "In der Solarzelle bewegt sich nichts mechanisch. Wärme ist sogar ein Verlust." },
+        { "text": "Das Licht lädt einen Akku in der Zelle auf.", "feedback": "Eine Solarzelle speichert keine Energie. Sie wandelt Licht direkt in elektrische Energie um." },
+        { "text": "Das Licht besteht aus Elektronen, die in die Zelle fließen.", "feedback": "Licht besteht nicht aus Elektronen. Es löst Elektronen aus Bindungen im Silizium." }
+      ],
+      "erklaerung": "Licht löst Elektronen aus ihren Bindungen. Die **Sperrschicht** am pn-Übergang trennt Elektronen (zur n-Seite, Minuspol) und Löcher (zur p-Seite, Pluspol). So entsteht eine Spannung." },
+    { "id": "timp-hso-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Die Bestrahlungsstärke auf einer Solarzelle wird verdoppelt. Was passiert?",
+      "optionen": [
+        { "text": "Der Kurzschlussstrom verdoppelt sich, die Leerlaufspannung steigt nur wenig.", "richtig": true },
+        { "text": "Die Leerlaufspannung verdoppelt sich, der Kurzschlussstrom bleibt gleich.", "feedback": "Die Leerlaufspannung hängt vom Material ab und bleibt bei Silizium etwa bei 0,5 bis 0,6 V." },
+        { "text": "Beide verdoppeln sich.", "feedback": "Nur der Strom ist proportional zur Bestrahlungsstärke." },
+        { "text": "Nichts ändert sich.", "feedback": "Mehr Licht erzeugt mehr Elektron-Loch-Paare, also mehr Strom." }
+      ],
+      "erklaerung": "Doppelt so viel Licht erzeugt doppelt so viele Elektron-Loch-Paare und damit den **doppelten Kurzschlussstrom**. Die Leerlaufspannung ist durch den pn-Übergang begrenzt und ändert sich kaum." },
+    { "id": "timp-hso-03", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Eine Solarzelle liefert bei einer Spannung von 0,48 V einen Strom von 2,5 A. Welche Leistung gibt sie ab?",
+      "gegeben": "`U = 0,48 V`, `I = 2,5 A`",
+      "gesucht": "Leistung `P`",
+      "gesuchtSymbol": "P",
+      "loesung": 1.2, "einheit": "W", "alternativEinheiten": { "mW": 0.001 },
+      "rechenweg": [
+        "`P = U · I`",
+        "`P = 0,48 V · 2,5 A = 1,2 W`"
+      ],
+      "erklaerung": "Eine große Siliziumzelle liefert in voller Sonne etwa 4 bis 5 W. Für ein Modul mit einigen hundert Watt braucht man deshalb 60 oder mehr Zellen." },
+    { "id": "timp-hso-04", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "An einer Solarzelle wurde gemessen:\n\n`U` in V: 0 · 0,20 · 0,40 · 0,45 · 0,50 · 0,55 · 0,60\n`I` in A: 3,00 · 2,98 · 2,85 · 2,70 · 2,30 · 1,40 · 0\n\nBei welcher Spannung liegt der MPP?",
+      "optionen": [
+        { "text": "Bei etwa 0,45 V", "richtig": true },
+        { "text": "Bei 0 V, weil dort der Strom am größten ist", "feedback": "Bei 0 V ist die Leistung `P = 0 V · 3,00 A = 0 W`." },
+        { "text": "Bei 0,60 V, weil dort die Spannung am größten ist", "feedback": "Bei 0,60 V fließt kein Strom mehr, die Leistung ist null." },
+        { "text": "Bei 0,50 V", "feedback": "Rechne nach: `0,50 V · 2,30 A = 1,15 W`. Bei 0,45 V ist die Leistung etwas größer." }
+      ],
+      "erklaerung": "Berechne `P = U · I` für jedes Messpaar: 0 · 0,60 · 1,14 · **1,22** · 1,15 · 0,77 · 0 (in W). Die größte Leistung von etwa 1,22 W liegt bei **0,45 V**, also bei etwa 75 % der Leerlaufspannung." },
+    { "id": "timp-hso-05", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Ein Solarmodul besteht aus 36 Siliziumzellen in Reihe. Jede Zelle hat eine Leerlaufspannung von 0,6 V. Wie groß ist die Leerlaufspannung des Moduls?",
+      "gegeben": "36 Zellen in Reihe, `U_{L} = 0,6 V` je Zelle",
+      "gesucht": "Leerlaufspannung des Moduls `U_{ges}`",
+      "gesuchtSymbol": "U_{ges}",
+      "loesung": 21.6, "einheit": "V",
+      "rechenweg": [
+        "In Reihe addieren sich die Spannungen.",
+        "`U_{ges} = 36 · 0,6 V = 21,6 V`"
+      ],
+      "erklaerung": "Solche 36-Zellen-Module waren früher üblich, um 12-V-Akkus zu laden. Die höhere Spannung braucht man, weil die Spannung im MPP und bei Wärme niedriger ist." },
+    { "id": "timp-hso-06", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz5",
+      "frage": "Ein Solarmodul hat eine Fläche von 1,6 m². Die Sonne strahlt mit 1000 W pro m² senkrecht darauf. Das Modul liefert 320 W elektrische Leistung. Wie groß ist sein Wirkungsgrad?",
+      "gegeben": "`A = 1,6 m²`, `E = 1000 W/m²`, `P_{el} = 320 W`",
+      "gesucht": "Wirkungsgrad `η`",
+      "gesuchtSymbol": "η",
+      "loesung": 20, "einheit": "%", "alternativEinheiten": { "(ohne Einheit)": 100 },
+      "rechenweg": [
+        "Eingestrahlte Leistung: `P_{Licht} = E · A = 1000 W/m² · 1,6 m² = 1600 W`",
+        "`η = \\frac{P_{el}}{P_{Licht}} = \\frac{320 W}{1600 W} = 0,20 = 20 %`"
+      ],
+      "hinweis": "Berechne zuerst, wie viel Lichtleistung auf das ganze Modul fällt.",
+      "erklaerung": "Nur ein Fünftel der Lichtleistung wird zu elektrischer Leistung. Der Rest erwärmt vor allem das Modul. Heiße Module liefern übrigens etwas weniger Spannung." },
+    { "id": "timp-hso-07", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Welche Aussagen über das Zusammenschalten und Aufstellen von Solarzellen sind richtig?",
+      "optionen": [
+        { "text": "In Reihenschaltung addieren sich die Spannungen der Zellen.", "richtig": true },
+        { "text": "In Parallelschaltung addieren sich die Ströme der Zellen.", "richtig": true },
+        { "text": "Wird in einer Reihenschaltung eine Zelle beschattet, sinkt der Strom der ganzen Kette.", "richtig": true },
+        { "text": "Eine Zelle liefert am meisten, wenn das Licht senkrecht auf sie fällt.", "richtig": true },
+        { "text": "In Parallelschaltung addieren sich die Spannungen.", "feedback": "Parallel liegt an allen Zellen dieselbe Spannung. Es addieren sich die Ströme." },
+        { "text": "Flach einfallendes Licht ist besser, weil es länger durch die Zelle läuft.", "feedback": "Schräg einfallendes Licht verteilt sich auf eine größere Fläche. Pro Quadratmeter kommt weniger an." }
+      ],
+      "erklaerung": "Reihe: Spannungen addieren sich, der Strom ist überall gleich und wird von der schwächsten Zelle begrenzt. Parallel: Ströme addieren sich. Am meisten Licht fängt eine Zelle bei **senkrechtem** Einfall ein." }
+  ]
+}

@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Programmierlabor</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<style>
+  .code { margin: 0; padding: 6px 0; background: var(--bg); border-radius: 10px; font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; overflow-x: auto; }
+  .ln { display: flex; padding: 1px 10px 1px 0; border-left: 4px solid transparent; white-space: pre; }
+  .ln .no { width: 2.4em; flex: none; text-align: right; padding-right: 10px; color: var(--muted); user-select: none; }
+  .ln.cur { background: var(--soft-accent); border-left-color: var(--accent); font-weight: 650; }
+  .ln.err { background: var(--warn-soft); border-left-color: var(--warn); }
+  .panes { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 520px) { .panes { grid-template-columns: 1fr; } }
+  table { border-collapse: collapse; width: 100%; font-size: .88rem; font-variant-numeric: tabular-nums; }
+  td, th { padding: 4px 6px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+  th { font-weight: 650; color: var(--muted); font-size: .8rem; }
+  td.v { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  tr.chg td { background: var(--soft-accent); }
+  tr.loc td:first-child { color: var(--c3); font-weight: 650; }
+  .out { margin: 0; min-height: 3.2em; max-height: 190px; overflow: auto; background: var(--bg); border-radius: 10px; padding: 6px 10px; font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  .out div::before { content: "› "; color: var(--muted); }
+  .empty { color: var(--muted); font-size: .85rem; font-style: italic; }
+  .note { margin: 8px 0 0; padding: 6px 10px; border-radius: 8px; background: var(--bg); font-size: .88rem; min-height: 2.2em; }
+  .note.bad { background: var(--warn-soft); color: var(--warn); }
+  .note.good { background: var(--ok-soft); color: var(--ok); }
+  .viewseg { margin-bottom: 10px; }
+  .lk-grid > div { min-width: 0; }
+  .pap-wrap { overflow-x: auto; }
+  #pap text { font-size: 12px; text-anchor: middle; dominant-baseline: central; }
+  #pap .shape { fill: var(--card); stroke: var(--line); stroke-width: 1.6; }
+  #pap .shape.term { fill: var(--bg); }
+  #pap .shape.hl { fill: var(--soft-accent); stroke: var(--accent); stroke-width: 3; }
+  #pap .edge { fill: none; stroke: var(--muted); stroke-width: 1.4; }
+  #pap .yn { font-size: 11px; fill: var(--muted); text-anchor: start; }
+  #pap .arrowhead { fill: var(--muted); }
+  .pred { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .pred input { font: inherit; width: 8em; padding: 7px 10px; border-radius: 9px; border: 1px solid var(--border); background: var(--card); color: var(--text); }
+  .pred input:disabled { opacity: .75; }
+  .legend { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: .8rem; color: var(--muted); margin-top: 8px; }
+  label.ctrl select { width: 100%; }
+  h2 .small { font-weight: 400; }
+</style>
+</head>
+<body>
+<h1>Programmierlabor</h1>
+<p class="muted small">Wähle ein Beispielprogramm und ändere die Startwerte. Mit „Nächster Schritt“ wird genau eine Zeile ausgeführt. Beobachte die Variablen, die Ausgabe und den Ablaufplan. Lege vorher fest, was das Programm am Ende sagt.</p>
+
+<div class="lk-grid">
+  <div>
+    <div class="lk-card">
+      <div class="row viewseg">
+        <div class="seg" role="group" aria-label="Darstellung wählen">
+          <button type="button" id="vCode" aria-pressed="true">Programm</button>
+          <button type="button" id="vPap" aria-pressed="false">Ablaufplan</button>
+        </div>
+        <span class="small muted" id="progName"></span>
+      </div>
+      <div id="codeView">
+        <pre class="code" id="code" aria-label="Programmtext"></pre>
+      </div>
+      <div id="papView" hidden>
+        <div class="pap-wrap"><svg id="pap" role="img" aria-labelledby="pap-title"><title id="pap-title">Programmablaufplan des gewählten Programms</title></svg></div>
+        <div class="legend"><span>Oval: Start und Ende</span><span>Rechteck: Anweisung</span><span>Raute: Verzweigung</span><span>Parallelogramm: Ausgabe</span><span>Rechteck mit Doppelrand: Unterprogramm (Funktion)</span></div>
+      </div>
+      <p class="note" id="note" aria-live="polite">Noch nicht gestartet.</p>
+    </div>
+
+    <div class="lk-card">
+      <div class="panes">
+        <div>
+          <h2>Variablen</h2>
+          <table><thead><tr><th>Name</th><th>Wert</th></tr></thead><tbody id="vars"></tbody></table>
+          <p class="small muted" style="margin-top:6px">Lila: Parameter, sie gelten nur innerhalb der Funktion.</p>
+        </div>
+        <div>
+          <h2>Ausgabe <span class="small muted">(was das Programm sagt)</span></h2>
+          <div class="out" id="out" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="lk-card">
+      <h2>Einstellungen</h2>
+      <label class="ctrl"><span>Beispielprogramm</span>
+        <select id="sProg">
+          <option value="tausch">Variablen: Werte tauschen</option>
+          <option value="eintritt">Bedingung: Eintrittspreis</option>
+          <option value="summe">Schleife: Summe von 1 bis n</option>
+          <option value="endlos">Schleife: Endet sie?</option>
+          <option value="rechteck">Funktion: Rechteck</option>
+          <option value="wuerfel">Zufall: Würfeln bis zur Sechs</option>
+        </select></label>
+      <div id="params"></div>
+      <div class="row">
+        <button type="button" id="bStep" class="primary">Nächster Schritt</button>
+        <button type="button" id="bRun">Ablaufen lassen</button>
+        <button type="button" id="bReset">Zurücksetzen</button>
+      </div>
+      <div class="pred" id="predBox">
+        <label for="iPred" class="small"><b>Vorhersage:</b> Was sagt das Programm zuletzt?</label>
+        <input id="iPred" inputmode="decimal" autocomplete="off" placeholder="z. B. 5">
+        <button type="button" id="bPred">Festlegen</button>
+      </div>
+      <p class="small" id="predFb" aria-live="polite"></p>
+      <div class="readouts">
+        <div class="readout"><span>ausgeführte Schritte</span><b id="rSteps">0</b></div>
+        <div class="readout"><span>Zustand</span><b id="rState">bereit</b></div>
+      </div>
+    </div>
+
+    <div class="lk-card tasks">
+      <h2>Entdecke selbst <span class="small muted" data-task-count></span></h2>
+      <div class="task" data-goal="func"><p class="task-q">Führe „Funktion: Rechteck“ aus, bis die Parameter <b>länge</b> und <b>breite</b> in der Variablentabelle auftauchen.</p></div>
+      <div class="task" data-goal="predict"><p class="task-q">Lege bei einem Programm eine Vorhersage fest und lass es dann bis zum Ende laufen. Deine Vorhersage soll stimmen.</p></div>
+      <div class="task" data-goal="sum55"><p class="task-q">Stelle bei „Summe von 1 bis n“ den Wert <b>n</b> so ein, dass das Programm 55 sagt.</p></div>
+      <div class="task" data-goal="loopfix"><p class="task-q">„Endet sie?“ läuft mit Schrittweite 5 endlos. Finde eine Schrittweite, bei der das Programm von selbst endet.</p></div>
+      <div class="task">
+        <p class="task-q">Schau dir den Ablaufplan von „Eintrittspreis“ an. Welches Symbol steht für eine Verzweigung (falls … dann … sonst)?</p>
+        <div class="choices">
+          <button type="button" data-ok data-fb="Richtig: In der Raute steht die Bedingung. Je nach Ergebnis geht es über „ja“ oder „nein“ weiter.">die Raute</button>
+          <button type="button" data-fb="Das Rechteck steht für eine einfache Anweisung wie „setze preis auf 5“.">das Rechteck</button>
+          <button type="button" data-fb="Das Oval markiert nur Start und Ende des Programms.">das Oval</button>
+          <button type="button" data-fb="Das Parallelogramm steht für Ein- und Ausgabe, z. B. „sage preis“.">das Parallelogramm</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="task">
+        <p class="task-q">Lass „Würfeln bis zur Sechs“ mehrmals laufen. Warum sagt es jedes Mal etwas anderes?</p>
+        <div class="choices">
+          <button type="button" data-ok data-fb="Genau: Das Ergebnis hängt von Zufallszahlen ab. Das ist kein Programmierfehler. Man muss ein solches Programm oft laufen lassen und die Ergebnisse vergleichen.">Weil die Zufallszahlen bei jedem Lauf anders sind.</button>
+          <button type="button" data-fb="Das Programm ist richtig geschrieben. Schau in der Variablentabelle auf die Werte von wurf.">Weil das Programm einen Fehler hat.</button>
+          <button type="button" data-fb="Hier wird nichts gerundet. zufallszahl liefert ganze Zahlen von 1 bis 6.">Weil der Computer falsch rundet.</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="all-done">Alles entdeckt! Weiter geht es mit den Übungen.</div>
+    </div>
+  </div>
+</div>
+<p class="small muted">Die Programmiersprache hier ist eine vereinfachte, deutsche Schreibweise der Scratch-Blöcke. Eingerückte Zeilen gehören zum Block darüber. Kommazahlen werden im Programm mit Punkt geschrieben, wie in Scratch.</p>
+
+<script src="../../static/lesson-kit.js"></script>
+<script>
+/*INTERP-START*/
+var Interp = (function () {
+  'use strict';
+  var ID = '[A-Za-zÄÖÜäöüß_][A-Za-z0-9ÄÖÜäöüß_]*';
+  var reId = new RegExp('^' + ID + '$');
+  var reCall = new RegExp('^(' + ID + ')\\((.*)\\)$');
+  var reDef = new RegExp('^definiere (' + ID + ')\\((.*)\\)$');
+
+  function PErr(msg, line) { this.message = msg; this.line = line; }
+
+  // ---------- Ausdrücke
+  function tokenize(s) {
+    var t = [], i = 0, m;
+    while (i < s.length) {
+      var c = s[i];
+      if (c === ' ') { i++; continue; }
+      if ((m = /^\d+(\.\d+)?/.exec(s.slice(i)))) { t.push({ k: 'num', v: Number(m[0]) }); i += m[0].length; continue; }
+      if (c === '"') { var j = s.indexOf('"', i + 1); if (j < 0) throw new PErr('Anführungszeichen fehlt'); t.push({ k: 'str', v: s.slice(i + 1, j) }); i = j + 1; continue; }
+      if ((m = new RegExp('^' + ID).exec(s.slice(i)))) { t.push({ k: 'id', v: m[0] }); i += m[0].length; continue; }
+      if ('()+-*/=<>≠≤≥,'.indexOf(c) >= 0) { t.push({ k: 'op', v: c }); i++; continue; }
+      throw new PErr('Unbekanntes Zeichen „' + c + '“');
+    }
+    return t;
+  }
+  function parseExpr(src) {
+    var t = tokenize(src), p = 0;
+    function peek(v) { return t[p] && (t[p].k === 'op' || t[p].k === 'id') && t[p].v === v; }
+    function eat(v) { if (!peek(v)) throw new PErr('Erwartet: ' + v); p++; }
+    function or() { var a = and(); while (peek('oder')) { p++; a = { op: 'oder', a: a, b: and() }; } return a; }
+    function and() { var a = not(); while (peek('und')) { p++; a = { op: 'und', a: a, b: not() }; } return a; }
+    function not() { if (peek('nicht')) { p++; return { op: 'nicht', a: not() }; } return cmp(); }
+    function cmp() {
+      var a = add();
+      if (t[p] && t[p].k === 'op' && '=<>≠≤≥'.indexOf(t[p].v) >= 0) { var o = t[p++].v; a = { op: o, a: a, b: add() }; }
+      return a;
+    }
+    function add() { var a = mul(); while (peek('+') || peek('-')) { var o = t[p++].v; a = { op: o, a: a, b: mul() }; } return a; }
+    function mul() { var a = un(); while (peek('*') || peek('/') || peek('mod')) { var o = t[p++].v; a = { op: o, a: a, b: un() }; } return a; }
+    function un() { if (peek('-')) { p++; return { op: 'neg', a: un() }; } return prim(); }
+    function prim() {
+      var x = t[p];
+      if (!x) throw new PErr('Ausdruck unvollständig');
+      if (x.k === 'num' || x.k === 'str') { p++; return { lit: x.v }; }
+      if (peek('(')) { p++; var e = or(); eat(')'); return e; }
+      if (x.k === 'id') {
+        p++;
+        if (x.v === 'wahr') return { lit: true };
+        if (x.v === 'falsch') return { lit: false };
+        if (x.v === 'zufallszahl') { eat('von'); var lo = add(); eat('bis'); return { op: 'zufall', a: lo, b: add() }; }
+        if (x.v === 'runde') return { op: 'runde', a: prim() };
+        if (peek('(')) throw new PErr('Funktionsaufruf nur allein hinter „setze … auf“ oder „sage“ möglich');
+        return { name: x.v };
+      }
+      throw new PErr('Unerwartet: ' + x.v);
+    }
+    var e = or();
+    if (p < t.length) throw new PErr('Unerwartet: ' + t[p].v);
+    return e;
+  }
+
+  function splitArgs(s) {
+    var out = [], depth = 0, cur = '', inStr = false;
+    for (var i = 0; i < s.length; i++) {
+      var c = s[i];
+      if (c === '"') inStr = !inStr;
+      if (!inStr && c === '(') depth++;
+      if (!inStr && c === ')') depth--;
+      if (!inStr && c === ',' && depth === 0) { out.push(cur.trim()); cur = ''; } else cur += c;
+    }
+    if (cur.trim()) out.push(cur.trim());
+    return out;
+  }
+
+  // ---------- Programmtext → Baum (Blöcke über Einrückung)
+  function parse(text) {
+    var raw = text.split('\n');
+    var lines = raw.map(function (l, i) { return { i: i, ind: l.match(/^ */)[0].length, s: l.trim() }; }).filter(function (l) { return l.s; });
+    var pos = 0, funcs = {};
+    function exprOrCall(src, line) {
+      var m = reCall.exec(src);
+      if (m && ['runde'].indexOf(m[1]) < 0) return { call: m[1], args: splitArgs(m[2]).map(function (a) { return wrap(a, line); }) };
+      return { expr: wrap(src, line) };
+    }
+    function wrap(src, line) { try { return parseExpr(src); } catch (e) { throw new PErr(e.message, line); } }
+    function block(ind) {
+      var nodes = [];
+      while (pos < lines.length && lines[pos].ind >= ind) {
+        var L = lines[pos], s = L.s, m, n = { line: L.i };
+        if (L.ind > ind) throw new PErr('Falsche Einrückung', L.i);
+        pos++;
+        var kids = function () { return pos < lines.length && lines[pos].ind > ind ? block(lines[pos].ind) : []; };
+        if ((m = /^setze (\S+) auf (.+)$/.exec(s))) { n.t = 'setze'; n.name = m[1]; n.val = exprOrCall(m[2], L.i); }
+        else if ((m = /^ändere (\S+) um (.+)$/.exec(s))) { n.t = 'aendere'; n.name = m[1]; n.val = { expr: wrap(m[2], L.i) }; }
+        else if ((m = /^sage (.+)$/.exec(s))) { n.t = 'sage'; n.val = exprOrCall(m[1], L.i); }
+        else if ((m = /^falls (.+) dann$/.exec(s))) {
+          n.t = 'falls'; n.cond = wrap(m[1], L.i); n.condSrc = m[1]; n.then = kids(); n.els = null;
+          if (pos < lines.length && lines[pos].ind === ind && lines[pos].s === 'sonst') { n.elseLine = lines[pos].i; pos++; n.els = kids(); }
+        }
+        else if (s === 'sonst') throw new PErr('„sonst“ ohne passendes „falls“', L.i);
+        else if ((m = /^wiederhole bis (.+)$/.exec(s))) { n.t = 'bis'; n.cond = wrap(m[1], L.i); n.condSrc = m[1]; n.body = kids(); }
+        else if (s === 'wiederhole fortlaufend') { n.t = 'immer'; n.body = kids(); }
+        else if ((m = /^wiederhole (.+)-mal$/.exec(s))) { n.t = 'mal'; n.cnt = wrap(m[1], L.i); n.cntSrc = m[1]; n.body = kids(); }
+        else if ((m = reDef.exec(s))) {
+          var ps = splitArgs(m[2]);
+          ps.forEach(function (x) { if (!reId.test(x)) throw new PErr('Ungültiger Parameter ' + x, L.i); });
+          funcs[m[1]] = { name: m[1], params: ps, line: L.i, body: kids() };
+          continue;
+        }
+        else if ((m = /^gib (.+) zurück$/.exec(s))) { n.t = 'gib'; n.val = { expr: wrap(m[1], L.i) }; }
+        else if (s === 'stoppe alles') { n.t = 'stopp'; }
+        else if ((m = reCall.exec(s))) { n.t = 'aufruf'; n.val = exprOrCall(s, L.i); }
+        else throw new PErr('Diese Zeile verstehe ich nicht', L.i);
+        n.src = s;
+        nodes.push(n);
+      }
+      return nodes;
+    }
+    var main = block(0);
+    return { main: main, funcs: funcs, lines: raw };
+  }
+
+  // ---------- Ausführung Schritt für Schritt
+  function fmt(v) {
+    if (v === true) return 'wahr';
+    if (v === false) return 'falsch';
+    if (typeof v === 'number') {
+      var r = Number(v.toFixed(6));
+      return String(r).replace('.', ',');
+    }
+    return String(v);
+  }
+
+  function Machine(prog, rnd) {
+    this.prog = prog; this.rnd = rnd || Math.random;
+    this.globals = {}; this.order = [];
+    this.stack = [{ t: 'seq', nodes: prog.main, i: 0 }];
+    this.out = []; this.steps = 0; this.done = false; this.error = null; this.changed = null;
+  }
+  Machine.prototype.scope = function () {
+    for (var k = this.stack.length - 1; k >= 0; k--) if (this.stack[k].t === 'func') return this.stack[k].scope;
+    return null;
+  };
+  Machine.prototype.get = function (name) {
+    var sc = this.scope();
+    if (sc && Object.prototype.hasOwnProperty.call(sc, name)) return sc[name];
+    if (Object.prototype.hasOwnProperty.call(this.globals, name)) return this.globals[name];
+    throw new PErr('Die Variable „' + name + '“ hat noch keinen Wert');
+  };
+  Machine.prototype.set = function (name, v) {
+    var sc = this.scope();
+    this.changed = name;
+    if (sc && Object.prototype.hasOwnProperty.call(sc, name)) { sc[name] = v; return; }
+    if (!Object.prototype.hasOwnProperty.call(this.globals, name)) this.order.push(name);
+    this.globals[name] = v;
+  };
+  Machine.prototype.ev = function (e) {
+    var self = this;
+    if ('lit' in e) return e.lit;
+    if (e.name) return this.get(e.name);
+    var num = function (x) { var v = self.ev(x); if (typeof v !== 'number') throw new PErr('Hier wird eine Zahl gebraucht, nicht „' + fmt(v) + '“'); return v; };
+    var bool = function (x) { var v = self.ev(x); if (typeof v !== 'boolean') throw new PErr('Hier wird wahr oder falsch gebraucht'); return v; };
+    switch (e.op) {
+      case 'oder': return bool(e.a) || bool(e.b);
+      case 'und': return bool(e.a) && bool(e.b);
+      case 'nicht': return !bool(e.a);
+      case '=': return self.ev(e.a) === self.ev(e.b);
+      case '≠': return self.ev(e.a) !== self.ev(e.b);
+      case '<': return num(e.a) < num(e.b);
+      case '>': return num(e.a) > num(e.b);
+      case '≤': return num(e.a) <= num(e.b);
+      case '≥': return num(e.a) >= num(e.b);
+      case '+': return num(e.a) + num(e.b);
+      case '-': return num(e.a) - num(e.b);
+      case '*': return num(e.a) * num(e.b);
+      case '/': var d = num(e.b); if (d === 0) throw new PErr('Teilen durch 0 ist nicht möglich'); return num(e.a) / d;
+      case 'mod': var a = num(e.a), b = num(e.b); return ((a % b) + b) % b;
+      case 'neg': return -num(e.a);
+      case 'runde': return Math.round(num(e.a));
+      case 'zufall': var lo = Math.round(num(e.a)), hi = Math.round(num(e.b)); return lo + Math.floor(this.rnd() * (hi - lo + 1));
+    }
+    throw new PErr('Unbekannter Ausdruck');
+  };
+  Machine.prototype.callFunc = function (c, ret, line) {
+    var f = this.prog.funcs[c.call];
+    if (!f) throw new PErr('Es gibt keine Funktion „' + c.call + '“');
+    if (c.args.length !== f.params.length) throw new PErr(c.call + ' braucht ' + f.params.length + ' Werte in der Klammer');
+    var sc = {}, self = this;
+    var vals = c.args.map(function (a) { return self.ev(a); });
+    f.params.forEach(function (p, k) { sc[p] = vals[k]; });
+    if (this.stack.length > 200) throw new PErr('Zu viele Funktionsaufrufe ineinander');
+    this.stack.push({ t: 'func', nodes: f.body, i: 0, scope: sc, ret: ret, f: f, line: line });
+    return 'Aufruf von ' + c.call + ': ' + f.params.map(function (p, k) { return p + ' = ' + fmt(vals[k]); }).join(', ');
+  };
+  Machine.prototype.inFunc = function () { return !!this.scope(); };
+  Machine.prototype.step = function () {
+    if (this.done) return null;
+    this.changed = null;
+    try { var r = this._step(); if (r) this.steps++; return r; }
+    catch (e) { this.done = true; this.error = e.message || String(e); return { line: this.lastLine, note: 'Fehler: ' + this.error, error: true }; }
+  };
+  Machine.prototype._step = function () {
+    for (;;) {
+      var top = this.stack[this.stack.length - 1];
+      if (!top) { this.done = true; return { line: -1, note: 'Das Programm ist zu Ende.', end: true }; }
+      if (top.i >= top.nodes.length) {
+        if (top.t === 'seq') { this.stack.pop(); continue; }
+        if (top.t === 'mal') {
+          top.k++;
+          if (top.k < top.n) { top.i = 0; this.lastLine = top.node.line; return { line: top.node.line, note: 'Durchlauf ' + (top.k + 1) + ' von ' + top.n }; }
+          this.stack.pop(); this.lastLine = top.node.line;
+          return { line: top.node.line, note: 'Die Schleife ist ' + top.n + '-mal gelaufen und endet.' };
+        }
+        if (top.t === 'bis') {
+          this.lastLine = top.node.line;
+          if (this.ev(top.node.cond)) { this.stack.pop(); return { line: top.node.line, note: 'Prüfen: ' + top.node.condSrc + ' ist wahr. Die Schleife endet.' }; }
+          top.i = 0; return { line: top.node.line, note: 'Prüfen: ' + top.node.condSrc + ' ist falsch. Noch ein Durchlauf.' };
+        }
+        if (top.t === 'immer') { top.i = 0; this.lastLine = top.node.line; return { line: top.node.line, note: 'Wieder von vorn (fortlaufend).' }; }
+        if (top.t === 'func') {
+          this.stack.pop();
+          if (top.ret) throw new PErr(top.f.name + ' gibt keinen Wert zurück');
+          this.lastLine = top.line;
+          return { line: top.line, note: top.f.name + ' ist fertig. Weiter nach dem Aufruf.' };
+        }
+      }
+      var n = top.nodes[top.i++], note = '';
+      this.lastLine = n.line;
+      switch (n.t) {
+        case 'setze':
+          if (n.val.call) { note = this.callFunc(n.val, { set: n.name }, n.line); break; }
+          var v = this.ev(n.val.expr); this.set(n.name, v); note = n.name + ' bekommt den Wert ' + fmt(v) + '.'; break;
+        case 'aendere':
+          var old = this.get(n.name), d = this.ev(n.val.expr);
+          if (typeof old !== 'number' || typeof d !== 'number') throw new PErr('„ändere“ geht nur mit Zahlen');
+          this.set(n.name, old + d); note = n.name + ': ' + fmt(old) + ' + ' + fmt(d) + ' = ' + fmt(old + d); break;
+        case 'sage':
+          if (n.val.call) { note = this.callFunc(n.val, { sage: true }, n.line); break; }
+          var s = this.ev(n.val.expr); this.out.push(fmt(s)); note = 'Ausgabe: ' + fmt(s); break;
+        case 'falls':
+          var c = this.ev(n.cond);
+          if (typeof c !== 'boolean') throw new PErr('Hinter „falls“ muss eine Bedingung stehen');
+          if (c) { this.stack.push({ t: 'seq', nodes: n.then, i: 0 }); note = n.condSrc + ' ist wahr: Der dann-Teil wird ausgeführt.'; }
+          else if (n.els) { this.stack.push({ t: 'seq', nodes: n.els, i: 0 }); note = n.condSrc + ' ist falsch: Der sonst-Teil wird ausgeführt.'; }
+          else note = n.condSrc + ' ist falsch: Der dann-Teil wird übersprungen.';
+          break;
+        case 'mal':
+          var cnt = Math.round(this.ev(n.cnt));
+          if (cnt > 0) { this.stack.push({ t: 'mal', nodes: n.body, i: 0, n: cnt, k: 0, node: n }); note = 'Durchlauf 1 von ' + cnt; }
+          else note = 'Die Schleife läuft 0-mal.';
+          break;
+        case 'bis':
+          if (this.ev(n.cond)) note = 'Prüfen: ' + n.condSrc + ' ist schon wahr. Die Schleife wird übersprungen.';
+          else { this.stack.push({ t: 'bis', nodes: n.body, i: 0, node: n }); note = 'Prüfen: ' + n.condSrc + ' ist falsch. Die Schleife beginnt.'; }
+          break;
+        case 'immer': this.stack.push({ t: 'immer', nodes: n.body, i: 0, node: n }); note = 'Diese Schleife läuft fortlaufend.'; break;
+        case 'aufruf': note = this.callFunc(n.val, null, n.line); break;
+        case 'gib':
+          var rv = this.ev(n.val.expr), fr;
+          do { fr = this.stack.pop(); } while (fr && fr.t !== 'func');
+          if (!fr) throw new PErr('„gib … zurück“ steht nicht in einer Funktion');
+          note = fr.f.name + ' gibt ' + fmt(rv) + ' zurück.';
+          if (fr.ret && fr.ret.set) { this.set(fr.ret.set, rv); note += ' ' + fr.ret.set + ' bekommt den Wert ' + fmt(rv) + '.'; }
+          if (fr.ret && fr.ret.sage) { this.out.push(fmt(rv)); note += ' Ausgabe: ' + fmt(rv); }
+          break;
+        case 'stopp': this.done = true; note = 'stoppe alles: Das Programm wird beendet.'; return { line: n.line, note: note, end: true };
+      }
+      return { line: n.line, note: note };
+    }
+  };
+  Machine.prototype.vars = function () {
+    var self = this, rows = this.order.map(function (k) { return { name: k, v: fmt(self.globals[k]), local: false }; });
+    var sc = this.scope(), fr;
+    for (var k = this.stack.length - 1; k >= 0; k--) if (this.stack[k].t === 'func') { fr = this.stack[k]; break; }
+    if (sc) Object.keys(sc).forEach(function (p) { rows.push({ name: p, v: fmt(sc[p]), local: true, fn: fr.f.name }); });
+    return rows;
+  };
+  function run(text, maxSteps, rnd) {
+    var m = new Machine(parse(text), rnd), r;
+    while (!m.done && m.steps < (maxSteps || 10000)) m.step();
+    return { out: m.out, done: m.done, error: m.error, steps: m.steps, globals: m.globals };
+  }
+  return { parse: parse, Machine: Machine, fmt: fmt, run: run, PErr: PErr };
+})();
+/*INTERP-END*/
+
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+  var NS = 'http://www.w3.org/2000/svg';
+  var MAXSTEPS = 400;
+
+  var PROGS = {
+    tausch: {
+      params: [{ k: 'a', label: 'Startwert von a', min: 0, max: 20, val: 5 }, { k: 'b', label: 'Startwert von b', min: 0, max: 20, val: 8 }],
+      code: function (p) { return ['setze a auf ' + p.a, 'setze b auf ' + p.b, 'setze hilf auf a', 'setze a auf b', 'setze b auf hilf', 'sage a', 'sage b']; }
+    },
+    eintritt: {
+      params: [{ k: 'alter', label: 'alter', min: 1, max: 30, val: 13 }],
+      code: function (p) { return ['setze alter auf ' + p.alter, 'setze preis auf 8', 'falls alter < 6 dann', '  setze preis auf 0', 'sonst', '  falls alter < 18 dann', '    setze preis auf 5', 'sage preis']; }
+    },
+    summe: {
+      params: [{ k: 'n', label: 'n', min: 1, max: 20, val: 4 }],
+      code: function (p) { return ['setze n auf ' + p.n, 'setze summe auf 0', 'setze i auf 1', 'wiederhole n-mal', '  ändere summe um i', '  ändere i um 1', 'sage summe']; }
+    },
+    endlos: {
+      params: [{ k: 's', label: 'Schrittweite', min: 1, max: 12, val: 5 }],
+      code: function (p) { return ['setze x auf 0', 'wiederhole bis x = 12', '  ändere x um ' + p.s, 'sage x']; }
+    },
+    rechteck: {
+      params: [{ k: 'l', label: 'erste Länge', min: 1, max: 10, val: 3 }, { k: 'b', label: 'erste Breite', min: 1, max: 10, val: 4 }],
+      code: function (p) { return ['definiere fläche(länge, breite)', '  gib länge * breite zurück', 'setze a auf fläche(' + p.l + ', ' + p.b + ')', 'setze b auf fläche(5, 2)', 'sage a + b']; }
+    },
+    wuerfel: {
+      params: [], random: true,
+      code: function () { return ['setze würfe auf 0', 'setze wurf auf 0', 'wiederhole bis wurf = 6', '  setze wurf auf zufallszahl von 1 bis 6', '  ändere würfe um 1', 'sage würfe']; }
+    }
+  };
+
+  var S = { id: 'tausch', pv: {}, m: null, prog: null, text: '', timer: null, pred: null, limit: false, line: -1 };
+
+  // ---------------------------------------------- Parameter-Regler
+  function buildParams() {
+    var P = PROGS[S.id], box = $('params');
+    box.innerHTML = '';
+    P.params.forEach(function (q) {
+      if (S.pv[S.id + q.k] == null) S.pv[S.id + q.k] = q.val;
+      var lab = document.createElement('label'); lab.className = 'ctrl';
+      var sp = document.createElement('span'); sp.textContent = q.label + ' ';
+      var o = document.createElement('output'); o.textContent = S.pv[S.id + q.k]; sp.appendChild(o);
+      var inp = document.createElement('input'); inp.type = 'range'; inp.min = q.min; inp.max = q.max; inp.step = 1; inp.value = S.pv[S.id + q.k];
+      inp.setAttribute('aria-label', q.label); inp.id = 'p-' + q.k;
+      inp.oninput = function () { S.pv[S.id + q.k] = Number(inp.value); o.textContent = inp.value; load(); };
+      lab.appendChild(sp); lab.appendChild(inp); box.appendChild(lab);
+    });
+    if (!P.params.length) box.innerHTML = '<p class="small muted">Dieses Programm hat keine Startwerte zum Einstellen.</p>';
+  }
+  function values() { var P = PROGS[S.id], o = {}; P.params.forEach(function (q) { o[q.k] = S.pv[S.id + q.k]; }); return o; }
+
+  // ---------------------------------------------- Laden und Zurücksetzen
+  function load() {
+    stop();
+    S.text = PROGS[S.id].code(values()).join('\n');
+    S.prog = Interp.parse(S.text);
+    S.m = new Interp.Machine(S.prog);
+    S.limit = false; S.line = -1;
+    S.pred = null; $('iPred').value = ''; $('iPred').disabled = false; $('bPred').disabled = !!PROGS[S.id].random; $('iPred').disabled = !!PROGS[S.id].random;
+    $('predFb').textContent = PROGS[S.id].random ? 'Bei Zufallsprogrammen kann man die Ausgabe nicht sicher vorhersagen.' : '';
+    $('progName').textContent = $('sProg').options[$('sProg').selectedIndex].text;
+    renderCode(); drawPap();
+    setNote('Noch nicht gestartet. Drücke „Nächster Schritt“.', '');
+    render();
+  }
+
+  function renderCode() {
+    var pre = $('code'); pre.innerHTML = '';
+    S.text.split('\n').forEach(function (l, i) {
+      var d = document.createElement('div'); d.className = 'ln'; d.id = 'ln' + i;
+      var no = document.createElement('span'); no.className = 'no'; no.textContent = i + 1; no.setAttribute('aria-hidden', 'true');
+      var tx = document.createElement('span'); tx.textContent = l;
+      d.appendChild(no); d.appendChild(tx); pre.appendChild(d);
+    });
+  }
+
+  function render() {
+    var m = S.m;
+    // aktuelle Zeile
+    Array.prototype.forEach.call(document.querySelectorAll('.ln'), function (d) { d.classList.remove('cur'); d.classList.remove('err'); });
+    Array.prototype.forEach.call(document.querySelectorAll('#pap .shape'), function (d) { d.classList.remove('hl'); });
+    if (S.line >= 0) {
+      var d = $('ln' + S.line); if (d) d.classList.add(m.error ? 'err' : 'cur');
+      Array.prototype.forEach.call(document.querySelectorAll('#pap [data-line="' + S.line + '"]'), function (x) { x.classList.add('hl'); });
+    }
+    // Variablen
+    var tb = $('vars'); tb.innerHTML = '';
+    var rows = m.vars();
+    if (!rows.length) tb.innerHTML = '<tr><td colspan="2" class="empty">noch keine Variablen</td></tr>';
+    rows.forEach(function (r) {
+      var tr = document.createElement('tr');
+      if (r.local) tr.className = 'loc';
+      if (r.name === m.changed && !(r.local === false && rows.some(function (x) { return x.local && x.name === r.name; }))) tr.className += ' chg';
+      var a = document.createElement('td'); a.textContent = r.name + (r.local ? ' (Parameter von ' + r.fn + ')' : '');
+      var b = document.createElement('td'); b.className = 'v'; b.textContent = r.v;
+      tr.appendChild(a); tr.appendChild(b); tb.appendChild(tr);
+    });
+    // Ausgabe
+    var out = $('out'); out.innerHTML = '';
+    if (!m.out.length) out.innerHTML = '<span class="empty">noch keine Ausgabe</span>';
+    m.out.forEach(function (o) { var d = document.createElement('div'); d.textContent = o; out.appendChild(d); });
+    out.scrollTop = out.scrollHeight;
+    $('rSteps').textContent = m.steps;
+    $('rState').textContent = m.error ? 'Fehler' : S.limit ? 'gestoppt' : m.done ? 'fertig' : m.steps ? 'läuft' : 'bereit';
+    $('bStep').disabled = m.done || S.limit;
+    $('bRun').disabled = m.done || S.limit;
+  }
+
+  function setNote(t, cls) { var n = $('note'); n.textContent = t; n.className = 'note' + (cls ? ' ' + cls : ''); }
+
+  // ---------------------------------------------- Ein Schritt
+  function step() {
+    var m = S.m;
+    if (m.done || S.limit) return;
+    var r = m.step();
+    if (!r) return;
+    S.line = r.line;
+    if (r.error) setNote(r.note, 'bad');
+    else if (r.end) { setNote(r.note, 'good'); finished(); }
+    else setNote('Zeile ' + (r.line + 1) + ': ' + r.note, '');
+    if (S.id === 'rechteck' && m.inFunc()) LK.reach('func');
+    if (!m.done && m.steps >= MAXSTEPS) {
+      S.limit = true; stop();
+      setNote('Nach ' + MAXSTEPS + ' Schritten ist das Programm immer noch nicht fertig. Die Abbruchbedingung wird offenbar nie erfüllt: eine Endlosschleife! Das Labor hat das Programm angehalten.', 'bad');
+    }
+    render();
+  }
+
+  function finished() {
+    var m = S.m, last = m.out.length ? m.out[m.out.length - 1] : '';
+    if (S.id === 'summe' && last === '55') LK.reach('sum55');
+    if (S.id === 'endlos') LK.reach('loopfix');
+    if (S.pred != null) {
+      var norm = function (s) { return String(s).trim().toLowerCase().replace(/\./g, ','); };
+      if (norm(S.pred) === norm(last)) { $('predFb').textContent = '✓ Deine Vorhersage „' + S.pred + '“ stimmt!'; LK.reach('predict'); }
+      else $('predFb').textContent = 'Deine Vorhersage war „' + S.pred + '“, das Programm sagt zuletzt „' + last + '“. Gehe die Schritte noch einmal durch.';
+    }
+  }
+
+  function stop() { if (S.timer) { clearInterval(S.timer); S.timer = null; } $('bRun').textContent = 'Ablaufen lassen'; }
+  function runAuto() {
+    if (S.timer) { stop(); return; }
+    $('bRun').textContent = 'Anhalten';
+    var fast = S.id === 'endlos' || S.id === 'wuerfel';
+    S.timer = setInterval(function () { step(); if (S.m.done || S.limit) stop(); }, fast ? 60 : 450);
+  }
+
+  // ---------------------------------------------- Programmablaufplan
+  var BH = 32, GAP = 18, CW = 6.6;
+  function tw(s) { return s.length * CW; }
+  function mk(tag, a, parent) { var e = document.createElementNS(NS, tag); for (var k in a) e.setAttribute(k, a[k]); parent.appendChild(e); return e; }
+  function txt(g, x, y, s, cls) { var t = mk('text', { x: x, y: y }, g); if (cls) t.setAttribute('class', cls); t.textContent = s; return t; }
+  function arrow(g, pts) { mk('polyline', { points: pts.map(function (p) { return p[0] + ',' + p[1]; }).join(' '), class: 'edge', 'marker-end': 'url(#ah)' }, g); }
+  function line(g, pts) { mk('polyline', { points: pts.map(function (p) { return p[0] + ',' + p[1]; }).join(' '), class: 'edge' }, g); }
+
+  function lBox(label, kind, ln) {
+    var w = Math.max(96, tw(label) + 28);
+    return { w: w, h: BH, cx: w / 2, draw: function (g, x, y) {
+      var a = { 'data-line': ln, class: 'shape' + (kind === 'term' ? ' term' : '') };
+      if (kind === 'io') { a.points = [[x + 10, y], [x + w, y], [x + w - 10, y + BH], [x, y + BH]].join(' '); mk('polygon', a, g); }
+      else if (kind === 'term') { a.x = x; a.y = y; a.width = w; a.height = BH; a.rx = BH / 2; mk('rect', a, g); }
+      else {
+        a.x = x; a.y = y; a.width = w; a.height = BH; mk('rect', a, g);
+        if (kind === 'sub') { line(g, [[x + 7, y], [x + 7, y + BH]]); line(g, [[x + w - 7, y], [x + w - 7, y + BH]]); }
+      }
+      txt(g, x + w / 2, y + BH / 2, label);
+    } };
+  }
+  function lSeq(nodes) {
+    var items = nodes.map(lNode);
+    if (!items.length) return { w: 24, h: 0, cx: 12, draw: function () {} };
+    var L = 0, R = 0, H = 0;
+    items.forEach(function (it, k) { L = Math.max(L, it.cx); R = Math.max(R, it.w - it.cx); H += it.h + (k ? GAP : 0); });
+    return { w: L + R, h: H, cx: L, noExit: items[items.length - 1].noExit, draw: function (g, x, y) {
+      var yy = y;
+      items.forEach(function (it, k) {
+        if (k) { if (!items[k - 1].noExit) arrow(g, [[x + L, yy], [x + L, yy + GAP]]); yy += GAP; }
+        it.draw(g, x + L - it.cx, yy); yy += it.h;
+      });
+    } };
+  }
+  function diamond(g, x, y, w, h, label, ln) {
+    mk('polygon', { points: [[x, y + h / 2], [x + w / 2, y], [x + w, y + h / 2], [x + w / 2, y + h]].join(' '), class: 'shape', 'data-line': ln }, g);
+    txt(g, x + w / 2, y + h / 2, label);
+  }
+  function lIf(n) {
+    var label = n.condSrc + ' ?', dw = Math.max(110, tw(label) + 56), dh = 46;
+    var A = lSeq(n.then), B = lSeq(n.els || []);
+    var gap = Math.max(24, 2 * (dw / 2 + 12 - (A.w - A.cx)), 2 * (dw / 2 + 12 - B.cx));
+    var w = A.w + gap + B.w, cx = A.w + gap / 2, lx = A.cx, rx = A.w + gap + B.cx;
+    var top = dh + 26, H = top + Math.max(A.h, B.h) + 14;
+    return { w: w, h: H, cx: cx, draw: function (g, x, y) {
+      diamond(g, x + cx - dw / 2, y, dw, dh, label, n.line);
+      arrow(g, [[x + cx - dw / 2, y + dh / 2], [x + lx, y + dh / 2], [x + lx, y + top]]);
+      (B.h ? arrow : line)(g, [[x + cx + dw / 2, y + dh / 2], [x + rx, y + dh / 2], [x + rx, y + top]]);
+      txt(g, x + cx - dw / 2 - 22, y + dh / 2 - 9, 'ja', 'yn');
+      txt(g, x + cx + dw / 2 + 4, y + dh / 2 - 9, 'nein', 'yn');
+      A.draw(g, x + lx - A.cx, y + top); B.draw(g, x + rx - B.cx, y + top);
+      line(g, [[x + lx, y + top + A.h], [x + lx, y + H], [x + rx, y + H], [x + rx, y + top + B.h]]);
+    } };
+  }
+  function lLoop(n) {
+    var label = n.t === 'mal' ? 'schon ' + n.cntSrc + '-mal?' : n.t === 'bis' ? n.condSrc + ' ?' : '';
+    var dw = label ? Math.max(110, tw(label) + 56) : 0, dh = label ? 46 : 0;
+    var B = lSeq(n.body);
+    var le = Math.max(dw / 2, B.cx), re = Math.max(dw / 2, B.w - B.cx);
+    var w = 22 + le + re + (label ? 34 : 10), cx = 22 + le;
+    var bt = 10 + dh + (label ? 22 : 8), bb = bt + B.h, H = label ? bb + 26 : bb + 14;
+    return { w: w, h: H, cx: cx, noExit: !label, draw: function (g, x, y) {
+      line(g, [[x + cx, y], [x + cx, y + 10]]);
+      if (label) {
+        diamond(g, x + cx - dw / 2, y + 10, dw, dh, label, n.line);
+        arrow(g, [[x + cx, y + 10 + dh], [x + cx, y + bt]]);
+        txt(g, x + cx + 5, y + 10 + dh + 9, 'nein', 'yn');
+        line(g, [[x + cx + dw / 2, y + 10 + dh / 2], [x + w - 8, y + 10 + dh / 2], [x + w - 8, y + bb + 20]]);
+        arrow(g, [[x + w - 8, y + bb + 20], [x + cx + 4, y + bb + 20]]);
+        line(g, [[x + cx, y + bb + 20], [x + cx, y + H]]);
+        txt(g, x + cx + dw / 2 + 4, y + 10 + dh / 2 - 9, 'ja', 'yn');
+      } else {
+        mk('circle', { cx: x + cx, cy: y + 10, r: 3, class: 'arrowhead', 'data-line': n.line }, g);
+        arrow(g, [[x + cx, y + 10], [x + cx, y + bt]]);
+      }
+      B.draw(g, x + cx - B.cx, y + bt);
+      arrow(g, [[x + cx, y + bb], [x + cx, y + bb + 8], [x + 6, y + bb + 8], [x + 6, y + 5], [x + cx - 4, y + 5]]);
+    } };
+  }
+  function lNode(n) {
+    if (n.t === 'falls') return lIf(n);
+    if (n.t === 'mal' || n.t === 'bis' || n.t === 'immer') return lLoop(n);
+    if (n.t === 'sage') return n.val.call ? lBox(n.src, 'sub', n.line) : lBox(n.src, 'io', n.line);
+    if (n.t === 'aufruf' || (n.t === 'setze' && n.val.call)) return lBox(n.src, 'sub', n.line);
+    if (n.t === 'stopp') return lBox('Ende', 'term', n.line);
+    return lBox(n.src, 'box', n.line);
+  }
+  function lChart(title, nodes, endLabel, startLine) {
+    var st = lBox(title, 'term', startLine), en = lBox(endLabel, 'term', -2), body = lSeq(nodes);
+    var L = 0, R = 0;
+    [st, body, en].forEach(function (it) { L = Math.max(L, it.cx); R = Math.max(R, it.w - it.cx); });
+    var H = st.h + GAP + body.h + (body.h ? GAP : 0) + en.h;
+    return { w: L + R, h: H, cx: L, draw: function (g, x, y) {
+      var yy = y;
+      st.draw(g, x + L - st.cx, yy); yy += st.h;
+      arrow(g, [[x + L, yy], [x + L, yy + GAP]]); yy += GAP;
+      if (body.h) { body.draw(g, x + L - body.cx, yy); yy += body.h; if (!body.noExit) arrow(g, [[x + L, yy], [x + L, yy + GAP]]); yy += GAP; }
+      en.draw(g, x + L - en.cx, yy);
+    } };
+  }
+  function drawPap() {
+    var svg = $('pap');
+    while (svg.lastChild && svg.lastChild.nodeName !== 'title') svg.removeChild(svg.lastChild);
+    var defs = mk('defs', {}, svg), mrk = mk('marker', { id: 'ah', viewBox: '0 0 10 10', refX: 9, refY: 5, markerWidth: 7, markerHeight: 7, orient: 'auto-start-reverse' }, defs);
+    mk('path', { d: 'M0,0 L10,5 L0,10 z', class: 'arrowhead' }, mrk);
+    var charts = [lChart('Start', S.prog.main, 'Ende', -1)];
+    Object.keys(S.prog.funcs).forEach(function (k) {
+      var f = S.prog.funcs[k];
+      charts.push(lChart(f.name + '(' + f.params.join(', ') + ')', f.body, 'zurück', f.line));
+    });
+    var W = 10, H = 0;
+    var g = mk('g', {}, svg);
+    charts.forEach(function (c, k) { c.draw(g, W, 10); W += c.w + (k < charts.length - 1 ? 40 : 10); H = Math.max(H, c.h); });
+    svg.setAttribute('viewBox', '0 0 ' + Math.ceil(W) + ' ' + Math.ceil(H + 20));
+    svg.style.maxWidth = Math.ceil(W * 1.1) + 'px';
+    svg.style.minWidth = Math.min(Math.ceil(W * 0.8), 560) + 'px';
+  }
+
+  // ---------------------------------------------- Bedienung
+  $('sProg').onchange = function () { S.id = this.value; buildParams(); load(); };
+  $('bStep').onclick = function () { stop(); step(); };
+  $('bRun').onclick = runAuto;
+  $('bReset').onclick = load;
+  $('bPred').onclick = function () {
+    var v = $('iPred').value.trim();
+    if (!v) { $('predFb').textContent = 'Trage zuerst eine Vorhersage ein.'; return; }
+    if (S.m.done) { $('predFb').textContent = 'Das Programm ist schon fertig. Setze es zurück und lege die Vorhersage vor dem Start fest.'; return; }
+    S.pred = v; $('iPred').disabled = true; $('bPred').disabled = true;
+    $('predFb').textContent = 'Vorhersage „' + v + '“ festgelegt. Jetzt lass das Programm laufen.';
+  };
+  function view(pap) {
+    $('vCode').setAttribute('aria-pressed', String(!pap)); $('vPap').setAttribute('aria-pressed', String(pap));
+    $('codeView').hidden = pap; $('papView').hidden = !pap;
+  }
+  $('vCode').onclick = function () { view(false); };
+  $('vPap').onclick = function () { view(true); };
+
+  buildParams(); load();
+})();
+</script>
+</body>
+</html>

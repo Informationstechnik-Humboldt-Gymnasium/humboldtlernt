@@ -1,0 +1,150 @@
+{
+  "id": "timp-k8-logik-alltag",
+  "titel": "Logische Schaltungen im Alltag entwerfen",
+  "kurz": "Vom Alltagsproblem zur Schaltung: Bedingungen formulieren, UND, ODER und NICHT kombinieren, mit einer Tabelle mit drei Eingängen prüfen und protokollieren.",
+  "reihenfolge": 4,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Alltagsgeräte wie Waschmaschine, Auto-Innenlicht oder Alarmanlage als UND-, ODER- oder NICHT-Verknüpfung beschreiben" },
+    { "id": "lz2", "niveau": "H", "text": "Kombinierte Schaltungen wie (A UND B) ODER C planen und als Schaltplan beschreiben" },
+    { "id": "lz3", "niveau": "H", "text": "Wahrheitswerttabellen mit drei Eingängen (8 Zeilen) vollständig und systematisch aufstellen" },
+    { "id": "lz4", "niveau": "H", "text": "Hypothesen über eine Schaltung aufstellen, mit der Wahrheitswerttabelle bestätigen oder widerlegen und die Untersuchung protokollieren" }
+  ],
+  "verstehen": {
+    "einstieg": "Eine Waschmaschine darf erst starten, wenn die Tür geschlossen ist. Eine Alarmanlage soll nur Alarm geben, wenn sie eingeschaltet ist. Wie baut man solche Regeln mit Schaltern?",
+    "abschnitte": [
+      {
+        "titel": "Vom Problem zur Schaltung",
+        "text": "So gehst du beim Entwerfen vor:\n\n- **Eingänge festlegen:** Welche Schalter, Taster oder Kontakte gibt es? Gib jedem einen Buchstaben und lege fest, was **1** bedeutet (z. B. „Tür geschlossen“).\n- **Ausgang festlegen:** Was soll passieren (Lampe an, Motor läuft, Alarm)?\n- **Bedingung als Satz formulieren:** „Der Motor läuft, wenn … und … .“\n- **Satz in Verknüpfungen übersetzen:** „und“ → Reihe, „oder“ → parallel, „nicht“ → Öffner.\n- **Schaltplan zeichnen** und mit einer **Wahrheitswerttabelle** prüfen."
+      },
+      {
+        "titel": "Beispiele aus dem Alltag",
+        "text": "**Waschmaschine:** Der Türkontakt T wird von der geschlossenen Tür gedrückt (T = 1). Der Motor läuft, wenn T = 1 **UND** der Startknopf S gedrückt wurde. Türkontakt und Startknopf liegen in Reihe.\n\n**Auto-Innenlicht:** In jeder Tür sitzt ein Türkontakt, der bei **offener** Tür den Stromkreis schließt. Das Licht geht an, wenn die Fahrertür **ODER** die Beifahrertür offen ist. Die Kontakte liegen parallel.\n\n**Alarmanlage:** Die Sirene soll heulen, wenn die Anlage eingeschaltet ist (A) **UND** außerdem ein Fenster (F) **ODER** die Tür (T) geöffnet wird. Die logische Aussage lautet: Alarm = A UND (F ODER T). Im Schaltplan liegt A in Reihe mit einer Parallelschaltung aus F und T."
+      },
+      {
+        "titel": "Kombinierte Schaltungen",
+        "text": "Verknüpfungen lassen sich kombinieren. **Klammern** zeigen, was zuerst zusammengehört.\n\n**(A UND B) ODER C:** A und B liegen in Reihe. Diese Reihe liegt parallel zu C. Die Lampe leuchtet, wenn A und B beide geschlossen sind oder wenn C geschlossen ist.\n\n**(A ODER B) UND C:** A und B liegen parallel. Diese Parallelschaltung liegt in Reihe mit C. Ohne C geht hier gar nichts.\n\nDie Klammern sind wichtig: (A UND B) ODER C ist eine andere Schaltung als A UND (B ODER C)."
+      },
+      {
+        "titel": "Tabellen mit drei Eingängen",
+        "text": "Jeder Schalter hat 2 Stellungen. Mit drei Schaltern gibt es 2 · 2 · 2 = **8** Kombinationen, mit vier Schaltern schon 16. Damit du keine Zeile vergisst, füllst du die Eingänge **systematisch** aus: C wechselt in jeder Zeile, B alle 2 Zeilen, A alle 4 Zeilen. So zählst du wie im Zweiersystem von 000 bis 111.\n\nTabelle für **(A UND B) ODER C**:\n\n```\nA B C | Lampe\n0 0 0 |  0\n0 0 1 |  1\n0 1 0 |  0\n0 1 1 |  1\n1 0 0 |  0\n1 0 1 |  1\n1 1 0 |  1\n1 1 1 |  1\n```"
+      },
+      {
+        "titel": "Hypothesen prüfen und protokollieren",
+        "text": "Bevor du eine Schaltung testest, stellst du eine **Hypothese** auf, z. B.: „Wenn C geschlossen ist, leuchtet die Lampe immer.“ Dann prüfst du sie mit der Tabelle oder im Experiment.\n\n- Passt die Hypothese zu **allen** betroffenen Zeilen, ist sie **bestätigt**.\n- Schon **ein** Gegenbeispiel **widerlegt** sie.\n\nIn der obigen Tabelle ist die Hypothese bestätigt: In allen Zeilen mit C = 1 steht eine 1.\n\nEin **Protokoll** enthält: Fragestellung, Hypothese, Schaltplan, Durchführung (alle Schalterstellungen testen), Beobachtungen in der Wahrheitswerttabelle und die Auswertung (Hypothese bestätigt oder widerlegt)."
+      }
+    ],
+    "merksatz": "Beim Entwerfen formulierst du die Bedingung als Satz und übersetzt ihn: **UND** → Reihe, **ODER** → parallel, **NICHT** → Öffner. Klammern zeigen, was zusammengehört.\n\nMit drei Eingängen hat die Wahrheitswerttabelle **8 Zeilen**. Eine Hypothese ist widerlegt, sobald eine einzige Zeile nicht passt.",
+    "alltag": "Auch Computer arbeiten mit UND, ODER und NICHT. Statt Schaltern benutzen sie winzige Transistoren als elektronische Schalter, Milliarden davon auf einem einzigen Chip."
+  },
+  "interaktiv": ["timp-logiklabor"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "timp-lalt-01",
+      "typ": "single",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz1",
+      "frage": "Eine Waschmaschine startet nur, wenn die Tür geschlossen ist **und** der Startknopf gedrückt wird. Wie sind Türkontakt und Startknopf geschaltet?",
+      "optionen": [
+        { "text": "in Reihe (UND)", "richtig": true },
+        { "text": "parallel (ODER)", "feedback": "Dann würde die Maschine auch bei offener Tür starten, sobald man den Startknopf drückt." },
+        { "text": "als Wechselschaltung", "feedback": "Bei einer Wechselschaltung könnte jeder Schalter allein den Motor einschalten." },
+        { "text": "Der Türkontakt ist ein Öffner in einer NICHT-Schaltung.", "feedback": "Der Motor soll laufen, wenn die Tür geschlossen ist, nicht wenn sie offen ist." }
+      ],
+      "erklaerung": "Beide Bedingungen müssen gleichzeitig erfüllt sein. Das ist eine UND-Verknüpfung, also liegen Türkontakt und Startknopf in Reihe."
+    },
+    {
+      "id": "timp-lalt-02",
+      "typ": "single",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz1",
+      "frage": "Das Innenlicht im Auto soll leuchten, wenn die Fahrertür oder die Beifahrertür offen ist. Welche logische Aussage passt? (F = Fahrertür offen, B = Beifahrertür offen)",
+      "optionen": [
+        { "text": "Licht = F ODER B", "richtig": true },
+        { "text": "Licht = F UND B", "feedback": "Dann ginge das Licht nur an, wenn beide Türen gleichzeitig offen sind." },
+        { "text": "Licht = NICHT F", "feedback": "Das berücksichtigt die Beifahrertür gar nicht und schaltet bei offener Fahrertür sogar aus." },
+        { "text": "Licht = F UND NICHT B", "feedback": "Dann bliebe das Licht aus, wenn nur die Beifahrertür offen ist." }
+      ],
+      "erklaerung": "Es reicht, wenn **eine** Tür offen ist. Die beiden Türkontakte liegen deshalb parallel: ODER."
+    },
+    {
+      "id": "timp-lalt-03",
+      "typ": "single",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz2",
+      "frage": "Für eine Alarmanlage gilt: Alarm = A UND (F ODER T). Dabei ist A der Schlüsselschalter (Anlage eingeschaltet), F ein Fensterkontakt und T ein Türkontakt. Welcher Schaltplan passt?",
+      "optionen": [
+        { "text": "A liegt in Reihe mit einer Parallelschaltung aus F und T.", "richtig": true },
+        { "text": "A, F und T liegen alle in Reihe.", "feedback": "Dann gäbe es nur Alarm, wenn Fenster **und** Tür gleichzeitig offen sind." },
+        { "text": "A, F und T liegen alle parallel.", "feedback": "Dann gäbe es auch Alarm, wenn die Anlage ausgeschaltet ist und jemand die Tür öffnet." },
+        { "text": "A und F liegen in Reihe, diese Reihe liegt parallel zu T.", "feedback": "Das ist (A UND F) ODER T. Dann würde die Tür auch bei ausgeschalteter Anlage Alarm auslösen." }
+      ],
+      "erklaerung": "Die Klammer (F ODER T) wird zur Parallelschaltung. Weil zusätzlich A erfüllt sein muss, liegt A **in Reihe** davor."
+    },
+    {
+      "id": "timp-lalt-04",
+      "typ": "zahl",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz3",
+      "frage": "Eine Schaltung hat **vier** Schalter A, B, C und D. Wie viele Zeilen hat ihre vollständige Wahrheitswerttabelle?",
+      "loesung": 16,
+      "einheit": "",
+      "toleranz": 0,
+      "rechenweg": [
+        "Jeder Schalter hat 2 Stellungen (0 und 1).",
+        "Die Möglichkeiten werden multipliziert: `2 · 2 · 2 · 2 = 2^{4}`",
+        "Ergebnis: 16 Zeilen"
+      ],
+      "hinweis": "Mit jedem weiteren Schalter verdoppelt sich die Zahl der Zeilen.",
+      "erklaerung": "1 Schalter: 2 Zeilen, 2 Schalter: 4, 3 Schalter: 8, 4 Schalter: 16."
+    },
+    {
+      "id": "timp-lalt-05",
+      "typ": "zahl",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz3",
+      "frage": "Stelle die Wahrheitswerttabelle für die Schaltung **(A ODER B) UND C** auf. In wie vielen der 8 Zeilen leuchtet die Lampe?",
+      "loesung": 3,
+      "einheit": "",
+      "toleranz": 0,
+      "rechenweg": [
+        "Ohne C leuchtet nichts: Alle 4 Zeilen mit C = 0 ergeben 0.",
+        "Bei C = 1 muss zusätzlich A oder B gleich 1 sein: 0 1 1, 1 0 1 und 1 1 1.",
+        "Bei 0 0 1 bleibt die Lampe aus.",
+        "Ergebnis: 3 Zeilen"
+      ],
+      "hinweis": "Schreibe die 8 Zeilen von 000 bis 111 auf und prüfe zuerst C.",
+      "erklaerung": "C liegt in Reihe mit der Parallelschaltung aus A und B. Die Lampe leuchtet also nur bei C = 1 und gleichzeitig A = 1 oder B = 1."
+    },
+    {
+      "id": "timp-lalt-06",
+      "typ": "single",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz4",
+      "frage": "Tom untersucht die Schaltung **(A ODER B) UND C** und stellt die Hypothese auf: „Wenn C geschlossen ist, leuchtet die Lampe immer.“ Was ergibt die Prüfung mit der Wahrheitswerttabelle?",
+      "optionen": [
+        { "text": "Widerlegt: Bei A = 0, B = 0, C = 1 bleibt die Lampe aus.", "richtig": true },
+        { "text": "Bestätigt: Bei A = 1, B = 1, C = 1 leuchtet die Lampe.", "feedback": "Eine passende Zeile reicht nicht für „immer“. Prüfe alle Zeilen mit C = 1." },
+        { "text": "Bestätigt: Ohne C leuchtet die Lampe nie.", "feedback": "Das stimmt zwar, ist aber eine andere Aussage. Die Hypothese behauptet, dass C allein ausreicht." },
+        { "text": "Widerlegt: Bei A = 1, B = 1, C = 0 leuchtet die Lampe.", "feedback": "In dieser Zeile ist die Lampe aus, denn C liegt in Reihe." }
+      ],
+      "erklaerung": "In den 4 Zeilen mit C = 1 ist die Lampe bei 0 0 1 aus. Dieses eine Gegenbeispiel **widerlegt** die Hypothese. Für die Schaltung (A UND B) ODER C wäre sie dagegen richtig."
+    },
+    {
+      "id": "timp-lalt-07",
+      "typ": "reihenfolge",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz4",
+      "frage": "Bringe die Teile eines Protokolls zur Untersuchung einer logischen Schaltung in die richtige Reihenfolge.",
+      "elemente": [
+        "Fragestellung: Wann leuchtet die Lampe?",
+        "Hypothese aufstellen",
+        "Schaltplan zeichnen und die Schaltung bei ausgeschalteter Quelle aufbauen",
+        "Alle Schalterstellungen nacheinander testen",
+        "Beobachtungen in die Wahrheitswerttabelle eintragen",
+        "Auswertung: Hypothese bestätigen oder widerlegen"
+      ],
+      "erklaerung": "Die Hypothese steht **vor** dem Experiment. Erst wenn alle Zeilen der Tabelle ausgefüllt sind, kann man sicher entscheiden, ob sie bestätigt oder widerlegt ist."
+    }
+  ]
+}

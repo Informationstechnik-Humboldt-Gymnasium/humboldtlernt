@@ -67,7 +67,7 @@ test('Schülerliste, Klassenstufe, Übungen, Fortschritt und Lehrer-Übersicht',
 
   const max = await new Client().login('max', 'student', 'max@schule.de');
   const home = await (await max.req('/')).text();
-  assert.match(home, /Physik lernen/);
+  assert.match(home, /class="eyebrow">Physik</);
   assert.match(home, /href="\/physik\/9"/, 'Startseite führt zur eigenen Klassenstufe');
   assert.doesNotMatch(home, /Stromkreis-Labor/, 'Themen-Lektionen erscheinen nicht doppelt auf der Startseite');
 
@@ -80,7 +80,8 @@ test('Schülerliste, Klassenstufe, Übungen, Fortschritt und Lehrer-Übersicht',
   const k9 = await (await max.req('/physik/9')).text();
   assert.match(k9, /3\.6/); assert.match(k9, /Widerstand und ohmsches Gesetz/);
   const k10 = await (await max.req('/physik/10')).text();
-  assert.match(k10, /In Vorbereitung/);
+  assert.match(k10, /3\.7/); assert.match(k10, /Gleichmäßig beschleunigte Bewegung/);
+  for (const g of [7, 8]) assert.doesNotMatch(await (await max.req(`/physik/${g}`)).text(), /In Vorbereitung/);
 
   const verstehen = await (await max.req('/physik/9/k9-ohmsches-gesetz')).text();
   assert.match(verstehen, /Das lernst du hier/);
@@ -122,6 +123,24 @@ test('Schülerliste, Klassenstufe, Übungen, Fortschritt und Lehrer-Übersicht',
   assert.equal(res.fortschritt.verstanden, true);
   assert.match(await (await max.req('/physik/9')).text(), /✓ Verstanden/);
 
+  // Zweites Fach: TIMP (Klasse 8 und 9) mit eigenen Seiten und eigenem Fortschritt
+  assert.match(home, /class="eyebrow">TIMP</);
+  assert.match(home, /href="\/timp\/9"/);
+  const timp = await (await max.req('/timp')).text();
+  assert.match(timp, /href="\/timp\/8"/); assert.match(timp, /href="\/timp\/9"/);
+  assert.doesNotMatch(timp, /href="\/timp\/10"/);
+  assert.equal((await max.req('/timp/10')).status, 404);
+  assert.match(await (await max.req('/timp/8')).text(), /Logische Schaltungen/);
+  const prog = await (await max.req('/timp/9/timp-k9-schleifen')).text();
+  assert.match(prog, /\/inhalt\/timp-programmierlabor\/index\.html/);
+  assert.match(prog, /href="\/timp"/, 'Brotkrümel führen ins Fach');
+  assert.equal((await max.req('/physik/9/timp-k9-schleifen')).status, 404, 'Thema nur in seinem Fach');
+  assert.equal((await max.req('/timp/9/k9-ohmsches-gesetz')).status, 404);
+  assert.match(await (await max.req('/timp/9/timp-k9-schleifen/ueben')).text(), /data-id="timp-sl-01"/);
+  res = await (await max.json('/api/verstanden/timp-k9-schleifen', { done: true })).json();
+  assert.equal(res.fortschritt.verstanden, true);
+  assert.equal((await max.req('/gibts-nicht')).status, 404);
+
   // Schüler dürfen nicht in die Verwaltung
   assert.equal((await max.req('/admin')).status, 403);
 
@@ -129,6 +148,8 @@ test('Schülerliste, Klassenstufe, Übungen, Fortschritt und Lehrer-Übersicht',
   const teacher = await new Client().login('lehrer', 'teacher');
   const adm = await (await teacher.req('/admin?klasse=9a')).text();
   assert.match(adm, /Physik · Klasse 9/);
+  assert.match(adm, /TIMP · Klasse 9/);
+  assert.match(adm, /Schleifen: 0\/7, verstanden/);
   assert.match(adm, /Max Muster/);
   assert.match(adm, /Widerstand und ohmsches Gesetz: 3\/10, verstanden/);
 });

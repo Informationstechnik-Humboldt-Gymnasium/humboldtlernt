@@ -1,0 +1,106 @@
+{
+  "id": "timp-k8-kolbendruck",
+  "titel": "Kolbendruck und hydraulische Anlagen",
+  "kurz": "Wie sich Druck in eingeschlossenen Flüssigkeiten ausbreitet und wie Wagenheber, Bremsen und Bagger damit große Kräfte erzeugen.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Beschreiben, dass sich Kolbendruck in einer eingeschlossenen Flüssigkeit nach allen Seiten gleich ausbreitet, und dies im Teilchenmodell deuten" },
+    { "id": "lz2", "niveau": "H", "text": "Kräfte an hydraulischen Anlagen mit `\\frac{F_{1}}{A_{1}} = \\frac{F_{2}}{A_{2}}` berechnen" },
+    { "id": "lz3", "niveau": "H", "text": "Die Kolbenwege mit `s_{1} · A_{1} = s_{2} · A_{2}` berechnen und erklären, warum man Kraft, aber keine Arbeit spart" },
+    { "id": "lz4", "niveau": "G", "text": "Aufbau und Funktion hydraulischer Anlagen wie Wagenheber, Bremse und Bagger erklären" }
+  ],
+  "verstehen": {
+    "einstieg": "Mit einem kleinen Wagenheber kannst du ein Auto mit einer Hand anheben. Wie kann eine so kleine Kraft eine so schwere Last tragen?",
+    "abschnitte": [
+      {
+        "titel": "Kolbendruck breitet sich nach allen Seiten aus",
+        "text": "Drückt man mit einem **Kolben** auf eine eingeschlossene Flüssigkeit, entsteht der **Kolbendruck** `p = F / A`. Dieser Druck ist **an jeder Stelle der Flüssigkeit gleich groß** und wirkt **in alle Richtungen**, also auch zur Seite und nach oben.\n\nDas zeigt die **pascalsche Kugel**: eine Kugel mit vielen Löchern, gefüllt mit Wasser. Drückt man auf den Kolben, spritzt das Wasser aus allen Löchern gleich weit heraus, nicht nur aus dem unteren."
+      },
+      {
+        "titel": "Deutung im Teilchenmodell",
+        "text": "In einer Flüssigkeit liegen die Teilchen **dicht beieinander**, sind aber gegeneinander verschiebbar. Drückt der Kolben auf die obersten Teilchen, geben sie den Druck an ihre Nachbarn weiter, und zwar in alle Richtungen. So verteilt sich der Druck gleichmäßig in der ganzen Flüssigkeit.\n\nWeil die Teilchen schon dicht liegen, lässt sich eine Flüssigkeit **kaum zusammendrücken**. Bei einem **Gas** sind die Abstände zwischen den Teilchen groß. Ein Gas lässt sich deshalb gut zusammendrücken. Für hydraulische Anlagen nimmt man daher Öl und keine Luft."
+      },
+      {
+        "titel": "Hydraulische Anlagen: kleine Kraft, große Kraft",
+        "text": "Eine hydraulische Anlage hat zwei Kolben, die über eine Flüssigkeit verbunden sind. Am kleinen Kolben (Fläche `A_{1}`) drückt man mit der Kraft `F_{1}`. Der Druck ist überall gleich, also auch am großen Kolben (Fläche `A_{2}`):\n\n`p = \\frac{F_{1}}{A_{1}} = \\frac{F_{2}}{A_{2}}`\n\nIst `A_{2}` zum Beispiel 25-mal so groß wie `A_{1}`, dann ist auch `F_{2}` 25-mal so groß wie `F_{1}`.\n\nBeispiel: `A_{1} = 2 cm^{2}`, `A_{2} = 50 cm^{2}`, `F_{1} = 100 N`. Dann ist `F_{2} = 100 N · \\frac{50}{2} = 2500 N`."
+      },
+      {
+        "titel": "Die Wege: Was man an Kraft spart, muss man an Weg zusetzen",
+        "text": "Schiebt der kleine Kolben die Flüssigkeit um den Weg `s_{1}` hinein, muss dasselbe Volumen beim großen Kolben ankommen:\n\n`s_{1} · A_{1} = s_{2} · A_{2}`\n\nDer große Kolben bewegt sich also nur ein kleines Stück. Bei 25-facher Kraft ist der Weg nur ein Fünfundzwanzigstel. Die Arbeit `F · s` bleibt gleich (ohne Reibung). Man spart Kraft, aber keine Arbeit.\n\nBeim **Wagenheber** pumpt man deshalb viele Male. Ventile sorgen dafür, dass beim Hochziehen des kleinen Kolbens Öl aus einem Vorratsbehälter nachfließt und das Öl unter dem großen Kolben nicht zurückfließt."
+      },
+      {
+        "titel": "Hydraulik in der Technik",
+        "text": "- **Bremse im Auto**: Der Fuß drückt über das Pedal auf einen kleinen Kolben im Hauptbremszylinder. Der Druck breitet sich in der Bremsflüssigkeit bis zu den Rädern aus. Dort drücken größere Kolben die Bremsbeläge auf die Bremsscheiben.\n- **Bagger, Kipper, Hebebühne**: Eine Pumpe erzeugt Öldruck von oft über 200 bar. Hydraulikzylinder bewegen damit Arm und Schaufel.\n- **Luft in der Bremsleitung ist gefährlich**: Luftblasen lassen sich zusammendrücken. Das Pedal gibt nach, und die Bremse wirkt schlechter."
+      }
+    ],
+    "formeln": [
+      { "formel": "p = \\frac{F_{1}}{A_{1}} = \\frac{F_{2}}{A_{2}}", "bedeutung": "Der Druck ist an beiden Kolben gleich" },
+      { "formel": "F_{2} = F_{1} · \\frac{A_{2}}{A_{1}}", "bedeutung": "Kraft am großen Kolben" },
+      { "formel": "s_{1} · A_{1} = s_{2} · A_{2}", "bedeutung": "Verschobenes Volumen ist gleich groß" }
+    ],
+    "merksatz": "Der Kolbendruck breitet sich in einer eingeschlossenen Flüssigkeit nach allen Seiten gleichmäßig aus. In hydraulischen Anlagen gilt `F_{1} / A_{1} = F_{2} / A_{2}`: Am größeren Kolben entsteht eine größere Kraft, er bewegt sich aber um einen kürzeren Weg.",
+    "alltag": "Ein Friseurstuhl, eine Autohebebühne in der Werkstatt und der Kipper eines Lastwagens arbeiten alle mit Hydraulik."
+  },
+  "interaktiv": ["timp-hydraulik"],
+  "vertiefung": ["k7-teilchenmodell"],
+  "uebungen": [
+    { "id": "timp-kol-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Eine Kugel mit vielen Löchern ist mit Wasser gefüllt. Oben drückt ein Kolben auf das Wasser. Was beobachtest du?",
+      "optionen": [
+        { "text": "Das Wasser spritzt aus allen Löchern gleich weit heraus.", "richtig": true },
+        { "text": "Das Wasser spritzt nur aus den unteren Löchern heraus.", "feedback": "Der Kolbendruck wirkt nicht nur nach unten, sondern in alle Richtungen." },
+        { "text": "Das Wasser spritzt am weitesten aus den Löchern genau gegenüber dem Kolben.", "feedback": "Der Druck ist in der ganzen Flüssigkeit gleich groß. Deshalb spritzt es überall gleich weit." },
+        { "text": "Es spritzt kein Wasser heraus, weil Wasser sich zusammendrücken lässt.", "feedback": "Wasser lässt sich kaum zusammendrücken. Deshalb gibt es den Druck an alle Wände weiter." }
+      ],
+      "erklaerung": "Das ist die pascalsche Kugel. Sie zeigt: Der Kolbendruck breitet sich in einer eingeschlossenen Flüssigkeit nach allen Seiten gleich aus." },
+    { "id": "timp-kol-02", "typ": "zahl", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Auf einen Kolben mit der Fläche 5 cm² wird mit 100 N gedrückt. Wie groß ist der Druck in der Flüssigkeit? Gib das Ergebnis in bar an.",
+      "gegeben": "`F = 100 N`, `A = 5 cm^{2} = 0,0005 m^{2}`", "gesucht": "`p`", "gesuchtSymbol": "p",
+      "loesung": 2, "einheit": "bar", "alternativEinheiten": { "Pa": 0.00001, "hPa": 0.001 },
+      "rechenweg": ["`p = \\frac{F}{A} = \\frac{100 N}{0,0005 m^{2}} = 200 000 Pa`", "`200 000 Pa = 2 bar`"],
+      "hinweis": "`1 cm^{2} = 0,0001 m^{2}` und `1 bar = 100 000 Pa`.",
+      "erklaerung": "Dieser Druck von 2 bar herrscht dann überall in der eingeschlossenen Flüssigkeit." },
+    { "id": "timp-kol-03", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Bei einem hydraulischen Wagenheber hat der kleine Kolben eine Fläche von 2 cm², der große Kolben eine Fläche von 50 cm². Am kleinen Kolben wird mit 200 N gedrückt. Welche Kraft entsteht am großen Kolben?",
+      "gegeben": "`A_{1} = 2 cm^{2}`, `A_{2} = 50 cm^{2}`, `F_{1} = 200 N`", "gesucht": "`F_{2}`", "gesuchtSymbol": "F_{2}",
+      "loesung": 5000, "einheit": "N", "alternativEinheiten": { "kN": 1000 },
+      "rechenweg": ["`\\frac{F_{1}}{A_{1}} = \\frac{F_{2}}{A_{2}}`, also `F_{2} = F_{1} · \\frac{A_{2}}{A_{1}}`", "`F_{2} = 200 N · \\frac{50 cm^{2}}{2 cm^{2}} = 200 N · 25 = 5000 N`"],
+      "hinweis": "Der große Kolben ist 25-mal so groß wie der kleine. Was folgt daraus für die Kraft?",
+      "erklaerung": "Die Flächen müssen nicht in m² umgerechnet werden, weil nur ihr Verhältnis zählt. 5000 N reichen, um etwa 500 kg zu heben." },
+    { "id": "timp-kol-04", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Beim Wagenheber aus der vorigen Aufgabe (`A_{1} = 2 cm^{2}`, `A_{2} = 50 cm^{2}`) wird der kleine Kolben bei einem Pumpstoß um 10 cm hineingedrückt. Um wie viel Millimeter hebt sich der große Kolben?",
+      "gegeben": "`A_{1} = 2 cm^{2}`, `A_{2} = 50 cm^{2}`, `s_{1} = 10 cm`", "gesucht": "`s_{2}`", "gesuchtSymbol": "s_{2}",
+      "loesung": 4, "einheit": "mm", "alternativEinheiten": { "cm": 10 },
+      "rechenweg": ["`s_{1} · A_{1} = s_{2} · A_{2}`, also `s_{2} = s_{1} · \\frac{A_{1}}{A_{2}}`", "`s_{2} = 10 cm · \\frac{2}{50} = 0,4 cm = 4 mm`"],
+      "hinweis": "Das Ölvolumen, das der kleine Kolben verschiebt, kommt vollständig beim großen Kolben an.",
+      "erklaerung": "Die Kraft ist 25-mal so groß, der Weg nur ein Fünfundzwanzigstel. Um das Auto 10 cm anzuheben, braucht man 25 Pumpstöße." },
+    { "id": "timp-kol-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Warum darf in der Bremsleitung eines Autos keine Luft sein?",
+      "optionen": [
+        { "text": "Luft lässt sich zusammendrücken. Das Pedal gibt nach, und der Druck kommt nicht richtig an den Rädern an.", "richtig": true },
+        { "text": "Luft ist zu leicht und kann deshalb keinen Druck weitergeben.", "feedback": "Auch Luft kann Druck übertragen. Das Problem ist, dass sie sich zusammendrücken lässt." },
+        { "text": "Luft würde die Bremsflüssigkeit verdunsten lassen.", "feedback": "Das ist nicht der Grund. Entscheidend ist, wie sich Luft beim Zusammendrücken verhält." },
+        { "text": "Luft macht die Bremse zu stark, sodass die Räder blockieren.", "feedback": "Im Gegenteil: Mit Luft in der Leitung bremst das Auto schlechter." }
+      ],
+      "erklaerung": "Im Teilchenmodell: Zwischen Gasteilchen sind große Abstände. Ein Teil des Pedalwegs wird verbraucht, um die Luftblase zusammenzudrücken. Die Bremse wird „schwammig“." },
+    { "id": "timp-kol-06", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Bringe die Vorgänge in einer hydraulischen Autobremse in die richtige Reihenfolge.",
+      "elemente": [
+        "Der Fuß tritt auf das Bremspedal.",
+        "Ein kleiner Kolben im Hauptbremszylinder drückt auf die Bremsflüssigkeit.",
+        "Der Druck breitet sich in den Bremsleitungen bis zu allen Rädern aus.",
+        "Der Druck wirkt auf die größeren Kolben an den Rädern.",
+        "Die Kolben pressen die Bremsbeläge auf die Bremsscheiben."
+      ],
+      "erklaerung": "Weil die Kolben an den Rädern größer sind als der im Hauptbremszylinder, entsteht dort eine größere Kraft. Außerdem verstärkt der Hebel des Pedals die Fußkraft." },
+    { "id": "timp-kol-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz1",
+      "frage": "Erkläre mit dem Teilchenmodell, warum sich Wasser kaum zusammendrücken lässt, Luft aber gut.",
+      "stichworte": [
+        { "aspekt": "In Flüssigkeiten liegen die Teilchen dicht beieinander", "woerter": ["dicht", "eng", "kaum platz", "kein platz", "kleine abstaende", "geringe abstaende", "beruehren"] },
+        { "aspekt": "In Gasen sind die Abstände zwischen den Teilchen groß", "woerter": ["grosse abstaende", "grosser abstand", "weit auseinander", "viel platz", "abstaende gross", "abstaende sind gross"] },
+        { "aspekt": "Beim Zusammendrücken werden die Abstände kleiner, was nur beim Gas möglich ist", "woerter": ["abstaende kleiner", "naeher zusammen", "zusammengeschoben", "verringern", "verkleinern", "naeher"] }
+      ],
+      "musterloesung": "In Wasser liegen die Teilchen schon sehr dicht beieinander. Es gibt kaum Platz zwischen ihnen, deshalb kann man sie nicht näher zusammenschieben. In Luft haben die Teilchen große Abstände zueinander. Drückt man Luft zusammen, werden die Abstände kleiner und die Teilchen rücken näher zusammen. Deshalb lässt sich Luft gut zusammendrücken, Wasser aber kaum.",
+      "erklaerung": "Deshalb verwendet man in hydraulischen Anlagen Flüssigkeiten wie Öl: Sie geben den Druck ohne Verlust an Weg weiter." }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "id": "timp-k8-kraft-druck",
+  "titel": "Kraft, Gewichtskraft und Auflagedruck",
+  "kurz": "Was eine Kraft ist, wie man die Gewichtskraft berechnet und warum es auf die Fläche ankommt, auf die eine Kraft drückt.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Kräfte an ihren Wirkungen erkennen und die Gewichtskraft mit `F_{G} = m · g` berechnen" },
+    { "id": "lz2", "niveau": "G", "text": "Den Druck als Kraft pro Fläche definieren, mit `p = F / A` berechnen und die Einheiten Pa, hPa und bar umrechnen" },
+    { "id": "lz3", "niveau": "H", "text": "Den Auflagedruck an Beispielen wie Schneeschuhen, Messern und Nagelbrettern erklären" },
+    { "id": "lz4", "niveau": "H", "text": "Mit dem Kraft-Druck-Gerät Hypothesen bilden und mit einem Kontrollversuch prüfen" }
+  ],
+  "verstehen": {
+    "einstieg": "Im tiefen Schnee sinkst du mit Stiefeln bis zu den Knien ein. Mit Schneeschuhen läufst du fast obendrauf, obwohl du gleich schwer bist. Woran liegt das?",
+    "abschnitte": [
+      {
+        "titel": "Was ist eine Kraft?",
+        "text": "Eine **Kraft** erkennst du an ihren Wirkungen: Sie kann einen Körper **verformen** (eine Feder dehnen, Knete eindrücken) oder seine **Bewegung ändern** (anschieben, abbremsen, die Richtung ändern).\n\nDas Formelzeichen der Kraft ist `F`, die Einheit ist das **Newton** (N). Eine Tafel Schokolade (100 g) wird auf der Erde mit etwa 1 N nach unten gezogen."
+      },
+      {
+        "titel": "Die Gewichtskraft",
+        "text": "Die Erde zieht jeden Körper nach unten. Diese Kraft heißt **Gewichtskraft** `F_{G}`. Sie hängt von der Masse `m` ab:\n\n`F_{G} = m · g` mit dem Ortsfaktor `g = 9,81 N/kg`\n\nBeispiel: Ein Schüler mit 50 kg hat die Gewichtskraft `F_{G} = 50 kg · 9,81 N/kg = 490,5 N`.\n\nAchtung: Die Masse (in kg) ist überall gleich. Die Gewichtskraft (in N) ist auf dem Mond viel kleiner, weil dort `g` nur etwa 1,6 N/kg beträgt."
+      },
+      {
+        "titel": "Druck ist Kraft pro Fläche",
+        "text": "Ob eine Kraft tief eindrückt oder nicht, hängt auch von der **Fläche** ab, auf die sie wirkt. Deshalb definiert man den **Druck**:\n\n`p = \\frac{F}{A}` (Druck = Kraft durch Fläche)\n\nDie Einheit ist das **Pascal**: `1 Pa = 1 N/m^{2}`. Ein Pascal ist sehr wenig, deshalb nutzt man oft:\n- `1 hPa = 100 Pa` (Hektopascal, z. B. beim Wetter)\n- `1 bar = 100 000 Pa = 1000 hPa` (z. B. beim Reifendruck)\n\nGleiche Kraft auf kleine Fläche bedeutet großen Druck. Gleiche Kraft auf große Fläche bedeutet kleinen Druck."
+      },
+      {
+        "titel": "Auflagedruck im Alltag",
+        "text": "Den Druck, den ein Körper auf seine Unterlage ausübt, nennt man **Auflagedruck**.\n- **Schneeschuhe** und breite Reifen von Traktoren vergrößern die Fläche. Der Druck wird kleiner, man sinkt weniger ein.\n- Ein **scharfes Messer** hat eine winzige Schneidenfläche. Schon eine kleine Kraft erzeugt einen riesigen Druck.\n- Auf einem **Nagelbrett** mit vielen hundert Nägeln verteilt sich die Gewichtskraft auf viele Spitzen. Der Druck pro Spitze ist viel kleiner als bei einem einzelnen Nagel."
+      },
+      {
+        "titel": "Experimentieren mit dem Kraft-Druck-Gerät",
+        "text": "Beim **Kraft-Druck-Gerät** drücken Stempel mit verschiedenen Grundflächen in eine weiche Unterlage (z. B. Knete oder Schaumstoff). Mit Wägestücken stellt man die Kraft ein. Die Eindrucktiefe zeigt, wie groß der Druck ist.\n\nSo gehst du vor:\n- **Hypothese** bilden: „Je kleiner die Fläche, desto tiefer der Eindruck.“\n- **Nur eine Größe verändern**: verschiedene Stempelflächen, aber immer dieselbe Kraft.\n- **Kontrollversuch**: Den Versuch mit denselben Einstellungen wiederholen. Nur wenn das Ergebnis gleich bleibt, ist es verlässlich.\n- Alles im **Protokoll** festhalten: Aufbau, Durchführung, Messwerte, Ergebnis."
+      }
+    ],
+    "formeln": [
+      { "formel": "F_{G} = m · g", "bedeutung": "Gewichtskraft in N, Masse in kg, `g = 9,81 N/kg`" },
+      { "formel": "p = \\frac{F}{A}", "bedeutung": "Druck in Pa, Kraft in N, Fläche in m²" },
+      { "formel": "1 bar = 1000 hPa = 100 000 Pa", "bedeutung": "Umrechnung der Druckeinheiten" }
+    ],
+    "merksatz": "Der Druck gibt an, wie groß die Kraft auf eine bestimmte Fläche ist: `p = F / A`. Seine Einheit ist das Pascal (`1 Pa = 1 N/m^{2}`). Je kleiner die Fläche, desto größer der Druck bei gleicher Kraft.",
+    "alltag": "Pfennigabsätze können Parkettböden beschädigen: Beim Auftreten drückt ein großer Teil der Gewichtskraft auf eine Fläche von etwa 1 cm². Der Druck ist dann größer als unter einem Elefantenfuß."
+  },
+  "interaktiv": [],
+  "vertiefung": ["k8-kraefte"],
+  "uebungen": [
+    { "id": "timp-kd-01", "typ": "multi", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Woran erkennst du, dass auf einen Körper eine Kraft wirkt?",
+      "optionen": [
+        { "text": "Der Körper wird verformt, z. B. eine Feder wird länger.", "richtig": true },
+        { "text": "Ein rollender Ball wird langsamer.", "richtig": true },
+        { "text": "Ein fliegender Ball ändert seine Richtung.", "richtig": true },
+        { "text": "Der Körper wird wärmer.", "feedback": "Eine Erwärmung entsteht durch Wärmezufuhr. Das ist keine Wirkung einer Kraft im Sinne der Mechanik." },
+        { "text": "Der Körper hat eine Masse.", "feedback": "Jeder Körper hat eine Masse, auch wenn gerade keine Kraft auf ihn wirkt." }
+      ],
+      "erklaerung": "Kräfte erkennt man an zwei Wirkungen: Verformung und Änderung der Bewegung (schneller, langsamer oder in eine andere Richtung)." },
+    { "id": "timp-kd-02", "typ": "zahl", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Ein Schüler hat eine Masse von 60 kg. Wie groß ist seine Gewichtskraft auf der Erde?",
+      "gegeben": "`m = 60 kg`, `g = 9,81 N/kg`", "gesucht": "`F_{G}`", "gesuchtSymbol": "F_{G}",
+      "loesung": 588.6, "einheit": "N", "alternativEinheiten": { "kN": 1000 },
+      "rechenweg": ["`F_{G} = m · g`", "`F_{G} = 60 kg · 9,81 N/kg = 588,6 N`"],
+      "hinweis": "Multipliziere die Masse mit dem Ortsfaktor `g = 9,81 N/kg`.",
+      "erklaerung": "Als Faustregel gilt: Jedes Kilogramm wird mit knapp 10 N nach unten gezogen." },
+    { "id": "timp-kd-03", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Eine Kiste drückt mit einer Gewichtskraft von 600 N auf den Boden. Ihre Grundfläche beträgt 0,2 m². Wie groß ist der Auflagedruck?",
+      "gegeben": "`F = 600 N`, `A = 0,2 m^{2}`", "gesucht": "`p`", "gesuchtSymbol": "p",
+      "loesung": 3000, "einheit": "Pa", "alternativEinheiten": { "hPa": 100, "bar": 100000 },
+      "rechenweg": ["`p = \\frac{F}{A}`", "`p = \\frac{600 N}{0,2 m^{2}} = 3000 N/m^{2} = 3000 Pa = 30 hPa`"],
+      "hinweis": "Teile die Kraft durch die Fläche. `1 N/m^{2} = 1 Pa`.",
+      "erklaerung": "Stellt man die Kiste auf eine kleinere Seite, bleibt die Kraft gleich, aber der Druck wird größer." },
+    { "id": "timp-kd-04", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Ordne jeder Angabe den gleich großen Druck zu.",
+      "paare": [
+        { "links": "1 hPa", "rechts": "100 Pa" },
+        { "links": "1 bar", "rechts": "100 000 Pa" },
+        { "links": "1 N/m²", "rechts": "1 Pa" },
+        { "links": "1013 hPa", "rechts": "1,013 bar" }
+      ],
+      "extraRechts": ["10 Pa", "1013 bar"],
+      "erklaerung": "„Hekto“ bedeutet 100. Ein bar sind 1000 hPa, also 100 000 Pa." },
+    { "id": "timp-kd-05", "typ": "text", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Erkläre mit dem Begriff Druck, warum man mit einem scharfen Messer leichter schneiden kann als mit einem stumpfen.",
+      "stichworte": [
+        { "aspekt": "Die Schneide eines scharfen Messers hat eine sehr kleine Fläche", "woerter": ["kleine flaeche", "kleinere flaeche", "flaeche ist klein", "flaeche kleiner", "schmal", "duenn"] },
+        { "aspekt": "Bei gleicher Kraft ist der Druck dann sehr groß", "woerter": ["druck gross", "druck groesser", "groesserer druck", "grosser druck", "hoher druck", "hoeherer druck"] },
+        { "aspekt": "Begründung mit `p = F / A`", "woerter": ["p f a", "kraft durch flaeche", "kraft pro flaeche"] }
+      ],
+      "musterloesung": "Die Schneide eines scharfen Messers ist sehr schmal, sie hat also eine kleine Fläche. Der Druck ist Kraft durch Fläche (`p = F / A`). Bei gleicher Kraft entsteht deshalb ein viel größerer Druck als bei einem stumpfen Messer mit breiterer Schneide. Dieser große Druck trennt das Material.",
+      "erklaerung": "Das gleiche Prinzip nutzen Nadeln, Nägel und Reißzwecken: kleine Fläche, großer Druck." },
+    { "id": "timp-kd-06", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Lena hat die Hypothese: „Je kleiner die Stempelfläche, desto tiefer drückt sich der Stempel in die Knete.“ Welcher Versuchsplan prüft diese Hypothese richtig?",
+      "optionen": [
+        { "text": "Drei Stempel mit verschiedenen Flächen werden mit derselben Kraft belastet. Jeder Versuch wird einmal wiederholt.", "richtig": true },
+        { "text": "Drei Stempel mit verschiedenen Flächen werden mit verschiedenen Kräften belastet.", "feedback": "Wenn sich Fläche und Kraft gleichzeitig ändern, weißt du nicht, welche Größe die Eindrucktiefe verursacht hat." },
+        { "text": "Ein Stempel wird nacheinander mit verschiedenen Kräften belastet.", "feedback": "So prüfst du den Einfluss der Kraft, nicht den der Fläche." },
+        { "text": "Ein großer und ein kleiner Stempel werden je einmal ohne Wiederholung eingedrückt.", "feedback": "Ohne Kontrollversuch kannst du nicht sicher sein, dass das Ergebnis kein Zufall oder Messfehler ist." }
+      ],
+      "erklaerung": "Bei einem fairen Versuch ändert man nur die Größe, deren Einfluss man prüfen will. Alle anderen Größen bleiben gleich. Die Wiederholung (Kontrollversuch) zeigt, ob das Ergebnis verlässlich ist." },
+    { "id": "timp-kd-07", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Ein Fakir mit einer Masse von 70 kg liegt auf einem Nagelbrett mit 500 Nägeln. Jede Nagelspitze hat eine Fläche von 1 mm². Welcher Druck wirkt an den Spitzen? Gib das Ergebnis in bar an.",
+      "gegeben": "`m = 70 kg`, 500 Nägel, je `A = 1 mm^{2} = 0,000001 m^{2}`", "gesucht": "`p`", "gesuchtSymbol": "p",
+      "loesung": 13.734, "einheit": "bar", "alternativEinheiten": { "Pa": 0.00001, "hPa": 0.001 },
+      "rechenweg": ["Gewichtskraft: `F_{G} = 70 kg · 9,81 N/kg = 686,7 N`", "Gesamtfläche: `A = 500 · 0,000001 m^{2} = 0,0005 m^{2}`", "`p = \\frac{686,7 N}{0,0005 m^{2}} = 1 373 400 Pa ≈ 13,7 bar`"],
+      "hinweis": "Berechne zuerst die Gewichtskraft und die Fläche aller Spitzen zusammen. `1 mm^{2} = 0,000001 m^{2}`.",
+      "erklaerung": "Auf einem einzigen Nagel wäre der Druck 500-mal so groß, also etwa 6900 bar. Deshalb ist ein einzelner Nagel gefährlich, das Nagelbrett aber nicht." }
+  ]
+}

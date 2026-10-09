@@ -1,0 +1,114 @@
+{
+  "id": "timp-k9-transistor",
+  "titel": "Der Transistor als Schalter und Verstärker",
+  "kurz": "Wie ein kleiner Basisstrom einen großen Kollektorstrom steuert und wie daraus ein Dämmerungsschalter wird.",
+  "reihenfolge": 3,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Den Aufbau eines NPN-Transistors beschreiben und die Anschlüsse Basis, Kollektor und Emitter benennen" },
+    { "id": "lz2", "niveau": "G", "text": "Die Funktion des Transistors als Schalter beschreiben: Ein kleiner Basisstrom schaltet einen großen Kollektorstrom" },
+    { "id": "lz3", "niveau": "H", "text": "Die Stromverstärkung mit `I_{C} = B · I_{B}` berechnen und die Sättigung erkennen" },
+    { "id": "lz4", "niveau": "H", "text": "Die Funktion eines Dämmerungsschalters mit Fotowiderstand (LDR) und Spannungsteiler erklären" },
+    { "id": "lz5", "niveau": "G", "text": "Sicherheitsaspekte beim Transistor beachten: Polung, Basisvorwiderstand, Spannungs- und Strombereich" }
+  ],
+  "verstehen": {
+    "einstieg": "Eine Straßenlaterne geht abends von selbst an. Niemand drückt einen Schalter. Wer schaltet hier eigentlich?",
+    "abschnitte": [
+      {
+        "titel": "Aufbau des NPN-Transistors",
+        "text": "Ein **Transistor** besteht aus drei dotierten Siliziumschichten. Beim **NPN-Transistor** liegt eine sehr dünne p-Schicht zwischen zwei n-Schichten. Die drei Anschlüsse heißen:\n\n- **Basis** (B): die dünne Mittelschicht, der Steueranschluss,\n- **Kollektor** (C): „Sammler“, hier fließt der große Strom hinein,\n- **Emitter** (E): „Aussender“, hier fließen beide Ströme gemeinsam heraus.\n\nIm Schaltzeichen sitzt am Emitter ein Pfeil. Beim NPN-Transistor zeigt er **nach außen**, in die technische Stromrichtung."
+      },
+      {
+        "titel": "Zwei Stromkreise",
+        "text": "Ein Transistor verbindet zwei Stromkreise:\n\n- den **Steuerstromkreis** über Basis und Emitter mit dem kleinen **Basisstrom** `I_{B}`,\n- den **Arbeitsstromkreis** über Kollektor und Emitter mit dem großen **Kollektorstrom** `I_{C}` (z. B. für eine Lampe oder einen Motor).\n\nDie Basis-Emitter-Strecke verhält sich wie eine Silizium-Diode: Erst ab etwa **0,7 V** zwischen Basis und Emitter fließt ein Basisstrom. Ohne Basisstrom **sperrt** der Transistor, und auch im Arbeitsstromkreis fließt kein Strom."
+      },
+      {
+        "titel": "Der Transistor als Verstärker",
+        "text": "Fließt ein Basisstrom, dann fließt ein viel größerer Kollektorstrom. Er ist proportional zum Basisstrom:\n\n`I_{C} = B · I_{B}`\n\nDer **Stromverstärkungsfaktor** `B` liegt bei üblichen Kleinsignal-Transistoren etwa zwischen **100 und 300**. Ein Basisstrom von 0,1 mA steuert bei `B = 200` also einen Kollektorstrom von 20 mA. Kleine Änderungen des Basisstroms bewirken große Änderungen des Kollektorstroms. Das ist **Verstärkung**.\n\nDer Kollektorstrom kann aber nicht beliebig wachsen. Der Lastwiderstand im Arbeitsstromkreis begrenzt ihn. Ist dieser Höchstwert erreicht, ist der Transistor voll durchgeschaltet. Das heißt **Sättigung**: Mehr Basisstrom bringt dann keinen größeren Kollektorstrom mehr."
+      },
+      {
+        "titel": "Der Transistor als Schalter: Dämmerungsschalter",
+        "text": "Als Schalter kennt der Transistor nur zwei Zustände: **gesperrt** (kein Basisstrom, aus) oder **gesättigt** (genug Basisstrom, an).\n\nBeim **Dämmerungsschalter** bilden ein fester Widerstand und ein **Fotowiderstand (LDR)** einen **Spannungsteiler**. Der LDR liegt zwischen Basis und Emitter. Sein Widerstand ist im Hellen klein (etwa 1 kΩ) und im Dunkeln groß (bis etwa 1 MΩ).\n\n- **Hell**: Der LDR hat einen kleinen Widerstand, an ihm fällt nur eine kleine Spannung ab (unter 0,7 V). Kein Basisstrom, die LED bleibt aus.\n- **Dunkel**: Der Widerstand des LDR steigt, und damit auch die Spannung an ihm. Über etwa 0,7 V fließt ein Basisstrom, der Transistor schaltet durch und die LED leuchtet."
+      },
+      {
+        "titel": "Sicherheit beim Transistor",
+        "text": "- **Anschlüsse nicht verwechseln**: Basis, Kollektor und Emitter stehen im Datenblatt. Falsch eingesetzt funktioniert die Schaltung nicht oder der Transistor wird beschädigt.\n- **Basisvorwiderstand**: Die Basis-Emitter-Strecke ist eine Diode. Ohne Widerstand würde ein viel zu großer Basisstrom fließen.\n- **Grenzwerte** einhalten: Jeder Transistor hat eine maximale Kollektor-Emitter-Spannung, einen maximalen Kollektorstrom und eine maximale Leistung. Wird er zu heiß, geht er kaputt.\n- In der Schule nur mit **Kleinspannung** (z. B. 4,5 V oder 9 V) arbeiten."
+      }
+    ],
+    "formeln": [
+      { "formel": "I_{C} = B · I_{B}", "bedeutung": "Kollektorstrom `I_{C}`, Basisstrom `I_{B}`, Stromverstärkungsfaktor `B` (ohne Einheit, etwa 100 bis 300)" },
+      { "formel": "I_{E} = I_{B} + I_{C}", "bedeutung": "Am Emitter fließen beide Ströme gemeinsam heraus" }
+    ],
+    "merksatz": "Beim Transistor steuert ein **kleiner Basisstrom** einen **großen Kollektorstrom**: `I_{C} = B · I_{B}`. Ohne Basisstrom sperrt er. Als **Schalter** wechselt er zwischen gesperrt und gesättigt, als **Verstärker** arbeitet er dazwischen.",
+    "alltag": "Ein moderner Handy-Prozessor enthält über zehn Milliarden Transistoren. Dort arbeiten sie als winzige Schalter, die die Nullen und Einsen der Computer darstellen."
+  },
+  "interaktiv": ["timp-transistor"],
+  "uebungen": [
+    { "id": "timp-htr-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Wie heißen die drei Anschlüsse eines Transistors?",
+      "optionen": [
+        { "text": "Basis, Kollektor, Emitter", "richtig": true },
+        { "text": "Anode, Kathode, Basis", "feedback": "Anode und Kathode sind die Anschlüsse einer Diode." },
+        { "text": "Plus, Minus, Erde", "feedback": "Das sind Bezeichnungen für Pole einer Spannungsquelle, nicht für die Anschlüsse des Transistors." },
+        { "text": "Eingang, Ausgang, Schalter", "feedback": "Die Anschlüsse haben eigene Fachbegriffe." }
+      ],
+      "erklaerung": "**Basis** (Steueranschluss), **Kollektor** (Sammler) und **Emitter** (Aussender). Beim NPN-Transistor fließt der große Strom vom Kollektor zum Emitter." },
+    { "id": "timp-htr-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "In einer Transistorschaltung ist eine LED im Kollektorstromkreis. Die Basis ist nicht angeschlossen. Was passiert?",
+      "optionen": [
+        { "text": "Die LED bleibt aus, weil ohne Basisstrom kein Kollektorstrom fließt.", "richtig": true },
+        { "text": "Die LED leuchtet hell, weil der Kollektor direkt an der Spannung liegt.", "feedback": "Der Transistor sperrt ohne Basisstrom. Die Kollektor-Emitter-Strecke ist dann nicht leitend." },
+        { "text": "Die LED leuchtet schwach.", "feedback": "Ohne Basisstrom ist der Kollektorstrom praktisch null." },
+        { "text": "Der Transistor wird zerstört.", "feedback": "Ohne Basisstrom passiert nichts. Der Transistor sperrt einfach." }
+      ],
+      "erklaerung": "Der Transistor ist ein **stromgesteuerter Schalter**: Ohne Basisstrom sperrt er. Erst ein Basisstrom öffnet den Weg vom Kollektor zum Emitter." },
+    { "id": "timp-htr-03", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Ein Transistor hat einen Stromverstärkungsfaktor von `B = 200`. In die Basis fließen 0,1 mA. Wie groß ist der Kollektorstrom, wenn der Transistor nicht in Sättigung ist?",
+      "gegeben": "`B = 200`, `I_{B} = 0,1 mA`",
+      "gesucht": "Kollektorstrom `I_{C}`",
+      "gesuchtSymbol": "I_{C}",
+      "loesung": 20, "einheit": "mA", "alternativEinheiten": { "A": 1000 },
+      "rechenweg": [
+        "`I_{C} = B · I_{B}`",
+        "`I_{C} = 200 · 0,1 mA = 20 mA`"
+      ],
+      "erklaerung": "Der Kollektorstrom ist 200-mal so groß wie der Basisstrom. Ein winziger Steuerstrom reicht also, um z. B. eine LED zu betreiben." },
+    { "id": "timp-htr-04", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Im Kollektorstromkreis eines Transistors (`B = 200`) liegt eine Lampe an 9 V. Die Lampe lässt höchstens 100 mA zu. Nun fließt ein Basisstrom von 1 mA. Welcher Kollektorstrom fließt ungefähr?",
+      "optionen": [
+        { "text": "Etwa 100 mA, der Transistor ist in Sättigung.", "richtig": true },
+        { "text": "200 mA, denn `I_{C} = 200 · 1 mA`.", "feedback": "So viel lässt die Lampe im Arbeitsstromkreis gar nicht zu. Der Lastwiderstand begrenzt den Strom." },
+        { "text": "1 mA, denn der Strom ist überall gleich.", "feedback": "Basisstrom und Kollektorstrom sind verschiedene Ströme. Der Kollektorstrom ist viel größer." },
+        { "text": "0 mA, denn der Basisstrom ist zu groß.", "feedback": "Ein großer Basisstrom schaltet den Transistor durch, er sperrt ihn nicht." }
+      ],
+      "erklaerung": "Nach `I_{C} = B · I_{B}` wären 200 mA möglich. Die Lampe lässt aber höchstens 100 mA zu. Der Transistor ist voll durchgeschaltet (**Sättigung**). Mehr Basisstrom ändert daran nichts." },
+    { "id": "timp-htr-05", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Bringe die Vorgänge beim Dämmerungsschalter in die richtige Reihenfolge, wenn es abends dunkel wird.",
+      "elemente": [
+        "Es wird dunkel.",
+        "Der Widerstand des Fotowiderstands (LDR) steigt.",
+        "Die Spannung am LDR und damit zwischen Basis und Emitter steigt.",
+        "Über etwa 0,7 V fließt ein Basisstrom.",
+        "Der Transistor schaltet durch, ein Kollektorstrom fließt und die LED leuchtet."
+      ],
+      "erklaerung": "Der LDR bildet mit einem festen Widerstand einen **Spannungsteiler**. Der größere Widerstand bekommt den größeren Teil der Spannung. Erreicht die Basis-Emitter-Spannung etwa 0,7 V, schaltet der Transistor." },
+    { "id": "timp-htr-06", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz5",
+      "frage": "Welche Regeln gelten für den sicheren Umgang mit Transistoren?",
+      "optionen": [
+        { "text": "Vor die Basis gehört ein Vorwiderstand, der den Basisstrom begrenzt.", "richtig": true },
+        { "text": "Die Anschlüsse müssen nach Datenblatt richtig eingesetzt werden.", "richtig": true },
+        { "text": "Maximale Kollektor-Emitter-Spannung und maximaler Kollektorstrom dürfen nicht überschritten werden.", "richtig": true },
+        { "text": "Je größer der Basisstrom, desto besser, das schadet nie.", "feedback": "Die Basis-Emitter-Strecke ist eine Diode. Ohne Begrenzung wird sie überlastet und der Transistor zerstört." },
+        { "text": "Ein Kleinsignal-Transistor kann direkt an 230 V betrieben werden.", "feedback": "Netzspannung ist lebensgefährlich und viel zu hoch für Schülerbauteile. Gearbeitet wird nur mit Kleinspannung." }
+      ],
+      "erklaerung": "Wie bei der Diode gilt: **Polung beachten, Ströme begrenzen, Grenzwerte einhalten.** Ein überlasteter Transistor wird heiß und geht kaputt." },
+    { "id": "timp-htr-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Erkläre, warum die LED beim Dämmerungsschalter ausbleibt, solange es hell ist.",
+      "stichworte": [
+        { "aspekt": "Im Hellen hat der LDR einen kleinen Widerstand", "woerter": ["kleinen widerstand", "kleiner widerstand", "widerstand ist klein", "geringen widerstand", "niedrigen widerstand", "widerstand sinkt"] },
+        { "aspekt": "Deshalb liegt am LDR bzw. zwischen Basis und Emitter nur eine kleine Spannung (unter 0,7 V)", "woerter": ["0 7", "kleine spannung", "geringe spannung", "spannung ist klein", "spannung zu klein", "spannung ist zu gering"] },
+        { "aspekt": "Kein Basisstrom, der Transistor sperrt, kein Kollektorstrom", "woerter": ["kein basisstrom", "sperrt", "kein kollektorstrom", "keinen basisstrom"] }
+      ],
+      "musterloesung": "Im Hellen hat der Fotowiderstand (LDR) einen kleinen Widerstand. Im Spannungsteiler liegt an ihm deshalb nur eine kleine Spannung, also auch zwischen Basis und Emitter weniger als 0,7 V. Dann fließt kein Basisstrom und der Transistor sperrt. Ohne Basisstrom fließt auch kein Kollektorstrom, die LED bleibt aus.",
+      "erklaerung": "Im Dunkeln steigt der Widerstand des LDR, die Basis-Emitter-Spannung erreicht etwa 0,7 V und der Transistor schaltet die LED ein." }
+  ]
+}

@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leitfähigkeitslabor</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<style>
+  .box { fill: var(--card); stroke: var(--line); stroke-width: 2; }
+  .screen { fill: var(--bg); stroke: var(--border); stroke-width: 1; }
+  .big { font-size: 21px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .water { fill: var(--neg); opacity: .13; }
+  .glass { fill: none; stroke: var(--line); stroke-width: 2.4; stroke-linejoin: round; }
+  .plate { fill: var(--muted); stroke: var(--line); stroke-width: 1.2; }
+  .ion-p { fill: var(--pos); }
+  .ion-n { fill: var(--neg); }
+  .ion-t { font-size: 9px; font-weight: 800; text-anchor: middle; dominant-baseline: central; fill: var(--card) !important; pointer-events: none; }
+  .bubble { fill: var(--card); stroke: var(--muted); stroke-width: 1; }
+  .dim { stroke: var(--muted); stroke-width: 1; fill: none; }
+  .therm { fill: var(--card); stroke: var(--line); stroke-width: 1.5; }
+  .therm-fill { fill: var(--warn); }
+  .cable { fill: none; stroke: var(--muted); stroke-width: 2; }
+  .core { fill: var(--bg); stroke: var(--muted); stroke-width: 1.5; }
+  .warnbox { color: var(--warn); font-weight: 600; }
+  .pick { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 12px; }
+  .pick button { font-size: .85rem; padding: 6px 9px; }
+  .sub { font-size: .82rem; color: var(--muted); margin: -6px 0 12px; }
+  table { border-collapse: collapse; width: 100%; font-size: .85rem; font-variant-numeric: tabular-nums; }
+  td, th { padding: 3px 6px; border-bottom: 1px solid var(--border); text-align: right; }
+  th:first-child, td:first-child { text-align: left; }
+  .tablewrap { max-height: 190px; overflow: auto; margin-top: 8px; }
+  .modes { margin-bottom: 14px; }
+  #svgW .val, #svgD .val { font-size: 14px; }
+  #svgW .lbl, #svgD .lbl { font-size: 15px; }
+</style>
+</head>
+<body>
+<h1>Leitfähigkeitslabor</h1>
+<p class="muted small">Tauche den Leitfähigkeitssensor in verschiedene Wasserproben, gib Salz dazu und verändere Temperatur und Elektroden. Im zweiten Teil untersuchst du Drähte mit dem Widerstandsgesetz.</p>
+
+<div class="row modes">
+  <div class="seg" role="group" aria-label="Teil wählen">
+    <button type="button" id="bModeW" aria-pressed="true">Wasserproben</button>
+    <button type="button" id="bModeD" aria-pressed="false">Draht</button>
+  </div>
+</div>
+
+<div class="lk-grid">
+  <div>
+    <!-- ============ Wasser ============ -->
+    <div class="lk-card" id="cardW">
+      <svg id="svgW" viewBox="0 0 520 350" role="img" aria-labelledby="w-title">
+        <title id="w-title">Becherglas mit Wasserprobe, Leitfähigkeitssensor mit zwei Elektroden und Messgerät</title>
+        <rect x="16" y="12" width="214" height="80" rx="10" class="box"/>
+        <rect x="28" y="22" width="190" height="42" rx="6" class="screen"/>
+        <text id="mMode" x="38" y="49" class="lbl">~</text>
+        <text id="mVal" x="208" y="51" class="big" text-anchor="end">0</text>
+        <text id="mSub" x="28" y="83" class="val"></text>
+        <path class="cable" d="M230 52 C 262 52, 260 70, 260 96"/>
+        <!-- Becherglas -->
+        <rect x="102" y="158" width="316" height="156" class="water"/>
+        <path class="glass" d="M98 120 V306 Q98 318 110 318 H410 Q422 318 422 306 V120"/>
+        <g id="ions"></g>
+        <g id="bubbles"></g>
+        <!-- Sensor -->
+        <rect x="238" y="96" width="44" height="40" rx="6" class="box"/>
+        <line id="rodL" class="wire" x1="250" y1="136" x2="250" y2="180"/>
+        <line id="rodR" class="wire" x1="270" y1="136" x2="270" y2="180"/>
+        <rect id="plL" class="plate" x="200" y="200" width="8" height="60" rx="2"/>
+        <rect id="plR" class="plate" x="310" y="200" width="8" height="60" rx="2"/>
+        <text id="polL" x="0" y="0" class="lbl" text-anchor="middle"></text>
+        <text id="polR" x="0" y="0" class="lbl" text-anchor="middle"></text>
+        <path id="dimLine" class="dim" d=""/>
+        <text id="dimTxt" x="260" y="340" class="val" text-anchor="middle"></text>
+        <!-- Thermometer -->
+        <rect x="452" y="140" width="14" height="150" rx="7" class="therm"/>
+        <circle cx="459" cy="296" r="11" class="therm therm-fill"/>
+        <rect id="thFill" x="455" y="200" width="8" height="96" class="therm-fill"/>
+        <text id="thTxt" x="459" y="324" class="val" text-anchor="middle"></text>
+      </svg>
+      <p class="small muted" style="margin:6px 0 0"><span style="color:var(--pos)">●</span> positive Ionen, <span style="color:var(--neg)">●</span> negative Ionen. Je mehr Ionen gelöst sind, desto besser leitet die Probe. Bei Wechselspannung pendeln sie nur hin und her.</p>
+    </div>
+
+    <!-- ============ Draht ============ -->
+    <div class="lk-card" id="cardD" hidden>
+      <svg id="svgD" viewBox="0 0 520 300" role="img" aria-labelledby="d-title">
+        <title id="d-title">Widerstandsmessgerät an einem aufgewickelten Draht, daneben der Querschnitt des Drahtes</title>
+        <rect x="16" y="12" width="214" height="80" rx="10" class="box"/>
+        <rect x="28" y="22" width="190" height="42" rx="6" class="screen"/>
+        <text x="38" y="49" class="lbl">Ω</text>
+        <text id="dVal" x="208" y="51" class="big" text-anchor="end">0</text>
+        <text x="28" y="83" class="val">Widerstand</text>
+        <path class="cable" d="M70 92 V180 H118"/>
+        <path class="cable" d="M180 92 V112 H460 V180 H402"/>
+        <circle cx="118" cy="180" r="4" fill="var(--line)"/><circle cx="402" cy="180" r="4" fill="var(--line)"/>
+        <rect x="130" y="146" width="260" height="68" rx="8" class="core"/>
+        <g id="coil"></g>
+        <text id="matName" x="250" y="40" class="lbl"></text>
+        <text id="matTxt" x="250" y="62" class="val"></text>
+        <text id="lenTxt" x="260" y="238" class="lbl" text-anchor="middle"></text>
+        <circle id="xsec" cx="150" cy="272" r="8"/>
+        <text id="aTxt" x="178" y="268" class="lbl"></text>
+        <text x="178" y="286" class="val">Querschnitt (vergrößert)</text>
+      </svg>
+      <p class="small muted" style="margin:6px 0 0">Der Draht ist auf einen Körper gewickelt, damit auch lange Drähte Platz haben. Darunter siehst du die Querschnittsfläche vergrößert.</p>
+      <div class="tablewrap"><table><thead><tr><th>Material</th><th>l in m</th><th>A in mm²</th><th>R in Ω</th></tr></thead><tbody id="rows"></tbody></table></div>
+    </div>
+  </div>
+
+  <div>
+    <div class="lk-card" id="ctrlW">
+      <h2>Einstellungen</h2>
+      <p class="small" style="margin:0 0 4px;font-weight:600">Wasserprobe</p>
+      <div class="pick" id="samples" role="group" aria-label="Wasserprobe wählen"></div>
+      <p class="sub" id="sampleInfo"></p>
+      <div class="row">
+        <button type="button" id="bSalt">Prise Salz zugeben</button>
+        <span class="small muted" id="saltInfo"></span>
+      </div>
+      <label class="ctrl"><span>Temperatur <span class="f">T</span> <output id="oT"></output></span>
+        <input type="range" id="sT" min="5" max="40" step="1" value="20"></label>
+      <div class="row">
+        <button type="button" id="bComp" aria-pressed="true">Temperaturkompensation (25 °C)</button>
+      </div>
+      <label class="ctrl"><span>Elektrodenabstand <span class="f">d</span> <output id="oD"></output></span>
+        <input type="range" id="sD" min="0.5" max="2" step="0.1" value="1"></label>
+      <label class="ctrl"><span>Elektrodenfläche <span class="f">A</span> <output id="oA"></output></span>
+        <input type="range" id="sA" min="0.5" max="2" step="0.1" value="1"></label>
+      <div class="row">
+        <div class="seg" role="group" aria-label="Messspannung">
+          <button type="button" id="bAC" aria-pressed="true">Wechselspannung</button>
+          <button type="button" id="bDC" aria-pressed="false">Gleichspannung</button>
+        </div>
+      </div>
+      <div class="row">
+        <button type="button" id="bCal" class="primary">Kalibrieren (Lösung 1413 µS/cm)</button>
+      </div>
+      <div class="readouts">
+        <div class="readout"><span>Anzeige</span><b id="rK">–</b></div>
+        <div class="readout"><span>Widerstand der Wasserschicht</span><b id="rR">–</b></div>
+        <div class="readout"><span>Gelöste Ionen</span><b id="rN">–</b></div>
+      </div>
+      <p id="hintW" class="small" aria-live="polite"></p>
+      <p class="small muted">Vereinfacht: Die Leitfähigkeit wächst hier proportional zur Salzmenge und um 2 % pro Grad. Echte Geräte schalten bei großen Werten auf mS/cm um.</p>
+    </div>
+
+    <div class="lk-card" id="ctrlD" hidden>
+      <h2>Einstellungen</h2>
+      <p class="small" style="margin:0 0 4px;font-weight:600">Material</p>
+      <div class="pick" id="mats" role="group" aria-label="Material wählen"></div>
+      <label class="ctrl"><span>Länge <span class="f">l</span> <output id="oL"></output></span>
+        <input type="range" id="sL" min="0.1" max="10" step="0.1" value="1"></label>
+      <label class="ctrl"><span>Querschnittsfläche <span class="f">A</span> <output id="oQ"></output></span>
+        <input type="range" id="sQ" min="0" max="8" step="1" value="3"></label>
+      <div class="readouts">
+        <div class="readout"><span>Widerstand <span class="f">R</span></span><b id="rRD">–</b></div>
+        <div class="readout"><span>spez. Widerstand <span class="f">ρ</span> in Ω·mm²/m</span><b id="rRho">–</b></div>
+        <div class="readout"><span>Leitfähigkeit <span class="f">σ = 1/ρ</span> in m/(Ω·mm²)</span><b id="rSig">–</b></div>
+      </div>
+      <p class="small" style="margin-top:10px"><span class="f">R = ρ · l / A</span> = <span id="calc"></span></p>
+      <div class="row" style="margin-top:8px">
+        <button type="button" id="bStore">Messwert merken</button>
+        <button type="button" id="bClear">Tabelle leeren</button>
+      </div>
+      <p id="hintD" class="small" aria-live="polite"></p>
+    </div>
+
+    <div class="lk-card tasks">
+      <h2>Entdecke selbst <span class="small muted" data-task-count></span></h2>
+      <div class="task" data-goal="salt"><p class="task-q">Wähle destilliertes Wasser und gib so viel Salz dazu, dass die Probe besser als 5000 µS/cm leitet.</p></div>
+      <div class="task">
+        <p class="task-q">Miss den Bach oberhalb und unterhalb der Einleitung. Was kannst du aus den beiden Werten sicher schließen?</p>
+        <div class="choices">
+          <button type="button" data-ok data-fb="Richtig: Unterhalb sind mehr als doppelt so viele Ionen gelöst. Welche Stoffe das sind, zeigt der Sensor nicht. Dafür braucht man weitere Tests.">Unterhalb sind mehr Ionen gelöst. Welche, zeigt der Sensor nicht.</button>
+          <button type="button" data-fb="Der Sensor misst nur, wie viele Ionen insgesamt gelöst sind, nicht welche. Für Nitrat brauchst du einen eigenen Test.">Unterhalb ist das Wasser mit Nitrat belastet.</button>
+          <button type="button" data-fb="Vergleiche die Anzeigen noch einmal: Welcher Wert ist größer?">Unterhalb sind weniger Stoffe gelöst.</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="task">
+        <p class="task-q">Schalte die Temperaturkompensation aus und erwärme eine Probe von 25 °C auf 35 °C. Wie ändert sich die Anzeige?</p>
+        <div class="choices">
+          <button type="button" data-ok data-fb="Genau: etwa 2 % pro Grad, also rund 20 % bei 10 Grad. Die Ionen bewegen sich im warmen Wasser schneller.">Sie steigt um etwa 20 %.</button>
+          <button type="button" data-fb="Probiere es aus: Achte darauf, dass die Kompensation ausgeschaltet ist.">Sie sinkt um etwa 20 %.</button>
+          <button type="button" data-fb="Mit eingeschalteter Kompensation bleibt sie gleich. Schalte sie aus und probiere es noch einmal.">Sie bleibt gleich.</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="task" data-goal="cal"><p class="task-q">Verändere Abstand oder Fläche der Elektroden. Die Anzeige stimmt dann nicht mehr. Kalibriere den Sensor neu, damit sie wieder stimmt.</p></div>
+      <div class="task" data-goal="k10"><p class="task-q">Wechsle zum Draht. Stelle einen Konstantandraht mit genau 10 Ω ein.</p></div>
+      <div class="task">
+        <p class="task-q">Draht: Verdopple Länge und Querschnittsfläche gleichzeitig (z. B. 1 m und 0,5 mm² auf 2 m und 1 mm²). Was passiert mit <span class="f">R</span>?</p>
+        <div class="choices">
+          <button type="button" data-fb="Die doppelte Länge allein würde R verdoppeln. Aber die doppelte Fläche halbiert ihn wieder.">Er verdoppelt sich.</button>
+          <button type="button" data-ok data-fb="Richtig: Doppelte Länge verdoppelt R, doppelte Fläche halbiert ihn. Beides zusammen hebt sich auf.">Er bleibt gleich.</button>
+          <button type="button" data-fb="Probiere es aus und merke dir beide Messwerte in der Tabelle.">Er vervierfacht sich.</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="all-done">Alles entdeckt! Weiter geht es mit den Übungen.</div>
+    </div>
+  </div>
+</div>
+
+<script src="../../static/lesson-kit.js"></script>
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+  var NS = 'http://www.w3.org/2000/svg';
+  function el(tag, attrs, parent) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ------------------------------------------------------------ Daten
+  // Leitfähigkeit bei 25 °C in µS/cm (typische Werte)
+  var SAMPLES = [
+    { id: 'dest', name: 'destilliertes Wasser', k: 1, info: 'Fast keine gelösten Ionen.' },
+    { id: 'tap', name: 'Leitungswasser', k: 550, info: 'Enthält gelöste Mineralstoffe, z. B. Calcium und Magnesium.' },
+    { id: 'min', name: 'Mineralwasser', k: 1200, info: 'Je nach Sorte etwa 500 bis 2000 µS/cm.' },
+    { id: 'salt', name: 'Salzlösung 1 g/L', k: 2000, info: '1 g Kochsalz in 1 Liter destilliertem Wasser.' },
+    { id: 'sea', name: 'Meerwasser', k: 50000, info: 'Etwa 35 g Salz pro Liter.' },
+    { id: 'up', name: 'Bach oberhalb', k: 420, info: 'Probe 200 m oberhalb einer Einleitung.' },
+    { id: 'down', name: 'Bach unterhalb', k: 980, info: 'Probe 200 m unterhalb einer Einleitung. Gleiche Wassertemperatur wie oberhalb.' }
+  ];
+  var SALT_K = 2000;      // µS/cm pro Prise (0,1 g in 100 ml = 1 g/L), vereinfacht linear
+  var SALT_MAX = 25;
+  var MATS = [
+    { id: 'cu', name: 'Kupfer', rho: 0.017, col: 'var(--pos)' },
+    { id: 'al', name: 'Aluminium', rho: 0.028, col: 'var(--muted)' },
+    { id: 'fe', name: 'Eisen', rho: 0.1, col: 'var(--line)' },
+    { id: 'ko', name: 'Konstantan', rho: 0.5, col: 'var(--c3)' }
+  ];
+  var AREAS = [0.1, 0.2, 0.25, 0.5, 0.75, 1, 1.5, 2, 2.5];
+
+  var S = {
+    mode: 'w', sample: SAMPLES[1], salt: 0, T: 20, comp: true, d: 1, A: 1, Kcal: 1, ac: true, pol: 1, bubbles: 0,
+    calibratedAfterChange: false,
+    mat: MATS[0], l: 1, ai: 3, stored: []
+  };
+
+  // ------------------------------------------------------------ Hilfen
+  function fmtK(k) {
+    if (k < 10) return LK.fmt(k, 1);
+    if (k < 100) return LK.fmt(k, 0);
+    return LK.fmt(Math.round(k / (k < 10000 ? 1 : 10)) * (k < 10000 ? 1 : 10), 0);
+  }
+  function fmtR(r) {
+    if (!isFinite(r)) return '–';
+    if (r < 10) return LK.fmt(r, 2) + ' Ω';
+    if (r < 1000) return LK.fmt(r, r < 100 ? 1 : 0) + ' Ω';
+    if (r < 1e6) return LK.fmt(r / 1000, r < 1e4 ? 2 : 1) + ' kΩ';
+    return LK.fmt(r / 1e6, 2) + ' MΩ';
+  }
+  function trimNum(x, maxDig) {
+    return Number(x).toLocaleString('de-DE', { maximumFractionDigits: maxDig });
+  }
+  function k25() { return S.sample.k + S.salt * SALT_K; }              // wahre Leitfähigkeit bei 25 °C
+  function tempFactor() { return 1 + 0.02 * (S.T - 25); }
+  function Kact() { return S.d / S.A; }                                  // Zellkonstante in 1/cm
+  function kTrue() { return k25() * tempFactor(); }                      // wahre Leitfähigkeit bei T
+  function Rcell() { return Kact() / (kTrue() * S.pol * 1e-6); }         // Ω (Polarisation erhöht den Widerstand)
+  function kShown() {
+    var k = S.Kcal / Rcell() * 1e6;
+    return S.comp ? k / tempFactor() : k;
+  }
+
+  // ------------------------------------------------------------ Bedienelemente aufbauen
+  var sampleBtns = SAMPLES.map(function (s) {
+    var b = document.createElement('button');
+    b.type = 'button'; b.textContent = s.name;
+    b.onclick = function () { S.sample = s; S.salt = 0; S.pol = 1; S.bubbles = 0; rebuildIons(); updateW(); };
+    $('samples').appendChild(b);
+    return b;
+  });
+  var matBtns = MATS.map(function (m) {
+    var b = document.createElement('button');
+    b.type = 'button'; b.textContent = m.name;
+    b.onclick = function () { S.mat = m; updateD(); };
+    $('mats').appendChild(b);
+    return b;
+  });
+
+  // ------------------------------------------------------------ Ionen
+  var ionLayer = $('ions'), ions = [];
+  var WX0 = 112, WX1 = 408, WY0 = 168, WY1 = 306;
+  function ionCount() {
+    var k = k25();
+    return Math.max(1, Math.min(80, Math.round(12 * Math.log(k) / Math.LN10)));
+  }
+  function addIon(sign) {
+    var g = el('g', {}, ionLayer);
+    el('circle', { r: 6.5, class: sign > 0 ? 'ion-p' : 'ion-n' }, g);
+    el('text', { class: 'ion-t' }, g).textContent = sign > 0 ? '+' : '−';
+    ions.push({ g: g, s: sign, x: WX0 + Math.random() * (WX1 - WX0), y: WY0 + Math.random() * (WY1 - WY0), ox: 0, ph: Math.random() * 6.28 });
+  }
+  function rebuildIons() {
+    var n = ionCount();
+    if (n % 2) n++;
+    while (ions.length > n) ionLayer.removeChild(ions.pop().g);
+    while (ions.length < n) addIon(ions.length % 2 ? -1 : 1);
+    placeIons(0);
+  }
+  function placeIons(t) {
+    var sp = 0.6 + 0.04 * (S.T - 5);
+    for (var i = 0; i < ions.length; i++) {
+      var o = ions[i];
+      var ac = S.ac ? o.s * 7 * Math.sin(t * 6 * sp) : 0;
+      var x = Math.max(WX0, Math.min(WX1, o.x + ac + o.ox));
+      var y = o.y + (reduce ? 0 : 2.5 * Math.sin(t * 2.3 * sp + o.ph));
+      o.g.setAttribute('transform', 'translate(' + x.toFixed(1) + ' ' + y.toFixed(1) + ')');
+    }
+  }
+
+  // ------------------------------------------------------------ Wasser zeichnen
+  function geom() {
+    var gap = 100 * S.d, h = 60 * S.A, cy = 236;
+    return { xL: 260 - gap / 2 - 8, xR: 260 + gap / 2, top: cy - h / 2, h: h };
+  }
+  function drawSensor() {
+    var g = geom();
+    $('plL').setAttribute('x', g.xL); $('plL').setAttribute('y', g.top); $('plL').setAttribute('height', g.h);
+    $('plR').setAttribute('x', g.xR); $('plR').setAttribute('y', g.top); $('plR').setAttribute('height', g.h);
+    $('rodL').setAttribute('x2', g.xL + 4); $('rodL').setAttribute('y2', g.top);
+    $('rodR').setAttribute('x2', g.xR + 4); $('rodR').setAttribute('y2', g.top);
+    var yb = g.top + g.h + 10;
+    $('dimLine').setAttribute('d', 'M' + (g.xL + 8) + ' ' + yb + ' H' + g.xR + ' M' + (g.xL + 8) + ' ' + (yb - 4) + ' V' + (yb + 4) + ' M' + g.xR + ' ' + (yb - 4) + ' V' + (yb + 4));
+    $('dimTxt').textContent = 'Abstand d = ' + LK.fmt(S.d, 1) + ' cm · Fläche A = ' + LK.fmt(S.A, 1) + ' cm²';
+    $('polL').setAttribute('x', g.xL - 16); $('polL').setAttribute('y', g.top - 4);
+    $('polR').setAttribute('x', g.xR + 24); $('polR').setAttribute('y', g.top - 4);
+    $('polL').textContent = S.ac ? '' : '+';
+    $('polR').textContent = S.ac ? '' : '−';
+  }
+  var bubbleLayer = $('bubbles'), bubbleEls = [];
+  function drawBubbles() {
+    var n = Math.round(S.bubbles);
+    var g = geom();
+    while (bubbleEls.length < n) {
+      var side = bubbleEls.length % 2;
+      bubbleEls.push(el('circle', { class: 'bubble', r: 2 + Math.random() * 2.5,
+        cx: side ? g.xR + 12 + Math.random() * 6 : g.xL - 4 - Math.random() * 6,
+        cy: g.top + Math.random() * g.h, 'data-side': side }, bubbleLayer));
+    }
+    while (bubbleEls.length > n) bubbleLayer.removeChild(bubbleEls.pop());
+  }
+
+  function updateW() {
+    sampleBtns.forEach(function (b, i) { b.setAttribute('aria-pressed', SAMPLES[i] === S.sample); });
+    $('sampleInfo').textContent = S.sample.info;
+    $('saltInfo').textContent = S.salt ? S.salt + ' Prise' + (S.salt > 1 ? 'n' : '') + ' (je 0,1 g in 100 ml)' : '';
+    $('bSalt').disabled = S.salt >= SALT_MAX;
+    $('oT').textContent = S.T + ' °C';
+    $('oD').textContent = LK.fmt(S.d, 1) + ' cm';
+    $('oA').textContent = LK.fmt(S.A, 1) + ' cm²';
+    $('bComp').setAttribute('aria-pressed', S.comp);
+    $('bAC').setAttribute('aria-pressed', S.ac);
+    $('bDC').setAttribute('aria-pressed', !S.ac);
+
+    var k = kShown(), R = Rcell();
+    $('mVal').textContent = fmtK(k) + ' µS/cm';
+    $('mMode').textContent = S.ac ? '~' : '=';
+    $('mSub').textContent = S.comp ? 'umgerechnet auf 25 °C' : 'gemessen bei ' + S.T + ' °C';
+    $('rK').textContent = fmtK(k) + ' µS/cm';
+    $('rR').textContent = fmtR(R);
+    var kk = k25();
+    $('rN').textContent = kk < 5 ? 'sehr wenige' : kk < 100 ? 'wenige' : kk < 3000 ? 'mittel' : kk < 20000 ? 'viele' : 'sehr viele';
+
+    var th = 140 * (S.T - 0) / 45;
+    $('thFill').setAttribute('y', 296 - th); $('thFill').setAttribute('height', th);
+    $('thTxt').textContent = S.T + ' °C';
+    drawSensor(); drawBubbles();
+
+    var msg = '';
+    if (Math.abs(S.Kcal - Kact()) > 0.004) msg = 'Achtung: Abstand oder Fläche der Elektroden wurden verändert. Der Sensor ist nicht mehr richtig kalibriert, die Anzeige ist falsch.';
+    else if (!S.ac && S.pol < 0.97) msg = 'Gleichspannung: An den Elektroden entstehen Gasbläschen (Elektrolyse). Der Messwert sinkt und wird falsch.';
+    else if (!S.ac) msg = 'Gleichspannung: Die Ionen wandern immer in dieselbe Richtung.';
+    var h = $('hintW');
+    if (h.dataset.msg !== msg) { h.dataset.msg = msg; h.textContent = msg; h.className = 'small' + (msg.indexOf('Achtung') === 0 || msg.indexOf('Gasbl') > 0 ? ' warnbox' : ' muted'); }
+
+    if (S.sample.id === 'dest' && S.salt > 0 && k25() > 5000) LK.reach('salt');
+    if (S.calibratedAfterChange) LK.reach('cal');
+  }
+
+  // ------------------------------------------------------------ Draht
+  function Rwire() { return S.mat.rho * S.l / AREAS[S.ai]; }
+  function updateD() {
+    var A = AREAS[S.ai], R = Rwire();
+    matBtns.forEach(function (b, i) { b.setAttribute('aria-pressed', MATS[i] === S.mat); });
+    $('oL').textContent = LK.fmt(S.l, 1) + ' m';
+    $('oQ').textContent = trimNum(A, 2) + ' mm²';
+    $('dVal').textContent = (R < 10 ? LK.fmt(R, 3) : R < 100 ? LK.fmt(R, 2) : LK.fmt(R, 1)) + ' Ω';
+    $('rRD').textContent = (R < 10 ? LK.fmt(R, 3) : LK.fmt(R, 2)) + ' Ω';
+    $('rRho').textContent = trimNum(S.mat.rho, 3);
+    $('rSig').textContent = LK.fmt(1 / S.mat.rho, 0);
+    $('calc').textContent = trimNum(S.mat.rho, 3) + ' · ' + LK.fmt(S.l, 1) + ' / ' + trimNum(A, 2) + ' Ω = ' + (R < 10 ? LK.fmt(R, 3) : LK.fmt(R, 2)) + ' Ω';
+    $('lenTxt').textContent = 'l = ' + LK.fmt(S.l, 1) + ' m (aufgewickelt)';
+    $('matName').textContent = S.mat.name;
+    $('matTxt').textContent = 'ρ = ' + trimNum(S.mat.rho, 3) + ' Ω·mm²/m';
+    $('aTxt').textContent = 'A = ' + trimNum(A, 2) + ' mm²';
+    // Querschnitt: Durchmesser in mm, 10-fach vergrößert
+    var dmm = 2 * Math.sqrt(A / Math.PI);
+    $('xsec').setAttribute('r', (8 * dmm).toFixed(1));
+    $('xsec').setAttribute('fill', S.mat.col);
+    // Wicklungen
+    var coil = $('coil');
+    while (coil.firstChild) coil.removeChild(coil.firstChild);
+    var n = Math.max(1, Math.round(S.l * 4)), w = 260 / n, sw = Math.max(1, 2.2 * dmm);
+    var d = 'M118 180 H' + (130 + w * 0.15).toFixed(1);
+    for (var i = 0; i < n; i++) {
+      var x0 = 130 + i * w;
+      d += ' M' + (x0 + w * 0.15).toFixed(1) + ' 146 L' + (x0 + w * 0.85).toFixed(1) + ' 214';
+    }
+    d += ' M' + (130 + 260 - w * 0.15).toFixed(1) + ' 180 H402';
+    el('path', { d: d, fill: 'none', stroke: S.mat.col, 'stroke-width': sw.toFixed(2), 'stroke-linecap': 'round' }, coil);
+    if (S.mat.id === 'ko' && Math.abs(R - 10) < 0.05) LK.reach('k10');
+  }
+  function drawRows() {
+    $('rows').innerHTML = S.stored.length ? S.stored.map(function (r) {
+      return '<tr><td>' + r.m + '</td><td>' + LK.fmt(r.l, 1) + '</td><td>' + trimNum(r.A, 2) + '</td><td>' + (r.R < 10 ? LK.fmt(r.R, 3) : LK.fmt(r.R, 2)) + '</td></tr>';
+    }).join('') : '<tr><td colspan="4" class="muted">Noch keine Messwerte. Mit „Messwert merken“ kannst du Drähte vergleichen.</td></tr>';
+  }
+
+  // ------------------------------------------------------------ Ereignisse
+  function setMode(m) {
+    S.mode = m;
+    $('bModeW').setAttribute('aria-pressed', m === 'w');
+    $('bModeD').setAttribute('aria-pressed', m === 'd');
+    $('cardW').hidden = m !== 'w'; $('ctrlW').hidden = m !== 'w';
+    $('cardD').hidden = m !== 'd'; $('ctrlD').hidden = m !== 'd';
+    if (m === 'd') updateD(); else updateW();
+  }
+  $('bModeW').onclick = function () { setMode('w'); };
+  $('bModeD').onclick = function () { setMode('d'); };
+
+  $('bSalt').onclick = function () {
+    if (S.salt >= SALT_MAX) return;
+    S.salt++; rebuildIons(); updateW();
+  };
+  $('sT').oninput = function () { S.T = Number(this.value); updateW(); };
+  $('bComp').onclick = function () { S.comp = !S.comp; updateW(); };
+  function geomChanged() { S.calibratedAfterChange = false; S.bubbles = 0; updateW(); }
+  $('sD').oninput = function () { S.d = Number(this.value); geomChanged(); };
+  $('sA').oninput = function () { S.A = Number(this.value); geomChanged(); };
+  $('bAC').onclick = function () { S.ac = true; ions.forEach(function (o) { o.ox = 0; }); updateW(); };
+  $('bDC').onclick = function () { S.ac = false; updateW(); };
+  $('bCal').onclick = function () {
+    var changed = Math.abs(Kact() - 1) > 0.004;
+    S.Kcal = Kact(); S.pol = 1; S.bubbles = 0;
+    if (changed) S.calibratedAfterChange = true;
+    updateW();
+    var h = $('hintW');
+    h.dataset.msg = 'cal';
+    h.className = 'small muted';
+    h.textContent = 'Sensor in die Kalibrierlösung getaucht und das Gerät auf 1413 µS/cm eingestellt. Kalibrierung fertig: Die Anzeige stimmt jetzt für diese Elektroden.' + (S.ac ? '' : ' Schalte wieder auf Wechselspannung, sonst wird die Messung durch Elektrolyse verfälscht.');
+  };
+
+  $('sL').oninput = function () { S.l = Number(this.value); updateD(); };
+  $('sQ').oninput = function () { S.ai = Number(this.value); updateD(); };
+  $('bStore').onclick = function () {
+    S.stored.push({ m: S.mat.name, l: S.l, A: AREAS[S.ai], R: Rwire() });
+    if (S.stored.length > 12) S.stored.shift();
+    drawRows();
+    $('hintD').textContent = 'Gemerkt: ' + S.mat.name + ', ' + LK.fmt(S.l, 1) + ' m, ' + trimNum(AREAS[S.ai], 2) + ' mm².';
+  };
+  $('bClear').onclick = function () { S.stored = []; drawRows(); $('hintD').textContent = ''; };
+
+  // ------------------------------------------------------------ Animation
+  var last = performance.now(), t = 0;
+  function frame(now) {
+    var dt = Math.min(0.05, (now - last) / 1000); last = now;
+    if (S.mode === 'w') {
+      t += reduce ? 0 : dt;
+      // Polarisation bei Gleichspannung (nur wenn Ionen da sind), Erholung bei Wechselspannung
+      var before = S.pol, bb = Math.round(S.bubbles);
+      if (!S.ac && k25() > 20) {
+        S.pol += (0.55 - S.pol) * dt / 4;
+        S.bubbles = Math.min(16, S.bubbles + dt * 2);
+        var gg = geom();
+        ions.forEach(function (o) {
+          var target = o.s > 0 ? gg.xR - 8 : gg.xL + 16;   // positive Ionen zum Minuspol (rechts), negative zum Pluspol (links)
+          o.ox += (target - (o.x + o.ox)) * Math.min(1, dt * 0.35);
+        });
+      } else if (S.ac) {
+        S.pol += (1 - S.pol) * dt / 1.5;
+        S.bubbles = Math.max(0, S.bubbles - dt * 3);
+      }
+      placeIons(t);
+      if (Math.abs(before - S.pol) > 1e-4 || bb !== Math.round(S.bubbles)) updateW();
+    }
+    requestAnimationFrame(frame);
+  }
+
+  rebuildIons(); updateW(); updateD(); drawRows(); setMode('w');
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

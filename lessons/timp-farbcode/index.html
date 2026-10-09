@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lötpraktikum-Trainer</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<style>
+  .modes { margin-bottom: 14px; }
+  .seg { flex-wrap: wrap; }
+  .ring { stroke: var(--line); stroke-width: 1.2; cursor: pointer; }
+  .lead { stroke: var(--muted); stroke-width: 5; stroke-linecap: round; }
+  .leader { stroke: var(--muted); stroke-width: 1; }
+  .rbody { stroke: var(--line); stroke-width: 1.5; }
+  .ctrl select { width: 100%; }
+  .readout b { font-size: 1.05rem; }
+  .target { background: var(--bg); border-radius: 10px; padding: 10px 12px; margin-top: 12px; }
+  .target b { font-size: 1.1rem; }
+  .msg-ok { color: var(--ok); font-weight: 650; }
+  .msg-bad { color: var(--warn); font-weight: 650; }
+  .qchoices { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .qchoices button { min-width: 92px; }
+  .qchoices button.right, .order li.right { border-color: var(--ok); background: var(--ok-soft); }
+  .qchoices button.wrong, .order li.wrong { border-color: var(--warn); background: var(--warn-soft); }
+  .big { font-size: 1rem; padding: 10px 16px; }
+  .hit { fill: transparent; cursor: pointer; }
+  @media (hover: hover) { .hit:hover { fill: var(--accent); opacity: .07; } }
+  #resSet .lbl, #resQuiz .lbl { font-size: 15px; }
+  #resSet .val, #resQuiz .val { font-size: 14px; }
+  .pin-lbl { font-size: 14px; font-weight: 700; }
+  .order { list-style: none; padding: 0; margin: 8px 0 0; counter-reset: st; }
+  .order li { display: flex; align-items: center; gap: 8px; border: 1px solid var(--border); border-radius: 10px; padding: 6px 8px; margin: 6px 0; background: var(--card); counter-increment: st; }
+  .order li::before { content: counter(st) "."; font-weight: 700; color: var(--muted); min-width: 1.4em; }
+  .order li span { flex: 1; font-size: .9rem; }
+  .order li button { padding: 4px 10px; min-width: 40px; min-height: 36px; }
+  .joints { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 8px; }
+  .joint { border: 1px solid var(--border); border-radius: 10px; padding: 8px; }
+  .joint.right { border-color: var(--ok); background: var(--ok-soft); }
+  .joint.wrong { border-color: var(--warn); background: var(--warn-soft); }
+  .joint select { width: 100%; margin-top: 6px; font-size: .85rem; padding: 6px 8px; }
+  .joint p { font-size: .8rem; margin: 6px 0 0; }
+  .joint p:empty { display: none; }
+  .rules { margin: 0; padding-left: 1.2em; font-size: .9rem; }
+  .rules li { margin: 4px 0; }
+  .note { font-size: .82rem; color: var(--muted); border-left: 3px solid var(--border); padding-left: 8px; margin-top: 10px; }
+</style>
+</head>
+<body>
+<h1>Lötpraktikum-Trainer</h1>
+<p class="muted small">Bevor du lötest, musst du Bauteile erkennen: Welchen Wert hat der Widerstand? Wie herum gehört die Diode hinein? Wähle oben einen Bereich und übe.</p>
+
+<div class="row modes">
+  <div class="seg" role="group" aria-label="Bereich wählen">
+    <button type="button" id="mCode" aria-pressed="true">Farbcode</button>
+    <button type="button" id="mPol" aria-pressed="false">Polung</button>
+    <button type="button" id="mSol" aria-pressed="false">Löten</button>
+  </div>
+</div>
+
+<div class="lk-grid">
+  <div>
+    <!-- ========== Farbcode ========== -->
+    <div id="pCode">
+      <div class="lk-card">
+        <h2>Widerstand einstellen</h2>
+        <svg id="resSet" viewBox="0 0 520 165" role="img" aria-label="Widerstand mit vier Farbringen"></svg>
+        <p class="small muted" style="margin:4px 0 0">Tipp: Du kannst auch direkt auf einen Ring tippen, dann wechselt seine Farbe. Gelesen wird von der Seite, auf der die Ringe dichter am Rand sitzen. Der Toleranzring (Gold oder Silber) steht etwas abseits.</p>
+      </div>
+      <div class="lk-card">
+        <h2>Quiz: Lies den Wert ab <span class="small muted" id="qCount"></span></h2>
+        <svg id="resQuiz" viewBox="0 0 520 165" role="img" aria-label="Widerstand für das Quiz"></svg>
+        <p class="small" style="margin:6px 0 0">Welchen Wert hat dieser Widerstand?</p>
+        <div class="qchoices" id="qChoices"></div>
+        <p id="qFb" class="small" aria-live="polite" style="min-height:1.4em"></p>
+        <div class="row"><button type="button" id="qNext">Nächster Widerstand</button></div>
+      </div>
+    </div>
+
+    <!-- ========== Polung ========== -->
+    <div id="pPol" hidden>
+      <div class="lk-card">
+        <h2 id="polTitle">Diode</h2>
+        <svg id="polSvg" viewBox="0 0 520 260" role="img" aria-label="Bauteil zum Erkennen der Polung"></svg>
+        <p class="small muted" style="margin:4px 0 0">Tippe auf die linke oder rechte Seite des Bauteils oder nutze die Buttons rechts.</p>
+      </div>
+    </div>
+
+    <!-- ========== Löten ========== -->
+    <div id="pSol" hidden>
+      <div class="lk-card">
+        <h2>Ablauf beim Löten</h2>
+        <p class="small muted">Bringe die Schritte mit den Pfeilen in die richtige Reihenfolge. Es geht um das Einlöten eines Bauteils auf einer Platine.</p>
+        <ol class="order" id="order"></ol>
+        <div class="row" style="margin-top:10px"><button type="button" class="primary" id="oCheck">Reihenfolge prüfen</button></div>
+        <p id="oFb" class="small" aria-live="polite"></p>
+      </div>
+      <div class="lk-card">
+        <h2>Gute und schlechte Lötstellen</h2>
+        <p class="small muted">Die Bilder zeigen Lötstellen im Schnitt: Platine (grün), Lötauge aus Kupfer, Bauteilbein und Lötzinn. Ordne jedem Bild den passenden Begriff zu.</p>
+        <div class="joints" id="joints">
+          <div class="joint" data-key="kugel">
+            <svg viewBox="0 0 160 110" role="img" aria-label="Lötstelle A"><title>Lötstelle A</title>
+              <rect x="5" y="72" width="150" height="14" fill="#3f7d4e" stroke="var(--line)" stroke-width="1"/>
+              <rect x="48" y="68" width="64" height="4" fill="#c8793a"/>
+              <rect x="76" y="6" width="8" height="98" fill="#a9adb2" stroke="var(--line)" stroke-width=".8"/>
+              <ellipse cx="80" cy="45" rx="29" ry="24" fill="#d9dde2" stroke="#5f656d" stroke-width="1.2"/>
+              <path d="M62 36 A20 18 0 0 1 76 26" stroke="#fff" stroke-width="2.5" fill="none"/>
+            </svg>
+            <select aria-label="Begriff für Lötstelle A"></select><p></p>
+          </div>
+          <div class="joint" data-key="gut">
+            <svg viewBox="0 0 160 110" role="img" aria-label="Lötstelle B"><title>Lötstelle B</title>
+              <rect x="5" y="72" width="150" height="14" fill="#3f7d4e" stroke="var(--line)" stroke-width="1"/>
+              <rect x="48" y="68" width="64" height="4" fill="#c8793a"/>
+              <rect x="76" y="6" width="8" height="98" fill="#a9adb2" stroke="var(--line)" stroke-width=".8"/>
+              <path d="M47 69 C66 67 74 58 76 24 L84 24 C86 58 94 67 113 69 Z" fill="#d9dde2" stroke="#5f656d" stroke-width="1.2"/>
+              <path d="M57 65 C67 62 72 52 74 36" stroke="#fff" stroke-width="2.5" fill="none"/>
+            </svg>
+            <select aria-label="Begriff für Lötstelle B"></select><p></p>
+          </div>
+          <div class="joint" data-key="bruecke">
+            <svg viewBox="0 0 160 110" role="img" aria-label="Lötstelle C"><title>Lötstelle C</title>
+              <rect x="5" y="72" width="150" height="14" fill="#3f7d4e" stroke="var(--line)" stroke-width="1"/>
+              <rect x="20" y="68" width="40" height="4" fill="#c8793a"/><rect x="100" y="68" width="40" height="4" fill="#c8793a"/>
+              <rect x="36" y="6" width="8" height="98" fill="#a9adb2" stroke="var(--line)" stroke-width=".8"/>
+              <rect x="116" y="6" width="8" height="98" fill="#a9adb2" stroke="var(--line)" stroke-width=".8"/>
+              <path d="M19 69 C30 64 34 52 36 28 L44 28 C48 48 58 54 80 54 C102 54 112 48 116 28 L124 28 C126 52 130 64 141 69 Z" fill="#d9dde2" stroke="#5f656d" stroke-width="1.2"/>
+              <path d="M60 60 C70 58 90 58 100 60" stroke="#fff" stroke-width="2" fill="none"/>
+            </svg>
+            <select aria-label="Begriff für Lötstelle C"></select><p></p>
+          </div>
+          <div class="joint" data-key="kalt">
+            <svg viewBox="0 0 160 110" role="img" aria-label="Lötstelle D"><title>Lötstelle D</title>
+              <rect x="5" y="72" width="150" height="14" fill="#3f7d4e" stroke="var(--line)" stroke-width="1"/>
+              <rect x="48" y="68" width="64" height="4" fill="#c8793a"/>
+              <rect x="76" y="6" width="8" height="98" fill="#a9adb2" stroke="var(--line)" stroke-width=".8"/>
+              <path d="M56 68 L58 60 L64 55 L68 46 L73 40 L76 31 L84 33 L87 42 L93 47 L96 55 L101 59 L103 68 Z" fill="#8f8f87" stroke="#5f656d" stroke-width="1.2"/>
+              <path d="M66 60 L72 55 L70 50 M88 52 L93 58 M79 45 L82 50 L80 56" stroke="#4d4d48" stroke-width="1.2" fill="none"/>
+              <circle cx="62" cy="64" r="1.2" fill="#4d4d48"/><circle cx="95" cy="63" r="1.2" fill="#4d4d48"/><circle cx="74" cy="62" r="1.2" fill="#4d4d48"/><circle cx="88" cy="64" r="1.2" fill="#4d4d48"/>
+            </svg>
+            <select aria-label="Begriff für Lötstelle D"></select><p></p>
+          </div>
+          <div class="joint" data-key="wenig">
+            <svg viewBox="0 0 160 110" role="img" aria-label="Lötstelle E"><title>Lötstelle E</title>
+              <rect x="5" y="72" width="150" height="14" fill="#3f7d4e" stroke="var(--line)" stroke-width="1"/>
+              <rect x="48" y="68" width="64" height="4" fill="#c8793a"/>
+              <rect x="76" y="6" width="8" height="98" fill="#a9adb2" stroke="var(--line)" stroke-width=".8"/>
+              <path d="M62 69 C70 68 75 66 76 61 L84 61 C85 66 90 68 98 69 Z" fill="#d9dde2" stroke="#5f656d" stroke-width="1.2"/>
+            </svg>
+            <select aria-label="Begriff für Lötstelle E"></select><p></p>
+          </div>
+        </div>
+        <div class="row" style="margin-top:10px"><button type="button" class="primary" id="jCheck">Zuordnung prüfen</button></div>
+        <p id="jFb" class="small" aria-live="polite"></p>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="lk-card">
+      <!-- Einstellungen Farbcode -->
+      <div id="sCode">
+        <h2>Farbringe</h2>
+        <label class="ctrl"><span>Ring 1: erste Ziffer</span><select id="r1"></select></label>
+        <label class="ctrl"><span>Ring 2: zweite Ziffer</span><select id="r2"></select></label>
+        <label class="ctrl"><span>Ring 3: Multiplikator</span><select id="r3"></select></label>
+        <label class="ctrl"><span>Ring 4: Toleranz</span><select id="r4"></select></label>
+        <div class="readouts">
+          <div class="readout"><span>Widerstand <span class="f">R</span></span><b id="oVal">–</b></div>
+          <div class="readout"><span>Toleranz</span><b id="oTol">–</b></div>
+          <div class="readout" style="grid-column:1/-1"><span>erlaubter Bereich</span><b id="oRange">–</b></div>
+        </div>
+        <div class="target">
+          <span class="small muted">Aufgabe: Stelle diesen Widerstand ein</span><br>
+          <b id="tgt">4,7 kΩ ± 5 %</b>
+          <p id="tgtFb" class="small" aria-live="polite" style="min-height:1.4em;margin-bottom:0"></p>
+          <div class="row" style="margin:6px 0 0"><button type="button" id="tgtNext" hidden>Neues Ziel</button></div>
+        </div>
+        <p class="note">Die Ziffernringe: schwarz 0, braun 1, rot 2, orange 3, gelb 4, grün 5, blau 6, violett 7, grau 8, weiß 9. Der Multiplikator sagt, wie viele Nullen angehängt werden (Gold: × 0,1). Präzisionswiderstände haben 5 Ringe; die sind hier nicht dabei.</p>
+      </div>
+
+      <!-- Einstellungen Polung -->
+      <div id="sPol" hidden>
+        <h2>Polung erkennen</h2>
+        <div class="row">
+          <div class="seg" role="group" aria-label="Bauteil wählen">
+            <button type="button" data-part="diode" aria-pressed="true">Diode</button>
+            <button type="button" data-part="led" aria-pressed="false">LED</button>
+            <button type="button" data-part="elko" aria-pressed="false">Elko</button>
+          </div>
+        </div>
+        <p id="polQ" style="font-weight:650"></p>
+        <div class="row">
+          <button type="button" class="big" id="aL">← linke Seite</button>
+          <button type="button" class="big" id="aR">rechte Seite →</button>
+        </div>
+        <p id="polFb" class="small" aria-live="polite" style="min-height:1.4em"></p>
+        <div class="row"><button type="button" id="polNext" hidden>Neues Bauteil</button></div>
+        <p class="small muted" id="polStat"></p>
+      </div>
+
+      <!-- Einstellungen Löten -->
+      <div id="sSol" hidden>
+        <h2>Sicherheitsregeln beim Löten</h2>
+        <ul class="rules">
+          <li>Die Lötspitze ist etwa 350 °C heiß. Fasse den Lötkolben nur am Griff an.</li>
+          <li>Lege den Lötkolben immer in den Ständer, nie auf den Tisch.</li>
+          <li>Das Kabel darf nicht an die heiße Spitze kommen.</li>
+          <li>Sorge für frische Luft oder eine Absaugung. Atme den Rauch des Flussmittels nicht ein.</li>
+          <li>Trage beim Abknipsen der Beinchen eine Schutzbrille und halte das Ende fest.</li>
+          <li>Iss und trinke nicht am Lötplatz. Wasche dir danach die Hände.</li>
+          <li>Schalte den Lötkolben nach der Arbeit aus und lass ihn im Ständer abkühlen.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="lk-card tasks">
+      <h2>Entdecke selbst <span class="small muted" data-task-count></span></h2>
+      <div class="task" data-goal="set47"><p class="task-q">Farbcode: Stelle einen Widerstand mit 4,7 kΩ und ± 5 % ein.</p></div>
+      <div class="task" data-goal="read3"><p class="task-q">Farbcode: Lies im Quiz 3 Widerstände jeweils beim ersten Versuch richtig ab.</p></div>
+      <div class="task" data-goal="polung"><p class="task-q">Polung: Erkenne bei Diode, LED und Elko jeweils beim ersten Versuch die richtige Seite.</p></div>
+      <div class="task" data-goal="order"><p class="task-q">Löten: Bringe den Ablauf beim Löten in die richtige Reihenfolge.</p></div>
+      <div class="task" data-goal="joints"><p class="task-q">Löten: Ordne alle fünf Lötstellen richtig zu.</p></div>
+      <div class="task">
+        <p class="task-q">Du musst beim Löten kurz aufstehen. Was machst du mit dem heißen Lötkolben?</p>
+        <div class="choices">
+          <button type="button" data-fb="Auch auf einer Unterlage kann der Kolben wegrollen, Dinge ansengen oder jemanden verbrennen.">Ich lege ihn vorsichtig auf den Tisch.</button>
+          <button type="button" data-ok data-fb="Richtig: Der Ständer hält die heiße Spitze sicher fest, so verbrennt sich niemand.">Ich stecke ihn in den Lötkolbenständer.</button>
+          <button type="button" data-fb="Einen heißen Lötkolben gibt man nicht weiter. Es gibt einen sicheren Platz dafür.">Ich gebe ihn meinem Nachbarn.</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="all-done">Alles entdeckt! Weiter geht es mit den Übungen.</div>
+    </div>
+  </div>
+</div>
+
+<script src="../../static/lesson-kit.js"></script>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var NS = 'http://www.w3.org/2000/svg';
+  function el(tag, a, parent) { var e = document.createElementNS(NS, tag); for (var k in a) e.setAttribute(k, a[k]); if (parent) parent.appendChild(e); return e; }
+  function shuffle(a) { for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+  function pick(a) { return a[Math.floor(Math.random() * a.length)]; }
+
+  // ================================================= Modi
+  var MODES = { Code: 'Code', Pol: 'Pol', Sol: 'Sol' };
+  function setMode(m) {
+    Object.keys(MODES).forEach(function (k) {
+      $('m' + k).setAttribute('aria-pressed', k === m);
+      $('p' + k).hidden = k !== m;
+      $('s' + k).hidden = k !== m;
+    });
+  }
+  $('mCode').onclick = function () { setMode('Code'); };
+  $('mPol').onclick = function () { setMode('Pol'); };
+  $('mSol').onclick = function () { setMode('Sol'); };
+
+  // ================================================= Farbcode
+  // Ringfarben sind echte Bauteilfarben (fest), jeder Ring hat einen Kontrastrand und eine Beschriftung.
+  var C = {
+    schwarz: { hex: '#1a1a1a', d: 0, m: 1 },
+    braun:   { hex: '#7a4522', d: 1, m: 10 },
+    rot:     { hex: '#d42a2a', d: 2, m: 100 },
+    orange:  { hex: '#f07b18', d: 3, m: 1e3 },
+    gelb:    { hex: '#f4d01a', d: 4, m: 1e4 },
+    'grün':  { hex: '#2c9a46', d: 5, m: 1e5 },
+    blau:    { hex: '#2a5fd0', d: 6, m: 1e6 },
+    violett: { hex: '#8a3cc4', d: 7, m: 1e7 },
+    grau:    { hex: '#8d8d8d', d: 8, m: 1e8 },
+    'weiß':  { hex: '#f7f7f7', d: 9, m: 1e9 },
+    gold:    { hex: '#c9a133', m: 0.1, tol: 5 },
+    silber:  { hex: '#c3c7cc', m: 0.01, tol: 10 }
+  };
+  var DIGITS = ['schwarz', 'braun', 'rot', 'orange', 'gelb', 'grün', 'blau', 'violett', 'grau', 'weiß'];
+  var MULTS = DIGITS.concat(['gold', 'silber']);
+  var TOLS = ['gold', 'silber'];
+  var LISTS = [DIGITS, DIGITS, MULTS, TOLS];
+
+  function num(x) {
+    x = Math.round(x * 1000) / 1000;
+    var d = Math.abs(x - Math.round(x)) < 1e-9 ? 0 : Math.abs(x * 10 - Math.round(x * 10)) < 1e-9 ? 1 : Math.abs(x * 100 - Math.round(x * 100)) < 1e-9 ? 2 : 3;
+    return LK.fmt(x, d);
+  }
+  function fmtR(r) {
+    if (r >= 1e6) return num(r / 1e6) + ' MΩ';
+    if (r >= 1e3) return num(r / 1e3) + ' kΩ';
+    return num(r) + ' Ω';
+  }
+  function multTxt(m) { return '× ' + (m < 1 ? LK.fmt(m, m < 0.1 ? 2 : 1) : LK.fmt(m, 0)); }
+  function value(code) { return (C[code[0]].d * 10 + C[code[1]].d) * C[code[2]].m; }
+  function same(a, b) { return Math.abs(a - b) <= 1e-9 * Math.max(1, Math.abs(b)); }
+
+  function drawResistor(svg, code, withValues, clickable) {
+    svg.innerHTML = '';
+    var id = svg.id + '-clip';
+    var defs = el('defs', {}, svg), cp = el('clipPath', { id: id }, defs);
+    var bodyD = 'M150 42 C126 32 108 44 108 75 C108 106 126 118 150 108 H370 C394 118 412 106 412 75 C412 44 394 32 370 42 Z';
+    el('path', { d: bodyD }, cp);
+    el('line', { x1: 12, y1: 75, x2: 508, y2: 75, class: 'lead' }, svg);
+    el('path', { d: bodyD, fill: '#e2c79c', class: 'rbody' }, svg);
+    var g = el('g', { 'clip-path': 'url(#' + id + ')' }, svg);
+    var XS = [160, 204, 248, 362], LX = [70, 190, 310, 448];
+    var roles = ['1. Ziffer', '2. Ziffer', 'Multiplikator', 'Toleranz'];
+    for (var k = 0; k < 4; k++) {
+      var r = el('rect', { x: XS[k] - 10, y: 25, width: 20, height: 100, fill: C[code[k]].hex, class: 'ring', 'data-ring': k }, g);
+      if (clickable) r.setAttribute('aria-hidden', 'true');
+      el('line', { x1: XS[k], y1: 113, x2: LX[k], y2: 126, class: 'leader' }, svg);
+      el('text', { x: LX[k], y: 140, 'text-anchor': 'middle', class: 'val' }, svg).textContent = roles[k];
+      var c = C[code[k]], t;
+      if (!withValues) t = code[k];
+      else if (k < 2) t = code[k] + ' = ' + c.d;
+      else if (k === 2) t = code[k] + ': ' + multTxt(c.m);
+      else t = code[k] + ': ± ' + c.tol + ' %';
+      el('text', { x: LX[k], y: 158, 'text-anchor': 'middle', class: 'lbl' }, svg).textContent = t;
+    }
+    el('path', { d: 'M150 14 H270', stroke: 'var(--muted)', 'stroke-width': 1.2, 'marker-end': 'url(#' + svg.id + '-ah)' }, svg);
+    var m = el('marker', { id: svg.id + '-ah', viewBox: '0 0 10 10', refX: 8, refY: 5, markerWidth: 6, markerHeight: 6, orient: 'auto' }, defs);
+    el('path', { d: 'M0 0 L10 5 L0 10 z', fill: 'var(--muted)' }, m);
+    el('text', { x: 280, y: 18, class: 'val' }, svg).textContent = 'Leserichtung';
+  }
+
+  var sel = [$('r1'), $('r2'), $('r3'), $('r4')];
+  sel.forEach(function (s, k) {
+    LISTS[k].forEach(function (name) {
+      var o = document.createElement('option'); o.value = name;
+      o.textContent = k < 2 ? name + ' (' + C[name].d + ')' : k === 2 ? name + ' (' + multTxt(C[name].m) + ')' : name + ' (± ' + C[name].tol + ' %)';
+      s.appendChild(o);
+    });
+  });
+  var code = ['braun', 'schwarz', 'rot', 'gold'];
+  var target = { v: 4700, first: true }, tgtDone = false;
+
+  function updateSet() {
+    sel.forEach(function (s, k) { s.value = code[k]; });
+    drawResistor($('resSet'), code, true, true);
+    var v = value(code), tol = C[code[3]].tol;
+    $('oVal').textContent = fmtR(v);
+    $('oTol').textContent = '± ' + tol + ' %';
+    $('oRange').textContent = fmtR(v * (1 - tol / 100)) + ' bis ' + fmtR(v * (1 + tol / 100));
+    $('resSet').setAttribute('aria-label', 'Widerstand mit den Ringen ' + code.join(', ') + ': ' + fmtR(v) + ' ± ' + tol + ' %');
+    if (!tgtDone && same(v, target.v) && code[3] === 'gold') {
+      tgtDone = true;
+      $('tgtFb').innerHTML = '<span class="msg-ok">✓ Richtig eingestellt!</span>';
+      $('tgtNext').hidden = false;
+      if (target.first) LK.reach('set47');
+    } else if (!tgtDone) {
+      $('tgtFb').textContent = same(v, target.v) ? 'Der Wert stimmt. Achte noch auf die Toleranz ± 5 %.' : '';
+    }
+  }
+  sel.forEach(function (s, k) { s.onchange = function () { code[k] = s.value; updateSet(); }; });
+  $('resSet').addEventListener('click', function (e) {
+    var k = e.target.getAttribute && e.target.getAttribute('data-ring');
+    if (k === null || k === undefined) return;
+    k = Number(k);
+    var list = LISTS[k], i = list.indexOf(code[k]);
+    code[k] = list[(i + 1) % list.length];
+    updateSet();
+  });
+  var E12 = [10, 12, 15, 18, 22, 27, 33, 39, 47, 56, 68, 82];
+  $('tgtNext').onclick = function () {
+    var v;
+    do { v = pick(E12) * Math.pow(10, Math.floor(Math.random() * 5)); } while (same(v, value(code)));
+    target = { v: v, first: false }; tgtDone = false;
+    $('tgt').textContent = fmtR(v) + ' ± 5 %';
+    $('tgtFb').textContent = ''; this.hidden = true;
+    updateSet();
+  };
+
+  // ---- Quiz: Wert ablesen
+  var quiz = null, readOk = 0;
+  function codeFor(v2, mName, tName) { return [DIGITS[Math.floor(v2 / 10)], DIGITS[v2 % 10], mName, tName]; }
+  function newQuiz() {
+    var v2 = pick(E12), mName = pick(['gold', 'schwarz', 'braun', 'rot', 'orange', 'gelb', 'grün']);
+    var c = codeFor(v2, mName, pick(TOLS)), v = value(c);
+    var opts = [v, v * 10, v / 10];
+    var sw = (v2 % 10) * 10 + Math.floor(v2 / 10);
+    if (sw !== v2 && v2 % 10 !== 0) opts.push(sw * C[mName].m); else opts.push(v * 100);
+    // Dubletten vermeiden
+    var uniq = [];
+    opts.forEach(function (o) { if (!uniq.some(function (u) { return same(u, o); })) uniq.push(o); });
+    while (uniq.length < 4) uniq.push(uniq[uniq.length - 1] * 10);
+    quiz = { code: c, v: v, tries: 0, done: false };
+    drawResistor($('resQuiz'), c, false, false);
+    $('resQuiz').setAttribute('aria-label', 'Widerstand mit den Ringen ' + c.join(', '));
+    var box = $('qChoices'); box.innerHTML = '';
+    shuffle(uniq).forEach(function (o) {
+      var b = document.createElement('button'); b.type = 'button'; b.textContent = fmtR(o);
+      b.onclick = function () { answerQuiz(b, o); };
+      box.appendChild(b);
+    });
+    $('qFb').textContent = '';
+  }
+  function answerQuiz(b, o) {
+    if (quiz.done) return;
+    quiz.tries++;
+    var c = quiz.code, d = C[c[0]].d * 10 + C[c[1]].d;
+    var expl = c[0] + ' = ' + C[c[0]].d + ', ' + c[1] + ' = ' + C[c[1]].d + ', ' + c[2] + ' = ' + multTxt(C[c[2]].m) + ' → ' + d + ' Ω ' + multTxt(C[c[2]].m) + ' = ' + fmtR(quiz.v) + ', Toleranz ± ' + C[c[3]].tol + ' %.';
+    if (same(o, quiz.v)) {
+      b.classList.add('right'); quiz.done = true;
+      if (quiz.tries === 1) readOk++;
+      $('qFb').innerHTML = '<span class="msg-ok">✓ Richtig.</span> ' + expl + (quiz.tries > 1 ? ' (Zählt nicht, weil es nicht der erste Versuch war.)' : '');
+      $('qCount').textContent = Math.min(readOk, 3) + ' / 3';
+      if (readOk >= 3) LK.reach('read3');
+    } else {
+      b.classList.add('wrong');
+      $('qFb').innerHTML = '<span class="msg-bad">Noch nicht.</span> Lies die ersten beiden Ringe als Ziffern. Der dritte Ring sagt, mit welcher Zahl du malnehmen musst.';
+    }
+  }
+  $('qNext').onclick = newQuiz;
+  $('qCount').textContent = '0 / 3';
+
+  // ================================================= Polung
+  var PARTS = {
+    diode: { title: 'Diode (1N4007)', side: 'Ende' },
+    led: { title: 'Leuchtdiode (LED)', side: 'Bein' },
+    elko: { title: 'Elektrolytkondensator (Elko)', side: 'Bein' }
+  };
+  var pol = { part: 'diode', flip: false, ask: 'minus', answered: false, ok: { diode: false, led: false, elko: false } };
+
+  function drawPart() {
+    var svg = $('polSvg'); svg.innerHTML = '';
+    var g = el('g', pol.flip ? { transform: 'translate(520 0) scale(-1 1)' } : {}, svg);
+    // ungespiegelt: Kathode bzw. Minus liegt RECHTS
+    if (pol.part === 'diode') {
+      el('line', { x1: 30, y1: 100, x2: 490, y2: 100, class: 'lead' }, g);
+      el('rect', { x: 180, y: 76, width: 160, height: 48, rx: 8, fill: '#222', stroke: 'var(--text)', 'stroke-width': 1.5 }, g);
+      el('rect', { x: 306, y: 76, width: 16, height: 48, fill: '#d6d6d6', stroke: 'var(--text)', 'stroke-width': 1 }, g);
+    } else if (pol.part === 'led') {
+      el('line', { x1: 240, y1: 150, x2: 240, y2: 245, class: 'lead' }, g);   // langes Bein links (Anode)
+      el('line', { x1: 280, y1: 150, x2: 280, y2: 210, class: 'lead' }, g);   // kurzes Bein rechts (Kathode)
+      el('path', { d: 'M222 140 V64 A38 38 0 0 1 298 64 V140 Z', fill: '#e8484a', 'fill-opacity': 0.8, stroke: 'var(--line)', 'stroke-width': 1.5 }, g);
+      el('path', { d: 'M212 140 H300 V152 H212 Z', fill: '#e8484a', stroke: 'var(--line)', 'stroke-width': 1.5 }, g);  // Rand, rechts abgeflacht
+      el('path', { d: 'M236 64 A24 24 0 0 1 252 40', stroke: '#fff', 'stroke-width': 3, fill: 'none', opacity: 0.7 }, g);
+      el('path', { d: 'M240 140 V110 M280 140 V104 L262 104 L262 122 L280 122', stroke: '#777', 'stroke-width': 2.5, fill: 'none' }, g);
+    } else {
+      el('line', { x1: 240, y1: 170, x2: 240, y2: 245, class: 'lead' }, g);   // Plus links, länger
+      el('line', { x1: 280, y1: 170, x2: 280, y2: 220, class: 'lead' }, g);   // Minus rechts, kürzer
+      el('rect', { x: 214, y: 40, width: 92, height: 132, rx: 10, fill: '#24418f', stroke: 'var(--text)', 'stroke-width': 1.5 }, g);
+      el('rect', { x: 278, y: 41, width: 22, height: 130, fill: '#c9ced6' }, g);
+      for (var y = 64; y < 160; y += 26) el('rect', { x: 284, y: y, width: 10, height: 3.5, fill: '#24418f' }, g);
+      el('path', { d: 'M226 44 L294 44', stroke: '#9fb0d6', 'stroke-width': 2 }, g);
+    }
+    var hitL = el('rect', { x: 0, y: 0, width: 260, height: 260, class: 'hit' }, svg);
+    var hitR = el('rect', { x: 260, y: 0, width: 260, height: 260, class: 'hit' }, svg);
+    hitL.addEventListener('click', function () { answerPol('L'); });
+    hitR.addEventListener('click', function () { answerPol('R'); });
+    if (pol.answered) drawLabels(svg);
+    $('polTitle').textContent = PARTS[pol.part].title;
+  }
+  function minusSide() { return pol.flip ? 'L' : 'R'; }
+  function drawLabels(svg) {
+    var mSide = minusSide();
+    var isCap = pol.part === 'elko';
+    var minusTxt = isCap ? 'Minuspol (−)' : 'Kathode (−)', plusTxt = isCap ? 'Pluspol (+)' : 'Anode (+)';
+    var y = pol.part === 'diode' ? 60 : 250;
+    el('text', { x: 20, y: y, class: 'pin-lbl', fill: mSide === 'L' ? 'var(--neg)' : 'var(--pos)' }, svg).textContent = mSide === 'L' ? minusTxt : plusTxt;
+    el('text', { x: 500, y: y, 'text-anchor': 'end', class: 'pin-lbl', fill: mSide === 'R' ? 'var(--neg)' : 'var(--pos)' }, svg).textContent = mSide === 'R' ? minusTxt : plusTxt;
+    // Schaltzeichen
+    var sy = pol.part === 'diode' ? 200 : 30, g = el('g', pol.flip ? { transform: 'translate(520 0) scale(-1 1)' } : {}, svg);
+    var gx = pol.part === 'diode' ? 0 : 150;   // bei LED/Elko rechts oben neben dem Bauteil
+    var x0 = 330 + gx * 0 - (pol.part === 'diode' ? 120 : -10);
+    if (pol.part === 'elko') {
+      el('path', { d: 'M' + (x0) + ' ' + sy + ' H' + (x0 + 40) + ' M' + (x0 + 40) + ' ' + (sy - 16) + ' V' + (sy + 16) + ' M' + (x0 + 52) + ' ' + sy + ' H' + (x0 + 92), class: 'wire' }, g);
+      el('rect', { x: x0 + 46, y: sy - 16, width: 6, height: 32, fill: 'var(--line)' }, g);
+    } else {
+      el('path', { d: 'M' + x0 + ' ' + sy + ' H' + (x0 + 30) + ' M' + (x0 + 60) + ' ' + sy + ' H' + (x0 + 92) + ' M' + (x0 + 60) + ' ' + (sy - 16) + ' V' + (sy + 16), class: 'wire' }, g);
+      el('path', { d: 'M' + (x0 + 30) + ' ' + (sy - 16) + ' L' + (x0 + 60) + ' ' + sy + ' L' + (x0 + 30) + ' ' + (sy + 16) + ' Z', fill: 'none', stroke: 'var(--line)', 'stroke-width': 2.2, 'stroke-linejoin': 'round' }, g);
+      if (pol.part === 'led') el('path', { d: 'M' + (x0 + 44) + ' ' + (sy - 18) + ' l10 -12 m-6 0 h6 v6 M' + (x0 + 54) + ' ' + (sy - 14) + ' l10 -12 m-6 0 h6 v6', stroke: 'var(--line)', 'stroke-width': 1.6, fill: 'none' }, g);
+    }
+    var tx = pol.flip ? 520 - (x0 + 46) : x0 + 46;
+    el('text', { x: tx, y: sy + 34, 'text-anchor': 'middle', class: 'val' }, svg).textContent = 'Schaltzeichen';
+    if (pol.part === 'elko') {
+      var px = pol.flip ? 520 - (x0 + 32) : x0 + 32;
+      el('text', { x: px, y: sy - 20, 'text-anchor': 'middle', class: 'lbl' }, svg).textContent = '+';
+    }
+  }
+  function question() {
+    var p = pol.part, a = pol.ask;
+    if (p === 'diode') return 'Auf welcher Seite ist die Kathode der Diode?';
+    if (p === 'led') return a === 'minus' ? 'Welches Bein der LED ist die Kathode (−)?' : 'Welches Bein der LED ist die Anode (+)?';
+    return a === 'minus' ? 'Welches Bein des Elkos ist der Minuspol?' : 'Welches Bein des Elkos ist der Pluspol?';
+  }
+  var EXPL = {
+    diode: 'Der Ring auf dem Gehäuse markiert die Kathode. Im Schaltzeichen ist das der Strich. In Durchlassrichtung fließt der Strom von der Anode zur Kathode.',
+    led: 'Das lange Bein ist die Anode (+), das kurze die Kathode (−). Auch der Rand des Gehäuses ist auf der Kathodenseite abgeflacht.',
+    elko: 'Der helle Streifen mit den Minuszeichen zeigt den Minuspol. Das Minus-Bein ist außerdem kürzer. Falsch herum eingebaut kann ein Elko heiß werden und sogar platzen.'
+  };
+  function newPart(part) {
+    if (part) pol.part = part;
+    pol.flip = Math.random() < 0.5;
+    pol.ask = pol.part === 'diode' ? 'minus' : (Math.random() < 0.5 ? 'minus' : 'plus');
+    pol.answered = false;
+    $('polQ').textContent = question();
+    $('polFb').textContent = '';
+    $('polNext').hidden = true;
+    $('aL').disabled = false; $('aR').disabled = false;
+    $('aL').textContent = '← linkes ' + PARTS[pol.part].side;
+    $('aR').textContent = 'rechtes ' + PARTS[pol.part].side + ' →';
+    document.querySelectorAll('[data-part]').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-part') === pol.part); });
+    drawPart();
+  }
+  function answerPol(side) {
+    if (pol.answered) return;
+    pol.answered = true;
+    var correct = pol.ask === 'minus' ? minusSide() : (minusSide() === 'L' ? 'R' : 'L');
+    if (side === correct) {
+      pol.ok[pol.part] = true;
+      $('polFb').innerHTML = '<span class="msg-ok">✓ Richtig.</span> ' + EXPL[pol.part];
+    } else {
+      $('polFb').innerHTML = '<span class="msg-bad">Leider falsch.</span> ' + EXPL[pol.part] + ' Probiere es mit einem neuen Bauteil noch einmal.';
+    }
+    $('aL').disabled = true; $('aR').disabled = true;
+    $('polNext').hidden = false;
+    drawPart();
+    updatePolStat();
+    if (pol.ok.diode && pol.ok.led && pol.ok.elko) LK.reach('polung');
+  }
+  function updatePolStat() {
+    var names = { diode: 'Diode', led: 'LED', elko: 'Elko' };
+    $('polStat').textContent = 'Geschafft: ' + Object.keys(names).map(function (k) { return names[k] + (pol.ok[k] ? ' ✓' : ' ○'); }).join(' · ');
+    document.querySelectorAll('[data-part]').forEach(function (b) { var k = b.getAttribute('data-part'); b.textContent = names[k] + (pol.ok[k] ? ' ✓' : ''); });
+  }
+  $('aL').onclick = function () { answerPol('L'); };
+  $('aR').onclick = function () { answerPol('R'); };
+  $('polNext').onclick = function () { newPart(); $('aL').focus(); };
+  document.querySelectorAll('[data-part]').forEach(function (b) { b.onclick = function () { newPart(b.getAttribute('data-part')); }; });
+
+  // ================================================= Löten: Reihenfolge
+  var STEPS = [
+    'Bauteil von oben durch die Platine stecken und die Beinchen auf der Lötseite leicht abbiegen.',
+    'Lötspitze am feuchten Schwamm reinigen und mit etwas Zinn benetzen (verzinnen).',
+    'Die heiße Lötspitze so anlegen, dass sie Lötauge und Bauteilbein gleichzeitig berührt.',
+    'Etwa 1 bis 2 Sekunden warten, bis Lötauge und Bein heiß sind.',
+    'Lötzinn an die Lötstelle führen (nicht an die Spitze), bis es rundherum fließt.',
+    'Lötzinn wegnehmen.',
+    'Lötkolben wegnehmen.',
+    'Lötstelle einige Sekunden abkühlen lassen und das Bauteil dabei nicht bewegen.',
+    'Überstehende Beinchen mit dem Seitenschneider abknipsen.'
+  ];
+  var order = STEPS.map(function (s, i) { return i; });
+  do { shuffle(order); } while (order.every(function (v, i) { return v === i; }));
+  function renderOrder(marks) {
+    var ol = $('order'); ol.innerHTML = '';
+    order.forEach(function (si, pos) {
+      var li = document.createElement('li');
+      if (marks) li.className = si === pos ? 'right' : 'wrong';
+      var sp = document.createElement('span'); sp.textContent = STEPS[si]; li.appendChild(sp);
+      var up = document.createElement('button'); up.type = 'button'; up.textContent = '↑'; up.setAttribute('aria-label', 'Schritt nach oben schieben'); up.disabled = pos === 0;
+      var dn = document.createElement('button'); dn.type = 'button'; dn.textContent = '↓'; dn.setAttribute('aria-label', 'Schritt nach unten schieben'); dn.disabled = pos === order.length - 1;
+      up.onclick = function () { move(pos, -1, 'up'); };
+      dn.onclick = function () { move(pos, 1, 'dn'); };
+      li.appendChild(up); li.appendChild(dn);
+      ol.appendChild(li);
+    });
+  }
+  function move(pos, d, which) {
+    var t = order[pos]; order[pos] = order[pos + d]; order[pos + d] = t;
+    renderOrder(false);
+    $('oFb').textContent = '';
+    var li = $('order').children[pos + d];
+    var btn = li && li.querySelectorAll('button')[which === 'up' ? 0 : 1];
+    if (btn && !btn.disabled) btn.focus(); else if (li) li.querySelector('button:not([disabled])').focus();
+  }
+  $('oCheck').onclick = function () {
+    var n = order.filter(function (v, i) { return v === i; }).length;
+    renderOrder(true);
+    if (n === STEPS.length) {
+      $('oFb').innerHTML = '<span class="msg-ok">✓ Alles richtig!</span> Merke: Erst Lötauge und Bein erwärmen, dann Zinn zuführen. Erst das Zinn wegnehmen, dann den Kolben.';
+      LK.reach('order');
+    } else {
+      $('oFb').innerHTML = '<span class="msg-bad">' + n + ' von ' + STEPS.length + ' Schritten stehen richtig.</span> Grün markierte Schritte stimmen schon.';
+    }
+  };
+  renderOrder(false);
+
+  // ================================================= Löten: Lötstellen
+  var JOINT = {
+    gut: { name: 'gute Lötstelle', fb: 'Glänzend, kegelförmig wie ein kleiner Vulkan, das Zinn umfließt Bein und Lötauge vollständig.' },
+    kalt: { name: 'kalte Lötstelle', fb: 'Matt, grau, rau und rissig: Lötauge oder Bein waren nicht heiß genug oder das Bauteil wurde beim Abkühlen bewegt. Der Kontakt ist unsicher.' },
+    kugel: { name: 'zu viel Lötzinn (Kugel)', fb: 'Eine dicke Kugel: Das Zinn hat das Lötauge nicht benetzt. Oft ist darunter keine richtige Verbindung.' },
+    bruecke: { name: 'Lötbrücke', fb: 'Das Zinn verbindet zwei Lötaugen, die getrennt sein müssen. Das ist ein Kurzschluss.' },
+    wenig: { name: 'zu wenig Lötzinn', fb: 'Das Lötauge ist nicht bedeckt und das Bein kaum umschlossen. Die Verbindung hält schlecht.' }
+  };
+  var jKeys = ['gut', 'kalt', 'kugel', 'bruecke', 'wenig'];
+  var joints = document.querySelectorAll('.joint');
+  joints.forEach(function (j) {
+    var s = j.querySelector('select');
+    var o0 = document.createElement('option'); o0.value = ''; o0.textContent = 'Was siehst du?'; s.appendChild(o0);
+    jKeys.forEach(function (k) { var o = document.createElement('option'); o.value = k; o.textContent = JOINT[k].name; s.appendChild(o); });
+    s.onchange = function () { j.classList.remove('right', 'wrong'); j.querySelector('p').textContent = ''; };
+  });
+  $('jCheck').onclick = function () {
+    var n = 0;
+    joints.forEach(function (j) {
+      var k = j.getAttribute('data-key'), v = j.querySelector('select').value, p = j.querySelector('p');
+      j.classList.remove('right', 'wrong');
+      if (!v) { p.textContent = ''; return; }
+      if (v === k) { n++; j.classList.add('right'); p.textContent = '✓ ' + JOINT[k].fb; }
+      else { j.classList.add('wrong'); p.textContent = 'Noch nicht. Schau auf Form, Glanz und darauf, was das Zinn verbindet.'; }
+    });
+    if (n === joints.length) { $('jFb').innerHTML = '<span class="msg-ok">✓ Alle fünf richtig zugeordnet.</span>'; LK.reach('joints'); }
+    else $('jFb').textContent = n + ' von ' + joints.length + ' richtig.';
+  };
+
+  // ================================================= Start
+  updateSet(); newQuiz(); newPart('diode'); updatePolStat();
+})();
+</script>
+</body>
+</html>

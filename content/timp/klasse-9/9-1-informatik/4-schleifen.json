@@ -1,0 +1,108 @@
+{
+  "id": "timp-k9-schleifen",
+  "titel": "Schleifen",
+  "kurz": "Wie ein Programm Anweisungen wiederholt, wie man mit Zählvariablen Summen berechnet und wie man Endlosschleifen erkennt.",
+  "reihenfolge": 4,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Die Schleifenarten wiederhole n-mal, wiederhole bis und wiederhole fortlaufend unterscheiden und passend auswählen" },
+    { "id": "lz2", "niveau": "G", "text": "Den Ablauf einer Schleife mit einer Zählvariable nachverfolgen" },
+    { "id": "lz3", "niveau": "H", "text": "Mit Schleifen Summen berechnen" },
+    { "id": "lz4", "niveau": "H", "text": "Endlosschleifen erkennen und vermeiden" }
+  ],
+  "verstehen": {
+    "einstieg": "Eine Figur soll ein Quadrat laufen: 4-mal geradeaus und drehen. Ein Ball soll fallen, bis er den Boden berührt. Die Musik im Spiel soll immer weiterlaufen. Muss man dafür jede Anweisung viele Male hinschreiben?",
+    "abschnitte": [
+      {
+        "titel": "Drei Arten von Schleifen",
+        "text": "Eine **Schleife** wiederholt die eingerückten Anweisungen darunter.\n\n- ``wiederhole 4-mal``: Die Anzahl der Durchläufe steht vorher fest.\n- ``wiederhole bis y < 0``: Vor jedem Durchlauf wird die Bedingung geprüft. Ist sie wahr, endet die Schleife. Die Anzahl der Durchläufe hängt davon ab, was passiert.\n- ``wiederhole fortlaufend``: Die Schleife hört nie von selbst auf. Das ist z. B. für ein Spiel sinnvoll, das bis zum Ausschalten läuft. Beenden kann sie dann nur ``stoppe alles`` oder der Stopp-Knopf."
+      },
+      {
+        "titel": "Zählvariablen",
+        "text": "Oft braucht man in der Schleife eine Variable, die mitzählt, die **Zählvariable**:\n\n```\nsetze i auf 1\nwiederhole 5-mal\n  sage i * i\n  ändere i um 1\n```\n\nIm ersten Durchlauf ist ``i = 1``, dann 2, 3, 4 und 5. Das Programm sagt 1, 4, 9, 16, 25. Nach der Schleife hat ``i`` den Wert 6."
+      },
+      {
+        "titel": "Summen berechnen",
+        "text": "Um viele Zahlen zu addieren, nimmt man eine Variable ``summe``, die vor der Schleife auf 0 gesetzt wird. In jedem Durchlauf kommt eine Zahl dazu:\n\n```\nsetze summe auf 0\nsetze i auf 1\nwiederhole 100-mal\n  ändere summe um i\n  ändere i um 1\nsage summe\n```\n\nDas Programm berechnet ``1 + 2 + 3 + … + 100 = 5050``. Ohne ``setze summe auf 0`` am Anfang würde mit einem alten oder gar keinem Wert gerechnet."
+      },
+      {
+        "titel": "Endlosschleifen",
+        "text": "Eine ``wiederhole bis``-Schleife endet nur, wenn ihre Bedingung irgendwann wahr wird. Wird sie nie wahr, entsteht eine **Endlosschleife**: Das Programm hängt.\n\n```\nsetze x auf 1\nwiederhole bis x = 10\n  ändere x um 2\n```\n\nHier nimmt ``x`` die Werte 1, 3, 5, 7, 9, 11, 13 … an. Die 10 wird übersprungen, die Schleife endet nie. Abhilfe: Bedingung ``x > 9`` statt ``x = 10``. Prüfe bei ``=`` in Abbruchbedingungen immer, ob der Wert **genau** getroffen wird."
+      }
+    ],
+    "merksatz": "``wiederhole n-mal`` für eine feste Anzahl, ``wiederhole bis`` für „so lange, bis eine Bedingung erfüllt ist“, ``wiederhole fortlaufend`` ohne Ende. Eine Zählvariable zählt die Durchläufe mit. Für Summen setzt man ``summe`` vorher auf 0. Eine Abbruchbedingung, die nie wahr wird, führt zur Endlosschleife.",
+    "alltag": "Ein Spiel zeichnet das Bild etwa 30- bis 60-mal pro Sekunde neu. Dahinter steckt eine Schleife, die immer wieder die Eingaben liest, die Figuren bewegt und den Bildschirm neu zeichnet."
+  },
+  "interaktiv": ["timp-programmierlabor"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "timp-sl-01", "typ": "zahl", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Was gibt das Programm aus?\n\n```\nsetze x auf 0\nwiederhole 3-mal\n  ändere x um 2\nsage x\n```",
+      "gesucht": "Ausgabe", "gesuchtSymbol": "x",
+      "loesung": 6, "einheit": "", "toleranz": 0,
+      "rechenweg": ["Start: ``x = 0``", "1. Durchlauf: x = 2", "2. Durchlauf: x = 4", "3. Durchlauf: x = 6", "Ausgabe nach der Schleife: 6"],
+      "erklaerung": "Die Zeile ``ändere x um 2`` wird dreimal ausgeführt. ``sage x`` ist nicht eingerückt und steht deshalb nach der Schleife. Es wird nur einmal ausgeführt."
+    },
+    {
+      "id": "timp-sl-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Welche Schleife passt am besten?",
+      "paare": [
+        { "links": "Eine Figur zeichnet ein Quadrat (4 gleiche Seiten).", "rechts": "``wiederhole n-mal``" },
+        { "links": "Eine Figur läuft, bis sie die Wand berührt.", "rechts": "``wiederhole bis``" },
+        { "links": "Die Hintergrundmusik soll im ganzen Spiel immer wieder laufen.", "rechts": "``wiederhole fortlaufend``" }
+      ],
+      "erklaerung": "Steht die Anzahl fest, nimmt man ``wiederhole n-mal``. Hängt das Ende von einer Bedingung ab, nimmt man ``wiederhole bis``. Soll es nie aufhören, nimmt man ``wiederhole fortlaufend``."
+    },
+    {
+      "id": "timp-sl-03", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Welche Zahl sagt das Programm?\n\n```\nsetze z auf 1\nsetze runden auf 0\nwiederhole bis z > 50\n  setze z auf z * 2\n  ändere runden um 1\nsage runden\n```",
+      "gesucht": "Ausgabe", "gesuchtSymbol": "runden",
+      "loesung": 6, "einheit": "", "toleranz": 0,
+      "rechenweg": ["``z`` verdoppelt sich in jedem Durchlauf: 1 → 2 → 4 → 8 → 16 → 32 → 64", "Nach 5 Durchläufen ist z = 32. ``32 > 50`` ist falsch, also noch ein Durchlauf.", "Nach 6 Durchläufen ist z = 64. ``64 > 50`` ist wahr, die Schleife endet.", "Ausgabe: 6"],
+      "hinweis": "Lege eine Tabelle mit den Spalten z und runden an und trage nach jedem Durchlauf die Werte ein.",
+      "erklaerung": "Bei ``wiederhole bis`` steht die Anzahl der Durchläufe nicht vorher fest. ``runden`` zählt sie mit."
+    },
+    {
+      "id": "timp-sl-04", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Welche Summe sagt das Programm?\n\n```\nsetze summe auf 0\nsetze i auf 2\nwiederhole 5-mal\n  ändere summe um i\n  ändere i um 2\nsage summe\n```",
+      "gesucht": "Ausgabe", "gesuchtSymbol": "summe",
+      "loesung": 30, "einheit": "", "toleranz": 0,
+      "rechenweg": ["``i`` nimmt nacheinander die Werte 2, 4, 6, 8, 10 an.", "``summe`` = 2 + 4 + 6 + 8 + 10 = 30", "Ausgabe: 30"],
+      "erklaerung": "Das Programm addiert die ersten fünf geraden Zahlen. Die Zählvariable ``i`` wächst dabei in Zweierschritten."
+    },
+    {
+      "id": "timp-sl-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Welches Programm ist eine **Endlosschleife**?\n\n```\nProgramm A:\nsetze x auf 1\nwiederhole bis x = 10\n  ändere x um 2\n```\n\n```\nProgramm B:\nsetze x auf 1\nwiederhole bis x > 10\n  ändere x um 2\n```\n\n```\nProgramm C:\nsetze x auf 0\nwiederhole bis x = 10\n  ändere x um 2\n```",
+      "optionen": [
+        { "text": "Programm A", "richtig": true },
+        { "text": "Programm B", "feedback": "Bei B nimmt x die Werte 1, 3, 5, 7, 9, 11 an. ``11 > 10`` ist wahr, die Schleife endet." },
+        { "text": "Programm C", "feedback": "Bei C nimmt x die Werte 0, 2, 4, 6, 8, 10 an. Die 10 wird genau getroffen, die Schleife endet." },
+        { "text": "keines", "feedback": "Schreibe bei A die Werte von x auf: Wird die 10 jemals genau erreicht?" }
+      ],
+      "erklaerung": "Bei A ist x immer ungerade: 1, 3, 5, … 9, 11, 13 … Die Bedingung ``x = 10`` wird nie wahr. Im Programmierlabor kannst du das mit dem Programm „Endet sie?“ ausprobieren."
+    },
+    {
+      "id": "timp-sl-06", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Diese Schleife endet nie:\n\n```\nsetze x auf 1\nwiederhole bis x = 10\n  ändere x um 2\n```\n\nWelche **einzelne** Änderung sorgt dafür, dass das Programm endet?",
+      "optionen": [
+        { "text": "Bedingung ändern zu ``wiederhole bis x > 9``", "richtig": true },
+        { "text": "Startwert ändern zu ``setze x auf 0``", "richtig": true },
+        { "text": "Schrittweite ändern zu ``ändere x um 3``", "richtig": true },
+        { "text": "Schrittweite ändern zu ``ändere x um 4``", "feedback": "Dann ist x: 1, 5, 9, 13, … Die 10 wird wieder übersprungen." },
+        { "text": "Bedingung ändern zu ``wiederhole bis x = 12``", "feedback": "x bleibt ungerade (1, 3, 5, …). Auch die 12 wird nie getroffen." }
+      ],
+      "erklaerung": "Mit ``x > 9`` endet die Schleife bei 11. Mit Start 0 wird die 10 genau getroffen (0, 2, …, 10). Mit Schrittweite 3 auch: 1, 4, 7, 10. Am sichersten sind Bedingungen mit ``<`` oder ``>``, weil sie auch beim Überspringen eines Wertes greifen."
+    },
+    {
+      "id": "timp-sl-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Das folgende Programm berechnet ``1 + 2 + 3 + … + 100``.\n\n```\nsetze summe auf 0\nsetze i auf 1\nwiederhole 100-mal\n  ändere summe um i\n  ändere i um 1\nsage summe\n```\n\nErkläre, welche Aufgabe die Variablen ``summe`` und ``i`` haben und warum ``summe`` vor der Schleife auf 0 gesetzt wird.",
+      "stichworte": [
+        { "aspekt": "``summe`` sammelt das Zwischenergebnis, in jedem Durchlauf kommt eine Zahl dazu", "woerter": ["sammel", "addiert", "zwischenergebnis", "dazu", "aufaddier", "zusammengezaehlt"] },
+        { "aspekt": "``i`` ist die Zählvariable und liefert nacheinander 1, 2, 3, …, 100", "woerter": ["zaehl", "naechste zahl", "um 1", "nacheinander"] },
+        { "aspekt": "Start bei 0, damit kein alter oder fehlender Wert mitgerechnet wird", "woerter": ["alter wert", "alten wert", "kein wert", "keinen wert", "noch nichts", "nichts addiert", "sonst"] }
+      ],
+      "musterloesung": "Die Variable summe sammelt das Zwischenergebnis: In jedem Durchlauf wird die aktuelle Zahl i dazu addiert. Die Variable i ist die Zählvariable. Sie wird in jedem Durchlauf um 1 größer und liefert so nacheinander die Zahlen 1 bis 100. Die Summe muss am Anfang 0 sein, weil noch nichts addiert wurde. Sonst würde ein alter Wert mitgerechnet oder summe hätte noch keinen Wert. Das Ergebnis ist 5050.",
+      "erklaerung": "Startwert 0 ist für Summen das, was ein leerer Einkaufskorb für den Einkauf ist: Man fängt bei nichts an und legt nach und nach etwas hinein."
+    }
+  ]
+}

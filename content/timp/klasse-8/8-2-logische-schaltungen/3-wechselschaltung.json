@@ -1,0 +1,140 @@
+{
+  "id": "timp-k8-wechselschaltung",
+  "titel": "Wechselschaltung",
+  "kurz": "Wie man eine Lampe im Flur oder Treppenhaus von zwei Stellen aus ein- und ausschalten kann.",
+  "reihenfolge": 3,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Aufbau und Verdrahtung einer Wechselschaltung mit zwei Wechselschaltern beschreiben" },
+    { "id": "lz2", "niveau": "G", "text": "Erklären, warum man die Lampe von jedem der beiden Schalter aus ein- und ausschalten kann" },
+    { "id": "lz3", "niveau": "H", "text": "Die Wahrheitswerttabelle der Wechselschaltung aufstellen und von UND und ODER abgrenzen" },
+    { "id": "lz4", "niveau": "H", "text": "Hypothesen über das Verhalten der Schaltung mit der Wahrheitswerttabelle bestätigen oder widerlegen" }
+  ],
+  "verstehen": {
+    "einstieg": "Du kommst in einen langen Flur, machst am Eingang das Licht an und gehst bis zur Tür am anderen Ende. Dort kannst du das Licht wieder ausschalten. Mit normalen Schaltern in Reihe oder parallel klappt das nicht. Wie funktioniert das?",
+    "abschnitte": [
+      {
+        "titel": "Der Wechselschalter",
+        "text": "Ein **Wechselschalter** (Umschalter) hat **drei Anschlüsse**: einen mittleren Anschluss an der Schaltzunge und zwei Kontakte, z. B. „oben“ und „unten“. Die Schaltzunge verbindet den mittleren Anschluss **immer mit genau einem** der beiden Kontakte. Einen Aus-Zustand gibt es beim Wechselschalter selbst nicht, er wählt nur einen von zwei Wegen."
+      },
+      {
+        "titel": "Die Verdrahtung",
+        "text": "Für die Wechselschaltung braucht man zwei Wechselschalter S1 und S2:\n\n- Der **Pluspol** der Quelle ist mit dem mittleren Anschluss von **S1** verbunden.\n- Die beiden Kontakte von S1 sind über **zwei Verbindungsleitungen** mit den beiden Kontakten von S2 verbunden: oben mit oben, unten mit unten.\n- Der mittlere Anschluss von **S2** führt zur **Lampe** und von dort zurück zum **Minuspol**.\n\nDer Stromkreis ist nur geschlossen, wenn beide Schaltzungen **dieselbe** Verbindungsleitung wählen. Wählen sie verschiedene Leitungen, endet der Weg an einem offenen Kontakt."
+      },
+      {
+        "titel": "Die Wahrheitswerttabelle",
+        "text": "Wir schreiben für jeden Schalter **1 = oben** und **0 = unten**. Mit der Verdrahtung „oben mit oben, unten mit unten“ ergibt sich:\n\n```\nS1 S2 | Lampe\n 0  0 |  1\n 0  1 |  0\n 1  0 |  0\n 1  1 |  1\n```\n\n**Logische Aussage:** Die Lampe leuchtet, wenn beide Schalter **gleich** stehen. Diese Verknüpfung heißt auch **Gleichheit** (in der Informatik XNOR).\n\nVerbindet man die Leitungen **gekreuzt** (oben mit unten), ist es genau umgekehrt: Die Lampe leuchtet, wenn die Schalter **verschieden** stehen (XOR, „entweder … oder“). Welche Tabelle gilt, hängt also von der Verdrahtung und von der Festlegung ab, was „1“ bedeutet."
+      },
+      {
+        "titel": "Jeder Schalter kann umschalten",
+        "text": "Entscheidend ist: **Jedes Umschalten ändert den Zustand der Lampe**, egal an welchem Schalter und egal, wie der andere Schalter steht. In der Tabelle siehst du: Ändert sich nur S1 (oder nur S2), wechselt die Lampe von 0 auf 1 oder von 1 auf 0.\n\nDas unterscheidet die Wechselschaltung von UND und ODER:\n- Bei **UND** kann ein Schalter allein die Lampe nicht einschalten, wenn der andere offen ist.\n- Bei **ODER** kann ein Schalter allein die Lampe nicht ausschalten, wenn der andere geschlossen ist."
+      }
+    ],
+    "merksatz": "Eine **Wechselschaltung** besteht aus zwei Wechselschaltern, die über zwei Verbindungsleitungen verbunden sind. Die Lampe leuchtet, wenn beide Schaltzungen dieselbe Leitung wählen.\n\nJedes Umschalten an einem der beiden Schalter ändert den Zustand der Lampe. Deshalb kann man sie von zwei Stellen aus ein- und ausschalten.",
+    "alltag": "Wechselschaltungen findest du in Fluren mit zwei Türen, an Treppen (unten und oben) und im Schlafzimmer (an der Tür und am Bett). Für mehr als zwei Schaltstellen baut man Kreuzschalter dazwischen oder nutzt Taster mit einem Stromstoßschalter."
+  },
+  "interaktiv": ["timp-logiklabor"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "timp-wech-01",
+      "typ": "single",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz1",
+      "frage": "Wo ist eine Wechselschaltung besonders sinnvoll?",
+      "optionen": [
+        { "text": "An einer Treppe: Licht unten einschalten und oben wieder ausschalten", "richtig": true },
+        { "text": "Bei einer Taschenlampe mit einem Schiebeschalter", "feedback": "Dort genügt ein einfacher Schalter, denn es gibt nur eine Schaltstelle." },
+        { "text": "Bei einer Presse, die nur mit beiden Händen startet", "feedback": "Das ist eine UND-Schaltung (Zweihandschaltung)." },
+        { "text": "Beim Licht im Kühlschrank", "feedback": "Das Kühlschranklicht wird mit einem Öffner geschaltet (NICHT)." }
+      ],
+      "erklaerung": "Eine Wechselschaltung erlaubt es, eine Lampe von **zwei Stellen** aus ein- und auszuschalten, z. B. unten und oben an der Treppe."
+    },
+    {
+      "id": "timp-wech-02",
+      "typ": "reihenfolge",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz1",
+      "frage": "Beide Wechselschalter stehen **oben**, die Lampe leuchtet. Verfolge den Stromweg (technische Stromrichtung) und bringe die Stationen in die richtige Reihenfolge.",
+      "elemente": [
+        "Pluspol der Quelle",
+        "Mittlerer Anschluss und Schaltzunge von S1",
+        "Oberer Kontakt von S1 und obere Verbindungsleitung",
+        "Oberer Kontakt und Schaltzunge von S2",
+        "Lampe",
+        "Minuspol der Quelle"
+      ],
+      "erklaerung": "Der Strom fließt vom Pluspol über S1, die obere Verbindungsleitung und S2 zur Lampe und zurück zum Minuspol. Die untere Verbindungsleitung ist in dieser Stellung stromlos."
+    },
+    {
+      "id": "timp-wech-03",
+      "typ": "single",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz3",
+      "frage": "Die Verbindungsleitungen verbinden oben mit oben und unten mit unten (1 = oben, 0 = unten). Bei welchen Schalterstellungen (S1 S2) leuchtet die Lampe?",
+      "optionen": [
+        { "text": "bei 0 0 und bei 1 1", "richtig": true },
+        { "text": "nur bei 1 1", "feedback": "Das wäre die UND-Tabelle. Bei 0 0 wählen beide Schalter die untere Leitung, auch dann ist der Kreis geschlossen." },
+        { "text": "bei 0 1, 1 0 und 1 1", "feedback": "Das ist die ODER-Tabelle. Stehen die Schalter verschieden, endet der Weg an einem offenen Kontakt." },
+        { "text": "bei 0 1 und bei 1 0", "feedback": "Das gilt nur, wenn die Verbindungsleitungen gekreuzt angeschlossen sind." }
+      ],
+      "erklaerung": "Der Kreis ist geschlossen, wenn beide Schaltzungen dieselbe Verbindungsleitung wählen, also bei **gleicher** Stellung: 0 0 oder 1 1."
+    },
+    {
+      "id": "timp-wech-04",
+      "typ": "multi",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz3",
+      "frage": "Welche Aussagen beschreiben einen Unterschied zwischen der Wechselschaltung und der UND- bzw. ODER-Schaltung richtig?",
+      "optionen": [
+        { "text": "Bei der Wechselschaltung ändert jedes Umschalten eines einzelnen Schalters den Zustand der Lampe.", "richtig": true },
+        { "text": "Bei UND kann ein Schalter allein die Lampe nicht einschalten, wenn der andere offen ist.", "richtig": true },
+        { "text": "Bei ODER kann ein Schalter allein die Lampe nicht ausschalten, wenn der andere geschlossen ist.", "richtig": true },
+        { "text": "Die Wechselschaltung hat eine Tabelle mit 8 Zeilen.", "feedback": "Sie hat zwei Eingänge, also 2 · 2 = 4 Zeilen." },
+        { "text": "Bei der Wechselschaltung leuchtet die Lampe in drei von vier Zeilen.", "feedback": "Das ist die ODER-Tabelle. Bei der Wechselschaltung leuchtet sie in zwei von vier Zeilen." }
+      ],
+      "erklaerung": "UND und ODER hängen davon ab, ob ein oder alle Schalter geschlossen sind. Bei der Wechselschaltung kommt es darauf an, ob die Schalter **gleich** oder **verschieden** stehen. Deshalb wirkt dort jeder Schalter immer."
+    },
+    {
+      "id": "timp-wech-05",
+      "typ": "single",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz2",
+      "frage": "Im Flur ist das Licht zuerst **aus**. Nacheinander wird umgeschaltet: S1, S2, S2, S1, S2. Ist das Licht danach an oder aus?",
+      "optionen": [
+        { "text": "an", "richtig": true },
+        { "text": "aus", "feedback": "Zähle die Umschaltungen: Jede einzelne ändert den Zustand der Lampe." },
+        { "text": "Das hängt davon ab, wie die Schalter am Anfang standen.", "feedback": "Bekannt ist, dass das Licht am Anfang aus ist. Mehr braucht man nicht." },
+        { "text": "Das hängt davon ab, welcher Schalter zuletzt betätigt wurde.", "feedback": "Bei der Wechselschaltung ist es egal, welcher Schalter umgeschaltet wird." }
+      ],
+      "erklaerung": "Jedes Umschalten ändert den Zustand: aus → an → aus → an → aus → **an**. Nach einer ungeraden Zahl von Umschaltungen (hier 5) ist das Licht an."
+    },
+    {
+      "id": "timp-wech-06",
+      "typ": "single",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz4",
+      "frage": "Lea stellt die Hypothese auf: „In der Wechselschaltung leuchtet die Lampe immer, wenn S1 oben steht.“ Die Verbindungsleitungen verbinden oben mit oben und unten mit unten. Was zeigt die Wahrheitswerttabelle?",
+      "optionen": [
+        { "text": "Die Hypothese ist widerlegt, denn bei S1 oben und S2 unten ist die Lampe aus.", "richtig": true },
+        { "text": "Die Hypothese ist bestätigt, denn bei S1 und S2 oben leuchtet die Lampe.", "feedback": "Eine einzelne passende Zeile reicht nicht. Die Hypothese sagt „immer“, also müssen alle Zeilen mit S1 = 1 passen." },
+        { "text": "Die Hypothese ist bestätigt, weil S1 der erste Schalter im Stromkreis ist.", "feedback": "Die Lage im Stromkreis spielt keine Rolle. Prüfe die Zeilen mit S1 = 1." },
+        { "text": "Man kann sie nicht prüfen, ohne die Schaltung aufzubauen.", "feedback": "Die Wahrheitswerttabelle enthält alle möglichen Stellungen. Damit lässt sich die Hypothese prüfen." }
+      ],
+      "erklaerung": "In den Zeilen mit S1 = 1 steht einmal 1 (S2 = 1) und einmal 0 (S2 = 0). Ein einziges Gegenbeispiel reicht, um eine Hypothese mit „immer“ zu **widerlegen**."
+    },
+    {
+      "id": "timp-wech-07",
+      "typ": "text",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz2",
+      "frage": "Erkläre, warum man die Lampe in einer Wechselschaltung von beiden Schaltern aus ein- und ausschalten kann.",
+      "stichworte": [
+        { "aspekt": "Jeder Wechselschalter wählt eine der beiden Verbindungsleitungen", "woerter": ["verbindungsleitung", "leitung waehlt", "eine der beiden", "andere leitung", "zwei leitungen"] },
+        { "aspekt": "Der Stromkreis ist geschlossen, wenn beide Schalter dieselbe Leitung wählen (gleich stehen)", "woerter": ["dieselbe", "gleiche leitung", "gleich stehen", "gleiche stellung"] },
+        { "aspekt": "Jedes Umschalten ändert den Zustand der Lampe, egal welcher Schalter", "woerter": ["jedes umschalten", "jedes mal", "zustand", "wechselt", "aendert sich"] }
+      ],
+      "musterloesung": "Beide Wechselschalter sind über zwei Verbindungsleitungen verbunden, und jeder Schalter wählt eine der beiden Leitungen. Der Stromkreis ist nur geschlossen, wenn beide Schalter dieselbe Leitung wählen, also gleich stehen. Schaltet man einen der Schalter um, wählt er die andere Leitung. Aus „gleich“ wird „verschieden“ oder umgekehrt. Deshalb ändert jedes Umschalten den Zustand der Lampe, egal an welchem Schalter.",
+      "erklaerung": "Die Lampe hängt nur davon ab, ob die Schalter gleich oder verschieden stehen. Ein einzelner Schalter kann das immer ändern."
+    }
+  ]
+}

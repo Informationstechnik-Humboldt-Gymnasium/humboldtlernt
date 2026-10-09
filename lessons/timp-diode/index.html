@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dioden-Labor: Kennlinie und Vorwiderstand</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<style>
+  .meter { fill: var(--card); stroke: var(--line); stroke-width: 2; }
+  .meter-txt { font-size: 14px; font-weight: 700; text-anchor: middle; dominant-baseline: central; }
+  .flow { fill: var(--pos); }
+  .diode { fill: var(--card); stroke: var(--line); stroke-width: 2.2; stroke-linejoin: round; }
+  .broken { stroke: var(--warn); stroke-width: 3.5; stroke-linecap: round; }
+  .series-line { fill: none; stroke-width: 2; }
+  .thr { stroke: var(--ok); stroke-width: 1.2; stroke-dasharray: 4 3; }
+  table { border-collapse: collapse; width: 100%; font-size: .85rem; font-variant-numeric: tabular-nums; }
+  td, th { padding: 3px 6px; border-bottom: 1px solid var(--border); text-align: right; }
+  th:first-child, td:first-child { text-align: left; }
+  .tablewrap { max-height: 170px; overflow: auto; margin-top: 8px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 10px; font-size: .82rem; margin-top: 6px; }
+  .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
+  .seg.wrap { flex-wrap: wrap; }
+  #status.warn { color: var(--warn); font-weight: 650; }
+</style>
+</head>
+<body>
+<h1>Dioden-Labor: Kennlinie und Vorwiderstand</h1>
+<p class="muted small">Wähle ein Bauteil, stelle Spannung und Vorwiderstand ein und lies die Messgeräte ab. Mit „Messwert eintragen“ entsteht die Kennlinie. Probiere auch die umgekehrte Polung aus.</p>
+
+<div class="lk-grid">
+  <div>
+    <div class="lk-card">
+      <svg id="circuit" viewBox="0 0 520 290" role="img" aria-labelledby="c-title">
+        <title id="c-title">Schaltplan: Spannungsquelle, Vorwiderstand, Diode und Strommesser in Reihe, Spannungsmesser parallel zur Diode</title>
+        <path class="wire" d="M70 120 V50 H170"/>
+        <path class="wire" d="M250 50 H400 V102"/>
+        <path class="wire" d="M400 148 V240 H246"/>
+        <path class="wire" d="M214 240 H70 V150"/>
+        <path class="wire thin" d="M400 76 H470 V109"/>
+        <path class="wire thin" d="M470 141 V200 H400"/>
+        <circle cx="400" cy="76" r="3" fill="var(--line)"/><circle cx="400" cy="200" r="3" fill="var(--line)"/>
+        <!-- Quelle -->
+        <line id="batTop" x1="50" y1="120" x2="90" y2="120" stroke="var(--line)" stroke-width="3"/>
+        <line id="batBot" x1="60" y1="150" x2="80" y2="150" stroke="var(--line)" stroke-width="7"/>
+        <text id="pTop" x="98" y="118" class="lbl">+</text><text id="pBot" x="98" y="160" class="lbl">−</text>
+        <text id="tU" x="12" y="182" class="val"></text>
+        <!-- Vorwiderstand -->
+        <rect x="170" y="40" width="80" height="20" rx="3" fill="var(--card)" stroke="var(--line)" stroke-width="2.2"/>
+        <text id="tR" x="210" y="30" class="lbl" text-anchor="middle"></text>
+        <text id="tUR" x="210" y="80" class="val" text-anchor="middle"></text>
+        <!-- Diode / LED -->
+        <circle id="glow" cx="400" cy="125" r="34" fill="var(--lamp)" opacity="0"/>
+        <polygon class="diode" points="382,104 418,104 400,140"/>
+        <line x1="380" y1="141" x2="420" y2="141" stroke="var(--line)" stroke-width="3"/>
+        <g id="ledArrows" hidden>
+          <path class="wire thin" d="M424 112 L440 98 M434 98 H440 V104"/>
+          <path class="wire thin" d="M426 126 L442 112 M436 112 H442 V118"/>
+        </g>
+        <g id="broken" hidden><path class="broken" d="M380 102 L420 146 M420 102 L380 146"/></g>
+        <text id="tName" x="360" y="118" class="lbl" text-anchor="end"></text>
+        <text x="360" y="136" class="val" text-anchor="end">Anode oben</text>
+        <!-- Messgeräte -->
+        <circle cx="230" cy="240" r="16" class="meter"/><text x="230" y="240" class="meter-txt">A</text>
+        <text id="tI" x="230" y="274" class="val" text-anchor="middle"></text>
+        <circle cx="470" cy="125" r="16" class="meter"/><text x="470" y="125" class="meter-txt">V</text>
+        <text id="tUD" x="470" y="226" class="val" text-anchor="middle"></text>
+        <path id="loop" d="M70 120 V50 H400 V240 H70 V150" fill="none" stroke="none"/>
+        <g id="dots"></g>
+      </svg>
+      <p class="small muted" style="margin:6px 0 0">Die Punkte zeigen die technische Stromrichtung (von + nach −). Das Dreieck im Schaltzeichen zeigt die Durchlassrichtung, der Strich ist die Kathode.</p>
+    </div>
+
+    <div class="lk-card">
+      <h2>Kennlinie: Stromstärke <span class="f">I</span> gegen Spannung <span class="f">U<sub>D</sub></span> an der Diode</h2>
+      <svg id="chart" viewBox="0 0 520 270" role="img" aria-label="Diagramm der eingetragenen Messwerte: Stromstärke gegen Diodenspannung"></svg>
+      <div class="legend" id="legend"></div>
+      <div class="tablewrap"><table><thead><tr><th>Bauteil</th><th>U<sub>D</sub> in V</th><th>I in mA</th></tr></thead><tbody id="rows"></tbody></table></div>
+      <p class="small muted">Modell: Eine Batterie mit 1 Ω Innenwiderstand. Der winzige Sperrstrom (wenige Nanoampere) ist nicht zu sehen.</p>
+    </div>
+  </div>
+
+  <div>
+    <div class="lk-card">
+      <h2>Einstellungen</h2>
+      <div class="row">
+        <div class="seg wrap" role="group" aria-label="Bauteil wählen">
+          <button type="button" data-comp="si" aria-pressed="true">Si-Diode</button>
+          <button type="button" data-comp="rot" aria-pressed="false">rote LED</button>
+          <button type="button" data-comp="blau" aria-pressed="false">blaue LED</button>
+        </div>
+      </div>
+      <label class="ctrl"><span>Spannung der Quelle <span class="f">U</span> <output id="oU"></output></span>
+        <input type="range" id="sU" min="0" max="12" step="0.1" value="1.5"></label>
+      <label class="ctrl"><span>Vorwiderstand <span class="f">R<sub>V</sub></span> <output id="oR"></output></span>
+        <input type="range" id="sR" min="0" max="6" step="1" value="3"></label>
+      <div class="row">
+        <button type="button" id="bPol" aria-pressed="false">Polung umkehren</button>
+        <button type="button" id="bNew" class="primary" hidden>Neues Bauteil einsetzen</button>
+      </div>
+      <div class="readouts">
+        <div class="readout"><span>Spannung an der Diode</span><b id="rUD">–</b></div>
+        <div class="readout"><span>Spannung am Widerstand</span><b id="rUR">–</b></div>
+        <div class="readout"><span>Stromstärke</span><b id="rI">–</b></div>
+      </div>
+      <p id="status" class="small muted" aria-live="polite"></p>
+      <div class="row" style="margin-top:12px">
+        <button type="button" id="bAdd">Messwert eintragen</button>
+        <button type="button" id="bSweep">Messreihe aufnehmen</button>
+        <button type="button" id="bClear">Diagramm leeren</button>
+      </div>
+    </div>
+
+    <div class="lk-card tasks">
+      <h2>Entdecke selbst <span class="small muted" data-task-count></span></h2>
+      <div class="task" data-goal="si"><p class="task-q">Nimm die Kennlinie der Si-Diode auf: mindestens 6 Messwerte, davon mindestens einer unterhalb und vier oberhalb der Schwellenspannung.</p></div>
+      <div class="task">
+        <p class="task-q">Ab welcher Spannung leitet die Si-Diode merklich?</p>
+        <div class="choices">
+          <button type="button" data-ok data-fb="Richtig: Unterhalb von etwa 0,7 V fließt fast nichts, darüber steigt der Strom steil an.">etwa 0,7 V</button>
+          <button type="button" data-fb="Bei 0,2 V fließt noch kein messbarer Strom. Schau in die Tabelle.">etwa 0,2 V</button>
+          <button type="button" data-fb="So viel braucht eine rote LED. Die Si-Diode leitet schon deutlich früher.">etwa 2 V</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="task" data-goal="sperr"><p class="task-q">Kehre die Polung um und stelle mindestens 3 V ein, ohne dass das Bauteil kaputtgeht. Was zeigt der Strommesser?</p></div>
+      <div class="task" data-goal="rot20"><p class="task-q">Lass die rote LED mit 15 bis 25 mA leuchten. Berechne dazu vorher <span class="f">R<sub>V</sub> = (U − U<sub>LED</sub>) / I</span>.</p></div>
+      <div class="task">
+        <p class="task-q">Nimm auch Kennlinien der beiden LEDs auf. Welche LED braucht die größere Spannung?</p>
+        <div class="choices">
+          <button type="button" data-ok data-fb="Genau: Blaues Licht ist energiereicher als rotes. Die blaue LED braucht etwa 3 V, die rote etwa 1,9 V.">die blaue LED</button>
+          <button type="button" data-fb="Vergleiche, wo die Kennlinien im Diagramm steil ansteigen.">die rote LED</button>
+          <button type="button" data-fb="Die Kennlinien liegen an verschiedenen Stellen. Nimm beide auf und vergleiche.">beide gleich</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="task">
+        <p class="task-q">Warum braucht eine LED immer einen Vorwiderstand?</p>
+        <div class="choices">
+          <button type="button" data-ok data-fb="Richtig: Schon wenig mehr Spannung als die Schwellenspannung lässt den Strom stark ansteigen. Der Widerstand begrenzt ihn.">Weil der Strom über der Schwellenspannung sehr steil ansteigt.</button>
+          <button type="button" data-fb="Die Farbe hängt vom Halbleitermaterial ab, nicht vom Widerstand.">Damit sie in der richtigen Farbe leuchtet.</button>
+          <button type="button" data-fb="Gegen falsche Polung schützt der Widerstand nicht. In Sperrrichtung fließt sowieso kein Strom.">Damit sie bei falscher Polung leuchtet.</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="all-done">Alles entdeckt! Weiter geht es mit den Übungen.</div>
+    </div>
+  </div>
+</div>
+
+<script src="../../static/lesson-kit.js"></script>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var NS = 'http://www.w3.org/2000/svg';
+  var UT = 0.02585, RI = 1, IREF = 0.01;
+  var RVALS = [0, 47, 100, 220, 330, 470, 1000];
+  // Uref: Spannung bei 10 mA; n: Idealitätsfaktor; rs: Bahnwiderstand; Imax: Höchststrom; Urmax: höchste Sperrspannung
+  var COMP = {
+    si:   { name: 'Si-Diode',  Uref: 0.70, n: 2, rs: 0.5, Imax: 0.3,  Urmax: 75, glow: null,          color: 'var(--c3)' },
+    rot:  { name: 'rote LED',  Uref: 1.90, n: 2, rs: 5,   Imax: 0.04, Urmax: 5,  glow: 'var(--warn)', color: 'var(--warn)' },
+    blau: { name: 'blaue LED', Uref: 3.00, n: 3, rs: 10,  Imax: 0.04, Urmax: 5,  glow: 'var(--neg)',  color: 'var(--neg)' }
+  };
+  Object.keys(COMP).forEach(function (k) { var c = COMP[k]; c.Is = IREF / (Math.exp(c.Uref / (c.n * UT)) - 1); });
+  var S = { comp: 'si', U: 1.5, ri: 3, rev: false, broken: false };
+
+  function ud(c, I) { return c.n * UT * Math.log(I / c.Is + 1) + I * c.rs; }
+  // Arbeitspunkt: U = I·(R + Ri) + U_D(I), gelöst durch Intervallhalbierung
+  function solve(compKey, U, R, rev) {
+    var c = COMP[compKey];
+    if (rev) return { I: 0, UD: -U, UR: 0 };
+    if (U <= 0) return { I: 0, UD: 0, UR: 0 };
+    var lo = 0, hi = U / (R + RI);
+    for (var k = 0; k < 80; k++) {
+      var m = (lo + hi) / 2;
+      if (U - m * (R + RI) - ud(c, m) > 0) lo = m; else hi = m;
+    }
+    var I = lo;
+    return { I: I, UD: ud(c, I), UR: I * R };
+  }
+  function state() {
+    if (S.broken) return { I: 0, UD: S.rev ? -S.U : S.U, UR: 0 };
+    return solve(S.comp, S.U, RVALS[S.ri], S.rev);
+  }
+  function overload(compKey, U, R, rev) {
+    var c = COMP[compKey];
+    if (rev) return U > c.Urmax ? 'rev' : '';
+    return solve(compKey, U, R, false).I > c.Imax ? 'fwd' : '';
+  }
+
+  // ---------------------------------------------- Diagramm
+  var series = {};
+  var X0 = 56, X1 = 504, Y0 = 228, Y1 = 24, UMIN = -4, UMAX = 4, IMAX = 50;
+  var px = function (u) { return X0 + (X1 - X0) * (u - UMIN) / (UMAX - UMIN); };
+  var py = function (i) { return Y0 - (Y0 - Y1) * i / IMAX; };
+  var chart = $('chart');
+  function el(tag, attrs, parent) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    (parent || chart).appendChild(e);
+    return e;
+  }
+  function drawChart() {
+    chart.innerHTML = '';
+    for (var u = UMIN; u <= UMAX; u += 1) {
+      el('line', { x1: px(u), x2: px(u), y1: Y1, y2: Y0, class: 'gridline' });
+      el('text', { x: px(u), y: Y0 + 18, 'text-anchor': 'middle', class: 'val' }).textContent = LK.fmt(u, 0);
+    }
+    for (var i = 0; i <= IMAX; i += 10) {
+      el('line', { x1: X0, x2: X1, y1: py(i), y2: py(i), class: 'gridline' });
+      el('text', { x: X0 - 8, y: py(i) + 4, 'text-anchor': 'end', class: 'val' }).textContent = i;
+    }
+    el('line', { x1: X0, x2: X1, y1: Y0, y2: Y0, class: 'axis' });
+    el('line', { x1: px(0), x2: px(0), y1: Y0, y2: Y1, class: 'axis' });
+    el('text', { x: X1, y: Y0 + 36, 'text-anchor': 'end', class: 'lbl' }).textContent = 'Diodenspannung in V';
+    el('text', { x: px(0) + 6, y: 14, class: 'lbl' }).textContent = 'I in mA';
+    el('text', { x: px(-2), y: py(25), 'text-anchor': 'middle', class: 'val' }).textContent = '← Sperrrichtung';
+    el('text', { x: px(0) + 8, y: py(46), class: 'val' }).textContent = 'Durchlassrichtung →';
+    var legend = '', rows = '';
+    Object.keys(series).forEach(function (key) {
+      var s = series[key], c = COMP[key];
+      var pts = s.slice().sort(function (a, b) { return a[0] - b[0]; }).filter(function (p) { return p[0] >= UMIN; });
+      if (pts.length > 1) el('polyline', { points: pts.map(function (p) { return px(p[0]) + ',' + py(Math.min(p[1], IMAX)); }).join(' '), class: 'series-line', stroke: c.color, opacity: .55 });
+      pts.forEach(function (p) {
+        if (p[1] <= IMAX) el('circle', { cx: px(p[0]), cy: py(p[1]), r: 4.5, fill: c.color });
+      });
+      s.slice().sort(function (a, b) { return a[0] - b[0]; }).forEach(function (p) {
+        rows += '<tr><td>' + c.name + '</td><td>' + LK.fmt(p[0], 2) + '</td><td>' + LK.fmt(p[1], 1) + '</td></tr>';
+      });
+      legend += '<span><i style="background:' + c.color + '"></i>' + c.name + '</span>';
+    });
+    $('legend').innerHTML = legend;
+    $('rows').innerHTML = rows || '<tr><td colspan="3" class="muted">Noch keine Messwerte.</td></tr>';
+  }
+  function addPoint(key, UD, ImA) {
+    if (!series[key]) series[key] = [];
+    var pts = series[key];
+    var r = Math.round(UD * 100) / 100;
+    var same = pts.findIndex(function (p) { return p[0] === r; });
+    if (same >= 0) pts[same] = [r, ImA]; else pts.push([r, ImA]);
+    drawChart(); goals();
+  }
+
+  // ---------------------------------------------- Schaltung
+  var loop = $('loop'), LEN = loop.getTotalLength(), N = 18, dots = [], offset = 0;
+  for (var k = 0; k < N; k++) dots.push(el('circle', { r: 3.5, class: 'flow', opacity: 0 }, $('dots')));
+
+  function fmtI(I) { return I < 0.1 ? LK.fmt(I * 1000, I < 0.01 ? 1 : 0) + ' mA' : LK.fmt(I, 2) + ' A'; }
+
+  function update() {
+    var c = COMP[S.comp], R = RVALS[S.ri];
+    // Zerstörung prüfen
+    if (!S.broken) {
+      var ov = overload(S.comp, S.U, R, S.rev);
+      if (ov) {
+        S.broken = true;
+        $('status').className = 'small warn';
+        $('status').textContent = ov === 'fwd'
+          ? 'Kaputt! Der Strom war viel zu groß (über ' + LK.fmt(c.Imax * 1000, 0) + ' mA). ' + (R === 0 ? 'Ohne Vorwiderstand begrenzt nichts den Strom.' : 'Der Vorwiderstand ist für diese Spannung zu klein.')
+          : 'Kaputt! In Sperrrichtung hält eine LED nur etwa 5 V aus. Darüber bricht sie durch.';
+      }
+    }
+    var st = state();
+    if (!S.broken) {
+      var msg = '';
+      if (S.rev) msg = 'Sperrrichtung: Pluspol an der Kathode. Es fließt kein Strom, die ganze Spannung liegt an der Diode.';
+      else if (c.glow && st.I > 0.025) msg = 'Achtung: Mehr als 20 mA. Die LED wird heiß und altert schnell. Nimm einen größeren Vorwiderstand.';
+      else if (st.I < 0.0005) msg = 'Die Spannung an der Diode liegt unter der Schwellenspannung: Es fließt fast kein Strom.';
+      $('status').className = 'small ' + (msg.indexOf('Achtung') === 0 ? 'warn' : 'muted');
+      $('status').textContent = msg;
+    }
+    $('oU').textContent = LK.fmt(S.U, 1) + ' V';
+    $('oR').textContent = R === 0 ? 'ohne (0 Ω)' : R >= 1000 ? LK.fmt(R / 1000, 0) + ' kΩ' : R + ' Ω';
+    $('tR').textContent = R === 0 ? 'R = 0 Ω' : 'R = ' + (R >= 1000 ? '1 kΩ' : R + ' Ω');
+    $('tU').textContent = 'U = ' + LK.fmt(S.U, 1) + ' V';
+    $('tUR').textContent = LK.fmt(st.UR, 2) + ' V';
+    $('tI').textContent = fmtI(st.I);
+    $('tUD').textContent = LK.fmt(st.UD, 2) + ' V';
+    $('tName').textContent = c.name;
+    $('rUD').textContent = LK.fmt(st.UD, 2) + ' V';
+    $('rUR').textContent = LK.fmt(st.UR, 2) + ' V';
+    $('rI').textContent = fmtI(st.I);
+    // Polung der Quelle
+    $('pTop').textContent = S.rev ? '−' : '+'; $('pBot').textContent = S.rev ? '+' : '−';
+    $('batTop').setAttribute('stroke-width', S.rev ? 7 : 3);
+    $('batTop').setAttribute('x1', S.rev ? 60 : 50); $('batTop').setAttribute('x2', S.rev ? 80 : 90);
+    $('batBot').setAttribute('stroke-width', S.rev ? 3 : 7);
+    $('batBot').setAttribute('x1', S.rev ? 50 : 60); $('batBot').setAttribute('x2', S.rev ? 90 : 80);
+    $('bPol').setAttribute('aria-pressed', S.rev);
+    // Bauteil
+    $('ledArrows').toggleAttribute('hidden', !c.glow);
+    $('broken').toggleAttribute('hidden', !S.broken);
+    $('bNew').hidden = !S.broken;
+    var g = $('glow');
+    g.setAttribute('fill', c.glow || 'var(--lamp)');
+    g.setAttribute('opacity', c.glow && !S.broken ? Math.min(0.85, Math.sqrt(st.I / 0.02) * 0.7) : 0);
+    document.querySelectorAll('[data-comp]').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-comp') === S.comp); });
+    goals();
+  }
+
+  function goals() {
+    var st = state();
+    if (S.rev && !S.broken && S.U >= 3) LK.reach('sperr');
+    if (S.comp === 'rot' && !S.broken && !S.rev && st.I >= 0.015 && st.I <= 0.025) LK.reach('rot20');
+    var si = series.si || [];
+    var below = si.filter(function (p) { return p[0] > 0 && p[0] < 0.55; }).length;
+    var above = si.filter(function (p) { return p[1] >= 0.5; }).length;
+    if (si.length >= 6 && below >= 1 && above >= 4) LK.reach('si');
+  }
+
+  var last = performance.now();
+  function frame(t) {
+    var dt = Math.min(0.05, (t - last) / 1000); last = t;
+    var I = state().I;
+    var speed = I > 0 ? 30 + Math.sqrt(I / 0.02) * 90 : 0;
+    offset = (offset + dt * speed) % (LEN / N);
+    dots.forEach(function (d, j) {
+      var p = loop.getPointAtLength((j * LEN / N + offset) % LEN);
+      d.setAttribute('cx', p.x); d.setAttribute('cy', p.y);
+      d.setAttribute('opacity', I > 0.0002 ? 0.85 : 0);
+    });
+    requestAnimationFrame(frame);
+  }
+
+  document.querySelectorAll('[data-comp]').forEach(function (b) {
+    b.addEventListener('click', function () { S.comp = b.getAttribute('data-comp'); S.broken = false; update(); });
+  });
+  $('sU').addEventListener('input', function () { S.U = Number(this.value); update(); });
+  $('sR').addEventListener('input', function () { S.ri = Number(this.value); update(); });
+  $('bPol').addEventListener('click', function () { S.rev = !S.rev; update(); });
+  $('bNew').addEventListener('click', function () { S.broken = false; S.U = 0; $('sU').value = 0; update(); $('status').textContent = 'Neues Bauteil eingesetzt. Die Spannung steht wieder auf 0 V.'; });
+  $('bAdd').addEventListener('click', function () {
+    if (S.broken) { $('status').textContent = 'Das Bauteil ist kaputt. Setze zuerst ein neues ein.'; return; }
+    var st = state();
+    addPoint(S.comp, st.UD, st.I * 1000);
+  });
+  $('bSweep').addEventListener('click', function () {
+    if (S.broken) { $('status').textContent = 'Das Bauteil ist kaputt. Setze zuerst ein neues ein.'; return; }
+    var R = RVALS[S.ri], list = S.rev ? [0, 1, 2, 3, 4] : [0, 0.3, 0.5, 0.6, 0.7, 0.8, 1, 1.5, 2, 2.5, 3, 3.5, 4, 5, 6, 8, 10, 12];
+    var n = 0, skipped = false;
+    list.forEach(function (u) {
+      if (overload(S.comp, u, R, S.rev)) { skipped = true; return; }
+      var st = solve(S.comp, u, R, S.rev);
+      if (!S.rev && st.I * 1000 > IMAX) { skipped = true; return; }
+      addPoint(S.comp, st.UD, st.I * 1000); n++;
+    });
+    $('status').className = 'small muted';
+    $('status').textContent = n + ' Messwerte eingetragen' + (skipped ? '. Werte, bei denen das Bauteil überlastet würde oder der Strom über 50 mA liegt, wurden ausgelassen.' : '.');
+  });
+  $('bClear').addEventListener('click', function () { series = {}; drawChart(); });
+
+  update(); drawChart(); requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

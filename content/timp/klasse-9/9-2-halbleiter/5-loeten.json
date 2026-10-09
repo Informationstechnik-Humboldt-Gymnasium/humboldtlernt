@@ -1,0 +1,119 @@
+{
+  "id": "timp-k9-loeten",
+  "titel": "Lötpraktikum",
+  "kurz": "Werkzeug, Ablauf und Sicherheit beim Löten, Bauteile richtig herum einsetzen und Widerstände am Farbcode erkennen.",
+  "reihenfolge": 5,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Werkzeuge und Materialien beim Löten (Lötkolben, bleifreies Lötzinn, Flussmittel) und ihre Aufgaben nennen" },
+    { "id": "lz2", "niveau": "G", "text": "Den Ablauf beim Löten beschreiben und gute von schlechten Lötstellen unterscheiden" },
+    { "id": "lz3", "niveau": "G", "text": "Bauteile erkennen und richtig gepolt einsetzen (Diode, LED, Elektrolytkondensator)" },
+    { "id": "lz4", "niveau": "H", "text": "Den Wert eines Widerstands mit dem Farbcode aus vier Ringen bestimmen" },
+    { "id": "lz5", "niveau": "G", "text": "Sicherheitsregeln beim Löten kennen und begründen" }
+  ],
+  "verstehen": {
+    "einstieg": "In jedem elektronischen Gerät sind Bauteile mit kleinen silbrigen Punkten auf einer Platine befestigt. Wie entsteht eine Verbindung, die fest hält und gut leitet?",
+    "abschnitte": [
+      {
+        "titel": "Werkzeug und Material",
+        "text": "- **Lötkolben** bzw. **Lötstation**: Die Spitze wird etwa **300 bis 350 °C** heiß. Bei einer Lötstation kann man die Temperatur einstellen.\n- **Lötzinn**: In der Schule nimmt man **bleifreies** Lot, meist aus Zinn mit wenig Silber und Kupfer. Es schmilzt bei etwa 220 °C.\n- **Flussmittel**: Es steckt als Seele im Lötdraht (meist Kolophonium, ein Harz). Es löst die dünne Oxidschicht auf den Metallen und hilft dem flüssigen Zinn, sich gut zu verteilen.\n- **Lötkolbenablage**, **feuchter Schwamm** oder Messingwolle zum Reinigen der Spitze, **Seitenschneider** zum Kürzen der Drähte, **Entlötlitze** oder Entlötpumpe zum Korrigieren."
+      },
+      {
+        "titel": "So wird gelötet",
+        "text": "1. Bauteil durch die Löcher der Platine stecken und die Drähte leicht umbiegen, damit es nicht herausfällt.\n2. Lötspitze am Schwamm reinigen und mit etwas Zinn benetzen (verzinnen).\n3. Lötspitze so ansetzen, dass sie **gleichzeitig** Lötauge und Bauteildraht berührt, und beide etwa 1 bis 2 Sekunden erwärmen.\n4. Lötzinn an die Lötstelle führen, **nicht** an die Spitze. Es schmilzt und fließt um den Draht.\n5. Zuerst das Zinn, dann den Lötkolben wegnehmen.\n6. Die Lötstelle einige Sekunden nicht bewegen, bis sie erstarrt ist.\n7. Überstehenden Draht mit dem Seitenschneider abknipsen."
+      },
+      {
+        "titel": "Gute und schlechte Lötstellen",
+        "text": "Eine **gute Lötstelle** sieht aus wie ein kleiner Kegel oder Vulkan. Das Zinn ist glatt und glänzend (bei bleifreiem Lot eher seidenmatt) und umschließt Draht und Lötauge vollständig.\n\nTypische Fehler:\n- **Kalte Lötstelle**: grau, rau, oft kugelig oder mit Riss. Draht oder Lötauge waren nicht heiß genug. Sie hält schlecht und leitet unsicher.\n- **Zu viel Zinn**: eine dicke Kugel, unter der man den Fehler nicht sieht.\n- **Lötbrücke**: Zinn verbindet zwei Lötaugen, die nicht verbunden sein dürfen. Das ist ein Kurzschluss."
+      },
+      {
+        "titel": "Bauteile und Polung",
+        "text": "Manche Bauteile funktionieren nur richtig herum:\n\n- **Diode**: Der **Ring** auf dem Gehäuse markiert die **Kathode**.\n- **LED**: Das **lange Bein** ist die **Anode** (Plus). Die Kathode ist am kürzeren Bein und an der abgeflachten Seite des Gehäuses.\n- **Elektrolytkondensator (Elko)**: Ein Streifen mit Minuszeichen markiert den **Minuspol**. Falsch gepolt kann er heiß werden und sogar platzen.\n- **Widerstände** haben keine Polung."
+      },
+      {
+        "titel": "Der Widerstands-Farbcode",
+        "text": "Der Wert eines Widerstands steht als **Farbringe** auf dem Bauteil. Beim Code mit vier Ringen gilt:\n\n- 1. Ring: erste Ziffer, 2. Ring: zweite Ziffer\n- 3. Ring: Multiplikator, also Anzahl der Nullen\n- 4. Ring: Toleranz (Gold ±5 %, Silber ±10 %), er hat etwas Abstand zu den anderen\n\nFarben: schwarz 0, braun 1, rot 2, orange 3, gelb 4, grün 5, blau 6, violett 7, grau 8, weiß 9.\n\nBeispiel: gelb, violett, rot, gold ergibt 4, 7 und zwei Nullen: **4700 Ω = 4,7 kΩ**, Toleranz ±5 %."
+      },
+      {
+        "titel": "Sicherheitsregeln",
+        "text": "- Den heißen Lötkolben **immer in die Ablage** stellen, nie auf den Tisch legen. Die Spitze nie berühren und das Kabel nicht über die Spitze führen.\n- **Schutzbrille** tragen: Beim Abknipsen von Drähten und durch Spritzer von heißem Zinn können Teilchen ins Auge fliegen.\n- Die Dämpfe des Flussmittels reizen die Atemwege: **Absaugung** einschalten und nicht in den Rauch beugen.\n- Nach dem Löten **Hände waschen**, nicht beim Löten essen oder trinken.\n- Lange Haare zusammenbinden, auf brennbare Gegenstände achten.\n- Nach der Arbeit den Lötkolben ausschalten und abkühlen lassen."
+      }
+    ],
+    "merksatz": "Beim Löten erwärmt man **Lötauge und Draht gleichzeitig** und führt das Zinn an die Lötstelle, nicht an die Spitze. Eine gute Lötstelle ist kegelförmig und umschließt alles. Auf die **Polung** von Diode, LED und Elko achten. Lötkolben immer in die **Ablage**, Absaugung an, Schutzbrille auf, danach Hände waschen.",
+    "alltag": "Seit 2006 darf in der EU in den meisten Elektrogeräten kein bleihaltiges Lot mehr verwendet werden. Blei ist giftig und soll nicht über Elektroschrott in die Umwelt gelangen."
+  },
+  "interaktiv": ["timp-farbcode"],
+  "uebungen": [
+    { "id": "timp-hlo-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Wie heiß wird die Spitze eines Lötkolbens beim Löten mit bleifreiem Lötzinn ungefähr?",
+      "optionen": [
+        { "text": "Etwa 300 bis 350 °C", "richtig": true },
+        { "text": "Etwa 100 °C", "feedback": "Bei 100 °C schmilzt das Lötzinn noch lange nicht. Bleifreies Lot schmilzt erst bei etwa 220 °C." },
+        { "text": "Etwa 1000 °C", "feedback": "So heiß wäre viel zu viel: Bauteile und Platine würden zerstört, das Flussmittel würde sofort verbrennen." },
+        { "text": "Etwa 60 °C", "feedback": "Das ist etwa die Temperatur von heißem Leitungswasser. Damit schmilzt kein Metall." }
+      ],
+      "erklaerung": "Die Spitze muss deutlich heißer sein als der Schmelzpunkt des Lots (etwa 220 °C), damit Lötauge und Draht schnell genug warm werden. Üblich sind **300 bis 350 °C**." },
+    { "id": "timp-hlo-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz3",
+      "frage": "Ordne jeder Markierung zu, was sie bedeutet.",
+      "paare": [
+        { "links": "Ring auf einer Diode", "rechts": "Kathode" },
+        { "links": "langes Bein einer LED", "rechts": "Anode (Plus)" },
+        { "links": "Streifen mit Minuszeichen auf einem Elko", "rechts": "Minuspol" },
+        { "links": "Farbringe auf einem Widerstand", "rechts": "Widerstandswert, keine Polung" }
+      ],
+      "extraRechts": ["Basis"],
+      "erklaerung": "Diode, LED und Elko müssen richtig herum eingebaut werden. Ein Widerstand funktioniert in beiden Richtungen gleich. Die Basis ist ein Anschluss des Transistors." },
+    { "id": "timp-hlo-03", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Bringe die Schritte beim Einlöten eines Bauteils in die richtige Reihenfolge.",
+      "elemente": [
+        "Bauteil einstecken und die Drähte leicht umbiegen",
+        "Lötspitze reinigen und verzinnen",
+        "Lötauge und Draht gleichzeitig mit der Spitze erwärmen",
+        "Lötzinn an die Lötstelle führen, bis es um den Draht fließt",
+        "Erst das Zinn, dann den Lötkolben wegnehmen",
+        "Überstehenden Draht abknipsen"
+      ],
+      "erklaerung": "Entscheidend ist, dass **beide** Metallteile heiß sind, bevor das Zinn kommt. Sonst entsteht eine kalte Lötstelle. Abgeknipst wird erst, wenn die Lötstelle erstarrt ist." },
+    { "id": "timp-hlo-04", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Ein Widerstand hat die Farbringe **rot, rot, braun, gold**. Welchen Widerstandswert hat er?",
+      "gegeben": "rot = 2, braun = 1 (Multiplikator: eine Null), gold = ±5 %",
+      "gesucht": "Widerstandswert `R`",
+      "gesuchtSymbol": "R",
+      "loesung": 220, "einheit": "Ω", "toleranz": 0,
+      "rechenweg": [
+        "1. Ring rot: 2, 2. Ring rot: 2, also 22",
+        "3. Ring braun: eine Null anhängen (· 10)",
+        "`R = 22 · 10 Ω = 220 Ω` mit ±5 % Toleranz"
+      ],
+      "erklaerung": "220 Ω ist ein typischer Vorwiderstand für LEDs an 5 V. Der echte Wert darf wegen der Toleranz zwischen 209 Ω und 231 Ω liegen." },
+    { "id": "timp-hlo-05", "typ": "zuordnung", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Ordne den Farbringen (die ersten drei Ringe, der vierte ist jeweils gold) den richtigen Widerstandswert zu.",
+      "paare": [
+        { "links": "gelb, violett, rot", "rechts": "4,7 kΩ" },
+        { "links": "braun, schwarz, orange", "rechts": "10 kΩ" },
+        { "links": "orange, orange, braun", "rechts": "330 Ω" },
+        { "links": "braun, schwarz, gelb", "rechts": "100 kΩ" }
+      ],
+      "extraRechts": ["47 Ω", "1 kΩ"],
+      "erklaerung": "gelb-violett-rot: 47 · 100 = 4700 Ω. braun-schwarz-orange: 10 · 1000 = 10 000 Ω. orange-orange-braun: 33 · 10 = 330 Ω. braun-schwarz-gelb: 10 · 10 000 = 100 000 Ω." },
+    { "id": "timp-hlo-06", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz5",
+      "frage": "Welche Sicherheitsregeln gelten beim Löten?",
+      "optionen": [
+        { "text": "Den Lötkolben immer in die Ablage stellen.", "richtig": true },
+        { "text": "Die Absaugung einschalten, weil die Flussmitteldämpfe die Atemwege reizen.", "richtig": true },
+        { "text": "Eine Schutzbrille tragen, weil Zinnspritzer und abgeknipste Drahtstücke ins Auge fliegen können.", "richtig": true },
+        { "text": "Nach dem Löten die Hände waschen.", "richtig": true },
+        { "text": "Bleifreies Lot ist ungefährlich, deshalb darf man nebenbei essen.", "feedback": "Auch bleifreies Lot und Flussmittelreste gehören nicht in den Mund. Beim Löten wird nicht gegessen." },
+        { "text": "Ob die Spitze heiß ist, prüft man kurz mit dem Finger.", "feedback": "Die Spitze ist über 300 °C heiß. Das führt sofort zu Verbrennungen." }
+      ],
+      "erklaerung": "Die größten Gefahren beim Löten sind **Verbrennungen**, **Dämpfe** und **Spritzer**. Ablage, Absaugung, Schutzbrille und Händewaschen schützen davor." },
+    { "id": "timp-hlo-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Eine Lötstelle ist grau und rau, das Zinn bildet eine Kugel auf dem Draht, und am Rand ist ein feiner Riss zu sehen. Was ist die wahrscheinlichste Ursache?",
+      "optionen": [
+        { "text": "Eine kalte Lötstelle: Lötauge oder Draht waren nicht heiß genug.", "richtig": true },
+        { "text": "Eine Lötbrücke: Das Zinn hat zwei Lötaugen verbunden.", "feedback": "Bei einer Lötbrücke sind zwei Lötaugen durch Zinn verbunden. Hier geht es um das Aussehen einer einzelnen Lötstelle." },
+        { "text": "Die Lötstelle ist perfekt, grau ist bei bleifreiem Lot normal.", "feedback": "Bleifreies Lot ist zwar etwas matter, aber eine Kugel mit Riss ist immer ein Fehler." },
+        { "text": "Es wurde zu viel Flussmittel verwendet.", "feedback": "Flussmittel hilft dem Zinn gerade, sich gut zu verteilen. Das Problem ist hier die Temperatur." }
+      ],
+      "erklaerung": "Bei einer **kalten Lötstelle** wurde das Zinn nur auf der heißen Spitze geschmolzen oder auf ein zu kaltes Lötauge gegeben. Es benetzt die Metalle nicht. Abhilfe: Lötstelle noch einmal richtig erwärmen, eventuell mit etwas frischem Zinn." }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "id": "timp-k9-algorithmen",
+  "titel": "Algorithmen und Programmablaufplan",
+  "kurz": "Was eine genaue Handlungsanweisung ausmacht und wie man einen Ablauf als Plan zeichnet und in ein Programm übersetzt.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Den Begriff Algorithmus erklären und die Eigenschaften eindeutig, endlich und ausführbar an Beispielen prüfen" },
+    { "id": "lz2", "niveau": "G", "text": "Die Symbole eines Programmablaufplans (PAP) kennen und benennen" },
+    { "id": "lz3", "niveau": "H", "text": "Einen Programmablaufplan in ein Programm übersetzen und umgekehrt" },
+    { "id": "lz4", "niveau": "H", "text": "Eigene Ideen und Alltagsabläufe als Algorithmus modellieren" }
+  ],
+  "verstehen": {
+    "einstieg": "Ein Rezept, eine Bauanleitung für ein Regal, die Wegbeschreibung zur Schule: Alles sind Anleitungen. Aber könnte ein Computer sie auch ausführen?",
+    "abschnitte": [
+      {
+        "titel": "Was ist ein Algorithmus?",
+        "text": "Ein **Algorithmus** ist eine genaue Handlungsanweisung, die eine Aufgabe in einzelnen Schritten löst. Damit ein Computer (oder ein Mensch, der nicht mitdenken soll) ihn ausführen kann, muss er drei Eigenschaften haben:\n\n- **eindeutig:** Jeder Schritt ist klar. Es gibt nichts zu raten (nicht „etwas Salz“, sondern „5 g Salz“).\n- **endlich:** Die Anweisung ist endlich lang und der Ablauf kommt irgendwann zu einem Ende.\n- **ausführbar:** Jeder Schritt kann vom Ausführenden auch wirklich erledigt werden.\n\nEin **Programm** ist ein Algorithmus, der in einer Sprache aufgeschrieben ist, die der Computer versteht, zum Beispiel mit Blöcken in Scratch."
+      },
+      {
+        "titel": "Der Programmablaufplan",
+        "text": "Ein **Programmablaufplan** (PAP) zeigt den Ablauf eines Algorithmus als Bild. Er benutzt feste Symbole:\n\n- **Oval** (abgerundetes Rechteck): Start und Ende\n- **Rechteck:** eine Anweisung, z. B. ``setze punkte auf 0``\n- **Raute:** eine Verzweigung. In der Raute steht eine Frage mit der Antwort ja oder nein, z. B. ``punkte > 10 ?``\n- **Parallelogramm:** Eingabe oder Ausgabe, z. B. ``sage punkte``\n- **Rechteck mit doppeltem Rand:** Aufruf eines Unterprogramms (einer Funktion)\n- **Pfeile:** zeigen, in welcher Reihenfolge es weitergeht\n\nAuch Schleifen zeichnet man mit einer Raute: Ein Pfeil führt zurück nach oben, bis die Bedingung erfüllt ist."
+      },
+      {
+        "titel": "Unsere Programmiersprache",
+        "text": "In diesem Kurs schreiben wir Programme in einer deutschen Schreibweise der Scratch-Blöcke. Eingerückte Zeilen gehören zum Block darüber. Kommazahlen schreiben wir im Programm mit Punkt, wie in Scratch.\n\n```\nfrage \"Wie alt bist du?\" und warte\nsetze alter auf antwort\nfalls alter > 17 dann\n  sage \"Du darfst wählen.\"\nsonst\n  sage \"Noch nicht.\"\n```\n\nNach ``frage … und warte`` steht die Eingabe in der Variable ``antwort``. ``sage`` gibt etwas aus."
+      },
+      {
+        "titel": "Vom Plan zum Programm und zurück",
+        "text": "PAP und Programm beschreiben denselben Ablauf. Beim Übersetzen gilt:\n\n- Jedes Rechteck wird zu einer Anweisungszeile.\n- Jede Raute mit zwei Wegen, die sich danach wieder treffen, wird zu ``falls … dann … sonst``.\n- Eine Raute, von der ein Pfeil zurück nach oben führt, ist eine Schleife, z. B. ``wiederhole bis …``.\n- Parallelogramme werden zu ``frage`` (Eingabe) oder ``sage`` (Ausgabe).\n\nDer PAP hilft vor allem beim **Planen**: Man sieht auf einen Blick, welche Wege das Programm nehmen kann."
+      }
+    ],
+    "merksatz": "Ein **Algorithmus** ist eine eindeutige, endliche und ausführbare Folge von Schritten zur Lösung einer Aufgabe. Ein **Programmablaufplan** stellt ihn mit Symbolen dar: Oval für Start und Ende, Rechteck für Anweisungen, Raute für Verzweigungen, Parallelogramm für Ein- und Ausgabe.",
+    "alltag": "Navigationsgeräte, Suchmaschinen und sogar die Ampelsteuerung an einer Kreuzung arbeiten mit Algorithmen. Auch die schriftliche Addition aus der Grundschule ist ein Algorithmus."
+  },
+  "interaktiv": ["timp-programmierlabor"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "timp-alg-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Welche Anweisung ist **kein** Algorithmus im Sinne der Informatik?",
+      "optionen": [
+        { "text": "„Mach den Kuchen schön lecker.“", "richtig": true },
+        { "text": "„Gib 200 g Mehl, 100 g Zucker und 2 Eier in eine Schüssel. Rühre 3 Minuten.“", "feedback": "Diese Schritte sind genau angegeben, endlich und ausführbar. Das ist ein Algorithmus." },
+        { "text": "„Addiere die Einerstellen, schreibe die Einerziffer hin und merke dir den Übertrag.“", "feedback": "Das ist ein Teil der schriftlichen Addition, ein klassischer Algorithmus." },
+        { "text": "„Gehe 20 Schritte geradeaus und dann an der Ampel nach links.“", "feedback": "Jeder Schritt ist klar und ausführbar. Das ist ein Algorithmus." }
+      ],
+      "erklaerung": "„Schön lecker“ ist nicht **eindeutig**: Niemand weiß genau, was zu tun ist. Ein Algorithmus besteht aus klaren Einzelschritten."
+    },
+    {
+      "id": "timp-alg-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Ordne jedem Symbol im Programmablaufplan seine Bedeutung zu.",
+      "paare": [
+        { "links": "Oval", "rechts": "Start oder Ende" },
+        { "links": "Rechteck", "rechts": "Anweisung" },
+        { "links": "Raute", "rechts": "Verzweigung (Frage mit ja/nein)" },
+        { "links": "Parallelogramm", "rechts": "Eingabe oder Ausgabe" },
+        { "links": "Pfeil", "rechts": "Reihenfolge des Ablaufs" }
+      ],
+      "erklaerung": "Die Symbole sind genormt. So kann jeder einen PAP lesen, egal in welcher Sprache das Programm später geschrieben wird."
+    },
+    {
+      "id": "timp-alg-03", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Welche Eigenschaften muss ein Algorithmus haben?",
+      "optionen": [
+        { "text": "eindeutig", "richtig": true },
+        { "text": "endlich", "richtig": true },
+        { "text": "ausführbar", "richtig": true },
+        { "text": "in Scratch geschrieben", "feedback": "Ein Algorithmus kann in jeder Sprache stehen, sogar auf Deutsch auf einem Zettel." },
+        { "text": "möglichst kurz", "feedback": "Kurz ist oft schön, aber keine Bedingung. Auch ein langer Algorithmus ist ein Algorithmus." }
+      ],
+      "erklaerung": "Eindeutig (jeder Schritt klar), endlich (er kommt zu einem Ende) und ausführbar (jeder Schritt ist machbar). Die Sprache und die Länge spielen keine Rolle."
+    },
+    {
+      "id": "timp-alg-04", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Ein Programmablaufplan soll eine Zahl einlesen und ihr Doppeltes ausgeben. Bringe die Symbole in die richtige Reihenfolge von oben nach unten.",
+      "elemente": [
+        "Oval: Start",
+        "Parallelogramm: ``frage \"Zahl?\" und warte``",
+        "Rechteck: ``setze ergebnis auf antwort * 2``",
+        "Parallelogramm: ``sage ergebnis``",
+        "Oval: Ende"
+      ],
+      "erklaerung": "Erst kommt die Eingabe, dann die Rechnung, dann die Ausgabe. Man kann ein Ergebnis erst ausgeben, wenn es berechnet wurde, und erst rechnen, wenn die Zahl bekannt ist."
+    },
+    {
+      "id": "timp-alg-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Ein Programmablaufplan sieht so aus: Nach dem Start kommt ein Parallelogramm ``frage \"Alter?\" und warte``. Danach folgt eine Raute ``antwort > 11 ?``. Beim Pfeil „ja“ steht das Parallelogramm ``sage \"Film ab 12: erlaubt\"``, beim Pfeil „nein“ das Parallelogramm ``sage \"Leider nicht\"``. Beide Wege treffen sich und führen zum Ende.\n\nWelches Programm passt dazu?\n\n```\nProgramm A:\nfrage \"Alter?\" und warte\nfalls antwort > 11 dann\n  sage \"Film ab 12: erlaubt\"\nsonst\n  sage \"Leider nicht\"\n```\n\n```\nProgramm B:\nfrage \"Alter?\" und warte\nfalls antwort > 11 dann\n  sage \"Film ab 12: erlaubt\"\nsage \"Leider nicht\"\n```\n\n```\nProgramm C:\nfrage \"Alter?\" und warte\nwiederhole bis antwort > 11\n  sage \"Leider nicht\"\nsage \"Film ab 12: erlaubt\"\n```",
+      "optionen": [
+        { "text": "Programm A", "richtig": true },
+        { "text": "Programm B", "feedback": "Bei B steht ``sage \"Leider nicht\"`` nicht im sonst-Teil. Es wird deshalb **immer** ausgeführt, auch bei einem 14-Jährigen." },
+        { "text": "Programm C", "feedback": "C enthält eine Schleife. Im PAP gibt es aber keinen Pfeil, der zurück nach oben führt. Außerdem würde C endlos „Leider nicht“ sagen." }
+      ],
+      "erklaerung": "Eine Raute mit zwei Wegen, die sich danach wieder treffen, entspricht ``falls … dann … sonst``. Der ja-Weg ist der dann-Teil, der nein-Weg der sonst-Teil."
+    },
+    {
+      "id": "timp-alg-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Wie viele **Rauten** enthält der Programmablaufplan zu diesem Programm?\n\n```\nsetze treffer auf 0\nsetze würfe auf 0\nwiederhole bis würfe = 10\n  setze wurf auf zufallszahl von 1 bis 6\n  falls wurf = 6 dann\n    ändere treffer um 1\n  ändere würfe um 1\nsage treffer\n```",
+      "optionen": [
+        { "text": "2", "richtig": true },
+        { "text": "1", "feedback": "Die Verzweigung ``falls wurf = 6`` ist eine Raute. Aber auch die Schleife braucht eine Raute: Dort wird ``würfe = 10 ?`` geprüft." },
+        { "text": "0", "feedback": "Jede Frage mit ja/nein ist im PAP eine Raute. Hier gibt es zwei solche Fragen." },
+        { "text": "3", "feedback": "``setze``, ``ändere`` und ``sage`` sind Rechtecke bzw. Parallelogramme, keine Rauten." }
+      ],
+      "erklaerung": "Eine Raute für die Schleifenbedingung ``würfe = 10 ?`` (mit Pfeil zurück nach oben) und eine Raute für ``wurf = 6 ?``. Im Programmierlabor kannst du dir Ablaufpläne von Schleifen und Verzweigungen ansehen."
+    },
+    {
+      "id": "timp-alg-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "In einem Rezept steht: „Salze die Nudeln nach Geschmack und lass sie kochen, bis sie fertig sind.“\n\nErkläre, warum das für einen Computer (oder einen Küchenroboter) kein brauchbarer Algorithmus ist, und verbessere die Anweisung.",
+      "stichworte": [
+        { "aspekt": "„nach Geschmack“ ist nicht eindeutig", "woerter": ["eindeutig", "ungenau", "unklar", "nicht genau", "nach geschmack"] },
+        { "aspekt": "„bis sie fertig sind“: unklar, wann der Ablauf endet", "woerter": ["fertig", "endet", "wann", "abbruch", "endlich"] },
+        { "aspekt": "Verbesserung mit genauen Angaben (Menge, Zeit)", "woerter": ["gramm", "minuten", "timer", "teeloeffel"] }
+      ],
+      "musterloesung": "Die Anweisung ist nicht eindeutig: „Nach Geschmack“ sagt nicht, wie viel Salz genau hinein soll, und ein Roboter hat keinen Geschmack. Auch „bis sie fertig sind“ ist unklar, denn der Roboter weiß nicht, wann die Nudeln fertig sind und wann er aufhören soll. Besser: „Gib 10 Gramm Salz in 1 Liter kochendes Wasser. Gib 250 Gramm Nudeln hinein und koche sie 9 Minuten. Gieße sie dann ab.“",
+      "erklaerung": "Ein Algorithmus darf nichts offen lassen. Mengen und Zeiten müssen als Zahlen angegeben werden, und es muss klar sein, wann der Ablauf endet."
+    }
+  ]
+}

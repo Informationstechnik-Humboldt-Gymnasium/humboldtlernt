@@ -1,0 +1,146 @@
+{
+  "id": "timp-k8-stromkreis-wdh",
+  "titel": "Stromkreis, Schaltzeichen und Kurzschluss",
+  "kurz": "Wiederholung aus Klasse 7: geschlossener Stromkreis, Reihen- und Parallelschaltung, Kurzschluss und sicheres Arbeiten mit dem Schülerübungskasten.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Einen geschlossenen Stromkreis beschreiben und mit Schaltzeichen als Schaltplan darstellen" },
+    { "id": "lz2", "niveau": "G", "text": "Reihen- und Parallelschaltung unterscheiden und ihr Verhalten beschreiben" },
+    { "id": "lz3", "niveau": "H", "text": "Erklären, wie ein Kurzschluss entsteht, warum er gefährlich ist und wie eine Sicherung schützt" },
+    { "id": "lz4", "niveau": "G", "text": "Sicherheitsregeln beim Experimentieren mit den Schülerübungskästen anwenden" }
+  ],
+  "verstehen": {
+    "einstieg": "Bevor du mit Schaltern logische Schaltungen baust, brauchst du sicheres Grundwissen: Wann fließt überhaupt Strom? Und was passiert, wenn man aus Versehen die beiden Pole der Batterie direkt verbindet?",
+    "abschnitte": [
+      {
+        "titel": "Der geschlossene Stromkreis",
+        "text": "Strom fließt nur in einem **geschlossenen Stromkreis**: vom Pluspol der Quelle über eine Leitung durch das Gerät und über eine zweite Leitung zurück zum Minuspol.\n\nDazu gehören:\n- eine **Quelle** (Batterie, Netzgerät),\n- **Leitungen** aus Metall,\n- ein **Gerät** wie eine Lampe, ein Motor oder eine Klingel,\n- meist ein **Schalter**, der den Kreis schließt oder öffnet.\n\nIst der Kreis an irgendeiner Stelle unterbrochen, fließt nirgends Strom. Ein geöffneter Schalter ist genau so eine Unterbrechung."
+      },
+      {
+        "titel": "Schaltzeichen und Schaltplan",
+        "text": "Statt Bauteile abzuzeichnen, benutzt man genormte **Schaltzeichen**. So kann jeder einen **Schaltplan** lesen.\n\n- **Batterie:** ein langer dünner Strich (Pluspol) und ein kurzer dicker Strich (Minuspol)\n- **Lampe:** ein Kreis mit einem Kreuz darin\n- **Schalter:** eine Leitung mit einer Lücke und einer schräg stehenden Schaltzunge\n- **Widerstand:** ein schmales Rechteck\n- **Strommesser:** ein Kreis mit einem A, **Spannungsmesser:** ein Kreis mit einem V\n\nLeitungen zeichnet man als gerade Linien mit rechten Winkeln. Ein Punkt zeigt eine leitende Verbindung (Abzweigung)."
+      },
+      {
+        "titel": "Reihen- und Parallelschaltung",
+        "text": "**Reihenschaltung:** Die Bauteile liegen hintereinander in einem einzigen Stromweg. Fällt ein Bauteil aus oder ist ein Schalter offen, ist der ganze Kreis unterbrochen. Zwei Lampen in Reihe leuchten schwächer als eine Lampe allein.\n\n**Parallelschaltung:** Der Stromkreis verzweigt sich. Jedes Bauteil hat seinen eigenen Weg zur Quelle und kann unabhängig von den anderen arbeiten. So sind die Steckdosen und Lampen in einer Wohnung geschaltet.\n\nDiese beiden Grundformen sind auch die Grundlage für die logischen Schaltungen UND und ODER."
+      },
+      {
+        "titel": "Kurzschluss und Sicherung",
+        "text": "Ein **Kurzschluss** entsteht, wenn die beiden Pole einer Quelle direkt über eine Leitung verbunden werden, also ohne ein Gerät dazwischen. Die Leitung hat einen sehr kleinen Widerstand, deshalb fließt ein **sehr großer Strom**.\n\nDas ist gefährlich: Die Leitungen werden **heiß**, die Isolierung kann schmelzen, und es kann ein **Brand** entstehen. Batterien werden heiß und können auslaufen.\n\nAuch ein Gerät kann kurzgeschlossen werden: Verbindet ein Draht die beiden Anschlüsse einer Lampe, fließt der Strom an der Lampe vorbei. Die Lampe geht aus.\n\nEine **Sicherung** schützt die Leitungen. Sie liegt in Reihe im Stromkreis und **unterbricht** ihn, sobald die Stromstärke zu groß wird. In der Schmelzsicherung schmilzt dazu ein dünner Draht, ein **Sicherungsautomat** (Leitungsschutzschalter) schaltet ab und kann wieder eingeschaltet werden."
+      },
+      {
+        "titel": "Sicher arbeiten mit dem Schülerübungskasten",
+        "text": "- Nur mit Batterien oder dem Schul-Netzgerät arbeiten, **niemals an der Steckdose** (230 V sind lebensgefährlich).\n- Die Schaltung bei **ausgeschalteter Quelle** aufbauen und umbauen.\n- Vor dem Einschalten die Schaltung **prüfen lassen** (Partner oder Lehrkraft) und auf Kurzschlüsse achten.\n- Am Netzgerät mit **kleiner Spannung** beginnen und sie langsam erhöhen.\n- Riecht es verbrannt oder wird etwas heiß: **sofort ausschalten**.\n- Nach dem Versuch zuerst ausschalten, dann abbauen und alles vollständig in den Kasten zurücklegen."
+      }
+    ],
+    "merksatz": "Strom fließt nur in einem geschlossenen Stromkreis. In der **Reihenschaltung** gibt es einen einzigen Weg, in der **Parallelschaltung** hat jedes Bauteil seinen eigenen Weg.\n\nBei einem **Kurzschluss** sind die Pole ohne Gerät verbunden. Dann fließt ein sehr großer Strom, der Leitungen gefährlich erhitzt. Eine **Sicherung** unterbricht den Stromkreis bei zu großer Stromstärke.",
+    "alltag": "Wenn zu Hause „die Sicherung rausfliegt“, hat der Sicherungsautomat im Sicherungskasten eine zu große Stromstärke bemerkt, z. B. wegen eines defekten Geräts oder weil zu viele Geräte an einer Leitung hängen."
+  },
+  "interaktiv": [],
+  "vertiefung": ["k7-stromkreis"],
+  "uebungen": [
+    {
+      "id": "timp-skr-01",
+      "typ": "single",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz1",
+      "frage": "Eine Lampe ist mit einer Batterie verbunden, aber nur über **eine** Leitung vom Pluspol zur Lampe. Leuchtet die Lampe?",
+      "optionen": [
+        { "text": "Nein, denn der Stromkreis ist nicht geschlossen.", "richtig": true },
+        { "text": "Ja, denn die Lampe ist mit dem Pluspol verbunden.", "feedback": "Der Strom braucht auch einen Rückweg zum Minuspol. Ohne zweite Leitung ist der Kreis offen." },
+        { "text": "Ja, aber nur schwach.", "feedback": "In einem offenen Stromkreis fließt gar kein Strom, auch kein schwacher." },
+        { "text": "Nur, wenn die Batterie neu ist.", "feedback": "Auch eine volle Batterie kann keinen Strom durch einen offenen Kreis treiben." }
+      ],
+      "erklaerung": "Strom fließt nur in einem **geschlossenen** Stromkreis: vom Pluspol durch das Gerät und zurück zum Minuspol. Dafür sind zwei Leitungen nötig."
+    },
+    {
+      "id": "timp-skr-02",
+      "typ": "zuordnung",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz1",
+      "frage": "Ordne jedem Schaltzeichen das Bauteil zu.",
+      "paare": [
+        { "links": "Langer dünner Strich neben kurzem dickem Strich", "rechts": "Batterie" },
+        { "links": "Kreis mit einem Kreuz darin", "rechts": "Lampe" },
+        { "links": "Leitung mit Lücke und schräger Schaltzunge", "rechts": "Schalter" },
+        { "links": "Schmales Rechteck", "rechts": "Widerstand" },
+        { "links": "Kreis mit dem Buchstaben A", "rechts": "Strommesser" }
+      ],
+      "extraRechts": ["Spannungsmesser", "Motor"],
+      "erklaerung": "Der Spannungsmesser hat einen Kreis mit **V**, der Motor einen Kreis mit **M**. Mit genormten Zeichen kann jeder einen Schaltplan lesen."
+    },
+    {
+      "id": "timp-skr-03",
+      "typ": "multi",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz2",
+      "frage": "Zwei Lampen sind in **Reihe** an eine Batterie geschaltet. Welche Aussagen sind richtig?",
+      "optionen": [
+        { "text": "Es gibt nur einen einzigen Stromweg.", "richtig": true },
+        { "text": "Dreht man eine Lampe heraus, geht auch die andere aus.", "richtig": true },
+        { "text": "Jede Lampe kann mit einem eigenen Schalter unabhängig geschaltet werden.", "feedback": "Das geht nur in der Parallelschaltung, dort hat jede Lampe ihren eigenen Weg." },
+        { "text": "Die Lampen leuchten schwächer als eine einzelne Lampe an derselben Batterie.", "richtig": true },
+        { "text": "Durch die zweite Lampe fließt weniger Strom als durch die erste.", "feedback": "In der Reihenschaltung fließt durch alle Bauteile derselbe Strom." }
+      ],
+      "erklaerung": "In der Reihenschaltung liegen die Lampen hintereinander. Fehlt eine Lampe, ist der einzige Weg unterbrochen. Zusammen haben die Lampen einen größeren Widerstand, deshalb fließt weniger Strom und beide leuchten schwächer."
+    },
+    {
+      "id": "timp-skr-04",
+      "typ": "single",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz2",
+      "frage": "Zwei gleiche Lampen L1 und L2 sind in Reihe an eine Batterie geschaltet und leuchten. Nun verbindest du die beiden Anschlüsse von **L2** mit einem Draht. Was beobachtest du?",
+      "optionen": [
+        { "text": "L2 geht aus, L1 leuchtet heller.", "richtig": true },
+        { "text": "Beide Lampen gehen aus.", "feedback": "Der Stromkreis ist nicht unterbrochen. Der Strom nimmt nur einen anderen Weg." },
+        { "text": "Beide leuchten unverändert weiter.", "feedback": "Der Draht hat fast keinen Widerstand. Der Strom fließt an L2 vorbei." },
+        { "text": "L2 leuchtet heller, L1 geht aus.", "feedback": "Überbrückt ist L2. Durch sie fließt praktisch kein Strom mehr." }
+      ],
+      "erklaerung": "Der Draht schließt **L2 kurz**: Der Strom fließt durch den Draht an L2 vorbei, deshalb geht L2 aus. Weil nun nur noch L1 im Kreis liegt, ist der Gesamtwiderstand kleiner, es fließt mehr Strom und L1 leuchtet heller."
+    },
+    {
+      "id": "timp-skr-05",
+      "typ": "single",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz3",
+      "frage": "In welchem Fall entsteht ein **Kurzschluss** der Batterie?",
+      "optionen": [
+        { "text": "Ein Kabel verbindet den Pluspol direkt mit dem Minuspol.", "richtig": true },
+        { "text": "Zwei Lampen werden parallel an die Batterie geschaltet.", "feedback": "Jede Lampe hat einen Widerstand. Das ist eine normale Parallelschaltung." },
+        { "text": "Ein Schalter im Stromkreis wird geöffnet.", "feedback": "Ein offener Schalter unterbricht den Kreis. Dann fließt gar kein Strom." },
+        { "text": "Eine Lampe wird aus der Fassung gedreht.", "feedback": "Auch das unterbricht den Stromkreis nur." }
+      ],
+      "erklaerung": "Bei einem Kurzschluss sind die Pole **ohne Gerät** verbunden. Die Leitung hat fast keinen Widerstand, deshalb fließt ein sehr großer Strom."
+    },
+    {
+      "id": "timp-skr-06",
+      "typ": "text",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz3",
+      "frage": "Erkläre, warum ein Kurzschluss gefährlich ist und wie eine Sicherung davor schützt.",
+      "stichworte": [
+        { "aspekt": "Beim Kurzschluss ist der Widerstand sehr klein, kein Gerät liegt dazwischen", "woerter": ["widerstand", "ohne geraet", "kein geraet", "direkt verbunden"] },
+        { "aspekt": "Es fließt ein sehr großer Strom", "woerter": ["grosser strom", "grosse strom", "hohe strom", "sehr viel strom", "stromstaerke", "starker strom"] },
+        { "aspekt": "Leitungen werden heiß, Brandgefahr", "woerter": ["heiss", "brand", "feuer", "schmilz", "erhitz"] },
+        { "aspekt": "Die Sicherung unterbricht den Stromkreis bei zu großer Stromstärke", "woerter": ["unterbrich", "schaltet ab", "trennt", "schmilzt durch", "abschalt"] }
+      ],
+      "musterloesung": "Bei einem Kurzschluss sind die Pole der Quelle direkt verbunden, ohne Gerät dazwischen. Der Widerstand ist deshalb sehr klein, und es fließt ein sehr großer Strom. Die Leitungen werden dadurch heiß, die Isolierung kann schmelzen und es kann ein Brand entstehen. Eine Sicherung liegt in Reihe im Stromkreis. Sie unterbricht den Stromkreis, sobald die Stromstärke zu groß wird.",
+      "erklaerung": "Je größer die Stromstärke, desto stärker erwärmt sich eine Leitung. Die Sicherung ist so gebaut, dass sie abschaltet, bevor die Leitung gefährlich heiß wird."
+    },
+    {
+      "id": "timp-skr-07",
+      "typ": "reihenfolge",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz4",
+      "frage": "Bringe die Schritte für ein sicheres Experiment mit dem Schülerübungskasten und dem Netzgerät in die richtige Reihenfolge.",
+      "elemente": [
+        "Netzgerät ausgeschaltet lassen und die Schaltung nach dem Schaltplan aufbauen",
+        "Schaltung von Partner oder Lehrkraft prüfen lassen, besonders auf Kurzschlüsse",
+        "Spannung auf den kleinsten Wert stellen und das Netzgerät einschalten",
+        "Spannung langsam erhöhen und beobachten",
+        "Netzgerät ausschalten, dann die Schaltung abbauen und einräumen"
+      ],
+      "erklaerung": "Aufgebaut und umgebaut wird nur bei ausgeschalteter Quelle. Die Prüfung vor dem Einschalten verhindert Kurzschlüsse, und eine kleine Startspannung schützt Lampen und andere Bauteile."
+    }
+  ]
+}

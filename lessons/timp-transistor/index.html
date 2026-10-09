@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Transistor als Verstärker und Schalter</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<style>
+  .part { fill: var(--card); stroke: var(--line); stroke-width: 2.2; }
+  .fill-line { fill: var(--line); }
+  .led-body { fill: var(--card); stroke: var(--line); stroke-width: 2.2; stroke-linejoin: round; }
+  .led-on { fill: var(--lamp); }
+  .glow { fill: var(--lamp); }
+  .flow-c { fill: var(--pos); }
+  .flow-b { fill: var(--c3); }
+  .curve { fill: none; stroke: var(--accent); stroke-width: 2.5; }
+  .ideal { fill: none; stroke: var(--muted); stroke-width: 1.5; stroke-dasharray: 5 4; }
+  .satline { stroke: var(--warn); stroke-width: 1.5; stroke-dasharray: 3 3; }
+  .dot { fill: var(--pos); stroke: var(--card); stroke-width: 2; }
+  .zone { fill: var(--c3); opacity: .12; }
+  .zone-t { font-size: 12px; fill: var(--c3) !important; font-weight: 650; }
+  .warnbox { margin-top: 12px; padding: 10px 12px; border-radius: 10px; background: var(--warn-soft); font-size: .85rem; }
+  .warnbox b { color: var(--warn); }
+  .note { font-size: .8rem; color: var(--muted); margin: 10px 0 0; }
+  .ibrow { display: flex; gap: 8px; align-items: center; }
+  .ibrow input { flex: 1; }
+  .ibrow button { padding: 4px 10px; min-width: 44px; }
+  .readouts { grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); }
+  #state { font-weight: 650; }
+  @media (max-width: 560px) { #circ text, #chart text { font-size: 17px; } #circ text.small-t { font-size: 15px; } }
+  .small-t { font-size: 12px; }
+</style>
+</head>
+<body>
+<h1>Transistor als Verstärker und Schalter</h1>
+<p class="muted small">Ein NPN-Transistor wird über einen kleinen Basisstrom <span class="f">I<sub>B</sub></span> gesteuert. Er lässt dann einen viel größeren Kollektorstrom <span class="f">I<sub>C</sub></span> durch die LED fließen. Untersuche zuerst den Verstärker und baue dann einen Dämmerungsschalter.</p>
+
+<div class="lk-grid">
+  <div>
+    <div class="lk-card">
+      <svg id="circ" viewBox="0 0 550 330" role="img" aria-labelledby="circTitle">
+        <title id="circTitle">Schaltplan: NPN-Transistor, Kollektor über LED und Vorwiderstand an +9 V, Emitter an Masse, Basis über Vorwiderstand angesteuert</title>
+        <g id="cg"></g>
+        <g id="dots"></g>
+      </svg>
+      <p class="small muted" style="margin:6px 0 0">Orange Punkte: Kollektorstrom, lila Punkte: Basisstrom (technische Stromrichtung). Die lila Punkte sind stark vergrößert dargestellt: Der Basisstrom ist etwa <span id="capB">150</span>-mal kleiner als der Kollektorstrom.</p>
+    </div>
+    <div class="lk-card">
+      <h2 id="chartTitle">Kennlinie</h2>
+      <svg id="chart" viewBox="0 0 520 270" role="img" aria-labelledby="chartDesc">
+        <title id="chartDesc">Diagramm des Kollektorstroms</title>
+      </svg>
+      <p class="small muted" id="chartNote" style="margin:6px 0 0"></p>
+    </div>
+  </div>
+
+  <div>
+    <div class="lk-card">
+      <h2>Einstellungen</h2>
+      <div class="row">
+        <div class="seg" role="group" aria-label="Schaltung wählen">
+          <button type="button" id="mAmp" aria-pressed="true">Verstärker</button>
+          <button type="button" id="mDusk" aria-pressed="false">Dämmerungsschalter</button>
+        </div>
+      </div>
+
+      <div id="ampCtrls">
+        <div class="ctrl"><span><label for="sIB">Basisstrom <span class="f">I<sub>B</sub></span></label> <output id="oIB"></output></span>
+          <div class="ibrow"><button type="button" id="ibM" aria-label="Basisstrom um 1 µA verkleinern">−1</button>
+            <input type="range" id="sIB" min="0" max="100" step="1" value="20">
+            <button type="button" id="ibP" aria-label="Basisstrom um 1 µA vergrößern">+1</button></div></div>
+        <label class="ctrl"><span>Stromverstärkung <span class="f">B</span> <output id="oB"></output></span>
+          <input type="range" id="sB" min="100" max="300" step="10" value="150"></label>
+      </div>
+
+      <div id="duskCtrls" hidden>
+        <label class="ctrl"><span>Helligkeit <span class="f">E</span> <output id="oE"></output></span>
+          <input type="range" id="sE" min="-1" max="4" step="0.05" value="3"></label>
+        <label class="ctrl"><span>Widerstand <span class="f">R</span> im Spannungsteiler <output id="oRP"></output></span>
+          <input type="range" id="sRP" min="0" max="7" step="1" value="2"></label>
+        <div class="row"><button type="button" id="bSwap" aria-pressed="false">LDR und R tauschen</button></div>
+      </div>
+
+      <label class="ctrl"><span>Vorwiderstand der LED <span class="f">R<sub>C</sub></span> <output id="oRC"></output></span>
+        <input type="range" id="sRC" min="0" max="3" step="1" value="1"></label>
+
+      <div class="readouts" id="readouts"></div>
+      <p id="status" class="small" aria-live="polite" style="margin:10px 0 0"></p>
+
+      <div class="warnbox"><b>Sicherheit beim Aufbau:</b> Transistor richtig herum einsetzen (Emitter an Minus, Anschlüsse im Datenblatt nachsehen). Die Basis nie ohne Vorwiderstand an die Spannung legen, die LED nur mit Vorwiderstand betreiben und auf ihre Polung achten. Grenzwerte einhalten, beim BC547 zum Beispiel <span class="f">U<sub>CE</sub></span> höchstens 45 V und <span class="f">I<sub>C</sub></span> höchstens 100 mA. Nur mit Batterie oder Schul-Netzgerät arbeiten, nie mit Netzspannung.</div>
+      <p class="note">Vereinfachtes Modell: Die Basis-Emitter-Strecke leitet erst ab <span class="f">U<sub>BE</sub> ≈ 0,7 V</span>. Dann gilt <span class="f">I<sub>C</sub> = B · I<sub>B</sub></span> mit festem <span class="f">B</span>, bis LED und Vorwiderstand den Strom begrenzen (Sättigung, <span class="f">U<sub>CE</sub> ≈ 0,2 V</span>). Echte Transistoren haben weichere Übergänge, und <span class="f">B</span> hängt vom Exemplar und von der Temperatur ab (BC547: etwa 110 bis 800). Rote LED mit etwa 2 V Durchlassspannung.</p>
+    </div>
+
+    <div class="lk-card tasks">
+      <h2>Entdecke selbst <span class="small muted" data-task-count></span></h2>
+      <div class="task" data-goal="minOn"><p class="task-q">Verstärker: Schalte die LED voll ein (Transistor gesättigt). Nimm dafür den kleinstmöglichen Basisstrom.</p></div>
+      <div class="task">
+        <p class="task-q">Bei <span class="f">I<sub>B</sub> = 40 µA</span> misst du <span class="f">I<sub>C</sub> = 6 mA</span>. Wie groß ist die Stromverstärkung <span class="f">B</span>?</p>
+        <div class="choices">
+          <button type="button" data-fb="Rechne beide Ströme in dieselbe Einheit um: 6 mA = 6000 µA.">B = 0,15</button>
+          <button type="button" data-ok data-fb="Richtig: B = I_C : I_B = 6000 µA : 40 µA = 150. Der Kollektorstrom ist 150-mal so groß wie der Basisstrom.">B = 150</button>
+          <button type="button" data-fb="Nicht multiplizieren: Teile den Kollektorstrom durch den Basisstrom.">B = 240</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="task" data-goal="sat"><p class="task-q">Erhöhe den Basisstrom deutlich über den Sättigungspunkt hinaus. Beobachte <span class="f">I<sub>C</sub></span> und <span class="f">U<sub>CE</sub></span>.</p></div>
+      <div class="task" data-goal="dusk"><p class="task-q">Dämmerungsschalter: Stelle <span class="f">R</span> so ein, dass die LED erst in der Dämmerung (3 bis 300 lx) angeht. Prüfe es, indem du die Helligkeit in diesen Bereich drehst.</p></div>
+      <div class="task">
+        <p class="task-q">Warum geht die LED im Dämmerungsschalter bei Dunkelheit an?</p>
+        <div class="choices">
+          <button type="button" data-fb="Ein LDR ist ein lichtabhängiger Widerstand, keine Spannungsquelle. Beobachte die Anzeige R_LDR.">Im Dunkeln liefert der LDR selbst Strom.</button>
+          <button type="button" data-fb="Umgekehrt: Im Dunkeln ist sein Widerstand groß. Schau auf die Anzeige R_LDR.">Im Dunkeln leitet der LDR besser.</button>
+          <button type="button" data-ok data-fb="Genau: Der Widerstand des LDR wird groß, deshalb fällt am LDR mehr Spannung ab. Erreicht U_BE etwa 0,7 V, fließt ein Basisstrom und der Transistor schaltet die LED ein.">Der LDR-Widerstand wird groß, die Spannung an der Basis steigt auf etwa 0,7 V.</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="task">
+        <p class="task-q">Was passiert, wenn du LDR und Widerstand <span class="f">R</span> vertauschst?</p>
+        <div class="choices">
+          <button type="button" data-fb="Probiere es mit dem Knopf „LDR und R tauschen“ aus und drehe an der Helligkeit.">Nichts, die Reihenfolge im Spannungsteiler ist egal.</button>
+          <button type="button" data-ok data-fb="Richtig: Jetzt liegt der LDR zwischen +9 V und Basis. Bei Helligkeit ist sein Widerstand klein, die Basisspannung steigt über 0,7 V und die LED leuchtet.">Die LED leuchtet bei Helligkeit und geht bei Dunkelheit aus.</button>
+          <button type="button" data-fb="Die Spannungen bleiben im erlaubten Bereich, der Basis-Vorwiderstand begrenzt den Strom. Probiere es aus.">Der Transistor geht kaputt.</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="all-done">Alles entdeckt! Weiter geht es mit den Übungen.</div>
+    </div>
+  </div>
+</div>
+
+<script src="../../static/lesson-kit.js"></script>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var NS = 'http://www.w3.org/2000/svg';
+  var UB = 9, UBE = 0.7, UCESAT = 0.2, RB_AMP = 47000, RB_DUSK = 10000;
+  var RCS = [470, 680, 1000, 2200];
+  var RPS = [1000, 2200, 4700, 10000, 22000, 47000, 100000, 220000];
+  var S = { mode: 'amp', IB: 20, B: 150, rc: 1, logE: 3, rp: 2, swap: false };
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ------------------------------------------------------------ Modell
+  function uLED(i) { var u = i * 1e6; return u < 1 ? 1.6 * u : 1.6 + 0.1 * Math.log(u) / Math.LN10; }
+  function iSat(rc) {
+    var lo = 0, hi = 0.05;
+    for (var k = 0; k < 60; k++) { var m = (lo + hi) / 2; if (UB - uLED(m) - m * rc - UCESAT > 0) lo = m; else hi = m; }
+    return lo;
+  }
+  function rLDR(E) { return Math.min(2e6, 15000 * Math.pow(E / 10, -0.6)); }
+  function ohm(r) { return r >= 1e6 ? LK.fmt(r / 1e6, 2) + ' MΩ' : r >= 1000 ? LK.fmt(r / 1000, r < 10000 ? 1 : 0) + ' kΩ' : LK.fmt(r, 0) + ' Ω'; }
+  function mA(i) { return i < 0.001 ? LK.fmt(i * 1e6, 0) + ' µA' : LK.fmt(i * 1000, 1) + ' mA'; }
+  function lux(E) {
+    if (E < 10) return LK.fmt(E, 1) + ' lx';
+    var p = Math.pow(10, Math.floor(Math.log(E) / Math.LN10) - 1);
+    return LK.fmt(Math.round(E / p) * p, 0) + ' lx';
+  }
+
+  function solve(st) {
+    var rc = RCS[st.rc], isat = iSat(rc), r = { isat: isat, rc: rc };
+    if (st.mode === 'amp') {
+      r.ib = st.IB * 1e-6;
+      r.ube = r.ib > 0 ? UBE : null;
+      r.upot = r.ib > 0 ? UBE + r.ib * RB_AMP : null;
+    } else {
+      var E = Math.pow(10, st.logE), rl = rLDR(E), rp = RPS[st.rp];
+      var top = st.swap ? rl : rp, bot = st.swap ? rp : rl;
+      var uth = UB * bot / (top + bot), rth = top * bot / (top + bot);
+      r.E = E; r.rl = rl; r.rp = rp; r.uth = uth;
+      r.ib = Math.max(0, (uth - UBE) / (rth + RB_DUSK));
+      r.ube = r.ib > 0 ? UBE : uth;
+    }
+    r.ic = Math.min(st.B * r.ib, isat);
+    r.sat = st.B * r.ib >= isat;
+    r.uce = r.ic > 0 ? Math.max(UCESAT, UB - uLED(r.ic) - r.ic * rc) : UB;
+    r.state = r.ib <= 0 ? 'off' : (r.sat ? 'sat' : 'lin');
+    return r;
+  }
+  function copy(o) { var c = {}; for (var k in o) c[k] = o[k]; return c; }
+
+  // Helligkeit, ab der die LED leuchtet (I_C ≥ 2 mA)
+  function switchPoint() {
+    var st = copy(S), prev = null, cross = null;
+    for (var le = -1; le <= 4.0001; le += 0.01) {
+      st.logE = le;
+      var on = solve(st).ic >= 0.002;
+      if (prev !== null && on !== prev) { cross = Math.pow(10, le); break; }
+      prev = on;
+    }
+    return { E: cross, onDark: S.swap ? false : true, alwaysOn: cross === null && prev, neverOn: cross === null && !prev };
+  }
+
+  // ------------------------------------------------------------ Zeichnen
+  function el(tag, a, parent) { var e = document.createElementNS(NS, tag); for (var k in a) e.setAttribute(k, a[k]); parent.appendChild(e); return e; }
+  function tx(parent, x, y, s, cls, anchor) { var e = el('text', { x: x, y: y, class: cls || 'val', 'text-anchor': anchor || 'start' }, parent); e.textContent = s; return e; }
+  // Text mit Index, z. B. sub(g, x, y, 'I', 'C', ' = 5 mA')
+  function sub(parent, x, y, a, i, rest, cls, anchor) {
+    var e = el('text', { x: x, y: y, class: cls || 'lbl', 'text-anchor': anchor || 'start' }, parent);
+    e.appendChild(document.createTextNode(a));
+    var t1 = el('tspan', { dy: 4, style: 'font-size:.75em' }, e); t1.textContent = i;
+    var t2 = el('tspan', { dy: -4 }, e); t2.textContent = rest || '';
+    return e;
+  }
+  function wire(g, d) { return el('path', { d: d, class: 'wire' }, g); }
+  function arrowHead(g, x1, y1, x2, y2, size) {
+    var a = Math.atan2(y2 - y1, x2 - x1), s = size || 8;
+    var p = [[x2, y2], [x2 - s * Math.cos(a - 0.45), y2 - s * Math.sin(a - 0.45)], [x2 - s * Math.cos(a + 0.45), y2 - s * Math.sin(a + 0.45)]];
+    el('polygon', { points: p.map(function (q) { return q[0].toFixed(1) + ',' + q[1].toFixed(1); }).join(' '), class: 'fill-line' }, g);
+  }
+  function resV(g, x, y1, y2) { el('rect', { x: x - 10, y: y1, width: 20, height: y2 - y1, rx: 2, class: 'part' }, g); }
+  function ldr(g, x, y1, y2) {
+    var cy = (y1 + y2) / 2;
+    wire(g, 'M' + x + ' ' + y1 + ' V' + (cy - 20) + ' M' + x + ' ' + (cy + 20) + ' V' + y2);
+    el('circle', { cx: x, cy: cy, r: 27, fill: 'none', stroke: 'var(--line)', 'stroke-width': 1.5 }, g);
+    resV(g, x, cy - 20, cy + 20);
+    [[-1, -10], [-1, 6]].forEach(function (o) {
+      var xa = x + o[0] * 50, ya = cy + o[1] - 16, xb = x + o[0] * 15, yb = cy + o[1];
+      el('line', { x1: xa, y1: ya, x2: xb, y2: yb, stroke: 'var(--line)', 'stroke-width': 1.5 }, g);
+      arrowHead(g, xa, ya, xb, yb, 7);
+    });
+  }
+
+  var paths = { c: null, b: null }, flows = { c: [], b: [] }, off = { c: 0, b: 0 };
+  var R = null;
+
+  function drawCircuit() {
+    var g = $('cg'); g.innerHTML = '';
+    var r = R, X = 400;
+    // Schienen
+    wire(g, 'M60 40 H' + X);
+    wire(g, 'M60 300 H' + X);
+    tx(g, 14, 45, '+9 V', 'lbl');
+    tx(g, 14, 305, '0 V', 'lbl');
+    // Kollektorzweig: R_C, LED
+    wire(g, 'M' + X + ' 40 V62 M' + X + ' 112 V130 M' + X + ' 168 V204');
+    resV(g, X, 62, 112);
+    sub(g, X - 18, 84, 'R', 'C', '', 'lbl', 'end'); tx(g, X - 18, 102, ohm(r.rc), 'val', 'end');
+    var bright = Math.pow(Math.min(1, r.ic / 0.01), 0.6);
+    el('circle', { cx: X, cy: 149, r: 30, class: 'glow', opacity: (bright * 0.75).toFixed(2) }, g);
+    el('polygon', { points: (X - 14) + ',132 ' + (X + 14) + ',132 ' + X + ',160', class: r.ic >= 0.0002 ? 'led-body led-on' : 'led-body' }, g);
+    el('line', { x1: X - 14, y1: 162, x2: X + 14, y2: 162, stroke: 'var(--line)', 'stroke-width': 2.5 }, g);
+    [0, 12].forEach(function (d) {
+      el('line', { x1: X + 18, y1: 140 + d, x2: X + 34, y2: 128 + d, stroke: 'var(--line)', 'stroke-width': 1.5 }, g);
+      arrowHead(g, X + 18, 140 + d, X + 34, 128 + d, 6);
+    });
+    tx(g, X - 22, 152, 'LED', 'lbl', 'end');
+    // Transistor
+    var TX = 372, TY = 230;
+    el('circle', { cx: TX + 10, cy: TY, r: 30, fill: 'var(--card)', stroke: 'var(--line)', 'stroke-width': 2 }, g);
+    el('line', { x1: TX, y1: TY - 17, x2: TX, y2: TY + 17, stroke: 'var(--line)', 'stroke-width': 4 }, g);
+    wire(g, 'M' + TX + ' ' + (TY - 8) + ' L' + X + ' ' + (TY - 26) + ' V204');
+    wire(g, 'M' + TX + ' ' + (TY + 8) + ' L' + X + ' ' + (TY + 26) + ' V300');
+    arrowHead(g, TX, TY + 8, X - 4, TY + 23.5, 10);
+    tx(g, X + 8, 204, 'C', 'small-t'); tx(g, X + 8, 268, 'E', 'small-t'); tx(g, TX - 6, TY - 22, 'B', 'small-t', 'end');
+    sub(g, X + 40, 222, 'I', 'C', ' = ' + mA(r.ic));
+    sub(g, X + 40, 246, 'U', 'CE', ' = ' + LK.fmt(r.uce, 1) + ' V');
+    // Basiszweig
+    var rb = S.mode === 'amp' ? RB_AMP : RB_DUSK, bpath;
+    el('rect', { x: 210, y: TY - 10, width: 70, height: 20, rx: 2, class: 'part' }, g);
+    sub(g, 245, TY - 18, 'R', 'B', ' = ' + ohm(rb), 'lbl', 'middle');
+    wire(g, 'M280 ' + TY + ' H' + TX);
+    sub(g, 214, TY + 32, 'I', 'B', ' = ' + LK.fmt(r.ib * 1e6, 0) + ' µA');
+    if (S.mode === 'amp') {
+      // Poti als Spannungsteiler zwischen +9 V und 0 V
+      wire(g, 'M110 40 V110 M110 230 V300');
+      resV(g, 110, 110, 230);
+      var yw = r.upot === null ? 228 : 230 - 120 * Math.min(1, r.upot / UB);
+      wire(g, 'M152 ' + yw.toFixed(1) + ' H124');
+      arrowHead(g, 140, yw, 121, yw, 9);
+      wire(g, 'M152 ' + yw.toFixed(1) + ' H175 V' + TY + ' H210');
+      tx(g, 96, 160, 'Poti', 'lbl', 'end');
+      tx(g, 96, 178, r.upot === null ? '< 0,7 V' : LK.fmt(r.upot, 1) + ' V', 'val', 'end');
+      bpath = 'M152 ' + yw.toFixed(1) + ' H175 V' + TY + ' H' + TX;
+    } else {
+      var topIsL = S.swap;
+      wire(g, 'M110 40 V70 M110 140 V200 M110 270 V300');
+      if (topIsL) ldr(g, 110, 70, 140); else resV(g, 110, 70, 140);
+      if (topIsL) resV(g, 110, 200, 270); else ldr(g, 110, 200, 270);
+      el('circle', { cx: 110, cy: 170, r: 3.5, class: 'fill-line' }, g);
+      wire(g, 'M110 170 H175 V' + TY + ' H210');
+      var lt = topIsL ? 105 : 235, rt = topIsL ? 235 : 105;
+      tx(g, 144, lt - 4, 'LDR', 'lbl'); tx(g, 144, lt + 14, ohm(r.rl), 'val');
+      tx(g, 130, rt - 4, 'R', 'lbl'); tx(g, 130, rt + 14, ohm(r.rp), 'val');
+      sub(g, 120, 162, 'U', 'BE', ' = ' + LK.fmt(r.ube, 2) + ' V');
+      bpath = 'M110 170 H175 V' + TY + ' H' + TX;
+    }
+    // Strompfade für die Punkte
+    var dg = $('dots'); dg.innerHTML = '';
+    paths.c = el('path', { d: 'M' + X + ' 40 V' + (TY - 26) + ' L' + (TX + 2) + ' ' + (TY - 7) + ' V' + (TY + 7) + ' L' + X + ' ' + (TY + 26) + ' V300', fill: 'none', stroke: 'none' }, dg);
+    paths.b = el('path', { d: bpath, fill: 'none', stroke: 'none' }, dg);
+    flows.c = []; flows.b = [];
+    for (var k = 0; k < 12; k++) flows.c.push(el('circle', { r: 3.5, class: 'flow-c', opacity: 0 }, dg));
+    for (var j = 0; j < 7; j++) flows.b.push(el('circle', { r: 3, class: 'flow-b', opacity: 0 }, dg));
+    moveDots(0);
+  }
+
+  function moveDots(dt) {
+    ['c', 'b'].forEach(function (k) {
+      var p = paths[k]; if (!p) return;
+      var len = p.getTotalLength(), n = flows[k].length, gap = len / n;
+      var i = k === 'c' ? R.ic / 0.01 : R.ib / 1e-4;
+      off[k] = (off[k] + dt * Math.min(1.6, i) * 70) % gap;
+      flows[k].forEach(function (d, j) {
+        var q = p.getPointAtLength((j * gap + off[k]) % len);
+        d.setAttribute('cx', q.x.toFixed(1)); d.setAttribute('cy', q.y.toFixed(1));
+        d.setAttribute('opacity', (k === 'c' ? R.ic > 2e-5 : R.ib > 0) && !reduced ? 0.85 : 0);
+      });
+    });
+  }
+
+  // ------------------------------------------------------------ Diagramm
+  var X0 = 62, X1 = 488, Y0 = 220, Y1 = 22, IMAX = 0.016;
+  function drawChart() {
+    var c = $('chart');
+    while (c.childNodes.length > 1) c.removeChild(c.lastChild);
+    var py = function (i) { return Y0 - (Y0 - Y1) * Math.min(i, IMAX * 1.04) / IMAX; };
+    for (var m = 0; m <= 16; m += 4) {
+      el('line', { x1: X0, x2: X1, y1: py(m / 1000), y2: py(m / 1000), class: 'gridline' }, c);
+      tx(c, X0 - 8, py(m / 1000) + 4, m, 'val', 'end');
+    }
+    var px, pts = [], st = copy(S);
+    if (S.mode === 'amp') {
+      px = function (ib) { return X0 + (X1 - X0) * ib / 100; };
+      for (var a = 0; a <= 100; a += 20) {
+        el('line', { x1: px(a), x2: px(a), y1: Y1, y2: Y0, class: 'gridline' }, c);
+        tx(c, px(a), Y0 + 18, a, 'val', 'middle');
+      }
+      sub(c, X1, Y0 + 40, 'Basisstrom I', 'B', ' in µA', 'lbl', 'end');
+      var ideal = [];
+      for (var u = 0; u <= 100; u += 1) { st.IB = u; var q = solve(st); pts.push(px(u) + ',' + py(q.ic).toFixed(1)); }
+      var uMax = Math.min(100, IMAX * 1.04 / (S.B * 1e-6));
+      ideal.push(px(0) + ',' + py(0), px(uMax) + ',' + py(S.B * uMax * 1e-6).toFixed(1));
+      el('polyline', { points: ideal.join(' '), class: 'ideal' }, c);
+      el('line', { x1: X0, x2: X1, y1: py(R.isat), y2: py(R.isat), class: 'satline' }, c);
+      tx(c, X1 - 4, py(R.isat) + 16, 'Sättigung: ' + mA(R.isat), 'val', 'end');
+      el('polyline', { points: pts.join(' '), class: 'curve' }, c);
+      el('circle', { cx: px(S.IB), cy: py(R.ic), r: 6, class: 'dot' }, c);
+      $('chartTitle').innerHTML = 'Kollektorstrom <span class="f">I<sub>C</sub></span> gegen Basisstrom <span class="f">I<sub>B</sub></span>';
+      $('chartNote').innerHTML = 'Gestrichelt: <span class="f">I<sub>C</sub> = B · I<sub>B</sub></span> ohne Begrenzung. Durchgezogen: tatsächlicher Kollektorstrom. Er kann nicht größer werden als der Strom, den LED und Vorwiderstand bei 9 V zulassen.';
+    } else {
+      px = function (le) { return X0 + (X1 - X0) * (le + 1) / 5; };
+      el('rect', { x: px(Math.log(3) / Math.LN10), y: Y1, width: px(Math.log(300) / Math.LN10) - px(Math.log(3) / Math.LN10), height: Y0 - Y1, class: 'zone' }, c);
+      tx(c, (px(Math.log(3) / Math.LN10) + px(Math.log(300) / Math.LN10)) / 2, Y1 + 14, 'Dämmerung', 'zone-t', 'middle');
+      [-1, 0, 1, 2, 3, 4].forEach(function (le) {
+        el('line', { x1: px(le), x2: px(le), y1: Y1, y2: Y0, class: 'gridline' }, c);
+        tx(c, px(le), Y0 + 18, LK.fmt(Math.pow(10, le), le < 0 ? 1 : 0), 'val', 'middle');
+      });
+      tx(c, X1, Y0 + 40, 'Helligkeit E in lx', 'lbl', 'end');
+      for (var le = -1; le <= 4.0001; le += 0.025) { st.logE = le; pts.push(px(le).toFixed(1) + ',' + py(solve(st).ic).toFixed(1)); }
+      el('polyline', { points: pts.join(' '), class: 'curve' }, c);
+      el('circle', { cx: px(S.logE), cy: py(R.ic), r: 6, class: 'dot' }, c);
+      $('chartTitle').innerHTML = 'Kollektorstrom <span class="f">I<sub>C</sub></span> gegen Helligkeit <span class="f">E</span>';
+      $('chartNote').textContent = 'Die Helligkeitsachse ist logarithmisch: Jeder Teilstrich bedeutet zehnmal so hell. Zum Vergleich: Vollmondnacht etwa 0,2 lx, Wohnzimmer etwa 100 bis 300 lx, bedeckter Tag etwa 10 000 lx.';
+    }
+    sub(c, X0 + 8, 14, 'I', 'C', ' in mA');
+    el('line', { x1: X0, x2: X1, y1: Y0, y2: Y0, class: 'axis' }, c);
+    el('line', { x1: X0, x2: X0, y1: Y1, y2: Y0, class: 'axis' }, c);
+  }
+
+  // ------------------------------------------------------------ Anzeige
+  function ro(label, val) { return '<div class="readout"><span>' + label + '</span><b>' + val + '</b></div>'; }
+  var STATE = { off: 'gesperrt: LED aus', lin: 'Verstärkerbereich', sat: 'gesättigt: voll durchgeschaltet' };
+
+  function update() {
+    R = solve(S);
+    $('oIB').textContent = S.IB + ' µA';
+    $('oB').textContent = S.B;
+    $('capB').textContent = S.B;
+    $('oRC').textContent = ohm(RCS[S.rc]);
+    $('oE').textContent = lux(Math.pow(10, S.logE));
+    $('oRP').textContent = ohm(RPS[S.rp]);
+    $('bSwap').setAttribute('aria-pressed', S.swap);
+    $('bSwap').textContent = S.swap ? 'LDR und R zurücktauschen' : 'LDR und R tauschen';
+    var h = '';
+    if (S.mode === 'amp') {
+      h += ro('Basisstrom I<sub>B</sub>', S.IB + ' µA');
+      h += ro('Kollektorstrom I<sub>C</sub>', mA(R.ic));
+      h += ro('I<sub>C</sub> : I<sub>B</sub>', R.ib > 0 ? LK.fmt(R.ic / R.ib, 0) : '–');
+      h += ro('U<sub>CE</sub>', LK.fmt(R.uce, 1) + ' V');
+    } else {
+      h += ro('R<sub>LDR</sub>', ohm(R.rl));
+      h += ro('U<sub>BE</sub>', LK.fmt(R.ube, 2) + ' V');
+      h += ro('Basisstrom I<sub>B</sub>', LK.fmt(R.ib * 1e6, 0) + ' µA');
+      h += ro('Kollektorstrom I<sub>C</sub>', mA(R.ic));
+      var sp = switchPoint();
+      h += sp.E ? ro(S.swap ? 'LED an oberhalb von' : 'LED an unterhalb von', '≈ ' + lux(sp.E))
+                : ro('LED', sp.alwaysOn ? 'immer an' : 'nie an');
+    }
+    h += '<div class="readout" style="grid-column:1/-1"><span>Zustand</span><b id="state">' + STATE[R.state] + '</b></div>';
+    $('readouts').innerHTML = h;
+    drawCircuit(); drawChart();
+    goals();
+  }
+
+  var lastMsg = '';
+  function say(m) { if (m !== lastMsg) { lastMsg = m; $('status').textContent = m; } }
+
+  function goals() {
+    if (S.mode === 'amp') {
+      var ibSat = R.isat / S.B;
+      if (R.sat && S.B * (S.IB - 1) * 1e-6 < R.isat) {
+        LK.reach('minOn');
+        say('Gesättigt mit dem kleinsten Basisstrom: ' + S.IB + ' µA · ' + S.B + ' reicht gerade für ' + mA(R.isat) + '.');
+      } else if (S.B * S.IB * 1e-6 >= 1.4 * R.isat) {
+        LK.reach('sat');
+        say('Sättigung: Der Basisstrom ist viel größer als nötig, aber I_C bleibt bei ' + mA(R.isat) + '. LED und Vorwiderstand begrenzen den Strom, am Transistor liegen nur noch etwa 0,2 V.');
+      } else if (R.sat) say('Der Transistor ist gesättigt. Geht es auch mit weniger Basisstrom?');
+      else if (ibSat * 1e6 > 100) say('Mit diesen Einstellungen reichen 100 µA nicht für die Sättigung. Wähle ein größeres B oder einen größeren Vorwiderstand R_C.');
+      else say('');
+    } else {
+      var sp = switchPoint();
+      if (!S.swap && sp.E && sp.E >= 3 && sp.E <= 300 && R.E >= 3 && R.E <= 300 && R.ic >= 0.002) {
+        LK.reach('dusk');
+        say('Der Dämmerungsschalter funktioniert: Die LED geht unterhalb von etwa ' + lux(sp.E) + ' an.');
+      } else if (!S.swap && sp.E && sp.E > 300) say('Die LED geht schon bei ' + lux(sp.E) + ' an, also auch bei Tageslicht oder im hellen Zimmer. Ändere R.');
+      else if (!S.swap && sp.E && sp.E < 3) say('Die LED geht erst bei ' + lux(sp.E) + ' an, also erst in tiefer Nacht. Ändere R.');
+      else if (!S.swap && sp.alwaysOn) say('Mit diesem kleinen R liegt an der Basis immer mehr als 0,7 V, die LED leuchtet sogar bei Tageslicht. Vergrößere R.');
+      else if (!S.swap && sp.neverOn) say('Mit diesem R erreicht die Basis nie 0,7 V, die LED bleibt immer aus. Verkleinere R.');
+      else if (S.swap && sp.E) say('Vertauscht: Jetzt leuchtet die LED bei Helligkeit (oberhalb von etwa ' + lux(sp.E) + ') und ist im Dunkeln aus.');
+      else if (S.swap) say('Vertauscht: Mit diesem R liegt an der Basis immer mehr als 0,7 V, die LED leuchtet immer. Verkleinere R, dann siehst du die Umkehrung.');
+      else say('');
+    }
+  }
+
+  // ------------------------------------------------------------ Bedienung
+  function setMode(m) {
+    S.mode = m;
+    $('mAmp').setAttribute('aria-pressed', m === 'amp');
+    $('mDusk').setAttribute('aria-pressed', m === 'dusk');
+    $('ampCtrls').hidden = m !== 'amp';
+    $('duskCtrls').hidden = m !== 'dusk';
+    lastMsg = null;
+    update();
+  }
+  $('mAmp').onclick = function () { setMode('amp'); };
+  $('mDusk').onclick = function () { setMode('dusk'); };
+  $('sIB').oninput = function () { S.IB = Number(this.value); update(); };
+  $('ibM').onclick = function () { S.IB = Math.max(0, S.IB - 1); $('sIB').value = S.IB; update(); };
+  $('ibP').onclick = function () { S.IB = Math.min(100, S.IB + 1); $('sIB').value = S.IB; update(); };
+  $('sB').oninput = function () { S.B = Number(this.value); update(); };
+  $('sRC').oninput = function () { S.rc = Number(this.value); update(); };
+  $('sE').oninput = function () { S.logE = Number(this.value); update(); };
+  $('sRP').oninput = function () { S.rp = Number(this.value); update(); };
+  $('bSwap').onclick = function () { S.swap = !S.swap; update(); };
+
+  var last = performance.now();
+  function frame(t) {
+    var dt = Math.min(0.05, (t - last) / 1000); last = t;
+    if (!reduced) moveDots(dt);
+    requestAnimationFrame(frame);
+  }
+  update();
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+{
+  "id": "timp-k9-bedingungen",
+  "titel": "Bedingungen und Verzweigungen",
+  "kurz": "Wie ein Programm Entscheidungen trifft und wie man Bedingungen mit und, oder und nicht verknüpft.",
+  "reihenfolge": 3,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Verzweigungen mit falls … dann … sonst lesen und schreiben" },
+    { "id": "lz2", "niveau": "G", "text": "Bedingungen mit Vergleichen (<, >, =) formulieren und auswerten" },
+    { "id": "lz3", "niveau": "H", "text": "Bedingungen mit und, oder und nicht verknüpfen und den Zusammenhang zu logischen Schaltungen herstellen" },
+    { "id": "lz4", "niveau": "H", "text": "Verschachtelte Verzweigungen nachverfolgen und entwerfen" }
+  ],
+  "verstehen": {
+    "einstieg": "Ein Kinoautomat soll Kindern unter 6 Jahren freien Eintritt geben, Jugendlichen einen Rabatt und allen anderen den vollen Preis berechnen. Wie entscheidet ein Programm, welcher Fall vorliegt?",
+    "abschnitte": [
+      {
+        "titel": "falls … dann … sonst",
+        "text": "Eine **Verzweigung** führt Anweisungen nur aus, wenn eine **Bedingung** erfüllt ist:\n\n```\nfalls temperatur > 25 dann\n  sage \"Ab ins Freibad!\"\nsonst\n  sage \"Lieber ins Kino.\"\n```\n\nIst die Bedingung **wahr**, werden die eingerückten Zeilen unter ``dann`` ausgeführt, sonst die unter ``sonst``. Der ``sonst``-Teil darf auch fehlen. Danach geht es in beiden Fällen mit der nächsten nicht eingerückten Zeile weiter."
+      },
+      {
+        "titel": "Vergleiche",
+        "text": "Eine Bedingung ist ein Ausdruck, der ``wahr`` oder ``falsch`` ergibt. Oft ist es ein Vergleich:\n\n- ``x < 10``: x ist kleiner als 10\n- ``x > 10``: x ist größer als 10\n- ``x = 10``: x ist gleich 10\n\nWie in Scratch gibt es kein eigenes Zeichen für „größer oder gleich“. Bei ganzen Zahlen schreibt man für „mindestens 18“ einfach ``alter > 17`` oder ``nicht (alter < 18)``. Achte bei solchen Grenzen genau darauf, ob der Grenzwert selbst noch dazugehört."
+      },
+      {
+        "titel": "und, oder, nicht",
+        "text": "Bedingungen kann man verknüpfen, genau wie bei den **logischen Schaltungen** aus Klasse 8:\n\n- ``a und b`` ist nur wahr, wenn **beide** wahr sind. Das entspricht zwei Schaltern in **Reihe**: Die Lampe leuchtet nur, wenn beide geschlossen sind.\n- ``a oder b`` ist wahr, wenn **mindestens einer** wahr ist. Das entspricht zwei Schaltern **parallel**.\n- ``nicht a`` kehrt den Wert um: aus wahr wird falsch und umgekehrt.\n\nAuch hier helfen Wahrheitswerttabellen. Klammern legen fest, was zuerst ausgewertet wird: ``an und (fenster oder tür)``."
+      },
+      {
+        "titel": "Verschachtelte Verzweigungen",
+        "text": "Im ``sonst``-Teil kann eine weitere Verzweigung stehen. So lassen sich mehr als zwei Fälle unterscheiden:\n\n```\nfalls alter < 6 dann\n  setze preis auf 0\nsonst\n  falls alter < 18 dann\n    setze preis auf 5\n  sonst\n    setze preis auf 8\n```\n\nDie innere Frage wird nur gestellt, wenn die äußere mit „nein“ beantwortet wurde. Ein 4-Jähriger zahlt also 0 €, obwohl 4 auch kleiner als 18 ist."
+      }
+    ],
+    "merksatz": "Mit ``falls … dann … sonst`` wählt ein Programm je nach Bedingung einen von zwei Wegen. Bedingungen sind Vergleiche (``<``, ``>``, ``=``) oder Verknüpfungen mit ``und`` (beide wahr), ``oder`` (mindestens eine wahr) und ``nicht`` (Umkehrung).",
+    "alltag": "Eine Alarmanlage löst aus, wenn sie eingeschaltet ist **und** ein Fenster **oder** die Tür geöffnet wird. Genau so eine Bedingung steht auch in ihrem Programm."
+  },
+  "interaktiv": ["timp-programmierlabor"],
+  "vertiefung": ["timp-logiklabor"],
+  "uebungen": [
+    {
+      "id": "timp-bed-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Was sagt das Programm?\n\n```\nsetze temperatur auf 18\nfalls temperatur > 20 dann\n  sage \"T-Shirt\"\nsonst\n  sage \"Pullover\"\n```",
+      "optionen": [
+        { "text": "Pullover", "richtig": true },
+        { "text": "T-Shirt", "feedback": "``18 > 20`` ist falsch. Deshalb wird der sonst-Teil ausgeführt." },
+        { "text": "T-Shirt und Pullover", "feedback": "Bei einer Verzweigung wird immer nur **einer** der beiden Teile ausgeführt." },
+        { "text": "nichts", "feedback": "Wenn die Bedingung falsch ist, wird der sonst-Teil ausgeführt. Dort steht eine Ausgabe." }
+      ],
+      "erklaerung": "18 ist nicht größer als 20. Die Bedingung ist also falsch, und das Programm sagt „Pullover“."
+    },
+    {
+      "id": "timp-bed-02", "typ": "multi", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Für welche Werte von ``x`` sagt das Programm „groß“?\n\n```\nfalls x > 5 dann\n  sage \"groß\"\n```",
+      "optionen": [
+        { "text": "3", "feedback": "3 ist kleiner als 5." },
+        { "text": "5", "feedback": "5 ist nicht **größer** als 5, sondern gleich. ``5 > 5`` ist falsch." },
+        { "text": "6", "richtig": true },
+        { "text": "10", "richtig": true }
+      ],
+      "erklaerung": "``x > 5`` ist nur für Zahlen wahr, die echt größer als 5 sind. Der Grenzwert 5 selbst gehört nicht dazu."
+    },
+    {
+      "id": "timp-bed-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Es gilt ``setze a auf 8`` und ``setze b auf 3``. Welche Bedingung ist **wahr**?",
+      "optionen": [
+        { "text": "``a = b + 5``", "richtig": true },
+        { "text": "``a < b``", "feedback": "8 ist nicht kleiner als 3." },
+        { "text": "``a > 10``", "feedback": "8 ist nicht größer als 10." },
+        { "text": "``b > a``", "feedback": "3 ist nicht größer als 8." }
+      ],
+      "erklaerung": "Zuerst wird ``b + 5 = 3 + 5 = 8`` berechnet. Dann wird verglichen: ``8 = 8`` ist wahr."
+    },
+    {
+      "id": "timp-bed-04", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Welche Schaltung aus der Elektrik (Klasse 8) passt zu welcher Verknüpfung? Die Lampe leuchtet, wenn die Bedingung wahr ist. Ein Schalter ist geschlossen, wenn seine Teilbedingung wahr ist.",
+      "paare": [
+        { "links": "``a und b``", "rechts": "zwei Schalter in Reihe" },
+        { "links": "``a oder b``", "rechts": "zwei Schalter parallel" },
+        { "links": "``nicht a``", "rechts": "ein Schalter, der den Stromkreis beim Drücken unterbricht (Öffner)" }
+      ],
+      "extraRechts": ["Kurzschluss zwischen den Anschlüssen"],
+      "erklaerung": "In Reihe muss Schalter a **und** Schalter b geschlossen sein. Parallel reicht a **oder** b. Ein Öffner kehrt den Zustand um: gedrückt (wahr) bedeutet Lampe aus (falsch)."
+    },
+    {
+      "id": "timp-bed-05", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Welchen Preis sagt das Programm?\n\n```\nsetze alter auf 15\nsetze preis auf 12\nfalls alter < 6 dann\n  setze preis auf 0\nsonst\n  falls alter < 16 dann\n    setze preis auf 7\n  sonst\n    falls alter > 64 dann\n      setze preis auf 9\nsage preis\n```",
+      "gesucht": "Ausgabe", "gesuchtSymbol": "preis",
+      "loesung": 7, "einheit": "", "toleranz": 0,
+      "rechenweg": ["``alter < 6``: 15 < 6 ist falsch, also weiter im sonst-Teil.", "``alter < 16``: 15 < 16 ist wahr, also ``setze preis auf 7``.", "Die Frage ``alter > 64`` wird gar nicht mehr gestellt.", "Ausgabe: 7"],
+      "erklaerung": "Bei verschachtelten Verzweigungen wird die innere Frage nur erreicht, wenn die äußere Bedingung falsch ist. Für 15 Jahre greift der zweite Fall."
+    },
+    {
+      "id": "timp-bed-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Welches Programm verhält sich **genau gleich** wie dieses?\n\n```\nfalls punkte > 100 und leben > 0 dann\n  sage \"Level geschafft\"\n```\n\n```\nProgramm A:\nfalls punkte > 100 dann\n  falls leben > 0 dann\n    sage \"Level geschafft\"\n```\n\n```\nProgramm B:\nfalls punkte > 100 oder leben > 0 dann\n  sage \"Level geschafft\"\n```\n\n```\nProgramm C:\nfalls punkte > 100 dann\n  sage \"Level geschafft\"\nfalls leben > 0 dann\n  sage \"Level geschafft\"\n```",
+      "optionen": [
+        { "text": "Programm A", "richtig": true },
+        { "text": "Programm B", "feedback": "Mit ``oder`` würde schon eine erfüllte Bedingung reichen, z. B. 50 Punkte und 3 Leben." },
+        { "text": "Programm C", "feedback": "Bei 50 Punkten und 3 Leben sagt C trotzdem einmal „Level geschafft“. Bei 120 Punkten und 3 Leben sagt C es sogar zweimal." }
+      ],
+      "erklaerung": "Bei A wird die innere Bedingung nur geprüft, wenn die äußere wahr ist. Die Ausgabe erscheint also nur, wenn **beide** Bedingungen wahr sind. Das ist genau die Bedeutung von ``und``."
+    },
+    {
+      "id": "timp-bed-07", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Eine Alarmanlage hat drei Wahrheitswerte: ``an`` ist wahr, ``fenster`` ist falsch (Fenster zu), ``tür`` ist wahr (Tür offen). Welche Bedingungen sind **wahr**?",
+      "optionen": [
+        { "text": "``an und (fenster oder tür)``", "richtig": true },
+        { "text": "``an und fenster``", "feedback": "``fenster`` ist falsch. Bei ``und`` müssen beide Teile wahr sein." },
+        { "text": "``nicht fenster``", "richtig": true },
+        { "text": "``nicht (an oder tür)``", "feedback": "``an oder tür`` ist wahr. ``nicht`` macht daraus falsch." },
+        { "text": "``fenster oder tür``", "richtig": true }
+      ],
+      "erklaerung": "``fenster oder tür`` = falsch oder wahr = wahr. Damit ist auch ``an und (fenster oder tür)`` = wahr und wahr = wahr. ``nicht fenster`` = nicht falsch = wahr. Die Klammer sorgt dafür, dass zuerst ``oder`` ausgewertet wird."
+    }
+  ]
+}

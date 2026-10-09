@@ -1,18 +1,18 @@
-// Prüft die Physik-Inhalte (content/physik) auf Fehler, bevor sie online gehen.
+// Prüft die Inhalte aller Fächer (content/<fach>) auf Fehler, bevor sie online gehen.
 // Aufruf: npm run check
 import fs from 'node:fs';
 import path from 'node:path';
 import { config } from '../src/config.js';
-import { loadContent } from '../src/physik.js';
+import { loadAll } from '../src/faecher.js';
 
-const c = loadContent();
+const c = loadAll();
 const errors = [...c.errors];
 const warnings = [];
 
-for (const grade of c.stufen) {
+for (const fach of c.faecher) for (const grade of fach.stufen) {
   for (const tf of grade.themenfelder) {
     for (const t of tf.topics) {
-      const where = `${grade.name} › ${tf.nummer} › ${t.titel}`;
+      const where = `${fach.kurz} ${grade.name} › ${tf.nummer} › ${t.titel}`;
       for (const slug of [...t.interaktiv, ...t.vertiefung]) {
         if (!fs.existsSync(path.join(config.lessonsDir, slug, 'index.html'))) errors.push(`${where}: Lerneinheit "${slug}" gibt es nicht in lessons/`);
       }
@@ -25,8 +25,11 @@ for (const grade of c.stufen) {
   }
 }
 
-const topics = c.topicById.size, exercises = c.exerciseById.size;
-console.log(`Physik-Inhalte: ${c.stufen.filter(s => s.themenfelder.length).map(s => s.stufe).join(', ')} · ${topics} Themen · ${exercises} Übungen`);
+for (const f of c.faecher) {
+  const topics = [...c.topicById.values()].filter(t => t.fach === f.id).length;
+  const exercises = [...c.exerciseById.values()].filter(e => e.fach === f.id).length;
+  console.log(`${f.fach}: Klasse ${f.stufen.filter(s => s.themenfelder.length).map(s => s.stufe).join(', ') || '–'} · ${topics} Themen · ${exercises} Übungen`);
+}
 if (warnings.length) console.log(`\nHinweise (${warnings.length}):\n  ${warnings.join('\n  ')}`);
 if (errors.length) { console.error(`\nFehler (${errors.length}):\n  ${errors.join('\n  ')}`); process.exit(1); }
 console.log('\n✔ Keine Fehler gefunden.');
