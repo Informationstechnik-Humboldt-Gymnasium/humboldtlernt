@@ -101,17 +101,6 @@ th { color: var(--muted); font-weight: 600; font-size: .82rem; }
 .badge { background: var(--soft-accent); color: var(--accent); }
 .ok-text { color: var(--ok); font-weight: 600; }
 
-.hero { display: grid; grid-template-columns: 1fr auto; gap: 10px 24px; align-items: center; background: var(--card); border: 1px solid var(--border);
-  border-left: 5px solid var(--accent); border-radius: var(--radius); padding: 20px 22px; text-decoration: none; color: var(--text); margin: 8px 0 18px; }
-.hero:hover { border-color: var(--accent); }
-.hero h2 { margin: 0 0 4px; font-size: 1.35rem; }
-.hero p { margin: 0; color: var(--muted); }
-.hero-progress { grid-column: 1; display: flex; gap: 12px; align-items: center; color: var(--muted); }
-.hero .btn { grid-column: 2; grid-row: 1 / span 2; }
-@media (max-width: 600px) { .hero { grid-template-columns: 1fr; } .hero .btn { grid-column: 1; grid-row: auto; justify-self: start; } }
-.subject-grid { display: grid; gap: 14px; margin: 8px 0 18px; }
-.subject-grid .hero { margin: 0; }
-
 .crumbs { display: flex; flex-wrap: wrap; gap: 6px; font-size: .88rem; color: var(--muted); margin-bottom: 10px; }
 .crumbs a { text-decoration: none; }
 .head-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; }

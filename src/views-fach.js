@@ -31,11 +31,11 @@ export function subjectPickerPage({ user, faecher, own, sets }) {
       <h1>Was möchtest du lernen?</h1>
       <p class="muted">Wähle ein Fach. Die Inhalte folgen dem schulinternen Curriculum.</p>
     </header>
-    <div class="subject-grid">${faecher.map(f => subjectCard(f, own, sets)).join('')}</div>`,
+    <div class="grade-grid">${faecher.map(f => subjectCard(f, own, sets)).join('')}</div>`,
   });
 }
 
-/** Karte eines Fachs: führt direkt zur eigenen Klassenstufe, sonst zur Auswahl. */
+/** Karte eines Fachs: führt direkt zur eigenen Klassenstufe, sonst zur Auswahl. Gleiche Optik wie die Klassenstufen-Karten. */
 export function subjectCard(fach, own, sets) {
   const grades = fach.stufen.filter(s => s.themenfelder.length);
   const grade = grades.find(g => g.stufe === own && topicsOfGrade(g).length);
@@ -43,15 +43,11 @@ export function subjectCard(fach, own, sets) {
   const href = grade ? `/${fach.id}/${grade.stufe}` : `/${fach.id}`;
   const stufen = grades.map(g => g.stufe);
   return `
-    <a class="hero" href="${esc(href)}">
-      <div class="hero-text">
-        <span class="eyebrow">${esc(fach.fach)}</span>
-        <h2>${grade ? esc(grade.name) : 'Wähle deine Klassenstufe'}</h2>
-        <p>${grade ? `${p.topics} Themen mit Erklärungen und Übungen.` : esc(fach.beschreibung || `Klasse ${stufen.join(', ')}`)}</p>
-      </div>
-      ${p ? `<div class="hero-progress"><div class="bar"><span style="width:${p.prozent}%"></span></div>
-        <span class="small">${p.done} von ${p.total} Übungen gelöst</span></div>` : ''}
-      <span class="btn primary">${p ? (p.done ? 'Weiterlernen' : 'Loslegen') : 'Zur Auswahl'} →</span>
+    <a class="grade-card" href="${esc(href)}">
+      <span class="grade-num" aria-hidden="true">${esc(fach.fach.charAt(0))}</span>
+      <span class="grade-name">${esc(fach.fach)}</span>
+      <span class="small muted">${grade ? `${p.topics} Themen mit Erklärungen und Übungen` : esc(fach.beschreibung || `Klasse ${stufen.join(', ')}`)}</span>
+      ${p ? bar(p.prozent, `${p.done} von ${p.total} Übungen gelöst`) : ''}
     </a>`;
 }
 
