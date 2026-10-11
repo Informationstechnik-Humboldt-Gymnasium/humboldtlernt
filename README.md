@@ -16,6 +16,9 @@ Lerneinheiten sie erledigt haben, und Lehrkräfte sehen den Fortschritt ihrer Kl
 - **TIMP (Wahlpflichtfach) nach dem Schulcurriculum:** Klasse 8 (Druck, Logische Schaltungen,
   Leitfähigkeit) und Klasse 9 (Informatik/Programmieren, Halbleiter): 24 Themen, 168 Übungen und
   11 interaktive Erklärungen, z. B. Logiklabor, Programmierlabor, Dioden- und Solarzellen-Labor.
+- **Chemie nach dem Schulcurriculum:** Klasse 7 bis 10 mit allen 12 Themenfeldern (Feuer, Periodensystem,
+  Gase, Wasser, Salze, Metalle, Säuren und Laugen, Stöchiometrie, Kohlenwasserstoffe, Alkohole,
+  organische Säuren, Ester): 36 Themen, 252 Übungen und 10 interaktive Labore.
 - **Weitere Fächer** lassen sich ohne Programmieren ergänzen (siehe Abschnitt 6).
 
 > **Schnellstart:** Wie du das Projekt auf GitHub hochlädst und ohne IServ-Login testest,
@@ -317,7 +320,7 @@ src/markup.js      Formel-Auszeichnung für Texte
 public/style.css   Aussehen (hell/dunkel automatisch)
 public/uebung.js   Übungen im Browser (Abschicken, Feedback)
 public/lesson-kit.*  gemeinsame Bausteine der interaktiven Erklärungen
-content/<fach>/    Inhalte je Fach nach SchiC (physik, timp)
+content/<fach>/    Inhalte je Fach nach SchiC (physik, chemie, timp)
 test/              automatische Tests (npm test)
 ```
 

@@ -1,0 +1,129 @@
+{
+  "id": "ch-k8-salzformeln",
+  "titel": "Salzformeln und Salze im Alltag",
+  "kurz": "Wie man Verhältnisformeln aus Ionenladungen aufstellt, Salze richtig benennt und wo Salze im Alltag vorkommen, nützen und schaden.",
+  "reihenfolge": 3,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Verhältnisformeln von Salzen mithilfe der Ionenladungen oder der Wertigkeit aufstellen" },
+    { "id": "lz2", "niveau": "G", "text": "Salze aus ihrer Formel benennen und aus dem Namen die Formel ableiten" },
+    { "id": "lz3", "niveau": "G", "text": "Vorkommen, Gewinnung und Verwendung von Salzen beschreiben und versteckte Salze in Lebensmitteln einordnen" },
+    { "id": "lz4", "niveau": "H", "text": "Den Einsatz von Streusalz im Winterdienst mit Pro- und Kontra-Argumenten bewerten" }
+  ],
+  "verstehen": {
+    "einstieg": "Auf einer Packung Pökelsalz steht „Natriumchlorid, Natriumnitrit“, auf einer Mineralwasserflasche „Calcium, Magnesium, Hydrogencarbonat“. Auf der Straße liegt im Winter Streusalz. Salze sind überall. Aber wie kommt man auf Formeln wie CaCl₂ oder Al₂O₃?",
+    "abschnitte": [
+      {
+        "titel": "Verhältnisformeln aus Ionenladungen",
+        "text": "Ein Salz ist nach außen **elektrisch neutral**. Die positiven und negativen Ladungen müssen sich also genau ausgleichen. So findest du die Formel:\n\n- Ladungen der Ionen bestimmen (aus dem Periodensystem): Ca²⁺ und Cl⁻\n- So viele Ionen kombinieren, dass die Summe der Ladungen null ist: 1 · (+2) + 2 · (−1) = 0\n- Anzahl als kleine Zahl unten rechts schreiben: **CaCl₂**\n\nEin schwieriges Beispiel ist Aluminiumoxid mit Al³⁺ und O²⁻. Das kleinste gemeinsame Vielfache von 3 und 2 ist 6. Man braucht 2 Al³⁺ (+6) und 3 O²⁻ (−6): **Al₂O₃**.\n\nDie Zahl der Ladungen nennt man auch **Wertigkeit**: Natrium ist einwertig, Calcium zweiwertig, Aluminium dreiwertig. Als Kurzregel kann man die Wertigkeiten über Kreuz als Indizes schreiben und dann kürzen. Bei Mg²⁺ und O²⁻ ergibt das Mg₂O₂, gekürzt **MgO**."
+      },
+      {
+        "titel": "Salze benennen",
+        "text": "Der Name eines Salzes besteht aus dem Namen des **Kations** und dem Namen des **Anions**:\n\n- NaCl: Natriumchlorid\n- MgO: Magnesiumoxid\n- K₂S: Kaliumsulfid\n- CaF₂: Calciumfluorid\n\nZahlwörter braucht man meist nicht, weil die Ladungen das Verhältnis festlegen. Manche Metalle wie Eisen bilden aber verschiedene Ionen. Dann gibt eine römische Zahl die Ladung an: **Eisen(II)-chlorid** FeCl₂ und **Eisen(III)-chlorid** FeCl₃.\n\nEs gibt auch **zusammengesetzte Ionen** aus mehreren Atomen, die zusammenbleiben: Carbonat CO₃²⁻, Sulfat SO₄²⁻, Nitrat NO₃⁻, Phosphat PO₄³⁻ und Hydroxid OH⁻. Kalk ist Calciumcarbonat CaCO₃, Gips ist Calciumsulfat CaSO₄. Braucht man ein solches Ion mehrfach, setzt man es in Klammern: Ca(NO₃)₂."
+      },
+      {
+        "titel": "Vorkommen und Gewinnung",
+        "text": "Meerwasser enthält etwa 3,5 % gelöste Salze, vor allem Natriumchlorid. In Norddeutschland liegen große **Steinsalzlager**. Sie entstanden vor etwa 250 Millionen Jahren, als ein flaches Meer, das Zechsteinmeer, immer wieder austrocknete.\n\nSo gewinnt man Kochsalz:\n\n- **Bergbau**: Steinsalz wird unter Tage abgebaut.\n- **Solung**: Man pumpt Wasser in das Salzlager, löst das Salz und lässt die Sole in Salinen verdampfen.\n- **Meersalz**: In flachen Becken (Salzgärten) verdunstet Meerwasser in der Sonne.\n\nFrüher war Salz so wertvoll, dass man es „weißes Gold“ nannte. Städte wie Lüneburg wurden durch Salzhandel reich, auf Salzstraßen wurde es durch ganz Europa transportiert."
+      },
+      {
+        "titel": "Verwendung und versteckte Salze",
+        "text": "Salze werden vielseitig genutzt: Kochsalz zum Würzen und Konservieren, als Rohstoff für Chlor und Natronlauge, Calciumsulfat als Gips, Nitrate und Phosphate als Dünger.\n\nViel Kochsalz nehmen wir **versteckt** auf: in Brot, Wurst, Käse, Chips und Fertiggerichten. Die Weltgesundheitsorganisation empfiehlt höchstens **5 g Salz pro Tag**. In Deutschland essen viele Menschen deutlich mehr. Zu viel Salz kann auf Dauer den Blutdruck erhöhen.\n\nSteht auf einer Packung nur der Natriumgehalt, rechnet man: **Salzmenge ≈ Natrium · 2,5**. Auch andere Salze stecken als Zusatzstoffe in Lebensmitteln, z. B. Natriumnitrit (E 250) in gepökelter Wurst oder Phosphate in Schmelzkäse."
+      },
+      {
+        "titel": "Streusalz: Pro und Kontra",
+        "text": "Im Winter streut man Salz, weil Salzwasser erst unter 0 °C gefriert. Das Eis taut, Straßen werden sicherer.\n\n- **Pro**: weniger Glätte, weniger Unfälle und Stürze, wirkt schnell, ist billig.\n- **Kontra**: Das Salz gelangt in den Boden und schädigt Straßenbäume und andere Pflanzen. Es reizt die Pfoten von Hunden, belastet Gewässer und lässt Autos und Brücken schneller rosten.\n\nAlternativen sind **abstumpfende Mittel** wie Sand, Splitt oder Granulat. Sie tauen das Eis nicht, machen es aber weniger rutschig. In Berlin dürfen Privatleute auf Gehwegen deshalb grundsätzlich kein Streusalz verwenden. Eine Bewertung wägt ab, wo Sicherheit besonders wichtig ist (z. B. Hauptstraßen, Treppen) und wo der Schaden überwiegt."
+      }
+    ],
+    "merksatz": "In einer **Verhältnisformel** ist die Summe der Ionenladungen null: CaCl₂, Al₂O₃. Der Name nennt zuerst das Kation, dann das Anion mit der Endung **-id** (Chlorid, Oxid, Sulfid) oder den Namen des zusammengesetzten Ions (Carbonat, Sulfat, Nitrat).\n\nSalze werden aus Steinsalzlagern, Sole oder Meerwasser gewonnen. Viel Salz essen wir versteckt in Lebensmitteln.",
+    "alltag": "Ein Brötchen enthält etwa 0,6 g Salz, eine Scheibe Salami etwa 0,5 g und eine Tiefkühlpizza oft 4 bis 6 g. Damit ist die empfohlene Tagesmenge schnell erreicht."
+  },
+  "interaktiv": ["ch-ionenbildung"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "ch-sfo-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Calcium bildet Ca²⁺-Ionen, Chlor bildet Cl⁻-Ionen. Wie lautet die Verhältnisformel von Calciumchlorid?",
+      "optionen": [
+        { "text": "CaCl₂", "richtig": true },
+        { "text": "CaCl", "feedback": "Dann wäre die Gesamtladung +2 − 1 = +1. Das Salz muss aber neutral sein." },
+        { "text": "Ca₂Cl", "feedback": "Zwei Ca²⁺ und ein Cl⁻ ergeben +4 − 1 = +3. Man braucht mehr Chlorid-Ionen, nicht mehr Calcium-Ionen." },
+        { "text": "CaCl₃", "feedback": "Drei Cl⁻ ergeben −3, zusammen mit +2 also −1." }
+      ],
+      "erklaerung": "Ein Ca²⁺ (+2) braucht zwei Cl⁻ (je −1), damit die Summe null ist: **CaCl₂**."
+    },
+    {
+      "id": "ch-sfo-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Ordne jeder Formel den richtigen Namen zu.",
+      "paare": [
+        { "links": "NaCl", "rechts": "Natriumchlorid" },
+        { "links": "MgO", "rechts": "Magnesiumoxid" },
+        { "links": "K₂S", "rechts": "Kaliumsulfid" },
+        { "links": "CaF₂", "rechts": "Calciumfluorid" },
+        { "links": "CaCO₃", "rechts": "Calciumcarbonat" }
+      ],
+      "extraRechts": ["Kaliumsulfat", "Calciumfluor"],
+      "erklaerung": "Zuerst kommt das Metall, dann das Anion: Chlorid, Oxid, Sulfid, Fluorid. CO₃²⁻ ist das zusammengesetzte Carbonat-Ion. Sulfat wäre SO₄²⁻, nicht S²⁻."
+    },
+    {
+      "id": "ch-sfo-03", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Aluminiumoxid besteht aus Al³⁺- und O²⁻-Ionen. Wie viele Oxid-Ionen kommen im Salz auf zwei Aluminium-Ionen?",
+      "gegeben": "Al³⁺, O²⁻",
+      "gesucht": "Anzahl der O²⁻ pro 2 Al³⁺",
+      "loesung": 3, "einheit": "", "toleranz": 0,
+      "rechenweg": [
+        "Zwei Al³⁺ tragen zusammen die Ladung 2 · (+3) = +6.",
+        "Jedes O²⁻ trägt −2. Für −6 braucht man 6 : 2 = 3 Oxid-Ionen.",
+        "Verhältnisformel: Al₂O₃"
+      ],
+      "hinweis": "Die positiven und negativen Ladungen müssen sich genau ausgleichen.",
+      "erklaerung": "Das kleinste gemeinsame Vielfache von 3 und 2 ist 6. Deshalb kombiniert man 2 Al³⁺ mit 3 O²⁻: **Al₂O₃**."
+    },
+    {
+      "id": "ch-sfo-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Rost besteht zum großen Teil aus Eisen(III)-oxid. Welche Formel hat dieses Salz?",
+      "optionen": [
+        { "text": "Fe₂O₃", "richtig": true },
+        { "text": "FeO", "feedback": "FeO enthält Fe²⁺. Das ist Eisen(II)-oxid." },
+        { "text": "Fe₃O₂", "feedback": "Drei Fe³⁺ (+9) und zwei O²⁻ (−4) gleichen sich nicht aus." },
+        { "text": "FeO₃", "feedback": "Ein Fe³⁺ (+3) und drei O²⁻ (−6) ergeben zusammen −3." }
+      ],
+      "erklaerung": "Die römische III bedeutet Fe³⁺. Zwei Fe³⁺ (+6) und drei O²⁻ (−6) ergeben **Fe₂O₃**."
+    },
+    {
+      "id": "ch-sfo-05", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Auf einer Chipstüte steht: 100 g enthalten 0,6 g Natrium. Wie viel Gramm Salz sind das ungefähr?",
+      "gegeben": "Natrium: 0,6 g pro 100 g",
+      "gesucht": "Salzmenge pro 100 g",
+      "loesung": 1.5, "einheit": "g",
+      "rechenweg": [
+        "Faustregel: Salzmenge ≈ Natriummenge · 2,5",
+        "0,6 g · 2,5 = 1,5 g"
+      ],
+      "hinweis": "Kochsalz besteht nur zu etwa 40 % aus Natrium.",
+      "erklaerung": "100 g Chips enthalten etwa 1,5 g Salz. Das ist schon fast ein Drittel der empfohlenen Tageshöchstmenge von 5 g. Der Faktor 2,5 ergibt sich, weil Natrium nur etwa 40 % der Masse von Natriumchlorid ausmacht (23 von 58,5)."
+    },
+    {
+      "id": "ch-sfo-06", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Mit welchen Verfahren wird Kochsalz in großen Mengen gewonnen?",
+      "optionen": [
+        { "text": "Abbau von Steinsalz in Bergwerken", "richtig": true },
+        { "text": "Lösen des Salzes im Lager mit Wasser und Eindampfen der Sole", "richtig": true },
+        { "text": "Verdunsten von Meerwasser in Salzgärten", "richtig": true },
+        { "text": "Reaktion von Natrium mit Chlor", "feedback": "Das funktioniert im Labor, ist aber viel zu teuer und gefährlich. Natrium und Chlor werden sogar umgekehrt aus Kochsalz hergestellt." },
+        { "text": "Destillation von Meerwasser, bei der das Salz verdampft", "feedback": "Beim Erhitzen verdampft das **Wasser**, das Salz bleibt zurück." }
+      ],
+      "erklaerung": "Kochsalz kommt in riesigen Mengen in der Natur vor. Man gewinnt es durch **Bergbau**, durch **Solung** mit anschließendem Eindampfen oder durch **Verdunsten** von Meerwasser."
+    },
+    {
+      "id": "ch-sfo-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Deine Stadt überlegt, ob im Winter auf allen Straßen und Gehwegen Streusalz eingesetzt werden soll. Bewerte diesen Vorschlag. Nenne dabei Pro- und Kontra-Argumente und komme zu einem begründeten Urteil.",
+      "stichworte": [
+        { "aspekt": "Pro: Salz taut Eis, weniger Glätte und Unfälle", "woerter": ["sicherheit", "sicherer", "unfall", "unfaelle", "glatt", "rutsch", "taut", "schmilzt", "schmelz", "gefrier"] },
+        { "aspekt": "Kontra: Schäden an Pflanzen, Boden, Gewässern oder Tieren", "woerter": ["baeume", "baum", "pflanze", "boden", "grundwasser", "gewaesser", "pfoten", "tiere", "umwelt"] },
+        { "aspekt": "Kontra: Korrosion an Autos, Brücken oder Bauwerken", "woerter": ["rost", "korrosion", "auto", "bruecke", "beton", "bauwerk"] },
+        { "aspekt": "Begründetes Urteil, z. B. Alternativen (Sand, Splitt) oder Salz nur an gefährlichen Stellen", "woerter": ["splitt", "sand", "granulat", "alternative", "nur auf", "nur an", "nur dort", "sparsam", "abwaeg", "urteil", "insgesamt", "deshalb finde", "meiner meinung"] }
+      ],
+      "musterloesung": "Für Streusalz spricht, dass es das Eis schnell taut. Dadurch gibt es weniger Glätte, und es passieren weniger Unfälle und Stürze. Gegen Streusalz spricht, dass das Salz in den Boden gelangt und Straßenbäume und andere Pflanzen schädigt. Außerdem reizt es Hundepfoten und belastet das Grundwasser. Es lässt auch Autos und Brücken schneller rosten. Insgesamt finde ich, dass Salz nur an besonders gefährlichen Stellen wie Hauptstraßen, Kreuzungen und Treppen eingesetzt werden sollte. Auf Gehwegen sind Sand oder Splitt eine gute Alternative.",
+      "erklaerung": "Eine gute Bewertung nennt Argumente beider Seiten, gewichtet sie und kommt zu einem begründeten Urteil. Verschiedene Urteile sind möglich, wenn sie gut begründet sind."
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "id": "ch-k8-redox",
+  "titel": "Oxidation, Reduktion und Redoxreihe",
+  "kurz": "Wie Metalle um den Sauerstoff konkurrieren, was Oxidations- und Reduktionsmittel sind und wie man mit der Redoxreihe Reaktionen vorhersagt.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Oxidation als Reaktion mit Sauerstoff und Reduktion als Abgabe von Sauerstoff erkennen" },
+    { "id": "lz2", "niveau": "G", "text": "In einer Redoxreaktion Oxidationsmittel und Reduktionsmittel benennen" },
+    { "id": "lz3", "niveau": "H", "text": "Die Redoxreihe der Metalle nach ihrer Affinität zu Sauerstoff aufstellen und damit Reaktionen vorhersagen" },
+    { "id": "lz4", "niveau": "H", "text": "Redoxgleichungen aufstellen (z. B. Thermitverfahren) und Redoxreaktionen als Elektronenübertragung deuten" }
+  ],
+  "verstehen": {
+    "einstieg": "Bahngleise werden bis heute oft mit einem Gemisch aus Eisenoxid und Aluminiumpulver verschweißt. Einmal gezündet, entsteht flüssiges Eisen mit über 2000 °C. Warum gibt das Eisenoxid seinen Sauerstoff an das Aluminium ab?",
+    "abschnitte": [
+      {
+        "titel": "Oxidation und Reduktion",
+        "text": "Eine **Oxidation** ist eine Reaktion, bei der ein Stoff **Sauerstoff aufnimmt**. Dabei entsteht ein Oxid:\n\n2 Mg + O₂ → 2 MgO\n\nDie **Reduktion** ist das Gegenteil: Ein Oxid **gibt Sauerstoff ab**. Erhitzt man schwarzes Kupferoxid mit Holzkohle, entsteht rotbraunes Kupfer:\n\n2 CuO + C → 2 Cu + CO₂\n\nHier passieren beide Vorgänge gleichzeitig: Kupferoxid wird reduziert, Kohlenstoff wird oxidiert. Eine solche Reaktion heißt **Redoxreaktion** (Reduktion + Oxidation). Eine Reduktion gibt es nie ohne Oxidation."
+      },
+      {
+        "titel": "Oxidationsmittel und Reduktionsmittel",
+        "text": "In einer Redoxreaktion gibt ein Stoff Sauerstoff ab, ein anderer nimmt ihn auf.\n\n- Das **Oxidationsmittel** gibt Sauerstoff ab und oxidiert damit den Partner. Es selbst wird dabei **reduziert**. Beispiel: CuO.\n- Das **Reduktionsmittel** nimmt Sauerstoff auf und reduziert damit den Partner. Es selbst wird dabei **oxidiert**. Beispiel: C.\n\nMerkhilfe: Das Mittel bewirkt beim Partner das, was in seinem Namen steht, und erleidet selbst das Gegenteil."
+      },
+      {
+        "titel": "Die Redoxreihe der Metalle",
+        "text": "Metalle ziehen Sauerstoff unterschiedlich stark an. Diese Anziehung heißt **Affinität zu Sauerstoff**. Erhitzt man ein Metall mit dem Oxid eines anderen Metalls, gilt:\n\n**Das Metall mit der größeren Affinität entreißt dem anderen den Sauerstoff.**\n\nZink + Kupferoxid reagiert: CuO + Zn → Cu + ZnO. Kupfer + Zinkoxid reagiert dagegen nicht. Aus vielen solchen Versuchen ergibt sich die **Redoxreihe** (von großer zu kleiner Affinität):\n\nMagnesium > Aluminium > Zink > Eisen > Kupfer > Silber > Gold\n\nDas Zeichen > bedeutet hier: hat eine größere Affinität zu Sauerstoff als.\n\nLinks stehen die **unedlen** Metalle: Sie sind gute Reduktionsmittel und ihre Oxide sind schwer zu reduzieren. Rechts stehen die **edlen** Metalle. Je weiter zwei Metalle auseinanderstehen, desto heftiger ist die Reaktion und desto mehr Energie wird frei."
+      },
+      {
+        "titel": "Thermitverfahren und Elektronenübertragung",
+        "text": "Beim **Thermitverfahren** reduziert Aluminium Eisenoxid:\n\nFe₂O₃ + 2 Al → Al₂O₃ + 2 Fe\n\nDie Reaktion ist so stark exotherm, dass das Eisen flüssig wird. Damit werden Schienen verschweißt. (**Nur als Lehrerversuch**: Funkenflug, extreme Hitze.)\n\nGenauer betrachtet geben Metallatome bei der Oxidation **Elektronen ab**, Sauerstoffatome nehmen sie auf. Aus Magnesium und Sauerstoff entstehen Ionen: Mg → Mg²⁺ + 2 e⁻ und O + 2 e⁻ → O²⁻. Deshalb definiert man allgemeiner:\n\n- **Oxidation** = Elektronenabgabe\n- **Reduktion** = Elektronenaufnahme"
+      }
+    ],
+    "merksatz": "**Oxidation:** Aufnahme von Sauerstoff (Abgabe von Elektronen). **Reduktion:** Abgabe von Sauerstoff (Aufnahme von Elektronen). Beide laufen immer gemeinsam ab: **Redoxreaktion**.\n\nRedoxreihe: Mg > Al > Zn > Fe > Cu > Ag > Au. Ein Metall kann nur die Oxide der Metalle reduzieren, die **rechts** von ihm stehen.",
+    "alltag": "Verzinkte Gartenzäune rosten lange nicht: Zink ist unedler als Eisen und reagiert zuerst. Es „opfert“ sich für das Eisen."
+  },
+  "interaktiv": ["ch-redoxreihe"],
+  "uebungen": [
+    {
+      "id": "ch-rdx-01",
+      "typ": "single",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz1",
+      "frage": "Magnesium verbrennt: 2 Mg + O₂ → 2 MgO. Was passiert mit dem Magnesium?",
+      "optionen": [
+        { "text": "Es wird oxidiert, denn es nimmt Sauerstoff auf.", "richtig": true },
+        { "text": "Es wird reduziert, denn es nimmt Sauerstoff auf.", "feedback": "Aufnahme von Sauerstoff heißt Oxidation. Reduktion ist die Abgabe von Sauerstoff." },
+        { "text": "Es wird reduziert, denn es gibt Sauerstoff ab.", "feedback": "Magnesium hat am Anfang gar keinen Sauerstoff, den es abgeben könnte." },
+        { "text": "Es schmilzt nur, ein neuer Stoff entsteht nicht.", "feedback": "Es entsteht ein weißes Pulver, Magnesiumoxid. Das ist ein neuer Stoff." }
+      ],
+      "erklaerung": "Magnesium verbindet sich mit Sauerstoff zu Magnesiumoxid. Diese Aufnahme von Sauerstoff heißt **Oxidation**."
+    },
+    {
+      "id": "ch-rdx-02",
+      "typ": "zuordnung",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz2",
+      "frage": "Zinkpulver und Kupferoxid werden erhitzt: CuO + Zn → Cu + ZnO. Ordne jedem Stoff seine Rolle zu.",
+      "paare": [
+        { "links": "Kupferoxid (CuO)", "rechts": "Oxidationsmittel, gibt Sauerstoff ab" },
+        { "links": "Zink (Zn)", "rechts": "Reduktionsmittel, nimmt Sauerstoff auf" },
+        { "links": "Kupfer (Cu)", "rechts": "Produkt der Reduktion" },
+        { "links": "Zinkoxid (ZnO)", "rechts": "Produkt der Oxidation" }
+      ],
+      "erklaerung": "Kupferoxid gibt Sauerstoff ab und wird zu Kupfer reduziert. Damit oxidiert es das Zink, ist also das Oxidationsmittel. Zink nimmt den Sauerstoff auf und wird zu Zinkoxid oxidiert. Es ist das Reduktionsmittel."
+    },
+    {
+      "id": "ch-rdx-03",
+      "typ": "reihenfolge",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz3",
+      "frage": "Ordne die Metalle nach ihrer Affinität zu Sauerstoff. Beginne mit der **größten** Affinität.",
+      "elemente": ["Magnesium", "Aluminium", "Zink", "Eisen", "Kupfer", "Silber"],
+      "erklaerung": "Die Redoxreihe lautet Mg > Al > Zn > Fe > Cu > Ag (> Au). Magnesium ist am unedelsten und reißt Sauerstoff am stärksten an sich, Silber ist edel und gibt ihn leicht ab."
+    },
+    {
+      "id": "ch-rdx-04",
+      "typ": "multi",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz3",
+      "frage": "Jeweils ein Metall wird mit einem Metalloxid erhitzt. Bei welchen Gemischen läuft eine Redoxreaktion ab?",
+      "optionen": [
+        { "text": "Eisen + Kupferoxid", "richtig": true },
+        { "text": "Kupfer + Zinkoxid", "feedback": "Kupfer hat eine kleinere Affinität zu Sauerstoff als Zink. Es kann dem Zinkoxid den Sauerstoff nicht entreißen." },
+        { "text": "Aluminium + Eisenoxid", "richtig": true },
+        { "text": "Silber + Kupferoxid", "feedback": "Silber ist edler als Kupfer und kann Kupferoxid nicht reduzieren." },
+        { "text": "Magnesium + Zinkoxid", "richtig": true }
+      ],
+      "erklaerung": "Ein Metall reduziert nur die Oxide von Metallen, die in der Redoxreihe **rechts** von ihm stehen (also edler sind). Eisen steht links von Kupfer, Aluminium links von Eisen und Magnesium links von Zink."
+    },
+    {
+      "id": "ch-rdx-05",
+      "typ": "single",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz4",
+      "frage": "Magnesium reagiert mit Sauerstoff zu Magnesiumoxid, das aus Mg²⁺- und O²⁻-Ionen besteht. Was geschieht dabei mit einem Magnesiumatom?",
+      "optionen": [
+        { "text": "Es gibt zwei Elektronen ab und wird oxidiert.", "richtig": true },
+        { "text": "Es nimmt zwei Elektronen auf und wird oxidiert.", "feedback": "Würde es Elektronen aufnehmen, wäre es danach negativ geladen. Mg²⁺ ist aber positiv." },
+        { "text": "Es gibt zwei Elektronen ab und wird reduziert.", "feedback": "Elektronenabgabe heißt Oxidation. Reduziert wird der Sauerstoff, der die Elektronen aufnimmt." },
+        { "text": "Es gibt zwei Protonen ab.", "feedback": "Bei chemischen Reaktionen bleibt der Atomkern unverändert. Nur Elektronen werden übertragen." }
+      ],
+      "erklaerung": "Mg → Mg²⁺ + 2 e⁻: Das Magnesiumatom gibt seine zwei Valenzelektronen ab und wird **oxidiert**. Das Sauerstoffatom nimmt sie auf (O + 2 e⁻ → O²⁻) und wird **reduziert**."
+    },
+    {
+      "id": "ch-rdx-06",
+      "typ": "single",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz4",
+      "frage": "Beim Thermitverfahren reagiert Eisenoxid (Fe₂O₃) mit Aluminium. Welche Gleichung ist richtig und ausgeglichen?",
+      "optionen": [
+        { "text": "Fe₂O₃ + 2 Al → Al₂O₃ + 2 Fe", "richtig": true },
+        { "text": "Fe₂O₃ + Al → AlO₃ + Fe₂", "feedback": "Die Formeln stimmen nicht: Aluminiumoxid ist Al₂O₃, und Eisen schreibt man als Fe (kein Molekül)." },
+        { "text": "Fe₂O₃ + 3 Al → Al₃O₂ + 2 Fe", "feedback": "Aluminiumoxid hat die Formel Al₂O₃. Formeln darf man zum Ausgleichen nicht verändern." },
+        { "text": "Fe₂O₃ + Al → Al₂O₃ + Fe", "feedback": "Richtige Formeln, aber nicht ausgeglichen: Links steht 1 Al, rechts 2. Bei Fe ist es umgekehrt." }
+      ],
+      "erklaerung": "Links: 2 Fe, 3 O, 2 Al. Rechts: 2 Al, 3 O, 2 Fe. Aluminium nimmt den Sauerstoff auf (Reduktionsmittel), Eisenoxid gibt ihn ab (Oxidationsmittel)."
+    },
+    {
+      "id": "ch-rdx-07",
+      "typ": "text",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz3",
+      "frage": "Tom möchte aus Zinkoxid reines Zink gewinnen. Er erhitzt dazu Zinkoxid mit Kupferpulver. Sage voraus, ob das klappt, und begründe mit der Redoxreihe. Schlage ein besser geeignetes Metall vor.",
+      "stichworte": [
+        { "aspekt": "Es findet keine Reaktion statt", "woerter": ["keine reaktion", "klappt nicht", "funktioniert nicht", "reagiert nicht", "nicht moeglich"] },
+        { "aspekt": "Kupfer hat eine kleinere Affinität zu Sauerstoff / ist edler als Zink", "woerter": ["affinitaet", "edler", "rechts von zink", "unedler"] },
+        { "aspekt": "Geeignet ist ein unedleres Metall wie Magnesium oder Aluminium", "woerter": ["magnesium", "aluminium"] }
+      ],
+      "musterloesung": "Das klappt nicht, es findet keine Reaktion statt. Kupfer steht in der Redoxreihe rechts von Zink, ist also edler und hat eine kleinere Affinität zu Sauerstoff als Zink. Es kann dem Zinkoxid den Sauerstoff deshalb nicht entreißen. Tom sollte ein unedleres Metall nehmen, zum Beispiel Magnesium oder Aluminium. Dann gilt etwa: ZnO + Mg → Zn + MgO.",
+      "erklaerung": "Mit der Redoxreihe kann man Reaktionen vorhersagen, ohne sie auszuprobieren: Das Metall muss links vom Metall des Oxids stehen."
+    }
+  ]
+}

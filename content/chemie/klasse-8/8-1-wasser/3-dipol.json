@@ -1,0 +1,143 @@
+{
+  "id": "ch-k8-dipol",
+  "titel": "Das Wassermolekül: Elektronegativität und Dipol",
+  "kurz": "Warum das Wassermolekül gewinkelt ist, eine positive und eine negative Seite hat und deshalb so besondere Eigenschaften zeigt.",
+  "reihenfolge": 3,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Die Lewis-Formel des Wassermoleküls aufstellen und seinen gewinkelten Bau beschreiben" },
+    { "id": "lz2", "niveau": "G", "text": "Mit der Elektronegativität polare und unpolare Elektronenpaarbindungen unterscheiden und Partialladungen angeben" },
+    { "id": "lz3", "niveau": "H", "text": "Erklären, warum das Wassermolekül ein Dipol ist, das Kohlenstoffdioxidmolekül aber nicht" },
+    { "id": "lz4", "niveau": "H", "text": "Inter- und intramolekulare Wechselwirkungen unterscheiden und Eigenschaften von Wasser damit erklären (z. B. Ablenkung des Wasserstrahls)" }
+  ],
+  "verstehen": {
+    "einstieg": "Reibe einen Luftballon an deinen Haaren und halte ihn neben einen dünnen Wasserstrahl aus dem Wasserhahn. Der Strahl biegt sich zum Ballon hin. Mit Speiseöl klappt das nicht. Was ist am Wasser so besonders?",
+    "abschnitte": [
+      {
+        "titel": "Die Lewis-Formel von Wasser",
+        "text": "Ein Sauerstoffatom hat **6 Valenzelektronen**, ein Wasserstoffatom eines. Im Wassermolekül teilt sich das Sauerstoffatom mit jedem Wasserstoffatom ein **bindendes Elektronenpaar**. So erreicht das Sauerstoffatom 8 Elektronen (Oktett), jedes Wasserstoffatom 2 (wie Helium).\n\nAm Sauerstoffatom bleiben **zwei nichtbindende (freie) Elektronenpaare**. Jeder Strich steht für ein Elektronenpaar:\n\n```\n    _\n   |O—H\n    |\n    H\n```\n\nDie vier Elektronenpaare stoßen sich gegenseitig ab und ordnen sich räumlich möglichst weit voneinander an. Deshalb ist das Molekül **gewinkelt**. Der Winkel zwischen den beiden O–H-Bindungen beträgt etwa **105°**."
+      },
+      {
+        "titel": "Elektronegativität und polare Bindung",
+        "text": "Die **Elektronegativität** (EN) gibt an, wie stark ein Atom in einer Bindung die gemeinsamen Elektronen zu sich zieht. Fluor hat mit 4,0 den größten Wert. Im Periodensystem steigt die EN in einer Periode von links nach rechts und in einer Gruppe von unten nach oben.\n\nEinige Werte (nach Pauling, gerundet): H 2,2 · C 2,6 · N 3,0 · O 3,4 · Cl 3,2 · Na 0,9\n\nDie **Differenz** `ΔEN` entscheidet über die Bindungsart:\n\n- `ΔEN` = 0 bis etwa 0,4: **unpolare** Elektronenpaarbindung, z. B. H–H, C–H\n- `ΔEN` etwa 0,4 bis 1,7: **polare** Elektronenpaarbindung, z. B. O–H mit `ΔEN = 3,4 − 2,2 = 1,2`\n- `ΔEN` größer als etwa 1,7: **Ionenbindung**, z. B. Natriumchlorid\n\nIn der O–H-Bindung liegt das Elektronenpaar näher am Sauerstoff. Der Sauerstoff erhält eine negative **Partialladung** δ−, der Wasserstoff eine positive Partialladung δ+."
+      },
+      {
+        "titel": "Wasser ist ein Dipol",
+        "text": "Weil das Molekül gewinkelt ist, liegt der Schwerpunkt der positiven Partialladungen (bei den H-Atomen) an einer anderen Stelle als der Schwerpunkt der negativen Partialladung (am O-Atom). Das Molekül hat eine positive und eine negative Seite: Es ist ein **Dipol**.\n\nIm **Kohlenstoffdioxidmolekül** O=C=O sind die Bindungen auch polar. Das Molekül ist aber **linear** gebaut. Die Ladungsschwerpunkte fallen in der Mitte zusammen, deshalb ist CO₂ **kein** Dipol."
+      },
+      {
+        "titel": "Kräfte innerhalb und zwischen Molekülen",
+        "text": "**Intramolekulare** Kräfte wirken **innerhalb** eines Moleküls: die Elektronenpaarbindungen zwischen O und H. Sie sind sehr stark.\n\n**Intermolekulare** Kräfte wirken **zwischen** Molekülen. Zwischen Wassermolekülen ziehen sich δ+ und δ− gegenseitig an. Besonders stark ist die Anziehung zwischen einem H-Atom und einem freien Elektronenpaar eines O-Atoms im Nachbarmolekül: eine **Wasserstoffbrücke**.\n\nDiese Anziehung erklärt viele Eigenschaften:\n\n- **Hohe Siedetemperatur:** Wasser siedet bei 100 °C, das ähnlich große Schwefelwasserstoff H₂S schon bei −60 °C. Beim Sieden werden nur die Kräfte zwischen den Molekülen überwunden, die O–H-Bindungen bleiben erhalten.\n- **Wasserstrahl:** Ein geladener Stab richtet die Dipole aus und zieht sie an. Der Strahl wird abgelenkt, egal ob der Stab positiv oder negativ geladen ist.\n- **Gutes Lösungsmittel** für Salze und andere polare Stoffe."
+      }
+    ],
+    "formeln": [
+      { "formel": "ΔEN = EN_{1} − EN_{2}", "bedeutung": "Differenz der Elektronegativitäten der beiden Bindungspartner (größerer minus kleinerer Wert)" }
+    ],
+    "merksatz": "Das Wassermolekül ist **gewinkelt** und hat **polare** O–H-Bindungen (`ΔEN = 1,2`). Die Ladungsschwerpunkte fallen nicht zusammen: Wasser ist ein **Dipol**.\n\nZwischen Wassermolekülen wirken starke **intermolekulare** Kräfte (Wasserstoffbrücken). Sie erklären die hohe Siedetemperatur und die Ablenkung des Wasserstrahls.",
+    "alltag": "Eine Mikrowelle nutzt den Dipol: Das elektrische Feld der Mikrowellen dreht die Wassermoleküle im Essen ständig hin und her. Diese Bewegung macht das Essen warm."
+  },
+  "uebungen": [
+    {
+      "id": "ch-dip-01",
+      "typ": "single",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz1",
+      "frage": "Wie viele **nichtbindende** (freie) Elektronenpaare hat das Sauerstoffatom im Wassermolekül?",
+      "optionen": [
+        { "text": "keines", "feedback": "Zähle die Valenzelektronen: Sauerstoff hat 6, davon stecken nur 2 in den Bindungen." },
+        { "text": "eines", "feedback": "Dann hätte der Sauerstoff nur 6 Elektronen um sich, das Oktett wäre nicht erfüllt." },
+        { "text": "zwei", "richtig": true },
+        { "text": "vier", "feedback": "Insgesamt hat der Sauerstoff vier Elektronenpaare um sich, zwei davon sind aber bindend." }
+      ],
+      "erklaerung": "Sauerstoff hat 6 Valenzelektronen. Zwei davon bilden mit den Elektronen der H-Atome die beiden bindenden Paare. Die übrigen 4 Elektronen bilden **2 freie Elektronenpaare**. Zusammen sind es 4 Paare, also 8 Elektronen (Oktett)."
+    },
+    {
+      "id": "ch-dip-02",
+      "typ": "single",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz2",
+      "frage": "Was gibt die Elektronegativität eines Atoms an?",
+      "optionen": [
+        { "text": "Wie stark das Atom in einer Bindung die gemeinsamen Elektronen zu sich zieht", "richtig": true },
+        { "text": "Wie viele Elektronen das Atom insgesamt hat", "feedback": "Das ist die Ordnungszahl (beim neutralen Atom)." },
+        { "text": "Wie viele Bindungen das Atom eingehen kann", "feedback": "Das hängt von den Valenzelektronen ab, nicht von der Elektronegativität." },
+        { "text": "Wie negativ ein Ion geladen ist", "feedback": "Die Elektronegativität ist eine Eigenschaft von Atomen in Bindungen, keine Ionenladung." }
+      ],
+      "erklaerung": "Die Elektronegativität beschreibt die Anziehungskraft eines Atoms auf die Elektronen einer Bindung. Je größer der Unterschied zwischen zwei Bindungspartnern, desto polarer ist die Bindung."
+    },
+    {
+      "id": "ch-dip-03",
+      "typ": "zahl",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz2",
+      "frage": "Berechne die Elektronegativitätsdifferenz in einer N–H-Bindung (Ammoniak). EN(N) = 3,0; EN(H) = 2,2.",
+      "gegeben": "EN(N) = 3,0; EN(H) = 2,2",
+      "gesucht": "Elektronegativitätsdifferenz",
+      "gesuchtSymbol": "ΔEN",
+      "loesung": 0.8,
+      "einheit": "",
+      "rechenweg": [
+        "Größerer minus kleinerer Wert: `ΔEN = 3,0 − 2,2`",
+        "Ergebnis: `ΔEN = 0,8`",
+        "0,8 liegt zwischen 0,4 und 1,7: Die N–H-Bindung ist polar."
+      ],
+      "erklaerung": "Die N–H-Bindung ist polar, aber weniger polar als die O–H-Bindung (`ΔEN = 1,2`). Der Stickstoff trägt die negative Partialladung δ−."
+    },
+    {
+      "id": "ch-dip-04",
+      "typ": "zuordnung",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz2",
+      "frage": "Ordne jeder Bindung die passende Bindungsart zu. Nutze die EN-Werte H 2,2 · C 2,6 · O 3,4 · Na 0,9 · Cl 3,2.",
+      "paare": [
+        { "links": "H–H im Wasserstoffmolekül", "rechts": "unpolare Elektronenpaarbindung (ΔEN = 0)" },
+        { "links": "O–H im Wassermolekül", "rechts": "polare Elektronenpaarbindung (ΔEN = 1,2)" },
+        { "links": "C–H im Methanmolekül", "rechts": "nahezu unpolare Elektronenpaarbindung (ΔEN = 0,4)" },
+        { "links": "Natrium und Chlor im Kochsalz", "rechts": "Ionenbindung (ΔEN = 2,3)" }
+      ],
+      "erklaerung": "Je größer die Elektronegativitätsdifferenz, desto ungleicher werden die Elektronen verteilt. Ab etwa 1,7 gehen die Elektronen praktisch ganz auf ein Atom über: Es entstehen Ionen."
+    },
+    {
+      "id": "ch-dip-05",
+      "typ": "single",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz3",
+      "frage": "Die C=O-Bindungen im Kohlenstoffdioxidmolekül sind polar. Warum ist das CO₂-Molekül trotzdem **kein** Dipol?",
+      "optionen": [
+        { "text": "Das Molekül ist linear gebaut, die Ladungsschwerpunkte fallen in der Mitte zusammen.", "richtig": true },
+        { "text": "Kohlenstoff und Sauerstoff haben die gleiche Elektronegativität.", "feedback": "Nein: EN(O) = 3,4 und EN(C) = 2,6. Die Bindungen sind polar." },
+        { "text": "Es enthält keine Wasserstoffatome.", "feedback": "Ein Dipol braucht keinen Wasserstoff. Entscheidend ist die Form des Moleküls." },
+        { "text": "Kohlenstoffdioxid ist ein Gas.", "feedback": "Auch Gase können aus Dipolmolekülen bestehen, z. B. Wasserdampf." }
+      ],
+      "erklaerung": "O=C=O ist gerade gebaut. Die negativen Partialladungen sitzen links und rechts gleich weit vom Kohlenstoff entfernt. Ihr Schwerpunkt liegt genau auf dem positiven C-Atom. Beim gewinkelten Wassermolekül ist das nicht so."
+    },
+    {
+      "id": "ch-dip-06",
+      "typ": "multi",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz4",
+      "frage": "Welche Aussagen über Wasser sind richtig?",
+      "optionen": [
+        { "text": "Wasserstoffbrücken sind intermolekulare Kräfte.", "richtig": true },
+        { "text": "Beim Sieden von Wasser werden die Kräfte zwischen den Molekülen überwunden.", "richtig": true },
+        { "text": "Beim Sieden von Wasser werden die O–H-Bindungen gespalten.", "feedback": "Dann würden Wasserstoff und Sauerstoff entstehen. Wasserdampf besteht aber weiter aus H₂O-Molekülen." },
+        { "text": "Die O–H-Bindung ist eine intramolekulare Bindung.", "richtig": true },
+        { "text": "Wasser siedet bei 100 °C, weil seine Moleküle besonders schwer sind.", "feedback": "Wassermoleküle sind sogar leichter als H₂S-Moleküle. Die hohe Siedetemperatur kommt von den Wasserstoffbrücken." }
+      ],
+      "erklaerung": "Innerhalb des Moleküls halten starke Elektronenpaarbindungen die Atome zusammen (intramolekular). Zwischen den Molekülen wirken Wasserstoffbrücken (intermolekular). Nur diese werden beim Verdampfen überwunden."
+    },
+    {
+      "id": "ch-dip-07",
+      "typ": "text",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz4",
+      "frage": "Ein negativ geladener Kunststoffstab wird neben einen dünnen Wasserstrahl gehalten. Der Strahl wird zum Stab hin abgelenkt. Erkläre diese Beobachtung.",
+      "stichworte": [
+        { "aspekt": "Wassermoleküle sind Dipole (Partialladungen δ+ und δ−)", "woerter": ["dipol", "partialladung", "teilladung"] },
+        { "aspekt": "Die Moleküle drehen sich: positive Seite zum Stab", "woerter": ["dreh", "richten", "ausgerichtet", "ausricht", "positive seite", "h atome zum stab"] },
+        { "aspekt": "Anziehung zwischen Stab und Wasser", "woerter": ["anzieh", "angezogen", "zieht", "anziehung"] }
+      ],
+      "musterloesung": "Wassermoleküle sind Dipole: Sie haben am Sauerstoff eine negative und an den Wasserstoffatomen eine positive Partialladung. Im Feld des negativ geladenen Stabes drehen sich die Moleküle so, dass ihre positive Seite zum Stab zeigt. Die positive Seite ist näher am Stab als die negative, deshalb überwiegt die Anziehung. Der Wasserstrahl wird zum Stab hin angezogen.",
+      "erklaerung": "Bei einem positiv geladenen Stab drehen sich die Moleküle andersherum, und der Strahl wird ebenfalls angezogen. Ein Strahl aus unpolarem Speiseöl oder Heptan wird dagegen kaum abgelenkt."
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "id": "ch-k10-alkansaeuren",
+  "titel": "Essigsäure und die Alkansäuren",
+  "kurz": "Wie aus Wein Essig wird, was die Carboxygruppe ausmacht und wie sich die Alkansäuren in ihrer homologen Reihe verändern.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Die Herstellung von Essigsäure aus Ethanol über Ethanal als zweistufige Oxidation beschreiben" },
+    { "id": "lz2", "niveau": "G", "text": "Die Carboxygruppe als funktionelle Gruppe erkennen und Alkansäuren mit Namen und Halbstrukturformel angeben" },
+    { "id": "lz3", "niveau": "H", "text": "Siedetemperaturen und Löslichkeit in der homologen Reihe mit zwischenmolekularen Kräften erklären" },
+    { "id": "lz4", "niveau": "G", "text": "Ethansäure als Säure beschreiben und den sicheren Umgang mit Essig, Essigessenz und Eisessig begründen" }
+  ],
+  "verstehen": {
+    "einstieg": "Eine offene Flasche Wein schmeckt nach ein paar Tagen sauer. Eine verschlossene Flasche nicht. Was passiert da mit dem Alkohol?",
+    "abschnitte": [
+      {
+        "titel": "Vom Wein zum Essig",
+        "text": "In offenem Wein leben **Essigsäurebakterien**. Sie wandeln Ethanol mithilfe von **Sauerstoff aus der Luft** in Ethansäure um. Ethansäure heißt im Alltag **Essigsäure**. Ohne Luft, also in einer verschlossenen Flasche, klappt das nicht.\n\nDie Umwandlung läuft in **zwei Schritten** ab. Beide sind **Oxidationen**:\n\n- Ethanol wird zu **Ethanal** oxidiert. Dabei gibt das Molekül zwei Wasserstoffatome ab. Das kennst du aus dem Versuch mit heißem Kupferoxid.\n- Ethanal wird zu **Ethansäure** oxidiert. Dabei nimmt das Molekül ein Sauerstoffatom auf.\n\nInsgesamt gilt: CH₃–CH₂–OH + O₂ → CH₃–COOH + H₂O"
+      },
+      {
+        "titel": "Die Carboxygruppe",
+        "text": "Alle Alkansäuren tragen am Ende der Kohlenstoffkette die **Carboxygruppe** –COOH. Sie besteht aus einem C-Atom mit einem doppelt gebundenen O-Atom und einer OH-Gruppe. Das ist die **funktionelle Gruppe** der Carbonsäuren. Strukturformel der Ethansäure:\n\n```\n    H   O\n    |   ‖\nH – C – C – O – H\n    |\n    H\n```\n\nDer Name leitet sich vom Alkan mit **gleich vielen C-Atomen** ab. Das C-Atom der Carboxygruppe zählt mit:\n\n- **Methansäure** H–COOH (Ameisensäure)\n- **Ethansäure** CH₃–COOH (Essigsäure)\n- **Propansäure** CH₃–CH₂–COOH\n- **Butansäure** CH₃–CH₂–CH₂–COOH (Buttersäure)\n\nDie allgemeine Formel lautet CₙH₂ₙ₊₁–COOH. Jedes Glied hat eine CH₂-Gruppe mehr als das vorige: Die Alkansäuren bilden eine **homologe Reihe**."
+      },
+      {
+        "titel": "Siedetemperatur und Löslichkeit",
+        "text": "Siedetemperaturen bei Normaldruck:\n\n- Methansäure: 101 °C\n- Ethansäure: 118 °C\n- Propansäure: 141 °C\n- Butansäure: 164 °C\n\nZum Vergleich: Ethanol siedet schon bei 78 °C, Propan-1-ol (gleiche molare Masse wie Ethansäure) bei 97 °C. Die Carboxygruppe ist **stark polar**. Zwischen den Carboxygruppen zweier Moleküle bilden sich gleich **zwei Wasserstoffbrücken**. Diese Paare (Dimere) halten fest zusammen. Mit jeder CH₂-Gruppe mehr kommen stärkere **Van-der-Waals-Kräfte** zwischen den Ketten hinzu. Deshalb steigt die Siedetemperatur in der Reihe an.\n\nMethan- bis Butansäure mischen sich in jedem Verhältnis mit Wasser, denn die Carboxygruppe bildet Wasserstoffbrücken zu Wassermolekülen (**hydrophil**). Ab Pentansäure sinkt die Löslichkeit. Die lange, unpolare Kohlenwasserstoffkette ist **hydrophob**. Langkettige Säuren wie Hexadecansäure (Palmitinsäure) lösen sich praktisch nicht mehr in Wasser."
+      },
+      {
+        "titel": "Ethansäure als Säure",
+        "text": "In Wasser gibt Ethansäure ein **Proton** ab. Es stammt aus der OH-Gruppe der Carboxygruppe, nicht aus der CH₃-Gruppe:\n\nCH₃–COOH + H₂O ⇌ CH₃–COO⁻ + H₃O⁺\n\nEs entstehen **Oxonium-Ionen** (die Lösung ist sauer) und **Acetat-Ionen** (Ethanoat-Ionen). Ethansäure ist eine **schwache Säure**: Nur ein kleiner Teil der Moleküle gibt sein Proton ab. Trotzdem zeigt sie typische Säure-Reaktionen. Mit Magnesium entsteht Wasserstoff, mit Natronlauge das Salz Natriumacetat und Wasser.\n\nIm Haushalt gibt es Essig in verschiedenen Stärken:\n\n- **Speiseessig** mit etwa 5 % Essigsäure\n- **Essigessenz** mit 25 % Essigsäure: reizt Haut und Augen stark und muss vor dem Gebrauch verdünnt werden. Außer Reichweite von Kindern aufbewahren!\n- **Eisessig** ist reine Essigsäure. Er ist **ätzend** und **entzündlich**. Bei Temperaturen unter 17 °C erstarrt er zu eisartigen Kristallen. Im Labor nur mit Schutzbrille und Handschuhen verwenden."
+      }
+    ],
+    "formeln": [
+      { "formel": "CH₃–CH₂–OH  →  CH₃–CHO  →  CH₃–COOH", "bedeutung": "Ethanol → Ethanal → Ethansäure: zwei Oxidationsschritte" },
+      { "formel": "CH₃–CH₂–OH + O₂ → CH₃–COOH + H₂O", "bedeutung": "Essigsäuregärung insgesamt (durch Essigsäurebakterien)" },
+      { "formel": "CH₃–COOH + H₂O ⇌ CH₃–COO⁻ + H₃O⁺", "bedeutung": "Ethansäure gibt ein Proton an Wasser ab: Acetat-Ion und Oxonium-Ion entstehen" }
+    ],
+    "merksatz": "Alkansäuren entstehen durch **Oxidation** von Alkanolen über Alkanale. Ihre funktionelle Gruppe ist die **Carboxygruppe** –COOH. Die allgemeine Formel lautet CₙH₂ₙ₊₁–COOH.\n\nWasserstoffbrücken zwischen den Carboxygruppen bewirken hohe Siedetemperaturen. Mit wachsender Kettenlänge steigen die Siedetemperaturen, und die Wasserlöslichkeit nimmt ab.",
+    "alltag": "Essiggurken halten sich monatelang: In der sauren Lösung können sich die meisten Bakterien und Schimmelpilze nicht vermehren. Essig wird deshalb seit Jahrtausenden zum **Konservieren** verwendet."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "ch-aks-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Welche funktionelle Gruppe haben alle Alkansäuren gemeinsam?",
+      "optionen": [
+        { "text": "die Hydroxygruppe –OH", "feedback": "Die Hydroxygruppe ist die funktionelle Gruppe der Alkanole (Alkohole)." },
+        { "text": "die Aldehydgruppe –CHO", "feedback": "Die Aldehydgruppe gehört zu den Alkanalen, der Zwischenstufe auf dem Weg zur Säure." },
+        { "text": "die Carboxygruppe –COOH", "richtig": true },
+        { "text": "die Estergruppe –COO–", "feedback": "Die Estergruppe entsteht erst, wenn eine Säure mit einem Alkohol reagiert." }
+      ],
+      "erklaerung": "Die **Carboxygruppe** –COOH besteht aus einem C-Atom mit doppelt gebundenem O-Atom und einer OH-Gruppe. Sie macht die Moleküle zu Säuren."
+    },
+    {
+      "id": "ch-aks-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Ordne jeder Halbstrukturformel den richtigen Namen zu.",
+      "paare": [
+        { "links": "CH₃–CH₂–OH", "rechts": "Ethanol" },
+        { "links": "CH₃–CHO", "rechts": "Ethanal" },
+        { "links": "CH₃–COOH", "rechts": "Ethansäure" },
+        { "links": "H–COOH", "rechts": "Methansäure" },
+        { "links": "CH₃–CH₂–CH₂–COOH", "rechts": "Butansäure" }
+      ],
+      "extraRechts": ["Propansäure", "Methanol"],
+      "erklaerung": "Die Endung zeigt die funktionelle Gruppe: **-ol** für –OH, **-al** für –CHO, **-säure** für –COOH. Den Stamm bestimmt die Zahl der C-Atome, das C-Atom der Carboxygruppe zählt mit. CH₃–CH₂–CH₂–COOH hat vier C-Atome: Butansäure."
+    },
+    {
+      "id": "ch-aks-03", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Welche Aussagen über die Herstellung von Essig aus Wein sind richtig?",
+      "optionen": [
+        { "text": "Essigsäurebakterien brauchen Sauerstoff aus der Luft.", "richtig": true },
+        { "text": "Als Zwischenstufe entsteht Ethanal.", "richtig": true },
+        { "text": "Ethanol wird dabei oxidiert.", "richtig": true },
+        { "text": "In einer fest verschlossenen Flasche entsteht besonders schnell Essig.", "feedback": "Ohne Luftsauerstoff können die Bakterien Ethanol nicht oxidieren." },
+        { "text": "Bei der Umwandlung wird Sauerstoff freigesetzt.", "feedback": "Sauerstoff wird verbraucht, nicht freigesetzt: CH₃–CH₂–OH + O₂ → CH₃–COOH + H₂O." }
+      ],
+      "erklaerung": "Ethanol → Ethanal → Ethansäure: Im ersten Schritt werden Wasserstoffatome abgegeben, im zweiten wird ein Sauerstoffatom aufgenommen. Beides sind Oxidationen. Der Sauerstoff kommt aus der Luft."
+    },
+    {
+      "id": "ch-aks-04", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Essigessenz enthält 25 % Essigsäure (Massenanteil). Du willst daraus Speiseessig mit 5 % Essigsäure herstellen. Wie viel Wasser musst du zu 100 g Essigessenz geben?",
+      "gegeben": "100 g Essigessenz mit 25 % Essigsäure, Ziel: 5 %",
+      "gesucht": "Masse des Wassers",
+      "gesuchtSymbol": "m(Wasser)",
+      "loesung": 400, "einheit": "g", "toleranz": 0.01,
+      "rechenweg": [
+        "Masse der Essigsäure: 25 % von 100 g = 25 g",
+        "Diese 25 g sollen 5 % der neuen Lösung sein: 25 g : 0,05 = 500 g Lösung",
+        "Wasser: 500 g − 100 g = 400 g"
+      ],
+      "hinweis": "Die Masse der Essigsäure ändert sich beim Verdünnen nicht. Berechne zuerst, wie schwer die fertige 5-%-Lösung sein muss.",
+      "erklaerung": "Man verdünnt im Verhältnis 1 : 4 (1 Teil Essenz, 4 Teile Wasser). Unverdünnte Essigessenz reizt Haut und Augen stark. Deshalb immer zuerst verdünnen und Spritzer in die Augen vermeiden."
+    },
+    {
+      "id": "ch-aks-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Propan-1-ol und Ethansäure haben beide eine molare Masse von 60 g/mol. Propan-1-ol siedet bei 97 °C, Ethansäure erst bei 118 °C. Woran liegt das?",
+      "optionen": [
+        { "text": "Zwischen Ethansäure-Molekülen bilden sich über die Carboxygruppen je zwei Wasserstoffbrücken. Die Moleküle halten stärker zusammen.", "richtig": true },
+        { "text": "Ethansäure hat eine längere Kohlenstoffkette und deshalb stärkere Van-der-Waals-Kräfte.", "feedback": "Ethansäure hat 2 C-Atome, Propan-1-ol sogar 3. An der Kette liegt es also nicht." },
+        { "text": "Ethansäure-Moleküle sind schwerer.", "feedback": "Beide haben dieselbe molare Masse von 60 g/mol." },
+        { "text": "Beim Sieden zerfällt Ethansäure in Ionen.", "feedback": "Beim Sieden werden nur die Kräfte zwischen den Molekülen überwunden. Die Moleküle bleiben ganz." }
+      ],
+      "erklaerung": "Die Carboxygruppe enthält ein doppelt gebundenes O-Atom und eine OH-Gruppe. Zwei Ethansäure-Moleküle bilden deshalb ein Paar mit **zwei** Wasserstoffbrücken. Diese Paare müssen beim Sieden getrennt werden. Das kostet mehr Energie als bei Alkoholen, die nur die OH-Gruppe haben."
+    },
+    {
+      "id": "ch-aks-06", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Butansäure mischt sich in jedem Verhältnis mit Wasser. Hexadecansäure (C₁₅H₃₁–COOH) löst sich dagegen praktisch nicht. Erkläre den Unterschied mithilfe der Molekülstruktur.",
+      "stichworte": [
+        { "aspekt": "Die Carboxygruppe ist polar bzw. hydrophil und bildet Wasserstoffbrücken mit Wasser.", "woerter": ["hydrophil", "wasserstoffbrue", "polar", "wasserliebend"] },
+        { "aspekt": "Die Kohlenwasserstoffkette ist unpolar bzw. hydrophob.", "woerter": ["hydrophob", "unpolar", "wasserabweisend", "wasserfeindlich", "lipophil"] },
+        { "aspekt": "Bei Hexadecansäure ist die Kette viel länger, ihr Einfluss überwiegt.", "woerter": ["laenger", "lange kette", "ueberwieg", "groesser", "mehr c-atome", "mehr kohlenstoff", "langkettig"] }
+      ],
+      "musterloesung": "Beide Moleküle haben eine Carboxygruppe. Sie ist polar, also hydrophil, und bildet Wasserstoffbrücken zu Wassermolekülen. Der Rest des Moleküls ist eine unpolare, hydrophobe Kohlenwasserstoffkette. Bei Butansäure ist die Kette kurz, die Carboxygruppe bestimmt das Verhalten. Bei Hexadecansäure ist die Kette mit 15 C-Atomen viel länger. Ihr hydrophober Einfluss überwiegt, deshalb löst sich die Säure nicht in Wasser.",
+      "erklaerung": "Entscheidend ist das Verhältnis von hydrophilem zu hydrophobem Teil. Je länger die Kette, desto stärker überwiegen die Van-der-Waals-Kräfte zwischen den Ketten gegenüber den Wasserstoffbrücken zum Wasser."
+    },
+    {
+      "id": "ch-aks-07", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Ethansäure reagiert mit Wasser: CH₃–COOH + H₂O ⇌ CH₃–COO⁻ + H₃O⁺\n\nWelche Aussagen sind richtig?",
+      "optionen": [
+        { "text": "Ethansäure gibt ein Proton ab, sie ist ein Protonendonator.", "richtig": true },
+        { "text": "Es entsteht das Acetat-Ion (Ethanoat-Ion).", "richtig": true },
+        { "text": "Speiseessig ist sauer, weil er Oxonium-Ionen enthält.", "richtig": true },
+        { "text": "Das abgegebene Proton stammt aus der CH₃-Gruppe.", "feedback": "Das Proton stammt aus der OH-Gruppe der Carboxygruppe. Die C–H-Bindungen sind kaum polar." },
+        { "text": "Weil Ethansäure eine schwache Säure ist, kann man Eisessig gefahrlos anfassen.", "feedback": "Reine Essigsäure (Eisessig) ist ätzend. „Schwach“ heißt nur, dass in Wasser wenige Moleküle ihr Proton abgeben." }
+      ],
+      "erklaerung": "Die O–H-Bindung der Carboxygruppe ist stark polar. Deshalb kann Ethansäure dort ein Proton an ein Wassermolekül abgeben. Es entstehen Oxonium-Ionen H₃O⁺ und Acetat-Ionen CH₃–COO⁻. Die Salze der Essigsäure heißen Acetate, z. B. Natriumacetat."
+    }
+  ]
+}

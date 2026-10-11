@@ -1,0 +1,146 @@
+{
+  "id": "ch-k8-metalle",
+  "titel": "Eigenschaften und Bau der Metalle",
+  "kurz": "Was alle Metalle gemeinsam haben, wie man sie unterscheidet und wie das Elektronengasmodell ihre Eigenschaften erklärt.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Typische Eigenschaften von Metallen nennen und Verwendungen damit begründen" },
+    { "id": "lz2", "niveau": "G", "text": "Metalle nach Dichte (Leicht- und Schwermetalle) und chemischer Beständigkeit (edel, unedel) einteilen" },
+    { "id": "lz3", "niveau": "H", "text": "Den Bau der Metalle mit dem Elektronengasmodell beschreiben und damit Leitfähigkeit und Verformbarkeit erklären" },
+    { "id": "lz4", "niveau": "H", "text": "Legierungen kennen und den Einsatz von Metallen anhand ihrer Eigenschaften bewerten, auch mit Blick auf Rohstoffe und Recycling" }
+  ],
+  "verstehen": {
+    "einstieg": "In deinem Smartphone stecken über 30 verschiedene Metalle: Kupfer in den Leiterbahnen, Gold an den Kontakten, Aluminium im Gehäuse, Lithium und Cobalt im Akku. Warum ausgerechnet diese?",
+    "abschnitte": [
+      {
+        "titel": "Was alle Metalle gemeinsam haben",
+        "text": "Etwa drei Viertel aller Elemente sind Metalle. Sie haben typische gemeinsame Eigenschaften:\n\n- **metallischer Glanz** (frische Oberfläche)\n- gute **elektrische Leitfähigkeit**\n- gute **Wärmeleitfähigkeit**\n- **Verformbarkeit**: Man kann sie biegen, hämmern, walzen und zu Drähten ziehen, ohne dass sie zerbrechen\n\nBis auf Quecksilber sind alle Metalle bei Zimmertemperatur fest. Diese Eigenschaften bestimmen die Verwendung: Kupfer für Kabel, Aluminium für Kochtöpfe, Gold für Kontakte, die nicht korrodieren sollen."
+      },
+      {
+        "titel": "Metalle unterscheiden",
+        "text": "Metalle unterscheiden sich in **Dichte**, **Härte**, **Schmelztemperatur** und **chemischer Beständigkeit**.\n\n- **Leichtmetalle** haben eine Dichte unter 5 g/cm³: Magnesium (1,7), Aluminium (2,7), Titan (4,5).\n- **Schwermetalle** haben eine Dichte über 5 g/cm³: Eisen (7,9), Kupfer (9,0), Blei (11,3), Gold (19,3).\n\n**Unedle Metalle** wie Magnesium, Aluminium, Zink oder Eisen reagieren leicht mit Sauerstoff und laufen an oder rosten. **Edle Metalle** wie Silber, Gold oder Platin reagieren kaum. Gold glänzt auch nach Jahrtausenden noch. Kupfer steht dazwischen: Es gilt als halbedel."
+      },
+      {
+        "titel": "Das Elektronengasmodell",
+        "text": "Metallatome haben nur wenige **Valenzelektronen** (meist 1 bis 3). Im Metall geben alle Atome diese Elektronen ab. Übrig bleiben positiv geladene **Atomrümpfe**, die regelmäßig in einem **Metallgitter** angeordnet sind.\n\nDie abgegebenen Elektronen gehören keinem Atom mehr fest. Sie bewegen sich frei zwischen den Atomrümpfen wie ein Gas: das **Elektronengas**. Die Anziehung zwischen den positiven Atomrümpfen und dem negativen Elektronengas hält das Metall zusammen. Das ist die **Metallbindung**.\n\n- **Elektrische Leitfähigkeit:** Legt man eine Spannung an, wandern die frei beweglichen Elektronen zum Pluspol.\n- **Verformbarkeit:** Schichten von Atomrümpfen können gegeneinander verschoben werden. Das Elektronengas passt sich an und hält die Rümpfe weiter zusammen. Das Metall bricht nicht.\n- **Wärmeleitfähigkeit:** Die beweglichen Elektronen geben Bewegungsenergie schnell weiter."
+      },
+      {
+        "titel": "Legierungen und Rohstoffe",
+        "text": "Eine **Legierung** ist ein Gemisch aus einem Metall mit mindestens einem weiteren Element. Sie hat oft bessere Eigenschaften als die reinen Metalle, ist z. B. härter oder rostet nicht:\n\n- **Messing** = Kupfer + Zink (Wasserhähne, Musikinstrumente)\n- **Bronze** = Kupfer + Zinn (Glocken, Medaillen)\n- **Stahl** = Eisen + wenig Kohlenstoff (unter 2 %)\n- **Edelstahl** = Eisen + Chrom + Nickel (rostfrei, Besteck)\n\nViele Metalle sind knapp, ihr Abbau verbraucht viel Energie und schadet oft Umwelt und Menschen in den Abbauländern. Recycling spart Rohstoffe: Aus einer Tonne alter Handys lässt sich mehr Gold gewinnen als aus einer Tonne Golderz."
+      }
+    ],
+    "formeln": [
+      { "formel": "ρ = \\frac{m}{V}", "bedeutung": "Dichte `ρ` in g/cm³, Masse `m` in g, Volumen `V` in cm³" }
+    ],
+    "merksatz": "Metalle glänzen, leiten Strom und Wärme und sind verformbar. Im **Elektronengasmodell** sind positive **Atomrümpfe** in einem Gitter angeordnet, dazwischen bewegen sich frei die Valenzelektronen (**Elektronengas**).\n\nLeichtmetalle haben eine Dichte unter 5 g/cm³. Unedle Metalle reagieren leicht mit Sauerstoff, edle kaum.",
+    "alltag": "Überlandleitungen bestehen meist aus Aluminium mit einem Stahlkern: Aluminium leitet zwar etwas schlechter als Kupfer, ist aber viel leichter und billiger."
+  },
+  "uebungen": [
+    {
+      "id": "ch-met-01",
+      "typ": "multi",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz1",
+      "frage": "Welche Eigenschaften haben **alle** Metalle gemeinsam?",
+      "optionen": [
+        { "text": "Sie leiten den elektrischen Strom.", "richtig": true },
+        { "text": "Sie leiten Wärme gut.", "richtig": true },
+        { "text": "Sie sind magnetisch.", "feedback": "Nur wenige Metalle wie Eisen, Nickel und Cobalt werden vom Magneten angezogen. Kupfer oder Aluminium nicht." },
+        { "text": "Sie glänzen an einer frischen Oberfläche.", "richtig": true },
+        { "text": "Sie sind bei Zimmertemperatur fest.", "feedback": "Quecksilber ist bei Zimmertemperatur flüssig." }
+      ],
+      "erklaerung": "Glanz, elektrische Leitfähigkeit, Wärmeleitfähigkeit und Verformbarkeit sind typisch für alle Metalle. Magnetismus haben nur einzelne Metalle, und Quecksilber ist flüssig."
+    },
+    {
+      "id": "ch-met-02",
+      "typ": "zuordnung",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz4",
+      "frage": "Ordne jeder Legierung ihre Hauptbestandteile zu.",
+      "paare": [
+        { "links": "Messing", "rechts": "Kupfer und Zink" },
+        { "links": "Bronze", "rechts": "Kupfer und Zinn" },
+        { "links": "Stahl", "rechts": "Eisen und wenig Kohlenstoff" },
+        { "links": "Edelstahl", "rechts": "Eisen, Chrom und Nickel" }
+      ],
+      "extraRechts": ["Gold und Silber"],
+      "erklaerung": "Legierungen sind Gemische aus Metallen (und manchmal Nichtmetallen wie Kohlenstoff). Messing und Bronze sind Kupferlegierungen, Stahl und Edelstahl Eisenlegierungen."
+    },
+    {
+      "id": "ch-met-03",
+      "typ": "zahl",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz2",
+      "frage": "Ein Metallwürfel hat ein Volumen von 8 cm³ und eine Masse von 21,6 g. Berechne seine Dichte.",
+      "gegeben": "`m = 21,6 g`, `V = 8 cm³`",
+      "gesucht": "Dichte `ρ`",
+      "gesuchtSymbol": "ρ",
+      "loesung": 2.7,
+      "einheit": "g/cm³",
+      "rechenweg": [
+        "Formel: `ρ = \\frac{m}{V}`",
+        "Einsetzen: `ρ = \\frac{21,6 g}{8 cm³}`",
+        "Ergebnis: `ρ = 2,7 g/cm³`",
+        "Das ist ein Leichtmetall, vermutlich Aluminium."
+      ],
+      "hinweis": "Dichte = Masse geteilt durch Volumen.",
+      "erklaerung": "2,7 g/cm³ liegt unter 5 g/cm³, der Würfel besteht also aus einem Leichtmetall. Der Wert passt genau zu Aluminium."
+    },
+    {
+      "id": "ch-met-04",
+      "typ": "single",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz3",
+      "frage": "Warum leiten Metalle den elektrischen Strom?",
+      "optionen": [
+        { "text": "Zwischen den Atomrümpfen bewegen sich frei bewegliche Elektronen.", "richtig": true },
+        { "text": "Die Atomrümpfe wandern durch das Metall zum Minuspol.", "feedback": "Die Atomrümpfe sitzen fest im Gitter. Beweglich sind nur die Elektronen." },
+        { "text": "Metalle bestehen aus Ionen, die sich in Wasser lösen.", "feedback": "Das trifft auf Salzlösungen zu. Metalle leiten auch ohne Wasser." },
+        { "text": "Metallatome haben besonders viele Valenzelektronen.", "feedback": "Im Gegenteil: Metallatome haben meist nur 1 bis 3 Valenzelektronen, die sie leicht abgeben." }
+      ],
+      "erklaerung": "Im Elektronengasmodell geben die Metallatome ihre Valenzelektronen ab. Diese bewegen sich frei zwischen den positiven Atomrümpfen. Legt man eine Spannung an, wandern sie gerichtet: Es fließt Strom."
+    },
+    {
+      "id": "ch-met-05",
+      "typ": "single",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz2",
+      "frage": "Welches dieser Metalle ist ein **edles** Metall?",
+      "optionen": [
+        { "text": "Magnesium", "feedback": "Magnesium ist sehr unedel. Es verbrennt an der Luft mit gleißend heller Flamme." },
+        { "text": "Eisen", "feedback": "Eisen ist unedel. Es reagiert mit Sauerstoff und Wasser und rostet." },
+        { "text": "Zink", "feedback": "Zink ist unedel. Es schützt sogar Eisen vor Rost, weil es selbst leichter reagiert." },
+        { "text": "Gold", "richtig": true }
+      ],
+      "erklaerung": "Edle Metalle wie Gold, Silber und Platin reagieren kaum mit Sauerstoff. Deshalb findet man Gold in der Natur sogar gediegen, also als reines Metall."
+    },
+    {
+      "id": "ch-met-06",
+      "typ": "text",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz3",
+      "frage": "Ein Kupferblech lässt sich mit dem Hammer flach schlagen, ein Salzkristall zerspringt dabei. Erkläre mit dem Elektronengasmodell, warum Metalle verformbar sind.",
+      "stichworte": [
+        { "aspekt": "Positive Atomrümpfe im Metallgitter", "woerter": ["atomruempf", "atomrumpf", "metallgitter", "gitter"] },
+        { "aspekt": "Schichten verschieben sich gegeneinander", "woerter": ["verschieb", "schicht", "gleiten", "rutsch"] },
+        { "aspekt": "Das Elektronengas hält die Atomrümpfe weiter zusammen", "woerter": ["elektronengas", "freie elektronen", "frei bewegliche elektronen", "zusammengehalten", "haelt"] }
+      ],
+      "musterloesung": "Ein Metall besteht aus positiv geladenen Atomrümpfen, die in einem Metallgitter angeordnet sind. Dazwischen bewegen sich frei die Valenzelektronen als Elektronengas. Schlägt man mit dem Hammer darauf, verschieben sich Schichten von Atomrümpfen gegeneinander. Das Elektronengas passt sich sofort an und hält die Atomrümpfe auch in der neuen Lage zusammen. Deshalb bricht das Metall nicht, sondern verformt sich.",
+      "erklaerung": "Beim Salzkristall ist das anders: Verschieben sich dort Schichten, liegen plötzlich gleich geladene Ionen nebeneinander. Sie stoßen sich ab, und der Kristall zerspringt."
+    },
+    {
+      "id": "ch-met-07",
+      "typ": "single",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz4",
+      "frage": "Für eine lange Überlandleitung wird ein Metall gesucht. Es soll gut leiten, leicht sein und nicht zu teuer. Welche Wahl ist am sinnvollsten?",
+      "optionen": [
+        { "text": "Aluminium (Dichte 2,7 g/cm³, leitet gut, günstig)", "richtig": true },
+        { "text": "Kupfer (Dichte 9,0 g/cm³, leitet sehr gut, teurer)", "feedback": "Kupfer leitet etwas besser, ist aber mehr als dreimal so schwer. Die Masten müssten viel stabiler sein." },
+        { "text": "Silber (Dichte 10,5 g/cm³, leitet am besten, sehr teuer)", "feedback": "Silber leitet zwar am besten, ist aber viel zu teuer und schwer für kilometerlange Leitungen." },
+        { "text": "Blei (Dichte 11,3 g/cm³, leitet schlecht, giftig)", "feedback": "Blei ist schwer, leitet schlecht und ist giftig." }
+      ],
+      "erklaerung": "Bei Überlandleitungen kommt es auf das Verhältnis von Leitfähigkeit zu Masse und Preis an. Aluminium ist hier unschlagbar. Für die Festigkeit bekommt das Seil oft einen Kern aus Stahl."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "fach": "Chemie",
+  "kurz": "Chemie",
+  "reihenfolge": 2,
+  "beschreibung": "Chemie nach dem schulinternen Curriculum, Klasse 7 bis 10: von Feuer und Periodensystem über Salze, Metalle und Säuren bis zu Alkoholen und Estern.",
+  "quelle": "Schulinternes Curriculum Chemie 7–10, Fachbereich Naturwissenschaften, Humboldt-Gymnasium Berlin-Tegel",
+  "hinweis": "Die Themenfelder sind im Curriculum je Klassenstufe durchnummeriert (1., 2., 3. Themenfeld). Die Nummern hier (7.1 …) übernehmen diese Reihenfolge.",
+  "stufen": [
+    {
+      "stufe": 7,
+      "name": "Klasse 7"
+    },
+    {
+      "stufe": 8,
+      "name": "Klasse 8"
+    },
+    {
+      "stufe": 9,
+      "name": "Klasse 9"
+    },
+    {
+      "stufe": 10,
+      "name": "Klasse 10"
+    }
+  ]
+}

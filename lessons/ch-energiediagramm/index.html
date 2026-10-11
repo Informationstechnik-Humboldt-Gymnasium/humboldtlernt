@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Energiediagramm: exotherm und endotherm</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<style>
+  .curve { fill: none; stroke: var(--accent); stroke-width: 3.5; stroke-linecap: round; }
+  .curve-old { fill: none; stroke: var(--muted); stroke-width: 2; stroke-dasharray: 6 5; }
+  .level { stroke: var(--muted); stroke-width: 1.2; stroke-dasharray: 4 4; }
+  .arrow { stroke-width: 2.5; fill: none; }
+  .ea { stroke: var(--c3); }
+  .de { stroke: var(--pos); }
+  .de.endo { stroke: var(--neg); }
+  .t16 { font-size: 16px; font-weight: 650; }
+  .t15 { font-size: 15px; }
+  .tea { fill: var(--c3) !important; }
+  .tde { fill: var(--pos) !important; }
+  .tde.endo { fill: var(--neg) !important; }
+  .ball { fill: var(--lamp); stroke: var(--line); stroke-width: 1.5; }
+  .heat-lvl { stroke: var(--warn); stroke-width: 2; stroke-dasharray: 2 4; }
+  .eq { font-weight: 650; margin: 0 0 6px; }
+  .status { font-weight: 650; margin: 8px 0 0; min-height: 1.4em; }
+  .status.warn { color: var(--warn); } .status.ok { color: var(--ok); }
+  .bar { height: 12px; border-radius: 6px; background: var(--grid); overflow: hidden; margin-top: 4px; }
+  .bar i { display: block; height: 100%; width: 0; background: var(--ok); }
+  .seg { flex-wrap: wrap; }
+  .readout b { font-size: 1rem; }
+  @media (max-width: 520px) { .t15 { font-size: 20px; } .t16 { font-size: 21px; } }
+  .group-lbl { font-size: .82rem; color: var(--muted); margin: 0 0 4px; font-weight: 600; }
+</style>
+</head>
+<body>
+<h1>Energiediagramm: exotherm und endotherm</h1>
+<p class="muted small">Wähle eine Reaktion und schalte den Brenner an. Die Kugel steht für die Teilchen: Nur wenn genug Energie zugeführt wird, kommen sie über den Energieberg und reagieren.</p>
+
+<div class="lk-grid">
+  <div>
+    <div class="lk-card">
+      <p class="eq" id="eq"></p>
+      <svg id="dia" viewBox="0 0 520 340" role="img" aria-labelledby="d-title">
+        <title id="d-title">Energiediagramm: Energie nach oben, Reaktionsverlauf nach rechts, mit Edukten, Energieberg und Produkten</title>
+        <line class="axis" x1="50" y1="310" x2="505" y2="310"/>
+        <line class="axis" x1="50" y1="310" x2="50" y2="20"/>
+        <path class="axis" d="M44 28 L50 18 L56 28" fill="none"/>
+        <path class="axis" d="M497 304 L507 310 L497 316" fill="none"/>
+        <text x="40" y="160" class="t15" text-anchor="middle" transform="rotate(-90 40 160)">Energie</text>
+        <text x="60" y="332" class="t15">Reaktionsverlauf →</text>
+        <line id="lvlE" class="level"/>
+        <line id="lvlP" class="level"/>
+        <line id="heatLvl" class="heat-lvl"/>
+        <path id="curveOld" class="curve-old" hidden/>
+        <path id="curve" class="curve"/>
+        <line id="aEA" class="arrow ea"/>
+        <path id="aEAh1" class="arrow ea"/><path id="aEAh2" class="arrow ea"/>
+        <text id="tEA" class="t15 tea" text-anchor="middle">Aktivierungsenergie</text>
+        <line id="aDE" class="arrow de"/>
+        <path id="aDEh" class="arrow de"/>
+        <text id="tDE" class="t15 tde">Reaktions-</text>
+        <text id="tDE2" class="t15 tde">energie</text>
+        <text id="tEd" x="110" class="t16" text-anchor="middle">Edukte</text>
+        <text id="tPr" x="440" class="t16" text-anchor="middle">Produkte</text>
+        <text id="tRel" x="440" class="t15 tde" text-anchor="middle"></text>
+        <circle id="ball" class="ball" r="10"/>
+      </svg>
+      <p id="status" class="status" aria-live="polite"></p>
+      <p class="small muted" style="margin:4px 0 0">Schematisches Diagramm: Die Höhen zeigen nur, was größer oder kleiner ist, sie sind nicht maßstabsgetreu.</p>
+    </div>
+  </div>
+
+  <div>
+    <div class="lk-card">
+      <h2>Einstellungen</h2>
+      <p class="group-lbl">Reaktion</p>
+      <div class="row">
+        <div class="seg" role="group" aria-label="Reaktion wählen" id="exSeg">
+          <button type="button" data-ex="mg" aria-pressed="true">Magnesium</button>
+          <button type="button" data-ex="fes" aria-pressed="false">Eisen + Schwefel</button>
+          <button type="button" data-ex="ag" aria-pressed="false">Silberoxid</button>
+          <button type="button" data-ex="h2o2" aria-pressed="false">Wasserstoffperoxid</button>
+          <button type="button" data-ex="own" aria-pressed="false">Eigene</button>
+        </div>
+      </div>
+      <div id="ownCtrls" hidden>
+        <label class="ctrl"><span>Energie der Produkte <output id="oP"></output></span>
+          <input type="range" id="sP" min="-50" max="50" step="5" value="-20"></label>
+        <label class="ctrl"><span>Aktivierungsenergie <output id="oEA"></output></span>
+          <input type="range" id="sEA" min="10" max="80" step="5" value="40"></label>
+      </div>
+      <label class="ctrl"><span>Stärke der Brennerflamme <output id="oH"></output></span>
+        <input type="range" id="sH" min="10" max="80" step="5" value="25"></label>
+      <div class="row">
+        <button type="button" id="bHeat" class="primary" aria-pressed="false">Brenner an</button>
+        <button type="button" id="bCat" aria-pressed="false">Katalysator</button>
+        <button type="button" id="bReset">Neu starten</button>
+      </div>
+      <p class="group-lbl">Stoffumsatz <span id="oProg"></span></p>
+      <div class="bar"><i id="prog"></i></div>
+      <div class="readouts">
+        <div class="readout"><span>Reaktionsart</span><b id="rType">–</b></div>
+        <div class="readout"><span>Reaktions&shy;energie wird</span><b id="rDE">–</b></div>
+        <div class="readout"><span>Aktivierungs&shy;energie</span><b id="rEA">–</b></div>
+      </div>
+    </div>
+
+    <div class="lk-card tasks">
+      <h2>Entdecke selbst <span class="small muted" data-task-count></span></h2>
+      <div class="task" data-goal="mg"><p class="task-q">Bring Magnesium zum Brennen. Wie stark muss der Brenner mindestens sein?</p></div>
+      <div class="task" data-goal="selbst"><p class="task-q">Starte eine exotherme Reaktion und schalte den Brenner dann aus. Läuft sie weiter?</p></div>
+      <div class="task" data-goal="ag"><p class="task-q">Zersetze das Silberoxid vollständig (Stoffumsatz 100 %).</p></div>
+      <div class="task" data-goal="kat"><p class="task-q">Lass Wasserstoffperoxid ganz ohne Brenner reagieren.</p></div>
+      <div class="task">
+        <p class="task-q">Im Energiediagramm liegen die Produkte höher als die Edukte. Was bedeutet das?</p>
+        <div class="choices">
+          <button type="button" data-fb="Dann müssten die Produkte tiefer liegen. Vergleiche mit Magnesium.">Die Reaktion ist exotherm.</button>
+          <button type="button" data-ok data-fb="Richtig: Die Produkte enthalten mehr Energie. Diese Energie muss ständig zugeführt werden, wie beim Silberoxid.">Die Reaktion ist endotherm und nimmt Energie auf.</button>
+          <button type="button" data-fb="Die Aktivierungsenergie ist der Berg, nicht der Unterschied zwischen Edukten und Produkten.">Die Reaktion hat keine Aktivierungsenergie.</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="task">
+        <p class="task-q">Was ändert ein Katalysator im Energiediagramm?</p>
+        <div class="choices">
+          <button type="button" data-fb="Schau auf die Höhe der Produkte mit und ohne Katalysator: Sie bleibt gleich.">Die Produkte liegen tiefer, es wird mehr Energie frei.</button>
+          <button type="button" data-ok data-fb="Genau: Der Energieberg wird niedriger. Edukte, Produkte und Reaktionsenergie bleiben gleich, und der Katalysator wird nicht verbraucht.">Nur der Energieberg wird niedriger.</button>
+          <button type="button" data-fb="Ein Katalysator macht eine Reaktion nicht endotherm. Er senkt nur die Aktivierungsenergie.">Aus exotherm wird endotherm.</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="all-done">Alles entdeckt! Weiter geht es mit den Übungen.</div>
+    </div>
+  </div>
+</div>
+
+<script src="../../static/lesson-kit.js"></script>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  // Energien in schematischen Einheiten, bezogen auf die Edukte. P: Produkte − Edukte, EA: Aktivierungsenergie
+  var EX = {
+    mg:   { eq: 'Magnesium + Sauerstoff → Magnesiumoxid', P: -55, EA: 45, cat: '' },
+    fes:  { eq: 'Eisen + Schwefel → Eisensulfid', P: -22, EA: 35, cat: '' },
+    ag:   { eq: 'Silberoxid → Silber + Sauerstoff', P: 25, EA: 50, cat: '' },
+    h2o2: { eq: 'Wasserstoffperoxid → Wasser + Sauerstoff', P: -30, EA: 45, cat: 'Braunstein' },
+    own:  { eq: 'Eigene Reaktion: Edukte → Produkte', P: -20, EA: 40, cat: 'Katalysator' }
+  };
+  var ROOM = 15, CATF = 0.3, E0 = 60;
+  var S = { ex: 'mg', heat: false, cat: false, H: 25, prog: 0, started: false, heatedStart: false, phase: 0 };
+
+  var X0 = 70, Y0 = 310, SC = 1.65;           // y = Y0 − SC · Energie
+  var yOf = function (E) { return Y0 - SC * E; };
+  function cur() { var e = EX[S.ex]; return { P: e.P, EA: e.EA, EAeff: e.EA * (S.cat ? CATF : 1), exo: e.P < 0 }; }
+  function pathFor(EA, P) {
+    var yE = yOf(E0), yK = yOf(E0 + EA), yP = yOf(E0 + P);
+    return 'M' + X0 + ' ' + yE + ' H150 C205 ' + yE + ' 215 ' + yK + ' 260 ' + yK + ' C305 ' + yK + ' 315 ' + yP + ' 370 ' + yP + ' H490';
+  }
+  function line(id, x1, y1, x2, y2) { var l = $(id); l.setAttribute('x1', x1); l.setAttribute('y1', y1); l.setAttribute('x2', x2); l.setAttribute('y2', y2); }
+  function head(id, x, y, up) { $(id).setAttribute('d', 'M' + (x - 6) + ' ' + (y + (up ? 9 : -9)) + ' L' + x + ' ' + y + ' L' + (x + 6) + ' ' + (y + (up ? 9 : -9))); }
+
+  var samples = [], LEN = 0;
+  function drawStatic() {
+    var c = cur(), yE = yOf(E0), yK = yOf(E0 + c.EAeff), yP = yOf(E0 + c.P);
+    $('curve').setAttribute('d', pathFor(c.EAeff, c.P));
+    $('curveOld').setAttribute('d', pathFor(c.EA, c.P));
+    $('curveOld').toggleAttribute('hidden', !S.cat);
+    line('lvlE', 150, yE, 490, yE);
+    line('lvlP', 370, yP, 490, yP);
+    // Aktivierungsenergie-Pfeil
+    line('aEA', 260, yE, 260, yK + 2); head('aEAh1', 260, yK + 1, true);
+    $('aEAh2').setAttribute('d', '');
+    $('tEA').setAttribute('x', 260); $('tEA').setAttribute('y', yOf(E0 + c.EA) - 12);
+    // Reaktionsenergie-Pfeil von den Edukten zu den Produkten
+    line('aDE', 400, yE, 400, yP + (c.exo ? -2 : 2)); head('aDEh', 400, yP + (c.exo ? -1 : 1), !c.exo);
+    var cls = c.exo ? '' : ' endo';
+    $('aDE').setAttribute('class', 'arrow de' + cls); $('aDEh').setAttribute('class', 'arrow de' + cls);
+    $('tDE').setAttribute('class', 't15 tde' + cls); $('tDE2').setAttribute('class', 't15 tde' + cls);
+    var dy = (yE + yP) / 2;
+    $('tDE').setAttribute('x', 408); $('tDE').setAttribute('y', dy - 2);
+    $('tDE2').setAttribute('x', 408); $('tDE2').setAttribute('y', dy + 15);
+    $('tEd').setAttribute('y', yE - 12);
+    $('tPr').setAttribute('y', c.exo && yP - yE < 70 ? yP + 22 : yP - 10);
+    $('tPr').setAttribute('x', 445);
+    $('tRel').setAttribute('class', 't15 tde' + cls);
+    $('tRel').setAttribute('x', 495); $('tRel').setAttribute('text-anchor', 'end');
+    $('tRel').setAttribute('y', 40);
+    // Kurve abtasten (für die Kugel)
+    var p = $('curve'); LEN = p.getTotalLength(); samples = [];
+    for (var i = 0; i <= 240; i++) { var pt = p.getPointAtLength(LEN * i / 240); samples.push({ l: LEN * i / 240, x: pt.x, y: pt.y }); }
+    // Anzeigen
+    var e = EX[S.ex];
+    $('eq').textContent = e.eq;
+    $('rType').textContent = c.exo ? 'exotherm' : 'endotherm';
+    $('rDE').textContent = c.exo ? 'abgegeben' : 'aufgenommen';
+    $('rEA').textContent = c.EAeff < 20 ? 'niedrig' : c.EAeff < 45 ? 'mittel' : 'hoch';
+    $('bCat').disabled = !e.cat;
+    $('bCat').textContent = e.cat === 'Braunstein' ? 'Katalysator Braunstein' : 'Katalysator';
+    $('bCat').setAttribute('aria-pressed', S.cat);
+    $('bHeat').setAttribute('aria-pressed', S.heat);
+    $('bHeat').textContent = S.heat ? 'Brenner aus' : 'Brenner an';
+    $('oH').textContent = S.H <= 20 ? 'schwach' : S.H <= 45 ? 'mittel' : 'stark';
+    $('oP').textContent = (EX.own.P > 0 ? 'höher' : EX.own.P < 0 ? 'tiefer' : 'gleich hoch') + ' als die Edukte';
+    $('oEA').textContent = EX.own.EA <= 20 ? 'niedrig' : EX.own.EA <= 45 ? 'mittel' : 'hoch';
+  }
+
+  var msg = '';
+  function say(t, cls) { if (t === msg) return; msg = t; $('status').textContent = t; $('status').className = 'status ' + (cls || ''); }
+
+  function setEx(ex) {
+    S.ex = ex; S.cat = false; S.prog = 0; S.started = false; S.heat = false; S.phase = 0;
+    document.querySelectorAll('#exSeg button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.ex === ex); });
+    $('ownCtrls').hidden = ex !== 'own';
+    msg = ''; say('Schalte den Brenner an, um Energie zuzuführen.');
+    drawStatic();
+  }
+  document.querySelectorAll('#exSeg button').forEach(function (b) { b.onclick = function () { setEx(b.dataset.ex); }; });
+  $('sP').oninput = function () { EX.own.P = Number(this.value) || 0; if (EX.own.P === 0) EX.own.P = 5; S.prog = 0; S.started = false; drawStatic(); };
+  $('sEA').oninput = function () { EX.own.EA = Number(this.value); S.prog = 0; S.started = false; drawStatic(); };
+  $('sH').oninput = function () { S.H = Number(this.value); drawStatic(); };
+  $('bHeat').onclick = function () { S.heat = !S.heat; drawStatic(); };
+  $('bCat').onclick = function () { S.cat = !S.cat; drawStatic(); };
+  $('bReset').onclick = function () { setEx(S.ex); };
+
+  function avail() { return ROOM + (S.heat ? S.H : 0); }
+
+  function step(dt) {
+    var c = cur(), a = avail(), enough = a >= c.EAeff;
+    var running = false;
+    if (S.prog < 100) {
+      if (c.exo) {
+        if (!S.started && enough) { S.started = true; S.heatedStart = S.heat; }
+        running = S.started;
+      } else running = enough;
+      if (running) S.prog = Math.min(100, S.prog + dt * (c.exo ? 14 : 10));
+    }
+    S.running = running && S.prog < 100;
+    // Ziele
+    if (S.started && S.ex === 'mg') LK.reach('mg');
+    if (c.exo && S.started && S.heatedStart && !S.heat && S.prog > 0 && S.prog < 100) LK.reach('selbst');
+    if (S.ex === 'ag' && S.prog >= 100) LK.reach('ag');
+    if (S.ex === 'h2o2' && S.cat && !S.heat && S.running) LK.reach('kat');
+    // Meldungen
+    if (S.prog >= 100) say('Die Reaktion ist abgeschlossen: Alle Edukte sind zu Produkten geworden.', 'ok');
+    else if (S.running && c.exo && !S.heat && S.heatedStart) say('Die Reaktion läuft von selbst weiter: Die frei werdende Energie aktiviert die nächsten Teilchen.', 'ok');
+    else if (S.running && c.exo && !S.heat) say('Schon die Wärme der Umgebung reicht: Die Teilchen kommen über den niedrigen Energieberg.', 'ok');
+    else if (S.running && c.exo) say('Die Teilchen kommen über den Berg. Bei der Reaktion wird Energie frei.', 'ok');
+    else if (S.running) say('Die Reaktion läuft, solange du Energie zuführst.', 'ok');
+    else if (!c.exo && S.prog > 0 && !enough) say('Die Reaktion stoppt: Eine endotherme Reaktion braucht ständig Energie von außen.', 'warn');
+    else if (S.heat) say('Zu wenig Energie: Die Teilchen kommen nicht über den Energieberg.', 'warn');
+    else say('Schalte den Brenner an, um Energie zuzuführen.');
+  }
+
+  function pointAtEnergy(E) {     // erster Punkt auf dem Anstieg, an dem die Kurve die Energie E erreicht
+    var y = yOf(E), best = samples[0];
+    for (var i = 0; i < samples.length; i++) {
+      if (samples[i].x > 262) break;
+      best = samples[i];
+      if (samples[i].y <= y) break;
+    }
+    return best;
+  }
+  function draw(dt, t) {
+    var c = cur(), b = $('ball'), p;
+    var a = avail();
+    // Linie: zugeführte Energie
+    var hy = yOf(E0 + a);
+    line('heatLvl', 150, hy, 300, hy);
+    $('heatLvl').toggleAttribute('hidden', !S.heat);
+    if (S.prog >= 100) p = samples[samples.length - 1];
+    else if (S.running) {
+      S.phase = (S.phase + dt / 1.3) % 1;
+      p = $('curve').getPointAtLength(LEN * S.phase);
+    } else if (S.heat || S.prog > 0) {
+      S.phase = (S.phase + dt / 1.4) % 1;
+      var top = pointAtEnergy(E0 + a), s = Math.sin(Math.PI * S.phase);
+      var lStart = samples[Math.round(240 * 70 / 420)].l;
+      p = $('curve').getPointAtLength(lStart + (top.l - lStart) * s);
+    } else {
+      p = samples[Math.round(240 * 50 / 420)];
+      p = { x: p.x + Math.sin(t / 200) * 3, y: p.y };
+    }
+    b.setAttribute('cx', p.x); b.setAttribute('cy', p.y - 10);
+    $('tRel').textContent = S.running ? (c.exo ? 'Energie wird frei' : 'Energie wird aufgenommen') : '';
+    $('tRel').setAttribute('opacity', 0.6 + 0.4 * Math.sin(t / 150));
+    $('prog').style.width = S.prog + '%';
+    $('oProg').textContent = LK.fmt(S.prog, 0) + ' %';
+  }
+
+  var last = performance.now();
+  function frame(t) {
+    var dt = Math.min(0.05, (t - last) / 1000); last = t;
+    step(dt); draw(dt, t);
+    requestAnimationFrame(frame);
+  }
+  setEx('mg');
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

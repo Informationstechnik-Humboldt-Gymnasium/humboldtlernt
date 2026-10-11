@@ -141,6 +141,13 @@ test('Schülerliste, Klassenstufe, Übungen, Fortschritt und Lehrer-Übersicht',
   assert.equal(res.fortschritt.verstanden, true);
   assert.equal((await max.req('/gibts-nicht')).status, 404);
 
+  // Drittes Fach: Chemie (Klasse 7 bis 10)
+  assert.match(home, /class="eyebrow">Chemie</);
+  assert.match(await (await max.req('/chemie/9')).text(), /Säuren und Laugen/);
+  const ester = await (await max.req('/chemie/10/ch-k10-ester')).text();
+  assert.match(ester, /\/inhalt\/ch-veresterung\/index\.html/);
+  assert.equal((await max.req('/physik/10/ch-k10-ester')).status, 404);
+
   // Schüler dürfen nicht in die Verwaltung
   assert.equal((await max.req('/admin')).status, 403);
 

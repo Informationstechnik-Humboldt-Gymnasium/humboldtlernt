@@ -1,0 +1,15 @@
+{
+  "nummer": "7.1",
+  "reihenfolge": 1,
+  "titel": "Faszination Chemie: Feuer, Schall und Rauch",
+  "beschreibung": "Brenner und Feuer, Merkmale der chemischen Reaktion, Energie bei Reaktionen und das Gesetz von der Erhaltung der Masse.",
+  "inhalte": [
+    "Handhabung des Brenners",
+    "Feuer, Brände und Brandbekämpfung",
+    "Kennzeichen der chemischen Reaktion (stofflich und auf Teilchenebene)",
+    "Energieumsatz bei chemischen Reaktionen (Reaktionsenergie, endotherm, exotherm, Aktivierungsenergie)",
+    "Gesetz von der Erhaltung der Masse",
+    "Reaktionen von Metallen und Nichtmetallen mit Sauerstoff, Oxidation, Wortgleichung"
+  ],
+  "erweiterung": "Brandklassen; Sulfidbildung"
+}

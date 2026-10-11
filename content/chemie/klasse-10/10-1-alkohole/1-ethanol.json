@@ -1,0 +1,135 @@
+{
+  "id": "ch-k10-ethanol",
+  "titel": "Ethanol: Gärung und Wirkung auf den Körper",
+  "kurz": "Wie Hefe aus Zucker Ethanol macht, was Alkohol im Körper bewirkt und wie man Aussagen über Alkohol kritisch prüft.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Die alkoholische Gärung als enzymkatalysierte Reaktion beschreiben und ihre Reaktionsgleichung angeben" },
+    { "id": "lz2", "niveau": "G", "text": "Ein Gärexperiment planen, durchführen und auswerten (Bedingungen, CO₂-Nachweis, Destillation)" },
+    { "id": "lz3", "niveau": "G", "text": "Aufnahme, Abbau und Wirkung von Alkohol im Körper beschreiben und den Alkoholgehalt von Getränken berechnen" },
+    { "id": "lz4", "niveau": "H", "text": "Informationen über Alkohol in Medien und Werbung prüfen und Alkohol zwischen Genussmittel und Suchtmittel bewerten" }
+  ],
+  "verstehen": {
+    "einstieg": "In Brotteig, Traubensaft und Bier arbeitet derselbe winzige Pilz: die Hefe. Beim Brot sorgt sie für Bläschen, im Traubensaft für Alkohol. Was genau macht die Hefe mit dem Zucker?",
+    "abschnitte": [
+      {
+        "titel": "„Alkohol“ in Alltag und Fachsprache",
+        "text": "Im Alltag meint „Alkohol“ den Stoff in Bier, Wein und Schnaps. Chemisch heißt dieser Stoff **Ethanol**: C₂H₅OH, als Halbstrukturformel CH₃–CH₂–OH.\n\n```\n    H   H\n    |   |\nH - C - C - O - H\n    |   |\n    H   H\n```\n\nIn der Chemie sind **Alkohole** eine ganze Stoffklasse: alle Verbindungen mit einer OH-Gruppe an einem Kohlenstoffatom. Dazu gehören auch das sehr giftige Methanol und das süße Glycerin, das in Cremes steckt. Wenn du im Chemieunterricht „Alkohol“ sagst, sag dazu, welchen du meinst."
+      },
+      {
+        "titel": "Alkoholische Gärung",
+        "text": "Hefepilze gewinnen Energie, indem sie Traubenzucker (Glucose) abbauen. Ohne Sauerstoff entsteht dabei Ethanol:\n\nC₆H₁₂O₆ → 2 C₂H₅OH + 2 CO₂\n\nDie Reaktion läuft nur mithilfe von **Enzymen** ab. Enzyme sind Biokatalysatoren: Eiweißstoffe der Hefe, die die Reaktion bei Körpertemperatur möglich machen und dabei nicht verbraucht werden.\n\n**Bedingungen:**\n\n- Zucker als Ausgangsstoff\n- kein Sauerstoff (sonst baut die Hefe den Zucker vollständig zu CO₂ und Wasser ab)\n- Wärme, am besten etwa 30 bis 35 °C. Bei hohen Temperaturen werden die Enzyme zerstört.\n- Ab etwa 15 Vol.-% Ethanol stirbt die Hefe ab, die Gärung hört auf. Stärkere Getränke entstehen nur durch **Destillation**: Ethanol siedet bei 78 °C, Wasser bei 100 °C."
+      },
+      {
+        "titel": "Der Gärversuch",
+        "text": "In einem Kolben wird Traubenzucker in lauwarmem Wasser gelöst und etwas Hefe dazugegeben. Ein **Gärröhrchen** mit Kalkwasser verschließt den Kolben: Gas kann entweichen, aber keine Luft hinein.\n\n- Nach kurzer Zeit steigen Bläschen auf, das Kalkwasser wird trüb → **CO₂** ist entstanden.\n- Nach einigen Tagen wird die Lösung destilliert. Das Destillat lässt sich anzünden und brennt mit blauer Flamme → **Ethanol** ist entstanden.\n- Ein **Kontrollansatz** (z. B. Hefe ohne Zucker oder Zucker ohne Hefe) zeigt, dass wirklich beide nötig sind.\n\nSicherheit: Schutzbrille, Destillat nur in kleinen Mengen anzünden. Im Labor wird nichts probiert, auch wenn es „nur Ethanol“ ist."
+      },
+      {
+        "titel": "Wie viel Alkohol steckt im Glas?",
+        "text": "Auf Getränken steht der Alkoholgehalt in **Volumenprozent** (Vol.-%). 5 Vol.-% bedeutet: In 100 mL Bier stecken 5 mL Ethanol.\n\nBeispiel: 0,5 L Bier mit 5 Vol.-% enthalten 500 mL · 0,05 = 25 mL Ethanol. Mit der Dichte von Ethanol (etwa 0,8 g/mL) sind das `m = ρ · V` = 0,8 g/mL · 25 mL = **20 g reiner Alkohol**.\n\nEin kleines Glas Wein (0,2 L, 12 Vol.-%) oder ein Schnaps (4 cl, 40 Vol.-%) enthalten ähnlich viel."
+      },
+      {
+        "titel": "Was Alkohol im Körper macht",
+        "text": "Ethanol gelangt über Magen und Dünndarm schnell ins Blut und nach wenigen Minuten ins Gehirn. Weil es sich in Wasser und Fett löst, verteilt es sich im ganzen Körper.\n\n- **Wirkung:** Ethanol stört die Signalübertragung im Gehirn. Man wird enthemmt und überschätzt sich, die Reaktionszeit wird länger, Gleichgewicht und Sehfeld werden eingeschränkt („Tunnelblick“). Größere Mengen führen zu Erbrechen, Bewusstlosigkeit und einer lebensgefährlichen Alkoholvergiftung.\n- **Abbau:** Vor allem die Leber baut Ethanol ab, über das giftige Zwischenprodukt Ethanal. Das geht langsam, nur etwa 0,1 bis 0,2 Promille pro Stunde. Kaffee, frische Luft oder eine kalte Dusche beschleunigen das nicht.\n- **Langfristig:** Regelmäßiger Konsum schädigt Leber, Gehirn, Herz und Nerven, erhöht das Risiko für mehrere Krebsarten und kann **abhängig** machen.\n- **Jugendliche** sind besonders gefährdet, weil sich ihr Gehirn noch entwickelt. Das Jugendschutzgesetz erlaubt Bier und Wein erst ab 16, Spirituosen erst ab 18 Jahren. Für Fahranfänger in der Probezeit und unter 21 Jahren gilt 0,0 Promille."
+      },
+      {
+        "titel": "Genussmittel oder Suchtmittel?",
+        "text": "Alkohol ist gesellschaftlich akzeptiert und gehört für viele Menschen zum Feiern dazu. Gleichzeitig ist er ein **Suchtmittel**: In Deutschland sind mehrere Millionen Menschen alkoholabhängig oder trinken gesundheitsschädlich viel.\n\nDie Deutsche Gesellschaft für Ernährung stellt fest, dass es **keine gesundheitlich unbedenkliche Menge** Alkohol gibt. Die früher oft gehörte Aussage, ein Glas Rotwein am Tag sei gut fürs Herz, gilt heute als nicht belegt.\n\nPrüfe Aussagen über Alkohol in Werbung und Medien mit diesen Fragen:\n\n- **Wer** sagt das? Hat die Quelle ein Interesse, z. B. weil sie Getränke verkauft?\n- **Welche Belege** werden genannt? Gibt es seriöse Studien?\n- **Was wird weggelassen?** Werbung zeigt Spaß und Erfolg, aber keine Folgen."
+      }
+    ],
+    "formeln": [
+      { "formel": "V_{Ethanol} = \\frac{p}{100} · V_{Getränk}", "bedeutung": "Volumen des reinen Ethanols, `p` ist der Alkoholgehalt in Vol.-%" },
+      { "formel": "m = ρ · V", "bedeutung": "Masse `m` aus Dichte `ρ` (Ethanol etwa 0,8 g/mL) und Volumen `V`" }
+    ],
+    "merksatz": "Bei der **alkoholischen Gärung** bauen Hefepilze mithilfe von Enzymen ohne Sauerstoff Glucose zu Ethanol und Kohlenstoffdioxid ab: C₆H₁₂O₆ → 2 C₂H₅OH + 2 CO₂.\n\nEthanol wirkt auf das Gehirn, wird langsam in der Leber abgebaut und kann abhängig machen. Es gibt keine gesundheitlich unbedenkliche Menge.",
+    "alltag": "Auch beim Brotbacken gärt die Hefe. Hier ist das CO₂ erwünscht, denn es lockert den Teig. Das wenige Ethanol verdampft beim Backen."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "ch-gae-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Welche Wortgleichung beschreibt die **alkoholische Gärung**?",
+      "optionen": [
+        { "text": "Glucose → Ethanol + Kohlenstoffdioxid", "richtig": true },
+        { "text": "Glucose + Sauerstoff → Kohlenstoffdioxid + Wasser", "feedback": "Das ist die Zellatmung mit Sauerstoff. Bei der Gärung fehlt Sauerstoff, und es entsteht Ethanol." },
+        { "text": "Ethanol + Sauerstoff → Glucose", "feedback": "Bei der Gärung ist Glucose der Ausgangsstoff, nicht das Produkt." },
+        { "text": "Glucose → Ethanol + Sauerstoff", "feedback": "Das Gas, das Kalkwasser trübt, ist Kohlenstoffdioxid, nicht Sauerstoff." }
+      ],
+      "erklaerung": "Hefepilze bauen ohne Sauerstoff Glucose zu Ethanol und Kohlenstoffdioxid ab: C₆H₁₂O₆ → 2 C₂H₅OH + 2 CO₂. Enzyme der Hefe ermöglichen die Reaktion."
+    },
+    {
+      "id": "ch-gae-02", "typ": "multi", "schwierigkeit": "leicht", "lernziel": "lz3",
+      "frage": "Welche Aussagen über die Wirkung von Alkohol stimmen?",
+      "optionen": [
+        { "text": "Die Reaktionszeit wird länger.", "richtig": true },
+        { "text": "Man wird enthemmt und überschätzt sich leichter.", "richtig": true },
+        { "text": "Das Sehfeld wird eingeschränkt.", "richtig": true },
+        { "text": "Ein starker Kaffee baut den Alkohol schneller ab.", "feedback": "Die Leber baut Ethanol in gleichbleibendem Tempo ab. Kaffee macht vielleicht wacher, aber nicht nüchtern." },
+        { "text": "In kleinen Mengen verbessert Alkohol die Konzentration.", "feedback": "Schon kleine Mengen verschlechtern Aufmerksamkeit und Reaktion. Man merkt es selbst nur weniger." }
+      ],
+      "erklaerung": "Ethanol stört die Signalübertragung im Gehirn. Deshalb ist Alkohol im Straßenverkehr so gefährlich, und für Fahranfänger gilt 0,0 Promille."
+    },
+    {
+      "id": "ch-gae-03", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Welche Masse Ethanol kann bei vollständiger Gärung höchstens aus **360 g Glucose** entstehen?\n\nC₆H₁₂O₆ → 2 C₂H₅OH + 2 CO₂",
+      "gegeben": "`m(Glucose) = 360 g`, M(Glucose) = 180 g/mol, M(Ethanol) = 46 g/mol",
+      "gesucht": "Masse des Ethanols", "gesuchtSymbol": "m(Ethanol)",
+      "loesung": 184, "einheit": "g",
+      "rechenweg": [
+        "`n = m / M` = 360 g : 180 g/mol = 2 mol Glucose",
+        "Aus 1 mol Glucose entstehen 2 mol Ethanol, aus 2 mol also 4 mol.",
+        "m(Ethanol) = 4 mol · 46 g/mol = 184 g"
+      ],
+      "erklaerung": "Der Rest der Masse steckt im CO₂: 4 mol · 44 g/mol = 176 g. Zusammen 184 g + 176 g = 360 g, die Masse bleibt erhalten. In Wirklichkeit entsteht etwas weniger Ethanol, weil die Hefe einen Teil des Zuckers für ihr Wachstum braucht."
+    },
+    {
+      "id": "ch-gae-04", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Wie viel Gramm reinen Alkohol enthält ein Glas Wein mit **0,2 L** und **12 Vol.-%**? Die Dichte von Ethanol beträgt etwa 0,8 g/mL.",
+      "gegeben": "`V = 0,2 L = 200 mL`, Alkoholgehalt 12 Vol.-%, `ρ = 0,8 g/mL`",
+      "gesucht": "Masse des Ethanols", "gesuchtSymbol": "m",
+      "loesung": 19.2, "einheit": "g",
+      "rechenweg": [
+        "Volumen Ethanol: 200 mL · 12 / 100 = 24 mL",
+        "`m = ρ · V` = 0,8 g/mL · 24 mL = 19,2 g"
+      ],
+      "erklaerung": "Ein Glas Wein enthält also etwa so viel Alkohol wie ein halber Liter Bier (rund 20 g). Die Leber braucht für den Abbau einer solchen Menge mehrere Stunden."
+    },
+    {
+      "id": "ch-gae-05", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Bringe die Schritte des Gärversuchs in die richtige Reihenfolge.",
+      "elemente": [
+        "Traubenzucker in lauwarmem Wasser lösen",
+        "Hefe zugeben und umrühren",
+        "Kolben mit einem Gärröhrchen mit Kalkwasser verschließen",
+        "Einige Tage an einem warmen Ort stehen lassen und das Kalkwasser beobachten",
+        "Die Lösung destillieren",
+        "Mit dem Destillat eine Brennprobe durchführen"
+      ],
+      "erklaerung": "Das Gärröhrchen lässt CO₂ heraus und keine Luft hinein. Die Trübung des Kalkwassers zeigt CO₂, die Brennprobe des Destillats zeigt Ethanol."
+    },
+    {
+      "id": "ch-gae-06", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Drei Ansätze werden zwei Tage beobachtet:\n\n- A: Zuckerlösung + Hefe bei 30 °C\n- B: Zuckerlösung + Hefe bei 70 °C\n- C: Wasser + Hefe (ohne Zucker) bei 30 °C\n\nNur bei A wird das Kalkwasser trüb. Welche Schlussfolgerungen sind richtig?",
+      "optionen": [
+        { "text": "Die Hefe braucht Zucker als Ausgangsstoff.", "richtig": true },
+        { "text": "Bei 70 °C werden die Enzyme der Hefe zerstört.", "richtig": true },
+        { "text": "Ansatz C zeigt, dass das CO₂ nicht aus der Hefe allein stammt.", "richtig": true },
+        { "text": "Bei 70 °C verdampft das Kalkwasser, deshalb wird es nicht trüb.", "feedback": "Das Kalkwasser steht im Gärröhrchen außerhalb des warmen Kolbens. Das Problem liegt bei der Hefe." },
+        { "text": "Ansatz C beweist, dass Hefe Kohlenstoffdioxid verbraucht.", "feedback": "C zeigt nur, dass ohne Zucker kein CO₂ entsteht. Über einen Verbrauch sagt der Versuch nichts." }
+      ],
+      "erklaerung": "In jedem Ansatz wird nur eine Bedingung verändert. So lässt sich jede Beobachtung genau einer Ursache zuordnen. Ansatz A ist der Vergleich für B (Temperatur) und C (Zucker)."
+    },
+    {
+      "id": "ch-gae-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Auf einer Weinflasche steht: „Ein Gläschen am Abend ist gut fürs Herz, das sagen Experten.“ Prüfe und bewerte diese Aussage.",
+      "stichworte": [
+        { "aspekt": "Die Quelle prüfen: Wer sagt das, und hat sie ein Interesse (z. B. Verkauf)?", "woerter": ["quelle", "hersteller", "werbung", "interesse", "verkauf", "wer sagt"] },
+        { "aspekt": "Gesundheitliche Schäden: Es gibt keine unbedenkliche Menge (Leber, Krebs, Gehirn)", "woerter": ["unbedenklich", "schaed", "leber", "krebs", "gehirn", "gesundheit"] },
+        { "aspekt": "Gefahr der Gewöhnung und Abhängigkeit", "woerter": ["sucht", "abhaengig", "gewoehn"] }
+      ],
+      "musterloesung": "Die Aussage steht auf einer Weinflasche, also in der Werbung eines Herstellers, der Wein verkaufen will. Welche Experten das sagen und welche Belege es gibt, wird nicht genannt. Fachgesellschaften wie die Deutsche Gesellschaft für Ernährung sagen heute, dass es keine gesundheitlich unbedenkliche Menge Alkohol gibt. Alkohol schädigt die Leber, erhöht das Krebsrisiko und wirkt auf das Gehirn. Wer jeden Abend trinkt, kann sich außerdem daran gewöhnen und abhängig werden. Die Aussage ist deshalb nicht glaubwürdig.",
+      "erklaerung": "Beim Bewerten von Informationen prüfst du immer Quelle, Belege und Interessen. Werbung soll verkaufen und lässt Risiken meistens weg."
+    }
+  ]
+}

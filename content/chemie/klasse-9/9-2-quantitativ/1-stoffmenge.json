@@ -1,0 +1,145 @@
+{
+  "id": "ch-k9-stoffmenge",
+  "titel": "Stoffmenge und molare Masse",
+  "kurz": "Wie Chemiker unvorstellbar viele Teilchen mit dem Mol abzählen und mit der molaren Masse zwischen Gramm und Teilchenzahl umrechnen.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Die Stoffmenge `n` als Zählgröße mit der Einheit Mol beschreiben: 1 mol enthält 6,022 · 10^{23} Teilchen" },
+    { "id": "lz2", "niveau": "G", "text": "Atommassen in u aus dem Periodensystem ablesen und die molare Masse `M` von Verbindungen berechnen" },
+    { "id": "lz3", "niveau": "G", "text": "Masse und Stoffmenge mit `n = m / M` ineinander umrechnen" },
+    { "id": "lz4", "niveau": "H", "text": "Teilchenzahlen mit `N = n · N_{A}` berechnen und Stoffportionen über ihre Teilchenzahl vergleichen" }
+  ],
+  "verstehen": {
+    "einstieg": "Ein einziger Tropfen Wasser enthält etwa 1 700 000 000 000 000 000 000 Wasser-Moleküle. Wie soll man da bei einer Reaktion abzählen, wie viele Teilchen miteinander reagieren?",
+    "abschnitte": [
+      {
+        "titel": "Atome sind unvorstellbar leicht",
+        "text": "Die Masse von Atomen gibt man in der **atomaren Masseneinheit u** an: 1 u ≈ 1,66 · 10^{-24} g. Das ist etwa die Masse eines Wasserstoff-Atoms.\n\nDie **Atommasse** steht im Periodensystem. Gerundet gilt: H 1 u, C 12 u, N 14 u, O 16 u, Na 23 u, Mg 24 u, Al 27 u, S 32 u, Cl 35,5 u, Ca 40 u, Fe 56 u, Cu 63,5 u.\n\nDie Masse eines Moleküls ist die Summe der Atommassen: Ein H₂O-Molekül hat 2 · 1 u + 16 u = 18 u."
+      },
+      {
+        "titel": "Das Mol: ein Päckchen voller Teilchen",
+        "text": "Weil einzelne Teilchen so leicht sind, zählt man sie in Päckchen, ähnlich wie Eier im Dutzend. Das chemische Päckchen heißt **Mol** (Einheitenzeichen mol). Die zugehörige Größe ist die **Stoffmenge** `n`.\n\n**1 mol** enthält **6,022 · 10^{23} Teilchen**. Diese Zahl heißt **Avogadro-Konstante**: `N_{A} = 6,022 · 10^{23} mol^{-1}`.\n\nDie Zahl ist so gewählt, dass **1 mol eines Stoffes so viele Gramm wiegt, wie ein Teilchen u wiegt**: 1 mol Kohlenstoff-Atome (12 u) wiegt 12 g, 1 mol Wasser-Moleküle (18 u) wiegt 18 g."
+      },
+      {
+        "titel": "Die molare Masse",
+        "text": "Die **molare Masse** `M` gibt an, welche Masse 1 mol eines Stoffes hat. Einheit: g/mol. Ihr Zahlenwert stimmt mit der Teilchenmasse in u überein.\n\nSo berechnest du sie für eine Verbindung: Atommassen aus der Formel addieren und mit den Indizes multiplizieren.\n\n- CO₂: 12 + 2 · 16 = 44, also `M = 44 g/mol`\n- NaCl: 23 + 35,5 = 58,5, also `M = 58,5 g/mol`\n- CaCO₃: 40 + 12 + 3 · 16 = 100, also `M = 100 g/mol`\n- Ca(OH)₂: 40 + 2 · (16 + 1) = 74, also `M = 74 g/mol`"
+      },
+      {
+        "titel": "Umrechnen zwischen Masse, Stoffmenge und Teilchenzahl",
+        "text": "Masse und Stoffmenge hängen über die molare Masse zusammen: `n = m / M`.\n\n**Beispiel:** Wie viel Mol sind 88 g Kohlenstoffdioxid?\n`n = 88 g / (44 g/mol) = 2 mol`\n\nDie Zahl der Teilchen erhältst du mit der Avogadro-Konstante: `N = n · N_{A}`.\n\n**Beispiel:** 2 mol CO₂ enthalten `N = 2 mol · 6,022 · 10^{23} mol^{-1} ≈ 1,2 · 10^{24}` Moleküle.\n\nPrüfe bei jeder Rechnung die Einheiten: g geteilt durch g/mol ergibt mol."
+      }
+    ],
+    "formeln": [
+      { "formel": "n = \\frac{m}{M}", "bedeutung": "Stoffmenge `n` in mol, Masse `m` in g, molare Masse `M` in g/mol" },
+      { "formel": "m = n · M", "bedeutung": "Umgestellt nach der Masse" },
+      { "formel": "N = n · N_{A}", "bedeutung": "Teilchenzahl `N`, Avogadro-Konstante `N_{A} = 6,022 · 10^{23} mol^{-1}`" }
+    ],
+    "merksatz": "Die **Stoffmenge** `n` zählt Teilchen in der Einheit **Mol**: 1 mol = 6,022 · 10^{23} Teilchen.\n\nDie **molare Masse** `M` ist die Masse von 1 mol. Sie hat in g/mol denselben Zahlenwert wie die Teilchenmasse in u. Es gilt `n = m / M`.",
+    "alltag": "Ein Löffel Zucker (etwa 10 g) enthält rund 1,8 · 10^{22} Zucker-Moleküle. Würdest du jede Sekunde eins zählen, bräuchtest du über 500 Billionen Jahre."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "ch-stm-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Wie viele Teilchen enthält 1 mol eines Stoffes?",
+      "optionen": [
+        { "text": "6,022 · 10^{23}", "richtig": true },
+        { "text": "1000", "feedback": "Tausend ist das Kilo. Ein Mol ist eine viel größere Zahl." },
+        { "text": "12", "feedback": "12 g ist die Masse von 1 mol Kohlenstoff-Atomen, nicht die Teilchenzahl." },
+        { "text": "Das hängt vom Stoff ab.", "feedback": "Die Teilchenzahl pro Mol ist für alle Stoffe gleich. Nur die Masse von 1 mol hängt vom Stoff ab." }
+      ],
+      "erklaerung": "1 mol enthält immer 6,022 · 10^{23} Teilchen (Avogadro-Konstante), egal ob Atome, Moleküle oder Ionen."
+    },
+    {
+      "id": "ch-stm-02", "typ": "zahl", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Berechne die molare Masse von Wasser (H₂O).",
+      "gegeben": "Atommassen: H 1 u, O 16 u",
+      "gesucht": "molare Masse `M(H_{2}O)`",
+      "gesuchtSymbol": "M",
+      "loesung": 18,
+      "einheit": "g/mol",
+      "toleranz": 0,
+      "rechenweg": [
+        "Ein Molekül H₂O besteht aus 2 H-Atomen und 1 O-Atom.",
+        "`M = 2 · 1 g/mol + 16 g/mol`",
+        "`M = 18 g/mol`"
+      ],
+      "erklaerung": "Ein Wasser-Molekül wiegt 18 u, also wiegt 1 mol Wasser 18 g."
+    },
+    {
+      "id": "ch-stm-03", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Kalk besteht aus Calciumcarbonat (CaCO₃). Berechne seine molare Masse.",
+      "gegeben": "Atommassen: Ca 40 u, C 12 u, O 16 u",
+      "gesucht": "molare Masse `M(CaCO_{3})`",
+      "gesuchtSymbol": "M",
+      "loesung": 100,
+      "einheit": "g/mol",
+      "toleranz": 0,
+      "rechenweg": [
+        "CaCO₃ enthält 1 Ca, 1 C und 3 O.",
+        "`M = 40 g/mol + 12 g/mol + 3 · 16 g/mol`",
+        "`M = 100 g/mol`"
+      ],
+      "hinweis": "Der Index 3 gehört nur zum Sauerstoff.",
+      "erklaerung": "Die Indizes geben an, wie oft ein Atom vorkommt. Bei CaCO₃ zählt der Sauerstoff dreimal."
+    },
+    {
+      "id": "ch-stm-04", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Eine Flasche enthält 90 g Wasser. Welche Stoffmenge ist das?",
+      "gegeben": "`m = 90 g`, `M(H_{2}O) = 18 g/mol`",
+      "gesucht": "Stoffmenge `n`",
+      "gesuchtSymbol": "n",
+      "loesung": 5,
+      "einheit": "mol",
+      "alternativEinheiten": { "mmol": 0.001 },
+      "rechenweg": [
+        "Formel: `n = \\frac{m}{M}`",
+        "Einsetzen: `n = \\frac{90 g}{18 g/mol}`",
+        "Ergebnis: `n = 5 mol`"
+      ],
+      "erklaerung": "In 90 g Wasser stecken 5 mol Wasser-Moleküle, das sind etwa 3 · 10^{24} Moleküle."
+    },
+    {
+      "id": "ch-stm-05", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Ordne jeder Größe ihre Einheit zu.",
+      "paare": [
+        { "links": "Stoffmenge `n`", "rechts": "mol" },
+        { "links": "Masse `m`", "rechts": "g" },
+        { "links": "molare Masse `M`", "rechts": "g/mol" },
+        { "links": "Avogadro-Konstante `N_{A}`", "rechts": "1/mol" },
+        { "links": "Masse eines Atoms", "rechts": "u" }
+      ],
+      "extraRechts": ["mol/L"],
+      "erklaerung": "Die Stoffmenge wird in mol gemessen, die molare Masse in g/mol. Die Avogadro-Konstante gibt Teilchen pro Mol an (mol^{-1} = 1/mol). Atommassen gibt man in u an. mol/L ist die Einheit der Konzentration."
+    },
+    {
+      "id": "ch-stm-06", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Eine Eisenportion enthält 1,2044 · 10^{24} Eisen-Atome. Wie groß ist ihre Stoffmenge, und welche Masse hat sie? Gib die **Masse** an.",
+      "gegeben": "`N = 1,2044 · 10^{24}`, `N_{A} = 6,022 · 10^{23} mol^{-1}`, `M(Fe) = 56 g/mol`",
+      "gesucht": "Masse `m`",
+      "gesuchtSymbol": "m",
+      "loesung": 112,
+      "einheit": "g",
+      "alternativEinheiten": { "kg": 1000 },
+      "rechenweg": [
+        "Stoffmenge: `n = \\frac{N}{N_{A}} = \\frac{1,2044 · 10^{24}}{6,022 · 10^{23} mol^{-1}} = 2 mol`",
+        "Masse: `m = n · M = 2 mol · 56 g/mol`",
+        "Ergebnis: `m = 112 g`"
+      ],
+      "hinweis": "Rechne zuerst mit `n = N / N_{A}` die Stoffmenge aus.",
+      "erklaerung": "Die Teilchenzahl ist doppelt so groß wie die Avogadro-Konstante, also liegen 2 mol vor. 2 mol Eisen wiegen 2 · 56 g = 112 g."
+    },
+    {
+      "id": "ch-stm-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Welche Portion enthält die **meisten Teilchen**?",
+      "optionen": [
+        { "text": "10 g Wasserstoff (H₂)", "richtig": true },
+        { "text": "100 g Eisen (Fe)", "feedback": "100 g Fe sind nur `100 g / (56 g/mol) ≈ 1,8 mol`. Eisen-Atome sind schwer, deshalb sind es trotz der großen Masse wenige." },
+        { "text": "44 g Kohlenstoffdioxid (CO₂)", "feedback": "44 g CO₂ sind genau 1 mol." },
+        { "text": "Alle enthalten gleich viele Teilchen.", "feedback": "Gleiche Teilchenzahl bedeutet gleiche Stoffmenge. Rechne für jede Portion `n = m / M` aus." }
+      ],
+      "erklaerung": "Vergleiche die Stoffmengen: H₂: `n = 10 g / (2 g/mol) = 5 mol`, Fe: ≈ 1,8 mol, CO₂: 1 mol. Die größte Stoffmenge bedeutet die meisten Teilchen. Die Masse allein sagt darüber nichts aus."
+    }
+  ]
+}

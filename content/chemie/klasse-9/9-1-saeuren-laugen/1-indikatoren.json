@@ -1,0 +1,127 @@
+{
+  "id": "ch-k9-indikatoren",
+  "titel": "Indikatoren und pH-Wert",
+  "kurz": "Wie Farbstoffe zeigen, ob eine Lösung sauer, neutral oder alkalisch ist, und was der pH-Wert über die Teilchen in der Lösung verrät.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Saure, neutrale und alkalische Lösungen mit Indikatoren (Universalindikator, Phenolphthalein, Bromthymolblau, Rotkohlsaft) unterscheiden" },
+    { "id": "lz2", "niveau": "G", "text": "Die pH-Skala von 0 bis 14 beschreiben und Stoffe aus dem Haushalt einordnen" },
+    { "id": "lz3", "niveau": "H", "text": "Den sauren, neutralen oder alkalischen Charakter einer Lösung mit der Konzentration der Oxonium-Ionen (H₃O⁺) und Hydroxid-Ionen (OH⁻) erklären" },
+    { "id": "lz4", "niveau": "H", "text": "Erklären, dass eine Verdünnung auf das Zehnfache den pH-Wert einer sauren Lösung um 1 erhöht" },
+    { "id": "lz5", "niveau": "G", "text": "Sicher mit sauren und alkalischen Lösungen umgehen und Gefahrenhinweise beachten" }
+  ],
+  "verstehen": {
+    "einstieg": "Gießt du Zitronensaft in Rotkohlsaft, wird er leuchtend rot. Mit etwas Seifenlauge wird er grün. Woher „weiß“ der Rotkohl, was in der Lösung ist?",
+    "abschnitte": [
+      {
+        "titel": "Indikatoren zeigen den Charakter einer Lösung",
+        "text": "**Indikatoren** sind Farbstoffe, die ihre Farbe ändern, je nachdem ob eine Lösung **sauer**, **neutral** oder **alkalisch** (basisch) ist. Eine alkalische Lösung nennt man auch **Lauge**.\n\n- **Universalindikator:** eine Mischung mehrerer Farbstoffe. Rot (stark sauer) über Orange und Gelb zu Grün (neutral), dann Blau und Violett (stark alkalisch).\n- **Phenolphthalein:** farblos in sauren und neutralen Lösungen, **pink** ab etwa pH 8,2.\n- **Bromthymolblau:** **gelb** unter pH 6, **grün** um pH 7, **blau** über pH 7,6.\n- **Rotkohlsaft:** ein natürlicher Indikator. Rot (stark sauer), rosa, violett (neutral), blau, grün und schließlich gelb (stark alkalisch).\n\nPhenolphthalein und Bromthymolblau zeigen nur, ob ein bestimmter Wert über- oder unterschritten ist. Der Universalindikator zeigt den ungefähren pH-Wert."
+      },
+      {
+        "titel": "Die pH-Skala",
+        "text": "Wie sauer oder alkalisch eine Lösung ist, gibt der **pH-Wert** an. Bei wässrigen Lösungen reicht die Skala meist von 0 bis 14.\n\n- **pH < 7:** sauer, je kleiner, desto saurer\n- **pH = 7:** neutral (reines Wasser, Kochsalzlösung)\n- **pH > 7:** alkalisch, je größer, desto stärker alkalisch\n\nTypische Werte: Magensaft 1 bis 2, Zitronensaft etwa 2,4, Speiseessig etwa 3, Kaffee etwa 5, Blut 7,4, Natronlösung etwa 8,3, Seifenlösung 9 bis 10, Ammoniak-Reiniger etwa 11, Abflussreiniger bis 14.\n\nGenauer als Indikatoren misst ein **pH-Meter** mit einer Elektrode."
+      },
+      {
+        "titel": "Was hinter dem pH-Wert steckt",
+        "text": "In jeder sauren Lösung gibt es besonders viele **Oxonium-Ionen** (H₃O⁺). In jeder alkalischen Lösung gibt es besonders viele **Hydroxid-Ionen** (OH⁻).\n\n- sauer: mehr H₃O⁺ als OH⁻\n- neutral: gleich viele H₃O⁺ und OH⁻ (in reinem Wasser nur sehr wenige)\n- alkalisch: mehr OH⁻ als H₃O⁺\n\nDer pH-Wert beschreibt die **Konzentration der Oxonium-Ionen**. Sinkt der pH-Wert um 1, gibt es **zehnmal so viele** H₃O⁺-Ionen in einem Liter. Eine Lösung mit pH 2 enthält also 10 · 10 = 100-mal so viele Oxonium-Ionen wie eine Lösung mit pH 4.\n\nVerdünnst du eine saure Lösung mit Wasser auf das Zehnfache ihres Volumens, verteilen sich die Oxonium-Ionen auf das zehnfache Volumen. Der pH-Wert **steigt um 1**. Neutral wird eine saure Lösung durch Verdünnen aber nie, sie nähert sich nur pH 7 an.\n\n**Für Profis:** Es gilt `c(H_{3}O^{+}) = 10^{-pH} mol/L`. Bei pH 3 sind das 0,001 mol/L."
+      },
+      {
+        "titel": "Sicher arbeiten",
+        "text": "Konzentrierte Säuren und Laugen sind **ätzend**. Laugen sind für die Augen besonders gefährlich, weil sie das Gewebe auflösen.\n\n- Immer **Schutzbrille** tragen, auch beim Verdünnen und Aufräumen.\n- Auf das Gefahrenpiktogramm **„Ätzwirkung“** achten (Flüssigkeit tropft auf Hand und Oberfläche).\n- Nie mit dem Mund pipettieren, nie probieren oder direkt daran riechen.\n- Spritzer sofort mit viel Wasser abspülen, bei Augen die Augendusche benutzen und der Lehrkraft Bescheid sagen.\n- Zum Testen nur wenige Tropfen Indikator in eine kleine Probe geben."
+      }
+    ],
+    "merksatz": "**Indikatoren** zeigen durch ihre Farbe, ob eine Lösung sauer, neutral oder alkalisch ist. Der **pH-Wert** gibt an, wie sauer oder alkalisch sie ist: unter 7 sauer, 7 neutral, über 7 alkalisch.\n\nSaure Lösungen enthalten viele **Oxonium-Ionen** (H₃O⁺), alkalische viele **Hydroxid-Ionen** (OH⁻). Eine pH-Stufe bedeutet den Faktor 10.",
+    "alltag": "Hortensien blühen auf saurem Boden blau und auf alkalischem Boden rosa. Gärtner nutzen sie deshalb als lebenden Indikator für den Boden."
+  },
+  "interaktiv": ["ch-titration"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "ch-ind-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Du gibst zwei Tropfen Phenolphthalein zu einer Probe Natronlauge. Was beobachtest du?",
+      "optionen": [
+        { "text": "Die Lösung färbt sich pink.", "richtig": true },
+        { "text": "Die Lösung bleibt farblos.", "feedback": "Farblos bleibt Phenolphthalein in sauren und neutralen Lösungen. Natronlauge ist stark alkalisch." },
+        { "text": "Die Lösung färbt sich gelb.", "feedback": "Gelb ist die Farbe von Bromthymolblau in sauren Lösungen." },
+        { "text": "Die Lösung färbt sich rot.", "feedback": "Rot zeigt der Universalindikator in stark sauren Lösungen." }
+      ],
+      "erklaerung": "Phenolphthalein ist in sauren und neutralen Lösungen farblos und wird ab etwa pH 8,2 **pink**. Natronlauge ist stark alkalisch, deshalb färbt sie sich pink."
+    },
+    {
+      "id": "ch-ind-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Ordne den Stoffen aus dem Haushalt ihren ungefähren pH-Wert zu.",
+      "paare": [
+        { "links": "Zitronensaft", "rechts": "pH ≈ 2" },
+        { "links": "Kaffee", "rechts": "pH ≈ 5" },
+        { "links": "Kochsalzlösung", "rechts": "pH ≈ 7" },
+        { "links": "Seifenlösung", "rechts": "pH ≈ 10" },
+        { "links": "Abflussreiniger", "rechts": "pH ≈ 13" }
+      ],
+      "erklaerung": "Zitronensaft ist deutlich sauer, Kaffee schwach sauer. Kochsalzlösung ist neutral, denn Salze wie Natriumchlorid sind keine Säuren oder Basen. Seifenlösung ist schwach alkalisch, Abflussreiniger enthält Natriumhydroxid und ist stark alkalisch."
+    },
+    {
+      "id": "ch-ind-03", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Welche Farbe zeigt der Indikator in einer **stark alkalischen** Lösung (pH 12)?",
+      "paare": [
+        { "links": "Phenolphthalein", "rechts": "pink" },
+        { "links": "Bromthymolblau", "rechts": "blau" },
+        { "links": "Universalindikator", "rechts": "violett" },
+        { "links": "Rotkohlsaft", "rechts": "gelb bis gelbgrün" }
+      ],
+      "extraRechts": ["farblos", "rot"],
+      "erklaerung": "In alkalischen Lösungen ist Phenolphthalein pink, Bromthymolblau blau und der Universalindikator blau bis violett. Rotkohlsaft wird über Blau und Grün bei sehr hohem pH-Wert gelb. Farblos ist Phenolphthalein nur in sauren und neutralen Lösungen, rot zeigen Universalindikator und Rotkohl im stark Sauren."
+    },
+    {
+      "id": "ch-ind-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Welche Aussage beschreibt eine **neutrale** Lösung richtig?",
+      "optionen": [
+        { "text": "Sie enthält gleich viele Oxonium-Ionen (H₃O⁺) wie Hydroxid-Ionen (OH⁻).", "richtig": true },
+        { "text": "Sie enthält überhaupt keine Ionen.", "feedback": "Kochsalzlösung ist neutral und enthält sehr viele Na⁺- und Cl⁻-Ionen. Auch reines Wasser enthält ein paar H₃O⁺- und OH⁻-Ionen." },
+        { "text": "Sie enthält mehr Hydroxid-Ionen als Oxonium-Ionen.", "feedback": "Das wäre eine alkalische Lösung." },
+        { "text": "Sie enthält nur Oxonium-Ionen.", "feedback": "Viele Oxonium-Ionen machen eine Lösung sauer." }
+      ],
+      "erklaerung": "Entscheidend ist das Verhältnis: Bei gleich vielen H₃O⁺- und OH⁻-Ionen ist die Lösung neutral (pH 7). Überwiegen die H₃O⁺-Ionen, ist sie sauer, überwiegen die OH⁻-Ionen, ist sie alkalisch."
+    },
+    {
+      "id": "ch-ind-05", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz5",
+      "frage": "Du sollst die pH-Werte verschiedener Reinigungsmittel untersuchen. Welche Regeln sind richtig?",
+      "optionen": [
+        { "text": "Ich trage die ganze Zeit eine Schutzbrille.", "richtig": true },
+        { "text": "Ich achte auf das Gefahrenpiktogramm „Ätzwirkung“ auf den Flaschen.", "richtig": true },
+        { "text": "Spritzer auf der Haut spüle ich sofort mit viel Wasser ab.", "richtig": true },
+        { "text": "Ich prüfe am Geruch, ob ein Mittel sauer ist.", "feedback": "Nie direkt an Chemikalien riechen. Dämpfe können die Atemwege reizen." },
+        { "text": "Laugen sind ungefährlicher als Säuren, bei ihnen brauche ich keine Brille.", "feedback": "Laugen sind für die Augen sogar besonders gefährlich, weil sie das Gewebe auflösen." }
+      ],
+      "erklaerung": "Viele Reinigungsmittel sind ätzend. Schutzbrille, Gefahrenhinweise beachten und Spritzer sofort mit viel Wasser abspülen sind Grundregeln. Geruchs- und Geschmacksproben sind im Chemieraum verboten."
+    },
+    {
+      "id": "ch-ind-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Lösung A hat pH 2, Lösung B hat pH 5. Wie viele Oxonium-Ionen enthält ein Liter von A im Vergleich zu einem Liter von B?",
+      "optionen": [
+        { "text": "1000-mal so viele", "richtig": true },
+        { "text": "3-mal so viele", "feedback": "Die pH-Skala ist nicht linear. Jede Stufe bedeutet den Faktor 10." },
+        { "text": "2,5-mal so viele", "feedback": "Du hast 5 durch 2 geteilt. Jede pH-Stufe bedeutet aber den Faktor 10." },
+        { "text": "1000-mal weniger", "feedback": "Ein kleinerer pH-Wert bedeutet **mehr** Oxonium-Ionen." }
+      ],
+      "erklaerung": "Zwischen pH 2 und pH 5 liegen 3 Stufen. Jede Stufe bedeutet den Faktor 10: 10 · 10 · 10 = 1000. Lösung A enthält also 1000-mal so viele H₃O⁺-Ionen."
+    },
+    {
+      "id": "ch-ind-07", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Du füllst 10 mL Salzsäure mit pH 1 mit Wasser auf genau 1 L auf. Welchen pH-Wert hat die verdünnte Lösung?",
+      "gegeben": "`V_{1} = 10 mL`, pH 1, `V_{2} = 1 L = 1000 mL`",
+      "gesucht": "pH-Wert der verdünnten Lösung",
+      "gesuchtSymbol": "pH",
+      "loesung": 3,
+      "einheit": "",
+      "toleranz": 0,
+      "rechenweg": [
+        "Verdünnungsfaktor: `1000 mL / 10 mL = 100`",
+        "Die Oxonium-Ionen verteilen sich auf das 100-fache Volumen: ihre Konzentration sinkt auf ein Hundertstel.",
+        "Faktor 100 = 10 · 10, das sind 2 pH-Stufen.",
+        "Neuer pH-Wert: `1 + 2 = 3`"
+      ],
+      "hinweis": "Jede Verdünnung auf das Zehnfache erhöht den pH-Wert einer sauren Lösung um 1.",
+      "erklaerung": "Verdünnen auf das 100-Fache erhöht den pH-Wert um 2. Die Lösung bleibt sauer, aber deutlich schwächer. **Sicherheit:** Beim Verdünnen immer erst das Wasser vorlegen und dann die Säure dazugeben."
+    }
+  ]
+}

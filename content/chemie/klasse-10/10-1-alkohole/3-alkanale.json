@@ -1,0 +1,113 @@
+{
+  "id": "ch-k10-alkanale",
+  "titel": "Oxidation zu Alkanalen",
+  "kurz": "Was aus Alkoholen wird, wenn man sie oxidiert, wie man die Aldehydgruppe nachweist und warum Methanol so gefährlich ist.",
+  "reihenfolge": 3,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Die Oxidation von Ethanol mit Kupferoxid zu Ethanal beschreiben und als Redoxreaktion deuten" },
+    { "id": "lz2", "niveau": "G", "text": "Die Aldehydgruppe als funktionelle Gruppe der Alkanale erkennen und Alkanale benennen" },
+    { "id": "lz3", "niveau": "H", "text": "Hypothesen über Oxidationsprodukte mit der Fehling-Probe und der Silberspiegelprobe überprüfen" },
+    { "id": "lz4", "niveau": "G", "text": "Den Abbau von Ethanol im Körper über Ethanal und die Giftigkeit von Methanol erklären" }
+  ],
+  "verstehen": {
+    "einstieg": "Ein schwarz angelaufenes Kupferblech wird heiß in etwas Ethanol getaucht. Plötzlich glänzt es wieder kupferrot, und es riecht stechend nach grünen Äpfeln. Was ist mit dem Ethanol passiert?",
+    "abschnitte": [
+      {
+        "titel": "Ethanol wird oxidiert",
+        "text": "**Versuch:** Ein Kupferblech wird in der Brennerflamme erhitzt, bis es schwarz ist (Kupferoxid). Dann taucht man es noch heiß in ein Reagenzglas mit wenig Ethanol.\n\n**Beobachtung:** Das Blech wird wieder kupferrot. Es entsteht ein stechend riechender Stoff, das **Ethanal**.\n\nCH₃–CH₂–OH + CuO → CH₃–CHO + Cu + H₂O\n\n**Deutung:** Das Kupferoxid gibt sein Sauerstoffatom ab und wird zu Kupfer **reduziert**. Dem Ethanol werden zwei H-Atome entzogen, die mit dem Sauerstoff Wasser bilden. Ethanol wird dabei **oxidiert**. Es ist eine **Redoxreaktion**: Kupferoxid ist das Oxidationsmittel, Ethanol das Reduktionsmittel.\n\nSicherheit: Schutzbrille, nur wenige Milliliter Ethanol, Vorratsflasche weit weg vom Brenner. Ethanol ist leicht entzündlich, Ethanal reizt Augen und Atemwege: im Abzug arbeiten."
+      },
+      {
+        "titel": "Die Aldehydgruppe",
+        "text": "Ethanal gehört zu den **Alkanalen** (Aldehyden). Ihre funktionelle Gruppe ist die **Aldehydgruppe** –CHO: ein C-Atom mit einer Doppelbindung zu einem O-Atom und einem H-Atom.\n\n```\n      O\n      ||\nR  -  C  -  H\n```\n\nR steht für den Rest des Moleküls. Der Name entsteht aus dem Alkan mit der Endung **-al**:\n\n- Methanal H–CHO (Formaldehyd), Sdp. −19 °C\n- Ethanal CH₃–CHO (Acetaldehyd), Sdp. 20 °C\n- Propanal CH₃–CH₂–CHO, Sdp. 48 °C\n- Butanal CH₃–CH₂–CH₂–CHO, Sdp. 75 °C\n\nDie Aldehydgruppe sitzt immer am Kettenende, deshalb braucht man keine Positionszahl. Alkanale sieden niedriger als die passenden Alkanole, weil sie untereinander keine Wasserstoffbrücken bilden können."
+      },
+      {
+        "titel": "Nachweis der Aldehydgruppe",
+        "text": "Alkanale lassen sich leicht weiter oxidieren. Darauf beruhen zwei Nachweise:\n\n- **Fehling-Probe:** Man mischt Fehling-Lösung I (blaue Kupfersulfat-Lösung) und Fehling-Lösung II (alkalische Lösung) zu einer tiefblauen Lösung, gibt die Probe dazu und erhitzt im Wasserbad. Ein **ziegelroter Niederschlag** (Kupfer(I)-oxid Cu₂O) zeigt eine Aldehydgruppe.\n- **Silberspiegelprobe:** Mit einer ammoniakalischen Silbernitrat-Lösung bildet sich beim Erwärmen ein glänzender **Silberspiegel** an der Glaswand.\n\nIn beiden Fällen wird das Alkanal zur Alkansäure oxidiert, und die Kupfer- bzw. Silber-Ionen werden reduziert. Alkanole zeigen beide Proben **nicht**. Deshalb führt man zum Vergleich immer eine **Blindprobe** mit dem Ausgangsalkohol durch.\n\nSicherheit: Fehling-Lösung II enthält Natronlauge und ist ätzend. Schutzbrille und Handschuhe tragen.\n\nErweiterung: Oxidiert man einen **sekundären** Alkohol wie Propan-2-ol, entsteht kein Alkanal, sondern ein **Keton**, hier Propanon (Aceton). Ketone zeigen die Fehling-Probe nicht."
+      },
+      {
+        "titel": "Alkanale im Körper",
+        "text": "In der Leber wird Ethanol durch Enzyme schrittweise oxidiert:\n\nEthanol → Ethanal → Ethansäure (Essigsäure) → Kohlenstoffdioxid und Wasser\n\nDas Zwischenprodukt **Ethanal** ist giftig. Es trägt zu Kopfschmerzen und Übelkeit nach dem Trinken („Kater“) bei und steht im Verdacht, Krebs auszulösen.\n\n**Methanol** CH₃–OH sieht aus, riecht und schmeckt fast wie Ethanol, ist aber viel gefährlicher. Die Leber oxidiert es zu **Methanal** und **Methansäure** (Ameisensäure). Diese schädigen besonders den Sehnerv. Schon wenige Milliliter Methanol können zur **Erblindung** führen, größere Mengen sind tödlich. Methanol kann in unsachgemäß selbst gebrannten oder gepanschten Spirituosen stecken."
+      }
+    ],
+    "merksatz": "Bei der **Oxidation** eines primären Alkanols entsteht ein **Alkanal** mit der **Aldehydgruppe** –CHO, z. B. Ethanol → Ethanal. Name: Alkan + **-al**.\n\nNachweis: **Fehling-Probe** (ziegelroter Niederschlag) und **Silberspiegelprobe**. Im Körper wird Ethanol über Ethanal zu Ethansäure abgebaut, Methanol zu giftigem Methanal und Methansäure.",
+    "alltag": "Methanal (Formaldehyd) wurde früher in Spanplatten und Klebstoffen verwendet und konnte aus Möbeln ausdünsten. Heute gelten dafür strenge Grenzwerte, weil Methanal die Schleimhäute reizt und Krebs auslösen kann."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "ch-anl-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Welche funktionelle Gruppe haben die **Alkanale**?",
+      "optionen": [
+        { "text": "die Aldehydgruppe –CHO", "richtig": true },
+        { "text": "die Hydroxygruppe –OH", "feedback": "Die Hydroxygruppe kennzeichnet die Alkanole, aus denen Alkanale durch Oxidation entstehen." },
+        { "text": "die Carboxygruppe –COOH", "feedback": "Die Carboxygruppe gehört zu den Alkansäuren. Sie entstehen, wenn man Alkanale weiter oxidiert." },
+        { "text": "die C≡C-Dreifachbindung", "feedback": "Die Dreifachbindung kennzeichnet die Alkine." }
+      ],
+      "erklaerung": "Die Aldehydgruppe besteht aus einem C-Atom mit einer Doppelbindung zu Sauerstoff und einem gebundenen H-Atom. Die Endung -al im Namen zeigt sie an."
+    },
+    {
+      "id": "ch-anl-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Welches Alkanal entsteht bei der Oxidation des jeweiligen Alkanols?",
+      "paare": [
+        { "links": "Methanol", "rechts": "Methanal" },
+        { "links": "Ethanol", "rechts": "Ethanal" },
+        { "links": "Propan-1-ol", "rechts": "Propanal" },
+        { "links": "Butan-1-ol", "rechts": "Butanal" }
+      ],
+      "extraRechts": ["Ethansäure"],
+      "erklaerung": "Die Zahl der C-Atome bleibt bei der Oxidation gleich. Aus der Endung -ol wird -al. Ethansäure entsteht erst, wenn Ethanal weiter oxidiert wird."
+    },
+    {
+      "id": "ch-anl-03", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Ein heißes, schwarzes Kupferblech wird in Ethanol getaucht und wird wieder kupferrot. Welche Aussagen deuten den Versuch richtig?",
+      "optionen": [
+        { "text": "Kupferoxid wird zu Kupfer reduziert.", "richtig": true },
+        { "text": "Ethanol wird zu Ethanal oxidiert.", "richtig": true },
+        { "text": "Als weiteres Produkt entsteht Wasser.", "richtig": true },
+        { "text": "Das Kupfer wird oxidiert.", "feedback": "Das Kupfer gibt Sauerstoff ab, das ist eine Reduktion. Oxidiert wurde es vorher in der Brennerflamme." },
+        { "text": "Ethanol ist hier das Oxidationsmittel.", "feedback": "Ethanol gibt Wasserstoff ab und wird oxidiert. Damit ist es das Reduktionsmittel. Oxidationsmittel ist das Kupferoxid." }
+      ],
+      "erklaerung": "CH₃–CH₂–OH + CuO → CH₃–CHO + Cu + H₂O. Oxidation und Reduktion laufen gleichzeitig ab: eine Redoxreaktion."
+    },
+    {
+      "id": "ch-anl-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Woran erkennst du bei der **Fehling-Probe**, dass die Probe eine Aldehydgruppe enthält?",
+      "optionen": [
+        { "text": "Beim Erhitzen bildet sich ein ziegelroter Niederschlag.", "richtig": true },
+        { "text": "Die Lösung bleibt tiefblau.", "feedback": "Tiefblau ist die Farbe der Fehling-Lösung selbst. Bleibt sie so, ist die Probe negativ." },
+        { "text": "An der Glaswand entsteht ein Silberspiegel.", "feedback": "Das ist das Ergebnis der Silberspiegelprobe. Fehling-Lösung enthält kein Silber, sondern Kupfer-Ionen." },
+        { "text": "Die Lösung wird trüb und weiß.", "feedback": "Eine weiße Trübung kennst du vom Kalkwasser beim CO₂-Nachweis." }
+      ],
+      "erklaerung": "Das Alkanal reduziert die Kupfer(II)-Ionen der Fehling-Lösung zu rotem Kupfer(I)-oxid Cu₂O und wird selbst zur Alkansäure oxidiert."
+    },
+    {
+      "id": "ch-anl-05", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Bringe die Stationen des Ethanol-Abbaus in der Leber in die richtige Reihenfolge.",
+      "elemente": ["Ethanol", "Ethanal", "Ethansäure", "Kohlenstoffdioxid und Wasser"],
+      "erklaerung": "Jeder Schritt ist eine Oxidation. Das Zwischenprodukt Ethanal ist giftig und trägt zu den Beschwerden nach dem Trinken bei."
+    },
+    {
+      "id": "ch-anl-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Mia vermutet: „Wenn man Propan-1-ol mit heißem Kupferoxid oxidiert, entsteht ein Alkanal.“ Mit welchem Vorgehen kann sie ihre Hypothese am besten überprüfen?",
+      "optionen": [
+        { "text": "Das Reaktionsprodukt und reines Propan-1-ol getrennt mit Fehling-Lösung erhitzen. Nur das Produkt sollte einen ziegelroten Niederschlag zeigen.", "richtig": true },
+        { "text": "Nur das Reaktionsprodukt mit Fehling-Lösung erhitzen.", "feedback": "Ohne Blindprobe weiß Mia nicht, ob nicht schon das Propan-1-ol selbst die Probe zeigt." },
+        { "text": "Das Reaktionsprodukt in Kalkwasser einleiten.", "feedback": "Kalkwasser weist CO₂ nach, keine Aldehydgruppe." },
+        { "text": "Bromwasser zum Reaktionsprodukt geben.", "feedback": "Bromwasser zeigt C=C-Doppelbindungen, nicht die Aldehydgruppe." }
+      ],
+      "erklaerung": "Eine Hypothese prüft man mit einem passenden Nachweis und einer Blindprobe zum Vergleich. Propan-1-ol ist ein primärer Alkohol, das Produkt Propanal zeigt die Fehling-Probe. Mit Propan-2-ol würde dagegen ein Keton entstehen und die Probe bliebe blau."
+    },
+    {
+      "id": "ch-anl-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Methanol und Ethanol sind sich chemisch sehr ähnlich. Erkläre, warum Methanol trotzdem viel gefährlicher ist.",
+      "stichworte": [
+        { "aspekt": "Methanol wird im Körper zu Methanal und Methansäure oxidiert", "woerter": ["methanal", "methansaeure", "ameisensaeure", "formaldehyd"] },
+        { "aspekt": "Diese Stoffe schädigen den Sehnerv, es droht Erblindung", "woerter": ["blind", "sehnerv", "augen"] },
+        { "aspekt": "Schon kleine Mengen sind gefährlich bis tödlich", "woerter": ["wenige milliliter", "kleine menge", "geringe menge", "toedlich"] }
+      ],
+      "musterloesung": "Methanol wird in der Leber genau wie Ethanol oxidiert. Dabei entstehen aber Methanal und Methansäure. Diese Stoffe sind stark giftig und schädigen vor allem den Sehnerv, man kann erblinden. Schon wenige Milliliter Methanol reichen dafür aus, größere Mengen sind tödlich. Gefährlich ist auch, dass man Methanol an Geruch und Geschmack kaum von Ethanol unterscheiden kann.",
+      "erklaerung": "Nicht der Alkohol selbst, sondern seine Oxidationsprodukte machen den Unterschied. Deshalb sind schwarz gebrannte oder gepanschte Spirituosen so gefährlich."
+    }
+  ]
+}

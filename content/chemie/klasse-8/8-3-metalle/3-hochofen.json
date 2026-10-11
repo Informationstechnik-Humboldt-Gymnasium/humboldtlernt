@@ -1,0 +1,140 @@
+{
+  "id": "ch-k8-hochofen",
+  "titel": "Metallgewinnung: vom Erz zum Eisen",
+  "kurz": "Wie im Hochofen aus Eisenerz und Koks Roheisen wird, welche Redoxreaktionen dabei ablaufen und wie man die Eisenherstellung bewerten kann.",
+  "reihenfolge": 3,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Den Begriff Erz erklären und wichtige Erze nennen" },
+    { "id": "lz2", "niveau": "G", "text": "Aufbau und Ablauf des Hochofenprozesses anhand eines Schemas beschreiben" },
+    { "id": "lz3", "niveau": "H", "text": "Die Reaktionen im Hochofen mit Reaktionsgleichungen und aus energetischer Sicht erläutern" },
+    { "id": "lz4", "niveau": "H", "text": "Stahlherstellung, Recycling und neue Verfahren beschreiben und die Eisengewinnung bewerten" }
+  ],
+  "verstehen": {
+    "einstieg": "Eisen ist das wichtigste Gebrauchsmetall der Welt: Brücken, Autos, Schienen, Schrauben. In der Natur kommt es aber fast nie als Metall vor, sondern als rotbraunes Gestein. Wie macht man aus Stein Eisen?",
+    "abschnitte": [
+      {
+        "titel": "Erze",
+        "text": "Die meisten Metalle kommen in der Natur nur als Verbindungen vor, z. B. als Oxide oder Sulfide. Ein **Erz** ist ein Gestein, das so viel einer Metallverbindung enthält, dass sich die Gewinnung des Metalls lohnt. Das übrige Gestein heißt **Gangart**.\n\n- **Roteisenstein** (Hämatit): Fe₂O₃\n- **Magneteisenstein** (Magnetit): Fe₃O₄\n- **Bauxit**: Rohstoff für Aluminium\n- **Kupferkies**: CuFeS₂\n\nUm ein Metall zu gewinnen, muss man dem Metalloxid den Sauerstoff entziehen: Es muss **reduziert** werden."
+      },
+      {
+        "titel": "Der Hochofen",
+        "text": "Ein **Hochofen** ist ein bis zu 40 m hoher Schachtofen. Er arbeitet ohne Pause, oft mehr als zehn Jahre lang.\n\n- Oben (an der **Gicht**) wird schichtweise der **Möller** eingefüllt: Eisenerz, **Koks** (fast reiner Kohlenstoff) und **Zuschläge** wie Kalkstein.\n- Unten wird durch Düsen **Heißwind** eingeblasen: auf etwa 1200 °C vorgeheizte Luft.\n- Der Möller rutscht langsam nach unten, das heiße Gas strömt nach oben (**Gegenstromprinzip**).\n- Ganz unten sammeln sich flüssiges **Roheisen** und darüber die leichtere **Schlacke**. Beide werden regelmäßig abgelassen (**Abstich**).\n- Oben entweicht das **Gichtgas**. Es enthält noch brennbares Kohlenstoffmonooxid und wird verbrannt, um den Heißwind vorzuheizen.\n\nDie Zuschläge binden die Gangart zur Schlacke. Sie wird im Straßenbau und für Zement verwendet."
+      },
+      {
+        "titel": "Die Reaktionen im Hochofen",
+        "text": "Unten verbrennt Koks mit dem Sauerstoff des Heißwinds. Diese stark **exotherme** Reaktion liefert die Wärme (bis etwa 2000 °C):\n\nC + O₂ → CO₂\n\nDarüber reagiert das Kohlenstoffdioxid mit glühendem Koks zu **Kohlenstoffmonooxid**. Diese Reaktion ist **endotherm**:\n\nCO₂ + C → 2 CO\n\nDas aufsteigende Kohlenstoffmonooxid ist das eigentliche **Reduktionsmittel**. Es entzieht dem Eisenoxid den Sauerstoff:\n\nFe₂O₃ + 3 CO → 2 Fe + 3 CO₂\n\nDas Eisen schmilzt in der heißen Zone und tropft nach unten. Weil es dabei Kohlenstoff aufnimmt, enthält **Roheisen** etwa 4 % Kohlenstoff. Es ist hart und spröde und lässt sich nicht schmieden."
+      },
+      {
+        "titel": "Vom Roheisen zum Stahl und neue Wege",
+        "text": "Im **Sauerstoffblasverfahren** wird reiner Sauerstoff auf das flüssige Roheisen geblasen. Der Kohlenstoff verbrennt, bis weniger als 2 % übrig sind. So entsteht **Stahl**, der zäh und schmiedbar ist. Dabei wird auch **Schrott** zugegeben.\n\nDie Hochofenroute setzt pro Tonne Stahl rund **2 Tonnen CO₂** frei. Die Stahlindustrie gehört damit zu den größten CO₂-Quellen. Es gibt Alternativen:\n\n- **Recycling:** Schrott wird im Elektrolichtbogenofen eingeschmolzen. Das spart Erz und viel Energie.\n- **Direktreduktion mit Wasserstoff:** Fe₂O₃ + 3 H₂ → 2 Fe + 3 H₂O. Statt CO₂ entsteht Wasser. Der Wasserstoff muss aber mit viel Strom aus erneuerbaren Energien hergestellt werden („grüner Stahl“)."
+      }
+    ],
+    "merksatz": "Im Hochofen wird Eisenoxid durch **Kohlenstoffmonooxid** zu Eisen **reduziert**: Fe₂O₃ + 3 CO → 2 Fe + 3 CO₂. Die Energie liefert die Verbrennung von Koks.\n\nRoheisen enthält etwa 4 % Kohlenstoff. Im Sauerstoffblasverfahren wird daraus **Stahl** mit weniger als 2 % Kohlenstoff.",
+    "alltag": "Stahl ist das am häufigsten recycelte Material der Welt. Mit einem Magneten lässt er sich leicht aus dem Müll aussortieren."
+  },
+  "interaktiv": ["ch-redoxreihe"],
+  "uebungen": [
+    {
+      "id": "ch-hof-01",
+      "typ": "single",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz1",
+      "frage": "Was ist ein **Erz**?",
+      "optionen": [
+        { "text": "Ein Gestein, das so viel einer Metallverbindung enthält, dass sich die Metallgewinnung lohnt", "richtig": true },
+        { "text": "Ein reines Metall, das man in der Natur findet", "feedback": "Reine Metalle in der Natur nennt man **gediegen**, z. B. Gold. Erze enthalten Metallverbindungen." },
+        { "text": "Der Abfall, der beim Hochofen entsteht", "feedback": "Das ist die Schlacke." },
+        { "text": "Eine Legierung aus Eisen und Kohlenstoff", "feedback": "Das ist Stahl oder Roheisen." }
+      ],
+      "erklaerung": "Erze enthalten Metallverbindungen wie Oxide oder Sulfide. Ob ein Gestein als Erz gilt, hängt davon ab, ob sich der Abbau wirtschaftlich lohnt."
+    },
+    {
+      "id": "ch-hof-02",
+      "typ": "zuordnung",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz2",
+      "frage": "Ordne die Begriffe zum Hochofen richtig zu.",
+      "paare": [
+        { "links": "Möller", "rechts": "oben eingefülltes Gemisch aus Erz, Koks und Zuschlägen" },
+        { "links": "Heißwind", "rechts": "vorgeheizte Luft, die unten eingeblasen wird" },
+        { "links": "Schlacke", "rechts": "schwimmt auf dem Roheisen und wird als Baustoff genutzt" },
+        { "links": "Gichtgas", "rechts": "entweicht oben, enthält noch brennbares CO" },
+        { "links": "Roheisen", "rechts": "flüssiges Eisen mit etwa 4 % Kohlenstoff" }
+      ],
+      "erklaerung": "Möller und Heißwind bewegen sich im Gegenstrom: Der Möller rutscht nach unten, das heiße Gas steigt nach oben. Unten werden Roheisen und Schlacke abgestochen, oben wird das Gichtgas abgeleitet und zum Vorheizen genutzt."
+    },
+    {
+      "id": "ch-hof-03",
+      "typ": "reihenfolge",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz3",
+      "frage": "Bringe die Vorgänge im Hochofen in die richtige Reihenfolge, wie sie für ein Stück Eisenerz ablaufen.",
+      "elemente": [
+        "Unten verbrennt Koks mit dem Heißwind: C + O₂ → CO₂",
+        "Kohlenstoffdioxid reagiert mit glühendem Koks: CO₂ + C → 2 CO",
+        "Kohlenstoffmonooxid steigt auf und reduziert das Eisenoxid: Fe₂O₃ + 3 CO → 2 Fe + 3 CO₂",
+        "Das Eisen schmilzt, nimmt Kohlenstoff auf und tropft nach unten",
+        "Roheisen und Schlacke werden abgestochen"
+      ],
+      "erklaerung": "Erst entsteht durch Verbrennung die nötige Wärme, dann das Reduktionsmittel CO. Es reduziert das Erz, das flüssige Eisen sammelt sich unten und wird abgelassen."
+    },
+    {
+      "id": "ch-hof-04",
+      "typ": "single",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz3",
+      "frage": "Welcher Stoff ist im Hochofen das **eigentliche Reduktionsmittel** für das Eisenoxid?",
+      "optionen": [
+        { "text": "Kohlenstoffmonooxid (CO)", "richtig": true },
+        { "text": "Sauerstoff aus dem Heißwind", "feedback": "Sauerstoff oxidiert. Er verbrennt den Koks, reduziert aber nichts." },
+        { "text": "Kalkstein", "feedback": "Kalkstein ist ein Zuschlag. Er bindet die Gangart zur Schlacke." },
+        { "text": "Kohlenstoffdioxid (CO₂)", "feedback": "CO₂ kann keinen Sauerstoff mehr aufnehmen. Es ist ein Produkt der Reduktion." }
+      ],
+      "erklaerung": "Das gasförmige Kohlenstoffmonooxid strömt durch die ganze Erzschüttung und nimmt den Sauerstoff des Eisenoxids auf: Fe₂O₃ + 3 CO → 2 Fe + 3 CO₂. Dabei wird CO zu CO₂ oxidiert."
+    },
+    {
+      "id": "ch-hof-05",
+      "typ": "multi",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz4",
+      "frage": "Welche Aussagen über Roheisen und Stahl sind richtig?",
+      "optionen": [
+        { "text": "Roheisen enthält etwa 4 % Kohlenstoff und ist spröde.", "richtig": true },
+        { "text": "Beim Sauerstoffblasverfahren verbrennt ein Teil des Kohlenstoffs.", "richtig": true },
+        { "text": "Stahl enthält weniger als 2 % Kohlenstoff und ist schmiedbar.", "richtig": true },
+        { "text": "Stahl entsteht, indem man dem Roheisen noch mehr Koks zugibt.", "feedback": "Mehr Kohlenstoff macht Eisen spröder. Für Stahl muss der Kohlenstoffgehalt sinken." },
+        { "text": "Schrott kann bei der Stahlherstellung nicht verwendet werden.", "feedback": "Schrott ist ein wichtiger Rohstoff. Er wird beim Blasverfahren zugegeben oder im Elektroofen eingeschmolzen." }
+      ],
+      "erklaerung": "Der hohe Kohlenstoffgehalt macht Roheisen hart und spröde. Beim Aufblasen von Sauerstoff verbrennt Kohlenstoff zu Kohlenstoffoxiden, die als Gas entweichen. Übrig bleibt Stahl."
+    },
+    {
+      "id": "ch-hof-06",
+      "typ": "single",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz3",
+      "frage": "Welche Aussage zur Energie im Hochofen ist richtig?",
+      "optionen": [
+        { "text": "Die Verbrennung von Koks ist exotherm und liefert die Wärme. Die Bildung von CO aus CO₂ und Koks ist endotherm.", "richtig": true },
+        { "text": "Alle Reaktionen im Hochofen sind endotherm, deshalb braucht man den Heißwind.", "feedback": "Die Verbrennung C + O₂ → CO₂ setzt sehr viel Wärme frei. Der Heißwind liefert den Sauerstoff dafür." },
+        { "text": "Die Reduktion des Eisenoxids liefert die meiste Wärme, Koks wird nur als Reduktionsmittel gebraucht.", "feedback": "Koks hat zwei Aufgaben: Er ist Brennstoff und liefert das Reduktionsmittel CO." },
+        { "text": "Die Wärme kommt nur aus dem Heißwind, die Reaktionen setzen keine Energie um.", "feedback": "Jede chemische Reaktion ist mit einem Energieumsatz verbunden." }
+      ],
+      "erklaerung": "Koks ist im Hochofen **Brennstoff und Reduktionsmittel** zugleich. Seine Verbrennung ist stark exotherm und hält die Temperatur hoch. Die Reaktion CO₂ + C → 2 CO nimmt dagegen Energie auf."
+    },
+    {
+      "id": "ch-hof-07",
+      "typ": "text",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz4",
+      "frage": "Ein Stahlwerk überlegt, seinen Hochofen durch eine Anlage zur Direktreduktion mit Wasserstoff zu ersetzen. Nenne Vorteile und Probleme und bewerte den Plan.",
+      "stichworte": [
+        { "aspekt": "Vorteil: Statt CO₂ entsteht Wasser, gut für das Klima", "woerter": ["co2", "kohlenstoffdioxid", "klima", "treibhaus"] },
+        { "aspekt": "Problem: Wasserstoff braucht sehr viel Strom/Energie", "woerter": ["strom", "energie", "elektrolyse"] },
+        { "aspekt": "Strom muss aus erneuerbaren Quellen kommen", "woerter": ["erneuerbar", "wind", "sonne", "solar", "oekostrom"] },
+        { "aspekt": "Weitere Punkte: Kosten / Umbau oder Recycling von Schrott", "woerter": ["kosten", "teuer", "investition", "umbau", "schrott", "recycling"] }
+      ],
+      "musterloesung": "Bei der Direktreduktion mit Wasserstoff entsteht statt Kohlenstoffdioxid nur Wasser: Fe₂O₃ + 3 H₂ → 2 Fe + 3 H₂O. Das wäre sehr gut für das Klima, denn Stahlwerke gehören zu den größten CO₂-Quellen. Das Problem ist, dass man für die Herstellung von Wasserstoff durch Elektrolyse sehr viel Strom braucht. Der Strom muss aus erneuerbaren Quellen wie Wind und Sonne kommen, sonst entsteht das CO₂ einfach im Kraftwerk. Außerdem ist der Umbau teuer. Ergänzend sollte man möglichst viel Schrott recyceln. Insgesamt halte ich den Plan für sinnvoll, wenn genug Ökostrom zur Verfügung steht.",
+      "erklaerung": "Eine gute Bewertung wägt ab: Klimanutzen gegen Energiebedarf und Kosten. Entscheidend ist, woher der Strom für den Wasserstoff kommt."
+    }
+  ]
+}

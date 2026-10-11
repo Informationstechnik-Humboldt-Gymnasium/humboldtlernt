@@ -1,7 +1,7 @@
 # humboldtlernt – Regeln für Claude-Sitzungen
 
 Lernplattform des Humboldt-Gymnasiums Berlin-Tegel (Node 20+, Express, SQLite, kein Build-Schritt).
-Fächer nach dem schulinternen Curriculum (SchiC): **Physik** (Kl. 7–10) und **TIMP** (Wahlpflicht, Kl. 8–9).
+Fächer nach dem schulinternen Curriculum (SchiC): **Physik** und **Chemie** (Kl. 7–10) sowie **TIMP** (Wahlpflicht, Kl. 8–9).
 Mehrere Personen arbeiten gleichzeitig mit eigenen Claude-Sitzungen am Repo. Halte dich deshalb genau an diese Regeln.
 
 ## Zusammenarbeit (wichtig)
@@ -53,7 +53,8 @@ Thema:
 - **IDs** sind über **alle Fächer** eindeutig (der Fortschritt wird darüber gespeichert) und bestehen nur aus a–z, 0–9, `-`.
   - Physik: Thema `k<klasse>-<name>`, Übungen `k<klasse>-<kürzel>-01`.
   - TIMP: Thema `timp-k<klasse>-<name>`, Übungen `timp-<kürzel>-01`.
-  - Neues Fach: eigenes Präfix, z. B. `chemie-k8-…`.
+  - Chemie: Thema `ch-k<klasse>-<name>`, Übungen `ch-<kürzel>-01`. Chemische Formeln mit Unicode-Indizes direkt im Text (H₂O, SO₄²⁻, →), nicht als Formel-Backticks (die sind kursiv).
+  - Neues Fach: eigenes Präfix, z. B. `bio-k8-…`.
   - Kürzel vorher mit `grep -r '"<präfix>-<kürzel>-' content` auf Eindeutigkeit prüfen.
 - **IDs bestehender Themen und Übungen nie ändern oder wiederverwenden**, sonst geht Schülerfortschritt verloren.
 - **Übungen:** 7 pro Thema, mindestens je eine `leicht`, `mittel`, `schwer`, jedes Lernziel mindestens einmal (`"lernziel": "lz…"`). Jede Übung hat `erklaerung`, falsche Optionen haben `feedback`.

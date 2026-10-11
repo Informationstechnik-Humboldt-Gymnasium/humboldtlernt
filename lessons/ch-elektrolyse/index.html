@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wasserzerlegung im Hofmannschen Apparat</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<style>
+  .glass { fill: none; stroke: var(--muted); stroke-width: 2.2; stroke-linejoin: round; stroke-linecap: round; }
+  .water { fill: var(--neg); opacity: .22; }
+  .electrode { fill: var(--line); }
+  .bubble { fill: none; stroke: var(--neg); stroke-width: 1.2; }
+  .tick { stroke: var(--muted); stroke-width: 1; }
+  .gasname { font-size: 13px; font-weight: 700; }
+  .flame { fill: var(--pos); }
+  .flame-in { fill: var(--lamp); }
+  .glow { fill: var(--pos); }
+  .stick { stroke: var(--c3); stroke-width: 5; stroke-linecap: round; }
+  .burst { fill: var(--lamp); stroke: var(--pos); stroke-width: 2; }
+  .probe-txt { font-size: 15px; font-weight: 800; text-anchor: middle; }
+  .atom-o { fill: var(--warn); }
+  .atom-h { fill: var(--card); stroke: var(--line); stroke-width: 1.5; }
+  .atom-t { font-size: 13px; font-weight: 700; text-anchor: middle; dominant-baseline: central; pointer-events: none; }
+  .atom-t.o { fill: var(--card) !important; }
+  .bond { stroke: var(--line); stroke-width: 3; stroke-linecap: round; }
+  .mol-lbl { font-size: 13px; font-weight: 650; }
+  .eq { font-size: 1.05rem; font-weight: 650; text-align: center; margin: 6px 0 2px; }
+  .flash { fill: var(--lamp); }
+  .note { font-size: .82rem; color: var(--muted); margin: 8px 0 0; }
+</style>
+</head>
+<body>
+<h1>Wasserzerlegung im Hofmannschen Apparat</h1>
+<p class="muted small">Schalte die Spannung ein und beobachte, wie viel Gas an den beiden Elektroden entsteht. Prüfe die Gase dann mit der Glimmspan- und der Knallgasprobe. Unten siehst du, was dabei mit den Teilchen passiert.</p>
+
+<div class="lk-grid">
+  <div>
+    <div class="lk-card">
+      <svg id="app" viewBox="0 -48 440 428" role="img" aria-labelledby="app-title">
+        <title id="app-title">Hofmannscher Wasserzersetzungsapparat: zwei Schenkel mit Elektroden und Hähnen, in der Mitte ein Vorratsgefäß, unten eine Spannungsquelle</title>
+        <!-- Wasser -->
+        <rect id="wL" class="water" x="92" y="52" width="36" height="250"/>
+        <rect id="wR" class="water" x="312" y="52" width="36" height="250"/>
+        <clipPath id="clipRes"><path d="M201 302 V93 Q181 93 181 72 V22 H259 V72 Q259 93 239 93 V302 Z"/></clipPath>
+        <g clip-path="url(#clipRes)">
+          <rect id="wC" class="water" x="202" y="170" width="36" height="132"/>
+          <rect id="wRes" class="water" x="182" y="92" width="76" height="0"/>
+        </g>
+        <rect class="water" x="92" y="300" width="256" height="20"/>
+        <!-- Glas -->
+        <path class="glass" d="M90 300 V54 Q90 50 94 50 H106 V30 M114 30 V50 H126 Q130 50 130 54 V300"/>
+        <path class="glass" d="M310 300 V54 Q310 50 314 50 H326 V30 M334 30 V50 H346 Q350 50 350 54 V300"/>
+        <path class="glass" d="M200 300 V92 Q180 92 180 72 V22 M240 300 V92 Q260 92 260 72 V22"/>
+        <path class="glass" d="M90 300 V318 Q90 322 94 322 H346 Q350 322 350 318 V300 M130 300 H200 M240 300 H310"/>
+        <!-- Hähne -->
+        <circle cx="110" cy="38" r="6" fill="var(--card)" stroke="var(--muted)" stroke-width="2"/>
+        <line id="hL" x1="100" y1="38" x2="120" y2="38" stroke="var(--line)" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="330" cy="38" r="6" fill="var(--card)" stroke="var(--muted)" stroke-width="2"/>
+        <line id="hR" x1="320" y1="38" x2="340" y2="38" stroke="var(--line)" stroke-width="3" stroke-linecap="round"/>
+        <!-- Skalen -->
+        <g id="scales"></g>
+        <!-- Elektroden, Kabel, Quelle -->
+        <rect class="electrode" x="106" y="262" width="8" height="40" rx="2"/>
+        <rect class="electrode" x="326" y="262" width="8" height="40" rx="2"/>
+        <path class="wire" d="M110 302 V350 H160 M330 302 V350 H280"/>
+        <rect x="160" y="334" width="120" height="36" rx="6" fill="var(--card)" stroke="var(--line)" stroke-width="2"/>
+        <text id="tSupply" x="220" y="357" class="lbl" text-anchor="middle">aus</text>
+        <text x="150" y="342" class="lbl" text-anchor="middle">−</text>
+        <text x="290" y="342" class="lbl" text-anchor="middle">+</text>
+        <text x="84" y="282" class="lbl" text-anchor="end">Minuspol</text>
+        <text x="84" y="298" class="lbl" text-anchor="end">(−)</text>
+        <text x="356" y="282" class="lbl">Pluspol</text>
+        <text x="356" y="298" class="lbl">(+)</text>
+        <!-- Gasnamen und Volumen -->
+        <text id="nL" x="84" y="70" class="gasname" text-anchor="end">Gas ?</text>
+        <text id="vL" x="84" y="88" class="val" text-anchor="end">0,0 mL</text>
+        <text id="nR" x="356" y="70" class="gasname">Gas ?</text>
+        <text id="vR" x="356" y="88" class="val">0,0 mL</text>
+        <g id="bubbles"></g>
+        <!-- Probe -->
+        <g id="probe" hidden>
+          <line class="stick" x1="46" y1="-58" x2="4" y2="-10"/>
+          <circle id="pGlow" class="glow" cx="3" cy="-9" r="5"/>
+          <g id="pFlame"><path class="flame" d="M0 -26 C10 -14 10 -2 0 3 C-10 -2 -10 -14 0 -26 Z"/><path class="flame-in" d="M0 -14 C4 -8 4 -2 0 1 C-4 -2 -4 -8 0 -14 Z"/></g>
+          <path id="pBurst" class="burst" d="M0 -40 L6 -22 L24 -28 L12 -14 L26 -4 L8 -6 L4 10 L-4 -6 L-22 -2 L-10 -14 L-24 -28 L-6 -22 Z"/>
+          <text id="pTxt" class="probe-txt" x="-20" y="-24" text-anchor="end" style="text-anchor:end"></text>
+        </g>
+      </svg>
+      <p class="note">Vereinfachungen: Die Zeit läuft im Zeitraffer. Im echten Versuch gibt man etwas Natriumsulfat ins Wasser, damit es leitet (Schutzbrille!). Anfangs ist das Verhältnis oft etwas größer als 2 : 1, weil sich Sauerstoff etwas besser im Wasser löst.</p>
+    </div>
+
+    <div class="lk-card">
+      <h2>Teilchenebene</h2>
+      <div class="row">
+        <div class="seg" role="group" aria-label="Reaktion wählen">
+          <button type="button" id="mZ" aria-pressed="true">Zerlegung</button>
+          <button type="button" id="mB" aria-pressed="false">Bildung (Knallgas)</button>
+        </div>
+        <button type="button" id="bPlay" class="primary">Abspielen</button>
+      </div>
+      <svg id="parts" viewBox="0 0 440 200" role="img" aria-labelledby="parts-title">
+        <title id="parts-title">Teilchenmodell: Atome von zwei Wassermolekülen gruppieren sich zu zwei Wasserstoffmolekülen und einem Sauerstoffmolekül um und umgekehrt</title>
+        <circle id="flash" class="flash" cx="220" cy="110" r="0" opacity="0"/>
+        <text id="pHeadL" x="100" y="22" class="lbl" text-anchor="middle">vorher</text>
+        <text id="pHeadR" x="335" y="22" class="lbl" text-anchor="middle">nachher</text>
+        <text id="pEnergy" x="220" y="22" class="mol-lbl" text-anchor="middle" style="font-weight:500"></text>
+        <line x1="190" y1="34" x2="250" y2="34" class="axis"/>
+        <path d="M250 34 l-7 -4 v8 z" fill="var(--muted)"/>
+        <g id="bonds"></g>
+        <g id="atoms"></g>
+        <g id="molLbls"></g>
+      </svg>
+      <p class="eq" id="eq"></p>
+      <p class="small muted" id="count" style="text-align:center"></p>
+    </div>
+  </div>
+
+  <div>
+    <div class="lk-card">
+      <h2>Einstellungen</h2>
+      <label class="ctrl"><span>Spannung <span class="f">U</span> <output id="oU"></output></span>
+        <input type="range" id="sU" min="0" max="12" step="0.5" value="6"></label>
+      <div class="row">
+        <button type="button" id="bOn" class="primary" aria-pressed="false">Spannung einschalten</button>
+        <button type="button" id="bReset">Neu starten</button>
+      </div>
+      <div class="readouts">
+        <div class="readout"><span>Gas am Minuspol</span><b id="rL">0,0 mL</b></div>
+        <div class="readout"><span>Gas am Pluspol</span><b id="rR">0,0 mL</b></div>
+        <div class="readout"><span>Verhältnis</span><b id="rRatio">–</b></div>
+      </div>
+      <h2 style="margin-top:14px">Nachweis am Hahn</h2>
+      <div class="row">
+        <div class="seg" role="group" aria-label="Schenkel wählen">
+          <button type="button" id="sideL" aria-pressed="true">links (−)</button>
+          <button type="button" id="sideR" aria-pressed="false">rechts (+)</button>
+        </div>
+      </div>
+      <div class="row">
+        <button type="button" id="bGlimm">Glimmspanprobe</button>
+        <button type="button" id="bKnall">Knallgasprobe</button>
+      </div>
+      <p id="msg" class="small" aria-live="polite"></p>
+    </div>
+
+    <div class="lk-card tasks">
+      <h2>Entdecke selbst <span class="small muted" data-task-count></span></h2>
+      <div class="task" data-goal="gas"><p class="task-q">Schalte die Spannung ein und sammle mindestens 20 mL Gas am Minuspol.</p></div>
+      <div class="task">
+        <p class="task-q">In welchem Volumenverhältnis entstehen die Gase am Minuspol und am Pluspol?</p>
+        <div class="choices">
+          <button type="button" data-ok data-fb="Richtig: Am Minuspol entsteht immer doppelt so viel Gas wie am Pluspol.">2 : 1</button>
+          <button type="button" data-fb="Vergleiche die beiden Anzeigen: Ein Schenkel füllt sich deutlich schneller.">1 : 1</button>
+          <button type="button" data-fb="Schau genau hin, welcher Schenkel mehr Gas enthält: der am Minuspol.">1 : 2</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="task" data-goal="glimm"><p class="task-q">Finde mit der Glimmspanprobe heraus, an welchem Pol Sauerstoff entsteht.</p></div>
+      <div class="task" data-goal="knall"><p class="task-q">Weise mit der Knallgasprobe Wasserstoff nach.</p></div>
+      <div class="task" data-goal="teilchen"><p class="task-q">Spiele auf der Teilchenebene die Zerlegung und die Bildung von Wasser ab.</p></div>
+      <div class="task">
+        <p class="task-q">Warum folgt aus dem Verhältnis 2 : 1 die Formel H₂O?</p>
+        <div class="choices">
+          <button type="button" data-ok data-fb="Genau: Gleiche Gasvolumina enthalten gleich viele Moleküle. Doppelt so viele H₂- wie O₂-Moleküle bedeuten 2 H-Atome pro O-Atom.">Gleiche Gasvolumina enthalten gleich viele Teilchen, also entstehen doppelt so viele H₂- wie O₂-Moleküle.</button>
+          <button type="button" data-fb="Die Masse hilft hier nicht: Ein Sauerstoffatom ist 16-mal so schwer wie ein Wasserstoffatom.">Wasserstoff ist doppelt so schwer wie Sauerstoff.</button>
+          <button type="button" data-fb="Die Pole haben mit der Formel nichts zu tun. Entscheidend ist die Anzahl der Teilchen in den Gasvolumina.">Weil der Minuspol doppelt so stark ist wie der Pluspol.</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="all-done">Alles entdeckt! Weiter geht es mit den Übungen.</div>
+    </div>
+  </div>
+</div>
+
+<script src="../../static/lesson-kit.js"></script>
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+  var NS = 'http://www.w3.org/2000/svg';
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function el(tag, attrs, parent) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+
+  // ------------------------------------------------ Apparat
+  var TOP = 52, PX = 4, VMAX = 50, XL = 110, XR = 330;
+  var S = { U: 6, on: false, VH: 0, VO: 0, side: 'L', vented: false, named: { L: false, R: false } };
+
+  // Skalen (alle 10 mL)
+  var sc = $('scales');
+  for (var v = 0; v <= VMAX; v += 10) {
+    var y = TOP + v * PX;
+    el('line', { x1: 130, x2: 137, y1: y, y2: y, class: 'tick' }, sc);
+    el('text', { x: 140, y: y + 4, class: 'val' }, sc).textContent = v;
+    el('line', { x1: 303, x2: 310, y1: y, y2: y, class: 'tick' }, sc);
+    el('text', { x: 300, y: y + 4, class: 'val', 'text-anchor': 'end' }, sc).textContent = v;
+  }
+  el('text', { x: 140, y: TOP + VMAX * PX + 20, class: 'val' }, sc).textContent = 'mL';
+  el('text', { x: 300, y: TOP + VMAX * PX + 20, class: 'val', 'text-anchor': 'end' }, sc).textContent = 'mL';
+
+  function rate() { return S.on && S.U >= 2 ? 0.25 * (S.U - 2) : 0; } // mL Wasserstoff pro Sekunde (Zeitraffer)
+
+  function msg(t) { $('msg').textContent = t; }
+
+  function draw() {
+    var yL = TOP + S.VH * PX, yR = TOP + S.VO * PX;
+    $('wL').setAttribute('y', yL); $('wL').setAttribute('height', 302 - yL);
+    $('wR').setAttribute('y', yR); $('wR').setAttribute('height', 302 - yR);
+    var lc = 84 - (S.VH + S.VO) * 0.6; // offenes Vorratsgefäß: Wasser wird nach oben verdrängt
+    $('wC').setAttribute('y', Math.max(lc, 92)); $('wC').setAttribute('height', 302 - Math.max(lc, 92));
+    $('wRes').setAttribute('y', Math.min(lc, 92)); $('wRes').setAttribute('height', Math.max(0, 92 - lc));
+    $('vL').textContent = LK.fmt(S.VH, 1) + ' mL';
+    $('vR').textContent = LK.fmt(S.VO, 1) + ' mL';
+    $('rL').textContent = LK.fmt(S.VH, 1) + ' mL';
+    $('rR').textContent = LK.fmt(S.VO, 1) + ' mL';
+    $('rRatio').textContent = (!S.vented && S.VO >= 1) ? LK.fmt(S.VH / S.VO, 1) + ' : 1' : '–';
+    $('nL').textContent = S.named.L ? 'Wasserstoff' : 'Gas ?';
+    $('nR').textContent = S.named.R ? 'Sauerstoff' : 'Gas ?';
+    $('tSupply').textContent = S.on ? 'U = ' + LK.fmt(S.U, 1) + ' V' : 'aus';
+    $('oU').textContent = LK.fmt(S.U, 1) + ' V';
+    $('bOn').textContent = S.on ? 'Spannung ausschalten' : 'Spannung einschalten';
+    $('bOn').setAttribute('aria-pressed', S.on);
+  }
+
+  // Blasen
+  var bubbles = [], spawnL = 0, spawnR = 0, bubG = $('bubbles');
+  function spawn(x, gasY) {
+    var c = el('circle', { class: 'bubble', r: 1.5 + Math.random() * 2, cx: x + (Math.random() - 0.5) * 18, cy: 262 + Math.random() * 30 }, bubG);
+    bubbles.push({ c: c, x: +c.getAttribute('cx'), y: +c.getAttribute('cy'), side: x === XL ? 'L' : 'R' });
+  }
+
+  // ------------------------------------------------ Nachweise
+  var probe = null; // { side, kind, positive, t }
+  function setSide(s) {
+    S.side = s;
+    $('sideL').setAttribute('aria-pressed', s === 'L');
+    $('sideR').setAttribute('aria-pressed', s === 'R');
+  }
+  function test(kind) {
+    if (probe) return;
+    var side = S.side, V = side === 'L' ? S.VH : S.VO;
+    var gas = side === 'L' ? 'H2' : 'O2';
+    var where = side === 'L' ? 'am Minuspol' : 'am Pluspol';
+    if (V < 4) { msg('Im Schenkel ' + where + ' ist noch zu wenig Gas. Sammle mindestens 4 mL.'); return; }
+    var positive = (kind === 'glimm' && gas === 'O2') || (kind === 'knall' && gas === 'H2');
+    var text;
+    if (kind === 'glimm') text = gas === 'O2'
+      ? 'Der glimmende Span flammt hell auf. Das Gas ' + where + ' ist Sauerstoff.'
+      : 'Der Glimmspan flammt nicht auf. Das Gas ' + where + ' ist kein Sauerstoff.';
+    else text = gas === 'H2'
+      ? 'Plopp! Das Gas verbrennt mit einem leisen Knall. Das Gas ' + where + ' ist Wasserstoff.'
+      : 'Kein Knall. Die Flamme brennt nur etwas heller. Das Gas ' + where + ' ist kein Wasserstoff.';
+    probe = { side: side, kind: kind, positive: positive, t: 0, text: text };
+    $(side === 'L' ? 'hL' : 'hR').setAttribute('transform', 'rotate(90 ' + (side === 'L' ? XL : XR) + ' 38)');
+    msg('Hahn geöffnet, Span wird an die Öffnung gehalten …');
+  }
+  function finishProbe() {
+    var p = probe;
+    msg(p.text);
+    if (p.side === 'L') S.VH = 0; else S.VO = 0;
+    S.vented = true;
+    if (p.positive) {
+      S.named[p.side] = true;
+      LK.reach(p.kind === 'glimm' ? 'glimm' : 'knall');
+    }
+    $(p.side === 'L' ? 'hL' : 'hR').removeAttribute('transform');
+    $('probe').toggleAttribute('hidden', true);
+    probe = null;
+    draw();
+  }
+  function drawProbe() {
+    var p = probe;
+    $('probe').toggleAttribute('hidden', !p);
+    if (!p) return;
+    var x = p.side === 'L' ? XL : XR;
+    $('probe').setAttribute('transform', 'translate(' + x + ' 30)');
+    var effect = p.t > 0.8;
+    var glimm = p.kind === 'glimm';
+    $('pGlow').toggleAttribute('hidden', !glimm || (effect && p.positive) || (effect && !p.positive && p.t > 1.4));
+    var flameScale = glimm ? (effect && p.positive ? 1.5 : 0) : (effect ? (p.positive ? 0.6 : 1.25) : 0.8);
+    $('pFlame').toggleAttribute('hidden', flameScale === 0);
+    $('pFlame').setAttribute('transform', 'translate(3 -9) scale(' + flameScale + ')');
+    var burst = !glimm && p.positive && effect && p.t < 1.8;
+    $('pBurst').toggleAttribute('hidden', !burst);
+    $('pBurst').setAttribute('transform', 'translate(3 -9) scale(' + (burst ? 0.6 + (p.t - 0.8) * 0.5 : 1) + ')');
+    $('pTxt').textContent = !effect ? '' : glimm ? (p.positive ? 'flammt auf!' : 'erlischt') : (p.positive ? 'Plopp!' : 'kein Knall');
+  }
+
+  // ------------------------------------------------ Teilchenebene
+  var W = { O1: [100, 62], H1: [77, 86], H2: [123, 86], O2: [100, 140], H3: [77, 164], H4: [123, 164] };
+  var P = { H1: [318, 52], H2: [342, 52], H3: [318, 102], H4: [342, 102], O1: [316, 154], O2: [346, 154] };
+  var M = { O1: [200, 70], H1: [240, 62], H2: [182, 120], O2: [238, 150], H3: [256, 108], H4: [205, 172] };
+  var BW = [['O1', 'H1'], ['O1', 'H2'], ['O2', 'H3'], ['O2', 'H4']];
+  var BP = [['H1', 'H2'], ['H3', 'H4'], ['O1', 'O2']];
+  var atoms = {}, bondsW = [], bondsP = [];
+  var gB = $('bonds'), gA = $('atoms'), gL = $('molLbls');
+  BW.forEach(function () { bondsW.push(el('line', { class: 'bond' }, gB)); });
+  BP.forEach(function () { bondsP.push(el('line', { class: 'bond' }, gB)); });
+  Object.keys(W).forEach(function (k) {
+    var o = k.charAt(0) === 'O';
+    var g = el('g', {}, gA);
+    el('circle', { r: o ? 15 : 10, class: o ? 'atom-o' : 'atom-h' }, g);
+    el('text', { class: 'atom-t' + (o ? ' o' : '') }, g).textContent = o ? 'O' : 'H';
+    atoms[k] = g;
+  });
+  var lblW = el('g', {}, gL), lblP = el('g', {}, gL);
+  el('text', { x: 150, y: 80, class: 'mol-lbl' }, lblW).textContent = 'H₂O';
+  el('text', { x: 150, y: 158, class: 'mol-lbl' }, lblW).textContent = 'H₂O';
+  el('text', { x: 366, y: 57, class: 'mol-lbl' }, lblP).textContent = 'H₂';
+  el('text', { x: 366, y: 107, class: 'mol-lbl' }, lblP).textContent = 'H₂';
+  el('text', { x: 374, y: 159, class: 'mol-lbl' }, lblP).textContent = 'O₂';
+
+  var A = { mode: 'z', t: 0, playing: false, played: { z: false, b: false } };
+  function ease(x) { return x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2; }
+  function lerp(a, b, f) { return [a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f]; }
+  function posAt(k, t) {
+    var from = A.mode === 'z' ? W : P, to = A.mode === 'z' ? P : W;
+    if (t < 0.45) return lerp(from[k], M[k], ease(t / 0.45));
+    if (t < 0.55) return M[k];
+    return lerp(M[k], to[k], ease((t - 0.55) / 0.45));
+  }
+  function drawParts() {
+    var pos = {};
+    Object.keys(atoms).forEach(function (k) {
+      var p = posAt(k, A.t); pos[k] = p;
+      atoms[k].setAttribute('transform', 'translate(' + p[0].toFixed(1) + ' ' + p[1].toFixed(1) + ')');
+    });
+    var fromBonds = A.mode === 'z' ? BW : BP, toBonds = A.mode === 'z' ? BP : BW;
+    var fromLines = A.mode === 'z' ? bondsW : bondsP, toLines = A.mode === 'z' ? bondsP : bondsW;
+    function setBonds(list, lines, op) {
+      list.forEach(function (b, i) {
+        var a = pos[b[0]], c = pos[b[1]];
+        lines[i].setAttribute('x1', a[0]); lines[i].setAttribute('y1', a[1]);
+        lines[i].setAttribute('x2', c[0]); lines[i].setAttribute('y2', c[1]);
+        lines[i].setAttribute('opacity', op);
+      });
+    }
+    setBonds(fromBonds, fromLines, Math.max(0, 1 - A.t / 0.2));
+    setBonds(toBonds, toLines, Math.max(0, (A.t - 0.8) / 0.2));
+    var atStart = A.t === 0, atEnd = A.t >= 1;
+    lblW.toggleAttribute('hidden', !((A.mode === 'z' && atStart) || (A.mode === 'b' && atEnd)));
+    lblP.toggleAttribute('hidden', !((A.mode === 'z' && atEnd) || (A.mode === 'b' && atStart)));
+    var fl = $('flash');
+    var f = A.mode === 'b' && A.t > 0.55 ? Math.max(0, 1 - (A.t - 0.55) / 0.45) : 0;
+    fl.setAttribute('r', 40 + 60 * (1 - f)); fl.setAttribute('opacity', (f * 0.6).toFixed(2));
+  }
+  function setMode(m) {
+    A.mode = m; A.t = 0; A.playing = false;
+    $('mZ').setAttribute('aria-pressed', m === 'z');
+    $('mB').setAttribute('aria-pressed', m === 'b');
+    $('eq').textContent = m === 'z' ? '2 H₂O → 2 H₂ + O₂' : '2 H₂ + O₂ → 2 H₂O';
+    $('pEnergy').textContent = m === 'z' ? 'Energie wird zugeführt' : 'Energie wird frei';
+    $('count').textContent = m === 'z'
+      ? 'Zerlegung (Analyse), endotherm. Links 4 H und 2 O, rechts 4 H und 2 O: Die Atome werden nur umgruppiert.'
+      : 'Bildung (Synthese), exotherm. Links 4 H und 2 O, rechts 4 H und 2 O: Die Atome werden nur umgruppiert.';
+    drawParts();
+  }
+  function play() {
+    if (reduce) { A.t = 1; drawParts(); done(); return; }
+    A.t = 0; A.playing = true;
+  }
+  function done() {
+    A.played[A.mode] = true;
+    if (A.played.z && A.played.b) LK.reach('teilchen');
+  }
+
+  // ------------------------------------------------ Schleife
+  var last = performance.now();
+  function frame(t) {
+    var dt = Math.min(0.05, (t - last) / 1000); last = t;
+    var r = rate();
+    if (r > 0) {
+      S.VH = Math.min(VMAX, S.VH + r * dt);
+      S.VO = Math.min(VMAX, S.VO + r / 2 * dt);
+      if (S.VH >= 20) LK.reach('gas');
+      if (S.VH >= VMAX) { S.on = false; msg('Der Schenkel am Minuspol ist voll. Prüfe die Gase oder starte neu.'); }
+      if (!reduce) {
+        spawnL += r * dt * 6; spawnR += r * dt * 3;
+        while (spawnL >= 1) { spawn(XL); spawnL--; }
+        while (spawnR >= 1) { spawn(XR); spawnR--; }
+      }
+      draw();
+    }
+    for (var i = bubbles.length - 1; i >= 0; i--) {
+      var b = bubbles[i];
+      b.y -= 70 * dt;
+      var gasY = TOP + (b.side === 'L' ? S.VH : S.VO) * PX;
+      if (b.y <= gasY + 3) { bubG.removeChild(b.c); bubbles.splice(i, 1); }
+      else b.c.setAttribute('cy', b.y.toFixed(1));
+    }
+    if (probe) {
+      probe.t += dt;
+      drawProbe();
+      if (probe.t > 2.4) finishProbe();
+    }
+    if (A.playing) {
+      A.t = Math.min(1, A.t + dt / 2.4);
+      if (A.t >= 1) { A.playing = false; done(); }
+      drawParts();
+    }
+    requestAnimationFrame(frame);
+  }
+
+  // ------------------------------------------------ Bedienung
+  $('sU').oninput = function () { S.U = Number(this.value); draw(); if (S.on && S.U < 2) msg('Unter etwa 2 V entstehen kaum Gasbläschen. Erhöhe die Spannung.'); };
+  $('bOn').onclick = function () {
+    if (!S.on && S.VH >= VMAX) { msg('Der Schenkel ist voll. Starte neu oder prüfe zuerst die Gase.'); return; }
+    S.on = !S.on;
+    if (S.on) msg(S.U < 2 ? 'Unter etwa 2 V entstehen kaum Gasbläschen. Erhöhe die Spannung.' : 'An beiden Elektroden steigen Gasbläschen auf.');
+    else msg('Spannung aus: Die Gasentwicklung stoppt sofort.');
+    draw();
+  };
+  $('bReset').onclick = function () {
+    S.on = false; S.VH = 0; S.VO = 0; S.vented = false;
+    bubbles.forEach(function (b) { bubG.removeChild(b.c); }); bubbles = [];
+    msg('Neu gestartet: Beide Schenkel sind wieder mit Wasser gefüllt.');
+    draw();
+  };
+  $('sideL').onclick = function () { setSide('L'); };
+  $('sideR').onclick = function () { setSide('R'); };
+  $('bGlimm').onclick = function () { test('glimm'); };
+  $('bKnall').onclick = function () { test('knall'); };
+  $('mZ').onclick = function () { setMode('z'); };
+  $('mB').onclick = function () { setMode('b'); };
+  $('bPlay').onclick = play;
+
+  draw(); setMode('z'); drawProbe(); requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

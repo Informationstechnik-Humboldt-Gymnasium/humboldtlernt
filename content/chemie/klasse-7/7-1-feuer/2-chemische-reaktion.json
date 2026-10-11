@@ -1,0 +1,121 @@
+{
+  "id": "ch-k7-chemische-reaktion",
+  "titel": "Merkmale der chemischen Reaktion",
+  "kurz": "Woran du erkennst, dass bei einem Vorgang neue Stoffe entstehen, und wie du das mit einer Wortgleichung beschreibst.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Die Stoffumwandlung als Merkmal der chemischen Reaktion benennen und chemische Reaktionen von physikalischen Vorgängen unterscheiden" },
+    { "id": "lz2", "niveau": "G", "text": "Edukte und Produkte benennen und Wortgleichungen aufstellen" },
+    { "id": "lz3", "niveau": "G", "text": "Den Energieumsatz als Merkmal der chemischen Reaktion benennen" },
+    { "id": "lz4", "niveau": "H", "text": "Die chemische Reaktion auf der Teilchenebene als Umgruppierung von Teilchen beschreiben" }
+  ],
+  "verstehen": {
+    "einstieg": "Eis schmilzt zu Wasser, Holz verbrennt zu Asche. In beiden Fällen sieht hinterher etwas anders aus. Aber nur in einem Fall ist ein wirklich neuer Stoff entstanden. Woran erkennst du das?",
+    "abschnitte": [
+      {
+        "titel": "Gemisch oder neuer Stoff?",
+        "text": "Mischst du graues **Eisenpulver** mit gelbem **Schwefelpulver**, erhältst du ein **Gemisch**. Mit der Lupe siehst du noch beide Stoffe, und mit einem Magneten kannst du das Eisen wieder herausziehen.\n\nErhitzt du das Gemisch im Reagenzglas, glüht es auf. Die Glut wandert durch das ganze Gemisch, auch wenn du den Brenner wegnimmst. Danach liegt ein grauschwarzer, spröder Stoff vor: **Eisensulfid**. Er hat ganz andere Eigenschaften. Ist kein Eisen übrig geblieben, zieht ihn der Magnet nicht mehr an, und du kannst Eisen und Schwefel nicht mehr einfach trennen.\n\nEisensulfid ist eine **Verbindung**: ein neuer Reinstoff, der aus zwei Elementen entstanden ist."
+      },
+      {
+        "titel": "Die Merkmale einer chemischen Reaktion",
+        "text": "- **Stoffumwandlung:** Aus den Ausgangsstoffen entstehen neue Stoffe mit neuen Eigenschaften (Farbe, Geruch, Schmelztemperatur, Magnetismus …).\n- **Energieumsatz:** Bei jeder chemischen Reaktion wird Energie abgegeben (z. B. als Wärme oder Licht) oder aufgenommen.\n- **Umgruppierung der Teilchen:** Die Teilchen der Ausgangsstoffe ordnen sich neu an und verbinden sich zu neuen Teilchen.\n\nBei einem **physikalischen Vorgang** bleibt der Stoff erhalten. Schmelzen, Verdampfen, Lösen oder Mischen sind deshalb keine chemischen Reaktionen. Eis und Wasser sind derselbe Stoff, nur in verschiedenen Aggregatzuständen."
+      },
+      {
+        "titel": "Edukte, Produkte und Wortgleichung",
+        "text": "Die Ausgangsstoffe heißen **Edukte**, die entstehenden Stoffe **Produkte**. Eine **Wortgleichung** beschreibt die Reaktion kurz:\n\n**Eisen + Schwefel → Eisensulfid**\n\nGelesen: „Eisen und Schwefel reagieren zu Eisensulfid.“ Links stehen die Edukte, rechts die Produkte. Der Pfeil bedeutet „reagiert zu“. Ein Gleichheitszeichen wäre falsch, denn links und rechts stehen verschiedene Stoffe.\n\nGenauso reagiert Kupfer mit Schwefel: **Kupfer + Schwefel → Kupfersulfid**. Aus dem rötlichen Kupferblech wird ein blauschwarzer Stoff. Reaktionen von Metallen mit Schwefel heißen **Sulfidbildung**."
+      },
+      {
+        "titel": "Die Teilchenebene",
+        "text": "Im Teilchenmodell liegen im Gemisch Eisenteilchen und Schwefelteilchen ungeordnet nebeneinander. Bei der Reaktion verbinden sie sich in einem festen Verhältnis, im Eisensulfid immer 1 : 1.\n\nDabei geht kein Teilchen verloren und es kommt keines hinzu. Die Teilchen werden nur **neu gruppiert**. Weil die neuen Teilchenverbände anders aufgebaut sind, hat das Produkt andere Eigenschaften als die Edukte."
+      },
+      {
+        "titel": "Die Kerze: beides auf einmal",
+        "text": "An einer brennenden Kerze laufen physikalische Vorgänge und eine chemische Reaktion nebeneinander ab:\n\n- Wachs **schmilzt** am Docht (physikalisch).\n- Das flüssige Wachs steigt im Docht hoch und **verdampft** (physikalisch).\n- Der Wachsdampf **verbrennt** mit Sauerstoff zu Kohlenstoffdioxid und Wasser (chemisch). Dabei werden Wärme und Licht abgegeben."
+      }
+    ],
+    "merksatz": "Bei einer **chemischen Reaktion** entstehen aus den **Edukten** neue Stoffe, die **Produkte**, mit neuen Eigenschaften. Dabei wird Energie umgesetzt, und die Teilchen werden neu gruppiert. Die **Wortgleichung** lautet: Edukte → Produkte.",
+    "alltag": "Beim Backen eines Kuchens entstehen neue Stoffe: Aus einem flüssigen Teig wird ein fester, brauner, duftender Kuchen. Das kannst du nicht wieder rückgängig machen."
+  },
+  "interaktiv": [],
+  "vertiefung": ["ch-energiediagramm"],
+  "uebungen": [
+    {
+      "id": "ch-rkt-01", "typ": "multi", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Bei welchen Vorgängen handelt es sich um eine chemische Reaktion?",
+      "optionen": [
+        { "text": "Ein Holzscheit verbrennt im Kamin.", "richtig": true },
+        { "text": "Ein Eisennagel rostet.", "richtig": true },
+        { "text": "Ein Eiswürfel schmilzt.", "feedback": "Eis und Wasser sind derselbe Stoff. Nur der Aggregatzustand ändert sich." },
+        { "text": "Zucker löst sich im Tee.", "feedback": "Der Zucker ist noch da, der Tee schmeckt süß. Beim Eindampfen bekommst du ihn zurück." },
+        { "text": "Eine Brotscheibe wird im Toaster braun.", "richtig": true }
+      ],
+      "erklaerung": "Bei Verbrennen, Rosten und Rösten entstehen neue Stoffe (Asche und Gase, Rost, braune Röststoffe). Schmelzen und Lösen sind physikalische Vorgänge: Der Stoff bleibt erhalten."
+    },
+    {
+      "id": "ch-rkt-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Magnesium + Sauerstoff → Magnesiumoxid\n\nWelche Stoffe sind die Edukte?",
+      "optionen": [
+        { "text": "Magnesium und Sauerstoff", "richtig": true },
+        { "text": "nur Magnesiumoxid", "feedback": "Magnesiumoxid steht rechts vom Pfeil. Es ist das Produkt." },
+        { "text": "Magnesium und Magnesiumoxid", "feedback": "Edukte stehen alle links vom Pfeil." },
+        { "text": "nur Sauerstoff", "feedback": "Links vom Pfeil steht noch ein zweiter Stoff." }
+      ],
+      "erklaerung": "**Edukte** sind die Ausgangsstoffe links vom Pfeil, **Produkte** die entstehenden Stoffe rechts vom Pfeil."
+    },
+    {
+      "id": "ch-rkt-03", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Ein Gemisch aus Eisen und Schwefel wird im Reagenzglas erhitzt. Ordne jeder Beobachtung die passende Deutung zu.",
+      "paare": [
+        { "links": "Zum Start muss das Gemisch kurz in die Flamme gehalten werden.", "rechts": "Die Reaktion braucht einen Energieanstoß." },
+        { "links": "Das Gemisch glüht weiter, auch wenn der Brenner weggenommen wird.", "rechts": "Bei der Reaktion wird Energie abgegeben." },
+        { "links": "Es entsteht ein grauschwarzer, spröder Stoff.", "rechts": "Ein neuer Stoff mit neuen Eigenschaften ist entstanden." }
+      ],
+      "extraRechts": ["Der Schwefel ist nur geschmolzen."],
+      "erklaerung": "Die Glut wandert ohne Brenner weiter, weil die Reaktion selbst Wärme freisetzt. Der neue Stoff Eisensulfid zeigt die Stoffumwandlung."
+    },
+    {
+      "id": "ch-rkt-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Ein Kupferblech wird mit Schwefel erhitzt. Es entsteht ein blauschwarzer Stoff. Welche Wortgleichung ist richtig?",
+      "optionen": [
+        { "text": "Kupfer + Schwefel → Kupfersulfid", "richtig": true },
+        { "text": "Kupfersulfid → Kupfer + Schwefel", "feedback": "Das wäre die umgekehrte Reaktion, eine Zerlegung von Kupfersulfid." },
+        { "text": "Kupfer + Schwefel = Kupfersulfid", "feedback": "In Reaktionsgleichungen steht ein Pfeil. Links und rechts stehen ja verschiedene Stoffe." },
+        { "text": "Kupfer + Schwefel → Kupfer-Schwefel-Gemisch", "feedback": "Ein Gemisch entsteht beim Mischen, nicht bei einer Reaktion. Hier ist eine Verbindung entstanden." }
+      ],
+      "erklaerung": "Die Edukte Kupfer und Schwefel reagieren zu dem Produkt Kupfersulfid. Metalle bilden mit Schwefel **Sulfide**."
+    },
+    {
+      "id": "ch-rkt-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Was passiert mit den Teilchen, wenn Eisen und Schwefel zu Eisensulfid reagieren?",
+      "optionen": [
+        { "text": "Eisen- und Schwefelteilchen verbinden sich in einem festen Verhältnis zu neuen Teilchenverbänden.", "richtig": true },
+        { "text": "Die Eisenteilchen verwandeln sich in Schwefelteilchen.", "feedback": "Teilchen eines Elements verwandeln sich bei chemischen Reaktionen nicht in ein anderes Element." },
+        { "text": "Die Teilchen liegen nur dichter nebeneinander als vorher.", "feedback": "Das wäre ein Gemisch. Im Produkt sind die Teilchen fest miteinander verbunden." },
+        { "text": "Es entstehen ganz neue Teilchen, die vorher nicht vorhanden waren.", "feedback": "Es entstehen keine Teilchen aus dem Nichts. Die vorhandenen Teilchen werden nur neu gruppiert." }
+      ],
+      "erklaerung": "Bei einer chemischen Reaktion werden die Teilchen **umgruppiert**. Im Eisensulfid sind Eisen und Schwefel immer im Verhältnis 1 : 1 verbunden."
+    },
+    {
+      "id": "ch-rkt-06", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "An einer brennenden Kerze laufen mehrere Vorgänge ab. Ordne zu.",
+      "paare": [
+        { "links": "Das Wachs wird am Docht flüssig.", "rechts": "physikalischer Vorgang: Schmelzen" },
+        { "links": "Flüssiges Wachs wird im Docht gasförmig.", "rechts": "physikalischer Vorgang: Verdampfen" },
+        { "links": "Wachsdampf reagiert mit Sauerstoff aus der Luft.", "rechts": "chemische Reaktion: Verbrennung" }
+      ],
+      "extraRechts": ["physikalischer Vorgang: Lösen"],
+      "erklaerung": "Schmelzen und Verdampfen ändern nur den Aggregatzustand. Erst bei der Verbrennung entstehen neue Stoffe: Kohlenstoffdioxid und Wasser."
+    },
+    {
+      "id": "ch-rkt-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Bei einer chemischen Reaktion gehen keine Teilchen verloren, und es entstehen keine aus dem Nichts. Erkläre mit dem Teilchenmodell, warum trotzdem ein Stoff mit neuen Eigenschaften entsteht. Nutze das Beispiel Eisen und Schwefel.",
+      "stichworte": [
+        { "aspekt": "Die Teilchen von Eisen und Schwefel bleiben erhalten", "woerter": ["erhalten", "bleiben erhalten", "gehen nicht verloren", "bleiben gleich", "dieselben teilchen", "gleichen teilchen", "keine teilchen"] },
+        { "aspekt": "Sie werden neu gruppiert bzw. verbinden sich miteinander", "woerter": ["umgruppiert", "neu gruppiert", "neu angeordnet", "ordnen sich neu", "verbinden sich", "verbunden", "neu zusammen"] },
+        { "aspekt": "Die neuen Teilchenverbände bestimmen die neuen Eigenschaften des Eisensulfids", "woerter": ["eisensulfid", "neue eigenschaft", "andere eigenschaft", "neuer stoff"] }
+      ],
+      "musterloesung": "Die Eisenteilchen und Schwefelteilchen bleiben bei der Reaktion erhalten. Sie werden aber neu gruppiert: Je ein Eisenteilchen verbindet sich mit einem Schwefelteilchen. Die neuen Teilchenverbände sind anders aufgebaut als die Teilchen der Ausgangsstoffe. Deshalb hat das Eisensulfid andere Eigenschaften, zum Beispiel eine andere Farbe, und es wird nicht mehr vom Magneten angezogen.",
+      "erklaerung": "Die Eigenschaften eines Stoffes hängen davon ab, wie seine Teilchen aufgebaut und miteinander verbunden sind, nicht nur davon, welche Teilchen vorhanden sind."
+    }
+  ]
+}

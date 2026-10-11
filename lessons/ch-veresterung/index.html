@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ester-Labor: Bildung, Gleichgewicht und Seife</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<style>
+  .mol { font-size: 17px; font-weight: 600; }
+  .grp { fill: var(--neg); }
+  .ester { fill: var(--accent); }
+  .tag { font-size: 12px; fill: var(--muted) !important; text-anchor: middle; }
+  .curve { fill: none; stroke: var(--accent); stroke-width: 2.6; }
+  .curve2 { fill: none; stroke: var(--muted); stroke-width: 1.8; stroke-dasharray: 6 5; }
+  .eq { stroke: var(--ok); stroke-width: 1.2; stroke-dasharray: 3 4; }
+  .tline { stroke: var(--pos); stroke-width: 1.5; }
+  .bar { opacity: .9; }
+  .water { fill: var(--soft-accent); }
+  .fabric { fill: var(--muted); opacity: .35; }
+  .drop { fill: var(--lamp); stroke: var(--pos); stroke-width: 1.5; }
+  .head { fill: var(--neg); }
+  .tail { fill: none; stroke: var(--line); stroke-width: 1.6; stroke-linejoin: round; }
+  .ca { fill: var(--c3); }
+  .chain { fill: none; stroke: var(--line); stroke-width: 2; stroke-linejoin: round; }
+  .soaphead { fill: var(--soft-accent); stroke: var(--neg); stroke-width: 1.5; }
+  .eqline { font-size: .95rem; margin: 8px 0 0; text-align: center; }
+  .viewrow button { flex: 1 1 auto; }
+  .legend { display: flex; flex-wrap: wrap; gap: 12px; font-size: .82rem; margin-top: 6px; }
+  .legend i { display: inline-block; width: 18px; height: 0; border-top: 3px solid var(--accent); margin-right: 4px; vertical-align: middle; }
+  .legend i.dash { border-top: 2px dashed var(--muted); }
+  .legend i.eqi { border-top: 2px dotted var(--ok); }
+  .ctrl-label { font-size: .9rem; font-weight: 600; margin: 0 0 4px; }
+  .note { font-size: .8rem; color: var(--muted); margin-top: 8px; }
+  .readout b.txt { font-size: .98rem; }
+  #S1 .readouts, #S3 .readouts { grid-template-columns: 1fr 1fr; }
+</style>
+</head>
+<body>
+<h1>Ester-Labor: Bildung, Gleichgewicht und Seife</h1>
+<p class="muted small">Wähle eine Ansicht. Baue Ester aus Säure und Alkohol, beobachte das Gleichgewicht mit und ohne Katalysator und stelle aus Fett Seife her, die einen Fetttropfen einschließt.</p>
+
+<div class="row viewrow" role="group" aria-label="Ansicht wählen">
+  <button type="button" data-view="1" aria-pressed="true">1 · Esterbildung</button>
+  <button type="button" data-view="2" aria-pressed="false">2 · Gleichgewicht</button>
+  <button type="button" data-view="3" aria-pressed="false">3 · Seife und Micelle</button>
+</div>
+
+<div class="lk-grid">
+  <div>
+    <!-- Ansicht 1 -->
+    <div id="L1">
+      <div class="lk-card">
+        <h2 id="h1title">Kondensation: Säure + Alkohol → Ester + Wasser</h2>
+        <svg id="esvg" viewBox="0 0 480 220" role="img" aria-label="Teilchenebene der Esterbildung: Die OH-Gruppe der Säure und das H-Atom des Alkohols bilden Wasser, die beiden Reste verbinden sich zum Ester.">
+          <line x1="12" y1="112" x2="460" y2="112" class="gridline"/>
+          <text x="12" y="22" class="tag" text-anchor="start" style="text-anchor:start" id="topTag">Ausgangsstoffe</text>
+          <text x="12" y="134" class="tag" style="text-anchor:start" id="botTag">Produkte</text>
+          <text id="tPlus1" class="mol">+</text>
+          <text id="tPlus2" class="mol">+</text>
+          <g id="gA"><text class="mol" id="tA"><tspan id="tAp"></tspan><tspan id="tAc">CO</tspan></text></g>
+          <g id="gOH"><text class="mol grp" id="tOH">OH</text></g>
+          <g id="gH"><text class="mol grp" id="tH">H</text></g>
+          <g id="gB"><text class="mol" id="tB"><tspan id="tBo">O</tspan><tspan id="tBr"></tspan></text></g>
+          <text id="tW" class="mol grp">H₂O</text>
+          <text id="lblA" class="tag"></text>
+          <text id="lblB" class="tag"></text>
+          <text id="lblE" class="tag"></text>
+          <text id="lblW" class="tag">Wasser</text>
+          <path id="brace" fill="none" stroke="var(--accent)" stroke-width="1.5"/>
+          <text id="lblG" class="tag" style="fill:var(--accent) !important">Estergruppe</text>
+        </svg>
+        <p class="eqline" id="eqText"></p>
+      </div>
+    </div>
+
+    <!-- Ansicht 2 -->
+    <div id="L2" hidden>
+      <div class="lk-card">
+        <h2>Stoffmenge des Esters über die Zeit</h2>
+        <svg id="chart" viewBox="0 0 520 270" role="img" aria-label="Diagramm: Stoffmenge des Esters in mol gegen die Zeit in Stunden"></svg>
+        <div class="legend"><span><i></i><span id="legCur">aktuelle Einstellung</span></span><span><i class="dash"></i><span id="legCmp">zum Vergleich</span></span><span><i class="eqi"></i>Gleichgewichtsmenge</span></div>
+      </div>
+      <div class="lk-card">
+        <h2>Im Kolben zur Zeit <span class="f">t</span> = <span id="tNow">0</span> h</h2>
+        <svg id="bars" viewBox="0 0 520 150" role="img" aria-label="Balkendiagramm der Stoffmengen von Säure, Alkohol, Ester und Wasser"></svg>
+      </div>
+    </div>
+
+    <!-- Ansicht 3 -->
+    <div id="L3" hidden>
+      <div class="lk-card">
+        <h2>Verseifung: Fett + Natronlauge → Glycerin + Seife</h2>
+        <svg id="vsvg" viewBox="0 0 520 200" role="img" aria-label="Ein Fettmolekül aus Glycerin und drei Fettsäureresten wird von Natronlauge in Glycerin und drei Seifen-Anionen gespalten."></svg>
+        <p class="eqline" id="vEq">Tristearin + 3 NaOH → Glycerin + 3 C₁₇H₃₅–COO⁻ Na⁺</p>
+      </div>
+      <div class="lk-card">
+        <h2>Waschen: ein Fetttropfen auf dem Stoff</h2>
+        <svg id="msvg" viewBox="0 0 520 260" role="img" aria-label="Wasser mit Seifen-Anionen und einem Fetttropfen, der auf einem Stoff haftet"></svg>
+        <p class="small muted" style="margin:6px 0 0">Seifen-Anion: <span style="color:var(--neg)">●</span> hydrophiler Kopf (–COO⁻) mit hydrophobem Schwanz. <span style="color:var(--c3)">●</span> Calcium-Ion Ca²⁺ (nur in hartem Wasser).</p>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="lk-card">
+      <h2>Einstellungen</h2>
+      <div id="S1">
+        <p class="ctrl-label">Carbonsäure</p>
+        <div class="row" role="group" aria-label="Carbonsäure wählen" id="acidRow"></div>
+        <p class="ctrl-label">Alkohol</p>
+        <div class="row" role="group" aria-label="Alkohol wählen" id="alcRow"></div>
+        <p class="ctrl-label">Richtung</p>
+        <div class="row">
+          <div class="seg" role="group" aria-label="Reaktionsrichtung">
+            <button type="button" id="bKond" aria-pressed="true">Kondensation</button>
+            <button type="button" id="bHydro" aria-pressed="false">Hydrolyse</button>
+          </div>
+        </div>
+        <div class="row"><button type="button" class="primary" id="bRun">Reaktion ablaufen lassen</button></div>
+        <div class="readouts">
+          <div class="readout" style="grid-column:1/-1"><span>Ester</span><b class="txt" id="rName">–</b></div>
+          <div class="readout"><span>Summenformel</span><b class="txt" id="rFormel">–</b></div>
+          <div class="readout"><span>Siedetemperatur</span><b class="txt" id="rSdp">–</b></div>
+          <div class="readout" style="grid-column:1/-1"><span>Geruch</span><b class="txt" id="rDuft">–</b></div>
+        </div>
+        <p class="note">Gerüche im Labor nur durch Zufächeln prüfen. Duftangaben vereinfacht: Echte Fruchtaromen sind Gemische aus vielen Stoffen.</p>
+      </div>
+
+      <div id="S2" hidden>
+        <p class="ctrl-label">Katalysator</p>
+        <div class="row"><div class="seg" role="group" aria-label="Katalysator">
+          <button type="button" id="bNoCat" aria-pressed="true">ohne</button>
+          <button type="button" id="bCat" aria-pressed="false">mit Schwefelsäure</button>
+        </div></div>
+        <p class="ctrl-label">Ansatz (Säure : Alkohol)</p>
+        <div class="row"><div class="seg" role="group" aria-label="Ansatz">
+          <button type="button" id="bR1" aria-pressed="true">1 mol : 1 mol</button>
+          <button type="button" id="bR3" aria-pressed="false">1 mol : 3 mol</button>
+        </div></div>
+        <p class="ctrl-label">Zeitachse</p>
+        <div class="row"><div class="seg" role="group" aria-label="Zeitachse">
+          <button type="button" id="bT5" aria-pressed="true">0 bis 5 h</button>
+          <button type="button" id="bT200" aria-pressed="false">0 bis 200 h</button>
+        </div></div>
+        <label class="ctrl"><span>Zeit <span class="f">t</span> <output id="oT"></output></span>
+          <input type="range" id="sT" min="0" max="5" step="0.025" value="0"></label>
+        <div class="row">
+          <button type="button" class="primary" id="bPlay">▶ Abspielen</button>
+          <button type="button" id="bZero">Zurück auf 0</button>
+        </div>
+        <div class="readouts">
+          <div class="readout"><span>Ester <span class="f">n</span></span><b id="rN">–</b></div>
+          <div class="readout"><span>Ausbeute</span><b id="rY">–</b></div>
+          <div class="readout" style="grid-column:1/-1"><span>Zustand</span><b class="txt" id="rState">–</b></div>
+        </div>
+        <p class="note">Modell für Ethansäure + Ethanol bei konstanter Temperatur (Erhitzen unter Rückfluss), Gleichgewichtskonstante etwa 4. Die Zeiten sind gerundete Modellwerte.</p>
+      </div>
+
+      <div id="S3" hidden>
+        <div class="row"><button type="button" class="primary" id="bSap">Natronlauge zugeben und erhitzen</button></div>
+        <p class="ctrl-label">Wasser</p>
+        <div class="row"><div class="seg" role="group" aria-label="Wasserhärte">
+          <button type="button" id="bSoft" aria-pressed="true">weich</button>
+          <button type="button" id="bHard" aria-pressed="false">hart (mit Ca²⁺)</button>
+        </div></div>
+        <label class="ctrl"><span>Seifen-Anionen im Wasser <output id="oS"></output></span>
+          <input type="range" id="sS" min="0" max="30" step="1" value="0" disabled></label>
+        <div class="readouts">
+          <div class="readout"><span>als Kalkseife gebunden</span><b id="rKalk">0</b></div>
+          <div class="readout"><span>am Fetttropfen</span><b id="rAtt">0</b></div>
+        </div>
+      </div>
+      <p id="live" class="small muted" aria-live="polite"></p>
+    </div>
+
+    <div class="lk-card tasks">
+      <h2>Entdecke selbst <span class="small muted" data-task-count></span></h2>
+      <div class="task" data-goal="ananas"><p class="task-q">Stelle den Ester her, der nach Ananas riecht: Butansäureethylester. Lass die Kondensation ablaufen.</p></div>
+      <div class="task" data-goal="hydrolyse"><p class="task-q">Spalte einen Ester mit Wasser wieder in Säure und Alkohol (Hydrolyse).</p></div>
+      <div class="task" data-goal="ggohne"><p class="task-q">Zeige in Ansicht 2: Auch <b>ohne</b> Katalysator stellt sich das Gleichgewicht ein. Wie lange dauert es?</p></div>
+      <div class="task">
+        <p class="task-q">Vergleiche die Kurven mit und ohne Schwefelsäure. Was bewirkt der Katalysator?</p>
+        <div class="choices">
+          <button type="button" data-ok data-fb="Genau: Beide Kurven enden bei derselben Estermenge. Mit Katalysator ist das Ziel nur viel schneller erreicht.">Das Gleichgewicht stellt sich schneller ein, die Estermenge darin bleibt gleich.</button>
+          <button type="button" data-fb="Schau auf das Ende der Kurven bei 0 bis 200 h: Beide erreichen dieselbe Höhe.">Im Gleichgewicht entsteht mehr Ester.</button>
+          <button type="button" data-fb="Ein Katalysator wird nicht verbraucht. Er liegt nach der Reaktion unverändert vor.">Die Schwefelsäure wird selbst zu Ester umgesetzt.</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="task" data-goal="ausbeute"><p class="task-q">Erreiche eine Ausbeute von mehr als 85 % Ester (bezogen auf die Säure).</p></div>
+      <div class="task" data-goal="micelle"><p class="task-q">Stelle Seife her und schließe den Fetttropfen in <b>hartem</b> Wasser vollständig in eine Micelle ein.</p></div>
+      <div class="all-done">Alles entdeckt! Weiter geht es mit den Übungen.</div>
+    </div>
+  </div>
+</div>
+
+<script src="../../static/lesson-kit.js"></script>
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+  var NS = 'http://www.w3.org/2000/svg';
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function el(tag, attrs, parent) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  function say(t) { $('live').textContent = t; }
+  function ease(p) { return p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2; }
+  function setPressed(btns, active) { btns.forEach(function (b) { b.setAttribute('aria-pressed', b === active); }); }
+
+  // =====================================================================
+  // Ansichten
+  var view = 1;
+  window.addEventListener('resize', function () { if (view === 1) layoutEster(); });
+  var viewBtns = [].slice.call(document.querySelectorAll('[data-view]'));
+  function showView(v) {
+    view = v;
+    viewBtns.forEach(function (b) { b.setAttribute('aria-pressed', Number(b.dataset.view) === v); });
+    for (var i = 1; i <= 3; i++) { $('L' + i).hidden = i !== v; $('S' + i).hidden = i !== v; }
+    say('');
+    if (v === 1) layoutEster();
+    if (v === 2) drawGG();
+    if (v === 3) updateM();
+  }
+  viewBtns.forEach(function (b) { b.onclick = function () { showView(Number(b.dataset.view)); }; });
+
+  // =====================================================================
+  // Ansicht 1: Esterbildung
+  var ACIDS = [
+    { n: 1, name: 'Methansäure', pre: 'H–' },
+    { n: 2, name: 'Ethansäure', pre: 'CH₃–' },
+    { n: 3, name: 'Propansäure', pre: 'CH₃–CH₂–' },
+    { n: 4, name: 'Butansäure', pre: 'CH₃–CH₂–CH₂–' }
+  ];
+  var ALCS = [
+    { n: 1, name: 'Methanol', alkyl: 'methyl', rest: '–CH₃' },
+    { n: 2, name: 'Ethanol', alkyl: 'ethyl', rest: '–CH₂–CH₃' },
+    { n: 3, name: 'Propan-1-ol', alkyl: 'propyl', rest: '–CH₂–CH₂–CH₃' },
+    { n: 4, name: 'Butan-1-ol', alkyl: 'butyl', rest: '–CH₂–CH₂–CH₂–CH₃' }
+  ];
+  // Siedetemperaturen in °C (gerundete Literaturwerte), Zeilen: Säure, Spalten: Alkohol
+  var SDP = [[32, 54, 81, 106], [57, 77, 102, 126], [80, 99, 122, 145], [102, 121, 143, 166]];
+  var DUFT = [
+    ['süßlich, etherartig', 'nach Rum', 'fruchtig', 'fruchtig'],
+    ['fruchtig, nach Klebstoff', 'nach Klebstoff und Nagellackentferner', 'nach Birne', 'nach Banane'],
+    ['fruchtig', 'fruchtig, nach Ananas', 'fruchtig', 'fruchtig'],
+    ['nach Apfel', 'nach Ananas', 'fruchtig', 'nach Ananas']
+  ];
+  var SUB = '₀₁₂₃₄₅₆₇₈₉';
+  function sub(n) { return String(n).split('').map(function (c) { return SUB[Number(c)]; }).join(''); }
+
+  var E = { a: 1, b: 1, dir: 'kond', p: 0, anim: null };
+  var acidBtns = [], alcBtns = [];
+  ACIDS.forEach(function (a, i) {
+    var b = document.createElement('button'); b.type = 'button'; b.textContent = a.name;
+    b.setAttribute('aria-pressed', i === E.a);
+    b.onclick = function () { E.a = i; setPressed(acidBtns, b); resetEster(); };
+    $('acidRow').appendChild(b); acidBtns.push(b);
+  });
+  ALCS.forEach(function (a, i) {
+    var b = document.createElement('button'); b.type = 'button'; b.textContent = a.name;
+    b.setAttribute('aria-pressed', i === E.b);
+    b.onclick = function () { E.b = i; setPressed(alcBtns, b); resetEster(); };
+    $('alcRow').appendChild(b); alcBtns.push(b);
+  });
+  function esterName() { return ACIDS[E.a].name + ALCS[E.b].alkyl + 'ester'; }
+
+  var POS = {};
+  function W(id) { return $(id).getComputedTextLength(); }
+  function layoutEster() {
+    var A = ACIDS[E.a], B = ALCS[E.b];
+    $('tAp').textContent = A.pre;
+    $('tBr').textContent = B.rest;
+    var wA = W('tA'), wOH = W('tOH'), wH = W('tH'), wB = W('tB'), wW = W('tW'), wP = W('tPlus1');
+    if (!wA) return; // nicht sichtbar
+    var gap = wP + 20;
+    var top = wA + wOH + gap + wH + wB, bot = wA + wB + gap + wW;
+    // Auf schmalen Bildschirmen den Ausschnitt an das Molekül anpassen, damit die Schrift lesbar bleibt
+    var narrow = $('esvg').getBoundingClientRect().width < 520;
+    var VW = narrow ? Math.max(260, Math.ceil(Math.max(top, bot) + 24)) : 480;
+    $('esvg').setAttribute('viewBox', '0 0 ' + VW + ' 220');
+    $('esvg').querySelector('line').setAttribute('x2', VW - 20);
+    var x0 = (VW - top) / 2, x1 = (VW - bot) / 2;
+    POS = {
+      yT: 70, yB: 182,
+      A0: x0, OH0: x0 + wA, H0: x0 + wA + wOH + gap, B0: x0 + wA + wOH + gap + wH,
+      A1: x1, B1: x1 + wA, W1: x1 + wA + wB + gap, wA: wA, wB: wB, wW: wW, wOH: wOH,
+      plusT: x0 + wA + wOH + 10, plusB: x1 + wA + wB + 10
+    };
+    POS.OH1 = POS.W1 + wW - wOH; POS.H1 = POS.W1;
+    $('tPlus1').setAttribute('x', POS.plusT); $('tPlus1').setAttribute('y', POS.yT);
+    $('tPlus2').setAttribute('x', POS.plusB); $('tPlus2').setAttribute('y', POS.yB);
+    $('tW').setAttribute('x', POS.W1); $('tW').setAttribute('y', POS.yB);
+    // Beschriftungen
+    $('lblA').textContent = A.name; $('lblB').textContent = B.name;
+    $('lblE').textContent = esterName();
+    $('lblA').setAttribute('x', POS.A0 + (wA + wOH) / 2); $('lblA').setAttribute('y', POS.yT + 26);
+    $('lblB').setAttribute('x', POS.H0 + (wH + wB) / 2); $('lblB').setAttribute('y', POS.yT + 26);
+    $('lblE').setAttribute('x', POS.A1 + (wA + wB) / 2); $('lblE').setAttribute('y', POS.yB + 26);
+    $('lblW').setAttribute('x', POS.W1 + wW / 2); $('lblW').setAttribute('y', POS.yB + 26);
+    // Klammer über der Estergruppe (CO + O)
+    var wCO = $('tAc').getComputedTextLength(), wO = $('tBo').getComputedTextLength();
+    var gx0 = POS.B1 - wCO, gx1 = POS.B1 + wO, gy = POS.yB - 22;
+    $('brace').setAttribute('d', 'M' + gx0 + ' ' + (gy + 5) + ' V' + gy + ' H' + gx1 + ' V' + (gy + 5));
+    $('lblG').setAttribute('x', (gx0 + gx1) / 2); $('lblG').setAttribute('y', gy - 5);
+    // Ausgaben
+    var nC = A.n + B.n;
+    $('rName').textContent = esterName();
+    $('rFormel').textContent = 'C' + sub(nC) + 'H' + sub(2 * nC) + 'O₂';
+    $('rSdp').textContent = 'etwa ' + SDP[E.a][E.b] + ' °C';
+    $('rDuft').textContent = DUFT[E.a][E.b];
+    renderEster();
+  }
+  function place(id, x, y) { $(id).setAttribute('transform', 'translate(' + x.toFixed(2) + ' ' + y.toFixed(2) + ')'); }
+  function renderEster() {
+    if (!POS.yT) return;
+    var p = ease(E.p), q = E.p;
+    var y = POS.yT + (POS.yB - POS.yT) * p;
+    place('gA', POS.A0 + (POS.A1 - POS.A0) * p, y);
+    place('gB', POS.B0 + (POS.B1 - POS.B0) * p, y);
+    // OH und H wandern zum Wasser
+    place('gOH', POS.OH0 + (POS.OH1 - POS.OH0) * p, y);
+    place('gH', POS.H0 + (POS.H1 - POS.H0) * p, y);
+    var wv = Math.max(0, Math.min(1, (q - 0.8) / 0.2));
+    $('gOH').setAttribute('opacity', 1 - wv); $('gH').setAttribute('opacity', 1 - wv);
+    $('tW').setAttribute('opacity', wv);
+    $('tPlus1').setAttribute('opacity', Math.max(0, 1 - q * 3));
+    $('tPlus2').setAttribute('opacity', wv);
+    $('lblA').setAttribute('opacity', Math.max(0, 1 - q * 3)); $('lblB').setAttribute('opacity', Math.max(0, 1 - q * 3));
+    $('lblE').setAttribute('opacity', wv); $('lblW').setAttribute('opacity', wv);
+    $('brace').setAttribute('opacity', wv); $('lblG').setAttribute('opacity', wv);
+    $('tAc').setAttribute('class', wv > 0.5 ? 'ester' : '');
+    $('tBo').setAttribute('class', wv > 0.5 ? 'ester' : '');
+    var A = ACIDS[E.a].name, B = ALCS[E.b].name, N = esterName();
+    $('eqText').textContent = E.dir === 'kond' ? A + ' + ' + B + ' → ' + N + ' + Wasser' : N + ' + Wasser → ' + A + ' + ' + B;
+  }
+  function resetEster() {
+    if (E.anim) { cancelAnimationFrame(E.anim); E.anim = null; }
+    E.p = E.dir === 'kond' ? 0 : 1;
+    $('h1title').textContent = E.dir === 'kond' ? 'Kondensation: Säure + Alkohol → Ester + Wasser' : 'Hydrolyse: Ester + Wasser → Säure + Alkohol';
+    $('topTag').textContent = E.dir === 'kond' ? 'Ausgangsstoffe' : 'Produkte';
+    $('botTag').textContent = E.dir === 'kond' ? 'Produkte' : 'Ausgangsstoffe';
+    $('bRun').textContent = E.dir === 'kond' ? 'Ester bilden' : 'Ester spalten';
+    layoutEster();
+  }
+  function setDir(d) {
+    E.dir = d;
+    $('bKond').setAttribute('aria-pressed', d === 'kond'); $('bHydro').setAttribute('aria-pressed', d === 'hydro');
+    resetEster(); say('');
+  }
+  $('bKond').onclick = function () { setDir('kond'); };
+  $('bHydro').onclick = function () { setDir('hydro'); };
+  $('bRun').onclick = function () {
+    resetEster();
+    var from = E.p, to = E.dir === 'kond' ? 1 : 0, t0 = null, DUR = reduce ? 1 : 2200;
+    function step(t) {
+      if (t0 === null) t0 = t;
+      var f = Math.min(1, (t - t0) / DUR);
+      E.p = from + (to - from) * f; renderEster();
+      if (f < 1) { E.anim = requestAnimationFrame(step); return; }
+      E.anim = null;
+      if (E.dir === 'kond') {
+        say('Kondensation: Die OH-Gruppe der Säure und das H-Atom des Alkohols bilden ein Wassermolekül. Die Reste verbinden sich über ein O-Atom: die Estergruppe.');
+        if (E.a === 3 && E.b === 1) LK.reach('ananas');
+      } else {
+        say('Hydrolyse: Ein Wassermolekül spaltet die Estergruppe. Die Säure erhält ihre OH-Gruppe zurück, der Alkohol sein H-Atom.');
+        LK.reach('hydrolyse');
+      }
+    }
+    E.anim = requestAnimationFrame(step);
+  };
+
+  // =====================================================================
+  // Ansicht 2: Gleichgewicht
+  var K = 4, KCAT = 2, KUN = 0.02;
+  var G = { cat: false, b: 1, T: 5, t: 0, playing: false };
+  function rate(k, b, x) { return k * ((1 - x) * (b - x) - x * x / K); }
+  function rk4(k, b, x, h) {
+    var k1 = rate(k, b, x), k2 = rate(k, b, x + h / 2 * k1), k3 = rate(k, b, x + h / 2 * k2), k4 = rate(k, b, x + h * k3);
+    return x + h / 6 * (k1 + 2 * k2 + 2 * k3 + k4);
+  }
+  function xAt(cat, b, t) {
+    var k = cat ? KCAT : KUN, n = Math.max(20, Math.ceil(t / 0.05)), h = t / n, x = 0;
+    if (t <= 0) return 0;
+    for (var i = 0; i < n; i++) x = rk4(k, b, x, h);
+    return x;
+  }
+  function series(cat, b, T, N) {
+    var k = cat ? KCAT : KUN, pts = [[0, 0]], x = 0, h = T / N, sub = Math.max(1, Math.ceil(h / 0.05));
+    for (var i = 1; i <= N; i++) { for (var j = 0; j < sub; j++) x = rk4(k, b, x, h / sub); pts.push([i * h, x]); }
+    return pts;
+  }
+  function xEq(b) { var A = 1 - 1 / K, B = -(1 + b), C = b; return (-B - Math.sqrt(B * B - 4 * A * C)) / (2 * A); }
+
+  var chart = $('chart'), bars = $('bars');
+  var X0 = 56, X1 = 500, Y0 = 222, Y1 = 24;
+  function drawGG() {
+    var T = G.T, xe = xEq(G.b);
+    var px = function (t) { return X0 + (X1 - X0) * t / T; };
+    var py = function (n) { return Y0 - (Y0 - Y1) * n; };
+    chart.innerHTML = '';
+    var stepT = T === 5 ? 1 : 25;
+    for (var t = 0; t <= T + 1e-9; t += stepT) {
+      el('line', { x1: px(t), x2: px(t), y1: Y1, y2: Y0, class: 'gridline' }, chart);
+      el('text', { x: px(t), y: Y0 + 18, 'text-anchor': 'middle', class: 'val' }, chart).textContent = t;
+    }
+    for (var n = 0; n <= 1.0001; n += 0.2) {
+      el('line', { x1: X0, x2: X1, y1: py(n), y2: py(n), class: 'gridline' }, chart);
+      el('text', { x: X0 - 8, y: py(n) + 4, 'text-anchor': 'end', class: 'val' }, chart).textContent = LK.fmt(n, 1);
+    }
+    el('line', { x1: X0, x2: X1, y1: Y0, y2: Y0, class: 'axis' }, chart);
+    el('line', { x1: X0, x2: X0, y1: Y0, y2: Y1, class: 'axis' }, chart);
+    el('text', { x: X1, y: Y0 + 38, 'text-anchor': 'end', class: 'lbl' }, chart).textContent = 't in h';
+    el('text', { x: 6, y: 14, class: 'lbl' }, chart).textContent = 'n(Ester) in mol';
+    el('line', { x1: X0, x2: X1, y1: py(xe), y2: py(xe), class: 'eq' }, chart);
+    el('text', { x: X1 - 4, y: py(xe) - 6, 'text-anchor': 'end', class: 'val' }, chart).textContent = 'Gleichgewicht: ' + LK.fmt(xe, 2) + ' mol';
+    var toPts = function (s) { return s.map(function (p) { return px(p[0]).toFixed(1) + ',' + py(p[1]).toFixed(1); }).join(' '); };
+    el('polyline', { points: toPts(series(!G.cat, G.b, T, 300)), class: 'curve2' }, chart);
+    el('polyline', { points: toPts(series(G.cat, G.b, T, 300)), class: 'curve' }, chart);
+    var x = xAt(G.cat, G.b, G.t);
+    el('line', { x1: px(G.t), x2: px(G.t), y1: Y1, y2: Y0, class: 'tline' }, chart);
+    el('circle', { cx: px(G.t), cy: py(x), r: 5, fill: 'var(--pos)' }, chart);
+    $('legCur').textContent = G.cat ? 'mit Schwefelsäure' : 'ohne Katalysator';
+    $('legCmp').textContent = G.cat ? 'ohne Katalysator' : 'mit Schwefelsäure';
+
+    // Balken
+    bars.innerHTML = '';
+    var items = [['Säure', 1 - x, 'var(--pos)'], ['Alkohol', G.b - x, 'var(--c3)'], ['Ester', x, 'var(--accent)'], ['Wasser', x, 'var(--neg)']];
+    var BX = 90, BW = 340;
+    items.forEach(function (it, i) {
+      var y = 12 + i * 34;
+      el('text', { x: BX - 10, y: y + 15, 'text-anchor': 'end', class: 'lbl' }, bars).textContent = it[0];
+      el('rect', { x: BX, y: y, width: BW, height: 20, rx: 4, fill: 'var(--grid)' }, bars);
+      el('rect', { x: BX, y: y, width: Math.max(0, BW * it[1] / 3), height: 20, rx: 4, fill: it[2], class: 'bar' }, bars);
+      el('text', { x: BX + BW + 8, y: y + 15, class: 'val' }, bars).textContent = LK.fmt(it[1], 2) + ' mol';
+    });
+
+    $('oT').textContent = LK.fmt(G.t, T === 5 ? 2 : 0) + ' h';
+    $('tNow').textContent = LK.fmt(G.t, T === 5 ? 2 : 0);
+    $('rN').textContent = LK.fmt(x, 2) + ' mol';
+    $('rY').textContent = LK.fmt(x * 100, 0) + ' %';
+    var reached = x >= 0.97 * xe;
+    $('rState').textContent = G.t === 0 ? 'Start: nur Säure und Alkohol' : reached ? 'Gleichgewicht erreicht: Hin- und Rückreaktion gleich schnell' : 'Gleichgewicht stellt sich noch ein';
+    if (reached && !G.cat) LK.reach('ggohne');
+    if (x > 0.85) LK.reach('ausbeute');
+  }
+  function setT(T) {
+    G.T = T;
+    $('bT5').setAttribute('aria-pressed', T === 5); $('bT200').setAttribute('aria-pressed', T === 200);
+    var s = $('sT'); s.max = T; s.step = T / 200;
+    G.t = Math.min(G.t, T); s.value = G.t; drawGG();
+  }
+  $('bNoCat').onclick = function () { G.cat = false; setPressed([$('bNoCat'), $('bCat')], this); drawGG(); };
+  $('bCat').onclick = function () { G.cat = true; setPressed([$('bNoCat'), $('bCat')], this); drawGG(); };
+  $('bR1').onclick = function () { G.b = 1; setPressed([$('bR1'), $('bR3')], this); drawGG(); };
+  $('bR3').onclick = function () { G.b = 3; setPressed([$('bR1'), $('bR3')], this); drawGG(); };
+  $('bT5').onclick = function () { setT(5); };
+  $('bT200').onclick = function () { setT(200); };
+  $('sT').oninput = function () { G.t = Number(this.value); drawGG(); };
+  $('bZero').onclick = function () { stopPlay(); G.t = 0; $('sT').value = 0; drawGG(); };
+  var playLast = 0;
+  function stopPlay() { G.playing = false; $('bPlay').textContent = '▶ Abspielen'; }
+  function play(ts) {
+    if (!G.playing) return;
+    var dt = Math.min(0.05, (ts - playLast) / 1000); playLast = ts;
+    G.t = Math.min(G.T, G.t + dt * G.T / 6);
+    $('sT').value = G.t; drawGG();
+    if (G.t >= G.T) { stopPlay(); return; }
+    requestAnimationFrame(play);
+  }
+  $('bPlay').onclick = function () {
+    if (G.playing) { stopPlay(); return; }
+    if (G.t >= G.T) G.t = 0;
+    G.playing = true; this.textContent = '❚❚ Pause';
+    playLast = performance.now(); requestAnimationFrame(play);
+  };
+
+  // =====================================================================
+  // Ansicht 3a: Verseifung
+  var V = { p: 0, done: false, anim: null };
+  var vsvg = $('vsvg'), ROWS = [44, 100, 156], vParts = [];
+  (function buildV() {
+    // Glycerin-Gerüst
+    var lbl = ['CH₂', 'CH', 'CH₂'];
+    ROWS.forEach(function (y, i) {
+      el('text', { x: 14, y: y + 6, class: 'mol' }, vsvg).textContent = lbl[i];
+      el('text', { x: 50, y: y + 6, class: 'mol' }, vsvg).textContent = '–O';
+      var h = el('text', { x: 75, y: y + 6, class: 'mol grp', opacity: 0 }, vsvg); h.textContent = 'H';
+      if (i < 2) el('line', { x1: 26, x2: 26, y1: y + 12, y2: ROWS[i + 1] - 14, class: 'wire thin' }, vsvg);
+      // Fettsäurerest als Gruppe, die sich verschieben lässt
+      var g = el('g', {}, vsvg);
+      var head = el('circle', { cx: 104, cy: y, r: 19, class: 'soaphead', opacity: 0 }, g);
+      var t = el('text', { x: 84, y: y + 6, class: 'mol' }, g); t.textContent = '–CO';
+      var pts = [];
+      for (var k = 0; k <= 16; k++) pts.push((124 + k * 15) + ',' + (y + (k % 2 ? -6 : 6)));
+      el('polyline', { points: pts.join(' '), class: 'chain' }, g);
+      var na = el('text', { x: 92, y: y - 22, class: 'val', opacity: 0 }, g); na.textContent = 'Na⁺';
+      vParts.push({ g: g, head: head, t: t, h: h, na: na });
+    });
+    V.naoh = el('text', { x: 506, y: 190, 'text-anchor': 'end', class: 'lbl' }, vsvg); V.naoh.textContent = '+ 3 Na⁺ + 3 OH⁻';
+    V.lG = el('text', { x: 14, y: 190, class: 'tag', style: 'text-anchor:start', opacity: 0 }, vsvg); V.lG.textContent = 'Glycerin';
+    V.lS = el('text', { x: 330, y: 190, class: 'tag', opacity: 0 }, vsvg); V.lS.textContent = '3 Seifen-Anionen (Stearat-Ionen)';
+    V.lF = el('text', { x: 260, y: 190, class: 'tag' }, vsvg); V.lF.textContent = 'Fettmolekül (Tristearin)';
+  })();
+  function renderV() {
+    var p = ease(V.p), sw = V.p > 0.5;
+    vParts.forEach(function (r) {
+      r.g.setAttribute('transform', 'translate(' + (46 * p).toFixed(1) + ' 0)');
+      r.head.setAttribute('opacity', p);
+      r.na.setAttribute('opacity', p);
+      r.h.setAttribute('opacity', p);
+      r.t.textContent = sw ? 'COO⁻' : '–CO';
+      r.t.setAttribute('x', sw ? 86 : 84);
+      r.t.setAttribute('class', sw ? 'mol grp' : 'mol');
+      r.t.setAttribute('style', sw ? 'font-size:13px' : '');
+    });
+    V.naoh.setAttribute('opacity', 1 - p);
+    V.lF.setAttribute('opacity', 1 - p);
+    V.lG.setAttribute('opacity', p); V.lS.setAttribute('opacity', p);
+  }
+  $('bSap').onclick = function () {
+    if (V.anim) return;
+    var t0 = null, DUR = reduce ? 1 : 2400;
+    V.p = 0; renderV();
+    function step(t) {
+      if (t0 === null) t0 = t;
+      V.p = Math.min(1, (t - t0) / DUR); renderV();
+      if (V.p < 1) { V.anim = requestAnimationFrame(step); return; }
+      V.anim = null;
+      if (!V.done) {
+        V.done = true;
+        $('sS').disabled = false;
+        if (Number($('sS').value) === 0) { $('sS').value = 8; M.n = 8; }
+        updateM();
+      }
+      say('Verseifung: Die Hydroxid-Ionen spalten die drei Estergruppen. Es entstehen Glycerin und drei Seifen-Anionen. Jetzt kannst du Seife ins Waschwasser geben.');
+    }
+    V.anim = requestAnimationFrame(step);
+  };
+
+  // =====================================================================
+  // Ansicht 3b: Micelle
+  var NT = 30, NEED = 16, NCA = 5, R = 30;
+  var M = { n: 0, hard: false, dx: 260, dy: 194 };
+  var msvg = $('msvg');
+  el('rect', { x: 10, y: 10, width: 500, height: 222, rx: 8, class: 'water' }, msvg);
+  el('rect', { x: 10, y: 226, width: 500, height: 24, rx: 4, class: 'fabric' }, msvg);
+  for (var fx = 18; fx < 510; fx += 14) el('line', { x1: fx, x2: fx + 8, y1: 230, y2: 246, stroke: 'var(--muted)', 'stroke-width': 1, opacity: .5 }, msvg);
+  el('text', { x: 500, y: 243, 'text-anchor': 'end', class: 'val' }, msvg).textContent = 'Stoff (Faser)';
+  el('text', { x: 20, y: 28, class: 'val' }, msvg).textContent = 'Wasser';
+  var drop = el('circle', { cx: M.dx, cy: M.dy, r: R, class: 'drop' }, msvg);
+  var dropLbl = el('text', { x: M.dx, y: M.dy + 4, 'text-anchor': 'middle', class: 'val' }, msvg); dropLbl.textContent = 'Fett';
+  var kalkLbl = el('text', { x: 126, y: 188, 'text-anchor': 'middle', class: 'val' }, msvg); kalkLbl.textContent = 'Kalkseife (Niederschlag)';
+  var cas = [], tens = [];
+  function rnd(a, b) { return a + Math.random() * (b - a); }
+  for (var c = 0; c < NCA; c++) {
+    var cg = el('g', {}, msvg);
+    el('circle', { r: 8, class: 'ca' }, cg);
+    el('text', { y: 3.5, 'text-anchor': 'middle', style: 'font-size:8px;fill:var(--card)' }, cg).textContent = 'Ca²⁺';
+    cas.push({ g: cg, x: rnd(40, 480), y: rnd(50, 150), wx: rnd(40, 480), wy: rnd(50, 150) });
+  }
+  for (var i = 0; i < NT; i++) {
+    var g = el('g', {}, msvg);
+    el('polyline', { points: '6,0 9,-3.5 13,3.5 17,-3.5 21,3.5 25,-3.5 28,0', class: 'tail' }, g);
+    el('circle', { r: 5.5, class: 'head' }, g);
+    var x0 = rnd(40, 480), y0 = rnd(40, 150);
+    tens.push({ g: g, x: x0, y: y0, a: rnd(0, 360), wx: x0, wy: y0, wa: rnd(0, 360) });
+  }
+  function counts() {
+    var kalk = M.hard ? Math.min(M.n - M.n % 2, 2 * NCA) : 0;
+    var att = Math.min(M.n - kalk, NEED);
+    return { kalk: kalk, att: att, free: M.n - kalk - att, done: att >= NEED };
+  }
+  function updateM() {
+    var c = counts();
+    $('oS').textContent = M.n;
+    $('rKalk').textContent = c.kalk;
+    $('rAtt').textContent = c.att + ' / ' + NEED;
+    cas.forEach(function (ca) { ca.g.toggleAttribute('hidden', !M.hard); });
+    kalkLbl.toggleAttribute('hidden', !(M.hard && c.kalk > 0));
+    if (!V.done) say('Stelle zuerst Seife her: Natronlauge zugeben und erhitzen.');
+    else if (c.done) say('Micelle fertig: Der Fetttropfen ist rundum von Seifen-Anionen eingehüllt, die Köpfe zeigen ins Wasser. Er löst sich vom Stoff und wird weggespült.');
+    else if (M.hard && c.kalk > 0 && M.n - c.kalk < NEED) say('Die Calcium-Ionen binden ' + c.kalk + ' Seifen-Anionen als Kalkseife. Am Fett fehlen noch ' + (NEED - c.att) + ' Seifen-Anionen.');
+    else say('Die Schwänze tauchen ins Fett ein. Um den Tropfen ganz einzuhüllen, fehlen noch ' + (NEED - c.att) + ' Seifen-Anionen.');
+    if (c.done && M.hard && V.done) LK.reach('micelle');
+  }
+  $('sS').oninput = function () { M.n = Number(this.value); updateM(); };
+  $('bSoft').onclick = function () { M.hard = false; setPressed([$('bSoft'), $('bHard')], this); updateM(); };
+  $('bHard').onclick = function () { M.hard = true; setPressed([$('bSoft'), $('bHard')], this); updateM(); };
+
+  function lerp(a, b, f) { return a + (b - a) * f; }
+  function lerpAng(a, b, f) { var d = ((b - a + 540) % 360) - 180; return a + d * f; }
+  var mLast = performance.now(), wanderT = 0;
+  function frameM(ts) {
+    var dt = Math.min(0.05, (ts - mLast) / 1000); mLast = ts;
+    if (view === 3) {
+      var c = counts(), f = reduce ? 1 : Math.min(1, dt * 4);
+      wanderT += dt;
+      var newWander = wanderT > 2.5; if (newWander) wanderT = 0;
+      // Tropfen
+      var tdy = c.done ? 112 : 194;
+      M.dy = lerp(M.dy, tdy, reduce ? 1 : Math.min(1, dt * 1.5));
+      drop.setAttribute('cy', M.dy.toFixed(1)); dropLbl.setAttribute('y', (M.dy + 4).toFixed(1));
+      // Calcium-Ionen
+      cas.forEach(function (ca, j) {
+        var bound = j < c.kalk / 2, tx, ty;
+        if (bound) { tx = 46 + j * 40; ty = 212; } else {
+          if (newWander) { ca.wx = rnd(40, 480); ca.wy = rnd(50, 140); }
+          tx = ca.wx; ty = ca.wy;
+        }
+        ca.x = lerp(ca.x, tx, f * 0.5); ca.y = lerp(ca.y, ty, f * 0.5);
+        ca.g.setAttribute('transform', 'translate(' + ca.x.toFixed(1) + ' ' + ca.y.toFixed(1) + ')');
+      });
+      var ai = 0;
+      tens.forEach(function (s, i) {
+        var hide = i >= M.n;
+        s.g.toggleAttribute('hidden', hide);
+        if (hide) return;
+        var tx, ty, ta;
+        if (i < c.kalk) {
+          var j = Math.floor(i / 2), side = i % 2 ? 1 : -1;
+          tx = 46 + j * 40 + side * 13; ty = 212 - 6; ta = side > 0 ? -20 : 200;
+        } else if (ai < c.att) {
+          var th;
+          if (c.done) th = (ai / NEED) * 2 * Math.PI - Math.PI / 2;
+          else th = Math.PI * (1.08 + 0.84 * (ai + 0.5) / c.att);
+          ai++;
+          tx = M.dx + (R + 22) * Math.cos(th); ty = M.dy + (R + 22) * Math.sin(th);
+          ta = th * 180 / Math.PI + 180;
+        } else {
+          if (newWander) { s.wx = rnd(30, 490); s.wy = rnd(30, 120); s.wa = rnd(0, 360); }
+          tx = s.wx; ty = s.wy; ta = s.wa;
+        }
+        s.x = lerp(s.x, tx, f); s.y = lerp(s.y, ty, f); s.a = lerpAng(s.a, ta, f);
+        s.g.setAttribute('transform', 'translate(' + s.x.toFixed(1) + ' ' + s.y.toFixed(1) + ') rotate(' + s.a.toFixed(1) + ')');
+      });
+    }
+    requestAnimationFrame(frameM);
+  }
+
+  // =====================================================================
+  resetEster();
+  renderV();
+  updateM();
+  say('');
+  drawGG();
+  requestAnimationFrame(frameM);
+})();
+</script>
+</body>
+</html>

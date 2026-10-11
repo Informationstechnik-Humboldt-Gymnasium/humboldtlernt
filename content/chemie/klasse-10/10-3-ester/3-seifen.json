@@ -1,0 +1,129 @@
+{
+  "id": "ch-k10-seifen",
+  "titel": "Seifen und Tenside",
+  "kurz": "Wie aus Fett und Lauge Seife wird, wie ein Tensid gebaut ist und wie es Fettschmutz in Micellen verpackt.",
+  "reihenfolge": 3,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Seifen als Salze der Fettsäuren beschreiben und ihre Herstellung durch Verseifung erläutern" },
+    { "id": "lz2", "niveau": "G", "text": "Den Bau eines Tensids mit hydrophilem Kopf und hydrophobem Schwanz beschreiben" },
+    { "id": "lz3", "niveau": "H", "text": "Die Waschwirkung mit der Verringerung der Oberflächenspannung und der Bildung von Micellen erklären" },
+    { "id": "lz4", "niveau": "H", "text": "Seifen und synthetische Tenside vergleichen und ihren Einsatz bewerten (hartes Wasser, Haut, Umwelt)" }
+  ],
+  "verstehen": {
+    "einstieg": "Fettige Hände wäschst du mit Wasser allein nicht sauber. Ein wenig Seife, und das Fett ist weg. Was macht die Seife mit dem Fett?",
+    "abschnitte": [
+      {
+        "titel": "Verseifung: aus Fett wird Seife",
+        "text": "Kocht man Fett mit **Natronlauge**, werden die Estergruppen gespalten. Es entstehen **Glycerin** und die **Natriumsalze der Fettsäuren**. Diese Salze sind die **Seife**. Weil hier ein Ester mit einer Lauge gespalten wird, nennt man das **alkalische Hydrolyse** oder **Verseifung**:\n\nFett + Natronlauge → Glycerin + Seife\n\nAnders als die Hydrolyse mit Wasser ist die Verseifung **nicht umkehrbar**. Das Fettsäure-Anion (Carboxylat-Ion) R–COO⁻ reagiert nicht mehr mit Glycerin zurück.\n\nMit Natronlauge entsteht feste **Kernseife**, mit Kalilauge weiche **Schmierseife**. Beim Seifensieden gilt: Natronlauge ist **ätzend**. Schutzbrille und Handschuhe tragen. Frisch hergestellte Seife kann noch Laugenreste enthalten und ist nicht für die Haut geeignet."
+      },
+      {
+        "titel": "Bau eines Tensids",
+        "text": "Ein Seifen-Anion wie das Stearat-Ion C₁₇H₃₅–COO⁻ hat zwei sehr unterschiedliche Enden:\n\n- einen **hydrophilen Kopf**: die negativ geladene Carboxylat-Gruppe –COO⁻. Sie wird von Wassermolekülen umhüllt.\n- einen **hydrophoben Schwanz**: die lange, unpolare Kohlenwasserstoffkette. Sie meidet Wasser, ist aber **lipophil** und löst sich in Fett.\n\nSolche Teilchen heißen **Tenside** (von lat. tensio, Spannung). In Zeichnungen stellt man sie vereinfacht als Kreis (Kopf) mit einer Zickzacklinie (Schwanz) dar."
+      },
+      {
+        "titel": "Wie Tenside waschen",
+        "text": "Wasser hat eine hohe **Oberflächenspannung**: Eine Büroklammer kann auf ihm schwimmen. Tenside sammeln sich an der Oberfläche, die Köpfe im Wasser, die Schwänze in der Luft. Sie **verringern die Oberflächenspannung**: Die Büroklammer sinkt, und Wasser dringt besser in Stoffe ein (**Benetzen**).\n\nDer Waschvorgang in Schritten:\n\n- Das Tensidwasser benetzt Stoff und Schmutz.\n- Die hydrophoben Schwänze dringen in den Fettschmutz ein, die Köpfe bleiben im Wasser.\n- Durch Bewegung und Wärme löst sich der Fetttropfen von der Faser.\n- Tenside umhüllen den Tropfen vollständig. Es entsteht eine **Micelle**: innen das Fett mit den Schwänzen, außen die geladenen Köpfe.\n- Weil sich die negativ geladenen Micellen gegenseitig abstoßen, schweben sie im Wasser und werden **weggespült**."
+      },
+      {
+        "titel": "Seifen und synthetische Tenside im Vergleich",
+        "text": "Seife hat einige Nachteile:\n\n- **Alkalisch:** Seifen-Anionen nehmen Protonen von Wassermolekülen auf, dabei entstehen Hydroxid-Ionen. Seifenlösung hat einen pH-Wert von etwa 9 bis 10. Sie kann den leicht sauren **Säureschutzmantel** der Haut (pH etwa 5,5) stören und Wolle schädigen.\n- **Hartes Wasser:** Calcium-Ionen bilden mit Seifen-Anionen schwer lösliche **Kalkseife**. Sie flockt aus, verbraucht Seife und hinterlässt einen Grauschleier.\n- **Saure Lösung:** Dort entstehen aus den Anionen wieder unlösliche Fettsäuren. Die Seife wirkt nicht mehr.\n\n**Synthetische Tenside** wie Alkylsulfate haben einen anderen Kopf, z. B. –O–SO₃⁻. Sie bilden keine Kalkseife und lassen sich hautneutral einstellen. Deshalb stecken sie in Duschgel, Shampoo, Spül- und Waschmitteln.\n\nIn den 1950er- und 1960er-Jahren bildeten schwer abbaubare Tenside meterhohe **Schaumberge** auf Flüssen. Heute müssen Tenside in Wasch- und Reinigungsmitteln in der EU **biologisch gut abbaubar** sein. Für Fische und andere Wasserlebewesen sind Tenside trotzdem schädlich. Deshalb gilt: nach Angabe dosieren, nicht mehr."
+      }
+    ],
+    "formeln": [
+      { "formel": "Fett + 3 NaOH → Glycerin + 3 Seife", "bedeutung": "Verseifung (alkalische Hydrolyse), nicht umkehrbar" },
+      { "formel": "C₃H₅(OOC–C₁₇H₃₅)₃ + 3 NaOH → C₃H₅(OH)₃ + 3 C₁₇H₃₅–COONa", "bedeutung": "Tristearin + Natronlauge → Glycerin + Natriumstearat (Kernseife)" },
+      { "formel": "2 C₁₇H₃₅–COO⁻ + Ca²⁺ → Ca(C₁₇H₃₅–COO)₂", "bedeutung": "In hartem Wasser fällt schwer lösliche Kalkseife aus." }
+    ],
+    "merksatz": "**Seifen** sind Natrium- oder Kaliumsalze der Fettsäuren. Sie entstehen bei der **Verseifung** von Fetten mit Lauge.\n\n**Tenside** haben einen hydrophilen Kopf und einen hydrophoben Schwanz. Sie verringern die Oberflächenspannung des Wassers und schließen Fett in **Micellen** ein, die weggespült werden.",
+    "alltag": "Auf Shampoo-Flaschen steht oft „Sodium Laureth Sulfate“ oder „Sodium Lauryl Sulfate“. Das sind synthetische Tenside. Ihre hydrophobe Kette stammt meist aus Kokos- oder Palmöl."
+  },
+  "interaktiv": ["ch-veresterung"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "ch-sei-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Fett wird mit Natronlauge gekocht. Was entsteht?",
+      "optionen": [
+        { "text": "Glycerin und Natriumsalze der Fettsäuren (Seife)", "richtig": true },
+        { "text": "Ethanol und Essigsäure", "feedback": "Ethanol und Essigsäure entstehen bei der Hydrolyse von Ethansäureethylester, nicht von Fett." },
+        { "text": "Glycerin und Wasserstoff", "feedback": "Bei der Verseifung entsteht kein Gas." },
+        { "text": "Kohlenstoffdioxid und Wasser", "feedback": "Das wären die Produkte einer vollständigen Verbrennung." }
+      ],
+      "erklaerung": "Die Natronlauge spaltet die drei Estergruppen des Fetts. Zurück bleiben Glycerin und drei Fettsäure-Anionen, die mit den Natrium-Ionen die Seife bilden. Diese Reaktion heißt **Verseifung**."
+    },
+    {
+      "id": "ch-sei-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Ordne die Begriffe zu.",
+      "paare": [
+        { "links": "Kohlenwasserstoffkette des Seifen-Anions", "rechts": "hydrophober Schwanz, taucht ins Fett" },
+        { "links": "Carboxylat-Gruppe –COO⁻", "rechts": "hydrophiler Kopf, zeigt ins Wasser" },
+        { "links": "Micelle", "rechts": "Kugel aus Tensiden, die Schwänze zeigen nach innen" },
+        { "links": "Kalkseife", "rechts": "schwer löslicher Niederschlag in hartem Wasser" }
+      ],
+      "extraRechts": ["Ester aus Glycerin und drei Fettsäuren"],
+      "erklaerung": "Der geladene Kopf ist hydrophil, die lange Kette hydrophob und lipophil. Viele Tenside zusammen bilden um einen Fetttropfen eine Micelle."
+    },
+    {
+      "id": "ch-sei-03", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Bringe die Schritte des Waschvorgangs in die richtige Reihenfolge.",
+      "elemente": [
+        "Tenside verringern die Oberflächenspannung, das Wasser benetzt Stoff und Schmutz.",
+        "Die hydrophoben Schwänze dringen in den Fettschmutz ein.",
+        "Durch Bewegung und Wärme löst sich der Fetttropfen von der Faser.",
+        "Tenside umhüllen den Tropfen vollständig, es entsteht eine Micelle.",
+        "Die Micellen stoßen sich ab, bleiben in der Schwebe und werden weggespült."
+      ],
+      "erklaerung": "Zuerst muss das Wasser überhaupt an den Schmutz herankommen (Benetzen). Dann verankern sich die Tenside im Fett, lösen es ab und verpacken es in Micellen. Die gleich geladenen Köpfe verhindern, dass sich der Schmutz wieder an die Faser setzt."
+    },
+    {
+      "id": "ch-sei-04", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Welche Aussagen zum Vergleich von Seife und synthetischen Tensiden sind richtig?",
+      "optionen": [
+        { "text": "Seifenlösung reagiert alkalisch und kann den Säureschutzmantel der Haut stören.", "richtig": true },
+        { "text": "Synthetische Tenside wie Alkylsulfate bilden in hartem Wasser keine Kalkseife.", "richtig": true },
+        { "text": "Tenside in Waschmitteln müssen in der EU biologisch gut abbaubar sein.", "richtig": true },
+        { "text": "Synthetische Tenside schaden Wasserlebewesen nicht, man kann sie beliebig dosieren.", "feedback": "Tenside schädigen z. B. die Kiemen von Fischen. Auch abbaubare Tenside sollte man sparsam dosieren." },
+        { "text": "Seife wirkt in saurer Lösung besonders gut.", "feedback": "In saurer Lösung werden die Seifen-Anionen zu unlöslichen Fettsäuren. Die Seife verliert ihre Wirkung." }
+      ],
+      "erklaerung": "Synthetische Tenside beheben einige Nachteile der Seife (Kalkseife, alkalische Reaktion). Für die Umwelt sind alle Tenside eine Belastung, wenn man sie überdosiert."
+    },
+    {
+      "id": "ch-sei-05", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz1",
+      "frage": "Wie viel Gramm Natriumhydroxid braucht man, um 89 g Tristearin (M = 890 g/mol) vollständig zu verseifen? (M(NaOH) = 40 g/mol)",
+      "gegeben": "`m`(Tristearin) = 89 g, `M`(Tristearin) = 890 g/mol, `M`(NaOH) = 40 g/mol",
+      "gesucht": "Masse an Natriumhydroxid",
+      "gesuchtSymbol": "m(NaOH)",
+      "loesung": 12, "einheit": "g",
+      "rechenweg": [
+        "Stoffmenge Fett: `n = \\frac{89 g}{890 g/mol} = 0,1 mol`",
+        "Reaktionsgleichung: 1 Fett + 3 NaOH → Glycerin + 3 Seife, also `n`(NaOH) = 3 · 0,1 mol = 0,3 mol",
+        "Masse: `m = 0,3 mol · 40 g/mol = 12 g`"
+      ],
+      "hinweis": "Ein Fettmolekül hat drei Estergruppen. Jede braucht ein Hydroxid-Ion.",
+      "erklaerung": "Wer selbst Seife siedet, rechnet die Laugenmenge genau aus. Zu viel Lauge macht die Seife ätzend, zu wenig lässt unverseiftes Fett zurück. Profis nehmen meist etwas weniger Lauge, damit sicher keine Lauge übrig bleibt."
+    },
+    {
+      "id": "ch-sei-06", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Wäschst du mit Kernseife in sehr hartem Wasser, bilden sich graue Flocken und es schäumt kaum. Warum?",
+      "optionen": [
+        { "text": "Calcium-Ionen bilden mit den Seifen-Anionen schwer lösliche Kalkseife. Die Seife wird verbraucht.", "richtig": true },
+        { "text": "Hartes Wasser ist sauer und zersetzt die Seife.", "feedback": "Hartes Wasser ist nicht sauer. Es enthält viele Calcium- und Magnesium-Ionen." },
+        { "text": "Im harten Wasser ist zu viel Sauerstoff gelöst.", "feedback": "Die Härte des Wassers hat mit gelöstem Sauerstoff nichts zu tun." },
+        { "text": "Die Seife reagiert mit dem Wasser zu Glycerin.", "feedback": "Glycerin entsteht bei der Herstellung der Seife, nicht beim Waschen." }
+      ],
+      "erklaerung": "2 R–COO⁻ + Ca²⁺ → Ca(R–COO)₂: Die Kalkseife fällt aus. Erst wenn alle Calcium-Ionen gebunden sind, bleibt Seife zum Waschen übrig. Deshalb enthalten Waschmittel synthetische Tenside und Wasserenthärter."
+    },
+    {
+      "id": "ch-sei-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Erkläre auf Teilchenebene, wie Seife einen Fetttropfen von der Haut entfernt. Gehe dabei auf den Bau der Seifen-Anionen ein.",
+      "stichworte": [
+        { "aspekt": "Seifen-Anionen haben einen hydrophilen (geladenen) Kopf und einen hydrophoben (lipophilen) Schwanz.", "woerter": ["hydrophil", "kopf", "wasserliebend"] },
+        { "aspekt": "Die Schwänze lagern sich in das Fett ein, die Köpfe zeigen ins Wasser.", "woerter": ["schwanz", "schwaenze", "kette", "ins fett", "in das fett", "lipophil", "hydrophob"] },
+        { "aspekt": "Es bilden sich Micellen, die den Fetttropfen einschließen.", "woerter": ["micelle", "mizelle", "umhuell", "einschliess", "eingeschlossen"] },
+        { "aspekt": "Die Micellen werden mit dem Wasser weggespült.", "woerter": ["weggespuelt", "wegspuel", "abgespuelt", "spuelen", "abtransport", "fortgespuelt", "schweben"] }
+      ],
+      "musterloesung": "Ein Seifen-Anion besteht aus einem hydrophilen, negativ geladenen Kopf (–COO⁻) und einem langen hydrophoben, lipophilen Schwanz aus einer Kohlenwasserstoffkette. Die Schwänze lagern sich in den Fetttropfen ein, die Köpfe bleiben im Wasser. Viele Seifen-Anionen umhüllen den Tropfen schließlich ganz, es entsteht eine Micelle mit dem Fett im Inneren. Nach außen ist die Micelle negativ geladen und gut wasserlöslich. Die Micellen stoßen sich gegenseitig ab, schweben im Wasser und werden weggespült.",
+      "erklaerung": "Seife löst Fett nicht chemisch auf. Sie wirkt wie ein Vermittler zwischen Wasser und Fett: Ein Ende hält sich am Fett fest, das andere am Wasser."
+    }
+  ]
+}

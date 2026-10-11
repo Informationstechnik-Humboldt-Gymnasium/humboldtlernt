@@ -1,0 +1,14 @@
+{
+  "nummer": "7.2",
+  "reihenfolge": 2,
+  "titel": "Das Periodensystem der Elemente: Übersicht und Werkzeug",
+  "beschreibung": "Atombau, Schalenmodell und Lewis-Schreibweise und wie man mit dem Periodensystem Eigenschaften vorhersagt.",
+  "inhalte": [
+    "Das Periodensystem der Elemente im Überblick, chemische Symbole",
+    "Atombau: Kern-Hülle-Modell (Proton, Neutron, Elektron)",
+    "Modell der strukturierten Atomhülle",
+    "Elektronenschreibweise nach Lewis",
+    "Stoffliche und teilchenbezogene Ordnungsprinzipien des PSE"
+  ],
+  "erweiterung": "Energiestufen und Ionisierungsenergie"
+}

@@ -1,0 +1,126 @@
+{
+  "id": "ch-k9-saeuren-basen",
+  "titel": "Säuren und Basen",
+  "kurz": "Säuren geben Protonen ab, Basen nehmen sie auf: So entstehen saure und alkalische Lösungen, und so reagieren Säuren mit Metallen.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Säuren als Protonendonatoren und Basen als Protonenakzeptoren beschreiben und in Reaktionen kennzeichnen" },
+    { "id": "lz2", "niveau": "G", "text": "Die Bildung saurer Lösungen beschreiben und das Oxonium-Ion (H₃O⁺) als ihr charakteristisches Teilchen angeben" },
+    { "id": "lz3", "niveau": "G", "text": "Die Bildung alkalischer Lösungen aus Hydroxiden, Metalloxiden und Ammoniak beschreiben und das Hydroxid-Ion (OH⁻) als charakteristisches Teilchen angeben" },
+    { "id": "lz4", "niveau": "H", "text": "Das Reaktionsverhalten verschiedener Metalle mit Säuren vergleichen und mit der Sauerstoffaffinität verknüpfen" },
+    { "id": "lz5", "niveau": "G", "text": "Wichtige Säuren mit Formel und Namen ihrer Säurerest-Ionen benennen" }
+  ],
+  "verstehen": {
+    "einstieg": "Chlorwasserstoff ist ein Gas aus Molekülen. Leitest du es in Wasser ein, entsteht Salzsäure, die Strom leitet, ätzend ist und Magnesium auflöst. Was passiert dabei mit den Teilchen?",
+    "abschnitte": [
+      {
+        "titel": "Säuren geben Protonen ab",
+        "text": "Ein **Proton** ist ein Wasserstoff-Atom ohne sein Elektron, also ein H⁺-Ion.\n\nNach Brønsted gilt:\n\n- Eine **Säure** ist ein Teilchen, das ein Proton **abgibt** (**Protonendonator**).\n- Eine **Base** ist ein Teilchen, das ein Proton **aufnimmt** (**Protonenakzeptor**).\n\nEine Reaktion, bei der ein Proton übertragen wird, heißt **Säure-Base-Reaktion** oder Protolyse. Eine Säure reagiert immer mit einer Base: Ohne Akzeptor kann kein Proton abgegeben werden."
+      },
+      {
+        "titel": "Saure Lösungen: Oxonium-Ionen",
+        "text": "Leitet man Chlorwasserstoff in Wasser ein, gibt jedes HCl-Molekül ein Proton an ein Wasser-Molekül ab:\n\nHCl + H₂O → H₃O⁺ + Cl⁻\n\nHCl ist der Protonendonator, H₂O der Protonenakzeptor. Es entstehen **Oxonium-Ionen** (H₃O⁺) und **Chlorid-Ionen** (Cl⁻). Die Lösung heißt **Salzsäure**.\n\nAlle sauren Lösungen enthalten Oxonium-Ionen. Sie sind für die gemeinsamen Eigenschaften verantwortlich: saurer Geschmack, Rotfärbung von Universalindikator, elektrische Leitfähigkeit und Reaktion mit unedlen Metallen.\n\nAuch **Nichtmetalloxide** bilden mit Wasser saure Lösungen, z. B. CO₂ + H₂O ⇌ H₂CO₃ (Kohlensäure) oder SO₂ + H₂O ⇌ H₂SO₃ (schweflige Säure, saurer Regen).\n\n**Sicherheit:** Konzentrierte Schwefelsäure wird immer langsam unter Rühren **in Wasser** gegossen, nie umgekehrt. Merke: „Erst das Wasser, dann die Säure, sonst geschieht das Ungeheure.“"
+      },
+      {
+        "titel": "Wichtige Säuren und ihre Säurerest-Ionen",
+        "text": "Nach der Abgabe der Protonen bleibt das **Säurerest-Ion** übrig:\n\n- Chlorwasserstoff HCl (Salzsäure) → Chlorid-Ion Cl⁻\n- Schwefelsäure H₂SO₄ → Sulfat-Ion SO₄²⁻\n- Salpetersäure HNO₃ → Nitrat-Ion NO₃⁻\n- Kohlensäure H₂CO₃ → Carbonat-Ion CO₃²⁻\n- Phosphorsäure H₃PO₄ → Phosphat-Ion PO₄³⁻\n\nSchwefelsäure kann zwei Protonen abgeben, Phosphorsäure drei. Solche Säuren heißen **mehrprotonig**. Die Ladung des Säurerest-Ions entspricht der Zahl der abgegebenen Protonen."
+      },
+      {
+        "titel": "Alkalische Lösungen: Hydroxid-Ionen",
+        "text": "Alle alkalischen Lösungen enthalten **Hydroxid-Ionen** (OH⁻). Sie entstehen auf verschiedenen Wegen:\n\n- **Hydroxide lösen sich:** Festes Natriumhydroxid ist ein Salz aus Na⁺- und OH⁻-Ionen. In Wasser lösen sich die Ionen aus dem Gitter: NaOH → Na⁺ + OH⁻. Es entsteht **Natronlauge**.\n- **Metalloxide reagieren mit Wasser:** CaO + H₂O → Ca(OH)₂. Die Lösung heißt **Kalkwasser**.\n- **Unedle Metalle reagieren mit Wasser:** 2 Na + 2 H₂O → 2 NaOH + H₂\n- **Ammoniak nimmt ein Proton auf:** NH₃ + H₂O ⇌ NH₄⁺ + OH⁻. Hier ist Ammoniak die Base und Wasser die Säure.\n\nDie eigentliche Base ist jeweils das Hydroxid-Ion bzw. das Ammoniak-Molekül, denn sie können Protonen aufnehmen. Wasser kann also je nach Partner Protonen aufnehmen oder abgeben."
+      },
+      {
+        "titel": "Säuren reagieren mit unedlen Metallen",
+        "text": "Gibst du ein Stück Magnesiumband in Salzsäure, sprudelt es heftig. Es entsteht **Wasserstoff**, den du mit der **Knallgasprobe** nachweist (Reagenzglas mit dem Gas an die Flamme halten: „Plopp“ oder Pfeifen).\n\nMg + 2 HCl → MgCl₂ + H₂\n\nAuf Teilchenebene geben die Magnesium-Atome Elektronen an die Oxonium-Ionen ab:\n\nMg + 2 H₃O⁺ → Mg²⁺ + H₂ + 2 H₂O\n\nEs entsteht ein **Salz** (hier Magnesiumchlorid), das gelöst bleibt.\n\nJe **unedler** ein Metall ist, also je größer seine Sauerstoffaffinität, desto heftiger reagiert es: Magnesium sehr heftig, Zink deutlich, Eisen langsam. **Edle** Metalle wie Kupfer, Silber und Gold reagieren mit Salzsäure nicht. Die Reihenfolge stimmt mit der Redoxreihe aus Klasse 8 überein."
+      }
+    ],
+    "merksatz": "**Säuren** sind Protonendonatoren, **Basen** sind Protonenakzeptoren. Bei einer Säure-Base-Reaktion wird ein Proton (H⁺) übertragen.\n\nSaure Lösungen enthalten **Oxonium-Ionen** (H₃O⁺), alkalische Lösungen **Hydroxid-Ionen** (OH⁻). Unedle Metalle reagieren mit sauren Lösungen zu einem Salz und Wasserstoff.",
+    "alltag": "In Mineralwasser ist Kohlenstoffdioxid gelöst. Ein kleiner Teil reagiert mit Wasser zu Kohlensäure. Deshalb schmeckt Sprudel leicht säuerlich und färbt Bromthymolblau gelb."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "ch-sb-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Was ist eine Säure nach Brønsted?",
+      "optionen": [
+        { "text": "Ein Teilchen, das ein Proton abgibt", "richtig": true },
+        { "text": "Ein Teilchen, das ein Proton aufnimmt", "feedback": "Das ist eine Base (Protonenakzeptor)." },
+        { "text": "Ein Stoff, der sauer schmeckt", "feedback": "Viele Säuren schmecken sauer, aber das ist keine Definition. Probieren ist im Labor außerdem verboten." },
+        { "text": "Ein Teilchen, das ein Elektron abgibt", "feedback": "Elektronen werden bei Redoxreaktionen übertragen. Bei Säure-Base-Reaktionen geht es um Protonen." }
+      ],
+      "erklaerung": "Säuren sind **Protonendonatoren**: Sie geben ein Proton (H⁺) an einen Reaktionspartner ab. Basen sind **Protonenakzeptoren**."
+    },
+    {
+      "id": "ch-sb-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz5",
+      "frage": "Ordne jeder Säure ihr Säurerest-Ion zu.",
+      "paare": [
+        { "links": "HCl (Salzsäure)", "rechts": "Chlorid Cl⁻" },
+        { "links": "H₂SO₄ (Schwefelsäure)", "rechts": "Sulfat SO₄²⁻" },
+        { "links": "HNO₃ (Salpetersäure)", "rechts": "Nitrat NO₃⁻" },
+        { "links": "H₂CO₃ (Kohlensäure)", "rechts": "Carbonat CO₃²⁻" },
+        { "links": "H₃PO₄ (Phosphorsäure)", "rechts": "Phosphat PO₄³⁻" }
+      ],
+      "extraRechts": ["Sulfid S²⁻"],
+      "erklaerung": "Das Säurerest-Ion bleibt übrig, wenn die Säure alle Protonen abgegeben hat. Seine Ladung entspricht der Anzahl der abgegebenen Protonen: H₂SO₄ gibt zwei ab, also SO₄²⁻."
+    },
+    {
+      "id": "ch-sb-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "In der Reaktion NH₃ + H₂O ⇌ NH₄⁺ + OH⁻ entsteht eine alkalische Lösung. Welches Teilchen ist hier der **Protonendonator**?",
+      "optionen": [
+        { "text": "Das Wasser-Molekül H₂O", "richtig": true },
+        { "text": "Das Ammoniak-Molekül NH₃", "feedback": "Ammoniak **nimmt** ein Proton auf und wird zum NH₄⁺-Ion. Es ist der Akzeptor, also die Base." },
+        { "text": "Das Hydroxid-Ion OH⁻", "feedback": "OH⁻ ist ein Produkt. Es bleibt vom Wasser-Molekül übrig, nachdem dieses ein Proton abgegeben hat." },
+        { "text": "Es wird kein Proton übertragen.", "feedback": "Vergleiche die Formeln: Aus NH₃ wird NH₄⁺, aus H₂O wird OH⁻. Ein H⁺ hat den Partner gewechselt." }
+      ],
+      "erklaerung": "Das Wasser-Molekül gibt ein Proton ab (Donator, Säure) und wird zum Hydroxid-Ion. Ammoniak nimmt es auf (Akzeptor, Base). Wasser kann also auch als Säure reagieren, mit HCl reagiert es dagegen als Base."
+    },
+    {
+      "id": "ch-sb-04", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Welche Stoffe ergeben mit Wasser eine **alkalische** Lösung?",
+      "optionen": [
+        { "text": "Calciumoxid (CaO)", "richtig": true },
+        { "text": "Natrium (Na)", "richtig": true },
+        { "text": "Ammoniak (NH₃)", "richtig": true },
+        { "text": "Kohlenstoffdioxid (CO₂)", "feedback": "CO₂ ist ein Nichtmetalloxid. Mit Wasser entsteht Kohlensäure, die Lösung ist sauer." },
+        { "text": "Chlorwasserstoff (HCl)", "feedback": "HCl gibt Protonen an Wasser ab. Es entsteht Salzsäure." },
+        { "text": "Schwefeldioxid (SO₂)", "feedback": "SO₂ ist ein Nichtmetalloxid und bildet mit Wasser schweflige Säure." }
+      ],
+      "erklaerung": "Metalloxide (CaO + H₂O → Ca(OH)₂), unedle Metalle (2 Na + 2 H₂O → 2 NaOH + H₂) und Ammoniak (NH₃ + H₂O ⇌ NH₄⁺ + OH⁻) bilden Hydroxid-Ionen. Nichtmetalloxide und Chlorwasserstoff bilden dagegen saure Lösungen."
+    },
+    {
+      "id": "ch-sb-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Du gibst Magnesiumband in verdünnte Salzsäure. Es bilden sich viele Gasbläschen. Welches Gas ist das und wie weist du es nach?",
+      "optionen": [
+        { "text": "Wasserstoff, Nachweis mit der Knallgasprobe", "richtig": true },
+        { "text": "Sauerstoff, Nachweis mit der Glimmspanprobe", "feedback": "Sauerstoff entsteht hier nicht. Die Wasserstoff-Atome stammen aus den Oxonium-Ionen." },
+        { "text": "Kohlenstoffdioxid, Nachweis mit Kalkwasser", "feedback": "CO₂ entsteht, wenn Säuren mit Carbonaten (z. B. Kalk) reagieren, nicht mit Metallen." },
+        { "text": "Chlor, Nachweis am Geruch", "feedback": "Die Chlorid-Ionen bleiben gelöst. Außerdem riecht man nie direkt an Gasen im Labor." }
+      ],
+      "erklaerung": "Mg + 2 HCl → MgCl₂ + H₂. Die Magnesium-Atome geben Elektronen an die Oxonium-Ionen ab, dabei entsteht Wasserstoff. Mit der Knallgasprobe hörst du ein „Plopp“ oder Pfeifen."
+    },
+    {
+      "id": "ch-sb-06", "typ": "reihenfolge", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Gleich große Stücke verschiedener Metalle liegen in Salzsäure gleicher Konzentration. Ordne von der **heftigsten** Reaktion bis **keine Reaktion**.",
+      "elemente": [
+        "Magnesium",
+        "Zink",
+        "Eisen",
+        "Kupfer"
+      ],
+      "hinweis": "Denke an die Redoxreihe: Je größer die Sauerstoffaffinität (je unedler), desto leichter gibt das Metall Elektronen ab.",
+      "erklaerung": "Magnesium ist am unedelsten und reagiert sehr heftig, Zink deutlich, Eisen nur langsam. Kupfer ist ein edles Metall und reagiert mit Salzsäure nicht. Das ist dieselbe Reihenfolge wie bei der Sauerstoffaffinität."
+    },
+    {
+      "id": "ch-sb-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Chlorwasserstoff-Gas wird in Wasser eingeleitet. Erkläre auf der Ebene der Teilchen, warum dabei eine saure Lösung entsteht. Verwende die Fachbegriffe Donator und Akzeptor.",
+      "stichworte": [
+        { "aspekt": "Das HCl-Molekül gibt ein Proton (H⁺) ab, es ist der Protonendonator", "woerter": ["donator", "gibt ein proton ab", "abgegeben", "proton ab", "h ab", "wasserstoff ion ab", "wasserstoffion ab"] },
+        { "aspekt": "Das Wasser-Molekül nimmt das Proton auf, es ist der Protonenakzeptor", "woerter": ["akzeptor", "nimmt", "aufgenommen", "aufnahme"] },
+        { "aspekt": "Es entstehen Oxonium-Ionen (H₃O⁺), die die Lösung sauer machen (dazu Chlorid-Ionen)", "woerter": ["oxonium", "h3o"] }
+      ],
+      "musterloesung": "Jedes Chlorwasserstoff-Molekül gibt ein Proton ab. HCl ist also der Protonendonator. Ein Wasser-Molekül nimmt das Proton auf und ist damit der Protonenakzeptor. Dabei entstehen Oxonium-Ionen (H₃O⁺) und Chlorid-Ionen (Cl⁻): HCl + H₂O → H₃O⁺ + Cl⁻. Die Oxonium-Ionen sind die typischen Teilchen aller sauren Lösungen, deshalb ist die Lösung sauer.",
+      "erklaerung": "Das ist eine Säure-Base-Reaktion nach Brønsted. Die vielen Oxonium-Ionen erklären, warum Salzsäure sauer ist und Strom leitet."
+    }
+  ]
+}

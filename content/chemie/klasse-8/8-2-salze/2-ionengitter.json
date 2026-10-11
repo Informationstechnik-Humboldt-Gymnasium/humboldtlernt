@@ -1,0 +1,123 @@
+{
+  "id": "ch-k8-ionengitter",
+  "titel": "Ionengitter und Eigenschaften von Salzen",
+  "kurz": "Warum Salzkristalle hart und spröde sind, erst bei hohen Temperaturen schmelzen, in Wasser zerfallen und als Lösung den Strom leiten.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Den Bau eines Ionenkristalls (Ionengitter, Ionenbindung) am Beispiel Natriumchlorid beschreiben und verschiedene Gittermodelle vergleichen" },
+    { "id": "lz2", "niveau": "G", "text": "Eigenschaften von Salzen (Härte, Sprödigkeit, Schmelztemperatur, Leitfähigkeit) auf den Bau des Ionengitters zurückführen" },
+    { "id": "lz3", "niveau": "H", "text": "Das Lösen eines Salzes in Wasser mit den Fachbegriffen Dissoziation, Hydratation und hydratisiertes Kation bzw. Anion beschreiben" },
+    { "id": "lz4", "niveau": "G", "text": "Die Flammenfärbung beschreiben und zum Nachweis von Metall-Ionen anwenden" }
+  ],
+  "verstehen": {
+    "einstieg": "Schaust du Kochsalz unter der Lupe an, siehst du kleine Würfel. Sie sind hart, zerspringen aber beim Hammerschlag. Erst bei 801 °C schmelzen sie, doch in Wasser lösen sie sich einfach auf. Wie passt das alles zusammen?",
+    "abschnitte": [
+      {
+        "titel": "Das Ionengitter",
+        "text": "Im festen Natriumchlorid liegen keine einzelnen NaCl-Paare oder Moleküle vor. Unzählige Na⁺- und Cl⁻-Ionen sind regelmäßig in einem **Ionengitter** angeordnet. Jedes Natrium-Ion ist von **6 Chlorid-Ionen** umgeben, jedes Chlorid-Ion von **6 Natrium-Ionen**. So entsteht ein würfelförmiger **Ionenkristall**.\n\nDer Zusammenhalt durch die elektrische Anziehung zwischen entgegengesetzt geladenen Ionen heißt **Ionenbindung**. Sie wirkt in **alle Richtungen** gleich stark.\n\nDie Formel NaCl ist eine **Verhältnisformel**: Sie gibt nur an, dass auf jedes Na⁺ ein Cl⁻ kommt."
+      },
+      {
+        "titel": "Modelle des Ionengitters",
+        "text": "- Im **Kugelpackungsmodell** berühren sich die Ionen. Man sieht gut, dass Chlorid-Ionen größer sind als Natrium-Ionen und dass kaum Platz frei bleibt.\n- Im **Kugel-Stab-Modell** sind die Ionen kleiner gezeichnet und durch Stäbe verbunden. Man sieht gut, welche Ionen Nachbarn sind. Die Stäbe sind aber keine echten Bindungen zwischen zwei bestimmten Ionen, und die Abstände sind übertrieben.\n\nJedes Modell zeigt also nur einen Teil der Wirklichkeit."
+      },
+      {
+        "titel": "Eigenschaften aus dem Bau",
+        "text": "- **Hohe Schmelztemperatur** (NaCl: 801 °C): Die Anziehung zwischen den Ionen ist stark, und jedes Ion hat viele Nachbarn. Man braucht viel Energie, um das Gitter aufzubrechen.\n- **Hart, aber spröde**: Die Ionen sitzen fest auf ihren Plätzen. Verschiebt ein Schlag jedoch eine Schicht um eine Ionenlage, stehen sich gleich geladene Ionen gegenüber. Sie stoßen sich ab, der Kristall bricht.\n- **Elektrische Leitfähigkeit**: Ein fester Salzkristall leitet nicht, denn die Ionen sind nicht beweglich. Eine **Salzschmelze** und eine **Salzlösung** leiten dagegen, weil sich die Ionen dort frei bewegen können. Destilliertes Wasser und Zuckerlösung leiten kaum, denn sie enthalten fast keine Ionen."
+      },
+      {
+        "titel": "Salze lösen sich in Wasser",
+        "text": "Viele Salze sind gut wasserlöslich. In 100 g Wasser lösen sich bei 20 °C etwa 36 g Natriumchlorid. Es gibt aber auch schwer lösliche Salze wie Kalk (Calciumcarbonat).\n\nWassermoleküle sind **Dipole**. Ihre teilweise negativ geladene Seite (δ−, am Sauerstoffatom) lagert sich an die Kationen an, ihre teilweise positiv geladene Seite (δ+, an den Wasserstoffatomen) an die Anionen. So werden die Ionen nach und nach aus dem Gitter gelöst. Das Zerfallen des Ionengitters in einzelne, frei bewegliche Ionen heißt **Dissoziation**. Die Umhüllung der Ionen mit Wassermolekülen heißt **Hydratation**. Es entstehen **hydratisierte Kationen** und **hydratisierte Anionen**.\n\nNaCl (s) → Na⁺ (aq) + Cl⁻ (aq)\n\nDas Zeichen (aq) bedeutet „hydratisiert, in Wasser gelöst“."
+      },
+      {
+        "titel": "Flammenfärbung",
+        "text": "Hält man ein Salz mit einem Magnesiastäbchen in die nicht leuchtende Brennerflamme, färbt sich die Flamme oft typisch. Die Farbe verrät die **Metall-Ionen**:\n\n- Natrium: gelb (orange-gelb)\n- Kalium: violett (fahl, am besten durch ein Cobaltglas sichtbar, das das gelbe Natriumlicht verschluckt)\n- Lithium: karminrot\n- Calcium: ziegelrot\n- Strontium: rot\n- Barium: fahlgrün\n- Kupfer: grün bis blaugrün\n\nSchutzbrille tragen, Haare zusammenbinden und nur kleine Mengen verwenden. Viele Bariumsalze sind giftig. Die Farben entstehen, weil die Hitze Elektronen auf höhere Energiestufen hebt. Fallen sie zurück, geben sie die Energie als Licht einer ganz bestimmten Farbe ab."
+      }
+    ],
+    "merksatz": "Salze bestehen aus Kationen und Anionen, die in einem **Ionengitter** regelmäßig angeordnet sind und sich in alle Richtungen anziehen (**Ionenbindung**). Daraus folgen hohe Schmelztemperaturen, Härte und Sprödigkeit.\n\nBeim Lösen in Wasser zerfällt das Gitter (**Dissoziation**), die Ionen werden von Wassermolekülen umhüllt (**Hydratation**). Salzlösungen und Salzschmelzen leiten den Strom, weil die Ionen beweglich sind.",
+    "alltag": "Die Farben im Feuerwerk stammen von Salzen: Strontiumsalze leuchten rot, Bariumsalze grün, Natriumsalze gelb und Kupfersalze blaugrün."
+  },
+  "interaktiv": ["ch-ionenbildung"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "ch-igt-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Von wie vielen Chlorid-Ionen ist ein Natrium-Ion im Natriumchlorid-Gitter direkt umgeben?",
+      "optionen": [
+        { "text": "6", "richtig": true },
+        { "text": "1", "feedback": "Die Formel NaCl gibt nur das Verhältnis an. Im Gitter hat jedes Ion mehrere Nachbarn." },
+        { "text": "4", "feedback": "Denke an einen Würfel: oben, unten, links, rechts, vorne, hinten." },
+        { "text": "8", "feedback": "Im Natriumchlorid-Gitter sind es weniger. Denke an die sechs Seiten eines Würfels." }
+      ],
+      "erklaerung": "Jedes Na⁺ ist von **6** Cl⁻ umgeben (oben, unten, links, rechts, vorne, hinten) und umgekehrt. Insgesamt kommen trotzdem gleich viele Na⁺ und Cl⁻ vor, also NaCl."
+    },
+    {
+      "id": "ch-igt-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz4",
+      "frage": "Ordne den Metall-Ionen ihre Flammenfärbung zu.",
+      "paare": [
+        { "links": "Natrium-Ionen", "rechts": "gelb" },
+        { "links": "Kalium-Ionen", "rechts": "violett" },
+        { "links": "Lithium-Ionen", "rechts": "karminrot" },
+        { "links": "Kupfer-Ionen", "rechts": "grün bis blaugrün" }
+      ],
+      "extraRechts": ["weiß"],
+      "erklaerung": "Natrium leuchtet kräftig gelb, Kalium fahlviolett, Lithium karminrot und Kupfer grün. Weiß ist keine typische Flammenfärbung."
+    },
+    {
+      "id": "ch-igt-03", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Welche dieser Stoffe leiten den elektrischen Strom gut?",
+      "optionen": [
+        { "text": "geschmolzenes Natriumchlorid", "richtig": true },
+        { "text": "Kochsalzlösung", "richtig": true },
+        { "text": "festes Kochsalz", "feedback": "Im festen Kristall sitzen die Ionen fest auf ihren Plätzen und können nicht wandern." },
+        { "text": "Zuckerlösung", "feedback": "Zucker besteht aus ungeladenen Molekülen. Beim Lösen entstehen keine Ionen." },
+        { "text": "destilliertes Wasser", "feedback": "Reines Wasser enthält fast keine Ionen und leitet deshalb kaum." }
+      ],
+      "erklaerung": "Strom kann nur fließen, wenn **bewegliche geladene Teilchen** vorhanden sind. In der Schmelze und in der Lösung sind die Ionen frei beweglich, im Kristall nicht."
+    },
+    {
+      "id": "ch-igt-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Ein Salzkristall zerspringt, wenn man mit dem Hammer darauf schlägt. Warum?",
+      "optionen": [
+        { "text": "Durch den Schlag verschieben sich Ionenschichten. Dann stehen sich gleich geladene Ionen gegenüber und stoßen sich ab.", "richtig": true },
+        { "text": "Durch den Schlag werden Elektronen übertragen, und es entstehen wieder Atome.", "feedback": "Ein Hammerschlag ist eine mechanische Einwirkung, keine chemische Reaktion. Die Ionen bleiben Ionen." },
+        { "text": "Die Ionenbindung ist sehr schwach.", "feedback": "Die Ionenbindung ist stark, das zeigt die hohe Schmelztemperatur. Es liegt an der Anordnung der Ladungen." },
+        { "text": "Im Kristall ist Wasser eingeschlossen, das verdampft.", "feedback": "Das Zerspringen hat mit Wasser nichts zu tun. Es liegt am Bau des Ionengitters." }
+      ],
+      "erklaerung": "Salze sind **spröde**. Verschiebt sich eine Schicht im Gitter um eine Ionenlage, liegen plötzlich Na⁺ neben Na⁺ und Cl⁻ neben Cl⁻. Die Abstoßung spaltet den Kristall entlang glatter Flächen."
+    },
+    {
+      "id": "ch-igt-05", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Ordne die Fachbegriffe zum Lösen eines Salzes den passenden Beschreibungen zu.",
+      "paare": [
+        { "links": "Dissoziation", "rechts": "Das Ionengitter zerfällt in frei bewegliche Ionen." },
+        { "links": "Hydratation", "rechts": "Wassermoleküle lagern sich an die Ionen an und umhüllen sie." },
+        { "links": "hydratisiertes Kation", "rechts": "Na⁺ mit Hydrathülle, die Sauerstoffatome zeigen zum Ion." },
+        { "links": "hydratisiertes Anion", "rechts": "Cl⁻ mit Hydrathülle, die Wasserstoffatome zeigen zum Ion." }
+      ],
+      "extraRechts": ["Das Salz reagiert mit Wasser zu einem neuen Stoff."],
+      "erklaerung": "Beim Lösen entsteht kein neuer Stoff. Nach dem Eindampfen erhält man das Salz zurück. Die Wassermoleküle richten ihre teilweise negativ geladene Seite (δ−) zum Kation und ihre teilweise positiv geladene Seite (δ+) zum Anion aus."
+    },
+    {
+      "id": "ch-igt-06", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Natriumchlorid schmilzt erst bei 801 °C. Erkläre diese hohe Schmelztemperatur mit dem Bau des Ionengitters.",
+      "stichworte": [
+        { "aspekt": "Zwischen den entgegengesetzt geladenen Ionen wirken starke Anziehungskräfte (Ionenbindung).", "woerter": ["anziehung", "anziehen", "ziehen sich", "ionenbindung", "elektrostatisch"] },
+        { "aspekt": "Die Anziehung wirkt in alle Richtungen, jedes Ion hat viele Nachbarn im Gitter.", "woerter": ["alle richtungen", "allen richtungen", "nachbarn", "sechs", "umgeben", "gitter"] },
+        { "aspekt": "Zum Aufbrechen des Gitters braucht man viel Energie.", "woerter": ["energie", "waerme", "stark erhitzen", "stark erhitzt"] }
+      ],
+      "musterloesung": "Natriumchlorid besteht aus positiv geladenen Natrium-Ionen und negativ geladenen Chlorid-Ionen. Zwischen ihnen wirken starke Anziehungskräfte, die Ionenbindung. Diese Anziehung wirkt in alle Richtungen, jedes Ion ist im Gitter von sechs entgegengesetzt geladenen Nachbarn umgeben. Damit die Ionen beim Schmelzen beweglich werden, muss man sehr viel Energie zuführen. Deshalb ist die Schmelztemperatur so hoch.",
+      "erklaerung": "Beim Schmelzen bleiben die Ionen erhalten. Sie verlassen nur ihre festen Plätze im Gitter. Dafür muss die starke Anziehung überwunden werden."
+    },
+    {
+      "id": "ch-igt-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Ein unbekanntes Salzgemisch färbt die Brennerflamme kräftig gelb. Durch ein Cobaltglas betrachtet, sieht man ein violettes Leuchten. Welche Ionen enthält das Gemisch?",
+      "optionen": [
+        { "text": "Natrium-Ionen und Kalium-Ionen", "richtig": true },
+        { "text": "Nur Natrium-Ionen", "feedback": "Natrium erklärt die gelbe Farbe. Das Cobaltglas verschluckt aber genau dieses gelbe Licht. Das Violett muss von etwas anderem kommen." },
+        { "text": "Nur Kalium-Ionen", "feedback": "Kalium leuchtet fahlviolett, nicht kräftig gelb. Das Gelb stammt von einem anderen Ion." },
+        { "text": "Lithium-Ionen und Kupfer-Ionen", "feedback": "Lithium färbt karminrot und Kupfer grün. Beides passt nicht zur Beobachtung." }
+      ],
+      "erklaerung": "Das kräftige Gelb von Natrium überdeckt die schwache violette Kaliumfarbe. Das blaue **Cobaltglas** verschluckt das gelbe Licht, dann wird das Violett von **Kalium** sichtbar."
+    }
+  ]
+}
