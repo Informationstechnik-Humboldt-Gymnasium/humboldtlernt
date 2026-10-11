@@ -1,0 +1,122 @@
+{
+  "id": "ch-k7-feuer",
+  "titel": "Brenner, Feuer und Brandbekämpfung",
+  "kurz": "Wie der Gasbrenner funktioniert, was ein Feuer zum Brennen braucht und wie man Brände richtig löscht.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Aufbau und Funktionsweise des Gasbrenners beschreiben und ihn sicher bedienen" },
+    { "id": "lz2", "niveau": "G", "text": "Die drei Bedingungen für ein Feuer nennen (Branddreieck) und Flammen als brennende Gase erkennen" },
+    { "id": "lz3", "niveau": "H", "text": "Den Einfluss des Zerteilungsgrades auf die Verbrennung erklären" },
+    { "id": "lz4", "niveau": "G", "text": "Mittel und Methoden zur Brandbekämpfung nennen und den Bedingungen für Feuer zuordnen" },
+    { "id": "lz5", "niveau": "H", "text": "Brandgefahren im Alltag erkennen und Löschmaßnahmen begründet bewerten (z. B. Fettbrand, Feuerlöscher)" }
+  ],
+  "verstehen": {
+    "einstieg": "Ein Holzklotz lässt sich mit einem Streichholz kaum anzünden, Holzspäne brennen sofort. Und warum darf man brennendes Fett in der Pfanne auf keinen Fall mit Wasser löschen?",
+    "abschnitte": [
+      {
+        "titel": "Der Gasbrenner",
+        "text": "Im Chemieraum erhitzt du Stoffe mit dem **Gasbrenner** (z. B. Teclu- oder Bunsenbrenner). Unten strömt Erdgas ein. Über die **Luftzufuhr** mischt sich Luft dazu, das Gemisch brennt oben am Brennerrohr.\n\n- **Leuchtende Flamme** (Luftzufuhr geschlossen): gelb, rußt, etwa 1000 °C. Sie ist gut sichtbar und dient als Sicherheitsflamme.\n- **Rauschende Flamme** (Luftzufuhr offen): blau mit einem inneren Kegel. Die heißeste Stelle liegt knapp über der Spitze des inneren Kegels, etwa 1500 °C. Damit erhitzt du.\n\n**Sicherheit:** Schutzbrille auf, lange Haare zusammenbinden, Brenner standsicher aufstellen, Schlauch prüfen. Zum Anzünden erst die Luftzufuhr schließen, das Streichholz anzünden, dann den Gashahn öffnen und das Gas entzünden. Erst danach die Luftzufuhr einstellen. Zum Ausschalten den Gashahn schließen."
+      },
+      {
+        "titel": "Was ein Feuer braucht",
+        "text": "Ein Feuer brennt nur, wenn **drei Bedingungen** gleichzeitig erfüllt sind (**Branddreieck**):\n\n- ein **brennbarer Stoff** (Holz, Wachs, Gas, Benzin …)\n- **Sauerstoff** (meist aus der Luft)\n- die **Zündtemperatur** muss erreicht sein (bei Holz etwa 300 °C)\n\nFlammen sind **brennende Gase**. Bei einer Kerze schmilzt das Wachs, steigt im Docht hoch und verdampft. Erst der **Wachsdampf** brennt. Pustest du eine Kerze aus, steigt weißer Wachsdampf auf, den du mit einem Streichholz wieder anzünden kannst."
+      },
+      {
+        "titel": "Der Zerteilungsgrad",
+        "text": "Je feiner ein Stoff zerteilt ist, desto **größer ist seine Oberfläche**. Mehr Teilchen kommen gleichzeitig mit Sauerstoff in Kontakt, und kleine Stücke erreichen schneller die Zündtemperatur.\n\n- Holzklotz: schwer zu entzünden, brennt langsam\n- Holzspäne: brennen schnell\n- Holz- oder Mehlstaub in der Luft: kann schlagartig verbrennen, es kommt zu einer **Staubexplosion**\n\nAus demselben Grund brennt Eisenwolle in der Brennerflamme, ein Eisennagel aber nicht."
+      },
+      {
+        "titel": "Brände löschen",
+        "text": "Zum Löschen entfernt man **mindestens eine Seite des Branddreiecks**:\n\n- **Brennstoff entziehen:** Gashahn zudrehen, brennbare Dinge wegräumen\n- **Sauerstoff entziehen (ersticken):** Löschdecke, Sand, Deckel auf den Topf, Kohlenstoffdioxid- oder Schaumlöscher\n- **Unter die Zündtemperatur abkühlen:** Wasser\n\n**Achtung Fettbrand:** Brennendes Fett ist viel heißer als 100 °C. Wasser sinkt darin nach unten und verdampft schlagartig. Aus 1 L Wasser werden etwa 1700 L Dampf. Der Dampf reißt das brennende Fett mit, es entsteht eine riesige Stichflamme (**Fettexplosion**). Richtig: Deckel auflegen, Herd ausschalten.\n\nIm Brandfall gilt: Ruhe bewahren, **Alarmieren** (Notruf 112), **Retten**, erst dann **Löschen**, wenn es ohne Gefahr möglich ist."
+      },
+      {
+        "titel": "Für Schnelle: Brandklassen",
+        "text": "Feuerlöscher tragen Buchstaben für die Brandklassen, für die sie geeignet sind:\n\n- **A** feste, glutbildende Stoffe (Holz, Papier, Textilien)\n- **B** flüssige oder flüssig werdende Stoffe (Benzin, Wachs)\n- **C** Gase (Erdgas, Propan)\n- **D** Metalle (Magnesium, Aluminium)\n- **F** Speiseöle und Speisefette\n\nEin Wasserlöscher ist nur für Klasse A geeignet. Für Fettbrände gibt es spezielle F-Löscher."
+      }
+    ],
+    "merksatz": "Feuer braucht einen **brennbaren Stoff**, **Sauerstoff** und die **Zündtemperatur**. Gelöscht wird, indem man mindestens eine dieser Bedingungen entfernt. Je feiner ein Stoff zerteilt ist, desto heftiger brennt er. Brennendes Fett nie mit Wasser löschen!",
+    "alltag": "In Mühlen und Holzwerkstätten sind Absauganlagen Pflicht: Feiner Mehl- oder Holzstaub in der Luft kann durch einen einzigen Funken explodieren."
+  },
+  "interaktiv": ["ch-feuer"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "ch-fbr-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Welche drei Bedingungen müssen erfüllt sein, damit ein Feuer brennt?",
+      "optionen": [
+        { "text": "brennbarer Stoff, Sauerstoff, Zündtemperatur", "richtig": true },
+        { "text": "brennbarer Stoff, Stickstoff, Wasser", "feedback": "Stickstoff unterhält keine Verbrennung, und Wasser löscht eher." },
+        { "text": "Sauerstoff, Licht, Wind", "feedback": "Licht und Wind sind keine Bedingungen. Ohne brennbaren Stoff brennt nichts." },
+        { "text": "brennbarer Stoff, Kohlenstoffdioxid, Hitze", "feedback": "Kohlenstoffdioxid erstickt Flammen. Gebraucht wird Sauerstoff." }
+      ],
+      "erklaerung": "Das **Branddreieck**: brennbarer Stoff, Sauerstoff und Erreichen der Zündtemperatur. Fehlt eine Seite, geht das Feuer aus."
+    },
+    {
+      "id": "ch-fbr-02", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Bringe die Schritte zum sicheren Anzünden des Gasbrenners in die richtige Reihenfolge.",
+      "elemente": [
+        "Schutzbrille aufsetzen und lange Haare zusammenbinden",
+        "Brenner standsicher aufstellen und den Schlauch prüfen",
+        "Luftzufuhr am Brenner schließen",
+        "Streichholz anzünden",
+        "Gashahn öffnen und das Gas am Brennerrohr entzünden",
+        "Luftzufuhr öffnen, bis die rauschende Flamme entsteht"
+      ],
+      "erklaerung": "Das Streichholz brennt schon, bevor Gas ausströmt. So sammelt sich kein Gas an. Mit geschlossener Luftzufuhr entsteht zuerst die gut sichtbare leuchtende Flamme."
+    },
+    {
+      "id": "ch-fbr-03", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz4",
+      "frage": "Welche Bedingung für das Feuer wird bei der Löschmaßnahme jeweils entfernt?",
+      "paare": [
+        { "links": "Eine Löschdecke wird über den brennenden Papierkorb gelegt.", "rechts": "Sauerstoff wird ferngehalten" },
+        { "links": "Die Feuerwehr spritzt Wasser auf brennendes Holz.", "rechts": "Abkühlen unter die Zündtemperatur" },
+        { "links": "Bei einem Gasbrand wird der Gashahn zugedreht.", "rechts": "Der Brennstoff wird entzogen" }
+      ],
+      "erklaerung": "Jede Löschmethode entfernt eine Seite des Branddreiecks: ersticken (Sauerstoff), kühlen (Zündtemperatur) oder den Brennstoff wegnehmen."
+    },
+    {
+      "id": "ch-fbr-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Warum brennen Holzspäne viel leichter als ein Holzklotz derselben Masse?",
+      "optionen": [
+        { "text": "Die Späne haben eine größere Oberfläche, an der Sauerstoff angreifen kann.", "richtig": true },
+        { "text": "Holzspäne bestehen aus einem anderen Stoff als der Holzklotz.", "feedback": "Es ist derselbe Stoff, nur feiner zerteilt." },
+        { "text": "Die Späne haben eine niedrigere Zündtemperatur, weil sie leichter sind.", "feedback": "Die Zündtemperatur ist eine Eigenschaft des Stoffes. Kleine Stücke erreichen sie aber schneller." },
+        { "text": "Im Holzklotz ist kein Sauerstoff enthalten.", "feedback": "Der Sauerstoff kommt bei beiden aus der Luft. Entscheidend ist, wie viel Oberfläche mit der Luft in Kontakt ist." }
+      ],
+      "erklaerung": "Je höher der **Zerteilungsgrad**, desto größer die Oberfläche. Mehr Holzteilchen kommen gleichzeitig mit Sauerstoff in Kontakt, und die kleinen Stücke werden schneller auf die Zündtemperatur erhitzt."
+    },
+    {
+      "id": "ch-fbr-05", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Welche Aussagen über die Flammen des Gasbrenners sind richtig?",
+      "optionen": [
+        { "text": "Bei geschlossener Luftzufuhr brennt eine gelbe, leuchtende Flamme.", "richtig": true },
+        { "text": "Die rauschende Flamme ist knapp über der Spitze des inneren Kegels am heißesten.", "richtig": true },
+        { "text": "Die leuchtende Flamme ist heißer als die rauschende Flamme.", "feedback": "Die leuchtende Flamme erreicht etwa 1000 °C, die rauschende etwa 1500 °C." },
+        { "text": "Die leuchtende Flamme rußt, weil zu wenig Luft beigemischt ist.", "richtig": true }
+      ],
+      "erklaerung": "Mit mehr Luft verbrennt das Gas vollständiger und heißer. Ohne Luftzufuhr bleibt unverbrannter Kohlenstoff übrig. Er glüht gelb und schlägt sich als Ruß nieder."
+    },
+    {
+      "id": "ch-fbr-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz5",
+      "frage": "In der Küche fängt Öl in einer Pfanne Feuer. Was ist die richtige Reaktion?",
+      "optionen": [
+        { "text": "Einen passenden Deckel auflegen und den Herd ausschalten.", "richtig": true },
+        { "text": "Ein Glas Wasser in die Pfanne gießen.", "feedback": "Lebensgefährlich! Das Wasser verdampft schlagartig und schleudert brennendes Fett heraus (Fettexplosion)." },
+        { "text": "Die Pfanne schnell zum Spülbecken tragen.", "feedback": "Dabei kann brennendes Öl überschwappen, und du verbrennst dich." },
+        { "text": "Kräftig in die Flamme pusten.", "feedback": "Pusten führt neuen Sauerstoff zu und verteilt das brennende Öl." }
+      ],
+      "erklaerung": "Der Deckel erstickt die Flamme, weil kein Sauerstoff mehr herankommt. Das Ausschalten des Herdes verhindert, dass das Öl weiter über die Zündtemperatur erhitzt wird. Deckel erst nach dem Abkühlen wieder abnehmen."
+    },
+    {
+      "id": "ch-fbr-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz5",
+      "frage": "Erkläre, warum man brennendes Fett nicht mit Wasser löschen darf.",
+      "stichworte": [
+        { "aspekt": "Das Fett ist viel heißer als 100 °C, das Wasser sinkt darin nach unten", "woerter": ["heisser als 100", "ueber 100", "sinkt", "schwerer", "dichte", "nach unten", "sehr heiss"] },
+        { "aspekt": "Das Wasser verdampft schlagartig, das Volumen nimmt stark zu", "woerter": ["verdampf", "wasserdampf", "dampf", "siedet"] },
+        { "aspekt": "Der Dampf reißt brennendes Fett mit: Stichflamme / Fettexplosion", "woerter": ["fettexplosion", "stichflamme", "explosion", "reisst", "mitgerissen", "spritzt", "schleudert", "feuerball"] }
+      ],
+      "musterloesung": "Brennendes Fett ist viel heißer als 100 °C. Gießt man Wasser hinein, sinkt es nach unten, weil es schwerer ist als Fett. Dort verdampft es schlagartig, aus 1 L Wasser werden etwa 1700 L Dampf. Der Dampf reißt das brennende Fett mit nach oben, es entsteht eine riesige Stichflamme, eine Fettexplosion.",
+      "erklaerung": "Richtig löschst du einen Fettbrand mit einem Deckel oder einer Löschdecke (Sauerstoff entziehen) oder mit einem F-Löscher. Den Herd ausschalten nicht vergessen."
+    }
+  ]
+}

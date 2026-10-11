@@ -1,0 +1,125 @@
+{
+  "id": "ch-k7-energie-masse",
+  "titel": "Energie, Oxidation und Massenerhaltung",
+  "kurz": "Warum manche Reaktionen Wärme abgeben und andere Wärme brauchen, was beim Verbrennen von Metallen und Nichtmetallen entsteht und warum dabei keine Masse verloren geht.",
+  "reihenfolge": 3,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Exotherme und endotherme Reaktionen unterscheiden und Energiediagramme beschreiben" },
+    { "id": "lz2", "niveau": "H", "text": "Die Aktivierungsenergie als Einflussgröße einer chemischen Reaktion erklären, auch die Wirkung eines Katalysators" },
+    { "id": "lz3", "niveau": "G", "text": "Reaktionen von Metallen und Nichtmetallen mit Sauerstoff als Oxidation beschreiben und die Oxide benennen" },
+    { "id": "lz4", "niveau": "G", "text": "Das Gesetz von der Erhaltung der Masse anwenden" },
+    { "id": "lz5", "niveau": "H", "text": "Die Massenerhaltung mit dem Atommodell von Dalton erklären" }
+  ],
+  "verstehen": {
+    "einstieg": "Ein Magnesiumband verbrennt mit grellem Licht, aber nur, wenn man es vorher in die Flamme hält. Und warum wird Eisenwolle beim Verbrennen schwerer, eine Kerze aber leichter?",
+    "abschnitte": [
+      {
+        "titel": "Exotherm und endotherm",
+        "text": "Jeder Stoff enthält Energie, die in den Teilchen und ihren Verbindungen steckt (**innere Energie**). Bei einer Reaktion ändert sich diese Energie.\n\n- **Exotherm:** Die Produkte haben weniger Energie als die Edukte. Der Unterschied wird als Wärme oder Licht **abgegeben**. Beispiele: Verbrennung von Magnesium, Reaktion von Eisen mit Schwefel.\n- **Endotherm:** Die Produkte haben mehr Energie als die Edukte. Die Reaktion läuft nur, solange Energie **zugeführt** wird. Beispiel: Silberoxid zerfällt beim Erhitzen in Silber und Sauerstoff. Nimmst du den Brenner weg, hört die Reaktion auf.\n\nDen Energieunterschied zwischen Edukten und Produkten nennt man **Reaktionsenergie**."
+      },
+      {
+        "titel": "Aktivierungsenergie und Energiediagramm",
+        "text": "Auch exotherme Reaktionen starten meist nicht von selbst. Magnesium liegt an der Luft, ohne zu brennen. Man muss erst Energie zuführen, die **Aktivierungsenergie**. Sie ist der „Anstoß“, danach läuft eine exotherme Reaktion von selbst weiter.\n\nIm **Energiediagramm** zeigt die Hochachse die Energie, die Rechtsachse den Reaktionsverlauf. Die Kurve steigt von den Edukten zu einem „Berg“ an (Aktivierungsenergie) und fällt dann zu den Produkten. Liegen die Produkte tiefer als die Edukte, ist die Reaktion exotherm. Liegen sie höher, ist sie endotherm.\n\nEin **Katalysator** senkt die Aktivierungsenergie. Die Reaktion startet dann leichter und läuft schneller ab. Der Katalysator wird dabei nicht verbraucht, und die Reaktionsenergie bleibt gleich. Beispiele: der Abgaskatalysator im Auto, Enzyme im Körper."
+      },
+      {
+        "titel": "Oxidation: Reaktion mit Sauerstoff",
+        "text": "Reagiert ein Stoff mit Sauerstoff, nennt man das **Oxidation**. Die Produkte heißen **Oxide**.\n\n- Metalle bilden feste **Metalloxide**: Magnesium + Sauerstoff → Magnesiumoxid (weißes Pulver), Kupfer + Sauerstoff → Kupferoxid (schwarz), Eisen + Sauerstoff → Eisenoxid.\n- Nichtmetalle bilden meist gasförmige **Nichtmetalloxide**: Kohlenstoff + Sauerstoff → Kohlenstoffdioxid, Schwefel + Sauerstoff → Schwefeldioxid (stechend riechend, giftig).\n\nEine **Verbrennung** ist eine schnelle Oxidation mit Flamme oder Glut. Das **Rosten** von Eisen ist eine langsame Oxidation ohne Flamme."
+      },
+      {
+        "titel": "Das Gesetz von der Erhaltung der Masse",
+        "text": "Führt man eine Reaktion in einem **geschlossenen Gefäß** auf einer Waage durch, ändert sich die Masse nicht. Das fand Antoine Lavoisier im 18. Jahrhundert heraus:\n\n**Bei einer chemischen Reaktion ist die Masse der Produkte gleich der Masse der Edukte.**\n\nBeispiel: 5,6 g Eisen und 3,2 g Schwefel reagieren zu 8,8 g Eisensulfid.\n\nIn einem **offenen** Gefäß scheint die Masse sich zu ändern. Eisenwolle wird beim Verbrennen schwerer, weil Sauerstoff aus der Luft gebunden wird. Eine Kerze wird leichter, weil die Produkte Kohlenstoffdioxid und Wasserdampf als Gase entweichen. Rechnet man alle Gase mit, stimmt die Bilanz immer."
+      },
+      {
+        "titel": "Daltons Atommodell",
+        "text": "John Dalton erklärte die Massenerhaltung um 1808 mit seinem **Atommodell**:\n\n- Jedes Element besteht aus kleinsten Teilchen, den **Atomen**.\n- Alle Atome eines Elements sind gleich und haben dieselbe Masse. Atome verschiedener Elemente unterscheiden sich in Masse und Größe.\n- Bei chemischen Reaktionen werden Atome **weder zerstört noch neu gebildet**. Sie werden nur neu angeordnet.\n- In einer Verbindung sind Atome in einem festen Zahlenverhältnis verbunden.\n\nWenn vorher und nachher dieselben Atome vorhanden sind, muss auch die Masse gleich bleiben. Heute weiß man, dass Atome aus noch kleineren Teilchen bestehen. Für chemische Reaktionen ist Daltons Modell aber weiterhin sehr nützlich."
+      }
+    ],
+    "merksatz": "**Exotherme** Reaktionen geben Energie ab, **endotherme** nehmen Energie auf. Fast jede Reaktion braucht zum Start die **Aktivierungsenergie**, ein Katalysator senkt sie. Reaktionen mit Sauerstoff heißen **Oxidation**, die Produkte **Oxide**. Bei jeder chemischen Reaktion bleibt die **Gesamtmasse erhalten**, weil die Atome nur neu angeordnet werden.",
+    "alltag": "Ein Wärmekissen mit Eisenpulver wird warm, sobald Luft an das Pulver kommt: Das Eisen oxidiert langsam, und die Reaktion ist exotherm."
+  },
+  "interaktiv": ["ch-energiediagramm"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "ch-emh-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Was bedeutet „exotherm“?",
+      "optionen": [
+        { "text": "Bei der Reaktion wird Energie an die Umgebung abgegeben.", "richtig": true },
+        { "text": "Die Reaktion braucht ständig Energie von außen.", "feedback": "Das beschreibt eine endotherme Reaktion." },
+        { "text": "Die Reaktion startet ohne jede Aktivierungsenergie.", "feedback": "Auch exotherme Reaktionen brauchen meist einen Anstoß, z. B. eine Flamme." },
+        { "text": "Bei der Reaktion entsteht Sauerstoff.", "feedback": "„Exotherm“ sagt etwas über die Energie aus, nicht über die Stoffe." }
+      ],
+      "erklaerung": "„Exo“ heißt „nach außen“: Bei einer **exothermen** Reaktion wird Energie abgegeben, z. B. als Wärme und Licht. Die Produkte haben weniger Energie als die Edukte."
+    },
+    {
+      "id": "ch-emh-02", "typ": "zahl", "schwierigkeit": "leicht", "lernziel": "lz4",
+      "frage": "In einem geschlossenen Reagenzglas reagieren 5,6 g Eisen vollständig mit 3,2 g Schwefel zu Eisensulfid. Welche Masse an Eisensulfid entsteht?",
+      "gegeben": "`m(Eisen) = 5,6 g`, `m(Schwefel) = 3,2 g`",
+      "gesucht": "Masse des Eisensulfids",
+      "gesuchtSymbol": "m",
+      "loesung": 8.8, "einheit": "g",
+      "rechenweg": [
+        "Gesetz von der Erhaltung der Masse: Masse der Produkte = Masse der Edukte",
+        "`m = 5,6 g + 3,2 g`",
+        "`m = 8,8 g`"
+      ],
+      "erklaerung": "Die Atome werden nur neu angeordnet. Deshalb hat das Eisensulfid genau die Masse von Eisen und Schwefel zusammen."
+    },
+    {
+      "id": "ch-emh-03", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Ordne jedem Stoff das Produkt zu, das bei seiner Oxidation entsteht.",
+      "paare": [
+        { "links": "Magnesium", "rechts": "weißes, festes Magnesiumoxid" },
+        { "links": "Kupfer", "rechts": "schwarzes, festes Kupferoxid" },
+        { "links": "Kohlenstoff", "rechts": "farbloses Gas Kohlenstoffdioxid" },
+        { "links": "Schwefel", "rechts": "stechend riechendes Gas Schwefeldioxid" }
+      ],
+      "erklaerung": "Metalle bilden feste **Metalloxide**, Nichtmetalle wie Kohlenstoff und Schwefel meist gasförmige **Nichtmetalloxide**."
+    },
+    {
+      "id": "ch-emh-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Was bewirkt ein Katalysator bei einer chemischen Reaktion?",
+      "optionen": [
+        { "text": "Er senkt die Aktivierungsenergie, wird aber selbst nicht verbraucht.", "richtig": true },
+        { "text": "Er vergrößert die Reaktionsenergie, sodass mehr Wärme frei wird.", "feedback": "Die Energie von Edukten und Produkten ändert der Katalysator nicht. Die Reaktionsenergie bleibt gleich." },
+        { "text": "Er wird bei der Reaktion zu einem der Produkte.", "feedback": "Ein Katalysator liegt nach der Reaktion unverändert vor." },
+        { "text": "Er macht aus einer endothermen eine exotherme Reaktion.", "feedback": "Ob eine Reaktion exo- oder endotherm ist, hängt von Edukten und Produkten ab, nicht vom Katalysator." }
+      ],
+      "erklaerung": "Ein **Katalysator** öffnet einen Weg mit niedrigerem „Energieberg“. Die Reaktion startet leichter und läuft schneller, die Reaktionsenergie bleibt gleich."
+    },
+    {
+      "id": "ch-emh-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Schwarzes Silberoxid zerfällt beim Erhitzen in Silber und Sauerstoff. Nimmt man den Brenner weg, hört die Reaktion sofort auf. Was zeigt das Energiediagramm dieser Reaktion?",
+      "optionen": [
+        { "text": "Die Produkte liegen höher als die Edukte: Die Reaktion ist endotherm.", "richtig": true },
+        { "text": "Die Produkte liegen tiefer als die Edukte: Die Reaktion ist exotherm.", "feedback": "Dann würde die Reaktion nach dem Start von selbst weiterlaufen, wie bei Eisen und Schwefel." },
+        { "text": "Edukte und Produkte liegen gleich hoch.", "feedback": "Bei jeder chemischen Reaktion wird Energie umgesetzt." },
+        { "text": "Es gibt keinen Energieberg, weil die Reaktion keine Aktivierungsenergie braucht.", "feedback": "Ohne Erhitzen zerfällt Silberoxid gar nicht." }
+      ],
+      "erklaerung": "Die Zersetzung von Silberoxid ist **endotherm**: Silber und Sauerstoff zusammen enthalten mehr Energie als Silberoxid. Diese Energie muss ständig zugeführt werden."
+    },
+    {
+      "id": "ch-emh-06", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz5",
+      "frage": "Welche Aussagen aus Daltons Atommodell erklären das Gesetz von der Erhaltung der Masse?",
+      "optionen": [
+        { "text": "Bei chemischen Reaktionen werden Atome weder zerstört noch neu gebildet.", "richtig": true },
+        { "text": "Alle Atome eines Elements haben dieselbe Masse.", "richtig": true },
+        { "text": "Bei chemischen Reaktionen werden Atome nur neu angeordnet.", "richtig": true },
+        { "text": "Atome eines Elements können sich in Atome eines anderen Elements umwandeln.", "feedback": "Genau das schließt Dalton aus. Die Atome bleiben, was sie sind." },
+        { "text": "Bei exothermen Reaktionen geht mit der Energie auch Masse verloren.", "feedback": "Eine Waage kann bei chemischen Reaktionen keinen Massenverlust messen. Gleiche Atome vorher und nachher bedeuten gleiche Masse." }
+      ],
+      "erklaerung": "Wenn vor und nach der Reaktion dieselben Atome mit derselben Masse vorhanden sind, kann sich die Gesamtmasse nicht ändern."
+    },
+    {
+      "id": "ch-emh-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Eine brennende Kerze steht auf einer offenen Waage und wird mit der Zeit leichter. Widerspricht das dem Gesetz von der Erhaltung der Masse? Begründe.",
+      "stichworte": [
+        { "aspekt": "Nein, das Gesetz gilt trotzdem", "woerter": ["nein", "kein widerspruch", "widerspricht nicht", "gilt trotzdem", "gilt auch"] },
+        { "aspekt": "Die Produkte Kohlenstoffdioxid und Wasser(dampf) sind Gase und entweichen", "woerter": ["entweich", "gasfoermig", "gase", "in die luft", "kohlenstoffdioxid", "wasserdampf"] },
+        { "aspekt": "Im geschlossenen Gefäß (mit dem gebundenen Sauerstoff) bliebe die Masse gleich", "woerter": ["geschlossen", "gleich bleiben", "bliebe gleich", "bleibt gleich", "sauerstoff mit"] }
+      ],
+      "musterloesung": "Nein, das ist kein Widerspruch. Der Wachsdampf reagiert mit Sauerstoff zu Kohlenstoffdioxid und Wasserdampf. Diese Produkte sind Gase und entweichen in die Luft, deshalb zeigt die offene Waage weniger an. In einem geschlossenen Gefäß, in dem auch der Sauerstoff mitgewogen wird, bleibt die Masse gleich.",
+      "erklaerung": "Das Gesetz von der Erhaltung der Masse lässt sich nur überprüfen, wenn kein Stoff entweichen oder hinzukommen kann, also in einem geschlossenen System."
+    }
+  ]
+}

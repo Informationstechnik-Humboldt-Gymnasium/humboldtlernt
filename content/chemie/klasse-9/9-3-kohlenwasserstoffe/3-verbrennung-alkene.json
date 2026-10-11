@@ -1,0 +1,124 @@
+{
+  "id": "ch-k9-verbrennung-alkene",
+  "titel": "Verbrennung, Alkene und Alkine",
+  "kurz": "Was beim Verbrennen von Kohlenwasserstoffen entsteht, wie man Doppel- und Dreifachbindungen erkennt und wie man den Einsatz von Erdöl bewertet.",
+  "reihenfolge": 3,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Die Verbrennungsprodukte von Alkanen nennen und mit Nachweisreaktionen bestätigen (Kalkwasser, Watesmo-Papier)" },
+    { "id": "lz2", "niveau": "H", "text": "Reaktionsgleichungen für die vollständige Verbrennung von Alkanen aufstellen und die Energieumwandlung beschreiben" },
+    { "id": "lz3", "niveau": "G", "text": "Alkene und Alkine als ungesättigte Kohlenwasserstoffe erkennen, benennen und mit Bromwasser von Alkanen unterscheiden" },
+    { "id": "lz4", "niveau": "H", "text": "Die Verwendung von Erdölprodukten unter den Aspekten Verfügbarkeit, Nachhaltigkeit und Folgeschäden bewerten" }
+  ],
+  "verstehen": {
+    "einstieg": "Ein Gasherd brennt mit einer blauen, fast unsichtbaren Flamme. Eine Kerze brennt gelb und kann rußen. Was entsteht eigentlich, wenn Kohlenwasserstoffe verbrennen, und wie kann man das nachweisen?",
+    "abschnitte": [
+      {
+        "titel": "Verbrennungsprodukte nachweisen",
+        "text": "**Hypothese:** Alkane bestehen aus Kohlenstoff und Wasserstoff. Beim Verbrennen reagieren beide mit Sauerstoff. Es sollten also Kohlenstoffdioxid und Wasser entstehen.\n\n**Versuch:** Man saugt die Abgase einer Brennerflamme (oder einer Kerze) durch einen Trichter, ein gekühltes U-Rohr und eine Waschflasche mit Kalkwasser.\n\n- Im kalten U-Rohr sammelt sich eine farblose Flüssigkeit. **Watesmo-Papier** färbt sich damit blau → **Wasser** ist nachgewiesen.\n- Das **Kalkwasser** wird trüb → **Kohlenstoffdioxid** ist nachgewiesen.\n\nDie Hypothese ist bestätigt. Bei **Sauerstoffmangel** verbrennen Kohlenwasserstoffe unvollständig: Dann entstehen zusätzlich **Ruß** (Kohlenstoff) und das sehr giftige, geruchlose **Kohlenstoffmonooxid** CO. Deshalb dürfen Gasthermen und Grills nie in geschlossenen Räumen ohne Abzug betrieben werden.\n\nSicherheit: Schutzbrille, Haare zusammenbinden, Gashahn nur bei brennendem Streichholz öffnen."
+      },
+      {
+        "titel": "Reaktionsgleichungen aufstellen",
+        "text": "Bei der vollständigen Verbrennung von Methan gilt:\n\nCH₄ + 2 O₂ → CO₂ + 2 H₂O\n\nSo gleichst du die Gleichung aus:\n\n- Zuerst die **C-Atome**: Jedes C-Atom wird zu einem CO₂-Molekül.\n- Dann die **H-Atome**: Je zwei H-Atome ergeben ein H₂O-Molekül.\n- Zuletzt die **O-Atome** rechts zählen und die passende Zahl O₂ links ergänzen.\n\nBeispiel Propan: 3 C → 3 CO₂, 8 H → 4 H₂O, rechts stehen 3 · 2 + 4 = 10 O-Atome, also 5 O₂:\n\nC₃H₈ + 5 O₂ → 3 CO₂ + 4 H₂O\n\nErgibt sich eine ungerade Zahl O-Atome, verdoppelt man alles. Butan: 2 C₄H₁₀ + 13 O₂ → 8 CO₂ + 10 H₂O.\n\nDie Verbrennung ist **exotherm**. Ein Teil der in den Stoffen gespeicherten chemischen Energie wird in Wärme und Licht umgewandelt. Diese Wärme nutzt man in Heizungen, Gasherden und Motoren."
+      },
+      {
+        "titel": "Alkene und Alkine",
+        "text": "Kohlenwasserstoffe können auch **Mehrfachbindungen** zwischen C-Atomen enthalten. Sie tragen dann weniger H-Atome und heißen **ungesättigt**.\n\n- **Alkene** haben eine C=C-**Doppelbindung**. Allgemeine Formel CₙH₂ₙ, Endung **-en**. Beispiel: Ethen CH₂=CH₂, ein Pflanzenhormon, das Obst reifen lässt, und Ausgangsstoff für den Kunststoff Polyethen.\n- **Alkine** haben eine C≡C-**Dreifachbindung**. Allgemeine Formel CₙH₂ₙ₋₂, Endung **-in**. Beispiel: Ethin CH≡CH (Acetylen). Es verbrennt mit Sauerstoff so heiß (etwa 3000 °C), dass man damit Stahl schweißen kann.\n\nDie Lage der Mehrfachbindung gibt eine Zahl an, möglichst klein: CH₂=CH–CH₂–CH₃ ist **But-1-en**, CH₃–CH=CH–CH₃ ist **But-2-en**.\n\nRäumlich: Bei einer Einfachbindung sind die Bindungen tetraedrisch angeordnet (etwa 109,5°). An einer Doppelbindung liegen die Atome in einer Ebene (120°), an einer Dreifachbindung auf einer Geraden (180°)."
+      },
+      {
+        "titel": "Nachweis mit Bromwasser",
+        "text": "Gibt man ein Alken zu gelbbraunem **Bromwasser**, wird es **sofort entfärbt**. Die Brom-Moleküle lagern sich an die Doppelbindung an (**Addition**), aus der Doppel- wird eine Einfachbindung:\n\nCH₂=CH₂ + Br₂ → CH₂Br–CH₂Br (1,2-Dibromethan)\n\nAlkane haben keine Mehrfachbindung. Mit ihnen bleibt das Bromwasser im Dunkeln gelbbraun. So lassen sich gesättigte und ungesättigte Kohlenwasserstoffe unterscheiden.\n\nSicherheit: Brom ist giftig und ätzend. Diesen Versuch führt die Lehrkraft unter dem Abzug durch."
+      },
+      {
+        "titel": "Erdölprodukte bewerten",
+        "text": "Erdöl liefert Treibstoffe, Heizöl, Schmierstoffe und den Rohstoff für fast alle Kunststoffe, viele Medikamente, Farben und Waschmittel. Für eine Bewertung helfen mehrere Blickwinkel:\n\n- **Verfügbarkeit:** Erdöl und Erdgas sind fossil. Sie bilden sich über Millionen Jahre und sind deshalb begrenzt.\n- **Nachhaltigkeit:** Beim Verbrennen wird CO₂ frei, das lange im Boden gespeichert war. Das verstärkt den Treibhauseffekt und damit den Klimawandel.\n- **Folgeschäden:** Ölunfälle verschmutzen Meere und Küsten, Abgase belasten die Luft, Plastikmüll gelangt in die Umwelt.\n- **Alternativen:** Strom aus Wind und Sonne, Biogas, sparsamere Motoren, Recycling von Kunststoffen.\n\nPrüfe bei Informationen über Erdöl und Klima immer die Quelle: Wer schreibt das, mit welchem Interesse, und gibt es Belege?"
+      }
+    ],
+    "merksatz": "Bei der vollständigen Verbrennung von Kohlenwasserstoffen entstehen **Kohlenstoffdioxid** (Kalkwasser wird trüb) und **Wasser** (Watesmo-Papier wird blau). Die Reaktion ist exotherm.\n\n**Alkene** (C=C, CₙH₂ₙ) und **Alkine** (C≡C, CₙH₂ₙ₋₂) sind ungesättigt. Sie entfärben Bromwasser sofort.",
+    "alltag": "Ein Kohlenstoffmonooxid-Melder warnt, wenn eine Gastherme oder ein Kaminofen schlecht verbrennt. CO kann man weder riechen noch sehen, schon kleine Mengen sind lebensgefährlich."
+  },
+  "interaktiv": ["ch-molekuelbaukasten"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "ch-kwv-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Ordne jeder Beobachtung zu, was damit nachgewiesen wird.",
+      "paare": [
+        { "links": "Kalkwasser wird trüb.", "rechts": "Kohlenstoffdioxid" },
+        { "links": "Watesmo-Papier färbt sich blau.", "rechts": "Wasser" },
+        { "links": "Ein glimmender Holzspan flammt auf.", "rechts": "Sauerstoff" },
+        { "links": "Bromwasser wird sofort entfärbt.", "rechts": "eine C=C-Doppelbindung" }
+      ],
+      "erklaerung": "Beim Verbrennen von Alkanen nutzt man die Kalkwasserprobe für CO₂ und Watesmo-Papier für Wasser. Die Glimmspanprobe kennst du aus Klasse 7, die Bromwasserprobe zeigt ungesättigte Kohlenwasserstoffe."
+    },
+    {
+      "id": "ch-kwv-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz3",
+      "frage": "Welche Formel gehört zu einem **Alken**?",
+      "optionen": [
+        { "text": "C₃H₆", "richtig": true },
+        { "text": "C₃H₈", "feedback": "C₃H₈ passt zu CₙH₂ₙ₊₂, das ist das Alkan Propan." },
+        { "text": "C₃H₄", "feedback": "C₃H₄ passt zu CₙH₂ₙ₋₂, das ist das Alkin Propin." },
+        { "text": "C₃H₇OH", "feedback": "Die OH-Gruppe zeigt einen Alkohol (Propanol), kein Alken." }
+      ],
+      "erklaerung": "Alkene haben die allgemeine Formel CₙH₂ₙ. Für n = 3 ergibt das C₃H₆, das ist Propen: CH₂=CH–CH₃."
+    },
+    {
+      "id": "ch-kwv-03", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Gleiche die Verbrennung von Propan aus:\n\nC₃H₈ + **x** O₂ → 3 CO₂ + 4 H₂O\n\nWelche Zahl muss für **x** stehen?",
+      "gesucht": "Koeffizient vor O₂", "gesuchtSymbol": "x",
+      "loesung": 5, "einheit": "", "toleranz": 0,
+      "rechenweg": ["Rechts: 3 CO₂ enthalten 3 · 2 = 6 O-Atome.", "Rechts: 4 H₂O enthalten 4 O-Atome.", "Zusammen 10 O-Atome, die alle aus O₂ stammen.", "10 : 2 = 5, also 5 O₂."],
+      "erklaerung": "Gleiche immer zuerst C und H aus und zum Schluss den Sauerstoff, weil O₂ nur auf der linken Seite allein steht."
+    },
+    {
+      "id": "ch-kwv-04", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Eine Kerze brennt unter einer Glasglocke mit wenig Luft und rußt stark. Welche Stoffe können dabei entstehen?",
+      "optionen": [
+        { "text": "Ruß (Kohlenstoff)", "richtig": true },
+        { "text": "Kohlenstoffmonooxid", "richtig": true },
+        { "text": "Wasser", "richtig": true },
+        { "text": "Sauerstoff", "feedback": "Sauerstoff wird bei der Verbrennung verbraucht, nicht gebildet." },
+        { "text": "Wasserstoff, der sich am Glas als Beschlag niederschlägt", "feedback": "Der Beschlag am Glas ist Wasser. Wasserstoff wäre ein Gas und würde nicht kondensieren." }
+      ],
+      "erklaerung": "Bei Sauerstoffmangel reicht der Sauerstoff nicht, um allen Kohlenstoff zu CO₂ zu oxidieren. Es entstehen Ruß und giftiges CO. Der Wasserstoff reagiert trotzdem zu Wasser."
+    },
+    {
+      "id": "ch-kwv-05", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Benzin kann man vereinfacht als Octan C₈H₁₈ betrachten. Welche Masse Kohlenstoffdioxid entsteht, wenn **1 kg Octan** vollständig verbrennt?\n\n2 C₈H₁₈ + 25 O₂ → 16 CO₂ + 18 H₂O",
+      "gegeben": "`m(Octan) = 1 kg`, M(C) = 12 g/mol, M(H) = 1 g/mol, M(O) = 16 g/mol",
+      "gesucht": "Masse des Kohlenstoffdioxids", "gesuchtSymbol": "m(CO₂)",
+      "loesung": 3.09, "einheit": "kg", "alternativEinheiten": { "g": 0.001 },
+      "rechenweg": [
+        "M(C₈H₁₈) = 8 · 12 g/mol + 18 · 1 g/mol = 114 g/mol",
+        "`n = m / M` = 1000 g : 114 g/mol ≈ 8,77 mol Octan",
+        "Laut Gleichung entstehen aus 2 mol Octan 16 mol CO₂, aus 1 mol also 8 mol.",
+        "n(CO₂) = 8 · 8,77 mol ≈ 70,2 mol",
+        "M(CO₂) = 12 g/mol + 2 · 16 g/mol = 44 g/mol",
+        "m(CO₂) = 70,2 mol · 44 g/mol ≈ 3088 g ≈ 3,09 kg"
+      ],
+      "erklaerung": "Aus 1 kg Benzin entstehen etwa 3 kg CO₂. Das ist mehr als der Kraftstoff selbst wiegt, weil bei der Verbrennung Sauerstoff aus der Luft gebunden wird."
+    },
+    {
+      "id": "ch-kwv-06", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Zwei farblose Flüssigkeiten sind nicht beschriftet: Hexan und Hex-1-en. Die Lehrkraft gibt unter dem Abzug zu jeder Probe etwas Bromwasser. Welches Ergebnis erwartest du?",
+      "optionen": [
+        { "text": "Hex-1-en entfärbt das Bromwasser sofort, bei Hexan bleibt es gelbbraun.", "richtig": true },
+        { "text": "Hexan entfärbt das Bromwasser sofort, Hex-1-en nicht.", "feedback": "Andersherum: Brom lagert sich an die Doppelbindung an. Nur Hex-1-en hat eine." },
+        { "text": "Beide entfärben das Bromwasser sofort.", "feedback": "Hexan ist gesättigt. Ohne Doppelbindung findet keine schnelle Addition statt." },
+        { "text": "Beide Proben trüben sich weiß.", "feedback": "Eine weiße Trübung zeigt Kalkwasser mit CO₂, nicht Bromwasser." }
+      ],
+      "erklaerung": "Die schnelle Entfärbung von Bromwasser ist der Nachweis für C=C-Doppelbindungen (und Dreifachbindungen). Das Brom wird an die Mehrfachbindung addiert."
+    },
+    {
+      "id": "ch-kwv-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Ein Politiker sagt: „Erdöl ist viel zu wertvoll, um es einfach zu verbrennen.“ Nimm Stellung und berücksichtige dabei mindestens drei Gesichtspunkte.",
+      "stichworte": [
+        { "aspekt": "Verfügbarkeit: Erdöl ist fossil und begrenzt", "woerter": ["begrenzt", "endlich", "fossil", "vorraete", "irgendwann"] },
+        { "aspekt": "Folgen der Verbrennung: CO₂, Treibhauseffekt, Klimawandel", "woerter": ["co2", "kohlenstoffdioxid", "treibhaus", "klima"] },
+        { "aspekt": "Erdöl als Rohstoff für Kunststoffe, Medikamente oder Farben", "woerter": ["kunststoff", "plastik", "medikament", "rohstoff", "farbe"] },
+        { "aspekt": "Abwägung oder Alternativen (z. B. erneuerbare Energien, Recycling)", "woerter": ["alternativ", "erneuerbar", "wind", "sonne", "solar", "recycl", "einerseits", "abwaeg"] }
+      ],
+      "musterloesung": "Ich stimme der Aussage größtenteils zu. Erdöl ist fossil und damit begrenzt, es bildet sich nur in Millionen Jahren neu. Beim Verbrennen entsteht Kohlenstoffdioxid, das den Treibhauseffekt und den Klimawandel verstärkt. Gleichzeitig ist Erdöl ein wichtiger Rohstoff für Kunststoffe, Medikamente und Farben, für die es bisher schwer Ersatz gibt. Einerseits brauchen wir heute noch Benzin und Heizöl, andererseits können wir Energie oft auch durch Alternativen wie Wind und Sonne bereitstellen. Deshalb sollte man Erdöl lieber stofflich nutzen als verbrennen.",
+      "erklaerung": "Eine gute Bewertung nennt Argumente aus mehreren Blickwinkeln (Umwelt, Rohstoffe, Wirtschaft), wägt sie gegeneinander ab und kommt zu einem begründeten eigenen Urteil."
+    }
+  ]
+}

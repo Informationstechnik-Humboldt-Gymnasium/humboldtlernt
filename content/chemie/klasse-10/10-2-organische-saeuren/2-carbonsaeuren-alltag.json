@@ -1,0 +1,133 @@
+{
+  "id": "ch-k10-carbonsaeuren-alltag",
+  "titel": "Carbonsäuren im Alltag",
+  "kurz": "Ameisen-, Milch-, Oxal- und Citronensäure: wo sie vorkommen, wie sie gebaut sind und wie man einen Entkalker sinnvoll auswählt.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Wichtige Carbonsäuren des Alltags mit Vorkommen und Verwendung nennen" },
+    { "id": "lz2", "niveau": "G", "text": "Carbonsäuren nach der Anzahl ihrer Carboxygruppen in Mono-, Di- und Tricarbonsäuren ordnen" },
+    { "id": "lz3", "niveau": "H", "text": "Schmelztemperatur und Löslichkeit mit der Anzahl der Carboxy- und Hydroxygruppen begründen" },
+    { "id": "lz4", "niveau": "G", "text": "Organische und anorganische Säuren vergleichen" },
+    { "id": "lz5", "niveau": "H", "text": "Entkalker nach Wirksamkeit, Sicherheit und Umweltverträglichkeit bewerten" }
+  ],
+  "verstehen": {
+    "einstieg": "Ameisen, Brennnesseln, Joghurt, Rhabarber, Zitronen und der Entkalker im Badschrank haben etwas gemeinsam. Was?",
+    "abschnitte": [
+      {
+        "titel": "Carbonsäuren in der Natur und im Haushalt",
+        "text": "Alle Stoffe mit mindestens einer Carboxygruppe –COOH heißen **Carbonsäuren**. Viele kommen in Lebewesen vor:\n\n- **Ameisensäure** (Methansäure) H–COOH: Ameisen versprühen sie zur Verteidigung, auch in Brennnesselhaaren steckt sie. Verwendet wird sie in Entkalkern und in der Imkerei gegen Milben.\n- **Milchsäure** CH₃–CH(OH)–COOH: Milchsäurebakterien bilden sie in Joghurt, Sauerkraut und sauren Gurken. Auch deine Muskeln bilden sie bei großer Anstrengung. Sie wird in milden Entkalkern und Hautpflegemitteln verwendet.\n- **Oxalsäure** (Ethandisäure) HOOC–COOH: kommt in Rhabarber, Sauerampfer und Spinat vor. In größeren Mengen ist sie giftig. Sie bindet Calcium-Ionen zu schwer löslichem Calciumoxalat, aus dem auch viele Nierensteine bestehen.\n- **Citronensäure**: Zitronensaft enthält etwa 5 % davon. Sie wird als Säuerungsmittel (E 330), in Brausepulver und in Entkalkern eingesetzt.\n\nMilch- und Citronensäure tragen zusätzlich eine **Hydroxygruppe** –OH. Man nennt sie **Hydroxycarbonsäuren**."
+      },
+      {
+        "titel": "Mono-, Di- und Tricarbonsäuren",
+        "text": "Man ordnet Carbonsäuren nach der **Anzahl ihrer Carboxygruppen**:\n\n- **Monocarbonsäuren** (eine –COOH): Ameisen-, Essig-, Milchsäure\n- **Dicarbonsäuren** (zwei): Oxalsäure, Weinsäure, Äpfelsäure\n- **Tricarbonsäuren** (drei): Citronensäure\n\nCitronensäure (C₆H₈O₇) als Halbstrukturformel:\n\n```\n      CH₂–COOH\n      |\nHO – C – COOH\n      |\n      CH₂–COOH\n```\n\nJede Carboxygruppe kann ein Proton abgeben. Eine Dicarbonsäure kann deshalb zwei, eine Tricarbonsäure drei Protonen abgeben. Mit Natronlauge entstehen Salze: Oxalsäure bildet Oxalate, Citronensäure Citrate, Milchsäure Lactate, Essigsäure Acetate."
+      },
+      {
+        "titel": "Viele polare Gruppen: fest und gut löslich",
+        "text": "Ethansäure und Oxalsäure haben beide zwei C-Atome. Ethansäure ist bei Raumtemperatur flüssig und schmilzt bei 17 °C. Oxalsäure ist ein Feststoff, der erst bei etwa 190 °C schmilzt und sich dabei zersetzt.\n\nDer Grund: Oxalsäure hat **zwei** Carboxygruppen, an **beiden Enden** des Moleküls. Jedes Molekül kann so mit Nachbarn auf zwei Seiten Wasserstoffbrücken bilden. Es entsteht ein festes Netz. Auch Citronensäure (drei Carboxygruppen und eine Hydroxygruppe) ist fest, schmilzt erst bei 153 °C und löst sich sehr gut in Wasser.\n\nFaustregel: Je mehr Carboxy- und Hydroxygruppen im Verhältnis zur Kohlenwasserstoffkette, desto höher die Schmelztemperatur und desto besser die Löslichkeit in Wasser."
+      },
+      {
+        "titel": "Organische und anorganische Säuren im Vergleich",
+        "text": "Salzsäure und Schwefelsäure sind **anorganische** Säuren, Carbonsäuren sind **organische** Säuren mit einem Kohlenstoffgerüst. Ihre Lösungen haben viel gemeinsam:\n\n- Sie enthalten **Oxonium-Ionen** H₃O⁺ und färben Universalindikator rot.\n- Sie leiten den elektrischen Strom.\n- Mit unedlen Metallen wie Magnesium entsteht **Wasserstoff**.\n- Mit Kalk (Calciumcarbonat) entsteht **Kohlenstoffdioxid**.\n- Mit Laugen reagieren sie in einer **Neutralisation** zu Salz und Wasser.\n\nDer wichtigste Unterschied: Carbonsäuren sind **schwache Säuren**. Nur ein kleiner Teil ihrer Moleküle gibt ein Proton ab. Eine Essigsäure-Lösung mit 0,1 mol/L hat deshalb einen pH-Wert von etwa 2,9, eine Salzsäure gleicher Konzentration von 1. Viele Carbonsäuren sind außerdem brennbar und werden in der Natur gut abgebaut."
+      },
+      {
+        "titel": "Entkalker bewerten",
+        "text": "Kalk ist Calciumcarbonat CaCO₃. Säuren lösen ihn: Es entstehen ein wasserlösliches Calciumsalz, Wasser und Kohlenstoffdioxid (das Sprudeln).\n\nZum Bewerten eines Entkalkers helfen drei Kriterien:\n\n- **Wirksamkeit:** Ameisensäure wirkt schnell und kräftig. Essig und Milchsäure wirken langsamer. Citronensäure soll man nicht heiß anwenden, denn dann lagert sich schwer lösliches Calciumcitrat ab.\n- **Sicherheit:** Konzentrierte Entkalker reizen oder verätzen Haut und Augen, Ameisensäure-Dämpfe reizen die Atemwege. Handschuhe tragen, Spritzer vermeiden, lüften. **Nie mit chlorhaltigen Reinigern mischen**: Dabei entsteht giftiges Chlorgas. Nicht auf Marmor verwenden, denn Marmor ist selbst Calciumcarbonat.\n- **Umwelt:** Ameisen-, Milch-, Citronen- und Essigsäure werden in Kläranlagen gut abgebaut. Trotzdem sparsam dosieren, denn mehr hilft nicht mehr."
+      }
+    ],
+    "formeln": [
+      { "formel": "CaCO₃ + 2 CH₃–COOH → Ca(CH₃–COO)₂ + H₂O + CO₂", "bedeutung": "Entkalken mit Essigsäure: Calciumacetat ist gut wasserlöslich" },
+      { "formel": "HOOC–COOH + 2 NaOH → Na₂C₂O₄ + 2 H₂O", "bedeutung": "Die Dicarbonsäure Oxalsäure gibt zwei Protonen ab: Natriumoxalat entsteht" }
+    ],
+    "merksatz": "Carbonsäuren enthalten mindestens eine Carboxygruppe. Nach deren Anzahl unterscheidet man **Mono-, Di- und Tricarbonsäuren**. Viele Carboxy- und Hydroxygruppen führen zu hohen Schmelztemperaturen und guter Wasserlöslichkeit.\n\nCarbonsäuren zeigen dieselben Säure-Reaktionen wie anorganische Säuren, sind aber meist **schwache Säuren**.",
+    "alltag": "Auf Lebensmittelpackungen stehen Carbonsäuren als E-Nummern: E 260 ist Essigsäure, E 270 Milchsäure, E 330 Citronensäure. Sie säuern, konservieren und verhindern, dass angeschnittenes Obst braun wird."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "ch-csa-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Wo kommen diese Säuren natürlich vor? Ordne zu.",
+      "paare": [
+        { "links": "Ameisensäure", "rechts": "Ameisen und Brennnesseln" },
+        { "links": "Milchsäure", "rechts": "Joghurt und Sauerkraut" },
+        { "links": "Oxalsäure", "rechts": "Rhabarber und Sauerampfer" },
+        { "links": "Citronensäure", "rechts": "Zitronen und Orangen" },
+        { "links": "Essigsäure", "rechts": "Essig und Salatsauce" }
+      ],
+      "extraRechts": ["Kochsalz und Meerwasser"],
+      "erklaerung": "Viele Carbonsäuren bilden Lebewesen selbst: Ameisen zur Verteidigung, Bakterien beim Vergären (Milch- und Essigsäure), Pflanzen in ihren Zellen (Oxal- und Citronensäure)."
+    },
+    {
+      "id": "ch-csa-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Oxalsäure hat die Halbstrukturformel HOOC–COOH. Zu welcher Gruppe gehört sie?",
+      "optionen": [
+        { "text": "Monocarbonsäure", "feedback": "Zähle die Carboxygruppen –COOH im Molekül." },
+        { "text": "Dicarbonsäure", "richtig": true },
+        { "text": "Tricarbonsäure", "feedback": "Eine Tricarbonsäure wie Citronensäure hat drei Carboxygruppen." },
+        { "text": "Hydroxycarbonsäure", "feedback": "Oxalsäure hat keine zusätzliche Hydroxygruppe. Die OH-Teile gehören zu den Carboxygruppen." }
+      ],
+      "erklaerung": "HOOC–COOH besteht nur aus zwei miteinander verbundenen Carboxygruppen. Oxalsäure (Ethandisäure) ist die einfachste **Dicarbonsäure**."
+    },
+    {
+      "id": "ch-csa-03", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Citronensäure ist eine Tricarbonsäure. Wie viel Mol Natriumhydroxid (NaOH) braucht man, um 1 mol Citronensäure vollständig zu neutralisieren?",
+      "gesucht": "Stoffmenge an Natriumhydroxid",
+      "gesuchtSymbol": "n(NaOH)",
+      "loesung": 3, "einheit": "mol", "toleranz": 0,
+      "rechenweg": [
+        "Jede der drei Carboxygruppen gibt ein Proton ab.",
+        "Jedes Proton reagiert mit einem Hydroxid-Ion OH⁻ zu Wasser.",
+        "C₆H₈O₇ + 3 NaOH → Na₃C₆H₅O₇ + 3 H₂O, also 3 mol NaOH"
+      ],
+      "hinweis": "Zähle die Carboxygruppen. Die Hydroxygruppe der Citronensäure gibt kein Proton ab.",
+      "erklaerung": "Es entsteht Natriumcitrat. Die OH-Gruppe am mittleren C-Atom ist keine Säuregruppe. Sie bleibt bei der Neutralisation erhalten."
+    },
+    {
+      "id": "ch-csa-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Ethansäure (CH₃–COOH) schmilzt bei 17 °C, Oxalsäure (HOOC–COOH) erst bei etwa 190 °C. Beide haben zwei C-Atome. Wie lässt sich der Unterschied erklären?",
+      "optionen": [
+        { "text": "Oxalsäure hat an beiden Enden eine Carboxygruppe und bildet mit Nachbarn auf zwei Seiten Wasserstoffbrücken. So entsteht ein festes Netz.", "richtig": true },
+        { "text": "Oxalsäure hat eine längere Kohlenstoffkette und stärkere Van-der-Waals-Kräfte.", "feedback": "Beide Moleküle haben genau zwei C-Atome." },
+        { "text": "Oxalsäure ist eine Ionenverbindung.", "feedback": "Reine Oxalsäure besteht aus Molekülen, nicht aus Ionen." },
+        { "text": "Ethansäure kann keine Wasserstoffbrücken bilden.", "feedback": "Ethansäure bildet Wasserstoffbrücken, aber nur an einem Ende des Moleküls. Es entstehen Paare statt eines Netzes." }
+      ],
+      "erklaerung": "Eine Carboxygruppe erlaubt Wasserstoffbrücken zu **einem** Nachbarn (Paare). Zwei Carboxygruppen an entgegengesetzten Enden verknüpfen die Moleküle zu Ketten und Netzen. Um diesen Verband zu lösen, braucht man viel mehr Energie."
+    },
+    {
+      "id": "ch-csa-05", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Du vergleichst Salzsäure und eine Essigsäure-Lösung mit **gleicher** Konzentration (0,1 mol/L). Welche Aussagen sind richtig?",
+      "optionen": [
+        { "text": "Beide Lösungen enthalten Oxonium-Ionen.", "richtig": true },
+        { "text": "Mit Magnesium entsteht in beiden Fällen Wasserstoff.", "richtig": true },
+        { "text": "Auf Kalk sprudeln beide, weil Kohlenstoffdioxid entsteht.", "richtig": true },
+        { "text": "Beide Lösungen haben denselben pH-Wert.", "feedback": "Essigsäure ist eine schwache Säure. Ihre Lösung enthält weniger Oxonium-Ionen und hat einen höheren pH-Wert (etwa 2,9 statt 1)." },
+        { "text": "Beide Säuren sind organische Verbindungen.", "feedback": "Salzsäure ist eine Lösung von Chlorwasserstoff HCl. Sie enthält keinen Kohlenstoff und ist anorganisch." }
+      ],
+      "erklaerung": "Die typischen Säure-Reaktionen beruhen auf den Oxonium-Ionen. Die sind in beiden Lösungen vorhanden. Bei der schwachen Essigsäure gibt aber nur etwa jedes hundertste Molekül sein Proton ab. Deshalb reagiert sie langsamer, und der pH-Wert ist höher."
+    },
+    {
+      "id": "ch-csa-06", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz5",
+      "frage": "Welche Regeln für den Umgang mit Entkalkern sind fachlich begründet?",
+      "optionen": [
+        { "text": "Handschuhe tragen und Spritzer in die Augen vermeiden, weil konzentrierte Säuren Haut und Augen schädigen.", "richtig": true },
+        { "text": "Nie mit chlorhaltigen Reinigern mischen, weil dabei giftiges Chlorgas entsteht.", "richtig": true },
+        { "text": "Nicht auf Marmorflächen verwenden, weil Marmor aus Calciumcarbonat besteht und angegriffen wird.", "richtig": true },
+        { "text": "Citronensäure-Entkalker möglichst kochend heiß anwenden, dann wirkt er am besten.", "feedback": "Bei hohen Temperaturen lagert sich schwer lösliches Calciumcitrat ab. Citronensäure besser kalt bis lauwarm verwenden." },
+        { "text": "Reste in eine leere Getränkeflasche umfüllen, damit nichts verschwendet wird.", "feedback": "Chemikalien nie in Lebensmittelbehälter füllen: Verwechslungsgefahr! Im Originalbehälter aufbewahren." }
+      ],
+      "erklaerung": "Gute Sicherheitsregeln lassen sich chemisch begründen: Säuren schädigen Gewebe, Säure und Hypochlorit (in Chlorreinigern) bilden Chlor, und Säuren lösen alle Carbonate, also auch Marmor und Kalkstein."
+    },
+    {
+      "id": "ch-csa-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz5",
+      "frage": "Für einen Wasserkocher stehen ein Entkalker mit Ameisensäure und einer mit Citronensäure zur Auswahl. Vergleiche beide nach Wirksamkeit, Sicherheit und Umweltverträglichkeit und triff eine begründete Entscheidung.",
+      "stichworte": [
+        { "aspekt": "Wirksamkeit: Ameisensäure wirkt schneller bzw. stärker; Citronensäure nicht heiß anwenden (Calciumcitrat).", "woerter": ["schnell", "staerker", "wirksam", "wirkt", "calciumcitrat"] },
+        { "aspekt": "Sicherheit: Ameisensäure ist ätzend bzw. reizt, Citronensäure ist harmloser; Schutzmaßnahmen nennen.", "woerter": ["aetzend", "reiz", "gefaehrlich", "handschuh", "schutzbrille", "harmlos", "sicherer"] },
+        { "aspekt": "Umwelt: Beide sind biologisch gut abbaubar.", "woerter": ["abbaubar", "abgebaut", "umwelt", "klaeranlage"] },
+        { "aspekt": "Eine begründete Entscheidung wird getroffen.", "woerter": ["ich wuerde", "ich nehme", "ich waehle", "entscheide", "deshalb", "daher", "empfehle", "besser geeignet"] }
+      ],
+      "musterloesung": "Ameisensäure wirkt schneller und stärker gegen Kalk. Citronensäure wirkt etwas langsamer und darf nicht heiß angewendet werden, sonst lagert sich Calciumcitrat ab. Ameisensäure ist in höherer Konzentration ätzend und ihre Dämpfe reizen, man braucht Handschuhe und Schutzbrille. Citronensäure ist deutlich harmloser und riecht nicht. Beide Säuren werden in Kläranlagen gut biologisch abgebaut. Für den Wasserkocher im Haushalt würde ich deshalb Citronensäure nehmen und kalt anwenden, weil sie ausreichend wirkt und sicherer ist.",
+      "erklaerung": "Eine Bewertung braucht Kriterien, Fakten zu jedem Kriterium und eine Abwägung. Eine andere Entscheidung ist ebenfalls richtig, wenn sie begründet ist, z. B. Ameisensäure bei sehr starkem Kalk mit entsprechenden Schutzmaßnahmen."
+    }
+  ]
+}

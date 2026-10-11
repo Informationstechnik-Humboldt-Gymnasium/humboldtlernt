@@ -1,0 +1,144 @@
+{
+  "id": "ch-k8-wasser-zerlegung",
+  "titel": "Bildung und Zerlegung von Wasser",
+  "kurz": "Wie elektrischer Strom Wasser in Wasserstoff und Sauerstoff zerlegt, warum daraus die Formel H₂O folgt und wie man Reaktionsgleichungen ausgleicht.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Die Zerlegung von Wasser durch elektrischen Strom (Analyse) beschreiben und die Produkte nachweisen" },
+    { "id": "lz2", "niveau": "G", "text": "Aus dem Volumenverhältnis 2 : 1 auf die Zusammensetzung von Wasser schließen" },
+    { "id": "lz3", "niveau": "G", "text": "Die Bildung von Wasser (Synthese) als Umkehrung der Zerlegung erklären, auch energetisch" },
+    { "id": "lz4", "niveau": "H", "text": "Reaktionsgleichungen aufstellen, ausgleichen und als Umgruppierung von Teilchen deuten" }
+  ],
+  "verstehen": {
+    "einstieg": "Lange hielt man Wasser für ein Element, also für einen Stoff, den man nicht weiter zerlegen kann. Erst um 1800 gelang es, Wasser mit elektrischem Strom in zwei Gase zu spalten. Welche Gase sind das, und was verraten sie über das Wassermolekül?",
+    "abschnitte": [
+      {
+        "titel": "Zerlegung: Elektrolyse im Hofmannschen Apparat",
+        "text": "Im **Hofmannschen Wasserzersetzungsapparat** taucht in jedem Schenkel eine Elektrode in Wasser. Damit das Wasser gut leitet, gibt man etwas Natriumsulfat oder verdünnte Schwefelsäure dazu (**Schutzbrille!**). Liegt eine Gleichspannung an, steigen an beiden Elektroden Gasbläschen auf.\n\n- Am **Minuspol** entsteht **Wasserstoff**. Nachweis: **Knallgasprobe**. Das Gas verbrennt mit einem Ploppen oder Pfeifen.\n- Am **Pluspol** entsteht **Sauerstoff**. Nachweis: **Glimmspanprobe**. Ein glimmender Holzspan flammt auf.\n\nDie Zerlegung einer Verbindung in einfachere Stoffe heißt **Analyse**. Die Elektrolyse läuft nur, solange Strom fließt: Sie ist **endotherm**, man muss ständig Energie zuführen."
+      },
+      {
+        "titel": "Das Volumenverhältnis 2 : 1",
+        "text": "Am Minuspol entsteht immer **doppelt so viel Gas** wie am Pluspol: V(Wasserstoff) : V(Sauerstoff) = **2 : 1**.\n\nGase enthalten bei gleicher Temperatur und gleichem Druck in gleichen Volumina **gleich viele Teilchen** (Satz von Avogadro). Es entstehen also doppelt so viele Wasserstoffmoleküle wie Sauerstoffmoleküle. Beide Gase bestehen aus zweiatomigen Molekülen: H₂ und O₂. Daraus folgt: Im Wasser kommen auf **ein Sauerstoffatom zwei Wasserstoffatome**. Die Formel ist **H₂O**.\n\nIm echten Versuch ist das Verhältnis am Anfang oft etwas größer als 2 : 1, weil sich Sauerstoff ein wenig besser im Wasser löst."
+      },
+      {
+        "titel": "Bildung: die Knallgasreaktion",
+        "text": "Mischt man Wasserstoff und Sauerstoff und zündet das Gemisch, reagieren die Gase explosionsartig zu Wasser. Im Verhältnis 2 : 1 heißt das Gemisch **Knallgas**. Die Bildung einer Verbindung aus Elementen heißt **Synthese**.\n\nDie Synthese ist **exotherm**: Es wird genau so viel Energie frei, wie man bei der Zerlegung hineingesteckt hat. Bildung und Zerlegung von Wasser sind ein Beispiel dafür, dass chemische Reaktionen **umkehrbar** sind:\n\nWasser ⇌ Wasserstoff + Sauerstoff\n\nIn einer **Brennstoffzelle** läuft die Synthese kontrolliert ab. Dabei entsteht direkt elektrische Energie."
+      },
+      {
+        "titel": "Reaktionsgleichungen aufstellen",
+        "text": "Bei einer chemischen Reaktion werden Atome nur **umgruppiert**. Es gehen keine verloren und es kommen keine hinzu. Deshalb muss auf beiden Seiten des Pfeils von jeder Atomsorte gleich viel stehen.\n\n1. Wortgleichung: Wasser → Wasserstoff + Sauerstoff\n2. Formeln einsetzen: H₂O → H₂ + O₂\n3. Atome zählen: links 1 O-Atom, rechts 2 O-Atome. Das passt nicht.\n4. **Koeffizienten** (große Zahlen davor) ergänzen: 2 H₂O → 2 H₂ + O₂\n5. Kontrolle: links 4 H und 2 O, rechts 4 H und 2 O.\n\nWichtig: Die kleinen Indizes in den Formeln darfst du **nie** ändern. H₂O₂ wäre ein anderer Stoff (Wasserstoffperoxid)."
+      }
+    ],
+    "merksatz": "- Zerlegung (Analyse, endotherm): 2 H₂O → 2 H₂ + O₂\n- Bildung (Synthese, exotherm): 2 H₂ + O₂ → 2 H₂O\n\nWasser ist eine **Verbindung** aus Wasserstoff und Sauerstoff. Bei der Elektrolyse entstehen Wasserstoff und Sauerstoff im Volumenverhältnis **2 : 1**, daraus folgt die Formel **H₂O**.\n\nIn einer Reaktionsgleichung stehen links und rechts gleich viele Atome jeder Sorte. Ausgeglichen wird nur mit **Koeffizienten**.",
+    "alltag": "Wasserstoff gilt als Energieträger der Zukunft: Mit Strom aus Wind und Sonne wird Wasser zerlegt, später gibt eine Brennstoffzelle die Energie zurück und es entsteht wieder nur Wasser."
+  },
+  "interaktiv": ["ch-elektrolyse"],
+  "uebungen": [
+    {
+      "id": "ch-wz-01",
+      "typ": "single",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz1",
+      "frage": "Welches Gas entsteht bei der Elektrolyse von Wasser am **Minuspol**?",
+      "optionen": [
+        { "text": "Wasserstoff", "richtig": true },
+        { "text": "Sauerstoff", "feedback": "Sauerstoff entsteht am Pluspol, und zwar nur halb so viel." },
+        { "text": "Kohlenstoffdioxid", "feedback": "Im Wasser ist kein Kohlenstoff enthalten, also kann kein Kohlenstoffdioxid entstehen." },
+        { "text": "Wasserdampf", "feedback": "Wasserdampf ist immer noch Wasser. Bei der Elektrolyse wird Wasser aber zerlegt." }
+      ],
+      "erklaerung": "Am Minuspol entsteht **Wasserstoff**, am Pluspol **Sauerstoff**. Am Minuspol sammelt sich dabei doppelt so viel Gas."
+    },
+    {
+      "id": "ch-wz-02",
+      "typ": "zuordnung",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz1",
+      "frage": "Ordne jeder Nachweisreaktion das Gas zu, das sie nachweist.",
+      "paare": [
+        { "links": "Ein glimmender Holzspan flammt auf.", "rechts": "Sauerstoff" },
+        { "links": "Das Gas verbrennt mit einem Ploppen oder Pfeifen.", "rechts": "Wasserstoff" },
+        { "links": "Kalkwasser wird trüb.", "rechts": "Kohlenstoffdioxid" }
+      ],
+      "extraRechts": ["Stickstoff"],
+      "erklaerung": "Glimmspanprobe → Sauerstoff, Knallgasprobe → Wasserstoff, Kalkwasserprobe → Kohlenstoffdioxid. Stickstoff hat keinen so einfachen Nachweis: Er erstickt die Flamme nur."
+    },
+    {
+      "id": "ch-wz-03",
+      "typ": "zahl",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz2",
+      "frage": "Bei einer Elektrolyse von Wasser haben sich am Minuspol 36 mL Wasserstoff gesammelt. Wie viel Sauerstoff hat sich zur gleichen Zeit am Pluspol gebildet?",
+      "gegeben": "V(Wasserstoff) = 36 mL, Volumenverhältnis Wasserstoff : Sauerstoff = 2 : 1",
+      "gesucht": "Volumen Sauerstoff",
+      "gesuchtSymbol": "V",
+      "loesung": 18,
+      "einheit": "mL",
+      "toleranz": 0,
+      "rechenweg": [
+        "Es entsteht halb so viel Sauerstoff wie Wasserstoff.",
+        "`V = 36 mL : 2`",
+        "Ergebnis: `V = 18 mL`"
+      ],
+      "erklaerung": "Wasserstoff und Sauerstoff entstehen im Volumenverhältnis 2 : 1. Am Pluspol sammelt sich deshalb halb so viel Gas wie am Minuspol."
+    },
+    {
+      "id": "ch-wz-04",
+      "typ": "reihenfolge",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz4",
+      "frage": "Bringe die Schritte zum Aufstellen der Reaktionsgleichung für die Bildung von Wasser in die richtige Reihenfolge.",
+      "elemente": [
+        "Wortgleichung: Wasserstoff + Sauerstoff → Wasser",
+        "Formeln einsetzen: H₂ + O₂ → H₂O",
+        "Atome zählen: links 2 O-Atome, rechts nur 1 O-Atom",
+        "Vor H₂O eine 2 schreiben, dann vor H₂ eine 2 schreiben",
+        "Kontrolle: links und rechts je 4 H-Atome und 2 O-Atome"
+      ],
+      "erklaerung": "Ergebnis: 2 H₂ + O₂ → 2 H₂O. Man beginnt mit der Wortgleichung, setzt die richtigen Formeln ein und gleicht dann nur mit Koeffizienten aus. Zum Schluss kontrolliert man jede Atomsorte."
+    },
+    {
+      "id": "ch-wz-05",
+      "typ": "multi",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz3",
+      "frage": "Welche Aussagen über Bildung und Zerlegung von Wasser sind richtig?",
+      "optionen": [
+        { "text": "Die Zerlegung von Wasser ist endotherm, sie läuft nur, solange Strom zugeführt wird.", "richtig": true },
+        { "text": "Die Bildung von Wasser aus den Elementen ist exotherm.", "richtig": true },
+        { "text": "Die Zerlegung heißt Analyse, die Bildung heißt Synthese.", "richtig": true },
+        { "text": "Bei der Bildung von Wasser wird mehr Energie frei, als man zum Zerlegen braucht.", "feedback": "Dann könnte man Energie aus dem Nichts gewinnen. Es wird genau so viel Energie frei, wie man zum Zerlegen hineinsteckt." },
+        { "text": "Wasser ist ein Element, weil man es nur mit Strom zerlegen kann.", "feedback": "Ein Element lässt sich gar nicht chemisch zerlegen. Wasser ist eine Verbindung." }
+      ],
+      "erklaerung": "Bildung und Zerlegung von Wasser sind Umkehrungen voneinander. Die Energie, die bei der Elektrolyse aufgenommen wird, wird bei der Knallgasreaktion oder in einer Brennstoffzelle wieder abgegeben."
+    },
+    {
+      "id": "ch-wz-06",
+      "typ": "single",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz4",
+      "frage": "Welche Reaktionsgleichung für die Knallgasreaktion ist richtig aufgestellt und ausgeglichen?",
+      "optionen": [
+        { "text": "2 H₂ + O₂ → 2 H₂O", "richtig": true },
+        { "text": "H₂ + O₂ → H₂O", "feedback": "Links stehen 2 O-Atome, rechts nur eines. Die Gleichung ist nicht ausgeglichen." },
+        { "text": "H₂ + O₂ → H₂O₂", "feedback": "Ausgeglichen schon, aber der Index wurde verändert: H₂O₂ ist Wasserstoffperoxid, nicht Wasser." },
+        { "text": "H₂ + O → H₂O", "feedback": "Sauerstoff kommt als Molekül O₂ vor, nicht als einzelnes Atom." }
+      ],
+      "erklaerung": "Wasserstoff und Sauerstoff bestehen aus zweiatomigen Molekülen (H₂, O₂). Aus einem O₂-Molekül entstehen zwei Wassermoleküle, dafür braucht man zwei H₂-Moleküle: 2 H₂ + O₂ → 2 H₂O."
+    },
+    {
+      "id": "ch-wz-07",
+      "typ": "text",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz2",
+      "frage": "Erkläre, wie man aus dem Volumenverhältnis von Wasserstoff und Sauerstoff bei der Elektrolyse auf die Formel H₂O schließen kann.",
+      "stichworte": [
+        { "aspekt": "Volumenverhältnis Wasserstoff : Sauerstoff = 2 : 1", "woerter": ["2 1", "doppelt so viel", "zweimal so viel", "doppelte volumen", "halb so viel"] },
+        { "aspekt": "Gleiche Gasvolumina enthalten gleich viele Teilchen (Avogadro)", "woerter": ["gleich viele teilchen", "gleich viele molekuele", "gleiche anzahl", "avogadro"] },
+        { "aspekt": "Beide Gase bestehen aus zweiatomigen Molekülen H₂ und O₂", "woerter": ["zweiatomig", "h2 und o2", "h2 molekuel", "o2 molekuel"] },
+        { "aspekt": "Also 2 Wasserstoffatome auf 1 Sauerstoffatom", "woerter": ["zwei wasserstoffatome", "2 wasserstoffatome", "2 h atome", "zwei h atome", "h2o"] }
+      ],
+      "musterloesung": "Bei der Elektrolyse entsteht doppelt so viel Wasserstoff wie Sauerstoff, das Volumenverhältnis ist 2 : 1. Gleiche Gasvolumina enthalten bei gleicher Temperatur und gleichem Druck gleich viele Teilchen. Es entstehen also doppelt so viele Wasserstoffmoleküle wie Sauerstoffmoleküle. Beide Gase sind zweiatomig, also H₂ und O₂. Folglich kommen im Wasser auf ein Sauerstoffatom zwei Wasserstoffatome, die Formel ist H₂O.",
+      "erklaerung": "Die Messung der Gasvolumina ist eine **quantitative Analyse**: Sie verrät nicht nur, woraus Wasser besteht, sondern auch in welchem Zahlenverhältnis die Atome verbunden sind."
+    }
+  ]
+}

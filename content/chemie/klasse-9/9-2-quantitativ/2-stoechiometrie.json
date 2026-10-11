@@ -1,0 +1,154 @@
+{
+  "id": "ch-k9-stoechiometrie",
+  "titel": "Stöchiometrisches Rechnen",
+  "kurz": "Wie man aus einer Reaktionsgleichung berechnet, wie viel Gramm Ausgangsstoff man braucht und wie viel Produkt entsteht.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Aus einer ausgeglichenen Reaktionsgleichung das Stoffmengenverhältnis der beteiligten Stoffe ablesen" },
+    { "id": "lz2", "niveau": "G", "text": "Massen von Edukten und Produkten schrittweise über die Stoffmenge berechnen" },
+    { "id": "lz3", "niveau": "H", "text": "Das Gesetz von der Erhaltung der Masse für Berechnungen und zur Kontrolle nutzen" },
+    { "id": "lz4", "niveau": "H", "text": "Volumina gasförmiger Produkte mit dem molaren Volumen (etwa 24 L/mol bei 20 °C) berechnen" }
+  ],
+  "verstehen": {
+    "einstieg": "Beim Thermit-Verfahren werden Eisenoxid und Aluminium gemischt. Damit nichts übrig bleibt, muss das Mischungsverhältnis stimmen. Wie viel Gramm Aluminium braucht man für 80 g Eisenoxid?",
+    "abschnitte": [
+      {
+        "titel": "Die Reaktionsgleichung zählt Teilchen",
+        "text": "Eine ausgeglichene Reaktionsgleichung sagt, in welchem **Anzahlverhältnis** die Teilchen reagieren. Bei der Verbrennung von Magnesium:\n\n2 Mg + O₂ → 2 MgO\n\nZwei Magnesium-Atome reagieren mit einem Sauerstoff-Molekül zu zwei Einheiten Magnesiumoxid. Weil 1 mol immer gleich viele Teilchen enthält, gilt dasselbe Verhältnis auch für die **Stoffmengen**:\n\n`n(Mg) : n(O_{2}) : n(MgO) = 2 : 1 : 2`\n\n**Die Massen stehen nicht in diesem Verhältnis!** 2 g Magnesium reagieren nicht mit 1 g Sauerstoff. Deshalb rechnet man immer über die Stoffmenge."
+      },
+      {
+        "titel": "In fünf Schritten zur Masse",
+        "text": "**Aufgabe:** Wie viel Magnesiumoxid entsteht aus 12 g Magnesium?\n\n- **1. Reaktionsgleichung:** 2 Mg + O₂ → 2 MgO\n- **2. Stoffmengenverhältnis:** `n(MgO) : n(Mg) = 2 : 2 = 1 : 1`\n- **3. Gegebene Masse in Stoffmenge umrechnen:** `n(Mg) = 12 g / (24 g/mol) = 0,5 mol`\n- **4. Stoffmenge des gesuchten Stoffes:** `n(MgO) = 0,5 mol`\n- **5. Masse berechnen:** `M(MgO) = 24 + 16 = 40 g/mol`, `m(MgO) = 0,5 mol · 40 g/mol = 20 g`\n\nAntwortsatz: Aus 12 g Magnesium entstehen 20 g Magnesiumoxid."
+      },
+      {
+        "titel": "Kontrolle mit der Massenerhaltung",
+        "text": "Bei chemischen Reaktionen gehen keine Atome verloren und es kommen keine dazu. Deshalb gilt das **Gesetz von der Erhaltung der Masse**: Die Masse der Edukte ist gleich der Masse der Produkte.\n\nIm Beispiel: Für 0,5 mol Mg braucht man 0,25 mol O₂, das sind `0,25 mol · 32 g/mol = 8 g`. Probe: 12 g + 8 g = 20 g. Es stimmt.\n\nDie Massenerhaltung hilft auch, eine fehlende Masse direkt auszurechnen."
+      },
+      {
+        "titel": "Beispiel Thermit-Reaktion",
+        "text": "Fe₂O₃ + 2 Al → 2 Fe + Al₂O₃\n\nGegeben: 80 g Eisenoxid. `M(Fe_{2}O_{3}) = 2 · 56 + 3 · 16 = 160 g/mol`, also `n(Fe_{2}O_{3}) = 0,5 mol`.\n\nLaut Gleichung braucht man doppelt so viel Aluminium: `n(Al) = 1 mol`, `m(Al) = 27 g`. Es entsteht `n(Fe) = 1 mol`, also 56 g flüssiges Eisen.\n\n**Sicherheit:** Die Thermit-Reaktion erreicht über 2000 °C. Sie wird nur von der Lehrkraft mit Schutzausrüstung im Freien oder hinter einer Schutzscheibe durchgeführt."
+      },
+      {
+        "titel": "Reaktionen mit Gasen",
+        "text": "Gase nehmen bei gleicher Temperatur und gleichem Druck pro Mol **dasselbe Volumen** ein, egal um welches Gas es sich handelt. Dieses **molare Volumen** beträgt bei 20 °C und Normaldruck etwa `V_{m} = 24 L/mol`.\n\nDamit gilt für Gase: `V = n · V_{m}`.\n\n**Beispiel:** Beim Kalkbrennen CaCO₃ → CaO + CO₂ entstehen aus 100 g Kalk (1 mol) 1 mol CO₂, also etwa 24 L Gas.\n\n**Vereinfachung:** Das molare Volumen hängt von Temperatur und Druck ab. Bei 0 °C sind es nur etwa 22,4 L/mol."
+      }
+    ],
+    "formeln": [
+      { "formel": "n = \\frac{m}{M}", "bedeutung": "Stoffmenge aus Masse und molarer Masse" },
+      { "formel": "\\frac{n(A)}{n(B)} = \\frac{a}{b}", "bedeutung": "Stoffmengenverhältnis = Verhältnis der Koeffizienten `a` und `b` in der Reaktionsgleichung" },
+      { "formel": "V = n · V_{m}", "bedeutung": "Gasvolumen, `V_{m} ≈ 24 L/mol` bei 20 °C und Normaldruck" }
+    ],
+    "merksatz": "Die Koeffizienten einer Reaktionsgleichung geben das **Stoffmengenverhältnis** an, nicht das Massenverhältnis.\n\nRechenweg: Gleichung aufstellen → Verhältnis ablesen → gegebene Masse in Stoffmenge umrechnen → Stoffmenge des gesuchten Stoffes → Masse berechnen. Kontrolle: Masse der Edukte = Masse der Produkte.",
+    "alltag": "Ein Auto verbrennt pro Liter Benzin (etwa 0,75 kg) rund 2,3 kg Kohlenstoffdioxid. Das CO₂ ist schwerer als das Benzin, weil bei der Verbrennung Sauerstoff aus der Luft gebunden wird."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "ch-sto-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Bei der Knallgasreaktion gilt: 2 H₂ + O₂ → 2 H₂O. In welchem Stoffmengenverhältnis reagieren Wasserstoff und Sauerstoff?",
+      "optionen": [
+        { "text": "`n(H_{2}) : n(O_{2}) = 2 : 1`", "richtig": true },
+        { "text": "`n(H_{2}) : n(O_{2}) = 1 : 2`", "feedback": "Du hast das Verhältnis umgedreht. Vor H₂ steht die 2, vor O₂ die (unsichtbare) 1." },
+        { "text": "`n(H_{2}) : n(O_{2}) = 1 : 8`", "feedback": "1 : 8 ist das **Massenverhältnis** (4 g H₂ zu 32 g O₂). Gefragt ist das Stoffmengenverhältnis." },
+        { "text": "`n(H_{2}) : n(O_{2}) = 1 : 1`", "feedback": "Schau auf die Koeffizienten vor den Formeln." }
+      ],
+      "erklaerung": "Die Koeffizienten geben das Stoffmengenverhältnis an: 2 mol H₂ reagieren mit 1 mol O₂. Das passt zum Volumenverhältnis 2 : 1 bei der Wasserzersetzung."
+    },
+    {
+      "id": "ch-sto-02", "typ": "zahl", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Magnesium verbrennt nach 2 Mg + O₂ → 2 MgO. Welche Stoffmenge Sauerstoff braucht man für 3 mol Magnesium?",
+      "gegeben": "`n(Mg) = 3 mol`",
+      "gesucht": "`n(O_{2})`",
+      "gesuchtSymbol": "n(O_{2})",
+      "loesung": 1.5,
+      "einheit": "mol",
+      "rechenweg": [
+        "Verhältnis aus der Gleichung: `n(O_{2}) : n(Mg) = 1 : 2`",
+        "`n(O_{2}) = \\frac{1}{2} · 3 mol`",
+        "`n(O_{2}) = 1,5 mol`"
+      ],
+      "erklaerung": "Auf zwei Magnesium-Atome kommt ein Sauerstoff-Molekül. Man braucht also halb so viel Sauerstoff wie Magnesium (in mol)."
+    },
+    {
+      "id": "ch-sto-03", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Welche Masse Magnesiumoxid entsteht, wenn 6 g Magnesium vollständig verbrennen? (2 Mg + O₂ → 2 MgO)",
+      "gegeben": "`m(Mg) = 6 g`, `M(Mg) = 24 g/mol`, `M(O) = 16 g/mol`",
+      "gesucht": "`m(MgO)`",
+      "gesuchtSymbol": "m(MgO)",
+      "loesung": 10,
+      "einheit": "g",
+      "rechenweg": [
+        "Stoffmenge Mg: `n(Mg) = \\frac{6 g}{24 g/mol} = 0,25 mol`",
+        "Verhältnis: `n(MgO) : n(Mg) = 2 : 2`, also `n(MgO) = 0,25 mol`",
+        "Molare Masse: `M(MgO) = 24 g/mol + 16 g/mol = 40 g/mol`",
+        "Masse: `m(MgO) = 0,25 mol · 40 g/mol = 10 g`"
+      ],
+      "hinweis": "Rechne über die Stoffmenge: erst `n(Mg)`, dann `n(MgO)`, dann `m(MgO)`.",
+      "erklaerung": "Das Produkt ist schwerer als das Magnesium, weil Sauerstoff aus der Luft gebunden wird (hier 4 g)."
+    },
+    {
+      "id": "ch-sto-04", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Bringe die Schritte einer stöchiometrischen Massenberechnung in die richtige Reihenfolge.",
+      "elemente": [
+        "Ausgeglichene Reaktionsgleichung aufstellen",
+        "Stoffmengenverhältnis aus den Koeffizienten ablesen",
+        "Gegebene Masse mit `n = m / M` in die Stoffmenge umrechnen",
+        "Stoffmenge des gesuchten Stoffes über das Verhältnis bestimmen",
+        "Gesuchte Masse mit `m = n · M` berechnen und Antwortsatz schreiben"
+      ],
+      "erklaerung": "Massen kann man nicht direkt über die Koeffizienten umrechnen. Der Weg führt immer über die Stoffmenge: Masse → Stoffmenge → Stoffmenge → Masse."
+    },
+    {
+      "id": "ch-sto-05", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Beim Kalkbrennen wird Kalk zu Branntkalk zersetzt: CaCO₃ → CaO + CO₂. Wie viel Gramm Branntkalk (CaO) erhält man aus 500 g Kalk?",
+      "gegeben": "`m(CaCO_{3}) = 500 g`, `M(CaCO_{3}) = 100 g/mol`, `M(CaO) = 56 g/mol`",
+      "gesucht": "`m(CaO)`",
+      "gesuchtSymbol": "m(CaO)",
+      "loesung": 280,
+      "einheit": "g",
+      "alternativEinheiten": { "kg": 1000 },
+      "rechenweg": [
+        "Stoffmenge Kalk: `n(CaCO_{3}) = \\frac{500 g}{100 g/mol} = 5 mol`",
+        "Verhältnis 1 : 1, also `n(CaO) = 5 mol`",
+        "Masse: `m(CaO) = 5 mol · 56 g/mol = 280 g`"
+      ],
+      "erklaerung": "Die restlichen 220 g entweichen als Kohlenstoffdioxid (5 mol · 44 g/mol = 220 g). Zusammen ergibt das wieder 500 g."
+    },
+    {
+      "id": "ch-sto-06", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "8 g Methan verbrennen mit 32 g Sauerstoff vollständig: CH₄ + 2 O₂ → CO₂ + 2 H₂O. Dabei entstehen 22 g Kohlenstoffdioxid. Welche Masse Wasser entsteht?",
+      "gegeben": "`m(CH_{4}) = 8 g`, `m(O_{2}) = 32 g`, `m(CO_{2}) = 22 g`",
+      "gesucht": "`m(H_{2}O)`",
+      "gesuchtSymbol": "m(H_{2}O)",
+      "loesung": 18,
+      "einheit": "g",
+      "rechenweg": [
+        "Masse der Edukte: `8 g + 32 g = 40 g`",
+        "Massenerhaltung: Die Produkte wiegen zusammen ebenfalls 40 g.",
+        "`m(H_{2}O) = 40 g − 22 g = 18 g`",
+        "Probe über die Stoffmenge: `n(CH_{4}) = 0,5 mol` → `n(H_{2}O) = 1 mol` → `m = 18 g`"
+      ],
+      "hinweis": "Nutze das Gesetz von der Erhaltung der Masse.",
+      "erklaerung": "Bei einer chemischen Reaktion bleibt die Gesamtmasse gleich, weil die Atome nur neu angeordnet werden. Die Rechnung über die Stoffmengen bestätigt das Ergebnis."
+    },
+    {
+      "id": "ch-sto-07", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Backpulver-Experiment: 8,4 g Natron reagieren vollständig mit Salzsäure: NaHCO₃ + HCl → NaCl + H₂O + CO₂. Welches Volumen Kohlenstoffdioxid entsteht bei 20 °C?",
+      "gegeben": "`m(NaHCO_{3}) = 8,4 g`, `V_{m} = 24 L/mol`, Atommassen Na 23, H 1, C 12, O 16",
+      "gesucht": "Volumen `V(CO_{2})`",
+      "gesuchtSymbol": "V",
+      "loesung": 2.4,
+      "einheit": "L",
+      "alternativEinheiten": { "mL": 0.001 },
+      "rechenweg": [
+        "Molare Masse: `M(NaHCO_{3}) = 23 + 1 + 12 + 3 · 16 = 84 g/mol`",
+        "Stoffmenge: `n(NaHCO_{3}) = \\frac{8,4 g}{84 g/mol} = 0,1 mol`",
+        "Verhältnis 1 : 1, also `n(CO_{2}) = 0,1 mol`",
+        "Volumen: `V = n · V_{m} = 0,1 mol · 24 L/mol = 2,4 L`"
+      ],
+      "hinweis": "Rechne erst die Stoffmenge Natron aus. Für Gase gilt `V = n · V_{m}`.",
+      "erklaerung": "Aus nur 8,4 g Natron entstehen 2,4 L Gas. Deshalb lockert schon ein Päckchen Backpulver einen ganzen Kuchen."
+    }
+  ]
+}

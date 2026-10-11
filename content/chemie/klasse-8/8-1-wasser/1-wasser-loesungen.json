@@ -1,0 +1,146 @@
+{
+  "id": "ch-k8-wasser-loesungen",
+  "titel": "Wasser als Lösungsmittel",
+  "kurz": "Warum sich so viele Stoffe in Wasser lösen, was verdünnte, konzentrierte und gesättigte Lösungen sind und wie du Trink- und Mineralwasser bewertest.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Wichtige Eigenschaften von Wasser nennen (Schmelz- und Siedetemperatur, Dichte, Lösungsmittel)" },
+    { "id": "lz2", "niveau": "G", "text": "Verdünnte, konzentrierte und gesättigte Lösungen mithilfe des Teilchenmodells erklären" },
+    { "id": "lz3", "niveau": "H", "text": "Mit der Löslichkeit rechnen und ihre Abhängigkeit von der Temperatur beschreiben" },
+    { "id": "lz4", "niveau": "H", "text": "Die Qualität von Trinkwasser und Mineralwasser anhand von Inhaltsstoffen und Grenzwerten bewerten" }
+  ],
+  "verstehen": {
+    "einstieg": "Leitungswasser sieht klar aus und schmeckt nach nichts Besonderem. Trotzdem stehen auf jeder Mineralwasserflasche lange Listen mit Calcium, Magnesium und Natrium. Wo stecken diese Stoffe im Wasser?",
+    "abschnitte": [
+      {
+        "titel": "Ein besonderer Stoff",
+        "text": "Reines Wasser ist farblos, geruchlos und geschmacklos. Bei normalem Luftdruck schmilzt es bei **0 °C** und siedet bei **100 °C**. Die Celsius-Skala wurde genau an diesen beiden Punkten festgemacht.\n\nWasser hat eine Besonderheit: Seine **größte Dichte** hat es bei **4 °C**. Eis ist leichter als flüssiges Wasser und schwimmt deshalb oben. Seen frieren von oben zu, am Grund bleibt es bei etwa 4 °C, und Fische können überwintern. Diese Abweichung vom normalen Verhalten heißt **Anomalie des Wassers**.\n\nReines Wasser leitet den elektrischen Strom fast nicht. Leitungswasser leitet, weil darin Salze gelöst sind."
+      },
+      {
+        "titel": "Lösungen im Teilchenmodell",
+        "text": "Gibst du Zucker in Wasser, verschwindet er scheinbar. Im Teilchenmodell verteilen sich die Zuckerteilchen **gleichmäßig zwischen den Wasserteilchen**. Es entsteht eine **Lösung**: ein einheitlich aussehendes Gemisch (homogen). Wasser ist das **Lösungsmittel**, Zucker der **gelöste Stoff**.\n\n- **verdünnte Lösung:** wenige gelöste Teilchen zwischen sehr vielen Wasserteilchen\n- **konzentrierte Lösung:** viele gelöste Teilchen im gleichen Volumen\n- **gesättigte Lösung:** Es löst sich nichts mehr. Weiterer Stoff bleibt als **Bodensatz** liegen.\n\nDurch Zugabe von Wasser wird eine Lösung **verdünnt**, durch Verdunsten des Wassers wird sie **konzentrierter**."
+      },
+      {
+        "titel": "Löslichkeit",
+        "text": "Die **Löslichkeit** gibt an, wie viel Gramm eines Stoffes sich höchstens in 100 g Wasser lösen. Bei 20 °C sind das zum Beispiel rund 36 g Kochsalz oder etwa 200 g Zucker.\n\nBei den meisten **Feststoffen** steigt die Löslichkeit mit der Temperatur: In heißem Tee löst sich mehr Zucker als in kaltem. Bei **Gasen** ist es umgekehrt: Kaltes Wasser kann mehr Sauerstoff oder Kohlenstoffdioxid lösen als warmes. Deshalb sprudelt warme Limonade stärker, und in warmen Seen wird im Sommer der Sauerstoff knapp."
+      },
+      {
+        "titel": "Trinkwasser und Mineralwasser bewerten",
+        "text": "Trinkwasser ist in Deutschland eines der am besten kontrollierten Lebensmittel. Die **Trinkwasserverordnung** legt Grenzwerte fest, zum Beispiel höchstens **50 mg Nitrat pro Liter**. Zu viel Nitrat kommt meist aus Düngern der Landwirtschaft.\n\nAuf Mineralwasser stehen die gelösten **Mineralstoffe** in mg pro Liter. Einige Angaben sind fest geregelt:\n\n- „geeignet für natriumarme Ernährung“: weniger als 20 mg Natrium pro Liter\n- „calciumhaltig“: mehr als 150 mg Calcium pro Liter\n- „magnesiumhaltig“: mehr als 50 mg Magnesium pro Liter\n\nCalcium und Magnesium machen Wasser **hart**. Hartes Wasser ist gesund, hinterlässt aber Kalk im Wasserkocher. Beim Vergleich von Leitungs- und Flaschenwasser zählen auch Preis, Transportwege und Verpackungsmüll."
+      }
+    ],
+    "formeln": [
+      { "formel": "Löslichkeit = \\frac{m_{gelöst, max}}{100 g Wasser}", "bedeutung": "höchste Masse eines Stoffes, die sich bei einer bestimmten Temperatur in 100 g Wasser löst" }
+    ],
+    "merksatz": "In einer **Lösung** sind die Teilchen des gelösten Stoffes gleichmäßig zwischen den Wasserteilchen verteilt. Je mehr gelöste Teilchen, desto **konzentrierter** die Lösung. Löst sich nichts mehr, ist sie **gesättigt**.\n\nFeststoffe lösen sich meist in warmem Wasser besser, Gase in kaltem Wasser.",
+    "alltag": "Ein Wasserkocher verkalkt in Berlin schnell, weil das Leitungswasser viel Calcium und Magnesium enthält. Mit Essig oder Zitronensäure lässt sich der Kalk wieder lösen."
+  },
+  "uebungen": [
+    {
+      "id": "ch-wl-01",
+      "typ": "single",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz1",
+      "frage": "Bei welcher Temperatur hat Wasser seine größte Dichte?",
+      "optionen": [
+        { "text": "0 °C", "feedback": "Bei 0 °C gefriert Wasser. Eis hat sogar eine kleinere Dichte als flüssiges Wasser, deshalb schwimmt es." },
+        { "text": "4 °C", "richtig": true },
+        { "text": "20 °C", "feedback": "Bei Zimmertemperatur ist Wasser schon etwas ausgedehnter als bei 4 °C." },
+        { "text": "100 °C", "feedback": "Bei 100 °C siedet Wasser. Dann hat es eine besonders kleine Dichte." }
+      ],
+      "erklaerung": "Wasser hat bei **4 °C** seine größte Dichte. Kühlt es weiter ab, dehnt es sich wieder aus (Anomalie des Wassers). Deshalb sammelt sich in Seen am Grund 4 °C warmes Wasser, und das Eis bildet sich oben."
+    },
+    {
+      "id": "ch-wl-02",
+      "typ": "zuordnung",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz2",
+      "frage": "Ordne jedem Begriff die passende Beschreibung im Teilchenmodell zu.",
+      "paare": [
+        { "links": "verdünnte Lösung", "rechts": "wenige gelöste Teilchen zwischen sehr vielen Wasserteilchen" },
+        { "links": "konzentrierte Lösung", "rechts": "viele gelöste Teilchen im gleichen Volumen" },
+        { "links": "gesättigte Lösung", "rechts": "es löst sich nichts mehr, ein Bodensatz bleibt liegen" },
+        { "links": "Lösungsmittel", "rechts": "der Stoff, in dem sich der andere Stoff verteilt, z. B. Wasser" }
+      ],
+      "extraRechts": ["die gelösten Teilchen verschwinden vollständig"],
+      "erklaerung": "Beim Lösen verschwinden keine Teilchen. Sie verteilen sich nur gleichmäßig zwischen den Wasserteilchen. Wie konzentriert eine Lösung ist, hängt davon ab, wie viele gelöste Teilchen sich im gleichen Volumen befinden."
+    },
+    {
+      "id": "ch-wl-03",
+      "typ": "zahl",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz3",
+      "frage": "Die Löslichkeit von Kochsalz beträgt bei 20 °C etwa 36 g pro 100 g Wasser. Wie viel Kochsalz kannst du höchstens in 250 g Wasser lösen?",
+      "gegeben": "Löslichkeit 36 g pro 100 g Wasser, Masse Wasser 250 g",
+      "gesucht": "größte lösbare Masse Kochsalz",
+      "gesuchtSymbol": "m",
+      "loesung": 90,
+      "einheit": "g",
+      "toleranz": 0,
+      "rechenweg": [
+        "250 g Wasser sind das 2,5-Fache von 100 g Wasser.",
+        "Also löst sich auch 2,5-mal so viel Kochsalz: `m = 2,5 · 36 g`",
+        "Ergebnis: `m = 90 g`"
+      ],
+      "hinweis": "Wie oft passen 100 g Wasser in 250 g Wasser?",
+      "erklaerung": "Die Löslichkeit bezieht sich immer auf 100 g Wasser. Bei mehr Wasser löst sich im gleichen Verhältnis mehr Salz. Gibst du mehr als 90 g Salz zu, bleibt der Rest als Bodensatz liegen."
+    },
+    {
+      "id": "ch-wl-04",
+      "typ": "single",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz2",
+      "frage": "Zu einer gesättigten Kochsalzlösung **ohne** Bodensatz gibst du die gleiche Menge Wasser dazu. Was stimmt danach?",
+      "optionen": [
+        { "text": "Die Lösung ist verdünnter und nicht mehr gesättigt.", "richtig": true },
+        { "text": "Die Lösung ist konzentrierter.", "feedback": "Es kommen nur Wasserteilchen dazu, die Salzteilchen verteilen sich auf ein größeres Volumen." },
+        { "text": "Die Lösung bleibt gesättigt, weil die Salzmenge gleich bleibt.", "feedback": "Gesättigt heißt: Es löst sich nichts mehr. Jetzt könnte sich aber wieder Salz lösen." },
+        { "text": "Ein Teil des Salzes fällt als Bodensatz aus.", "feedback": "Salz fällt aus, wenn Wasser verdunstet oder die Lösung abkühlt, nicht wenn Wasser hinzukommt." }
+      ],
+      "erklaerung": "Durch das zusätzliche Wasser verteilen sich die gleich vielen Salzteilchen auf mehr Wasserteilchen. Die Lösung ist verdünnter und kann wieder Salz aufnehmen."
+    },
+    {
+      "id": "ch-wl-05",
+      "typ": "multi",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz4",
+      "frage": "Auf einem Mineralwasser steht (in mg pro Liter):\n\nNatrium 8 · Calcium 160 · Magnesium 55 · Nitrat unter 1\n\nWelche Aussagen sind richtig?",
+      "optionen": [
+        { "text": "Es ist für natriumarme Ernährung geeignet.", "richtig": true },
+        { "text": "Es darf als „calciumhaltig“ bezeichnet werden.", "richtig": true },
+        { "text": "Es darf als „magnesiumhaltig“ bezeichnet werden.", "richtig": true },
+        { "text": "Es überschreitet den Grenzwert für Nitrat.", "feedback": "Der Grenzwert liegt bei 50 mg Nitrat pro Liter. Unter 1 mg ist sehr wenig." }
+      ],
+      "erklaerung": "Natriumarm heißt weniger als 20 mg Natrium pro Liter (hier 8 mg). Calciumhaltig heißt mehr als 150 mg Calcium (hier 160 mg), magnesiumhaltig mehr als 50 mg Magnesium (hier 55 mg). Der Nitratwert liegt weit unter dem Grenzwert von 50 mg pro Liter."
+    },
+    {
+      "id": "ch-wl-06",
+      "typ": "single",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz3",
+      "frage": "In heißen Sommern sterben in flachen Teichen manchmal Fische, obwohl das Wasser sauber ist. Welche Erklärung passt?",
+      "optionen": [
+        { "text": "Warmes Wasser kann weniger Sauerstoff lösen als kaltes.", "richtig": true },
+        { "text": "Warmes Wasser kann mehr Sauerstoff lösen, die Fische bekommen zu viel davon.", "feedback": "Bei Gasen ist es umgekehrt wie bei Zucker oder Salz: Die Löslichkeit sinkt mit steigender Temperatur." },
+        { "text": "Bei Wärme hat Wasser seine größte Dichte, die Fische werden zusammengedrückt.", "feedback": "Die größte Dichte hat Wasser bei 4 °C. Mit Fischsterben hat das nichts zu tun." },
+        { "text": "Im Sommer verdunstet der gelöste Sauerstoff zusammen mit dem Salz.", "feedback": "Salz verdunstet nicht. Entscheidend ist, wie gut sich Sauerstoff bei hoher Temperatur löst." }
+      ],
+      "erklaerung": "Gase lösen sich in kaltem Wasser besser als in warmem. Erwärmt sich ein Teich stark, sinkt der Sauerstoffgehalt. Gleichzeitig brauchen Fische bei Wärme mehr Sauerstoff. Beides zusammen kann zu Sauerstoffmangel führen."
+    },
+    {
+      "id": "ch-wl-07",
+      "typ": "text",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz4",
+      "frage": "Deine Familie überlegt, ob sie weiter Mineralwasser in Plastikflaschen kauft oder Leitungswasser trinkt. Bewerte beide Möglichkeiten mit mindestens drei Argumenten.",
+      "stichworte": [
+        { "aspekt": "Leitungswasser ist streng kontrolliert (Trinkwasserverordnung, Grenzwerte)", "woerter": ["kontroll", "trinkwasserverordnung", "grenzwert", "geprueft", "ueberwacht"] },
+        { "aspekt": "Umwelt: Transport und Plastikmüll bei Flaschenwasser", "woerter": ["plastik", "muell", "transport", "verpackung", "umwelt", "lkw"] },
+        { "aspekt": "Kosten: Leitungswasser ist viel billiger", "woerter": ["billig", "guenstig", "preis", "kosten", "teuer", "geld"] },
+        { "aspekt": "Mineralstoffgehalt vergleichen (z. B. Calcium, Magnesium, Natrium)", "woerter": ["mineral", "calcium", "magnesium", "natrium"] }
+      ],
+      "musterloesung": "Leitungswasser wird nach der Trinkwasserverordnung regelmäßig kontrolliert und muss strenge Grenzwerte einhalten, zum Beispiel für Nitrat. Es ist außerdem viel billiger als Flaschenwasser. Mineralwasser in Plastikflaschen verursacht durch Transport mit dem Lkw und durch Verpackung mehr Müll und belastet die Umwelt. Ein Vorteil von Mineralwasser kann ein hoher Gehalt an Mineralstoffen wie Calcium und Magnesium sein, das steht auf dem Etikett. Berliner Leitungswasser enthält aber ebenfalls viel Calcium und Magnesium. Insgesamt spricht deshalb mehr für Leitungswasser.",
+      "erklaerung": "Eine gute Bewertung nennt Argumente für beide Seiten (Gesundheit, Umwelt, Kosten) und zieht am Ende ein begründetes Fazit. Ausnahmen gibt es zum Beispiel bei alten Bleirohren im Haus: Dann sollte das Wasser geprüft werden."
+    }
+  ]
+}

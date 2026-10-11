@@ -1,0 +1,242 @@
+{
+  "id": "ch-k7-molekuele",
+  "titel": "Moleküle und Elektronenpaarbindung",
+  "kurz": "Warum Stickstoff, Sauerstoff und Wasser aus Molekülen bestehen, wie Atome sich Elektronen teilen und wie man Lewis-Formeln aufstellt.",
+  "reihenfolge": 3,
+  "lernziele": [
+    {
+      "id": "lz1",
+      "niveau": "G",
+      "text": "Moleküle als Teilchen aus fest verbundenen Atomen beschreiben und die Bestandteile der Luft als Moleküle oder Atome einordnen"
+    },
+    {
+      "id": "lz2",
+      "niveau": "G",
+      "text": "Die Elektronenpaarbindung (Atombindung) und die Oktettregel erklären"
+    },
+    {
+      "id": "lz3",
+      "niveau": "H",
+      "text": "Lewis-Formeln für einfache Moleküle wie H₂, Cl₂, H₂O, O₂, N₂ und CO₂ aufstellen"
+    },
+    {
+      "id": "lz4",
+      "niveau": "H",
+      "text": "Bindende und freie Elektronenpaare unterscheiden und die Anzahl der Bindungen eines Atoms aus seinen Valenzelektronen ableiten"
+    }
+  ],
+  "verstehen": {
+    "einstieg": "Edelgase wie Argon kommen als einzelne Atome vor. Sauerstoff und Stickstoff dagegen immer als Paare: O₂ und N₂. Warum bleiben diese Atome nicht allein?",
+    "abschnitte": [
+      {
+        "titel": "Moleküle",
+        "text": "Ein **Molekül** ist ein Teilchen aus zwei oder mehr Atomen, die fest miteinander verbunden sind. Die **Molekülformel** gibt an, welche Atome und wie viele davon ein Molekül enthält. Die kleine tiefgestellte Zahl gehört zu dem Atom davor.\n\n- Stickstoff N₂: 2 Stickstoffatome\n- Sauerstoff O₂: 2 Sauerstoffatome\n- Kohlenstoffdioxid CO₂: 1 Kohlenstoffatom und 2 Sauerstoffatome\n- Wasser H₂O: 2 Wasserstoffatome und 1 Sauerstoffatom\n\n**Edelgase** wie Argon bilden keine Moleküle. Sie kommen als einzelne Atome vor."
+      },
+      {
+        "titel": "Die Oktettregel",
+        "text": "Für Bindungen sind nur die Elektronen auf der äußersten Schale wichtig, die **Valenzelektronen** (Außenelektronen). Die Hauptgruppennummer im Periodensystem verrät ihre Anzahl: H hat 1, C hat 4, N hat 5, O hat 6, Cl hat 7.\n\nEdelgasatome haben 8 Valenzelektronen (Helium 2). Diese **Edelgaskonfiguration** ist besonders stabil, deshalb reagieren Edelgase kaum.\n\n**Oktettregel:** Atome gehen Bindungen so ein, dass sie danach 8 Valenzelektronen um sich haben, ein **Elektronenoktett**. Wasserstoff braucht nur 2 Elektronen, wie Helium."
+      },
+      {
+        "titel": "Die Elektronenpaarbindung",
+        "text": "Zwei Nichtmetallatome können ihr Oktett erreichen, indem sie sich Elektronen **teilen**. Jedes Atom gibt ein Elektron in ein **gemeinsames Elektronenpaar**. Dieses Paar gehört beiden Atomen zugleich und hält sie zusammen. Das ist die **Elektronenpaarbindung** (Atombindung).\n\nEin Chloratom hat 7 Valenzelektronen. Zwei Chloratome teilen sich ein Paar. Jedes zählt dann 6 eigene + 2 gemeinsame = 8 Elektronen.\n\nTeilen zwei Atome zwei oder drei Paare, spricht man von einer **Doppelbindung** oder **Dreifachbindung**.\n\nWie viele Bindungen ein Atom eingeht, ergibt sich aus den fehlenden Elektronen bis zum Oktett: Anzahl Bindungen = 8 − Valenzelektronen (bei Wasserstoff 2 − 1 = 1). Also: H und Cl 1 Bindung, O 2, N 3, C 4."
+      },
+      {
+        "titel": "Lewis-Formeln",
+        "text": "In der **Lewis-Formel** steht jedes **bindende Elektronenpaar** als Strich zwischen den Atomen. Die **freien Elektronenpaare**, die nur zu einem Atom gehören, zeichnet man in Büchern meist als Striche am Atom. Hier stehen sie als zwei Punkte.\n\nWasserstoff H₂:\n\n```\nH – H\n```\n\nChlor Cl₂, eine Einfachbindung und je drei freie Paare:\n\n```\n ..   ..\n:Cl – Cl:\n ..   ..\n```\n\nWasser H₂O, zwei bindende und zwei freie Paare am O:\n\n```\n    ..\nH – O – H\n    ..\n```\n\nSauerstoff O₂ mit einer Doppelbindung:\n\n```\n..   ..\n O = O\n..   ..\n```\n\nStickstoff N₂ mit einer Dreifachbindung:\n\n```\n:N ≡ N:\n```\n\nKohlenstoffdioxid CO₂ mit zwei Doppelbindungen:\n\n```\n..       ..\n O = C = O\n..       ..\n```\n\n**Kontrolle:** Zähle um jedes Atom alle Elektronen (Striche zählen doppelt). Es müssen 8 sein, bei Wasserstoff 2."
+      }
+    ],
+    "merksatz": "In einem **Molekül** sind Atome durch **Elektronenpaarbindungen** verbunden: Sie teilen sich Elektronenpaare. Dabei erreicht jedes Atom ein **Oktett** aus 8 Valenzelektronen (Wasserstoff 2). In der **Lewis-Formel** zeigt ein Strich ein bindendes Elektronenpaar.",
+    "alltag": "Stickstoff N₂ ist extrem reaktionsträge, weil seine Dreifachbindung sehr fest ist. Darum besteht die Luft zu 78 % aus Stickstoff, der kaum mit etwas reagiert."
+  },
+  "interaktiv": [],
+  "vertiefung": [
+    "ch-atombaukasten"
+  ],
+  "uebungen": [
+    {
+      "id": "ch-mlk-01",
+      "typ": "single",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz1",
+      "frage": "Welcher Bestandteil der Luft besteht nicht aus Molekülen, sondern aus einzelnen Atomen?",
+      "optionen": [
+        {
+          "text": "Argon",
+          "richtig": true
+        },
+        {
+          "text": "Stickstoff",
+          "feedback": "Stickstoff besteht aus N₂-Molekülen."
+        },
+        {
+          "text": "Sauerstoff",
+          "feedback": "Sauerstoff besteht aus O₂-Molekülen."
+        },
+        {
+          "text": "Kohlenstoffdioxid",
+          "feedback": "Ein CO₂-Molekül besteht aus drei Atomen."
+        }
+      ],
+      "erklaerung": "Argon ist ein **Edelgas**. Seine Atome haben schon 8 Valenzelektronen und gehen deshalb keine Bindungen ein."
+    },
+    {
+      "id": "ch-mlk-02",
+      "typ": "zuordnung",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz4",
+      "frage": "Wie viele Elektronenpaarbindungen geht jedes Atom in seinen Molekülen normalerweise ein?",
+      "paare": [
+        {
+          "links": "Wasserstoff (1 Valenzelektron)",
+          "rechts": "1 Bindung"
+        },
+        {
+          "links": "Sauerstoff (6 Valenzelektronen)",
+          "rechts": "2 Bindungen"
+        },
+        {
+          "links": "Stickstoff (5 Valenzelektronen)",
+          "rechts": "3 Bindungen"
+        },
+        {
+          "links": "Kohlenstoff (4 Valenzelektronen)",
+          "rechts": "4 Bindungen"
+        }
+      ],
+      "erklaerung": "Jedes Atom geht so viele Bindungen ein, wie ihm Elektronen zum Oktett fehlen: O fehlen 2, N fehlen 3, C fehlen 4. Wasserstoff fehlt 1 Elektron bis zur Heliumschale."
+    },
+    {
+      "id": "ch-mlk-03",
+      "typ": "single",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz2",
+      "frage": "Was besagt die Oktettregel?",
+      "optionen": [
+        {
+          "text": "Atome gehen Bindungen so ein, dass sie danach 8 Valenzelektronen um sich haben.",
+          "richtig": true
+        },
+        {
+          "text": "Jedes Molekül besteht aus genau 8 Atomen.",
+          "feedback": "H₂ hat 2 Atome, CO₂ hat 3. Die 8 bezieht sich auf Elektronen."
+        },
+        {
+          "text": "Jedes Atom hat 8 Protonen im Kern.",
+          "feedback": "Die Protonenzahl ist bei jedem Element anders. Die Regel betrifft die Außenelektronen."
+        },
+        {
+          "text": "Ein Atom kann höchstens 8 Bindungen eingehen.",
+          "feedback": "Es geht um 8 Elektronen um das Atom, also höchstens 4 Elektronenpaare."
+        }
+      ],
+      "erklaerung": "8 Valenzelektronen entsprechen der stabilen **Edelgaskonfiguration**. Gemeinsame Elektronenpaare zählen dabei für beide Atome."
+    },
+    {
+      "id": "ch-mlk-04",
+      "typ": "zahl",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz4",
+      "frage": "Wie viele **freie** Elektronenpaare hat das Sauerstoffatom im Wassermolekül H₂O?",
+      "gesucht": "Anzahl freier Elektronenpaare",
+      "gesuchtSymbol": "Anzahl",
+      "loesung": 2,
+      "einheit": "",
+      "toleranz": 0,
+      "rechenweg": [
+        "Sauerstoff hat 6 Valenzelektronen.",
+        "2 davon nutzt es für die beiden Bindungen zu den H-Atomen.",
+        "Übrig bleiben 4 Elektronen, also 2 freie Elektronenpaare.",
+        "Kontrolle: 2 bindende + 2 freie Paare = 8 Elektronen um das O-Atom."
+      ],
+      "erklaerung": "Das Sauerstoffatom im Wasser hat 2 bindende und 2 freie Elektronenpaare. Zusammen ergeben sie das Oktett."
+    },
+    {
+      "id": "ch-mlk-05",
+      "typ": "single",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz3",
+      "frage": "Ein Stickstoffatom hat 5 Valenzelektronen. Wie sieht die Lewis-Formel von N₂ aus?",
+      "optionen": [
+        {
+          "text": "Eine Dreifachbindung und an jedem N-Atom ein freies Elektronenpaar",
+          "richtig": true
+        },
+        {
+          "text": "Eine Einfachbindung und an jedem N-Atom drei freie Elektronenpaare",
+          "feedback": "Dann hätte jedes N-Atom 2 + 6 = 8 Elektronen, aber es hat nur 5 Valenzelektronen, nicht 7."
+        },
+        {
+          "text": "Eine Doppelbindung und an jedem N-Atom zwei freie Elektronenpaare",
+          "feedback": "Das ist die Lewis-Formel von O₂. Zähle die Valenzelektronen von Stickstoff nach."
+        },
+        {
+          "text": "Keine Bindung, Stickstoff ist ein Edelgas",
+          "feedback": "Stickstoff steht in der 5. Hauptgruppe. Er ist reaktionsträge, aber kein Edelgas."
+        }
+      ],
+      "erklaerung": "Jedem N-Atom fehlen 3 Elektronen zum Oktett, also teilen sie sich **3 Elektronenpaare**. Die restlichen 2 Elektronen bilden je ein freies Paar: :N≡N:. Kontrolle: 6 + 2 = 8 Elektronen pro Atom."
+    },
+    {
+      "id": "ch-mlk-06",
+      "typ": "zahl",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz3",
+      "frage": "Stelle die Lewis-Formel von Kohlenstoffdioxid CO₂ auf. Wie viele **bindende** Elektronenpaare enthält das Molekül insgesamt?",
+      "gesucht": "Anzahl bindender Elektronenpaare",
+      "gesuchtSymbol": "Anzahl",
+      "loesung": 4,
+      "einheit": "",
+      "toleranz": 0,
+      "rechenweg": [
+        "Kohlenstoff braucht 4 Bindungen, jeder Sauerstoff 2.",
+        "Das C-Atom in der Mitte bildet zu jedem O-Atom eine Doppelbindung: O=C=O.",
+        "2 Doppelbindungen = 4 bindende Elektronenpaare.",
+        "Kontrolle: 4 + 12 = 16 Valenzelektronen = 8 Paare, davon 4 bindend und 4 frei (je 2 an jedem O)."
+      ],
+      "hinweis": "Kohlenstoff hat 4 Valenzelektronen, Sauerstoff 6.",
+      "erklaerung": "Im CO₂ hat das C-Atom 4 bindende Paare (8 Elektronen), jedes O-Atom 2 bindende und 2 freie Paare (8 Elektronen)."
+    },
+    {
+      "id": "ch-mlk-07",
+      "typ": "text",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz2",
+      "frage": "Erkläre, wie aus zwei Chloratomen ein Chlormolekül Cl₂ entsteht und warum danach beide Atome ein Oktett haben.",
+      "stichworte": [
+        {
+          "aspekt": "Jedes Chloratom hat 7 Valenzelektronen, ihm fehlt eins zum Oktett",
+          "woerter": [
+            "7 valenz",
+            "sieben valenz",
+            "7 aussen",
+            "sieben aussen",
+            "7 elektronen",
+            "sieben elektronen"
+          ]
+        },
+        {
+          "aspekt": "Beide teilen sich ein gemeinsames (bindendes) Elektronenpaar",
+          "woerter": [
+            "gemeinsam",
+            "teilen",
+            "bindendes elektronenpaar",
+            "elektronenpaarbindung",
+            "atombindung"
+          ]
+        },
+        {
+          "aspekt": "Das Paar zählt für beide: 6 + 2 = 8 Elektronen, Oktett / Edelgaskonfiguration",
+          "woerter": [
+            "8 elektronen",
+            "acht elektronen",
+            "oktett",
+            "edelgas",
+            "6 2 8"
+          ]
+        }
+      ],
+      "musterloesung": "Jedes Chloratom hat 7 Valenzelektronen, ihm fehlt also ein Elektron zum Oktett. Jedes Atom gibt ein Elektron in ein gemeinsames Elektronenpaar, das beide Atome verbindet (Elektronenpaarbindung). Dieses Paar zählt für beide Atome. Jedes Chloratom hat dann 6 eigene und 2 gemeinsame, also 8 Elektronen um sich. Das ist ein Oktett wie beim Edelgas Argon.",
+      "erklaerung": "Bei der Elektronenpaarbindung gibt kein Atom ein Elektron ab. Die Elektronen werden geteilt, sodass beide Atome gleichzeitig ihr Oktett erreichen."
+    }
+  ]
+}

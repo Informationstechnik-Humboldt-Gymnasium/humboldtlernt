@@ -1,0 +1,128 @@
+{
+  "id": "ch-k7-luft",
+  "titel": "Luft und Luftschadstoffe",
+  "kurz": "Woraus Luft besteht, wie man ihren Sauerstoffanteil misst und welche Schadstoffe die Luft belasten.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Luft als Stoffgemisch erkennen und ihre Bestandteile mit ihren Anteilen nennen" },
+    { "id": "lz2", "niveau": "G", "text": "Eigenschaften und Bedeutung von Stickstoff, Sauerstoff, Argon und Kohlenstoffdioxid kennen" },
+    { "id": "lz3", "niveau": "H", "text": "Den Sauerstoffanteil der Luft experimentell bestimmen und das Ergebnis auswerten" },
+    { "id": "lz4", "niveau": "H", "text": "Luftschadstoffe (Feinstaub, Stickstoffoxide, Kohlenstoffmonoxid, Schwefeldioxid) mit Quellen und Wirkungen beschreiben und Aussagen dazu auf Fakten prüfen" }
+  ],
+  "verstehen": {
+    "einstieg": "Du atmest jeden Tag etwa 10 000 Liter Luft ein. Aber was genau ist eigentlich „Luft“? Ein einziger Stoff oder eine Mischung?",
+    "abschnitte": [
+      {
+        "titel": "Luft ist ein Gemisch",
+        "text": "Luft ist kein Reinstoff, sondern ein **Gemisch aus mehreren Gasen**. Trockene Luft enthält (Volumenanteile):\n\n- **Stickstoff** N₂: etwa 78 %\n- **Sauerstoff** O₂: etwa 21 %\n- **Argon** Ar: etwa 0,9 %\n- **Kohlenstoffdioxid** CO₂: etwa 0,04 %\n- Spuren weiterer Edelgase (Neon, Helium …)\n\nDazu kommt je nach Wetter mehr oder weniger **Wasserdampf**. Weil Luft ein Gemisch ist, lassen sich ihre Bestandteile trennen, z. B. durch starkes Abkühlen, bis sie flüssig werden."
+      },
+      {
+        "titel": "Die Bestandteile und ihre Bedeutung",
+        "text": "- **Stickstoff:** farblos, geruchlos, sehr **reaktionsträge**. Flammen erlöschen darin. Man nutzt ihn als Schutzgas, z. B. in Chipstüten, damit nichts verdirbt, und als Rohstoff für Dünger.\n- **Sauerstoff:** farblos, geruchlos. Er **unterhält die Verbrennung** und ist für die Atmung lebensnotwendig.\n- **Argon:** ein **Edelgas**, reagiert praktisch mit nichts. Schutzgas beim Schweißen.\n- **Kohlenstoffdioxid:** Pflanzen brauchen es für die Fotosynthese. Es ist ein **Treibhausgas**. Durch das Verbrennen von Kohle, Erdöl und Erdgas ist sein Anteil seit Beginn der Industrialisierung von etwa 0,028 % auf über 0,04 % gestiegen. Das verstärkt den Treibhauseffekt und erwärmt die Erde."
+      },
+      {
+        "titel": "Den Sauerstoffanteil messen",
+        "text": "In einem Kolbenprober werden z. B. 100 mL Luft mehrmals über glühendes Kupfer geleitet. Das Kupfer reagiert mit dem Sauerstoff zu schwarzem Kupferoxid. Der Sauerstoff wird so aus der Luft entfernt.\n\nNach dem Abkühlen sind nur noch etwa **79 mL** Gas übrig. Es fehlen also 21 mL von 100 mL, das sind **21 %**. Im Restgas erlischt ein brennender Span: Es besteht fast nur aus Stickstoff und Edelgasen.\n\nAnteil Sauerstoff = verbrauchtes Volumen geteilt durch Anfangsvolumen."
+      },
+      {
+        "titel": "Luftschadstoffe",
+        "text": "- **Kohlenstoffmonoxid** CO: entsteht bei **unvollständiger Verbrennung** (zu wenig Sauerstoff), z. B. in schlecht gewarteten Gasthermen oder beim Grillen in geschlossenen Räumen. Farblos, geruchlos und sehr giftig: Es blockiert den Sauerstofftransport im Blut. Schutz: CO-Melder, gut lüften, nie mit Holzkohle in Innenräumen grillen.\n- **Stickstoffoxide** (NO, NO₂): entstehen bei hohen Temperaturen in Motoren und Feuerungen aus dem Stickstoff und Sauerstoff der Luft. Sie reizen die Atemwege und tragen zu saurem Regen und Sommersmog bei.\n- **Schwefeldioxid** SO₂: entsteht beim Verbrennen schwefelhaltiger Kohle und Öle. Stechend riechend, verursacht sauren Regen. Seit Kraftwerke ihre Abgase entschwefeln, ist der Gehalt in Deutschland stark gesunken.\n- **Feinstaub:** winzige Partikel, z. B. aus Reifen- und Bremsabrieb, Holzöfen und Abgasen. Je kleiner, desto tiefer dringen sie in die Lunge ein.\n\nBeim **Bewerten** von Meldungen über Luftschadstoffe prüfst du: Wer sagt das? Gibt es Messwerte? Werden Quelle, Menge und Wirkung genannt?"
+      }
+    ],
+    "merksatz": "Luft ist ein **Gasgemisch** aus etwa 78 % Stickstoff, 21 % Sauerstoff, 0,9 % Argon und 0,04 % Kohlenstoffdioxid. Luftschadstoffe wie Kohlenstoffmonoxid, Stickstoffoxide, Schwefeldioxid und Feinstaub entstehen vor allem bei Verbrennungen.",
+    "alltag": "Ein CO-Melder in der Wohnung kann Leben retten: Kohlenstoffmonoxid aus einer defekten Gastherme riecht man nicht."
+  },
+  "interaktiv": [],
+  "vertiefung": ["ch-gaslabor"],
+  "uebungen": [
+    {
+      "id": "ch-luf-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Ordne jedem Bestandteil der trockenen Luft seinen Volumenanteil zu.",
+      "paare": [
+        { "links": "Stickstoff", "rechts": "etwa 78 %" },
+        { "links": "Sauerstoff", "rechts": "etwa 21 %" },
+        { "links": "Argon", "rechts": "etwa 0,9 %" },
+        { "links": "Kohlenstoffdioxid", "rechts": "etwa 0,04 %" }
+      ],
+      "extraRechts": ["etwa 50 %"],
+      "erklaerung": "Stickstoff und Sauerstoff machen zusammen 99 % der Luft aus. Kohlenstoffdioxid ist nur in Spuren enthalten, beeinflusst aber trotzdem das Klima."
+    },
+    {
+      "id": "ch-luf-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Chipstüten werden mit einem Gas gefüllt, das den größten Teil der Luft ausmacht und sehr reaktionsträge ist. Welches Gas ist das?",
+      "optionen": [
+        { "text": "Stickstoff", "richtig": true },
+        { "text": "Sauerstoff", "feedback": "Sauerstoff würde das Fett in den Chips oxidieren, sie würden ranzig." },
+        { "text": "Kohlenstoffdioxid", "feedback": "Kohlenstoffdioxid ist nur zu 0,04 % in der Luft enthalten." },
+        { "text": "Wasserstoff", "feedback": "Wasserstoff ist brennbar und kaum in der Luft enthalten." }
+      ],
+      "erklaerung": "**Stickstoff** (78 % der Luft) reagiert kaum mit anderen Stoffen. Als Schutzgas verdrängt er den Sauerstoff, und die Chips bleiben länger frisch."
+    },
+    {
+      "id": "ch-luf-03", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "In einem Kolbenprober werden 50 mL Luft so lange über glühendes Kupfer geleitet, bis sich das Volumen nicht mehr ändert. Nach dem Abkühlen sind noch 39,5 mL Gas übrig. Wie groß ist der Volumenanteil des Sauerstoffs?",
+      "gegeben": "`V_{vorher} = 50 mL`, `V_{nachher} = 39,5 mL`",
+      "gesucht": "Volumenanteil Sauerstoff",
+      "gesuchtSymbol": "φ(O₂)",
+      "loesung": 21, "einheit": "%",
+      "rechenweg": [
+        "Verbrauchter Sauerstoff: `50 mL − 39,5 mL = 10,5 mL`",
+        "Anteil: `\\frac{10,5 mL}{50 mL} = 0,21`",
+        "`0,21 = 21 %`"
+      ],
+      "hinweis": "Das fehlende Volumen ist der Sauerstoff, der mit dem Kupfer reagiert hat.",
+      "erklaerung": "Das Kupfer bindet den Sauerstoff als Kupferoxid. Das Restgas ist vor allem Stickstoff."
+    },
+    {
+      "id": "ch-luf-04", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz1",
+      "frage": "Ein Klassenraum ist 8 m lang, 7 m breit und 3 m hoch. Wie viel Kubikmeter Sauerstoff enthält die Luft darin?",
+      "gegeben": "Raum 8 m × 7 m × 3 m, Sauerstoffanteil 21 %",
+      "gesucht": "Volumen des Sauerstoffs",
+      "gesuchtSymbol": "V(O₂)",
+      "loesung": 35.28, "einheit": "m³",
+      "alternativEinheiten": { "L": 0.001 },
+      "rechenweg": [
+        "Raumvolumen: `V = 8 m · 7 m · 3 m = 168 m³`",
+        "Sauerstoff: `V(O₂) = 0,21 · 168 m³`",
+        "`V(O₂) ≈ 35,3 m³`"
+      ],
+      "hinweis": "Berechne zuerst das Volumen des Raumes.",
+      "erklaerung": "Etwa ein Fünftel der Raumluft ist Sauerstoff. Beim Atmen wird er langsam verbraucht und durch Kohlenstoffdioxid ersetzt. Deshalb ist regelmäßiges Lüften wichtig."
+    },
+    {
+      "id": "ch-luf-05", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Ordne jedem Luftschadstoff die passende Beschreibung zu.",
+      "paare": [
+        { "links": "Kohlenstoffmonoxid", "rechts": "entsteht bei unvollständiger Verbrennung, blockiert den Sauerstofftransport im Blut" },
+        { "links": "Stickstoffoxide", "rechts": "entstehen in heißen Motoren aus Stickstoff und Sauerstoff der Luft, reizen die Atemwege" },
+        { "links": "Schwefeldioxid", "rechts": "entsteht beim Verbrennen schwefelhaltiger Kohle, verursacht sauren Regen" },
+        { "links": "Feinstaub", "rechts": "winzige Partikel, z. B. aus Reifen- und Bremsabrieb, dringen tief in die Lunge" }
+      ],
+      "erklaerung": "Fast alle Luftschadstoffe stammen aus Verbrennungen. Feinstaub entsteht zusätzlich durch Abrieb."
+    },
+    {
+      "id": "ch-luf-06", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "In einer Diskussion über Luftqualität fallen diese Aussagen. Welche sind durch Fakten gedeckt?",
+      "optionen": [
+        { "text": "Der Schwefeldioxidgehalt der Luft ist in Deutschland stark gesunken, seit Kraftwerke ihre Abgase entschwefeln.", "richtig": true },
+        { "text": "Stickstoffoxide entstehen vor allem bei hohen Temperaturen in Motoren und Feuerungen.", "richtig": true },
+        { "text": "Der Anteil von Kohlenstoffdioxid in der Luft ist seit Beginn der Industrialisierung deutlich gestiegen.", "richtig": true },
+        { "text": "Kohlenstoffmonoxid bemerkt man rechtzeitig an seinem stechenden Geruch.", "feedback": "Kohlenstoffmonoxid ist geruchlos. Gerade das macht es so gefährlich." },
+        { "text": "Feinstaub ist harmlos, weil man ihn nicht sehen kann.", "feedback": "Gerade die unsichtbar kleinen Partikel dringen am tiefsten in die Lunge ein." }
+      ],
+      "erklaerung": "Beim Bewerten hilft die Frage: Gibt es Messwerte und eine nachvollziehbare Erklärung? „Unsichtbar“ oder „riecht man nicht“ heißt nicht „harmlos“."
+    },
+    {
+      "id": "ch-luf-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Erkläre, warum Kohlenstoffmonoxid besonders gefährlich ist, wie es entsteht und wie man sich davor schützen kann.",
+      "stichworte": [
+        { "aspekt": "Es ist farblos und geruchlos, man bemerkt es nicht", "woerter": ["geruchlos", "farblos", "riecht man nicht", "nicht riechen", "unsichtbar", "bemerkt", "merkt"] },
+        { "aspekt": "Es blockiert den Sauerstofftransport im Blut (giftig)", "woerter": ["blut", "sauerstofftransport", "giftig", "vergiftung", "erstick"] },
+        { "aspekt": "Es entsteht bei unvollständiger Verbrennung (zu wenig Sauerstoff)", "woerter": ["unvollstaendig", "zu wenig sauerstoff", "wenig sauerstoff", "sauerstoffmangel"] },
+        { "aspekt": "Schutz: CO-Melder, lüften, nicht in Innenräumen grillen", "woerter": ["melder", "lueft", "nicht in innenraeum", "nicht drinnen", "nicht in geschlossenen", "wartung", "warten"] }
+      ],
+      "musterloesung": "Kohlenstoffmonoxid ist farblos und geruchlos, deshalb bemerkt man es nicht. Es ist sehr giftig, weil es im Blut den Sauerstofftransport blockiert. Es entsteht bei unvollständiger Verbrennung, wenn zu wenig Sauerstoff vorhanden ist, z. B. in defekten Gasthermen oder beim Grillen in geschlossenen Räumen. Schützen kann man sich mit einem CO-Melder, regelmäßigem Lüften und indem man nie in Innenräumen grillt.",
+      "erklaerung": "Da man CO nicht wahrnimmt, helfen nur Technik (Melder, Wartung) und richtiges Verhalten."
+    }
+  ]
+}

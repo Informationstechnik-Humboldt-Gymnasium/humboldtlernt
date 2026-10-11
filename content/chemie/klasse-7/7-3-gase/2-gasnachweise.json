@@ -1,0 +1,124 @@
+{
+  "id": "ch-k7-gasnachweise",
+  "titel": "Sauerstoff, Wasserstoff und Kohlenstoffdioxid",
+  "kurz": "Drei farblose Gase mit ganz verschiedenen Eigenschaften und wie du sie mit Glimmspan, Knallgasprobe und Kalkwasser sicher erkennst.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Eigenschaften und Verwendung von Sauerstoff, Wasserstoff und Kohlenstoffdioxid nennen" },
+    { "id": "lz2", "niveau": "G", "text": "Die Nachweise Glimmspanprobe, Knallgasprobe und Kalkwasserprobe beschreiben und durchführen" },
+    { "id": "lz3", "niveau": "H", "text": "Aus Beobachtungen bei Nachweisreaktionen auf ein unbekanntes Gas schließen" },
+    { "id": "lz4", "niveau": "H", "text": "Gefahren beim Umgang mit Wasserstoff und Kohlenstoffdioxid erkennen und Sicherheitsmaßnahmen begründen" }
+  ],
+  "verstehen": {
+    "einstieg": "Vor dir stehen drei verschlossene Reagenzgläser. Alle sehen leer aus, alle Gase sind farblos und geruchlos. Wie findest du heraus, welches Gas in welchem Glas ist?",
+    "abschnitte": [
+      {
+        "titel": "Sauerstoff O₂",
+        "text": "- farblos, geruchlos, etwas schwerer als Luft\n- brennt selbst nicht, **unterhält aber die Verbrennung**: In reinem Sauerstoff brennen Stoffe viel heftiger als an der Luft\n- Verwendung: Atemgerät in der Medizin, Schweißen, Stahlherstellung\n\n**Nachweis: Glimmspanprobe.** Ein glimmender Holzspan wird in das Gas gehalten. **Flammt er hell auf**, ist Sauerstoff (in hoher Konzentration) vorhanden. In normaler Luft glimmt der Span nur weiter."
+      },
+      {
+        "titel": "Wasserstoff H₂",
+        "text": "- farblos, geruchlos, das **leichteste aller Gase** (etwa 14-mal leichter als Luft)\n- **brennbar**: Wasserstoff + Sauerstoff → Wasser\n- Gemische aus Wasserstoff und Luft oder Sauerstoff heißen **Knallgas**. Sie verbrennen explosionsartig.\n- Verwendung: Brennstoffzellen, Raketentreibstoff, Herstellung von Ammoniak\n\n**Nachweis: Knallgasprobe.** Ein Reagenzglas wird mit der Öffnung nach unten mit dem Gas gefüllt (Wasserstoff steigt nach oben), mit dem Daumen verschlossen und schräg nach unten an die Brennerflamme gehalten. Ein **leises Ploppen** zeigt reinen Wasserstoff. Ein **pfeifender Knall** zeigt, dass Wasserstoff mit Luft gemischt war.\n\n**Sicherheit:** Wasserstoff darf erst entzündet werden, wenn die Knallgasprobe ein leises Ploppen ergibt. Sonst kann die ganze Apparatur explodieren."
+      },
+      {
+        "titel": "Kohlenstoffdioxid CO₂",
+        "text": "- farblos, geruchlos, etwa **1,5-mal schwerer als Luft**: Es sammelt sich am Boden und lässt sich wie eine Flüssigkeit „ausgießen“\n- brennt nicht und **erstickt Flammen**\n- löst sich in Wasser (Sprudel)\n- Verwendung: Feuerlöscher, Kohlensäure in Getränken, Trockeneis zum Kühlen\n\n**Nachweis: Kalkwasserprobe.** Das Gas wird in klares Kalkwasser geleitet. Wird es **milchig-trüb**, ist Kohlenstoffdioxid vorhanden. Dabei entsteht weißer, unlöslicher Kalk:\n\nKohlenstoffdioxid + Calciumhydroxid → Calciumcarbonat + Wasser\n\n**Gefahr:** Bei der Gärung (z. B. im Weinkeller) entsteht viel Kohlenstoffdioxid. Es sammelt sich am Boden und verdrängt die Atemluft. Schon wenige Prozent in der Atemluft verursachen Kopfschmerzen, höhere Anteile Bewusstlosigkeit und Tod."
+      },
+      {
+        "titel": "Nachweis heißt: eindeutig",
+        "text": "Ein **brennender Span** erlischt in Kohlenstoffdioxid, aber auch in Stickstoff. Diese Probe allein ist also **kein Nachweis**. Erst die Kalkwasserprobe unterscheidet die beiden Gase: Nur Kohlenstoffdioxid trübt Kalkwasser.\n\nGute Nachweise reagieren nur auf **einen** Stoff. Darum nutzt man:\n\n- Sauerstoff: Glimmspan flammt auf\n- Wasserstoff: Knallgasprobe ploppt oder pfeift\n- Kohlenstoffdioxid: Kalkwasser wird trüb"
+      },
+      {
+        "titel": "Für Schnelle: Gase herstellen",
+        "text": "- Sauerstoff: Wasserstoffperoxid-Lösung zersetzt sich mit Braunstein als Katalysator.\n- Wasserstoff: Zink reagiert mit verdünnter Salzsäure.\n- Kohlenstoffdioxid: Kalk oder Marmor reagiert mit verdünnter Salzsäure.\n\nDie Gase fängt man in einem umgedrehten, mit Wasser gefüllten Reagenzglas oder in einem Kolbenprober auf. Bei allen Versuchen gilt: Schutzbrille tragen."
+      }
+    ],
+    "merksatz": "**Sauerstoff:** Glimmspan flammt auf. **Wasserstoff:** Knallgasprobe (leises Ploppen bei reinem Wasserstoff). **Kohlenstoffdioxid:** Kalkwasser wird trüb. Ein erlöschender brennender Span ist kein eindeutiger Nachweis.",
+    "alltag": "Winzer prüfen vor dem Betreten eines Gärkellers mit einer brennenden Kerze in Bodennähe, ob dort zu viel Kohlenstoffdioxid ist. Erlischt die Kerze, ist der Aufenthalt lebensgefährlich."
+  },
+  "interaktiv": ["ch-gaslabor"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "ch-gnw-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Ordne jedem Gas seinen Nachweis zu.",
+      "paare": [
+        { "links": "Sauerstoff", "rechts": "Glimmspanprobe: der Span flammt auf" },
+        { "links": "Wasserstoff", "rechts": "Knallgasprobe: Ploppen oder pfeifender Knall" },
+        { "links": "Kohlenstoffdioxid", "rechts": "Kalkwasserprobe: das Kalkwasser wird trüb" }
+      ],
+      "extraRechts": ["Das Gas riecht stechend."],
+      "erklaerung": "Alle drei Gase sind farblos und geruchlos. Man erkennt sie nur an ihren typischen Reaktionen."
+    },
+    {
+      "id": "ch-gnw-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Welches Gas ist viel leichter als Luft und deshalb früher für Luftschiffe verwendet worden?",
+      "optionen": [
+        { "text": "Wasserstoff", "richtig": true },
+        { "text": "Kohlenstoffdioxid", "feedback": "Kohlenstoffdioxid ist schwerer als Luft und sinkt nach unten." },
+        { "text": "Sauerstoff", "feedback": "Sauerstoff ist etwas schwerer als Luft." },
+        { "text": "Stickstoff", "feedback": "Stickstoff ist fast genauso schwer wie Luft. Damit kann nichts schweben." }
+      ],
+      "erklaerung": "Wasserstoff ist das leichteste Gas. Weil er brennbar ist, ist das aber gefährlich: 1937 verbrannte das Luftschiff „Hindenburg“. Heute nimmt man das unbrennbare Edelgas Helium."
+    },
+    {
+      "id": "ch-gnw-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Du hältst einen glimmenden Holzspan in ein Reagenzglas mit einem unbekannten Gas. Der Span flammt hell auf. Was folgt daraus?",
+      "optionen": [
+        { "text": "Im Glas ist Sauerstoff in hoher Konzentration.", "richtig": true },
+        { "text": "Im Glas ist Wasserstoff.", "feedback": "Wasserstoff würde mit einem Ploppen oder Knall verbrennen. Den Span lässt er nicht aufflammen." },
+        { "text": "Im Glas ist Kohlenstoffdioxid.", "feedback": "In Kohlenstoffdioxid würde der Span ausgehen." },
+        { "text": "Im Glas ist ganz normale Luft.", "feedback": "In Luft glimmt der Span nur weiter. Für ein Aufflammen braucht er mehr Sauerstoff." }
+      ],
+      "erklaerung": "Das Aufflammen des glimmenden Spans ist der Nachweis für **Sauerstoff**. Sauerstoff unterhält die Verbrennung, in reinem Sauerstoff brennt Holz viel heftiger."
+    },
+    {
+      "id": "ch-gnw-04", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Ein brennender Span erlischt in einem unbekannten Gas. Leitet man das Gas in Kalkwasser, bleibt dieses klar. Der Glimmspan flammt nicht auf, die Knallgasprobe bleibt still. Welches Gas ist es am wahrscheinlichsten?",
+      "optionen": [
+        { "text": "Stickstoff", "richtig": true },
+        { "text": "Kohlenstoffdioxid", "feedback": "Kohlenstoffdioxid würde das Kalkwasser trüben." },
+        { "text": "Sauerstoff", "feedback": "In Sauerstoff würde der Span heller brennen statt zu erlöschen." },
+        { "text": "Wasserstoff", "feedback": "Wasserstoff würde sich am Span entzünden und bei der Knallgasprobe ploppen." }
+      ],
+      "erklaerung": "Das Gas unterhält die Verbrennung nicht, ist nicht brennbar und trübt Kalkwasser nicht. Von den bekannten Gasen passt nur das reaktionsträge **Stickstoff**. Ein erlöschender Span allein ist deshalb kein Nachweis für Kohlenstoffdioxid."
+    },
+    {
+      "id": "ch-gnw-05", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Welche Aussagen über Kohlenstoffdioxid sind richtig?",
+      "optionen": [
+        { "text": "Es ist schwerer als Luft und sammelt sich am Boden.", "richtig": true },
+        { "text": "Es erstickt Flammen und wird deshalb in Feuerlöschern verwendet.", "richtig": true },
+        { "text": "Es löst sich in Wasser und macht Sprudel prickelnd.", "richtig": true },
+        { "text": "Es ist brennbar und wird als Treibstoff genutzt.", "feedback": "Kohlenstoffdioxid entsteht bei Verbrennungen. Es brennt selbst nicht." },
+        { "text": "Man erkennt es an seinem stechenden Geruch.", "feedback": "Kohlenstoffdioxid ist geruchlos. Stechend riecht z. B. Schwefeldioxid." }
+      ],
+      "erklaerung": "Kohlenstoffdioxid ist farblos, geruchlos, schwerer als Luft und nicht brennbar. Nachgewiesen wird es mit Kalkwasser."
+    },
+    {
+      "id": "ch-gnw-06", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Bringe die Schritte der Knallgasprobe in die richtige Reihenfolge.",
+      "elemente": [
+        "Schutzbrille aufsetzen",
+        "Reagenzglas mit der Öffnung nach unten über die Gasquelle halten und füllen",
+        "Öffnung mit dem Daumen verschließen",
+        "Reagenzglas mit der Öffnung schräg nach unten zur Brennerflamme führen",
+        "Daumen wegnehmen und das Gas entzünden",
+        "Auf das Geräusch achten: leises Ploppen oder pfeifender Knall"
+      ],
+      "erklaerung": "Weil Wasserstoff leichter als Luft ist, fängt man ihn mit der Öffnung nach unten auf. Erst wenn die Probe nur noch leise ploppt, ist der Wasserstoff rein und darf entzündet werden."
+    },
+    {
+      "id": "ch-gnw-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Ein Winzer hält eine brennende Kerze in Bodennähe, bevor er seinen Gärkeller betritt. Erkläre, warum das sinnvoll ist.",
+      "stichworte": [
+        { "aspekt": "Bei der Gärung entsteht Kohlenstoffdioxid", "woerter": ["kohlenstoffdioxid", "co2"] },
+        { "aspekt": "Es ist schwerer als Luft und sammelt sich am Boden", "woerter": ["schwerer", "am boden", "unten", "sammelt", "sinkt"] },
+        { "aspekt": "Die Kerze erlischt, wenn zu viel davon da ist", "woerter": ["erlisch", "geht aus", "kerze aus", "ausgeht", "erstickt die flamme", "flamme erstickt"] },
+        { "aspekt": "Dann besteht Erstickungsgefahr, der Keller darf nicht betreten werden", "woerter": ["erstick", "lebensgefaehr", "nicht betreten", "bewusstlos", "nicht hinein", "atemluft"] }
+      ],
+      "musterloesung": "Bei der Gärung entsteht Kohlenstoffdioxid. Es ist schwerer als Luft und sammelt sich am Boden des Kellers. Ist dort zu viel Kohlenstoffdioxid und zu wenig Sauerstoff, geht die Kerze aus. Dann besteht Erstickungsgefahr, und der Winzer darf den Keller nicht betreten, sondern muss erst lüften.",
+      "erklaerung": "Die Kerzenprobe ist nur eine grobe Warnung: Eine Kerze erlischt erst, wenn schon sehr viel Kohlenstoffdioxid in der Luft ist. Auch wenn sie weiterbrennt, kann die Luft ungesund sein. Sicherer sind elektronische CO₂-Warngeräte und eine gute Belüftung."
+    }
+  ]
+}

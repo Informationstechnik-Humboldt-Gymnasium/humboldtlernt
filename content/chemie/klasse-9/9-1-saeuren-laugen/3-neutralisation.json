@@ -1,0 +1,124 @@
+{
+  "id": "ch-k9-neutralisation",
+  "titel": "Neutralisation und Säuren im Haushalt",
+  "kurz": "Säure plus Lauge ergibt Salz und Wasser: wie die Neutralisation abläuft und wo Säure-Base-Reaktionen beim Entkalken, Backen und Löschen helfen.",
+  "reihenfolge": 3,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Die Neutralisation als Reaktion von Oxonium-Ionen mit Hydroxid-Ionen zu Wasser beschreiben und dabei Donator und Akzeptor kennzeichnen" },
+    { "id": "lz2", "niveau": "G", "text": "Reaktionsgleichungen für Neutralisationen aufstellen und die entstehenden Salze benennen" },
+    { "id": "lz3", "niveau": "H", "text": "Die Erwärmung bei der Neutralisation als Umwandlung gespeicherter Energie in Wärme erklären" },
+    { "id": "lz4", "niveau": "G", "text": "Säure-Base-Reaktionen im Alltag erklären: Entkalken, Backtriebmittel, Feuerlöscher und Mittel gegen Sodbrennen" },
+    { "id": "lz5", "niveau": "H", "text": "Haushaltschemikalien nach Sicherheit, Umweltverträglichkeit und Wirksamkeit bewerten und auswählen" }
+  ],
+  "verstehen": {
+    "einstieg": "Der Wasserkocher ist innen weiß verkrustet. Gibst du etwas Citronensäure-Lösung hinein, schäumt es, und der Belag verschwindet. Was passiert da?",
+    "abschnitte": [
+      {
+        "titel": "Säure + Lauge → Salz + Wasser",
+        "text": "Gibt man zu Salzsäure nach und nach Natronlauge, wird die Lösung immer weniger sauer, bis sie **neutral** ist. Diese Reaktion heißt **Neutralisation**:\n\nHCl + NaOH → NaCl + H₂O\n\nIn der Lösung liegen die Stoffe als Ionen vor:\n\nH₃O⁺ + Cl⁻ + Na⁺ + OH⁻ → Na⁺ + Cl⁻ + 2 H₂O\n\nDie Na⁺- und Cl⁻-Ionen ändern sich nicht. Die eigentliche Reaktion ist:\n\nH₃O⁺ + OH⁻ → 2 H₂O\n\nDas Oxonium-Ion gibt ein Proton an das Hydroxid-Ion ab. H₃O⁺ ist der **Donator**, OH⁻ der **Akzeptor**. Dampft man die neutrale Lösung ein, bleibt das **Salz** zurück, hier Natriumchlorid (Kochsalz)."
+      },
+      {
+        "titel": "Gleichungen aufstellen und Salze benennen",
+        "text": "Das Salz besteht aus dem **Metall-Ion der Lauge** und dem **Säurerest-Ion der Säure**. Achte darauf, dass gleich viele H₃O⁺- und OH⁻-Ionen reagieren:\n\n- H₂SO₄ + 2 NaOH → Na₂SO₄ + 2 H₂O (Natriumsulfat)\n- 2 HCl + Ca(OH)₂ → CaCl₂ + 2 H₂O (Calciumchlorid)\n- HNO₃ + KOH → KNO₃ + H₂O (Kaliumnitrat)\n\nSchwefelsäure gibt zwei Protonen ab, deshalb braucht man doppelt so viel Natriumhydroxid."
+      },
+      {
+        "titel": "Neutralisation ist exotherm",
+        "text": "Bei der Neutralisation wird die Lösung **warm**. Ein Teil der in den Stoffen gespeicherten Energie wird in **Wärme** umgewandelt. Die Neutralisation ist also **exotherm**.\n\nBei konzentrierten Lösungen kann es so heiß werden, dass die Flüssigkeit spritzt. Deshalb nur mit verdünnten Lösungen arbeiten und die Lauge langsam zugeben."
+      },
+      {
+        "titel": "Säure-Base-Reaktionen im Alltag",
+        "text": "**Entkalken:** Kalk ist Calciumcarbonat (CaCO₃). Säuren lösen ihn auf, dabei sprudelt Kohlenstoffdioxid heraus:\n\nCaCO₃ + 2 H₃O⁺ → Ca²⁺ + 3 H₂O + CO₂\n\nDas Gas weist du mit **Kalkwasser** nach (es trübt sich). Entkalker enthalten z. B. Citronensäure, Essigsäure oder Amidosulfonsäure.\n\n**Backpulver:** Es enthält **Natron** (Natriumhydrogencarbonat, NaHCO₃) und ein festes Säuerungsmittel. Kommen Wasser und Wärme dazu, reagieren beide, und es entsteht CO₂:\n\nNaHCO₃ + H₃O⁺ → Na⁺ + 2 H₂O + CO₂\n\nDie Gasbläschen dehnen sich im Ofen aus und lockern den Teig.\n\n**Feuerlöscher:** Früher gab es Säure-Soda-Löscher. Beim Auslösen floss Schwefelsäure in eine Natriumhydrogencarbonat-Lösung. Das entstehende CO₂ baute Druck auf und trieb das Löschwasser heraus. Heutige CO₂-Löscher enthalten das Gas schon fertig unter Druck.\n\n**Sodbrennen:** Mittel gegen zu viel Magensäure enthalten Basen wie Magnesiumhydroxid: Mg(OH)₂ + 2 HCl → MgCl₂ + 2 H₂O."
+      },
+      {
+        "titel": "Haushaltschemikalien bewerten",
+        "text": "Beim Auswählen helfen drei Fragen:\n\n- **Sicherheit:** Ist das Mittel ätzend? Gibt es Gefahrenpiktogramme? Muss ich Handschuhe und Brille tragen?\n- **Umweltverträglichkeit:** Ist der Stoff biologisch abbaubar? Wie viel braucht man?\n- **Wirksamkeit:** Löst das Mittel das Problem, ohne das Gerät zu beschädigen?\n\nBeispiel Entkalker: **Citronensäure** ist gut abbaubar und kaum gefährlich, sollte aber nur kalt oder lauwarm verwendet werden, weil sich sonst schwer lösliches Calciumcitrat absetzen kann. **Essigessenz** wirkt ebenfalls, riecht aber stark und kann Gummidichtungen angreifen. Stark saure WC-Reiniger wirken schnell, sind aber ätzend.\n\n**Abflussreiniger** enthalten festes Natriumhydroxid. Sie sind stark ätzend und belasten das Abwasser. Oft hilft schon eine Saugglocke.\n\n**Niemals mischen:** Chlorhaltige Reiniger und saure Reiniger zusammen setzen giftiges **Chlorgas** frei."
+      }
+    ],
+    "merksatz": "**Neutralisation:** Säure + Lauge → Salz + Wasser. Dabei reagieren Oxonium-Ionen und Hydroxid-Ionen zu Wasser: H₃O⁺ + OH⁻ → 2 H₂O. Die Reaktion ist **exotherm**.\n\nSäuren lösen Kalk unter Bildung von Kohlenstoffdioxid. Das nutzt man beim Entkalken, beim Backen mit Backpulver und früher im Feuerlöscher.",
+    "alltag": "Landwirte und Gärtner streuen Kalk auf saure Böden. Das Calciumcarbonat reagiert mit den Oxonium-Ionen im Boden, der pH-Wert steigt, und viele Pflanzen wachsen besser."
+  },
+  "interaktiv": ["ch-titration"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "ch-neu-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Welche Teilchen reagieren bei jeder Neutralisation einer sauren mit einer alkalischen Lösung miteinander?",
+      "optionen": [
+        { "text": "Oxonium-Ionen und Hydroxid-Ionen zu Wasser-Molekülen", "richtig": true },
+        { "text": "Natrium-Ionen und Chlorid-Ionen zu Kochsalz", "feedback": "Na⁺ und Cl⁻ sind vorher und nachher gelöst. Sie verändern sich nicht. Erst beim Eindampfen bildet sich festes Kochsalz." },
+        { "text": "Wasserstoff und Sauerstoff zu Wasser", "feedback": "Das ist die Knallgasreaktion, eine Redoxreaktion." },
+        { "text": "Chlorid-Ionen und Hydroxid-Ionen", "feedback": "Beide Ionen sind negativ geladen und reagieren nicht miteinander." }
+      ],
+      "erklaerung": "Kern jeder Neutralisation ist H₃O⁺ + OH⁻ → 2 H₂O. Das Oxonium-Ion gibt ein Proton an das Hydroxid-Ion ab."
+    },
+    {
+      "id": "ch-neu-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz4",
+      "frage": "Du tropfst Essig auf ein Stück Kalkstein. Es schäumt. Welches Gas entsteht, und wie weist du es nach?",
+      "optionen": [
+        { "text": "Kohlenstoffdioxid, Kalkwasser wird trüb", "richtig": true },
+        { "text": "Wasserstoff, Knallgasprobe", "feedback": "Wasserstoff entsteht, wenn Säuren mit unedlen **Metallen** reagieren. Kalk ist kein Metall, sondern ein Carbonat." },
+        { "text": "Sauerstoff, Glimmspanprobe", "feedback": "Der Sauerstoff im Carbonat bleibt gebunden, er wird nicht frei." },
+        { "text": "Es entsteht kein Gas, die Bläschen sind Luft.", "feedback": "Es bildet sich ein neuer Stoff. Leite das Gas in Kalkwasser ein und beobachte." }
+      ],
+      "erklaerung": "Säuren reagieren mit Carbonaten zu einem Salz, Wasser und Kohlenstoffdioxid: CaCO₃ + 2 H₃O⁺ → Ca²⁺ + 3 H₂O + CO₂. Kalkwasser trübt sich mit CO₂."
+    },
+    {
+      "id": "ch-neu-03", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Welches Salz entsteht bei der Neutralisation?",
+      "paare": [
+        { "links": "Salzsäure + Kalilauge", "rechts": "Kaliumchlorid" },
+        { "links": "Schwefelsäure + Natronlauge", "rechts": "Natriumsulfat" },
+        { "links": "Salpetersäure + Kalkwasser", "rechts": "Calciumnitrat" },
+        { "links": "Phosphorsäure + Natronlauge", "rechts": "Natriumphosphat" }
+      ],
+      "extraRechts": ["Natriumcarbonat", "Calciumchlorid"],
+      "erklaerung": "Das Salz setzt sich aus dem Metall-Ion der Lauge (Kalilauge: K⁺, Natronlauge: Na⁺, Kalkwasser: Ca²⁺) und dem Säurerest-Ion der Säure (Cl⁻, SO₄²⁻, NO₃⁻, PO₄³⁻) zusammen."
+    },
+    {
+      "id": "ch-neu-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Welche Reaktionsgleichung für die Neutralisation von Schwefelsäure mit Natronlauge ist richtig ausgeglichen?",
+      "optionen": [
+        { "text": "H₂SO₄ + 2 NaOH → Na₂SO₄ + 2 H₂O", "richtig": true },
+        { "text": "H₂SO₄ + NaOH → NaSO₄ + H₂O", "feedback": "Das Sulfat-Ion ist zweifach negativ geladen (SO₄²⁻). Es braucht zwei Na⁺-Ionen: Na₂SO₄." },
+        { "text": "H₂SO₄ + 2 NaOH → Na₂SO₄ + H₂O", "feedback": "Zähle die H- und O-Atome: Links sind es 4 H, rechts nur 2. Es entstehen 2 H₂O." },
+        { "text": "H₂SO₄ + Na₂OH → Na₂SO₄ + H₂O", "feedback": "Natriumhydroxid hat die Formel NaOH. Die Anzahl der Teilchen gleichst du mit Koeffizienten aus, nicht durch Ändern der Formel." }
+      ],
+      "erklaerung": "Schwefelsäure ist zweiprotonig: Ein H₂SO₄ gibt zwei Protonen ab, die mit zwei OH⁻ zu zwei Wasser-Molekülen reagieren. Probe: links 4 H, 1 S, 6 O, 2 Na, rechts ebenso."
+    },
+    {
+      "id": "ch-neu-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Du gibst verdünnte Natronlauge zu verdünnter Salzsäure. Ein Thermometer zeigt einen Temperaturanstieg von 21 °C auf 27 °C. Wie erklärst du das?",
+      "optionen": [
+        { "text": "Die Neutralisation ist exotherm: Gespeicherte Energie der Stoffe wird in Wärme umgewandelt.", "richtig": true },
+        { "text": "Die Neutralisation ist endotherm: Sie nimmt Wärme aus der Umgebung auf.", "feedback": "Bei einer endothermen Reaktion würde die Lösung kälter werden." },
+        { "text": "Das Thermometer wird durch die Säure angegriffen und zeigt falsch an.", "feedback": "Glasthermometer sind gegen verdünnte Säuren beständig. Die Erwärmung ist echt." },
+        { "text": "Durch das Rühren entsteht Reibungswärme.", "feedback": "Reibung beim Rühren erwärmt eine Lösung nur unmessbar wenig, nicht um 6 °C." }
+      ],
+      "erklaerung": "Bei der Reaktion H₃O⁺ + OH⁻ → 2 H₂O wird Energie frei. Die Neutralisation ist **exotherm**, die Lösung erwärmt sich."
+    },
+    {
+      "id": "ch-neu-06", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Erkläre, warum ein Kuchenteig mit Backpulver im Ofen aufgeht. Nenne die beteiligten Stoffe.",
+      "stichworte": [
+        { "aspekt": "Backpulver enthält Natron (Natriumhydrogencarbonat) und ein Säuerungsmittel", "woerter": ["natron", "hydrogencarbonat", "nahco3"] },
+        { "aspekt": "Mit Wasser (Feuchtigkeit) und Wärme reagieren sie in einer Säure-Base-Reaktion miteinander", "woerter": ["saeure", "saeuerungsmittel", "sauer"] },
+        { "aspekt": "Dabei entsteht das Gas Kohlenstoffdioxid", "woerter": ["kohlenstoffdioxid", "co2", "kohlendioxid"] },
+        { "aspekt": "Die Gasbläschen dehnen sich in der Hitze aus und lockern den Teig", "woerter": ["blaeschen", "blasen", "ausdehn", "dehnen", "lockert", "locker", "hohlraeume", "poren"] }
+      ],
+      "musterloesung": "Backpulver enthält Natron, also Natriumhydrogencarbonat (NaHCO₃), und ein festes Säuerungsmittel. Sobald Feuchtigkeit aus dem Teig und Wärme dazukommen, reagiert die Säure mit dem Natron. Dabei entsteht das Gas Kohlenstoffdioxid (CO₂). Die Gasbläschen dehnen sich in der Hitze des Ofens aus und lockern den Teig, er geht auf.",
+      "erklaerung": "Vereinfacht: NaHCO₃ + H₃O⁺ → Na⁺ + 2 H₂O + CO₂. Natron allein gibt beim starken Erhitzen ebenfalls CO₂ ab, mit Säuerungsmittel geht es aber schneller und ohne seifigen Beigeschmack."
+    },
+    {
+      "id": "ch-neu-07", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz5",
+      "frage": "Welche Aussagen zum Umgang mit Haushaltschemikalien sind fachlich richtig?",
+      "optionen": [
+        { "text": "Chlorhaltige Reiniger darf man nie mit sauren Entkalkern mischen, weil giftiges Chlorgas entstehen kann.", "richtig": true },
+        { "text": "Citronensäure ist ein gut abbaubarer Entkalker, sollte aber nicht heiß verwendet werden.", "richtig": true },
+        { "text": "Abflussreiniger mit Natriumhydroxid sind stark ätzend. Oft reicht stattdessen eine Saugglocke.", "richtig": true },
+        { "text": "Je mehr Entkalker man nimmt, desto umweltfreundlicher ist das Entkalken.", "feedback": "Mehr Mittel belastet das Abwasser stärker. Man dosiert nach Anleitung." },
+        { "text": "Mit Essig kann man einen verstopften Abfluss genauso gut frei machen wie mit Rohrreiniger, weil beide sauer sind.", "feedback": "Rohrreiniger ist stark **alkalisch**. Er zersetzt Haare und Fette, das kann Essig nicht." }
+      ],
+      "erklaerung": "Gute Bewertung wägt **Sicherheit**, **Umweltverträglichkeit** und **Wirksamkeit** ab. Mildere, abbaubare Mittel sind oft ausreichend. Gefährliche Kombinationen wie Chlorreiniger + Säure müssen vermieden werden."
+    }
+  ]
+}

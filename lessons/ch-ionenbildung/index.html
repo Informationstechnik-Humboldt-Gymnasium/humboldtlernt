@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ionenbildung und Salzformeln</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<style>
+  .ring { fill: none; stroke: var(--muted); stroke-width: 1.5; }
+  .ring.full { stroke: var(--ok); stroke-width: 2.4; }
+  .ring.gone { stroke: var(--border); stroke-dasharray: 4 4; }
+  .core { fill: var(--bg); stroke: var(--border); stroke-width: 1; }
+  .core.m { fill: var(--soft-accent); }
+  .el { fill: var(--neg); }
+  .el.moved { fill: var(--c3); }
+  .sym { font-size: 20px; font-weight: 700; text-anchor: middle; }
+  .ionlbl { font-size: 17px; font-weight: 700; text-anchor: middle; }
+  .cfg { font-size: 14px; text-anchor: middle; fill: var(--muted) !important; }
+  .chg { font-size: 18px; font-weight: 700; text-anchor: middle; }
+  .chg.pos { fill: var(--pos) !important; }
+  .chg.neg { fill: var(--neg) !important; }
+  .divider { stroke: var(--border); stroke-dasharray: 3 5; }
+  .side { font-size: 15px; fill: var(--muted) !important; text-anchor: middle; }
+  .cat { fill: var(--pos); }
+  .an { fill: var(--neg); }
+  .legend { display: flex; flex-wrap: wrap; gap: 12px; font-size: .82rem; margin-top: 6px; }
+  .legend i { display: inline-block; width: 11px; height: 11px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
+  .formula { font-size: 1.6rem; font-weight: 700; text-align: center; margin: 4px 0; }
+  .balance { font-size: .9rem; text-align: center; font-variant-numeric: tabular-nums; }
+  .ctrl-lbl { font-size: .9rem; font-weight: 600; margin: 0 0 4px; }
+  #lattice { max-width: 360px; margin: 6px auto 0; }
+</style>
+</head>
+<body>
+<h1>Ionenbildung und Salzformeln</h1>
+<p class="muted small">Wähle ein Metall und ein Nichtmetall. Übertrage Elektronen, bis alle Teilchen eine Edelgaskonfiguration haben. Fehlen Atome, füge welche hinzu.</p>
+
+<div class="lk-grid">
+  <div>
+    <div class="lk-card">
+      <svg id="scene" viewBox="0 0 520 345" role="img" aria-label="Metallatome links, Nichtmetallatome rechts, jeweils mit innerer Schale und Valenzschale"></svg>
+      <div class="legend">
+        <span><i style="background:var(--neg)"></i>Elektron</span>
+        <span><i style="background:var(--c3)"></i>übertragenes Elektron</span>
+        <span><i style="background:var(--ok)"></i>voll besetzte Außenschale</span>
+      </div>
+      <p class="small muted" style="margin:6px 0 0">Gezeichnet sind nur die äußerste und die darunterliegende Schale. Der Kreis in der Mitte steht für den Kern mit den übrigen inneren Elektronen.</p>
+    </div>
+
+    <div class="lk-card">
+      <h2>Verhältnisformel und Ionengitter</h2>
+      <div id="result"></div>
+      <svg id="lattice" viewBox="0 0 304 200" role="img" aria-label="Ebener Ausschnitt aus dem Ionengitter"></svg>
+      <div class="legend" id="latLegend"></div>
+      <p class="small muted" id="latNote" style="margin:6px 0 0"></p>
+    </div>
+  </div>
+
+  <div>
+    <div class="lk-card">
+      <h2>Einstellungen</h2>
+      <p class="ctrl-lbl">Metall</p>
+      <div class="row"><div class="seg" role="group" aria-label="Metall wählen" id="segM"></div></div>
+      <p class="ctrl-lbl">Nichtmetall</p>
+      <div class="row"><div class="seg" role="group" aria-label="Nichtmetall wählen" id="segX"></div></div>
+      <div class="row">
+        <button type="button" id="bMove" class="primary">Elektron übertragen</button>
+      </div>
+      <div class="row">
+        <button type="button" id="bAddM">+ Metallatom</button>
+        <button type="button" id="bAddX">+ Nichtmetallatom</button>
+      </div>
+      <div class="row">
+        <button type="button" id="bReset">Neu starten</button>
+      </div>
+      <div class="readouts">
+        <div class="readout"><span>abgegebene Elektronen</span><b id="rGive">0</b></div>
+        <div class="readout"><span>aufgenommene Elektronen</span><b id="rTake">0</b></div>
+        <div class="readout"><span>mit Edelgas­konfiguration</span><b id="rNoble">–</b></div>
+      </div>
+      <p id="hint" class="small" aria-live="polite"></p>
+    </div>
+
+    <div class="lk-card tasks">
+      <h2>Entdecke selbst <span class="small muted" data-task-count></span></h2>
+      <div class="task" data-goal="nacl"><p class="task-q">Bilde Natriumchlorid: Alle Teilchen sollen eine Edelgaskonfiguration haben.</p></div>
+      <div class="task">
+        <p class="task-q">Welche Ladung hat das Natrium-Ion, und warum?</p>
+        <div class="choices">
+          <button type="button" data-ok data-fb="Richtig: 11 Protonen, aber nur noch 10 Elektronen. Das ergibt +1.">+1, weil es ein Elektron abgegeben hat.</button>
+          <button type="button" data-fb="Elektronen sind negativ. Wer eines abgibt, wird positiv.">−1, weil es ein Elektron abgegeben hat.</button>
+          <button type="button" data-fb="Bei der Ionenbildung ändert sich der Kern nicht. Nur Elektronen wechseln.">+1, weil es ein Proton aufgenommen hat.</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="task" data-goal="mgcl2"><p class="task-q">Bilde Magnesiumchlorid. Wie viele Chloratome brauchst du pro Magnesiumatom?</p></div>
+      <div class="task" data-goal="al2o3"><p class="task-q">Finde die Verhältnisformel von Aluminiumoxid.</p></div>
+      <div class="task">
+        <p class="task-q">Welche Ladung hat das Sulfid-Ion? Probiere es mit Schwefel aus.</p>
+        <div class="choices">
+          <button type="button" data-ok data-fb="Genau: Schwefel hat 6 Valenzelektronen und nimmt 2 auf. So entsteht S²⁻.">2−</button>
+          <button type="button" data-fb="Schwefel steht in der VI. Hauptgruppe. Zähle, wie viele Elektronen bis zum Oktett fehlen.">1−</button>
+          <button type="button" data-fb="Nichtmetallatome nehmen Elektronen auf. Dabei werden sie negativ.">6+</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="task">
+        <p class="task-q">Warum ist die Summe aller Ionenladungen in einem Salz immer null?</p>
+        <div class="choices">
+          <button type="button" data-ok data-fb="Richtig: Elektronen gehen nicht verloren. Plus- und Minusladungen gleichen sich deshalb genau aus.">Die Metallatome geben genau so viele Elektronen ab, wie die Nichtmetallatome aufnehmen.</button>
+          <button type="button" data-fb="Die Ionen bleiben geladen. Nur ihre Summe ist null.">Weil die Ionen ihre Ladung im Gitter verlieren.</button>
+          <button type="button" data-fb="Die Anzahl ist oft verschieden, z. B. bei MgCl₂. Entscheidend sind die Ladungen.">Weil es immer gleich viele Kationen wie Anionen gibt.</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="all-done">Alles entdeckt! Weiter geht es mit den Übungen.</div>
+    </div>
+  </div>
+</div>
+
+<script src="../../static/lesson-kit.js"></script>
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+  var NS = 'http://www.w3.org/2000/svg';
+  var METALS = {
+    Na: { name: 'Natrium', v: 1, inner: 8, cfg: '2, 8', r: 102 },
+    Mg: { name: 'Magnesium', v: 2, inner: 8, cfg: '2, 8', r: 72 },
+    Al: { name: 'Aluminium', v: 3, inner: 8, cfg: '2, 8', r: 54 },
+    K: { name: 'Kalium', v: 1, inner: 8, cfg: '2, 8, 8', r: 138 },
+    Ca: { name: 'Calcium', v: 2, inner: 8, cfg: '2, 8, 8', r: 100 }
+  };
+  var NONMETALS = {
+    F: { name: 'Fluor', an: 'fluorid', v: 7, inner: 2, cfg: '2', r: 133 },
+    Cl: { name: 'Chlor', an: 'chlorid', v: 7, inner: 8, cfg: '2, 8', r: 181 },
+    O: { name: 'Sauerstoff', an: 'oxid', v: 6, inner: 2, cfg: '2', r: 140 },
+    S: { name: 'Schwefel', an: 'sulfid', v: 6, inner: 8, cfg: '2, 8', r: 184 }
+  };
+  var MAXN = 4;
+  var S = { m: 'Na', x: 'Cl', metals: [0], nons: [0], busy: false };
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function el(tag, attrs, parent, text) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    if (text != null) e.textContent = text;
+    parent.appendChild(e);
+    return e;
+  }
+  var SUP = { '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹' };
+  var SUB = { '0': '₀', '1': '₁', '2': '₂', '3': '₃', '4': '₄', '5': '₅', '6': '₆', '7': '₇', '8': '₈', '9': '₉' };
+  function ionSym(sym, q) {
+    if (!q) return sym;
+    var a = Math.abs(q);
+    return sym + (a === 1 ? '' : SUP[a]) + (q > 0 ? '⁺' : '⁻');
+  }
+  function chg(q) { var a = Math.abs(q); return (a === 1 ? '' : a) + (q > 0 ? '+' : '−'); }
+  function gcd(a, b) { return b ? gcd(b, a % b) : a; }
+  function sub(n) { return n === 1 ? '' : String(n).split('').map(function (c) { return SUB[c]; }).join(''); }
+
+  // ------------------------------------------------ Auswahl
+  function buildSeg(id, list, key) {
+    var seg = $(id);
+    Object.keys(list).forEach(function (sym) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.textContent = sym; b.dataset.sym = sym;
+      b.setAttribute('aria-label', list[sym].name);
+      b.onclick = function () { if (S.busy) return; S[key] = sym; reset(); };
+      seg.appendChild(b);
+    });
+  }
+  buildSeg('segM', METALS, 'm');
+  buildSeg('segX', NONMETALS, 'x');
+
+  function reset(msg) {
+    S.metals = S.metals.map(function () { return 0; });
+    S.nons = S.nons.map(function () { return 0; });
+    if (!msg) { S.metals = [0]; S.nons = [0]; }
+    draw();
+    $('hint').textContent = msg || '';
+  }
+
+  // ------------------------------------------------ Geometrie
+  function slots(n, base) {
+    var p = n === 1 ? [[125, 170]] : n === 2 ? [[125, 95], [125, 245]] : n === 3 ? [[65, 95], [185, 95], [125, 245]] : [[65, 95], [185, 95], [65, 245], [185, 245]];
+    return p.map(function (q) { return [q[0] + base, q[1]]; });
+  }
+  var RI = 26, RV = 46;
+  function slotPos(c, k, r) { var a = -Math.PI / 2 + k * Math.PI / 4; return [c[0] + r * Math.cos(a), c[1] + r * Math.sin(a)]; }
+  // Valenzelektronen auf 8 Plätze: erst einzeln (0, 2, 4, 6), dann Paare
+  var ORDER = [0, 2, 4, 6, 1, 3, 5, 7];
+
+  function done() {
+    var M = METALS[S.m], X = NONMETALS[S.x];
+    return S.metals.every(function (g) { return g === M.v; }) && S.nons.every(function (g) { return g === 8 - X.v; });
+  }
+
+  // ------------------------------------------------ Szene
+  var scene = $('scene');
+  function draw() {
+    var M = METALS[S.m], X = NONMETALS[S.x];
+    document.querySelectorAll('#segM button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.sym === S.m); });
+    document.querySelectorAll('#segX button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.sym === S.x); });
+    scene.innerHTML = '';
+    el('line', { x1: 260, y1: 20, x2: 260, y2: 335, class: 'divider' }, scene);
+    el('text', { x: 125, y: 18, class: 'side' }, scene, 'Metallatome');
+    el('text', { x: 395, y: 18, class: 'side' }, scene, 'Nichtmetallatome');
+
+    var pm = slots(S.metals.length, 0), px = slots(S.nons.length, 270);
+    S.metals.forEach(function (g, i) {
+      var c = pm[i], left = M.v - g, empty = left === 0;
+      el('circle', { cx: c[0], cy: c[1], r: RV, class: 'ring' + (empty ? ' gone' : '') }, scene);
+      el('circle', { cx: c[0], cy: c[1], r: RI, class: 'ring' + (empty ? ' full' : '') }, scene);
+      el('circle', { cx: c[0], cy: c[1], r: 15, class: 'core m' }, scene);
+      el('text', { x: c[0], y: c[1] + 7, class: 'sym' }, scene, S.m);
+      for (var k = 0; k < M.inner; k++) { var p = slotPos(c, k * 8 / M.inner, RI); el('circle', { cx: p[0], cy: p[1], r: 4, class: 'el' }, scene); }
+      for (var j = 0; j < left; j++) { var q = slotPos(c, ORDER[j], RV); el('circle', { cx: q[0], cy: q[1], r: 5, class: 'el' }, scene); }
+      if (g) el('text', { x: c[0] + 40, y: c[1] - 38, class: 'chg pos' }, scene, chg(g));
+      el('text', { x: c[0], y: c[1] + 64, class: 'ionlbl' }, scene, ionSym(S.m, g));
+      el('text', { x: c[0], y: c[1] + 82, class: 'cfg' }, scene, '(' + M.cfg + (left ? ', ' + left : '') + ')');
+    });
+    S.nons.forEach(function (g, i) {
+      var c = px[i], tot = X.v + g, full = tot === 8;
+      el('circle', { cx: c[0], cy: c[1], r: RV, class: 'ring' + (full ? ' full' : '') }, scene);
+      el('circle', { cx: c[0], cy: c[1], r: RI, class: 'ring' }, scene);
+      el('circle', { cx: c[0], cy: c[1], r: 15, class: 'core' }, scene);
+      el('text', { x: c[0], y: c[1] + 7, class: 'sym' }, scene, S.x);
+      for (var k = 0; k < X.inner; k++) { var p = slotPos(c, k * 8 / X.inner, RI); el('circle', { cx: p[0], cy: p[1], r: 4, class: 'el' }, scene); }
+      for (var j = 0; j < tot; j++) { var q = slotPos(c, ORDER[j], RV); el('circle', { cx: q[0], cy: q[1], r: 5, class: 'el' + (j >= X.v ? ' moved' : '') }, scene); }
+      if (g) el('text', { x: c[0] + 40, y: c[1] - 38, class: 'chg neg' }, scene, chg(-g));
+      el('text', { x: c[0], y: c[1] + 64, class: 'ionlbl' }, scene, ionSym(S.x, -g));
+      el('text', { x: c[0], y: c[1] + 82, class: 'cfg' }, scene, '(' + X.cfg + ', ' + tot + ')');
+    });
+
+    var give = S.metals.reduce(function (a, b) { return a + b; }, 0);
+    var take = S.nons.reduce(function (a, b) { return a + b; }, 0);
+    var noble = S.metals.filter(function (g) { return g === M.v; }).length + S.nons.filter(function (g) { return g === 8 - X.v; }).length;
+    $('rGive').textContent = give;
+    $('rTake').textContent = take;
+    $('rNoble').textContent = noble + ' von ' + (S.metals.length + S.nons.length);
+    $('bAddM').disabled = S.metals.length >= MAXN || S.busy;
+    $('bAddX').disabled = S.nons.length >= MAXN || S.busy;
+    $('bMove').disabled = S.busy || done();
+    drawResult();
+  }
+
+  // ------------------------------------------------ Ergebnis und Gitter
+  function drawResult() {
+    var M = METALS[S.m], X = NONMETALS[S.x], lat = $('lattice');
+    lat.innerHTML = '';
+    if (!done()) {
+      $('result').innerHTML = '<p class="small muted">Die Verhältnisformel erscheint, sobald alle Teilchen eine Edelgaskonfiguration haben.</p>';
+      lat.toggleAttribute('hidden', true);
+      $('latLegend').innerHTML = ''; $('latNote').textContent = '';
+      return;
+    }
+    var cm = S.metals.length, cx = S.nons.length, g = gcd(cm, cx);
+    var a = cm / g, b = cx / g, qm = M.v, qx = 8 - X.v;
+    var formula = S.m + sub(a) + S.x + sub(b);
+    var name = M.name + X.an;
+    var note = g > 1 ? '<p class="small muted" style="text-align:center">Du hast ' + cm + ' Metall- und ' + cx + ' Nichtmetallatome verwendet. Gekürzt ergibt das ' + a + ' : ' + b + '.</p>' : '';
+    $('result').innerHTML = '<p class="formula">' + formula + '</p>' +
+      '<p class="balance">' + name + '</p>' +
+      '<p class="balance">' + a + ' · ' + ionSym(S.m, qm) + ' (+' + a * qm + ') und ' + b + ' · ' + ionSym(S.x, -qx) + ' (−' + b * qx + '): Ladungssumme 0</p>' + note;
+    lat.toggleAttribute('hidden', false);
+    // Ionenradien (pm) maßstäblich verkleinert
+    var rc = M.r * 0.09, ra = X.r * 0.09, i, j;
+    if (a === b) {
+      for (j = 0; j < 5; j++) for (i = 0; i < 8; i++) {
+        var isCat = (i + j) % 2 === 0;
+        el('circle', { cx: 26 + i * 36, cy: 28 + j * 36, r: isCat ? rc : ra, class: isCat ? 'cat' : 'an' }, lat);
+      }
+    } else {
+      // Die häufigere Ionensorte auf einem 6×4-Raster, die seltenere in einem Teil der 6×4 Lücken.
+      // So stimmt das Anzahlverhältnis im Ausschnitt genau.
+      var gridCat = a > b, frac = gridCat ? b / a : a / b;
+      for (j = 0; j < 4; j++) for (i = 0; i < 6; i++) {
+        var on = frac === 0.5 ? (i + j) % 2 === 0 : frac < 0.5 ? (i + j) % 3 === 0 : (i + j) % 3 !== 0;
+        if (on) el('circle', { cx: 53 + i * 44, cy: 46 + j * 44, r: gridCat ? ra : rc, class: gridCat ? 'an' : 'cat' }, lat);
+      }
+      for (j = 0; j < 4; j++) for (i = 0; i < 6; i++)
+        el('circle', { cx: 31 + i * 44, cy: 24 + j * 44, r: gridCat ? rc : ra, class: gridCat ? 'cat' : 'an' }, lat);
+    }
+    $('latLegend').innerHTML = '<span><i style="background:var(--pos)"></i>' + ionSym(S.m, qm) + ' (Kation)</span><span><i style="background:var(--neg)"></i>' + ionSym(S.x, -qx) + ' (Anion)</span>';
+    $('latNote').textContent = 'Vereinfachter, ebener Ausschnitt: Zähle nach, die Ionen stehen im Verhältnis ' + a + ' : ' + b + '. Echte Ionengitter sind räumlich, ihre Anordnung hängt vom Salz ab. Die Größen entsprechen ungefähr den Ionenradien.';
+  }
+
+  // ------------------------------------------------ Elektron übertragen
+  function transfer() {
+    if (S.busy || done()) return;
+    var M = METALS[S.m], X = NONMETALS[S.x];
+    var di = S.metals.findIndex(function (g) { return g < M.v; });
+    var ai = S.nons.findIndex(function (g) { return g < 8 - X.v; });
+    if (di < 0) { $('hint').textContent = 'Alle Metallatome haben ihre Valenzelektronen schon abgegeben. Füge ein weiteres Metallatom hinzu.'; return; }
+    if (ai < 0) { $('hint').textContent = 'Alle Nichtmetallatome haben schon ein Oktett. Füge ein weiteres Nichtmetallatom hinzu.'; return; }
+    var from = slotPos(slots(S.metals.length, 0)[di], ORDER[M.v - S.metals[di] - 1], RV);
+    var to = slotPos(slots(S.nons.length, 270)[ai], ORDER[X.v + S.nons[ai]], RV);
+    function finish() {
+      S.metals[di]++; S.nons[ai]++; S.busy = false;
+      draw();
+      var msg = S.m + ' gibt ein Elektron an ' + S.x + ' ab.';
+      if (done()) {
+        msg = 'Geschafft: Alle Teilchen haben eine Edelgaskonfiguration. Die Verhältnisformel steht unten.';
+        var cm = S.metals.length, cx = S.nons.length, g = gcd(cm, cx), f = S.m + '-' + cm / g + '-' + S.x + '-' + cx / g;
+        if (f === 'Na-1-Cl-1') LK.reach('nacl');
+        if (f === 'Mg-1-Cl-2') LK.reach('mgcl2');
+        if (f === 'Al-2-O-3') LK.reach('al2o3');
+      } else {
+        var noM = S.metals.every(function (g) { return g === M.v; }), noX = S.nons.every(function (g) { return g === 8 - X.v; });
+        if (noM) msg += ' Kein Metallatom hat noch Valenzelektronen: Es fehlt ein Metallatom.';
+        else if (noX) msg += ' Alle Nichtmetallatome sind voll: Es fehlt ein Nichtmetallatom.';
+      }
+      $('hint').textContent = msg;
+    }
+    S.busy = true; draw();
+    if (reduce) { finish(); return; }
+    var dot = el('circle', { cx: from[0], cy: from[1], r: 6, class: 'el moved' }, scene);
+    var t0 = null, DUR = 650;
+    function step(t) {
+      if (t0 === null) t0 = t;
+      var u = Math.min(1, (t - t0) / DUR), e = u < 0.5 ? 2 * u * u : 1 - Math.pow(-2 * u + 2, 2) / 2;
+      dot.setAttribute('cx', from[0] + (to[0] - from[0]) * e);
+      dot.setAttribute('cy', from[1] + (to[1] - from[1]) * e - Math.sin(Math.PI * e) * 30);
+      if (u < 1) requestAnimationFrame(step); else finish();
+    }
+    requestAnimationFrame(step);
+  }
+
+  $('bMove').onclick = transfer;
+  $('bAddM').onclick = function () { if (S.metals.length < MAXN) { S.metals.push(0); draw(); $('hint').textContent = 'Ein ' + METALS[S.m].name + 'atom hinzugefügt.'; } };
+  $('bAddX').onclick = function () { if (S.nons.length < MAXN) { S.nons.push(0); draw(); $('hint').textContent = 'Ein ' + NONMETALS[S.x].name + 'atom hinzugefügt.'; } };
+  $('bReset').onclick = function () { if (!S.busy) reset(); };
+
+  draw();
+})();
+</script>
+</body>
+</html>

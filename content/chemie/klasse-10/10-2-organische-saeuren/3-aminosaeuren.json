@@ -1,0 +1,128 @@
+{
+  "id": "ch-k10-aminosaeuren",
+  "titel": "Aminosäuren",
+  "kurz": "Moleküle mit Säure- und Basengruppe: wie Aminosäuren gebaut sind, warum sie Zwitterionen bilden und wie aus ihnen Proteine entstehen.",
+  "reihenfolge": 3,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Den Bau von Aminosäuren mit Aminogruppe und Carboxygruppe beschreiben und Glycin und Alanin angeben" },
+    { "id": "lz2", "niveau": "G", "text": "Aminosäuren als Bausteine der Proteine und die Bedeutung essenzieller Aminosäuren für die Ernährung erläutern" },
+    { "id": "lz3", "niveau": "H", "text": "Die Verknüpfung von Aminosäuren über Peptidbindungen als Kondensation beschreiben" },
+    { "id": "lz4", "niveau": "H", "text": "Hohe Schmelztemperatur und gute Wasserlöslichkeit mit dem Zwitterion erklären" }
+  ],
+  "verstehen": {
+    "einstieg": "Muskeln, Haare, Enzyme und Antikörper bestehen aus Proteinen (Eiweißen). Trotzdem sind sie völlig verschieden. Wie kann aus denselben Bausteinen so Unterschiedliches entstehen?",
+    "abschnitte": [
+      {
+        "titel": "Zwei funktionelle Gruppen in einem Molekül",
+        "text": "Eine **Aminosäure** trägt zwei funktionelle Gruppen:\n\n- die **Carboxygruppe** –COOH, die sauer reagiert\n- die **Aminogruppe** –NH₂, die ein Proton aufnehmen kann und damit basisch reagiert\n\nBei den Aminosäuren in Lebewesen sitzen beide Gruppen am **selben C-Atom**. An diesem C-Atom hängt außerdem ein Rest R, der jede Aminosäure besonders macht.\n\nDie einfachste Aminosäure ist **Glycin** (Aminoethansäure), bei ihr ist der Rest ein H-Atom:\n\n```\n    H   O\n    |   ‖\nH₂N–C – C – O – H\n    |\n    H\n```\n\nBei **Alanin** ist der Rest eine Methylgruppe: H₂N–CH(CH₃)–COOH."
+      },
+      {
+        "titel": "Bausteine der Proteine",
+        "text": "Proteine sind lange Ketten aus Aminosäuren, meist aus 50 bis mehreren Tausend Bausteinen. Dafür nutzen Lebewesen **20 verschiedene Aminosäuren**. Wie bei Buchstaben in einem Text kommt es auf die **Reihenfolge** an: Sie bestimmt, wie sich die Kette faltet und welche Aufgabe das Protein hat.\n\nEinige Aminosäuren kann dein Körper nicht selbst herstellen. Diese **essenziellen Aminosäuren** müssen mit der Nahrung aufgenommen werden. Je nach Zählweise sind es acht oder neun. Proteinreich sind Fleisch, Fisch, Eier und Milchprodukte, aber auch Hülsenfrüchte (Linsen, Bohnen, Soja), Nüsse und Getreide. Wer sich pflanzlich ernährt, sollte verschiedene Quellen kombinieren, z. B. Linsen mit Reis oder Bohnen mit Mais, weil sie sich in ihren Aminosäuren ergänzen."
+      },
+      {
+        "titel": "Die Peptidbindung",
+        "text": "Zwei Aminosäuren verbinden sich, indem die **Carboxygruppe** der einen mit der **Aminogruppe** der anderen reagiert. Dabei wird ein **Wassermolekül abgespalten**. Eine solche Reaktion, bei der sich zwei Moleküle unter Abspaltung von Wasser verbinden, heißt **Kondensation**.\n\nDie neue Verknüpfung –CO–NH– heißt **Peptidbindung**. Aus zwei Aminosäuren entsteht ein **Dipeptid**, aus vielen ein **Polypeptid** oder Protein. Das Dipeptid hat an einem Ende wieder eine freie Amino- und am anderen eine freie Carboxygruppe. Die Kette kann also weiterwachsen.\n\nBei der Verdauung läuft die Rückreaktion ab: Enzyme spalten die Peptidbindungen unter Aufnahme von Wasser. Das ist eine **Hydrolyse**."
+      },
+      {
+        "titel": "Das Zwitterion",
+        "text": "Glycin ist ein weißer Feststoff, der sich erst bei etwa 230 °C zersetzt, ohne vorher zu schmelzen. Ethansäure dagegen schmilzt schon bei 17 °C. Warum?\n\nIn einer Aminosäure gibt die Carboxygruppe ihr Proton an die Aminogruppe **desselben Moleküls** ab:\n\nH₂N–CH₂–COOH → H₃N⁺–CH₂–COO⁻\n\nEs entsteht ein **Zwitterion**: ein Teilchen mit einer positiven und einer negativen Ladung, insgesamt aber neutral. Zwischen den Ladungen benachbarter Zwitterionen wirken starke Anziehungskräfte, ähnlich wie in einem Ionengitter. Deshalb sind Aminosäuren Feststoffe mit sehr hohen Schmelz- bzw. Zersetzungstemperaturen. Wassermoleküle lagern sich gut an die geladenen Gruppen an: Viele Aminosäuren lösen sich gut in Wasser, in Benzin dagegen nicht."
+      }
+    ],
+    "formeln": [
+      { "formel": "H₂N–CH₂–COOH + H₂N–CH₂–COOH → H₂N–CH₂–CO–NH–CH₂–COOH + H₂O", "bedeutung": "Zwei Glycin-Moleküle bilden durch Kondensation ein Dipeptid. –CO–NH– ist die Peptidbindung." },
+      { "formel": "H₂N–CH₂–COOH → H₃N⁺–CH₂–COO⁻", "bedeutung": "Glycin bildet ein Zwitterion: Das Proton wandert von der Carboxy- zur Aminogruppe." }
+    ],
+    "merksatz": "**Aminosäuren** enthalten eine Aminogruppe –NH₂ und eine Carboxygruppe –COOH. Sie bilden **Zwitterionen** und sind deshalb Feststoffe mit hohen Schmelztemperaturen.\n\nÜber **Peptidbindungen** –CO–NH– verknüpfen sie sich durch Kondensation zu Peptiden und Proteinen. **Essenzielle** Aminosäuren muss der Mensch mit der Nahrung aufnehmen.",
+    "alltag": "Der Geschmacksverstärker **Glutamat** (E 621) ist das Natriumsalz der Aminosäure Glutaminsäure. Sie kommt natürlich in Tomaten, Parmesan und Sojasoße vor und sorgt für den herzhaften Geschmack „umami“."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "ch-ams-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Welche Halbstrukturformel gehört zu einer Aminosäure?",
+      "optionen": [
+        { "text": "CH₃–COOH", "feedback": "Das ist Ethansäure. Es fehlt die Aminogruppe –NH₂." },
+        { "text": "CH₃–CH₂–NH₂", "feedback": "Hier gibt es eine Aminogruppe, aber keine Carboxygruppe." },
+        { "text": "HO–CH₂–COOH", "feedback": "Am C-Atom sitzt eine Hydroxygruppe –OH, keine Aminogruppe –NH₂." },
+        { "text": "H₂N–CH₂–COOH", "richtig": true }
+      ],
+      "erklaerung": "H₂N–CH₂–COOH ist **Glycin**. Es hat eine Aminogruppe und eine Carboxygruppe am selben C-Atom, genau wie alle Aminosäuren in Proteinen."
+    },
+    {
+      "id": "ch-ams-02", "typ": "multi", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Welche Aussagen über Aminosäuren und Proteine sind richtig?",
+      "optionen": [
+        { "text": "Proteine sind lange Ketten aus Aminosäuren.", "richtig": true },
+        { "text": "Essenzielle Aminosäuren müssen mit der Nahrung aufgenommen werden.", "richtig": true },
+        { "text": "Linsen und Bohnen enthalten viel Protein.", "richtig": true },
+        { "text": "Jedes Protein besteht nur aus einer einzigen Sorte Aminosäure.", "feedback": "Proteine bestehen aus bis zu 20 verschiedenen Aminosäuren. Ihre Reihenfolge macht jedes Protein einzigartig." },
+        { "text": "Der Körper kann alle Aminosäuren selbst herstellen.", "feedback": "Genau das gilt für die essenziellen Aminosäuren nicht. Deshalb braucht man proteinhaltige Nahrung." }
+      ],
+      "erklaerung": "Aus 20 Aminosäuren baut der Körper Tausende verschiedene Proteine. Die Bausteine dafür stammen aus der Verdauung von Nahrungsproteinen."
+    },
+    {
+      "id": "ch-ams-03", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Alanin hat die Halbstrukturformel H₂N–CH(CH₃)–COOH. Berechne die molare Masse von Alanin. (H: 1 g/mol, C: 12 g/mol, N: 14 g/mol, O: 16 g/mol)",
+      "gesucht": "molare Masse von Alanin",
+      "gesuchtSymbol": "M",
+      "loesung": 89, "einheit": "g/mol", "toleranz": 0.01,
+      "rechenweg": [
+        "Atome zählen: 3 C, 7 H, 1 N, 2 O, also C₃H₇NO₂",
+        "`M = 3 · 12 + 7 · 1 + 14 + 2 · 16` g/mol",
+        "`M = 36 + 7 + 14 + 32 = 89` g/mol"
+      ],
+      "hinweis": "Zähle die H-Atome sorgfältig: 2 an der Aminogruppe, 1 am mittleren C-Atom, 3 in der Methylgruppe, 1 in der Carboxygruppe.",
+      "erklaerung": "Die Summenformel von Alanin ist C₃H₇NO₂. Aus der Halbstrukturformel liest du sie ab, indem du jede Atomsorte zählst."
+    },
+    {
+      "id": "ch-ams-04", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Ordne jeder Atomgruppe ihren Namen zu.",
+      "paare": [
+        { "links": "–NH₂", "rechts": "Aminogruppe" },
+        { "links": "–COOH", "rechts": "Carboxygruppe" },
+        { "links": "–CO–NH–", "rechts": "Peptidbindung" },
+        { "links": "–OH", "rechts": "Hydroxygruppe" }
+      ],
+      "extraRechts": ["Aldehydgruppe"],
+      "erklaerung": "Die **Peptidbindung** –CO–NH– entsteht, wenn die Carboxygruppe einer Aminosäure mit der Aminogruppe einer anderen reagiert und dabei Wasser abgespalten wird."
+    },
+    {
+      "id": "ch-ams-05", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Aus den 20 Aminosäuren der Proteine sollen Dipeptide (zwei Bausteine) gebaut werden. Gly–Ala und Ala–Gly sind verschieden, weil die Reihenfolge zählt. Auch Gly–Gly ist erlaubt. Wie viele verschiedene Dipeptide gibt es?",
+      "gesucht": "Anzahl der Dipeptide",
+      "gesuchtSymbol": "N",
+      "loesung": 400, "einheit": "", "toleranz": 0,
+      "rechenweg": [
+        "Für die erste Position gibt es 20 Möglichkeiten.",
+        "Für die zweite Position gibt es wieder 20 Möglichkeiten.",
+        "`N = 20 · 20 = 400`"
+      ],
+      "erklaerung": "Bei einem Tripeptid wären es schon 20 · 20 · 20 = 8000 Möglichkeiten. Bei Proteinen mit Hunderten Bausteinen ist die Zahl der Möglichkeiten unvorstellbar groß. Deshalb gibt es so viele verschiedene Proteine."
+    },
+    {
+      "id": "ch-ams-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Glycin (M = 75 g/mol) ist ein Feststoff, der sich erst bei etwa 230 °C zersetzt. Ethansäure (M = 60 g/mol) schmilzt schon bei 17 °C. Welche Erklärung ist richtig?",
+      "optionen": [
+        { "text": "Glycin liegt als Zwitterion H₃N⁺–CH₂–COO⁻ vor. Zwischen den Ladungen benachbarter Teilchen wirken starke Anziehungskräfte.", "richtig": true },
+        { "text": "Glycin-Moleküle sind schwerer und haben deshalb viel stärkere Van-der-Waals-Kräfte.", "feedback": "Der Unterschied der molaren Masse ist klein. Van-der-Waals-Kräfte allein erklären keinen Unterschied von über 200 °C." },
+        { "text": "Glycin bildet ein Metallgitter.", "feedback": "Glycin enthält keine Metallatome." },
+        { "text": "Ethansäure kann keine Wasserstoffbrücken bilden.", "feedback": "Ethansäure bildet Wasserstoffbrücken. Ladungen ziehen sich aber noch viel stärker an." }
+      ],
+      "erklaerung": "Die Carboxygruppe gibt ihr Proton an die basische Aminogruppe im selben Molekül ab. Jedes Teilchen trägt dann eine positive und eine negative Ladung. Die Teilchen ziehen sich ähnlich stark an wie Ionen in einem Salzkristall."
+    },
+    {
+      "id": "ch-ams-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Beschreibe, wie zwei Glycin-Moleküle zu einem Dipeptid reagieren. Nenne die beteiligten Gruppen, das Nebenprodukt und den Reaktionstyp.",
+      "stichworte": [
+        { "aspekt": "Die Carboxygruppe des einen reagiert mit der Aminogruppe des anderen Moleküls.", "woerter": ["carboxygruppe", "aminogruppe", "cooh", "nh2"] },
+        { "aspekt": "Dabei wird Wasser abgespalten.", "woerter": ["wasser", "h2o"] },
+        { "aspekt": "Der Reaktionstyp ist eine Kondensation.", "woerter": ["kondensation"] },
+        { "aspekt": "Es entsteht eine Peptidbindung –CO–NH–.", "woerter": ["peptidbindung", "co nh", "peptidgruppe"] }
+      ],
+      "musterloesung": "Die Carboxygruppe des ersten Glycin-Moleküls reagiert mit der Aminogruppe des zweiten Moleküls. Dabei wird ein Wassermolekül abgespalten: Die OH-Gruppe stammt aus der Carboxygruppe, ein H-Atom aus der Aminogruppe. Es entsteht eine Peptidbindung –CO–NH–. Weil sich zwei Moleküle unter Abspaltung von Wasser verbinden, ist das eine Kondensation.",
+      "erklaerung": "Die Kondensation ist ein Reaktionstyp, der dir bei den Estern wieder begegnet. Die Umkehrung, die Spaltung unter Aufnahme von Wasser, heißt Hydrolyse."
+    }
+  ]
+}

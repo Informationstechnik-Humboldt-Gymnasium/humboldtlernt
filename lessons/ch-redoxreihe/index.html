@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Redoxreihe der Metalle und Hochofen</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<style>
+  .pick { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin: 4px 0 12px; }
+  .pick button { padding: 7px 4px; }
+  .lab { font-size: .9rem; font-weight: 600; margin: 0; }
+  .crucible { fill: var(--card); stroke: var(--line); stroke-width: 2.5; stroke-linejoin: round; }
+  .burner { fill: var(--muted); }
+  .flame { fill: var(--neg); opacity: .75; }
+  .flame-in { fill: var(--accent); opacity: .9; }
+  .glow { fill: var(--lamp); }
+  .spark { stroke: var(--lamp); stroke-width: 2.5; stroke-linecap: round; }
+  .mixlbl { font-size: 18px; font-weight: 700; text-anchor: middle; }
+  .result { border-radius: 10px; padding: 8px 10px; background: var(--bg); margin-top: 10px; font-size: .92rem; }
+  .result.yes { background: var(--ok-soft); }
+  .result.no { background: var(--warn-soft); }
+  .result .eqn { font-size: 1.05rem; font-weight: 700; margin: 4px 0; }
+  table { border-collapse: collapse; width: 100%; font-size: .85rem; }
+  td, th { padding: 3px 6px; border-bottom: 1px solid var(--border); text-align: left; }
+  .yes-t { color: var(--ok); font-weight: 700; } .no-t { color: var(--warn); font-weight: 700; }
+  .order { list-style: none; padding: 0; margin: 6px 0 10px; counter-reset: n; }
+  .order li { display: flex; align-items: center; gap: 8px; padding: 5px 8px; border: 1px solid var(--border); border-radius: 9px; margin: 4px 0; background: var(--card); counter-increment: n; }
+  .order li::before { content: counter(n) "."; color: var(--muted); width: 1.4em; }
+  .order li span { flex: 1; font-weight: 600; }
+  .order li button { padding: 3px 10px; }
+  .order.ok li { border-color: var(--ok); background: var(--ok-soft); }
+  .zone { stroke: var(--line); stroke-width: 0; cursor: pointer; }
+  .zone.sel { stroke-width: 6; stroke: var(--accent); }
+  .zone.seen { }
+  .shell { fill: none; stroke: var(--line); stroke-width: 3; stroke-linejoin: round; }
+  .arrow { stroke: var(--accent); stroke-width: 2.5; fill: none; }
+  .arrowhead { fill: var(--accent); }
+  .zlbl { font-size: 16px; font-weight: 650; }
+  #ofen .val { font-size: 14px; }
+  #lab { max-width: 380px; margin: 0 auto; }
+  .zone-info { margin-top: 10px; border-radius: 10px; background: var(--bg); padding: 8px 10px; font-size: .92rem; min-height: 4.5em; }
+  .zone-info b.eqn { display: block; font-size: 1.02rem; margin: 3px 0; }
+  .zbtns button { font-size: .85rem; padding: 6px 9px; }
+</style>
+</head>
+<body>
+<h1>Redoxreihe der Metalle und Hochofen</h1>
+<p class="muted small">Wähle ein Metallpulver und ein Metalloxid und erhitze das Gemisch. Reagiert es? Baue aus deinen Ergebnissen die Redoxreihe. In der Ansicht „Hochofen“ siehst du, wie Eisen im Großen gewonnen wird.</p>
+
+<div class="row">
+  <div class="seg" role="group" aria-label="Ansicht wählen">
+    <button type="button" id="vExp" aria-pressed="true">Experiment</button>
+    <button type="button" id="vOfen" aria-pressed="false">Hochofen</button>
+  </div>
+</div>
+
+<div class="lk-grid">
+  <div>
+    <div id="expView">
+      <div class="lk-card">
+        <svg id="lab" viewBox="80 0 280 250" role="img" aria-labelledby="lab-title">
+          <title id="lab-title">Tiegel mit einem Gemisch aus Metallpulver und Metalloxid über einem Brenner</title>
+          <circle id="glow" class="glow" cx="220" cy="135" r="70" opacity="0"/>
+          <g id="sparks"></g>
+          <text id="mixLbl" class="mixlbl" x="220" y="24"></text>
+          <text id="mixSub" class="val" x="220" y="44" text-anchor="middle"></text>
+          <!-- Dreifuß -->
+          <path class="wire" d="M150 178 H290 M165 178 L150 240 M275 178 L290 240"/>
+          <polygon class="crucible" points="165,92 275,92 258,176 182,176"/>
+          <g id="dots"></g>
+          <!-- Brenner -->
+          <g id="flame" hidden>
+            <path class="flame" d="M220 178 C238 196 236 214 220 222 C204 214 202 196 220 178 Z"/>
+            <path class="flame-in" d="M220 196 C228 206 227 214 220 220 C213 214 212 206 220 196 Z"/>
+          </g>
+          <rect class="burner" x="211" y="222" width="18" height="26" rx="3"/>
+          <text x="300" y="236" class="val">Brenner</text>
+        </svg>
+        <div id="result" class="result" aria-live="polite">Wähle Metall und Oxid und klicke auf „Erhitzen“.</div>
+        <p class="small muted" style="margin-top:8px">Schutzbrille! Thermit-Gemische (Aluminium + Eisenoxid) zündet nur die Lehrkraft. Vereinfachung: Eisenoxid steht hier immer für Fe₂O₃.</p>
+      </div>
+      <div class="lk-card">
+        <h2>Deine Versuche</h2>
+        <table><thead><tr><th>Metall</th><th>Oxid</th><th>Reaktion?</th></tr></thead><tbody id="log"><tr><td colspan="3" class="muted">Noch keine Versuche.</td></tr></tbody></table>
+      </div>
+    </div>
+
+    <div id="ofenView" hidden>
+      <div class="lk-card">
+        <svg id="ofen" viewBox="0 0 480 440" role="img" aria-labelledby="ofen-title">
+          <title id="ofen-title">Schema eines Hochofens mit fünf Zonen von der Gicht oben bis zum Gestell unten</title>
+          <defs><clipPath id="ofenClip"><path id="ofenPath" d="M130 40 H250 L300 260 L275 330 V400 H105 V330 L80 260 Z"/></clipPath></defs>
+          <rect x="105" y="372" width="170" height="28" fill="var(--warn)" opacity=".75" clip-path="url(#ofenClip)" pointer-events="none"/>
+          <rect x="105" y="356" width="170" height="16" fill="var(--lamp)" opacity=".8" clip-path="url(#ofenClip)" pointer-events="none"/>
+          <g clip-path="url(#ofenClip)" id="zones"></g>
+          <path class="shell" d="M130 40 H250 L300 260 L275 330 V400 H105 V330 L80 260 Z"/>
+          <!-- Möller und Gichtgas -->
+          <path class="arrow" d="M70 10 Q120 10 150 32"/><path class="arrowhead" d="M152 36 l-10 -2 l6 -7 z"/>
+          <text x="10" y="16" class="zlbl">Möller</text>
+          <path class="arrow" d="M235 34 Q255 10 290 10"/><path class="arrowhead" d="M296 10 l-9 -5 v10 z"/>
+          <text x="300" y="15" class="zlbl">Gichtgas</text>
+          <!-- Heißwind -->
+          <path class="arrow" d="M20 300 H82"/><path class="arrowhead" d="M90 300 l-9 -5 v10 z"/>
+          <text x="8" y="290" class="zlbl">Heißwind</text>
+          <path class="arrow" d="M330 300 H298"/><path class="arrowhead" d="M290 300 l9 -5 v10 z"/>
+          <!-- Abstiche -->
+          <path class="arrow" d="M105 392 H60 V410"/><path class="arrowhead" d="M60 418 l-5 -9 h10 z"/>
+          <text x="10" y="428" class="zlbl">Roheisen</text>
+          <path class="arrow" d="M275 364 H320 V380"/><path class="arrowhead" d="M320 388 l-5 -9 h10 z"/>
+          <text x="330" y="392" class="zlbl">Schlacke</text>
+          <g id="zlabels"></g>
+        </svg>
+        <div class="row zbtns" role="group" aria-label="Zone wählen" id="zbtns"></div>
+        <div id="zoneInfo" class="zone-info" aria-live="polite">Klicke auf eine Zone im Hochofen oder auf einen der Knöpfe.</div>
+        <p class="small muted" style="margin-top:8px">Die Temperaturen sind ungefähre Werte. Die Zonen gehen in Wirklichkeit fließend ineinander über.</p>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="lk-card" id="ctrlCard">
+      <h2>Einstellungen</h2>
+      <p class="lab">Metallpulver</p>
+      <div class="pick" id="metals" role="group" aria-label="Metall wählen"></div>
+      <p class="lab">Metalloxid</p>
+      <div class="pick" id="oxides" role="group" aria-label="Metalloxid wählen"></div>
+      <div class="row"><button type="button" id="bHeat" class="primary">Erhitzen</button></div>
+      <h2 style="margin-top:12px">Redoxreihe bauen</h2>
+      <p class="small muted">Ordne die Metalle: oben die größte Affinität zu Sauerstoff (am unedelsten), unten die kleinste.</p>
+      <ol class="order" id="order"></ol>
+      <div class="row"><button type="button" id="bCheck">Reihe prüfen</button></div>
+      <p id="orderMsg" class="small" aria-live="polite"></p>
+    </div>
+
+    <div class="lk-card tasks">
+      <h2>Entdecke selbst <span class="small muted" data-task-count></span></h2>
+      <div class="task" data-goal="react3"><p class="task-q">Finde drei verschiedene Gemische, die reagieren.</p></div>
+      <div class="task" data-goal="noreact"><p class="task-q">Finde ein Gemisch aus zwei verschiedenen Metallen, das nicht reagiert.</p></div>
+      <div class="task" data-goal="reihe"><p class="task-q">Baue die Redoxreihe der sechs Metalle richtig auf.</p></div>
+      <div class="task">
+        <p class="task-q">Thermitverfahren: Fe₂O₃ + 2 Al → Al₂O₃ + 2 Fe. Welcher Stoff ist das Reduktionsmittel?</p>
+        <div class="choices">
+          <button type="button" data-ok data-fb="Richtig: Aluminium nimmt den Sauerstoff auf, wird oxidiert und reduziert dabei das Eisenoxid.">Aluminium</button>
+          <button type="button" data-fb="Eisenoxid gibt Sauerstoff ab. Es ist das Oxidationsmittel.">Eisenoxid</button>
+          <button type="button" data-fb="Eisen ist ein Produkt. Gesucht ist der Stoff, der Sauerstoff aufnimmt.">Eisen</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="task" data-goal="ofen"><p class="task-q">Wechsle zur Ansicht „Hochofen“ und sieh dir alle fünf Zonen an.</p></div>
+      <div class="task">
+        <p class="task-q">Aluminium könnte Eisenoxid auch reduzieren. Warum nimmt man im Hochofen trotzdem Koks?</p>
+        <div class="choices">
+          <button type="button" data-ok data-fb="Genau: Koks ist billig und liefert zugleich Wärme und das Reduktionsmittel CO. Aluminium muss selbst mit sehr viel Strom gewonnen werden.">Koks ist billig und liefert Wärme und CO. Aluminium ist viel teurer.</button>
+          <button type="button" data-fb="Schau in die Redoxreihe: Aluminium steht links von Eisen und hat die größere Affinität.">Aluminium hat eine kleinere Affinität zu Sauerstoff als Eisen.</button>
+          <button type="button" data-fb="Im Hochofen entsteht sehr viel Kohlenstoffdioxid. Der Grund ist ein anderer.">Koks setzt kein CO₂ frei.</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="all-done">Alles entdeckt! Weiter geht es mit den Übungen.</div>
+    </div>
+  </div>
+</div>
+
+<script src="../../static/lesson-kit.js"></script>
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+  var NS = 'http://www.w3.org/2000/svg';
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function el(tag, attrs, parent) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+
+  // Affinität: Bildungsenthalpie je Sauerstoffatom in kJ/mol (Betrag, gerundet)
+  // a = Metallatome, b = Sauerstoffatome im Oxid
+  var MET = {
+    Mg: { name: 'Magnesium', ox: 'MgO', oxName: 'Magnesiumoxid', a: 1, b: 1, aff: 602, col: 'var(--muted)', oxCol: 'var(--card)' },
+    Al: { name: 'Aluminium', ox: 'Al₂O₃', oxName: 'Aluminiumoxid', a: 2, b: 3, aff: 559, col: 'var(--muted)', oxCol: 'var(--card)' },
+    Zn: { name: 'Zink', ox: 'ZnO', oxName: 'Zinkoxid', a: 1, b: 1, aff: 350, col: 'var(--muted)', oxCol: 'var(--card)' },
+    Fe: { name: 'Eisen', ox: 'Fe₂O₃', oxName: 'Eisenoxid', a: 2, b: 3, aff: 275, col: 'var(--muted)', oxCol: 'var(--warn)' },
+    Cu: { name: 'Kupfer', ox: 'CuO', oxName: 'Kupferoxid', a: 1, b: 1, aff: 157, col: 'var(--pos)', oxCol: 'var(--line)' },
+    Ag: { name: 'Silber', ox: 'Ag₂O', oxName: 'Silberoxid', a: 2, b: 1, aff: 31, col: 'var(--muted)', oxCol: 'var(--line)' }
+  };
+  var KEYS = ['Mg', 'Al', 'Zn', 'Fe', 'Cu', 'Ag'];
+  var S = { m: 'Zn', o: 'Cu', phase: 'idle', t: 0, res: null };
+  var tested = {}, reacted = {};
+
+  function gcd(a, b) { return b ? gcd(b, a % b) : a; }
+  function k(n) { return n === 1 ? '' : n + ' '; }
+  function equation(A, B) {
+    var a = MET[A], b = MET[B];
+    var L = b.b * a.b / gcd(b.b, a.b);
+    var x = L / b.b, z = L / a.b, y = z * a.a, w = x * b.a;
+    return k(x) + b.ox + ' + ' + k(y) + A + ' → ' + k(z) + a.ox + ' + ' + k(w) + B;
+  }
+
+  // Auswahl-Knöpfe
+  function buildPick(box, isOx) {
+    KEYS.forEach(function (key) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.dataset.key = key;
+      b.textContent = isOx ? MET[key].ox : key;
+      b.title = isOx ? MET[key].oxName : MET[key].name;
+      b.setAttribute('aria-label', isOx ? MET[key].oxName + ' ' + MET[key].ox : MET[key].name);
+      b.onclick = function () { if (S.phase === 'heat') return; if (isOx) S.o = key; else S.m = key; S.phase = 'idle'; S.res = null; drawLab(); };
+      box.appendChild(b);
+    });
+  }
+  buildPick($('metals'), false); buildPick($('oxides'), true);
+
+  // Gemisch als Punkte
+  var dots = [], seed = 7;
+  function rnd() { seed = (seed * 16807) % 2147483647; return seed / 2147483647; }
+  for (var i = 0; i < 70; i++) {
+    var yy = 112 + rnd() * 58, half = 55 - (yy - 92) * 0.2;
+    var c = el('circle', { cx: (220 + (rnd() * 2 - 1) * (half - 8)).toFixed(1), cy: yy.toFixed(1), r: 4.2 }, $('dots'));
+    dots.push({ c: c, metal: i % 2 === 0 });
+  }
+  function colorDots(after) {
+    var A = MET[S.m], B = MET[S.o];
+    dots.forEach(function (d) {
+      var fill = d.metal ? (after ? A.oxCol : A.col) : (after ? B.col : B.oxCol);
+      d.c.setAttribute('fill', fill);
+      d.c.setAttribute('stroke', 'var(--muted)'); d.c.setAttribute('stroke-width', '0.8');
+    });
+  }
+
+  function drawLab() {
+    document.querySelectorAll('#metals button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.key === S.m); });
+    document.querySelectorAll('#oxides button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.key === S.o); });
+    var A = MET[S.m], B = MET[S.o];
+    var after = S.phase === 'done' && S.res && S.res.react;
+    $('mixLbl').textContent = after ? A.ox + ' + ' + S.o : S.m + ' + ' + B.ox;
+    $('mixSub').textContent = after ? A.oxName + ' und ' + B.name : A.name + ' und ' + B.oxName;
+    colorDots(after);
+    $('flame').toggleAttribute('hidden', S.phase !== 'heat');
+    if (S.phase !== 'heat') { $('glow').setAttribute('opacity', after ? 0.25 : 0); $('sparks').innerHTML = ''; }
+    $('bHeat').disabled = S.phase === 'heat';
+    if (S.phase === 'idle') { $('result').className = 'result'; $('result').textContent = 'Gemisch: ' + A.name + ' und ' + B.oxName + '. Klicke auf „Erhitzen“.'; }
+  }
+
+  function evaluate() {
+    var A = MET[S.m], B = MET[S.o];
+    if (S.m === S.o) return { react: false, same: true };
+    var d = A.aff - B.aff;
+    return { react: d > 0, d: d };
+  }
+
+  function showResult() {
+    var A = MET[S.m], B = MET[S.o], r = S.res, box = $('result');
+    var extra = S.o === 'Ag' ? '<p class="small muted">Hinweis: Silberoxid zerfällt beim starken Erhitzen sogar allein in Silber und Sauerstoff.</p>' : '';
+    if (r.same) {
+      box.className = 'result';
+      box.innerHTML = 'Metall und Oxid gehören zum selben Element. Hier kann kein Sauerstoff zu einem anderen Metall wandern. Wähle zwei verschiedene Metalle.' + extra;
+      return;
+    }
+    if (r.react) {
+      var how = r.d > 250 ? 'Das Gemisch reagiert sehr heftig und leuchtet grell auf.' : r.d > 100 ? 'Das Gemisch glüht hell auf und glüht von selbst weiter.' : 'Das Gemisch glüht auf, die Reaktion ist eher schwach.';
+      box.className = 'result yes';
+      box.innerHTML = '<b>Reaktion!</b> ' + how +
+        '<div class="eqn">' + equation(S.m, S.o) + '</div>' +
+        '<b>Oxidationsmittel:</b> ' + B.oxName + ' (gibt Sauerstoff ab, wird reduziert).<br>' +
+        '<b>Reduktionsmittel:</b> ' + A.name + ' (nimmt Sauerstoff auf, wird oxidiert).<br>' +
+        A.name + ' hat eine größere Affinität zu Sauerstoff als ' + B.name + '.' + extra;
+    } else {
+      box.className = 'result no';
+      box.innerHTML = '<b>Keine Reaktion.</b> Das Gemisch wird nur heiß, es entsteht nichts Neues.<br>' +
+        A.name + ' hat eine kleinere Affinität zu Sauerstoff als ' + B.name + ' und kann ' + B.oxName + ' den Sauerstoff nicht entreißen.' + extra;
+    }
+  }
+
+  function logRow() {
+    var key = S.m + '|' + S.o;
+    if (S.res.same) return;
+    tested[key] = S.res.react;
+    if (S.res.react) reacted[key] = true;
+    var rows = Object.keys(tested).map(function (kk) {
+      var p = kk.split('|');
+      return '<tr><td>' + MET[p[0]].name + '</td><td>' + MET[p[1]].oxName + ' (' + MET[p[1]].ox + ')</td><td class="' + (tested[kk] ? 'yes-t">ja' : 'no-t">nein') + '</td></tr>';
+    });
+    $('log').innerHTML = rows.join('');
+    if (Object.keys(reacted).length >= 3) LK.reach('react3');
+    if (!S.res.react) LK.reach('noreact');
+  }
+
+  function heat() {
+    if (S.phase === 'heat') return;
+    S.res = evaluate();
+    S.phase = 'heat'; S.t = 0;
+    $('result').className = 'result';
+    $('result').textContent = 'Das Gemisch wird erhitzt …';
+    drawLab();
+    if (reduce) { S.t = 2; finishHeat(); }
+  }
+  function finishHeat() {
+    S.phase = 'done';
+    drawLab(); showResult(); logRow();
+  }
+
+  // Funken
+  function drawHeat() {
+    var r = S.res, t = S.t;
+    var ignite = r.react && t > 1.0;
+    var strength = r.react ? Math.min(1, Math.max(0.35, r.d / 300)) : 0;
+    var g = ignite ? strength * (0.5 + 0.5 * Math.sin(t * 18)) * Math.max(0, 1 - (t - 1.0) / 1.6) + 0.15 : 0;
+    $('glow').setAttribute('opacity', g.toFixed(2));
+    var sp = $('sparks'); sp.innerHTML = '';
+    if (ignite && r.d > 100) {
+      var n = r.d > 250 ? 14 : 6;
+      for (var i = 0; i < n; i++) {
+        var ang = -Math.PI * (0.1 + 0.8 * ((i * 0.618 + t * 1.7) % 1));
+        var len = 18 + 30 * ((i * 0.37 + t * 2.3) % 1);
+        var x1 = 220 + Math.cos(ang) * len, y1 = 106 + Math.sin(ang) * len;
+        el('line', { class: 'spark', x1: x1.toFixed(1), y1: y1.toFixed(1), x2: (x1 + Math.cos(ang) * 8).toFixed(1), y2: (y1 + Math.sin(ang) * 8).toFixed(1) }, sp);
+      }
+    }
+  }
+
+  // ------------------------------------------------ Redoxreihe bauen
+  var order = ['Cu', 'Mg', 'Fe', 'Ag', 'Zn', 'Al'];
+  function drawOrder() {
+    var ol = $('order'); ol.innerHTML = '';
+    order.forEach(function (key, i) {
+      var li = document.createElement('li');
+      li.innerHTML = '<span>' + MET[key].name + ' (' + key + ')</span>';
+      var up = document.createElement('button'); up.type = 'button'; up.textContent = '↑'; up.setAttribute('aria-label', MET[key].name + ' nach oben'); up.disabled = i === 0;
+      var dn = document.createElement('button'); dn.type = 'button'; dn.textContent = '↓'; dn.setAttribute('aria-label', MET[key].name + ' nach unten'); dn.disabled = i === order.length - 1;
+      up.onclick = function () { move(i, -1); }; dn.onclick = function () { move(i, 1); };
+      li.appendChild(up); li.appendChild(dn); ol.appendChild(li);
+    });
+  }
+  function move(i, d) {
+    var j = i + d; if (j < 0 || j >= order.length) return;
+    var t = order[i]; order[i] = order[j]; order[j] = t;
+    $('order').classList.remove('ok'); $('orderMsg').textContent = '';
+    drawOrder();
+    var btns = $('order').children[j].querySelectorAll('button');
+    (d < 0 ? btns[0] : btns[1]).focus();
+  }
+  $('bCheck').onclick = function () {
+    var hits = 0;
+    order.forEach(function (key, i) { if (key === KEYS[i]) hits++; });
+    if (hits === KEYS.length) {
+      $('order').classList.add('ok');
+      $('orderMsg').textContent = 'Richtig! Redoxreihe: Mg > Al > Zn > Fe > Cu > Ag. Oben stehen die unedlen, unten die edlen Metalle.';
+      LK.reach('reihe');
+    } else {
+      $('orderMsg').textContent = hits + ' von 6 Metallen stehen an der richtigen Stelle. Tipp: Ein Metall, das das Oxid eines anderen reduziert, steht weiter oben.';
+    }
+  };
+
+  // ------------------------------------------------ Hochofen
+  var ZONES = [
+    { id: 'gicht', name: 'Vorwärmzone (Gicht)', short: 'Gicht', y0: 40, y1: 110, temp: 'ca. 200 bis 400 °C', op: 0.12,
+      text: 'Oben wird schichtweise der Möller eingefüllt: Eisenerz, Koks und Kalkstein. Das aufsteigende heiße Gas trocknet und erwärmt ihn. Das Gichtgas (N₂, CO₂ und brennbares CO) wird abgeleitet und verbrannt, um den Heißwind vorzuheizen.' },
+    { id: 'red', name: 'Reduktionszone', short: 'Reduktion', y0: 110, y1: 200, temp: 'ca. 400 bis 900 °C', op: 0.25,
+      eq: 'Fe₂O₃ + 3 CO → 2 Fe + 3 CO₂',
+      text: 'Kohlenstoffmonooxid entzieht dem Eisenoxid den Sauerstoff. CO ist das Reduktionsmittel und wird dabei zu CO₂ oxidiert. Es entsteht festes, schwammiges Eisen.' },
+    { id: 'kohl', name: 'Kohlungszone', short: 'Kohlung', y0: 200, y1: 262, temp: 'ca. 900 bis 1300 °C', op: 0.42,
+      eq: 'CO₂ + C → 2 CO',
+      text: 'Kohlenstoffdioxid reagiert mit glühendem Koks wieder zu Kohlenstoffmonooxid (endotherm). Das Eisen nimmt Kohlenstoff auf, dadurch sinkt seine Schmelztemperatur.' },
+    { id: 'schmelz', name: 'Schmelzzone', short: 'Schmelzen', y0: 262, y1: 356, temp: 'bis ca. 2000 °C', op: 0.65,
+      eq: 'C + O₂ → CO₂',
+      text: 'Hier wird der Heißwind (ca. 1200 °C) eingeblasen. Der Koks verbrennt stark exotherm und liefert die Wärme für den ganzen Ofen. Eisen und Schlacke schmelzen und tropfen nach unten.' },
+    { id: 'gestell', name: 'Gestell', short: 'Gestell', y0: 356, y1: 400, temp: 'ca. 1450 °C', op: 0,
+      text: 'Unten sammelt sich flüssiges Roheisen mit etwa 4 % Kohlenstoff. Darauf schwimmt die leichtere Schlacke. Beide werden regelmäßig abgestochen. Die Schlacke wird z. B. im Straßenbau verwendet.' }
+  ];
+  var seen = {}, zoneEls = {}, zg = $('zones'), zl = $('zlabels');
+  ZONES.forEach(function (z) {
+    var r = el('rect', { x: 60, y: z.y0, width: 260, height: z.y1 - z.y0, class: 'zone', fill: z.op ? 'var(--pos)' : 'transparent', 'fill-opacity': z.op || 0, tabindex: 0, role: 'button', 'aria-label': z.name }, zg);
+    r.addEventListener('click', function () { selectZone(z.id); });
+    r.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectZone(z.id); } });
+    zoneEls[z.id] = r;
+    var ym = (z.y0 + z.y1) / 2;
+    if (z.id !== 'gestell') el('line', { x1: 300, x2: 340, y1: ym, y2: ym, class: 'gridline', stroke: 'var(--muted)' }, zl);
+    var tx = el('text', { x: 345, y: z.id === 'gestell' ? 350 : ym - 2, class: 'zlbl' }, zl); tx.textContent = z.short;
+    var tv = el('text', { x: 345, y: z.id === 'gestell' ? 366 : ym + 14, class: 'val' }, zl); tv.textContent = z.temp;
+    if (z.id === 'gestell') el('line', { x1: 280, x2: 340, y1: 378, y2: 356, class: 'gridline', stroke: 'var(--muted)' }, zl);
+    var b = document.createElement('button');
+    b.type = 'button'; b.textContent = z.short; b.dataset.zone = z.id; b.setAttribute('aria-pressed', 'false');
+    b.onclick = function () { selectZone(z.id); };
+    $('zbtns').appendChild(b);
+  });
+  function selectZone(id) {
+    var z = ZONES.filter(function (x) { return x.id === id; })[0];
+    seen[id] = true;
+    ZONES.forEach(function (x) { zoneEls[x.id].classList.toggle('sel', x.id === id); });
+    document.querySelectorAll('#zbtns button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.zone === id); });
+    $('zoneInfo').innerHTML = '<b>' + z.name + '</b> <span class="muted">(' + z.temp + ')</span>' + (z.eq ? '<b class="eqn">' + z.eq + '</b>' : '<br>') + z.text;
+    if (Object.keys(seen).length === ZONES.length) LK.reach('ofen');
+  }
+
+  function setView(v) {
+    $('vExp').setAttribute('aria-pressed', v === 'exp');
+    $('vOfen').setAttribute('aria-pressed', v === 'ofen');
+    $('expView').hidden = v !== 'exp';
+    $('ofenView').hidden = v !== 'ofen';
+  }
+  $('vExp').onclick = function () { setView('exp'); };
+  $('vOfen').onclick = function () { setView('ofen'); };
+
+  // ------------------------------------------------ Schleife
+  var last = performance.now();
+  function frame(t) {
+    var dt = Math.min(0.05, (t - last) / 1000); last = t;
+    if (S.phase === 'heat') {
+      S.t += dt;
+      drawHeat();
+      if (S.t > 2.6) finishHeat();
+    }
+    requestAnimationFrame(frame);
+  }
+  $('bHeat').onclick = heat;
+
+  drawLab(); drawOrder(); requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

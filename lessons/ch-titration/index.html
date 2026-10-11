@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>pH-Labor und Titration</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<style>
+  .glass { fill: none; stroke: var(--line); stroke-width: 2.2; stroke-linejoin: round; }
+  .glass-thin { fill: none; stroke: var(--line); stroke-width: 1.2; }
+  .colorless { fill: var(--neg); fill-opacity: .16; }
+  .stand { fill: var(--muted); }
+  .tick { stroke: var(--line); stroke-width: 1; }
+  .tiny { font-size: 12px; fill: var(--muted) !important; font-variant-numeric: tabular-nums; }
+  .marker { fill: var(--text); }
+  .display { fill: var(--card); stroke: var(--line); stroke-width: 1.5; }
+  .display-txt { font-size: 15px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .curve { fill: none; stroke: var(--accent); stroke-width: 2.2; stroke-linejoin: round; }
+  .pt { fill: var(--accent); }
+  .pt-now { fill: var(--pos); }
+  .seven { stroke: var(--ok); stroke-width: 1.2; stroke-dasharray: 5 4; }
+  .subst { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 12px; }
+  .subst button { font-size: .85rem; padding: 6px 9px; }
+  .calc { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 10px; }
+  .calc input { font: inherit; width: 7.5em; padding: 7px 10px; border-radius: 9px; border: 1px solid var(--border); background: var(--card); color: var(--text); }
+  .note { margin-top: 10px; }
+  .tabs { margin-bottom: 12px; }
+  #svgPh .val, #svgTit .val { font-size: 14px; }
+  #svgPh .lbl, #svgTit .lbl { font-size: 15px; }
+  #svgTit .tiny { font-size: 11px; }
+  #chart .val { font-size: 15px; }
+  #chart .lbl { font-size: 15px; }
+  .readout b.sm { font-size: 1rem; white-space: nowrap; }
+  h3 { font-size: .92rem; margin: 10px 0 6px; }
+</style>
+</head>
+<body>
+<h1>pH-Labor und Titration</h1>
+<p class="muted small">Im <b>pH-Labor</b> testest du Stoffe aus dem Haushalt mit vier Indikatoren. Bei der <b>Titration</b> tropfst du Natronlauge zu einer Salzsäure, bis der Indikator umschlägt, und berechnest daraus ihre Konzentration.</p>
+
+<div class="lk-grid">
+  <div>
+    <div id="viewPh">
+      <div class="lk-card">
+        <svg id="svgPh" viewBox="0 0 400 236" role="img" aria-labelledby="ph-title">
+          <title id="ph-title">Reagenzglas mit der Probe und Indikator, daneben die pH-Skala von 0 bis 14 mit einer Markierung beim pH-Wert der Probe</title>
+          <defs><linearGradient id="uniGrad" x1="0" x2="1" y1="0" y2="0"></linearGradient></defs>
+          <path id="tubeLiquid" d="M23 92 V182 A17 17 0 0 0 57 182 V92 Z"/>
+          <path class="glass" d="M20 18 V182 A20 20 0 0 0 60 182 V18"/>
+          <path class="glass-thin" d="M14 18 H26 M54 18 H66"/>
+          <text id="tName" x="96" y="34" class="lbl" style="font-size:18px"></text>
+          <text id="tInd" x="96" y="58" class="val"></text>
+          <text id="tColor" x="96" y="78" class="val"></text>
+          <rect x="100" y="146" width="280" height="22" rx="4" fill="url(#uniGrad)" stroke="var(--border)"/>
+          <g id="scaleTicks"></g>
+          <g id="phMarker">
+            <path class="marker" d="M0 0 L-8 -12 H8 Z"/>
+            <text id="tPh" x="0" y="-18" class="lbl" text-anchor="middle"></text>
+          </g>
+          <text x="100" y="210" class="val">← sauer</text>
+          <text x="240" y="210" class="val" text-anchor="middle">neutral</text>
+          <text x="380" y="210" class="val" text-anchor="end">alkalisch →</text>
+          <text x="100" y="230" class="tiny">Farbleiste: Universalindikator</text>
+        </svg>
+      </div>
+    </div>
+
+    <div id="viewTit" hidden>
+      <div class="lk-card">
+        <svg id="svgTit" viewBox="96 4 400 352" role="img" aria-labelledby="tit-title">
+          <title id="tit-title">Titrationsaufbau: Bürette mit Natronlauge über einem Erlenmeyerkolben mit Salzsäure und Indikator, daneben die Anzeige des pH-Meters</title>
+          <rect class="stand" x="146" y="10" width="6" height="336" rx="2"/>
+          <rect class="stand" x="100" y="344" width="240" height="8" rx="3"/>
+          <rect class="stand" x="150" y="19" width="98" height="5" rx="2"/>
+          <text x="226" y="20" class="tiny" text-anchor="end">mL</text>
+          <rect id="buretteLiquid" class="colorless" x="248" y="30" width="14" height="190"/>
+          <path class="colorless" d="M248 220 L253 238 H257 L262 220 Z"/>
+          <path class="glass" d="M246 16 V220 L252 240 V262 M264 16 V220 L258 240 V262"/>
+          <rect x="242" y="242" width="26" height="7" rx="2" fill="var(--card)" stroke="var(--line)" stroke-width="1.5"/>
+          <g id="buretteScale"></g>
+          <text x="282" y="36" class="lbl">Natronlauge</text>
+          <text x="282" y="54" class="val">c = 0,1 mol/L</text>
+          <path id="flaskLiquid" d=""/>
+          <path class="glass" d="M238 270 V292 L196 342 H314 L272 292 V270"/>
+          <circle id="drop" r="3.5" class="colorless" cx="255" cy="266" opacity="0" style="fill-opacity:.7"/>
+          <text x="326" y="300" class="lbl">20 mL Salzsäure</text>
+          <text x="326" y="318" class="val">c = ? (gesucht)</text>
+          <text id="tFlaskInd" x="326" y="336" class="val"></text>
+          <rect class="display" x="360" y="200" width="120" height="44" rx="8"/>
+          <text x="420" y="216" class="tiny" text-anchor="middle">pH-Meter</text>
+          <text id="tMeter" x="420" y="236" class="display-txt" text-anchor="middle"></text>
+        </svg>
+      </div>
+      <div class="lk-card">
+        <h2>Titrationskurve</h2>
+        <svg id="chart" viewBox="0 0 520 260" role="img" aria-label="Diagramm: pH-Wert der Lösung gegen das zugegebene Volumen Natronlauge"></svg>
+        <p class="small muted">Jeder Punkt ist eine Messung des pH-Meters nach einer Zugabe. Die grüne Linie markiert pH 7.</p>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="lk-card">
+      <h2>Einstellungen</h2>
+      <div class="seg tabs" role="group" aria-label="Ansicht wählen">
+        <button type="button" id="bViewPh" aria-pressed="true">pH-Labor</button>
+        <button type="button" id="bViewTit" aria-pressed="false">Titration</button>
+      </div>
+
+      <div id="panelPh">
+        <h3>Indikator</h3>
+        <div class="row" id="indRow" role="group" aria-label="Indikator wählen"></div>
+        <h3>Probe</h3>
+        <div class="subst" id="substRow" role="group" aria-label="Probe wählen"></div>
+        <div class="readouts">
+          <div class="readout"><span>pH-Wert</span><b id="rPh">–</b></div>
+          <div class="readout"><span>Charakter</span><b id="rChar">–</b></div>
+          <div class="readout"><span>c(H₃O⁺) in mol/L</span><b id="rH" class="sm">–</b></div>
+        </div>
+      </div>
+
+      <div id="panelTit" hidden>
+        <h3>Indikator im Kolben</h3>
+        <div class="row" id="indRowT" role="group" aria-label="Indikator für die Titration wählen"></div>
+        <h3>Natronlauge zugeben</h3>
+        <div class="row">
+          <button type="button" class="add" data-v="0.1">+ 0,1 mL</button>
+          <button type="button" class="add" data-v="0.5">+ 0,5 mL</button>
+          <button type="button" class="add" data-v="1">+ 1 mL</button>
+          <button type="button" class="add" data-v="5">+ 5 mL</button>
+        </div>
+        <div class="row">
+          <button type="button" id="bRestart">Von vorn (gleiche Probe)</button>
+          <button type="button" id="bNew">Neue Probe</button>
+        </div>
+        <div class="readouts">
+          <div class="readout"><span>Verbrauch <span class="f">V</span>(NaOH)</span><b id="rV">–</b></div>
+          <div class="readout"><span>pH-Wert</span><b id="rPhT">–</b></div>
+          <div class="readout"><span>Farbe</span><b id="rColT">–</b></div>
+        </div>
+        <div class="calc">
+          <label for="inC" class="small"><span class="f">c</span>(HCl) in mol/L:</label>
+          <input id="inC" inputmode="decimal" autocomplete="off" placeholder="z. B. 0,05">
+          <button type="button" id="bCheck" class="primary">Prüfen</button>
+        </div>
+        <p class="small muted">Tipp: <span class="f">c</span>(HCl) · <span class="f">V</span>(HCl) = <span class="f">c</span>(NaOH) · <span class="f">V</span>(NaOH)</p>
+      </div>
+      <p id="hint" class="small" aria-live="polite"></p>
+      <p class="small muted note">Vereinfachungen: Die pH-Werte der Haushaltsstoffe sind typische Werte, die Indikatorfarben sind angenähert. Phenolphthalein entfärbt sich in sehr stark alkalischen Lösungen (pH über 12) langsam wieder, das ist hier nicht dargestellt.</p>
+    </div>
+
+    <div class="lk-card tasks">
+      <h2>Entdecke selbst <span class="small muted" data-task-count></span></h2>
+      <div class="task" data-goal="three"><p class="task-q">Teste mit dem Universalindikator mindestens eine saure, eine neutrale und eine alkalische Probe.</p></div>
+      <div class="task" data-goal="php"><p class="task-q">Finde mit Phenolphthalein eine Probe, in der sich der Indikator pink färbt.</p></div>
+      <div class="task">
+        <p class="task-q">Rotkohlsaft färbt sich in einer unbekannten Lösung grün. Was weißt du über die Lösung?</p>
+        <div class="choices">
+          <button type="button" data-ok data-fb="Richtig: Grün zeigt Rotkohlsaft bei etwa pH 9 bis 11, also in alkalischen Lösungen wie Seifenlösung.">Sie ist alkalisch.</button>
+          <button type="button" data-fb="In sauren Lösungen ist Rotkohlsaft rot bis rosa. Probiere Zitronensaft mit Rotkohlsaft aus.">Sie ist sauer.</button>
+          <button type="button" data-fb="Neutral ist Rotkohlsaft violett. Teste reines Wasser.">Sie ist neutral.</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="task" data-goal="aeq"><p class="task-q">Titration: Gib Natronlauge zu, bis der Indikator umschlägt, aber höchstens 0,2 mL darüber hinaus. Zum Ende hin tropfenweise!</p></div>
+      <div class="task" data-goal="calc"><p class="task-q">Berechne aus deinem Verbrauch die Konzentration der Salzsäure und gib sie oben ein.</p></div>
+      <div class="task">
+        <p class="task-q">Welchen pH-Wert hat die Lösung genau am Äquivalenzpunkt?</p>
+        <div class="choices">
+          <button type="button" data-ok data-fb="Genau: Alle Oxonium-Ionen haben mit Hydroxid-Ionen zu Wasser reagiert. Es bleibt eine neutrale Kochsalzlösung.">pH = 7</button>
+          <button type="button" data-fb="Dann wäre noch viel Salzsäure übrig. Schau dir die Kurve am steilen Sprung an.">pH = 1</button>
+          <button type="button" data-fb="pH 14 wäre sehr starke Natronlauge. Am Äquivalenzpunkt ist aber gerade keine Lauge übrig.">pH = 14</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="all-done">Alles entdeckt! Weiter geht es mit den Übungen.</div>
+    </div>
+  </div>
+</div>
+
+<script src="../../static/lesson-kit.js"></script>
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+  var NS = 'http://www.w3.org/2000/svg';
+  function el(tag, attrs, parent) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    parent.appendChild(e);
+    return e;
+  }
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ------------------------------------------------ Indikatoren (Farben als RGB, angenähert)
+  var IND = {
+    uni: { name: 'Universalindikator', stops: [[0, [176, 18, 42]], [3, [227, 52, 47]], [4, [240, 123, 34]], [5, [245, 181, 30]], [6, [222, 206, 40]], [7, [63, 163, 77]], [8, [31, 143, 138]], [9, [35, 102, 196]], [10, [43, 63, 168]], [12, [85, 45, 150]], [14, [60, 26, 110]]],
+      word: function (p) { return p < 3 ? 'rot' : p < 4.5 ? 'orange' : p < 6.5 ? 'gelb' : p < 7.5 ? 'grün' : p < 10.5 ? 'blau' : 'violett'; } },
+    php: { name: 'Phenolphthalein', stops: [[8.2, [255, 214, 232]], [9, [232, 96, 170]], [10, [214, 36, 127]], [14, [214, 36, 127]]], below: 8.2,
+      word: function (p) { return p < 8.2 ? 'farblos' : p < 9 ? 'zartrosa' : 'pink'; } },
+    btb: { name: 'Bromthymolblau', stops: [[0, [228, 201, 25]], [6, [228, 201, 25]], [6.8, [70, 160, 75]], [7.6, [36, 83, 184]], [14, [36, 83, 184]]],
+      word: function (p) { return p < 6 ? 'gelb' : p <= 7.6 ? 'grün' : 'blau'; } },
+    rot: { name: 'Rotkohlsaft', stops: [[0, [200, 30, 60]], [3, [214, 60, 120]], [5, [170, 70, 150]], [7, [110, 70, 160]], [8, [60, 90, 190]], [9, [40, 140, 150]], [10, [60, 160, 70]], [12, [160, 190, 40]], [14, [225, 205, 40]]],
+      word: function (p) { return p < 3 ? 'rot' : p < 6 ? 'rosa' : p < 7.5 ? 'violett' : p < 8.5 ? 'blau' : p < 11.5 ? 'grün' : 'gelb'; } }
+  };
+  function color(ind, p) {
+    var I = IND[ind];
+    if (I.below && p < I.below) return null;
+    var s = I.stops;
+    if (p <= s[0][0]) return s[0][1];
+    for (var i = 1; i < s.length; i++) {
+      if (p <= s[i][0]) {
+        var t = (p - s[i - 1][0]) / (s[i][0] - s[i - 1][0]);
+        return [0, 1, 2].map(function (k) { return Math.round(s[i - 1][1][k] + t * (s[i][1][k] - s[i - 1][1][k])); });
+      }
+    }
+    return s[s.length - 1][1];
+  }
+  function paint(node, rgb) {
+    if (rgb) { node.removeAttribute('class'); node.setAttribute('fill', 'rgb(' + rgb.join(',') + ')'); node.setAttribute('fill-opacity', '.9'); }
+    else { node.setAttribute('class', 'colorless'); node.removeAttribute('fill'); node.removeAttribute('fill-opacity'); }
+  }
+  function charOf(p) { return p < 6.95 ? 'sauer' : p <= 7.05 ? 'neutral' : 'alkalisch'; }
+  var SUP = { '-': '⁻', '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹' };
+  function sci(x) {
+    var e = Math.floor(Math.log10(x)), m = x / Math.pow(10, e);
+    if (m >= 9.95) { m = 1; e++; }
+    return LK.fmt(m, 1) + ' · 10' + String(e).split('').map(function (c) { return SUP[c]; }).join('');
+  }
+
+  // ------------------------------------------------ pH-Labor
+  var SUBST = [
+    ['Zitronensaft', 2.4], ['Speiseessig', 2.9], ['Kaffee', 5.0], ['Sprudelwasser', 5.5], ['Reines Wasser', 7.0],
+    ['Kochsalzlösung', 7.0], ['Natronlösung', 8.3], ['Seifenlösung', 10.0], ['Ammoniak-Reiniger', 11.5], ['Abflussreiniger', 13.5]
+  ];
+  var P = { ind: 'uni', s: 0 }, tested = {};
+  var X0 = 100, X1 = 380, px = function (p) { return X0 + (X1 - X0) * p / 14; };
+
+  var grad = $('uniGrad');
+  for (var g = 0; g <= 14; g += 0.5) el('stop', { offset: (g / 14 * 100) + '%', 'stop-color': 'rgb(' + color('uni', g).join(',') + ')' }, grad);
+  var ticks = $('scaleTicks');
+  for (var p = 0; p <= 14; p++) {
+    el('line', { x1: px(p), x2: px(p), y1: 168, y2: 174, class: 'tick' }, ticks);
+    el('text', { x: px(p), y: 189, class: 'tiny', 'text-anchor': 'middle' }, ticks).textContent = p;
+  }
+
+  function mkButtons(row, items, onPick) {
+    items.forEach(function (it) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.textContent = it[1]; b.dataset.k = it[0];
+      b.setAttribute('aria-pressed', 'false');
+      b.onclick = function () { onPick(it[0]); };
+      row.appendChild(b);
+    });
+  }
+  function press(row, key) {
+    row.querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.k === String(key))); });
+  }
+  var indItems = [['uni', 'Universalindikator'], ['php', 'Phenolphthalein'], ['btb', 'Bromthymolblau'], ['rot', 'Rotkohlsaft']];
+  mkButtons($('indRow'), indItems, function (k) { P.ind = k; updatePh(); });
+  mkButtons($('substRow'), SUBST.map(function (s, i) { return [i, s[0]]; }), function (k) { P.s = Number(k); updatePh(); });
+
+  function updatePh() {
+    var s = SUBST[P.s], p = s[1], rgb = color(P.ind, p);
+    press($('indRow'), P.ind); press($('substRow'), P.s);
+    paint($('tubeLiquid'), rgb);
+    $('tName').textContent = s[0];
+    $('tInd').textContent = 'Indikator: ' + IND[P.ind].name;
+    $('tColor').textContent = 'Farbe: ' + IND[P.ind].word(p);
+    $('phMarker').setAttribute('transform', 'translate(' + px(p) + ',144)');
+    $('tPh').textContent = 'pH ' + LK.fmt(p, 1);
+    $('rPh').textContent = LK.fmt(p, 1);
+    $('rChar').textContent = charOf(p);
+    $('rH').textContent = sci(Math.pow(10, -p));
+    if (P.ind === 'uni') {
+      tested[charOf(p)] = true;
+      var n = ['sauer', 'neutral', 'alkalisch'].filter(function (c) { return tested[c]; });
+      if (n.length === 3) LK.reach('three');
+    }
+    if (P.ind === 'php' && p >= 8.2) LK.reach('php');
+  }
+
+  // ------------------------------------------------ Titration
+  var CB = 0.1, VA = 20, VMAX = 50, SAMPLES = [0.06, 0.075, 0.09, 0.1, 0.12, 0.125];
+  var T = { ind: 'btb', ca: 0.075, vb: 0, pts: [[0, 0]] };
+  function veq() { return T.ca * VA / CB; }
+  function phOf(vb) {
+    var d = (T.ca * VA - CB * vb) / (VA + vb);           // Überschuss H₃O⁺ in mol/L (negativ: OH⁻)
+    var h = (d + Math.sqrt(d * d + 4e-14)) / 2;          // mit Autoprotolyse des Wassers
+    return -Math.log10(h);
+  }
+  function newSample(keep) {
+    if (!keep) {
+      var opts = SAMPLES.filter(function (c) { return c !== T.ca; });
+      T.ca = opts[Math.floor(Math.random() * opts.length)];
+      $('inC').value = '';
+    }
+    T.vb = 0; T.pts = [[0, phOf(0)]]; lastWord = IND[T.ind].word(phOf(0));
+    updateTit();
+  }
+
+  var BY0 = 30, BY1 = 220, by = function (v) { return BY0 + (BY1 - BY0) * v / VMAX; };
+  var bs = $('buretteScale');
+  for (var v = 0; v <= VMAX; v++) {
+    var big = v % 5 === 0;
+    el('line', { x1: big ? 236 : 240, x2: 246, y1: by(v), y2: by(v), class: 'tick' }, bs);
+    if (v % 10 === 0) el('text', { x: 232, y: by(v) + 3.5, class: 'tiny', 'text-anchor': 'end' }, bs).textContent = v;
+  }
+
+  function flaskPath(yTop) {
+    var xl = function (y) { return y <= 292 ? 239 : 239 - (y - 292) * 42 / 50; };
+    var xr = function (y) { return y <= 292 ? 271 : 271 + (y - 292) * 42 / 50; };
+    var yb = 341;
+    return 'M' + xl(yTop) + ' ' + yTop + (yTop < 292 ? ' V292' : '') + ' L' + (xl(yb)) + ' ' + yb + ' H' + xr(yb) + ' L' + xr(Math.max(yTop, 292)) + ' ' + Math.max(yTop, 292) + (yTop < 292 ? ' V' + yTop : '') + ' Z';
+  }
+
+  var lastWord = '';
+  function updateTit() {
+    var pH = phOf(T.vb), rgb = color(T.ind, pH), word = IND[T.ind].word(pH);
+    press($('indRowT'), T.ind);
+    $('buretteLiquid').setAttribute('y', by(T.vb));
+    $('buretteLiquid').setAttribute('height', Math.max(0, BY1 - by(T.vb)));
+    var fl = $('flaskLiquid');
+    fl.setAttribute('d', flaskPath(318 - (T.vb / VMAX) * 22));
+    paint(fl, rgb);
+    $('tFlaskInd').textContent = '+ ' + IND[T.ind].name;
+    $('tMeter').textContent = LK.fmt(pH, 2);
+    $('rV').textContent = LK.fmt(T.vb, 1) + ' mL';
+    $('rPhT').textContent = LK.fmt(pH, 2);
+    $('rColT').textContent = word;
+    drawChart();
+  }
+
+  // Diagramm
+  var chart = $('chart'), CX0 = 50, CX1 = 500, CY0 = 218, CY1 = 28;
+  var cx = function (v) { return CX0 + (CX1 - CX0) * v / VMAX; };
+  var cy = function (p) { return CY0 - (CY0 - CY1) * p / 14; };
+  function drawChart() {
+    chart.innerHTML = '';
+    for (var v = 0; v <= VMAX; v += 5) {
+      el('line', { x1: cx(v), x2: cx(v), y1: CY1, y2: CY0, class: 'gridline' }, chart);
+      if (v % 10 === 0) el('text', { x: cx(v), y: CY0 + 19, 'text-anchor': 'middle', class: 'val' }, chart).textContent = v;
+    }
+    for (var p = 0; p <= 14; p += 2) {
+      el('line', { x1: CX0, x2: CX1, y1: cy(p), y2: cy(p), class: 'gridline' }, chart);
+      el('text', { x: CX0 - 8, y: cy(p) + 4, 'text-anchor': 'end', class: 'val' }, chart).textContent = p;
+    }
+    el('line', { x1: CX0, x2: CX1, y1: cy(7), y2: cy(7), class: 'seven' }, chart);
+    el('line', { x1: CX0, x2: CX1, y1: CY0, y2: CY0, class: 'axis' }, chart);
+    el('line', { x1: CX0, x2: CX0, y1: CY0, y2: CY1, class: 'axis' }, chart);
+    el('text', { x: CX1, y: CY0 + 40, 'text-anchor': 'end', class: 'lbl' }, chart).textContent = 'V(NaOH) in mL';
+    el('text', { x: 6, y: 14, class: 'lbl' }, chart).textContent = 'pH';
+    var pts = T.pts.slice().sort(function (a, b) { return a[0] - b[0]; });
+    if (pts.length > 1) el('polyline', { class: 'curve', points: pts.map(function (q) { return cx(q[0]) + ',' + cy(q[1]); }).join(' ') }, chart);
+    pts.forEach(function (q) { el('circle', { cx: cx(q[0]), cy: cy(q[1]), r: 2.6, class: 'pt' }, chart); });
+    el('circle', { cx: cx(T.vb), cy: cy(phOf(T.vb)), r: 5, class: 'pt-now' }, chart);
+  }
+
+  // Tropfen-Animation
+  var dropT = -1;
+  function animateDrop() {
+    if (reduce) return;
+    var start = dropT < 0;
+    dropT = 0;
+    if (start) requestAnimationFrame(step);
+  }
+  var lastTs = 0;
+  function step(ts) {
+    var dt = lastTs ? Math.min(0.05, (ts - lastTs) / 1000) : 0.016; lastTs = ts;
+    dropT += dt * 3;
+    var d = $('drop');
+    if (dropT >= 1) { d.setAttribute('opacity', 0); dropT = -1; lastTs = 0; return; }
+    d.setAttribute('cy', 264 + dropT * (318 - (T.vb / VMAX) * 22 - 264));
+    d.setAttribute('opacity', 1 - dropT * 0.3);
+    requestAnimationFrame(step);
+  }
+
+  function add(dv) {
+    if (T.vb + dv > VMAX + 1e-9) { $('hint').textContent = 'Die Bürette ist leer (50 mL). Starte mit „Von vorn“ neu.'; return; }
+    T.vb = Math.round((T.vb + dv) * 10) / 10;
+    var pH = phOf(T.vb);
+    T.pts.push([T.vb, pH]);
+    var word = IND[T.ind].word(pH);
+    var e = veq();
+    if (word !== lastWord) $('hint').textContent = 'Farbumschlag nach ' + word + '! Lies den Verbrauch an der Bürette ab.';
+    else if (T.vb > e + 0.2 && T.vb - dv <= e + 0.2) $('hint').textContent = 'Du bist schon über den Umschlag hinaus. Für eine genaue Messung: „Von vorn“ und zum Ende hin in kleinen Schritten zugeben.';
+    else $('hint').textContent = '';
+    lastWord = word;
+    if (dv <= 0.5 && T.vb >= e - 1e-9 && T.vb <= e + 0.2 + 1e-9) LK.reach('aeq');
+    else if (dv > 0.5 && T.vb >= e - 1e-9 && T.vb <= e + 0.2 + 1e-9) $('hint').textContent = 'Glück gehabt: genau am Umschlag! Wiederhole es mit „Von vorn“ und gib die letzten Milliliter in kleinen Schritten (höchstens 0,5 mL) zu.';
+    animateDrop();
+    updateTit();
+  }
+
+  mkButtons($('indRowT'), [['btb', 'Bromthymolblau'], ['php', 'Phenolphthalein'], ['uni', 'Universalindikator']], function (k) {
+    T.ind = k; lastWord = IND[k].word(phOf(T.vb)); updateTit();
+  });
+  document.querySelectorAll('button.add').forEach(function (b) { b.onclick = function () { add(Number(b.dataset.v)); }; });
+  $('bRestart').onclick = function () { newSample(true); $('hint').textContent = 'Neuer Versuch mit derselben Salzsäure: 20 mL im Kolben, Bürette auf 0 mL.'; };
+  $('bNew').onclick = function () { newSample(false); $('hint').textContent = 'Neue Salzsäure-Probe mit unbekannter Konzentration.'; };
+  $('bCheck').onclick = function () {
+    var raw = $('inC').value.trim().replace(',', '.'), c = Number(raw);
+    if (!raw || !isFinite(c)) { $('hint').textContent = 'Gib eine Zahl ein, z. B. 0,05.'; return; }
+    if (Math.abs(c - T.ca) <= T.ca * 0.02) {
+      $('hint').textContent = '✓ Richtig: c(HCl) = ' + LK.fmt(T.ca, 3) + ' mol/L. Verbrauch ' + LK.fmt(veq(), 1) + ' mL · 0,1 mol/L ÷ 20 mL.';
+      LK.reach('calc');
+    } else if (Math.abs(c * 1000 - T.ca) <= T.ca * 0.02 || Math.abs(c / 1000 - T.ca) <= T.ca * 0.02) {
+      $('hint').textContent = 'Die Ziffern stimmen, aber nicht die Größenordnung. Gib das Ergebnis in mol/L an.';
+    } else {
+      $('hint').textContent = 'Noch nicht. Titriere bis zum Farbumschlag, lies den Verbrauch ab und rechne c(HCl) = 0,1 mol/L · V(NaOH) / 20 mL.';
+    }
+  };
+
+  // ------------------------------------------------ Ansicht
+  function setView(v) {
+    $('viewPh').hidden = v !== 'ph'; $('panelPh').hidden = v !== 'ph';
+    $('viewTit').hidden = v !== 'tit'; $('panelTit').hidden = v !== 'tit';
+    $('bViewPh').setAttribute('aria-pressed', String(v === 'ph'));
+    $('bViewTit').setAttribute('aria-pressed', String(v === 'tit'));
+    $('hint').textContent = '';
+  }
+  $('bViewPh').onclick = function () { setView('ph'); };
+  $('bViewTit').onclick = function () { setView('tit'); };
+  $('inC').addEventListener('keydown', function (e) { if (e.key === 'Enter') $('bCheck').click(); });
+
+  T.ca = SAMPLES[Math.floor(Math.random() * SAMPLES.length)];
+  newSample(true);
+  updatePh();
+})();
+</script>
+</body>
+</html>

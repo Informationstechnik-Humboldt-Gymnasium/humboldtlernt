@@ -1,0 +1,157 @@
+{
+  "id": "ch-k9-konzentration",
+  "titel": "Konzentration und Titration",
+  "kurz": "Wie man angibt, wie viel Stoff in einer Lösung steckt, Lösungen verdünnt und die Konzentration einer Säure durch Titration bestimmt.",
+  "reihenfolge": 3,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Die Stoffmengenkonzentration mit `c = n / V` beschreiben und in mol/L berechnen" },
+    { "id": "lz2", "niveau": "G", "text": "Das Verdünnen von Lösungen mit `c_{1} · V_{1} = c_{2} · V_{2}` berechnen" },
+    { "id": "lz3", "niveau": "G", "text": "Den Ablauf einer Säure-Base-Titration mit Bürette und Indikator beschreiben" },
+    { "id": "lz4", "niveau": "H", "text": "Aus dem Verbrauch bei einer Titration die Konzentration einer Säure berechnen, auch bei zweiprotonigen Säuren" },
+    { "id": "lz5", "niveau": "H", "text": "Eine Titrationskurve (pH-Kurve) deuten und den Äquivalenzpunkt erkennen" }
+  ],
+  "verstehen": {
+    "einstieg": "Auf einer Flasche im Chemieraum steht „Salzsäure, c = 0,1 mol/L“. Auf einer anderen steht nur „Salzsäure“. Wie findest du heraus, wie konzentriert die zweite ist, ohne sie einzudampfen?",
+    "abschnitte": [
+      {
+        "titel": "Die Stoffmengenkonzentration",
+        "text": "Die **Stoffmengenkonzentration** `c` gibt an, welche Stoffmenge eines gelösten Stoffes in einem Liter Lösung enthalten ist:\n\n`c = n / V`, Einheit **mol/L**\n\n**Beispiel:** 0,2 mol Natriumchlorid werden in Wasser gelöst und auf 500 mL aufgefüllt.\n`c = 0,2 mol / 0,5 L = 0,4 mol/L`\n\nWichtig: `V` ist das Volumen der fertigen **Lösung**, nicht das des Wassers. Deshalb löst man den Stoff in einem **Messkolben** und füllt bis zur Markierung auf."
+      },
+      {
+        "titel": "Lösungen verdünnen",
+        "text": "Beim Verdünnen kommt nur Wasser dazu. Die Stoffmenge des gelösten Stoffes bleibt gleich: `n = c_{1} · V_{1} = c_{2} · V_{2}`.\n\n**Beispiel:** 10 mL Salzsäure mit `c_{1} = 1 mol/L` werden auf 100 mL aufgefüllt.\n`c_{2} = c_{1} · V_{1} / V_{2} = 1 mol/L · 10 mL / 100 mL = 0,1 mol/L`\n\nDie Volumina müssen nur dieselbe Einheit haben, mL dürfen bleiben.\n\n**Sicherheit:** Immer erst Wasser vorlegen und die Säure hineingeben, mit Schutzbrille."
+      },
+      {
+        "titel": "Die Titration",
+        "text": "Bei einer **Titration** bestimmt man die unbekannte Konzentration einer Lösung mit einer Lösung bekannter Konzentration, der **Maßlösung**.\n\n- Eine genau abgemessene Portion der Probe (z. B. 20 mL Salzsäure, mit der Vollpipette und Pipettierhilfe) kommt in einen Erlenmeyerkolben.\n- Einige Tropfen **Indikator** dazugeben, z. B. Bromthymolblau oder Phenolphthalein.\n- Die **Bürette** mit Natronlauge bekannter Konzentration füllen und den Anfangsstand ablesen.\n- Unter Schwenken Natronlauge zutropfen lassen, zum Ende hin tropfenweise.\n- Beim **Farbumschlag** stoppen und das verbrauchte Volumen ablesen.\n\nAm **Äquivalenzpunkt** haben genau so viele Hydroxid-Ionen reagiert, wie Oxonium-Ionen vorhanden waren."
+      },
+      {
+        "titel": "Auswerten: Konzentration berechnen",
+        "text": "Bei Salzsäure und Natronlauge reagieren H₃O⁺ und OH⁻ im Verhältnis 1 : 1. Am Äquivalenzpunkt gilt `n(HCl) = n(NaOH)`, also:\n\n`c(HCl) · V(HCl) = c(NaOH) · V(NaOH)`\n\n**Beispiel:** 20 mL Salzsäure verbrauchen 15 mL Natronlauge mit `c = 0,1 mol/L`.\n`c(HCl) = 0,1 mol/L · 15 mL / 20 mL = 0,075 mol/L`\n\nBei **Schwefelsäure** gibt jedes Molekül zwei Protonen ab: H₂SO₄ + 2 NaOH → Na₂SO₄ + 2 H₂O. Dann gilt `n(H_{2}SO_{4}) = n(NaOH) / 2`."
+      },
+      {
+        "titel": "Die Titrationskurve",
+        "text": "Misst man während der Titration mit einem pH-Meter, erhält man die **Titrationskurve**. Bei Salzsäure mit Natronlauge:\n\n- Am Anfang ist der pH-Wert niedrig (z. B. 1) und steigt nur langsam.\n- Kurz vor dem Äquivalenzpunkt steigt er plötzlich steil an. Ein einziger Tropfen ändert den pH-Wert um mehrere Stufen (**pH-Sprung**).\n- Am Äquivalenzpunkt ist pH = 7, die Lösung ist neutral.\n- Danach flacht die Kurve im alkalischen Bereich wieder ab.\n\nWeil der Sprung so steil ist, schlagen Bromthymolblau (um pH 7) und Phenolphthalein (ab pH 8,2) praktisch am selben Tropfen um."
+      }
+    ],
+    "formeln": [
+      { "formel": "c = \\frac{n}{V}", "bedeutung": "Stoffmengenkonzentration `c` in mol/L, Stoffmenge `n` in mol, Volumen der Lösung `V` in L" },
+      { "formel": "c_{1} · V_{1} = c_{2} · V_{2}", "bedeutung": "Verdünnen: Die Stoffmenge des gelösten Stoffes bleibt gleich" },
+      { "formel": "c_{S} · V_{S} = c_{B} · V_{B}", "bedeutung": "Titration einer einprotonigen Säure (S) mit einer Lauge wie Natronlauge (B) am Äquivalenzpunkt" }
+    ],
+    "merksatz": "Die **Stoffmengenkonzentration** ist `c = n / V` in mol/L. Beim Verdünnen bleibt die Stoffmenge gleich: `c_{1} · V_{1} = c_{2} · V_{2}`.\n\nBei einer **Titration** gibt man eine Maßlösung bekannter Konzentration zu, bis der Indikator umschlägt. Am **Äquivalenzpunkt** gilt bei Salzsäure und Natronlauge `n(HCl) = n(NaOH)`.",
+    "alltag": "Lebensmittelchemiker bestimmen durch Titration den Säuregehalt von Wein, Essig oder Fruchtsaft. So wird geprüft, ob z. B. Speiseessig wirklich mindestens 5 % Säure enthält."
+  },
+  "interaktiv": ["ch-titration"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "ch-konz-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz3",
+      "frage": "Mit welchem Gerät gibt man bei einer Titration die Maßlösung tropfenweise zu und liest das verbrauchte Volumen ab?",
+      "optionen": [
+        { "text": "Bürette", "richtig": true },
+        { "text": "Becherglas", "feedback": "Die Skala am Becherglas ist viel zu ungenau, und man kann damit nicht tropfenweise zugeben." },
+        { "text": "Messkolben", "feedback": "Mit dem Messkolben stellt man Lösungen mit genau einem Volumen her." },
+        { "text": "Erlenmeyerkolben", "feedback": "Im Erlenmeyerkolben befindet sich die Probe mit dem Indikator." }
+      ],
+      "erklaerung": "Die **Bürette** ist ein langes, fein skaliertes Glasrohr mit Hahn. Man kann auf 0,05 mL genau ablesen und die Lösung tropfenweise zugeben."
+    },
+    {
+      "id": "ch-konz-02", "typ": "zahl", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "0,5 mol Natriumchlorid werden zu 2 L Lösung gelöst. Wie groß ist die Konzentration?",
+      "gegeben": "`n = 0,5 mol`, `V = 2 L`",
+      "gesucht": "Konzentration `c`",
+      "gesuchtSymbol": "c",
+      "loesung": 0.25,
+      "einheit": "mol/L",
+      "alternativEinheiten": { "mmol/L": 0.001 },
+      "rechenweg": [
+        "Formel: `c = \\frac{n}{V}`",
+        "Einsetzen: `c = \\frac{0,5 mol}{2 L}`",
+        "Ergebnis: `c = 0,25 mol/L`"
+      ],
+      "erklaerung": "In jedem Liter der Lösung sind 0,25 mol Natriumchlorid gelöst."
+    },
+    {
+      "id": "ch-konz-03", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Du löst 4 g Natriumhydroxid (NaOH) und füllst im Messkolben auf 500 mL auf. Welche Konzentration hat die Natronlauge?",
+      "gegeben": "`m = 4 g`, `V = 500 mL`, Atommassen Na 23, O 16, H 1",
+      "gesucht": "Konzentration `c`",
+      "gesuchtSymbol": "c",
+      "loesung": 0.2,
+      "einheit": "mol/L",
+      "alternativEinheiten": { "mmol/L": 0.001 },
+      "rechenweg": [
+        "Molare Masse: `M(NaOH) = 23 + 16 + 1 = 40 g/mol`",
+        "Stoffmenge: `n = \\frac{4 g}{40 g/mol} = 0,1 mol`",
+        "Volumen in Liter: `V = 500 mL = 0,5 L`",
+        "Konzentration: `c = \\frac{0,1 mol}{0,5 L} = 0,2 mol/L`"
+      ],
+      "hinweis": "Rechne zuerst die Stoffmenge aus und denke daran, mL in L umzurechnen.",
+      "erklaerung": "Für die Konzentration braucht man die Stoffmenge, nicht die Masse. **Sicherheit:** Festes Natriumhydroxid ist stark ätzend, beim Lösen wird es warm. Schutzbrille und Handschuhe tragen."
+    },
+    {
+      "id": "ch-konz-04", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "10 mL Salzsäure mit `c = 1 mol/L` werden mit Wasser auf 250 mL aufgefüllt. Welche Konzentration hat die verdünnte Säure?",
+      "gegeben": "`c_{1} = 1 mol/L`, `V_{1} = 10 mL`, `V_{2} = 250 mL`",
+      "gesucht": "`c_{2}`",
+      "gesuchtSymbol": "c_{2}",
+      "loesung": 0.04,
+      "einheit": "mol/L",
+      "alternativEinheiten": { "mmol/L": 0.001 },
+      "rechenweg": [
+        "Die Stoffmenge HCl bleibt gleich: `c_{1} · V_{1} = c_{2} · V_{2}`",
+        "Umstellen: `c_{2} = \\frac{c_{1} · V_{1}}{V_{2}}`",
+        "Einsetzen: `c_{2} = \\frac{1 mol/L · 10 mL}{250 mL}`",
+        "Ergebnis: `c_{2} = 0,04 mol/L`"
+      ],
+      "erklaerung": "Das Volumen wird 25-mal so groß, die Konzentration also 25-mal so klein: 1 mol/L : 25 = 0,04 mol/L."
+    },
+    {
+      "id": "ch-konz-05", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "20 mL Salzsäure werden mit Natronlauge (`c = 0,1 mol/L`) gegen Bromthymolblau titriert. Bis zum Farbumschlag verbrauchst du 12,5 mL. Welche Konzentration hat die Salzsäure?",
+      "gegeben": "`V(HCl) = 20 mL`, `c(NaOH) = 0,1 mol/L`, `V(NaOH) = 12,5 mL`",
+      "gesucht": "`c(HCl)`",
+      "gesuchtSymbol": "c(HCl)",
+      "loesung": 0.0625,
+      "einheit": "mol/L",
+      "alternativEinheiten": { "mmol/L": 0.001 },
+      "rechenweg": [
+        "Am Äquivalenzpunkt: `n(HCl) = n(NaOH)`, also `c(HCl) · V(HCl) = c(NaOH) · V(NaOH)`",
+        "Umstellen: `c(HCl) = \\frac{c(NaOH) · V(NaOH)}{V(HCl)}`",
+        "Einsetzen: `c(HCl) = \\frac{0,1 mol/L · 12,5 mL}{20 mL}`",
+        "Ergebnis: `c(HCl) = 0,0625 mol/L`"
+      ],
+      "hinweis": "Bei Salzsäure und Natronlauge reagieren die Ionen im Verhältnis 1 : 1.",
+      "erklaerung": "Die Salzsäure ist etwas schwächer konzentriert als die Natronlauge, denn man brauchte weniger Lauge (12,5 mL) als Säure vorlag (20 mL)."
+    },
+    {
+      "id": "ch-konz-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz5",
+      "frage": "Bei der Titration von Salzsäure mit Natronlauge zeichnest du mit einem pH-Meter eine Titrationskurve auf. Was ist am Äquivalenzpunkt typisch?",
+      "optionen": [
+        { "text": "Der pH-Wert springt steil an, schon ein Tropfen ändert ihn um mehrere Stufen. Am Äquivalenzpunkt ist pH = 7.", "richtig": true },
+        { "text": "Der pH-Wert steigt dort besonders langsam, damit man genau ablesen kann.", "feedback": "Langsam ändert sich der pH-Wert am Anfang und am Ende der Kurve. Am Äquivalenzpunkt ist es umgekehrt." },
+        { "text": "Der pH-Wert ist dort 14, weil dann nur noch Natronlauge vorliegt.", "feedback": "Am Äquivalenzpunkt sind alle H₃O⁺ und die zugegebenen OH⁻ gerade vollständig zu Wasser reagiert. Die Lösung ist neutral." },
+        { "text": "Der pH-Wert fällt plötzlich auf 0.", "feedback": "Durch Zugabe von Lauge steigt der pH-Wert, er kann nicht fallen." }
+      ],
+      "erklaerung": "Vor dem Äquivalenzpunkt sind fast alle H₃O⁺-Ionen schon verbraucht. Der letzte Tropfen beseitigt die restlichen, der nächste bringt bereits überschüssige OH⁻-Ionen. Deshalb springt der pH-Wert von etwa 4 auf etwa 10. Bei starker Säure und starker Lauge liegt der Äquivalenzpunkt bei pH 7."
+    },
+    {
+      "id": "ch-konz-07", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "10 mL Schwefelsäure werden mit Natronlauge (`c = 0,1 mol/L`) titriert. Bis zum Äquivalenzpunkt verbrauchst du 20 mL. Welche Konzentration hat die Schwefelsäure? (H₂SO₄ + 2 NaOH → Na₂SO₄ + 2 H₂O)",
+      "gegeben": "`V(H_{2}SO_{4}) = 10 mL`, `c(NaOH) = 0,1 mol/L`, `V(NaOH) = 20 mL`",
+      "gesucht": "`c(H_{2}SO_{4})`",
+      "gesuchtSymbol": "c(H_{2}SO_{4})",
+      "loesung": 0.1,
+      "einheit": "mol/L",
+      "alternativEinheiten": { "mmol/L": 0.001 },
+      "rechenweg": [
+        "Stoffmenge NaOH: `n(NaOH) = 0,1 mol/L · 0,020 L = 0,002 mol`",
+        "Verhältnis aus der Gleichung: `n(H_{2}SO_{4}) = \\frac{1}{2} · n(NaOH) = 0,001 mol`",
+        "Konzentration: `c(H_{2}SO_{4}) = \\frac{0,001 mol}{0,010 L} = 0,1 mol/L`"
+      ],
+      "hinweis": "Schwefelsäure gibt zwei Protonen ab. Ein Molekül H₂SO₄ braucht deshalb zwei OH⁻-Ionen.",
+      "erklaerung": "Ohne Berücksichtigung der zwei Protonen käme man fälschlich auf 0,2 mol/L. Bei mehrprotonigen Säuren muss man immer das Stoffmengenverhältnis aus der Reaktionsgleichung verwenden."
+    }
+  ]
+}

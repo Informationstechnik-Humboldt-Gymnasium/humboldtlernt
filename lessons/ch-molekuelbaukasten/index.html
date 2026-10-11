@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Molekülbaukasten: Kohlenwasserstoffe und Alkanole</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<style>
+  .atom { font-size: 19px; font-weight: 650; text-anchor: middle; dominant-baseline: central; }
+  .atom.c { font-size: 21px; }
+  .atom.o { fill: var(--warn); }
+  .atom.me { fill: var(--c3); }
+  .bond { stroke: var(--line); stroke-width: 2.2; stroke-linecap: round; }
+  .bond.multi { stroke: var(--accent); }
+  .hit { fill: transparent; cursor: pointer; }
+  .selring { fill: var(--soft-accent); stroke: var(--accent); stroke-width: 2; }
+  .num { font-size: 13px; text-anchor: middle; fill: var(--muted) !important; font-variant-numeric: tabular-nums; }
+  .num.main { fill: var(--accent) !important; font-weight: 700; }
+  .lk-grid > div { min-width: 0; }
+  .molwrap { overflow-x: auto; }
+  #mol { margin: 0 auto; }
+  #chart { max-width: 520px; margin: 0 auto; }
+  #chart .val { font-size: 15px; }
+  #chart .lbl { font-size: 15px; }
+  .series.dash { stroke-dasharray: 6 4; }
+  .name { font-size: 1.35rem; font-weight: 700; margin: 6px 0 2px; text-align: center; }
+  .formula { text-align: center; margin: 2px 0; overflow-wrap: anywhere; }
+  .formula b { font-weight: 650; }
+  .series { fill: none; stroke-width: 2; }
+  .rt { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 4 4; }
+  .cur { fill: none; stroke: var(--text); stroke-width: 2.5; }
+  .legend { display: flex; flex-wrap: wrap; gap: 12px; font-size: .82rem; margin-top: 6px; }
+  .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
+  .legend i.ring { background: none; border: 2px solid var(--text); }
+  .seg button { padding: 7px 10px; }
+  .isos { font-size: .88rem; margin: 10px 0 0; padding: 8px 10px; background: var(--bg); border-radius: 10px; }
+  .isos p { margin: 2px 0; }
+  .isos .found { color: var(--muted); }
+  .readout b.txt { font-size: .98rem; }
+  select { padding: 7px 8px; }
+</style>
+</head>
+<body>
+<h1>Molekülbaukasten: Kohlenwasserstoffe und Alkanole</h1>
+<p class="muted small">Wähle die Stoffklasse und die Kettenlänge. Lege die Lage der Doppel- oder Dreifachbindung bzw. der OH-Gruppe fest und hänge Methylgruppen an. Name, Formeln und Siedepunkt erscheinen sofort.</p>
+
+<div class="lk-grid">
+  <div>
+    <div class="lk-card">
+      <div class="molwrap">
+      <svg id="mol" viewBox="0 0 300 200" role="img" aria-labelledby="mol-title">
+        <title id="mol-title">Strukturformel des gebauten Moleküls</title>
+      </svg>
+      </div>
+      <p class="name" id="name" aria-live="polite">Butan</p>
+      <p class="formula"><span class="muted">Halbstrukturformel:</span> <b id="half"></b></p>
+      <p class="formula"><span class="muted">Summenformel:</span> <b id="sum"></b></p>
+      <p class="small muted" id="numhint" style="text-align:center;margin-top:6px"></p>
+    </div>
+
+    <div class="lk-card">
+      <h2>Siedepunkte der homologen Reihen</h2>
+      <svg id="chart" viewBox="0 0 420 295" role="img" aria-label="Diagramm: Siedetemperatur in Grad Celsius gegen die Anzahl der C-Atome für Alkane, Alk-1-ene und Alkan-1-ole. Ein Ring markiert das gebaute Molekül."></svg>
+      <div class="legend">
+        <span><i style="background:var(--accent)"></i>Alkane (unverzweigt)</span>
+        <span><i style="background:var(--ok)"></i>Alk-1-ene (gestrichelt)</span>
+        <span><i style="background:var(--pos)"></i>Alkan-1-ole</span>
+        <span><i class="ring"></i>dein Molekül</span>
+      </div>
+      <p class="small muted">Graue Linie: Raumtemperatur 20 °C. Was darunter siedet, ist bei Raumtemperatur ein Gas. Werte gerundet, bei 1013 hPa.</p>
+    </div>
+  </div>
+
+  <div>
+    <div class="lk-card">
+      <h2>Bauen</h2>
+      <div class="row">
+        <div class="seg" role="group" aria-label="Stoffklasse wählen">
+          <button type="button" data-cls="an" aria-pressed="true">Alkan</button>
+          <button type="button" data-cls="en" aria-pressed="false">Alken</button>
+          <button type="button" data-cls="in" aria-pressed="false">Alkin</button>
+          <button type="button" data-cls="ol" aria-pressed="false">Alkanol</button>
+        </div>
+      </div>
+      <label class="ctrl"><span>Hauptkette <output id="oN"></output></span>
+        <input type="range" id="sN" min="1" max="10" step="1" value="4"></label>
+      <label class="ctrl" id="posCtrl"><span id="posLbl">Lage</span>
+        <input type="range" id="sPos" min="1" max="3" step="1" value="1"></label>
+      <div class="row" id="meRow">
+        <label for="selC" class="small">Methylgruppe an</label>
+        <select id="selC" aria-label="C-Atom für die Methylgruppe wählen"></select>
+        <button type="button" id="bAdd">+ CH₃</button>
+        <button type="button" id="bDel">− CH₃</button>
+      </div>
+      <p class="small muted" style="margin-top:-6px">Du kannst ein C-Atom auch in der Strukturformel antippen.</p>
+      <div class="row">
+        <button type="button" id="bReset">Seitenketten entfernen</button>
+      </div>
+      <p id="hint" class="small" aria-live="polite"></p>
+      <div class="readouts">
+        <div class="readout"><span>Siedepunkt</span><b id="rT" class="txt">–</b></div>
+        <div class="readout"><span>bei 20 °C</span><b id="rS" class="txt">–</b></div>
+        <div class="readout"><span>molare Masse</span><b id="rM" class="txt">–</b></div>
+        <div class="readout"><span>allgemeine Formel</span><b id="rG" class="txt">–</b></div>
+      </div>
+      <div class="isos" id="isos" aria-live="polite"></div>
+    </div>
+
+    <div class="lk-card tasks">
+      <h2>Entdecke selbst <span class="small muted" data-task-count></span></h2>
+      <div class="task" data-goal="c4"><p class="task-q">Baue beide Isomere mit der Summenformel C₄H₁₀ (Gas im Feuerzeug).</p></div>
+      <div class="task" data-goal="c5"><p class="task-q">Finde alle drei Isomere mit der Summenformel C₅H₁₂.</p></div>
+      <div class="task">
+        <p class="task-q">Welches Isomer von C₅H₁₂ hat den niedrigsten Siedepunkt?</p>
+        <div class="choices">
+          <button type="button" data-fb="Pentan ist lang gestreckt und berührt seine Nachbarn auf großer Fläche. Es siedet mit 36 °C am höchsten.">Pentan</button>
+          <button type="button" data-fb="2-Methylbutan siedet bei 28 °C. Es gibt ein noch kompakteres Isomer.">2-Methylbutan</button>
+          <button type="button" data-ok data-fb="Richtig: 9,5 °C. Das fast kugelförmige Molekül hat die kleinste Berührungsfläche, die Van-der-Waals-Kräfte sind am schwächsten.">2,2-Dimethylpropan</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="task" data-goal="but2en"><p class="task-q">Baue But-2-en: vier C-Atome, die Doppelbindung genau in der Mitte.</p></div>
+      <div class="task" data-goal="propan2ol"><p class="task-q">Baue Propan-2-ol, den Alkohol aus vielen Desinfektionsmitteln.</p></div>
+      <div class="task">
+        <p class="task-q">Ethanol (46 g/mol) siedet bei 78 °C, Propan (44 g/mol) schon bei −42 °C. Woran liegt das vor allem?</p>
+        <div class="choices">
+          <button type="button" data-fb="2 g/mol Unterschied erklären keine 120 °C. Vergleiche: Butan (58 g/mol) siedet bei −1 °C.">Ethanol-Moleküle sind schwerer.</button>
+          <button type="button" data-ok data-fb="Genau: Die OH-Gruppen bilden Wasserstoffbrücken zu den Nachbarmolekülen. Sie sind viel stärker als Van-der-Waals-Kräfte.">Zwischen den OH-Gruppen bilden sich Wasserstoffbrücken.</button>
+          <button type="button" data-fb="Beide Moleküle haben eine kurze Kette mit 2 bzw. 3 C-Atomen. Propan hat sogar die längere.">Ethanol hat die längere Kohlenstoffkette.</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="all-done">Alles entdeckt! Weiter geht es mit den Übungen.</div>
+    </div>
+    <p class="small muted">Vereinfachungen: Als Seitenketten gibt es hier nur Methylgruppen. Mehrfachbindung und OH-Gruppe lassen sich nicht kombinieren. Die Strukturformel ist flach gezeichnet, in Wirklichkeit sind die Bindungen räumlich angeordnet. Bei But-2-en gibt es zwei räumliche Formen (cis/trans), die hier nicht unterschieden werden.</p>
+  </div>
+</div>
+
+<script src="../../static/lesson-kit.js"></script>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var NS = 'http://www.w3.org/2000/svg';
+  var STEM = ['', 'Meth', 'Eth', 'Prop', 'But', 'Pent', 'Hex', 'Hept', 'Oct', 'Non', 'Dec'];
+  var MULT = ['', '', 'Di', 'Tri', 'Tetra'];
+  var SUB = '₀₁₂₃₄₅₆₇₈₉';
+  var MAXME = 4;
+
+  // Siedetemperaturen in °C bei 1013 hPa (gerundete Literaturwerte)
+  var SDP = {
+    'Methan': -162, 'Ethan': -89, 'Propan': -42, 'Butan': -1, 'Pentan': 36, 'Hexan': 69, 'Heptan': 98,
+    'Octan': 126, 'Nonan': 151, 'Decan': 174,
+    '2-Methylpropan': -12, '2-Methylbutan': 28, '2,2-Dimethylpropan': 9.5,
+    '2-Methylpentan': 60, '3-Methylpentan': 63, '2,2-Dimethylbutan': 50, '2,3-Dimethylbutan': 58,
+    '2-Methylhexan': 90, '3-Methylhexan': 92, '2,2-Dimethylpentan': 79, '2,3-Dimethylpentan': 90,
+    '2,4-Dimethylpentan': 80, '3,3-Dimethylpentan': 86, '2,2,3-Trimethylbutan': 81, '2,2,4-Trimethylpentan': 99,
+    '2-Methylheptan': 118, '3-Methylheptan': 119, '4-Methylheptan': 118,
+    '2-Methylbut-1-en': 31, '3-Methylbut-1-en': 20, '2-Methylbut-2-en': 39,
+    'Ethen': -104, 'Propen': -48, 'But-1-en': -6, 'But-2-en': 4, '2-Methylpropen': -7, 'Pent-1-en': 30,
+    'Hex-1-en': 63, 'Hept-1-en': 94, 'Oct-1-en': 121, 'Non-1-en': 147, 'Dec-1-en': 171,
+    'Ethin': -84, 'Propin': -23, 'But-1-in': 8, 'But-2-in': 27, 'Pent-1-in': 40, 'Hex-1-in': 71,
+    'Methanol': 65, 'Ethanol': 78, 'Propan-1-ol': 97, 'Propan-2-ol': 82, 'Butan-1-ol': 118, 'Butan-2-ol': 99,
+    '2-Methylpropan-1-ol': 108, '2-Methylpropan-2-ol': 82, 'Pentan-1-ol': 138, 'Pentan-2-ol': 119, 'Pentan-3-ol': 116,
+    'Hexan-1-ol': 157, 'Heptan-1-ol': 176, 'Octan-1-ol': 195, 'Nonan-1-ol': 214, 'Decan-1-ol': 231
+  };
+  var SDP_TXT = { 'But-2-en': '1 bzw. 4 °C', 'Ethin': '−84 °C (sublimiert)' };
+  var SOLID = { '2-Methylpropan-2-ol': 'fest (Smp. 25 °C)' };
+  var ALKANE = [-162, -89, -42, -1, 36, 69, 98, 126, 151, 174];
+  var ALKENE = [null, -104, -48, -6, 30, 63, 94, 121, 147, 171];
+  var ALKANOL = [65, 78, 97, 118, 138, 157, 176, 195, 214, 231];
+  var ISO = { 4: 2, 5: 3, 6: 5 };
+  var GENERAL = { an: 'CₙH₂ₙ₊₂', en: 'CₙH₂ₙ', in: 'CₙH₂ₙ₋₂', ol: 'CₙH₂ₙ₊₁OH' };
+  var CLASSNAME = { an: 'Alkan', en: 'Alken', in: 'Alkin', ol: 'Alkanol' };
+
+  var S = { n: 4, cls: 'an', pos: 1, me: [], sel: 2 };
+  var found = { 4: {}, 5: {}, 6: {} };
+
+  function sub(k) { return String(k).split('').map(function (d) { return SUB[d]; }).join(''); }
+  function temp(v) { return (v < 0 ? '−' : '') + LK.fmt(Math.abs(v), v % 1 ? 1 : 0) + ' °C'; }
+  function meAt(i) { return S.me[i] || 0; }
+  function totalMe() { var s = 0; for (var i = 1; i <= S.n; i++) s += meAt(i); return s; }
+  function hasMulti() { return S.cls === 'en' || S.cls === 'in'; }
+  function order(i) { // Bindungsordnung zwischen C-Atom i und i+1
+    if (!hasMulti() || i !== S.pos) return 1;
+    return S.cls === 'en' ? 2 : 3;
+  }
+  function chainBonds(i) { // Summe der Bindungsordnungen zu Ketten-Nachbarn
+    var s = 0;
+    if (i > 1) s += order(i - 1);
+    if (i < S.n) s += order(i);
+    return s;
+  }
+  function ohAt(i) { return S.cls === 'ol' && S.pos === i; }
+  function maxMe(i) {
+    if (i <= 1 || i >= S.n) return 0;
+    return Math.max(0, 4 - chainBonds(i) - (ohAt(i) ? 1 : 0));
+  }
+  function hAt(i) { return 4 - chainBonds(i) - meAt(i) - (ohAt(i) ? 1 : 0); }
+
+  // ---------------------------------------------- Regeln einhalten
+  function fix() {
+    var msg = '';
+    if (hasMulti() && S.n < 2) S.n = 2;
+    var pmax = hasMulti() ? S.n - 1 : S.n;
+    if (S.pos > pmax) S.pos = pmax;
+    if (S.pos < 1) S.pos = 1;
+    for (var i = 0; i <= 11; i++) {
+      if (i <= 1 || i >= S.n) { S.me[i] = 0; continue; }
+      var m = maxMe(i);
+      if (meAt(i) > m) { S.me[i] = m; msg = 'Ein C-Atom kann nur vier Bindungen eingehen. Überzählige Methylgruppen wurden entfernt.'; }
+    }
+    if (S.sel < 2) S.sel = 2;
+    if (S.sel > S.n - 1) S.sel = Math.max(2, S.n - 1);
+    return msg;
+  }
+
+  // ---------------------------------------------- Nummerierung und Name
+  function locants(rev) {
+    var map = function (i) { return rev ? S.n + 1 - i : i; };
+    var main = null;
+    if (hasMulti()) main = rev ? S.n - S.pos : S.pos;
+    else if (S.cls === 'ol') main = map(S.pos);
+    var me = [];
+    for (var i = 2; i < S.n; i++) for (var k = 0; k < meAt(i); k++) me.push(map(i));
+    me.sort(function (a, b) { return a - b; });
+    return { main: main, me: me, rev: rev };
+  }
+  function better(a, b) { // true, wenn a kleinere Lokanten hat als b
+    if (a.main !== null && a.main !== b.main) return a.main < b.main;
+    for (var i = 0; i < a.me.length; i++) if (a.me[i] !== b.me[i]) return a.me[i] < b.me[i];
+    return false;
+  }
+  function analyze() {
+    var f = locants(false), r = locants(true);
+    var L = better(r, f) ? r : f;
+    var k = L.me.length, prefix = '';
+    if (k) prefix = L.me.join(',') + '-' + (k === 1 ? 'Methyl' : MULT[k] + 'methyl');
+    var stem = STEM[S.n], name;
+    if (S.cls === 'an') name = stem + 'an';
+    else if (S.cls === 'ol') name = S.n <= 2 ? stem + 'anol' : stem + 'an-' + L.main + '-ol';
+    else {
+      var end = S.cls === 'en' ? 'en' : 'in';
+      name = S.n <= 3 ? stem + end : stem + '-' + L.main + '-' + end;
+    }
+    if (prefix) name = prefix + name.charAt(0).toLowerCase() + name.slice(1);
+    var C = S.n + totalMe(), H = 3 * totalMe() + (S.cls === 'ol' ? 1 : 0), O = S.cls === 'ol' ? 1 : 0;
+    for (var i = 1; i <= S.n; i++) H += hAt(i);
+    return { name: name, L: L, C: C, H: H, O: O };
+  }
+
+  function halfFormula() {
+    var parts = [];
+    for (var i = 1; i <= S.n; i++) {
+      var h = hAt(i), t = 'C' + (h > 0 ? 'H' + (h > 1 ? sub(h) : '') : '');
+      var m = meAt(i);
+      if (m === 1) t += '(CH₃)'; else if (m > 1) t += '(CH₃)' + sub(m);
+      if (ohAt(i)) {
+        if (i === S.n) t += '–OH';
+        else if (i === 1) t = 'HO–' + t;
+        else t += '(OH)';
+      }
+      parts.push(t);
+      if (i < S.n) parts.push(['', '–', '=', '≡'][order(i)]);
+    }
+    return parts.join('');
+  }
+
+  // ---------------------------------------------- Strukturformel zeichnen
+  var mol = $('mol');
+  function el(tag, attrs, parent, text) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    if (text != null) e.textContent = text;
+    (parent || mol).appendChild(e);
+    return e;
+  }
+  function slots(i) {
+    var s;
+    if (S.n === 1) return ['up', 'down', 'left', 'right'];
+    if (i === 1) s = ['up', 'down', 'left'];
+    else if (i === S.n) s = ['up', 'down', 'right'];
+    else s = ['up', 'down'];
+    var neigh = (i > 1 ? 1 : 0) + (i < S.n ? 1 : 0);
+    var extra = chainBonds(i) - neigh;
+    var side = i === 1 ? 'left' : 'right';
+    if (extra === 2) return (i === 1 || i === S.n) ? [side] : [];
+    if (extra === 1) return (i === 1 || i === S.n) ? ['up', 'down'] : ['up'];
+    return s;
+  }
+  var DIR = { up: [0, -1], down: [0, 1], left: [-1, 0], right: [1, 0] };
+
+  function drawMol(info) {
+    while (mol.lastChild && mol.lastChild.nodeName !== 'title') mol.removeChild(mol.lastChild);
+    var n = S.n, dx = n <= 6 ? 62 : 52, y = 92;
+    var W = Math.max(300, (n - 1) * dx + 170);
+    var x0 = (W - (n - 1) * dx) / 2;
+    mol.setAttribute('viewBox', '0 0 ' + W + ' 200');
+    mol.style.maxWidth = Math.round(W * 1.3) + 'px';
+    mol.style.minWidth = Math.round(W * 0.75) + 'px';
+    var X = function (i) { return x0 + (i - 1) * dx; };
+    // Auswahlring
+    if (maxMe(S.sel) > 0 || meAt(S.sel) > 0) el('circle', { cx: X(S.sel), cy: y, r: 17, class: 'selring' });
+    // Kettenbindungen
+    for (var i = 1; i < n; i++) {
+      var o = order(i), xa = X(i) + 13, xb = X(i + 1) - 13;
+      var offs = o === 1 ? [0] : o === 2 ? [-4, 4] : [-6, 0, 6];
+      offs.forEach(function (d) { el('line', { x1: xa, x2: xb, y1: y + d, y2: y + d, class: 'bond' + (o > 1 ? ' multi' : '') }); });
+    }
+    // Atome und Substituenten
+    for (var j = 1; j <= n; j++) {
+      var x = X(j), free = slots(j), items = [];
+      if (ohAt(j)) items.push('OH');
+      for (var k = 0; k < meAt(j); k++) items.push('Me');
+      var assign = {};
+      items.forEach(function (it) {
+        var pref = it === 'OH' ? ['left', 'right', 'down', 'up'] : ['up', 'down', 'left', 'right'];
+        for (var p = 0; p < pref.length; p++) if (free.indexOf(pref[p]) >= 0 && !assign[pref[p]]) { assign[pref[p]] = it; break; }
+      });
+      free.forEach(function (s) {
+        var it = assign[s] || 'H', d = DIR[s];
+        var label = it === 'H' ? 'H' : it === 'Me' ? 'CH₃' : (s === 'left' ? 'HO' : 'OH');
+        var horiz = d[0] !== 0;
+        var dist = it === 'H' ? 40 : (horiz ? 50 : 46);
+        var lx = x + d[0] * dist, ly = y + d[1] * dist;
+        var gap = it === 'H' ? 11 : (horiz ? 20 : 12);
+        el('line', { x1: x + d[0] * 13, y1: y + d[1] * 13, x2: lx - d[0] * gap, y2: ly - d[1] * gap, class: 'bond' });
+        el('text', { x: lx, y: ly, class: 'atom' + (it === 'OH' ? ' o' : it === 'Me' ? ' me' : '') }, null, label);
+      });
+      el('text', { x: x, y: y, class: 'atom c' }, null, 'C');
+      if (j > 1 && j < n) {
+        var hit = el('circle', { cx: x, cy: y, r: 24, class: 'hit', 'data-i': j });
+        hit.addEventListener('click', (function (idx) { return function () { S.sel = idx; update(); }; })(j));
+      }
+      // Nummer nach den Regeln
+      var num = info.L.rev ? n + 1 - j : j;
+      el('text', { x: x, y: 186, class: 'num' + (n > 1 ? ' main' : '') }, null, n > 1 ? num : '');
+    }
+    if (n > 1) el('text', { x: 6, y: 186, class: 'num', 'text-anchor': 'start', style: 'text-anchor:start' }, null, 'Nr.');
+  }
+
+  // ---------------------------------------------- Siedepunkt-Diagramm
+  var chart = $('chart');
+  var CX0 = 54, CX1 = 405, CY0 = 250, CY1 = 36, TMIN = -180, TMAX = 240;
+  function cx(c) { return CX0 + (CX1 - CX0) * (c - 1) / 9; }
+  function cy(t) { return CY0 - (CY0 - CY1) * (t - TMIN) / (TMAX - TMIN); }
+  function cel(tag, attrs, text) { return el(tag, attrs, chart, text); }
+  function drawChart(info) {
+    chart.innerHTML = '';
+    for (var t = TMIN; t <= TMAX; t += 60) {
+      cel('line', { x1: CX0, x2: CX1, y1: cy(t), y2: cy(t), class: 'gridline' });
+      cel('text', { x: CX0 - 6, y: cy(t) + 4, 'text-anchor': 'end', class: 'val' }, (t < 0 ? '−' : '') + Math.abs(t));
+    }
+    for (var c = 1; c <= 10; c++) cel('text', { x: cx(c), y: CY0 + 18, 'text-anchor': 'middle', class: 'val' }, c);
+    cel('line', { x1: CX0, x2: CX1, y1: CY0, y2: CY0, class: 'axis' });
+    cel('line', { x1: CX0, x2: CX0, y1: CY0, y2: CY1, class: 'axis' });
+    cel('line', { x1: CX0, x2: CX1, y1: cy(20), y2: cy(20), class: 'rt' });
+    cel('text', { x: CX1, y: CY0 + 37, 'text-anchor': 'end', class: 'lbl' }, 'Anzahl C-Atome');
+    cel('text', { x: 4, y: 16, class: 'lbl' }, 'Sdp. in °C');
+    [[ALKANE, 'var(--accent)', ''], [ALKENE, 'var(--ok)', ' dash'], [ALKANOL, 'var(--pos)', '']].forEach(function (s) {
+      var pts = [];
+      s[0].forEach(function (v, i) { if (v !== null) pts.push([cx(i + 1), cy(v)]); });
+      cel('polyline', { points: pts.map(function (p) { return p.join(','); }).join(' '), class: 'series' + s[2], stroke: s[1], opacity: 0.6 });
+      pts.forEach(function (p) { cel('circle', { cx: p[0], cy: p[1], r: 3.2, fill: s[1] }); });
+    });
+    var v = SDP[info.name];
+    if (v !== undefined && info.C <= 10) cel('circle', { cx: cx(info.C), cy: cy(v), r: 8, class: 'cur' });
+  }
+
+  // ---------------------------------------------- Oberfläche
+  var hintMsg = '';
+  function update() {
+    var fixMsg = fix();
+    var info = analyze();
+    drawMol(info);
+    drawChart(info);
+    $('name').textContent = info.name;
+    $('half').textContent = halfFormula();
+    var sum = 'C' + (info.C > 1 ? sub(info.C) : '') + 'H' + sub(info.H) + (info.O ? 'O' : '');
+    if (S.cls === 'ol') sum += '  (C' + (info.C > 1 ? sub(info.C) : '') + 'H' + sub(info.H - 1) + 'OH)';
+    $('sum').textContent = sum;
+    $('rM').textContent = LK.fmt(12 * info.C + info.H + 16 * info.O, 0) + ' g/mol';
+    $('rG').textContent = totalMe() ? GENERAL[S.cls] + ' (verzweigt)' : GENERAL[S.cls];
+    var v = SDP[info.name];
+    $('rT').textContent = v === undefined ? 'nicht hinterlegt' : (SDP_TXT[info.name] || temp(v));
+    $('rS').textContent = v === undefined ? '–' : (SOLID[info.name] || (v < 20 ? 'gasförmig' : 'flüssig'));
+    // Hinweis zur Nummerierung
+    var nh = '';
+    if (S.n > 1 && info.L.rev) {
+      nh = 'Die Nummerierung beginnt rechts, damit ' + (S.cls === 'an' ? 'die Verzweigungen möglichst kleine Zahlen bekommen.' : S.cls === 'ol' ? 'die OH-Gruppe eine möglichst kleine Zahl bekommt.' : 'die Mehrfachbindung eine möglichst kleine Zahl bekommt.');
+    } else if (S.n > 1) nh = 'Die blauen Zahlen zeigen die Nummerierung der Hauptkette.';
+    $('numhint').textContent = nh;
+    // Bedienelemente
+    $('oN').textContent = S.n + (S.n === 1 ? ' C-Atom' : ' C-Atome');
+    $('sN').value = S.n;
+    var showPos = S.cls !== 'an' && !(S.cls === 'ol' && S.n === 1);
+    $('posCtrl').hidden = !showPos;
+    var sp = $('sPos');
+    sp.max = hasMulti() ? S.n - 1 : S.n;
+    sp.value = S.pos;
+    sp.disabled = Number(sp.max) <= 1;
+    $('posLbl').textContent = (hasMulti() ? (S.cls === 'en' ? 'Doppelbindung' : 'Dreifachbindung') + ' zwischen dem ' + S.pos + '. und ' + (S.pos + 1) + '. C-Atom von links'
+      : 'OH-Gruppe am ' + S.pos + '. C-Atom von links');
+    document.querySelectorAll('[data-cls]').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.cls === S.cls); });
+    var sel = $('selC'), opts = '';
+    for (var i = 2; i < S.n; i++) opts += '<option value="' + i + '"' + (i === S.sel ? ' selected' : '') + '>' + i + '. C-Atom von links</option>';
+    sel.innerHTML = opts;
+    var canMe = S.n >= 3;
+    $('meRow').hidden = !canMe;
+    $('bAdd').disabled = !canMe || meAt(S.sel) >= maxMe(S.sel) || totalMe() >= MAXME;
+    $('bDel').disabled = !canMe || meAt(S.sel) === 0;
+    $('bReset').disabled = totalMe() === 0;
+    $('hint').textContent = fixMsg || hintMsg;
+    hintMsg = '';
+    // Isomere
+    if (S.cls === 'an' && found[info.C]) found[info.C][info.name] = true;
+    var html = '<p><b>Gefundene Isomere der Alkane</b></p>';
+    [4, 5, 6].forEach(function (c) {
+      var names = Object.keys(found[c]);
+      html += '<p>C' + sub(c) + 'H' + sub(2 * c + 2) + ': ' + names.length + ' von ' + ISO[c] +
+        (names.length ? ' <span class="found">(' + names.join(', ') + ')</span>' : '') + '</p>';
+    });
+    $('isos').innerHTML = html;
+    // Ziele
+    if (Object.keys(found[4]).length >= 2) LK.reach('c4');
+    if (Object.keys(found[5]).length >= 3) LK.reach('c5');
+    if (info.name === 'But-2-en') LK.reach('but2en');
+    if (info.name === 'Propan-2-ol') LK.reach('propan2ol');
+  }
+
+  document.querySelectorAll('[data-cls]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      S.cls = b.dataset.cls;
+      if (hasMulti() && S.n < 2) { S.n = 2; hintMsg = 'Für eine Mehrfachbindung braucht man mindestens zwei C-Atome.'; }
+      update();
+    });
+  });
+  $('sN').addEventListener('input', function () {
+    var v = Number(this.value);
+    if (hasMulti() && v < 2) { v = 2; hintMsg = 'Für eine Mehrfachbindung braucht man mindestens zwei C-Atome.'; }
+    S.n = v; update();
+  });
+  $('sPos').addEventListener('input', function () { S.pos = Number(this.value); update(); });
+  $('selC').addEventListener('change', function () { S.sel = Number(this.value); update(); });
+  $('bAdd').addEventListener('click', function () {
+    if (totalMe() >= MAXME) hintMsg = 'Höchstens vier Methylgruppen.';
+    else if (meAt(S.sel) >= maxMe(S.sel)) hintMsg = 'An diesem C-Atom ist keine Bindung mehr frei.';
+    else S.me[S.sel] = meAt(S.sel) + 1;
+    update();
+  });
+  $('bDel').addEventListener('click', function () { if (meAt(S.sel) > 0) S.me[S.sel] = meAt(S.sel) - 1; update(); });
+  $('bReset').addEventListener('click', function () { S.me = []; update(); });
+
+  update();
+})();
+</script>
+</body>
+</html>

@@ -23,6 +23,7 @@ test('Klassen 5 und 6 sind ohne Inhalte und damit ausgeblendet, 7 bis 10 sind si
 const SCHIC = {
   physik: { 7: ['3.1', '3.4', '3.5'], 8: ['3.2', '3.3'], 9: ['3.6', '3.9', '3.10'], 10: ['3.7', '3.8', '3.11', '3.12'] },
   timp: { 8: ['8.1', '8.2', '8.3'], 9: ['9.1', '9.2'] },
+  chemie: { 7: ['7.1', '7.2', '7.3'], 8: ['8.1', '8.2', '8.3'], 9: ['9.1', '9.2', '9.3'], 10: ['10.1', '10.2', '10.3'] },
 };
 
 for (const [fachId, plan] of Object.entries(SCHIC)) for (const [stufe, felder] of Object.entries(plan)) {

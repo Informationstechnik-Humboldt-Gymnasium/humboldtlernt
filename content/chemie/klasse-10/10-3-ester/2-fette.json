@@ -1,0 +1,130 @@
+{
+  "id": "ch-k10-fette",
+  "titel": "Fette und Öle",
+  "kurz": "Fette sind Ester aus Glycerin und Fettsäuren. Warum Butter fest und Olivenöl flüssig ist und warum dein Körper Fett braucht.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Fette als Ester aus Glycerin (Propan-1,2,3-triol) und drei Fettsäuren beschreiben" },
+    { "id": "lz2", "niveau": "G", "text": "Gesättigte und ungesättigte Fettsäuren unterscheiden und erklären, warum Öle flüssig und Fette fest sind" },
+    { "id": "lz3", "niveau": "G", "text": "Typische Eigenschaften von Fetten beschreiben (lipophil, hydrophob, Dichte, Fettfleck)" },
+    { "id": "lz4", "niveau": "H", "text": "Fette als notwendigen Nahrungsbestandteil einordnen und Aussagen über Fette in der Ernährung bewerten" }
+  ],
+  "verstehen": {
+    "einstieg": "Butter ist im Kühlschrank fest, Olivenöl bleibt flüssig. Chemisch sind beide fast dasselbe. Wo liegt der kleine, aber entscheidende Unterschied?",
+    "abschnitte": [
+      {
+        "titel": "Fette sind Ester",
+        "text": "Ein Fettmolekül entsteht aus einem Molekül **Glycerin** und drei Molekülen **Fettsäure**. Glycerin heißt chemisch **Propan-1,2,3-triol**, es ist ein Alkohol mit drei Hydroxygruppen. Jede Hydroxygruppe bildet mit der Carboxygruppe einer Fettsäure eine **Estergruppe**. Dabei werden drei Wassermoleküle abgespalten:\n\nGlycerin + 3 Fettsäuren ⇌ Fett + 3 Wasser\n\nEin Fettmolekül (oft Triglycerid genannt) mit drei verschiedenen Fettsäureresten:\n\n```\nCH₂–O–CO–C₁₇H₃₅\n|\nCH –O–CO–C₁₇H₃₃\n|\nCH₂–O–CO–C₁₇H₃₁\n```\n\nNatürliche Fette sind **Gemische** vieler verschiedener Fettmoleküle. Deshalb haben sie keinen genauen Schmelzpunkt, sondern einen **Schmelzbereich**: Butter wird zwischen etwa 30 °C und 40 °C allmählich weich und flüssig."
+      },
+      {
+        "titel": "Gesättigte und ungesättigte Fettsäuren",
+        "text": "**Fettsäuren** sind lange, unverzweigte Monocarbonsäuren, meist mit 16 oder 18 C-Atomen.\n\n- **Gesättigte** Fettsäuren haben nur Einfachbindungen, z. B. Palmitinsäure C₁₅H₃₁–COOH und Stearinsäure C₁₇H₃₅–COOH.\n- **Ungesättigte** Fettsäuren haben C=C-Doppelbindungen: Ölsäure C₁₇H₃₃–COOH (eine), Linolsäure C₁₇H₃₁–COOH (zwei), Linolensäure C₁₇H₂₉–COOH (drei).\n\nGesättigte Ketten sind gerade und lassen sich dicht aneinanderlegen, wie Bleistifte in einer Schachtel. Zwischen ihnen wirken starke **Van-der-Waals-Kräfte**. Eine Doppelbindung in natürlichen Fettsäuren verursacht einen **Knick** in der Kette. Die Moleküle liegen dann weniger dicht, die Kräfte sind schwächer, und der Schmelzbereich sinkt.\n\nDarum sind Fette mit vielen gesättigten Fettsäuren (Butter, Schmalz, Kokosfett) bei Raumtemperatur fest. Fette mit vielen ungesättigten Fettsäuren sind flüssig. Man nennt sie **Öle** (Olivenöl, Rapsöl, Sonnenblumenöl). Doppelbindungen weist man wie bei den Alkenen mit **Bromwasser** nach: Es wird entfärbt."
+      },
+      {
+        "titel": "Eigenschaften von Fetten",
+        "text": "Fettmoleküle bestehen fast nur aus langen, unpolaren Kohlenwasserstoffketten. Daraus folgt:\n\n- Fette lösen sich nicht in Wasser (**hydrophob**), aber gut in Benzin oder Heptan (**lipophil**).\n- Mit einer Dichte von etwa 0,9 g/cm³ **schwimmen** sie auf Wasser.\n- Auf Papier hinterlassen sie einen durchscheinenden **Fettfleck**, der beim Trocknen nicht verschwindet. Das ist ein einfacher Nachweis.\n- Fette sieden nicht unzersetzt. Sehr heißes Fett kann sich selbst entzünden. Einen **Fettbrand nie mit Wasser löschen**: Das Wasser verdampft schlagartig und reißt brennendes Fett mit (Fettexplosion). Deckel drauf!\n\nAn Luft, Licht und Wärme werden Fette **ranzig**. Sie werden teilweise hydrolysiert, und die Doppelbindungen werden oxidiert. Bei Butter entsteht dabei unter anderem die übel riechende Butansäure (Buttersäure). Deshalb Fette kühl, dunkel und verschlossen lagern."
+      },
+      {
+        "titel": "Fett in der Ernährung",
+        "text": "Fett ist **lebensnotwendig**:\n\n- Es ist der energiereichste Nährstoff: rund **37 kJ pro Gramm**, mehr als doppelt so viel wie Kohlenhydrate oder Eiweiß (je rund 17 kJ/g).\n- Die Vitamine A, D, E und K sind **fettlöslich**. Ohne Fett in der Mahlzeit kann der Körper sie kaum aufnehmen.\n- Linolsäure und Linolensäure (Omega-6- und Omega-3-Fettsäuren) sind **essenziell**. Der Körper kann sie nicht selbst herstellen.\n- Fettgewebe schützt Organe und isoliert gegen Kälte.\n\nEmpfohlen wird, etwa 30 % der Nahrungsenergie aus Fett zu beziehen. Dabei kommt es auch auf die Art an: Pflanzenöle wie Raps- und Olivenöl liefern viele ungesättigte Fettsäuren. Ungünstig sind große Mengen gesättigter Fette und vor allem die **trans-Fettsäuren**, die z. B. beim starken Erhitzen und bei der industriellen Fetthärtung entstehen können."
+      }
+    ],
+    "formeln": [
+      { "formel": "Glycerin + 3 Fettsäuren ⇌ Fett + 3 H₂O", "bedeutung": "Ein Fettmolekül ist ein dreifacher Ester (Triglycerid)." },
+      { "formel": "C₃H₅(OH)₃ + 3 C₁₇H₃₅–COOH ⇌ C₃H₅(OOC–C₁₇H₃₅)₃ + 3 H₂O", "bedeutung": "Glycerin + Stearinsäure ⇌ Tristearin + Wasser" }
+    ],
+    "merksatz": "**Fette** sind Ester aus **Glycerin** (Propan-1,2,3-triol) und drei **Fettsäuren**. Fette mit vielen **ungesättigten** Fettsäuren sind flüssig (Öle), weil die geknickten Ketten weniger dicht liegen.\n\nFette sind hydrophob und lipophil. Sie liefern viel Energie, transportieren fettlösliche Vitamine und enthalten essenzielle Fettsäuren.",
+    "alltag": "Leinöl enthält besonders viel Linolensäure. An der Luft reagieren deren Doppelbindungen mit Sauerstoff, und das Öl härtet zu einem festen Film aus. Deshalb nutzt man Leinöl als Holzschutz und in Ölfarben."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "ch-fet-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Aus welchen Bausteinen ist ein Fettmolekül aufgebaut?",
+      "optionen": [
+        { "text": "aus einem Glycerin-Molekül und drei Fettsäure-Molekülen", "richtig": true },
+        { "text": "aus einem Ethanol-Molekül und einem Ethansäure-Molekül", "feedback": "Daraus entsteht Ethansäureethylester, ein kleiner Ester, aber kein Fett." },
+        { "text": "aus einem Glycerin-Molekül und drei Aminosäure-Molekülen", "feedback": "Aminosäuren sind die Bausteine der Proteine, nicht der Fette." },
+        { "text": "aus drei Glycerin-Molekülen und einer Fettsäure", "feedback": "Umgekehrt: Glycerin hat drei Hydroxygruppen, an jede bindet eine Fettsäure." }
+      ],
+      "erklaerung": "Glycerin (Propan-1,2,3-triol) hat drei Hydroxygruppen. Jede bildet mit einer Fettsäure eine Estergruppe. So entsteht ein **Triglycerid**."
+    },
+    {
+      "id": "ch-fet-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Wie viele C=C-Doppelbindungen hat die Kohlenwasserstoffkette dieser Fettsäuren? Ordne zu.",
+      "paare": [
+        { "links": "Stearinsäure C₁₇H₃₅–COOH", "rechts": "keine (gesättigt)" },
+        { "links": "Ölsäure C₁₇H₃₃–COOH", "rechts": "eine" },
+        { "links": "Linolsäure C₁₇H₃₁–COOH", "rechts": "zwei" },
+        { "links": "Linolensäure C₁₇H₂₉–COOH", "rechts": "drei" }
+      ],
+      "extraRechts": ["vier"],
+      "erklaerung": "Eine gesättigte Kette C₁₇H₃₅ hat die Form CₙH₂ₙ₊₁. Jede Doppelbindung bedeutet zwei H-Atome weniger: C₁₇H₃₃ hat eine, C₁₇H₃₁ zwei, C₁₇H₂₉ drei Doppelbindungen."
+    },
+    {
+      "id": "ch-fet-03", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Welche Aussagen über Speiseöl sind richtig?",
+      "optionen": [
+        { "text": "Es löst sich nicht in Wasser.", "richtig": true },
+        { "text": "Es löst sich gut in Heptan oder Benzin.", "richtig": true },
+        { "text": "Es schwimmt auf Wasser, weil seine Dichte kleiner ist.", "richtig": true },
+        { "text": "Ein Ölfleck auf Papier verschwindet beim Trocknen wie ein Wasserfleck.", "feedback": "Öl verdunstet bei Raumtemperatur praktisch nicht. Der durchscheinende Fleck bleibt. Das nutzt man als Fettfleckprobe." },
+        { "text": "Es hat einen genauen Schmelzpunkt wie reines Wasser.", "feedback": "Öle und Fette sind Gemische verschiedener Fettmoleküle. Sie haben einen Schmelzbereich." }
+      ],
+      "erklaerung": "Fettmoleküle bestehen fast nur aus unpolaren Kohlenwasserstoffketten. Sie sind hydrophob und lipophil: Gleiches löst sich in Gleichem."
+    },
+    {
+      "id": "ch-fet-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Olivenöl enthält viele ungesättigte Fettsäurereste, Butter viele gesättigte. Warum ist Olivenöl bei Raumtemperatur flüssig?",
+      "optionen": [
+        { "text": "Die Doppelbindungen verursachen Knicke in den Ketten. Die Moleküle liegen weniger dicht, die Van-der-Waals-Kräfte sind schwächer.", "richtig": true },
+        { "text": "Olivenöl enthält Wasser, Butter nicht.", "feedback": "Es ist umgekehrt: Butter enthält etwas Wasser, Olivenöl praktisch keins. Das erklärt den Unterschied nicht." },
+        { "text": "Ungesättigte Fettsäuren bilden Wasserstoffbrücken.", "feedback": "C=C-Doppelbindungen bilden keine Wasserstoffbrücken." },
+        { "text": "Olivenöl-Moleküle haben deutlich kürzere Ketten.", "feedback": "Die Ketten sind meist gleich lang (oft 18 C-Atome). Entscheidend ist ihre Form." }
+      ],
+      "erklaerung": "Gerade, gesättigte Ketten liegen dicht wie Bleistifte in einer Schachtel. Geknickte Ketten passen schlecht zusammen. Je weniger Kontaktfläche, desto schwächer die Van-der-Waals-Kräfte und desto niedriger der Schmelzbereich."
+    },
+    {
+      "id": "ch-fet-05", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Du streichst 25 g Butter auf dein Brot. Butter besteht zu etwa 80 % aus Fett. Fett liefert 37 kJ pro Gramm. Wie viel Energie liefert das Fett in der Butter?",
+      "gegeben": "`m`(Butter) = 25 g, Fettanteil 80 %, Brennwert 37 kJ/g",
+      "gesucht": "Energie aus dem Fett",
+      "gesuchtSymbol": "E",
+      "loesung": 740, "einheit": "kJ",
+      "alternativEinheiten": { "J": 0.001 },
+      "rechenweg": [
+        "Masse des Fetts: 80 % von 25 g = 20 g",
+        "`E = 20 g · 37 kJ/g = 740 kJ`"
+      ],
+      "erklaerung": "740 kJ sind etwa 7 % des Tagesbedarfs eines Jugendlichen (rund 10 000 kJ). Fett ist sehr energiereich, deshalb lohnt es sich, auf die Menge zu achten."
+    },
+    {
+      "id": "ch-fet-06", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz1",
+      "frage": "Tristearin ist ein Fett aus Glycerin und drei Stearinsäure-Resten: C₃H₅(OOC–C₁₇H₃₅)₃. Berechne seine molare Masse. (H: 1 g/mol, C: 12 g/mol, O: 16 g/mol)",
+      "gesucht": "molare Masse von Tristearin",
+      "gesuchtSymbol": "M",
+      "loesung": 890, "einheit": "g/mol", "toleranz": 0.005,
+      "rechenweg": [
+        "C-Atome: 3 + 3 · 18 = 57",
+        "H-Atome: 5 + 3 · 35 = 110",
+        "O-Atome: 3 · 2 = 6, Summenformel C₅₇H₁₁₀O₆",
+        "`M = 57 · 12 + 110 · 1 + 6 · 16 = 684 + 110 + 96 = 890` g/mol"
+      ],
+      "hinweis": "Jeder Rest OOC–C₁₇H₃₅ enthält 18 C-Atome, 35 H-Atome und 2 O-Atome. Dazu kommt das Gerüst C₃H₅.",
+      "erklaerung": "Prüfe mit der Reaktionsgleichung: Glycerin C₃H₈O₃ (92 g/mol) + 3 Stearinsäure C₁₈H₃₆O₂ (je 284 g/mol) − 3 Wasser (je 18 g/mol) = 92 + 852 − 54 = 890 g/mol."
+    },
+    {
+      "id": "ch-fet-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "In einem Social-Media-Beitrag steht: „Fett macht fett. Am gesündesten ist es, gar kein Fett zu essen.“ Bewerte diese Aussage fachlich.",
+      "stichworte": [
+        { "aspekt": "Fett ist notwendig: Energie und fettlösliche Vitamine (A, D, E, K).", "woerter": ["vitamin", "fettloeslich"] },
+        { "aspekt": "Essenzielle (ungesättigte) Fettsäuren muss man mit der Nahrung aufnehmen.", "woerter": ["essenziell", "essentiell", "omega", "linol", "nicht selbst herstellen"] },
+        { "aspekt": "Auf Menge und Art kommt es an: hoher Brennwert, maßvoll essen, Pflanzenöle bevorzugen.", "woerter": ["menge", "massvoll", "zu viel", "energiereich", "brennwert", "30", "pflanzen", "ungesaettigt", "kj"] },
+        { "aspekt": "Urteil: Die Aussage ist zu pauschal bzw. falsch.", "woerter": ["falsch", "pauschal", "nicht richtig", "stimmt nicht", "uebertrieben", "unsinn", "irrefuehrend"] }
+      ],
+      "musterloesung": "Die Aussage ist zu pauschal und deshalb falsch. Fett ist ein notwendiger Nahrungsbestandteil: Es liefert Energie, und die fettlöslichen Vitamine A, D, E und K kann der Körper nur mit Fett aufnehmen. Außerdem sind einige ungesättigte Fettsäuren wie Linolsäure essenziell, der Körper kann sie nicht selbst herstellen. Richtig ist, dass Fett mit 37 kJ pro Gramm sehr energiereich ist. Wer zu viel davon isst, nimmt leicht zu. Es kommt also auf eine maßvolle Menge an, etwa 30 % der Nahrungsenergie, und auf die Art: Pflanzenöle mit ungesättigten Fettsäuren sind günstiger als viele gesättigte Fette.",
+      "erklaerung": "Beim Bewerten prüfst du eine Aussage mit Fachwissen, nennst, was daran stimmt und was nicht, und kommst zu einem begründeten Urteil. Gute Quellen für Ernährungsfragen sind z. B. die Deutsche Gesellschaft für Ernährung oder die Verbraucherzentrale."
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "id": "ch-k9-nomenklatur",
+  "titel": "Nomenklatur und Isomerie",
+  "kurz": "Wie man verzweigte Kohlenwasserstoffe eindeutig benennt und warum Moleküle mit gleicher Summenformel verschiedene Stoffe sein können.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Unverzweigte Alkane benennen und aus dem Namen die Halbstrukturformel ableiten" },
+    { "id": "lz2", "niveau": "G", "text": "Den Begriff Isomerie erklären und Isomere zu einer Summenformel finden" },
+    { "id": "lz3", "niveau": "H", "text": "Verzweigte Alkane nach den Nomenklaturregeln benennen (Hauptkette, Nummerierung, Alkylgruppen, Vorsilben) und aus dem Namen die Formel zeichnen" },
+    { "id": "lz4", "niveau": "H", "text": "Unterschiedliche Siedepunkte von Isomeren mit der Molekülgestalt und den Van-der-Waals-Kräften begründen" }
+  ],
+  "verstehen": {
+    "einstieg": "Das Gas in manchen Feuerzeugen heißt „Isobutan“. Es hat dieselbe Summenformel C₄H₁₀ wie Butan, siedet aber bei −12 °C statt bei −1 °C. Wie kann dieselbe Formel zu zwei verschiedenen Stoffen gehören?",
+    "abschnitte": [
+      {
+        "titel": "Isomere: gleiche Summenformel, anderer Bau",
+        "text": "Vier C-Atome kann man auf zwei Arten verbinden: als gerade Kette oder als Kette mit Abzweigung.\n\n```\nButan:        CH3-CH2-CH2-CH3\n2-Methylpropan:\n              CH3-CH-CH3\n                  |\n                  CH3\n```\n\nBeide Moleküle haben die Summenformel C₄H₁₀, aber eine andere Struktur. Solche Verbindungen heißen **Isomere**. Isomere sind **verschiedene Stoffe** mit eigenen Eigenschaften, zum Beispiel eigenen Siede- und Schmelzpunkten.\n\nMit der Zahl der C-Atome wächst die Zahl der möglichen Isomere schnell: C₄H₁₀ hat 2, C₅H₁₂ hat 3, C₆H₁₄ hat 5, C₇H₁₆ hat 9 und C₁₀H₂₂ schon 75 Isomere."
+      },
+      {
+        "titel": "Die Nomenklaturregeln",
+        "text": "Damit jeder Name zu genau einem Molekül gehört, gibt es feste Regeln (IUPAC-Nomenklatur):\n\n- **Hauptkette suchen:** Die längste durchgehende Kette aus C-Atomen gibt den Stammnamen (z. B. 5 C-Atome → Pentan). Die Kette darf dabei „um die Ecke“ laufen.\n- **Seitenketten benennen:** Abzweigungen heißen **Alkylgruppen**. Man ersetzt die Endung -an durch **-yl**: CH₃– ist Methyl, C₂H₅– ist Ethyl.\n- **Nummerieren:** Die Hauptkette wird so durchnummeriert, dass die Verzweigungsstellen **möglichst kleine Zahlen** bekommen.\n- **Gleiche Gruppen zusammenfassen:** Mit den Vorsilben **Di-** (2), **Tri-** (3), **Tetra-** (4). Jede Position wird genannt, Zahlen trennt man mit Komma.\n- **Verschiedene Gruppen** stehen in alphabetischer Reihenfolge (Ethyl vor Methyl). Die Vorsilben Di-, Tri- zählen dabei nicht mit.\n- **Schreibweise:** Zwischen Zahl und Wort steht ein Bindestrich. Der Name wird zusammengeschrieben: 2,3-Dimethylbutan."
+      },
+      {
+        "titel": "Ein Beispiel Schritt für Schritt",
+        "text": "```\nCH3-CH-CH2-CH2-CH3\n    |\n    CH3\n```\n\n- Längste Kette: 5 C-Atome → Pentan\n- Seitenkette: eine CH₃-Gruppe → Methyl\n- Nummerierung von links: Die Methylgruppe sitzt an C-Atom 2. Von rechts wäre es C-Atom 4. Die kleinere Zahl gewinnt.\n- Name: **2-Methylpentan**\n\nTypische Fehler: „1-Methylbutan“ gibt es nicht, denn eine Methylgruppe am Kettenende verlängert die Hauptkette, das ist einfach Pentan. Und aus „2-Ethylbutan“ wird bei richtiger Suche nach der längsten Kette **3-Methylpentan**."
+      },
+      {
+        "titel": "Isomere und Siedepunkte",
+        "text": "Die drei Isomere mit der Summenformel C₅H₁₂ sieden unterschiedlich:\n\n- Pentan (unverzweigt, lang gestreckt): 36 °C\n- 2-Methylbutan (eine Verzweigung): 28 °C\n- 2,2-Dimethylpropan (fast kugelförmig): 9,5 °C\n\nJe stärker ein Molekül verzweigt ist, desto **kompakter** ist es. Kugelförmige Moleküle berühren sich nur an kleinen Flächen, die **Van-der-Waals-Kräfte** sind schwächer. Deshalb siedet das kugelige 2,2-Dimethylpropan am niedrigsten, obwohl alle drei gleich viele Atome haben.\n\nRäumlich sind die vier Bindungen eines C-Atoms in einem Alkan nicht flach, sondern zu den Ecken eines **Tetraeders** ausgerichtet (Bindungswinkel etwa 109,5°). Die „Ketten“ sind deshalb eigentlich Zickzack-Ketten."
+      }
+    ],
+    "merksatz": "**Isomere** haben dieselbe Summenformel, aber eine unterschiedliche Struktur. Sie sind verschiedene Stoffe.\n\n**Benennen:** längste Kette suchen → Seitenketten als Alkylgruppen benennen → so nummerieren, dass die Verzweigungen kleine Zahlen bekommen → gleiche Gruppen mit Di-, Tri- zusammenfassen → alphabetisch ordnen.",
+    "alltag": "Bei Benzin gibt die Oktanzahl an, wie klopffest es ist. Stark verzweigte Alkane wie 2,2,4-Trimethylpentan („Isooctan“, Oktanzahl 100) verbrennen im Motor gleichmäßiger als unverzweigtes Heptan (Oktanzahl 0)."
+  },
+  "interaktiv": ["ch-molekuelbaukasten"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "ch-kwn-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Ordne jedem Namen die passende Halbstrukturformel zu.",
+      "paare": [
+        { "links": "Methan", "rechts": "CH₄" },
+        { "links": "Ethan", "rechts": "CH₃–CH₃" },
+        { "links": "Propan", "rechts": "CH₃–CH₂–CH₃" },
+        { "links": "Butan", "rechts": "CH₃–CH₂–CH₂–CH₃" }
+      ],
+      "extraRechts": ["CH₂=CH₂"],
+      "erklaerung": "Die Vorsilben Meth-, Eth-, Prop-, But- stehen für 1, 2, 3 und 4 C-Atome. CH₂=CH₂ ist Ethen: Es hat eine Doppelbindung und ist deshalb kein Alkan."
+    },
+    {
+      "id": "ch-kwn-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Was versteht man unter **Isomeren**?",
+      "optionen": [
+        { "text": "Verbindungen mit gleicher Summenformel, aber unterschiedlicher Struktur", "richtig": true },
+        { "text": "Verbindungen mit gleicher Struktur, aber unterschiedlicher Summenformel", "feedback": "Andersherum: Die Summenformel ist gleich, die Anordnung der Atome ist verschieden." },
+        { "text": "Verschiedene Schreibweisen für dasselbe Molekül", "feedback": "Isomere sind wirklich verschiedene Stoffe mit eigenen Eigenschaften, z. B. eigenen Siedepunkten." },
+        { "text": "Aufeinanderfolgende Glieder der homologen Reihe", "feedback": "Glieder der homologen Reihe unterscheiden sich um eine CH₂-Gruppe, haben also verschiedene Summenformeln." }
+      ],
+      "erklaerung": "Beispiel: Butan und 2-Methylpropan haben beide die Summenformel C₄H₁₀. Butan ist eine gerade Kette, 2-Methylpropan ist verzweigt."
+    },
+    {
+      "id": "ch-kwn-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Wie heißt dieses Alkan?\n\n```\nCH3-CH-CH2-CH2-CH3\n    |\n    CH3\n```",
+      "optionen": [
+        { "text": "2-Methylpentan", "richtig": true },
+        { "text": "4-Methylpentan", "feedback": "Die Nummerierung beginnt an dem Ende, das näher an der Verzweigung liegt. Dann sitzt die Methylgruppe an C-Atom 2." },
+        { "text": "2-Methylbutan", "feedback": "Zähle die längste Kette noch einmal: Sie hat 5 C-Atome, also Pentan." },
+        { "text": "Hexan", "feedback": "Die Summenformel C₆H₁₄ stimmt, aber Hexan ist unverzweigt. Dieses Molekül ist ein Isomer von Hexan." }
+      ],
+      "erklaerung": "Längste Kette: 5 C-Atome → Pentan. Die Methylgruppe sitzt von links gezählt an C-Atom 2. Name: 2-Methylpentan, Summenformel C₆H₁₄."
+    },
+    {
+      "id": "ch-kwn-04", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Welche Verbindungen sind **Isomere von Hexan** (C₆H₁₄)?",
+      "optionen": [
+        { "text": "2-Methylpentan", "richtig": true },
+        { "text": "3-Methylpentan", "richtig": true },
+        { "text": "2,2-Dimethylbutan", "richtig": true },
+        { "text": "2-Methylbutan", "feedback": "2-Methylbutan hat nur 5 C-Atome (4 in der Kette + 1 Methyl), also C₅H₁₂." },
+        { "text": "Hex-1-en", "feedback": "Hex-1-en hat eine Doppelbindung und deshalb nur 12 H-Atome: C₆H₁₂." }
+      ],
+      "erklaerung": "Zähle bei jedem Namen alle C-Atome: Stammname plus Seitenketten. 2-Methylpentan: 5 + 1 = 6, 3-Methylpentan: 5 + 1 = 6, 2,2-Dimethylbutan: 4 + 2 = 6. Alle sind gesättigt, also C₆H₁₄. Zusammen mit Hexan und 2,3-Dimethylbutan gibt es 5 Isomere."
+    },
+    {
+      "id": "ch-kwn-05", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Lina hat dieses Molekül „2-Ethylbutan“ genannt. Wie heißt es richtig?\n\n```\nCH3-CH-CH2-CH3\n    |\n    CH2-CH3\n```",
+      "optionen": [
+        { "text": "3-Methylpentan", "richtig": true },
+        { "text": "2-Ethylbutan", "feedback": "Die längste Kette läuft durch die Ethylgruppe hindurch und hat 5 C-Atome, nicht 4." },
+        { "text": "Hexan", "feedback": "Gleiche Summenformel C₆H₁₄, aber das Molekül ist verzweigt. Hexan ist eine gerade Kette." },
+        { "text": "2-Methylpentan", "feedback": "Zähle von beiden Enden der 5er-Kette: Die Verzweigung liegt genau in der Mitte, an C-Atom 3." }
+      ],
+      "erklaerung": "Die längste Kette läuft vom rechten CH₃ über CH₂ und die Verzweigung nach unten durch die Ethylgruppe: 5 C-Atome → Pentan. Übrig bleibt das linke CH₃ als Methylgruppe. Es hängt am mittleren C-Atom der Kette, also an C-Atom 3, egal von welcher Seite man zählt. Name: 3-Methylpentan."
+    },
+    {
+      "id": "ch-kwn-06", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Pentan siedet bei 36 °C, 2,2-Dimethylpropan bei 9,5 °C. Beide haben die Summenformel C₅H₁₂. Begründe den Unterschied.",
+      "stichworte": [
+        { "aspekt": "Beide sind Isomere mit gleich vielen Atomen, der Unterschied liegt in der Molekülgestalt", "woerter": ["isomer", "gleiche summenformel", "gleich viele", "gestalt", "form"] },
+        { "aspekt": "2,2-Dimethylpropan ist stark verzweigt und fast kugelförmig, Pentan lang gestreckt", "woerter": ["kugel", "kompakt", "verzweigt", "gestreckt"] },
+        { "aspekt": "Kleinere Berührungsfläche, daher schwächere Van-der-Waals-Kräfte", "woerter": ["flaeche", "oberflaeche", "beruehr", "van der waals", "schwaecher"] }
+      ],
+      "musterloesung": "Pentan und 2,2-Dimethylpropan sind Isomere: Sie haben die gleiche Summenformel und gleich viele Atome, aber eine andere Gestalt. Pentan ist lang gestreckt, 2,2-Dimethylpropan ist stark verzweigt und fast kugelförmig. Kugelige Moleküle berühren sich nur an einer kleinen Fläche. Deshalb sind die Van-der-Waals-Kräfte schwächer, und es wird weniger Energie zum Sieden gebraucht.",
+      "erklaerung": "Vergleiche zwei Bleistifte, die nebeneinander liegen, mit zwei Murmeln: Die Bleistifte berühren sich auf ganzer Länge, die Murmeln nur in einem Punkt."
+    },
+    {
+      "id": "ch-kwn-07", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Welche Halbstrukturformel gehört zu **2,3-Dimethylbutan**?",
+      "optionen": [
+        { "text": "CH₃–CH(CH₃)–CH(CH₃)–CH₃", "richtig": true },
+        { "text": "CH₃–C(CH₃)₂–CH₂–CH₃", "feedback": "Hier sitzen beide Methylgruppen an C-Atom 2. Das ist 2,2-Dimethylbutan." },
+        { "text": "CH₃–CH(CH₃)–CH₂–CH₂–CH₃", "feedback": "Die Hauptkette hat hier 5 C-Atome und nur eine Methylgruppe. Das ist 2-Methylpentan." },
+        { "text": "CH₃–CH₂–CH(CH₃)–CH₃", "feedback": "Nur eine Methylgruppe: Das ist 2-Methylbutan." }
+      ],
+      "erklaerung": "„Butan“: Hauptkette mit 4 C-Atomen. „2,3-Dimethyl“: je eine Methylgruppe an C-Atom 2 und an C-Atom 3. In der Halbstrukturformel schreibt man Seitenketten in Klammern hinter das C-Atom, an dem sie hängen."
+    }
+  ]
+}

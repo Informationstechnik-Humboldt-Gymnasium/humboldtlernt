@@ -1,0 +1,117 @@
+{
+  "id": "ch-k10-alkanole",
+  "titel": "Alkanole: Struktur, Namen und Eigenschaften",
+  "kurz": "Was die Hydroxygruppe mit Siedepunkt und Löslichkeit macht, wie man Alkanole benennt und warum Glycerin so zähflüssig ist.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Die Hydroxygruppe als funktionelle Gruppe der Alkanole erkennen und vom Hydroxid-Ion unterscheiden" },
+    { "id": "lz2", "niveau": "G", "text": "Alkanole der homologen Reihe CₙH₂ₙ₊₁OH benennen und ihre Halbstrukturformeln aufstellen" },
+    { "id": "lz3", "niveau": "H", "text": "Siedepunkte und Löslichkeit der Alkanole mit Wasserstoffbrücken, Van-der-Waals-Kräften und dem Verhältnis von hydrophilem zu hydrophobem Molekülteil begründen" },
+    { "id": "lz4", "niveau": "H", "text": "Ein- und mehrwertige Alkohole unterscheiden und Eigenschaften und Verwendung von Glycerin (Propan-1,2,3-triol) erklären" }
+  ],
+  "verstehen": {
+    "einstieg": "Propan ist bei Raumtemperatur ein Gas, Ethanol eine Flüssigkeit, obwohl beide Moleküle fast gleich schwer sind. Ethanol mischt sich mit Wasser, Propan nicht. Was macht das eine Sauerstoffatom für einen Unterschied?",
+    "abschnitte": [
+      {
+        "titel": "Die Hydroxygruppe",
+        "text": "Ersetzt man in einem Alkan ein H-Atom durch eine **–OH-Gruppe**, erhält man ein **Alkanol**. Die –OH-Gruppe heißt **Hydroxygruppe**. Sie ist die **funktionelle Gruppe** der Alkohole: Sie bestimmt viele ihrer Eigenschaften.\n\nVorsicht, Verwechslungsgefahr: Die Hydroxygruppe ist über eine Elektronenpaarbindung fest an ein C-Atom gebunden. Sie ist **kein Hydroxid-Ion** OH⁻. Deshalb ist eine Ethanol-Lösung **nicht alkalisch**: Universalindikator bleibt grün, und die Lösung leitet den Strom praktisch nicht."
+      },
+      {
+        "titel": "Namen der Alkanole",
+        "text": "Der Name entsteht aus dem Namen des Alkans mit der Endung **-ol**. Eine Zahl gibt an, an welchem C-Atom die OH-Gruppe sitzt. Man nummeriert so, dass diese Zahl möglichst klein ist.\n\n- Methanol CH₃–OH (Sdp. 65 °C)\n- Ethanol CH₃–CH₂–OH (Sdp. 78 °C)\n- Propan-1-ol CH₃–CH₂–CH₂–OH (Sdp. 97 °C)\n- Propan-2-ol CH₃–CH(OH)–CH₃ (Sdp. 82 °C), ein Desinfektionsmittel\n- Butan-1-ol CH₃–CH₂–CH₂–CH₂–OH (Sdp. 118 °C)\n\nDie allgemeine Formel ist **CₙH₂ₙ₊₁OH**. Propan-1-ol und Propan-2-ol sind Isomere.\n\nSitzt die OH-Gruppe an einem C-Atom mit höchstens einem C-Nachbarn, heißt der Alkohol **primär** (z. B. Propan-1-ol). Hat dieses C-Atom zwei C-Nachbarn, ist er **sekundär** (z. B. Propan-2-ol)."
+      },
+      {
+        "titel": "Wasserstoffbrücken und Siedepunkte",
+        "text": "Die O–H-Bindung ist stark polar: Das Sauerstoffatom zieht die Elektronen stärker an. Zwischen dem positiv polarisierten H-Atom des einen Moleküls und dem O-Atom eines Nachbarmoleküls bilden sich **Wasserstoffbrücken**. Sie sind viel stärker als Van-der-Waals-Kräfte.\n\n- Propan (44 g/mol): Sdp. −42 °C, nur Van-der-Waals-Kräfte\n- Ethanol (46 g/mol): Sdp. 78 °C, zusätzlich Wasserstoffbrücken\n\nInnerhalb der homologen Reihe steigt der Siedepunkt weiter an, weil mit jeder CH₂-Gruppe die Van-der-Waals-Kräfte zunehmen."
+      },
+      {
+        "titel": "Hydrophil und hydrophob",
+        "text": "Ein Alkanol-Molekül hat zwei Teile mit gegensätzlichem Verhalten:\n\n- Die **OH-Gruppe** ist **hydrophil** (wasserliebend). Sie kann Wasserstoffbrücken zu Wassermolekülen bilden.\n- Der **Alkylrest** (die Kohlenwasserstoffkette) ist **hydrophob** (wasserabweisend) und lipophil.\n\nBei Methanol, Ethanol und Propanol überwiegt der hydrophile Teil: Sie mischen sich mit Wasser in jedem Verhältnis. Mit wachsender Kette überwiegt der hydrophobe Teil. Von Butan-1-ol lösen sich nur noch etwa 8 g in 100 mL Wasser, von Hexan-1-ol weniger als 1 g. Dafür mischen sich lange Alkanole gut mit Benzin.\n\nEthanol löst sowohl Wasser als auch viele fettlösliche Stoffe. Deshalb ist es ein beliebtes Lösungsmittel für Parfüm, Tinkturen und Reinigungsmittel."
+      },
+      {
+        "titel": "Mehrwertige Alkohole und Glycerin",
+        "text": "Ein Molekül kann auch mehrere OH-Gruppen tragen, aber höchstens eine pro C-Atom. Nach der Zahl der OH-Gruppen spricht man von **ein-, zwei- oder dreiwertigen** Alkoholen.\n\n- **Ethan-1,2-diol** (Glykol), zweiwertig: Frostschutzmittel im Autokühler, giftig.\n- **Propan-1,2,3-triol** (Glycerin), dreiwertig, C₃H₅(OH)₃:\n\n```\nCH2 - OH\n |\nCH  - OH\n |\nCH2 - OH\n```\n\nDurch die drei OH-Gruppen bildet Glycerin besonders viele Wasserstoffbrücken. Es ist **zähflüssig**, siedet erst bei 290 °C, schmeckt süß und mischt sich mit Wasser in jedem Verhältnis. Weil es Feuchtigkeit festhält, steckt es in Hautcremes, Zahnpasta und Seifen. Als Lebensmittelzusatzstoff heißt es E 422. Glycerin ist außerdem ein Baustein aller Fette."
+      }
+    ],
+    "merksatz": "**Alkanole** tragen eine **Hydroxygruppe** –OH (kein OH⁻-Ion). Name: Alkan + **-ol**, z. B. Propan-2-ol.\n\nDie OH-Gruppe ist hydrophil und bildet **Wasserstoffbrücken**: Alkanole sieden viel höher als Alkane ähnlicher Masse. Je länger der hydrophobe Alkylrest, desto schlechter die Wasserlöslichkeit. Mehr OH-Gruppen bedeuten mehr Wasserstoffbrücken, wie beim dreiwertigen Glycerin.",
+    "alltag": "Desinfektionsmittel für die Hände enthalten meist Ethanol oder Propan-2-ol. Damit die Haut nicht austrocknet, ist oft etwas Glycerin zugesetzt."
+  },
+  "interaktiv": ["ch-molekuelbaukasten"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "ch-aol-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Welche funktionelle Gruppe kennzeichnet die **Alkanole**?",
+      "optionen": [
+        { "text": "die Hydroxygruppe –OH", "richtig": true },
+        { "text": "das Hydroxid-Ion OH⁻", "feedback": "Hydroxid-Ionen kommen in Laugen vor. In Alkanolen ist die OH-Gruppe fest an ein C-Atom gebunden." },
+        { "text": "die Aldehydgruppe –CHO", "feedback": "Die Aldehydgruppe gehört zu den Alkanalen, die durch Oxidation von Alkanolen entstehen." },
+        { "text": "die C=C-Doppelbindung", "feedback": "Die Doppelbindung kennzeichnet die Alkene." }
+      ],
+      "erklaerung": "Alkanole sind Alkane, bei denen ein H-Atom durch eine Hydroxygruppe ersetzt ist. Die Endung -ol zeigt das im Namen an."
+    },
+    {
+      "id": "ch-aol-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Ordne jedem Namen die passende Halbstrukturformel zu.",
+      "paare": [
+        { "links": "Methanol", "rechts": "CH₃–OH" },
+        { "links": "Propan-1-ol", "rechts": "CH₃–CH₂–CH₂–OH" },
+        { "links": "Propan-2-ol", "rechts": "CH₃–CH(OH)–CH₃" },
+        { "links": "Butan-1-ol", "rechts": "CH₃–CH₂–CH₂–CH₂–OH" }
+      ],
+      "extraRechts": ["CH₃–CH₂–CH₃"],
+      "erklaerung": "Der Stammname gibt die Zahl der C-Atome an, die Zahl vor -ol die Position der OH-Gruppe. CH₃–CH₂–CH₃ ist Propan und hat keine OH-Gruppe."
+    },
+    {
+      "id": "ch-aol-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Jonas meint: „Ethanol hat eine OH-Gruppe, also ist eine Ethanol-Lösung alkalisch.“ Was zeigt ein Test mit Universalindikator, und warum?",
+      "optionen": [
+        { "text": "Der Indikator bleibt grün, weil die OH-Gruppe fest gebunden ist und keine Hydroxid-Ionen bildet.", "richtig": true },
+        { "text": "Der Indikator wird blau, weil Ethanol Hydroxid-Ionen enthält.", "feedback": "Ethanol ist eine Molekülverbindung. Die OH-Gruppe spaltet sich in Wasser nicht als OH⁻-Ion ab." },
+        { "text": "Der Indikator wird rot, weil Ethanol eine Säure ist.", "feedback": "Ethanol gibt in Wasser praktisch keine Protonen ab. Die Lösung ist neutral." },
+        { "text": "Der Indikator wird entfärbt, weil Ethanol ein Lösungsmittel ist.", "feedback": "Ethanol löst den Farbstoff, verändert seine Farbe aber nicht. Neutral bedeutet grün." }
+      ],
+      "erklaerung": "Auch die fehlende elektrische Leitfähigkeit zeigt: In einer Ethanol-Lösung gibt es kaum Ionen. „Hydroxygruppe“ und „Hydroxid-Ion“ klingen ähnlich, sind aber etwas ganz anderes."
+    },
+    {
+      "id": "ch-aol-04", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Ordne die Stoffe nach ihrem Siedepunkt, vom **niedrigsten** zum **höchsten**.",
+      "elemente": ["Propan", "Ethanol", "Propan-1-ol", "Butan-1-ol", "Propan-1,2,3-triol (Glycerin)"],
+      "erklaerung": "Propan (−42 °C) hat nur Van-der-Waals-Kräfte. Die Alkanole bilden zusätzlich Wasserstoffbrücken, ihr Siedepunkt steigt mit der Kettenlänge: Ethanol 78 °C, Propan-1-ol 97 °C, Butan-1-ol 118 °C. Glycerin hat drei OH-Gruppen und siedet erst bei 290 °C."
+    },
+    {
+      "id": "ch-aol-05", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Ethanol mischt sich mit Wasser in jedem Verhältnis, Hexan-1-ol löst sich kaum. Erkläre diesen Unterschied mit dem Bau der Moleküle.",
+      "stichworte": [
+        { "aspekt": "Die OH-Gruppe ist hydrophil und bildet Wasserstoffbrücken zu Wassermolekülen", "woerter": ["hydrophil", "wasserstoffbrueck", "wasserliebend"] },
+        { "aspekt": "Der Alkylrest ist hydrophob bzw. unpolar", "woerter": ["hydrophob", "unpolar", "wasserabweisend", "lipophil"] },
+        { "aspekt": "Bei Hexan-1-ol ist die Kette länger, der hydrophobe Teil überwiegt", "woerter": ["laenger", "ueberwieg", "groesser", "mehr ch2", "lange kette"] }
+      ],
+      "musterloesung": "Beide Moleküle haben eine OH-Gruppe. Sie ist hydrophil und kann Wasserstoffbrücken zu Wassermolekülen bilden. Der Alkylrest dagegen ist unpolar und hydrophob. Bei Ethanol ist der Alkylrest sehr kurz, der hydrophile Teil überwiegt. Bei Hexan-1-ol ist die Kette viel länger, der hydrophobe Teil überwiegt, und das Molekül löst sich kaum in Wasser.",
+      "erklaerung": "Das Verhältnis von hydrophilem zu hydrophobem Teil entscheidet. Mit jeder CH₂-Gruppe verschiebt es sich zur hydrophoben Seite."
+    },
+    {
+      "id": "ch-aol-06", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Welche Aussagen über **Glycerin** (Propan-1,2,3-triol) sind richtig?",
+      "optionen": [
+        { "text": "Es ist ein dreiwertiger Alkohol.", "richtig": true },
+        { "text": "Es ist zähflüssig und hat einen hohen Siedepunkt, weil es viele Wasserstoffbrücken bildet.", "richtig": true },
+        { "text": "Seine Summenformel ist C₃H₈O₃.", "richtig": true },
+        { "text": "Es löst sich nicht in Wasser.", "feedback": "Drei hydrophile OH-Gruppen an nur drei C-Atomen: Glycerin mischt sich mit Wasser in jedem Verhältnis." },
+        { "text": "Es trägt drei OH-Gruppen am selben C-Atom.", "feedback": "Die Zahlen 1,2,3 im Namen zeigen: Jede OH-Gruppe sitzt an einem anderen C-Atom. Mehr als eine OH-Gruppe pro C-Atom ist nicht stabil." }
+      ],
+      "erklaerung": "Glycerin: CH₂(OH)–CH(OH)–CH₂(OH), also C₃H₅(OH)₃ = C₃H₈O₃. Die drei OH-Gruppen machen es süß, wasserlöslich, zähflüssig und schwer flüchtig."
+    },
+    {
+      "id": "ch-aol-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Wie heißt dieser Alkohol?\n\n```\n    CH3\n    |\nCH3-C-CH3\n    |\n    OH\n```",
+      "optionen": [
+        { "text": "2-Methylpropan-2-ol", "richtig": true },
+        { "text": "Butan-2-ol", "feedback": "Die Summenformel C₄H₁₀O stimmt, aber hier ist die längste Kette nur 3 C-Atome lang. Butan-2-ol ist ein Isomer." },
+        { "text": "2-Methylpropan-1-ol", "feedback": "Die OH-Gruppe sitzt am mittleren C-Atom, also an C-Atom 2." },
+        { "text": "1,1-Dimethylethanol", "feedback": "Suche die längste Kette: Sie hat 3 C-Atome (Propan), nicht 2." }
+      ],
+      "erklaerung": "Längste Kette: 3 C-Atome → Propan. Am mittleren C-Atom (C-Atom 2) sitzen eine OH-Gruppe und eine Methylgruppe. Name: 2-Methylpropan-2-ol. Weil das C-Atom mit der OH-Gruppe drei C-Nachbarn hat, ist das ein tertiärer Alkohol."
+    }
+  ]
+}

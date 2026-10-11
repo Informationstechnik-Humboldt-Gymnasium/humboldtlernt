@@ -1,0 +1,126 @@
+{
+  "id": "ch-k8-ionen",
+  "titel": "Ionen und Ionenbildung",
+  "kurz": "Wie aus einem giftigen Gas und einem gefährlichen Metall Kochsalz wird: Elektronenübergang, Kationen und Anionen.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Ionen als elektrisch geladene Teilchen beschreiben und Kationen und Anionen unterscheiden" },
+    { "id": "lz2", "niveau": "G", "text": "Die Ionenbildung als Elektronenübergang vom Metall- zum Nichtmetallatom am Beispiel Natriumchlorid erläutern" },
+    { "id": "lz3", "niveau": "G", "text": "Die Ladung von Ionen mithilfe des Schalenmodells und der Edelgaskonfiguration aus dem Periodensystem ableiten" },
+    { "id": "lz4", "niveau": "H", "text": "Elektronenübergänge bei weiteren Salzbildungen (z. B. Magnesiumoxid, Aluminiumchlorid) mit Teilgleichungen beschreiben" }
+  ],
+  "verstehen": {
+    "einstieg": "Natrium ist ein weiches Metall, das mit Wasser heftig reagiert. Chlor ist ein gelbgrünes, giftiges Gas. Bringt man beide zusammen, entsteht ein weißer Stoff, den du täglich isst: Kochsalz. Was passiert dabei mit den Teilchen?",
+    "abschnitte": [
+      {
+        "titel": "Die Reaktion von Natrium mit Chlor",
+        "text": "Erhitzt man ein Stück Natrium und bringt es in einen mit Chlor gefüllten Standzylinder, verbrennt es mit greller, gelber Flamme. An der Wand schlägt sich ein weißer Feststoff nieder: **Natriumchlorid**. Die Reaktion ist stark **exotherm**.\n\nNatrium + Chlor → Natriumchlorid\n\n2 Na + Cl₂ → 2 NaCl\n\nDieser Versuch ist nur ein **Lehrerversuch** im Abzug mit Schutzbrille und Schutzscheibe, denn Chlor ist giftig und Natrium reagiert sehr heftig. Das Produkt hat ganz andere Eigenschaften als die Ausgangsstoffe."
+      },
+      {
+        "titel": "Elektronenübergang",
+        "text": "Was passiert auf Teilchenebene? Ein **Natriumatom** hat die Elektronenverteilung 2, 8, 1. Es **gibt** sein einzelnes Valenzelektron **ab**. Übrig bleibt ein Teilchen mit 11 Protonen und 10 Elektronen, also einer positiven Ladung: das **Natrium-Ion** Na⁺. Es hat die Elektronenverteilung 2, 8 wie das Edelgas Neon.\n\nEin **Chloratom** (2, 8, 7) **nimmt** dieses Elektron **auf**. Es hat dann 17 Protonen und 18 Elektronen: das **Chlorid-Ion** Cl⁻ mit der Verteilung 2, 8, 8 wie Argon.\n\nNa → Na⁺ + e⁻\n\nCl + e⁻ → Cl⁻\n\nDa Chlor eigentlich aus Cl₂-Molekülen besteht, schreibt man genauer: 2 Na → 2 Na⁺ + 2 e⁻ und Cl₂ + 2 e⁻ → 2 Cl⁻.\n\nBeide Ionen haben jetzt eine **Edelgaskonfiguration**. Weil sie entgegengesetzt geladen sind, ziehen sie sich stark an. Daher der Titel: Gegensätze ziehen sich an."
+      },
+      {
+        "titel": "Kationen und Anionen",
+        "text": "**Ionen** sind elektrisch geladene Teilchen, die aus Atomen durch Abgabe oder Aufnahme von Elektronen entstehen.\n\n- **Kationen** sind positiv geladen. Metallatome bilden Kationen, weil sie Elektronen abgeben. Name: wie das Element, z. B. Natrium-Ion, Magnesium-Ion.\n- **Anionen** sind negativ geladen. Nichtmetallatome bilden Anionen, weil sie Elektronen aufnehmen. Name mit der Endung **-id**: Chlorid, Fluorid, Oxid, Sulfid.\n\nDie Namen kommen daher, dass in einer Salzlösung bei angelegter Spannung die Kationen zur **Kathode** (Minuspol) und die Anionen zur **Anode** (Pluspol) wandern."
+      },
+      {
+        "titel": "Ionenladungen aus dem Periodensystem",
+        "text": "Atome geben so viele Elektronen ab oder nehmen so viele auf, bis sie eine **Edelgaskonfiguration** erreichen. Das ist der kürzere Weg:\n\n- I. Hauptgruppe: 1 Elektron abgeben → **+1** (Na⁺, K⁺)\n- II. Hauptgruppe: 2 Elektronen abgeben → **+2** (Mg²⁺, Ca²⁺)\n- III. Hauptgruppe: 3 Elektronen abgeben → **+3** (Al³⁺)\n- V. Hauptgruppe: 3 Elektronen aufnehmen → **−3** (N³⁻)\n- VI. Hauptgruppe: 2 Elektronen aufnehmen → **−2** (O²⁻, S²⁻)\n- VII. Hauptgruppe: 1 Elektron aufnehmen → **−1** (F⁻, Cl⁻)\n\nDie Zahl der übertragenen Elektronen steht als Ladung oben rechts am Symbol."
+      },
+      {
+        "titel": "Weitere Beispiele",
+        "text": "Bei der Verbrennung von Magnesium gibt jedes Magnesiumatom **zwei** Elektronen ab. Jedes Sauerstoffatom nimmt zwei auf. Weil Sauerstoff als O₂-Molekül vorliegt, schreibt man:\n\n2 Mg → 2 Mg²⁺ + 4 e⁻\n\nO₂ + 4 e⁻ → 2 O²⁻\n\nGesamt: 2 Mg + O₂ → 2 MgO\n\nBei Aluminium und Chlor gibt jedes Aluminiumatom drei Elektronen ab, jedes Chloratom nimmt nur eines auf. Ein Aluminium-Ion braucht deshalb drei Chlorid-Ionen: AlCl₃. Wichtig ist immer: **Die Zahl der abgegebenen Elektronen ist gleich der Zahl der aufgenommenen Elektronen.**"
+      }
+    ],
+    "merksatz": "**Ionen** sind geladene Teilchen. Metallatome geben Elektronen ab und werden zu positiv geladenen **Kationen**. Nichtmetallatome nehmen Elektronen auf und werden zu negativ geladenen **Anionen**.\n\nBei der Ionenbildung wird so lange übertragen, bis alle Teilchen eine **Edelgaskonfiguration** haben. Abgegebene und aufgenommene Elektronen sind gleich viele.",
+    "alltag": "Ionen sind lebenswichtig: Natrium- und Kalium-Ionen leiten Signale in deinen Nerven weiter, Calcium-Ionen stecken in Knochen und Zähnen. Beim Schwitzen verlierst du Ionen. Deshalb enthalten Sportgetränke oft Salze."
+  },
+  "interaktiv": ["ch-ionenbildung"],
+  "vertiefung": ["ch-atombaukasten"],
+  "uebungen": [
+    {
+      "id": "ch-ion-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Was ist ein Anion?",
+      "optionen": [
+        { "text": "Ein negativ geladenes Ion, das durch Aufnahme von Elektronen entsteht", "richtig": true },
+        { "text": "Ein positiv geladenes Ion, das durch Abgabe von Elektronen entsteht", "feedback": "Das ist ein **Kation**." },
+        { "text": "Ein ungeladenes Atom eines Nichtmetalls", "feedback": "Ionen sind immer geladen. Ein ungeladenes Teilchen ist kein Ion." },
+        { "text": "Ein Atom, das Protonen aufgenommen hat", "feedback": "Bei der Ionenbildung ändert sich nur die Zahl der Elektronen. Der Kern bleibt unverändert." }
+      ],
+      "erklaerung": "Anionen sind negativ geladen. Sie entstehen, wenn Nichtmetallatome Elektronen aufnehmen, z. B. Cl⁻ oder O²⁻. In einer Lösung wandern sie zur Anode (Pluspol)."
+    },
+    {
+      "id": "ch-ion-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz3",
+      "frage": "Ordne jedem Atom das Ion zu, das es in Salzen bildet.",
+      "paare": [
+        { "links": "Natrium", "rechts": "Na⁺" },
+        { "links": "Magnesium", "rechts": "Mg²⁺" },
+        { "links": "Aluminium", "rechts": "Al³⁺" },
+        { "links": "Chlor", "rechts": "Cl⁻" },
+        { "links": "Sauerstoff", "rechts": "O²⁻" }
+      ],
+      "extraRechts": ["Na⁻", "O²⁺"],
+      "erklaerung": "Metallatome geben ihre Valenzelektronen ab (Ladung = Hauptgruppennummer). Nichtmetallatome nehmen so viele Elektronen auf, wie ihnen zum Oktett fehlen."
+    },
+    {
+      "id": "ch-ion-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Was passiert mit den Elektronen, wenn Natrium und Chlor zu Natriumchlorid reagieren?",
+      "optionen": [
+        { "text": "Jedes Natriumatom gibt ein Elektron an ein Chloratom ab.", "richtig": true },
+        { "text": "Jedes Chloratom gibt ein Elektron an ein Natriumatom ab.", "feedback": "Dann hätte Natrium 2, 8, 2 und Chlor 2, 8, 6. Beide wären weiter vom Oktett entfernt als vorher." },
+        { "text": "Natrium und Chlor tauschen Protonen aus.", "feedback": "Die Atomkerne ändern sich bei chemischen Reaktionen nicht. Nur Elektronen werden übertragen." },
+        { "text": "Die Elektronen verschwinden, dabei wird Energie frei.", "feedback": "Elektronen gehen nicht verloren. Sie wechseln nur von einem Atom zum anderen." }
+      ],
+      "erklaerung": "Natrium (2, 8, 1) gibt sein Valenzelektron ab und wird zu Na⁺ (2, 8). Chlor (2, 8, 7) nimmt es auf und wird zu Cl⁻ (2, 8, 8). Beide haben danach eine Edelgaskonfiguration."
+    },
+    {
+      "id": "ch-ion-04", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Ein Schwefelatom hat die Elektronenverteilung 2, 8, 6. Wie viele Elektronen muss es aufnehmen, um eine Edelgaskonfiguration zu erreichen?",
+      "gegeben": "Schwefel: 2, 8, 6",
+      "gesucht": "Anzahl aufgenommener Elektronen",
+      "loesung": 2, "einheit": "", "toleranz": 0,
+      "rechenweg": [
+        "Auf der Außenschale sitzen 6 Elektronen.",
+        "Zum Oktett fehlen 8 − 6 = 2 Elektronen.",
+        "Es entsteht das Sulfid-Ion S²⁻ mit der Verteilung 2, 8, 8 (wie Argon)."
+      ],
+      "erklaerung": "Schwefel nimmt 2 Elektronen auf. 6 Elektronen abzugeben wäre viel schwerer. Das Sulfid-Ion hat deshalb die Ladung 2−."
+    },
+    {
+      "id": "ch-ion-05", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Welche Aussagen über das Natrium-Ion Na⁺ sind richtig?",
+      "optionen": [
+        { "text": "Es hat 11 Protonen und 10 Elektronen.", "richtig": true },
+        { "text": "Es hat die gleiche Elektronenverteilung wie ein Neonatom.", "richtig": true },
+        { "text": "Es hat eine besetzte Schale weniger als das Natriumatom.", "richtig": true },
+        { "text": "Es ist entstanden, weil das Natriumatom ein Proton abgegeben hat.", "feedback": "Abgegeben wird ein **Elektron**. Die Protonenzahl bleibt 11, sonst wäre es kein Natrium mehr." },
+        { "text": "Es ist größer als das Natriumatom.", "feedback": "Mit der äußersten Schale fällt auch der äußere Teil der Hülle weg. Das Ion ist deshalb kleiner als das Atom." }
+      ],
+      "erklaerung": "Das Natriumatom (2, 8, 1) verliert sein einziges Valenzelektron. Die 3. Schale ist danach leer, die volle 2. Schale ist jetzt außen: 2, 8 wie Neon. Die Ladung ist +11 − 10 = +1."
+    },
+    {
+      "id": "ch-ion-06", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Erkläre die Bildung von Natriumchlorid aus Natrium und Chlor auf der Teilchenebene. Verwende die Begriffe Elektron, Ion und Edelgaskonfiguration.",
+      "stichworte": [
+        { "aspekt": "Das Natriumatom gibt sein Valenzelektron ab und wird zum positiv geladenen Natrium-Ion.", "woerter": ["gibt", "abgegeben", "abgeben", "abgabe"] },
+        { "aspekt": "Das Chloratom nimmt das Elektron auf und wird zum negativ geladenen Chlorid-Ion.", "woerter": ["nimmt", "aufgenommen", "aufnehmen", "aufnahme"] },
+        { "aspekt": "Beide Ionen haben danach eine Edelgaskonfiguration (Oktett).", "woerter": ["edelgas", "oktett", "achterschale", "volle aussenschale", "voll besetzt"] },
+        { "aspekt": "Die entgegengesetzt geladenen Ionen ziehen sich an.", "woerter": ["ziehen sich", "anziehung", "anziehen", "ionenbindung"] }
+      ],
+      "musterloesung": "Ein Natriumatom hat die Elektronenverteilung 2, 8, 1. Es gibt sein einziges Valenzelektron ab und wird zum positiv geladenen Natrium-Ion Na⁺. Ein Chloratom hat die Verteilung 2, 8, 7. Es nimmt das Elektron auf und wird zum negativ geladenen Chlorid-Ion Cl⁻. Beide Ionen haben danach eine Edelgaskonfiguration mit voll besetzter Außenschale: Na⁺ wie Neon, Cl⁻ wie Argon. Die entgegengesetzt geladenen Ionen ziehen sich stark an und bilden zusammen das Salz Natriumchlorid.",
+      "erklaerung": "Entscheidend ist der **Elektronenübergang** vom Metall- zum Nichtmetallatom. Die Anziehung zwischen den Ionen nennt man **Ionenbindung**."
+    },
+    {
+      "id": "ch-ion-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Aluminium reagiert mit Chlor zu Aluminiumchlorid. Welche Teilgleichung beschreibt, was mit einem Aluminiumatom passiert?",
+      "optionen": [
+        { "text": "Al → Al³⁺ + 3 e⁻", "richtig": true },
+        { "text": "Al + 3 e⁻ → Al³⁺", "feedback": "Wer Elektronen aufnimmt, wird negativer. Ein positives Ion entsteht nur durch **Abgabe** von Elektronen." },
+        { "text": "Al → Al³⁻ + 3 e⁻", "feedback": "Wer negative Elektronen abgibt, wird positiv geladen, nicht negativ." },
+        { "text": "Al → Al⁺ + e⁻", "feedback": "Aluminium steht in der III. Hauptgruppe und hat 3 Valenzelektronen. Es gibt alle drei ab." }
+      ],
+      "erklaerung": "Aluminium (2, 8, 3) gibt 3 Elektronen ab und wird zu Al³⁺ (2, 8 wie Neon). Jedes Chloratom nimmt nur ein Elektron auf. Deshalb braucht man drei Chloratome pro Aluminiumatom: Es entsteht AlCl₃."
+    }
+  ]
+}

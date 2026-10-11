@@ -1,0 +1,131 @@
+{
+  "id": "ch-k10-ester",
+  "titel": "Ester: Bildung und Spaltung",
+  "kurz": "Wie aus einer Säure und einem Alkohol ein fruchtig duftender Ester entsteht, warum die Reaktion umkehrbar ist und was der Katalysator dabei tut.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Die Esterbildung aus Carbonsäure und Alkohol als Kondensation beschreiben und Ester benennen" },
+    { "id": "lz2", "niveau": "G", "text": "Die Estergruppe erkennen und Ester mit Halbstrukturformeln darstellen" },
+    { "id": "lz3", "niveau": "H", "text": "Siedetemperatur und Löslichkeit von Estern mit der Molekülstruktur und den zwischenmolekularen Kräften begründen" },
+    { "id": "lz4", "niveau": "H", "text": "Esterbildung und Hydrolyse als umkehrbare, durch Säure katalysierte Reaktion erläutern" }
+  ],
+  "verstehen": {
+    "einstieg": "Gummibärchen mit Ananasgeschmack haben nie eine Ananas gesehen. Trotzdem schmecken sie danach. Woher kommt das Aroma?",
+    "abschnitte": [
+      {
+        "titel": "Säure + Alkohol → Ester + Wasser",
+        "text": "Erhitzt man Ethansäure und Ethanol mit einigen Tropfen konzentrierter Schwefelsäure, riecht es plötzlich fruchtig nach Klebstoff. Es ist ein **Ester** entstanden:\n\nCH₃–COOH + HO–CH₂–CH₃ ⇌ CH₃–COO–CH₂–CH₃ + H₂O\n\nDie OH-Gruppe der Carboxygruppe und das H-Atom der Hydroxygruppe des Alkohols bilden zusammen ein **Wassermolekül**. Die beiden Molekülreste verbinden sich über ein O-Atom. Eine Reaktion, bei der sich zwei Moleküle unter Abspaltung von Wasser verbinden, heißt **Kondensation**.\n\n**Benennen:** Name der Säure + Name des Alkylrests aus dem Alkohol + „ester“. Aus Ethansäure und Ethanol entsteht **Ethansäureethylester**, aus Butansäure und Methanol Butansäuremethylester. Nach den internationalen Regeln heißt Ethansäureethylester auch Ethylethanoat."
+      },
+      {
+        "titel": "Die Estergruppe",
+        "text": "Kennzeichen aller Ester ist die **Estergruppe** –COO–. Ein C-Atom trägt ein doppelt gebundenes O-Atom und ist über ein zweites O-Atom mit dem Alkylrest des Alkohols verbunden:\n\n```\n      O\n      ‖\nCH₃ – C – O – CH₂ – CH₃\n```\n\nAnders als bei Säuren und Alkoholen gibt es **kein H-Atom am Sauerstoff**. Esterreaktionen sind dir übrigens schon begegnet: Auch Fette sind Ester, und Polyester-Kleidung besteht aus langen Ketten, die über Estergruppen verknüpft sind."
+      },
+      {
+        "titel": "Eigenschaften und Verwendung",
+        "text": "Viele Ester riechen fruchtig und sind für das Aroma von Obst verantwortlich. Einige Beispiele:\n\n- Ethansäureethylester: Klebstoff, Nagellackentferner\n- Ethansäurepropylester: Birne\n- Ethansäurebutylester: Banane\n- Butansäureethylester: Ananas\n- Methansäureethylester: Rum\n\nEster mit kurzen Ketten **sieden niedrig**. Ethansäureethylester (M = 88 g/mol) siedet bei 77 °C, Butansäure mit gleicher molarer Masse erst bei 164 °C. Da Estermoleküle kein H-Atom am Sauerstoff haben, können sie **untereinander keine Wasserstoffbrücken** bilden. Es wirken nur schwächere Kräfte. Deshalb verdunsten Ester leicht, und man riecht sie gut.\n\nEster lösen sich nur wenig in Wasser, aber gut in Fetten und Benzin (**lipophil**). Darum dienen sie als **Lösungsmittel** in Klebstoffen, Lacken und Nagellackentfernern. Außerdem werden sie als **Aromastoffe** in Süßigkeiten und Getränken eingesetzt."
+      },
+      {
+        "titel": "Hin und zurück: Kondensation und Hydrolyse",
+        "text": "Die Esterbildung ist **umkehrbar**. Ein Ester kann mit Wasser wieder in Säure und Alkohol zerfallen. Diese Spaltung durch Wasser heißt **Hydrolyse**.\n\nIn einem geschlossenen Gefäß laufen beide Reaktionen gleichzeitig ab. Nach einiger Zeit entsteht pro Sekunde genau so viel Ester, wie zerfällt. Die Mengen ändern sich dann nicht mehr: Es hat sich ein **chemisches Gleichgewicht** eingestellt. Aus 1 mol Ethansäure und 1 mol Ethanol entstehen deshalb nur etwa 0,67 mol Ester.\n\nOhne Hilfe dauert es Tage, bis das Gleichgewicht erreicht ist. Säuren wie Schwefelsäure wirken als **Katalysator**: Sie beschleunigen Hin- und Rückreaktion gleichermaßen, sodass sich das Gleichgewicht in kurzer Zeit einstellt. Die Lage des Gleichgewichts ändert ein Katalysator nicht.\n\nMehr Ester erhält man, wenn man einen Ausgangsstoff im **Überschuss** einsetzt oder ein Produkt **entfernt**, z. B. das Wasser bindet oder den Ester abdestilliert."
+      },
+      {
+        "titel": "Sicher experimentieren",
+        "text": "Konzentrierte Schwefelsäure und Eisessig sind **ätzend**, Ethanol und Ester sind **leicht entzündlich**. Deshalb gilt:\n\n- Schutzbrille und Handschuhe tragen, unter dem Abzug arbeiten\n- im **Wasserbad** erwärmen, nicht mit offener Flamme\n- Gerüche nur durch **Zufächeln** prüfen, nie direkt am Glas riechen"
+      }
+    ],
+    "formeln": [
+      { "formel": "Carbonsäure + Alkohol ⇌ Ester + Wasser", "bedeutung": "nach rechts: Kondensation (Esterbildung), nach links: Hydrolyse (Esterspaltung)" },
+      { "formel": "CH₃–COOH + HO–C₂H₅ ⇌ CH₃–COO–C₂H₅ + H₂O", "bedeutung": "Ethansäure + Ethanol ⇌ Ethansäureethylester + Wasser (Katalysator: Schwefelsäure)" }
+    ],
+    "merksatz": "Carbonsäure und Alkohol reagieren unter Abspaltung von Wasser (**Kondensation**) zu einem **Ester** mit der Estergruppe –COO–. Die Rückreaktion ist die **Hydrolyse**.\n\nDie Reaktion ist umkehrbar und führt zu einem **Gleichgewicht**. Säuren als **Katalysator** beschleunigen die Einstellung des Gleichgewichts, ändern aber nicht seine Lage.",
+    "alltag": "Ein künstliches Erdbeeraroma enthält oft mehr als ein Dutzend verschiedene Ester und andere Duftstoffe. Eine echte Erdbeere bringt es sogar auf mehrere Hundert. Darum schmeckt das Original meist anders als die Süßigkeit."
+  },
+  "interaktiv": ["ch-veresterung"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "ch-est-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Welcher Stoff ist ein Ester?",
+      "optionen": [
+        { "text": "CH₃–COO–CH₂–CH₃", "richtig": true },
+        { "text": "CH₃–CH₂–COOH", "feedback": "Hier sitzt am Ende eine Carboxygruppe mit H-Atom: Das ist Propansäure." },
+        { "text": "CH₃–CH₂–CH₂–OH", "feedback": "Das ist ein Alkohol (Propan-1-ol) mit einer Hydroxygruppe." },
+        { "text": "CH₃–CH₂–CHO", "feedback": "Das ist ein Alkanal (Propanal) mit einer Aldehydgruppe." }
+      ],
+      "erklaerung": "CH₃–COO–CH₂–CH₃ enthält die **Estergruppe** –COO– mitten im Molekül. Auf beiden Seiten hängt ein Kohlenstoffrest, am Sauerstoff gibt es kein H-Atom. Es ist Ethansäureethylester."
+    },
+    {
+      "id": "ch-est-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Welcher Ester entsteht aus diesen Ausgangsstoffen?",
+      "paare": [
+        { "links": "Ethansäure + Ethanol", "rechts": "Ethansäureethylester" },
+        { "links": "Ethansäure + Methanol", "rechts": "Ethansäuremethylester" },
+        { "links": "Butansäure + Ethanol", "rechts": "Butansäureethylester" },
+        { "links": "Methansäure + Ethanol", "rechts": "Methansäureethylester" }
+      ],
+      "extraRechts": ["Ethansäurebutylester", "Ethylethansäure"],
+      "erklaerung": "Der Name beginnt mit der **Säure**, danach folgt der **Alkylrest** des Alkohols (Methanol → methyl, Ethanol → ethyl) und am Ende „ester“."
+    },
+    {
+      "id": "ch-est-03", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Bringe die Schritte zur Herstellung von Ethansäureethylester im Schülerversuch in eine sinnvolle Reihenfolge.",
+      "elemente": [
+        "Schutzbrille und Handschuhe anziehen, im Abzug arbeiten",
+        "Je 2 mL Ethanol und Eisessig in ein Reagenzglas geben",
+        "Einige Tropfen konzentrierte Schwefelsäure als Katalysator zugeben",
+        "Das Reagenzglas einige Minuten im heißen Wasserbad erwärmen",
+        "Den Inhalt in ein Becherglas mit kaltem Wasser gießen und den Geruch durch Zufächeln prüfen"
+      ],
+      "erklaerung": "Erst kommt die Schutzausrüstung, dann die Ausgangsstoffe, dann der Katalysator. Erwärmt wird im Wasserbad, weil Ethanol und Ester leicht entzündlich sind. Der Ester löst sich kaum in Wasser und schwimmt als Schicht oben. So lässt er sich gut riechen."
+    },
+    {
+      "id": "ch-est-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Ethansäureethylester und Butansäure haben beide die Summenformel C₄H₈O₂ (M = 88 g/mol). Der Ester siedet bei 77 °C, die Säure bei 164 °C. Warum?",
+      "optionen": [
+        { "text": "Estermoleküle haben kein H-Atom am Sauerstoff und bilden untereinander keine Wasserstoffbrücken.", "richtig": true },
+        { "text": "Der Ester hat eine kleinere molare Masse.", "feedback": "Beide haben dieselbe Summenformel und dieselbe molare Masse." },
+        { "text": "Estermoleküle sind unpolar, sie haben gar keine polaren Bindungen.", "feedback": "Die Estergruppe ist durchaus polar. Es fehlt aber die O–H-Bindung für Wasserstoffbrücken." },
+        { "text": "Die Säure bildet beim Sieden Ionen.", "feedback": "Beim Sieden werden nur Kräfte zwischen Molekülen überwunden. Ionen entstehen dabei nicht." }
+      ],
+      "erklaerung": "Zwischen Butansäure-Molekülen bilden die Carboxygruppen Wasserstoffbrücken. Bei der Esterbildung ist die O–H-Gruppe verschwunden. Zwischen Estermolekülen wirken nur schwächere Kräfte, sie lassen sich leichter trennen."
+    },
+    {
+      "id": "ch-est-05", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Bei der Esterbildung gibt man einige Tropfen Schwefelsäure als Katalysator zu. Welche Aussagen sind richtig?",
+      "optionen": [
+        { "text": "Der Katalysator beschleunigt Hin- und Rückreaktion.", "richtig": true },
+        { "text": "Das Gleichgewicht stellt sich viel schneller ein.", "richtig": true },
+        { "text": "Der Katalysator wird bei der Reaktion nicht verbraucht.", "richtig": true },
+        { "text": "Ein Katalysator verschiebt das Gleichgewicht zugunsten des Esters.", "feedback": "Ein Katalysator beschleunigt beide Richtungen gleich stark. Die Lage des Gleichgewichts bleibt gleich. (Konzentrierte Schwefelsäure bindet zusätzlich Wasser. Das ist aber eine andere Wirkung als die des Katalysators.)" },
+        { "text": "Ohne Katalysator findet überhaupt keine Reaktion statt.", "feedback": "Auch ohne Katalysator bildet sich Ester, nur sehr langsam: Bis zum Gleichgewicht dauert es Tage." }
+      ],
+      "erklaerung": "Ein Katalysator senkt die Aktivierungsenergie für Hin- und Rückreaktion. Das Ziel, also die Lage des Gleichgewichts, bleibt gleich. Man kommt nur schneller dort an."
+    },
+    {
+      "id": "ch-est-06", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Du lässt 0,5 mol Ethansäure mit 0,5 mol Ethanol reagieren. Im Gleichgewicht haben sich zwei Drittel der Säure umgesetzt. Welche Masse Ethansäureethylester (CH₃–COO–C₂H₅) ist entstanden? (H: 1 g/mol, C: 12 g/mol, O: 16 g/mol)",
+      "gegeben": "`n`(Säure) = 0,5 mol, Umsatz: 2/3",
+      "gesucht": "Masse des Esters",
+      "gesuchtSymbol": "m",
+      "loesung": 29.33, "einheit": "g",
+      "rechenweg": [
+        "Stoffmenge Ester: `n = \\frac{2}{3} · 0,5 mol ≈ 0,333 mol` (aus 1 mol Säure entsteht 1 mol Ester)",
+        "Molare Masse C₄H₈O₂: `M = 4 · 12 + 8 · 1 + 2 · 16 = 88` g/mol",
+        "Masse: `m = n · M = 0,333 mol · 88 g/mol ≈ 29,3 g`"
+      ],
+      "hinweis": "Bestimme zuerst die Stoffmenge des Esters, dann seine molare Masse, und rechne mit `m = n · M`.",
+      "erklaerung": "Bei vollständigem Umsatz wären es 44 g. Weil sich ein Gleichgewicht einstellt, entstehen nur etwa 29 g. Die Ausbeute beträgt also rund 67 %."
+    },
+    {
+      "id": "ch-est-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Erkläre, warum aus 1 mol Ethansäure und 1 mol Ethanol niemals 1 mol Ester entsteht. Nenne außerdem eine Möglichkeit, mehr Ester zu gewinnen.",
+      "stichworte": [
+        { "aspekt": "Die Reaktion ist umkehrbar: Der Ester wird durch Wasser wieder gespalten (Hydrolyse).", "woerter": ["umkehrbar", "hydrolyse", "rueckreaktion", "wieder gespalten", "zerfaellt wieder", "zurueck"] },
+        { "aspekt": "Es stellt sich ein Gleichgewicht ein, in dem Hin- und Rückreaktion gleich schnell sind.", "woerter": ["gleichgewicht", "gleich schnell", "gleich viel"] },
+        { "aspekt": "Mehr Ester durch Überschuss eines Edukts oder Entfernen eines Produkts (Wasser binden, Ester abdestillieren).", "woerter": ["ueberschuss", "entfern", "abdestill", "wasser binden", "wasser entzieh", "mehr alkohol", "mehr ethanol", "mehr saeure"] }
+      ],
+      "musterloesung": "Die Esterbildung ist umkehrbar. Der entstandene Ester reagiert mit dem gebildeten Wasser wieder zu Säure und Alkohol, das ist die Hydrolyse. Nach einiger Zeit laufen Hin- und Rückreaktion gleich schnell ab, es hat sich ein Gleichgewicht eingestellt. Dann liegen alle vier Stoffe nebeneinander vor, und es entstehen nur etwa 0,67 mol Ester. Mehr Ester erhält man, wenn man Ethanol im Überschuss einsetzt oder das Wasser bzw. den Ester aus dem Gemisch entfernt.",
+      "erklaerung": "Im Gleichgewicht steht die Reaktion nicht still: Es bildet sich ständig Ester und zerfällt wieder, nur gleich schnell. Entfernt man ein Produkt, läuft die Hinreaktion weiter, bis sich ein neues Gleichgewicht eingestellt hat."
+    }
+  ]
+}

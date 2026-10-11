@@ -1,0 +1,125 @@
+{
+  "id": "ch-k7-pse",
+  "titel": "Das Periodensystem als Werkzeug",
+  "kurz": "Wie das Periodensystem aufgebaut ist, welche Elementfamilien es gibt und wie man damit Eigenschaften von Elementen vorhersagt.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Den Aufbau des Periodensystems beschreiben und die Fachbegriffe Ordnungszahl, Periode, Hauptgruppe und Nebengruppe verwenden" },
+    { "id": "lz2", "niveau": "G", "text": "Symbole und Namen wichtiger Elemente kennen und Elemente als Metalle, Halbmetalle oder Nichtmetalle einordnen" },
+    { "id": "lz3", "niveau": "G", "text": "Die Elementfamilien Alkalimetalle, Erdalkalimetalle, Halogene und Edelgase mit typischen Eigenschaften beschreiben" },
+    { "id": "lz4", "niveau": "H", "text": "Mithilfe des Periodensystems Eigenschaften und Reaktionen von Elementen vorhersagen und Vorzüge und Grenzen des Periodensystems als Werkzeug abwägen" }
+  ],
+  "verstehen": {
+    "einstieg": "Im Chemieraum hängt eine große Tafel mit 118 Kästchen. Chemikerinnen und Chemiker sagen, sie sei ihr wichtigstes Werkzeug. Wie kann eine Tabelle ein Werkzeug sein?",
+    "abschnitte": [
+      {
+        "titel": "Ordnung in die Elemente bringen",
+        "text": "1869 ordneten **Dmitri Mendelejew** und **Lothar Meyer** unabhängig voneinander die damals bekannten 63 Elemente nach ihrer Atommasse. Elemente mit ähnlichen Eigenschaften schrieben sie untereinander. Mendelejew ließ dabei **Lücken** für noch unbekannte Elemente und sagte deren Eigenschaften voraus. Als 1886 das Germanium entdeckt wurde, passte es fast genau zu seiner Vorhersage.\n\nHeute weiß man: Die richtige Ordnung ergibt sich aus der **Ordnungszahl**, also der Anzahl der Protonen im Kern. Jedes Element hat ein **Symbol** aus einem oder zwei Buchstaben, oft aus dem lateinischen oder griechischen Namen: Na (Natrium), K (Kalium), Fe (Eisen, lat. ferrum), Ag (Silber, lat. argentum), Au (Gold, lat. aurum), Cu (Kupfer, lat. cuprum)."
+      },
+      {
+        "titel": "Perioden und Gruppen",
+        "text": "- Die waagerechten Zeilen heißen **Perioden**. Es gibt 7 Perioden. Von links nach rechts steigt die Ordnungszahl um je 1.\n- Die senkrechten Spalten heißen **Gruppen**. Die 8 hohen Spalten an den Rändern sind die **Hauptgruppen** (I bis VIII). Die Elemente im niedrigen Mittelblock bilden die **Nebengruppen**. Dort stehen nur Metalle, z. B. Eisen, Kupfer, Silber und Gold.\n\nIn der neueren Zählung werden alle 18 Spalten von 1 bis 18 durchnummeriert. Die Hauptgruppen I bis VIII entsprechen dann den Gruppen 1, 2 und 13 bis 18."
+      },
+      {
+        "titel": "Metalle, Halbmetalle und Nichtmetalle",
+        "text": "Etwa vier Fünftel aller Elemente sind **Metalle**. Sie stehen links und in der Mitte des Periodensystems. Die **Nichtmetalle** wie Sauerstoff, Schwefel, Chlor oder die Edelgase stehen rechts oben. Wasserstoff ist eine Ausnahme: Er steht in der I. Hauptgruppe, ist aber ein Nichtmetall.\n\nDazwischen verläuft eine Treppe aus **Halbmetallen** wie Bor, Silicium, Germanium und Arsen. Sie haben Eigenschaften von beiden Seiten. Silicium glänzt zum Beispiel wie ein Metall, leitet den Strom aber nur schlecht und ist spröde."
+      },
+      {
+        "titel": "Elementfamilien",
+        "text": "Die Elemente einer Hauptgruppe sind chemisch verwandt. Man nennt sie deshalb **Elementfamilie**.\n\n- **Alkalimetalle** (I. Hauptgruppe, ohne Wasserstoff): Lithium, Natrium, Kalium … Weiche, silbrig glänzende Metalle mit geringer Dichte. Sie reagieren heftig mit Wasser zu Wasserstoff und einer alkalischen Lösung. Die Heftigkeit **nimmt nach unten zu**. Man bewahrt sie unter Paraffinöl auf. Versuche damit macht nur die Lehrkraft, mit kleinen Stücken, Schutzscheibe und Schutzbrille.\n- **Erdalkalimetalle** (II. Hauptgruppe): Beryllium, Magnesium, Calcium … Ebenfalls reaktionsfreudige Metalle, aber weniger heftig als die Alkalimetalle.\n- **Halogene** (VII. Hauptgruppe, „Salzbildner“): Fluor, Chlor, Brom, Iod. Sehr reaktionsfreudige, giftige Nichtmetalle aus zweiatomigen Molekülen (F₂, Cl₂, Br₂, I₂). Ihre Reaktionsfreudigkeit **nimmt nach unten ab**. Fluor und Chlor sind Gase, Brom ist flüssig, Iod fest.\n- **Edelgase** (VIII. Hauptgruppe): Helium, Neon, Argon … Farblose Gase aus einzelnen Atomen. Sie sind **reaktionsträge** und gehen fast keine Verbindungen ein. Verwendung: Ballongas (Helium), Leuchtreklame (Neon), Schutzgas beim Schweißen (Argon)."
+      },
+      {
+        "titel": "Vorhersagen und Grenzen",
+        "text": "Mit dem Periodensystem kann man **Eigenschaften abschätzen**, ohne das Element selbst untersucht zu haben. Steht ein Element unter Kalium, wird es noch heftiger mit Wasser reagieren als Kalium. Solche Vorhersagen sollte man anschließend im Experiment oder in einem Tabellenbuch **überprüfen**.\n\nDas Periodensystem hat aber **Grenzen**: Es zeigt nur Tendenzen, es gibt Ausnahmen (z. B. Wasserstoff), und viele Eigenschaften wie Farbe, Giftigkeit oder Preis stehen nicht darin. Außerdem gibt es verschiedene Darstellungsformen, z. B. die kurze Form mit 8 Hauptgruppen, die lange Form mit 18 Spalten oder sogar spiralförmige Varianten. Jede betont andere Zusammenhänge."
+      }
+    ],
+    "merksatz": "Im **Periodensystem** sind die Elemente nach steigender **Ordnungszahl** geordnet. Waagerechte Zeilen sind **Perioden**, senkrechte Spalten sind **Gruppen**. Elemente einer **Hauptgruppe** bilden eine Elementfamilie mit ähnlichen Eigenschaften: Alkalimetalle, Erdalkalimetalle, Halogene, Edelgase.\n\nMetalle stehen links und in der Mitte, Nichtmetalle rechts oben, dazwischen die Halbmetalle.",
+    "alltag": "Viele Elemente stecken in deinem Handy: Lithium im Akku, Silicium in den Chips, Kupfer in den Leiterbahnen, Gold in den Kontakten und seltene Metalle wie Neodym im Lautsprecher. Deshalb ist es sinnvoll, alte Handys zu recyceln."
+  },
+  "interaktiv": ["ch-atombaukasten"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "ch-pse-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Ordne jedem Elementsymbol den richtigen Namen zu.",
+      "paare": [
+        { "links": "Na", "rechts": "Natrium" },
+        { "links": "K", "rechts": "Kalium" },
+        { "links": "Fe", "rechts": "Eisen" },
+        { "links": "Ag", "rechts": "Silber" },
+        { "links": "S", "rechts": "Schwefel" }
+      ],
+      "extraRechts": ["Stickstoff", "Gold"],
+      "erklaerung": "Viele Symbole kommen aus dem Lateinischen: Natrium (Na), Kalium (K), Eisen von ferrum (Fe), Silber von argentum (Ag), Schwefel von sulfur (S). Stickstoff hat das Symbol N, Gold das Symbol Au."
+    },
+    {
+      "id": "ch-pse-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Wonach sind die Elemente im heutigen Periodensystem geordnet?",
+      "optionen": [
+        { "text": "Nach steigender Ordnungszahl (Protonenzahl)", "richtig": true },
+        { "text": "Alphabetisch nach dem Namen", "feedback": "Dann stünden Argon und Aluminium nebeneinander, obwohl sie ganz verschieden sind." },
+        { "text": "Nach dem Jahr ihrer Entdeckung", "feedback": "Das Entdeckungsjahr sagt nichts über die Eigenschaften eines Elements aus." },
+        { "text": "Nach ihrer Dichte", "feedback": "Die Dichte ändert sich im Periodensystem nicht gleichmäßig. Ordnungsprinzip ist die Ordnungszahl." }
+      ],
+      "erklaerung": "Die **Ordnungszahl** gibt die Anzahl der Protonen im Atomkern an. Von Kästchen zu Kästchen steigt sie um 1."
+    },
+    {
+      "id": "ch-pse-03", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Ordne jedes Element seiner Elementfamilie zu.",
+      "paare": [
+        { "links": "Kalium", "rechts": "Alkalimetalle" },
+        { "links": "Calcium", "rechts": "Erdalkalimetalle" },
+        { "links": "Brom", "rechts": "Halogene" },
+        { "links": "Argon", "rechts": "Edelgase" }
+      ],
+      "extraRechts": ["Nebengruppenmetalle"],
+      "erklaerung": "Kalium steht in der I., Calcium in der II., Brom in der VII. und Argon in der VIII. Hauptgruppe."
+    },
+    {
+      "id": "ch-pse-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Ein Element steht in der 3. Periode und in der II. Hauptgruppe. Welches Element ist es?",
+      "optionen": [
+        { "text": "Magnesium (Mg)", "richtig": true },
+        { "text": "Calcium (Ca)", "feedback": "Calcium steht in der II. Hauptgruppe, aber in der 4. Periode." },
+        { "text": "Aluminium (Al)", "feedback": "Aluminium steht in der 3. Periode, aber in der III. Hauptgruppe." },
+        { "text": "Beryllium (Be)", "feedback": "Beryllium steht in der II. Hauptgruppe, aber in der 2. Periode." }
+      ],
+      "erklaerung": "Die 3. Periode beginnt mit Natrium (I. Hauptgruppe). Rechts daneben, in der II. Hauptgruppe, steht **Magnesium** mit der Ordnungszahl 12."
+    },
+    {
+      "id": "ch-pse-05", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Welche dieser Elemente sind Metalle?",
+      "optionen": [
+        { "text": "Kupfer", "richtig": true },
+        { "text": "Natrium", "richtig": true },
+        { "text": "Calcium", "richtig": true },
+        { "text": "Schwefel", "feedback": "Schwefel steht rechts oben im Periodensystem und ist ein Nichtmetall." },
+        { "text": "Iod", "feedback": "Iod glänzt zwar etwas, ist aber ein Halogen und damit ein Nichtmetall." },
+        { "text": "Silicium", "feedback": "Silicium ist ein Halbmetall. Es leitet den Strom nur schlecht und ist spröde." }
+      ],
+      "erklaerung": "Kupfer steht bei den Nebengruppen, Natrium und Calcium in der I. und II. Hauptgruppe. Alle drei sind Metalle: Sie glänzen, leiten Strom und Wärme gut und sind verformbar."
+    },
+    {
+      "id": "ch-pse-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Natrium reagiert heftig mit Wasser, Kalium noch heftiger. Rubidium steht in der I. Hauptgruppe direkt unter Kalium. Welche Vorhersage ist am besten begründet?",
+      "optionen": [
+        { "text": "Rubidium reagiert noch heftiger mit Wasser. Dabei entstehen Wasserstoff und eine alkalische Lösung.", "richtig": true },
+        { "text": "Rubidium reagiert nicht mit Wasser, weil es ein schweres Metall ist.", "feedback": "Innerhalb der Alkalimetalle nimmt die Reaktionsfreudigkeit nach unten **zu**, nicht ab." },
+        { "text": "Rubidium reagiert genauso wie Natrium, weil alle Alkalimetalle gleich sind.", "feedback": "Elemente einer Familie sind ähnlich, aber nicht gleich. Es gibt eine Abstufung von oben nach unten." },
+        { "text": "Man kann nichts vorhersagen, ohne den Versuch zu machen.", "feedback": "Genau dafür ist das Periodensystem ein Werkzeug: Man kann begründet abschätzen. Überprüfen sollte man die Vorhersage trotzdem." }
+      ],
+      "erklaerung": "Innerhalb der Alkalimetalle steigt die Reaktionsfreudigkeit von oben nach unten. Rubidium reagiert deshalb noch heftiger als Kalium, und es entstehen wie bei allen Alkalimetallen Wasserstoff und eine alkalische Lösung (Rubidiumhydroxid-Lösung)."
+    },
+    {
+      "id": "ch-pse-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Das Periodensystem gilt als das wichtigste Werkzeug der Chemie. Nenne zwei Vorzüge und eine Grenze dieses Werkzeugs.",
+      "stichworte": [
+        { "aspekt": "Vorzug: Es ordnet alle Elemente übersichtlich und zeigt verwandte Elemente (Gruppen, Perioden).", "woerter": ["ueberblick", "uebersicht", "ordnet", "ordnung", "geordnet", "familie", "verwandt", "gruppe"] },
+        { "aspekt": "Vorzug: Man kann Eigenschaften und Reaktionen vorhersagen oder abschätzen.", "woerter": ["vorhersag", "voraussag", "vorhergesag", "abschaetz", "vorhersehen", "vorausseh"] },
+        { "aspekt": "Grenze: Es zeigt nur Tendenzen, es gibt Ausnahmen, viele Eigenschaften stehen nicht darin.", "woerter": ["grenze", "nachteil", "ausnahme", "tendenz", "nicht alle", "nicht genau", "steht nicht", "stehen nicht", "wasserstoff", "ueberpruef"] }
+      ],
+      "musterloesung": "Ein Vorzug ist, dass das Periodensystem alle Elemente übersichtlich nach der Ordnungszahl ordnet. Verwandte Elemente stehen in einer Gruppe untereinander. Ein zweiter Vorzug ist, dass man Eigenschaften und Reaktionen vorhersagen kann, z. B. dass Rubidium heftiger mit Wasser reagiert als Kalium. Eine Grenze ist, dass es nur Tendenzen zeigt und es Ausnahmen gibt, z. B. steht der Wasserstoff bei den Alkalimetallen, ist aber ein Nichtmetall. Viele Eigenschaften wie Farbe oder Giftigkeit stehen nicht darin.",
+      "erklaerung": "Vorhersagen aus dem Periodensystem sind begründete Vermutungen. Ob sie stimmen, prüft man im Experiment oder in Datentabellen."
+    }
+  ]
+}

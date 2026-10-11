@@ -1,0 +1,113 @@
+{
+  "id": "ch-k9-alkane",
+  "titel": "Alkane und homologe Reihe",
+  "kurz": "Woraus Erdgas, Campinggas und Benzin bestehen, wie Alkan-Moleküle gebaut sind und warum ihre Siedepunkte mit der Kettenlänge steigen.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Vorkommen und Verwendung von Alkanen nennen (Erdgas, Erdöl, Campinggas, Benzin, Paraffin)" },
+    { "id": "lz2", "niveau": "G", "text": "Alkane als gesättigte Kohlenwasserstoffe der homologen Reihe CₙH₂ₙ₊₂ beschreiben und ihre Summen- und Halbstrukturformeln angeben" },
+    { "id": "lz3", "niveau": "H", "text": "Die Zunahme von Siedepunkt und Zähigkeit innerhalb der homologen Reihe mit Van-der-Waals-Kräften erklären" },
+    { "id": "lz4", "niveau": "H", "text": "Das Löslichkeitsverhalten der Alkane (hydrophob, lipophil) mit dem Bau der Moleküle begründen und Versuche dazu auswerten" }
+  ],
+  "verstehen": {
+    "einstieg": "Im Campingkocher, im Feuerzeug, im Autotank und in der Kerze steckt im Grunde dieselbe Sorte Stoff. Trotzdem ist das eine ein Gas, das andere eine Flüssigkeit und das dritte ein fester Stoff. Wie passt das zusammen?",
+    "abschnitte": [
+      {
+        "titel": "Kohlenwasserstoffe im Alltag",
+        "text": "**Kohlenwasserstoffe** sind Verbindungen, die nur aus Kohlenstoff (C) und Wasserstoff (H) bestehen. Die wichtigsten Quellen sind **Erdgas** und **Erdöl**. Beide sind vor Millionen von Jahren aus abgestorbenen Meeresorganismen entstanden.\n\n- **Erdgas** besteht überwiegend aus **Methan** CH₄. Es heizt Wohnungen und kocht auf dem Gasherd.\n- **Campinggas** und **Feuerzeuggas** sind Propan C₃H₈ und Butan C₄H₁₀. Unter Druck werden sie flüssig.\n- **Erdöl** ist ein Gemisch aus vielen Kohlenwasserstoffen. In der Raffinerie wird es durch **fraktionierte Destillation** in Teile mit ähnlichem Siedebereich getrennt: Benzin (etwa 5 bis 11 C-Atome), Kerosin, Diesel und Heizöl, Schmieröle und Bitumen.\n- **Paraffin** (Kerzenwachs) besteht aus Alkanen mit etwa 20 bis 40 C-Atomen."
+      },
+      {
+        "titel": "Bau der Alkane",
+        "text": "Ein Kohlenstoffatom bildet immer **vier** Elektronenpaarbindungen, ein Wasserstoffatom eine. Bei den **Alkanen** sind die C-Atome nur durch **Einfachbindungen** verbunden. Jedes C-Atom trägt so viele H-Atome, wie möglich ist. Deshalb heißen Alkane **gesättigte** Kohlenwasserstoffe.\n\nStrukturformel von Ethan C₂H₆:\n\n```\n    H   H\n    |   |\nH - C - C - H\n    |   |\n    H   H\n```\n\nKürzer ist die **Halbstrukturformel**: CH₃–CH₃. Für Propan schreibt man CH₃–CH₂–CH₃."
+      },
+      {
+        "titel": "Die homologe Reihe",
+        "text": "Ordnet man die unverzweigten Alkane nach der Zahl der C-Atome, unterscheidet sich jedes Glied vom nächsten um genau eine CH₂-Gruppe. So eine Reihe heißt **homologe Reihe**. Alle Alkane passen zur allgemeinen Summenformel **CₙH₂ₙ₊₂**.\n\n- Methan CH₄, Ethan C₂H₆, Propan C₃H₈, Butan C₄H₁₀\n- Pentan C₅H₁₂, Hexan C₆H₁₄, Heptan C₇H₁₆, Octan C₈H₁₈\n- Nonan C₉H₂₀, Decan C₁₀H₂₂\n\nAb Pentan stecken griechische Zahlwörter im Namen (penta = 5, hexa = 6 …). Die Endung **-an** zeigt: Das ist ein Alkan."
+      },
+      {
+        "titel": "Van-der-Waals-Kräfte und Siedepunkte",
+        "text": "Alkan-Moleküle sind **unpolar**. Trotzdem ziehen sie sich schwach an: In der Elektronenhülle entstehen kurzzeitig ungleiche Ladungsverteilungen. Sie verschieben auch die Elektronen im Nachbarmolekül, und die Moleküle ziehen sich an. Diese schwachen Anziehungskräfte zwischen Molekülen heißen **Van-der-Waals-Kräfte**.\n\nJe **größer** ein Molekül ist, desto größer ist seine Oberfläche, an der es Nachbarmoleküle berührt, und desto stärker sind die Van-der-Waals-Kräfte. Zum Sieden müssen die Moleküle voneinander getrennt werden. Dafür ist dann mehr Energie nötig.\n\n- Siedepunkte: Methan −162 °C, Propan −42 °C, Butan −1 °C, Pentan 36 °C, Hexan 69 °C, Octan 126 °C, Decan 174 °C\n- Bei Raumtemperatur sind Methan bis Butan gasförmig, Pentan bis etwa C₁₆ flüssig, längere Alkane fest.\n- Mit der Kettenlänge steigt auch die **Zähigkeit** (Viskosität): Benzin ist dünnflüssig, Schmieröl zähflüssig. Kurzkettige Alkane sind dagegen leichter entzündlich."
+      },
+      {
+        "titel": "Löslichkeit: hydrophob und lipophil",
+        "text": "Gibt man Hexan und Wasser zusammen, bilden sich zwei Schichten. Hexan schwimmt oben, weil seine Dichte (0,66 g/cm³) kleiner ist als die von Wasser. Dass es sich nicht löst, liegt aber an den Teilchen: Wassermoleküle sind Dipole und halten über Wasserstoffbrücken fest zusammen. Die unpolaren Alkan-Moleküle können da nicht dazwischen.\n\nAlkane sind **hydrophob** (wasserabweisend) und **lipophil** (fettliebend): Fette, Öle und Wachse lösen sich gut in ihnen. Faustregel: **Ähnliches löst sich in Ähnlichem.** Deshalb entfernt Waschbenzin Fettflecken, und bei einer Ölpest treibt das Öl als Film auf dem Meer.\n\nSicherheit: Benzin und Hexan sind leicht entzündlich und ihre Dämpfe gesundheitsschädlich. Im Versuch nur kleine Mengen, keine offene Flamme in der Nähe, Schutzbrille tragen."
+      }
+    ],
+    "merksatz": "**Alkane** sind gesättigte Kohlenwasserstoffe mit der allgemeinen Formel CₙH₂ₙ₊₂. Die Glieder der **homologen Reihe** unterscheiden sich jeweils um eine CH₂-Gruppe.\n\nMit wachsender Kettenlänge werden die **Van-der-Waals-Kräfte** stärker, Siedepunkt und Zähigkeit steigen. Alkane sind unpolar, also hydrophob und lipophil.",
+    "alltag": "Im Winter kann Butan aus dem Feuerzeug kaum noch verdampfen, weil sein Siedepunkt bei etwa −1 °C liegt. Campinggas für kalte Tage enthält deshalb mehr Propan (Siedepunkt −42 °C)."
+  },
+  "interaktiv": ["ch-molekuelbaukasten"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "ch-kwa-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Welche Summenformel hat **Pentan**?",
+      "optionen": [
+        { "text": "C₅H₁₂", "richtig": true },
+        { "text": "C₅H₁₀", "feedback": "Bei 5 C-Atomen hat ein Alkan 2 · 5 + 2 = 12 H-Atome. C₅H₁₀ hätte zu wenig Wasserstoff." },
+        { "text": "C₅H₁₄", "feedback": "So viele H-Atome kann man an 5 C-Atome nicht binden. Rechne mit CₙH₂ₙ₊₂." },
+        { "text": "C₄H₁₀", "feedback": "Das ist Butan mit 4 C-Atomen. „Pent“ steht für 5." }
+      ],
+      "erklaerung": "Pentan hat 5 C-Atome. Mit der allgemeinen Formel CₙH₂ₙ₊₂ ergibt sich 2 · 5 + 2 = 12. Halbstrukturformel: CH₃–CH₂–CH₂–CH₂–CH₃."
+    },
+    {
+      "id": "ch-kwa-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Ordne jedem Alltagsprodukt die Alkane zu, aus denen es hauptsächlich besteht.",
+      "paare": [
+        { "links": "Erdgas aus der Gasleitung", "rechts": "Methan" },
+        { "links": "Campinggas", "rechts": "Propan und Butan" },
+        { "links": "Benzin", "rechts": "Alkane mit etwa 5 bis 11 C-Atomen" },
+        { "links": "Kerzenwachs (Paraffin)", "rechts": "Alkane mit etwa 20 bis 40 C-Atomen" }
+      ],
+      "erklaerung": "Je länger die Kette, desto höher der Siedepunkt: Methan ist ein Gas, Propan und Butan werden nur unter Druck flüssig, Benzin ist eine Flüssigkeit, Paraffin ist fest."
+    },
+    {
+      "id": "ch-kwa-03", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Im Dieselkraftstoff steckt unter anderem **Hexadecan**, ein unverzweigtes Alkan mit 16 C-Atomen. Wie viele Wasserstoffatome hat ein Molekül Hexadecan?",
+      "gesucht": "Anzahl der H-Atome", "gesuchtSymbol": "H",
+      "loesung": 34, "einheit": "", "toleranz": 0,
+      "rechenweg": ["Allgemeine Formel der Alkane: CₙH₂ₙ₊₂", "n = 16", "2 · 16 + 2 = 34", "Summenformel: C₁₆H₃₄"],
+      "erklaerung": "Die beiden C-Atome an den Kettenenden tragen je 3 H-Atome, die 14 inneren je 2: 2 · 3 + 14 · 2 = 34."
+    },
+    {
+      "id": "ch-kwa-04", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Ordne die Alkane nach ihrem Siedepunkt, vom **niedrigsten** zum **höchsten**.",
+      "elemente": ["Methan", "Propan", "Pentan", "Heptan", "Decan"],
+      "erklaerung": "Je mehr C-Atome, desto größer das Molekül und desto stärker die Van-der-Waals-Kräfte. Siedepunkte: Methan −162 °C, Propan −42 °C, Pentan 36 °C, Heptan 98 °C, Decan 174 °C."
+    },
+    {
+      "id": "ch-kwa-05", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Ihr gebt etwas Hexan in ein Reagenzglas mit Wasser und schüttelt. Danach testet ihr, was sich in Hexan löst. Welche Beobachtungen sind zu erwarten?",
+      "optionen": [
+        { "text": "Es bilden sich zwei Schichten, Hexan ist die obere.", "richtig": true },
+        { "text": "Ein Tropfen Speiseöl löst sich in Hexan.", "richtig": true },
+        { "text": "Ein Iodkristall löst sich in Hexan mit violetter Farbe.", "richtig": true },
+        { "text": "Hexan und Wasser mischen sich nach kräftigem Schütteln dauerhaft.", "feedback": "Hexan ist unpolar, Wasser polar. Nach kurzer Zeit trennen sich die Schichten wieder." },
+        { "text": "Kochsalz löst sich gut in Hexan.", "feedback": "Salze bestehen aus Ionen. Sie lösen sich in Wasser, nicht in unpolaren Lösungsmitteln wie Hexan." }
+      ],
+      "erklaerung": "Hexan ist ein unpolares, lipophiles Lösungsmittel. Unpolare Stoffe wie Öl oder Iod lösen sich darin, Wasser und Salze nicht. Hexan ist leicht entzündlich: Versuch ohne offene Flamme und mit Schutzbrille."
+    },
+    {
+      "id": "ch-kwa-06", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Methan siedet bei −162 °C, Decan erst bei 174 °C. Erkläre diesen Unterschied auf der Teilchenebene.",
+      "stichworte": [
+        { "aspekt": "Zwischen den Molekülen wirken **Van-der-Waals-Kräfte**", "woerter": ["van der waals", "vdw", "anziehungskr", "zwischenmolekular"] },
+        { "aspekt": "Decan-Moleküle sind größer bzw. länger und haben eine größere Oberfläche", "woerter": ["groesser", "laenger", "oberflaeche", "kontaktflaeche", "mehr atome", "laengere kette"] },
+        { "aspekt": "Zum Trennen der Moleküle beim Sieden ist mehr Energie nötig", "woerter": ["mehr energie", "mehr waerme", "hoehere temperatur", "trennen", "loesen"] }
+      ],
+      "musterloesung": "Zwischen den unpolaren Alkan-Molekülen wirken Van-der-Waals-Kräfte. Ein Decan-Molekül ist viel länger als ein Methan-Molekül und hat eine größere Oberfläche, an der es Nachbarmoleküle berührt. Deshalb sind die Anziehungskräfte stärker. Beim Sieden müssen die Moleküle voneinander getrennt werden, dafür ist bei Decan mehr Energie und damit eine höhere Temperatur nötig.",
+      "erklaerung": "Beim Sieden bleiben die Moleküle selbst ganz. Getrennt werden nur die Moleküle voneinander, also werden nur die Kräfte zwischen ihnen überwunden."
+    },
+    {
+      "id": "ch-kwa-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Ein Mitschüler sagt: „Benzin löst sich nicht in Wasser, weil es leichter ist als Wasser.“ Wie bewertest du diese Begründung?",
+      "optionen": [
+        { "text": "Falsch: Die Dichte erklärt nur, warum Benzin oben schwimmt. Es löst sich nicht, weil die unpolaren Alkan-Moleküle nicht zwischen die polaren Wassermoleküle passen.", "richtig": true },
+        { "text": "Richtig: Leichte Stoffe lösen sich grundsätzlich nicht in schweren Flüssigkeiten.", "feedback": "Ethanol hat auch eine kleinere Dichte als Wasser und mischt sich trotzdem in jedem Verhältnis. Die Dichte entscheidet nicht über die Löslichkeit." },
+        { "text": "Richtig: Benzin-Moleküle sind zu groß, um in Wasser zu passen.", "feedback": "Auch das kleine Methan-Molekül löst sich kaum in Wasser. Entscheidend ist, ob die Moleküle polar oder unpolar sind." },
+        { "text": "Falsch: Benzin löst sich sehr wohl in Wasser, man sieht es nur nicht.", "feedback": "Im Versuch bilden sich zwei deutliche Schichten. Benzin ist praktisch unlöslich in Wasser." }
+      ],
+      "erklaerung": "Löslichkeit und Dichte sind zwei verschiedene Dinge. Ob sich etwas löst, hängt von den Kräften zwischen den Teilchen ab: Wassermoleküle halten über Wasserstoffbrücken zusammen, unpolare Alkane können diese nicht ersetzen. Die Dichte bestimmt nur, welche Schicht oben liegt."
+    }
+  ]
+}

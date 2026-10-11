@@ -1,0 +1,125 @@
+{
+  "id": "ch-k7-schalenmodell",
+  "titel": "Schalenmodell und Lewis-Schreibweise",
+  "kurz": "Wie die Elektronen in der Atomhülle auf Schalen verteilt sind, was Valenzelektronen sind und warum Edelgase so reaktionsträge sind.",
+  "reihenfolge": 3,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Den Aufbau der Atomhülle mit dem Schalenmodell beschreiben und Atome im Schalenmodell darstellen" },
+    { "id": "lz2", "niveau": "G", "text": "Die Anzahl der Schalen und der Valenzelektronen aus der Stellung im Periodensystem ableiten" },
+    { "id": "lz3", "niveau": "G", "text": "Atome in der Elektronenschreibweise nach Lewis darstellen" },
+    { "id": "lz4", "niveau": "H", "text": "Das Elektronenoktett als Edelgaskonfiguration erkennen und Eigenschaften der Elementfamilien mit dem Atombau begründen" }
+  ],
+  "verstehen": {
+    "einstieg": "Natrium und Kalium sehen sich zum Verwechseln ähnlich und reagieren beide heftig mit Wasser. Neon und Argon dagegen reagieren mit fast gar nichts. Warum verhalten sich Elemente einer Gruppe so ähnlich?",
+    "abschnitte": [
+      {
+        "titel": "Das Schalenmodell",
+        "text": "Im **Schalenmodell** bewegen sich die Elektronen auf mehreren **Schalen** um den Kern. Jede Schale kann nur eine bestimmte Anzahl an Elektronen aufnehmen. Die Schalen werden von innen nach außen gefüllt:\n\n- 1. Schale: höchstens **2** Elektronen\n- 2. Schale: höchstens **8** Elektronen\n- 3. Schale: bei den Elementen bis Calcium **8** Elektronen, danach beginnt die 4. Schale\n\nBeispiele: Natrium (11 Elektronen) hat die Verteilung 2, 8, 1. Chlor (17 Elektronen) hat 2, 8, 7. Calcium (20 Elektronen) hat 2, 8, 8, 2.\n\nDie Elektronen innen sind stark an den Kern gebunden. Die äußeren Elektronen sind weiter vom Kern entfernt und werden schwächer angezogen. Man kann sie leichter entfernen. Die Energie, die man dafür braucht, heißt **Ionisierungsenergie**.\n\nDas Schalenmodell ist eine Vereinfachung. Die 3. Schale kann eigentlich bis zu 18 Elektronen aufnehmen, sie wird aber erst bei den Nebengruppenelementen weiter aufgefüllt."
+      },
+      {
+        "titel": "Schalenmodell und Periodensystem",
+        "text": "Das Periodensystem verrät den Bau der Atomhülle:\n\n- **Periodennummer = Anzahl der besetzten Schalen.** Chlor steht in der 3. Periode und hat 3 Schalen.\n- **Hauptgruppennummer = Anzahl der Valenzelektronen.** Das sind die Elektronen auf der äußersten Schale (auch Außenelektronen). Chlor steht in der VII. Hauptgruppe und hat 7 Valenzelektronen.\n\nDie Valenzelektronen bestimmen, wie ein Element reagiert. Elemente einer Hauptgruppe haben gleich viele Valenzelektronen. Deshalb verhalten sie sich chemisch ähnlich."
+      },
+      {
+        "titel": "Die Lewis-Schreibweise",
+        "text": "Der Chemiker Gilbert Lewis hat eine kurze Schreibweise erfunden. Man zeichnet nur das **Elementsymbol** und darum die **Valenzelektronen** als Punkte. Das Symbol steht dabei für den Kern mit allen inneren Elektronen.\n\nDie Punkte verteilt man auf die vier Seiten des Symbols: Zuerst bekommt jede Seite einen einzelnen Punkt. Ab dem 5. Elektron bilden sich **Elektronenpaare**.\n\n```\n ·      ·      ··     ··\n·C·    ·N:    ·O:    :Cl·\n ·      ·      ·      ··\n```\n\nKohlenstoff hat 4 einzelne Elektronen, Stickstoff 1 Paar und 3 einzelne, Sauerstoff 2 Paare und 2 einzelne, Chlor 3 Paare und 1 einzelnes. In vielen Büchern wird ein Elektronenpaar auch als Strich gezeichnet."
+      },
+      {
+        "titel": "Edelgaskonfiguration",
+        "text": "Die Edelgase Neon und Argon haben **8 Valenzelektronen**, ihre Außenschale ist voll besetzt. Diesen Zustand nennt man **Elektronenoktett** oder **Edelgaskonfiguration**. Helium hat nur eine Schale, die mit 2 Elektronen schon voll ist (**Elektronenduett**).\n\nEine voll besetzte Außenschale ist besonders stabil. Deshalb sind die Edelgase **reaktionsträge**. Andere Atome erreichen eine solche Konfiguration erst, wenn sie bei einer Reaktion Elektronen abgeben, aufnehmen oder mit anderen Atomen teilen.\n\nAuch die Abstufung innerhalb einer Familie lässt sich erklären: Bei den Alkalimetallen sitzt das einzelne Valenzelektron von oben nach unten auf einer immer weiter außen liegenden Schale. Es wird schwächer angezogen und leichter abgegeben. Deshalb reagiert Kalium heftiger als Natrium und Natrium heftiger als Lithium."
+      }
+    ],
+    "merksatz": "Im **Schalenmodell** verteilen sich die Elektronen auf Schalen (2, 8, 8 bis Calcium). Die Elektronen auf der äußersten Schale heißen **Valenzelektronen**.\n\nPeriodennummer = Anzahl der Schalen, Hauptgruppennummer = Anzahl der Valenzelektronen. In der **Lewis-Schreibweise** werden die Valenzelektronen als Punkte um das Symbol gezeichnet. 8 Valenzelektronen (**Oktett**) bedeuten **Edelgaskonfiguration** und große Stabilität.",
+    "alltag": "Weil Argon so reaktionsträge ist, füllt man es in Glühlampen und zwischen die Scheiben moderner Fenster. Beim Schweißen schützt ein Argonstrom das heiße Metall davor, mit dem Sauerstoff der Luft zu reagieren."
+  },
+  "interaktiv": ["ch-atombaukasten"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "ch-smo-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Wie viele Elektronen passen höchstens auf die erste Schale?",
+      "optionen": [
+        { "text": "2", "richtig": true },
+        { "text": "8", "feedback": "8 Elektronen passen auf die 2. Schale. Die erste Schale ist kleiner." },
+        { "text": "1", "feedback": "Helium hat 2 Elektronen auf der ersten Schale. Es passt also mehr als eines darauf." },
+        { "text": "18", "feedback": "So viele Elektronen fasst erst die 3. Schale, wenn sie ganz gefüllt ist." }
+      ],
+      "erklaerung": "Die erste Schale fasst höchstens **2 Elektronen**. Beim Helium ist sie damit schon voll besetzt (Elektronenduett)."
+    },
+    {
+      "id": "ch-smo-02", "typ": "zahl", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Schwefel steht in der VI. Hauptgruppe. Wie viele Valenzelektronen hat ein Schwefelatom?",
+      "gegeben": "Schwefel, VI. Hauptgruppe",
+      "gesucht": "Anzahl der Valenzelektronen",
+      "loesung": 6, "einheit": "", "toleranz": 0,
+      "rechenweg": [
+        "Hauptgruppennummer = Anzahl der Valenzelektronen",
+        "VI. Hauptgruppe → 6 Valenzelektronen",
+        "Kontrolle: Schwefel hat 16 Elektronen, Verteilung 2, 8, 6"
+      ],
+      "erklaerung": "Schwefel hat 6 Valenzelektronen, genau wie Sauerstoff, der in derselben Hauptgruppe steht."
+    },
+    {
+      "id": "ch-smo-03", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Ordne jedem Atom die richtige Verteilung der Elektronen auf die Schalen zu.",
+      "paare": [
+        { "links": "Lithium (3 Elektronen)", "rechts": "2, 1" },
+        { "links": "Sauerstoff (8 Elektronen)", "rechts": "2, 6" },
+        { "links": "Natrium (11 Elektronen)", "rechts": "2, 8, 1" },
+        { "links": "Chlor (17 Elektronen)", "rechts": "2, 8, 7" },
+        { "links": "Calcium (20 Elektronen)", "rechts": "2, 8, 8, 2" }
+      ],
+      "extraRechts": ["2, 7", "8, 3"],
+      "erklaerung": "Die Schalen werden von innen nach außen gefüllt: zuerst 2, dann 8, dann 8 Elektronen. Was übrig bleibt, kommt auf die nächste Schale."
+    },
+    {
+      "id": "ch-smo-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Wie sieht die Lewis-Schreibweise eines Stickstoffatoms aus?",
+      "optionen": [
+        { "text": "N mit 5 Punkten: ein Elektronenpaar und drei einzelne Elektronen", "richtig": true },
+        { "text": "N mit 7 Punkten", "feedback": "Es werden nur die Valenzelektronen gezeichnet. Stickstoff steht in der V. Hauptgruppe." },
+        { "text": "N mit 5 einzelnen Punkten, kein Paar", "feedback": "Um das Symbol gibt es nur vier Seiten. Das 5. Elektron bildet deshalb mit einem anderen ein Paar." },
+        { "text": "N mit 3 Punkten", "feedback": "Stickstoff bildet zwar oft drei Bindungen, hat aber 5 Valenzelektronen." }
+      ],
+      "erklaerung": "Stickstoff steht in der V. Hauptgruppe und hat 5 Valenzelektronen. Die ersten vier verteilen sich einzeln auf die vier Seiten, das fünfte bildet ein **Elektronenpaar**."
+    },
+    {
+      "id": "ch-smo-05", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Welche Atome haben eine Edelgaskonfiguration (voll besetzte Außenschale)?",
+      "optionen": [
+        { "text": "Neon (2, 8)", "richtig": true },
+        { "text": "Argon (2, 8, 8)", "richtig": true },
+        { "text": "Helium (2)", "richtig": true },
+        { "text": "Natrium (2, 8, 1)", "feedback": "Natrium hat nur 1 Elektron auf der äußersten Schale." },
+        { "text": "Chlor (2, 8, 7)", "feedback": "Chlor fehlt noch 1 Elektron zum Oktett." }
+      ],
+      "erklaerung": "Neon und Argon haben 8 Valenzelektronen (Oktett). Helium hat nur eine Schale, die mit 2 Elektronen voll ist (Duett). Alle drei sind Edelgase und reaktionsträge."
+    },
+    {
+      "id": "ch-smo-06", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Ein Element steht in der 3. Periode und hat 5 Valenzelektronen. Welche Ordnungszahl hat es?",
+      "gegeben": "3. Periode, 5 Valenzelektronen",
+      "gesucht": "Ordnungszahl",
+      "loesung": 15, "einheit": "", "toleranz": 0,
+      "rechenweg": [
+        "3. Periode → 3 Schalen. Die beiden inneren Schalen sind voll: 2 + 8 = 10 Elektronen.",
+        "Auf der 3. Schale sitzen die 5 Valenzelektronen.",
+        "Elektronen insgesamt: 2 + 8 + 5 = 15. Im Atom gilt: Elektronen = Protonen = Ordnungszahl.",
+        "Ordnungszahl 15: Phosphor (P)"
+      ],
+      "hinweis": "Zähle die Elektronen auf allen Schalen zusammen.",
+      "erklaerung": "Das Element ist **Phosphor**. Es steht in der V. Hauptgruppe unter Stickstoff."
+    },
+    {
+      "id": "ch-smo-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Lithium, Natrium und Kalium reagieren ähnlich, aber Kalium am heftigsten. Begründe beides mit dem Schalenmodell.",
+      "stichworte": [
+        { "aspekt": "Alle haben genau ein Valenzelektron (gleiche Hauptgruppe).", "woerter": ["ein valenzelektron", "1 valenzelektron", "einem valenzelektron", "ein aussenelektron", "1 aussenelektron", "einem aussenelektron", "ein elektron auf der aeusser", "ein elektron in der aeusser", "gleiche hauptgruppe", "gleichen hauptgruppe", "selben hauptgruppe", "derselben hauptgruppe"] },
+        { "aspekt": "Kalium hat mehr Schalen, das Valenzelektron ist weiter vom Kern entfernt.", "woerter": ["mehr schalen", "vier schalen", "4 schalen", "weiter vom kern", "weiter entfernt", "weiter aussen", "groesser"] },
+        { "aspekt": "Es wird schwächer angezogen und leichter abgegeben.", "woerter": ["schwaecher", "weniger stark", "leichter", "ionisierungsenergie"] }
+      ],
+      "musterloesung": "Lithium, Natrium und Kalium stehen in derselben Hauptgruppe. Alle haben genau ein Valenzelektron auf der äußersten Schale. Deshalb reagieren sie ähnlich. Kalium hat aber mehr Schalen als Natrium und Lithium. Sein Valenzelektron ist weiter vom Kern entfernt und wird deshalb schwächer angezogen. Es kann leichter abgegeben werden, und Kalium reagiert am heftigsten.",
+      "erklaerung": "Gleich viele Valenzelektronen erklären die Ähnlichkeit, der unterschiedliche Abstand vom Kern erklärt die Abstufung innerhalb der Familie."
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "id": "ch-k7-atombau",
+  "titel": "Atombau: Kern-Hülle-Modell",
+  "kurz": "Woraus Atome bestehen, was Ordnungszahl und Massenzahl verraten und warum es von einem Element verschieden schwere Atome gibt.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Den Aufbau eines Atoms aus Atomkern (Protonen, Neutronen) und Atomhülle (Elektronen) beschreiben" },
+    { "id": "lz2", "niveau": "G", "text": "Die Fachbegriffe Ordnungszahl (Kernladungszahl) und Massenzahl verwenden und damit die Anzahl der Protonen, Neutronen und Elektronen bestimmen" },
+    { "id": "lz3", "niveau": "H", "text": "Isotope erklären und in der Symbolschreibweise angeben" },
+    { "id": "lz4", "niveau": "H", "text": "Den Streuversuch von Rutherford als Modellexperiment zum Kern-Hülle-Modell erklären" }
+  ],
+  "verstehen": {
+    "einstieg": "Ein Stück Gold kann man immer weiter teilen, bis nur noch ein einziges Goldatom übrig bleibt. Lange stellte man sich Atome als winzige, massive Kugeln vor. Doch ein berühmter Versuch zeigte: Ein Atom ist fast vollständig leer. Wie kann das sein?",
+    "abschnitte": [
+      {
+        "titel": "Rutherfords Streuversuch",
+        "text": "Ernest Rutherford ließ 1911 in seinem Labor **α-Teilchen** (winzige, positiv geladene Teilchen aus einem radioaktiven Stoff) auf eine sehr dünne **Goldfolie** schießen. Ein Leuchtschirm rund um die Folie zeigte, wohin die Teilchen flogen.\n\n- Fast alle α-Teilchen flogen **ungehindert** durch die Folie.\n- Wenige wurden **abgelenkt**.\n- Sehr wenige prallten sogar **zurück**.\n\nDaraus schloss Rutherford: Das Atom ist größtenteils **leer**. In seiner Mitte sitzt ein winziger, **positiv geladener Atomkern**, in dem fast die gesamte Masse steckt. Nur wenn ein α-Teilchen einem Kern sehr nahe kommt, wird es abgestoßen.\n\nIm Unterricht kann man das mit einem **Modellexperiment** nachstellen: Man rollt Murmeln unter ein Brett, unter dem einige wenige Hindernisse versteckt sind. Aus den abgelenkten Murmeln schließt man auf Lage und Größe der unsichtbaren Hindernisse."
+      },
+      {
+        "titel": "Kern und Hülle",
+        "text": "Ein Atom besteht aus drei Sorten von Elementarteilchen:\n\n- **Protonen** (p⁺): positiv geladen, Masse etwa 1 u, im Kern\n- **Neutronen** (n): ungeladen, Masse etwa 1 u, im Kern\n- **Elektronen** (e⁻): negativ geladen, fast masselos (etwa 1/1836 u), in der Hülle\n\nDie Einheit u (atomare Masseneinheit) ist ungefähr die Masse eines Protons. Der **Atomkern** ist etwa 100 000-mal kleiner als das ganze Atom. Wäre ein Atom so groß wie ein Fußballstadion, wäre der Kern nur ein Stecknadelkopf auf dem Anstoßpunkt. Trotzdem enthält er mehr als 99,9 % der Masse.\n\nEin Atom ist nach außen **elektrisch neutral**: Es hat genauso viele Elektronen wie Protonen."
+      },
+      {
+        "titel": "Ordnungszahl und Massenzahl",
+        "text": "Die **Anzahl der Protonen** legt fest, um welches Element es sich handelt. Sie heißt **Ordnungszahl** oder **Kernladungszahl** und steht im Periodensystem bei jedem Element. Jedes Kohlenstoffatom hat 6 Protonen, jedes Natriumatom 11.\n\nDie **Massenzahl** ist die Anzahl aller Teilchen im Kern:\n\nMassenzahl = Anzahl der Protonen + Anzahl der Neutronen\n\nIn der **Symbolschreibweise** steht die Massenzahl oben links und die Ordnungszahl unten links vor dem Elementsymbol, z. B. ²³₁₁Na. Dieses Natriumatom hat 11 Protonen, 23 − 11 = 12 Neutronen und (als neutrales Atom) 11 Elektronen. Kurz schreibt man auch Na-23."
+      },
+      {
+        "titel": "Isotope",
+        "text": "Atome desselben Elements haben immer gleich viele Protonen, aber nicht immer gleich viele Neutronen. Atome mit **gleicher Protonenzahl, aber unterschiedlicher Neutronenzahl** heißen **Isotope**.\n\n- Kohlenstoff: C-12 (6 Neutronen), C-13 (7 Neutronen) und das radioaktive C-14 (8 Neutronen)\n- Wasserstoff: H-1, H-2 (Deuterium) und das radioaktive H-3 (Tritium)\n- Chlor: etwa 75 % Cl-35 und 25 % Cl-37\n\nIsotope verhalten sich chemisch gleich, denn die Chemie wird von den Elektronen bestimmt. Sie unterscheiden sich nur in der Masse und darin, ob ihr Kern stabil ist. Weil Chlor ein Gemisch aus zwei Isotopen ist, steht im Periodensystem die **mittlere Atommasse** 35,5 u."
+      }
+    ],
+    "formeln": [
+      { "formel": "Massenzahl = Protonen + Neutronen", "bedeutung": "Anzahl aller Kernteilchen" },
+      { "formel": "Ordnungszahl = Protonen = Elektronen (im Atom)", "bedeutung": "Ein neutrales Atom hat so viele Elektronen wie Protonen" }
+    ],
+    "merksatz": "Ein Atom besteht aus einem winzigen, positiv geladenen **Atomkern** mit Protonen und Neutronen und einer fast leeren **Atomhülle** mit Elektronen.\n\nDie **Ordnungszahl** (Protonenzahl) bestimmt das Element. Die **Massenzahl** ist die Summe aus Protonen und Neutronen. **Isotope** sind Atome eines Elements mit unterschiedlicher Neutronenzahl.",
+    "alltag": "Mit dem radioaktiven Isotop C-14 kann man das Alter von Knochen, Holz oder Stoffen aus der Steinzeit bestimmen. Lebewesen nehmen C-14 auf, solange sie leben. Danach zerfällt es langsam, nach etwa 5730 Jahren ist nur noch die Hälfte da."
+  },
+  "interaktiv": ["ch-atombaukasten"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "ch-atb-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Welche elektrische Ladung hat ein Neutron?",
+      "optionen": [
+        { "text": "Es ist ungeladen.", "richtig": true },
+        { "text": "Es ist positiv geladen.", "feedback": "Positiv geladen ist das **Proton**." },
+        { "text": "Es ist negativ geladen.", "feedback": "Negativ geladen ist das **Elektron**." },
+        { "text": "Das hängt vom Element ab.", "feedback": "Neutronen sind in allen Atomen gleich: Sie sind immer ungeladen. Das steckt schon im Namen („neutral“)." }
+      ],
+      "erklaerung": "Das Neutron ist **elektrisch neutral**. Es sitzt zusammen mit den Protonen im Atomkern und hat etwa die gleiche Masse wie ein Proton."
+    },
+    {
+      "id": "ch-atb-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Ordne jedem Elementarteilchen Ladung und Ort im Atom zu.",
+      "paare": [
+        { "links": "Proton", "rechts": "positiv geladen, im Atomkern" },
+        { "links": "Neutron", "rechts": "ungeladen, im Atomkern" },
+        { "links": "Elektron", "rechts": "negativ geladen, in der Atomhülle" }
+      ],
+      "extraRechts": ["positiv geladen, in der Atomhülle"],
+      "erklaerung": "Protonen und Neutronen bilden zusammen den Atomkern. Die Elektronen bewegen sich in der viel größeren Atomhülle um den Kern."
+    },
+    {
+      "id": "ch-atb-03", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Ein Aluminiumatom hat die Ordnungszahl 13 und die Massenzahl 27. Wie viele Neutronen enthält sein Kern?",
+      "gegeben": "Ordnungszahl 13, Massenzahl 27",
+      "gesucht": "Anzahl der Neutronen",
+      "loesung": 14, "einheit": "", "toleranz": 0,
+      "rechenweg": [
+        "Die Ordnungszahl ist die Anzahl der Protonen: 13 Protonen.",
+        "Massenzahl = Protonen + Neutronen, also Neutronen = Massenzahl − Protonen.",
+        "Neutronen = 27 − 13 = 14"
+      ],
+      "hinweis": "Die Massenzahl zählt alle Teilchen im Kern.",
+      "erklaerung": "Ein Al-27-Atom hat 13 Protonen und 14 Neutronen im Kern. Als neutrales Atom hat es außerdem 13 Elektronen."
+    },
+    {
+      "id": "ch-atb-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Ein Atom hat 17 Protonen und 18 Neutronen im Kern. Um welches Atom handelt es sich?",
+      "optionen": [
+        { "text": "Chlor mit der Massenzahl 35", "richtig": true },
+        { "text": "Argon mit der Massenzahl 35", "feedback": "Argon hat 18 **Protonen**. Das Element wird durch die Protonenzahl festgelegt, nicht durch die Neutronenzahl." },
+        { "text": "Chlor mit der Massenzahl 18", "feedback": "Die Massenzahl ist die Summe aus Protonen **und** Neutronen." },
+        { "text": "Argon mit der Massenzahl 17", "feedback": "Das Element hängt von der Protonenzahl (17) ab, die Massenzahl ist 17 + 18." }
+      ],
+      "erklaerung": "17 Protonen bedeuten Ordnungszahl 17, also **Chlor**. Die Massenzahl ist 17 + 18 = 35. Es ist das Isotop Cl-35."
+    },
+    {
+      "id": "ch-atb-05", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Vergleiche die Kohlenstoff-Isotope C-12 und C-14. Welche Aussagen sind richtig?",
+      "optionen": [
+        { "text": "Beide haben 6 Protonen im Kern.", "richtig": true },
+        { "text": "C-14 hat zwei Neutronen mehr als C-12.", "richtig": true },
+        { "text": "Beide gehören zum selben Element.", "richtig": true },
+        { "text": "C-14 hat zwei Elektronen mehr als C-12.", "feedback": "Neutrale Atome haben so viele Elektronen wie Protonen. Beide haben also 6 Elektronen." },
+        { "text": "C-14 ist ein anderes Element als C-12.", "feedback": "Das Element hängt nur von der Protonenzahl ab. Beide haben 6 Protonen, also sind beide Kohlenstoff." }
+      ],
+      "erklaerung": "Isotope haben die gleiche Protonenzahl und damit die gleiche Elektronenzahl. Sie unterscheiden sich nur in der Neutronenzahl: C-12 hat 6, C-14 hat 8 Neutronen."
+    },
+    {
+      "id": "ch-atb-06", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Beschreibe, was Rutherford beim Beschuss einer Goldfolie mit α-Teilchen beobachtet hat, und erkläre, was er daraus über den Bau der Atome geschlossen hat.",
+      "stichworte": [
+        { "aspekt": "Fast alle Teilchen fliegen ungehindert hindurch: Das Atom ist größtenteils leer.", "woerter": ["leer", "ungehindert", "fliegen durch", "flogen durch", "gehen durch", "gingen durch", "hindurch", "nicht abgelenkt", "kaum abgelenkt"] },
+        { "aspekt": "Wenige werden stark abgelenkt oder prallen zurück: Es gibt einen winzigen Atomkern.", "woerter": ["kern"] },
+        { "aspekt": "Der Kern ist positiv geladen und enthält fast die gesamte Masse.", "woerter": ["masse", "positiv"] }
+      ],
+      "musterloesung": "Fast alle α-Teilchen flogen ungehindert durch die Goldfolie. Daraus folgt, dass ein Atom größtenteils leer ist. Wenige Teilchen wurden stark abgelenkt, sehr wenige prallten sogar zurück. Sie sind einem winzigen Atomkern sehr nahe gekommen. Dieser Kern ist positiv geladen, weil er die positiven α-Teilchen abstößt, und er enthält fast die gesamte Masse des Atoms. Die Elektronen befinden sich in der großen, fast leeren Atomhülle.",
+      "erklaerung": "Dieser Versuch führte zum **Kern-Hülle-Modell**. Vorher hatte man sich das Atom als gleichmäßig gefüllte Kugel vorgestellt. Dann hätten aber kaum Teilchen zurückprallen dürfen."
+    },
+    {
+      "id": "ch-atb-07", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Natürliches Chlor besteht zu 75 % aus Cl-35 (Atommasse 35 u) und zu 25 % aus Cl-37 (Atommasse 37 u). Berechne die mittlere Atommasse von Chlor.",
+      "gegeben": "75 % Cl-35, 25 % Cl-37",
+      "gesucht": "mittlere Atommasse",
+      "loesung": 35.5, "einheit": "u", "toleranz": 0.005,
+      "rechenweg": [
+        "Von 100 Chloratomen sind 75 Atome Cl-35 und 25 Atome Cl-37.",
+        "Gesamtmasse: 75 · 35 u + 25 · 37 u = 2625 u + 925 u = 3550 u",
+        "Mittlere Masse pro Atom: 3550 u : 100 = 35,5 u"
+      ],
+      "hinweis": "Stell dir 100 Chloratome vor und berechne ihre Gesamtmasse.",
+      "erklaerung": "Die mittlere Atommasse liegt näher an 35 u, weil das leichtere Isotop häufiger ist. Deshalb steht im Periodensystem bei Chlor 35,5 u und keine ganze Zahl."
+    }
+  ]
+}
