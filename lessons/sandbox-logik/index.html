@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Logik-Labor</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<link rel="stylesheet" href="../sandbox-schaltkreis/labor.css">
+<link rel="stylesheet" href="logik.css">
+</head>
+<body class="labor logik">
+<div class="app">
+  <header class="werkzeuge" role="toolbar" aria-label="Werkzeuge">
+    <h1 class="titel">Logik-Labor</h1>
+    <button type="button" id="neu" title="Neues, leeres Projekt">Neu</button>
+    <button type="button" id="rueck" disabled title="Rückgängig (Strg+Z)">↶</button>
+    <button type="button" id="vor" disabled title="Wiederholen (Strg+Y)">↷</button>
+    <button type="button" id="alle" title="Alles auswählen (Strg+A)">Alles auswählen</button>
+    <button type="button" id="loeschen" title="Auswahl löschen (Entf)">Löschen</button>
+    <button type="button" id="zuruecksetzen" title="Alle Schalter auf 0, Speicher in Ruhe">Zurücksetzen</button>
+    <button type="button" id="takt" aria-pressed="true" title="Taktgeber laufen lassen oder anhalten">⏸ Takt anhalten</button>
+    <span class="trenner" aria-hidden="true"></span>
+    <select id="beispiele" aria-label="Beispielschaltung laden"></select>
+    <button type="button" id="export" title="Projekt als Datei speichern">Speichern</button>
+    <label class="knopf" title="Gespeichertes Projekt laden">Laden<input type="file" id="import" accept=".json,application/json"></label>
+    <button type="button" id="aufraeumen" title="Ansicht so einstellen, dass alles zu sehen ist">Aufräumen</button>
+    <button type="button" id="hilfe" aria-expanded="false" aria-controls="hilfetext">? Hilfe</button>
+  </header>
+
+  <nav class="leiste" id="leiste" aria-label="Bauteilbibliothek (auf die Arbeitsfläche ziehen oder antippen)"></nav>
+
+  <section class="flaeche-box" id="flaeche-box" aria-label="Arbeitsfläche">
+    <svg id="flaeche" role="img" aria-label="Arbeitsfläche mit der Logikschaltung. Schalter antippen zum Umschalten, Anschlüsse mit Leitungen verbinden.">
+      <defs>
+        <pattern id="raster-muster" width="20" height="20" patternUnits="userSpaceOnUse">
+          <circle cx="0" cy="0" r="1.1" class="rasterpunkt"/><circle cx="20" cy="0" r="1.1" class="rasterpunkt"/>
+          <circle cx="0" cy="20" r="1.1" class="rasterpunkt"/><circle cx="20" cy="20" r="1.1" class="rasterpunkt"/>
+        </pattern>
+      </defs>
+      <rect id="raster" fill="url(#raster-muster)"/>
+      <g id="welt"></g>
+    </svg>
+    <div class="zoom" role="group" aria-label="Ansicht">
+      <button type="button" id="zoom-minus" aria-label="Verkleinern">−</button>
+      <button type="button" id="zoom-plus" aria-label="Vergrößern">+</button>
+      <button type="button" id="zoom-fit" aria-label="Alles zeigen">⤢</button>
+    </div>
+    <div class="leer" id="leer">
+      <p>Ziehe Schalter, Gatter und Lampen aus der Bibliothek hierher<br>oder lade ein Beispiel.</p>
+      <button type="button" id="leer-beispiel" class="primary">Beispiel: UND-Gatter</button>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </section>
+
+  <aside class="seite">
+    <section class="lk-card karte" aria-labelledby="eig-titel">
+      <h2 id="eig-titel">Eigenschaften</h2>
+      <div id="eig"></div>
+    </section>
+    <section class="lk-card karte" aria-labelledby="tab-titel">
+      <h2 id="tab-titel">Wahrheitstabelle</h2>
+      <div id="tabelle" aria-live="polite"></div>
+    </section>
+    <section class="lk-card karte" aria-labelledby="mel-titel">
+      <h2 id="mel-titel">Hinweise</h2>
+      <ul id="meldungen" class="meldungen"></ul>
+    </section>
+    <section class="lk-card karte hilfe" id="hilfetext" hidden aria-labelledby="hilfe-titel">
+      <h2 id="hilfe-titel">So funktioniert's</h2>
+      <ul class="small">
+        <li><b>Bauteil einfügen:</b> aus der Bibliothek auf die Fläche ziehen oder antippen.</li>
+        <li><b>Verbinden:</b> von einem Ausgang (gefüllter Punkt, rechts) zu einem Eingang (leerer Punkt, links) ziehen – oder beide nacheinander antippen. Ein Ausgang darf mehrere Eingänge versorgen, ein Eingang hat genau ein Signal.</li>
+        <li><b>Schalter</b> antippen schaltet um, <b>Taster</b> gedrückt halten. Leertaste schaltet den ausgewählten Schalter.</li>
+        <li><b>Verschieben:</b> ziehen (mit „Alles auswählen“ alle zusammen). <b>Drehen:</b> Taste R. <b>Löschen:</b> Entf. Rückgängig/Wiederholen: Strg+Z / Strg+Y.</li>
+        <li><b>Zustände:</b> 1 = aktiv (dicke, farbige Leitung, Zahl 1 am Anschluss), 0 = inaktiv. Offene Eingänge gelten als 0.</li>
+        <li><b>Wahrheitstabelle:</b> wird aus der Schaltung berechnet (alle Kombinationen der Schalter, Taster und Taktgeber). Die markierte Zeile ist der aktuelle Zustand.</li>
+        <li><b>Rückkopplungen</b> (z. B. Flipflop) werden schrittweise berechnet. Schaltet sich eine Schaltung ständig selbst um, erscheint ein Hinweis.</li>
+      </ul>
+      <p class="small muted">Modell: rein digital, 1 bedeutet „Spannung liegt an“. Gatter brauchen keine eigene Versorgung. Ein Relais gibt das Signal an COM je nach Steuereingang an NO oder NC weiter; der Steuerkreis ist vom geschalteten Kreis getrennt. Das Projekt wird in diesem Browser gespeichert; mit „Speichern“ bekommst du eine Datei.</p>
+    </section>
+  </aside>
+</div>
+<script src="../../static/lesson-kit.js"></script>
+<script src="modell.js"></script>
+<script src="simulation.js"></script>
+<script src="wahrheit.js"></script>
+<script src="../sandbox-schaltkreis/bedienung.js"></script>
+<script src="zeichnen.js"></script>
+<script src="logik.js"></script>
+</body>
+</html>

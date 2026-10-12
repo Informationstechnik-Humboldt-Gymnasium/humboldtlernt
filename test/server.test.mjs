@@ -193,6 +193,17 @@ test('Sandbox: Simulationsübersicht, Schaltkreis-Labor und Rückweg zur Fachüb
     assert.equal((await t.req(`/inhalt/sandbox-schaltkreis/${f}`)).status, 200, f);
   }
   assert.equal((await new Client().req('/sandbox/schaltkreis')).status, 302, 'nur angemeldet');
+  // Zweite Simulation: Logik-Labor (nutzt Bedienung und Grundlayout des Schaltkreis-Labors mit)
+  assert.match(uebersicht, /href="\/sandbox\/logik"/);
+  assert.match(uebersicht, /Logik-Labor/);
+  const logik = await (await t.req('/sandbox/logik')).text();
+  assert.match(logik, /src="\/inhalt\/sandbox-logik\/index\.html"/);
+  assert.match(logik, /<a href="\/sandbox" class="back">← Sandbox<\/a>/);
+  const html = await (await t.req('/inhalt/sandbox-logik/index.html')).text();
+  assert.match(html, /src="\.\.\/sandbox-schaltkreis\/bedienung\.js"/);
+  for (const f of ['modell.js', 'simulation.js', 'wahrheit.js', 'zeichnen.js', 'logik.js', 'logik.css']) {
+    assert.equal((await t.req(`/inhalt/sandbox-logik/${f}`)).status, 200, f);
+  }
   assert.equal((await t.req('/sandbox/gibts-nicht')).status, 404);
   assert.equal((await t.req('/sandbox/9')).status, 404);
   // Die anderen Fächer funktionieren weiter

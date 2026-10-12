@@ -33,7 +33,8 @@ const slugs = new Set([
   ...faecher.flatMap(f => f.simulationen.map(sim => sim.lesson)),
 ]);
 // Eigene Dateien einer Lektion (z. B. <script src="modell.js">, <link rel="stylesheet" href="labor.css">) direkt einbetten
-const local = (dir, f) => fs.readFileSync(path.join(dir, f), 'utf8');
+// Auch Dateien einer anderen Lektion: <script src="../sandbox-schaltkreis/bedienung.js">
+const local = (dir, f, andere) => fs.readFileSync(andere ? path.join(config.lessonsDir, andere, f) : path.join(dir, f), 'utf8');
 for (const slug of slugs) {
   const dir = path.join(config.lessonsDir, slug);
   let meta = {};
@@ -41,8 +42,8 @@ for (const slug of slugs) {
   const html = fs.readFileSync(path.join(dir, 'index.html'), 'utf8')
     .replace(/<link rel="stylesheet" href="\.\.\/\.\.\/static\/lesson-kit\.css">/, () => `<style>${kitCss}</style>`)
     .replace(/<script src="\.\.\/\.\.\/static\/lesson-kit\.js"><\/script>/, () => `<script>${kitJs}</script>`)
-    .replace(/<link rel="stylesheet" href="([a-z0-9-]+\.css)">/g, (_, f) => `<style>${local(dir, f)}</style>`)
-    .replace(/<script src="([a-z0-9-]+\.js)"><\/script>/g, (_, f) => `<script>${local(dir, f).replace(/<\/script/gi, '<\\/script')}</script>`);
+    .replace(/<link rel="stylesheet" href="(?:\.\.\/([a-z0-9-]+)\/)?([a-z0-9-]+\.css)">/g, (_, l, f) => `<style>${local(dir, f, l)}</style>`)
+    .replace(/<script src="(?:\.\.\/([a-z0-9-]+)\/)?([a-z0-9-]+\.js)"><\/script>/g, (_, l, f) => `<script>${local(dir, f, l).replace(/<\/script/gi, '<\\/script')}</script>`);
   lessons[slug] = { slug, title: meta.title || slug, description: meta.description || '', html };
 }
 

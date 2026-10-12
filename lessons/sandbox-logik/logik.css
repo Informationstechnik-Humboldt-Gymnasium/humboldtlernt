@@ -1,0 +1,75 @@
+/* Logik-Labor – ergänzt ../sandbox-schaltkreis/labor.css (Aufbau, Leisten, Arbeitsfläche) */
+:root { --an: #e0641f; --aus: #6b6a64; }
+@media (prefers-color-scheme: dark) { :root { --an: #ff9a52; --aus: #8d8b84; } }
+
+.leiste h3 { font-size: .72rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin: 6px 2px 0; }
+.leiste h3:first-child { margin-top: 0; }
+.teil svg { width: 74px; height: 36px; }
+.teil text { fill: var(--text); }
+.teil .symbol { font-size: 18px; font-weight: 700; }
+.teil .symbol.klein { font-size: 13px; }
+#beispiele { max-width: 220px; padding: 6px 8px; font-size: .88rem; }
+
+/* Schaltung */
+.leitung { fill: none; stroke-width: 2.2; stroke-linejoin: round; stroke-linecap: round; }
+.leitung.an { stroke-width: 4; }
+.leitung.gewaehlt { stroke-dasharray: 7 4; stroke-width: 4.5; }
+.halo { fill: none; stroke-width: 10; stroke-linejoin: round; stroke-linecap: round; opacity: .22; }
+.koerper.aktiv { stroke-width: 2.6; }
+.schiene { fill: var(--bg); stroke: var(--line); stroke-width: 1.5; }
+.schiene.an { fill: var(--an); }
+.knopf { fill: var(--card); stroke: var(--line); stroke-width: 1.8; }
+.tastknopf { fill: var(--card); stroke: var(--line); stroke-width: 2; }
+.tastknopf.an { fill: var(--an); }
+.gehaeuse { fill: var(--card); stroke: var(--line); stroke-width: 3; }
+.kolben { fill: var(--card); stroke: var(--line); stroke-width: 1.5; }
+.schein { opacity: .35; }
+.anzeige { fill: #1d1d1b; stroke: var(--line); stroke-width: 1.5; }
+.seg { fill: #3a3935; }
+.spule { fill: var(--card); stroke: var(--line); stroke-width: 2; }
+.spule.an { fill: var(--soft-accent); }
+.mechanik { stroke: var(--muted); stroke-width: 1.5; stroke-dasharray: 4 3; }
+.leiter.hebel { stroke-width: 3; }
+.leiter.an { stroke: var(--an); }
+.blase { fill: var(--card); stroke: var(--line); stroke-width: 2; }
+.pin { stroke: var(--line); stroke-width: 1.6; }
+.pin.ein { fill: var(--card); }
+.pin.aus { fill: var(--line); }
+.pin.bereit { fill: var(--soft-accent); stroke: var(--accent); }
+.pin.start { fill: var(--accent); }
+.pin.hover { stroke: var(--accent); stroke-width: 2.5; }
+.pin.ok { fill: var(--ok-soft); stroke: var(--ok); stroke-width: 3.5; }
+.pin.falsch { fill: var(--warn-soft); stroke: var(--warn); stroke-width: 3.5; }
+#flaeche .symbol { font-size: 17px; font-weight: 700; }
+#flaeche .symbol.klein { font-size: 12px; }
+#flaeche .pintext { font-size: 10px; fill: var(--muted); }
+#flaeche .pintext.klein { font-size: 9.5px; }
+#flaeche .pegel { font-size: 11px; font-weight: 700; fill: var(--muted); }
+#flaeche .pegel.an { fill: var(--an); }
+#flaeche .zustand { font-size: 11px; fill: var(--muted); font-weight: 600; }
+#flaeche .zustand.an { fill: var(--an); }
+
+/* Seitenleiste */
+.karte h3 { font-size: .92rem; margin: 10px 0 6px; }
+.karte h3:first-child { margin-top: 0; }
+.ctrl input[type=text] { font: inherit; padding: 6px 8px; border-radius: 8px; border: 1px solid var(--border); background: var(--card); color: var(--text); }
+.farbwahl { margin: 8px 0; }
+.farbwahl > span { display: block; font-size: .85rem; font-weight: 600; margin-bottom: 4px; }
+.farbwahl .felder { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.farbe { width: 28px; height: 28px; padding: 0; border-radius: 50%; border: 2px solid var(--border); }
+.farbe.standard { background: linear-gradient(135deg, var(--card) 45%, var(--muted) 45%, var(--muted) 55%, var(--card) 55%); }
+.farbe[aria-pressed=true] { outline: 3px solid var(--accent); outline-offset: 2px; }
+.eigene input { width: 34px; height: 30px; padding: 0; border: 1px solid var(--border); border-radius: 8px; background: none; cursor: pointer; }
+.haken { display: flex; gap: 6px; align-items: center; font-size: .88rem; margin: 6px 0; }
+.tab-rahmen { overflow: auto; max-height: 360px; border: 1px solid var(--border); border-radius: 8px; }
+table.wahrheit { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; font-size: .9rem; }
+table.wahrheit th, table.wahrheit td { padding: 4px 8px; text-align: center; border-bottom: 1px solid var(--border); }
+table.wahrheit thead th { position: sticky; top: 0; background: var(--card); }
+table.wahrheit .aus { font-weight: 700; }
+table.wahrheit .trenn { width: 2px; padding: 0; background: var(--border); }
+table.wahrheit tr.aktiv td { background: var(--ok-soft); color: var(--ok); }
+table.wahrheit tr.aktiv td:first-child { box-shadow: inset 4px 0 0 var(--ok); }
+.tab-wahl { margin-top: 8px; font-size: .88rem; }
+.tab-wahl .spalten { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.tab-wahl fieldset { border: 1px solid var(--border); border-radius: 8px; padding: 4px 8px; margin: 6px 0 0; }
+.mm-meldung.hinweis { color: var(--muted); }
