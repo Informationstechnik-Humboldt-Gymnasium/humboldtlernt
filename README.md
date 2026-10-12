@@ -20,8 +20,9 @@ Lerneinheiten sie erledigt haben, und Lehrkräfte sehen den Fortschritt ihrer Kl
   Gase, Wasser, Salze, Metalle, Säuren und Laugen, Stöchiometrie, Kohlenwasserstoffe, Alkohole,
   organische Säuren, Ester): 36 Themen, 252 Übungen und 10 interaktive Labore.
 - **Sandbox:** freie Simulationen ohne Klassenstufen. Erste Simulation ist das **Schaltkreis-Labor**:
-  Spannungsquelle, Schalter, Lampe, einstellbarer Widerstand, Diode und Multimeter frei verdrahten, mit
-  echter Schaltungsberechnung (Knotenpotenzialanalyse, Diode nach Shockley), Stromfluss-Animation,
+  Gleich- und Wechselspannungsquelle, Schalter, Lampe, einstellbarer Widerstand, Diode, Transistor (NPN),
+  Logikgatter (UND, ODER, NICHT, XODER) und Multimeter frei verdrahten, mit
+  echter Schaltungsberechnung (Knotenpotenzialanalyse, Diode nach Shockley, Transistor nach Ebers-Moll), Stromfluss-Animation,
   Kurzschluss-Erkennung, Rückgängig, Speichern/Laden und Touch-Bedienung.
 - **Weitere Fächer** lassen sich ohne Programmieren ergänzen (siehe Abschnitt 6).
 

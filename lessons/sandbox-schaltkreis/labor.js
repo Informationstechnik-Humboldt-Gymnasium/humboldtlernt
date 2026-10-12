@@ -8,7 +8,7 @@
   var $ = function (id) { return document.getElementById(id); };
   var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
 
-  var st = { doc: M.neu(), laeuft: false, messwerte: true, flussAn: true, auswahl: null, erg: null, verlauf: [] };
+  var st = { doc: M.neu(), laeuft: false, messwerte: true, flussAn: true, auswahl: null, erg: null, verlauf: [], t: 0, gatter: {}, stat: null, hatAC: false };
   var svg = $('flaeche'), welt = $('welt'), raster = $('raster'), box = $('flaeche-box');
 
   // ---------------------------------------------------------------- Zustand ändern
@@ -19,10 +19,22 @@
     $('rueck').disabled = false;
   }
 
-  function rechne() { st.erg = SL.sim.simuliere(st.doc, st.laeuft); }
+  // Momentanwerte zum Zeitpunkt st.t; bei Wechselspannung zusätzlich Effektiv-/Mittelwerte über eine Periode (st.stat)
+  function momentan() {
+    var e = SL.sim.simuliere(st.doc, st.laeuft, { t: st.t, gatter: st.gatter });
+    st.gatter = e.gatter;
+    st.erg = SL.sim.kombiniere(e, st.stat);
+  }
+  function rechne() {
+    st.stat = SL.sim.zeitverlauf(st.doc, st.laeuft, { gatter: st.gatter });
+    momentan();
+    var ac = SL.sim.wechselquellen(st.doc).length > 0;
+    if (ac !== st.hatAC) { st.hatAC = ac; if (st.auswahl) eigenschaften(); }
+  }
 
   function geaendert() {
     rechne();
+    starteSchleife();
     if (st.auswahl && !(st.auswahl.art === 'bauteil' ? M.finde(st.doc, st.auswahl.id) : M.findeDraht(st.doc, st.auswahl.id))) waehle(null);
     zeichne();
     werte();
@@ -82,7 +94,7 @@
   var leisteAktiv = null;
   $('leiste').innerHTML = Object.keys(SL.TYPEN).map(function (typ) {
     return '<button type="button" class="teil" data-typ="' + typ + '" title="' + esc(SL.TYPEN[typ].name) + ' – ziehen oder antippen">' +
-      SL.zeichnen.symbol(typ) + '<span>' + esc(SL.TYPEN[typ].name) + '</span></button>';
+      SL.zeichnen.symbol(typ) + '<span>' + esc(SL.TYPEN[typ].leiste || SL.TYPEN[typ].name) + '</span></button>';
   }).join('');
   $('leiste').addEventListener('pointerdown', function (e) {
     var b = e.target.closest('.teil');
@@ -121,11 +133,22 @@
   function animiere(t) {
     flussTempo.forEach(function (f) { f.p.style.strokeDashoffset = ruhig ? 0 : -((t / 1000 * f.v) % 16); });
   }
+  // Bei Wechselspannung läuft die Zeit: jedes Bild wird die Schaltung zum neuen Zeitpunkt berechnet.
+  var letzteZeit = null, letzteWerte = 0;
+  var brauchtSchleife = function () { return st.laeuft && (!!st.stat || (st.flussAn && !ruhig)); };
   function schleife(t) {
-    animiere(t);
-    animation = st.laeuft && st.flussAn && !ruhig ? requestAnimationFrame(schleife) : null;
+    if (st.stat && st.laeuft) {
+      var dt = letzteZeit == null ? 0 : Math.min(0.1, (t - letzteZeit) / 1000);
+      st.t += dt;
+      momentan();
+      zeichne();
+      if (t - letzteWerte > 150) { letzteWerte = t; werte(); }
+    } else animiere(t);
+    letzteZeit = t;
+    animation = brauchtSchleife() ? requestAnimationFrame(schleife) : null;
+    if (!animation) letzteZeit = null;
   }
-  function starteSchleife() { if (!animation && st.laeuft && st.flussAn && !ruhig) animation = requestAnimationFrame(schleife); }
+  function starteSchleife() { if (!animation && brauchtSchleife()) animation = requestAnimationFrame(schleife); }
 
   if (window.ResizeObserver) new ResizeObserver(function () { groesse = { w: box.clientWidth || 600, h: box.clientHeight || 400 }; bed.groesse = groesse; zeichne(); }).observe(box);
   groesse = { w: box.clientWidth || 600, h: box.clientHeight || 400 };
@@ -154,7 +177,10 @@
     Ohm: 'Widerstand misst man <b>ohne Spannung</b>: Simulation stoppen oder Quelle abklemmen, dann die Messleitungen an das Bauteil.',
   };
 
-  function anzeige(name, feld) { return '<div class="readout"><b data-zeige="' + feld + '">–</b><span>' + name + '</span></div>'; }
+  // name ist fester Text; html = true erlaubt <sub> im Namen
+  function anzeige(name, feld, html) { return '<div class="readout"><b data-zeige="' + feld + '">–</b><span>' + (html ? name : esc(name)) + '</span></div>'; }
+  var FREQ = [0.1, 0.2, 0.5, 1, 2, 5, 10, 25, 50];
+  var freqStufe = function (f) { var best = 0; FREQ.forEach(function (x, i) { if (Math.abs(Math.log(x / f)) < Math.abs(Math.log(FREQ[best] / f))) best = i; }); return best; };
   function knoepfe(b) {
     return '<div class="row knoepfe"><button type="button" data-aktion="drehen"' + (SL.TYPEN[b.typ].fest ? ' disabled title="Das Multimeter steht immer aufrecht."' : '') + '>⟳ Drehen</button>' +
       '<button type="button" data-aktion="loeschen" class="gefahr">Löschen</button></div>';
@@ -208,6 +234,29 @@
         h += '<p class="small">Strom fließt nur von der <b>Anode (A)</b> zur <b>Kathode (K)</b>, also in Pfeilrichtung des Dreiecks. In Durchlassrichtung fallen etwa 0,7 V ab, in Sperrrichtung sperrt sie.</p>' +
           '<div class="readouts">' + anzeige('Zustand', 'zustand') + anzeige('Spannung A→K', 'U') + anzeige('Stromstärke', 'I') + '</div>';
         break;
+      case 'wechsel':
+        h += '<label class="ctrl"><span>Effektivwert <output data-zeige="spannung"></output></span>' +
+          '<input type="range" min="0" max="24" step="0.1" data-wert="spannung" aria-label="Effektivwert der Spannung in Volt"></label>' +
+          '<div class="row"><label class="zahl">U<sub>eff</sub> = <input type="number" min="0" max="24" step="0.1" inputmode="decimal" data-wert="spannung" aria-label="Effektivwert in Volt (Zahl)"> V</label></div>' +
+          '<label class="ctrl"><span>Frequenz <output data-zeige="frequenz"></output></span>' +
+          '<input type="range" min="0" max="' + (FREQ.length - 1) + '" step="1" data-wert="frequenz-stufe" aria-label="Frequenz (Stufen)"></label>' +
+          '<div class="row"><label class="zahl">f = <input type="number" min="0.1" max="50" step="0.1" inputmode="decimal" data-wert="frequenz" aria-label="Frequenz in Hertz"> Hz</label></div>' +
+          '<p class="small muted" data-zeige="ac-info"></p>' +
+          '<div class="readouts">' + anzeige('Scheitelwert û', 'scheitel') + anzeige('Momentan u', 'U') + anzeige('Momentan i', 'I') + anzeige('Effektiv I', 'Ieff') + '</div>';
+        break;
+      case 'transistor':
+        h += '<p class="small">Ein kleiner Strom in die <b>Basis (B)</b> steuert einen großen Strom vom <b>Kollektor (C)</b> zum <b>Emitter (E)</b>. Hier gilt I<sub>C</sub> ≈ 100 · I<sub>B</sub>, bis der Transistor voll durchgeschaltet ist. Ohne Basisstrom sperrt er (Basis-Emitter-Spannung unter etwa 0,6 V).</p>' +
+          '<div class="readouts">' + anzeige('Zustand', 'zustand') + anzeige('U<sub>BE</sub>', 'Ube', true) + anzeige('U<sub>CE</sub>', 'U', true) + anzeige('I<sub>B</sub>', 'Ib', true) + anzeige('I<sub>C</sub>', 'I', true) + anzeige('I<sub>C</sub> / I<sub>B</sub>', 'beta', true) + '</div>';
+        break;
+      case 'und': case 'oder': case 'nicht': case 'xoder': {
+        var g = SL.GATTER[b.typ], zwei = !g.einEingang, reihen = zwei ? [[0, 0], [0, 1], [1, 0], [1, 1]] : [[0], [1]];
+        h += '<p class="small"><b>' + esc(g.name) + ' (' + esc(g.zeichen) + '):</b> ' + esc(g.regel) + '</p>' +
+          '<table class="wahrheit"><thead><tr><th>A</th>' + (zwei ? '<th>B</th>' : '') + '<th>Q</th></tr></thead><tbody>' +
+          reihen.map(function (x) { return '<tr data-zeile="' + x.join('') + '"><td>' + x.join('</td><td>') + '</td><td>' + g.f(x[0], x[1] || 0) + '</td></tr>'; }).join('') + '</tbody></table>' +
+          '<div class="readouts">' + anzeige('Eingang A', 'ea') + (zwei ? anzeige('Eingang B', 'eb') : '') + anzeige('Ausgang Q', 'q') + anzeige('U am Ausgang', 'U') + '</div>' +
+          '<p class="small muted">Das Gatter hat eine eingebaute 5-V-Versorgung. Verbinde den Anschluss ⊥ (unten) mit dem Minuspol. Ein Eingang ist 1 ab 3 V und 0 unter 2 V, offen gilt er als 0. Der Ausgang liefert 5 V (1) oder 0 V (0) – gut für eine 5-V-Lampe.</p>';
+        break;
+      }
       case 'messgeraet':
         h += '<div class="seg" role="group" aria-label="Messart">' + SL.MODI.map(function (m) {
           return '<button type="button" data-aktion="modus" data-modus="' + m + '" aria-pressed="false">' + (m === 'V' ? 'Spannung V' : m === 'A' ? 'Strom A' : 'Widerstand Ω') + '</button>';
@@ -217,6 +266,10 @@
           '<p class="small muted" data-zeige="anleitung"></p>' +
           '<p class="small muted">Rote Buchse: V/Ω/A, schwarze Buchse: COM. Ziehe von den Buchsen Messleitungen zu den Anschlüssen.</p>';
         break;
+    }
+    if (st.hatAC && st.laeuft && ['lampe', 'widerstand', 'diode', 'schalter'].indexOf(b.typ) >= 0) {
+      h += '<p class="small muted ac-hinweis">Wechselspannung: oben stehen die Momentanwerte, hier die Werte über eine Periode.</p>' +
+        '<div class="readouts">' + anzeige('U<sub>eff</sub>', 'Ueff', true) + anzeige('I<sub>eff</sub>', 'Ieff', true) + anzeige('P (Mittel)', 'Pm') + '</div>';
     }
     h += knoepfe(b);
     el.innerHTML = h;
@@ -236,6 +289,7 @@
       var b = M.finde(st.doc, sel.id), r = erg.bauteile[b.id] || {}, w = b.werte;
       var zeig = function (v, e) { return !lauf ? '–' : r.ungueltig ? 'Kurzschluss' : F(v, e); };
       setze('U', zeig(r.U, 'V')); setze('I', zeig(r.I, 'A')); setze('P', zeig(r.P, 'W'));
+      if (r.eff) { setze('Ueff', zeig(r.eff.Ueff, 'V')); setze('Ieff', zeig(r.eff.Ieff, 'A')); setze('Pm', zeig(r.eff.Pmittel, 'W')); }
       switch (b.typ) {
         case 'quelle':
           setze('spannung', F(w.spannung, 'V')); feld('spannung', w.spannung);
@@ -258,6 +312,26 @@
         case 'diode':
           setze('zustand', !lauf ? '–' : r.ungueltig ? 'überlastet' : r.zustand);
           break;
+        case 'wechsel':
+          setze('spannung', F(w.spannung, 'V')); feld('spannung', w.spannung);
+          setze('frequenz', String(w.frequenz).replace('.', ',') + ' Hz'); feld('frequenz', w.frequenz); feld('frequenz-stufe', freqStufe(w.frequenz));
+          setze('scheitel', F(w.spannung * Math.SQRT2, 'V'));
+          setze('Ieff', !lauf || !r.eff ? '–' : F(r.eff.Ieff, 'A'));
+          setze('ac-info', 'Die Spannung ändert sich wie eine Sinuskurve zwischen +' + F(w.spannung * Math.SQRT2, 'V') + ' und −' + F(w.spannung * Math.SQRT2, 'V') + '; die Stromrichtung wechselt ' + String(Math.round(w.frequenz * 20) / 10).replace('.', ',') + '-mal pro Sekunde. ' +
+            (w.frequenz < 5 ? 'Bei dieser Frequenz kannst du zusehen, wie Lampen pulsieren und der Strom die Richtung wechselt.' : 'So schnell sieht man das Wechseln nicht mehr: Lampen leuchten gleichmäßig, angezeigt werden Effektivwerte (~). Im Stromnetz sind es 50 Hz.'));
+          break;
+        case 'transistor':
+          setze('zustand', !lauf ? '–' : r.ungueltig ? 'überlastet' : r.zustand);
+          setze('Ube', zeig(r.Ube, 'V')); setze('Ib', zeig(r.Ib, 'A'));
+          setze('beta', !lauf || r.ungueltig || !r.Ib || r.zustand === 'sperrt' ? '–' : String(Math.round(r.I / r.Ib)).replace('.', ','));
+          break;
+        case 'und': case 'oder': case 'nicht': case 'xoder': {
+          var ein = r.ein || {};
+          setze('ea', lauf ? String(ein.a || 0) : '–'); setze('eb', lauf ? String(ein.b || 0) : '–'); setze('q', lauf ? String(r.q || 0) : '–');
+          var zeile = SL.GATTER[b.typ].einEingang ? String(ein.a || 0) : String(ein.a || 0) + String(ein.b || 0);
+          el.querySelectorAll('tr[data-zeile]').forEach(function (tr) { tr.classList.toggle('aktiv', lauf && tr.dataset.zeile === zeile); });
+          break;
+        }
         case 'messgeraet': {
           var m = erg.messgeraete[b.id] || {};
           el.querySelectorAll('[data-aktion="modus"]').forEach(function (x) { x.setAttribute('aria-pressed', String(x.dataset.modus === w.modus)); });
@@ -288,10 +362,13 @@
         var m = erg.messgeraete[b.id] || {};
         return '<tr data-id="' + b.id + '"><th>' + esc(b.name) + '</th><td colspan="3">' + esc(m.anzeige || '–') + (m.fehler ? ' <span class="warn">⚠</span>' : '') + '</td></tr>';
       }
-      if (!st.laeuft) { sp = i = '–'; } else if (r.ungueltig) { sp = '—'; i = 'Kurzschluss'; } else { sp = F(r.U, 'V'); i = F(r.I, 'A'); }
-      return '<tr data-id="' + b.id + '"><th>' + esc(b.name) + '</th><td>' + sp + '</td><td>' + i + '</td><td>' + (st.laeuft && !r.ungueltig ? F(r.P, 'W') : '–') + '</td></tr>';
+      var eff = erg.wechsel && erg.wechsel.schnell && r.eff, P = eff ? r.eff.Pmittel : r.P;
+      if (!st.laeuft) { sp = i = '–'; } else if (r.ungueltig) { sp = '—'; i = 'Kurzschluss'; } else if (eff) { sp = F(r.eff.Ueff, 'V') + '~'; i = F(r.eff.Ieff, 'A') + '~'; } else { sp = F(r.U, 'V'); i = F(r.I, 'A'); }
+      if (SL.TYPEN[b.typ].gatter && st.laeuft && !r.ungueltig) i = 'Q = ' + (r.q || 0);
+      return '<tr data-id="' + b.id + '"><th>' + esc(b.name) + '</th><td>' + sp + '</td><td>' + i + '</td><td>' + (st.laeuft && !r.ungueltig ? F(P, 'W') : '–') + '</td></tr>';
     }).join('');
-    $('tabelle').innerHTML = zeilen ? '<table class="werte"><thead><tr><th>Bauteil</th><th>U</th><th>I</th><th>P</th></tr></thead><tbody>' + zeilen + '</tbody></table>' : '';
+    $('tabelle').innerHTML = zeilen ? '<table class="werte"><thead><tr><th>Bauteil</th><th>U</th><th>I</th><th>P</th></tr></thead><tbody>' + zeilen + '</tbody></table>' +
+      (erg.wechsel ? '<p class="small muted">' + (erg.wechsel.schnell ? '~ = Effektivwert, P = mittlere Leistung.' : 'Momentanwerte – sie ändern sich laufend mit der Wechselspannung.') + '</p>' : '') : '';
   }
 
   // Eingaben im Eigenschaften-Bereich
@@ -308,6 +385,7 @@
     if (x.type === 'range') {
       if (!sliderMerk) { merke(); sliderMerk = true; }
       if (name === 'widerstand-log') aendereWert(b, 'widerstand', logZuR(x.value), true);
+      else if (name === 'frequenz-stufe') aendereWert(b, 'frequenz', FREQ[Number(x.value)], true);
       else aendereWert(b, name, Number(x.value), true);
     } else if (x.type === 'number') {
       var v = parseFloat(String(x.value).replace(',', '.'));
@@ -361,6 +439,7 @@
 
   function setzeLauf(an) {
     st.laeuft = an;
+    if (!an) { st.gatter = {}; st.t = 0; }
     var k = $('start');
     k.setAttribute('aria-pressed', String(an));
     k.innerHTML = an ? '■ Stopp' : '▶ Start';
