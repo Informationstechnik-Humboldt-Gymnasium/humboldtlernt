@@ -9,7 +9,7 @@ import { startLogin, finishLogin } from './src/iserv.js';
 import { lessonsFor, isValidSlug } from './src/lessons.js';
 import * as views from './src/views.js';
 import * as fviews from './src/views-fach.js';
-import { content, visibleFaecher, getFach, visibleGrades, getGrade, gradeOf, topicsOfGrade, topicProgress } from './src/faecher.js';
+import { content, visibleFaecher, getFach, getSimulation, visibleGrades, getGrade, gradeOf, topicsOfGrade, topicProgress } from './src/faecher.js';
 import { checkAnswer, revealSolution } from './src/exercises.js';
 
 const app = express();
@@ -154,6 +154,7 @@ app.get('/', (req, res) => {
 function usedLessonSlugs() {
   const used = new Set();
   for (const t of content().topicById.values()) for (const s of [...t.interaktiv, ...t.vertiefung]) used.add(s);
+  for (const f of content().faecher) for (const sim of f.simulationen) used.add(sim.lesson);
   return used;
 }
 
@@ -320,10 +321,17 @@ const fachOf = (req, res, next) => {
 };
 
 app.get('/:fach', fachOf, requireLogin, (req, res) => {
+  // Fächer ohne Klassenstufen (Sandbox) zeigen ihre Simulationen
+  if (!visibleGrades(req.fach).length) return res.send(fviews.simulationsPage({ user: req.user, fach: req.fach }));
   res.send(fviews.gradePickerPage({ user: req.user, fach: req.fach, grades: visibleGrades(req.fach), own: gradeOf(req.user.klasse), sets: progressSets(req.user.id) }));
 });
 
 app.get('/:fach/:stufe', fachOf, requireLogin, (req, res) => {
+  const sim = getSimulation(req.fach, req.params.stufe);
+  if (sim) {
+    if (!visibleLesson(req.user, sim.lesson)) return notFound(req, res, 'Diese Simulation ist nicht verfügbar.');
+    return res.send(fviews.simulationPage({ user: req.user, fach: req.fach, sim }));
+  }
   const grade = getGrade(req.fach, req.params.stufe);
   if (!grade) return notFound(req, res, 'Für diese Klassenstufe gibt es keine Inhalte.');
   res.send(fviews.gradePage({ user: req.user, fach: req.fach, grade, grades: visibleGrades(req.fach), sets: progressSets(req.user.id) }));
@@ -360,7 +368,8 @@ if (!fs.existsSync(config.lessonsDir)) console.warn(`⚠  Lektionsordner ${confi
   const c = content();
   for (const f of c.faecher) {
     const n = f.stufen.reduce((a, g) => a + topicsOfGrade(g).length, 0);
-    console.log(`✔  ${f.fach}: Klasse ${visibleGrades(f).map(g => g.stufe).join(', ') || '–'}, ${n} Themen`);
+    const teile = [visibleGrades(f).length ? `Klasse ${visibleGrades(f).map(g => g.stufe).join(', ')}, ${n} Themen` : '', f.simulationen.length ? `${f.simulationen.length} Simulation(en)` : ''].filter(Boolean);
+    console.log(`✔  ${f.fach}: ${teile.join(', ') || 'keine Inhalte'}`);
   }
   console.log(`✔  Zusammen ${c.topicById.size} Themen, ${c.exerciseById.size} Übungen${c.errors.length ? `, ${c.errors.length} Fehler (siehe oben)` : ''}`);
 }

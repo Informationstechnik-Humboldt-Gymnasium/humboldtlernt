@@ -11,6 +11,10 @@
 //
 // Ein Fach ist jeder Ordner unter content/ mit einer stufen.json. Der Ordnername ist die Adresse
 // (content/timp → /timp). Eine Klassenstufe erscheint, sobald es für sie mindestens ein Themenfeld gibt.
+//
+// Ein Fach kann statt (oder zusätzlich zu) Klassenstufen „simulationen“ haben (z. B. content/sandbox):
+//   "simulationen": [{ "id": "schaltkreis", "lesson": "<slug in lessons/>", "titel": "…", "untertitel": "…", "bereich": "…" }]
+// Jede Simulation ist eine Lerneinheit aus lessons/ und erscheint unter /<fach>/<id>.
 // Themen- und Übungs-IDs müssen über alle Fächer eindeutig sein (der Fortschritt wird über sie gespeichert).
 import fs from 'node:fs';
 import path from 'node:path';
@@ -30,7 +34,7 @@ export function loadContent(dir = path.join(config.contentDir, 'physik'), shared
   const err = (file, msg) => errors.push(`${path.relative(config.contentDir, file) || file}: ${msg}`);
   const id = path.basename(dir);
   const content = {
-    id, fach: id, kurz: '', beschreibung: '', quelle: '', reihenfolge: 100, stufen: [],
+    id, fach: id, kurz: '', beschreibung: '', quelle: '', reihenfolge: 100, stufen: [], simulationen: [],
     topicById: shared?.topicById || new Map(), exerciseById: shared?.exerciseById || new Map(), errors,
   };
 
@@ -40,6 +44,13 @@ export function loadContent(dir = path.join(config.contentDir, 'physik'), shared
     const s = readJson(stufenFile);
     Object.assign(content, { fach: s.fach || id, kurz: s.kurz || s.fach || id, beschreibung: s.beschreibung || '', quelle: s.quelle || '', reihenfolge: s.reihenfolge ?? 100 });
     stufen = s.stufen || [];
+    for (const [i, sim] of (Array.isArray(s.simulationen) ? s.simulationen : []).entries()) {
+      // Die Adresse /<fach>/<id> darf nicht wie eine Klassenstufe aussehen
+      if (!ID.test(sim?.id || '') || !/[a-z]/.test(sim.id)) { err(stufenFile, `Simulation ${i + 1}: "id" fehlt oder ist ungültig (a–z, 0–9, -, nicht nur Ziffern)`); continue; }
+      if (!ID.test(sim.lesson || '')) { err(stufenFile, `Simulation "${sim.id}": "lesson" fehlt oder ist ungültig`); continue; }
+      if (content.simulationen.some(x => x.id === sim.id)) { err(stufenFile, `Simulation "${sim.id}" gibt es doppelt`); continue; }
+      content.simulationen.push({ id: sim.id, lesson: sim.lesson, titel: sim.titel || sim.id, untertitel: sim.untertitel || '', bereich: sim.bereich || '', icon: sim.icon || '' });
+    }
   } catch (e) { err(stufenFile, e.code === 'ENOENT' ? 'fehlt' : e.message); }
 
   for (const st of stufen) {
@@ -127,8 +138,9 @@ export function content() {
 /** Klassenstufen eines Fachs, für die es Inhalte gibt. */
 export const visibleGrades = fach => fach.stufen.filter(s => s.themenfelder.length);
 export const getGrade = (fach, n) => visibleGrades(fach).find(s => s.stufe === Number(n));
-/** Fächer mit mindestens einer sichtbaren Klassenstufe. */
-export const visibleFaecher = () => content().faecher.filter(f => visibleGrades(f).length);
+/** Fächer mit mindestens einer sichtbaren Klassenstufe oder Simulation. */
+export const visibleFaecher = () => content().faecher.filter(f => visibleGrades(f).length || f.simulationen.length);
 export const getFach = id => visibleFaecher().find(f => f.id === id);
+export const getSimulation = (fach, id) => fach.simulationen.find(s => s.id === id);
 
 export { gradeOf, topicsOfGrade, topicProgress, gradeProgress } from './progress.js';

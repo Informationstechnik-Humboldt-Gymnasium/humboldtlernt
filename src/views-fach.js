@@ -38,6 +38,16 @@ export function subjectPickerPage({ user, faecher, own, sets }) {
 /** Karte eines Fachs: führt direkt zur eigenen Klassenstufe, sonst zur Auswahl. */
 export function subjectCard(fach, own, sets) {
   const grades = fach.stufen.filter(s => s.themenfelder.length);
+  const sims = fach.simulationen || [];
+  if (!grades.length && sims.length) return `
+    <a class="hero" href="/${esc(fach.id)}">
+      <div class="hero-text">
+        <span class="eyebrow">${esc(fach.fach)}</span>
+        <h2>Simulationen zum Ausprobieren</h2>
+        <p>${esc(fach.beschreibung || '')} ${sims.length === 1 ? `Neu: ${esc(sims[0].titel)}.` : `${sims.length} Simulationen.`}</p>
+      </div>
+      <span class="btn primary">Zur Übersicht →</span>
+    </a>`;
   const grade = grades.find(g => g.stufe === own && topicsOfGrade(g).length);
   const p = grade ? gradeProgress(grade, sets.solved, sets.understood) : null;
   const href = grade ? `/${fach.id}/${grade.stufe}` : `/${fach.id}`;
@@ -53,6 +63,42 @@ export function subjectCard(fach, own, sets) {
         <span class="small">${p.done} von ${p.total} Übungen gelöst</span></div>` : ''}
       <span class="btn primary">${p ? (p.done ? 'Weiterlernen' : 'Loslegen') : 'Zur Auswahl'} →</span>
     </a>`;
+}
+
+// ---------------------------------------------------------------- Simulationen eines Fachs (z. B. Sandbox)
+
+/** Übersicht der Simulationen. Neue Simulationen erscheinen hier, sobald sie in stufen.json stehen. */
+export function simulationsPage({ user, fach }) {
+  return layout({
+    title: fach.fach, user, body: `
+    <header class="page-head">
+      <h1>${esc(fach.fach)}</h1>
+      <p class="muted">${fach.beschreibung ? md(fach.beschreibung) : 'Wähle eine Simulation.'}</p>
+    </header>
+    <div class="cards sim-cards">
+      ${fach.simulationen.map(sim => `
+      <a class="card sim-card" href="/${esc(fach.id)}/${esc(sim.id)}">
+        ${sim.icon ? `<span class="sim-icon" aria-hidden="true">${esc(sim.icon)}</span>` : ''}
+        <div class="card-top"><h3>${esc(sim.titel)}</h3>${sim.bereich ? `<span class="chip">${esc(sim.bereich)}</span>` : ''}</div>
+        ${sim.untertitel ? `<p>${esc(sim.untertitel)}</p>` : ''}
+        <span class="sim-open">Öffnen →</span>
+      </a>`).join('')}
+    </div>`,
+  });
+}
+
+/** Eine Simulation im Vollbild: schmale Leiste mit Rückweg, darunter die Simulation. */
+export function simulationPage({ user, fach, sim }) {
+  return layout({
+    title: sim.titel, user, bare: true, wide: true, body: `
+    <div class="lesson-bar sim-bar">
+      <a href="/${esc(fach.id)}" class="back">← ${esc(fach.kurz)}</a>
+      <h1>${esc(sim.titel)}</h1>
+      ${sim.bereich ? `<span class="chip">${esc(sim.bereich)}</span>` : ''}
+    </div>
+    <iframe id="lesson" class="sim-frame" src="/inhalt/${esc(sim.lesson)}/index.html" title="${esc(sim.titel)}"
+      sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals allow-downloads"></iframe>`,
+  });
 }
 
 // ---------------------------------------------------------------- Klassenstufe wählen

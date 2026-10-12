@@ -1,7 +1,7 @@
 # humboldtlernt – Regeln für Claude-Sitzungen
 
 Lernplattform des Humboldt-Gymnasiums Berlin-Tegel (Node 20+, Express, SQLite, kein Build-Schritt).
-Fächer nach dem schulinternen Curriculum (SchiC): **Physik** und **Chemie** (Kl. 7–10) sowie **TIMP** (Wahlpflicht, Kl. 8–9).
+Fächer nach dem schulinternen Curriculum (SchiC): **Physik** und **Chemie** (Kl. 7–10) sowie **TIMP** (Wahlpflicht, Kl. 8–9). Dazu die **Sandbox** mit freien Simulationen (Schaltkreis-Labor).
 Mehrere Personen arbeiten gleichzeitig mit eigenen Claude-Sitzungen am Repo. Halte dich deshalb genau an diese Regeln.
 
 ## Zusammenarbeit (wichtig)
@@ -36,6 +36,8 @@ src/views-fach.js     Seiten eines Fachs    src/markup.js     Text-Auszeichnung
 ```
 
 Ein neues Fach ist nur ein neuer Ordner unter `content/` mit `stufen.json` (Adresse `/<ordnername>`). Wenn du ein Fach oder eine Klassenstufe hinzufügst, ergänze die Liste `SCHIC` in `test/content.test.mjs`.
+
+**Sandbox** (`content/sandbox/stufen.json`): Fach ohne Klassenstufen mit `"simulationen"` (`id`, `lesson`, `titel`, `untertitel`, `bereich`, `icon`). Neue Simulation = neuer Eintrag + Ordner `lessons/sandbox-<name>/`. Das Schaltkreis-Labor (`lessons/sandbox-schaltkreis/`) ist in Module geteilt: `modell.js` (Bauteile, Drähte, Speicherformat), `simulation.js` (MNA, Diode, Multimeter), `bedienung.js` (Zeiger/Touch), `zeichnen.js` (SVG), `labor.js` (Oberfläche); Tests in `test/schaltkreis.test.mjs`. Eigene `.js`/`.css` einer Lektion nur mit einfachem Dateinamen einbinden (`<script src="modell.js"></script>`), dann bettet die Testseite sie ein.
 
 ## Inhalte schreiben
 
