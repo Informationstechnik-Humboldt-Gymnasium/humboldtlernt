@@ -61,6 +61,10 @@ textarea { width: 100%; font-family: ui-monospace, Menlo, Consolas, monospace; f
 .lesson-bar h1 { font-size: 1.05rem; margin: 0; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .lesson-bar .back { text-decoration: none; white-space: nowrap; }
 #lesson { display: block; width: 100%; height: calc(100vh - 110px); border: 0; background: var(--bg); }
+/* Sandbox: Simulationen */
+#lesson.sim-frame { min-height: 560px; }
+.sim-card .sim-icon { font-size: 1.8rem; line-height: 1; }
+.sim-card .sim-open { margin-top: auto; padding-top: 6px; color: var(--accent); font-weight: 600; font-size: .92rem; }
 
 .panel { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; margin: 16px 0; }
 .panel h2 { margin-top: 0; }
@@ -77,6 +81,8 @@ th { color: var(--muted); font-weight: 600; font-size: .82rem; }
 @media (max-width: 600px) {
   main { padding: 20px 14px 40px; }
   .who { display: none; }
+  nav.top { flex-wrap: wrap; row-gap: 6px; }
+  .nav-right { flex-wrap: wrap; gap: 6px 14px; }
   .lesson-bar { padding: 8px 12px; gap: 10px; }
   .lesson-bar .btn { padding: 7px 10px; font-size: .85rem; }
 }

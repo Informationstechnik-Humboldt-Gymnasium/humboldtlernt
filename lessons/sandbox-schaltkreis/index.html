@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Schaltkreis-Labor</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<link rel="stylesheet" href="labor.css">
+</head>
+<body class="labor">
+<div class="app">
+  <header class="werkzeuge" role="toolbar" aria-label="Werkzeuge">
+    <h1 class="titel">Schaltkreis-Labor</h1>
+    <button type="button" id="start" class="primary" aria-pressed="false">▶ Start</button>
+    <button type="button" id="messwerte" aria-pressed="true" title="Messwerte an den Bauteilen anzeigen">Messwerte</button>
+    <button type="button" id="fluss" aria-pressed="true" title="Stromfluss auf den Drähten zeigen">Stromfluss</button>
+    <span class="trenner" aria-hidden="true"></span>
+    <button type="button" id="rueck" disabled title="Rückgängig (Strg+Z)">↶ Rückgängig</button>
+    <button type="button" id="beispiel">Beispiel</button>
+    <button type="button" id="leeren">Zurücksetzen</button>
+    <span class="trenner" aria-hidden="true"></span>
+    <button type="button" id="export" title="Schaltung als Datei speichern">Speichern</button>
+    <label class="knopf" title="Gespeicherte Schaltung laden">Laden<input type="file" id="import" accept=".json,application/json"></label>
+    <button type="button" id="hilfe" aria-expanded="false" aria-controls="hilfetext">? Hilfe</button>
+  </header>
+
+  <nav class="leiste" id="leiste" aria-label="Bauteile (auf die Arbeitsfläche ziehen oder antippen)"></nav>
+
+  <section class="flaeche-box" id="flaeche-box" aria-label="Arbeitsfläche">
+    <svg id="flaeche" role="img" aria-label="Arbeitsfläche mit der Schaltung. Bauteile ziehen zum Verschieben, Anschlüsse verbinden mit Drähten.">
+      <defs>
+        <pattern id="raster-muster" width="20" height="20" patternUnits="userSpaceOnUse">
+          <circle cx="0" cy="0" r="1.1" class="rasterpunkt"/><circle cx="20" cy="0" r="1.1" class="rasterpunkt"/>
+          <circle cx="0" cy="20" r="1.1" class="rasterpunkt"/><circle cx="20" cy="20" r="1.1" class="rasterpunkt"/>
+        </pattern>
+      </defs>
+      <rect id="raster" fill="url(#raster-muster)"/>
+      <g id="welt"></g>
+    </svg>
+    <div class="zoom" role="group" aria-label="Ansicht">
+      <button type="button" id="zoom-minus" aria-label="Verkleinern">−</button>
+      <button type="button" id="zoom-plus" aria-label="Vergrößern">+</button>
+      <button type="button" id="zoom-fit" aria-label="Alles zeigen">⤢</button>
+    </div>
+    <div class="leer" id="leer">
+      <p>Ziehe Bauteile aus der Leiste hierher<br>oder tippe sie an.</p>
+      <button type="button" id="leer-beispiel" class="primary">Beispielschaltung laden</button>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </section>
+
+  <aside class="seite">
+    <section class="lk-card karte" aria-labelledby="eig-titel">
+      <h2 id="eig-titel">Eigenschaften</h2>
+      <div id="eig"></div>
+    </section>
+    <section class="lk-card karte" aria-labelledby="mess-titel">
+      <h2 id="mess-titel">Messwerte und Hinweise</h2>
+      <p id="status" class="status" aria-live="polite"></p>
+      <ul id="meldungen" class="meldungen"></ul>
+      <div id="tabelle"></div>
+    </section>
+    <section class="lk-card karte hilfe" id="hilfetext" hidden aria-labelledby="hilfe-titel">
+      <h2 id="hilfe-titel">So funktioniert's</h2>
+      <ul class="small">
+        <li><b>Bauteil einfügen:</b> aus der Leiste auf die Fläche ziehen oder antippen.</li>
+        <li><b>Verbinden:</b> von einem Anschlusspunkt zu einem anderen ziehen – oder den ersten und dann den zweiten Anschluss antippen.</li>
+        <li><b>Verschieben:</b> Bauteil ziehen. Drähte wandern mit. <b>Drehen:</b> Taste R oder „⟳ Drehen“.</li>
+        <li><b>Schalter</b> und <b>Multimeter-Tasten</b> direkt antippen.</li>
+        <li><b>Löschen:</b> auswählen, dann „Löschen“ oder Entf-Taste. Ein Bauteil nimmt seine Drähte mit.</li>
+        <li><b>Ansicht:</b> leere Fläche ziehen verschiebt, Mausrad oder zwei Finger zoomen.</li>
+        <li><b>▶ Start</b> schaltet die Spannungsquellen ein. Die wandernden Striche zeigen die technische Stromrichtung (von + nach −), je schneller, desto größer die Stromstärke.</li>
+        <li><b>Multimeter:</b> Spannung parallel, Stromstärke in Reihe, Widerstand nur ohne Spannung messen.</li>
+      </ul>
+      <p class="small muted">Vereinfachungen: ideale Spannungsquelle, Drähte mit 1 mΩ, Lampen mit festem Widerstand, Diode nach der Shockley-Gleichung. Die Schaltung wird in diesem Browser gespeichert; mit „Speichern“ bekommst du eine Datei.</p>
+    </section>
+  </aside>
+</div>
+<script src="../../static/lesson-kit.js"></script>
+<script src="modell.js"></script>
+<script src="simulation.js"></script>
+<script src="bedienung.js"></script>
+<script src="zeichnen.js"></script>
+<script src="labor.js"></script>
+</body>
+</html>

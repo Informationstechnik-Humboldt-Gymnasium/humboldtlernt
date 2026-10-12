@@ -1,0 +1,151 @@
+/* Schaltkreis-Labor – Aussehen. Farben nur über CSS-Variablen (lesson-kit.css + die zwei Messleitungsfarben hier). */
+:root { --sonde-rot: #d0392b; --sonde-schwarz: #2b2a27; }
+@media (prefers-color-scheme: dark) { :root { --sonde-rot: #ff6f61; --sonde-schwarz: #8d8b84; } }
+
+html, body { height: 100%; }
+body.labor { padding: 0; overflow: hidden; }
+.app {
+  height: 100%; display: grid;
+  grid-template-columns: 118px minmax(0, 1fr) minmax(260px, 310px);
+  grid-template-rows: auto minmax(0, 1fr);
+  grid-template-areas: "werk werk werk" "leiste flaeche seite";
+}
+
+/* Werkzeugleiste */
+.werkzeuge { grid-area: werk; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; padding: 8px 10px; background: var(--card); border-bottom: 1px solid var(--border); }
+.werkzeuge .titel { font-size: 1rem; margin: 0 8px 0 2px; white-space: nowrap; }
+@media (max-width: 1180px) { .werkzeuge .titel { display: none; } }
+.werkzeuge button, .knopf { padding: 6px 11px; font-size: .88rem; }
+.werkzeuge button:disabled { opacity: .45; cursor: default; }
+#start { min-width: 88px; font-weight: 650; }
+#start[aria-pressed=true] { background: var(--warn-soft); color: var(--warn); border-color: var(--warn); }
+.trenner { width: 1px; align-self: stretch; background: var(--border); margin: 2px 2px; }
+.knopf { display: inline-flex; align-items: center; border: 1px solid var(--border); border-radius: 9px; background: var(--card); cursor: pointer; position: relative; overflow: hidden; }
+.knopf:hover { border-color: var(--muted); }
+.knopf:focus-within { outline: 3px solid var(--accent); outline-offset: 2px; }
+.knopf input { position: absolute; inset: 0; opacity: 0; cursor: pointer; font-size: 0; }
+
+/* Bauteilleiste */
+.leiste { grid-area: leiste; display: flex; flex-direction: column; gap: 6px; padding: 8px; overflow-y: auto; background: var(--card); border-right: 1px solid var(--border); }
+.teil { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 4px; font-size: .74rem; line-height: 1.2; text-align: center; touch-action: pan-y; user-select: none; -webkit-user-select: none; cursor: grab; }
+.teil svg { width: 74px; height: 40px; pointer-events: none; }
+.teil span { pointer-events: none; }
+
+/* Arbeitsfläche */
+.flaeche-box { grid-area: flaeche; position: relative; min-height: 0; overflow: hidden; background: var(--bg); }
+#flaeche { width: 100%; height: 100%; display: block; touch-action: none; user-select: none; -webkit-user-select: none; }
+.rasterpunkt { fill: var(--border); }
+.zoom { position: absolute; right: 10px; bottom: 10px; display: flex; gap: 4px; }
+.zoom button { width: 40px; height: 40px; padding: 0; font-size: 1.15rem; box-shadow: 0 1px 3px rgba(0, 0, 0, .12); }
+.leer { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; text-align: center; color: var(--muted); pointer-events: none; }
+.leer button { pointer-events: auto; }
+.toast { position: absolute; left: 50%; bottom: 60px; transform: translate(-50%, 10px); max-width: min(92%, 520px); padding: 8px 14px; border-radius: 10px; background: var(--text); color: var(--card); font-size: .88rem; opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; text-align: center; }
+.toast.zeigen { opacity: .96; transform: translate(-50%, 0); }
+.toast.fehler { background: var(--warn); color: #fff; }
+.toast.ok { background: var(--ok); color: #fff; }
+
+/* Seitenleiste */
+.seite { grid-area: seite; overflow-y: auto; padding: 10px; display: flex; flex-direction: column; gap: 10px; border-left: 1px solid var(--border); }
+.seite .lk-card + .lk-card { margin-top: 0; }
+.karte h2 { font-size: .95rem; }
+.karte h3 { font-size: .95rem; margin: 0 0 8px; }
+.zahl { display: inline-flex; align-items: center; gap: 4px; font-size: .9rem; }
+.zahl input { width: 92px; font: inherit; padding: 6px 8px; border-radius: 8px; border: 1px solid var(--border); background: var(--card); color: var(--text); }
+select { width: 100%; }
+.knoepfe { margin: 12px 0 0; }
+button.gefahr { color: var(--warn); }
+.readouts { grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); }
+.readout b { font-size: 1rem; overflow-wrap: anywhere; }
+.seg { display: flex; flex-wrap: wrap; margin-bottom: 10px; }
+.seg button { flex: 1 1 auto; font-size: .85rem; padding: 8px 6px; }
+.mm-anzeige { font: 700 1.6rem/1.2 ui-monospace, "Cascadia Mono", Consolas, monospace; text-align: right; padding: 10px 12px; border-radius: 10px; background: var(--soft-accent); font-variant-numeric: tabular-nums; }
+.mm-meldung { font-size: .88rem; margin: 8px 0; }
+.mm-meldung:empty { display: none; }
+.mm-meldung.fehler { color: var(--warn); font-weight: 600; }
+.mm-meldung.warnung { color: var(--warn); }
+.status { font-weight: 700; margin: 0 0 6px; }
+.status.ok { color: var(--ok); }
+.status.fehler { color: var(--warn); }
+.meldungen { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.meldungen li { font-size: .86rem; padding: 6px 9px; border-radius: 8px; background: var(--bg); }
+.meldungen li.fehler { background: var(--warn-soft); color: var(--warn); font-weight: 600; }
+.meldungen li.warnung { background: var(--warn-soft); color: var(--warn); }
+.meldungen li.ok { background: var(--ok-soft); color: var(--ok); }
+table.werte { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: .84rem; font-variant-numeric: tabular-nums; }
+table.werte th, table.werte td { text-align: left; padding: 4px 6px; border-bottom: 1px solid var(--border); }
+table.werte tbody tr { cursor: pointer; }
+table.werte tbody tr:hover { background: var(--bg); }
+.warn { color: var(--warn); }
+.hilfe ul { padding-left: 18px; margin: 0 0 8px; }
+.hilfe li { margin: 4px 0; }
+
+/* Schaltung (SVG) */
+#flaeche text { font-family: inherit; fill: var(--text); }
+.leiter { stroke: var(--line); stroke-width: 2.4; stroke-linecap: round; fill: none; }
+.leiter.duenn { stroke-width: 1.6; }
+.leiter.platte { stroke-width: 2.6; }
+.leiter.dick { stroke-width: 5.5; stroke-linecap: butt; }
+.leiter.hebel { stroke-width: 2.8; }
+.kontakt { fill: var(--card); stroke: var(--line); stroke-width: 1.6; }
+.kolben { fill: var(--lamp); stroke: var(--line); stroke-width: 2.2; }
+.kolben.ueberlast { stroke: var(--warn); stroke-width: 3; }
+.schein { fill: var(--lamp); }
+.koerper, .dreieck { fill: var(--card); stroke: var(--line); stroke-width: 2.2; }
+.dreieck { stroke-linejoin: round; }
+.dreieck.leitend { fill: var(--accent); }
+.geraet { fill: var(--card); stroke: var(--line); stroke-width: 2; }
+.display { fill: var(--soft-accent); stroke: var(--border); }
+.display.fehler { fill: var(--warn-soft); }
+#flaeche .display-wert { font: 700 15px ui-monospace, "Cascadia Mono", Consolas, monospace; }
+#flaeche .display-wert.klein { font-size: 11px; }
+#flaeche .display-modus { font-size: 10px; font-weight: 700; fill: var(--muted); }
+.taste { fill: var(--bg); stroke: var(--border); }
+.taste.aktiv { fill: var(--accent); stroke: var(--accent); }
+#flaeche .taste-text { font-size: 12px; font-weight: 700; }
+#flaeche .taste-text.aktiv { fill: var(--accent-text); }
+#flaeche .buchse-text { font-size: 8px; fill: var(--muted); }
+.buchse { stroke: var(--card); stroke-width: 1.5; }
+.buchse.schwarz { fill: var(--sonde-schwarz); }
+.buchse.rot { fill: var(--sonde-rot); }
+.flaeche { fill: transparent; }
+.flaeche.auswahl { fill: var(--soft-accent); fill-opacity: .55; stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 5 4; }
+.bauteil { cursor: grab; }
+.draht { fill: none; stroke: var(--line); stroke-width: 2.4; stroke-linejoin: round; stroke-linecap: round; }
+.draht.sonde-rot { stroke: var(--sonde-rot); }
+.draht.sonde-schwarz { stroke: var(--sonde-schwarz); }
+.draht.gewaehlt { stroke: var(--accent); stroke-width: 4.5; }
+.draht.kurz, .bauteil.kurz .leiter { stroke: var(--warn); animation: blinken 1s steps(2, jump-none) infinite; }
+@keyframes blinken { 50% { stroke-opacity: .35; } }
+.fluss { fill: none; stroke: var(--pos); stroke-width: 3.4; stroke-dasharray: 3 13; stroke-linecap: round; pointer-events: none; }
+.anschluss { fill: var(--card); stroke: var(--line); stroke-width: 1.6; }
+.anschluss.bereit { fill: var(--soft-accent); stroke: var(--accent); stroke-width: 2; }
+.anschluss.hover { fill: var(--soft-accent); stroke: var(--accent); stroke-width: 2.5; }
+.anschluss.start { fill: var(--accent); }
+.anschluss.ok { fill: var(--ok-soft); stroke: var(--ok); stroke-width: 3.5; }
+.anschluss.falsch { fill: var(--warn-soft); stroke: var(--warn); stroke-width: 3.5; }
+.gummiband { stroke: var(--accent); stroke-width: 2.4; stroke-dasharray: 6 5; stroke-linecap: round; pointer-events: none; }
+.gummiband.ok { stroke: var(--ok); }
+.gummiband.falsch { stroke: var(--warn); }
+.ebene-text text { paint-order: stroke; stroke: var(--bg); stroke-width: 3.5px; stroke-linejoin: round; pointer-events: none; }
+#flaeche .name { font-size: 12px; font-weight: 650; }
+#flaeche .wert { font-size: 11.5px; fill: var(--muted); font-variant-numeric: tabular-nums; }
+#flaeche .wert.warn { fill: var(--warn); font-weight: 700; }
+#flaeche .pol { font-size: 15px; font-weight: 700; }
+#flaeche .pol.klein { font-size: 10px; fill: var(--muted); }
+.geist { opacity: .5; pointer-events: none; }
+
+/* Schmale Bildschirme: alles untereinander, die Seite scrollt */
+@media (max-width: 860px) {
+  body.labor { overflow: auto; }
+  .app { height: auto; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto 440px auto; grid-template-areas: "werk" "leiste" "flaeche" "seite"; }
+  .leiste { flex-direction: row; overflow-x: auto; overflow-y: hidden; border-right: 0; border-bottom: 1px solid var(--border); }
+  .teil { flex: 0 0 auto; width: 92px; touch-action: pan-x; }
+  .seite { border-left: 0; overflow: visible; }
+  .werkzeuge .titel { display: none; }
+}
+@media (max-width: 480px) {
+  .app { grid-template-rows: auto auto 380px auto; }
+  .werkzeuge { gap: 4px; padding: 6px; }
+  .werkzeuge button, .knopf { padding: 6px 8px; font-size: .82rem; }
+  .trenner { display: none; }
+}

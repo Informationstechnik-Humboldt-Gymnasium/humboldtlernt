@@ -19,6 +19,10 @@ Lerneinheiten sie erledigt haben, und Lehrkräfte sehen den Fortschritt ihrer Kl
 - **Chemie nach dem Schulcurriculum:** Klasse 7 bis 10 mit allen 12 Themenfeldern (Feuer, Periodensystem,
   Gase, Wasser, Salze, Metalle, Säuren und Laugen, Stöchiometrie, Kohlenwasserstoffe, Alkohole,
   organische Säuren, Ester): 36 Themen, 252 Übungen und 10 interaktive Labore.
+- **Sandbox:** freie Simulationen ohne Klassenstufen. Erste Simulation ist das **Schaltkreis-Labor**:
+  Spannungsquelle, Schalter, Lampe, einstellbarer Widerstand, Diode und Multimeter frei verdrahten, mit
+  echter Schaltungsberechnung (Knotenpotenzialanalyse, Diode nach Shockley), Stromfluss-Animation,
+  Kurzschluss-Erkennung, Rückgängig, Speichern/Laden und Touch-Bedienung.
 - **Weitere Fächer** lassen sich ohne Programmieren ergänzen (siehe Abschnitt 6).
 
 > **Schnellstart:** Wie du das Projekt auf GitHub hochlädst und ohne IServ-Login testest,
@@ -221,6 +225,18 @@ automatisch im Menü und auf der Startseite. **Neues Fach:** Ordner anlegen, `st
 dann Themenfelder und Themen wie unten. Themen- und Übungs-IDs müssen über **alle** Fächer
 eindeutig sein (z. B. Präfix `timp-`), weil der Fortschritt über sie gespeichert wird.
 
+**Fach mit Simulationen statt Klassenstufen** (z. B. `content/sandbox/stufen.json`): `"stufen": []` und
+eine Liste `"simulationen"`. Jede Simulation ist eine Lerneinheit aus `lessons/` und erscheint auf der
+Übersicht `/sandbox` und unter `/sandbox/<id>`. Eine neue Simulation (Mechanik, Optik, …) ist nur ein
+weiterer Eintrag plus ein Ordner in `lessons/`:
+
+```json
+"simulationen": [
+  { "id": "schaltkreis", "lesson": "sandbox-schaltkreis", "titel": "Schaltkreis-Labor",
+    "untertitel": "Baue eigene elektrische Schaltungen …", "bereich": "Elektrizität", "icon": "⚡" }
+]
+```
+
 Aufbau am Beispiel Physik:
 
 ```
@@ -332,6 +348,7 @@ test/              automatische Tests (npm test)
 | `/admin` | Fortschritt pro Klasse (alle Fächer und Lerneinheiten), Schülerliste, Konten |
 | `/<fach>` | Klassenstufe wählen, z. B. `/physik`, `/timp` |
 | `/<fach>/<stufe>` | Themenfelder und Themen einer Klassenstufe |
+| `/<fach>/<simulation>` | Simulation eines Fachs ohne Klassenstufen, z. B. `/sandbox/schaltkreis` |
 | `/<fach>/<stufe>/<thema>` | Verstehen; `…/ueben` = Übungen |
 | `POST /api/uebung/<id>` | `{ "antwort": {…} }` → Bewertung; `/loesung`, `/selbst` |
 | `POST /api/verstanden/<thema>` | „Ich habe es verstanden“ |

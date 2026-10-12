@@ -171,6 +171,36 @@ test('Bestehende Funktionen: Lektionen, alter Fortschritt, Inhalte nur angemelde
   assert.equal((await t.req('/static/lesson-kit.js')).status, 200);
 });
 
+test('Sandbox: Simulationsübersicht, Schaltkreis-Labor und Rückweg zur Fachübersicht', async () => {
+  const t = await new Client().login('sandkasten', 'teacher');
+  const home = await (await t.req('/')).text();
+  assert.match(home, /class="eyebrow">Sandbox</);
+  assert.match(home, /href="\/sandbox"/);
+  assert.doesNotMatch(home, /href="\/lektion\/sandbox-schaltkreis"/, 'Simulation erscheint nicht doppelt als Lerneinheit');
+  const nav = await (await t.req('/physik')).text();
+  assert.match(nav, /<a href="\/sandbox">Sandbox<\/a>/, 'Sandbox im Hauptmenü');
+
+  const uebersicht = await (await t.req('/sandbox')).text();
+  assert.match(uebersicht, /Schaltkreis-Labor/);
+  assert.match(uebersicht, /Baue eigene elektrische Schaltungen und untersuche Spannung, Stromstärke und Widerstand\./);
+  assert.match(uebersicht, /href="\/sandbox\/schaltkreis"/);
+  assert.doesNotMatch(uebersicht, /grade-card/, 'keine Klassenstufen');
+
+  const labor = await (await t.req('/sandbox/schaltkreis')).text();
+  assert.match(labor, /src="\/inhalt\/sandbox-schaltkreis\/index\.html"/);
+  assert.match(labor, /<a href="\/sandbox" class="back">← Sandbox<\/a>/, 'Rückweg zur Sandbox-Übersicht');
+  for (const f of ['index.html', 'modell.js', 'simulation.js', 'bedienung.js', 'zeichnen.js', 'labor.js', 'labor.css']) {
+    assert.equal((await t.req(`/inhalt/sandbox-schaltkreis/${f}`)).status, 200, f);
+  }
+  assert.equal((await new Client().req('/sandbox/schaltkreis')).status, 302, 'nur angemeldet');
+  assert.equal((await t.req('/sandbox/gibts-nicht')).status, 404);
+  assert.equal((await t.req('/sandbox/9')).status, 404);
+  // Die anderen Fächer funktionieren weiter
+  assert.equal((await t.req('/physik/9')).status, 200);
+  assert.equal((await t.req('/physik/9/k9-ohmsches-gesetz')).status, 200);
+  assert.equal((await t.req('/admin?klasse=9a')).status, 200);
+});
+
 test('Anfragen von fremden Seiten werden abgelehnt', async () => {
   const c = await new Client().login('anna', 'teacher');
   const r = await fetch(BASE + '/api/verstanden/k9-ohmsches-gesetz', {

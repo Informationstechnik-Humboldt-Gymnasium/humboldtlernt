@@ -25,10 +25,14 @@ for (const fach of c.faecher) for (const grade of fach.stufen) {
   }
 }
 
+for (const f of c.faecher) for (const sim of f.simulationen) {
+  if (!fs.existsSync(path.join(config.lessonsDir, sim.lesson, 'index.html'))) errors.push(`${f.kurz} › Simulation „${sim.titel}“: Lerneinheit "${sim.lesson}" gibt es nicht in lessons/`);
+}
+
 for (const f of c.faecher) {
   const topics = [...c.topicById.values()].filter(t => t.fach === f.id).length;
   const exercises = [...c.exerciseById.values()].filter(e => e.fach === f.id).length;
-  console.log(`${f.fach}: Klasse ${f.stufen.filter(s => s.themenfelder.length).map(s => s.stufe).join(', ') || '–'} · ${topics} Themen · ${exercises} Übungen`);
+  console.log(`${f.fach}: Klasse ${f.stufen.filter(s => s.themenfelder.length).map(s => s.stufe).join(', ') || '–'} · ${topics} Themen · ${exercises} Übungen${f.simulationen.length ? ` · ${f.simulationen.length} Simulation(en)` : ''}`);
 }
 if (warnings.length) console.log(`\nHinweise (${warnings.length}):\n  ${warnings.join('\n  ')}`);
 if (errors.length) { console.error(`\nFehler (${errors.length}):\n  ${errors.join('\n  ')}`); process.exit(1); }

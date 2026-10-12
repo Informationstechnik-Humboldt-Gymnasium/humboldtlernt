@@ -1,0 +1,17 @@
+{
+  "fach": "Sandbox",
+  "kurz": "Sandbox",
+  "beschreibung": "Freie Experimentierräume ohne Aufgaben und ohne Klassenstufen: bauen, ausprobieren, nachmessen.",
+  "reihenfolge": 4,
+  "stufen": [],
+  "simulationen": [
+    {
+      "id": "schaltkreis",
+      "lesson": "sandbox-schaltkreis",
+      "titel": "Schaltkreis-Labor",
+      "untertitel": "Baue eigene elektrische Schaltungen und untersuche Spannung, Stromstärke und Widerstand.",
+      "bereich": "Elektrizität",
+      "icon": "⚡"
+    }
+  ]
+}

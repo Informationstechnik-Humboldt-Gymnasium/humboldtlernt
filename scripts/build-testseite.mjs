@@ -19,22 +19,29 @@ const read = f => fs.readFileSync(path.join(ROOT, f), 'utf8');
 const content = loadAll();
 if (content.errors.length) { console.error('Fehler in den Inhalten:\n  ' + content.errors.join('\n  ')); process.exit(1); }
 const faecher = content.faecher
-  .map(f => ({ id: f.id, fach: f.fach, kurz: f.kurz, beschreibung: f.beschreibung, stufen: f.stufen.filter(s => s.themenfelder.length) }))
-  .filter(f => f.stufen.length);
+  .map(f => ({ id: f.id, fach: f.fach, kurz: f.kurz, beschreibung: f.beschreibung, stufen: f.stufen.filter(s => s.themenfelder.length), simulationen: f.simulationen }))
+  .filter(f => f.stufen.length || f.simulationen.length);
 const stufen = faecher.flatMap(f => f.stufen);
 
 // ---------------------------------------------------------------- Interaktive Erklärungen einbetten
 const kitCss = read('public/lesson-kit.css');
 const kitJs = read('public/lesson-kit.js').replace(/<\/script/gi, '<\\/script');   // darf das eingebettete <script> nicht beenden
 const lessons = {};
-const slugs = new Set(stufen.flatMap(s => s.themenfelder.flatMap(tf => tf.topics.flatMap(t => [...t.interaktiv, ...t.vertiefung]))));
+const slugs = new Set([
+  ...stufen.flatMap(s => s.themenfelder.flatMap(tf => tf.topics.flatMap(t => [...t.interaktiv, ...t.vertiefung]))),
+  ...faecher.flatMap(f => f.simulationen.map(sim => sim.lesson)),
+]);
+// Eigene Dateien einer Lektion (z. B. <script src="modell.js">, <link rel="stylesheet" href="labor.css">) direkt einbetten
+const local = (dir, f) => fs.readFileSync(path.join(dir, f), 'utf8');
 for (const slug of slugs) {
   const dir = path.join(config.lessonsDir, slug);
   let meta = {};
   try { meta = JSON.parse(fs.readFileSync(path.join(dir, 'lesson.json'), 'utf8')); } catch {}
   const html = fs.readFileSync(path.join(dir, 'index.html'), 'utf8')
     .replace(/<link rel="stylesheet" href="\.\.\/\.\.\/static\/lesson-kit\.css">/, () => `<style>${kitCss}</style>`)
-    .replace(/<script src="\.\.\/\.\.\/static\/lesson-kit\.js"><\/script>/, () => `<script>${kitJs}</script>`);
+    .replace(/<script src="\.\.\/\.\.\/static\/lesson-kit\.js"><\/script>/, () => `<script>${kitJs}</script>`)
+    .replace(/<link rel="stylesheet" href="([a-z0-9-]+\.css)">/g, (_, f) => `<style>${local(dir, f)}</style>`)
+    .replace(/<script src="([a-z0-9-]+\.js)"><\/script>/g, (_, f) => `<script>${local(dir, f).replace(/<\/script/gi, '<\\/script')}</script>`);
   lessons[slug] = { slug, title: meta.title || slug, description: meta.description || '', html };
 }
 
@@ -132,6 +139,9 @@ function page(p) {
   if (!parts.length) return subjectPickerPage({ user: user(), faecher: FAECHER, own: gradeOf(state.klasse), sets: s });
   const fach = FAECHER.find(f => f.id === parts[0]);
   const grades = fach ? fach.stufen : [];
+  if (fach && !grades.length && parts.length === 1) return simulationsPage({ user: user(), fach });
+  const sim = fach && parts.length === 2 && (fach.simulationen || []).find(x => x.id === parts[1]);
+  if (sim && LESSONS[sim.lesson]) return simulationPage({ user: user(), fach, sim });
   if (fach && parts.length === 1) return gradePickerPage({ user: user(), fach, grades, own: gradeOf(state.klasse), sets: s });
   if (parts[0] === 'lektion' && LESSONS[parts[1]]) {
     const l = LESSONS[parts[1]];
