@@ -50,7 +50,30 @@
       return linie(-40, 0, -12, 0) + linie(12, 0, 40, 0) +
         '<path d="M-12 -12 L-12 12 L12 0 Z" class="dreieck' + (leitend ? ' leitend' : '') + '"/>' + linie(12, -12, 12, 12, 'leiter platte');
     },
+    wechsel: function () {
+      return linie(-40, 0, -17, 0) + linie(17, 0, 40, 0) + '<circle r="17" class="koerper"/>' +
+        '<path d="M-11 0 C-8 -13 -3 -13 0 0 S8 13 11 0" class="leiter duenn"/>';
+    },
+    transistor: function (b, r) {
+      var an = r && r.zustand && r.zustand !== 'sperrt';
+      return '<circle cx="2" cy="0" r="25" class="koerper' + (an ? ' leitend-hell' : '') + '"/>' +
+        linie(-40, 0, -10, 0) + linie(-10, -14, -10, 14, 'leiter platte') +
+        '<polyline points="-10,-7 20,-24 20,-40" class="leiter' + (an ? ' an' : '') + '"/>' +
+        '<polyline points="-10,7 20,24 20,40" class="leiter' + (an ? ' an' : '') + '"/>' +
+        '<polygon points="16,22 7.1,21.6 11,14.6" class="pfeil"/>';
+    },
   };
+  ['und', 'oder', 'nicht', 'xoder'].forEach(function (typ) {
+    SYMBOL[typ] = function (b, r) {
+      var q = r && r.q, ein = (r && r.ein) || {}, eins = typ === 'nicht';
+      var s = '<rect x="-24" y="-30" width="48" height="60" rx="3" class="koerper' + (q ? ' leitend-hell' : '') + '"/>';
+      if (eins) s += linie(-40, 0, -24, 0, 'leiter' + (ein.a ? ' an' : ''));
+      else s += linie(-40, -20, -24, -20, 'leiter' + (ein.a ? ' an' : '')) + linie(-40, 20, -24, 20, 'leiter' + (ein.b ? ' an' : ''));
+      if (eins) s += '<circle cx="28" cy="0" r="4" class="kontakt"/>' + linie(32, 0, 40, 0, 'leiter' + (q ? ' an' : ''));
+      else s += linie(24, 0, 40, 0, 'leiter' + (q ? ' an' : ''));
+      return s + linie(0, 30, 0, 40, 'leiter masse');
+    };
+  });
 
   function messgeraet(b, m) {
     var modus = b.werte.modus, kopf = modus === 'V' ? 'V' : modus === 'A' ? 'A' : 'Ω';
@@ -73,26 +96,59 @@
 
   var F = function (x, e) { return SL.fmt(x, e); };
 
+  /** Anzuzeigende Werte: bei schneller Wechselspannung Effektivwerte (mit „~“), sonst Momentanwerte. */
+  function wahl(r, z) {
+    var e = z.erg && z.erg.wechsel && z.erg.wechsel.schnell && r && r.eff;
+    return e ? { U: e.Ueff, I: e.Ieff, P: e.Pmittel, s: '~' } : { U: r && r.U, I: r && r.I, P: r && r.P, s: '' };
+  }
+
   /** Zeilen unter/neben einem Bauteil: Name, Kennwert und – wenn gewünscht – Messwerte. */
   function zeilen(b, r, z) {
-    var w = b.werte, out = [], lauf = z.laeuft && r && !r.ungueltig, mw = z.messwerte;
+    var w = b.werte, out = [], lauf = z.laeuft && r && !r.ungueltig, mw = z.messwerte, x = wahl(r, z);
+    if (lauf && mw && b.typ !== 'transistor' && !SL.TYPEN[b.typ].gatter) r = { U: x.U, I: x.I, P: x.P, zustand: r.zustand };
+    var UI = function () { return F(r.U, 'V') + x.s + ' · ' + F(r.I, 'A') + x.s; };
     switch (b.typ) {
+      case 'wechsel': out.push(b.name + '  ' + F(w.spannung, 'V') + '~ · ' + String(w.frequenz).replace('.', ',') + ' Hz'); if (lauf && mw) out.push((x.s ? 'I = ' + F(r.I, 'A') + '~' : 'u = ' + F(r.U, 'V') + ' · i = ' + F(r.I, 'A'))); break;
+      case 'transistor': out.push(b.name + (lauf ? '  ' + r.zustand : '')); if (lauf && mw && r.Ube != null) out.push('Ic = ' + F(r.I, 'A') + ' · Ib = ' + F(r.Ib, 'A')); break;
+      case 'und': case 'oder': case 'nicht': case 'xoder': out.push(b.name); break;
       case 'quelle': out.push(b.name + '  ' + F(w.spannung, 'V')); if (lauf && mw) out.push('I = ' + F(r.I, 'A')); break;
       case 'schalter': out.push(b.name + (w.geschlossen ? '  zu' : '  offen')); if (lauf && mw && !w.geschlossen && r.U != null) out.push('U = ' + F(r.U, 'V')); break;
-      case 'lampe': out.push(b.name); if (lauf && mw) { out.push(F(r.U, 'V') + ' · ' + F(r.I, 'A')); out.push('P = ' + F(r.P, 'W')); } break;
-      case 'widerstand': out.push(b.name + '  ' + F(w.widerstand, 'Ω')); if (lauf && mw) out.push(F(r.U, 'V') + ' · ' + F(r.I, 'A')); break;
-      case 'diode': out.push(b.name + (z.laeuft && r && !r.ungueltig ? '  ' + r.zustand : '')); if (lauf && mw) out.push(F(r.U, 'V') + ' · ' + F(r.I, 'A')); break;
+      case 'lampe': out.push(b.name); if (lauf && mw) { out.push(UI()); out.push('P = ' + F(r.P, 'W') + (x.s ? ' (Mittel)' : '')); } break;
+      case 'widerstand': out.push(b.name + '  ' + F(w.widerstand, 'Ω')); if (lauf && mw) out.push(UI()); break;
+      case 'diode': out.push(b.name + (z.laeuft && r && !r.ungueltig && !x.s ? '  ' + r.zustand : '')); if (lauf && mw) out.push(UI()); break;
     }
     if (z.laeuft && r && r.ungueltig) out.push('Kurzschluss!');
     return out;
   }
 
+  /** Ausdehnung eines Bauteils samt Anschlüssen (relativ zur Mitte, gedreht). */
+  function ausdehnung(b) {
+    var T = SL.TYPEN[b.typ], bx = T.box, pts = [[bx[0], bx[1]], [bx[0] + bx[2], bx[1] + bx[3]]];
+    for (var a in T.anschluesse) pts.push(T.anschluesse[a]);
+    var e = { x0: 0, x1: 0, y0: 0, y1: 0 };
+    pts.forEach(function (p) { var q = M().drehe(p[0], p[1], b.rot); e.x0 = Math.min(e.x0, q[0]); e.x1 = Math.max(e.x1, q[0]); e.y0 = Math.min(e.y0, q[1]); e.y1 = Math.max(e.y1, q[1]); });
+    return e;
+  }
+
   function beschriftung(b, r, z) {
-    var liste = zeilen(b, r, z), senkrecht = b.rot === 90 || b.rot === 270, s = '';
+    var liste = zeilen(b, r, z), senkrecht = b.rot === 90 || b.rot === 270, s = '', aus = ausdehnung(b);
+    var rechts = b.typ === 'transistor' || SL.TYPEN[b.typ].gatter ? Math.max(aus.x1 + 4, 26) : 26;
     liste.forEach(function (t, i) {
       var cls = i === 0 ? 'name' : t === 'Kurzschluss!' ? 'wert warn' : 'wert';
-      s += senkrecht ? text(b.x + 26, b.y - 8 + i * 15 - (liste.length - 1) * 5, t, cls, 'start') : text(b.x, b.y + 38 + i * 15, t, cls, 'middle');
+      s += senkrecht ? text(b.x + rechts, b.y - 8 + i * 15 - (liste.length - 1) * 5, t, cls, 'start') : text(b.x, b.y + Math.max(aus.y1, 24) + 14 + i * 15, t, cls, 'middle');
     });
+    if (SL.TYPEN[b.typ].gatter) {
+      var g = SL.GATTER[b.typ], mitte = wp(b, 0, 0);
+      s += text(mitte.x, mitte.y + 6, g.zeichen, 'gatter-zeichen', 'middle');
+      if (z.laeuft && r && !r.ungueltig) {
+        var pegel = function (lx, ly, wert) { var p = wp(b, lx, ly); return text(p.x, p.y + 4, String(wert), 'pegel' + (wert ? ' an' : ''), 'middle'); };
+        if (g.einEingang) s += pegel(-32, -9, r.ein.a); else s += pegel(-32, -29, r.ein.a) + pegel(-32, 11, r.ein.b);
+        s += pegel(34, -9, r.q);
+      }
+    }
+    if (b.typ === 'transistor') {
+      [['b', -32, -9], ['c', 30, -34], ['e', 30, 34]].forEach(function (x) { var p = wp(b, x[1], x[2]); s += text(p.x, p.y + 4, x[0].toUpperCase(), 'pol klein', 'middle'); });
+    }
     // Pole und Anschlüsse kennzeichnen
     if (b.typ === 'quelle') {
       var p = M().pluspol(b), lp = SL.TYPEN.quelle.anschluesse[p][0] < 0 ? -1 : 1;
@@ -136,6 +192,8 @@
       if (z.laeuft && z.flussAn && r.I && !r.ungueltig) {
         var v = tempo(r.I);
         if (v) fluss += '<path d="' + pfad(r.I > 0 ? pts : pts.slice().reverse()) + '" class="fluss" data-tempo="' + n1(v) + '"/>';
+      } else if (z.laeuft && z.flussAn && r.wechselnd) {
+        fluss += '<path d="' + pfad(pts) + '" class="fluss wechselnd" data-tempo="0"/>';
       }
     });
     s += '<g class="ebene-draehte">' + draehte + '</g><g class="ebene-fluss" aria-hidden="true">' + fluss + '</g>';
@@ -180,9 +238,10 @@
   /** Kleines Symbol für die Bauteilleiste. */
   function symbol(typ) {
     var b = { id: '_', typ: typ, name: '', x: 0, y: 0, rot: 0, werte: M().normalisiere(typ, SL.TYPEN[typ].werte) };
-    var vb = typ === 'messgeraet' ? '-50 -60 100 128' : '-44 -26 88 52';
+    var vb = typ === 'messgeraet' ? '-50 -60 100 128' : typ === 'transistor' ? '-44 -44 80 88' : SL.TYPEN[typ].gatter ? '-44 -34 88 78' : '-44 -26 88 52';
     var inhalt = typ === 'messgeraet' ? messgeraet(b, null) : SYMBOL[typ](b, null);
     if (typ === 'quelle') inhalt += text(-20, -10, '+', 'pol', 'middle') + text(20, -10, '−', 'pol', 'middle');
+    if (SL.TYPEN[typ].gatter) inhalt += text(0, 7, SL.GATTER[typ].zeichen, 'gatter-zeichen', 'middle');
     return '<svg viewBox="' + vb + '" aria-hidden="true" focusable="false">' + inhalt + '</svg>';
   }
 

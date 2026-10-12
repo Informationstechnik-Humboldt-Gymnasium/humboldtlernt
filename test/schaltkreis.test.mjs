@@ -11,7 +11,7 @@ const DIR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../lesso
 const ctx = vm.createContext({});
 for (const f of ['modell.js', 'simulation.js', 'bedienung.js', 'zeichnen.js']) vm.runInContext(fs.readFileSync(path.join(DIR, f), 'utf8'), ctx, { filename: f });
 const SL = ctx.SL, M = SL.modell;
-const sim = (doc, laeuft = true) => SL.sim.simuliere(doc, laeuft);
+const sim = (doc, laeuft = true, opt) => SL.sim.simuliere(doc, laeuft, opt);
 const nah = (ist, soll, tol, text) => assert.ok(Math.abs(ist - soll) <= tol, `${text || ''} erwartet ≈ ${soll}, ist ${ist}`);
 
 /** Reihenschaltung: Quelle → Teil 1 → Teil 2 → … → zurück zur Quelle. teile: [[typ, werte], …] */
@@ -34,7 +34,7 @@ function pruefeKirchhoff(doc, erg) {
   for (const [id, r] of Object.entries(erg.draehte)) assert.ok(Number.isFinite(r.I), `Draht ${id}`);
   if (!erg.laeuft || erg.status !== 'ok') return;
   for (const b of doc.bauteile) {
-    if (b.typ === 'messgeraet') continue;
+    if (b.typ === 'messgeraet' || b.typ === 'transistor' || SL.TYPEN[b.typ].gatter) continue; // Mehrpole: eigene Tests
     const r = erg.bauteile[b.id];
     const ein = b.typ === 'quelle' ? M.pluspol(b) : 'a';
     // Strom, der über die Drähte in den Anschluss hineinfließt = Strom, der im Bauteil weiterfließt
@@ -44,7 +44,7 @@ function pruefeKirchhoff(doc, erg) {
       if (d.nach.b === b.id && d.nach.a === ein) zu += I;
       if (d.von.b === b.id && d.von.a === ein) zu -= I;
     }
-    const imBauteil = b.typ === 'quelle' ? -r.I : r.I;
+    const imBauteil = b.typ === 'quelle' || b.typ === 'wechsel' ? -r.I : r.I;
     nah(zu, imBauteil, 1e-6 + 1e-6 * Math.abs(imBauteil), `Knotenregel an ${b.name}:`);
   }
 }
@@ -484,6 +484,12 @@ test('19 · Robustheit: 400 zufällige Schaltungen ohne Absturz, NaN oder Endlos
       for (const m of Object.values(erg.messgeraete)) assert.equal(typeof m.anzeige, 'string');
       assert.ok(SL.zeichnen.szene({ doc, erg, laeuft, messwerte: true, flussAn: true }).length > 0);
     }
+    if (n % 10 === 0) {
+      const stat = SL.sim.zeitverlauf(doc, true, {});
+      const k = SL.sim.kombiniere(sim(doc, true, { t: 0.13 }), stat);
+      for (const r of Object.values(k.bauteile)) for (const x of ['U', 'I', 'P']) if (r[x] != null) assert.ok(Number.isFinite(r[x]));
+      assert.ok(SL.zeichnen.szene({ doc, erg: k, laeuft: true, messwerte: true, flussAn: true }).length > 0);
+    }
   }
   assert.ok(Date.now() - start < 15000, 'schnell genug');
 });
@@ -496,4 +502,195 @@ test('20 · Zahlen werden mit passender Einheit angezeigt', () => {
   assert.equal(SL.fmt(-0.5, 'A'), '−500 mA');
   assert.equal(SL.fmt(NaN, 'V'), '–');
   assert.equal(SL.fmt(0.0000123, 'A'), '12,3 µA');
+});
+
+// ---------------------------------------------------------------- Wechselspannung, Transistor, Logikgatter
+
+/** Quelle (Typ beliebig) in Reihe mit Teilen, wie reihe(), aber mit freier Quelle. */
+function reiheMit(quelle, werte, teile) {
+  const doc = M.neu();
+  const u = M.bauteil(doc, quelle, 0, 0, werte);
+  const bs = teile.map(([typ, w], i) => M.bauteil(doc, typ, 200 * (i + 1), 200, w));
+  let vorher = { b: u.id, a: 'a' };
+  for (const b of bs) { M.verbinde(doc, vorher, { b: b.id, a: 'a' }); vorher = { b: b.id, a: b.typ === 'diode' ? 'k' : 'b' }; }
+  M.verbinde(doc, vorher, { b: u.id, a: 'b' });
+  return { doc, u, bs };
+}
+
+test('21 · Wechselspannung: Momentanwerte folgen dem Sinus, Effektivwert = Scheitelwert / √2', () => {
+  const { doc, bs: [r] } = reiheMit('wechsel', { spannung: 10, frequenz: 2 }, [['widerstand', { widerstand: 100 }]]);
+  const T = 1 / 2;
+  nah(sim(doc, true, { t: T / 4 }).bauteile[r.id].I, 10 * Math.SQRT2 / 100, 1e-4, 'Scheitelwert nach T/4:');
+  nah(sim(doc, true, { t: 3 * T / 4 }).bauteile[r.id].I, -10 * Math.SQRT2 / 100, 1e-4, 'Richtung kehrt sich um:');
+  nah(sim(doc, true, { t: T / 2 }).bauteile[r.id].I, 0, 1e-4, 'Nulldurchgang:');
+  const stat = SL.sim.zeitverlauf(doc, true);
+  nah(stat.bauteile[r.id].Ieff, 0.1, 1e-3, 'Effektivwert 10 V / 100 Ω:');
+  nah(stat.bauteile[r.id].Imittel, 0, 1e-3, 'Mittelwert:');
+  nah(stat.bauteile[r.id].Pmittel, 1, 0.01, 'mittlere Leistung:');
+  assert.equal(stat.schnell, false);
+  assert.ok(stat.meldungen.some(m => /Wechselstrom/.test(m.text)));
+  pruefeKirchhoff(doc, sim(doc, true, { t: 0.1 }));
+  assert.equal(SL.sim.zeitverlauf(doc, false), null, 'gestoppt: kein Zeitverlauf');
+  // Frequenz und Spannung werden begrenzt
+  M.setzeWert(doc, doc.bauteile[0].id, 'frequenz', 500);
+  assert.equal(doc.bauteile[0].werte.frequenz, 50);
+});
+
+test('22 · Wechselspannung: Lampe leuchtet bei 50 Hz gleichmäßig, Messgerät zeigt den Effektivwert', () => {
+  const { doc, u, bs: [l] } = reiheMit('wechsel', { spannung: 6, frequenz: 50 }, [['lampe']]);
+  const m = M.bauteil(doc, 'messgeraet', 400, -100, { modus: 'V' });
+  M.verbinde(doc, { b: m.id, a: 'v' }, { b: l.id, a: 'a' });
+  M.verbinde(doc, { b: m.id, a: 'com' }, { b: l.id, a: 'b' });
+  const stat = SL.sim.zeitverlauf(doc, true);
+  assert.equal(stat.schnell, true);
+  nah(stat.bauteile[l.id].hell, 1, 0.01, '6 V effektiv an 6-V-Lampe:');
+  const k = SL.sim.kombiniere(sim(doc, true, { t: 0.0001 }), stat);
+  nah(k.bauteile[l.id].hell, 1, 0.01, 'auch kurz nach dem Nulldurchgang volle (mittlere) Helligkeit:');
+  assert.equal(k.bauteile[l.id].zustand, 'an');
+  assert.equal(k.messgeraete[m.id].effektiv, true);
+  nah(k.messgeraete[m.id].wert, 6, 0.05, 'Effektivwert am Messgerät:');
+  assert.match(k.messgeraete[m.id].anzeige, /V~$/);
+  assert.ok(Object.values(k.draehte).some(d => d.wechselnd), 'Drähte: Strom ohne mittlere Richtung');
+  assert.ok(!k.meldungen.some(x => /durchbrennen/.test(x.text)), 'keine falsche Überlast durch den Scheitelwert');
+  void u;
+});
+
+test('23 · Wechselspannung mit Diode: Einweggleichrichter', () => {
+  const { doc, bs: [d, r] } = reiheMit('wechsel', { spannung: 10, frequenz: 1 }, [['diode'], ['widerstand', { widerstand: 100 }]]);
+  assert.equal(sim(doc, true, { t: 0.25 }).bauteile[d.id].zustand, 'leitend');
+  assert.equal(sim(doc, true, { t: 0.75 }).bauteile[d.id].zustand, 'sperrend');
+  assert.equal(sim(doc, true, { t: 0.75 }).bauteile[r.id].I, 0);
+  const stat = SL.sim.zeitverlauf(doc, true);
+  assert.ok(stat.bauteile[r.id].Imittel > 0.03, `Mittelwert ${stat.bauteile[r.id].Imittel} – der Strom fließt nur in eine Richtung`);
+  assert.ok(stat.bauteile[r.id].Ieff < 0.1);
+});
+
+/** Transistor als Schalter: Quelle 6 V, Lampe im Kollektorkreis, Basis über R_B an +. */
+function transistorSchaltung(rb) {
+  const doc = M.neu();
+  const u = M.bauteil(doc, 'quelle', 0, 0, { spannung: 6 });
+  const l = M.bauteil(doc, 'lampe', 200, -100);
+  const t = M.bauteil(doc, 'transistor', 200, 100);
+  const r = M.bauteil(doc, 'widerstand', 100, 100, { widerstand: rb });
+  M.verbinde(doc, { b: u.id, a: 'a' }, { b: l.id, a: 'a' });
+  M.verbinde(doc, { b: l.id, a: 'b' }, { b: t.id, a: 'c' });
+  M.verbinde(doc, { b: t.id, a: 'e' }, { b: u.id, a: 'b' });
+  M.verbinde(doc, { b: u.id, a: 'a' }, { b: r.id, a: 'a' });
+  M.verbinde(doc, { b: r.id, a: 'b' }, { b: t.id, a: 'b' });
+  return { doc, u, l, t, r };
+}
+
+test('24 · Transistor: sperrt ohne Basisstrom, verstärkt (I_C ≈ β · I_B), schaltet voll durch', () => {
+  // Basis offen: sperrt
+  let x = transistorSchaltung(1000);
+  M.loesche(x.doc, { art: 'bauteil', id: x.r.id });
+  let e = sim(x.doc);
+  assert.equal(e.bauteile[x.t.id].zustand, 'sperrt');
+  assert.equal(e.bauteile[x.l.id].zustand, 'aus');
+  // 100 kΩ an der Basis: kleiner Basisstrom, Kollektorstrom ≈ 100-fach
+  x = transistorSchaltung(100000);
+  e = sim(x.doc);
+  const rt = e.bauteile[x.t.id];
+  assert.equal(rt.zustand, 'verstärkt');
+  nah(rt.I / rt.Ib, SL.K.BETA_F, 2, 'Stromverstärkung:');
+  assert.ok(rt.Ube > 0.5 && rt.Ube < 0.75, `U_BE = ${rt.Ube}`);
+  // 1 kΩ: Transistor schaltet voll durch, Lampe leuchtet fast voll
+  x = transistorSchaltung(1000);
+  e = sim(x.doc);
+  assert.equal(e.bauteile[x.t.id].zustand, 'durchgeschaltet');
+  assert.ok(e.bauteile[x.t.id].U < 0.3, `U_CE = ${e.bauteile[x.t.id].U}`);
+  assert.ok(e.bauteile[x.l.id].hell > 0.9);
+  // Knotenregel am Transistor: I_E = I_B + I_C (aus der Quelle)
+  nah(e.bauteile[x.u.id].I, e.bauteile[x.t.id].I + e.bauteile[x.t.id].Ib, 1e-6, 'Quellenstrom = I_C + I_B:');
+});
+
+/** Logikgatter mit zwei Schaltern an den Eingängen und einer 5-V-Lampe am Ausgang. */
+function gatterSchaltung(typ, a, b) {
+  const doc = M.neu();
+  const u = M.bauteil(doc, 'quelle', -200, 0, { spannung: 5 });
+  const g = M.bauteil(doc, typ, 100, 0);
+  const l = M.bauteil(doc, 'lampe', 300, 0, { typ: '5v-1w' });
+  const s1 = M.bauteil(doc, 'schalter', 0, -100, { geschlossen: !!a });
+  M.verbinde(doc, { b: u.id, a: 'a' }, { b: s1.id, a: 'a' });
+  M.verbinde(doc, { b: s1.id, a: 'b' }, { b: g.id, a: 'a' });
+  if (typ !== 'nicht') {
+    const s2 = M.bauteil(doc, 'schalter', 0, 100, { geschlossen: !!b });
+    M.verbinde(doc, { b: u.id, a: 'a' }, { b: s2.id, a: 'a' });
+    M.verbinde(doc, { b: s2.id, a: 'b' }, { b: g.id, a: 'b' });
+  }
+  M.verbinde(doc, { b: g.id, a: 'm' }, { b: u.id, a: 'b' });
+  M.verbinde(doc, { b: g.id, a: 'q' }, { b: l.id, a: 'a' });
+  M.verbinde(doc, { b: l.id, a: 'b' }, { b: u.id, a: 'b' });
+  return { doc, g, l };
+}
+
+test('25 · Logikgatter UND, ODER, NICHT, XODER: Wahrheitstafeln', () => {
+  const tafeln = { und: [0, 0, 0, 1], oder: [0, 1, 1, 1], xoder: [0, 1, 1, 0] };
+  for (const [typ, q] of Object.entries(tafeln)) {
+    [[0, 0], [0, 1], [1, 0], [1, 1]].forEach(([a, b], i) => {
+      const { doc, g, l } = gatterSchaltung(typ, a, b);
+      const e = sim(doc);
+      assert.equal(e.bauteile[g.id].q, q[i], `${typ} ${a}${b}`);
+      assert.deepEqual({ ...e.bauteile[g.id].ein }, { a, b }, `${typ}: Eingänge erkannt`);
+      assert.equal(e.bauteile[l.id].zustand, q[i] ? 'an' : 'aus', `${typ} ${a}${b}: Lampe`);
+      assert.ok(!e.meldungen.some(m => m.art === 'fehler'));
+    });
+  }
+  for (const [a, q] of [[0, 1], [1, 0]]) {
+    const { doc, g, l } = gatterSchaltung('nicht', a);
+    const e = sim(doc);
+    assert.equal(e.bauteile[g.id].q, q, `NICHT ${a}`);
+    assert.equal(e.bauteile[l.id].zustand, q ? 'an' : 'aus');
+    nah(e.bauteile[g.id].U, q ? 5 * 25 / 26 : 0, 0.01, 'Ausgangsspannung mit 1 Ω Innenwiderstand:');
+  }
+  assert.equal(SL.GATTER.xoder.f(1, 1), 0);
+});
+
+test('26 · Logikgatter: Hinweise bei fehlender Masse, Rückkopplung und Überlast; Gatter hintereinander', () => {
+  // Ohne Masse-Anschluss
+  let x = gatterSchaltung('und', 1, 1);
+  x.doc.draehte = x.doc.draehte.filter(d => !(d.von.b === x.g.id && d.von.a === 'm'));
+  assert.ok(sim(x.doc).meldungen.some(m => /Masseanschluss/.test(m.text)));
+  // NICHT-Gatter mit Ausgang auf eigenem Eingang: schwingt, aber kein Absturz
+  const doc = M.neu();
+  const u = M.bauteil(doc, 'quelle', 0, 0, { spannung: 5 });
+  const n = M.bauteil(doc, 'nicht', 200, 0);
+  M.verbinde(doc, { b: n.id, a: 'q' }, { b: n.id, a: 'a' });
+  M.verbinde(doc, { b: n.id, a: 'm' }, { b: u.id, a: 'b' });
+  const e = sim(doc);
+  assert.ok(e.meldungen.some(m => /schalten ständig um/.test(m.text)));
+  // Ausgang direkt auf Masse: überlastet
+  x = gatterSchaltung('oder', 1, 0);
+  M.verbinde(x.doc, { b: x.g.id, a: 'q' }, { b: x.g.id, a: 'm' });
+  assert.ok(sim(x.doc).meldungen.some(m => /überlastet/.test(m.text)));
+  // UND → NICHT = NAND
+  x = gatterSchaltung('und', 1, 1);
+  const nicht = M.bauteil(x.doc, 'nicht', 300, 200);
+  const ld = x.doc.draehte.find(d => d.von.b === x.g.id && d.von.a === 'q');
+  M.loesche(x.doc, { art: 'draht', id: ld.id });
+  M.verbinde(x.doc, { b: x.g.id, a: 'q' }, { b: nicht.id, a: 'a' });
+  M.verbinde(x.doc, { b: nicht.id, a: 'q' }, { b: x.l.id, a: 'a' });
+  M.verbinde(x.doc, { b: nicht.id, a: 'm' }, { b: x.doc.bauteile[0].id, a: 'b' });
+  const r = sim(x.doc);
+  assert.equal(r.bauteile[nicht.id].q, 0);
+  assert.equal(r.bauteile[x.l.id].zustand, 'aus', 'NAND: 1,1 → 0');
+  // Widerstandsmessung an einem eingeschalteten Gatter wird abgelehnt
+  const mm = M.bauteil(x.doc, 'messgeraet', 500, 0, { modus: 'Ohm' });
+  M.verbinde(x.doc, { b: mm.id, a: 'v' }, { b: x.l.id, a: 'a' });
+  M.verbinde(x.doc, { b: mm.id, a: 'com' }, { b: x.l.id, a: 'b' });
+  assert.match(sim(x.doc).messgeraete[mm.id].fehler, /ohne Spannung/);
+});
+
+test('27 · Neue Bauteile: Speichern/Laden, Anschlussnamen, Zeichnen', () => {
+  const doc = M.neu();
+  for (const typ of ['wechsel', 'transistor', 'und', 'oder', 'nicht', 'xoder']) M.bauteil(doc, typ, 0, 0);
+  const r = M.importiere(M.exportiere(doc));
+  assert.equal(r.ok, true);
+  assert.deepEqual([...r.doc.bauteile.map(b => b.name)], ['G1', 'T1', 'UND1', 'ODER1', 'NICHT1', 'XODER1']);
+  const t = doc.bauteile[1];
+  assert.equal(M.anschlussName(t, 'c'), 'Kollektor (C)');
+  assert.equal(M.anschlussName(doc.bauteile[2], 'm'), 'Masse (⊥)');
+  const svg = SL.zeichnen.szene({ doc, erg: sim(doc), laeuft: true, messwerte: true, flussAn: true });
+  assert.match(svg, /≥1/); assert.match(svg, /=1/); assert.match(svg, /&amp;/);
+  for (const typ of Object.keys(SL.TYPEN)) assert.match(SL.zeichnen.symbol(typ), /^<svg/);
 });

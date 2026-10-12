@@ -29,7 +29,10 @@ body.labor { padding: 0; overflow: hidden; }
 .leiste { grid-area: leiste; display: flex; flex-direction: column; gap: 6px; padding: 8px; overflow-y: auto; background: var(--card); border-right: 1px solid var(--border); }
 .teil { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 4px; font-size: .74rem; line-height: 1.2; text-align: center; touch-action: pan-y; user-select: none; -webkit-user-select: none; cursor: grab; }
 .teil svg { width: 74px; height: 40px; pointer-events: none; }
-.teil span { pointer-events: none; }
+.teil span { pointer-events: none; hyphens: manual; overflow-wrap: anywhere; }
+.teil text { fill: var(--text); }
+.teil .gatter-zeichen { font-size: 20px; font-weight: 700; }
+.teil .pol { font-size: 15px; font-weight: 700; }
 
 /* Arbeitsfläche */
 .flaeche-box { grid-area: flaeche; position: relative; min-height: 0; overflow: hidden; background: var(--bg); }
@@ -133,6 +136,17 @@ table.werte tbody tr:hover { background: var(--bg); }
 #flaeche .pol { font-size: 15px; font-weight: 700; }
 #flaeche .pol.klein { font-size: 10px; fill: var(--muted); }
 .geist { opacity: .5; pointer-events: none; }
+.koerper.leitend-hell { fill: var(--soft-accent); }
+.leiter.an { stroke: var(--ok); }
+.pfeil { fill: var(--line); }
+#flaeche .gatter-zeichen { font-size: 17px; font-weight: 700; }
+#flaeche .pegel { font-size: 12px; font-weight: 700; fill: var(--muted); }
+#flaeche .pegel.an { fill: var(--ok); }
+.fluss.wechselnd { stroke-dasharray: 2 6; opacity: .7; }
+table.wahrheit { border-collapse: collapse; margin: 6px 0 10px; font-variant-numeric: tabular-nums; }
+table.wahrheit th, table.wahrheit td { border: 1px solid var(--border); padding: 3px 12px; text-align: center; }
+table.wahrheit tr.aktiv td { background: var(--ok-soft); color: var(--ok); font-weight: 700; }
+.ac-hinweis { margin: 12px 0 0; }
 
 /* Schmale Bildschirme: alles untereinander, die Seite scrollt */
 @media (max-width: 860px) {
