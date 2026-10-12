@@ -24,6 +24,9 @@ Lerneinheiten sie erledigt haben, und Lehrkräfte sehen den Fortschritt ihrer Kl
   und Multimeter frei verdrahten, mit
   echter Schaltungsberechnung (Knotenpotenzialanalyse, Diode nach Shockley, Transistor nach Ebers-Moll), Stromfluss-Animation,
   Kurzschluss-Erkennung, Rückgängig, Speichern/Laden und Touch-Bedienung.
+  Zweite Simulation: das **Logik-Labor** mit Schaltern, Tastern, Taktgeber, sieben Gattern (UND, ODER, NICHT,
+  XOR, NAND, NOR, XNOR), Relais, Lampen, Decoder und 7-Segment-Anzeige, farbigen Leitungen, Beispielschaltungen
+  und einer Wahrheitstabelle, die aus der Schaltung berechnet wird.
 - **Weitere Fächer** lassen sich ohne Programmieren ergänzen (siehe Abschnitt 6).
 
 > **Schnellstart:** Wie du das Projekt auf GitHub hochlädst und ohne IServ-Login testest,

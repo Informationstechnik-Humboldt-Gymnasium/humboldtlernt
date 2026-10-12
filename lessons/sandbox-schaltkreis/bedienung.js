@@ -10,6 +10,10 @@
 //   Leere Fläche ziehen     → Ansicht verschieben;  zwei Finger / Mausrad → zoomen
 //
 // ctx (vom UI): doc() · merke(vorher) · geaendert() · zeige() · auswahl(sel) · meldung(text, art)
+//   optional: gruppe(id) → ids, die gemeinsam verschoben werden (Mehrfachauswahl)
+//             halten(id, an) → Taster: gedrückt halten (Bauteiltyp mit „halten: true“)
+// Wird auch vom Logik-Labor (lessons/sandbox-logik) benutzt. Das jeweilige Modell (SL.modell) kann
+// box(b) und anschluesse(b) für Bauteile mit veränderlicher Größe liefern.
 (function (root) {
   'use strict';
   var SL = root.SL || (root.SL = {});
@@ -26,6 +30,8 @@
   }
   var P = Bedienung.prototype;
   var M = function () { return SL.modell; };
+  /** Fläche eines Bauteils (lokal): vom Modell, falls die Größe von den Werten abhängt, sonst aus dem Katalog. */
+  var boxVon = function (b) { return M().box ? M().box(b) : SL.TYPEN[b.typ].box; };
 
   P.welt = function (p) { return { x: this.view.x + p.x / this.view.s, y: this.view.y + p.y / this.view.s }; };
   P.fang = function (typ) { return (typ === 'touch' ? 24 : typ === 'pen' ? 14 : 11) / Math.min(this.view.s, 1.4); };
@@ -60,8 +66,11 @@
     }
     if (h.art === 'bauteil') {
       var b = M().finde(doc, h.b);
-      ctx.auswahl({ art: 'bauteil', id: b.id });
-      this.zustand = { art: 'ziehen', id: b.id, start: p, w0: w, x0: b.x, y0: b.y, bewegt: false, vorher: M().kopie(doc) };
+      var gruppe = ctx.gruppe ? ctx.gruppe(b.id) : null;
+      if (!gruppe || gruppe.length < 2) { gruppe = null; ctx.auswahl({ art: 'bauteil', id: b.id }); }
+      this.zustand = { art: 'ziehen', id: b.id, start: p, w0: w, x0: b.x, y0: b.y, bewegt: false, vorher: M().kopie(doc),
+        gruppe: gruppe && gruppe.map(function (id) { var x = M().finde(doc, id); return { id: id, x0: x.x, y0: x.y }; }) };
+      if (SL.TYPEN[b.typ].halten && ctx.halten) { this.zustand.gehalten = b.id; ctx.halten(b.id, true); }
       return;
     }
     ctx.auswahl({ art: 'draht', id: h.d });
@@ -96,7 +105,11 @@
       if (!z.bewegt && abstand(p, z.start) < this.schwelle(p.typ)) return;
       w = this.welt(p);
       z.bewegt = true;
-      if (M().verschiebe(doc, z.id, z.x0 + w.x - z.w0.x, z.y0 + w.y - z.w0.y)) {
+      var dx = w.x - z.w0.x, dy = w.y - z.w0.y;
+      var weg = z.gruppe
+        ? z.gruppe.map(function (g) { return M().verschiebe(doc, g.id, g.x0 + dx, g.y0 + dy); }).some(Boolean)
+        : M().verschiebe(doc, z.id, z.x0 + dx, z.y0 + dy);
+      if (weg) {
         if (!z.gemerkt) { z.gemerkt = true; ctx.merke(z.vorher); }
         ctx.geaendert('bewegen');
       }
@@ -140,6 +153,7 @@
     if (z.art === 'beendet') { this.zustand = null; return; }
     if (z.art === 'ziehen') {
       this.zustand = null;
+      if (z.gehalten) ctx.halten(z.gehalten, false);
       if (!z.bewegt) {
         var vorher = M().kopie(doc), text = M().tippAktion(doc, z.id, w.x, w.y);
         if (text) { ctx.merke(vorher); ctx.geaendert('tippen'); ctx.meldung(text, 'ok'); }
@@ -180,6 +194,7 @@
   P.abbrechen = function (p) {
     delete this.zeiger[p.id];
     var z = this.zustand;
+    if (z && z.art === 'ziehen' && z.gehalten) this.ctx.halten(z.gehalten, false);
     if (z && z.art === 'ziehen' && z.bewegt) this.ctx.geaendert('bewegen');
     if (!z || z.art !== 'wartet') { this.zustand = null; this.vorschau = null; }
     this.ctx.zeige();
@@ -227,8 +242,8 @@
   };
 
   /** Rechteck (Weltkoordinaten) eines Bauteils, auch gedreht. */
-  function rechteck(typ, x, y, rot, rand) {
-    var bx = SL.TYPEN[typ].box, a = M().drehe(bx[0], bx[1], rot), c = M().drehe(bx[0] + bx[2], bx[1] + bx[3], rot);
+  function rechteck(bx, x, y, rot, rand) {
+    var a = M().drehe(bx[0], bx[1], rot), c = M().drehe(bx[0] + bx[2], bx[1] + bx[3], rot);
     return { x0: x + Math.min(a[0], c[0]) - rand, y0: y + Math.min(a[1], c[1]) - rand, x1: x + Math.max(a[0], c[0]) + rand, y1: y + Math.max(a[1], c[1]) + rand };
   }
   var ueberlappt = function (r, q) { return r.x0 < q.x1 && q.x0 < r.x1 && r.y0 < q.y1 && q.y0 < r.y1; };
@@ -238,12 +253,13 @@
     var doc = this.ctx.doc(), g = this.groesse || { w: 600, h: 400 };
     typ = typ || 'lampe';
     var mx = M().runde(this.view.x + g.w / 2 / this.view.s), my = M().runde(this.view.y + g.h / 2 / this.view.s);
-    var hindernisse = doc.bauteile.map(function (b) { return rechteck(b.typ, b.x, b.y, b.rot, 6); });
+    var hindernisse = doc.bauteile.map(function (b) { return rechteck(boxVon(b), b.x, b.y, b.rot, 6); });
+    var neuBox = boxVon({ typ: typ, werte: M().normalisiere(typ, SL.TYPEN[typ].werte), rot: 0 });
     doc.draehte.forEach(function (d) {
       var pts = M().drahtPunkte(doc, d) || [];
       for (var i = 0; i < pts.length - 1; i++) hindernisse.push({ x0: Math.min(pts[i].x, pts[i + 1].x) - 4, y0: Math.min(pts[i].y, pts[i + 1].y) - 4, x1: Math.max(pts[i].x, pts[i + 1].x) + 4, y1: Math.max(pts[i].y, pts[i + 1].y) + 4 });
     });
-    var frei = function (x, y) { var r = rechteck(typ, x, y, 0, 14); return hindernisse.every(function (h) { return !ueberlappt(r, h); }); };
+    var frei = function (x, y) { var r = rechteck(neuBox, x, y, 0, 14); return hindernisse.every(function (h) { return !ueberlappt(r, h); }); };
     // Spirale um die Mitte, in Rasterschritten
     for (var ring = 0; ring < 25; ring++) {
       for (var dx = -ring; dx <= ring; dx++) for (var dy = -ring; dy <= ring; dy++) {
@@ -282,10 +298,9 @@
     if (!doc.bauteile.length) { this.view = { x: -g.w / 2, y: -g.h / 2, s: 1 }; this.ctx.zeige(); return; }
     var x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
     doc.bauteile.forEach(function (b) {
-      var bx = SL.TYPEN[b.typ].box, ecken = [[bx[0], bx[1]], [bx[0] + bx[2], bx[1] + bx[3]], [bx[0], bx[1] + bx[3]], [bx[0] + bx[2], bx[1]]];
-      ecken.concat(Object.keys(SL.TYPEN[b.typ].anschluesse).map(function (a) { return SL.TYPEN[b.typ].anschluesse[a]; })).forEach(function (e) {
-        var p = M().drehe(e[0], e[1], b.rot);
-        x0 = Math.min(x0, b.x + p[0]); x1 = Math.max(x1, b.x + p[0]); y0 = Math.min(y0, b.y + p[1]); y1 = Math.max(y1, b.y + p[1]);
+      var bx = boxVon(b), ecken = [[bx[0], bx[1]], [bx[0] + bx[2], bx[1] + bx[3]], [bx[0], bx[1] + bx[3]], [bx[0] + bx[2], bx[1]]];
+      ecken.map(function (e) { var p = M().drehe(e[0], e[1], b.rot); return { x: b.x + p[0], y: b.y + p[1] }; }).concat(M().anschluesse(b)).forEach(function (p) {
+        x0 = Math.min(x0, p.x); x1 = Math.max(x1, p.x); y0 = Math.min(y0, p.y); y1 = Math.max(y1, p.y);
       });
       // Platz für die Beschriftung (rechts bei senkrechten, unten bei waagerechten Bauteilen)
       if (b.typ !== 'messgeraet' && (b.rot === 90 || b.rot === 270)) x1 = Math.max(x1, b.x + 140);
