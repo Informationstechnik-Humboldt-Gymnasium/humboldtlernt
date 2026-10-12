@@ -67,7 +67,7 @@ test('Schülerliste, Klassenstufe, Übungen, Fortschritt und Lehrer-Übersicht',
 
   const max = await new Client().login('max', 'student', 'max@schule.de');
   const home = await (await max.req('/')).text();
-  assert.match(home, /class="eyebrow">Physik</);
+  assert.match(home, /class="grade-name">Physik</);
   assert.match(home, /href="\/physik\/9"/, 'Startseite führt zur eigenen Klassenstufe');
   assert.doesNotMatch(home, /Stromkreis-Labor/, 'Themen-Lektionen erscheinen nicht doppelt auf der Startseite');
 
@@ -124,7 +124,7 @@ test('Schülerliste, Klassenstufe, Übungen, Fortschritt und Lehrer-Übersicht',
   assert.match(await (await max.req('/physik/9')).text(), /✓ Verstanden/);
 
   // Zweites Fach: TIMP (Klasse 8 und 9) mit eigenen Seiten und eigenem Fortschritt
-  assert.match(home, /class="eyebrow">TIMP</);
+  assert.match(home, /class="grade-name">TIMP</);
   assert.match(home, /href="\/timp\/9"/);
   const timp = await (await max.req('/timp')).text();
   assert.match(timp, /href="\/timp\/8"/); assert.match(timp, /href="\/timp\/9"/);
@@ -142,7 +142,7 @@ test('Schülerliste, Klassenstufe, Übungen, Fortschritt und Lehrer-Übersicht',
   assert.equal((await max.req('/gibts-nicht')).status, 404);
 
   // Drittes Fach: Chemie (Klasse 7 bis 10)
-  assert.match(home, /class="eyebrow">Chemie</);
+  assert.match(home, /class="grade-name">Chemie</);
   assert.match(await (await max.req('/chemie/9')).text(), /Säuren und Laugen/);
   const ester = await (await max.req('/chemie/10/ch-k10-ester')).text();
   assert.match(ester, /\/inhalt\/ch-veresterung\/index\.html/);

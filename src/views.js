@@ -66,7 +66,7 @@ export function messagePage({ title, text, user }) {
 /** `subjects`: fertige Karten der Fächer (aus views-fach.js), leer wenn es keine gibt. */
 export function homePage({ user, lessons, done, subjects = '' }) {
   const physik = Boolean(subjects);
-  const hero = subjects ? `<div class="subject-grid">${subjects}</div>` : '';
+  const hero = subjects ? `<div class="grade-grid">${subjects}</div>` : '';
   const total = lessons.length, n = lessons.filter(l => done.has(l.slug)).length;
   const bySubject = new Map();
   for (const l of lessons) { if (!bySubject.has(l.subject)) bySubject.set(l.subject, []); bySubject.get(l.subject).push(l); }
