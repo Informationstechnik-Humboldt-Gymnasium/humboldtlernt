@@ -11,6 +11,7 @@ import * as views from './src/views.js';
 import * as fviews from './src/views-fach.js';
 import { content, visibleFaecher, getFach, getSimulation, visibleGrades, getGrade, gradeOf, topicsOfGrade, topicProgress } from './src/faecher.js';
 import { checkAnswer, revealSolution } from './src/exercises.js';
+import { ladeImpressum, impressumBody, datenschutzBody } from './src/rechtliches.js';
 
 const app = express();
 app.disable('x-powered-by');
@@ -135,6 +136,11 @@ if (config.devLogin) {
 }
 
 app.post('/auth/logout', (req, res) => { req.session = null; res.redirect('/'); });
+
+// ---------------------------------------------------------------- Impressum und Datenschutz (ohne Anmeldung)
+
+app.get('/impressum', (req, res) => res.send(views.layout({ title: 'Impressum', user: req.user, body: impressumBody(ladeImpressum()) })));
+app.get('/datenschutz', (req, res) => res.send(views.layout({ title: 'Datenschutzerklärung', user: req.user, body: datenschutzBody(ladeImpressum()) })));
 
 // ---------------------------------------------------------------- Lerneinheiten
 

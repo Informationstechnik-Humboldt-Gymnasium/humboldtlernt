@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { config } from '../src/config.js';
 import { loadAll } from '../src/faecher.js';
+import { ladeImpressum, impressumFehlt } from '../src/rechtliches.js';
 
 const c = loadAll();
 const errors = [...c.errors];
@@ -34,6 +35,8 @@ for (const f of c.faecher) {
   const exercises = [...c.exerciseById.values()].filter(e => e.fach === f.id).length;
   console.log(`${f.fach}: Klasse ${f.stufen.filter(s => s.themenfelder.length).map(s => s.stufe).join(', ') || '–'} · ${topics} Themen · ${exercises} Übungen${f.simulationen.length ? ` · ${f.simulationen.length} Simulation(en)` : ''}`);
 }
+const fehlt = impressumFehlt(ladeImpressum());
+if (fehlt.length) warnings.push(`content/impressum.json: Impressum unvollständig, es fehlt ${fehlt.join(', ')}`);
 if (warnings.length) console.log(`\nHinweise (${warnings.length}):\n  ${warnings.join('\n  ')}`);
 if (errors.length) { console.error(`\nFehler (${errors.length}):\n  ${errors.join('\n  ')}`); process.exit(1); }
 console.log('\n✔ Keine Fehler gefunden.');

@@ -201,6 +201,28 @@ test('Sandbox: Simulationsübersicht, Schaltkreis-Labor und Rückweg zur Fachüb
   assert.equal((await t.req('/admin?klasse=9a')).status, 200);
 });
 
+test('Impressum und Datenschutzerklärung sind ohne Anmeldung erreichbar und überall verlinkt', async () => {
+  const gast = new Client();
+  const login = await (await gast.req('/')).text();
+  assert.match(login, /href="\/impressum"/);
+  assert.match(login, /href="\/datenschutz"/);
+  const imp = await gast.req('/impressum');
+  assert.equal(imp.status, 200);
+  const impText = await imp.text();
+  assert.match(impText, /Angaben gemäß § 5 DDG/);
+  assert.match(impText, /§ 18 Abs\. 2 MStV/);
+  assert.match(impText, /Schulinternen Curriculum \(SchiC\)/);
+  assert.doesNotMatch(impText, /ec\.europa\.eu\/consumers\/odr/, 'OS-Plattform gibt es nicht mehr');
+  const ds = await gast.req('/datenschutz');
+  assert.equal(ds.status, 200);
+  const dsText = await ds.text();
+  assert.match(dsText, /IServ-Passwort/);
+  assert.match(dsText, /12 Stunden/);
+  assert.match(dsText, /Art\. 77 DSGVO/);
+  const t = await new Client().login('rechtlich', 'teacher');
+  assert.match(await (await t.req('/physik')).text(), /<footer class="fuss">/);
+});
+
 test('Anfragen von fremden Seiten werden abgelehnt', async () => {
   const c = await new Client().login('anna', 'teacher');
   const r = await fetch(BASE + '/api/verstanden/k9-ohmsches-gesetz', {
