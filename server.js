@@ -9,7 +9,7 @@ import { startLogin, finishLogin } from './src/iserv.js';
 import { lessonsFor, isValidSlug } from './src/lessons.js';
 import * as views from './src/views.js';
 import * as fviews from './src/views-fach.js';
-import { content, visibleFaecher, getFach, getSimulation, visibleGrades, getGrade, gradeOf, topicsOfGrade, topicProgress } from './src/faecher.js';
+import { content, visibleFaecher, getFach, getSimulation, getKategorie, visibleGrades, getGrade, gradeOf, topicsOfGrade, topicProgress } from './src/faecher.js';
 import { checkAnswer, revealSolution } from './src/exercises.js';
 import { ladeImpressum, impressumBody, datenschutzBody } from './src/rechtliches.js';
 
@@ -333,6 +333,8 @@ app.get('/:fach', fachOf, requireLogin, (req, res) => {
 });
 
 app.get('/:fach/:stufe', fachOf, requireLogin, (req, res) => {
+  const kat = getKategorie(req.fach, req.params.stufe);
+  if (kat) return res.send(fviews.kategoriePage({ user: req.user, fach: req.fach, kat }));
   const sim = getSimulation(req.fach, req.params.stufe);
   if (sim) {
     if (!visibleLesson(req.user, sim.lesson)) return notFound(req, res, 'Diese Simulation ist nicht verfügbar.');
@@ -341,6 +343,15 @@ app.get('/:fach/:stufe', fachOf, requireLogin, (req, res) => {
   const grade = getGrade(req.fach, req.params.stufe);
   if (!grade) return notFound(req, res, 'Für diese Klassenstufe gibt es keine Inhalte.');
   res.send(fviews.gradePage({ user: req.user, fach: req.fach, grade, grades: visibleGrades(req.fach), sets: progressSets(req.user.id) }));
+});
+
+// Simulation in einer Unterkategorie: /<fach>/<kategorie>/<simulation>
+app.get('/:fach/:kat/:sim', fachOf, requireLogin, (req, res, next) => {
+  const kat = getKategorie(req.fach, req.params.kat);
+  if (!kat) return next();
+  const sim = getSimulation(req.fach, req.params.sim, kat.id);
+  if (!sim || !visibleLesson(req.user, sim.lesson)) return notFound(req, res, 'Diese Simulation gibt es nicht.');
+  res.send(fviews.simulationPage({ user: req.user, fach: req.fach, sim, kat }));
 });
 
 /** Gemeinsame Daten für beide Themen-Seiten. */

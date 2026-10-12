@@ -20,7 +20,7 @@ const read = f => fs.readFileSync(path.join(ROOT, f), 'utf8');
 const content = loadAll();
 if (content.errors.length) { console.error('Fehler in den Inhalten:\n  ' + content.errors.join('\n  ')); process.exit(1); }
 const faecher = content.faecher
-  .map(f => ({ id: f.id, fach: f.fach, kurz: f.kurz, beschreibung: f.beschreibung, stufen: f.stufen.filter(s => s.themenfelder.length), simulationen: f.simulationen }))
+  .map(f => ({ id: f.id, fach: f.fach, kurz: f.kurz, beschreibung: f.beschreibung, stufen: f.stufen.filter(s => s.themenfelder.length), simulationen: f.simulationen, kategorien: f.kategorien }))
   .filter(f => f.stufen.length || f.simulationen.length);
 const stufen = faecher.flatMap(f => f.stufen);
 
@@ -146,8 +146,10 @@ function page(p) {
   const fach = FAECHER.find(f => f.id === parts[0]);
   const grades = fach ? fach.stufen : [];
   if (fach && !grades.length && parts.length === 1) return simulationsPage({ user: user(), fach });
-  const sim = fach && parts.length === 2 && (fach.simulationen || []).find(x => x.id === parts[1]);
-  if (sim && LESSONS[sim.lesson]) return simulationPage({ user: user(), fach, sim });
+  const kat = fach && parts.length >= 2 && kategorienMitInhalt(fach).find(k => k.id === parts[1]);
+  if (kat && parts.length === 2) return kategoriePage({ user: user(), fach, kat });
+  const sim = fach && (kat ? parts.length === 3 && simulationenIn(fach, kat.id).find(x => x.id === parts[2]) : parts.length === 2 && simulationenIn(fach).find(x => x.id === parts[1]));
+  if (sim && LESSONS[sim.lesson]) return simulationPage({ user: user(), fach, sim, kat: kat || null });
   if (fach && parts.length === 1) return gradePickerPage({ user: user(), fach, grades, own: gradeOf(state.klasse), sets: s });
   if (parts[0] === 'lektion' && LESSONS[parts[1]]) {
     const l = LESSONS[parts[1]];

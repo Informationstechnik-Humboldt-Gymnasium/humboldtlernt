@@ -84,7 +84,20 @@ const SIM_SYMBOLE = {
 };
 const simSymbol = icon => SIM_SYMBOLE[icon] || esc(icon);
 
-/** Übersicht der Simulationen. Neue Simulationen erscheinen hier, sobald sie in stufen.json stehen. */
+const simKarte = (href, x, unten) => `
+      <a class="card sim-card" href="${esc(href)}">
+        ${x.icon ? `<span class="sim-icon" aria-hidden="true">${simSymbol(x.icon)}</span>` : ''}
+        <div class="card-top"><h3>${esc(x.titel)}</h3>${x.bereich ? `<span class="chip">${esc(x.bereich)}</span>` : ''}</div>
+        ${x.untertitel ? `<p>${esc(x.untertitel)}</p>` : ''}
+        <span class="sim-open">${unten}</span>
+      </a>`;
+
+/** Simulationen einer Kategorie ('' = direkt im Fach). */
+export const simulationenIn = (fach, kat = '') => fach.simulationen.filter(s => (s.kategorie || '') === kat);
+/** Kategorien, die mindestens eine Simulation enthalten. */
+export const kategorienMitInhalt = fach => (fach.kategorien || []).filter(k => simulationenIn(fach, k.id).length);
+
+/** Übersicht der Simulationen und Unterkategorien. Neue erscheinen hier, sobald sie in stufen.json stehen. */
 export function simulationsPage({ user, fach }) {
   return layout({
     title: fach.fach, user, body: `
@@ -93,27 +106,38 @@ export function simulationsPage({ user, fach }) {
       <p class="muted">${fach.beschreibung ? md(fach.beschreibung) : 'Wähle eine Simulation.'}</p>
     </header>
     <div class="cards sim-cards">
-      ${fach.simulationen.map(sim => `
-      <a class="card sim-card" href="/${esc(fach.id)}/${esc(sim.id)}">
-        ${sim.icon ? `<span class="sim-icon" aria-hidden="true">${simSymbol(sim.icon)}</span>` : ''}
-        <div class="card-top"><h3>${esc(sim.titel)}</h3>${sim.bereich ? `<span class="chip">${esc(sim.bereich)}</span>` : ''}</div>
-        ${sim.untertitel ? `<p>${esc(sim.untertitel)}</p>` : ''}
-        <span class="sim-open">Öffnen →</span>
-      </a>`).join('')}
+      ${simulationenIn(fach).map(sim => simKarte(`/${fach.id}/${sim.id}`, sim, 'Öffnen →')).join('')}
+      ${kategorienMitInhalt(fach).map(k => simKarte(`/${fach.id}/${k.id}`, k, `${simulationenIn(fach, k.id).length} Module ansehen →`)).join('')}
+    </div>`,
+  });
+}
+
+/** Übersicht einer Unterkategorie (z. B. Atom- und Moleküllabor). */
+export function kategoriePage({ user, fach, kat }) {
+  return layout({
+    title: kat.titel, user, body: `
+    ${crumbs([{ href: `/${fach.id}`, label: fach.kurz }, { label: kat.titel }])}
+    <header class="page-head">
+      <h1>${esc(kat.titel)}</h1>
+      ${kat.untertitel ? `<p class="muted">${esc(kat.untertitel)}</p>` : ''}
+    </header>
+    <div class="cards sim-cards">
+      ${simulationenIn(fach, kat.id).map(sim => simKarte(`/${fach.id}/${kat.id}/${sim.id}`, sim, 'Öffnen →')).join('')}
     </div>`,
   });
 }
 
 /** Eine Simulation im Vollbild: schmale Leiste mit Rückweg, darunter die Simulation. */
-export function simulationPage({ user, fach, sim }) {
+export function simulationPage({ user, fach, sim, kat = null }) {
+  const zurueck = kat ? { href: `/${fach.id}/${kat.id}`, label: kat.titel } : { href: `/${fach.id}`, label: fach.kurz };
   return layout({
     title: sim.titel, user, bare: true, wide: true, body: `
     <div class="lesson-bar sim-bar">
-      <a href="/${esc(fach.id)}" class="back">← ${esc(fach.kurz)}</a>
+      <a href="${esc(zurueck.href)}" class="back">← ${esc(zurueck.label)}</a>
       <h1>${esc(sim.titel)}</h1>
       ${sim.bereich ? `<span class="chip">${esc(sim.bereich)}</span>` : ''}
     </div>
-    <iframe id="lesson" class="sim-frame" src="/inhalt/${esc(sim.lesson)}/index.html" title="${esc(sim.titel)}"
+    <iframe id="lesson" class="sim-frame" src="/inhalt/${esc(sim.lesson)}/index.html${sim.modul ? '#' + esc(sim.modul) : ''}" title="${esc(sim.titel)}"${sim.modul ? ` data-modul="${esc(sim.modul)}"` : ''}
       sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals allow-downloads"></iframe>`,
   });
 }
