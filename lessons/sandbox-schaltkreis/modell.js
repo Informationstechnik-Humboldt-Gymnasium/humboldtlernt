@@ -20,21 +20,11 @@
     '12v-6w': { name: '12 V / 6 W', u: 12, p: 6 },
     '3v5-0w7': { name: '3,5 V / 0,7 W', u: 3.5, p: 0.7 },
     '24v-5w': { name: '24 V / 5 W', u: 24, p: 5 },
-    '5v-1w': { name: '5 V / 1 W (für Logik)', u: 5, p: 1 },
+    '5v-1w': { name: '5 V / 1 W', u: 5, p: 1 },
   };
   var MODI = ['V', 'A', 'Ohm'];
   var ZWEIPOL = { a: [-40, 0], b: [40, 0] };
   var BOX2 = [-40, -24, 80, 48];
-
-  // Logikgatter: Eingänge A, B, Ausgang Q und Masse M (Bezugspunkt, an den Minuspol anschließen)
-  var GATTER2 = { a: [-40, -20], b: [-40, 20], q: [40, 0], m: [0, 40] };
-  var BOXG = [-40, -32, 80, 64];
-  var GATTER = {
-    und: { zeichen: '&', name: 'UND', regel: 'Q = 1 nur, wenn A = 1 und B = 1.', f: function (a, b) { return a & b; } },
-    oder: { zeichen: '≥1', name: 'ODER', regel: 'Q = 1, wenn mindestens ein Eingang 1 ist.', f: function (a, b) { return a | b; } },
-    nicht: { zeichen: '1', name: 'NICHT', regel: 'Q ist immer das Gegenteil von A.', f: function (a) { return a ? 0 : 1; }, einEingang: true },
-    xoder: { zeichen: '=1', name: 'XODER', regel: 'Q = 1, wenn genau ein Eingang 1 ist.', f: function (a, b) { return a ^ b; } },
-  };
 
   // Bauteilkatalog: Anschlüsse (lokale Lage bei Drehung 0°), Fläche zum Anfassen, Startwerte
   var TYPEN = {
@@ -45,10 +35,6 @@
     widerstand: { name: 'Einstellbarer Widerstand', kuerzel: 'R', anschluesse: ZWEIPOL, box: BOX2, werte: { widerstand: 100 } },
     diode: { name: 'Diode', kuerzel: 'D', anschluesse: { a: [-40, 0], k: [40, 0] }, box: BOX2, werte: {} },
     transistor: { name: 'Transistor (NPN)', kuerzel: 'T', anschluesse: { b: [-40, 0], c: [20, -40], e: [20, 40] }, box: [-40, -30, 70, 60], werte: {} },
-    und: { name: 'UND-Gatter', kuerzel: 'UND', anschluesse: GATTER2, box: BOXG, werte: {}, gatter: true },
-    oder: { name: 'ODER-Gatter', kuerzel: 'ODER', anschluesse: GATTER2, box: BOXG, werte: {}, gatter: true },
-    nicht: { name: 'NICHT-Gatter', kuerzel: 'NICHT', anschluesse: { a: [-40, 0], q: [40, 0], m: [0, 40] }, box: BOXG, werte: {}, gatter: true },
-    xoder: { name: 'XODER-Gatter', kuerzel: 'XODER', anschluesse: GATTER2, box: BOXG, werte: {}, gatter: true },
     messgeraet: { name: 'Multimeter', kuerzel: 'M', anschluesse: { com: [-20, 60], v: [20, 60] }, box: [-46, -56, 92, 106], werte: { modus: 'V' }, fest: true },
   };
   // Tasten am Multimeter (lokale Koordinaten): zum direkten Umschalten per Klick/Tippen
@@ -60,7 +46,6 @@
     if (b.typ === 'diode') return a === 'a' ? 'Anode' : 'Kathode';
     if (b.typ === 'messgeraet') return a === 'com' ? 'COM-Buchse (schwarz)' : 'V/Ω/A-Buchse (rot)';
     if (b.typ === 'transistor') return { b: 'Basis (B)', c: 'Kollektor (C)', e: 'Emitter (E)' }[a];
-    if (TYPEN[b.typ].gatter) return { a: 'Eingang A', b: 'Eingang B', q: 'Ausgang Q', m: 'Masse (⊥)' }[a];
     return 'Anschluss ' + (a === 'a' ? 1 : 2);
   }
 
@@ -356,7 +341,6 @@
   SL.LAMPEN = LAMPEN;
   SL.MODI = MODI;
   SL.TYPEN = TYPEN;
-  SL.GATTER = GATTER;
   SL.MODUS_TASTEN = MODUS_TASTEN;
   SL.TASTEN_Y = TASTEN_Y;
   SL.TASTEN_H = TASTEN_H;

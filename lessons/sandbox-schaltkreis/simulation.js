@@ -9,8 +9,6 @@
 //   - Wechselspannungsquellen: Die Schaltung wird zu einem Zeitpunkt t berechnet (es gibt keine Spulen und
 //     Kondensatoren, deshalb ist jeder Zeitpunkt unabhängig); zeitverlauf() tastet eine Periode ab und liefert
 //     Effektiv- und Mittelwerte,
-//   - Logikgatter haben eine eingebaute 5-V-Versorgung: Eingänge mit 100 kΩ gegen Masse (offen = 0),
-//     Schaltschwellen 2 V / 3 V mit Hysterese, Ausgang 5 V oder 0 V mit 1 Ω Innenwiderstand,
 //   - getrennte Schaltungsteile („Inseln“) bekommen je einen eigenen Bezugspunkt (0 V).
 // Dazu kommen Kurzschluss-Erkennung, Multimeter (V, A, Ω) mit Prüfung der Messanordnung und verständliche Meldungen.
 (function (root) {
@@ -29,11 +27,9 @@
     DIODE_IS: 1.5e-11, DIODE_NVT: 0.031, DIODE_GMIN: 1e-9, DIODE_LEITEND: 1e-4,
     MAX_ITER: 300,
     BETA_F: 100, BETA_R: 1, T_GMIN: 1e-9,
-    GATTER_U: 5, GATTER_R_AUS: 1, GATTER_R_EIN: 1e5, GATTER_H: 3, GATTER_L: 2, GATTER_I_MAX: 1,
     AC_SCHNELL: 5,          // ab dieser Frequenz (Hz) zeigt die Anzeige Effektiv- und Mittelwerte
     PROBEN: 32,             // Abtastpunkte je Periode
   };
-  var istGatter = function (typ) { return !!(SL.TYPEN[typ] && SL.TYPEN[typ].gatter); };
   var istQuelle = function (typ) { return typ === 'quelle' || typ === 'wechsel'; };
 
   // ---------------------------------------------------------------- Lineares Gleichungssystem
@@ -99,8 +95,8 @@
 
   /**
    * Elemente der Schaltung. art: R (Widerstand), V (Spannungsquelle), D (Diode), T (Transistor: i = Basis, j = Emitter, c = Kollektor),
-   * I (Stromquelle: Ohmmeter, Gatterausgang).
-   * opt.quellen: Quellen einschalten; opt.t: Zeitpunkt in s (Wechselspannung); opt.gatter: Zustände der Gatter {id: {q, a, b}};
+   * I (Stromquelle des Ohmmeters).
+   * opt.quellen: Quellen einschalten; opt.t: Zeitpunkt in s (Wechselspannung);
    * opt.ohmmeter: id des Multimeters, das gerade Widerstand misst.
    */
   function netz(doc, opt) {
@@ -126,14 +122,6 @@
         case 'transistor':
           el.push({ art: 'T', i: k(b.id, 'b'), j: k(b.id, 'e'), c: k(b.id, 'c'), bauteil: b.id });
           break;
-        case 'und': case 'oder': case 'nicht': case 'xoder': {
-          var m = k(b.id, 'm');
-          ['a', 'b'].forEach(function (e) { if (k(b.id, e) != null) el.push({ art: 'R', i: k(b.id, e), j: m, g: 1 / K.GATTER_R_EIN, bauteil: b.id, eingang: e }); });
-          el.push({ art: 'R', i: k(b.id, 'q'), j: m, g: 1 / K.GATTER_R_AUS, bauteil: b.id, ausgang: true });
-          var q = opt.gatter && opt.gatter[b.id] ? opt.gatter[b.id].q : 0;
-          if (opt.quellen && q) el.push({ art: 'I', i: m, j: k(b.id, 'q'), strom: K.GATTER_U / K.GATTER_R_AUS, bauteil: b.id, quelle: true });
-          break;
-        }
         case 'schalter':
           if (w.geschlossen) el.push({ art: 'R', i: k(b.id, 'a'), j: k(b.id, 'b'), g: 1 / K.R_LEITUNG, niedrig: true, bauteil: b.id });
           break;
@@ -289,55 +277,21 @@
     };
   }
 
-  /** Ein- und Ausgänge der Gatter aus den Knotenspannungen bestimmen (mit Hysterese). */
-  function gatterAuswerten(doc, n, V, alt) {
-    var neu = {};
-    doc.bauteile.forEach(function (b) {
-      if (!istGatter(b.typ)) return;
-      var vorher = alt[b.id] || { q: 0, a: 0, b: 0 }, m = n.knoten[b.id + ':m'], z = { q: 0 };
-      ['a', 'b'].forEach(function (e) {
-        var i = n.knoten[b.id + ':' + e];
-        if (i == null) return;
-        var u = n.uf.find(i) === n.uf.find(m) ? V[i] - V[m] : 0;
-        z[e] = u > K.GATTER_H ? 1 : u < K.GATTER_L ? 0 : (vorher[e] || 0);
-      });
-      z.q = SL.GATTER[b.typ].f(z.a, z.b || 0);
-      neu[b.id] = z;
-    });
-    return neu;
-  }
-  var gleicheGatter = function (x, y) { for (var id in x) if (!y[id] || x[id].q !== y[id].q || x[id].a !== y[id].a || x[id].b !== y[id].b) return false; return true; };
-
   /**
    * Simuliert die Schaltung zu einem Zeitpunkt.
    * laeuft = false: Quellen sind aus, es wird nur die Widerstandsmessung berechnet.
-   * opt.t: Zeitpunkt in s (für Wechselspannung), opt.gatter: Gatterzustände vom vorigen Zeitpunkt.
-   * Ergebnis: { laeuft, status, bauteile: {id: {U, I, P, …}}, draehte: {id: {I}}, messgeraete: {id: {…}}, gatter, kurzschluss: [ids], meldungen: [] }
+   * opt.t: Zeitpunkt in s (für Wechselspannung).
+   * Ergebnis: { laeuft, status, bauteile: {id: {U, I, P, …}}, draehte: {id: {I}}, messgeraete: {id: {…}}, kurzschluss: [ids], meldungen: [] }
    */
   function simuliere(doc, laeuft, opt) {
     opt = opt || {};
     var M = SL.modell, F = SL.fmt;
-    var erg = { laeuft: !!laeuft, status: laeuft ? 'ok' : 'gestoppt', bauteile: {}, draehte: {}, messgeraete: {}, gatter: {}, kurzschluss: [], meldungen: [] };
+    var erg = { laeuft: !!laeuft, status: laeuft ? 'ok' : 'gestoppt', bauteile: {}, draehte: {}, messgeraete: {}, kurzschluss: [], meldungen: [] };
     var meld = function (art, text, ids, code) { erg.meldungen.push({ art: art, text: text, ids: ids || [], code: code || '' }); };
     var quellen = doc.bauteile.filter(function (b) { return istQuelle(b.typ); });
-    var gatter = doc.bauteile.filter(function (b) { return istGatter(b.typ); });
 
-    // Gatterzustände: ausgehend vom vorigen Zustand so lange nachrechnen, bis sich nichts mehr ändert
-    var gz = {};
-    gatter.forEach(function (b) { gz[b.id] = (opt.gatter && opt.gatter[b.id]) || { q: SL.GATTER[b.typ].f(0, 0), a: 0, b: 0 }; });
-    var n = netz(doc, { quellen: !!laeuft, t: opt.t, gatter: gz });
-    var lsg = loese(n), stabil = true;
-    if (laeuft && gatter.length) {
-      stabil = false;
-      for (var runde = 0; runde < 12 && lsg.ok; runde++) {
-        var neu = gatterAuswerten(doc, n, lsg.V, gz);
-        if (gleicheGatter(neu, gz)) { stabil = true; break; }
-        gz = neu;
-        n = netz(doc, { quellen: true, t: opt.t, gatter: gz });
-        lsg = loese(n);
-      }
-    }
-    erg.gatter = gz;
+    var n = netz(doc, { quellen: !!laeuft, t: opt.t });
+    var lsg = loese(n);
     var k = function (b, a) { return n.knoten[b + ':' + a]; };
     var verbunden = {};
     doc.draehte.forEach(function (d) { verbunden[d.von.b + ':' + d.von.a] = 1; verbunden[d.nach.b + ':' + d.nach.a] = 1; });
@@ -402,14 +356,13 @@
       var w = b.werte, r = { U: null, I: null, P: null, ungueltig: false };
       erg.bauteile[b.id] = r;
       if (b.typ === 'messgeraet') return;
-      var pole = b.typ === 'quelle' ? [M.pluspol(b), M.pluspol(b) === 'a' ? 'b' : 'a'] : istGatter(b.typ) ? ['q', 'm'] : POLE[b.typ] || ['a', 'b'];
+      var pole = b.typ === 'quelle' ? [M.pluspol(b), M.pluspol(b) === 'a' ? 'b' : 'a'] : POLE[b.typ] || ['a', 'b'];
       var i = k(b.id, pole[0]), j = k(b.id, pole[1]);
       if (b.typ === 'lampe') { var l = SL.LAMPEN[w.typ]; r.R = l.u * l.u / l.p; r.nenn = l; r.hell = 0; r.zustand = 'aus'; }
       if (b.typ === 'widerstand') r.R = w.widerstand;
       if (b.typ === 'diode') r.zustand = 'sperrend';
       if (b.typ === 'transistor') r.zustand = 'sperrt';
       if (b.typ === 'schalter') r.zustand = w.geschlossen ? 'geschlossen' : 'offen';
-      if (istGatter(b.typ)) { r.ein = { a: 0, b: 0 }; r.q = 0; }
       if (!laeuft) return;
       if (istUngueltig(i)) { r.ungueltig = true; return; }
       var u = U(i, j);
@@ -430,13 +383,6 @@
           r.zustand = r.I < 1e-5 ? 'sperrt' : u < 0.3 ? 'durchgeschaltet' : 'verstärkt';
           break;
         }
-        default: if (istGatter(b.typ)) {
-          var g = gz[b.id] || { q: 0, a: 0, b: 0 };
-          r.q = g.q; r.ein = { a: g.a, b: g.b || 0 };
-          r.I = u == null ? 0 : (g.q ? K.GATTER_U : 0) / K.GATTER_R_AUS - u / K.GATTER_R_AUS;
-          if (!verbunden[b.id + ':m']) meld('hinweis', 'Verbinde den Masseanschluss (⊥, unten) von ' + b.name + ' mit dem Minuspol, sonst haben Ein- und Ausgang keinen Bezugspunkt.', [b.id], 'gatter-masse');
-          if (Math.abs(r.I) > K.GATTER_I_MAX) meld('warnung', 'Der Ausgang von ' + b.name + ' ist überlastet (' + F(Math.abs(r.I), 'A') + '). Ein Gatter schafft nur kleine Ströme – nimm z. B. eine 5-V-Lampe oder einen Widerstand.', [b.id], 'gatter-last');
-        }
       }
       if (r.I != null && Math.abs(r.I) < 1e-7) r.I = 0; // Leckströme (Diode in Sperrrichtung, Messgerät) nicht anzeigen
       r.P = u == null ? 0 : u * r.I;
@@ -446,9 +392,8 @@
         r.zustand = r.P < 0.01 * r.nenn.p ? 'aus' : r.P > 1.44 * r.nenn.p ? 'ueberlast' : 'an';
         if (r.zustand === 'ueberlast') meld('warnung', 'Lampe ' + b.name + ' bekommt ' + F(Math.abs(u), 'V') + ', ausgelegt ist sie für ' + F(r.nenn.u, 'V') + '. Sie würde durchbrennen.', [b.id], 'lampe-ueberlast');
       }
-      if ((istQuelle(b.typ) || istGatter(b.typ)) && Math.abs(r.I) > K.I_FLIESST) irgendwoStrom = true;
+      if (istQuelle(b.typ) && Math.abs(r.I) > K.I_FLIESST) irgendwoStrom = true;
     });
-    if (laeuft && !stabil) meld('warnung', 'Die Logikgatter schalten ständig um: Ein Ausgang wirkt auf seinen eigenen Eingang zurück (z. B. NICHT-Gatter im Kreis).', gatter.map(function (b) { return b.id; }), 'gatter-schwingt');
 
     // Messgeräte
     doc.bauteile.forEach(function (b) { if (b.typ === 'messgeraet') erg.messgeraete[b.id] = messe(doc, b, n, V, U, netze, verbunden, laeuft, istUngueltig, kurz, k); });
@@ -456,9 +401,9 @@
     // Allgemeine Hinweise
     if (!doc.bauteile.length) meld('hinweis', 'Ziehe Bauteile aus der Leiste auf die Arbeitsfläche oder lade die Beispielschaltung.');
     else if (!laeuft) meld('hinweis', 'Die Simulation ist gestoppt. Starte sie mit „▶ Start“.');
-    else if (!quellen.length && !gatter.length) meld('hinweis', 'Ohne Spannungsquelle fließt kein Strom.');
+    else if (!quellen.length) meld('hinweis', 'Ohne Spannungsquelle fließt kein Strom.');
     else if (erg.status === 'ok' && !irgendwoStrom) {
-      meld('hinweis', quellen.length && !gatter.length && quellen.every(function (q) { return q.werte.spannung === 0; })
+      meld('hinweis', quellen.every(function (q) { return q.werte.spannung === 0; })
         ? 'Die Spannungsquelle steht auf 0 V.'
         : 'Es fließt kein Strom: Der Stromkreis ist nicht geschlossen (offener Schalter, fehlender Draht, sperrende Diode oder sperrender Transistor).', [], 'kein-strom');
     }
@@ -481,14 +426,12 @@
     opt = opt || {};
     var fmin = Math.min.apply(null, ac.map(function (b) { return b.werte.frequenz; }));
     var fmax = Math.max.apply(null, ac.map(function (b) { return b.werte.frequenz; }));
-    var T = 1 / fmin, N = K.PROBEN, gz = opt.gatter;
+    var T = 1 / fmin, N = K.PROBEN;
     var sb = {}, sd = {}, sm = {}, meldungen = {}, reihenfolge = [], status = 'ok', strom = false;
     var RANG = { ok: 0, kurzschluss: 1, fehler: 2 };
-    for (var s = 0; s < 2 * N; s++) {
+    for (var s = 0; s < N; s++) {
       var t = (s + 0.5) * T / N;
-      var e = simuliere(doc, true, { t: t, gatter: gz });
-      gz = e.gatter;
-      if (s < N) continue; // erste Periode: Gatter einschwingen lassen
+      var e = simuliere(doc, true, { t: t });
       if (RANG[e.status] > RANG[status]) status = e.status;
       e.meldungen.forEach(function (m) {
         if (m.code === 'strom') strom = true;
@@ -509,7 +452,7 @@
         if (typeof m.wert === 'number' && isFinite(m.wert)) { a.w += m.wert; a.w2 += m.wert * m.wert; a.n++; }
       });
     }
-    var erg = { f: fmax, fmin: fmin, T: T, schnell: fmax >= K.AC_SCHNELL, status: status, bauteile: {}, draehte: {}, messgeraete: {}, gatter: gz, meldungen: [] };
+    var erg = { f: fmax, fmin: fmin, T: T, schnell: fmax >= K.AC_SCHNELL, status: status, bauteile: {}, draehte: {}, messgeraete: {}, meldungen: [] };
     var F = SL.fmt;
     doc.bauteile.forEach(function (b) {
       var a = sb[b.id]; if (!a) return;
@@ -622,7 +565,7 @@
         var andere = netze.andere(t);
         if (m.warnung || andere.length !== 1) return;
         var x = n.liste[andere[0]], xb = M.finde(doc, x.b);
-        if (xb.id === b.id || istQuelle(xb.typ) || xb.typ === 'messgeraet' || istGatter(xb.typ) || xb.typ === 'transistor') return;
+        if (xb.id === b.id || istQuelle(xb.typ) || xb.typ === 'messgeraet' || xb.typ === 'transistor') return;
         var zweiter = Object.keys(SL.TYPEN[xb.typ].anschluesse).filter(function (a) { return a !== x.a; })[0];
         if (netze.groesse(k(xb.id, zweiter)) > 1) m.warnung = 'Das Spannungsmessgerät liegt in Reihe mit ' + xb.name + '. Es lässt fast keinen Strom durch. Spannung misst man parallel zum Bauteil.';
       });
