@@ -63,6 +63,27 @@ export function subjectCard(fach, own, sets) {
 
 // ---------------------------------------------------------------- Simulationen eines Fachs (z. B. Sandbox)
 
+/**
+ * Schaltzeichen für die Karten der Simulationen ("icon" in stufen.json). Ein unbekannter Name wird als Text gezeigt.
+ * Zeichnen mit currentColor, damit sie im Dark Mode mitfärben.
+ */
+const SIM_SYMBOLE = {
+  // Gleichspannungsquelle (DIN): langer dünner Strich = Pluspol, kurzer dicker = Minuspol
+  gleichspannung: `<svg viewBox="0 0 64 40" width="64" height="40" focusable="false">
+    <path d="M4 20 H27 M37 20 H60" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <path d="M27 6 V34" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M37 12 V28" stroke="currentColor" stroke-width="6"/>
+    <path d="M14 8 H20 M17 5 V11 M45 8 H51" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  </svg>`,
+  // UND-Gatter (IEC): Rechteck mit „&“, zwei Eingänge, ein Ausgang
+  logikgatter: `<svg viewBox="0 0 64 40" width="64" height="40" focusable="false">
+    <path d="M4 12 H20 M4 28 H20 M44 20 H60" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <rect x="20" y="4" width="24" height="32" rx="2" stroke="currentColor" stroke-width="2.5" fill="none"/>
+    <text x="32" y="26" text-anchor="middle" font-size="16" font-weight="700" fill="currentColor" font-family="system-ui, sans-serif">&amp;</text>
+  </svg>`,
+};
+const simSymbol = icon => SIM_SYMBOLE[icon] || esc(icon);
+
 /** Übersicht der Simulationen. Neue Simulationen erscheinen hier, sobald sie in stufen.json stehen. */
 export function simulationsPage({ user, fach }) {
   return layout({
@@ -74,7 +95,7 @@ export function simulationsPage({ user, fach }) {
     <div class="cards sim-cards">
       ${fach.simulationen.map(sim => `
       <a class="card sim-card" href="/${esc(fach.id)}/${esc(sim.id)}">
-        ${sim.icon ? `<span class="sim-icon" aria-hidden="true">${esc(sim.icon)}</span>` : ''}
+        ${sim.icon ? `<span class="sim-icon" aria-hidden="true">${simSymbol(sim.icon)}</span>` : ''}
         <div class="card-top"><h3>${esc(sim.titel)}</h3>${sim.bereich ? `<span class="chip">${esc(sim.bereich)}</span>` : ''}</div>
         ${sim.untertitel ? `<p>${esc(sim.untertitel)}</p>` : ''}
         <span class="sim-open">Öffnen →</span>
