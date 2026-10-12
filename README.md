@@ -318,6 +318,11 @@ einen Eintrag ins Verzeichnis der Verarbeitungstätigkeiten und ggf. einen Vertr
 Auftragsverarbeitung mit dem Hoster. Konten entfernen geht über die Datenbank
 (`DELETE FROM users WHERE username = '…'`, der Fortschritt wird mitgelöscht).
 
+**Impressum und Datenschutzerklärung** stehen unter `/impressum` und `/datenschutz` (ohne Anmeldung,
+in der Fußzeile jeder Seite verlinkt). Name, Anschrift und E-Mail der verantwortlichen Person kommen aus
+`content/impressum.json`; solange etwas fehlt, zeigt die Seite „wird ergänzt“ und `npm run check` warnt.
+Die Texte stehen in `src/rechtliches.js` und beschreiben genau die oben genannten Daten.
+
 ---
 
 ## Aufbau

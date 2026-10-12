@@ -11,6 +11,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { ROOT, config } from '../src/config.js';
 import { loadAll } from '../src/faecher.js';
+import { ladeImpressum } from '../src/rechtliches.js';
 
 const out = process.argv[2] || path.join(ROOT, 'testseite.html');
 const read = f => fs.readFileSync(path.join(ROOT, f), 'utf8');
@@ -47,7 +48,7 @@ for (const slug of slugs) {
 
 // ---------------------------------------------------------------- Echten Code für den Browser zusammensetzen
 const asScript = f => read(f).split('\n').filter(l => !/^import\s/.test(l)).join('\n').replace(/^export\s+(?=(const|function|let|class|async)\b)/gm, '');
-const appCode = ['src/markup.js', 'src/exercises.js', 'src/progress.js', 'src/views-fach.js'].map(f => `// ---- ${f}\n${asScript(f)}`).join('\n\n');
+const appCode = ['src/markup.js', 'src/exercises.js', 'src/progress.js', 'src/views-fach.js', 'src/rechtliches.js'].map(f => `// ---- ${f}\n${asScript(f)}`).join('\n\n');
 const uebung = read('public/uebung.js').replace(/^\(function \(\) \{/m, 'function initUebung() {').replace(/^\}\)\(\);\s*$/m, '}');
 
 const json = v => JSON.stringify(v).replace(/</g, '\\u003c');
@@ -56,6 +57,7 @@ const shell = /* js */ `
 // ---------------------------------------------------------------- Testseite: Daten, Speicher, nachgebauter Server
 const FAECHER = ${json(faecher)};
 const LESSONS = ${json(lessons)};
+const IMPRESSUM = ${json(ladeImpressum())};
 const topicById = new Map(), exerciseById = new Map();
 for (const f of FAECHER) for (const g of f.stufen) for (const tf of g.themenfelder) for (const t of tf.topics) { topicById.set(t.id, t); for (const e of t.uebungen) exerciseById.set(e.id, e); }
 
@@ -128,7 +130,8 @@ function layout({ title, body }) {
     <a class="brand" href="/">Lernseite</a>
     <div class="nav-right">\${fachLinks}<span class="who">Testschüler\${state.klasse ? ' · ' + esc(state.klasse) : ''}</span></div>
   </nav>
-  <main id="inhalt">\${body}</main>\`;
+  <main id="inhalt">\${body}</main>
+  <footer class="fuss"><a href="/impressum">Impressum</a><span aria-hidden="true">·</span><a href="/datenschutz">Datenschutz</a></footer>\`;
 }
 
 // ---------------------------------------------------------------- Seiten
@@ -136,6 +139,8 @@ const lessonList = slugs => slugs.map(s => LESSONS[s]).filter(Boolean);
 function page(p) {
   const s = sets(), parts = p.split('/').filter(Boolean);
   const lessonDone = new Set(state.lessons);
+  if (p === '/impressum') return layout({ title: 'Impressum', body: impressumBody(IMPRESSUM) });
+  if (p === '/datenschutz') return layout({ title: 'Datenschutzerklärung', body: datenschutzBody(IMPRESSUM) });
   if (!parts.length) return subjectPickerPage({ user: user(), faecher: FAECHER, own: gradeOf(state.klasse), sets: s });
   const fach = FAECHER.find(f => f.id === parts[0]);
   const grades = fach ? fach.stufen : [];

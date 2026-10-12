@@ -108,6 +108,7 @@ Thema:
 
 ## Bekannte Eigenheiten
 
-- `/<fach>`-Routen stehen in `server.js` am Ende, feste Adressen (`/admin`, `/lektion`, `/inhalt`, `/api`, `/auth`, `/static`) haben Vorrang. Diese Namen sind als Fachordner verboten.
+- `/<fach>`-Routen stehen in `server.js` am Ende, feste Adressen (`/admin`, `/lektion`, `/inhalt`, `/api`, `/auth`, `/static`, `/impressum`, `/datenschutz`) haben Vorrang. Diese Namen sind als Fachordner verboten.
+- **Impressum/Datenschutz:** Angaben in `content/impressum.json`, Texte in `src/rechtliches.js`. Wer ändert, was gespeichert wird (`src/db.js`, IServ-Anmeldung, Cookies, LocalStorage), passt die Datenschutzerklärung mit an.
 - Zahleneingaben: „13.734“ wird als Tausender- oder Dezimalpunkt gelesen, je nachdem was zur Lösung passt.
 - Der Workflow `.github/workflows/zip-und-testseite.yml` entpackt hochgeladene ZIPs auf `main` und veröffentlicht die Testseite. Nicht ändern ohne Absprache.

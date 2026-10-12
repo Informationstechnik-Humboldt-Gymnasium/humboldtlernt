@@ -30,6 +30,7 @@ ${nav}
 <main id="inhalt" class="${wide ? 'wide' : ''}">
 ${body}
 </main>
+<footer class="fuss"><a href="/impressum">Impressum</a><span aria-hidden="true">·</span><a href="/datenschutz">Datenschutz</a></footer>
 ${scripts.map(s => `<script src="${esc(s)}" defer></script>`).join('\n')}
 </body>
 </html>`;
