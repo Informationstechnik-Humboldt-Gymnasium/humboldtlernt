@@ -237,7 +237,7 @@ weiterer Eintrag plus ein Ordner in `lessons/`:
 ```json
 "simulationen": [
   { "id": "schaltkreis", "lesson": "sandbox-schaltkreis", "titel": "Schaltkreis-Labor",
-    "untertitel": "Baue eigene elektrische Schaltungen …", "bereich": "Elektrizität", "icon": "⚡" }
+    "untertitel": "Baue eigene elektrische Schaltungen …", "bereich": "Elektrizität", "icon": "gleichspannung" }
 ]
 ```
 

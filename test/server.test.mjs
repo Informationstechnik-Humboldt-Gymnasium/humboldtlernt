@@ -196,6 +196,8 @@ test('Sandbox: Simulationsübersicht, Schaltkreis-Labor und Rückweg zur Fachüb
   // Zweite Simulation: Logik-Labor (nutzt Bedienung und Grundlayout des Schaltkreis-Labors mit)
   assert.match(uebersicht, /href="\/sandbox\/logik"/);
   assert.match(uebersicht, /Logik-Labor/);
+  assert.doesNotMatch(uebersicht, /⚡|🔀/, 'Schaltzeichen statt Emojis');
+  assert.equal((uebersicht.match(/<span class="sim-icon" aria-hidden="true"><svg/g) || []).length, 2);
   const logik = await (await t.req('/sandbox/logik')).text();
   assert.match(logik, /src="\/inhalt\/sandbox-logik\/index\.html"/);
   assert.match(logik, /<a href="\/sandbox" class="back">← Sandbox<\/a>/);

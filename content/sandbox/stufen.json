@@ -11,7 +11,7 @@
       "titel": "Schaltkreis-Labor",
       "untertitel": "Baue eigene elektrische Schaltungen und untersuche Spannung, Stromstärke und Widerstand.",
       "bereich": "Elektrizität",
-      "icon": "⚡"
+      "icon": "gleichspannung"
     },
     {
       "id": "logik",
@@ -19,7 +19,7 @@
       "titel": "Logik-Labor",
       "untertitel": "Baue digitale Schaltungen mit Schaltern, Logikgattern, Relais, Lampen und 7-Segment-Anzeigen – die Wahrheitstabelle rechnet sich selbst aus.",
       "bereich": "Digitaltechnik",
-      "icon": "🔀"
+      "icon": "logikgatter"
     }
   ]
 }

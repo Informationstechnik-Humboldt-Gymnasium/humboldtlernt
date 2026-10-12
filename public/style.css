@@ -73,7 +73,8 @@ body.bare .fuss { padding: 8px 20px; }
 #lesson { display: block; width: 100%; height: calc(100vh - 110px); border: 0; background: var(--bg); }
 /* Sandbox: Simulationen */
 #lesson.sim-frame { min-height: 560px; }
-.sim-card .sim-icon { font-size: 1.8rem; line-height: 1; }
+.sim-card .sim-icon { font-size: 1.8rem; line-height: 1; color: var(--accent); }
+.sim-card .sim-icon svg { display: block; }
 .sim-card .sim-open { margin-top: auto; padding-top: 6px; color: var(--accent); font-weight: 600; font-size: .92rem; }
 
 .panel { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; margin: 16px 0; }
