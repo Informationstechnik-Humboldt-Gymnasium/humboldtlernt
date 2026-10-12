@@ -8,7 +8,7 @@
   var $ = function (id) { return document.getElementById(id); };
   var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
 
-  var st = { doc: M.neu(), laeuft: false, messwerte: true, flussAn: true, auswahl: null, erg: null, verlauf: [], t: 0, gatter: {}, stat: null, hatAC: false };
+  var st = { doc: M.neu(), laeuft: false, messwerte: true, flussAn: true, auswahl: null, erg: null, verlauf: [], t: 0, stat: null, hatAC: false };
   var svg = $('flaeche'), welt = $('welt'), raster = $('raster'), box = $('flaeche-box');
 
   // ---------------------------------------------------------------- Zustand ändern
@@ -21,12 +21,11 @@
 
   // Momentanwerte zum Zeitpunkt st.t; bei Wechselspannung zusätzlich Effektiv-/Mittelwerte über eine Periode (st.stat)
   function momentan() {
-    var e = SL.sim.simuliere(st.doc, st.laeuft, { t: st.t, gatter: st.gatter });
-    st.gatter = e.gatter;
+    var e = SL.sim.simuliere(st.doc, st.laeuft, { t: st.t });
     st.erg = SL.sim.kombiniere(e, st.stat);
   }
   function rechne() {
-    st.stat = SL.sim.zeitverlauf(st.doc, st.laeuft, { gatter: st.gatter });
+    st.stat = SL.sim.zeitverlauf(st.doc, st.laeuft);
     momentan();
     var ac = SL.sim.wechselquellen(st.doc).length > 0;
     if (ac !== st.hatAC) { st.hatAC = ac; if (st.auswahl) eigenschaften(); }
@@ -248,15 +247,6 @@
         h += '<p class="small">Ein kleiner Strom in die <b>Basis (B)</b> steuert einen großen Strom vom <b>Kollektor (C)</b> zum <b>Emitter (E)</b>. Hier gilt I<sub>C</sub> ≈ 100 · I<sub>B</sub>, bis der Transistor voll durchgeschaltet ist. Ohne Basisstrom sperrt er (Basis-Emitter-Spannung unter etwa 0,6 V).</p>' +
           '<div class="readouts">' + anzeige('Zustand', 'zustand') + anzeige('U<sub>BE</sub>', 'Ube', true) + anzeige('U<sub>CE</sub>', 'U', true) + anzeige('I<sub>B</sub>', 'Ib', true) + anzeige('I<sub>C</sub>', 'I', true) + anzeige('I<sub>C</sub> / I<sub>B</sub>', 'beta', true) + '</div>';
         break;
-      case 'und': case 'oder': case 'nicht': case 'xoder': {
-        var g = SL.GATTER[b.typ], zwei = !g.einEingang, reihen = zwei ? [[0, 0], [0, 1], [1, 0], [1, 1]] : [[0], [1]];
-        h += '<p class="small"><b>' + esc(g.name) + ' (' + esc(g.zeichen) + '):</b> ' + esc(g.regel) + '</p>' +
-          '<table class="wahrheit"><thead><tr><th>A</th>' + (zwei ? '<th>B</th>' : '') + '<th>Q</th></tr></thead><tbody>' +
-          reihen.map(function (x) { return '<tr data-zeile="' + x.join('') + '"><td>' + x.join('</td><td>') + '</td><td>' + g.f(x[0], x[1] || 0) + '</td></tr>'; }).join('') + '</tbody></table>' +
-          '<div class="readouts">' + anzeige('Eingang A', 'ea') + (zwei ? anzeige('Eingang B', 'eb') : '') + anzeige('Ausgang Q', 'q') + anzeige('U am Ausgang', 'U') + '</div>' +
-          '<p class="small muted">Das Gatter hat eine eingebaute 5-V-Versorgung. Verbinde den Anschluss ⊥ (unten) mit dem Minuspol. Ein Eingang ist 1 ab 3 V und 0 unter 2 V, offen gilt er als 0. Der Ausgang liefert 5 V (1) oder 0 V (0) – gut für eine 5-V-Lampe.</p>';
-        break;
-      }
       case 'messgeraet':
         h += '<div class="seg" role="group" aria-label="Messart">' + SL.MODI.map(function (m) {
           return '<button type="button" data-aktion="modus" data-modus="' + m + '" aria-pressed="false">' + (m === 'V' ? 'Spannung V' : m === 'A' ? 'Strom A' : 'Widerstand Ω') + '</button>';
@@ -325,13 +315,6 @@
           setze('Ube', zeig(r.Ube, 'V')); setze('Ib', zeig(r.Ib, 'A'));
           setze('beta', !lauf || r.ungueltig || !r.Ib || r.zustand === 'sperrt' ? '–' : String(Math.round(r.I / r.Ib)).replace('.', ','));
           break;
-        case 'und': case 'oder': case 'nicht': case 'xoder': {
-          var ein = r.ein || {};
-          setze('ea', lauf ? String(ein.a || 0) : '–'); setze('eb', lauf ? String(ein.b || 0) : '–'); setze('q', lauf ? String(r.q || 0) : '–');
-          var zeile = SL.GATTER[b.typ].einEingang ? String(ein.a || 0) : String(ein.a || 0) + String(ein.b || 0);
-          el.querySelectorAll('tr[data-zeile]').forEach(function (tr) { tr.classList.toggle('aktiv', lauf && tr.dataset.zeile === zeile); });
-          break;
-        }
         case 'messgeraet': {
           var m = erg.messgeraete[b.id] || {};
           el.querySelectorAll('[data-aktion="modus"]').forEach(function (x) { x.setAttribute('aria-pressed', String(x.dataset.modus === w.modus)); });
@@ -364,7 +347,6 @@
       }
       var eff = erg.wechsel && erg.wechsel.schnell && r.eff, P = eff ? r.eff.Pmittel : r.P;
       if (!st.laeuft) { sp = i = '–'; } else if (r.ungueltig) { sp = '—'; i = 'Kurzschluss'; } else if (eff) { sp = F(r.eff.Ueff, 'V') + '~'; i = F(r.eff.Ieff, 'A') + '~'; } else { sp = F(r.U, 'V'); i = F(r.I, 'A'); }
-      if (SL.TYPEN[b.typ].gatter && st.laeuft && !r.ungueltig) i = 'Q = ' + (r.q || 0);
       return '<tr data-id="' + b.id + '"><th>' + esc(b.name) + '</th><td>' + sp + '</td><td>' + i + '</td><td>' + (st.laeuft && !r.ungueltig ? F(P, 'W') : '–') + '</td></tr>';
     }).join('');
     $('tabelle').innerHTML = zeilen ? '<table class="werte"><thead><tr><th>Bauteil</th><th>U</th><th>I</th><th>P</th></tr></thead><tbody>' + zeilen + '</tbody></table>' +
@@ -439,7 +421,7 @@
 
   function setzeLauf(an) {
     st.laeuft = an;
-    if (!an) { st.gatter = {}; st.t = 0; }
+    if (!an) st.t = 0;
     var k = $('start');
     k.setAttribute('aria-pressed', String(an));
     k.innerHTML = an ? '■ Stopp' : '▶ Start';

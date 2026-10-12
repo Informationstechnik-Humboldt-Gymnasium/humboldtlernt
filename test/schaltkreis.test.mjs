@@ -34,7 +34,7 @@ function pruefeKirchhoff(doc, erg) {
   for (const [id, r] of Object.entries(erg.draehte)) assert.ok(Number.isFinite(r.I), `Draht ${id}`);
   if (!erg.laeuft || erg.status !== 'ok') return;
   for (const b of doc.bauteile) {
-    if (b.typ === 'messgeraet' || b.typ === 'transistor' || SL.TYPEN[b.typ].gatter) continue; // Mehrpole: eigene Tests
+    if (b.typ === 'messgeraet' || b.typ === 'transistor') continue; // Mehrpole: eigene Tests
     const r = erg.bauteile[b.id];
     const ein = b.typ === 'quelle' ? M.pluspol(b) : 'a';
     // Strom, der über die Drähte in den Anschluss hineinfließt = Strom, der im Bauteil weiterfließt
@@ -504,7 +504,7 @@ test('20 · Zahlen werden mit passender Einheit angezeigt', () => {
   assert.equal(SL.fmt(0.0000123, 'A'), '12,3 µA');
 });
 
-// ---------------------------------------------------------------- Wechselspannung, Transistor, Logikgatter
+// ---------------------------------------------------------------- Wechselspannung und Transistor
 
 /** Quelle (Typ beliebig) in Reihe mit Teilen, wie reihe(), aber mit freier Quelle. */
 function reiheMit(quelle, werte, teile) {
@@ -604,93 +604,24 @@ test('24 · Transistor: sperrt ohne Basisstrom, verstärkt (I_C ≈ β · I_B), 
   nah(e.bauteile[x.u.id].I, e.bauteile[x.t.id].I + e.bauteile[x.t.id].Ib, 1e-6, 'Quellenstrom = I_C + I_B:');
 });
 
-/** Logikgatter mit zwei Schaltern an den Eingängen und einer 5-V-Lampe am Ausgang. */
-function gatterSchaltung(typ, a, b) {
+test('25 · Neue Bauteile: Speichern/Laden, Anschlussnamen, Zeichnen', () => {
   const doc = M.neu();
-  const u = M.bauteil(doc, 'quelle', -200, 0, { spannung: 5 });
-  const g = M.bauteil(doc, typ, 100, 0);
-  const l = M.bauteil(doc, 'lampe', 300, 0, { typ: '5v-1w' });
-  const s1 = M.bauteil(doc, 'schalter', 0, -100, { geschlossen: !!a });
-  M.verbinde(doc, { b: u.id, a: 'a' }, { b: s1.id, a: 'a' });
-  M.verbinde(doc, { b: s1.id, a: 'b' }, { b: g.id, a: 'a' });
-  if (typ !== 'nicht') {
-    const s2 = M.bauteil(doc, 'schalter', 0, 100, { geschlossen: !!b });
-    M.verbinde(doc, { b: u.id, a: 'a' }, { b: s2.id, a: 'a' });
-    M.verbinde(doc, { b: s2.id, a: 'b' }, { b: g.id, a: 'b' });
-  }
-  M.verbinde(doc, { b: g.id, a: 'm' }, { b: u.id, a: 'b' });
-  M.verbinde(doc, { b: g.id, a: 'q' }, { b: l.id, a: 'a' });
-  M.verbinde(doc, { b: l.id, a: 'b' }, { b: u.id, a: 'b' });
-  return { doc, g, l };
-}
-
-test('25 · Logikgatter UND, ODER, NICHT, XODER: Wahrheitstafeln', () => {
-  const tafeln = { und: [0, 0, 0, 1], oder: [0, 1, 1, 1], xoder: [0, 1, 1, 0] };
-  for (const [typ, q] of Object.entries(tafeln)) {
-    [[0, 0], [0, 1], [1, 0], [1, 1]].forEach(([a, b], i) => {
-      const { doc, g, l } = gatterSchaltung(typ, a, b);
-      const e = sim(doc);
-      assert.equal(e.bauteile[g.id].q, q[i], `${typ} ${a}${b}`);
-      assert.deepEqual({ ...e.bauteile[g.id].ein }, { a, b }, `${typ}: Eingänge erkannt`);
-      assert.equal(e.bauteile[l.id].zustand, q[i] ? 'an' : 'aus', `${typ} ${a}${b}: Lampe`);
-      assert.ok(!e.meldungen.some(m => m.art === 'fehler'));
-    });
-  }
-  for (const [a, q] of [[0, 1], [1, 0]]) {
-    const { doc, g, l } = gatterSchaltung('nicht', a);
-    const e = sim(doc);
-    assert.equal(e.bauteile[g.id].q, q, `NICHT ${a}`);
-    assert.equal(e.bauteile[l.id].zustand, q ? 'an' : 'aus');
-    nah(e.bauteile[g.id].U, q ? 5 * 25 / 26 : 0, 0.01, 'Ausgangsspannung mit 1 Ω Innenwiderstand:');
-  }
-  assert.equal(SL.GATTER.xoder.f(1, 1), 0);
-});
-
-test('26 · Logikgatter: Hinweise bei fehlender Masse, Rückkopplung und Überlast; Gatter hintereinander', () => {
-  // Ohne Masse-Anschluss
-  let x = gatterSchaltung('und', 1, 1);
-  x.doc.draehte = x.doc.draehte.filter(d => !(d.von.b === x.g.id && d.von.a === 'm'));
-  assert.ok(sim(x.doc).meldungen.some(m => /Masseanschluss/.test(m.text)));
-  // NICHT-Gatter mit Ausgang auf eigenem Eingang: schwingt, aber kein Absturz
-  const doc = M.neu();
-  const u = M.bauteil(doc, 'quelle', 0, 0, { spannung: 5 });
-  const n = M.bauteil(doc, 'nicht', 200, 0);
-  M.verbinde(doc, { b: n.id, a: 'q' }, { b: n.id, a: 'a' });
-  M.verbinde(doc, { b: n.id, a: 'm' }, { b: u.id, a: 'b' });
-  const e = sim(doc);
-  assert.ok(e.meldungen.some(m => /schalten ständig um/.test(m.text)));
-  // Ausgang direkt auf Masse: überlastet
-  x = gatterSchaltung('oder', 1, 0);
-  M.verbinde(x.doc, { b: x.g.id, a: 'q' }, { b: x.g.id, a: 'm' });
-  assert.ok(sim(x.doc).meldungen.some(m => /überlastet/.test(m.text)));
-  // UND → NICHT = NAND
-  x = gatterSchaltung('und', 1, 1);
-  const nicht = M.bauteil(x.doc, 'nicht', 300, 200);
-  const ld = x.doc.draehte.find(d => d.von.b === x.g.id && d.von.a === 'q');
-  M.loesche(x.doc, { art: 'draht', id: ld.id });
-  M.verbinde(x.doc, { b: x.g.id, a: 'q' }, { b: nicht.id, a: 'a' });
-  M.verbinde(x.doc, { b: nicht.id, a: 'q' }, { b: x.l.id, a: 'a' });
-  M.verbinde(x.doc, { b: nicht.id, a: 'm' }, { b: x.doc.bauteile[0].id, a: 'b' });
-  const r = sim(x.doc);
-  assert.equal(r.bauteile[nicht.id].q, 0);
-  assert.equal(r.bauteile[x.l.id].zustand, 'aus', 'NAND: 1,1 → 0');
-  // Widerstandsmessung an einem eingeschalteten Gatter wird abgelehnt
-  const mm = M.bauteil(x.doc, 'messgeraet', 500, 0, { modus: 'Ohm' });
-  M.verbinde(x.doc, { b: mm.id, a: 'v' }, { b: x.l.id, a: 'a' });
-  M.verbinde(x.doc, { b: mm.id, a: 'com' }, { b: x.l.id, a: 'b' });
-  assert.match(sim(x.doc).messgeraete[mm.id].fehler, /ohne Spannung/);
-});
-
-test('27 · Neue Bauteile: Speichern/Laden, Anschlussnamen, Zeichnen', () => {
-  const doc = M.neu();
-  for (const typ of ['wechsel', 'transistor', 'und', 'oder', 'nicht', 'xoder']) M.bauteil(doc, typ, 0, 0);
+  for (const typ of ['wechsel', 'transistor']) M.bauteil(doc, typ, 0, 0);
   const r = M.importiere(M.exportiere(doc));
   assert.equal(r.ok, true);
-  assert.deepEqual([...r.doc.bauteile.map(b => b.name)], ['G1', 'T1', 'UND1', 'ODER1', 'NICHT1', 'XODER1']);
+  assert.deepEqual([...r.doc.bauteile.map(b => b.name)], ['G1', 'T1']);
   const t = doc.bauteile[1];
   assert.equal(M.anschlussName(t, 'c'), 'Kollektor (C)');
-  assert.equal(M.anschlussName(doc.bauteile[2], 'm'), 'Masse (⊥)');
   const svg = SL.zeichnen.szene({ doc, erg: sim(doc), laeuft: true, messwerte: true, flussAn: true });
-  assert.match(svg, /≥1/); assert.match(svg, /=1/); assert.match(svg, /&amp;/);
+  assert.match(svg, /T1/);
   for (const typ of Object.keys(SL.TYPEN)) assert.match(SL.zeichnen.symbol(typ), /^<svg/);
+  // Logikgatter gibt es nicht mehr: alte Dateien damit laden trotzdem, die Gatter werden übersprungen
+  const alt = JSON.parse(M.exportiere(doc));
+  alt.bauteile.push({ id: 'b9', typ: 'und', name: 'UND1', x: 0, y: 0, rot: 0, werte: {} });
+  alt.draehte.push({ id: 'd9', von: { b: 'b9', a: 'q' }, nach: { b: t.id, a: 'b' } });
+  const geladen = M.importiere(JSON.stringify(alt));
+  assert.equal(geladen.ok, true);
+  assert.equal(geladen.doc.bauteile.length, 2);
+  assert.equal(geladen.doc.draehte.length, 0);
+  assert.ok(!('und' in SL.TYPEN));
 });
