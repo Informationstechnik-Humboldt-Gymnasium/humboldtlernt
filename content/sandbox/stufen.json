@@ -28,6 +28,14 @@
       "untertitel": "Periodensystem mit allen 118 Elementen, Atome und Isotope selbst bauen, Energiestufen, Teilchenmodell, Molekülbaukasten und Formelrechner.",
       "bereich": "Atome & Chemie",
       "icon": "atom"
+    },
+    {
+      "id": "netzwerk",
+      "lesson": "sandbox-netzwerk",
+      "titel": "Netzwerk-Labor",
+      "untertitel": "Baue Netzwerke aus PCs, Servern, Switches und Routern, vergib IPv4-Adressen, trage Routen ein und verfolge Datenpakete Schritt für Schritt.",
+      "bereich": "Netzwerke",
+      "icon": "netzwerk"
     }
   ]
 }

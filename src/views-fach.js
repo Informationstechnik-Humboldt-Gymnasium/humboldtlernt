@@ -88,6 +88,13 @@ const SIM_SYMBOLE = {
     <ellipse cx="32" cy="20" rx="18" ry="6" stroke="currentColor" stroke-width="2" fill="none" transform="rotate(60 32 20)"/>
     <ellipse cx="32" cy="20" rx="18" ry="6" stroke="currentColor" stroke-width="2" fill="none" transform="rotate(-60 32 20)"/>
   </svg>`,
+  // Netzwerk: zwei Rechner über einen Switch verbunden
+  netzwerk: `<svg viewBox="0 0 64 40" width="64" height="40" focusable="false">
+    <rect x="4" y="4" width="16" height="11" rx="1.5" stroke="currentColor" stroke-width="2" fill="none"/>
+    <rect x="44" y="4" width="16" height="11" rx="1.5" stroke="currentColor" stroke-width="2" fill="none"/>
+    <rect x="18" y="28" width="28" height="8" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path d="M12 15 V22 H26 V28 M52 15 V22 H38 V28" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/>
+  </svg>`,
 };
 const simSymbol = icon => SIM_SYMBOLE[icon] || esc(icon);
 

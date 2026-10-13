@@ -197,13 +197,20 @@ test('Sandbox: Simulationsübersicht, Schaltkreis-Labor und Rückweg zur Fachüb
   assert.match(uebersicht, /href="\/sandbox\/logik"/);
   assert.match(uebersicht, /Logik-Labor/);
   assert.doesNotMatch(uebersicht, /⚡|🔀/, 'Schaltzeichen statt Emojis');
-  assert.equal((uebersicht.match(/<span class="sim-icon" aria-hidden="true"><svg/g) || []).length, 3);
+  assert.equal((uebersicht.match(/<span class="sim-icon" aria-hidden="true"><svg/g) || []).length, 4);
+  // Vierte Simulation: Netzwerk-Labor (nutzt Bedienung und Grundlayout des Schaltkreis-Labors mit)
+  assert.match(uebersicht, /href="\/sandbox\/netzwerk"/);
+  const netz = await (await t.req('/sandbox/netzwerk')).text();
+  assert.match(netz, /src="\/inhalt\/sandbox-netzwerk\/index\.html"/);
+  for (const f of ['index.html', 'netzwerk.css', 'ipv4.js', 'modell.js', 'simulation.js', 'aufgaben.js', 'zeichnen.js', 'netzwerk.js']) {
+    assert.equal((await t.req(`/inhalt/sandbox-netzwerk/${f}`)).status, 200, f);
+  }
   // Dritte Simulation: Atom- & Chemielabor
   assert.match(uebersicht, /href="\/sandbox\/chemielabor"/);
   assert.match(uebersicht, /Atom- &amp; Chemielabor/);
   const chem = await (await t.req('/sandbox/chemielabor')).text();
   assert.match(chem, /src="\/inhalt\/sandbox-chemielabor\/index\.html"/);
-  for (const f of ['index.html', 'chemielabor.css', 'daten-elemente.js', 'chemie.js', 'molekuel.js', 'labor.js']) {
+  for (const f of ['index.html', 'chemielabor.css', 'daten-elemente.js', 'chemie.js', 'molekuel.js', 'aufgaben-molekuel.js', 'labor.js']) {
     assert.equal((await t.req(`/inhalt/sandbox-chemielabor/${f}`)).status, 200, f);
   }
   const logik = await (await t.req('/sandbox/logik')).text();
