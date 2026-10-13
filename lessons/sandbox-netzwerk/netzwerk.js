@@ -10,7 +10,7 @@
   var reduziert = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
 
   var st = { doc: M.neu(), auswahl: null, verlauf: [], zukunft: [], mac: {}, aufgabe: null, hinweise: 0, rueckmeldung: null, erledigt: {}, test: null,
-    sim: null };   // sim: { erg, k (Index in erg.ablauf), t0, laeuft, raf, paket, gen }
+    sim: null, testmodus: false, pick: null, log: [] };   // sim: { erg, k (Index in erg.ablauf), t0, laeuft, raf, paket, gen }
 
   // ---------------------------------------------------------------- Verlauf und Speichern
   function knoepfe() { $('rueck').disabled = !st.verlauf.length; $('vor').disabled = !st.zukunft.length; $('loeschen').disabled = !st.auswahl; }
@@ -34,13 +34,29 @@
    *  art 'feld': Texteingabe im Konfigurationsbereich – die Felder selbst werden NICHT neu aufgebaut (Fokus bleibt). */
   function geaendert(art) {
     gueltigeAuswahl();
-    if (art !== 'bewegen') { simStopp(); st.mac = {}; }
+    // Beim Verschieben ändert sich nur die Lage – außer bei WLAN: Dort entscheidet der Abstand über die Verbindung.
+    var funk = art === 'bewegen' && st.doc.bauteile.some(function (b) { return SL.TYPEN[b.typ].funk; });
+    if (art !== 'bewegen' || funk) { simStopp(); st.mac = {}; }
     zeichne();
     if (art !== 'bewegen') { auswahlListen(); if (art === 'feld') meldungenAktualisieren(); else eigenschaften(); aufgabeLive(); }
+    else if (funk) { meldungenAktualisieren(); aufgabeLive(); }
     knoepfe();
     speichere();
   }
-  function waehle(sel) { st.auswahl = sel; knoepfe(); eigenschaften(); zeichne(); }
+  function waehle(sel) {
+    // Freier Testmodus: Antippen von Endgeräten wählt Quelle und Ziel und startet sofort einen Test
+    if (st.testmodus && sel && sel.art === 'bauteil') {
+      var b = M.finde(st.doc, sel.id);
+      if (!SL.TYPEN[b.typ].endgeraet) { toast(SL.TYPEN[b.typ].name + ' leitet nur weiter. Tippe ein Endgerät an (PC, Laptop, Smartphone, Server).', 'hinweis'); return; }
+      if (!st.pick || st.pick.z) { st.pick = { q: b.id }; st.test = { q: b.id, z: null }; toast('Quelle: ' + b.name + '. Tippe jetzt das Ziel an.', 'hinweis'); zeichne(); return; }
+      if (st.pick.q === b.id) { st.pick = null; st.test = null; toast('Auswahl aufgehoben.', 'hinweis'); zeichne(); return; }
+      st.pick.z = b.id;
+      $('quelle').value = st.pick.q; $('ziel').value = b.id;
+      senden();
+      return;
+    }
+    st.auswahl = sel; knoepfe(); eigenschaften(); zeichne();
+  }
 
   // ---------------------------------------------------------------- Bedienung (gemeinsam mit den anderen Laboren)
   var svg = $('flaeche'), welt = $('welt'), raster = $('raster'), box = $('flaeche-box'), leisteAktiv = null;
@@ -79,9 +95,14 @@
     svg.setAttribute('viewBox', [v.x, v.y, w, h].map(function (n) { return Math.round(n * 100) / 100; }).join(' '));
     raster.setAttribute('x', v.x); raster.setAttribute('y', v.y); raster.setAttribute('width', w); raster.setAttribute('height', h);
     var sim = st.sim, pfadKabel = {}, markiert = {};
-    if (st.test) { markiert[st.test.q] = 'quelle'; markiert[st.test.z] = 'ziel'; }
+    if (st.test) { markiert[st.test.q] = 'quelle'; if (st.test.z) markiert[st.test.z] = 'ziel'; }
     if (sim) {
-      sim.erg.ablauf.slice(0, sim.k + 1).forEach(function (x) { if (x.typ === 'kabel') pfadKabel[sim.erg.pfad[x.i].draht] = sim.erg.pfad[x.i].phase; });
+      sim.erg.ablauf.slice(0, sim.k + 1).forEach(function (x) {
+        if (x.typ !== 'kabel') return;
+        var pf = sim.erg.pfad[x.i];
+        // Funkstrecken werden über das WLAN-Gerät markiert (die Seite, die nicht der Access Point ist)
+        pfadKabel[pf.funk ? 'funk:' + (pf.von.a === 'funk' ? pf.nach.b : pf.von.b) : pf.draht] = pf.phase;
+      });
       var akt = sim.erg.ablauf[Math.min(sim.k, sim.erg.ablauf.length - 1)];
       if (akt && akt.typ === 'schritt') { var s = sim.erg.schritte[akt.i]; if (s.geraet) markiert[s.geraet] = s.art === 'fehler' ? 'fehler' : 'aktuell'; }
     }
@@ -109,7 +130,7 @@
   // ---------------------------------------------------------------- Konfiguration (rechte Spalte)
   /** Prüfmeldung für ein Eingabefeld (leer = in Ordnung). */
   function feldMeldung(b, schluessel) {
-    var t = schluessel.split(':');   // if:port:feld | gw | dns | route:rid
+    var t = schluessel.split(':');   // if:port:feld | gw | dns | route:rid | regel:fid | funk | kunden
     if (t[0] === 'if') {
       var f = b.werte.ifs[t[1]];
       if (!f.ip && !f.maske) return '';
@@ -122,9 +143,24 @@
       if (!v) return t[0] === 'gw' ? 'hinweis:Ohne Gateway erreicht das Gerät nur Geräte im eigenen Netz.' : '';
       var a = IP.adresse(v);
       if (!a.ok) return a.fehler;
-      var h2 = IP.host(b.werte.ifs.eth0.ip, b.werte.ifs.eth0.maske);
+      var eigen = b.werte.ifs[M.ifName(b)], h2 = IP.host(eigen.ip, eigen.maske);
       if (t[0] === 'gw' && h2.ok && !IP.gleichesNetz(a.wert, h2.ip, h2.praefix)) return 'Das Gateway muss im eigenen Netz ' + IP.info(h2.ip, h2.praefix).cidr + ' liegen.';
       return t[0] === 'dns' ? 'hinweis:Nur gespeichert – DNS-Auflösung wird nicht simuliert.' : '';
+    }
+    if (t[0] === 'funk') {
+      var fu = M.funk(st.doc, b);
+      return fu.ok ? 'ok:Verbunden mit ' + fu.ap.name + ' („' + b.werte.ssid + '“), Abstand ' + Math.round(fu.abstand) + ' von ' + fu.ap.werte.reichweite + '.' : fu.grund;
+    }
+    if (t[0] === 'kunden') {
+      var ku = M.funkKunden(st.doc, b);
+      return 'hinweis:' + (ku.length ? 'Verbunden: ' + ku.map(function (c) { return c.name; }).join(', ') : 'Noch kein WLAN-Gerät verbunden.');
+    }
+    if (t[0] === 'regel') {
+      var rg = b.werte.regeln.filter(function (x) { return x.id === t[1]; })[0];
+      if (!rg) return '';
+      var fe = [];
+      [['Quelle', rg.quelle], ['Ziel', rg.ziel]].forEach(function (x) { var br = IP.bereich(x[1]); if (!br.ok) fe.push(x[0] + ': ' + br.fehler); });
+      return fe.length ? fe.join(' ') + ' Die Regel wird ignoriert.' : '';
     }
     if (t[0] === 'route') {
       var r = b.werte.routen.filter(function (x) { return x.id === t[1]; })[0];
@@ -170,12 +206,33 @@
     h += '<p class="small muted">' + esc(T.name) + ' · ' + esc(T.hilfe) + '</p>';
     h += '<label class="ctrl"><span>Gerätename</span><input type="text" data-name maxlength="16" value="' + esc(b.name) + '"></label><div class="meldung" data-meldung="name"></div>';
     if (T.endgeraet) {
-      h += ifFeld(b, 'eth0', 'Netzwerkkarte eth0');
+      var ifn = M.ifName(b);
+      if (T.funk) {
+        var ssids = {}; st.doc.bauteile.forEach(function (x) { if (x.typ === 'ap' && x.werte.ssid) ssids[x.werte.ssid] = true; });
+        h += '<fieldset class="schnitt"><legend>WLAN</legend>' +
+          '<label class="ctrl"><span>Netzwerkname (SSID)</span><input type="text" list="ssid-liste" autocomplete="off" spellcheck="false" data-feld="wert:ssid" value="' + esc(b.werte.ssid) + '" placeholder="z. B. Schul-WLAN"></label>' +
+          '<datalist id="ssid-liste">' + Object.keys(ssids).map(function (x) { return '<option value="' + esc(x) + '">'; }).join('') + '</datalist>' +
+          '<label class="ctrl"><span>WLAN-Schlüssel <span class="muted">(nur Simulation – kein echtes Passwort eingeben)</span></span><input type="text" autocomplete="off" spellcheck="false" data-feld="wert:schluessel" value="' + esc(b.werte.schluessel) + '"></label>' +
+          '<div class="meldung" data-meldung="funk">' + meldungHtml(feldMeldung(b, 'funk')) + '</div>' +
+          '<p class="small muted">Verbunden wird mit dem nächstgelegenen Access Point mit dieser SSID, wenn der Schlüssel stimmt und das Gerät in Reichweite steht. Zum Ändern der Entfernung das Gerät verschieben.</p></fieldset>';
+      }
+      h += ifFeld(b, ifn, T.funk ? 'WLAN-Karte ' + ifn : 'Netzwerkkarte ' + ifn);
       h += '<label class="ctrl"><span>Standardgateway <span class="muted">(optional)</span></span><input type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-feld="gw" value="' + esc(b.werte.gateway) + '" placeholder="z. B. 192.168.1.1"></label>' +
         '<div class="meldung" data-meldung="gw">' + meldungHtml(feldMeldung(b, 'gw')) + '</div>';
       h += '<label class="ctrl"><span>DNS-Server <span class="muted">(optional)</span></span><input type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-feld="dns" value="' + esc(b.werte.dns) + '"></label>' +
         '<div class="meldung" data-meldung="dns">' + meldungHtml(feldMeldung(b, 'dns')) + '</div>';
-    } else if (b.typ === 'router') {
+      if (b.werte.dienste) h += '<h3>Dienste</h3>' +
+        '<label class="haken"><input type="checkbox" data-feld="wert:dienst:web"' + (b.werte.dienste.web ? ' checked' : '') + '> Webserver (HTTP, Port 80)</label>' +
+        '<label class="haken"><input type="checkbox" data-feld="wert:dienst:https"' + (b.werte.dienste.https ? ' checked' : '') + '> Sicheres Web (HTTPS, Port 443)</label>' +
+        '<p class="small muted">Ping beantwortet jedes Endgerät. Für „Web“-Tests muss der passende Dienst eingeschaltet sein.</p>';
+    } else if (b.typ === 'ap') {
+      h += '<label class="ctrl"><span>Netzwerkname (SSID)</span><input type="text" autocomplete="off" spellcheck="false" data-feld="wert:ssid" value="' + esc(b.werte.ssid) + '"></label>' +
+        '<label class="ctrl"><span>WLAN-Schlüssel <span class="muted">(leer = offenes WLAN; nur Simulation)</span></span><input type="text" autocomplete="off" spellcheck="false" data-feld="wert:schluessel" value="' + esc(b.werte.schluessel) + '"></label>' +
+        '<label class="ctrl"><span>Reichweite <output data-ausgabe="reichweite">' + b.werte.reichweite + '</output></span><input type="range" min="80" max="600" step="10" data-feld="wert:reichweite" value="' + b.werte.reichweite + '" aria-label="Reichweite"></label>' +
+        '<div class="meldung" data-meldung="kunden">' + meldungHtml(feldMeldung(b, 'kunden')) + '</div>' +
+        '<p class="small muted">LAN-Anschluss eth0: ' + gegenstelleText(b, 'eth0') + '. Der Access Point arbeitet wie ein Switch mit Funk (Schicht 2) und braucht selbst keine IP-Adresse. Die Reichweite ist eine Vereinfachung (fester Kreis, keine Wände).</p>';
+      h += macTabelle(b);
+    } else if (T.routet) {
       Object.keys(b.werte.ifs).forEach(function (p) { h += ifFeld(b, p, 'Schnittstelle ' + p); });
       h += '<h3>Routing-Tabelle</h3><div class="tab-rahmen" data-routen-tabelle>' + routenTabelle(b) + '</div>' +
         '<p class="small muted">C = direkt angeschlossenes Netz (automatisch aus den Schnittstellen), S = statische Route (unten eintragen). Bei mehreren passenden Einträgen gewinnt der längste Präfix.</p>';
@@ -190,21 +247,48 @@
           '<button type="button" data-route-loeschen="' + r.id + '" class="gefahr">Route löschen</button></div></fieldset>';
       }).join('');
       h += '<button type="button" data-aktion="route-neu"' + (b.werte.routen.length >= 16 ? ' disabled' : '') + '>+ Route hinzufügen</button>';
+      if (b.typ === 'firewall') h += firewallRegeln(b);
     } else if (b.typ === 'switch') {
       h += '<h3>Ports</h3><ul class="ports">' + Object.keys(M.ports(b)).map(function (p) {
         return '<li><b>' + esc(M.anschlussName(b, p)) + '</b>: ' + gegenstelleText(b, p) + '</li>';
       }).join('') + '</ul>';
-      var tab = st.mac[b.id] || {}, eintraege = Object.keys(tab);
-      h += '<h3>Gelernte MAC-Adressen</h3>' + (eintraege.length
-        ? '<table class="werte"><thead><tr><th>MAC-Adresse</th><th>Port</th><th>Gerät</th></tr></thead><tbody>' + eintraege.map(function (m) {
-          var g = st.doc.bauteile.filter(function (x) { return Object.keys(M.ports(x)).some(function (p) { return M.mac(x, p) === m; }); })[0];
-          return '<tr><td><code>' + esc(m) + '</code></td><td>' + esc(M.anschlussName(b, tab[m])) + '</td><td>' + esc(g ? g.name : '?') + '</td></tr>';
-        }).join('') + '</tbody></table>'
-        : '<p class="small muted">Noch leer. Der Switch lernt erst, wenn Verkehr durch ihn läuft – teste eine Verbindung.</p>') +
-        '<p class="small muted">Vereinfachtes Modell: Der Switch merkt sich die Absender-MAC jedes Rahmens. Kennt er das Ziel noch nicht, flutet er den Rahmen an alle anderen Ports. VLANs werden nicht simuliert. Die Tabelle wird bei jeder Änderung am Netz geleert.</p>';
+      h += macTabelle(b);
     }
     h += '<div class="knoepfe"><button type="button" data-aktion="loeschen" class="gefahr">Gerät entfernen</button></div>';
     z.innerHTML = h;
+  }
+  /** Gelernte MAC-Adressen eines Switches oder Access Points (aus der letzten Simulation). */
+  function macTabelle(b) {
+      var tab = st.mac[b.id] || {}, eintraege = Object.keys(tab);
+      return '<h3>Gelernte MAC-Adressen</h3>' + (eintraege.length
+        ? '<table class="werte"><thead><tr><th>MAC-Adresse</th><th>Port</th><th>Gerät</th></tr></thead><tbody>' + eintraege.map(function (m) {
+          var g = st.doc.bauteile.filter(function (x) { return Object.keys(x.werte.ifs || M.ports(x)).some(function (p) { return M.mac(x, p) === m; }); })[0];
+          return '<tr><td><code>' + esc(m) + '</code></td><td>' + esc(M.anschlussName(b, tab[m])) + '</td><td>' + esc(g ? g.name : '?') + '</td></tr>';
+        }).join('') + '</tbody></table>'
+        : '<p class="small muted">Noch leer. Gelernt wird erst, wenn Verkehr durchläuft – teste eine Verbindung.</p>') +
+        '<p class="small muted">Vereinfachtes Modell: Gemerkt wird die Absender-MAC jedes Rahmens. Ist das Ziel noch unbekannt, wird der Rahmen an alle anderen Ports geflutet. VLANs werden nicht simuliert. Die Tabelle wird bei jeder Änderung am Netz geleert.</p>';
+  }
+  /** Regel-Editor einer Firewall: Reihenfolge zählt, erste passende Regel gilt. */
+  function firewallRegeln(b) {
+    var D = M.DIENSTE;
+    var h = '<h3>Firewall-Regeln</h3><p class="small muted">Jedes Paket wird von oben nach unten geprüft – die <b>erste passende</b> Regel entscheidet. Passt keine, gilt die Standardrichtlinie. Antworten auf erlaubte Verbindungen dürfen automatisch zurück. Adressen: „alle“, eine Adresse (10.0.0.5) oder ein Netz (192.168.1.0/24).</p>';
+    h += b.werte.regeln.map(function (r, i) {
+      var k = 'regel:' + r.id;
+      return '<fieldset class="route regel ' + r.aktion + '"><legend>Regel ' + (i + 1) + '</legend><div class="felder2">' +
+        '<label class="ctrl"><span>Aktion</span><select data-feld="' + k + ':aktion"><option value="erlauben"' + (r.aktion === 'erlauben' ? ' selected' : '') + '>erlauben</option><option value="blockieren"' + (r.aktion === 'blockieren' ? ' selected' : '') + '>blockieren</option></select></label>' +
+        '<label class="ctrl"><span>Dienst</span><select data-feld="' + k + ':dienst"><option value="alle"' + (r.dienst === 'alle' ? ' selected' : '') + '>alle Dienste</option>' +
+        Object.keys(D).map(function (d) { return '<option value="' + d + '"' + (r.dienst === d ? ' selected' : '') + '>' + esc(D[d].kurz) + '</option>'; }).join('') + '</select></label>' +
+        '<label class="ctrl"><span>Quelle</span><input type="text" spellcheck="false" data-feld="' + k + ':quelle" value="' + esc(r.quelle) + '" placeholder="alle"></label>' +
+        '<label class="ctrl"><span>Ziel</span><input type="text" spellcheck="false" data-feld="' + k + ':ziel" value="' + esc(r.ziel) + '" placeholder="alle"></label></div>' +
+        '<div class="meldung" data-meldung="' + k + '">' + meldungHtml(feldMeldung(b, k)) + '</div>' +
+        '<div class="row eng"><label class="haken"><input type="checkbox" data-feld="' + k + ':aktiv"' + (r.aktiv ? ' checked' : '') + '> aktiv</label>' +
+        '<button type="button" data-regel="hoch" data-id="' + r.id + '"' + (i === 0 ? ' disabled' : '') + ' aria-label="Regel ' + (i + 1) + ' nach oben">↑</button>' +
+        '<button type="button" data-regel="runter" data-id="' + r.id + '"' + (i === b.werte.regeln.length - 1 ? ' disabled' : '') + ' aria-label="Regel ' + (i + 1) + ' nach unten">↓</button>' +
+        '<button type="button" data-regel="loeschen" data-id="' + r.id + '" class="gefahr">Löschen</button></div></fieldset>';
+    }).join('');
+    h += '<button type="button" data-aktion="regel-neu"' + (b.werte.regeln.length >= 16 ? ' disabled' : '') + '>+ Regel hinzufügen</button>';
+    h += '<label class="ctrl standard"><span>Standardrichtlinie (wenn keine Regel passt)</span><select data-feld="wert:standard"><option value="blockieren"' + (b.werte.standard === 'blockieren' ? ' selected' : '') + '>blockieren (empfohlen)</option><option value="erlauben"' + (b.werte.standard === 'erlauben' ? ' selected' : '') + '>erlauben</option></select></label>';
+    return h;
   }
   function routenTabelle(b) {
     return '<table class="werte routen"><thead><tr><th>Typ</th><th>Zielnetz</th><th>Nächster Hop</th><th>Aktiv</th></tr></thead><tbody>' +
@@ -220,7 +304,9 @@
     if (!b) return;
     $('eig').querySelectorAll('[data-meldung]').forEach(function (el) { if (el.dataset.meldung !== 'name') el.innerHTML = meldungHtml(feldMeldung(b, el.dataset.meldung)); });
     var t = $('eig').querySelector('[data-routen-tabelle]');
-    if (t && b.typ === 'router') t.innerHTML = routenTabelle(b);
+    if (t && SL.TYPEN[b.typ].routet) t.innerHTML = routenTabelle(b);
+    var o = $('eig').querySelector('[data-ausgabe="reichweite"]');
+    if (o && b.typ === 'ap') o.textContent = b.werte.reichweite;
   }
   $('eig').addEventListener('input', function (e) {
     var x = e.target, a = st.auswahl, b = a && a.art === 'bauteil' && M.finde(st.doc, a.id);
@@ -229,7 +315,7 @@
     if (x.hasAttribute('data-name')) {
       var ok = M.setzeName(st.doc, b.id, x.value);
       $('eig').querySelector('[data-meldung="name"]').innerHTML = ok ? '' : meldungHtml('Diesen Namen hat schon ein anderes Gerät.');
-    } else if (x.dataset.feld && x.type !== 'checkbox') setzeFeld(b, x.dataset.feld, x.value);
+    } else if (x.dataset.feld && x.type !== 'checkbox' && x.tagName !== 'SELECT') setzeFeld(b, x.dataset.feld, x.value);
     simStopp(); st.mac = {};
     zeichne(); meldungenAktualisieren(b); speichere(); aufgabeLive();
   });
@@ -238,6 +324,7 @@
     if (!b) return;
     x._gemerkt = false;
     if (x.type === 'checkbox') { merke(); setzeFeld(b, x.dataset.feld, x.checked); geaendert(); return; }
+    if (x.tagName === 'SELECT' && x.dataset.feld) { merke(); setzeFeld(b, x.dataset.feld, x.value); geaendert(); return; }
     geaendert('feld');
   });
   function setzeFeld(b, feld, wert) {
@@ -246,6 +333,8 @@
     else if (t[0] === 'gw') M.setzeWert(st.doc, b.id, 'gateway', wert);
     else if (t[0] === 'dns') M.setzeWert(st.doc, b.id, 'dns', wert);
     else if (t[0] === 'route') M.routeSetze(st.doc, b.id, t[1], t[2], wert);
+    else if (t[0] === 'regel') M.regelSetze(st.doc, b.id, t[1], t[2], wert);
+    else if (t[0] === 'wert') M.setzeWert(st.doc, b.id, t.slice(1).join(':'), wert);
   }
   $('eig').addEventListener('click', function (e) {
     var x = e.target.closest('button'); if (!x) return;
@@ -253,6 +342,13 @@
     if (x.dataset.aktion === 'loeschen') loeschen();
     else if (x.dataset.aktion === 'route-neu' && b) { merke(); M.routeHinzu(st.doc, b.id); geaendert(); var f = $('eig').querySelectorAll('fieldset.route input'); if (f.length) f[f.length - 3].focus(); }
     else if (x.dataset.routeLoeschen && b) { merke(); M.routeLoesche(st.doc, b.id, x.dataset.routeLoeschen); geaendert(); }
+    else if (x.dataset.aktion === 'regel-neu' && b) { merke(); M.regelHinzu(st.doc, b.id); geaendert(); var q = $('eig').querySelectorAll('fieldset.regel input[type=text]'); if (q.length) q[q.length - 2].focus(); }
+    else if (x.dataset.regel && b) {
+      merke();
+      if (x.dataset.regel === 'loeschen') M.regelLoesche(st.doc, b.id, x.dataset.id);
+      else M.regelVerschiebe(st.doc, b.id, x.dataset.id, x.dataset.regel === 'hoch' ? -1 : 1);
+      geaendert();
+    }
   });
 
   function loeschen() {
@@ -274,7 +370,7 @@
   function endgeraete() { return st.doc.bauteile.filter(function (b) { return SL.TYPEN[b.typ].endgeraet; }); }
   function auswahlListen() {
     var e = endgeraete(), q = $('quelle'), z = $('ziel'), vq = q.value, vz = z.value;
-    var opt = e.map(function (b) { return '<option value="' + esc(b.id) + '">' + esc(b.name) + '</option>'; }).join('') || '<option value="">– keine PCs/Server –</option>';
+    var opt = e.map(function (b) { return '<option value="' + esc(b.id) + '">' + esc(b.name) + '</option>'; }).join('') || '<option value="">– keine Endgeräte –</option>';
     q.innerHTML = opt; z.innerHTML = opt;
     if (vq && M.finde(st.doc, vq)) q.value = vq;
     if (vz && M.finde(st.doc, vz)) z.value = vz; else if (e[1]) z.value = e[1].id;
@@ -304,10 +400,27 @@
     var q = $('quelle').value, z = $('ziel').value;
     simStopp();
     st.mac = {};
-    var erg = S.sende(st.doc, q, z, st.mac);
+    var erg = S.sende(st.doc, q, z, st.mac, $('dienst').value);
     st.test = { q: q, z: z };
+    protokolliere(q, z, erg);
     zeigeErgebnis(erg);
     zeichne(); eigenschaften();
+  }
+  /** Testprotokoll (letzte 12 Tests) – besonders für den freien Testmodus. */
+  function protokolliere(q, z, erg) {
+    var bq = M.finde(st.doc, q), bz = M.finde(st.doc, z);
+    if (!bq || !bz) return;
+    st.log.unshift({ q: q, z: z, dienst: erg.dienst, status: erg.status, text: bq.name + ' → ' + bz.name, meldung: erg.meldung });
+    st.log = st.log.slice(0, 12);
+    zeigeProtokoll();
+  }
+  function zeigeProtokoll() {
+    var l = $('testlog');
+    l.hidden = !st.log.length;
+    l.innerHTML = '<h3>Testprotokoll</h3><ol>' + st.log.map(function (x, i) {
+      var s = STATUS_TEXT[x.status];
+      return '<li><button type="button" class="log ' + s[0] + '" data-log="' + i + '" title="' + esc(x.meldung) + '"><span class="log-zeichen">' + s[1].charAt(0) + '</span> ' + esc(x.text) + ' <span class="muted">· ' + esc(M.DIENSTE[x.dienst].kurz) + '</span></button></li>';
+    }).join('') + '</ol><button type="button" id="log-leeren" class="klein">Protokoll leeren</button>';
   }
 
   // Paketanimation: läuft erg.ablauf ab. Ein Generationszähler verhindert, dass alte Animationen nach Stopp/Neustart weiterlaufen.
@@ -316,8 +429,9 @@
     var q = $('quelle').value, z = $('ziel').value;
     simStopp();
     st.mac = {};
-    var erg = S.sende(st.doc, q, z, st.mac);
+    var erg = S.sende(st.doc, q, z, st.mac, $('dienst').value);
     st.test = { q: q, z: z };
+    protokolliere(q, z, erg);
     if (!erg.ablauf.length) { zeigeErgebnis(erg); zeichne(); return; }
     st.sim = { erg: erg, k: 0, t0: null, laeuft: true, raf: null, paket: null, gen: (st.sim && st.sim.gen || 0) + 1 };
     $('abspielen').hidden = false;
@@ -389,6 +503,29 @@
   });
   $('stopp').addEventListener('click', function () { simStopp(); st.test = null; $('ergebnis').innerHTML = ''; $('schritte').innerHTML = ''; zeichne(); });
   $('testen').addEventListener('click', testen);
+  $('dienst').addEventListener('change', function () { simStopp(); $('ergebnis').innerHTML = ''; $('schritte').innerHTML = ''; zeichne(); });
+  $('testlog').addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b) return;
+    if (b.id === 'log-leeren') { st.log = []; zeigeProtokoll(); return; }
+    var x = st.log[Number(b.dataset.log)];
+    if (!x || !M.finde(st.doc, x.q) || !M.finde(st.doc, x.z)) { toast('Eines der Geräte gibt es nicht mehr.', 'hinweis'); return; }
+    $('quelle').value = x.q; $('ziel').value = x.z; $('dienst').value = x.dienst;
+    st.log.splice(Number(b.dataset.log), 1);
+    senden();
+  });
+  // Freier Testmodus: Endgeräte antippen statt konfigurieren, jeder Test wird sofort als Paket abgespielt und protokolliert
+  function testmodus(an) {
+    st.testmodus = an; st.pick = null;
+    var k = $('testmodus');
+    k.setAttribute('aria-pressed', String(an));
+    $('testmodus-hinweis').hidden = !an;
+    document.body.classList.toggle('testend', an);
+    if (an) { st.auswahl = null; eigenschaften(); knoepfe(); $('test-karte').scrollIntoView({ block: 'nearest' }); toast('Freier Testmodus: Tippe Quelle und Ziel an. Geräte lassen sich weiter verschieben.', 'hinweis'); }
+    else { st.test = null; toast('Testmodus beendet – Geräte antippen öffnet wieder die Konfiguration.', 'hinweis'); }
+    zeichne();
+  }
+  $('testmodus').addEventListener('click', function () { testmodus(!st.testmodus); });
+  $('testmodus-ende').addEventListener('click', function () { testmodus(false); });
   $('senden').addEventListener('click', senden);
   ['quelle', 'ziel'].forEach(function (id) { $(id).addEventListener('change', function () { simStopp(); st.test = null; $('ergebnis').innerHTML = ''; $('schritte').innerHTML = ''; zeichne(); }); });
   document.addEventListener('visibilitychange', function () { if (document.hidden && st.sim && st.sim.laeuft) { st.sim.laeuft = false; if (st.sim.raf) cancelAnimationFrame(st.sim.raf); pauseKnopf(); } });
@@ -494,7 +631,7 @@
     if ((e.ctrlKey || e.metaKey) && taste === 'z' && !e.shiftKey) { e.preventDefault(); rueckgaengig(); }
     else if ((e.ctrlKey || e.metaKey) && (taste === 'y' || (taste === 'z' && e.shiftKey))) { e.preventDefault(); wiederholen(); }
     else if ((e.key === 'Delete' || e.key === 'Backspace') && st.auswahl) { e.preventDefault(); loeschen(); }
-    else if (e.key === 'Escape') { if (!bed.escape() && st.auswahl) waehle(null); }
+    else if (e.key === 'Escape') { if (bed.escape()) return; if (st.testmodus) testmodus(false); else if (st.auswahl) waehle(null); }
   });
 
   // ---------------------------------------------------------------- Start

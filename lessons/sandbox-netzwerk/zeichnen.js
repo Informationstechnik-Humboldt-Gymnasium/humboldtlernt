@@ -24,6 +24,19 @@
       case 'router':
         return '<circle r="30" class="geraet"/>' +
           '<path d="M-17,0 L17,0 M0,-17 L0,17 M-17,0 l6,-5 M-17,0 l6,5 M17,0 l-6,-5 M17,0 l-6,5 M0,-17 l-5,6 M0,-17 l5,6 M0,17 l-5,-6 M0,17 l5,-6" class="leiter duenn"/>';
+      case 'firewall':
+        // Gehäuse mit Mauerwerk (Ziegel) – das übliche Bild für eine Firewall
+        return '<rect x="-32" y="-28" width="64" height="56" rx="5" class="geraet"/>' +
+          '<path d="M-26,-14 H26 M-26,0 H26 M-26,14 H26 M-10,-28 V-14 M14,-28 V-14 M-20,-14 V0 M4,-14 V0 M22,-14 V0 M-10,0 V14 M14,0 V14 M-20,14 V28 M4,14 V28 M22,14 V28" class="mauer"/>';
+      case 'ap':
+        // Gerät mit zwei Antennen und Funkwellen
+        return '<rect x="-28" y="-8" width="56" height="22" rx="6" class="geraet"/><circle cx="-14" cy="3" r="2.4" class="led"/><circle cx="-5" cy="3" r="2.4" class="led"/>' +
+          '<path d="M-18,-8 L-22,-22 M18,-8 L22,-22" class="leiter"/><path d="M-8,-17 a10,10 0 0,1 16,0 M-14,-22 a18,18 0 0,1 28,0" class="welle"/>';
+      case 'laptop':
+        return '<rect x="-24" y="-22" width="48" height="32" rx="3" class="geraet"/><rect x="-19" y="-17" width="38" height="22" rx="1.5" class="bildschirm"/>' +
+          '<path d="M-32,12 H32 L28,20 H-28 Z" class="geraet"/>';
+      case 'smartphone':
+        return '<rect x="-13" y="-24" width="26" height="48" rx="5" class="geraet"/><rect x="-9" y="-18" width="18" height="32" rx="1.5" class="bildschirm"/><circle cx="0" cy="19" r="2" class="led aus"/>';
     }
     return '';
   }
@@ -39,10 +52,12 @@
       var f = b.werte.ifs[p];
       if (!f.ip && !f.maske) return;
       var h = SL.ip.host(f.ip, f.maske), pr = SL.ip.praefix(f.maske);
-      var t = (b.typ === 'router' ? p + ' ' : '') + (f.ip || '?') + (pr.ok ? '/' + pr.praefix : '');
+      var t = (SL.TYPEN[b.typ].routet ? p + ' ' : '') + (f.ip || '?') + (pr.ok ? '/' + pr.praefix : '');
       zeilen.push([(h.ok ? '' : '! ') + t + (f.aktiv === false ? ' (aus)' : ''), 'wert' + (h.ok && f.aktiv !== false ? '' : ' warn')]);
     });
     if (SL.TYPEN[b.typ].endgeraet && b.werte.gateway) zeilen.push(['GW ' + b.werte.gateway, 'wert klein']);
+    if (b.typ === 'ap') zeilen.push(['WLAN „' + (b.werte.ssid || '–') + '“' + (b.werte.schluessel ? ' 🔒' : ''), 'wert']);
+    if (b.typ === 'firewall') { var nr = b.werte.regeln.filter(function (r) { return r.aktiv; }).length; zeilen.push([nr + (nr === 1 ? ' Regel' : ' Regeln') + ' · sonst ' + b.werte.standard, 'wert klein']); }
     var bx = M().koerper(b), y0 = b.y + bx[1] - 10 - (zeilen.length - 1) * 14;
     return zeilen.map(function (z, i) { return text(b.x, y0 + i * 14, z[0], z[1], 'middle'); }).join('');
   }
@@ -53,6 +68,16 @@
    */
   function szene(z) {
     var doc = z.doc, sel = z.auswahl || {}, s = '';
+    // Reichweite des ausgewählten Access Points
+    doc.bauteile.forEach(function (b) {
+      if (b.typ === 'ap' && sel.art === 'bauteil' && sel.id === b.id) s += '<circle cx="' + b.x + '" cy="' + b.y + '" r="' + b.werte.reichweite + '" class="reichweite"/>';
+    });
+    // Funkverbindungen (WLAN): gestrichelt zwischen Gerät und Access Point; nicht verbundene WLAN-Geräte bekommen „✕ WLAN“
+    doc.bauteile.forEach(function (b) {
+      if (!SL.TYPEN[b.typ].funk) return;
+      var f = M().funk(doc, b), pf = z.pfadKabel && z.pfadKabel['funk:' + b.id];
+      if (f.ok) s += '<line x1="' + f.ap.x + '" y1="' + f.ap.y + '" x2="' + b.x + '" y2="' + b.y + '" class="funk' + (b.werte.ifs.wlan0.aktiv === false ? ' inaktiv' : '') + (pf ? ' pfad ' + pf : '') + '"/>';
+    });
     // Kabel
     doc.draehte.forEach(function (d) {
       var pts = M().drahtPunkte(doc, d); if (!pts) return;
@@ -84,6 +109,10 @@
         var ps = M().ports(b)[t.a], lx = t.x + (ps.x < -30 ? -8 : ps.x > 30 ? 8 : 0), ly = t.y + (ps.y > 20 ? 15 : -9);
         if (b.typ !== 'switch' || hov || dr) s += text(lx, ly, ps.text, 'porttext', ps.x < -30 ? 'end' : ps.x > 30 ? 'start' : 'middle');
       });
+    });
+    // WLAN-Status unter nicht verbundenen Funkgeräten
+    doc.bauteile.forEach(function (b) {
+      if (SL.TYPEN[b.typ].funk && !M().funk(doc, b).ok) s += text(b.x, b.y + M().koerper(b)[1] + M().koerper(b)[3] + 14, '✕ kein WLAN', 'wert warn', 'middle');
     });
     // Beschriftungen obenauf
     s += '<g class="ebene-text">' + doc.bauteile.map(beschriftung).join('') + '</g>';

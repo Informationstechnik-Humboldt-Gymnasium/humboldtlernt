@@ -5,9 +5,15 @@
 //     bauteile: [{ id, typ, name, x, y, rot, werte }],          // Geräte (Feldname wie in den anderen Laboren)
 //     draehte:  [{ id, von: { b, a }, nach: { b, a } }] }        // Kabel zwischen zwei Anschlüssen (ungerichtet)
 //   werte je Typ:
-//     pc, server: { ifs: { eth0: { ip, maske, aktiv } }, gateway, dns }
+//     pc:         { ifs: { eth0: { ip, maske, aktiv } }, gateway, dns }
+//     server:     wie pc + dienste: { web, https }                (Webserver auf Port 80 / 443 an oder aus)
+//     laptop, smartphone: { ifs: { wlan0: {…} }, gateway, dns, ssid, schluessel }   (nur WLAN, kein Kabelanschluss)
 //     router:     { ifs: { g0: {…}, g1: {…}, g2: {…} }, routen: [{ id, ziel, maske, via, aktiv }] }
+//     firewall:   wie router + regeln: [{ id, aktion: 'erlauben'|'blockieren', quelle, ziel, dienst, aktiv }], standard
 //     switch:     {}                                             (8 Ports, reine Schicht-2-Weiterleitung)
+//     ap:         { ssid, schluessel, reichweite }              (Access Point: WLAN-Brücke mit einem LAN-Anschluss eth0)
+// WLAN: Ein Laptop/Smartphone ist mit dem nächstgelegenen Access Point verbunden, dessen SSID passt, dessen Schlüssel
+// stimmt (falls gesetzt) und in dessen Reichweite (Abstand auf der Arbeitsfläche) er steht – siehe funk(doc, b).
 // IP-Angaben werden als TEXT gespeichert, genau wie eingegeben. Die Prüfung (SL.ip) meldet Fehler, statt sie still zu
 // „reparieren“. Jeder Anschluss nimmt höchstens ein Kabel auf. MAC-Adressen werden aus Geräte-ID und Port abgeleitet.
 //
@@ -27,21 +33,34 @@
   for (var i = 1; i <= 8; i++) SWITCH_PORTS['p' + i] = { x: -70 + (i - 1) * 20, y: 30, text: String(i) };
   var ROUTER_PORTS = { g0: { x: -46, y: 0, text: 'g0' }, g1: { x: 46, y: 0, text: 'g1' }, g2: { x: 0, y: 46, text: 'g2' } };
 
+  var WLAN_IF = { wlan0: { x: 0, y: 0, text: 'wlan0' } };   // nur für die Schnittstelle, kein Kabelanschluss
+  var AP_PORTS = { eth0: { x: 0, y: 34, text: 'eth0' } };
   var ifsLeer = function (ports) { var o = {}; Object.keys(ports).forEach(function (p) { o[p] = { ip: '', maske: '', aktiv: true }; }); return o; };
 
   var TYPEN = {
     pc: { name: 'PC', kategorie: 'Endgeräte', kuerzel: 'PC', hilfe: 'Arbeitsplatzrechner mit einer Netzwerkkarte (eth0).', ports: ENDGERAET_PORTS, box: [-36, -30, 72, 58], endgeraet: true,
       werte: function () { return { ifs: ifsLeer(ENDGERAET_PORTS), gateway: '', dns: '' }; } },
-    server: { name: 'Server', kategorie: 'Endgeräte', kuerzel: 'Server', hilfe: 'Stellt Dienste bereit, z. B. eine Webseite. Netzwerktechnisch wie ein PC.', ports: ENDGERAET_PORTS, box: [-28, -34, 56, 64], endgeraet: true,
-      werte: function () { return { ifs: ifsLeer(ENDGERAET_PORTS), gateway: '', dns: '' }; } },
+    server: { name: 'Server', kategorie: 'Endgeräte', kuerzel: 'Server', hilfe: 'Stellt Dienste bereit, z. B. eine Webseite (HTTP/HTTPS). Netzwerktechnisch wie ein PC.', ports: ENDGERAET_PORTS, box: [-28, -34, 56, 64], endgeraet: true,
+      werte: function () { return { ifs: ifsLeer(ENDGERAET_PORTS), gateway: '', dns: '', dienste: { web: true, https: false } }; } },
+    laptop: { name: 'Laptop', kategorie: 'Endgeräte', kuerzel: 'Laptop', hilfe: 'Mobiles Gerät mit WLAN-Karte (wlan0). Verbindet sich per Funk mit einem Access Point.', ports: {}, funk: 'wlan0', box: [-34, -24, 68, 46], endgeraet: true,
+      werte: function () { return { ifs: ifsLeer(WLAN_IF), gateway: '', dns: '', ssid: '', schluessel: '' }; } },
+    smartphone: { name: 'Smartphone', kategorie: 'Endgeräte', kuerzel: 'Handy', hilfe: 'Smartphone mit WLAN (wlan0). Verbindet sich per Funk mit einem Access Point.', ports: {}, funk: 'wlan0', box: [-15, -26, 30, 52], endgeraet: true,
+      werte: function () { return { ifs: ifsLeer(WLAN_IF), gateway: '', dns: '', ssid: '', schluessel: '' }; } },
     switch: { name: 'Switch', kategorie: 'Netzgeräte', kuerzel: 'SW', hilfe: 'Verbindet Geräte im selben Netz und leitet Rahmen anhand von MAC-Adressen weiter (Schicht 2).', ports: SWITCH_PORTS, box: [-90, -22, 180, 44],
       werte: function () { return {}; } },
-    router: { name: 'Router', kategorie: 'Netzgeräte', kuerzel: 'R', hilfe: 'Verbindet verschiedene IP-Netze und leitet Pakete anhand seiner Routing-Tabelle weiter (Schicht 3).', ports: ROUTER_PORTS, box: [-34, -34, 68, 68],
+    router: { name: 'Router', kategorie: 'Netzgeräte', kuerzel: 'R', hilfe: 'Verbindet verschiedene IP-Netze und leitet Pakete anhand seiner Routing-Tabelle weiter (Schicht 3).', ports: ROUTER_PORTS, box: [-34, -34, 68, 68], routet: true,
       werte: function () { return { ifs: ifsLeer(ROUTER_PORTS), routen: [] }; } },
+    firewall: { name: 'Firewall', kategorie: 'Netzgeräte', kuerzel: 'FW', hilfe: 'Router mit Paketfilter: Regeln legen fest, welche Verbindungen erlaubt oder blockiert sind. Antworten auf erlaubte Verbindungen dürfen zurück.', ports: ROUTER_PORTS, box: [-34, -30, 68, 60], routet: true,
+      werte: function () { return { ifs: ifsLeer(ROUTER_PORTS), routen: [], regeln: [], standard: 'blockieren' }; } },
+    ap: { name: 'Access Point', kategorie: 'Netzgeräte', kuerzel: 'AP', hilfe: 'Verbindet WLAN-Geräte mit dem kabelgebundenen Netz (Schicht 2, wie ein Switch mit Funk). Geräte verbinden sich über SSID und Schlüssel.', ports: AP_PORTS, box: [-30, -22, 60, 44], bruecke: true,
+      werte: function () { return { ssid: 'Schul-WLAN', schluessel: '', reichweite: 260 }; } },
   };
   var KATEGORIEN = ['Endgeräte', 'Netzgeräte'];
 
   // ---------------------------------------------------------------- Werte bereinigen
+  // Dienste für Tests und Firewall-Regeln: Ping (ICMP), Web (HTTP, TCP 80), sicheres Web (HTTPS, TCP 443)
+  var DIENSTE = { ping: { name: 'Ping (ICMP)', kurz: 'Ping' }, http: { name: 'Web (HTTP, Port 80)', kurz: 'HTTP', port: 80 }, https: { name: 'Sicheres Web (HTTPS, Port 443)', kurz: 'HTTPS', port: 443 } };
+  var text = function (v) { return String(v == null ? '' : v).replace(/[\u0000-\u001f<>"'&]/g, '').trim().slice(0, 24); };
   var feld = function (v) { return String(v == null ? '' : v).replace(/[\u0000-\u001f<>"'&]/g, '').trim().slice(0, 20); };
   function normalisiere(typ, w) {
     w = w || {};
@@ -51,6 +70,21 @@
       neu.ifs[p] = { ip: feld(q.ip), maske: feld(q.maske), aktiv: q.aktiv !== false };
     });
     if ('gateway' in neu) { neu.gateway = feld(w.gateway); neu.dns = feld(w.dns); }
+    if ('ssid' in neu) { neu.ssid = text(w.ssid !== undefined ? w.ssid : neu.ssid); neu.schluessel = text(w.schluessel); }
+    if ('reichweite' in neu) neu.reichweite = Math.round(klemme(zahl(w.reichweite, 260), 80, 600) / 10) * 10;
+    if (neu.dienste) { var dw = w.dienste || {}; neu.dienste = { web: dw.web !== undefined ? !!dw.web : true, https: !!dw.https }; }
+    if ('standard' in neu) neu.standard = w.standard === 'erlauben' ? 'erlauben' : 'blockieren';
+    if (neu.regeln) {
+      var rids = {};
+      neu.regeln = (Array.isArray(w.regeln) ? w.regeln : []).slice(0, 16).map(function (r, k) {
+        r = r || {};
+        var id = typeof r.id === 'string' && /^f[0-9]{1,3}$/.test(r.id) && !rids[r.id] ? r.id : 'f' + (k + 1);
+        while (rids[id]) id = 'f' + (Number(id.slice(1)) + 1);
+        rids[id] = true;
+        return { id: id, aktion: r.aktion === 'erlauben' ? 'erlauben' : 'blockieren', quelle: feld(r.quelle) || 'alle', ziel: feld(r.ziel) || 'alle',
+          dienst: DIENSTE[r.dienst] || r.dienst === 'alle' ? r.dienst : 'alle', aktiv: r.aktiv !== false };
+      });
+    }
     if (neu.routen) {
       var ids = {};
       neu.routen = (Array.isArray(w.routen) ? w.routen : []).slice(0, 16).map(function (r, k) {
@@ -86,7 +120,11 @@
     return b;
   }
   function ports(b) { return TYPEN[b.typ].ports; }
-  function anschlussName(b, a) { var p = ports(b)[a]; return !p ? a : b.typ === 'switch' ? 'Port ' + p.text : p.text; }
+  function anschlussName(b, a) {
+    if (a === 'funk') return 'WLAN';
+    var p = ports(b)[a];
+    return !p ? a : b.typ === 'switch' ? 'Port ' + p.text : p.text;
+  }
   /** Gerätefläche (lokal) für die gemeinsame Bedienung (Einpassen, freier Platz) – inklusive Beschriftung darüber. */
   function box(b) { var bx = TYPEN[b.typ].box; return b.typ === 'switch' ? bx : [bx[0] - 10, bx[1] - 52, bx[2] + 20, bx[3] + 52]; }
   /** Nur das Gerät selbst (Treffertest, Zeichnung). */
@@ -94,7 +132,7 @@
 
   /** MAC-Adresse einer Schnittstelle (abgeleitet, deterministisch, „lokal verwaltet“: beginnt mit 02). */
   function mac(b, a) {
-    var n = Number(String(b.id).replace(/\D/g, '')) || 0, k = Object.keys(ports(b)).indexOf(a) + 1;
+    var n = Number(String(b.id).replace(/\D/g, '')) || 0, k = a === 'funk' ? 9 : b.werte && b.werte.ifs ? Object.keys(b.werte.ifs).indexOf(a) + 1 : Object.keys(ports(b)).indexOf(a) + 1;
     var hx = function (v) { return ('0' + (v & 255).toString(16)).slice(-2); };
     return ['02', '00', hx(n >> 8), hx(n), '00', hx(k)].join(':');
   }
@@ -106,7 +144,40 @@
     Object.keys(ps).forEach(function (a) { out.push({ b: b.id, a: a, x: b.x + ps[a].x, y: b.y + ps[a].y, text: ps[a].text }); });
     return out;
   }
-  function anschlussPos(doc, ref) { var b = finde(doc, ref.b), p = b && ports(b)[ref.a]; return p ? { x: b.x + p.x, y: b.y + p.y } : null; }
+  /** Lage eines Anschlusses. Funk-Endpunkte (WLAN-Karte, Funkseite des Access Points) liegen in der Gerätemitte. */
+  function anschlussPos(doc, ref) {
+    var b = finde(doc, ref.b); if (!b) return null;
+    if (ref.a === 'funk' || ref.a === TYPEN[b.typ].funk) return { x: b.x, y: b.y };
+    var p = ports(b)[ref.a];
+    return p ? { x: b.x + p.x, y: b.y + p.y } : null;
+  }
+
+  // ---------------------------------------------------------------- WLAN
+  /**
+   * Mit welchem Access Point ist ein WLAN-Gerät verbunden? Liefert { ok, ap, abstand } oder { ok: false, grund, ursache }.
+   * Regeln: SSID gleich (Groß-/Kleinschreibung zählt), Schlüssel gleich (falls der AP einen hat), Abstand ≤ Reichweite.
+   * Passen mehrere APs, gewinnt der nächstgelegene.
+   */
+  function funk(doc, b) {
+    if (!b || !TYPEN[b.typ].funk) return { ok: false, grund: 'Kein WLAN-Gerät.' };
+    var ssid = b.werte.ssid;
+    if (!ssid) return { ok: false, ursache: 'wlan-keine-ssid', grund: b.name + ' ist mit keinem WLAN verbunden (keine SSID gewählt).' };
+    var aps = doc.bauteile.filter(function (x) { return x.typ === 'ap' && x.werte.ssid === ssid; });
+    if (!aps.length) return { ok: false, ursache: 'wlan-ssid', grund: 'Kein Access Point sendet das WLAN „' + ssid + '“.' };
+    var abst = function (x) { return Math.hypot(x.x - b.x, x.y - b.y); };
+    aps.sort(function (p, q) { return abst(p) - abst(q); });
+    var inReichweite = aps.filter(function (x) { return abst(x) <= x.werte.reichweite; });
+    if (!inReichweite.length) return { ok: false, ursache: 'wlan-reichweite', grund: b.name + ' ist außer Reichweite von „' + ssid + '“ (' + aps[0].name + ': Abstand ' + Math.round(abst(aps[0])) + ', Reichweite ' + aps[0].werte.reichweite + ').' };
+    var passend = inReichweite.filter(function (x) { return !x.werte.schluessel || x.werte.schluessel === b.werte.schluessel; });
+    if (!passend.length) return { ok: false, ursache: 'wlan-schluessel', grund: 'Der WLAN-Schlüssel von ' + b.name + ' passt nicht zu „' + ssid + '“ – die Anmeldung am Access Point schlägt fehl.' };
+    return { ok: true, ap: passend[0], abstand: abst(passend[0]) };
+  }
+  /** Alle WLAN-Geräte, die gerade mit diesem Access Point verbunden sind. */
+  function funkKunden(doc, ap) {
+    return doc.bauteile.filter(function (x) { if (!TYPEN[x.typ].funk) return false; var f = funk(doc, x); return f.ok && f.ap.id === ap.id; });
+  }
+  /** Name der einzigen Schnittstelle eines Endgeräts (eth0 oder wlan0). */
+  function ifName(b) { return b.werte.ifs ? Object.keys(b.werte.ifs)[0] : null; }
   function drahtPunkte(doc, d) { var p = anschlussPos(doc, d.von), q = anschlussPos(doc, d.nach); return p && q ? [p, q] : null; }
   function abstandStrecke(px, py, a, b) {
     var dx = b.x - a.x, dy = b.y - a.y, l = dx * dx + dy * dy;
@@ -190,16 +261,56 @@
     b.werte.ifs[port][k] = k === 'aktiv' ? !!v : feld(v);
     return true;
   }
-  /** Gateway oder DNS eines Endgeräts setzen. */
+  /** Einfache Werte setzen: gateway, dns (Endgeräte) · ssid, schluessel (WLAN-Geräte, AP) · reichweite (AP) ·
+   *  standard (Firewall) · dienst:web, dienst:https (Server). */
   function setzeWert(doc, id, k, v) {
+    var b = finde(doc, id); if (!b) return false;
+    var w = b.werte;
+    if ((k === 'gateway' || k === 'dns') && TYPEN[b.typ].endgeraet) { w[k] = feld(v); return true; }
+    if ((k === 'ssid' || k === 'schluessel') && k in w) { w[k] = text(v); return true; }
+    if (k === 'reichweite' && 'reichweite' in w) { w.reichweite = Math.round(klemme(zahl(v, w.reichweite), 80, 600) / 10) * 10; return true; }
+    if (k === 'standard' && 'standard' in w) { w.standard = v === 'erlauben' ? 'erlauben' : 'blockieren'; return true; }
+    if (/^dienst:(web|https)$/.test(k) && w.dienste) { w.dienste[k.slice(7)] = !!v; return true; }
+    return false;
+  }
+  // ---------------------------------------------------------------- Firewall-Regeln
+  function regelHinzu(doc, id, r) {
     var b = finde(doc, id);
-    if (!b || !TYPEN[b.typ].endgeraet || ['gateway', 'dns'].indexOf(k) < 0) return false;
-    b.werte[k] = feld(v);
+    if (!b || !b.werte.regeln || b.werte.regeln.length >= 16) return null;
+    var used = {}; b.werte.regeln.forEach(function (x) { used[x.id] = 1; });
+    var n = 1; while (used['f' + n]) n++;
+    r = r || {};
+    var neuR = { id: 'f' + n, aktion: r.aktion === 'blockieren' ? 'blockieren' : 'erlauben', quelle: feld(r.quelle) || 'alle', ziel: feld(r.ziel) || 'alle', dienst: DIENSTE[r.dienst] ? r.dienst : 'alle', aktiv: r.aktiv !== false };
+    b.werte.regeln.push(neuR);
+    return neuR;
+  }
+  function regelSetze(doc, id, rid, k, v) {
+    var b = finde(doc, id), r = b && b.werte.regeln && b.werte.regeln.filter(function (x) { return x.id === rid; })[0];
+    if (!r) return false;
+    if (k === 'aktion') r.aktion = v === 'erlauben' ? 'erlauben' : 'blockieren';
+    else if (k === 'quelle' || k === 'ziel') r[k] = feld(v);
+    else if (k === 'dienst') r.dienst = DIENSTE[v] ? v : 'alle';
+    else if (k === 'aktiv') r.aktiv = !!v;
+    else return false;
+    return true;
+  }
+  function regelLoesche(doc, id, rid) {
+    var b = finde(doc, id); if (!b || !b.werte.regeln) return false;
+    var n = b.werte.regeln.length;
+    b.werte.regeln = b.werte.regeln.filter(function (x) { return x.id !== rid; });
+    return b.werte.regeln.length !== n;
+  }
+  /** Regel in der Reihenfolge verschieben (richtung −1 = nach oben, +1 = nach unten). Reihenfolge zählt: erste passende Regel gewinnt. */
+  function regelVerschiebe(doc, id, rid, richtung) {
+    var b = finde(doc, id); if (!b || !b.werte.regeln) return false;
+    var l = b.werte.regeln, i = l.map(function (x) { return x.id; }).indexOf(rid), j = i + richtung;
+    if (i < 0 || j < 0 || j >= l.length) return false;
+    var t = l[i]; l[i] = l[j]; l[j] = t;
     return true;
   }
   function routeHinzu(doc, id, r) {
     var b = finde(doc, id);
-    if (!b || b.typ !== 'router' || b.werte.routen.length >= 16) return null;
+    if (!b || !TYPEN[b.typ].routet || b.werte.routen.length >= 16) return null;
     var used = {}; b.werte.routen.forEach(function (x) { used[x.id] = 1; });
     var n = 1; while (used['r' + n]) n++;
     var neuR = { id: 'r' + n, ziel: feld(r && r.ziel), maske: feld(r && r.maske), via: feld(r && r.via), aktiv: !(r && r.aktiv === false) };
@@ -207,13 +318,13 @@
     return neuR;
   }
   function routeSetze(doc, id, rid, k, v) {
-    var b = finde(doc, id), r = b && b.typ === 'router' && b.werte.routen.filter(function (x) { return x.id === rid; })[0];
+    var b = finde(doc, id), r = b && TYPEN[b.typ].routet && b.werte.routen.filter(function (x) { return x.id === rid; })[0];
     if (!r || ['ziel', 'maske', 'via', 'aktiv'].indexOf(k) < 0) return false;
     r[k] = k === 'aktiv' ? !!v : feld(v);
     return true;
   }
   function routeLoesche(doc, id, rid) {
-    var b = finde(doc, id); if (!b || b.typ !== 'router') return false;
+    var b = finde(doc, id); if (!b || !TYPEN[b.typ].routet) return false;
     var n = b.werte.routen.length;
     b.werte.routen = b.werte.routen.filter(function (x) { return x.id !== rid; });
     return b.werte.routen.length !== n;
@@ -286,7 +397,8 @@
     neu: neu, bauteil: bauteil, finde: finde, findeDraht: findeDraht, normalisiere: normalisiere, standardWerte: standardWerte, ports: ports, box: box, koerper: koerper,
     anschluesse: anschluesse, anschlussPos: anschlussPos, anschlussName: anschlussName, drahtPunkte: drahtPunkte, trefferTest: trefferTest,
     verbindungFehler: verbindungFehler, verbinde: verbinde, kabelAn: kabelAn, gegenstelle: gegenstelle, verschiebe: verschiebe, loesche: loesche,
-    setzeName: setzeName, setzeIf: setzeIf, setzeWert: setzeWert, routeHinzu: routeHinzu, routeSetze: routeSetze, routeLoesche: routeLoesche,
+    setzeName: setzeName, setzeIf: setzeIf, setzeWert: setzeWert, routeHinzu: routeHinzu, regelHinzu: regelHinzu, regelSetze: regelSetze,
+    regelLoesche: regelLoesche, regelVerschiebe: regelVerschiebe, funk: funk, funkKunden: funkKunden, ifName: ifName, DIENSTE: DIENSTE, routeSetze: routeSetze, routeLoesche: routeLoesche,
     tippAktion: tippAktion, kopie: kopie, validiere: validiere, exportiere: exportiere, importiere: importiere, mac: mac, drehe: drehe,
     runde: runde, neuerName: neuerName,
   };

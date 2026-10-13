@@ -21,12 +21,12 @@
   function nachName(doc, name) { return doc.bauteile.filter(function (b) { return b.name === name; })[0] || null; }
 
   /** Prüft Verbindungen zwischen benannten Geräten. bedingung(ergebnis) optional, z. B. „Weg über einen Router“. */
-  function verbindungen(doc, paare, bedingung) {
+  function verbindungen(doc, paare, bedingung, dienst) {
     for (var i = 0; i < paare.length; i++) {
       var a = nachName(doc, paare[i][0]), b = nachName(doc, paare[i][1]);
       if (!a || !b) return { ok: false, text: 'Das Gerät „' + (a ? paare[i][1] : paare[i][0]) + '“ fehlt. Benenne ein Gerät so oder lade die Aufgabe neu.' };
-      var r = S().sende(doc, a.id, b.id, {});
-      if (r.status !== 'erfolg') return { ok: false, text: paare[i][0] + ' → ' + paare[i][1] + ': ' + r.meldung };
+      var r = S().sende(doc, a.id, b.id, {}, dienst);
+      if (r.status !== 'erfolg') return { ok: false, text: paare[i][0] + ' → ' + paare[i][1] + (dienst && dienst !== 'ping' ? ' (' + M().DIENSTE[dienst].kurz + ')' : '') + ': ' + r.meldung };
       if (bedingung) { var t = bedingung(doc, r); if (t) return { ok: false, text: paare[i][0] + ' → ' + paare[i][1] + ': ' + t }; }
     }
     return { ok: true };
@@ -128,6 +128,53 @@
         return d;
       },
       pruefe: function (doc) { return verbindungen(doc, [['PC1', 'Server'], ['PC2', 'Server']]); },
+    },
+    {
+      id: 'wlan', titel: '6 · WLAN einrichten',
+      beschreibung: 'Das Smartphone ist schon im Schul-WLAN. Der Laptop soll den Server ebenfalls erreichen, hat aber keine WLAN-Verbindung. Bring ihn ins WLAN.',
+      hinweise: ['Wähle den Access Point AP1 aus: Dort stehen SSID, Schlüssel und Reichweite (der gestrichelte Kreis).',
+        'Ein WLAN-Gerät verbindet sich nur, wenn SSID und Schlüssel stimmen UND es innerhalb der Reichweite steht. Du kannst den Laptop näher heranziehen.',
+        'Trage beim Laptop die SSID „Schul-WLAN“ und den Schlüssel des Access Points ein.'],
+      ziel: 'Laptop1 erreicht den Server über das WLAN.',
+      erklaerung: 'Ein Access Point verbindet Funkgeräte mit dem Kabelnetz – wie ein Switch mit Antenne. Für die Anmeldung braucht ein Gerät den Netzwerknamen (SSID) und den Schlüssel, und es muss in Funkreichweite sein. Danach gelten die gleichen IP-Regeln wie im Kabelnetz: Der Laptop liegt mit 192.168.1.50/24 im selben Netz wie der Server.',
+      bauen: function () {
+        var d = M().neu();
+        var srv = geraet(d, 'server', 'Server', -320, -80, { eth0: ['192.168.1.5', '/24'] });
+        var sw = geraet(d, 'switch', 'SW1', -120, 80);
+        var ap = geraet(d, 'ap', 'AP1', 120, -40, {}, { ssid: 'Schul-WLAN', schluessel: 'Humboldt2026', reichweite: 240 });
+        geraet(d, 'smartphone', 'Smartphone1', 260, 60, { wlan0: ['192.168.1.51', '/24'] }, { ssid: 'Schul-WLAN', schluessel: 'Humboldt2026' });
+        geraet(d, 'laptop', 'Laptop1', 520, -40, { wlan0: ['192.168.1.50', '/24'] }, { ssid: '', schluessel: '' });
+        kabel(d, srv, 'eth0', sw, 'p1'); kabel(d, sw, 'p8', ap, 'eth0');
+        return d;
+      },
+      pruefe: function (doc) { return verbindungen(doc, [['Laptop1', 'Server']]); },
+    },
+    {
+      id: 'firewall', titel: '7 · Firewall konfigurieren',
+      beschreibung: 'Die Firewall FW1 schützt den Webserver. Im Moment blockiert sie alles. Richte sie so ein, dass PC1 die Webseite (HTTP) abrufen kann – Ping zum Webserver soll aber weiterhin blockiert bleiben.',
+      hinweise: ['Wähle FW1 aus und sieh dir die Regeln an. Ohne passende Regel gilt die Standardrichtlinie „blockieren“.',
+        'Füge eine Regel hinzu: erlauben · Dienst HTTP · Quelle 192.168.1.0/24 · Ziel 10.0.0.10.',
+        'Teste im Bereich „Verbindung testen“ einmal mit „Web (HTTP)“ und einmal mit „Ping“. Die Standardrichtlinie nicht auf „erlauben“ stellen – dann wäre auch Ping offen.'],
+      ziel: 'PC1 erreicht den Webserver per HTTP, Ping von PC1 zum Webserver wird von der Firewall blockiert.',
+      erklaerung: 'Eine Firewall prüft jedes Paket gegen ihre Regeln von oben nach unten; die erste passende Regel entscheidet, sonst die Standardrichtlinie. „Standardmäßig blockieren, gezielt erlauben“ ist sicherer als umgekehrt. Die Antwort des Servers muss nicht extra erlaubt werden: Die Firewall merkt sich die erlaubte Verbindung (zustandsbehaftet).',
+      bauen: function () {
+        var d = M().neu();
+        var p1 = geraet(d, 'pc', 'PC1', -380, -60, { eth0: ['192.168.1.10', '/24'] }, { gateway: '192.168.1.1' });
+        var s1 = geraet(d, 'switch', 'SW1', -200, 80);
+        var fw = geraet(d, 'firewall', 'FW1', 20, -20, { g0: ['192.168.1.1', '/24'], g1: ['10.0.0.1', '/24'] }, { routen: [], regeln: [], standard: 'blockieren' });
+        var s2 = geraet(d, 'switch', 'SW2', 240, 80);
+        var srv = geraet(d, 'server', 'Webserver', 400, -80, { eth0: ['10.0.0.10', '/24'] }, { gateway: '10.0.0.1', dienste: { web: true, https: false } });
+        kabel(d, p1, 'eth0', s1, 'p1'); kabel(d, s1, 'p8', fw, 'g0'); kabel(d, fw, 'g1', s2, 'p1'); kabel(d, s2, 'p8', srv, 'eth0');
+        return d;
+      },
+      pruefe: function (doc) {
+        var web = verbindungen(doc, [['PC1', 'Webserver']], null, 'http');
+        if (!web.ok) return web;
+        var a = nachName(doc, 'PC1'), b = nachName(doc, 'Webserver'), ping = S().sende(doc, a.id, b.id, {}, 'ping');
+        if (ping.status === 'erfolg') return { ok: false, text: 'HTTP klappt – aber Ping zum Webserver ist auch erlaubt. Laut Aufgabe soll die Firewall Ping blockieren.' };
+        if (ping.ursache !== 'firewall') return { ok: false, text: 'Ping scheitert, aber nicht an der Firewall: ' + ping.meldung };
+        return { ok: true };
+      },
     },
   ];
 

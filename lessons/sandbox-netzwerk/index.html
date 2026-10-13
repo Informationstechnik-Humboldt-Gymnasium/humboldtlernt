@@ -19,6 +19,7 @@
     <span class="trenner" aria-hidden="true"></span>
     <select id="aufgaben" aria-label="Lernaufgabe laden"></select>
     <button type="button" id="pruefen" title="Konfiguration aller Geräte prüfen">Netzwerk prüfen</button>
+    <button type="button" id="testmodus" aria-pressed="false" title="Freier Testmodus: Quelle und Ziel antippen, Pakete sofort senden">🧪 Frei testen</button>
     <span class="trenner" aria-hidden="true"></span>
     <button type="button" id="export" title="Netzwerk als Datei speichern">Speichern</button>
     <label class="knopf" title="Gespeichertes Netzwerk laden">Laden<input type="file" id="import" accept=".json,application/json"></label>
@@ -48,6 +49,10 @@
       <p>Ziehe PCs, Server, Switches und Router aus der Leiste hierher<br>oder starte mit einer Lernaufgabe.</p>
       <button type="button" id="leer-aufgabe" class="primary">Aufgabe 1: Zwei PCs verbinden</button>
     </div>
+    <div class="testmodus-hinweis" id="testmodus-hinweis" hidden role="status">
+      <span><b>Freier Testmodus:</b> Tippe ein Endgerät als Quelle und dann eins als Ziel an – das Paket startet sofort. Dienst rechts wählen.</span>
+      <button type="button" id="testmodus-ende">Beenden</button>
+    </div>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
   </section>
 
@@ -60,12 +65,17 @@
       <h2 id="eig-titel">Konfiguration</h2>
       <div id="eig"></div>
     </section>
-    <section class="lk-card karte" aria-labelledby="test-titel">
+    <section class="lk-card karte" id="test-karte" aria-labelledby="test-titel">
       <h2 id="test-titel">Verbindung testen</h2>
       <div class="test-wahl">
         <label class="ctrl"><span>Von</span><select id="quelle"></select></label>
         <label class="ctrl"><span>Nach</span><select id="ziel"></select></label>
       </div>
+      <label class="ctrl"><span>Dienst</span><select id="dienst">
+        <option value="ping">Ping (ICMP) – ist das Gerät erreichbar?</option>
+        <option value="http">Web (HTTP, Port 80) – Webseite abrufen</option>
+        <option value="https">Sicheres Web (HTTPS, Port 443)</option>
+      </select></label>
       <div class="row eng">
         <button type="button" id="testen" class="primary">Verbindung testen</button>
         <button type="button" id="senden" title="Paket Schritt für Schritt durch das Netz schicken">▶ Paket senden</button>
@@ -77,6 +87,7 @@
       </div>
       <div id="ergebnis" aria-live="polite"></div>
       <ol class="schritte" id="schritte"></ol>
+      <div class="testlog" id="testlog" hidden></div>
       <p class="small muted">Pädagogisches Simulationsmodell – es werden keine echten Netzwerkpakete gesendet.</p>
     </section>
     <section class="lk-card karte" id="diagnose-karte" hidden aria-labelledby="diag-titel">
@@ -89,14 +100,16 @@
         <li><b>Gerät einfügen:</b> aus der Leiste auf die Fläche ziehen oder antippen.</li>
         <li><b>Verkabeln:</b> von einem Anschluss (Punkt) zu einem anderen ziehen – oder beide nacheinander antippen. Jeder Anschluss nimmt ein Kabel auf.</li>
         <li><b>Konfigurieren:</b> Gerät antippen, rechts IP-Adresse, Subnetzmaske (z. B. /24 oder 255.255.255.0), Gateway und bei Routern die Routen eintragen.</li>
-        <li><b>Testen:</b> „Verbindung testen“ prüft sofort, „Paket senden“ zeigt den Weg Schritt für Schritt (Anfrage und Antwort).</li>
+        <li><b>Testen:</b> „Verbindung testen“ prüft sofort, „Paket senden“ zeigt den Weg Schritt für Schritt (Anfrage und Antwort). Im <b>freien Testmodus</b> (🧪) tippst du Quelle und Ziel direkt auf der Fläche an; alle Tests landen im Testprotokoll.</li>
+        <li><b>WLAN:</b> Laptops und Smartphones haben keinen Kabelanschluss. Trage SSID und Schlüssel des Access Points ein und stelle das Gerät in seine Reichweite (Kreis beim ausgewählten Access Point). Der Access Point selbst hängt per Kabel am Switch.</li>
+        <li><b>Firewall:</b> arbeitet wie ein Router und prüft zusätzlich Regeln (erlauben/blockieren nach Quelle, Ziel und Dienst). Erste passende Regel gilt, sonst die Standardrichtlinie. Antworten auf erlaubte Verbindungen kommen automatisch zurück.</li>
         <li><b>Kabel</b> antippen und „Löschen“ entfernt es. <b>Verschieben:</b> Gerät ziehen. Leere Fläche ziehen verschiebt die Ansicht, Mausrad oder zwei Finger zoomen. Rückgängig/Wiederholen: Strg+Z / Strg+Y.</li>
         <li><b>Anzeigen:</b> ● am Kabelende = Verbindung aktiv, ✕ = Schnittstelle deaktiviert (Kabel gestrichelt). „!“ vor einer Adresse = ungültige Angabe.</li>
       </ul>
       <h3>Was das Modell kann – und was nicht</h3>
       <ul class="small">
-        <li><b>Simuliert:</b> Kabel und Schnittstellenstatus, IPv4-Adressen und Subnetze (/8 bis /30), Standardgateway, Switch-Weiterleitung mit MAC-Lernen, direkt angeschlossene Netze und statische Routen mit längstem Präfix, Hin- und Rückweg.</li>
-        <li><b>Nicht simuliert:</b> ARP-Tabellen, DHCP, DNS-Auflösung (der DNS-Eintrag wird nur geprüft), VLANs, NAT, Firewalls, Spanning Tree, WLAN, Übertragungszeiten und Paketverlust. Bei Schleifen zwischen Switches meldet das Labor „unklar“.</li>
+        <li><b>Simuliert:</b> Kabel und Schnittstellenstatus, IPv4-Adressen und Subnetze (/8 bis /30), Standardgateway, Switch- und Access-Point-Weiterleitung mit MAC-Lernen, WLAN-Anmeldung (SSID, Schlüssel, Reichweite), direkt angeschlossene Netze und statische Routen mit längstem Präfix, zustandsbehaftete Firewall-Regeln, Dienste Ping/HTTP/HTTPS, Hin- und Rückweg.</li>
+        <li><b>Nicht simuliert:</b> ARP-Tabellen, DHCP, DNS-Auflösung (der DNS-Eintrag wird nur geprüft), VLANs, NAT, Funkstörungen und Wände (Reichweite ist ein fester Kreis), WLAN-Verschlüsselungsverfahren, Spanning Tree, Übertragungszeiten und Paketverlust. Bei Schleifen zwischen Switches meldet das Labor „unklar“.</li>
         <li>Das Netzwerk wird in diesem Browser gespeichert. Mit „Speichern“ bekommst du eine Datei.</li>
       </ul>
     </section>
