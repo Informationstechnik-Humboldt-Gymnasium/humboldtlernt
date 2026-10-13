@@ -50,9 +50,10 @@ falls es ihn gibt – radioaktiv ist. Das Labor berechnet selbst keine Halbwerts
 | Elementarladung, Teilchenmassen, hc | CODATA 2018 (NIST) | tabelliert |
 | Na-D-Linien, Hα (Luft) | NIST Atomic Spectra Database | gemessen |
 | Schmelz-/Siedetemperatur von Wasser, Ethanol, Sauerstoff, Eisen | CRC Handbook, gerundet, 1013 hPa | tabelliert |
-| Bindigkeit und Valenzelektronen (H, C, N, O, F, S, Cl) | Lehrbuchregel für einfache ungeladene Moleküle | Modell |
-| Beispielmoleküle (19 Stoffe) | experimentell nachgewiesene Stoffe | tabelliert |
-| Bindungswinkel H₂O, H₂S, NH₃, CH₄, CO₂ | NIST CCCBDB (Gasphase) | gemessen |
+| Bindigkeit und Valenzelektronen (H, C, N, O, F, P, S, Cl) | Lehrbuchregel für einfache ungeladene Moleküle; Valenzelektronen = äußerste Schale laut Elektronenkonfiguration | Modell |
+| erweiterte Bindigkeit S (6) und P (5) | höchste Bindungszahl in bekannten Verbindungen (SF₆, PCl₅) | tabelliert |
+| Beispielmoleküle (22 Stoffe) | experimentell nachgewiesene Stoffe | tabelliert |
+| Bindungswinkel H₂O, H₂S, NH₃, PH₃, CH₄, CO₂, HCN | NIST CCCBDB (Gasphase) | gemessen |
 
 ## Modellgrenzen
 
@@ -65,9 +66,16 @@ falls es ihn gibt – radioaktiv ist. Das Labor berechnet selbst keine Halbwerts
 - **Teilchenmodell:** Berechnet sind nur T in Kelvin, der Zustand aus Tabellenwerten bei 1013 hPa und das Verhältnis
   der mittleren Geschwindigkeiten `√(T/T₀)`. Abstände und Bewegungen der Punkte sind qualitativ. Dichte, Druck oder
   Geschwindigkeiten in m/s werden nicht angezeigt, weil das Modell sie nicht bestimmen kann.
-- **Molekülbaukasten:** feste Bindigkeiten. Drei Stufen: Strukturzeichnung (Bindigkeit verletzt) → plausible Struktur
-  (Bindigkeiten erfüllt, Existenz unbekannt) → bekanntes Molekül (im Datensatz). Ausnahmen wie SO₂, CO oder geladene
-  Teilchen werden nicht gebaut. Geometrien nach dem Elektronenpaarabstoßungsmodell sind Modellwerte.
+- **Molecule Builder (Reiter „Moleküle“):** feste Bindigkeiten. Zwei getrennte Prüfungen: `validiere()` prüft das
+  Datenmodell (eindeutige IDs, gültige Bindungsendpunkte, Ordnungen 1–3, keine Doppelbindungen zwischen demselben Paar),
+  `analyse()` bewertet jedes Molekül in vier Stufen: **gültige Modellstruktur** (alle Bindigkeiten erfüllt – das sagt
+  nichts über Existenz oder Stabilität), **unvollständig** (freie Bindungsmöglichkeiten), **Regelverletzung**
+  (Bindigkeit überschritten oder unmögliche Bindungsordnung) und **nicht abschließend beurteilbar** (S oder P mit mehr
+  Bindungen als üblich, aber im Bereich bekannter Verbindungen mit erweitertem Oktett). Namen werden nur angezeigt,
+  wenn die Struktur per Graph-Isomorphie exakt einem Datensatz-Molekül entspricht – unabhängig von der Anordnung.
+  Formalladungen, geladene Teilchen und Ausnahmen wie CO werden nicht gebaut. Geometrien nach dem
+  Elektronenpaarabstoßungsmodell sind Modellwerte; die Zeichnung ist flach. Lernaufgaben (`aufgaben-molekuel.js`)
+  werden ebenfalls strukturell geprüft. Molekül und gelöste Aufgaben liegen im LocalStorage (`chemielabor-molekuel`).
 - **Formelrechner:** Summenformeln mit Klammern `()`/`[]`, Vorfaktoren, Kristallwasser (`·`, `*`, `.`) und Ladung am
   Ende. Keine Isotopenangaben, Strukturformeln oder Reaktionsgleichungen. Für Elemente ohne Standardatomgewicht wird
   keine molare Masse berechnet. Die Elektronenmasse bei Ionen wird vernachlässigt.

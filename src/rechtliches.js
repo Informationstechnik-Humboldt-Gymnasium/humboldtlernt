@@ -88,7 +88,7 @@ export function datenschutzBody(d) {
 
       <h2>6. Cookies und Speicher im Browser</h2>
       <p>Die Lernseite setzt genau ein Cookie („lernseite“). Es enthält nur die Nummer deines Kontos, signiert gegen Fälschung, damit du angemeldet bleibst. Es ist für den Betrieb technisch notwendig, für Skripte nicht lesbar, gilt höchstens 12 Stunden und wird beim Abmelden gelöscht.</p>
-      <p>Das <strong>Schaltkreis-Labor</strong> in der Sandbox speichert deine zuletzt gebaute Schaltung im Speicher deines Browsers (LocalStorage), damit sie beim nächsten Öffnen wieder da ist. Diese Daten bleiben auf deinem Gerät und werden nicht an den Server übertragen. Du kannst sie löschen, indem du im Labor „Zurücksetzen“ wählst oder die Websitedaten im Browser löschst.</p>
+      <p>Einige Simulationen in der Sandbox speichern deinen letzten Stand im Speicher deines Browsers (LocalStorage), damit er beim nächsten Öffnen wieder da ist: das <strong>Schaltkreis-Labor</strong> und das <strong>Logik-Labor</strong> deine Schaltung, das <strong>Netzwerk-Labor</strong> dein Netzwerk und welche Lernaufgaben du gelöst hast, der <strong>Molekülbaukasten</strong> im Atom- &amp; Chemielabor dein Molekül und deine gelösten Lernaufgaben. Diese Daten enthalten keine Angaben zu deiner Person, bleiben auf deinem Gerät und werden nicht an den Server übertragen. Du kannst sie löschen, indem du im Labor die Arbeitsfläche leerst bzw. „Neu“ wählst oder die Websitedaten im Browser löschst.</p>
 
       <h2>7. Zweck und Rechtsgrundlage</h2>
       <p>Die Daten werden ausschließlich verwendet, um die Funktionen der Lernseite bereitzustellen: Anmeldung, Rechte (Schüler/in, Lehrkraft, Admin), Inhalte passend zur Klassenstufe und das Speichern des Lernfortschritts.</p>

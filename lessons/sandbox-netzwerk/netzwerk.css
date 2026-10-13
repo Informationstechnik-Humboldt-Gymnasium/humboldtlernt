@@ -1,0 +1,100 @@
+/* Netzwerk-Labor – ergänzt ../sandbox-schaltkreis/labor.css (Aufbau, Leisten, Arbeitsfläche).
+   Farben nur über die CSS-Variablen aus lesson-kit.css, damit der Dark Mode funktioniert. */
+.app { grid-template-columns: 118px minmax(0, 1fr) minmax(280px, 350px); }
+.leiste h3 { font-size: .72rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin: 6px 2px 0; }
+.leiste h3:first-child { margin-top: 0; }
+.teil { border: 1px solid var(--border); border-radius: 10px; background: var(--card); color: var(--text); font: inherit; font-size: .76rem; }
+.teil svg { width: 74px; height: 44px; }
+#aufgaben { width: auto; max-width: 230px; padding: 6px 8px; font-size: .88rem; }
+
+/* Geräte */
+.geraet { fill: var(--card); stroke: var(--line); stroke-width: 2; stroke-linejoin: round; }
+.bildschirm { fill: var(--soft-accent); stroke: var(--border); }
+.einschub { fill: var(--bg); stroke: var(--border); }
+.led { fill: var(--ok); }
+#flaeche .symbol, .teil .symbol { font-size: 13px; font-weight: 700; }
+#flaeche .name { font-size: 12.5px; font-weight: 700; }
+#flaeche .wert { font-size: 11px; }
+#flaeche .wert.klein { font-size: 10px; }
+#flaeche .porttext { font-size: 9.5px; fill: var(--muted); font-weight: 600; pointer-events: none; }
+.flaeche.markiert { fill: none; stroke-width: 2.5; stroke-dasharray: 6 4; }
+.flaeche.markiert.quelle { stroke: var(--accent); }
+.flaeche.markiert.ziel { stroke: var(--c3); }
+.flaeche.markiert.aktuell { stroke: var(--ok); stroke-width: 3.5; stroke-dasharray: none; fill: var(--ok-soft); fill-opacity: .5; }
+.flaeche.markiert.fehler { stroke: var(--warn); stroke-width: 3.5; stroke-dasharray: none; fill: var(--warn-soft); fill-opacity: .6; }
+
+/* Anschlüsse */
+.anschluss.belegt { fill: var(--line); }
+.anschluss.aus { fill: var(--warn-soft); stroke: var(--warn); stroke-width: 2.2; }
+
+/* Kabel */
+.kabel { stroke: var(--line); stroke-width: 3; stroke-linecap: round; }
+.kabel.inaktiv { stroke: var(--warn); stroke-dasharray: 7 6; }
+.kabel.gewaehlt { stroke: var(--accent); stroke-width: 5.5; }
+.kabel.pfad.anfrage { stroke: var(--accent); stroke-width: 5; }
+.kabel.pfad.antwort { stroke: var(--c3); stroke-width: 5; }
+.link.an { fill: var(--ok); }
+.link.aus { stroke: var(--warn); stroke-width: 2.4; stroke-linecap: round; fill: none; }
+
+/* Paket */
+.paket rect { fill: var(--accent); stroke: var(--card); stroke-width: 2; }
+.paket path { fill: none; stroke: var(--accent-text); stroke-width: 1.6; }
+.paket.antwort rect { fill: var(--c3); }
+.paket.fehler rect { fill: var(--warn); }
+
+/* Seitenleiste */
+.karte h3 { font-size: .92rem; margin: 12px 0 6px; }
+.karte h3:first-child { margin-top: 0; }
+.ctrl input[type=text] { font: inherit; padding: 6px 8px; border-radius: 8px; border: 1px solid var(--border); background: var(--card); color: var(--text); width: 100%; min-width: 0; }
+.ctrl input[type=text]:focus { border-color: var(--accent); }
+.ctrl { margin-bottom: 8px; }
+fieldset.schnitt, fieldset.route { border: 1px solid var(--border); border-radius: 10px; padding: 6px 10px 4px; margin: 10px 0; }
+fieldset legend { font-weight: 700; font-size: .88rem; padding: 0 4px; }
+.felder2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.felder3 { display: grid; grid-template-columns: 1.3fr .7fr 1.2fr; gap: 6px; }
+.felder2 .ctrl, .felder3 .ctrl { margin-bottom: 4px; }
+.felder3 .ctrl > span { font-size: .8rem; }
+.meldung:empty { display: none; }
+.feld-meldung { display: block; font-size: .8rem; margin: 0 0 6px; }
+.feld-meldung.fehler { color: var(--warn); font-weight: 600; }
+.feld-meldung.ok { color: var(--ok); }
+.feld-meldung.hinweis { color: var(--muted); }
+.haken { display: flex; gap: 6px; align-items: center; font-size: .86rem; margin: 4px 0; }
+.ports { list-style: none; padding: 0; margin: 0; font-size: .84rem; display: grid; gap: 2px; }
+table.routen td:first-child { font-weight: 700; text-align: center; }
+.tab-rahmen { overflow: auto; border: 1px solid var(--border); border-radius: 8px; }
+.tab-rahmen table.werte { margin-top: 0; }
+table.werte code { font-size: .8rem; }
+table.erreichbar td.ok { color: var(--ok); font-weight: 700; }
+table.erreichbar td.fehler { color: var(--warn); font-weight: 700; }
+table.erreichbar td.unklar { color: var(--accent); font-weight: 700; }
+.test-wahl { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.abspielen { margin-top: 8px; }
+.abspielen button:disabled { opacity: .45; cursor: default; }
+.test-ergebnis { border-radius: 10px; padding: 8px 10px; margin-top: 10px; border: 1px solid var(--border); }
+.test-ergebnis p { margin: 4px 0 0; }
+.test-ergebnis.ok { background: var(--ok-soft); border-color: var(--ok); color: var(--text); }
+.test-ergebnis.ok b { color: var(--ok); }
+.test-ergebnis.fehler { background: var(--warn-soft); border-color: var(--warn); }
+.test-ergebnis.fehler b { color: var(--warn); }
+.test-ergebnis.unklar { background: var(--soft-accent); border-color: var(--accent); }
+.schritte { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 5px; font-size: .86rem; max-height: 340px; overflow-y: auto; }
+.schritte li.phase { font-size: .72rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin-top: 4px; }
+.schritte li.schritt { border-left: 3px solid var(--border); padding: 4px 8px; border-radius: 0 8px 8px 0; background: var(--bg); }
+.schritte li.ziel { border-left-color: var(--ok); }
+.schritte li.fehler { border-left-color: var(--warn); background: var(--warn-soft); }
+.schritte li.aktuell { outline: 2px solid var(--accent); }
+.aufgabe-karte { border-color: var(--accent); }
+.aufgabe-karte h3 { margin: 0 0 4px; font-size: 1rem; }
+.hinweise { padding-left: 20px; background: var(--soft-accent); border-radius: 8px; padding-top: 6px; padding-bottom: 6px; }
+.badge-ok { font-size: .75rem; border-radius: 999px; padding: 1px 8px; background: var(--ok-soft); color: var(--ok); border: 1px solid var(--ok); }
+.knoepfe { margin-top: 12px; }
+
+@media (max-width: 860px) {
+  .app { grid-template-columns: minmax(0, 1fr); }
+  .leiste h3 { display: none; }
+}
+@media (max-width: 420px) {
+  .felder2, .test-wahl { grid-template-columns: 1fr; }
+  .felder3 { grid-template-columns: 1fr 1fr; }
+}

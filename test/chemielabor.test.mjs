@@ -1,6 +1,6 @@
 // Tests für das Atom- & Chemielabor (Fach Sandbox): Datenkonsistenz des Periodensystems, Element aus der Protonenzahl,
 // Massenzahl und Ionenladung, Elektronenkonfigurationen, Nukliddaten (auch fehlende), Formel-Parser, molare Massen,
-// Molekülprüfung, Energiestufen und Teilchenmodell. Die Moduldateien laufen wie im Browser (ohne DOM) in einer VM.
+// Energiestufen und Teilchenmodell (Molekülbaukasten: test/molekuel.test.mjs). Die Moduldateien laufen wie im Browser (ohne DOM) in einer VM.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -340,90 +340,7 @@ test('22 · Summenformel nach Hill', () => {
   assert.equal(C.hill({ N: 1, H: 3 }), 'H₃N');
 });
 
-// ------------------------------------------------------------------ Molekülbaukasten
-function bau(atome, bindungen) {
-  const m = M.neu();
-  const ids = atome.map(el => M.atomHinzu(m, el, 0, 0).id);
-  for (const [a, b, o] of bindungen) { for (let k = 0; k < o; k++) M.verbinde(m, ids[a], ids[b]); }
-  return { m, ids };
-}
-
-test('23 · Alle Beispielmoleküle werden als bekannt mit korrekter Summenformel erkannt', () => {
-  const formeln = { h2: 'H₂', o2: 'O₂', n2: 'N₂', cl2: 'Cl₂', f2: 'F₂', hcl: 'ClH', hf: 'FH', h2o: 'H₂O', h2s: 'H₂S', nh3: 'H₃N', ch4: 'CH₄', co2: 'CO₂',
-    ch2o: 'CH₂O', h2o2: 'H₂O₂', c2h6: 'C₂H₆', c2h4: 'C₂H₄', c2h2: 'C₂H₂', ch3oh: 'CH₄O', c2h5oh: 'C₂H₆O' };
-  for (const mol of D.MOLEKUELE) {
-    const a = M.analyse(M.beispiel(mol.id));
-    assert.equal(a.length, 1, mol.id);
-    assert.equal(a[0].status, 'bekannt', `${mol.id}: ${a[0].meldungen.map(x => x.text).join(' ')}`);
-    assert.equal(a[0].name, mol.name);
-    assert.equal(a[0].formel, formeln[mol.id], mol.id);
-  }
-});
-
-test('24 · Selbst gebaute Moleküle: Bindigkeit, Mehrfachbindungen, Erkennung', () => {
-  const wasser = bau(['O', 'H', 'H'], [[0, 1, 1], [0, 2, 1]]);
-  assert.equal(M.analyse(wasser.m)[0].molekuelId, 'h2o');
-  const co2 = bau(['C', 'O', 'O'], [[0, 1, 2], [0, 2, 2]]);
-  assert.equal(M.analyse(co2.m)[0].molekuelId, 'co2');
-  const n2 = bau(['N', 'N'], [[0, 1, 3]]);
-  assert.equal(M.analyse(n2.m)[0].molekuelId, 'n2');
-  // Isomere unterscheiden: Ethanol und Dimethylether haben dieselbe Summenformel
-  const ether = bau(['C', 'O', 'C', 'H', 'H', 'H', 'H', 'H', 'H'], [[0, 1, 1], [1, 2, 1], [0, 3, 1], [0, 4, 1], [0, 5, 1], [2, 6, 1], [2, 7, 1], [2, 8, 1]]);
-  const e = M.analyse(ether.m)[0];
-  assert.equal(e.formel, 'C₂H₆O'); assert.equal(e.status, 'plausibel'); assert.equal(e.name, null);
-});
-
-test('25 · Verletzte Valenzen ergeben nur eine Strukturzeichnung mit Hinweis', () => {
-  const ch5 = bau(['C', 'H', 'H', 'H', 'H', 'H'], [[0, 1, 1], [0, 2, 1], [0, 3, 1], [0, 4, 1], [0, 5, 1]]);
-  const a = M.analyse(ch5.m)[0];
-  assert.equal(a.status, 'zeichnung');
-  assert.ok(a.meldungen.some(x => x.art === 'fehler' && /Kohlenstoff hat 5 Bindungen/.test(x.text)));
-  assert.equal(a.geometrie.length, 0, 'keine Geometrie für unmögliche Strukturen');
-  const oh = bau(['O', 'H'], [[0, 1, 1]]);
-  const b = M.analyse(oh.m)[0];
-  assert.equal(b.status, 'zeichnung'); assert.ok(b.meldungen.some(x => x.art === 'offen' && /1 freie Bindung/.test(x.text)));
-  const einzeln = bau(['C'], []);
-  assert.equal(M.analyse(einzeln.m)[0].status, 'zeichnung');
-  // H bindet nie doppelt: zweites Antippen trennt die Bindung wieder
-  const hh = bau(['H', 'H'], []);
-  assert.equal(M.verbinde(hh.m, hh.ids[0], hh.ids[1]), 1);
-  assert.equal(M.verbinde(hh.m, hh.ids[0], hh.ids[1]), 0);
-  // O höchstens doppelt, C≡C dreifach, danach getrennt
-  const oo = bau(['O', 'O'], []);
-  assert.deepEqual([1, 2, 3].map(() => M.verbinde(oo.m, oo.ids[0], oo.ids[1])), [1, 2, 0]);
-  const cc = bau(['C', 'C'], []);
-  assert.deepEqual([1, 2, 3, 4].map(() => M.verbinde(cc.m, cc.ids[0], cc.ids[1])), [1, 2, 3, 0]);
-  assert.equal(M.verbinde(cc.m, cc.ids[0], cc.ids[0]), null);
-  assert.equal(M.verbinde(cc.m, cc.ids[0], 999), null);
-  assert.equal(M.atomHinzu(cc.m, 'Na', 0, 0), null, 'nur Baukasten-Elemente');
-});
-
-test('26 · Mehrere Moleküle auf der Fläche werden getrennt bewertet; Löschen entfernt Bindungen', () => {
-  const m = M.beispiel('h2o');
-  const n = M.beispiel('ch4');
-  const off = Math.max(...m.atome.map(a => a.id));
-  n.atome.forEach(a => { a.id += off; m.atome.push(a); });
-  n.bindungen.forEach(b => m.bindungen.push({ a: b.a + off, b: b.b + off, ordnung: b.ordnung }));
-  const a = M.analyse(m);
-  assert.deepEqual(plain(a.map(t => t.molekuelId).sort()), ['ch4', 'h2o']);
-  const o = m.atome.find(x => x.el === 'O').id;
-  M.atomEntfernen(m, o);
-  assert.ok(m.bindungen.every(b => b.a !== o && b.b !== o));
-  assert.equal(M.analyse(m).filter(t => t.status === 'zeichnung').length, 2, 'zwei einzelne H-Atome bleiben übrig');
-});
-
-test('27 · Geometrie nach dem Elektronenpaarabstoßungsmodell, gemessene Winkel nur wo hinterlegt', () => {
-  const geo = id => M.analyse(M.beispiel(id))[0].geometrie;
-  const w = geo('h2o')[0];
-  assert.equal(w.geometrie.name, 'gewinkelt'); assert.equal(w.geometrie.freiePaare, 2); assert.equal(w.gemessen, 104.5);
-  assert.equal(geo('ch4')[0].geometrie.name, 'tetraedrisch'); assert.equal(geo('ch4')[0].geometrie.winkel, 109.5);
-  assert.equal(geo('nh3')[0].geometrie.name, 'trigonal-pyramidal'); assert.equal(geo('nh3')[0].gemessen, 106.7);
-  assert.equal(geo('co2')[0].geometrie.name, 'linear'); assert.equal(geo('co2')[0].geometrie.winkel, 180);
-  assert.equal(geo('ch2o')[0].geometrie.name, 'trigonal-planar'); assert.equal(geo('ch2o')[0].gemessen, null);
-  assert.equal(geo('h2').length, 0);
-  const c2h4 = geo('c2h4');
-  assert.equal(c2h4.length, 2); assert.ok(c2h4.every(g => g.geometrie.name === 'trigonal-planar' && g.gemessen === null));
-});
+// Molekülbaukasten (Molecule Builder): eigene Datei test/molekuel.test.mjs
 
 // ------------------------------------------------------------------ Teilchenmodell
 test('28 · Teilchenmodell: Kelvin, Zustand aus Tabellenwerten, Geschwindigkeitsverhältnis', () => {

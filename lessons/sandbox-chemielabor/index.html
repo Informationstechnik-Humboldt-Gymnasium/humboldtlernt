@@ -261,42 +261,80 @@
   </section>
 </section>
 
-<!-- ============================================================ Moleküle -->
+<!-- ============================================================ Moleküle (Molecule Builder) -->
 <section class="panel" role="tabpanel" id="p-molekuel" aria-labelledby="tab-molekuel" hidden>
-  <p class="einleitung">In Molekülen teilen sich Nichtmetall-Atome <b>Elektronenpaare</b> (Atombindung). Setze Atome auf die Fläche und verbinde sie. Das Labor prüft, ob jedes Atom seine übliche Zahl an Bindungen hat.</p>
+  <p class="einleitung">In Molekülen teilen sich Nichtmetall-Atome <b>Elektronenpaare</b> (Atombindung). Baue Moleküle aus Atomen und Bindungen. Das Labor prüft nach vereinfachten Valenzregeln, ob jedes Atom seine übliche Zahl an Bindungen hat – und erkennt bekannte Stoffe.</p>
+  <div class="row">
+    <div class="seg" role="group" aria-label="Modus">
+      <button type="button" id="mol-modus-frei" aria-pressed="true">Freies Bauen</button>
+      <button type="button" id="mol-modus-lernen" aria-pressed="false">Lernmodus</button>
+    </div>
+    <span class="small muted" id="mol-fortschritt"></span>
+  </div>
   <div class="lk-grid">
     <div class="lk-card">
-      <div class="row palette-mol" id="mol-palette" role="group" aria-label="Element zum Einsetzen"></div>
-      <svg id="mol-svg" viewBox="-300 -190 600 380" role="img" aria-label="Arbeitsfläche des Molekülbaukastens"></svg>
-      <p class="small muted" id="mol-hilfe">Atom einsetzen: Element wählen, dann auf die Fläche tippen (oder aus der Leiste ziehen). Ist ein Atom ausgewählt (Ring), wird jedes neue Atom gleich daran gebunden. Verbinden: zwei Atome nacheinander antippen; eine Bindung antippen schaltet Einfach → Doppel → Dreifach → getrennt. Atome lassen sich verschieben.</p>
+      <div class="row palette-mol" id="mol-palette" role="group" aria-label="Elementbibliothek: Element wählen, dann auf die Fläche tippen oder ziehen"></div>
+      <div class="row werkzeug-mol">
+        <div class="seg" role="group" aria-label="Bindungsart" id="mol-ordnung">
+          <button type="button" data-ordnung="1" aria-pressed="true" title="Einfachbindung">— Einfach</button>
+          <button type="button" data-ordnung="2" aria-pressed="false" title="Doppelbindung">= Doppel</button>
+          <button type="button" data-ordnung="3" aria-pressed="false" title="Dreifachbindung">≡ Dreifach</button>
+        </div>
+        <button type="button" id="mol-rueck" disabled title="Rückgängig (Strg+Z)" aria-label="Rückgängig">↶</button>
+        <button type="button" id="mol-vor" disabled title="Wiederholen (Strg+Y)" aria-label="Wiederholen">↷</button>
+        <button type="button" id="mol-loeschen" disabled title="Ausgewähltes Atom oder Bindung löschen (Entf)">Löschen</button>
+        <button type="button" id="mol-entfernen" disabled title="Das ganze Molekül des ausgewählten Atoms entfernen">Molekül entfernen</button>
+        <button type="button" id="mol-leeren" title="Arbeitsfläche leeren">Fläche leeren</button>
+      </div>
+      <div class="mol-box">
+        <svg id="mol-svg" viewBox="-300 -190 600 380" role="img" aria-label="Arbeitsfläche des Molecule Builders"></svg>
+        <div class="mol-zoom" role="group" aria-label="Ansicht">
+          <button type="button" id="mol-zoom-minus" aria-label="Verkleinern">−</button>
+          <button type="button" id="mol-zoom-plus" aria-label="Vergrößern">+</button>
+          <button type="button" id="mol-zoom-fit" aria-label="Alles zeigen">⤢</button>
+        </div>
+        <div class="mol-toast" id="mol-toast" role="status" aria-live="polite"></div>
+      </div>
+      <p class="small muted" id="mol-hilfe"><b>Einsetzen:</b> Element wählen und auf die Fläche tippen oder aus der Leiste ziehen. Ist ein Atom ausgewählt, wird das neue Atom mit der gewählten Bindungsart daran gebunden. <b>Verbinden:</b> zwei Atome nacheinander antippen. <b>Bindung ändern:</b> Bindung antippen, dann Bindungsart wählen. <b>Verschieben:</b> Atom ziehen; leere Fläche ziehen verschiebt die Ansicht, Mausrad oder zwei Finger zoomen.</p>
       <div class="row">
         <select id="mol-beispiel" aria-label="Beispielmolekül laden"><option value="">Beispiel laden …</option></select>
-        <button type="button" id="mol-loeschen" disabled>Atom löschen</button>
-        <button type="button" id="mol-leeren">Alles leeren</button>
       </div>
-      <details class="info"><summary>Ohne Maus bauen</summary>
+      <details class="info"><summary>Ohne Maus bauen (Tastatur)</summary>
         <div class="row eng">
           <select id="mol-a" aria-label="Erstes Atom"></select>
           <select id="mol-b" aria-label="Zweites Atom"></select>
-          <button type="button" id="mol-binden">Bindung ändern</button>
+          <button type="button" id="mol-binden">Bindung setzen</button>
         </div>
-        <p class="small muted">Atome einsetzen mit den Element-Knöpfen oben (Enter). Ausgewähltes Atom mit Entf löschen.</p>
+        <p class="small muted">Atome einsetzen: Element-Knopf mit Enter (wird an das ausgewählte Atom gebunden). Fläche anklicken, dann: Pfeiltasten verschieben das ausgewählte Atom, Entf löscht, Strg+Z / Strg+Y.</p>
       </details>
     </div>
-    <div class="lk-card">
-      <h2>Auswertung</h2>
-      <div id="mol-analyse" aria-live="polite"></div>
-      <details class="info"><summary>Drei Stufen der Bewertung</summary>
-        <ul class="small">
-          <li><b>Strukturzeichnung:</b> Es ist nur eine Zeichnung. Mindestens ein Atom hat zu viele oder zu wenige Bindungen.</li>
-          <li><b>Plausible Struktur:</b> Jedes Atom hat seine übliche Bindigkeit (H: 1, O und S: 2, N: 3, C: 4, F und Cl: 1). Ob es den Stoff wirklich gibt, ist damit <b>nicht</b> gesagt.</li>
-          <li><b>Bekanntes Molekül:</b> Die Struktur steht in der hinterlegten Liste experimentell nachgewiesener Stoffe.</li>
-        </ul>
-        <p class="small muted">Vereinfachung: Das Labor nutzt feste Bindigkeiten. Echte Ausnahmen (z. B. Schwefel in SO₂, Kohlenstoffmonoxid, geladene Teilchen) baut es nicht. Bindungswinkel nach dem Elektronenpaarabstoßungsmodell sind Modellwerte; gemessene Winkel stehen nur dort, wo sie hinterlegt sind.</p>
-      </details>
-      <details class="info"><summary>Und die Ionenbindung?</summary>
-        <p class="small">Zwischen einem Metall und einem Nichtmetall teilen sich die Atome keine Elektronenpaare. Das Metallatom <b>gibt Elektronen ab</b>, das Nichtmetallatom <b>nimmt sie auf</b>: Na → Na⁺ + e⁻ und Cl + e⁻ → Cl⁻. Die entgegengesetzt geladenen Ionen ziehen sich an und bilden ein <b>Ionengitter</b> (z. B. Kochsalz NaCl). Es gibt dabei keine einzelnen Moleküle – darum baut der Baukasten nur Atombindungen. Probiere die Ionenbildung im Reiter „Atom“ aus.</p>
-      </details>
+    <div>
+      <section class="lk-card lernmodus" id="mol-lernen" hidden aria-labelledby="mol-lernen-titel">
+        <h2 id="mol-lernen-titel">Aufgabe</h2>
+        <div class="row eng aufgaben-liste" id="mol-aufgaben" role="group" aria-label="Aufgabe wählen"></div>
+        <div id="mol-aufgabe"></div>
+      </section>
+      <section class="lk-card" aria-labelledby="mol-auswahl-titel">
+        <h2 id="mol-auswahl-titel">Auswahl</h2>
+        <div id="mol-auswahl" aria-live="polite"></div>
+      </section>
+      <section class="lk-card" aria-labelledby="mol-analyse-titel">
+        <h2 id="mol-analyse-titel">Auswertung</h2>
+        <div id="mol-analyse" aria-live="polite"></div>
+        <details class="info"><summary>Wie bewertet das Labor?</summary>
+          <ul class="small">
+            <li><b>Gültige Modellstruktur:</b> Jedes Atom hat genau seine übliche Bindigkeit (H, F, Cl: 1 · O, S: 2 · N, P: 3 · C: 4). Das heißt <b>nicht</b>, dass der Stoff existiert oder stabil ist.</li>
+            <li><b>Bekanntes Molekül:</b> Zusätzlich steht genau diese Struktur in der Liste experimentell nachgewiesener Stoffe.</li>
+            <li><b>Unvollständig:</b> Kein Regelverstoß, aber mindestens ein Atom hat noch freie Bindungsmöglichkeiten.</li>
+            <li><b>Regelverletzung:</b> Ein Atom hat mehr Bindungen als erlaubt, oder eine Bindungsart ist für die Atome nicht möglich.</li>
+            <li><b>Nicht abschließend beurteilbar:</b> Schwefel oder Phosphor haben mehr Bindungen als nach der einfachen Regel – das kommt in echten Verbindungen vor (z. B. SF₆, PCl₅), lässt sich mit diesem Modell aber nicht sicher bewerten.</li>
+          </ul>
+          <p class="small muted">Vereinfachungen: feste Bindigkeiten, keine Formalladungen und keine geladenen Teilchen; Ausnahmen wie Kohlenstoffmonoxid werden nicht gebaut. Bindungswinkel nach dem Elektronenpaarabstoßungsmodell sind Modellwerte; gemessene Winkel stehen nur dort, wo sie hinterlegt sind. Die Zeichnung ist flach, echte Moleküle sind räumlich.</p>
+        </details>
+        <details class="info"><summary>Und die Ionenbindung?</summary>
+          <p class="small">Zwischen einem Metall und einem Nichtmetall teilen sich die Atome keine Elektronenpaare. Das Metallatom <b>gibt Elektronen ab</b>, das Nichtmetallatom <b>nimmt sie auf</b>: Na → Na⁺ + e⁻ und Cl + e⁻ → Cl⁻. Die entgegengesetzt geladenen Ionen ziehen sich an und bilden ein <b>Ionengitter</b> (z. B. Kochsalz NaCl). Es gibt dabei keine einzelnen Moleküle – darum baut der Baukasten nur Atombindungen. Probiere die Ionenbildung im Reiter „Atom“ aus.</p>
+        </details>
+      </section>
     </div>
   </div>
   <section class="lk-card tasks" aria-label="Entdecke selbst: Moleküle">
@@ -362,6 +400,7 @@
 <script src="chemie.js"></script>
 <script src="molekuel.js"></script>
 <script src="teilchen.js"></script>
+<script src="aufgaben-molekuel.js"></script>
 <script src="ui.js"></script>
 <script src="ansicht-pse.js"></script>
 <script src="ansicht-atom.js"></script>

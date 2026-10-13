@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Netzwerk-Labor</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<link rel="stylesheet" href="../sandbox-schaltkreis/labor.css">
+<link rel="stylesheet" href="netzwerk.css">
+</head>
+<body class="labor netzwerk">
+<div class="app">
+  <header class="werkzeuge" role="toolbar" aria-label="Werkzeuge">
+    <h1 class="titel">Netzwerk-Labor</h1>
+    <button type="button" id="neu" title="Arbeitsfläche leeren (mit ↶ zurückholbar)">Neu</button>
+    <button type="button" id="rueck" disabled title="Rückgängig (Strg+Z)" aria-label="Rückgängig">↶</button>
+    <button type="button" id="vor" disabled title="Wiederholen (Strg+Y)" aria-label="Wiederholen">↷</button>
+    <button type="button" id="loeschen" title="Auswahl löschen (Entf)">Löschen</button>
+    <span class="trenner" aria-hidden="true"></span>
+    <select id="aufgaben" aria-label="Lernaufgabe laden"></select>
+    <button type="button" id="pruefen" title="Konfiguration aller Geräte prüfen">Netzwerk prüfen</button>
+    <span class="trenner" aria-hidden="true"></span>
+    <button type="button" id="export" title="Netzwerk als Datei speichern">Speichern</button>
+    <label class="knopf" title="Gespeichertes Netzwerk laden">Laden<input type="file" id="import" accept=".json,application/json"></label>
+    <button type="button" id="aufraeumen" title="Ansicht so einstellen, dass alles zu sehen ist">Alles zeigen</button>
+    <button type="button" id="hilfe" aria-expanded="false" aria-controls="hilfetext">? Hilfe</button>
+  </header>
+
+  <nav class="leiste" id="leiste" aria-label="Geräte (auf die Arbeitsfläche ziehen oder antippen)"></nav>
+
+  <section class="flaeche-box" id="flaeche-box" aria-label="Arbeitsfläche">
+    <svg id="flaeche" role="img" aria-label="Arbeitsfläche mit dem Netzwerk. Geräte ziehen, Anschlüsse mit Kabeln verbinden.">
+      <defs>
+        <pattern id="raster-muster" width="20" height="20" patternUnits="userSpaceOnUse">
+          <circle cx="0" cy="0" r="1.1" class="rasterpunkt"/><circle cx="20" cy="0" r="1.1" class="rasterpunkt"/>
+          <circle cx="0" cy="20" r="1.1" class="rasterpunkt"/><circle cx="20" cy="20" r="1.1" class="rasterpunkt"/>
+        </pattern>
+      </defs>
+      <rect id="raster" fill="url(#raster-muster)"/>
+      <g id="welt"></g>
+    </svg>
+    <div class="zoom" role="group" aria-label="Ansicht">
+      <button type="button" id="zoom-minus" aria-label="Verkleinern">−</button>
+      <button type="button" id="zoom-plus" aria-label="Vergrößern">+</button>
+      <button type="button" id="zoom-fit" aria-label="Alles zeigen">⤢</button>
+    </div>
+    <div class="leer" id="leer">
+      <p>Ziehe PCs, Server, Switches und Router aus der Leiste hierher<br>oder starte mit einer Lernaufgabe.</p>
+      <button type="button" id="leer-aufgabe" class="primary">Aufgabe 1: Zwei PCs verbinden</button>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </section>
+
+  <aside class="seite">
+    <section class="lk-card karte aufgabe-karte" id="aufgabe-karte" hidden aria-labelledby="aufgabe-titel">
+      <h2 id="aufgabe-titel">Aufgabe</h2>
+      <div id="aufgabe"></div>
+    </section>
+    <section class="lk-card karte" aria-labelledby="eig-titel">
+      <h2 id="eig-titel">Konfiguration</h2>
+      <div id="eig"></div>
+    </section>
+    <section class="lk-card karte" aria-labelledby="test-titel">
+      <h2 id="test-titel">Verbindung testen</h2>
+      <div class="test-wahl">
+        <label class="ctrl"><span>Von</span><select id="quelle"></select></label>
+        <label class="ctrl"><span>Nach</span><select id="ziel"></select></label>
+      </div>
+      <div class="row eng">
+        <button type="button" id="testen" class="primary">Verbindung testen</button>
+        <button type="button" id="senden" title="Paket Schritt für Schritt durch das Netz schicken">▶ Paket senden</button>
+      </div>
+      <div class="row eng abspielen" id="abspielen" hidden role="group" aria-label="Paketsimulation steuern">
+        <button type="button" id="pause" aria-pressed="false">⏸ Pause</button>
+        <button type="button" id="schritt" title="Einen Schritt weiter">⏭ Schritt</button>
+        <button type="button" id="stopp" title="Simulation zurücksetzen">⏹ Zurücksetzen</button>
+      </div>
+      <div id="ergebnis" aria-live="polite"></div>
+      <ol class="schritte" id="schritte"></ol>
+      <p class="small muted">Pädagogisches Simulationsmodell – es werden keine echten Netzwerkpakete gesendet.</p>
+    </section>
+    <section class="lk-card karte" id="diagnose-karte" hidden aria-labelledby="diag-titel">
+      <h2 id="diag-titel">Netzwerk prüfen</h2>
+      <div id="diagnose" aria-live="polite"></div>
+    </section>
+    <section class="lk-card karte hilfe" id="hilfetext" hidden aria-labelledby="hilfe-titel">
+      <h2 id="hilfe-titel">So funktioniert's</h2>
+      <ul class="small">
+        <li><b>Gerät einfügen:</b> aus der Leiste auf die Fläche ziehen oder antippen.</li>
+        <li><b>Verkabeln:</b> von einem Anschluss (Punkt) zu einem anderen ziehen – oder beide nacheinander antippen. Jeder Anschluss nimmt ein Kabel auf.</li>
+        <li><b>Konfigurieren:</b> Gerät antippen, rechts IP-Adresse, Subnetzmaske (z. B. /24 oder 255.255.255.0), Gateway und bei Routern die Routen eintragen.</li>
+        <li><b>Testen:</b> „Verbindung testen“ prüft sofort, „Paket senden“ zeigt den Weg Schritt für Schritt (Anfrage und Antwort).</li>
+        <li><b>Kabel</b> antippen und „Löschen“ entfernt es. <b>Verschieben:</b> Gerät ziehen. Leere Fläche ziehen verschiebt die Ansicht, Mausrad oder zwei Finger zoomen. Rückgängig/Wiederholen: Strg+Z / Strg+Y.</li>
+        <li><b>Anzeigen:</b> ● am Kabelende = Verbindung aktiv, ✕ = Schnittstelle deaktiviert (Kabel gestrichelt). „!“ vor einer Adresse = ungültige Angabe.</li>
+      </ul>
+      <h3>Was das Modell kann – und was nicht</h3>
+      <ul class="small">
+        <li><b>Simuliert:</b> Kabel und Schnittstellenstatus, IPv4-Adressen und Subnetze (/8 bis /30), Standardgateway, Switch-Weiterleitung mit MAC-Lernen, direkt angeschlossene Netze und statische Routen mit längstem Präfix, Hin- und Rückweg.</li>
+        <li><b>Nicht simuliert:</b> ARP-Tabellen, DHCP, DNS-Auflösung (der DNS-Eintrag wird nur geprüft), VLANs, NAT, Firewalls, Spanning Tree, WLAN, Übertragungszeiten und Paketverlust. Bei Schleifen zwischen Switches meldet das Labor „unklar“.</li>
+        <li>Das Netzwerk wird in diesem Browser gespeichert. Mit „Speichern“ bekommst du eine Datei.</li>
+      </ul>
+    </section>
+  </aside>
+</div>
+<script src="../../static/lesson-kit.js"></script>
+<script src="ipv4.js"></script>
+<script src="modell.js"></script>
+<script src="simulation.js"></script>
+<script src="aufgaben.js"></script>
+<script src="../sandbox-schaltkreis/bedienung.js"></script>
+<script src="zeichnen.js"></script>
+<script src="netzwerk.js"></script>
+</body>
+</html>
