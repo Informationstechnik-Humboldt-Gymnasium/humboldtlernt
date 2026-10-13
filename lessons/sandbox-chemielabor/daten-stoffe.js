@@ -35,16 +35,21 @@
     { id: 'eisen', name: 'Eisen', formel: 'Fe', schmelz: 1538, siede: 2861 },
   ];
 
-  // Elemente im Molekülbaukasten mit ihrer üblichen Bindigkeit (Anzahl Elektronenpaarbindungen in einfachen
-  // ungeladenen Molekülen) und der Zahl der Valenzelektronen. VEREINFACHUNG: Ausnahmen wie Schwefel mit mehr
-  // als zwei Bindungen (z. B. in SO₂, H₂SO₄) oder Kohlenstoffmonoxid werden bewusst nicht gebaut.
+  // Elemente im Molekülbaukasten (Molecule Builder).
+  //   bindigkeit  übliche Zahl der Elektronenpaarbindungen in einfachen ungeladenen Molekülen (Oktett-/Duettregel)
+  //   valenz      Zahl der Valenzelektronen (Außenelektronen) = Hauptgruppennummer (aus der Elektronenkonfiguration, NIST)
+  //   maxOrdnung  höchste Bindungsordnung, die das Element im Modell eingehen darf
+  //   erweitert   nur S und P: höchste Bindungszahl in bekannten Verbindungen mit erweitertem Oktett (SF₆: 6, PCl₅: 5).
+  //               Strukturen zwischen bindigkeit und erweitert gelten als „nicht abschließend beurteilbar“, nicht als falsch.
+  // VEREINFACHUNG: Formalladungen und Ausnahmen wie Kohlenstoffmonoxid werden nicht modelliert.
   D.BAUKASTEN = {
     H: { bindigkeit: 1, valenz: 1, maxOrdnung: 1 },
     C: { bindigkeit: 4, valenz: 4, maxOrdnung: 3 },
     N: { bindigkeit: 3, valenz: 5, maxOrdnung: 3 },
     O: { bindigkeit: 2, valenz: 6, maxOrdnung: 2 },
     F: { bindigkeit: 1, valenz: 7, maxOrdnung: 1 },
-    S: { bindigkeit: 2, valenz: 6, maxOrdnung: 2 },
+    P: { bindigkeit: 3, valenz: 5, maxOrdnung: 3, erweitert: 5 },
+    S: { bindigkeit: 2, valenz: 6, maxOrdnung: 2, erweitert: 6 },
     Cl: { bindigkeit: 1, valenz: 7, maxOrdnung: 1 },
   };
 
@@ -63,6 +68,9 @@
     { id: 'h2s', name: 'Schwefelwasserstoff', winkel: 92.1, atome: [['S', 0, -20], ['H', -58, 42], ['H', 58, 42]], bindungen: [[0, 1, 1], [0, 2, 1]] },
     { id: 'nh3', name: 'Ammoniak', winkel: 106.7, atome: [['N', 0, -10], ['H', -70, 30], ['H', 70, 30], ['H', 0, 70]], bindungen: [[0, 1, 1], [0, 2, 1], [0, 3, 1]] },
     { id: 'ch4', name: 'Methan', winkel: 109.5, atome: [['C', 0, 0], ['H', -70, 0], ['H', 70, 0], ['H', 0, -70], ['H', 0, 70]], bindungen: [[0, 1, 1], [0, 2, 1], [0, 3, 1], [0, 4, 1]] },
+    { id: 'ph3', name: 'Phosphan (Phosphin)', winkel: 93.3, atome: [['P', 0, -10], ['H', -70, 30], ['H', 70, 30], ['H', 0, 70]], bindungen: [[0, 1, 1], [0, 2, 1], [0, 3, 1]] },
+    { id: 'pcl3', name: 'Phosphortrichlorid', atome: [['P', 0, -10], ['Cl', -80, 35], ['Cl', 80, 35], ['Cl', 0, 85]], bindungen: [[0, 1, 1], [0, 2, 1], [0, 3, 1]] },
+    { id: 'hcn', name: 'Cyanwasserstoff (Blausäure)', winkel: 180, atome: [['H', -100, 0], ['C', -20, 0], ['N', 70, 0]], bindungen: [[0, 1, 1], [1, 2, 3]] },
     { id: 'co2', name: 'Kohlenstoffdioxid', winkel: 180, atome: [['O', -90, 0], ['C', 0, 0], ['O', 90, 0]], bindungen: [[0, 1, 2], [1, 2, 2]] },
     { id: 'ch2o', name: 'Methanal (Formaldehyd)', atome: [['C', 0, 0], ['O', 0, -80], ['H', -65, 45], ['H', 65, 45]], bindungen: [[0, 1, 2], [0, 2, 1], [0, 3, 1]] },
     { id: 'h2o2', name: 'Wasserstoffperoxid', atome: [['O', -40, 0], ['O', 40, 0], ['H', -80, 55], ['H', 80, -55]], bindungen: [[0, 1, 1], [0, 2, 1], [1, 3, 1]] },

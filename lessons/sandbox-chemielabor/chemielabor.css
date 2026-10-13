@@ -3,7 +3,7 @@
 :root {
   --k-nm: #dff0e0; --k-ha: #e4f4c9; --k-eg: #e3e3fb; --k-am: #fbe1d7; --k-eam: #fbeccf; --k-um: #f6e0ea;
   --k-mt: #dfe9f5; --k-hm: #e5f0ef; --k-la: #efe3f7; --k-ac: #f3e6dc;
-  --neutron: #8b8a84; --el-h: #f4f4f1; --el-c: #4b4a46; --el-n: #3f6fd8; --el-o: #d8463b; --el-f: #82c66a; --el-s: #e3c22d; --el-cl: #3fb05a;
+  --neutron: #8b8a84; --el-h: #f4f4f1; --el-c: #4b4a46; --el-n: #3f6fd8; --el-o: #d8463b; --el-f: #82c66a; --el-s: #e3c22d; --el-cl: #3fb05a; --el-p: #e8801c;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -157,14 +157,17 @@ button.nuk.aktiv { background: var(--text); color: var(--card); }
 .mol-flaeche { fill: transparent; }
 .bindung .treffer { stroke: transparent; stroke-width: 16; cursor: pointer; }
 .bindung .strich { stroke: var(--line); stroke-width: 3; stroke-linecap: round; pointer-events: none; }
+.bindung .markiert { stroke: var(--accent); stroke-opacity: .35; stroke-width: 18; stroke-linecap: round; pointer-events: none; }
 .mol-atom { cursor: grab; }
 .kugel { stroke: var(--line); stroke-width: 1.5; }
 .mol-atom.gewaehlt .kugel { stroke: var(--accent); stroke-width: 4; }
 .kugel.zu-viel { stroke: var(--warn); stroke-width: 4; stroke-dasharray: 4 3; }
 .kugel.el-H { fill: var(--el-h); } .kugel.el-C { fill: var(--el-c); } .kugel.el-N { fill: var(--el-n); } .kugel.el-O { fill: var(--el-o); }
-.kugel.el-F { fill: var(--el-f); } .kugel.el-S { fill: var(--el-s); } .kugel.el-Cl { fill: var(--el-cl); }
+.kugel.el-F { fill: var(--el-f); } .kugel.el-S { fill: var(--el-s); } .kugel.el-Cl { fill: var(--el-cl); } .kugel.el-P { fill: var(--el-p); }
 .mol-sym { font-size: 15px; font-weight: 700; pointer-events: none; fill: #1d1c1a !important; }
 .mol-atom .kugel.el-C + .mol-sym, .mol-atom .kugel.el-N + .mol-sym, .mol-atom .kugel.el-O + .mol-sym { fill: #fff !important; }
+.kugel.unklar { stroke: var(--accent); stroke-width: 4; stroke-dasharray: 4 3; }
+.unklar-marke { fill: var(--accent); }
 .frei-marke { fill: var(--accent); } .zuviel-marke { fill: var(--warn); }
 .marke-text { font-size: 11px; font-weight: 700; fill: #fff !important; pointer-events: none; }
 .mol-karte { border: 1px solid var(--border); border-radius: 10px; padding: 8px 10px; margin-bottom: 8px; }
@@ -188,3 +191,42 @@ input[aria-invalid=true] { border-color: var(--warn); }
   table.daten { font-size: .82rem; }
   .readouts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+/* Molecule Builder */
+.mol-el { display: inline-flex; align-items: center; gap: 5px; padding: 6px 9px; }
+.mol-el b { font-size: 1rem; }
+.mol-el small { font-size: .7rem; color: var(--muted); font-weight: 400; }
+.mol-el[aria-pressed=true] small { color: inherit; }
+.kugel-mini { display: inline-flex; width: 14px; height: 14px; border-radius: 50%; border: 1.5px solid var(--line); flex: none; }
+.kugel-mini.geist { position: fixed; z-index: 10; width: 34px; height: 34px; align-items: center; justify-content: center; font-weight: 700; font-size: .85rem; transform: translate(-50%, -50%); pointer-events: none; color: #1d1c1a; }
+.el-H.kugel-mini, .kugel-kachel.el-H { background: var(--el-h); } .el-C.kugel-mini, .kugel-kachel.el-C { background: var(--el-c); color: #fff; }
+.el-N.kugel-mini, .kugel-kachel.el-N { background: var(--el-n); color: #fff; } .el-O.kugel-mini, .kugel-kachel.el-O { background: var(--el-o); color: #fff; }
+.el-F.kugel-mini, .kugel-kachel.el-F { background: var(--el-f); } .el-S.kugel-mini, .kugel-kachel.el-S { background: var(--el-s); }
+.el-Cl.kugel-mini, .kugel-kachel.el-Cl { background: var(--el-cl); } .el-P.kugel-mini, .kugel-kachel.el-P { background: var(--el-p); }
+.kugel-kachel { border-radius: 50%; }
+.kugel-kachel .z { color: inherit; opacity: .8; }
+.werkzeug-mol { gap: 6px; }
+.werkzeug-mol .seg { margin: 0; }
+.werkzeug-mol button:disabled { opacity: .45; cursor: default; }
+.mol-box { position: relative; }
+.mol-zoom { position: absolute; right: 8px; bottom: 8px; display: flex; gap: 4px; }
+.mol-zoom button { width: 38px; height: 38px; padding: 0; font-size: 1.1rem; box-shadow: 0 1px 3px rgba(0, 0, 0, .12); }
+.mol-toast { position: absolute; left: 50%; top: 10px; transform: translate(-50%, -6px); max-width: 92%; padding: 7px 12px; border-radius: 10px; background: var(--text); color: var(--card); font-size: .86rem; opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; text-align: center; }
+.mol-toast.zeigen { opacity: .96; transform: translate(-50%, 0); }
+.mol-toast.fehler { background: var(--warn); color: #fff; }
+.mol-toast.ok { background: var(--ok); color: #fff; }
+#mol-svg { touch-action: none; user-select: none; -webkit-user-select: none; }
+#mol-svg:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.badge.fehler { background: var(--warn-soft); color: var(--warn); border-color: var(--warn); }
+.meldungen-mol { padding-left: 18px; margin: 4px 0; }
+.meldungen-mol .fehler { color: var(--warn); }
+.meldungen-mol .unklar { color: var(--accent); }
+.lernmodus { margin-bottom: 14px; }
+.lernmodus h3 { margin: 10px 0 4px; font-size: 1rem; }
+.aufgaben-liste button { min-width: 40px; padding: 6px 8px; }
+.aufgaben-liste button.geloest { border-color: var(--ok); color: var(--ok); }
+.aufgaben-liste button.geloest[aria-pressed=true] { color: var(--card); background: var(--ok); }
+.tipp { background: var(--soft-accent); border-radius: 8px; padding: 6px 10px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+#mol-auswahl h3 { margin: 0; font-size: 1.05rem; }
+.lk-grid > div > .lk-card + .lk-card { margin-top: 14px; }
