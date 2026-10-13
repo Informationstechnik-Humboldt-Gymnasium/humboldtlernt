@@ -27,6 +27,10 @@ Lerneinheiten sie erledigt haben, und Lehrkräfte sehen den Fortschritt ihrer Kl
   Zweite Simulation: das **Logik-Labor** mit Schaltern, Tastern, Taktgeber, sieben Gattern (UND, ODER, NICHT,
   XOR, NAND, NOR, XNOR), Relais, Lampen, Decoder und 7-Segment-Anzeige, farbigen Leitungen, Beispielschaltungen
   und einer Wahrheitstabelle, die aus der Schaltung berechnet wird.
+  Dritte Simulation: das **Atom- & Chemielabor** mit Periodensystem (alle 118 Elemente), Atom- und Isotopenbau,
+  Energiestufen und Spektrallinien, Teilchenmodell der Aggregatzustände, Molekülbaukasten und Formelrechner
+  (molare Masse). Alle Module nutzen eine gemeinsame, dokumentierte Datengrundlage
+  (`lessons/sandbox-chemielabor/DATEN.md`).
 - **Weitere Fächer** lassen sich ohne Programmieren ergänzen (siehe Abschnitt 6).
 
 > **Schnellstart:** Wie du das Projekt auf GitHub hochlädst und ohne IServ-Login testest,

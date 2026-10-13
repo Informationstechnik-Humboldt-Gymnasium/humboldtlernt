@@ -197,7 +197,15 @@ test('Sandbox: Simulationsübersicht, Schaltkreis-Labor und Rückweg zur Fachüb
   assert.match(uebersicht, /href="\/sandbox\/logik"/);
   assert.match(uebersicht, /Logik-Labor/);
   assert.doesNotMatch(uebersicht, /⚡|🔀/, 'Schaltzeichen statt Emojis');
-  assert.equal((uebersicht.match(/<span class="sim-icon" aria-hidden="true"><svg/g) || []).length, 2);
+  assert.equal((uebersicht.match(/<span class="sim-icon" aria-hidden="true"><svg/g) || []).length, 3);
+  // Dritte Simulation: Atom- & Chemielabor
+  assert.match(uebersicht, /href="\/sandbox\/chemielabor"/);
+  assert.match(uebersicht, /Atom- &amp; Chemielabor/);
+  const chem = await (await t.req('/sandbox/chemielabor')).text();
+  assert.match(chem, /src="\/inhalt\/sandbox-chemielabor\/index\.html"/);
+  for (const f of ['index.html', 'chemielabor.css', 'daten-elemente.js', 'chemie.js', 'molekuel.js', 'labor.js']) {
+    assert.equal((await t.req(`/inhalt/sandbox-chemielabor/${f}`)).status, 200, f);
+  }
   const logik = await (await t.req('/sandbox/logik')).text();
   assert.match(logik, /src="\/inhalt\/sandbox-logik\/index\.html"/);
   assert.match(logik, /<a href="\/sandbox" class="back">← Sandbox<\/a>/);

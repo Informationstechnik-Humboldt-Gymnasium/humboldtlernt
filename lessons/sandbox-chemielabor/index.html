@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atom- &amp; Chemielabor</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<link rel="stylesheet" href="chemielabor.css">
+</head>
+<body class="chemlab">
+<header class="kopf">
+  <div>
+    <h1>Atom- &amp; Chemielabor</h1>
+    <p class="muted small">Sieben Werkzeuge rund um Atome, Elektronen, Teilchen, Moleküle und Formeln. Alle Elementdaten kommen aus einer gemeinsamen, dokumentierten Tabelle.</p>
+  </div>
+  <p class="fortschritt small">Entdecke selbst: <b data-task-count>0 / 0</b></p>
+</header>
+
+<nav class="reiter" role="tablist" aria-label="Werkzeuge des Labors">
+  <button type="button" role="tab" id="tab-pse" aria-controls="p-pse" aria-selected="true">Periodensystem</button>
+  <button type="button" role="tab" id="tab-atom" aria-controls="p-atom" aria-selected="false" tabindex="-1">Atom</button>
+  <button type="button" role="tab" id="tab-isotope" aria-controls="p-isotope" aria-selected="false" tabindex="-1">Isotope</button>
+  <button type="button" role="tab" id="tab-energie" aria-controls="p-energie" aria-selected="false" tabindex="-1">Elektronen &amp; Energie</button>
+  <button type="button" role="tab" id="tab-teilchen" aria-controls="p-teilchen" aria-selected="false" tabindex="-1">Teilchen &amp; Zustände</button>
+  <button type="button" role="tab" id="tab-molekuel" aria-controls="p-molekuel" aria-selected="false" tabindex="-1">Moleküle</button>
+  <button type="button" role="tab" id="tab-formel" aria-controls="p-formel" aria-selected="false" tabindex="-1">Formeln</button>
+</nav>
+<div class="all-done">Stark! Du hast alle Entdecker-Aufgaben im Labor gelöst.</div>
+
+<!-- ============================================================ Periodensystem -->
+<section class="panel" role="tabpanel" id="p-pse" aria-labelledby="tab-pse">
+  <p class="einleitung">Das Periodensystem ordnet alle <b>118</b> bekannten Elemente nach der <b>Ordnungszahl</b> – der Zahl der Protonen im Atomkern. Elemente in einer Spalte (Gruppe) haben ähnlich viele Außenelektronen und verhalten sich chemisch oft ähnlich.</p>
+  <div class="lk-card">
+    <div class="row filter">
+      <label class="feld">Suche <input type="search" id="pse-suche" placeholder="Name, Symbol oder Ordnungszahl" autocomplete="off"></label>
+      <label class="feld">Stoffklasse <select id="pse-kategorie"><option value="">alle</option></select></label>
+      <label class="feld">Zustand bei 20 °C <select id="pse-zustand">
+        <option value="">alle</option><option value="s">fest</option><option value="l">flüssig</option><option value="g">gasförmig</option><option value="?">nicht bekannt</option>
+      </select></label>
+      <span class="small muted" id="pse-treffer" aria-live="polite"></span>
+    </div>
+    <div class="pse-scroll">
+      <div class="pse" id="pse" role="grid" aria-label="Periodensystem der Elemente. Mit den Pfeiltasten bewegen, mit Enter auswählen."></div>
+    </div>
+    <div class="legende" id="pse-legende" aria-label="Farblegende der Stoffklassen"></div>
+  </div>
+  <div class="lk-grid zweit">
+    <div class="lk-card" id="pse-detail" aria-live="polite"></div>
+    <div class="lk-card">
+      <h2>So liest du die Daten</h2>
+      <ul class="small">
+        <li><b>Relative Atommasse</b> A<sub>r</sub>: mittlere Masse eines Atoms im natürlichen Isotopengemisch, bezogen auf 1/12 der Masse eines Kohlenstoff-12-Atoms. Zahlenwert = molare Masse in g/mol. Quelle: IUPAC (gekürzte Standardatomgewichte, Tabelle 2021).</li>
+        <li><b>[Zahl] in eckigen Klammern</b>: Das Element hat kein stabiles Isotop und deshalb keine Standard-Atommasse. Die Zahl ist die Massenzahl eines langlebigen Isotops.</li>
+        <li><b>Ab Ordnungszahl 100</b> wurden nur einzelne Atome hergestellt. Zustand und Stoffeigenschaften sind dort nicht gemessen; die Stoffklasse ergibt sich nur aus der Stellung im Periodensystem.</li>
+        <li>Lanthanoide (57–71) und Actinoide (89–103) stehen wie in vielen Schulbüchern in zwei eigenen Zeilen.</li>
+      </ul>
+    </div>
+  </div>
+  <section class="lk-card tasks" aria-label="Entdecke selbst: Periodensystem">
+    <h2>Entdecke selbst</h2>
+    <div class="task" data-goal="pse-fluessig"><p class="task-q">Bei 20 °C sind nur zwei Elemente flüssig. Finde eines davon und öffne seine Detailansicht (Tipp: Filter „Zustand“).</p></div>
+    <div class="task"><p class="task-q">Warum steht Natrium (Na) unter Lithium (Li)?</p>
+      <div class="choices">
+        <button type="button" data-fb="Nein – die Masse entscheidet nicht über die Spalte.">Weil Natrium schwerer ist.</button>
+        <button type="button" data-ok data-fb="Genau: Beide haben 1 Außenelektron (Gruppe 1) und reagieren deshalb ähnlich.">Weil beide ein Außenelektron haben.</button>
+        <button type="button" data-fb="Nein – Natrium ist bei Raumtemperatur fest, so wie Lithium, aber das ist nicht der Grund für die Spalte.">Weil beide fest sind.</button>
+      </div><p class="fb"></p></div>
+  </section>
+</section>
+
+<!-- ============================================================ Atom -->
+<section class="panel" role="tabpanel" id="p-atom" aria-labelledby="tab-atom" hidden>
+  <p class="einleitung">Ein Atom besteht aus einem winzigen <b>Atomkern</b> aus Protonen (positiv) und Neutronen (ungeladen) und der <b>Atomhülle</b> mit den Elektronen (negativ). Wähle ein Element, schalte zwischen den Modellen um und tippe Teilchen an.</p>
+  <div class="lk-grid">
+    <div class="lk-card">
+      <div class="row">
+        <div class="seg" role="group" aria-label="Modell">
+          <button type="button" id="atom-bohr" aria-pressed="true">Bohr-Modell</button>
+          <button type="button" id="atom-schale" aria-pressed="false">Schalenmodell</button>
+        </div>
+        <button type="button" id="atom-bewegung" aria-pressed="false">Bewegung an</button>
+      </div>
+      <svg id="atom-svg" viewBox="0 0 400 400" role="img" aria-label="Atommodell"></svg>
+      <p class="modellhinweis small" id="atom-modellhinweis"></p>
+    </div>
+    <div class="lk-card">
+      <div class="ctrl"><span>Element</span>
+        <div class="row eng">
+          <button type="button" id="atom-zurueck" aria-label="Vorheriges Element">◀</button>
+          <select id="atom-element" aria-label="Element wählen"></select>
+          <button type="button" id="atom-vor" aria-label="Nächstes Element">▶</button>
+        </div>
+      </div>
+      <div class="ctrl"><span>Elektronen <output id="atom-e-out"></output></span>
+        <div class="row eng">
+          <button type="button" id="atom-e-minus">− Elektron abgeben</button>
+          <button type="button" id="atom-e-plus">+ Elektron aufnehmen</button>
+          <button type="button" id="atom-neutral">neutral</button>
+        </div>
+      </div>
+      <div class="readouts" id="atom-readouts"></div>
+      <div class="teilcheninfo" id="atom-teilchen" aria-live="polite">
+        <p class="small muted">Tippe im Bild ein Teilchen an oder wähle:</p>
+        <div class="row eng">
+          <button type="button" data-teilchen="p">Proton</button>
+          <button type="button" data-teilchen="n">Neutron</button>
+          <button type="button" data-teilchen="e">Elektron</button>
+        </div>
+        <div id="atom-teilchen-text"></div>
+      </div>
+      <div class="erklaerung" id="atom-ion" aria-live="polite"></div>
+    </div>
+  </div>
+  <section class="lk-card tasks" aria-label="Entdecke selbst: Atom">
+    <h2>Entdecke selbst</h2>
+    <div class="task" data-goal="atom-na-ion"><p class="task-q">Mach aus einem Natrium-Atom ein Natrium-Ion mit Edelgaskonfiguration.</p></div>
+    <div class="task"><p class="task-q">Was beschreibt das Bohr-Modell richtig?</p>
+      <div class="choices">
+        <button type="button" data-fb="Nein. Elektronen bewegen sich nicht auf festen Kreisbahnen – das ist eine Vereinfachung.">Elektronen kreisen auf festen Bahnen wie Planeten.</button>
+        <button type="button" data-ok data-fb="Richtig. Die Idee fester Energiestufen stimmt; die Kreisbahnen sind nur ein Bild.">Elektronen können nur bestimmte Energien haben.</button>
+        <button type="button" data-fb="Nein. Das Bohr-Modell ist ein vereinfachtes Modell; die heutige Beschreibung ist die Quantenmechanik.">Es ist die heutige vollständige Beschreibung des Atoms.</button>
+      </div><p class="fb"></p></div>
+  </section>
+</section>
+
+<!-- ============================================================ Isotope -->
+<section class="panel" role="tabpanel" id="p-isotope" aria-labelledby="tab-isotope" hidden>
+  <p class="einleitung">Baue selbst ein Atom: Ziehe Teilchen aus der Leiste auf die Arbeitsfläche oder nutze die Knöpfe. Welches Element entsteht, bestimmt <b>allein die Zahl der Protonen</b>.</p>
+  <div class="lk-grid">
+    <div class="lk-card">
+      <div class="palette" role="group" aria-label="Teilchen zum Ziehen">
+        <span class="chip-teil p" data-ziehen="p" aria-hidden="true">p⁺</span>
+        <span class="chip-teil n" data-ziehen="n" aria-hidden="true">n</span>
+        <span class="chip-teil e" data-ziehen="e" aria-hidden="true">e⁻</span>
+        <span class="small muted">← auf das Atom ziehen</span>
+      </div>
+      <svg id="iso-svg" viewBox="0 0 400 360" role="img" aria-label="Selbst gebautes Atom"></svg>
+      <div class="zaehler">
+        <div class="zaehl p"><span>Protonen</span><button type="button" data-aendern="p" data-um="-1" aria-label="Proton entfernen">−</button><output id="iso-p">6</output><button type="button" data-aendern="p" data-um="1" aria-label="Proton hinzufügen">+</button></div>
+        <div class="zaehl n"><span>Neutronen</span><button type="button" data-aendern="n" data-um="-1" aria-label="Neutron entfernen">−</button><output id="iso-n">6</output><button type="button" data-aendern="n" data-um="1" aria-label="Neutron hinzufügen">+</button></div>
+        <div class="zaehl e"><span>Elektronen</span><button type="button" data-aendern="e" data-um="-1" aria-label="Elektron entfernen">−</button><output id="iso-e">6</output><button type="button" data-aendern="e" data-um="1" aria-label="Elektron hinzufügen">+</button></div>
+      </div>
+    </div>
+    <div class="lk-card">
+      <div class="schreibweise" id="iso-schreibweise" aria-live="polite"></div>
+      <div class="readouts" id="iso-readouts"></div>
+      <div class="status" id="iso-status" aria-live="polite"></div>
+      <div id="iso-bekannte"></div>
+      <details class="info"><summary>Isotop oder Ion?</summary>
+        <p class="small"><b>Isotope</b> sind Atome desselben Elements (gleiche Protonenzahl) mit <b>unterschiedlich vielen Neutronen</b>, z. B. Kohlenstoff-12 und Kohlenstoff-14. Sie haben unterschiedliche Massen, verhalten sich chemisch aber fast gleich.</p>
+        <p class="small"><b>Ionen</b> sind Atome mit <b>mehr oder weniger Elektronen als Protonen</b>. Sie sind elektrisch geladen. Der Kern bleibt dabei unverändert.</p>
+      </details>
+      <details class="info"><summary>Was bedeutet „radioaktiv“?</summary>
+        <p class="small">Manche Atomkerne sind nicht stabil. Sie wandeln sich irgendwann von selbst um und senden dabei Strahlung aus. Wann ein einzelner Kern zerfällt, ist Zufall. Die <b>Halbwertszeit</b> gibt an, nach welcher Zeit im Mittel die Hälfte der Kerne einer Probe zerfallen ist. Das Labor zeigt Halbwertszeiten nur aus der hinterlegten Tabelle (IAEA/ENSDF) und berechnet selbst keine.</p>
+      </details>
+    </div>
+  </div>
+  <section class="lk-card tasks" aria-label="Entdecke selbst: Isotope">
+    <h2>Entdecke selbst</h2>
+    <div class="task" data-goal="iso-c14"><p class="task-q">Baue ein neutrales Atom Kohlenstoff-14 (das Isotop der Radiokarbon-Methode).</p></div>
+    <div class="task" data-goal="iso-anion"><p class="task-q">Baue ein Fluorid-Ion F⁻.</p></div>
+    <div class="task"><p class="task-q">Du fügst einem Kohlenstoff-Atom ein Proton hinzu. Was passiert?</p>
+      <div class="choices">
+        <button type="button" data-fb="Nein – ein anderes Isotop entstünde durch ein zusätzliches Neutron.">Es entsteht ein anderes Kohlenstoff-Isotop.</button>
+        <button type="button" data-ok data-fb="Genau: 7 Protonen bedeuten Stickstoff – egal wie viele Neutronen oder Elektronen.">Es entsteht ein anderes Element.</button>
+        <button type="button" data-fb="Nein – die Ladung ändert sich zwar, aber vor allem ändert sich das Element.">Es entsteht nur ein Ion.</button>
+      </div><p class="fb"></p></div>
+  </section>
+</section>
+
+<!-- ============================================================ Elektronen & Energie -->
+<section class="panel" role="tabpanel" id="p-energie" aria-labelledby="tab-energie" hidden>
+  <p class="einleitung">Elektronen in der Atomhülle können nur <b>bestimmte Energiestufen</b> einnehmen. Nimmt ein Elektron genau passende Energie auf, springt es höher. Fällt es zurück, gibt es die Energie als Licht ab. Mit genug Energie verlässt es das Atom ganz: Das Atom wird zum <b>Ion</b>.</p>
+  <div class="lk-grid">
+    <div class="lk-card">
+      <h2>Energiestufen im Wasserstoffatom</h2>
+      <svg id="en-svg" viewBox="0 0 400 380" role="img" aria-label="Energiestufendiagramm des Wasserstoffatoms"></svg>
+      <p class="modellhinweis small">Berechnet mit <span class="f">E</span><sub>n</sub> = −13,598 eV / <span class="f">n</span>² (Bohr-Modell). Diese einfache Formel gilt <b>nur für Wasserstoff</b>; bei Atomen mit mehreren Elektronen liegen die Energiestufen anders.</p>
+    </div>
+    <div class="lk-card">
+      <div class="ctrl"><span>Energie des eingestrahlten Photons <output id="en-photon-out"></output></span>
+        <input type="range" id="en-photon" min="0.5" max="15" step="0.01" value="10.2" aria-label="Photonenenergie in Elektronenvolt">
+        <div class="row eng">
+          <button type="button" data-photon="10.20">10,20 eV</button>
+          <button type="button" data-photon="1.89">1,89 eV</button>
+          <button type="button" data-photon="5.00">5,00 eV</button>
+          <button type="button" data-photon="14.00">14,00 eV</button>
+        </div>
+        <button type="button" class="primary" id="en-einstrahlen">Photon einstrahlen</button>
+      </div>
+      <div class="ctrl"><span>Elektron fällt zurück auf</span>
+        <div class="row eng" id="en-zurueck"></div>
+      </div>
+      <div class="readouts" id="en-readouts"></div>
+      <div class="erklaerung" id="en-meldung" aria-live="polite"></div>
+    </div>
+  </div>
+  <div class="lk-grid zweit">
+    <div class="lk-card">
+      <h2>Spektrallinien</h2>
+      <svg id="en-spektrum" viewBox="0 0 400 90" role="img" aria-label="Sichtbares Spektrum mit Linien"></svg>
+      <div id="en-linien" class="small"></div>
+    </div>
+    <div class="lk-card">
+      <h2>Elemente vergleichen: Wie fest hält ein Atom sein äußerstes Elektron?</h2>
+      <svg id="en-ie" viewBox="0 0 400 236" role="img" aria-label="Erste Ionisierungsenergie der Elemente 1 bis 36"></svg>
+      <div class="ctrl"><span>Element</span><select id="en-element" aria-label="Element für den Vergleich"></select></div>
+      <div id="en-ion" class="erklaerung" aria-live="polite"></div>
+    </div>
+  </div>
+  <section class="lk-card tasks" aria-label="Entdecke selbst: Elektronen und Energie">
+    <h2>Entdecke selbst</h2>
+    <div class="task" data-goal="en-sichtbar"><p class="task-q">Lass das Elektron so zurückfallen, dass <b>sichtbares</b> Licht entsteht.</p></div>
+    <div class="task" data-goal="en-ionisiert"><p class="task-q">Ionisiere das Wasserstoffatom aus dem Grundzustand.</p></div>
+    <div class="task"><p class="task-q">Ein Photon mit 5,00 eV trifft ein Wasserstoffatom im Grundzustand. Was passiert?</p>
+      <div class="choices">
+        <button type="button" data-fb="Nein – die Energie passt zu keinem Sprung. Probier es aus!">Das Elektron springt ein bisschen höher.</button>
+        <button type="button" data-ok data-fb="Richtig: Es wird nur Energie aufgenommen, die genau zu einem Sprung passt.">Nichts – das Photon wird nicht aufgenommen.</button>
+        <button type="button" data-fb="Nein – dafür bräuchte man mindestens 13,6 eV.">Das Atom wird ionisiert.</button>
+      </div><p class="fb"></p></div>
+  </section>
+</section>
+
+<!-- ============================================================ Teilchen & Zustände -->
+<section class="panel" role="tabpanel" id="p-teilchen" aria-labelledby="tab-teilchen" hidden>
+  <p class="einleitung">Alle Stoffe bestehen aus kleinsten Teilchen, die sich ständig bewegen. Je höher die Temperatur, desto heftiger bewegen sie sich – bis der Stoff schmilzt oder siedet.</p>
+  <div class="lk-grid">
+    <div class="lk-card">
+      <svg id="tz-svg" viewBox="0 0 400 270" role="img" aria-label="Teilchenmodell"></svg>
+      <div class="row">
+        <button type="button" id="tz-lauf" aria-pressed="true">⏸ Anhalten</button>
+        <span class="badge qualitativ">Animation: qualitativ</span>
+      </div>
+    </div>
+    <div class="lk-card">
+      <div class="ctrl"><span>Stoff</span><select id="tz-stoff"></select></div>
+      <div class="ctrl"><span>Temperatur <output id="tz-t-out"></output></span>
+        <input type="range" id="tz-t" step="1" aria-label="Temperatur in Grad Celsius">
+        <div class="row eng" id="tz-sprung"></div>
+      </div>
+      <div class="readouts" id="tz-readouts"></div>
+      <div class="erklaerung" id="tz-text" aria-live="polite"></div>
+      <details class="info"><summary>Was ist berechnet, was nur Bild?</summary>
+        <ul class="small">
+          <li><b>Tabelliert:</b> Schmelz- und Siedetemperatur bei 1013 hPa (CRC Handbook).</li>
+          <li><b>Berechnet:</b> Temperatur in Kelvin und das Geschwindigkeitsverhältnis <span class="f">v</span>/<span class="f">v</span><sub>20 °C</sub> = √(<span class="f">T</span>/293,15 K) aus der kinetischen Gastheorie.</li>
+          <li><b>Nur Bild:</b> Abstände und Bahnen der Punkte. Das Modell kennt weder Masse noch Größe echter Teilchen. Darum zeigt es <b>keine Dichte</b>, keinen Druck und keine Geschwindigkeit in m/s.</li>
+        </ul>
+      </details>
+    </div>
+  </div>
+  <section class="lk-card tasks" aria-label="Entdecke selbst: Teilchen und Zustände">
+    <h2>Entdecke selbst</h2>
+    <div class="task" data-goal="tz-sauerstoff-fest"><p class="task-q">Bring Sauerstoff in den festen Zustand.</p></div>
+    <div class="task"><p class="task-q">Wasser wird von 20 °C auf 80 °C erwärmt. Was ändert sich an den Teilchen?</p>
+      <div class="choices">
+        <button type="button" data-fb="Nein – die Teilchen selbst bleiben gleich groß.">Die Teilchen werden größer.</button>
+        <button type="button" data-ok data-fb="Richtig: Die Teilchen bewegen sich schneller (im Mittel um den Faktor √(353 K / 293 K) ≈ 1,1).">Die Teilchen bewegen sich schneller.</button>
+        <button type="button" data-fb="Nein – Wasser bleibt bis 100 °C (bei 1013 hPa) flüssig.">Das Wasser wird gasförmig.</button>
+      </div><p class="fb"></p></div>
+  </section>
+</section>
+
+<!-- ============================================================ Moleküle -->
+<section class="panel" role="tabpanel" id="p-molekuel" aria-labelledby="tab-molekuel" hidden>
+  <p class="einleitung">In Molekülen teilen sich Nichtmetall-Atome <b>Elektronenpaare</b> (Atombindung). Setze Atome auf die Fläche und verbinde sie. Das Labor prüft, ob jedes Atom seine übliche Zahl an Bindungen hat.</p>
+  <div class="lk-grid">
+    <div class="lk-card">
+      <div class="row palette-mol" id="mol-palette" role="group" aria-label="Element zum Einsetzen"></div>
+      <svg id="mol-svg" viewBox="-300 -190 600 380" role="img" aria-label="Arbeitsfläche des Molekülbaukastens"></svg>
+      <p class="small muted" id="mol-hilfe">Atom einsetzen: Element wählen, dann auf die Fläche tippen (oder aus der Leiste ziehen). Ist ein Atom ausgewählt (Ring), wird jedes neue Atom gleich daran gebunden. Verbinden: zwei Atome nacheinander antippen; eine Bindung antippen schaltet Einfach → Doppel → Dreifach → getrennt. Atome lassen sich verschieben.</p>
+      <div class="row">
+        <select id="mol-beispiel" aria-label="Beispielmolekül laden"><option value="">Beispiel laden …</option></select>
+        <button type="button" id="mol-loeschen" disabled>Atom löschen</button>
+        <button type="button" id="mol-leeren">Alles leeren</button>
+      </div>
+      <details class="info"><summary>Ohne Maus bauen</summary>
+        <div class="row eng">
+          <select id="mol-a" aria-label="Erstes Atom"></select>
+          <select id="mol-b" aria-label="Zweites Atom"></select>
+          <button type="button" id="mol-binden">Bindung ändern</button>
+        </div>
+        <p class="small muted">Atome einsetzen mit den Element-Knöpfen oben (Enter). Ausgewähltes Atom mit Entf löschen.</p>
+      </details>
+    </div>
+    <div class="lk-card">
+      <h2>Auswertung</h2>
+      <div id="mol-analyse" aria-live="polite"></div>
+      <details class="info"><summary>Drei Stufen der Bewertung</summary>
+        <ul class="small">
+          <li><b>Strukturzeichnung:</b> Es ist nur eine Zeichnung. Mindestens ein Atom hat zu viele oder zu wenige Bindungen.</li>
+          <li><b>Plausible Struktur:</b> Jedes Atom hat seine übliche Bindigkeit (H: 1, O und S: 2, N: 3, C: 4, F und Cl: 1). Ob es den Stoff wirklich gibt, ist damit <b>nicht</b> gesagt.</li>
+          <li><b>Bekanntes Molekül:</b> Die Struktur steht in der hinterlegten Liste experimentell nachgewiesener Stoffe.</li>
+        </ul>
+        <p class="small muted">Vereinfachung: Das Labor nutzt feste Bindigkeiten. Echte Ausnahmen (z. B. Schwefel in SO₂, Kohlenstoffmonoxid, geladene Teilchen) baut es nicht. Bindungswinkel nach dem Elektronenpaarabstoßungsmodell sind Modellwerte; gemessene Winkel stehen nur dort, wo sie hinterlegt sind.</p>
+      </details>
+      <details class="info"><summary>Und die Ionenbindung?</summary>
+        <p class="small">Zwischen einem Metall und einem Nichtmetall teilen sich die Atome keine Elektronenpaare. Das Metallatom <b>gibt Elektronen ab</b>, das Nichtmetallatom <b>nimmt sie auf</b>: Na → Na⁺ + e⁻ und Cl + e⁻ → Cl⁻. Die entgegengesetzt geladenen Ionen ziehen sich an und bilden ein <b>Ionengitter</b> (z. B. Kochsalz NaCl). Es gibt dabei keine einzelnen Moleküle – darum baut der Baukasten nur Atombindungen. Probiere die Ionenbildung im Reiter „Atom“ aus.</p>
+      </details>
+    </div>
+  </div>
+  <section class="lk-card tasks" aria-label="Entdecke selbst: Moleküle">
+    <h2>Entdecke selbst</h2>
+    <div class="task" data-goal="mol-ammoniak"><p class="task-q">Baue selbst (ohne Beispiel) ein Ammoniak-Molekül NH₃.</p></div>
+    <div class="task" data-goal="mol-doppel"><p class="task-q">Baue ein Molekül mit einer Doppelbindung, das das Labor als bekannt erkennt.</p></div>
+    <div class="task"><p class="task-q">Warum ist das Wassermolekül gewinkelt und nicht gerade?</p>
+      <div class="choices">
+        <button type="button" data-fb="Nein – die Wasserstoffatome stoßen sich zwar ab, aber das würde ein gerades Molekül ergeben.">Die H-Atome stoßen sich ab.</button>
+        <button type="button" data-ok data-fb="Genau: Am Sauerstoff sitzen zwei Bindungen und zwei freie Elektronenpaare – vier Paare verteilen sich räumlich.">Am O-Atom sitzen zwei freie Elektronenpaare.</button>
+        <button type="button" data-fb="Nein – im Wassermolekül gibt es nur Einfachbindungen.">Wegen einer Doppelbindung.</button>
+      </div><p class="fb"></p></div>
+  </section>
+</section>
+
+<!-- ============================================================ Formeln -->
+<section class="panel" role="tabpanel" id="p-formel" aria-labelledby="tab-formel" hidden>
+  <p class="einleitung">Eine <b>Summenformel</b> zeigt, welche Atome in welcher Anzahl in einem Teilchen stecken. Aus ihr lässt sich die <b>molare Masse</b> <span class="f">M</span> berechnen: die Masse von einem Mol des Stoffes in g/mol.</p>
+  <div class="lk-grid">
+    <div class="lk-card">
+      <form id="fo-form" class="row" autocomplete="off">
+        <label class="feld breit">Summenformel <input type="text" id="fo-eingabe" value="H2SO4" spellcheck="false" aria-describedby="fo-tipp"></label>
+        <button type="submit" class="primary">Berechnen</button>
+      </form>
+      <p class="small muted" id="fo-tipp">Groß- und Kleinschreibung beachten (Co = Cobalt, CO = Kohlenstoffmonoxid). Klammern: Ca(OH)2 · Kristallwasser: CuSO4·5H2O oder CuSO4*5H2O · Ladung: SO4^2- oder NH4+</p>
+      <div class="row eng" id="fo-beispiele" aria-label="Beispiele"></div>
+      <div id="fo-ergebnis" aria-live="polite"></div>
+    </div>
+    <div class="lk-card">
+      <h2>Rechnen mit der molaren Masse</h2>
+      <p class="small">Stoffmenge <span class="f">n</span>, Masse <span class="f">m</span> und molare Masse <span class="f">M</span> hängen zusammen: <span class="f">m</span> = <span class="f">n</span> · <span class="f">M</span>.</p>
+      <div class="ctrl"><span>Stoffmenge <span class="f">n</span> in mol</span><input type="number" id="fo-n" value="2" min="0" step="any" class="zahlfeld" aria-label="Stoffmenge in mol"></div>
+      <div id="fo-rechnung" class="erklaerung" aria-live="polite"></div>
+      <details class="info"><summary>Grenzen dieses Werkzeugs</summary>
+        <ul class="small">
+          <li>Atommassen: IUPAC-Standardatomgewichte (gekürzt, Tabelle 2021). Elemente ohne stabiles Isotop (z. B. Technetium, Plutonium) haben keine Standard-Atommasse – dafür wird nichts berechnet.</li>
+          <li>Bei Ionen bleibt die Masse der fehlenden oder zusätzlichen Elektronen unberücksichtigt (unter 0,001 g/mol pro Elektron).</li>
+          <li>Strukturformeln, Isotopenangaben (wie ¹⁴C) und Reaktionsgleichungen werden (noch) nicht verarbeitet.</li>
+        </ul>
+      </details>
+    </div>
+  </div>
+  <section class="lk-card tasks" aria-label="Entdecke selbst: Formeln">
+    <h2>Entdecke selbst</h2>
+    <div class="task" data-goal="fo-glucose"><p class="task-q">Berechne die molare Masse von Traubenzucker (Glucose, 6 C-, 12 H- und 6 O-Atome).</p></div>
+    <div class="task"><p class="task-q">Wie viele Sauerstoffatome stecken in Ca(OH)₂?</p>
+      <div class="choices">
+        <button type="button" data-fb="Nein – die 2 hinter der Klammer gilt für alles in der Klammer.">1</button>
+        <button type="button" data-ok data-fb="Richtig: Die Klammer (OH) kommt zweimal vor, also 2 O und 2 H.">2</button>
+        <button type="button" data-fb="Nein – zähle nur die O-Atome.">4</button>
+      </div><p class="fb"></p></div>
+  </section>
+</section>
+
+<footer class="fuss small muted">
+  <p>Quellen: IUPAC/CIAAW (Atommassen, Namen), NIST Atomic Spectra Database (Elektronenkonfigurationen, Ionisierungsenergien, Spektrallinien), IAEA/ENSDF (Nuklide), CODATA 2018 (Konstanten), CRC Handbook (Schmelz- und Siedetemperaturen). Einzelheiten und Grenzen: Datei DATEN.md im Ordner des Labors.</p>
+</footer>
+
+<script src="../../static/lesson-kit.js"></script>
+<script src="daten-elemente.js"></script>
+<script src="daten-nuklide.js"></script>
+<script src="daten-stoffe.js"></script>
+<script src="chemie.js"></script>
+<script src="molekuel.js"></script>
+<script src="teilchen.js"></script>
+<script src="ui.js"></script>
+<script src="ansicht-pse.js"></script>
+<script src="ansicht-atom.js"></script>
+<script src="ansicht-isotope.js"></script>
+<script src="ansicht-energie.js"></script>
+<script src="ansicht-teilchen.js"></script>
+<script src="ansicht-molekuel.js"></script>
+<script src="ansicht-formel.js"></script>
+<script src="labor.js"></script>
+</body>
+</html>
