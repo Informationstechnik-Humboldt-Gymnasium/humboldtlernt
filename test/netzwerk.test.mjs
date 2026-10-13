@@ -1,6 +1,7 @@
 // Tests für das Netzwerk-Labor (Network Builder, Fach Sandbox): Geräte und Kabel, IPv4-Prüfung, Subnetzrechnung,
 // Kommunikation im gleichen Subnetz und über Router, Gateway- und Routingfehler, deaktivierte Schnittstellen,
-// Paketpfad und Abbruch, MAC-Lernen, Netzwerkprüfung, Speichern/Laden und die fünf Lernaufgaben.
+// Paketpfad und Abbruch, MAC-Lernen, Netzwerkprüfung, Speichern/Laden, WLAN (Access Point), Firewall-Regeln, Dienste
+// (Ping/HTTP/HTTPS) und die sieben Lernaufgaben.
 // Die Module laufen wie im Browser (ohne DOM) in einer VM – alle Ergebnisse sind deterministisch.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
@@ -398,8 +399,8 @@ test('20 · Routing-Tabelle zeigt direkt angeschlossene Netze (C) und statische 
 });
 
 // ------------------------------------------------------------------ Lernaufgaben
-test('21 · Fünf Lernaufgaben: reproduzierbar, vollständig beschrieben, anfangs nicht gelöst', () => {
-  assert.deepEqual(plain(A.liste.map(a => a.id)), ['zwei-pcs', 'subnetz', 'zwei-netze', 'routing', 'debuggen']);
+test('21 · Sieben Lernaufgaben: reproduzierbar, vollständig beschrieben, anfangs nicht gelöst', () => {
+  assert.deepEqual(plain(A.liste.map(a => a.id)), ['zwei-pcs', 'subnetz', 'zwei-netze', 'routing', 'debuggen', 'wlan', 'firewall']);
   for (const a of A.liste) {
     for (const f of ['titel', 'beschreibung', 'ziel', 'erklaerung']) assert.ok(a[f] && a[f].length > 10, `${a.id}.${f}`);
     assert.ok(a.hinweise.length >= 2, a.id);
@@ -495,4 +496,206 @@ test('24 · Seite: Einbindung wie vorgeschrieben, keine externen Ressourcen, But
   for (const f of ['ipv4.js', 'modell.js', 'simulation.js', 'aufgaben.js']) {
     assert.doesNotMatch(fs.readFileSync(path.join(LESSONS, 'sandbox-netzwerk', f), 'utf8'), /document\.|window\.addEventListener|fetch\(|XMLHttpRequest|WebSocket/, `${f} ist frei von DOM und Netzwerkzugriffen`);
   }
+});
+
+// ------------------------------------------------------------------ WLAN (Access Point, Laptop, Smartphone)
+/** LAN mit Server, Switch, Access Point und einem Laptop. */
+function wlanNetz({ ssid = 'Schule', schluessel = 'abc', laptopSsid = 'Schule', laptopSchluessel = 'abc', abstand = 100, reichweite = 200 } = {}) {
+  const d = M.neu();
+  const srv = geraet(d, 'server', 'Server', { eth0: ['192.168.1.5', '/24'] });
+  const sw = geraet(d, 'switch', 'SW1');
+  const ap = geraet(d, 'ap', 'AP1', {}, { ssid, schluessel, reichweite });
+  M.verschiebe(d, ap.id, 0, 0);
+  const lap = geraet(d, 'laptop', 'Laptop1', { wlan0: ['192.168.1.50', '/24'] }, { ssid: laptopSsid, schluessel: laptopSchluessel });
+  M.verschiebe(d, lap.id, abstand, 0);
+  kabel(d, srv, 'eth0', sw, 'p1'); kabel(d, sw, 'p2', ap, 'eth0');
+  return { d, srv, sw, ap, lap };
+}
+
+test('25 · Neue Gerätetypen: Laptop und Smartphone ohne Kabelanschluss, Access Point und Firewall mit Anschlüssen', () => {
+  const d = M.neu();
+  const l = M.bauteil(d, 'laptop', 0, 0), h = M.bauteil(d, 'smartphone', 0, 0), ap = M.bauteil(d, 'ap', 0, 0), fw = M.bauteil(d, 'firewall', 0, 0), s = M.bauteil(d, 'switch', 0, 0);
+  assert.deepEqual(plain(Object.keys(M.ports(l))), []);
+  assert.deepEqual(plain(Object.keys(l.werte.ifs)), ['wlan0']);
+  assert.equal(M.ifName(h), 'wlan0');
+  assert.deepEqual(plain(Object.keys(M.ports(ap))), ['eth0']);
+  assert.deepEqual(plain(Object.keys(M.ports(fw))), ['g0', 'g1', 'g2']);
+  assert.equal(fw.werte.standard, 'blockieren', 'Firewall blockiert standardmäßig');
+  assert.ok(M.verbinde(d, { b: ap.id, a: 'eth0' }, { b: s.id, a: 'p1' }).ok);
+  assert.ok(M.verbinde(d, { b: fw.id, a: 'g0' }, { b: s.id, a: 'p2' }).ok);
+  assert.equal(M.verbinde(d, { b: l.id, a: 'wlan0' }, { b: s.id, a: 'p3' }).ok, false, 'WLAN-Karte nimmt kein Kabel');
+  assert.ok(M.validiere(d).ok);
+  const r = M.importiere(M.exportiere(d));
+  assert.equal(M.exportiere(r.doc), M.exportiere(d), 'neue Felder überstehen Speichern/Laden');
+});
+
+test('26 · WLAN-Anmeldung: SSID, Schlüssel, Reichweite – mit genauer Ursache', () => {
+  const ok = wlanNetz();
+  assert.equal(M.funk(ok.d, ok.lap).ok, true);
+  assert.deepEqual(plain(M.funkKunden(ok.d, ok.ap).map(b => b.name)), ['Laptop1']);
+  assert.equal(M.funk(wlanNetz({ laptopSsid: '' }).d, wlanNetz({ laptopSsid: '' }).lap).ursache, 'wlan-keine-ssid');
+  const falsch = wlanNetz({ laptopSsid: 'Gast' });
+  assert.equal(M.funk(falsch.d, falsch.lap).ursache, 'wlan-ssid');
+  const weit = wlanNetz({ abstand: 400 });
+  const fw = M.funk(weit.d, weit.lap);
+  assert.equal(fw.ursache, 'wlan-reichweite'); assert.match(fw.grund, /Abstand 400, Reichweite 200/);
+  const key = wlanNetz({ laptopSchluessel: 'xyz' });
+  assert.equal(M.funk(key.d, key.lap).ursache, 'wlan-schluessel');
+  const offen = wlanNetz({ schluessel: '', laptopSchluessel: 'egal' });
+  assert.equal(M.funk(offen.d, offen.lap).ok, true, 'offenes WLAN ohne Schlüssel');
+  assert.equal(M.funk(ok.d, ok.srv).ok, false, 'Server ist kein WLAN-Gerät');
+  // Reichweite vergrößern holt den Laptop ins Netz; Verschieben ebenso
+  M.setzeWert(weit.d, weit.ap.id, 'reichweite', 450);
+  assert.equal(M.funk(weit.d, weit.lap).ok, true);
+  M.setzeWert(weit.d, weit.ap.id, 'reichweite', 5000);
+  assert.equal(weit.ap.werte.reichweite, 600, 'Reichweite begrenzt');
+  // Zwei Access Points mit gleicher SSID: der nächste gewinnt
+  const zwei = wlanNetz({ abstand: 150 });
+  const ap2 = geraet(zwei.d, 'ap', 'AP2', {}, { ssid: 'Schule', schluessel: 'abc', reichweite: 200 });
+  M.verschiebe(zwei.d, ap2.id, 200, 0);
+  assert.equal(M.funk(zwei.d, zwei.lap).ap.name, 'AP2');
+});
+
+test('27 · Paket über WLAN: Laptop ↔ Server über Access Point und Switch, Laptop ↔ Smartphone am selben AP', () => {
+  const { d, lap, srv, ap, sw } = wlanNetz();
+  const r = S.sende(d, lap.id, srv.id);
+  assert.equal(r.status, 'erfolg', r.meldung);
+  assert.deepEqual(plain(r.schritte.filter(x => x.phase === 'anfrage').map(x => x.name + ':' + x.art)), ['Laptop1:start', 'AP1:ap', 'SW1:switch', 'Server:ziel']);
+  const funk = r.pfad.filter(p => p.funk);
+  assert.equal(funk.length, 2, 'eine Funkstrecke hin, eine zurück');
+  assert.ok(funk.every(p => p.draht === null));
+  assert.ok(r.mac[ap.id] && r.mac[sw.id], 'Access Point und Switch lernen MAC-Adressen');
+  const handy = geraet(d, 'smartphone', 'Handy1', { wlan0: ['192.168.1.60', '/24'] }, { ssid: 'Schule', schluessel: 'abc' });
+  M.verschiebe(d, handy.id, -80, 60);
+  const r2 = S.sende(d, lap.id, handy.id);
+  assert.equal(r2.status, 'erfolg');
+  assert.deepEqual(plain(r2.schritte.filter(x => x.phase === 'anfrage').map(x => x.name)), ['Laptop1', 'AP1', 'Handy1']);
+});
+
+test('28 · Ohne WLAN-Verbindung: Fehler mit WLAN-Ursache; AP ohne Kabel trennt vom Kabelnetz', () => {
+  const weit = wlanNetz({ abstand: 500 });
+  const r = S.sende(weit.d, weit.lap.id, weit.srv.id);
+  assert.equal(r.ursache, 'wlan-reichweite'); assert.match(r.meldung, /Keine WLAN-Verbindung/);
+  const key = wlanNetz({ laptopSchluessel: 'falsch' });
+  assert.equal(S.sende(key.d, key.lap.id, key.srv.id).ursache, 'wlan-schluessel');
+  const ohneKabel = wlanNetz();
+  M.loesche(ohneKabel.d, { art: 'draht', id: M.kabelAn(ohneKabel.d, { b: ohneKabel.ap.id, a: 'eth0' }).id });
+  assert.equal(S.sende(ohneKabel.d, ohneKabel.lap.id, ohneKabel.srv.id).ursache, 'keine-verbindung');
+  const p = S.pruefeNetz(ohneKabel.d).meldungen.map(m => m.text);
+  assert.ok(p.some(t => /nicht per Kabel mit dem Netz verbunden/.test(t)));
+  // Deaktivierte WLAN-Karte
+  const aus = wlanNetz();
+  M.setzeIf(aus.d, aus.lap.id, 'wlan0', 'aktiv', false);
+  assert.equal(S.sende(aus.d, aus.lap.id, aus.srv.id).ursache, 'if-deaktiviert');
+  assert.match(S.pruefeNetz(weit.d).meldungen.map(m => m.text).join(' '), /Keine WLAN-Verbindung/);
+});
+
+// ------------------------------------------------------------------ Firewall
+/** LAN 192.168.1.0/24 – FW1 – 10.0.0.0/24 mit Webserver. */
+function fwNetz(regeln = [], standard = 'blockieren', dienste = { web: true, https: false }) {
+  const d = M.neu();
+  const pc = geraet(d, 'pc', 'PC1', { eth0: ['192.168.1.10', '/24'] }, { gateway: '192.168.1.1' });
+  const fw = geraet(d, 'firewall', 'FW1', { g0: ['192.168.1.1', '/24'], g1: ['10.0.0.1', '/24'] }, { regeln, standard });
+  const srv = geraet(d, 'server', 'Webserver', { eth0: ['10.0.0.10', '/24'] }, { gateway: '10.0.0.1', dienste });
+  kabel(d, pc, 'eth0', fw, 'g0'); kabel(d, fw, 'g1', srv, 'eth0');
+  return { d, pc, fw, srv };
+}
+const ERLAUBE_HTTP = { aktion: 'erlauben', dienst: 'http', quelle: '192.168.1.0/24', ziel: '10.0.0.10' };
+
+test('29 · Adressbereiche für Regeln: alle, einzelne Adresse, Netz – ungültige Angaben werden erkannt', () => {
+  assert.equal(IP.bereich('alle').alle, true);
+  assert.equal(IP.bereich('').alle, true);
+  assert.equal(IP.bereich('any').alle, true);
+  const n = IP.bereich('192.168.1.0/24');
+  assert.ok(IP.imBereich(IP.adresse('192.168.1.77').wert, n));
+  assert.ok(!IP.imBereich(IP.adresse('192.168.2.1').wert, n));
+  const e = IP.bereich('10.0.0.5');
+  assert.equal(e.praefix, 32); assert.ok(IP.imBereich(IP.adresse('10.0.0.5').wert, e)); assert.ok(!IP.imBereich(IP.adresse('10.0.0.6').wert, e));
+  assert.match(IP.bereich('192.168.1.5/24').fehler, /keine Netzadresse/);
+  assert.equal(IP.bereich('10.0.0/8').ok, false);
+  assert.equal(IP.bereich('1.2.3.4/8/9').ok, false);
+});
+
+test('30 · Firewall: Standardrichtlinie, erste passende Regel, Dienst, zustandsbehaftete Antwort', () => {
+  const zu = fwNetz();
+  const r0 = S.sende(zu.d, zu.pc.id, zu.srv.id, {}, 'http');
+  assert.equal(r0.ursache, 'firewall'); assert.match(r0.meldung, /Standardrichtlinie „blockieren“/);
+  const offen = fwNetz([], 'erlauben');
+  assert.equal(S.sende(offen.d, offen.pc.id, offen.srv.id, {}, 'ping').status, 'erfolg');
+  const http = fwNetz([ERLAUBE_HTTP]);
+  const r1 = S.sende(http.d, http.pc.id, http.srv.id, {}, 'http');
+  assert.equal(r1.status, 'erfolg', r1.meldung);
+  const fwSchritte = r1.schritte.filter(x => x.art === 'firewall');
+  assert.equal(fwSchritte.length, 2);
+  assert.match(fwSchritte[0].grund, /erlaubt: Regel 1/);
+  assert.match(fwSchritte[1].grund, /zustandsbehaftet/, 'Antwort darf ohne eigene Regel zurück');
+  assert.equal(S.sende(http.d, http.pc.id, http.srv.id, {}, 'ping').ursache, 'firewall', 'Ping bleibt blockiert');
+  assert.equal(S.sende(http.d, http.pc.id, http.srv.id, {}, 'https').ursache, 'firewall');
+  // Server darf von sich aus keine Verbindung ins LAN öffnen (Regel gilt nur in eine Richtung)
+  assert.equal(S.sende(http.d, http.srv.id, http.pc.id, {}, 'ping').ursache, 'firewall');
+  // Erste passende Regel gewinnt: blockieren vor erlauben
+  const zuerst = fwNetz([{ aktion: 'blockieren', quelle: '192.168.1.10', ziel: 'alle', dienst: 'alle' }, ERLAUBE_HTTP]);
+  const r2 = S.sende(zuerst.d, zuerst.pc.id, zuerst.srv.id, {}, 'http');
+  assert.equal(r2.ursache, 'firewall'); assert.match(r2.meldung, /Regel 1 \(blockieren/);
+  M.regelVerschiebe(zuerst.d, zuerst.fw.id, 'f2', -1);
+  assert.equal(S.sende(zuerst.d, zuerst.pc.id, zuerst.srv.id, {}, 'http').status, 'erfolg', 'nach dem Umsortieren erlaubt');
+  // Deaktivierte und ungültige Regeln zählen nicht
+  const aus = fwNetz([{ ...ERLAUBE_HTTP, aktiv: false }]);
+  assert.equal(S.sende(aus.d, aus.pc.id, aus.srv.id, {}, 'http').ursache, 'firewall');
+  const kaputt = fwNetz([{ ...ERLAUBE_HTTP, quelle: '192.168.1.5/24' }]);
+  assert.equal(S.sende(kaputt.d, kaputt.pc.id, kaputt.srv.id, {}, 'http').ursache, 'firewall');
+  assert.ok(S.pruefeNetz(kaputt.d).meldungen.some(m => /Regel 1, Quelle: .*keine Netzadresse/.test(m.text)));
+  assert.ok(S.pruefeNetz(zu.d).meldungen.some(m => /lässt nichts durch/.test(m.text)));
+});
+
+test('31 · Firewall routet wie ein Router (Routen, deaktivierte Schnittstellen) und lässt sich als Gateway nutzen', () => {
+  const { d, pc, fw, srv } = fwNetz([], 'erlauben');
+  M.setzeIf(d, fw.id, 'g1', 'aktiv', false);
+  assert.equal(S.sende(d, pc.id, srv.id).ursache, 'if-deaktiviert');
+  M.setzeIf(d, fw.id, 'g1', 'aktiv', true);
+  assert.ok(M.routeHinzu(d, fw.id, { ziel: '172.16.0.0', maske: '/16', via: '10.0.0.99' }));
+  assert.deepEqual(plain(S.routingTabelle(fw).map(r => r.art)), ['C', 'C', 'S']);
+  assert.ok(!S.pruefeNetz(d).meldungen.some(m => /kein Router/.test(m.text)), 'Firewall zählt als Gateway');
+  // Regel-Bearbeitung
+  const r = M.regelHinzu(d, fw.id, { aktion: 'blockieren', dienst: 'ping' });
+  assert.equal(r.id, 'f1');
+  assert.ok(M.regelSetze(d, fw.id, 'f1', 'quelle', '192.168.1.0/24'));
+  assert.ok(M.regelSetze(d, fw.id, 'f1', 'dienst', 'quatsch'));
+  assert.equal(fw.werte.regeln[0].dienst, 'alle', 'unbekannter Dienst → alle');
+  assert.equal(M.regelSetze(d, fw.id, 'f1', 'xyz', 1), false);
+  assert.equal(M.regelVerschiebe(d, fw.id, 'f1', -1), false, 'erste Regel kann nicht weiter nach oben');
+  assert.ok(M.regelLoesche(d, fw.id, 'f1'));
+  assert.equal(M.regelHinzu(d, pc.id), null, 'nur Firewalls haben Regeln');
+});
+
+test('32 · Dienste: Ping an jedes Endgerät, HTTP/HTTPS nur an Server mit eingeschaltetem Dienst', () => {
+  const { d, pc, srv } = fwNetz([], 'erlauben', { web: false, https: true });
+  const r = S.sende(d, pc.id, srv.id, {}, 'http');
+  assert.equal(r.ursache, 'dienst-aus'); assert.match(r.meldung, /Port 80/);
+  assert.ok(!r.schritte.some(x => x.phase === 'antwort'), 'keine Antwort bei abgelehnter Verbindung');
+  assert.equal(S.sende(d, pc.id, srv.id, {}, 'https').status, 'erfolg');
+  M.setzeWert(d, srv.id, 'dienst:web', true);
+  assert.equal(S.sende(d, pc.id, srv.id, {}, 'http').status, 'erfolg');
+  assert.match(S.sende(d, pc.id, srv.id, {}, 'http').meldung, /\(HTTP\)/);
+  const r2 = S.sende(d, srv.id, pc.id, {}, 'http');
+  assert.equal(r2.ursache, 'dienst-aus'); assert.match(r2.meldung, /nur Server/);
+  assert.equal(S.sende(d, pc.id, srv.id, {}, 'unbekannt').dienst, 'ping', 'unbekannter Dienst → Ping');
+});
+
+test('33 · Lösungen der neuen Aufgaben: WLAN einrichten und Firewall konfigurieren', () => {
+  let a = A.finde('wlan'), d = a.bauen();
+  const lap = nach(d, 'Laptop1');
+  M.setzeWert(d, lap.id, 'ssid', 'Schul-WLAN'); M.setzeWert(d, lap.id, 'schluessel', 'Humboldt2026');
+  assert.match(a.pruefe(d).text, /außer Reichweite/);
+  M.verschiebe(d, lap.id, nach(d, 'AP1').x + 120, nach(d, 'AP1').y);
+  assert.equal(a.pruefe(d).ok, true);
+  a = A.finde('firewall'); d = a.bauen();
+  const fw = nach(d, 'FW1');
+  M.setzeWert(d, fw.id, 'standard', 'erlauben');
+  assert.match(a.pruefe(d).text, /Ping zum Webserver ist auch erlaubt/, 'alles öffnen ist keine Lösung');
+  M.setzeWert(d, fw.id, 'standard', 'blockieren');
+  M.regelHinzu(d, fw.id, { aktion: 'erlauben', dienst: 'alle', quelle: '192.168.1.0/24', ziel: 'alle' });
+  assert.equal(a.pruefe(d).ok, false, 'Regel für alle Dienste öffnet auch Ping');
+  M.regelSetze(d, fw.id, 'f1', 'dienst', 'http');
+  assert.equal(a.pruefe(d).ok, true);
 });

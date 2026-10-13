@@ -96,7 +96,25 @@
     return { ok: !f.length, netz: a.ok ? a.wert : null, praefix: p.ok ? p.praefix : null, fehler: f };
   }
 
+  /** Adressbereich für Firewall-Regeln: „alle“ (oder leer, „any“, „*“), eine Adresse oder ein Netz „a.b.c.d/p“. */
+  function bereich(text) {
+    var t = String(text == null ? '' : text).trim().toLowerCase();
+    if (!t || t === 'alle' || t === 'any' || t === '*') return { ok: true, alle: true, text: 'alle' };
+    var teile = t.split('/');
+    if (teile.length > 2) return { ok: false, fehler: '„' + text + '“ ist kein Adressbereich (z. B. 192.168.1.0/24, 10.0.0.5 oder alle).' };
+    var a = adresse(teile[0]);
+    if (!a.ok) return { ok: false, fehler: a.fehler };
+    if (teile.length === 1) return { ok: true, netz: a.wert, praefix: 32, text: a.text };
+    var p = praefix(teile[1]);
+    if (!p.ok) return { ok: false, fehler: p.fehler };
+    if (netz(a.wert, p.praefix) !== a.wert) return { ok: false, fehler: a.text + '/' + p.praefix + ' ist keine Netzadresse – gemeint ist wohl ' + text_(netz(a.wert, p.praefix)) + '/' + p.praefix + '.' };
+    return { ok: true, netz: a.wert, praefix: p.praefix, text: a.text + '/' + p.praefix };
+  }
+  /** Liegt die Adresse w im Bereich b (Ergebnis von bereich)? */
+  function imBereich(w, b) { return b.alle || netz(w, b.praefix) === b.netz; }
+
   SL.ip = {
+    bereich: bereich, imBereich: imBereich,
     adresse: adresse, praefix: praefix, maske: maske, netz: netz, broadcast: broadcast, gleichesNetz: gleichesNetz, info: info,
     host: host, netzangabe: netzangabe, text: text_, PRAEFIX_MIN: PRAEFIX_MIN, PRAEFIX_MAX: PRAEFIX_MAX,
   };

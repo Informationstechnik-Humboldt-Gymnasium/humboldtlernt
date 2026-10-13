@@ -32,9 +32,10 @@ Lerneinheiten sie erledigt haben, und Lehrkräfte sehen den Fortschritt ihrer Kl
   Bindungen bauen, Valenzprüfung in vier Stufen, Erkennung bekannter Stoffe, Lernmodus mit 8 Aufgaben) und
   Formelrechner (molare Masse). Alle Module nutzen eine gemeinsame, dokumentierte Datengrundlage
   (`lessons/sandbox-chemielabor/DATEN.md`).
-  Vierte Simulation: das **Netzwerk-Labor** (Network Builder): PCs, Server, Switches und Router verkabeln, IPv4-Adressen,
-  Subnetzmasken, Gateways und statische Routen konfigurieren, Verbindungen testen und Pakete Schritt für Schritt
-  verfolgen (Hin- und Rückweg, MAC-Lernen am Switch), mit fünf Lernaufgaben zur Fehlersuche
+  Vierte Simulation: das **Netzwerk-Labor** (Network Builder): PCs, Server, Laptops, Smartphones, Switches, Access Points,
+  Router und Firewalls verbinden, IPv4-Adressen, Subnetzmasken, Gateways, statische Routen, WLAN (SSID, Schlüssel,
+  Reichweite) und Firewall-Regeln konfigurieren, Verbindungen mit Ping, HTTP oder HTTPS testen und Pakete Schritt für
+  Schritt verfolgen (Hin- und Rückweg, MAC-Lernen), mit freiem Testmodus und sieben Lernaufgaben zur Fehlersuche
   (`lessons/sandbox-netzwerk/MODELL.md`).
 - **Weitere Fächer** lassen sich ohne Programmieren ergänzen (siehe Abschnitt 6).
 

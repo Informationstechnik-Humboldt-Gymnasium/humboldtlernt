@@ -98,3 +98,33 @@ table.erreichbar td.unklar { color: var(--accent); font-weight: 700; }
   .felder2, .test-wahl { grid-template-columns: 1fr; }
   .felder3 { grid-template-columns: 1fr 1fr; }
 }
+
+/* Firewall, Access Point, WLAN */
+.mauer { stroke: var(--warn); stroke-width: 1.6; fill: none; }
+.welle { stroke: var(--accent); stroke-width: 2; fill: none; stroke-linecap: round; }
+.led.aus { fill: var(--border); }
+.funk { stroke: var(--accent); stroke-width: 2.4; stroke-dasharray: 2 6; stroke-linecap: round; }
+.funk.inaktiv { stroke: var(--warn); }
+.funk.pfad.anfrage { stroke: var(--accent); stroke-width: 5; stroke-dasharray: 3 6; }
+.funk.pfad.antwort { stroke: var(--c3); stroke-width: 5; stroke-dasharray: 3 6; }
+.reichweite { fill: var(--soft-accent); fill-opacity: .35; stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 6 6; pointer-events: none; }
+
+/* Freier Testmodus und Testprotokoll */
+#testmodus[aria-pressed=true] { background: var(--accent); border-color: var(--accent); color: var(--accent-text); }
+.testmodus-hinweis { position: absolute; left: 10px; right: 10px; top: 10px; display: flex; gap: 10px; align-items: center; justify-content: space-between; padding: 8px 12px; border-radius: 10px; background: var(--soft-accent); border: 1px solid var(--accent); font-size: .88rem; box-shadow: 0 1px 4px rgba(0, 0, 0, .1); }
+body.testend #flaeche .bauteil { cursor: pointer; }
+.testlog { margin-top: 12px; border-top: 1px solid var(--border); padding-top: 8px; }
+.testlog ol { list-style: none; padding: 0; margin: 0 0 8px; display: grid; gap: 4px; }
+.testlog button.log { width: 100%; text-align: left; font-size: .84rem; padding: 5px 8px; display: flex; gap: 6px; align-items: baseline; }
+.testlog .log-zeichen { font-weight: 700; width: 1em; }
+.testlog .log.ok .log-zeichen { color: var(--ok); }
+.testlog .log.fehler .log-zeichen { color: var(--warn); }
+.testlog .log.unklar .log-zeichen { color: var(--accent); }
+button.klein { font-size: .8rem; padding: 4px 9px; }
+fieldset.regel.erlauben { border-left: 4px solid var(--ok); }
+fieldset.regel.blockieren { border-left: 4px solid var(--warn); }
+fieldset select { width: 100%; }
+.ctrl.standard { margin-top: 10px; }
+.ctrl input[type=range] { width: 100%; }
+.schritte li.firewall { border-left-color: var(--ok); }
+.schritte li.ap { border-left-color: var(--accent); }
