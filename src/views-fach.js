@@ -81,6 +81,13 @@ const SIM_SYMBOLE = {
     <rect x="20" y="4" width="24" height="32" rx="2" stroke="currentColor" stroke-width="2.5" fill="none"/>
     <text x="32" y="26" text-anchor="middle" font-size="16" font-weight="700" fill="currentColor" font-family="system-ui, sans-serif">&amp;</text>
   </svg>`,
+  // Atom (vereinfachtes Bohr-Modell): Kern mit zwei Elektronenbahnen
+  atom: `<svg viewBox="0 0 64 40" width="64" height="40" focusable="false">
+    <circle cx="32" cy="20" r="4.5" fill="currentColor"/>
+    <ellipse cx="32" cy="20" rx="18" ry="6" stroke="currentColor" stroke-width="2" fill="none"/>
+    <ellipse cx="32" cy="20" rx="18" ry="6" stroke="currentColor" stroke-width="2" fill="none" transform="rotate(60 32 20)"/>
+    <ellipse cx="32" cy="20" rx="18" ry="6" stroke="currentColor" stroke-width="2" fill="none" transform="rotate(-60 32 20)"/>
+  </svg>`,
 };
 const simSymbol = icon => SIM_SYMBOLE[icon] || esc(icon);
 

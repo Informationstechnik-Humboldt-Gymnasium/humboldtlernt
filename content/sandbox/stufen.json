@@ -20,6 +20,14 @@
       "untertitel": "Baue digitale Schaltungen mit Schaltern, Logikgattern, Relais, Lampen und 7-Segment-Anzeigen – die Wahrheitstabelle rechnet sich selbst aus.",
       "bereich": "Digitaltechnik",
       "icon": "logikgatter"
+    },
+    {
+      "id": "chemielabor",
+      "lesson": "sandbox-chemielabor",
+      "titel": "Atom- & Chemielabor",
+      "untertitel": "Periodensystem mit allen 118 Elementen, Atome und Isotope selbst bauen, Energiestufen, Teilchenmodell, Molekülbaukasten und Formelrechner.",
+      "bereich": "Atome & Chemie",
+      "icon": "atom"
     }
   ]
 }

@@ -1,0 +1,190 @@
+/* Atom- & Chemielabor – Aussehen. Farben über die Variablen aus lesson-kit.css; die Stoffklassen-Farben
+   sind hier für hell und dunkel eigens festgelegt (sanfte Flächen, Text bleibt in --text lesbar). */
+:root {
+  --k-nm: #dff0e0; --k-ha: #e4f4c9; --k-eg: #e3e3fb; --k-am: #fbe1d7; --k-eam: #fbeccf; --k-um: #f6e0ea;
+  --k-mt: #dfe9f5; --k-hm: #e5f0ef; --k-la: #efe3f7; --k-ac: #f3e6dc;
+  --neutron: #8b8a84; --el-h: #f4f4f1; --el-c: #4b4a46; --el-n: #3f6fd8; --el-o: #d8463b; --el-f: #82c66a; --el-s: #e3c22d; --el-cl: #3fb05a;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --k-nm: #24382a; --k-ha: #33401f; --k-eg: #2b2b4a; --k-am: #47291f; --k-eam: #463720; --k-um: #3f2633;
+    --k-mt: #23324a; --k-hm: #213a39; --k-la: #36294a; --k-ac: #42301f;
+    --neutron: #8d8b84; --el-h: #d9d8d2; --el-c: #6b6a64;
+  }
+}
+
+body.chemlab { max-width: 1240px; margin: 0 auto; }
+.kopf { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
+.kopf p { margin: 0; }
+.fortschritt { background: var(--card); border: 1px solid var(--border); border-radius: 999px; padding: 4px 12px; white-space: nowrap; }
+.all-done { margin: 0 0 10px; }
+
+/* Reiter */
+.reiter { display: flex; gap: 4px; overflow-x: auto; margin: 12px 0 14px; padding-bottom: 2px; border-bottom: 1px solid var(--border); scrollbar-width: thin; }
+.reiter button { border: 0; border-bottom: 3px solid transparent; border-radius: 8px 8px 0 0; background: none; white-space: nowrap; padding: 9px 12px; color: var(--muted); font-weight: 600; }
+.reiter button[aria-selected=true] { color: var(--text); border-bottom-color: var(--accent); background: var(--card); }
+.reiter button:hover { color: var(--text); }
+.einleitung { margin: 0 0 12px; max-width: 80ch; }
+.zweit { margin-top: 14px; }
+.row.eng { gap: 6px; margin: 0; }
+.feld { display: grid; gap: 2px; font-size: .85rem; font-weight: 600; }
+.feld.breit { flex: 1 1 200px; }
+.feld input, .zahlfeld { font: inherit; font-weight: 400; padding: 7px 10px; border-radius: 9px; border: 1px solid var(--border); background: var(--card); color: var(--text); min-width: 0; }
+.feld select { width: auto; }
+.zahlfeld { width: 140px; }
+.knoepfe { margin-top: 12px; }
+details.info { margin-top: 12px; border-top: 1px solid var(--border); padding-top: 8px; }
+details.info summary { cursor: pointer; font-weight: 600; font-size: .92rem; }
+.erklaerung { margin-top: 12px; padding: 10px 12px; border-radius: 10px; background: var(--soft-accent); font-size: .92rem; }
+.erklaerung:empty { display: none; }
+.modellhinweis { background: var(--bg); border-radius: 10px; padding: 8px 10px; margin-top: 10px; }
+.hinweis { color: var(--warn); }
+.unbekannt { color: var(--muted); font-style: italic; }
+.wertart { font-size: .72rem; color: var(--muted); border: 1px solid var(--border); border-radius: 999px; padding: 0 6px; white-space: nowrap; }
+.badge { font-size: .78rem; border-radius: 999px; padding: 2px 9px; border: 1px solid var(--border); }
+.badge.ok { background: var(--ok-soft); color: var(--ok); border-color: var(--ok); }
+.badge.warn { background: var(--warn-soft); color: var(--warn); border-color: var(--warn); }
+.badge.info, .badge.qualitativ { background: var(--soft-accent); color: var(--accent); border-color: var(--accent); }
+.status-box { border-radius: 10px; padding: 8px 12px; margin: 12px 0 0; border: 1px solid var(--border); }
+.status-box p { margin: 2px 0 0; }
+.status-box.ok { background: var(--ok-soft); border-color: var(--ok); }
+.status-box.warn { background: var(--warn-soft); border-color: var(--warn); }
+.status-box.info { background: var(--soft-accent); border-color: var(--accent); }
+.status-box.unbekannt { background: var(--bg); border-style: dashed; }
+table.daten { width: 100%; border-collapse: collapse; font-size: .9rem; margin-top: 8px; }
+table.daten th, table.daten td { text-align: left; padding: 5px 6px; border-bottom: 1px solid var(--border); vertical-align: top; }
+table.daten th { font-weight: 600; color: var(--muted); }
+.fuss { margin-top: 18px; border-top: 1px solid var(--border); padding-top: 8px; }
+
+/* Stoffklassen */
+.k-nm { background: var(--k-nm); } .k-ha { background: var(--k-ha); } .k-eg { background: var(--k-eg); } .k-am { background: var(--k-am); }
+.k-eam { background: var(--k-eam); } .k-um { background: var(--k-um); } .k-mt { background: var(--k-mt); } .k-hm { background: var(--k-hm); }
+.k-la { background: var(--k-la); } .k-ac { background: var(--k-ac); }
+rect.k-nm { fill: var(--k-nm); } rect.k-ha { fill: var(--k-ha); } rect.k-eg { fill: var(--k-eg); } rect.k-am { fill: var(--k-am); } rect.k-eam { fill: var(--k-eam); }
+rect.k-um { fill: var(--k-um); } rect.k-mt { fill: var(--k-mt); } rect.k-hm { fill: var(--k-hm); }
+rect.balken { stroke: var(--muted); stroke-width: .6; cursor: pointer; }
+rect.balken.aktiv { stroke: var(--accent); stroke-width: 2.5; }
+
+/* Periodensystem */
+.pse-scroll { overflow-x: auto; padding-bottom: 4px; }
+.pse { display: grid; grid-template-columns: 18px repeat(18, minmax(40px, 1fr)); grid-template-rows: 18px repeat(7, auto) 10px auto auto; gap: 3px; min-width: 780px; }
+.pse-kopf { font-size: .7rem; color: var(--muted); display: flex; align-items: center; justify-content: center; }
+.pse-platz { font-size: .66rem; display: flex; align-items: center; justify-content: center; border-radius: 6px; color: var(--muted); border: 1px dashed var(--border); }
+.pse-zelle { display: flex; flex-direction: column; align-items: center; padding: 2px 1px 3px; border-radius: 6px; border: 1px solid transparent; min-height: 50px; line-height: 1.1; color: var(--text); }
+.pse-zelle .z { font-size: .62rem; align-self: flex-start; padding-left: 3px; color: var(--muted); }
+.pse-zelle .sym { font-size: 1.02rem; font-weight: 700; }
+.pse-zelle .nm { font-size: .54rem; color: var(--muted); max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding: 0 2px; }
+.pse-zelle:hover { border-color: var(--muted); }
+.pse-zelle.gewaehlt { border: 2px solid var(--accent); }
+.pse-zelle.aus { opacity: .18; }
+.pse-zelle.unsicher, .unsicher-muster { background-image: repeating-linear-gradient(135deg, transparent 0 5px, var(--border) 5px 6px); }
+.legende { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 10px; font-size: .78rem; }
+.leg { display: inline-flex; align-items: center; gap: 5px; }
+.leg i { width: 14px; height: 14px; border-radius: 4px; border: 1px solid var(--border); display: inline-block; }
+.filter { align-items: flex-end; }
+.detail-kopf { display: flex; gap: 12px; align-items: center; }
+.detail-kopf h2 { margin: 0; font-size: 1.15rem; }
+.detail-kopf p { margin: 0; }
+.kachel { width: 64px; height: 64px; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid var(--border); flex: none; }
+.kachel b { font-size: 1.6rem; line-height: 1; }
+.kachel .z { font-size: .75rem; color: var(--muted); }
+
+/* Diagramme nicht über ihre Zeichengröße hinaus aufblasen (sonst wird die Schrift riesig) */
+#atom-svg, #iso-svg { max-width: 440px; margin: 0 auto; }
+#en-svg { max-width: 460px; margin: 0 auto; }
+#en-spektrum, #en-ie { max-width: 520px; margin: 0 auto; }
+
+/* Teilchen allgemein */
+.t-p { fill: var(--pos); stroke: var(--card); stroke-width: 1; cursor: pointer; }
+.t-n { fill: var(--neutron); stroke: var(--card); stroke-width: 1; cursor: pointer; }
+.t-e { fill: var(--neg); stroke: var(--card); stroke-width: 1; cursor: pointer; }
+.kern-blob { fill: var(--pos); opacity: .85; cursor: pointer; }
+.kern-text { fill: #fff !important; font-size: 13px; font-weight: 700; pointer-events: none; }
+.bahn { fill: none; stroke: var(--border); stroke-width: 1.4; }
+.schale-band { fill: none; stroke: var(--soft-accent); }
+.schale-text { font-size: 12px; font-weight: 650; fill: var(--accent) !important; }
+.teilcheninfo { margin-top: 12px; }
+.teilcheninfo p { margin: 4px 0; }
+.kaestchen { display: block; margin-top: 8px; }
+.ks-zeile { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 3px 0; }
+.ks-name { font-weight: 700; width: 18px; }
+.ks-u { display: inline-flex; align-items: center; gap: 1px; }
+.ks-u > span { font-size: .78rem; margin-right: 3px; color: var(--muted); }
+.ks-u i { font-style: normal; display: inline-flex; width: 22px; height: 20px; border: 1px solid var(--line); align-items: center; justify-content: center; font-size: .8rem; letter-spacing: -2px; color: var(--neg); background: var(--card); }
+
+/* Isotopenlabor */
+.palette { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+.chip-teil { width: 40px; height: 40px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; cursor: grab; touch-action: none; user-select: none; -webkit-user-select: none; }
+.chip-teil.p { background: var(--pos); } .chip-teil.n { background: var(--neutron); } .chip-teil.e { background: var(--neg); width: 30px; height: 30px; font-size: .8rem; }
+.geist { position: fixed; z-index: 10; pointer-events: none; transform: translate(-50%, -50%); opacity: .85; }
+.zaehler { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 8px; }
+.zaehl { display: grid; grid-template-columns: 40px 1fr 40px; align-items: center; gap: 4px; text-align: center; }
+.zaehl span { grid-column: 1 / -1; font-size: .8rem; font-weight: 600; }
+.zaehl.p span { color: var(--pos); } .zaehl.e span { color: var(--neg); } .zaehl.n span { color: var(--muted); }
+.zaehl button { padding: 6px 0; font-size: 1.1rem; font-weight: 700; }
+.zaehl output { font-size: 1.2rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.zaehl button:disabled { opacity: .4; cursor: default; }
+.nuklidzeichen { display: inline-flex; align-items: center; font-size: 2.4rem; font-weight: 700; line-height: 1; }
+.nuklidzeichen .az { display: inline-flex; flex-direction: column; align-items: flex-end; font-size: .9rem; margin-right: 2px; line-height: 1.15; }
+.nuklidzeichen .q { font-size: 1.2rem; align-self: flex-start; }
+.schreibweise p { margin: 4px 0 0; }
+button.nuk { font-size: .8rem; padding: 5px 9px; }
+button.nuk.stabil { border-color: var(--ok); }
+button.nuk.radioaktiv { border-color: var(--warn); }
+button.nuk.aktiv { background: var(--text); color: var(--card); }
+
+/* Energielabor */
+.niveau { stroke: var(--line); stroke-width: 2; }
+.niveau.aktiv { stroke: var(--accent); stroke-width: 3.5; }
+.grenze { stroke: var(--muted); stroke-dasharray: 5 4; }
+.sprung { stroke: var(--muted); stroke-width: 1.5; stroke-dasharray: 3 3; }
+.photon { fill: none; stroke: var(--c3); stroke-width: 2.4; }
+.val.mini { font-size: 9px; }
+.spektrum-band { stroke: var(--border); }
+.linie-h { stroke: var(--text); stroke-width: 2; }
+.linie-na { stroke: var(--text); stroke-width: 2; stroke-dasharray: 3 2; }
+
+/* Teilchenlabor */
+.behaelter { fill: var(--bg); stroke: var(--line); stroke-width: 2; }
+.teilchen-punkt { fill: var(--accent); stroke: var(--card); stroke-width: 1; }
+
+/* Molekülbaukasten */
+.palette-mol button { min-width: 46px; font-weight: 700; display: inline-flex; align-items: baseline; gap: 3px; }
+.palette-mol button small { font-weight: 400; font-size: .7rem; color: var(--muted); }
+.palette-mol button[aria-pressed=true] small { color: inherit; }
+.palette-mol button { touch-action: none; }
+#mol-svg { background: var(--bg); border-radius: 10px; cursor: crosshair; }
+.mol-flaeche { fill: transparent; }
+.bindung .treffer { stroke: transparent; stroke-width: 16; cursor: pointer; }
+.bindung .strich { stroke: var(--line); stroke-width: 3; stroke-linecap: round; pointer-events: none; }
+.mol-atom { cursor: grab; }
+.kugel { stroke: var(--line); stroke-width: 1.5; }
+.mol-atom.gewaehlt .kugel { stroke: var(--accent); stroke-width: 4; }
+.kugel.zu-viel { stroke: var(--warn); stroke-width: 4; stroke-dasharray: 4 3; }
+.kugel.el-H { fill: var(--el-h); } .kugel.el-C { fill: var(--el-c); } .kugel.el-N { fill: var(--el-n); } .kugel.el-O { fill: var(--el-o); }
+.kugel.el-F { fill: var(--el-f); } .kugel.el-S { fill: var(--el-s); } .kugel.el-Cl { fill: var(--el-cl); }
+.mol-sym { font-size: 15px; font-weight: 700; pointer-events: none; fill: #1d1c1a !important; }
+.mol-atom .kugel.el-C + .mol-sym, .mol-atom .kugel.el-N + .mol-sym, .mol-atom .kugel.el-O + .mol-sym { fill: #fff !important; }
+.frei-marke { fill: var(--accent); } .zuviel-marke { fill: var(--warn); }
+.marke-text { font-size: 11px; font-weight: 700; fill: #fff !important; pointer-events: none; }
+.mol-karte { border: 1px solid var(--border); border-radius: 10px; padding: 8px 10px; margin-bottom: 8px; }
+.mol-karte p { margin: 4px 0; }
+.summenformel { font-size: 1.15rem; }
+.meldungen { padding-left: 18px; margin: 4px 0; }
+.meldungen .fehler { color: var(--warn); }
+
+/* Formellabor */
+.formel-gross { font-size: 1.7rem; font-weight: 700; margin: 10px 0 0; }
+.ergebnis-zeile { font-size: 1rem; margin-top: 10px; overflow-wrap: anywhere; }
+.formel-fehlerstelle code { font-size: 1.1rem; }
+.formel-fehlerstelle mark { background: var(--warn); color: #fff; border-radius: 3px; padding: 0 1px; }
+input[aria-invalid=true] { border-color: var(--warn); }
+.rechnung td:last-child { font-variant-numeric: tabular-nums; }
+
+@media (max-width: 520px) {
+  body.chemlab { padding: 10px; }
+  .zaehler { grid-template-columns: 1fr; }
+  .zaehl { grid-template-columns: 48px 1fr 48px; }
+  table.daten { font-size: .82rem; }
+  .readouts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
