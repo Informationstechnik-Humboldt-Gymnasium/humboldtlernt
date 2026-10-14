@@ -18,6 +18,8 @@
   .ion.minus { fill: var(--pos) !important; }
   .free { fill: var(--neg); }
   .flash { fill: none; stroke: var(--lamp); stroke-width: 2.5; }
+  .hop { fill: var(--neg); opacity: .85; }
+  .free.fangen { stroke: var(--lamp); stroke-width: 1.5; }
   .zone { fill: var(--warn-soft); stroke: var(--warn); stroke-width: 1; stroke-dasharray: 4 3; }
   .zlbl { font-size: 12px; font-weight: 650; text-anchor: middle; fill: var(--warn) !important; }
   .side { font-size: 15px; font-weight: 800; text-anchor: middle; }
@@ -229,6 +231,36 @@
   function removeHole(h) { var i = holes.indexOf(h); if (i >= 0) holes.splice(i, 1); if (slots[h.slot].hole === h) setHole(h.slot, null); }
   function flash(x, y) { flashes.push({ x: x, y: y, t: 0, el: el('circle', { cx: x, cy: y, r: 4, class: 'flash' }, gFx) }); }
 
+  // Rekombination: Ein freies Elektron fliegt sichtbar in ein Loch und füllt es (beide verschwinden).
+  var FANG = 16;   // so nah muss ein freies Elektron an ein Loch kommen, um hineinzufallen
+  function zielLoch(e, filter, maxD) {
+    var best = null, bd = maxD || Infinity;
+    holes.forEach(function (h) {
+      if (h.gefangen || (filter && !filter(h))) return;
+      var s = slots[h.slot], d = Math.hypot(s.x - e.x, s.y - e.y);
+      if (d < bd) { bd = d; best = h; }
+    });
+    return best;
+  }
+  function fange(e, h) {
+    if (!h) return false;
+    e.ziel = h; h.gefangen = e;
+    e.el.setAttribute('class', 'free fangen');
+    return true;
+  }
+  function rekombiniere(e, h) {
+    var s = slots[h.slot];
+    flash(s.x, s.y);
+    pairs = pairs.filter(function (p) { return p.e !== e && p.h !== h; });
+    removeHole(h); removeElectron(e);
+  }
+  // Ein Loch wandert, weil ein gebundenes Elektron aus der Nachbarbindung hineinspringt: kurz sichtbar machen.
+  var hops = [];
+  function hop(von, nach) {
+    var a = slots[von], b = slots[nach];
+    hops.push({ x1: a.x, y1: a.y, x2: b.x, y2: b.y, t: 0, el: el('circle', { cx: a.x, cy: a.y, r: 3.2, class: 'hop' }, gFx) });
+  }
+
   function dopedSites() {
     if (S.mode === 'pn') return { B: PN_B, P: PN_P };
     if (S.mode === 'n') return { B: [], P: SITES.slice(0, S.dop) };
@@ -241,6 +273,7 @@
     holes.slice().forEach(removeHole);
     pairs = []; recombs = [];
     flashes.forEach(function (f) { gFx.removeChild(f.el); }); flashes = [];
+    hops.forEach(function (x) { if (x.el.parentNode) gFx.removeChild(x.el); }); hops = [];
     atoms.forEach(function (a) { a.kind = 'si'; });
     var d = dopedSites();
     d.P.forEach(function (p) { atoms[atomIdx(p[0], p[1])].kind = 'p'; });
@@ -292,6 +325,7 @@
     var h = newHole(si, 'T');
     var e = newElectron(s.x, s.y, 'T');
     e.vx = rnd(-40, 40); e.vy = rnd(-40, 40);
+    e.schonzeit = 1.2;   // erst wegfliegen, dann kann es wieder eingefangen werden
     pairs.push({ e: e, h: h, life: rnd(3, 7), back: false });
     flash(s.x, s.y);
   }
@@ -320,23 +354,29 @@
     }
     pairs.slice().forEach(function (p) {
       p.life -= dt;
-      if (p.life <= 0) p.back = true;
       if (electrons.indexOf(p.e) < 0 || holes.indexOf(p.h) < 0) { // Partner ging über den Kontakt: Paar auflösen
         if (electrons.indexOf(p.e) >= 0 && holes.indexOf(p.h) < 0) p.e.origin = 'T';
         pairs.splice(pairs.indexOf(p), 1);
         return;
       }
-      if (p.back) {
-        var s = slots[p.h.slot], dx = s.x - p.e.x, dy = s.y - p.e.y, d = Math.sqrt(dx * dx + dy * dy);
-        if (d < 6) { removeElectron(p.e); removeHole(p.h); flash(s.x, s.y); pairs.splice(pairs.indexOf(p), 1); }
-        else { p.e.x += dx / d * Math.min(d, 160 * dt); p.e.y += dy / d * Math.min(d, 160 * dt); }
-      }
+      if (p.life <= 0) p.back = true;
+      // Rekombinieren: Das Elektron sucht sich das nächste Loch (meist sein eigenes) und fliegt hinein
+      if (p.back && !p.e.ziel) fange(p.e, p.h.gefangen ? zielLoch(p.e) : p.h);
     });
 
     // freie Elektronen
     electrons.slice().forEach(function (e) {
-      var returning = pairs.some(function (p) { return p.back && p.e === e; });
-      if (returning) return;
+      if (e.ziel) {
+        if (holes.indexOf(e.ziel) < 0) { e.ziel = null; e.el.setAttribute('class', 'free'); }
+        else {
+          var zs = slots[e.ziel.slot], zx = zs.x - e.x, zy = zs.y - e.y, zd = Math.hypot(zx, zy);
+          if (zd < 3) { rekombiniere(e, e.ziel); return; }
+          var schritt = Math.min(zd, 110 * dt * SPEED);
+          e.x += zx / zd * schritt; e.y += zy / zd * schritt;
+          e.el.setAttribute('cx', e.x.toFixed(1)); e.el.setAttribute('cy', e.y.toFixed(1));
+          return;
+        }
+      }
       e.vx += rnd(-1, 1) * 260 * dt; e.vy += rnd(-1, 1) * 260 * dt;
       var sp = Math.sqrt(e.vx * e.vx + e.vy * e.vy), vmax = 45;
       if (sp > vmax) { e.vx *= vmax / sp; e.vy *= vmax / sp; }
@@ -354,23 +394,22 @@
         if (e.x > XR) { e.x = XR; e.vx = -Math.abs(e.vx); }
         var lim = MID + zoneHalf + 4;
         if (S.bias === 'fwd' && e.x < MID + 2) {
-          // Rekombination an der Grenze mit dem nächstgelegenen Loch
-          var best = null;
-          holes.forEach(function (h) { if (!best || slots[h.slot].x > slots[best.slot].x) best = h; });
-          if (best && slots[best.slot].x > MID - 70) {
-            flash((e.x + slots[best.slot].x) / 2, (e.y + slots[best.slot].y) / 2);
-            removeHole(best); removeElectron(e); recombs.push(now);
-            return;
-          }
+          // An der Grenze: in das nächste Loch auf der p-Seite fliegen und es füllen
+          if (fange(e, zielLoch(e, function (h) { return slots[h.slot].x < MID + 4; }, 90))) { recombs.push(now); return; }
           e.x = MID + 2; e.vx = Math.abs(e.vx);
         } else if (S.bias !== 'fwd' && e.x < lim) { e.x = lim; e.vx = Math.abs(e.vx); }
       }
+      // Kommt ein freies Elektron an einem Loch vorbei, fällt es hinein (Rekombination).
+      // Ohne äußere Spannung im reinen Kristall regelt die Paarbilanz das Gleichgewicht, sonst bleibt der Strom erhalten.
+      if (e.schonzeit > 0) e.schonzeit -= dt * SPEED;
+      var nah = e.schonzeit > 0 ? null : zielLoch(e, null, FANG);
+      if (nah && (S.mode === 'pure' || S.mode === 'pn' || Math.random() < 0.5)) fange(e, nah);
       e.el.setAttribute('cx', e.x.toFixed(1)); e.el.setAttribute('cy', e.y.toFixed(1));
     });
 
     // Löcher springen
     holes.slice().forEach(function (h) {
-      if (pairs.some(function (p) { return p.back && p.h === h; })) return;
+      if (h.gefangen) return;   // ein Elektron ist schon auf dem Weg hinein
       var s = slots[h.slot];
       var forced = S.mode === 'pn' && !carrierAllowed(s.x, false) && S.bias !== 'fwd';
       h.t -= dt * SPEED * (hDir ? 1.6 : 1);
@@ -399,7 +438,8 @@
       var x = Math.random() * wsum;
       for (var i = 0; i < cand.length; i++) { x -= cand[i][1]; if (x <= 0) break; }
       var ns = cand[Math.min(i, cand.length - 1)][0];
-      setHole(h.slot, null); h.slot = ns; setHole(ns, h);
+      hop(ns, h.slot);   // gebundenes Elektron springt aus der Nachbarbindung ins Loch …
+      setHole(h.slot, null); h.slot = ns; setHole(ns, h);   // … dadurch sitzt das Loch jetzt dort, wo es herkam
     });
 
     // pn: Anzahl der Ladungsträger an die Sperrschicht anpassen (Nachschub / Abfluss an den Kontakten)
@@ -407,14 +447,23 @@
       var wantE = S.bias === 'fwd' ? PN_P.length : PN_P.filter(function (p) { return ax(p[0]) > MID + zoneHalf; }).length;
       var wantH = S.bias === 'fwd' ? PN_B.length : PN_B.filter(function (p) { return ax(p[0]) < MID - zoneHalf; }).length;
       if (electrons.length < wantE && Math.random() < dt * 6) newElectron(XR - 2, rnd(YT + 10, YB - 10), 'P').vx = -30;
-      if (electrons.length > wantE) { var far = electrons.reduce(function (m, e) { return !m || e.x > m.x ? e : m; }, null); if (far) removeElectron(far); }
+      if (electrons.length > wantE) { var far = electrons.reduce(function (m, e) { return e.ziel || (m && e.x <= m.x) ? m : e; }, null); if (far) removeElectron(far); }
       if (holes.length < wantH && Math.random() < dt * 6) {
         var free = [];
         slots.forEach(function (o, k) { if (o.edge && !o.hole && o.x < 40) free.push(k); });
         if (free.length) newHole(pick(free), 'B');
       }
-      if (holes.length > wantH) { var lft = holes.reduce(function (m, h) { return !m || slots[h.slot].x < slots[m.slot].x ? h : m; }, null); if (lft) removeHole(lft); }
+      if (holes.length > wantH) { var lft = holes.reduce(function (m, h) { return h.gefangen || (m && slots[h.slot].x >= slots[m.slot].x) ? m : h; }, null); if (lft) removeHole(lft); }
     }
+
+    // gebundene Elektronen, die in ein Loch springen
+    hops.slice().forEach(function (x) {
+      x.t += dt / 0.22;
+      var t = Math.min(1, x.t);
+      x.el.setAttribute('cx', (x.x1 + (x.x2 - x.x1) * t).toFixed(1));
+      x.el.setAttribute('cy', (x.y1 + (x.y2 - x.y1) * t).toFixed(1));
+      if (x.t >= 1) { gFx.removeChild(x.el); hops.splice(hops.indexOf(x), 1); }
+    });
 
     // Blitze
     flashes.slice().forEach(function (f) {
