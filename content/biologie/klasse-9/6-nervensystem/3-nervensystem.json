@@ -1,0 +1,116 @@
+{
+  "id": "bio-k9-nervensystem",
+  "titel": "Nervenzelle und Nervensystem",
+  "kurz": "Wie eine Nervenzelle gebaut ist, wie Signale an Synapsen übertragen werden und wie das Nervensystem gegliedert ist.",
+  "reihenfolge": 3,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Bau und Funktion der Nervenzelle mit den Fachbegriffen Dendrit, Soma, Axon und Synapse beschreiben" },
+    { "id": "lz2", "niveau": "G", "text": "Zentralnervensystem, peripheres und vegetatives Nervensystem unterscheiden" },
+    { "id": "lz3", "niveau": "H", "text": "Den Ablauf eines Reflexes erklären und von einer willkürlichen Handlung abgrenzen" }
+  ],
+  "verstehen": {
+    "einstieg": "Die Ärztin klopft dir mit einem kleinen Hammer unter die Kniescheibe, und dein Bein schnellt nach vorn, ohne dass du es willst. Wie ist das möglich?",
+    "abschnitte": [
+      {
+        "titel": "Die Nervenzelle",
+        "text": "Das Nervensystem besteht aus Milliarden **Nervenzellen** (Neuronen). Jede ist auf das Weiterleiten von Signalen spezialisiert:\n\n- **Dendriten:** kurze, verzweigte Fortsätze. Sie **empfangen** Signale von anderen Zellen.\n- **Zellkörper** (Soma): mit dem Zellkern, verarbeitet die Signale.\n- **Axon:** langer Fortsatz, der das Signal **weiterleitet**, bei manchen Nerven über einen Meter weit. Oft ist es von einer **Myelinscheide** umhüllt, die wie die Isolierung eines Kabels wirkt und die Leitung stark beschleunigt.\n- **Endknöpfchen:** Enden des Axons, die an die nächste Zelle grenzen.\n\nIm Axon wird das Signal als **elektrischer Impuls** weitergeleitet."
+      },
+      {
+        "titel": "Die Synapse",
+        "text": "Die Kontaktstelle zwischen einem Endknöpfchen und der nächsten Zelle heißt **Synapse**. Dazwischen liegt ein winziger Spalt, den der elektrische Impuls nicht überspringen kann.\n\nKommt ein Impuls an, schüttet das Endknöpfchen **Botenstoffe** (Transmitter) in den Spalt aus. Sie wandern zur nächsten Zelle, binden dort an passende Empfänger und lösen in ihr wieder ein elektrisches Signal aus. An der Synapse wird also ein **elektrisches Signal in ein chemisches** und wieder zurück **umgewandelt**.\n\nViele Medikamente und Drogen wirken an Synapsen, indem sie die Botenstoffe nachahmen oder blockieren."
+      },
+      {
+        "titel": "Gliederung des Nervensystems",
+        "text": "- **Zentralnervensystem (ZNS):** **Gehirn** und **Rückenmark**. Hier werden Informationen verarbeitet und gespeichert.\n- **Peripheres Nervensystem:** alle Nerven außerhalb von Gehirn und Rückenmark. Sie verbinden das ZNS mit Sinnesorganen und Muskeln.\n- **Vegetatives Nervensystem:** steuert die Organe **unbewusst**, z. B. Herzschlag, Atmung und Verdauung. Der **Sympathikus** macht den Körper leistungsbereit (Stress: Puls hoch, Verdauung gebremst). Der **Parasympathikus** sorgt für Ruhe und Erholung (Puls runter, Verdauung an).\n\nIm Gehirn sind die Aufgaben verteilt: Das **Großhirn** ist für Denken, Lernen, Gedächtnis und bewusste Bewegungen zuständig, das **Kleinhirn** für Gleichgewicht und fein abgestimmte Bewegungen, das **Stammhirn** für lebenswichtige Vorgänge wie Atmung und Herzschlag."
+      },
+      {
+        "titel": "Reflexe",
+        "text": "Ein **Reflex** ist eine schnelle, gleichartige Reaktion auf einen Reiz, die **unwillkürlich** abläuft, ohne Beteiligung des Bewusstseins.\n\nBeim **Kniesehnenreflex** dehnt der Schlag die Sehne und damit den Oberschenkelmuskel. Dehnungsrezeptoren im Muskel melden das über sensorische Nerven an das **Rückenmark**. Dort wird das Signal direkt auf motorische Nerven umgeschaltet. Der Muskel zieht sich zusammen, das Bein schnellt vor. Diesen Weg nennt man **Reflexbogen**.\n\nWeil das Gehirn nicht beteiligt ist, sind Reflexe sehr schnell. Schutzreflexe wie der Lidschlussreflex oder das Zurückziehen der Hand von einer heißen Platte bewahren uns vor Verletzungen."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "Nervenzellen empfangen Signale über **Dendriten**, verarbeiten sie im **Zellkörper** und leiten sie über das **Axon** weiter. An der **Synapse** übertragen Botenstoffe das Signal chemisch auf die nächste Zelle.\n\nDas **ZNS** besteht aus Gehirn und Rückenmark. Das **vegetative Nervensystem** steuert die Organe unbewusst. **Reflexe** laufen unwillkürlich und schnell, oft über das Rückenmark.",
+    "alltag": "Beim Erschrecken schlägt dein Herz schneller und du atmest schneller. Das ist der Sympathikus, der deinen Körper in Sekunden auf Flucht oder Abwehr einstellt."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "bio-nrv-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Ordne jedem Teil der Nervenzelle seine Aufgabe zu.",
+      "paare": [
+        { "links": "Dendrit", "rechts": "empfängt Signale von anderen Zellen" },
+        { "links": "Zellkörper (Soma)", "rechts": "enthält den Zellkern und verarbeitet Signale" },
+        { "links": "Axon", "rechts": "leitet das Signal über weite Strecken weiter" },
+        { "links": "Synapse", "rechts": "überträgt das Signal mit Botenstoffen auf die nächste Zelle" },
+        { "links": "Myelinscheide", "rechts": "isoliert das Axon und beschleunigt die Leitung" }
+      ],
+      "erklaerung": "Der Bau der Nervenzelle passt zu ihrer Aufgabe: Empfangen, Verarbeiten, Weiterleiten, Übertragen."
+    },
+    {
+      "id": "bio-nrv-02", "typ": "multi", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Was gehört zum Zentralnervensystem?",
+      "optionen": [
+        { "text": "Gehirn", "richtig": true },
+        { "text": "Rückenmark", "richtig": true },
+        { "text": "Sehnerv", "feedback": "Nerven wie der Sehnerv verbinden Sinnesorgane mit dem ZNS. Sie werden meist dem peripheren Nervensystem zugerechnet." },
+        { "text": "Nerven in den Fingern", "feedback": "Diese Nerven gehören zum peripheren Nervensystem." }
+      ],
+      "erklaerung": "Das ZNS besteht aus Gehirn und Rückenmark. Alle übrigen Nerven bilden das periphere Nervensystem."
+    },
+    {
+      "id": "bio-nrv-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Wie wird ein Signal an der Synapse auf die nächste Zelle übertragen?",
+      "optionen": [
+        { "text": "Das Endknöpfchen schüttet Botenstoffe aus, die an der nächsten Zelle ein neues Signal auslösen.", "richtig": true },
+        { "text": "Der elektrische Impuls springt als Funke über den Spalt.", "feedback": "Der Spalt kann vom elektrischen Impuls nicht übersprungen werden. Die Übertragung ist chemisch." },
+        { "text": "Die beiden Zellen sind an der Synapse fest verwachsen.", "feedback": "Zwischen den Zellen liegt ein winziger Spalt." },
+        { "text": "Das Axon wächst in die nächste Zelle hinein.", "feedback": "Das Axon endet an der Synapse. Es dringt nicht in die nächste Zelle ein." }
+      ],
+      "erklaerung": "An der Synapse wird aus dem elektrischen Signal ein chemisches (Botenstoffe) und danach wieder ein elektrisches."
+    },
+    {
+      "id": "bio-nrv-04", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Sympathikus oder Parasympathikus? Ordne die Wirkungen zu.",
+      "paare": [
+        { "links": "Herzschlag wird schneller", "rechts": "Sympathikus" },
+        { "links": "Verdauung wird angeregt", "rechts": "Parasympathikus" }
+      ],
+      "erklaerung": "Der Sympathikus bereitet auf Leistung vor, der Parasympathikus auf Erholung. Beide wirken als Gegenspieler."
+    },
+    {
+      "id": "bio-nrv-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Warum läuft der Kniesehnenreflex schneller ab als eine bewusste Bewegung?",
+      "optionen": [
+        { "text": "Das Signal wird schon im Rückenmark umgeschaltet und muss nicht erst ins Gehirn.", "richtig": true },
+        { "text": "Beim Reflex leiten die Nerven schneller als sonst.", "feedback": "Die Nerven leiten gleich schnell. Der Weg ist aber viel kürzer." },
+        { "text": "Beim Reflex braucht man keine Nerven.", "feedback": "Auch Reflexe brauchen sensorische und motorische Nerven." },
+        { "text": "Der Muskel bewegt sich ganz von allein.", "feedback": "Der Muskel wird über motorische Nerven aus dem Rückenmark angesteuert." }
+      ],
+      "erklaerung": "Der Reflexbogen ist kurz: Rezeptor → sensorischer Nerv → Rückenmark → motorischer Nerv → Muskel."
+    },
+    {
+      "id": "bio-nrv-06", "typ": "reihenfolge", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Ordne die Stationen des Kniesehnenreflexes.",
+      "elemente": [
+        "Schlag auf die Sehne dehnt den Oberschenkelmuskel.",
+        "Dehnungsrezeptoren im Muskel werden gereizt.",
+        "Ein sensorischer Nerv leitet das Signal zum Rückenmark.",
+        "Im Rückenmark wird auf einen motorischen Nerv umgeschaltet.",
+        "Der Oberschenkelmuskel zieht sich zusammen, das Bein schnellt vor."
+      ],
+      "erklaerung": "Beim Kniesehnenreflex liegen Rezeptor und Erfolgsorgan im selben Muskel. Das Gehirn erfährt erst danach davon."
+    },
+    {
+      "id": "bio-nrv-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz1",
+      "frage": "Bei der Krankheit Multiple Sklerose wird die Myelinscheide um die Axone geschädigt. Welche Folge ist zu erwarten?",
+      "optionen": [
+        { "text": "Signale werden langsamer oder gestört weitergeleitet.", "richtig": true },
+        { "text": "Die Nervenzellen bilden mehr Dendriten.", "feedback": "Die Myelinscheide betrifft das Axon, nicht die Dendriten." },
+        { "text": "Die Synapsen schütten keine Botenstoffe mehr aus.", "feedback": "Die Myelinscheide umhüllt das Axon. Ihre Schädigung betrifft vor allem die Weiterleitung entlang des Axons." },
+        { "text": "Es gibt keine Folgen, die Myelinscheide ist nur Schutz.", "feedback": "Die Myelinscheide beschleunigt die Leitung stark. Ohne sie ist die Weiterleitung gestört." }
+      ],
+      "erklaerung": "Wie bei einem Kabel mit beschädigter Isolierung kommen Signale schlechter an. Das kann zu Seh-, Gefühls- oder Bewegungsstörungen führen."
+    }
+  ]
+}

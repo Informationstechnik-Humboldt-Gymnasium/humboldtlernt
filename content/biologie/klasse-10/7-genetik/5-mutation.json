@@ -1,0 +1,111 @@
+{
+  "id": "bio-k10-mutation",
+  "titel": "Mutation und Modifikation",
+  "kurz": "Warum sich Lebewesen trotz gleicher Gene unterscheiden können und wie Veränderungen der Erbinformation entstehen.",
+  "reihenfolge": 5,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Den Unterschied zwischen Mutation und Modifikation erklären" },
+    { "id": "lz2", "niveau": "G", "text": "Gen-, Chromosomen- und Genommutationen unterscheiden und Ursachen von Mutationen nennen" },
+    { "id": "lz3", "niveau": "H", "text": "Genetisch bedingte Krankheiten am Beispiel der Trisomie 21 erklären und Auswirkungen auf das menschliche Zusammenleben bewerten" }
+  ],
+  "verstehen": {
+    "einstieg": "Eineiige Zwillinge haben dieselben Gene. Trotzdem ist oft einer etwas größer, und wer viel draußen ist, hat mehr Sommersprossen. Wie kommt das?",
+    "abschnitte": [
+      {
+        "titel": "Modifikation",
+        "text": "Ein Merkmal wird nicht nur von den Genen bestimmt, sondern auch von der **Umwelt**. Gleiche Gene können je nach Bedingungen zu unterschiedlichen Phänotypen führen. Solche umweltbedingten Unterschiede heißen **Modifikationen**.\n\nBeispiele:\n\n- Löwenzahn aus dem Gebirge bleibt klein, Pflanzen aus demselben Wurzelstück werden im Tal groß.\n- Sonne macht die Haut brauner, Training macht Muskeln kräftiger.\n\nModifikationen sind **nicht erblich**. Die Gene geben nur einen Rahmen vor, die **Reaktionsnorm**. Innerhalb dieses Rahmens bestimmt die Umwelt die Ausprägung."
+      },
+      {
+        "titel": "Mutation",
+        "text": "Eine **Mutation** ist eine dauerhafte **Veränderung der Erbinformation**:\n\n- **Genmutation:** Ein einzelnes Gen ist verändert, z. B. ist eine Base ausgetauscht. Beispiel: Mukoviszidose, Sichelzellanämie.\n- **Chromosomenmutation:** Der Bau eines Chromosoms ist verändert, z. B. fehlt ein Stück. Beispiel: Katzenschrei-Syndrom.\n- **Genommutation:** Die **Zahl** der Chromosomen ist verändert. Beispiel: Trisomie 21.\n\nMutationen entstehen **spontan** durch Fehler beim Kopieren der DNA oder werden durch **Mutagene** ausgelöst: UV-Strahlung, Röntgen- und radioaktive Strahlung oder bestimmte Chemikalien, etwa im Tabakrauch.\n\nMutationen in **Körperzellen** betreffen nur den Menschen selbst und können z. B. Hautkrebs auslösen. Nur Mutationen in **Keimzellen** werden an Kinder vererbt. Die meisten Mutationen sind neutral, manche schädlich, sehr wenige vorteilhaft. Sie sind die Grundlage für die Vielfalt der Lebewesen und die Evolution."
+      },
+      {
+        "titel": "Trisomie 21",
+        "text": "Bei der **Trisomie 21** (Down-Syndrom) ist das Chromosom 21 **dreimal** statt zweimal vorhanden, der Mensch hat 47 Chromosomen. Meist entsteht sie, weil sich in der Meiose die beiden Chromosomen 21 nicht trennen. Eine Keimzelle hat dann 24 Chromosomen. Die Wahrscheinlichkeit dafür steigt mit dem Alter der Mutter.\n\nMenschen mit Trisomie 21 haben oft typische Gesichtsmerkmale, Muskelschwäche, ein höheres Risiko für Herzfehler und lernen in der Regel langsamer. Mit Förderung können viele selbstständig leben, arbeiten und am gesellschaftlichen Leben teilhaben. Die Ausprägung ist sehr unterschiedlich."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "**Modifikationen** sind umweltbedingte, **nicht erbliche** Unterschiede bei gleichen Genen. **Mutationen** sind dauerhafte Veränderungen der Erbinformation: Gen-, Chromosomen- oder Genommutation.\n\nNur Mutationen in **Keimzellen** werden vererbt. Bei der **Trisomie 21** ist das Chromosom 21 dreimal vorhanden.",
+    "alltag": "Sonnencreme schützt vor UV-Strahlung, die Mutationen in Hautzellen auslösen kann. Hautkrebs ist eine Folge solcher Mutationen in Körperzellen."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "bio-mut-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Mutation oder Modifikation? Ordne zu.",
+      "paare": [
+        { "links": "Durch Training werden die Beinmuskeln kräftiger.", "rechts": "Modifikation" },
+        { "links": "Ein Basenaustausch in einem Gen führt zu einer Erbkrankheit.", "rechts": "Mutation" }
+      ],
+      "erklaerung": "Modifikationen entstehen durch die Umwelt und sind nicht erblich. Mutationen verändern die Erbinformation."
+    },
+    {
+      "id": "bio-mut-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Ordne jede Mutationsart ihrer Beschreibung zu.",
+      "paare": [
+        { "links": "Genmutation", "rechts": "Veränderung innerhalb eines einzelnen Gens" },
+        { "links": "Chromosomenmutation", "rechts": "Veränderung im Bau eines Chromosoms" },
+        { "links": "Genommutation", "rechts": "Veränderung der Chromosomenzahl" }
+      ],
+      "erklaerung": "Die Begriffe beschreiben verschiedene Ebenen: einzelnes Gen, ganzes Chromosom, ganzer Chromosomensatz (Genom)."
+    },
+    {
+      "id": "bio-mut-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Ein Bodybuilder hat sehr kräftige Muskeln. Werden seine Kinder deshalb auch kräftigere Muskeln haben?",
+      "optionen": [
+        { "text": "Nein, die trainierten Muskeln sind eine Modifikation und werden nicht vererbt.", "richtig": true },
+        { "text": "Ja, trainierte Muskeln werden vererbt.", "feedback": "Training verändert nicht die Gene in den Keimzellen. Erworbene Eigenschaften werden nicht vererbt." },
+        { "text": "Ja, aber nur an Söhne.", "feedback": "Die Muskelkraft durch Training ist gar nicht genetisch festgelegt und wird an niemanden vererbt." },
+        { "text": "Nur wenn er sehr lange trainiert.", "feedback": "Auch langes Training ändert die Erbinformation nicht." }
+      ],
+      "erklaerung": "Modifikationen betreffen den Phänotyp, nicht den Genotyp. Deshalb werden sie nicht weitergegeben."
+    },
+    {
+      "id": "bio-mut-04", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Was kann Mutationen auslösen?",
+      "optionen": [
+        { "text": "UV-Strahlung", "richtig": true },
+        { "text": "Röntgenstrahlung", "richtig": true },
+        { "text": "bestimmte Chemikalien im Tabakrauch", "richtig": true },
+        { "text": "zufällige Fehler beim Kopieren der DNA", "richtig": true },
+        { "text": "Muskeltraining", "feedback": "Training bewirkt eine Modifikation, keine Mutation." }
+      ],
+      "erklaerung": "Mutationen entstehen spontan oder durch Mutagene. Deshalb schützt man sich z. B. beim Röntgen mit einer Bleischürze."
+    },
+    {
+      "id": "bio-mut-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Eine Mutation in einer Hautzelle führt zu Hautkrebs. Kann diese Mutation an Kinder vererbt werden?",
+      "optionen": [
+        { "text": "Nein, nur Mutationen in Keimzellen werden vererbt.", "richtig": true },
+        { "text": "Ja, alle Mutationen werden vererbt.", "feedback": "Kinder entstehen aus Keimzellen. Eine Mutation in einer Hautzelle gelangt nicht dorthin." },
+        { "text": "Ja, aber nur an Töchter.", "feedback": "Die Mutation in der Hautzelle wird an niemanden vererbt." },
+        { "text": "Nur, wenn der Krebs geheilt ist.", "feedback": "Ob der Krebs geheilt ist, spielt für die Vererbung keine Rolle." }
+      ],
+      "erklaerung": "Man unterscheidet Körperzellmutationen (nicht erblich) und Keimzellmutationen (erblich)."
+    },
+    {
+      "id": "bio-mut-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Wie entsteht eine Trisomie 21 meistens?",
+      "optionen": [
+        { "text": "In der Meiose trennen sich die beiden Chromosomen 21 nicht, eine Keimzelle erhält 24 Chromosomen.", "richtig": true },
+        { "text": "Durch eine Infektion während der Schwangerschaft", "feedback": "Trisomie 21 ist eine Genommutation, die schon bei der Bildung der Keimzellen entsteht." },
+        { "text": "Durch einen Basenaustausch im Chromosom 21", "feedback": "Ein Basenaustausch wäre eine Genmutation. Bei der Trisomie ist ein ganzes Chromosom zu viel." },
+        { "text": "Durch eine Modifikation in der Kindheit", "feedback": "Modifikationen ändern die Chromosomenzahl nicht." }
+      ],
+      "erklaerung": "Verschmilzt eine Keimzelle mit 24 Chromosomen mit einer normalen (23), entsteht eine Zygote mit 47 Chromosomen."
+    },
+    {
+      "id": "bio-mut-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz1",
+      "frage": "Löwenzahnpflanzen aus demselben Wurzelstück werden geteilt. Eine Hälfte wächst im Gebirge, die andere im Tal. Die Gebirgspflanze bleibt klein, die Talpflanze wird groß. Erkläre das und begründe, ob die Gebirgspflanze kleine Nachkommen haben wird, wenn diese im Tal wachsen.",
+      "stichworte": [
+        { "aspekt": "Die Pflanzen haben dieselben Gene (gleicher Genotyp).", "woerter": ["gleiche gene", "dieselben gene", "gleichen gene", "genotyp", "erbgleich"] },
+        { "aspekt": "Unterschiedliche Umweltbedingungen (Temperatur, Licht, Wind, Boden)", "woerter": ["umwelt", "bedingung", "klima", "temperatur"] },
+        { "aspekt": "Es handelt sich um eine Modifikation.", "woerter": ["modifikation"] },
+        { "aspekt": "Modifikationen sind nicht erblich, Nachkommen im Tal werden groß.", "woerter": ["nicht erblich", "nicht vererbt", "werden groß", "gross"] }
+      ],
+      "musterloesung": "Beide Pflanzen haben dieselben Gene, denn sie stammen aus demselben Wurzelstück. Der Unterschied entsteht durch die Umwelt: Im Gebirge sind die Bedingungen mit Kälte, Wind und kurzer Wachstumszeit rauer. Es handelt sich um eine Modifikation. Modifikationen sind nicht erblich. Nachkommen der Gebirgspflanze, die im Tal wachsen, werden deshalb groß.",
+      "erklaerung": "Die Gene legen eine Reaktionsnorm fest, die Umwelt bestimmt, wo innerhalb dieses Rahmens die Ausprägung liegt."
+    }
+  ]
+}

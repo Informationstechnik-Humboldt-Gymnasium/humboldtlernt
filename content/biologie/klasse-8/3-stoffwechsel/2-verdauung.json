@@ -1,0 +1,236 @@
+{
+  "id": "bio-k8-verdauung",
+  "titel": "Verdauung und Enzyme",
+  "kurz": "Der Weg der Nahrung durch den Körper, wie Enzyme Nährstoffe zerlegen und wie der Bau der Organe zur Funktion passt.",
+  "reihenfolge": 2,
+  "lernziele": [
+    {
+      "id": "lz1",
+      "niveau": "G",
+      "text": "Die Verdauungsorgane und ihre Aufgaben in der richtigen Reihenfolge beschreiben"
+    },
+    {
+      "id": "lz2",
+      "niveau": "G",
+      "text": "Die Wirkungsweise von Enzymen mit dem Schlüssel-Schloss-Prinzip veranschaulichen"
+    },
+    {
+      "id": "lz3",
+      "niveau": "H",
+      "text": "Den Zusammenhang zwischen dem Bau ausgewählter Verdauungsorgane (Magen, Dünndarm) und ihrer Funktion erklären"
+    }
+  ],
+  "verstehen": {
+    "einstieg": "Kaust du ein Stück Brot sehr lange, schmeckt es plötzlich süß. Dabei ist im Brot kaum Zucker. Woher kommt der süße Geschmack?",
+    "abschnitte": [
+      {
+        "titel": "Warum wir verdauen",
+        "text": "Die Nährstoffe in der Nahrung sind große Teilchen. Sie können nicht durch die Darmwand ins Blut gelangen. Bei der **Verdauung** werden sie in kleine Bausteine zerlegt:\n\n- **Stärke** → Traubenzucker (Glucose)\n- **Eiweiße** → Aminosäuren\n- **Fette** → Glycerin und Fettsäuren\n\nDiese Bausteine gelangen ins Blut und werden im ganzen Körper verteilt."
+      },
+      {
+        "titel": "Der Weg der Nahrung",
+        "text": "- **Mund:** Zähne zerkleinern die Nahrung. Der **Speichel** enthält ein Enzym, das Stärke zu Zucker abbaut. Deshalb schmeckt Brot nach langem Kauen süß.\n- **Speiseröhre:** Ringmuskeln schieben den Bissen wellenförmig zum Magen.\n- **Magen:** Der Magensaft enthält **Salzsäure** (tötet viele Keime ab) und Enzyme, die Eiweiße spalten. Die Magenwand knetet den Speisebrei durch.\n- **Dünndarm:** Hier findet der Großteil der Verdauung statt. Die **Bauchspeicheldrüse** liefert Enzyme für alle Nährstoffe. Die **Galle** aus der Leber zerteilt Fett in feine Tröpfchen. Die Bausteine werden durch die Darmwand ins Blut aufgenommen.\n- **Dickdarm:** Dem Rest wird Wasser entzogen.\n- **Enddarm:** Unverdauliche Reste werden als Kot ausgeschieden."
+      },
+      {
+        "titel": "Enzyme und das Schlüssel-Schloss-Prinzip",
+        "text": "**Enzyme** sind Eiweißstoffe, die chemische Reaktionen beschleunigen, ohne dabei verbraucht zu werden. Jedes Enzym hat eine besondere Form mit einer Bindungsstelle.\n\nNur ein Stoff mit **passender Form** (das **Substrat**) passt in diese Stelle, so wie nur ein bestimmter Schlüssel in ein Schloss passt. Das Enzym spaltet das Substrat und ist danach wieder frei für das nächste Teilchen. Deshalb gilt: **Jedes Enzym spaltet nur einen bestimmten Stoff.**\n\nEnzyme arbeiten bei Körpertemperatur am besten. Bei hohen Temperaturen verändert sich ihre Form und sie werden unwirksam."
+      },
+      {
+        "titel": "Bau und Funktion: Magen und Dünndarm",
+        "text": "Der **Magen** hat eine Wand aus mehreren Muskelschichten, die den Brei durchmischen. Die Innenwand bildet **Schleim**, der sie vor der eigenen Salzsäure und den Enzymen schützt.\n\nDer **Dünndarm** ist mehrere Meter lang. Seine Innenwand hat **Falten**, darauf sitzen fingerförmige **Darmzotten**, und deren Zellen tragen noch winzige Ausstülpungen. So entsteht eine riesige **Oberfläche**, über die sehr viele Nährstoffbausteine gleichzeitig ins Blut gelangen können. Jede Zotte ist von feinen Blutgefäßen durchzogen."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "Bei der Verdauung zerlegen **Enzyme** die Nährstoffe in kleine Bausteine, die im **Dünndarm** ins Blut aufgenommen werden. Enzyme wirken nach dem **Schlüssel-Schloss-Prinzip**: Jedes Enzym spaltet nur ein passendes Substrat.\n\nDie **Darmzotten** vergrößern die Oberfläche des Dünndarms enorm.",
+    "alltag": "Manche Menschen vertragen keine Milch, weil ihnen das Enzym fehlt, das Milchzucker spaltet. Laktosefreie Milch enthält dieses Enzym bereits, der Milchzucker ist also schon zerlegt."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "bio-vdg-01",
+      "typ": "reihenfolge",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz1",
+      "frage": "Ordne die Stationen der Nahrung auf ihrem Weg durch den Körper.",
+      "elemente": [
+        "Mund",
+        "Speiseröhre",
+        "Magen",
+        "Dünndarm",
+        "Dickdarm",
+        "Enddarm"
+      ],
+      "erklaerung": "Leber, Galle und Bauchspeicheldrüse gehören auch zum Verdauungssystem, die Nahrung fließt aber nicht durch sie hindurch. Sie geben ihre Säfte in den Dünndarm ab."
+    },
+    {
+      "id": "bio-vdg-02",
+      "typ": "zuordnung",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz1",
+      "frage": "Ordne jedem Organ seine Hauptaufgabe zu.",
+      "paare": [
+        {
+          "links": "Mund",
+          "rechts": "Zerkleinern, Beginn der Stärkeverdauung"
+        },
+        {
+          "links": "Magen",
+          "rechts": "Salzsäure tötet Keime, Beginn der Eiweißverdauung"
+        },
+        {
+          "links": "Dünndarm",
+          "rechts": "Verdauung aller Nährstoffe und Aufnahme ins Blut"
+        },
+        {
+          "links": "Dickdarm",
+          "rechts": "Entzug von Wasser"
+        }
+      ],
+      "erklaerung": "Im Dünndarm wird der größte Teil der Nahrung verdaut und aufgenommen."
+    },
+    {
+      "id": "bio-vdg-03",
+      "typ": "single",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz2",
+      "frage": "Warum kann ein Enzym, das Stärke spaltet, kein Eiweiß spalten?",
+      "optionen": [
+        {
+          "text": "Nur ein Substrat mit passender Form passt in die Bindungsstelle des Enzyms.",
+          "richtig": true
+        },
+        {
+          "text": "Eiweiß ist zu klein für das Enzym.",
+          "feedback": "Eiweiße sind große Moleküle. Entscheidend ist aber die passende Form, nicht die Größe."
+        },
+        {
+          "text": "Das Enzym wird beim Spalten der Stärke verbraucht.",
+          "feedback": "Enzyme werden nicht verbraucht. Sie können immer wieder arbeiten."
+        },
+        {
+          "text": "Eiweiß wird überhaupt nicht verdaut.",
+          "feedback": "Eiweiß wird verdaut, aber von anderen, passenden Enzymen."
+        }
+      ],
+      "erklaerung": "Wie beim Schlüssel und Schloss passt jedes Substrat nur zu einem bestimmten Enzym. Man nennt das Substratspezifität."
+    },
+    {
+      "id": "bio-vdg-04",
+      "typ": "zuordnung",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz1",
+      "frage": "In welche Bausteine wird jeder Nährstoff zerlegt?",
+      "paare": [
+        {
+          "links": "Stärke",
+          "rechts": "Traubenzucker"
+        },
+        {
+          "links": "Eiweiß",
+          "rechts": "Aminosäuren"
+        },
+        {
+          "links": "Fett",
+          "rechts": "Glycerin und Fettsäuren"
+        }
+      ],
+      "extraRechts": [
+        "Vitamine"
+      ],
+      "erklaerung": "Nur diese kleinen Bausteine passen durch die Darmwand ins Blut."
+    },
+    {
+      "id": "bio-vdg-05",
+      "typ": "single",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz2",
+      "frage": "Ein Versuch: Stärkelösung wird mit Speichel gemischt und bei 37 °C, 0 °C und 90 °C aufbewahrt. Wo ist die Stärke nach 20 Minuten am stärksten abgebaut?",
+      "optionen": [
+        {
+          "text": "bei 37 °C",
+          "richtig": true
+        },
+        {
+          "text": "bei 0 °C",
+          "feedback": "In der Kälte arbeiten Enzyme sehr langsam."
+        },
+        {
+          "text": "bei 90 °C",
+          "feedback": "Bei so hohen Temperaturen verändert sich die Form des Enzyms. Es wird unwirksam."
+        },
+        {
+          "text": "überall gleich",
+          "feedback": "Die Temperatur beeinflusst die Arbeit der Enzyme stark."
+        }
+      ],
+      "erklaerung": "Enzyme des Menschen arbeiten bei Körpertemperatur am besten. Hitze zerstört ihre Form und damit ihr „Schloss“."
+    },
+    {
+      "id": "bio-vdg-06",
+      "typ": "single",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz3",
+      "frage": "Warum verdaut der Magen nicht seine eigene Wand, obwohl er Salzsäure und eiweißspaltende Enzyme enthält?",
+      "optionen": [
+        {
+          "text": "Die Magenwand bildet eine Schleimschicht, die sie schützt.",
+          "richtig": true
+        },
+        {
+          "text": "Die Magenwand besteht nicht aus Eiweiß.",
+          "feedback": "Die Zellen der Magenwand enthalten sehr wohl Eiweiße. Sie werden durch Schleim geschützt."
+        },
+        {
+          "text": "Salzsäure ist für Zellen ungefährlich.",
+          "feedback": "Salzsäure ist ätzend. Ohne Schutz würde sie die Magenwand schädigen."
+        },
+        {
+          "text": "Die Enzyme arbeiten im Magen nicht.",
+          "feedback": "Eiweißspaltende Enzyme arbeiten gerade im sauren Magen gut."
+        }
+      ],
+      "erklaerung": "Ist die Schleimschicht gestört, kann ein Magengeschwür entstehen. Bau (Schleim bildende Zellen) und Funktion (Schutz) gehören zusammen."
+    },
+    {
+      "id": "bio-vdg-07",
+      "typ": "text",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz3",
+      "frage": "Erkläre, wie der Bau des Dünndarms zu seiner Aufgabe passt, Nährstoffbausteine ins Blut aufzunehmen.",
+      "stichworte": [
+        {
+          "aspekt": "Falten und Darmzotten (Ausstülpungen) in der Innenwand",
+          "woerter": [
+            "zotte",
+            "falte",
+            "ausstuelp"
+          ]
+        },
+        {
+          "aspekt": "Dadurch entsteht eine sehr große Oberfläche.",
+          "woerter": [
+            "oberflaeche"
+          ]
+        },
+        {
+          "aspekt": "Viele Blutgefäße (Kapillaren) nehmen die Bausteine auf.",
+          "woerter": [
+            "blutgefaess",
+            "kapillar",
+            "blut"
+          ]
+        },
+        {
+          "aspekt": "Der Darm ist sehr lang.",
+          "woerter": [
+            "lang",
+            "meter"
+          ]
+        }
+      ],
+      "musterloesung": "Der Dünndarm ist mehrere Meter lang. Seine Innenwand hat Falten, auf denen viele fingerförmige Darmzotten sitzen. Dadurch entsteht eine sehr große Oberfläche, über die viele Nährstoffbausteine gleichzeitig aufgenommen werden können. In jeder Zotte liegen feine Blutgefäße, in die die Bausteine gelangen und mit dem Blut abtransportiert werden.",
+      "erklaerung": "Oberflächenvergrößerung ist ein häufiges Bauprinzip in der Biologie. Du findest es auch in der Lunge bei den Lungenbläschen."
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "nummer": "3",
+  "reihenfolge": 1,
+  "titel": "Stoffwechsel des Menschen",
+  "beschreibung": "Nährstoffe und ihre Nachweise, Verdauung und Enzyme, Atmung und Zellatmung, Herz und Blutkreislauf, Blut und Blutgruppen.",
+  "inhalte": [
+    "Ernährung und Verdauung: Zusammensetzung der Nahrung, Bedeutung der Nähr- und Zusatzstoffe",
+    "Nachweisreaktionen der Nährstoffe",
+    "Bau und Funktion der Verdauungsorgane",
+    "Transport und Ausscheidung: Blutgefäßsystem (Arterien, Venen, Kapillaren) und Herz",
+    "Zusammensetzung des Blutes und Funktion der Blutbestandteile",
+    "Blutgruppen: AB0-System, Antigen, Antikörper",
+    "Bau und Funktion der Atmungsorgane"
+  ],
+  "erweiterung": "Verdauung mit Wort- oder Reaktionsgleichungen; thesengeleitete Nährstoffnachweise; Modelle verschiedener Abstraktionsniveaus; Untersuchung von Realobjekten (Lunge, Herz)"
+}

@@ -165,6 +165,8 @@ function usedLessonSlugs() {
 }
 
 const notFound = (req, res, text) => res.status(404).send(views.messagePage({ title: 'Nicht gefunden', text, user: req.user }));
+const GESPERRT = 'Dieses Thema ist noch nicht freigeschaltet.';
+const gesperrt = topicId => content().topicById.get(topicId)?.gesperrt === true;
 
 function topicStatus(userId, topicId) {
   const sets = progressSets(userId);
@@ -175,6 +177,7 @@ function topicStatus(userId, topicId) {
 app.post('/api/uebung/:id', requireLogin, (req, res) => {
   const ex = content().exerciseById.get(req.params.id);
   if (!ex) return res.status(404).json({ error: 'Diese Aufgabe gibt es nicht (mehr). Lade die Seite neu.' });
+  if (gesperrt(ex.topicId)) return res.status(403).json({ error: GESPERRT });
   const antwort = req.body?.antwort && typeof req.body.antwort === 'object' ? req.body.antwort : {};
   const result = checkAnswer(ex, antwort);
   if (result.error) return res.status(400).json({ error: result.error });
@@ -188,6 +191,7 @@ app.post('/api/uebung/:id', requireLogin, (req, res) => {
 app.post('/api/uebung/:id/loesung', requireLogin, (req, res) => {
   const ex = content().exerciseById.get(req.params.id);
   if (!ex) return res.status(404).json({ error: 'Diese Aufgabe gibt es nicht (mehr).' });
+  if (gesperrt(ex.topicId)) return res.status(403).json({ error: GESPERRT });
   q.insertAttempt.run({ user_id: req.user.id, exercise_id: ex.id, topic_id: ex.topicId, correct: 0, revealed: 1, answer: null });
   res.json({ ...revealSolution(ex), fortschritt: topicStatus(req.user.id, ex.topicId) });
 });
@@ -196,6 +200,7 @@ app.post('/api/uebung/:id/loesung', requireLogin, (req, res) => {
 app.post('/api/uebung/:id/selbst', requireLogin, (req, res) => {
   const ex = content().exerciseById.get(req.params.id);
   if (!ex || ex.typ !== 'text') return res.status(404).json({ error: 'Diese Aufgabe gibt es nicht.' });
+  if (gesperrt(ex.topicId)) return res.status(403).json({ error: GESPERRT });
   const ok = req.body?.ok === true;
   const text = typeof req.body?.text === 'string' ? req.body.text.slice(0, 2000) : null;
   q.insertAttempt.run({ user_id: req.user.id, exercise_id: ex.id, topic_id: ex.topicId, correct: ok ? 1 : 0, revealed: 0, answer: JSON.stringify({ text, selbst: ok }) });
@@ -206,6 +211,7 @@ app.post('/api/uebung/:id/selbst', requireLogin, (req, res) => {
 app.post('/api/verstanden/:thema', requireLogin, (req, res) => {
   const topic = content().topicById.get(req.params.thema);
   if (!topic) return res.status(404).json({ error: 'Dieses Thema gibt es nicht.' });
+  if (topic.gesperrt) return res.status(403).json({ error: GESPERRT });
   if (req.body?.done === false) q.unsetDone.run(req.user.id, understoodSlug(topic.id));
   else q.setDone.run(req.user.id, understoodSlug(topic.id));
   res.json({ ok: true, fortschritt: topicStatus(req.user.id, topic.id) });
@@ -348,6 +354,7 @@ function topicContext(req, res) {
   const grade = getGrade(req.fach, req.params.stufe);
   const topic = content().topicById.get(req.params.thema);
   if (!grade || !topic || topic.fach !== req.fach.id || topic.stufe !== grade.stufe) { notFound(req, res, 'Dieses Thema gibt es nicht.'); return null; }
+  if (topic.gesperrt) { res.status(403).send(views.messagePage({ title: 'Noch gesperrt', text: GESPERRT, user: req.user })); return null; }
   const sets = progressSets(req.user.id);
   const all = topicsOfGrade(grade);
   return { fach: req.fach, grade, topic, sets, progress: topicProgress(topic, sets.solved, sets.understood), nextTopic: all[all.indexOf(topic) + 1] || null };

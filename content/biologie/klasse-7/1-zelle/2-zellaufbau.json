@@ -1,0 +1,122 @@
+{
+  "id": "bio-k7-zellaufbau",
+  "titel": "Pflanzenzelle und Tierzelle",
+  "kurz": "Aus welchen Bestandteilen Zellen bestehen, welche Aufgaben sie haben und wie sich Pflanzen- und Tierzellen unterscheiden.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Den Aufbau von Pflanzen- und Tierzellen beschreiben und die Zellbestandteile benennen" },
+    { "id": "lz2", "niveau": "G", "text": "Die Funktion der Zellbestandteile beschreiben" },
+    { "id": "lz3", "niveau": "G", "text": "Gemeinsamkeiten und Unterschiede von Tier- und Pflanzenzellen nennen" },
+    { "id": "lz4", "niveau": "H", "text": "Den Fachbegriff Eukaryot aus seiner Wortherkunft erklären und ein Zellmodell mit dem Original vergleichen" }
+  ],
+  "verstehen": {
+    "einstieg": "Unter dem Mikroskop sehen Zellen aus einem Zwiebelhäutchen aus wie kleine Ziegelsteine. Zellen von deiner Mundschleimhaut sind dagegen rundlich und unregelmäßig. Woran liegt das?",
+    "abschnitte": [
+      {
+        "titel": "Bestandteile jeder Zelle",
+        "text": "Pflanzen- und Tierzellen haben einige Bestandteile gemeinsam:\n\n- **Zellmembran:** dünne Haut um die Zelle. Sie grenzt die Zelle ab und kontrolliert, welche Stoffe hinein- und hinausgelangen.\n- **Zellplasma:** zähflüssige Grundsubstanz. Darin laufen viele Stoffwechselvorgänge ab.\n- **Zellkern:** enthält die Erbinformation und steuert die Vorgänge in der Zelle.\n- **Mitochondrien:** die „Kraftwerke“ der Zelle. Hier wird bei der Zellatmung Energie aus Nährstoffen freigesetzt.\n\nDie Bestandteile mit einer bestimmten Aufgabe heißen **Zellorganellen** (wörtlich: kleine Organe der Zelle)."
+      },
+      {
+        "titel": "Was nur Pflanzenzellen haben",
+        "text": "Pflanzenzellen haben zusätzlich:\n\n- **Zellwand:** feste Hülle aus Cellulose außen um die Zellmembran. Sie gibt der Zelle ihre feste Form. Deshalb sehen Pflanzenzellen oft eckig aus.\n- **Chloroplasten:** grüne Organellen mit dem Farbstoff **Chlorophyll**. Hier findet die **Fotosynthese** statt. Die Pflanze stellt dabei mit Lichtenergie Traubenzucker her.\n- **Große Vakuole:** mit Zellsaft gefüllter Raum. Sie speichert Stoffe und hält durch ihren Innendruck die Zelle prall.\n\nWurzelzellen liegen im Dunkeln und haben deshalb keine Chloroplasten. Die Zellwand und die Vakuole haben sie trotzdem."
+      },
+      {
+        "titel": "Eukaryoten",
+        "text": "Pflanzen, Tiere, Pilze und der Mensch bestehen aus Zellen mit einem echten **Zellkern**. Man nennt sie **Eukaryoten**. Das Wort kommt aus dem Griechischen: eu = gut, echt und karyon = Kern.\n\nBakterien haben dagegen keinen Zellkern. Ihre Erbinformation liegt frei im Zellplasma. Sie heißen **Prokaryoten** (pro = vor), also Lebewesen „vor dem Kern“."
+      },
+      {
+        "titel": "Zellmodelle",
+        "text": "Ein Zellmodell, zum Beispiel aus Knete oder als Schuhkarton-Zelle, macht den Aufbau anschaulich. Jedes Modell vereinfacht aber:\n\n- Echte Zellen sind **räumlich** und viel kleiner.\n- Die Organellen bewegen sich im Zellplasma, im Modell bleiben sie an ihrem Platz.\n- Es gibt viel mehr Mitochondrien und Chloroplasten als im Modell.\n\nBeim Vergleich von Modell und Original fragst du: Was zeigt das Modell gut? Was zeigt es nicht oder falsch?"
+      }
+    ],
+    "formeln": [],
+    "merksatz": "Pflanzen- und Tierzellen haben **Zellmembran, Zellplasma, Zellkern** und **Mitochondrien**. Nur Pflanzenzellen haben zusätzlich **Zellwand, Chloroplasten** und eine große **Vakuole**.\n\nZellen mit echtem Zellkern heißen **Eukaryoten**.",
+    "alltag": "Dass Salat in Salzwasser schlaff wird, liegt an den Vakuolen: Das Salz zieht Wasser aus dem Zellsaft. Die Vakuolen schrumpfen und die Blätter verlieren ihre Spannung."
+  },
+  "interaktiv": ["bio-zelle"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "bio-zel-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Ordne jedem Zellbestandteil seine Aufgabe zu.",
+      "paare": [
+        { "links": "Zellkern", "rechts": "enthält die Erbinformation und steuert die Zelle" },
+        { "links": "Zellmembran", "rechts": "grenzt die Zelle ab und regelt den Stoffaustausch" },
+        { "links": "Mitochondrium", "rechts": "setzt Energie aus Nährstoffen frei" },
+        { "links": "Chloroplast", "rechts": "Ort der Fotosynthese" },
+        { "links": "Zellwand", "rechts": "gibt der Pflanzenzelle eine feste Form" }
+      ],
+      "extraRechts": ["transportiert Blut durch den Körper"],
+      "erklaerung": "Jedes Zellorganell hat eine eigene Aufgabe. Zusammen sorgen sie dafür, dass die Zelle lebt."
+    },
+    {
+      "id": "bio-zel-02", "typ": "multi", "schwierigkeit": "leicht", "lernziel": "lz3",
+      "frage": "Welche Bestandteile kommen **nur** in Pflanzenzellen vor?",
+      "optionen": [
+        { "text": "Zellwand", "richtig": true },
+        { "text": "Chloroplasten", "richtig": true },
+        { "text": "große Vakuole", "richtig": true },
+        { "text": "Zellkern", "feedback": "Auch Tierzellen haben einen Zellkern." },
+        { "text": "Mitochondrien", "feedback": "Mitochondrien haben Pflanzen- und Tierzellen. Beide brauchen Energie aus der Zellatmung." }
+      ],
+      "erklaerung": "Zellwand, Chloroplasten und große Vakuole sind typisch für Pflanzenzellen. Zellmembran, Zellplasma, Zellkern und Mitochondrien haben beide Zelltypen."
+    },
+    {
+      "id": "bio-zel-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Unter dem Mikroskop siehst du eckige Zellen mit dicker Hülle, einem Zellkern und vielen kleinen grünen Körnchen. Was hast du vor dir?",
+      "optionen": [
+        { "text": "Zellen aus einem grünen Pflanzenblatt", "richtig": true },
+        { "text": "Zellen der Mundschleimhaut", "feedback": "Tierzellen haben keine Zellwand und keine grünen Chloroplasten." },
+        { "text": "Zellen aus einer Zwiebelschuppe", "feedback": "Zwiebelschuppen wachsen im Dunkeln in der Erde. Ihre Zellen haben keine Chloroplasten." },
+        { "text": "Bakterien", "feedback": "Bakterien haben keinen Zellkern. Außerdem sind sie viel kleiner." }
+      ],
+      "erklaerung": "Die dicke Hülle ist die Zellwand. Die grünen Körnchen sind Chloroplasten. Beides zusammen zeigt: eine Pflanzenzelle aus einem Teil, der Licht bekommt, etwa aus einem Blatt."
+    },
+    {
+      "id": "bio-zel-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Warum haben Zellen aus der Wurzel einer Möhre keine Chloroplasten?",
+      "optionen": [
+        { "text": "Die Wurzel wächst im Dunkeln. Dort könnte keine Fotosynthese stattfinden.", "richtig": true },
+        { "text": "Die Wurzel ist eine Tierzelle.", "feedback": "Die Möhre ist eine Pflanze. Ihre Zellen haben eine Zellwand und eine Vakuole." },
+        { "text": "Chloroplasten sind nur in Blüten.", "feedback": "Chloroplasten findest du vor allem in Blättern und grünen Stängeln." },
+        { "text": "Die Chloroplasten sind orange gefärbt.", "feedback": "Die orange Farbe kommt von anderen Farbstoffkörpern. Chloroplasten sind grün durch Chlorophyll." }
+      ],
+      "erklaerung": "Zellen sind auf ihre Aufgabe spezialisiert. Wurzelzellen nehmen Wasser auf und speichern Nährstoffe. Chloroplasten bräuchten Licht."
+    },
+    {
+      "id": "bio-zel-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Was bedeutet der Fachbegriff „Eukaryot“?",
+      "optionen": [
+        { "text": "Lebewesen mit echtem Zellkern", "richtig": true },
+        { "text": "Lebewesen ohne Zellkern", "feedback": "Lebewesen ohne Zellkern sind Prokaryoten (pro = vor), zum Beispiel Bakterien." },
+        { "text": "Lebewesen mit Chloroplasten", "feedback": "Auch Tiere und Menschen sind Eukaryoten, obwohl sie keine Chloroplasten haben." },
+        { "text": "Lebewesen aus nur einer Zelle", "feedback": "Einzeller heißen auf Fachsprache Protisten oder einzellige Lebewesen. Es gibt einzellige und vielzellige Eukaryoten." }
+      ],
+      "erklaerung": "Eu (griechisch) heißt gut oder echt, karyon heißt Kern. Pflanzen, Tiere, Pilze und Menschen sind Eukaryoten."
+    },
+    {
+      "id": "bio-zel-06", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Eine Klasse baut eine Pflanzenzelle als Modell aus einem Schuhkarton. Welche Grenzen hat dieses Modell?",
+      "optionen": [
+        { "text": "Die echte Zelle ist viel kleiner.", "richtig": true },
+        { "text": "Im Modell bewegen sich die Organellen nicht.", "richtig": true },
+        { "text": "Die echte Zelle hat viel mehr Chloroplasten und Mitochondrien.", "richtig": true },
+        { "text": "Das Modell zeigt nicht, dass die Zelle eine Zellwand hat.", "feedback": "Der Karton selbst stellt die feste Zellwand sogar gut dar." },
+        { "text": "Modelle dürfen im Unterricht keine Zellen darstellen.", "feedback": "Modelle sind wichtige Hilfen. Man muss nur wissen, was sie vereinfachen." }
+      ],
+      "erklaerung": "Jedes Modell vereinfacht. Ein Schuhkarton zeigt die Lage der Organellen und die feste Form durch die Zellwand gut. Größe, Anzahl und Bewegung der Organellen stimmen nicht."
+    },
+    {
+      "id": "bio-zel-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Vergleiche eine Pflanzenzelle aus einem Laubblatt mit einer Zelle der Mundschleimhaut. Nenne Gemeinsamkeiten und Unterschiede.",
+      "stichworte": [
+        { "aspekt": "Gemeinsam: Zellmembran, Zellplasma, Zellkern und Mitochondrien", "woerter": ["zellkern", "zellmembran", "mitochondri"] },
+        { "aspekt": "Nur die Pflanzenzelle hat eine Zellwand.", "woerter": ["zellwand"] },
+        { "aspekt": "Nur die Pflanzenzelle hat Chloroplasten.", "woerter": ["chloroplast"] },
+        { "aspekt": "Nur die Pflanzenzelle hat eine große Vakuole.", "woerter": ["vakuole"] }
+      ],
+      "musterloesung": "Beide Zellen haben eine Zellmembran, Zellplasma, einen Zellkern und Mitochondrien. Die Blattzelle hat zusätzlich eine feste Zellwand, Chloroplasten für die Fotosynthese und eine große Vakuole mit Zellsaft. Der Mundschleimhautzelle fehlen diese drei Bestandteile, deshalb ist sie rundlich und nicht eckig.",
+      "erklaerung": "Zellwand, Chloroplasten und Vakuole sind die drei Merkmale, an denen du eine Pflanzenzelle erkennst."
+    }
+  ]
+}

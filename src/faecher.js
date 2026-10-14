@@ -66,7 +66,7 @@ export function loadContent(dir = path.join(config.contentDir, 'physik'), shared
         const themenfeld = {
           id: tfName, stufe: stufe.stufe, nummer: tf.nummer || '', titel: tf.titel || tfName,
           beschreibung: tf.beschreibung || '', inhalte: tf.inhalte || [], erweiterung: tf.erweiterung || '',
-          reihenfolge: tf.reihenfolge ?? 100, topics: [],
+          reihenfolge: tf.reihenfolge ?? 100, gesperrt: tf.gesperrt === true, topics: [],
         };
         for (const f of fs.readdirSync(tfDir).sort()) {
           if (!f.endsWith('.json') || f === 'themenfeld.json' || f.startsWith('_')) continue;
@@ -81,6 +81,8 @@ export function loadContent(dir = path.join(config.contentDir, 'physik'), shared
             lernziele: Array.isArray(t.lernziele) ? t.lernziele : [],
             verstehen: t.verstehen || {}, interaktiv: t.interaktiv || [], vertiefung: t.vertiefung || [],
             uebungen: [],
+            // gesperrt: sichtbar, aber nicht aufrufbar (themenfeld.json oder Thema mit "gesperrt": true)
+            gesperrt: themenfeld.gesperrt || t.gesperrt === true,
           };
           const goalIds = new Set(topic.lernziele.map(l => l.id));
           topic.lernziele.forEach((l, i) => { if (!l.id || !l.text) err(file, `Lernziel ${i + 1} braucht "id" und "text"`); });

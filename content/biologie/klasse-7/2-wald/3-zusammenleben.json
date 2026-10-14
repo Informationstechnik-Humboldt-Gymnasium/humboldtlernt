@@ -1,0 +1,119 @@
+{
+  "id": "bio-k7-zusammenleben",
+  "titel": "Zusammenleben, wirbellose Tiere und Nachhaltigkeit",
+  "kurz": "Symbiose, Parasitismus und Konkurrenz, Experimente mit Asseln und warum der Wald nachhaltig genutzt werden muss.",
+  "reihenfolge": 3,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Die Fachbegriffe Symbiont, Parasit und Konkurrent an Beispielen erläutern" },
+    { "id": "lz2", "niveau": "G", "text": "Die Angepasstheit ausgewählter wirbelloser Tiere an ihren Lebensraum erklären" },
+    { "id": "lz3", "niveau": "H", "text": "Ein Experiment mit wirbellosen Tieren planen und auswerten" },
+    { "id": "lz4", "niveau": "G", "text": "Merkmale nachhaltiger Entwicklung nennen und Eingriffe in den Wald beurteilen" }
+  ],
+  "verstehen": {
+    "einstieg": "Hebst du einen morschen Ast im Wald an, flüchten sofort Asseln in alle Richtungen. Warum verstecken sie sich ausgerechnet unter Holz und Laub?",
+    "abschnitte": [
+      {
+        "titel": "Wie Lebewesen zusammenleben",
+        "text": "Zwischen Arten gibt es verschiedene Beziehungen:\n\n- **Symbiose:** Beide Partner haben einen Vorteil. Viele Waldbäume leben mit Pilzen zusammen (**Mykorrhiza**). Das Pilzgeflecht umspinnt die Wurzeln und liefert Wasser und Mineralstoffe. Der Baum gibt dem Pilz Zucker aus der Fotosynthese.\n- **Parasitismus:** Ein Partner (der **Parasit**) lebt auf Kosten des anderen (des **Wirts**). Die Zecke saugt Blut, die Mistel zapft die Wasserleitungen eines Baumes an.\n- **Konkurrenz:** Zwei Lebewesen brauchen dieselbe knappe Sache, zum Beispiel Licht, Wasser oder Nahrung. Junge Buchen und Eichen konkurrieren um Licht, Eichhörnchen und Eichelhäher um Eicheln."
+      },
+      {
+        "titel": "Wirbellose Tiere in der Laubstreu",
+        "text": "In der Laubstreu leben viele **wirbellose Tiere** ohne Wirbelsäule: Asseln, Tausendfüßer, Springschwänze, Regenwürmer und Schnecken. Viele sind an Feuchtigkeit angepasst:\n\n- **Landasseln** stammen von Wassertieren ab. Sie atmen über kiemenähnliche Organe an den Hinterbeinen und trocknen schnell aus. Deshalb meiden sie Licht und Trockenheit.\n- **Regenwürmer** atmen durch die feuchte Haut. Trocknet sie aus, ersticken sie.\n- **Schnecken** schützen sich mit Schleim vor Austrocknung und sind vor allem nachts und bei Regen unterwegs.\n\nZum **Bestimmen** nutzt du einen Bestimmungsschlüssel: Du zählst zum Beispiel die Beinpaare. Asseln haben 7, Insekten 3, Spinnen 4 Beinpaare."
+      },
+      {
+        "titel": "Ein Experiment planen: der Wahlversuch",
+        "text": "Bevorzugen Asseln es feucht oder trocken? So gehst du vor:\n\n- **Frage und Vermutung:** „Asseln halten sich lieber auf feuchtem Untergrund auf, weil sie sonst austrocknen.“\n- **Aufbau:** Eine Schale wird zur Hälfte mit feuchtem, zur Hälfte mit trockenem Filterpapier ausgelegt. Alles andere (Licht, Temperatur) ist auf beiden Seiten **gleich**. Nur ein Faktor wird verändert.\n- **Durchführung:** 10 Asseln in die Mitte setzen. Nach 10 Minuten zählen, wie viele auf jeder Seite sind. Mehrfach wiederholen.\n- **Auswertung:** Ergebnis mit der Vermutung vergleichen.\n\nNach dem Versuch bringst du die Tiere unversehrt an ihren Fundort zurück."
+      },
+      {
+        "titel": "Der Wald und der Mensch",
+        "text": "Der Wald ist für uns wichtig: Er liefert Holz und Sauerstoff, speichert Kohlenstoff und Wasser, filtert Staub, kühlt im Sommer und ist ein Ort zur Erholung.\n\nDer Begriff **Nachhaltigkeit** stammt aus der Forstwirtschaft (Hans Carl von Carlowitz, 1713): Man soll nicht mehr Holz schlagen, als nachwächst. Heute bedeutet nachhaltige Entwicklung: Wir nutzen die Natur so, dass auch spätere Generationen gut leben können. Dabei werden **ökologische, wirtschaftliche und soziale** Gesichtspunkte zusammen betrachtet.\n\nEingriffe wie Kahlschlag, Monokulturen aus Fichten oder Müll im Wald beurteilst du daher immer nach ihren Folgen für das ganze Ökosystem."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "Bei der **Symbiose** haben beide Partner Vorteile, beim **Parasitismus** nur der Parasit, bei der **Konkurrenz** streiten sich Lebewesen um dieselbe knappe Ressource.\n\nIn einem Experiment wird immer **nur ein Faktor** verändert. **Nachhaltig** ist eine Nutzung, die auch künftigen Generationen genug übrig lässt.",
+    "alltag": "Wenn du Pilze im Wald sammelst, siehst du nur die Fruchtkörper. Das eigentliche Pilzgeflecht steckt im Boden und versorgt oft die Bäume in der Nähe."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "bio-zus-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Ordne jedem Beispiel die passende Beziehung zu.",
+      "paare": [
+        { "links": "Pilz und Baum tauschen Mineralstoffe gegen Zucker", "rechts": "Symbiose" },
+        { "links": "Zecke saugt Blut beim Reh", "rechts": "Parasitismus" },
+        { "links": "Junge Buche und Eiche wachsen dicht nebeneinander ins Licht", "rechts": "Konkurrenz" }
+      ],
+      "erklaerung": "Bei der Symbiose profitieren beide, beim Parasitismus nur einer auf Kosten des anderen, bei der Konkurrenz brauchen beide dieselbe knappe Ressource."
+    },
+    {
+      "id": "bio-zus-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Warum leben Landasseln vor allem unter Laub, Steinen und Holz?",
+      "optionen": [
+        { "text": "Dort ist es feucht und dunkel. Asseln würden an trockener Luft schnell austrocknen.", "richtig": true },
+        { "text": "Dort ist es wärmer als im Sonnenschein.", "feedback": "Unter Laub ist es meist kühler. Entscheidend ist die Feuchtigkeit." },
+        { "text": "Asseln fressen Steine.", "feedback": "Asseln fressen vor allem abgestorbenes Laub und Holz." },
+        { "text": "Weil sie dort Fotosynthese betreiben.", "feedback": "Asseln sind Tiere und betreiben keine Fotosynthese." }
+      ],
+      "erklaerung": "Asseln atmen mit kiemenähnlichen Organen, die feucht bleiben müssen. Ihr Verhalten ist eine Angepasstheit an diesen Körperbau."
+    },
+    {
+      "id": "bio-zus-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Eine Gruppe untersucht, ob Asseln Feuchtigkeit bevorzugen. Auf der feuchten Seite steht eine Lampe, die trockene Seite ist abgedeckt. Was ist das Problem an diesem Aufbau?",
+      "optionen": [
+        { "text": "Es werden zwei Faktoren gleichzeitig verändert. Man weiß nicht, ob die Asseln auf Licht oder Feuchtigkeit reagieren.", "richtig": true },
+        { "text": "Asseln können Licht nicht wahrnehmen.", "feedback": "Asseln meiden Licht. Gerade deshalb stört die Lampe die Untersuchung." },
+        { "text": "Es gibt kein Problem, der Versuch ist richtig geplant.", "feedback": "Ein fairer Versuch verändert nur **einen** Faktor. Alle anderen Bedingungen müssen gleich sein." },
+        { "text": "Die Schale ist zu klein.", "feedback": "Die Größe ist nicht das Hauptproblem. Entscheidend ist, dass Licht und Feuchtigkeit gleichzeitig verändert werden." }
+      ],
+      "erklaerung": "Damit das Ergebnis eindeutig ist, darf sich nur der untersuchte Faktor unterscheiden. Licht muss auf beiden Seiten gleich sein."
+    },
+    {
+      "id": "bio-zus-04", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Im Wahlversuch werden 20 Asseln eingesetzt. Nach 10 Minuten sitzen 17 auf der feuchten Seite. Wie viel Prozent der Asseln haben die feuchte Seite gewählt?",
+      "gegeben": "20 Asseln, davon 17 auf der feuchten Seite",
+      "gesucht": "Anteil in Prozent",
+      "loesung": 85, "einheit": "%", "toleranz": 0,
+      "rechenweg": [
+        "`Anteil = \\frac{17}{20}`",
+        "`\\frac{17}{20} = 0,85 = 85 %`"
+      ],
+      "erklaerung": "85 % der Tiere wählten die feuchte Seite. Das stützt die Vermutung. Sicherer wird das Ergebnis, wenn man den Versuch mehrmals wiederholt."
+    },
+    {
+      "id": "bio-zus-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Du findest in der Laubstreu ein Tier mit 7 Beinpaaren und einem flachen, gegliederten Körper. Was ist es wahrscheinlich?",
+      "optionen": [
+        { "text": "eine Assel", "richtig": true },
+        { "text": "ein Käfer", "feedback": "Käfer sind Insekten und haben 3 Beinpaare." },
+        { "text": "eine Spinne", "feedback": "Spinnen haben 4 Beinpaare." },
+        { "text": "ein Regenwurm", "feedback": "Regenwürmer haben gar keine Beine." }
+      ],
+      "erklaerung": "Asseln sind Krebstiere mit 7 Beinpaaren. Die Zahl der Beinpaare ist ein wichtiges Merkmal im Bestimmungsschlüssel."
+    },
+    {
+      "id": "bio-zus-06", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Welche Maßnahmen entsprechen einer nachhaltigen Waldnutzung?",
+      "optionen": [
+        { "text": "Nur so viel Holz ernten, wie nachwächst", "richtig": true },
+        { "text": "Mischwälder aus verschiedenen Baumarten pflanzen", "richtig": true },
+        { "text": "Totholz teilweise im Wald liegen lassen", "richtig": true },
+        { "text": "Große Flächen auf einmal kahl schlagen", "feedback": "Kahlschlag zerstört Lebensräume und führt zu Bodenabtrag. Das widerspricht der Nachhaltigkeit." },
+        { "text": "Nur schnell wachsende Fichten in Reihen pflanzen", "feedback": "Fichten-Monokulturen sind anfällig für Sturm, Trockenheit und Borkenkäfer und bieten wenigen Arten Lebensraum." }
+      ],
+      "erklaerung": "Nachhaltige Forstwirtschaft erhält den Wald als Ökosystem. Mischwälder sind stabiler, Totholz ist Lebensraum für Pilze, Käfer und Spechte."
+    },
+    {
+      "id": "bio-zus-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Ein Unternehmen möchte einen alten Mischwald fällen und dort eine schnell wachsende Fichten-Monokultur anpflanzen. Beurteile diesen Eingriff. Gehe auf ökologische und wirtschaftliche Gesichtspunkte ein.",
+      "stichworte": [
+        { "aspekt": "Ökologisch: Viele Arten verlieren ihren Lebensraum, die Artenvielfalt sinkt.", "woerter": ["artenvielfalt", "lebensraum", "arten"] },
+        { "aspekt": "Monokulturen sind anfällig für Schädlinge, Sturm oder Trockenheit.", "woerter": ["anfaellig", "borkenkaefer", "schaedling", "sturm", "trocken"] },
+        { "aspekt": "Wirtschaftlich: schnelle Holzernte bringt kurzfristig Gewinn.", "woerter": ["gewinn", "holz", "geld", "wirtschaft"] },
+        { "aspekt": "Begründetes Urteil", "woerter": ["nicht nachhaltig", "lehne", "dagegen", "nachhaltig", "urteil"] }
+      ],
+      "musterloesung": "Wirtschaftlich bringt die Fichten-Monokultur schnell Holz und damit kurzfristig Gewinn. Ökologisch ist der Eingriff aber schädlich: Im alten Mischwald leben viele Arten, die ihren Lebensraum verlieren, die Artenvielfalt sinkt. Eine Monokultur ist außerdem anfällig für Borkenkäfer, Sturm und Trockenheit, sodass der Gewinn langfristig unsicher ist. Ich lehne den Eingriff ab, weil er nicht nachhaltig ist.",
+      "erklaerung": "Eine gute Beurteilung nennt Argumente aus mehreren Blickwinkeln und endet mit einem begründeten eigenen Urteil."
+    }
+  ]
+}

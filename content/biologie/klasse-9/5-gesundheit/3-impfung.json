@@ -1,0 +1,117 @@
+{
+  "id": "bio-k9-impfung",
+  "titel": "Impfungen und Antibiotika",
+  "kurz": "Aktive und passive Immunisierung, wie Antibiotika wirken und warum Resistenzen ein Problem sind.",
+  "reihenfolge": 3,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Aktive und passive Immunisierung darstellen und auf Beispiele anwenden" },
+    { "id": "lz2", "niveau": "G", "text": "Die Wirkung von Antibiotika beschreiben und die Fachbegriffe Antibiotikum und Resistenz erklären" },
+    { "id": "lz3", "niveau": "H", "text": "Den Einsatz von Antibiotika und Impfungen im medizinischen und landwirtschaftlichen Kontext bewerten" },
+    { "id": "lz4", "niveau": "H", "text": "Diagramme zur Antikörperkonzentration nach einer Impfung auswerten" }
+  ],
+  "verstehen": {
+    "einstieg": "Tritt jemand ohne Tetanusschutz in einen rostigen Nagel, bekommt er oft gleich zwei Spritzen. Warum zwei?",
+    "abschnitte": [
+      {
+        "titel": "Aktive Immunisierung",
+        "text": "Bei der **aktiven Immunisierung** (Schutzimpfung) bekommt man **abgeschwächte oder abgetötete Erreger**, **Teile davon** oder den **Bauplan** für ein Erreger-Antigen (mRNA-Impfstoff). Sie machen nicht krank, enthalten aber die Antigene.\n\nDas Immunsystem reagiert wie bei einer echten Infektion: Es bildet selbst **Antikörper** und **Gedächtniszellen**. Der Schutz baut sich in ein bis mehreren Wochen auf, hält dafür aber Jahre oder lebenslang. Oft sind **Auffrischungsimpfungen** nötig.\n\nBeispiele: Masern, Tetanus, Polio, HPV, Grippe."
+      },
+      {
+        "titel": "Passive Immunisierung",
+        "text": "Bei der **passiven Immunisierung** (Heilimpfung) bekommt man **fertige Antikörper**, die zum Beispiel aus dem Blut von immunen Menschen gewonnen werden.\n\nDer Schutz wirkt **sofort**, weil die Antikörper gleich da sind. Sie werden aber nach einigen Wochen bis Monaten abgebaut. Es entstehen **keine Gedächtniszellen**.\n\nEinsatz: wenn schon eine Infektion droht und keine Zeit für eine aktive Immunisierung bleibt, z. B. bei einer Verletzung ohne Tetanusschutz oder nach einem Schlangenbiss (Gegengift). Deshalb gibt es beim rostigen Nagel oft beides: fertige Antikörper für den sofortigen Schutz und eine aktive Impfung für später."
+      },
+      {
+        "titel": "Herdenschutz",
+        "text": "Sind genug Menschen geimpft, kann sich ein Erreger kaum noch ausbreiten. Davon profitieren auch Menschen, die nicht geimpft werden können, zum Beispiel Säuglinge oder Menschen mit geschwächtem Immunsystem. Man nennt das **Gemeinschafts-** oder **Herdenschutz**. Welche Impfungen empfohlen sind, legt in Deutschland die **Ständige Impfkommission (STIKO)** fest."
+      },
+      {
+        "titel": "Antibiotika und Resistenzen",
+        "text": "**Antibiotika** sind Stoffe, die **Bakterien** abtöten oder ihr Wachstum hemmen. Sie greifen zum Beispiel die Zellwand an, die menschliche Zellen nicht haben. Das erste Antibiotikum, **Penicillin**, entdeckte Alexander Fleming 1928 in einem Schimmelpilz.\n\nGegen **Viren wirken Antibiotika nicht**, weil Viren keine Zellwand und keinen eigenen Stoffwechsel haben.\n\nWerden Antibiotika zu oft, falsch oder zu kurz eingesetzt, überleben einzelne Bakterien, die zufällig unempfindlich sind. Sie vermehren sich, und es entstehen **resistente** Bakterienstämme. Auch der massenhafte Einsatz in der **Tierhaltung** fördert Resistenzen. Gegen manche Bakterien wirkt heute kaum noch ein Antibiotikum."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "**Aktive Immunisierung:** Man bekommt Antigene, der Körper bildet selbst Antikörper und Gedächtniszellen. Langer Schutz, aber erst nach Tagen bis Wochen.\n\n**Passive Immunisierung:** Man bekommt fertige Antikörper. Sofortiger, aber kurzer Schutz.\n\n**Antibiotika** wirken nur gegen Bakterien, nicht gegen Viren. Falscher Einsatz fördert **Resistenzen**.",
+    "alltag": "Wenn dir ein Antibiotikum verschrieben wird, nimm es so lange, wie die Ärztin oder der Arzt sagt, auch wenn es dir schon besser geht. Reste gehören nicht in den Abfluss, sondern in den Restmüll oder zur Apotheke."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "bio-ipf-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Aktive oder passive Immunisierung? Ordne zu.",
+      "paare": [
+        { "links": "Man bekommt abgeschwächte Erreger.", "rechts": "aktive Immunisierung" },
+        { "links": "Man bekommt fertige Antikörper.", "rechts": "passive Immunisierung" }
+      ],
+      "erklaerung": "Bei der aktiven Immunisierung ist das eigene Immunsystem aktiv. Bei der passiven bekommt man das Ergebnis, die Antikörper, schon geliefert."
+    },
+    {
+      "id": "bio-ipf-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Lena hat eine Erkältung durch Viren und möchte ein Antibiotikum. Was stimmt?",
+      "optionen": [
+        { "text": "Antibiotika helfen nicht gegen Viren.", "richtig": true },
+        { "text": "Antibiotika helfen gegen alle Krankheitserreger.", "feedback": "Antibiotika wirken nur gegen Bakterien." },
+        { "text": "Ein Antibiotikum verkürzt jede Erkältung um die Hälfte.", "feedback": "Gegen Viren haben Antibiotika keine Wirkung. Sie können aber Nebenwirkungen haben und Resistenzen fördern." },
+        { "text": "Antibiotika stärken das Immunsystem gegen Viren.", "feedback": "Antibiotika greifen Bakterien an, sie stärken nicht das Immunsystem." }
+      ],
+      "erklaerung": "Antibiotika greifen Strukturen an, die nur Bakterien haben, z. B. die Zellwand. Viren haben solche Strukturen nicht."
+    },
+    {
+      "id": "bio-ipf-03", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Welche Aussagen über die passive Immunisierung sind richtig?",
+      "optionen": [
+        { "text": "Der Schutz wirkt sofort.", "richtig": true },
+        { "text": "Der Schutz hält nur einige Wochen bis Monate.", "richtig": true },
+        { "text": "Es entstehen keine Gedächtniszellen.", "richtig": true },
+        { "text": "Der Körper bildet selbst Antikörper.", "feedback": "Das ist bei der aktiven Immunisierung der Fall. Bei der passiven werden fertige Antikörper gegeben." },
+        { "text": "Sie schützt lebenslang.", "feedback": "Die gegebenen Antikörper werden abgebaut. Ein dauerhafter Schutz entsteht nicht." }
+      ],
+      "erklaerung": "Passive Immunisierung ist eine schnelle Hilfe in akuter Gefahr, aber kein dauerhafter Schutz."
+    },
+    {
+      "id": "bio-ipf-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Ein Mann ohne Tetanusschutz verletzt sich an einem rostigen Nagel. Warum bekommt er gleichzeitig fertige Antikörper und eine Schutzimpfung?",
+      "optionen": [
+        { "text": "Die Antikörper schützen sofort, die Schutzimpfung baut einen langfristigen Schutz mit Gedächtniszellen auf.", "richtig": true },
+        { "text": "Eine Spritze allein ist zu schwach, deshalb verdoppelt man die Dosis.", "feedback": "Es sind zwei verschiedene Verfahren mit unterschiedlicher Wirkung, nicht dieselbe Dosis zweimal." },
+        { "text": "Die Schutzimpfung tötet die Bakterien in der Wunde ab.", "feedback": "Die Schutzimpfung regt nur das eigene Immunsystem an. Das dauert zu lange für die akute Gefahr." },
+        { "text": "Die Antikörper sind gegen Rost.", "feedback": "Die Gefahr geht von Tetanus-Bakterien aus, die über Schmutz in die Wunde gelangen, nicht vom Rost." }
+      ],
+      "erklaerung": "Man kombiniert die Vorteile beider Verfahren: sofortiger Schutz (passiv) und dauerhafter Schutz (aktiv)."
+    },
+    {
+      "id": "bio-ipf-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Wie entstehen antibiotikaresistente Bakterien?",
+      "optionen": [
+        { "text": "Einzelne Bakterien sind zufällig unempfindlich, überleben die Behandlung und vermehren sich.", "richtig": true },
+        { "text": "Der Mensch wird gegen das Antibiotikum resistent.", "feedback": "Resistent werden die Bakterien, nicht der Mensch." },
+        { "text": "Bakterien lernen, das Antibiotikum zu vermeiden.", "feedback": "Bakterien lernen nicht. Es überleben zufällig die widerstandsfähigen und geben ihre Eigenschaft weiter." },
+        { "text": "Antibiotika verwandeln Viren in Bakterien.", "feedback": "Das ist nicht möglich. Viren und Bakterien sind grundverschieden." }
+      ],
+      "erklaerung": "Das Antibiotikum wirkt wie ein Sieb: Es bleiben nur die widerstandsfähigen Bakterien übrig. Das ist ein Beispiel für Selektion."
+    },
+    {
+      "id": "bio-ipf-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Ein Diagramm zeigt die Antikörperkonzentration nach einer Impfung: Nach der ersten Impfung steigt sie langsam und nur wenig an. Nach der Auffrischung Monate später steigt sie schnell und viel höher. Wie erklärst du das?",
+      "optionen": [
+        { "text": "Bei der Auffrischung reagieren die Gedächtniszellen aus der ersten Impfung schnell und stark.", "richtig": true },
+        { "text": "Der zweite Impfstoff war stärker dosiert.", "feedback": "Meist ist es derselbe Impfstoff. Der Unterschied liegt im Immungedächtnis." },
+        { "text": "Die Antikörper aus der ersten Impfung haben sich vermehrt.", "feedback": "Antikörper vermehren sich nicht. Sie werden von Plasmazellen gebildet." },
+        { "text": "Das Diagramm zeigt eine passive Immunisierung.", "feedback": "Bei passiver Immunisierung wäre die Konzentration sofort hoch und würde dann nur fallen." }
+      ],
+      "erklaerung": "Die Erstreaktion ist langsam. Die Zweitreaktion über Gedächtniszellen ist schneller und stärker. Deshalb sind Auffrischungsimpfungen so wirksam."
+    },
+    {
+      "id": "bio-ipf-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "In manchen Ländern werden Antibiotika in großen Mengen in der Tiermast eingesetzt, auch an gesunde Tiere. Bewerte diesen Einsatz.",
+      "stichworte": [
+        { "aspekt": "Argument dafür: Krankheiten in großen Ställen vorbeugen, wirtschaftlicher Vorteil", "woerter": ["vorbeug", "wirtschaft", "gewinn", "kosten", "stall"] },
+        { "aspekt": "Häufiger Einsatz fördert resistente Bakterien.", "woerter": ["resisten"] },
+        { "aspekt": "Resistente Bakterien können auf Menschen übergehen, Antibiotika wirken dann nicht mehr bei Menschen.", "woerter": ["mensch"] },
+        { "aspekt": "Begründetes Urteil", "woerter": ["lehne", "dagegen", "nicht vertretbar", "sollte", "urteil", "nur bei"] }
+      ],
+      "musterloesung": "Für den Einsatz spricht, dass Krankheiten in großen Ställen vorgebeugt werden und der Betrieb Kosten spart. Dagegen spricht, dass der häufige Einsatz die Entstehung resistenter Bakterien fördert. Diese Bakterien können über Lebensmittel, Abwasser oder Kontakt auf den Menschen übergehen. Dann wirken wichtige Antibiotika auch bei kranken Menschen nicht mehr. Ich lehne den Einsatz an gesunden Tieren ab. Antibiotika sollte man nur bei kranken Tieren und nach tierärztlicher Untersuchung geben.",
+      "erklaerung": "Eine Bewertung wägt Argumente ab und endet mit einem begründeten Urteil. In der EU ist der vorbeugende Einsatz von Antibiotika in der Tierhaltung inzwischen stark eingeschränkt."
+    }
+  ]
+}

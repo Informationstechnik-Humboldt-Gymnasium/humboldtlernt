@@ -1,0 +1,115 @@
+{
+  "id": "bio-k7-geschlechtsorgane",
+  "titel": "Geschlechtsorgane und weiblicher Zyklus",
+  "kurz": "Bau und Funktion der weiblichen und männlichen Geschlechtsorgane und wie Hormone den Zyklus regeln.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Bau und Funktion der weiblichen Geschlechtsorgane erläutern" },
+    { "id": "lz2", "niveau": "G", "text": "Bau und Funktion der männlichen Geschlechtsorgane erläutern" },
+    { "id": "lz3", "niveau": "H", "text": "Die Wirkung der Geschlechtshormone bei der Regulation des weiblichen Zyklus beschreiben" }
+  ],
+  "verstehen": {
+    "einstieg": "Etwa einmal im Monat haben Frauen und Mädchen ab der Pubertät ihre Regelblutung. Warum blutet es, obwohl niemand verletzt ist?",
+    "abschnitte": [
+      {
+        "titel": "Weibliche Geschlechtsorgane",
+        "text": "Die inneren weiblichen Geschlechtsorgane liegen geschützt im Becken:\n\n- **Eierstöcke** (2): Hier reifen die **Eizellen** heran. Sie bilden außerdem die Hormone Östrogen und Progesteron.\n- **Eileiter** (2): Sie fangen die Eizelle beim **Eisprung** auf und leiten sie zur Gebärmutter. Im Eileiter findet die Befruchtung statt.\n- **Gebärmutter:** muskulöses Hohlorgan. Hier kann sich ein Embryo einnisten und entwickeln. Innen ist sie mit der **Gebärmutterschleimhaut** ausgekleidet.\n- **Scheide** (Vagina): Verbindung von der Gebärmutter nach außen.\n\nÄußerlich sichtbar ist die **Vulva** mit den Schamlippen und dem Kitzler."
+      },
+      {
+        "titel": "Männliche Geschlechtsorgane",
+        "text": "- **Hoden** (2): Sie liegen im Hodensack außerhalb des Bauchraums, weil Spermien bei etwas niedrigerer Temperatur am besten reifen. Hier entstehen ständig neue **Spermien** (Samenzellen). Die Hoden bilden außerdem Testosteron.\n- **Nebenhoden:** Hier werden die Spermien gespeichert und reifen aus.\n- **Spermienleiter:** Sie transportieren die Spermien beim Samenerguss.\n- **Bläschendrüse** und **Prostata:** Sie geben Flüssigkeit dazu. Zusammen mit den Spermien entsteht das **Sperma**.\n- **Penis** mit **Harn-Spermien-Röhre:** Durch sie gelangen Urin und, getrennt davon, Sperma nach außen."
+      },
+      {
+        "titel": "Der weibliche Zyklus",
+        "text": "Ab der Pubertät wiederholt sich im weiblichen Körper ein **Zyklus**. Er dauert meist 25 bis 35 Tage, oft etwa 28 Tage. Gerade in den ersten Jahren ist er häufig unregelmäßig.\n\n- **Menstruation** (Tag 1 bis etwa 5): Die Gebärmutterschleimhaut löst sich und wird mit etwas Blut ausgeschieden.\n- **Aufbauphase:** Im Eierstock reift ein Eibläschen mit einer Eizelle. Es bildet **Östrogen**. Östrogen lässt die Gebärmutterschleimhaut wieder dicker werden.\n- **Eisprung** (bei 28 Tagen etwa um Tag 14): Die reife Eizelle wird in den Eileiter abgegeben. Sie ist danach etwa einen Tag befruchtungsfähig.\n- **Gelbkörperphase:** Aus dem leeren Eibläschen wird der **Gelbkörper**. Er bildet **Progesteron**. Progesteron hält die Schleimhaut bereit für eine Einnistung.\n\nWird die Eizelle nicht befruchtet, bildet sich der Gelbkörper zurück. Der Progesteronspiegel sinkt, die Schleimhaut löst sich, und eine neue Menstruation beginnt."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "In den **Eierstöcken** reifen Eizellen, in den **Hoden** entstehen Spermien. Die Befruchtung findet im **Eileiter** statt, der Embryo wächst in der **Gebärmutter**.\n\nIm **Zyklus** baut **Östrogen** die Gebärmutterschleimhaut auf, **Progesteron** erhält sie. Sinkt der Progesteronspiegel, beginnt die **Menstruation**.",
+    "alltag": "Viele nutzen eine Zyklus-App oder einen Kalender, um den Beginn der nächsten Regelblutung abzuschätzen. Weil Zyklen schwanken, ist das immer nur eine ungefähre Vorhersage."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "bio-gsc-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Ordne jedem weiblichen Geschlechtsorgan seine Aufgabe zu.",
+      "paare": [
+        { "links": "Eierstock", "rechts": "Reifung der Eizellen, Bildung von Hormonen" },
+        { "links": "Eileiter", "rechts": "Transport der Eizelle, Ort der Befruchtung" },
+        { "links": "Gebärmutter", "rechts": "Einnistung und Entwicklung des Embryos" },
+        { "links": "Scheide", "rechts": "Verbindung von der Gebärmutter nach außen" }
+      ],
+      "erklaerung": "Die Eizelle reift im Eierstock, wandert durch den Eileiter und würde sich nach einer Befruchtung in der Gebärmutter einnisten."
+    },
+    {
+      "id": "bio-gsc-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Ordne jedem männlichen Geschlechtsorgan seine Aufgabe zu.",
+      "paare": [
+        { "links": "Hoden", "rechts": "Bildung der Spermien und von Testosteron" },
+        { "links": "Nebenhoden", "rechts": "Speicherung und Reifung der Spermien" },
+        { "links": "Spermienleiter", "rechts": "Transport der Spermien beim Samenerguss" },
+        { "links": "Prostata", "rechts": "gibt Flüssigkeit zum Sperma" }
+      ],
+      "erklaerung": "Spermien entstehen in den Hoden, reifen in den Nebenhoden und werden über die Spermienleiter transportiert. Drüsen wie die Prostata liefern die Flüssigkeit."
+    },
+    {
+      "id": "bio-gsc-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Warum liegen die Hoden außerhalb des Bauchraums im Hodensack?",
+      "optionen": [
+        { "text": "Spermien entwickeln sich bei etwas niedrigerer Temperatur als der Körperkerntemperatur am besten.", "richtig": true },
+        { "text": "Im Bauch ist kein Platz.", "feedback": "Der Grund ist die Temperatur. Im Bauchraum ist es für die Spermienbildung zu warm." },
+        { "text": "Damit sie Testosteron besser ins Blut abgeben.", "feedback": "Die Hormonabgabe würde auch im Bauch funktionieren. Entscheidend ist die Spermienbildung." },
+        { "text": "Damit sie vor Verletzungen geschützt sind.", "feedback": "Im Gegenteil: Außerhalb sind sie empfindlicher. Der Vorteil ist die niedrigere Temperatur." }
+      ],
+      "erklaerung": "Im Hodensack ist es einige Grad kühler als im Bauch. Das ist ein Beispiel für den Zusammenhang von Bau und Funktion."
+    },
+    {
+      "id": "bio-gsc-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Wo findet die Befruchtung der Eizelle normalerweise statt?",
+      "optionen": [
+        { "text": "im Eileiter", "richtig": true },
+        { "text": "im Eierstock", "feedback": "Im Eierstock reift die Eizelle. Nach dem Eisprung gelangt sie in den Eileiter." },
+        { "text": "in der Gebärmutter", "feedback": "In die Gebärmutter gelangt erst der junge Keim, der sich dort einnistet." },
+        { "text": "in der Scheide", "feedback": "Die Spermien müssen durch Gebärmutter bis in den Eileiter schwimmen." }
+      ],
+      "erklaerung": "Die Eizelle wird nach dem Eisprung vom Eileiter aufgefangen. Treffen dort Spermien auf sie, kann ein Spermium sie befruchten."
+    },
+    {
+      "id": "bio-gsc-05", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Ordne die Abschnitte eines Zyklus ohne Befruchtung, beginnend mit dem ersten Tag der Regelblutung.",
+      "elemente": [
+        "Menstruation: Die Gebärmutterschleimhaut wird abgestoßen.",
+        "Ein Eibläschen reift und bildet Östrogen; die Schleimhaut wird dicker.",
+        "Eisprung: Die Eizelle gelangt in den Eileiter.",
+        "Der Gelbkörper bildet Progesteron und erhält die Schleimhaut.",
+        "Der Progesteronspiegel sinkt, eine neue Menstruation beginnt."
+      ],
+      "erklaerung": "Der Zyklus wird mit dem ersten Tag der Regelblutung gezählt. Ohne Befruchtung endet er mit dem Abfall von Progesteron."
+    },
+    {
+      "id": "bio-gsc-06", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Ein Zyklus dauert 32 Tage. Der Eisprung liegt bei den meisten Frauen etwa 14 Tage **vor** Beginn der nächsten Regelblutung. Um welchen Zyklustag findet der Eisprung ungefähr statt?",
+      "gegeben": "Zykluslänge 32 Tage; Gelbkörperphase etwa 14 Tage",
+      "gesucht": "Zyklustag des Eisprungs",
+      "loesung": 18, "einheit": "", "toleranz": 0,
+      "rechenweg": [
+        "Die Zeit vom Eisprung bis zur nächsten Regelblutung ist recht konstant: etwa 14 Tage.",
+        "`32 − 14 = 18`",
+        "Der Eisprung liegt also etwa um Tag 18."
+      ],
+      "erklaerung": "Bei längeren Zyklen verlängert sich vor allem die Aufbauphase vor dem Eisprung. Weil Zyklen schwanken, ist das nur ein Richtwert."
+    },
+    {
+      "id": "bio-gsc-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Welches Hormon sorgt dafür, dass die Gebärmutterschleimhaut nach dem Eisprung für eine mögliche Einnistung erhalten bleibt?",
+      "optionen": [
+        { "text": "Progesteron aus dem Gelbkörper", "richtig": true },
+        { "text": "Testosteron aus den Hoden", "feedback": "Testosteron ist das wichtigste männliche Geschlechtshormon und regelt den weiblichen Zyklus nicht." },
+        { "text": "Östrogen aus dem reifenden Eibläschen", "feedback": "Östrogen baut die Schleimhaut vor dem Eisprung auf. Erhalten wird sie danach vor allem durch Progesteron." },
+        { "text": "Adrenalin aus der Nebenniere", "feedback": "Adrenalin ist ein Stresshormon und hat mit dem Zyklus nichts direkt zu tun." }
+      ],
+      "erklaerung": "Progesteron wird auch Gelbkörperhormon genannt. Sinkt es ab, löst sich die Schleimhaut und die Menstruation beginnt."
+    }
+  ]
+}

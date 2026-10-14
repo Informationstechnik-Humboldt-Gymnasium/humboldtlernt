@@ -1,0 +1,109 @@
+{
+  "id": "bio-k10-zellteilung",
+  "titel": "Mitose und Meiose",
+  "kurz": "Wie Körperzellen sich identisch teilen und wie Keimzellen mit halbem Chromosomensatz entstehen.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Den Vorgang der Mitose und ihre Bedeutung erklären" },
+    { "id": "lz2", "niveau": "G", "text": "Das Prinzip und die Bedeutung der Meiose erklären" },
+    { "id": "lz3", "niveau": "H", "text": "Mitose und Meiose vergleichen und mit Chromosomenmodellen arbeiten" }
+  ],
+  "verstehen": {
+    "einstieg": "Eine Schürfwunde heilt in ein paar Tagen, und die neue Haut hat genau die gleiche Erbinformation wie die alte. Aus Eizelle und Spermium entsteht dagegen ein Mensch, der sich von beiden Eltern unterscheidet. Wie passt das zusammen?",
+    "abschnitte": [
+      {
+        "titel": "Zellzyklus und Mitose",
+        "text": "Bevor sich eine Zelle teilt, **verdoppelt** sie in der **Interphase** ihre DNA. Jedes Chromosom besteht danach aus zwei identischen Chromatiden. Dann folgt die **Mitose**:\n\n- **Prophase:** Die Chromosomen verdichten sich und werden sichtbar. Die Kernhülle löst sich auf, ein Spindelapparat aus Fasern entsteht.\n- **Metaphase:** Die Chromosomen ordnen sich in der Mitte der Zelle in einer Ebene an.\n- **Anaphase:** Die Spindelfasern ziehen die Chromatiden jedes Chromosoms auseinander, zu den beiden Zellpolen.\n- **Telophase:** Um jede Hälfte bildet sich eine neue Kernhülle, die Chromosomen entspiralisieren sich. Die Zelle schnürt sich durch.\n\nErgebnis: **zwei genetisch identische Tochterzellen** mit je 46 Chromosomen.\n\n**Bedeutung:** Wachstum, Ersatz alter Zellen, Wundheilung."
+      },
+      {
+        "titel": "Meiose",
+        "text": "Keimzellen (Eizellen und Spermien) dürfen nur **einen** Chromosomensatz haben (23 Chromosomen, **haploid**). Sonst hätte das Kind nach der Befruchtung doppelt so viele Chromosomen wie die Eltern. Körperzellen haben zwei Sätze (46, **diploid**).\n\nDie **Meiose** besteht aus zwei Teilungen nacheinander:\n\n- **1. Reifeteilung:** Die homologen Chromosomen legen sich paarweise zusammen und werden dann **getrennt**. Jede Tochterzelle bekommt von jedem Paar nur **ein** Chromosom (noch aus zwei Chromatiden). Dabei können homologe Chromosomen Stücke austauschen (**Crossing-over**).\n- **2. Reifeteilung:** Wie bei der Mitose werden die Chromatiden getrennt.\n\nErgebnis: **vier haploide Zellen** mit je 23 Chromosomen, die sich genetisch unterscheiden."
+      },
+      {
+        "titel": "Bedeutung der Meiose",
+        "text": "Die Meiose hat zwei Aufgaben:\n\n- **Halbierung** des Chromosomensatzes, damit die Chromosomenzahl über Generationen gleich bleibt: 23 + 23 = 46.\n- **Neukombination** (Rekombination) der Erbanlagen: Bei der 1. Reifeteilung wird zufällig verteilt, ob das mütterliche oder das väterliche Chromosom eines Paares in eine Keimzelle kommt. Bei 23 Paaren gibt es `2^{23}` ≈ 8,4 Millionen Möglichkeiten, ohne Crossing-over gerechnet.\n\nDeshalb sind Geschwister (außer eineiigen Zwillingen) genetisch verschieden."
+      }
+    ],
+    "formeln": [
+      { "formel": "2^{23} ≈ 8,4 Millionen", "bedeutung": "Mögliche Kombinationen mütterlicher und väterlicher Chromosomen in einer Keimzelle (ohne Crossing-over)" }
+    ],
+    "merksatz": "**Mitose:** eine Teilung, aus einer diploiden Zelle entstehen **zwei genetisch identische** diploide Zellen. Sie dient Wachstum und Erneuerung.\n\n**Meiose:** zwei Teilungen, es entstehen **vier haploide** Keimzellen mit **verschiedener** Erbinformation. Sie halbiert den Chromosomensatz und mischt die Erbanlagen neu.",
+    "alltag": "Krebs entsteht, wenn sich Zellen unkontrolliert durch Mitose teilen. Viele Krebsmedikamente greifen deshalb gezielt in die Zellteilung ein."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "bio-ztl-01", "typ": "reihenfolge", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Ordne die Phasen der Mitose.",
+      "elemente": ["Prophase", "Metaphase", "Anaphase", "Telophase"],
+      "erklaerung": "Merkhilfe: **P**rophase – **M**etaphase (Mitte) – **A**naphase (auseinander) – **T**elophase (Teilung)."
+    },
+    {
+      "id": "bio-ztl-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Ordne jeder Phase der Mitose das passende Geschehen zu.",
+      "paare": [
+        { "links": "Prophase", "rechts": "Chromosomen verdichten sich, Kernhülle löst sich auf" },
+        { "links": "Metaphase", "rechts": "Chromosomen ordnen sich in der Zellmitte an" },
+        { "links": "Anaphase", "rechts": "Chromatiden werden zu den Polen gezogen" },
+        { "links": "Telophase", "rechts": "neue Kernhüllen bilden sich, Zelle schnürt sich durch" }
+      ],
+      "erklaerung": "Vor der Mitose wird in der Interphase die DNA verdoppelt."
+    },
+    {
+      "id": "bio-ztl-03", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Wie viele Chromosomen hat eine menschliche Eizelle nach der Meiose?",
+      "gegeben": "Körperzelle: 46 Chromosomen (diploid)",
+      "gesucht": "Chromosomenzahl der Keimzelle",
+      "loesung": 23, "einheit": "", "toleranz": 0,
+      "rechenweg": ["Die Meiose halbiert den Chromosomensatz.", "`46 : 2 = 23`"],
+      "erklaerung": "Bei der Befruchtung kommen wieder 23 + 23 = 46 Chromosomen zusammen."
+    },
+    {
+      "id": "bio-ztl-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Wozu dient die Mitose?",
+      "optionen": [
+        { "text": "Wachstum, Erneuerung von Zellen und Wundheilung", "richtig": true },
+        { "text": "Bildung von Eizellen und Spermien", "feedback": "Keimzellen entstehen durch Meiose." },
+        { "text": "Vermischung der Erbanlagen von Mutter und Vater", "feedback": "Die Mitose erzeugt identische Zellen. Die Neukombination geschieht bei Meiose und Befruchtung." },
+        { "text": "Halbierung des Chromosomensatzes", "feedback": "Bei der Mitose bleibt die Chromosomenzahl gleich." }
+      ],
+      "erklaerung": "Die Mitose sorgt dafür, dass alle Körperzellen dieselbe Erbinformation haben."
+    },
+    {
+      "id": "bio-ztl-05", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Welche Aussagen treffen auf die Meiose, aber **nicht** auf die Mitose zu?",
+      "optionen": [
+        { "text": "Es entstehen vier Tochterzellen.", "richtig": true },
+        { "text": "Die Tochterzellen sind haploid.", "richtig": true },
+        { "text": "Homologe Chromosomen werden voneinander getrennt.", "richtig": true },
+        { "text": "Vorher wird die DNA verdoppelt.", "feedback": "Vor beiden Teilungsarten wird die DNA verdoppelt." },
+        { "text": "Chromatiden werden zu den Polen gezogen.", "feedback": "Das passiert bei der Mitose und in der 2. Reifeteilung der Meiose." }
+      ],
+      "erklaerung": "Das Besondere an der Meiose ist die 1. Reifeteilung, in der homologe Chromosomen getrennt werden."
+    },
+    {
+      "id": "bio-ztl-06", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Ein Lebewesen hat 3 Chromosomenpaare. Wie viele verschiedene Keimzellen können durch die zufällige Verteilung der homologen Chromosomen entstehen (ohne Crossing-over)?",
+      "gegeben": "n = 3 Chromosomenpaare",
+      "gesucht": "Anzahl möglicher Kombinationen",
+      "loesung": 8, "einheit": "", "toleranz": 0,
+      "rechenweg": [
+        "Für jedes Paar gibt es 2 Möglichkeiten: mütterliches oder väterliches Chromosom.",
+        "`2 · 2 · 2 = 2^{3} = 8`"
+      ],
+      "erklaerung": "Beim Menschen mit 23 Paaren sind es `2^{23}`, also über 8 Millionen Möglichkeiten. Mit Crossing-over noch viel mehr."
+    },
+    {
+      "id": "bio-ztl-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Erkläre, warum die Meiose für die sexuelle Fortpflanzung notwendig ist. Gehe auf beide Aufgaben der Meiose ein.",
+      "stichworte": [
+        { "aspekt": "Der Chromosomensatz wird halbiert (diploid → haploid, 46 → 23).", "woerter": ["halbier", "haploid", "23"] },
+        { "aspekt": "Nach der Befruchtung entsteht wieder die normale Chromosomenzahl.", "woerter": ["befruchtung", "46"] },
+        { "aspekt": "Die Erbanlagen werden neu kombiniert, Nachkommen sind verschieden.", "woerter": ["neukombination", "rekombination", "neu kombiniert", "zufaellig", "verschieden", "vielfalt"] }
+      ],
+      "musterloesung": "Die Meiose halbiert den Chromosomensatz: Aus diploiden Zellen mit 46 Chromosomen entstehen haploide Keimzellen mit 23 Chromosomen. Bei der Befruchtung verschmelzen Eizelle und Spermium, sodass die Zygote wieder 46 Chromosomen hat. Ohne Meiose würde sich die Chromosomenzahl in jeder Generation verdoppeln. Außerdem werden die mütterlichen und väterlichen Chromosomen zufällig verteilt und durch Crossing-over neu kombiniert. Deshalb sind Nachkommen genetisch verschieden, was die Vielfalt erhöht.",
+      "erklaerung": "Halbierung und Neukombination sind die beiden zentralen Aufgaben der Meiose."
+    }
+  ]
+}

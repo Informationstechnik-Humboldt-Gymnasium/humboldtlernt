@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zellen-Explorer: Pflanzen- und Tierzelle</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<style>
+  .org { cursor: pointer; }
+  .org:focus { outline: none; }
+  .org:focus-visible .hit, .org.sel .hit { stroke: var(--accent); stroke-width: 3; stroke-dasharray: 6 4; }
+  .hit { fill: transparent; stroke: none; }
+  .hit.nofill { fill: none; }
+  .band { fill: none; stroke: transparent; stroke-width: 16; }
+  .wall { fill: none; stroke: var(--muted); stroke-width: 9; }
+  .membran { fill: var(--bg); stroke: var(--line); stroke-width: 2; }
+  .vakuole { fill: var(--soft-accent); stroke: var(--accent); stroke-width: 1.5; }
+  .kern { fill: var(--c3); fill-opacity: .25; stroke: var(--c3); stroke-width: 2; }
+  .kernk { fill: var(--c3); fill-opacity: .7; }
+  .chloro { fill: var(--ok); fill-opacity: .55; stroke: var(--ok); stroke-width: 1.5; }
+  .thyl { stroke: var(--ok); stroke-width: 1.2; }
+  .mito { fill: var(--pos); fill-opacity: .35; stroke: var(--pos); stroke-width: 1.5; }
+  .crista { fill: none; stroke: var(--pos); stroke-width: 1.2; }
+  .plasma-dot { fill: var(--muted); opacity: .35; }
+  .found { animation: pop .5s ease; }
+  @keyframes pop { 50% { transform: scale(1.06); } }
+  .info { min-height: 92px; }
+  .info h3 { margin: 0 0 4px; font-size: 1.05rem; }
+  .info p { margin: 0; }
+  .orglist { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 12px; }
+  .orglist button { font-size: .85rem; padding: 5px 9px; }
+  .orglist button.seen { border-color: var(--ok); }
+  .orglist button.seen::after { content: " ✓"; color: var(--ok); }
+  .quizbox { background: var(--bg); border-radius: 10px; padding: 10px 12px; margin-top: 4px; }
+  .quizbox b { font-size: 1.1rem; }
+  .compare { width: 100%; border-collapse: collapse; font-size: .85rem; margin-top: 6px; }
+  .compare td, .compare th { padding: 3px 6px; border-bottom: 1px solid var(--border); text-align: center; }
+  .compare td:first-child, .compare th:first-child { text-align: left; }
+</style>
+</head>
+<body>
+<h1>Zellen-Explorer: Pflanzen- und Tierzelle</h1>
+<p class="muted small">Wähle eine Zelle und tippe auf ihre Bestandteile. Im Suchspiel findest du die genannten Organellen selbst.</p>
+
+<div class="lk-grid">
+  <div>
+    <div class="lk-card">
+      <svg id="cell" viewBox="0 0 520 340" role="img" aria-labelledby="cell-title">
+        <title id="cell-title">Schematische Zelle mit antippbaren Bestandteilen</title>
+        <g id="plant"></g>
+        <g id="animal" hidden></g>
+      </svg>
+      <p class="small muted" style="margin:6px 0 0">Schema einer Zelle, wie sie im Lichtmikroskop erscheint, stark vereinfacht. Echte Zellen sind räumlich, meist kleiner als 0,1 mm und enthalten viel mehr Mitochondrien und Chloroplasten.</p>
+    </div>
+
+    <div class="lk-card">
+      <h2>Vergleich</h2>
+      <table class="compare">
+        <thead><tr><th>Bestandteil</th><th>Pflanzenzelle</th><th>Tierzelle</th></tr></thead>
+        <tbody id="cmp"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div>
+    <div class="lk-card">
+      <h2>Einstellungen</h2>
+      <div class="row">
+        <div class="seg" role="group" aria-label="Zelltyp wählen">
+          <button type="button" data-cell="plant" aria-pressed="true">Pflanzenzelle</button>
+          <button type="button" data-cell="animal" aria-pressed="false">Tierzelle</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="seg" role="group" aria-label="Modus wählen">
+          <button type="button" data-mode="explore" aria-pressed="true">Erkunden</button>
+          <button type="button" data-mode="quiz" aria-pressed="false">Suchspiel</button>
+        </div>
+      </div>
+      <div id="exploreBox">
+        <p class="small muted" style="margin:0">Bestandteile dieser Zelle:</p>
+        <div class="orglist" id="orglist"></div>
+        <div class="info" id="info" aria-live="polite"><p class="muted small">Tippe auf einen Bestandteil der Zelle oder auf einen Namen.</p></div>
+      </div>
+      <div id="quizBox" hidden>
+        <div class="quizbox" aria-live="polite">
+          <span class="small muted">Tippe in der Zelle auf:</span><br>
+          <b id="qTarget">–</b>
+          <p class="small" id="qFb" style="margin:6px 0 0"></p>
+        </div>
+        <div class="readouts">
+          <div class="readout"><span>gefunden</span><b id="rRight">0</b></div>
+          <div class="readout"><span>daneben</span><b id="rWrong">0</b></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lk-card tasks">
+      <h2>Entdecke selbst <span class="small muted" data-task-count></span></h2>
+      <div class="task" data-goal="plant"><p class="task-q">Erkunde alle 7 Bestandteile der Pflanzenzelle.</p></div>
+      <div class="task" data-goal="animal"><p class="task-q">Erkunde alle Bestandteile der Tierzelle.</p></div>
+      <div class="task">
+        <p class="task-q">Welche Bestandteile fehlen der Tierzelle?</p>
+        <div class="choices">
+          <button type="button" data-ok data-fb="Genau: Zellwand, Chloroplasten und die große Vakuole sind typisch für Pflanzenzellen.">Zellwand, Chloroplasten, große Vakuole</button>
+          <button type="button" data-fb="Schau noch einmal: Mitochondrien gibt es in beiden Zellen.">Mitochondrien und Zellkern</button>
+          <button type="button" data-fb="Eine Zellmembran hat jede Zelle, auch die Pflanzenzelle unter ihrer Zellwand.">Zellmembran und Zellplasma</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="task" data-goal="quiz"><p class="task-q">Finde im Suchspiel 6 Bestandteile hintereinander richtig.</p></div>
+      <div class="task">
+        <p class="task-q">Warum sind Pflanzenzellen oft eckig, Tierzellen dagegen rundlich?</p>
+        <div class="choices">
+          <button type="button" data-fb="Die Vakuole hält die Zelle prall, die feste Form kommt aber von etwas anderem.">Wegen der Vakuole</button>
+          <button type="button" data-ok data-fb="Richtig: Die feste Zellwand aus Cellulose gibt die Form vor. Tierzellen haben nur die weiche Zellmembran.">Wegen der festen Zellwand</button>
+          <button type="button" data-fb="Chloroplasten sind für die Fotosynthese zuständig, nicht für die Form.">Wegen der Chloroplasten</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="all-done">Alles entdeckt! Weiter geht es mit den Übungen.</div>
+    </div>
+  </div>
+</div>
+
+<script src="../../static/lesson-kit.js"></script>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var NS = 'http://www.w3.org/2000/svg';
+
+  var INFO = {
+    wand: { name: 'Zellwand', text: 'Feste Hülle aus Cellulose außen um die Zellmembran. Sie gibt der Pflanzenzelle Form und Halt.' },
+    membran: { name: 'Zellmembran', text: 'Dünne Haut um das Zellplasma. Sie grenzt die Zelle ab und kontrolliert, welche Stoffe hinein- und hinausgelangen.' },
+    plasma: { name: 'Zellplasma', text: 'Zähflüssige Grundsubstanz der Zelle. Darin liegen die Organellen, und viele Stoffwechselvorgänge laufen hier ab.' },
+    kern: { name: 'Zellkern', text: 'Enthält die Erbinformation (DNA) und steuert alle Vorgänge in der Zelle. Zellen mit Kern heißen Eukaryoten.' },
+    mito: { name: 'Mitochondrium', text: 'Das „Kraftwerk“ der Zelle: Bei der Zellatmung wird hier Energie aus Traubenzucker und Sauerstoff freigesetzt.' },
+    chloro: { name: 'Chloroplast', text: 'Grünes Organell mit Chlorophyll. Hier findet die Fotosynthese statt: Aus Kohlenstoffdioxid und Wasser entsteht mit Lichtenergie Traubenzucker.' },
+    vakuole: { name: 'Vakuole', text: 'Großer, mit Zellsaft gefüllter Raum. Sie speichert Stoffe und hält die Zelle durch ihren Innendruck prall.' }
+  };
+  var PARTS = { plant: ['wand', 'membran', 'plasma', 'vakuole', 'kern', 'chloro', 'mito'], animal: ['membran', 'plasma', 'kern', 'mito'] };
+  var S = { cell: 'plant', mode: 'explore', sel: null, seen: { plant: {}, animal: {} }, target: null, streak: 0, right: 0, wrong: 0 };
+
+  function el(tag, attrs, parent) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  // Antippbare Gruppe; „hit“ ist die (unsichtbare) Trefferfläche mit Markierungsrahmen
+  function group(parent, id) {
+    var g = el('g', { class: 'org', 'data-org': id, tabindex: '0', role: 'button', 'aria-label': INFO[id].name }, parent);
+    return g;
+  }
+
+  // ---------------------------------------------- Pflanzenzelle
+  function drawPlant(root) {
+    var gWand = group(root, 'wand');
+    el('rect', { x: 34, y: 24, width: 452, height: 292, rx: 18, class: 'wall' }, gWand);
+    el('rect', { x: 26, y: 16, width: 468, height: 308, rx: 22, class: 'hit' }, gWand);
+
+    var gMem = group(root, 'membran');
+    el('rect', { x: 46, y: 36, width: 428, height: 268, rx: 12, class: 'membran' }, gMem);
+    el('rect', { x: 42, y: 32, width: 436, height: 276, rx: 14, class: 'hit nofill' }, gMem);
+    // Zellplasma: Fläche zwischen den Organellen (nur der schmale Rand und Punkte sind Treffer)
+    var gPl = group(root, 'plasma');
+    el('rect', { x: 56, y: 46, width: 408, height: 248, rx: 8, class: 'hit' }, gPl);
+    [[80, 70], [120, 270], [440, 80], [450, 270], [300, 285], [70, 180], [250, 60]].forEach(function (p) { el('circle', { cx: p[0], cy: p[1], r: 2, class: 'plasma-dot' }, gPl); });
+
+    var gVak = group(root, 'vakuole');
+    el('path', { d: 'M150 110 C 170 70, 330 70, 360 105 C 395 145, 385 225, 340 248 C 290 270, 190 268, 160 240 C 125 205, 128 140, 150 110 Z', class: 'vakuole' }, gVak);
+    el('path', { d: 'M150 110 C 170 70, 330 70, 360 105 C 395 145, 385 225, 340 248 C 290 270, 190 268, 160 240 C 125 205, 128 140, 150 110 Z', class: 'hit' }, gVak);
+
+    var gKern = group(root, 'kern');
+    el('ellipse', { cx: 420, cy: 120, rx: 36, ry: 30, class: 'kern' }, gKern);
+    el('circle', { cx: 428, cy: 114, r: 9, class: 'kernk' }, gKern);
+    el('ellipse', { cx: 420, cy: 120, rx: 40, ry: 34, class: 'hit' }, gKern);
+
+    var gChl = group(root, 'chloro');
+    [[95, 95, -20], [92, 160, 15], [100, 230, -10], [230, 285, 5], [410, 230, 25], [300, 58, -5], [440, 280, -15]].forEach(function (c) {
+      var g = el('g', { transform: 'translate(' + c[0] + ' ' + c[1] + ') rotate(' + c[2] + ')' }, gChl);
+      el('ellipse', { cx: 0, cy: 0, rx: 20, ry: 10, class: 'chloro' }, g);
+      for (var k = -10; k <= 10; k += 7) el('line', { x1: k, y1: -5, x2: k, y2: 5, class: 'thyl' }, g);
+      el('ellipse', { cx: 0, cy: 0, rx: 24, ry: 14, class: 'hit' }, g);
+    });
+
+    var gMito = group(root, 'mito');
+    [[140, 285, 10], [400, 175, -30], [205, 52, 0]].forEach(function (c) { mito(gMito, c[0], c[1], c[2], 16, 8); });
+  }
+
+  function mito(parent, x, y, rot, rx, ry) {
+    var g = el('g', { transform: 'translate(' + x + ' ' + y + ') rotate(' + rot + ')' }, parent);
+    el('ellipse', { cx: 0, cy: 0, rx: rx, ry: ry, class: 'mito' }, g);
+    el('path', { d: 'M' + (-rx + 5) + ' 0 q 3 -' + (ry - 2) + ' 6 0 t 6 0 t 6 0 t 6 0', class: 'crista' }, g);
+    el('ellipse', { cx: 0, cy: 0, rx: rx + 5, ry: ry + 6, class: 'hit' }, g);
+  }
+
+  // ---------------------------------------------- Tierzelle
+  function drawAnimal(root) {
+    var blob = 'M110 70 C 170 20, 330 30, 400 60 C 470 90, 490 190, 450 255 C 410 315, 260 320, 170 295 C 80 270, 40 200, 55 140 C 62 110, 80 90, 110 70 Z';
+    var gMem = group(root, 'membran');
+    el('path', { d: blob, class: 'membran' }, gMem);
+    el('path', { d: blob, class: 'band' }, gMem);
+    el('path', { d: blob, class: 'hit nofill' }, gMem);
+    var gPl = group(root, 'plasma');
+    el('path', { d: 'M120 85 C 175 42, 325 50, 390 78 C 455 105, 470 190, 435 245 C 400 298, 262 302, 178 280 C 98 258, 64 198, 76 146 C 82 118, 96 100, 120 85 Z', class: 'hit' }, gPl);
+    [[120, 120], [380, 100], [430, 210], [180, 270], [300, 285], [90, 190], [250, 70]].forEach(function (p) { el('circle', { cx: p[0], cy: p[1], r: 2, class: 'plasma-dot' }, gPl); });
+    var gKern = group(root, 'kern');
+    el('ellipse', { cx: 265, cy: 175, rx: 50, ry: 42, class: 'kern' }, gKern);
+    el('circle', { cx: 275, cy: 168, r: 12, class: 'kernk' }, gKern);
+    el('ellipse', { cx: 265, cy: 175, rx: 54, ry: 46, class: 'hit' }, gKern);
+    var gMito = group(root, 'mito');
+    [[140, 150, 30], [380, 150, -20], [190, 250, 10], [360, 245, 35], [250, 95, -5], [120, 220, -40]].forEach(function (c) { mito(gMito, c[0], c[1], c[2], 18, 9); });
+  }
+
+  drawPlant($('plant'));
+  drawAnimal($('animal'));
+
+  // ---------------------------------------------- Vergleichstabelle
+  (function () {
+    var rows = '';
+    PARTS.plant.forEach(function (id) {
+      rows += '<tr><td>' + INFO[id].name + '</td><td>✓</td><td>' + (PARTS.animal.indexOf(id) >= 0 ? '✓' : '–') + '</td></tr>';
+    });
+    $('cmp').innerHTML = rows;
+  })();
+
+  // ---------------------------------------------- Oberfläche
+  function root() { return $(S.cell); }
+  function renderList() {
+    var box = $('orglist'); box.innerHTML = '';
+    PARTS[S.cell].forEach(function (id) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.textContent = INFO[id].name;
+      b.setAttribute('aria-pressed', S.sel === id ? 'true' : 'false');
+      if (S.seen[S.cell][id]) b.className = 'seen';
+      b.onclick = function () { pick(id); };
+      box.appendChild(b);
+    });
+  }
+  function highlight(id) {
+    root().querySelectorAll('.org').forEach(function (g) { g.classList.toggle('sel', g.getAttribute('data-org') === id); });
+  }
+  function pick(id) {
+    if (S.mode === 'quiz') return answer(id);
+    S.sel = id;
+    S.seen[S.cell][id] = true;
+    highlight(id);
+    $('info').innerHTML = '<h3>' + INFO[id].name + '</h3><p>' + INFO[id].text + '</p>' +
+      (PARTS.animal.indexOf(id) < 0 ? '<p class="small muted" style="margin-top:6px">Nur in Pflanzenzellen.</p>' : '<p class="small muted" style="margin-top:6px">In Pflanzen- und Tierzellen.</p>');
+    renderList();
+    if (PARTS.plant.every(function (p) { return S.seen.plant[p]; })) LK.reach('plant');
+    if (PARTS.animal.every(function (p) { return S.seen.animal[p]; })) LK.reach('animal');
+  }
+
+  // Suchspiel
+  function newTarget() {
+    var list = PARTS[S.cell].filter(function (p) { return p !== S.target; });
+    S.target = list[Math.floor(Math.random() * list.length)];
+    $('qTarget').textContent = INFO[S.target].name;
+  }
+  function answer(id) {
+    var ok = id === S.target;
+    if (ok) {
+      S.right++; S.streak++;
+      $('qFb').textContent = '✓ Richtig! ' + (S.streak >= 6 ? 'Super, 6 in Folge!' : 'Weiter so (' + S.streak + ' in Folge).');
+      var g = root().querySelector('.org[data-org="' + id + '"]');
+      if (g) { g.classList.remove('found'); void g.getBBox(); g.classList.add('found'); }
+      if (S.streak >= 6) LK.reach('quiz');
+      newTarget();
+    } else {
+      S.wrong++; S.streak = 0;
+      $('qFb').textContent = 'Das war ' + INFO[id].name + '. Versuche es noch einmal.';
+    }
+    $('rRight').textContent = S.right; $('rWrong').textContent = S.wrong;
+  }
+
+  function setCell(c) {
+    S.cell = c; S.sel = null;
+    $('plant').toggleAttribute('hidden', c !== 'plant');
+    $('animal').toggleAttribute('hidden', c !== 'animal');
+    document.querySelectorAll('[data-cell]').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-cell') === c); });
+    $('info').innerHTML = '<p class="muted small">Tippe auf einen Bestandteil der Zelle oder auf einen Namen.</p>';
+    highlight(null); renderList();
+    if (S.mode === 'quiz') { S.target = null; newTarget(); }
+  }
+  function setMode(m) {
+    S.mode = m;
+    document.querySelectorAll('[data-mode]').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-mode') === m); });
+    $('exploreBox').hidden = m !== 'explore';
+    $('quizBox').hidden = m !== 'quiz';
+    highlight(null);
+    if (m === 'quiz') { S.streak = 0; $('qFb').textContent = ''; newTarget(); }
+  }
+
+  // Treffer: der innerste antippbare Bestandteil zählt
+  $('cell').addEventListener('click', function (e) {
+    var g = e.target.closest('.org');
+    if (g) pick(g.getAttribute('data-org'));
+  });
+  $('cell').addEventListener('keydown', function (e) {
+    if ((e.key === 'Enter' || e.key === ' ') && e.target.classList && e.target.classList.contains('org')) {
+      e.preventDefault(); pick(e.target.getAttribute('data-org'));
+    }
+  });
+  document.querySelectorAll('[data-cell]').forEach(function (b) { b.onclick = function () { setCell(b.getAttribute('data-cell')); }; });
+  document.querySelectorAll('[data-mode]').forEach(function (b) { b.onclick = function () { setMode(b.getAttribute('data-mode')); }; });
+
+  renderList();
+})();
+</script>
+</body>
+</html>

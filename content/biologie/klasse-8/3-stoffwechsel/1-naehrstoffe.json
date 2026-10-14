@@ -1,0 +1,124 @@
+{
+  "id": "bio-k8-naehrstoffe",
+  "titel": "Nährstoffe und ihre Nachweise",
+  "kurz": "Woraus unsere Nahrung besteht, wofür wir Nähr- und Ergänzungsstoffe brauchen und wie man Nährstoffe nachweist.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Die Zusammensetzung der Nahrung und die Bedeutung der Nähr-, Ergänzungs- und Zusatzstoffe beschreiben" },
+    { "id": "lz2", "niveau": "G", "text": "Nachweise von Stärke, Zucker, Eiweiß und Fett mit Kontrolle durchführen und auswerten" },
+    { "id": "lz3", "niveau": "H", "text": "Den Energiegehalt von Lebensmitteln berechnen und Essgewohnheiten beurteilen" },
+    { "id": "lz4", "niveau": "G", "text": "Sicherheitsaspekte bei Nachweisreaktionen begründet auswählen und beachten" }
+  ],
+  "verstehen": {
+    "einstieg": "Auf jeder Chipstüte steht eine Nährwerttabelle mit Kilojoule, Fett, Kohlenhydraten und Eiweiß. Was bedeuten diese Angaben für deinen Körper?",
+    "abschnitte": [
+      {
+        "titel": "Die drei Nährstoffe",
+        "text": "**Nährstoffe** liefern Energie und Baustoffe:\n\n- **Kohlenhydrate** (Zucker und Stärke) sind die wichtigsten Energielieferanten, z. B. in Brot, Nudeln, Kartoffeln, Obst. Ballaststoffe sind unverdauliche Kohlenhydrate, die die Verdauung fördern.\n- **Fette** liefern besonders viel Energie und dienen als Energiespeicher und Wärmeschutz, z. B. in Butter, Öl, Nüssen.\n- **Eiweiße** (Proteine) sind vor allem **Baustoffe** für Muskeln, Haut, Haare und Enzyme, z. B. in Fleisch, Fisch, Milch, Hülsenfrüchten.\n\nZusätzlich braucht der Körper **Ergänzungsstoffe**: **Vitamine**, **Mineralstoffe** (z. B. Calcium für Knochen, Eisen für das Blut), **Ballaststoffe** und **Wasser**. Sie liefern keine Energie, sind aber lebensnotwendig."
+      },
+      {
+        "titel": "Energiegehalt",
+        "text": "Die Energie in Lebensmitteln wird in **Kilojoule** (kJ) angegeben, oft zusätzlich in Kilokalorien (kcal). Für die Nährwertkennzeichnung in der EU gilt:\n\n- 1 g Kohlenhydrate ≈ 17 kJ\n- 1 g Eiweiß ≈ 17 kJ\n- 1 g Fett ≈ 37 kJ\n\nFett liefert also gut doppelt so viel Energie wie die gleiche Masse Kohlenhydrate. Wer mehr Energie aufnimmt, als er verbraucht, speichert den Rest als Körperfett.\n\n`E = m_{KH} · 17 \\frac{kJ}{g} + m_{Eiweiß} · 17 \\frac{kJ}{g} + m_{Fett} · 37 \\frac{kJ}{g}`"
+      },
+      {
+        "titel": "Zusatzstoffe",
+        "text": "**Zusatzstoffe** werden Lebensmitteln bei der Herstellung zugefügt, zum Beispiel **Konservierungsstoffe** (längere Haltbarkeit), **Farbstoffe**, **Süßstoffe** oder **Verdickungsmittel**. In der EU zugelassene Zusatzstoffe haben eine **E-Nummer** und müssen auf der Zutatenliste stehen. Sie gelten in den erlaubten Mengen als unbedenklich. Manche Menschen reagieren aber empfindlich darauf."
+      },
+      {
+        "titel": "Nachweisreaktionen",
+        "text": "Mit Nachweisreaktionen prüfst du, ob ein Nährstoff in einem Lebensmittel steckt:\n\n- **Stärke:** Iod-Kaliumiodid-Lösung färbt sich **blauschwarz**.\n- **Traubenzucker:** Ein **Glucose-Teststreifen** verfärbt sich. Alternativ die **Fehling-Probe**: Beim Erhitzen entsteht ein **ziegelroter** Niederschlag.\n- **Eiweiß:** Bei der **Biuret-Probe** färbt sich die Lösung **violett**. Es gibt auch Eiweiß-Teststreifen.\n- **Fett:** Die **Fettfleckprobe**: Reibt man das Lebensmittel auf Papier, bleibt ein **durchscheinender Fleck**, der auch nach dem Trocknen nicht verschwindet. Ein Wasserfleck verschwindet.\n\nZu jedem Nachweis gehört eine **Kontrolle** (Blindprobe), z. B. mit Wasser. Sie zeigt, wie das Ergebnis ohne den Nährstoff aussieht.\n\n**Sicherheit:** Schutzbrille tragen. Fehling-Lösungen und Biuret-Reagenz sind ätzend. Iodlösung färbt Haut und Kleidung. Reagenzglas beim Erhitzen nie auf Personen richten."
+      }
+    ],
+    "formeln": [
+      { "formel": "E = m_{KH} · 17 \\frac{kJ}{g} + m_{Eiweiß} · 17 \\frac{kJ}{g} + m_{Fett} · 37 \\frac{kJ}{g}", "bedeutung": "Energiegehalt eines Lebensmittels (Werte der EU-Nährwertkennzeichnung)" }
+    ],
+    "merksatz": "**Kohlenhydrate** und **Fette** liefern vor allem Energie, **Eiweiße** sind vor allem Baustoffe. Vitamine, Mineralstoffe, Ballaststoffe und Wasser sind lebensnotwendige **Ergänzungsstoffe**.\n\nNachweise: Stärke → Iod blauschwarz, Zucker → Teststreifen oder Fehling ziegelrot, Eiweiß → Biuret violett, Fett → Fettfleck. Immer mit **Kontrolle**.",
+    "alltag": "Die Nährwerttabelle gibt Werte pro 100 g an. Eine Tüte Chips hat oft 175 g. Rechne also für die ganze Tüte um, wenn du sie isst."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "bio-nst-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Ordne jedem Nährstoff seinen Nachweis zu.",
+      "paare": [
+        { "links": "Stärke", "rechts": "Iod-Kaliumiodid-Lösung färbt sich blauschwarz" },
+        { "links": "Traubenzucker", "rechts": "Fehling-Probe: ziegelroter Niederschlag" },
+        { "links": "Eiweiß", "rechts": "Biuret-Probe: violette Färbung" },
+        { "links": "Fett", "rechts": "durchscheinender Fleck auf Papier" }
+      ],
+      "erklaerung": "Jeder Nährstoff hat eine eigene, typische Nachweisreaktion."
+    },
+    {
+      "id": "bio-nst-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Welcher Nährstoff dient vor allem als Baustoff für Muskeln, Haut und Haare?",
+      "optionen": [
+        { "text": "Eiweiß", "richtig": true },
+        { "text": "Kohlenhydrate", "feedback": "Kohlenhydrate sind vor allem Energielieferanten." },
+        { "text": "Fett", "feedback": "Fett dient vor allem als Energiespeicher und Wärmeschutz." },
+        { "text": "Wasser", "feedback": "Wasser ist ein Ergänzungsstoff und Lösungsmittel, kein Baustoff für Muskeln." }
+      ],
+      "erklaerung": "Eiweiße (Proteine) bauen Muskeln, Haut, Haare und Enzyme auf. Deshalb brauchen Jugendliche im Wachstum genug Eiweiß."
+    },
+    {
+      "id": "bio-nst-03", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Ein Müsliriegel (50 g) enthält 30 g Kohlenhydrate, 4 g Eiweiß und 8 g Fett. Berechne seinen Energiegehalt.",
+      "gegeben": "m_{KH} = 30 g, m_{Eiweiß} = 4 g, m_{Fett} = 8 g",
+      "gesucht": "E in kJ",
+      "loesung": 874, "einheit": "kJ", "toleranz": 0.01,
+      "rechenweg": [
+        "Kohlenhydrate: `30 g · 17 \\frac{kJ}{g} = 510 kJ`",
+        "Eiweiß: `4 g · 17 \\frac{kJ}{g} = 68 kJ`",
+        "Fett: `8 g · 37 \\frac{kJ}{g} = 296 kJ`",
+        "`E = 510 kJ + 68 kJ + 296 kJ = 874 kJ`"
+      ],
+      "erklaerung": "Obwohl der Riegel nur 8 g Fett enthält, stammt rund ein Drittel der Energie aus dem Fett."
+    },
+    {
+      "id": "bio-nst-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Du tropfst Iod-Kaliumiodid-Lösung auf eine Kartoffelscheibe und auf ein Stück Gurke. Nur die Kartoffel färbt sich blauschwarz. Was folgt daraus?",
+      "optionen": [
+        { "text": "Die Kartoffel enthält Stärke, die Gurke kaum.", "richtig": true },
+        { "text": "Die Kartoffel enthält Eiweiß.", "feedback": "Iod-Kaliumiodid-Lösung weist Stärke nach, nicht Eiweiß." },
+        { "text": "Die Gurke enthält Fett.", "feedback": "Fett weist man mit der Fettfleckprobe nach." },
+        { "text": "Der Versuch ist misslungen, beide müssten sich färben.", "feedback": "Gurken enthalten fast keine Stärke. Die Gurke dient hier sogar als gute Vergleichsprobe." }
+      ],
+      "erklaerung": "Die blauschwarze Farbe zeigt Stärke an. Kartoffeln speichern viel Stärke, Gurken bestehen zum größten Teil aus Wasser."
+    },
+    {
+      "id": "bio-nst-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Warum führt man bei Nachweisreaktionen zusätzlich eine Kontrolle mit Wasser durch?",
+      "optionen": [
+        { "text": "Man sieht, wie das Ergebnis ohne den gesuchten Stoff aussieht, und kann Farbänderungen sicher deuten.", "richtig": true },
+        { "text": "Damit das Reagenz verdünnt wird.", "feedback": "Die Kontrolle läuft getrennt ab. Sie dient dem Vergleich." },
+        { "text": "Weil Wasser Stärke enthält.", "feedback": "Reines Wasser enthält keine Nährstoffe. Genau deshalb eignet es sich als Kontrolle." },
+        { "text": "Das ist nur für die Sauberkeit nötig.", "feedback": "Die Kontrolle ist ein wichtiger Teil der Auswertung, nicht nur Ordnung." }
+      ],
+      "erklaerung": "Die Kontrolle (Blindprobe) zeigt die Ausgangsfarbe. Erst im Vergleich weißt du sicher, ob eine Reaktion stattgefunden hat."
+    },
+    {
+      "id": "bio-nst-06", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Welche Sicherheitsregeln gelten bei der Fehling-Probe?",
+      "optionen": [
+        { "text": "Schutzbrille tragen, denn die Fehling-Lösungen sind ätzend.", "richtig": true },
+        { "text": "Die Öffnung des Reagenzglases beim Erhitzen nie auf Personen richten.", "richtig": true },
+        { "text": "Das Reagenzglas mit einer Klammer halten.", "richtig": true },
+        { "text": "Zum Prüfen am Reagenzglas riechen und probieren.", "feedback": "Im Labor wird nie probiert. Chemikalien können giftig oder ätzend sein." },
+        { "text": "Das Reagenzglas ganz voll füllen, damit es schneller geht.", "feedback": "Ein volles Reagenzglas kann beim Erhitzen herausspritzen. Höchstens etwa ein Drittel füllen." }
+      ],
+      "erklaerung": "Bei jedem Nachweis wählst du die Sicherheitsmaßnahmen passend zu den Stoffen und dem Erhitzen aus."
+    },
+    {
+      "id": "bio-nst-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Tim isst mittags meistens Pommes mit Mayonnaise und trinkt Limonade. Beurteile seine Essgewohnheit mit deinem Wissen über Nährstoffe und Ergänzungsstoffe.",
+      "stichworte": [
+        { "aspekt": "Die Mahlzeit enthält sehr viel Fett mit hohem Energiegehalt.", "woerter": ["fett"] },
+        { "aspekt": "Limonade liefert viel Zucker.", "woerter": ["zucker"] },
+        { "aspekt": "Es fehlen Vitamine, Mineralstoffe oder Ballaststoffe.", "woerter": ["vitamin", "mineral", "ballaststoff"] },
+        { "aspekt": "Zu viel Energie wird als Körperfett gespeichert bzw. Empfehlung", "woerter": ["koerperfett", "uebergewicht", "abwechslungsreich", "gemuese", "obst", "wasser"] }
+      ],
+      "musterloesung": "Pommes mit Mayonnaise enthalten viel Fett. Fett liefert pro Gramm mehr als doppelt so viel Energie wie Kohlenhydrate. Die Limonade enthält zusätzlich viel Zucker. Dagegen fehlen Vitamine, Mineralstoffe und Ballaststoffe, weil kein Obst und Gemüse dabei ist. Wenn Tim regelmäßig mehr Energie aufnimmt als er verbraucht, speichert sein Körper den Rest als Körperfett. Besser wäre eine abwechslungsreiche Mahlzeit mit Gemüse und Wasser als Getränk.",
+      "erklaerung": "Eine einzelne Mahlzeit ist kein Problem. Entscheidend ist, was man regelmäßig isst."
+    }
+  ]
+}

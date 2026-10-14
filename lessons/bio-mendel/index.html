@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kreuzungs-Labor: Mendels Regeln</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<style>
+  .box { fill: var(--card); stroke: var(--border); stroke-width: 1.5; }
+  .head { fill: var(--soft-accent); stroke: var(--border); stroke-width: 1.5; }
+  .gam { font-size: 24px; font-weight: 700; text-anchor: middle; dominant-baseline: central; }
+  .geno { font-size: 20px; font-weight: 700; text-anchor: middle; }
+  .pheno-lbl { font-size: 14px; text-anchor: middle; fill: var(--muted) !important; }
+  .p-yellow { fill: var(--lamp); stroke: var(--line); stroke-width: 1.2; }
+  .p-green { fill: var(--ok); stroke: var(--line); stroke-width: 1.2; }
+  .p-red { fill: var(--warn); stroke: var(--line); stroke-width: 1; }
+  .p-pink { fill: var(--warn); fill-opacity: .4; stroke: var(--line); stroke-width: 1; }
+  .p-white { fill: var(--card); stroke: var(--line); stroke-width: 1; }
+  .p-center { fill: var(--lamp); }
+  .bar-bg { fill: var(--grid); }
+  .exp { stroke: var(--line); stroke-width: 2; stroke-dasharray: 4 3; }
+  .ctrl-lbl { font-size: .9rem; font-weight: 600; margin: 0 0 4px; }
+  .sym { font-size: 15px; }
+  .par { font-size: 16px; font-weight: 650; }
+</style>
+</head>
+<body>
+<h1>Kreuzungs-Labor: Mendels Regeln</h1>
+<p class="muted small">Wähle Erbgang und Genotypen der Eltern. Das Kreuzungsschema zeigt alle möglichen Nachkommen. Mit „Nachkommen erzeugen“ entstehen zufällige Nachkommen wie bei echten Kreuzungen.</p>
+
+<div class="lk-grid">
+  <div>
+    <div class="lk-card">
+      <h2>Kreuzungsschema</h2>
+      <svg id="punnett" viewBox="0 0 520 300" role="img" aria-label="Kreuzungsschema mit den Keimzellen der Eltern und den vier möglichen Nachkommen"></svg>
+      <p class="small muted" style="margin:6px 0 0" id="legend"></p>
+    </div>
+    <div class="lk-card">
+      <h2>Gezählte Nachkommen</h2>
+      <svg id="bars" viewBox="0 0 520 200" role="img" aria-label="Balkendiagramm der gezählten Phänotypen mit den erwarteten Anteilen als gestrichelte Linien"></svg>
+      <p class="small muted" style="margin:6px 0 0">Gestrichelte Linie: erwarteter Anteil laut Kreuzungsschema.</p>
+    </div>
+  </div>
+
+  <div>
+    <div class="lk-card">
+      <h2>Einstellungen</h2>
+      <div class="row">
+        <div class="seg" role="group" aria-label="Erbgang wählen">
+          <button type="button" data-mode="dom" aria-pressed="true">dominant-rezessiv</button>
+          <button type="button" data-mode="int" aria-pressed="false">intermediär</button>
+        </div>
+      </div>
+      <p class="small muted" id="modeInfo" style="margin:0 0 10px"></p>
+      <p class="ctrl-lbl">Elternteil 1</p>
+      <div class="row"><div class="seg" role="group" aria-label="Genotyp Elternteil 1" id="segP1"></div></div>
+      <p class="ctrl-lbl">Elternteil 2</p>
+      <div class="row"><div class="seg" role="group" aria-label="Genotyp Elternteil 2" id="segP2"></div></div>
+      <div class="row">
+        <button type="button" id="b1">+1 Nachkomme</button>
+        <button type="button" id="b100" class="primary">+100 Nachkommen</button>
+        <button type="button" id="bReset">Zählung leeren</button>
+      </div>
+      <div class="readouts">
+        <div class="readout"><span>erwartet (Phänotypen)</span><b id="rExp">–</b></div>
+        <div class="readout"><span>Nachkommen gezählt</span><b id="rN">0</b></div>
+      </div>
+      <p class="small" id="rCounts" style="margin:8px 0 0" aria-live="polite"></p>
+    </div>
+
+    <div class="lk-card tasks">
+      <h2>Entdecke selbst <span class="small muted" data-task-count></span></h2>
+      <div class="task" data-goal="uniform"><p class="task-q">Kreuze reinerbig gelbe (GG) mit reinerbig grünen Erbsen (gg) und erzeuge Nachkommen. Wie sieht die F₁ aus?</p></div>
+      <div class="task" data-goal="spalt"><p class="task-q">Kreuze zwei mischerbige Erbsen (Gg × Gg) und zähle mindestens 400 Nachkommen.</p></div>
+      <div class="task">
+        <p class="task-q">Bei Gg × Gg erwartest du 3 : 1. Warum zählst du fast nie genau 75 % gelbe Erbsen?</p>
+        <div class="choices">
+          <button type="button" data-ok data-fb="Richtig: Welche Keimzellen zusammentreffen, ist Zufall. Je mehr Nachkommen, desto näher liegt das Ergebnis meist am erwarteten Verhältnis.">Weil die Kombination der Keimzellen zufällig ist.</button>
+          <button type="button" data-fb="Die Regel stimmt. Erzeuge nacheinander 100, 400 und 1000 Nachkommen und beobachte die Anteile.">Weil die Spaltungsregel nicht stimmt.</button>
+          <button type="button" data-fb="Das Programm rechnet richtig. Auch Mendel erhielt keine exakten Zahlen.">Weil das Programm falsch rechnet.</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="task" data-goal="test"><p class="task-q">Testkreuzung: Kreuze eine mischerbig gelbe Erbse mit einer grünen (Gg × gg) und zähle mindestens 100 Nachkommen.</p></div>
+      <div class="task" data-goal="inter"><p class="task-q">Kreuze zwei rosa Wunderblumen (RW × RW) und zähle mindestens 100 Nachkommen.</p></div>
+      <div class="task">
+        <p class="task-q">Wie unterscheidet sich das Ergebnis der F₂ beim intermediären Erbgang vom dominant-rezessiven?</p>
+        <div class="choices">
+          <button type="button" data-fb="Vergleiche die Balken: Beim intermediären Erbgang gibt es drei Phänotypen.">Es gibt keinen Unterschied, beide spalten 3 : 1.</button>
+          <button type="button" data-ok data-fb="Genau: Jeder Genotyp hat seinen eigenen Phänotyp, deshalb 1 rot : 2 rosa : 1 weiß.">Die Phänotypen spalten 1 : 2 : 1, wie die Genotypen.</button>
+          <button type="button" data-fb="Rosa ist sogar die häufigste Farbe. Schau auf die Zählung.">Es entstehen nur rote und weiße Blüten.</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="all-done">Alles entdeckt! Weiter geht es mit den Übungen.</div>
+    </div>
+  </div>
+</div>
+
+<script src="../../static/lesson-kit.js"></script>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var NS = 'http://www.w3.org/2000/svg';
+
+  var MODES = {
+    dom: {
+      info: 'Erbse, Samenfarbe: G (gelb) ist dominant über g (grün).',
+      genos: ['GG', 'Gg', 'gg'], order: 'Gg',
+      phenos: [{ key: 'gelb', cls: 'p-yellow' }, { key: 'grün', cls: 'p-green' }],
+      pheno: function (gt) { return gt.indexOf('G') >= 0 ? 'gelb' : 'grün'; },
+      legend: 'Großbuchstabe = dominantes Allel, Kleinbuchstabe = rezessives Allel.'
+    },
+    int: {
+      info: 'Wunderblume, Blütenfarbe: R (rot) und W (weiß) sind gleichwertig, RW ergibt rosa.',
+      genos: ['RR', 'RW', 'WW'], order: 'RW',
+      phenos: [{ key: 'rot', cls: 'p-red' }, { key: 'rosa', cls: 'p-pink' }, { key: 'weiß', cls: 'p-white' }],
+      pheno: function (gt) { return gt === 'RR' ? 'rot' : gt === 'WW' ? 'weiß' : 'rosa'; },
+      legend: 'Beim intermediären Erbgang setzt sich keines der beiden Allele durch.'
+    }
+  };
+  var S = { mode: 'dom', p1: 'GG', p2: 'gg', counts: {}, n: 0 };
+
+  function M() { return MODES[S.mode]; }
+  function canon(a, b) { var o = M().order; return o.indexOf(a) <= o.indexOf(b) ? a + b : b + a; }
+  function el(tag, attrs, parent) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  function phenoCls(p) { return M().phenos.filter(function (x) { return x.key === p; })[0].cls; }
+
+  // Symbol: Erbse (Kreis) oder Blüte (fünf Blütenblätter)
+  function icon(parent, x, y, p, size) {
+    if (S.mode === 'dom') { el('circle', { cx: x, cy: y, r: size, class: phenoCls(p) }, parent); return; }
+    for (var i = 0; i < 5; i++) {
+      var a = i / 5 * Math.PI * 2 - Math.PI / 2;
+      el('circle', { cx: x + Math.cos(a) * size * 0.6, cy: y + Math.sin(a) * size * 0.6, r: size * 0.55, class: phenoCls(p) }, parent);
+    }
+    el('circle', { cx: x, cy: y, r: size * 0.3, class: 'p-center' }, parent);
+  }
+
+  // Erwartete Anteile aus dem Kreuzungsschema
+  function expected() {
+    var e = {};
+    M().phenos.forEach(function (p) { e[p.key] = 0; });
+    for (var i = 0; i < 2; i++) for (var j = 0; j < 2; j++) e[M().pheno(canon(S.p1[i], S.p2[j]))] += 0.25;
+    return e;
+  }
+  function ratioText(e) {
+    var parts = M().phenos.filter(function (p) { return e[p.key] > 0; }).map(function (p) { return Math.round(e[p.key] * 4); });
+    var names = M().phenos.filter(function (p) { return e[p.key] > 0; }).map(function (p) { return p.key; });
+    if (parts.length === 1) return 'alle ' + names[0];
+    return parts.join(' : ') + ' (' + names.join(' : ') + ')';
+  }
+
+  // ---------------------------------------------- Kreuzungsschema zeichnen
+  function drawPunnett() {
+    var svg = $('punnett'); svg.innerHTML = '';
+    var X0 = 150, Y0 = 70, C = 110, H = 100;
+    // Eltern
+    el('text', { x: 10, y: 22, class: 'par' }, svg).textContent = 'Elternteil 1: ' + S.p1 + ' (' + M().pheno(S.p1) + ')  ×  Elternteil 2: ' + S.p2 + ' (' + M().pheno(S.p2) + ')';
+    el('text', { x: X0 + C, y: Y0 - 14, class: 'pheno-lbl' }, svg).textContent = 'Keimzellen Elternteil 1';
+    el('text', { x: X0 - 92, y: Y0 + 30 + H, class: 'pheno-lbl', transform: 'rotate(-90 ' + (X0 - 92) + ' ' + (Y0 + 30 + H) + ')' }, svg).textContent = 'Keimzellen Elternteil 2';
+    for (var i = 0; i < 2; i++) {
+      el('rect', { x: X0 + i * C, y: Y0 - 4, width: C, height: 34, class: 'head' }, svg);
+      el('text', { x: X0 + i * C + C / 2, y: Y0 + 13, class: 'gam' }, svg).textContent = S.p1[i];
+      el('rect', { x: X0 - 70, y: Y0 + 30 + i * H, width: 70, height: H, class: 'head' }, svg);
+      el('text', { x: X0 - 35, y: Y0 + 30 + i * H + H / 2, class: 'gam' }, svg).textContent = S.p2[i];
+    }
+    for (var r = 0; r < 2; r++) for (var c = 0; c < 2; c++) {
+      var gt = canon(S.p1[c], S.p2[r]), p = M().pheno(gt), x = X0 + c * C, y = Y0 + 30 + r * H;
+      el('rect', { x: x, y: y, width: C, height: H, class: 'box' }, svg);
+      icon(svg, x + C / 2, y + 34, p, 16);
+      el('text', { x: x + C / 2, y: y + 72, class: 'geno' }, svg).textContent = gt;
+      el('text', { x: x + C / 2, y: y + 90, class: 'pheno-lbl' }, svg).textContent = p;
+    }
+    var e = expected(), gx = 388, gy = 100;
+    el('text', { x: gx, y: gy, class: 'par' }, svg).textContent = 'Erwartung';
+    M().phenos.forEach(function (ph, k) {
+      icon(svg, gx + 10, gy + 26 + k * 36, ph.key, 10);
+      el('text', { x: gx + 28, y: gy + 31 + k * 36, class: 'sym' }, svg).textContent = LK.fmt(e[ph.key] * 100, 0) + ' % ' + ph.key;
+    });
+  }
+
+  // ---------------------------------------------- Balkendiagramm
+  function drawBars() {
+    var svg = $('bars'); svg.innerHTML = '';
+    var e = expected(), ph = M().phenos, X0 = 90, W = 400, rowH = 46;
+    svg.setAttribute('viewBox', '0 0 520 ' + (20 + ph.length * rowH));
+    ph.forEach(function (p, k) {
+      var y = 20 + k * rowH, cnt = S.counts[p.key] || 0, share = S.n ? cnt / S.n : 0;
+      icon(svg, 22, y + 14, p.key, 10);
+      el('text', { x: 40, y: y + 19, class: 'sym' }, svg).textContent = p.key;
+      el('rect', { x: X0, y: y, width: W, height: 28, rx: 4, class: 'bar-bg' }, svg);
+      el('rect', { x: X0, y: y, width: (W * share).toFixed(1), height: 28, rx: 4, class: p.cls }, svg);
+      el('line', { x1: X0 + W * e[p.key], x2: X0 + W * e[p.key], y1: y - 4, y2: y + 32, class: 'exp' }, svg);
+      el('text', { x: X0 + W - 6, y: y + 19, class: 'val', 'text-anchor': 'end' }, svg).textContent = cnt + (S.n ? ' (' + LK.fmt(share * 100, 1) + ' %)' : '');
+    });
+  }
+
+  function readouts() {
+    $('rExp').textContent = ratioText(expected());
+    $('rN').textContent = S.n;
+    if (!S.n) { $('rCounts').textContent = ''; return; }
+    var parts = M().phenos.filter(function (p) { return S.counts[p.key]; }).map(function (p) { return S.counts[p.key] + ' ' + p.key; });
+    var txt = 'Gezählt: ' + parts.join(', ') + '.';
+    var nonzero = M().phenos.map(function (p) { return S.counts[p.key] || 0; }).filter(function (v) { return v > 0; });
+    if (nonzero.length === 2) {
+      var big = Math.max(nonzero[0], nonzero[1]), small = Math.min(nonzero[0], nonzero[1]);
+      txt += ' Verhältnis etwa ' + LK.fmt(big / small, 2) + ' : 1.';
+    }
+    $('rCounts').textContent = txt;
+  }
+
+  // ---------------------------------------------- Nachkommen
+  function offspring(k) {
+    for (var i = 0; i < k; i++) {
+      var gt = canon(S.p1[Math.random() < 0.5 ? 0 : 1], S.p2[Math.random() < 0.5 ? 0 : 1]);
+      var p = M().pheno(gt);
+      S.counts[p] = (S.counts[p] || 0) + 1;
+    }
+    S.n += k;
+    drawBars(); readouts(); goals();
+  }
+  function cross(a, b) { return (S.p1 === a && S.p2 === b) || (S.p1 === b && S.p2 === a); }
+  function goals() {
+    if (S.mode === 'dom' && cross('GG', 'gg') && S.n >= 10) LK.reach('uniform');
+    if (S.mode === 'dom' && cross('Gg', 'Gg') && S.n >= 400) LK.reach('spalt');
+    if (S.mode === 'dom' && cross('Gg', 'gg') && S.n >= 100) LK.reach('test');
+    if (S.mode === 'int' && cross('RW', 'RW') && S.n >= 100) LK.reach('inter');
+  }
+
+  function resetCounts() { S.counts = {}; S.n = 0; drawBars(); readouts(); }
+
+  function seg(id, value, onPick) {
+    var box = $(id); box.innerHTML = '';
+    M().genos.forEach(function (g) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.textContent = g;
+      b.setAttribute('aria-pressed', value === g ? 'true' : 'false');
+      b.onclick = function () { onPick(g); };
+      box.appendChild(b);
+    });
+  }
+  function render() {
+    seg('segP1', S.p1, function (g) { S.p1 = g; resetCounts(); render(); });
+    seg('segP2', S.p2, function (g) { S.p2 = g; resetCounts(); render(); });
+    $('modeInfo').textContent = M().info;
+    $('legend').textContent = M().legend;
+    document.querySelectorAll('[data-mode]').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-mode') === S.mode); });
+    drawPunnett(); drawBars(); readouts();
+  }
+
+  document.querySelectorAll('[data-mode]').forEach(function (b) {
+    b.onclick = function () {
+      S.mode = b.getAttribute('data-mode');
+      S.p1 = M().genos[0]; S.p2 = M().genos[2];
+      resetCounts(); render();
+    };
+  });
+  $('b1').onclick = function () { offspring(1); };
+  $('b100').onclick = function () { offspring(100); };
+  $('bReset').onclick = resetCounts;
+
+  render();
+})();
+</script>
+</body>
+</html>

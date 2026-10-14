@@ -1,0 +1,114 @@
+{
+  "id": "bio-k7-systemebenen",
+  "titel": "Von der Zelle zum Organismus",
+  "kurz": "Wie spezialisierte Zellen Gewebe, Organe und Organsysteme bilden und wie man Einzeller einordnet.",
+  "reihenfolge": 3,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Die Systemebenen Zellorganell, Zelle, Gewebe, Organ, Organsystem und Organismus ordnen" },
+    { "id": "lz2", "niveau": "G", "text": "Erklären, dass verschieden differenzierte Zellen unterschiedliche Aufgaben haben" },
+    { "id": "lz3", "niveau": "H", "text": "Mit den Merkmalen von Tier- und Pflanzenzellen entscheiden, ob ein Einzeller ins Tier- oder Pflanzenreich gehört" }
+  ],
+  "verstehen": {
+    "einstieg": "Dein Körper besteht aus etwa 30 bis 40 Billionen Zellen. Nervenzellen können über einen Meter lang werden, rote Blutkörperchen sind winzige Scheiben. Warum sehen Zellen in einem Körper so verschieden aus?",
+    "abschnitte": [
+      {
+        "titel": "Zellen spezialisieren sich",
+        "text": "In einem Vielzeller übernehmen verschiedene Zellen verschiedene Aufgaben. Man sagt: Die Zellen sind **differenziert**. Ihr Bau passt zu ihrer Aufgabe:\n\n- **Nervenzellen** haben lange Fortsätze und leiten Signale weiter.\n- **Muskelzellen** sind lang gestreckt und können sich zusammenziehen.\n- **Rote Blutkörperchen** sind klein und flach. Sie transportieren Sauerstoff.\n- **Palisadenzellen** im Blatt enthalten besonders viele Chloroplasten.\n- **Wurzelhaarzellen** haben lange Ausstülpungen. So nehmen sie viel Wasser auf.\n\nDieses Prinzip heißt **Zusammenhang von Bau und Funktion**."
+      },
+      {
+        "titel": "Die Systemebenen",
+        "text": "Lebewesen sind in Ebenen aufgebaut. Jede Ebene besteht aus Teilen der Ebene darunter:\n\n- **Zellorganell:** z. B. Zellkern, Mitochondrium\n- **Zelle:** z. B. Muskelzelle\n- **Gewebe:** viele gleichartige Zellen mit gleicher Aufgabe, z. B. Muskelgewebe\n- **Organ:** verschiedene Gewebe arbeiten zusammen, z. B. das Herz aus Muskel-, Nerven- und Bindegewebe\n- **Organsystem:** mehrere Organe mit gemeinsamer Aufgabe, z. B. das Herz-Kreislauf-System\n- **Organismus:** das ganze Lebewesen\n\nBei Pflanzen ist es genauso: Palisadenzellen bilden das Palisadengewebe, mehrere Gewebe bilden das Organ Laubblatt."
+      },
+      {
+        "titel": "Begriffsnetz",
+        "text": "Ein **Begriffsnetz** stellt Zusammenhänge zwischen Fachbegriffen dar. Die Begriffe stehen in Kästchen. Pfeile mit kurzen Beschriftungen verbinden sie, zum Beispiel: Gewebe → „besteht aus“ → Zellen. So siehst du auf einen Blick, wie die Ebenen zusammenhängen."
+      },
+      {
+        "titel": "Einzeller einordnen",
+        "text": "Bei Einzellern ist eine einzige Zelle der ganze Organismus. Ob ein Einzeller eher zu den Tieren oder Pflanzen passt, erkennst du an seinen Zellmerkmalen:\n\n- Das **Pantoffeltierchen** hat keine Chloroplasten und keine Zellwand. Es frisst Bakterien. Es ähnelt also Tierzellen.\n- Die **Grünalge Chlamydomonas** hat eine Zellwand und einen großen Chloroplasten. Sie betreibt Fotosynthese wie eine Pflanze.\n- **Euglena**, das Augentierchen, hat Chloroplasten, schwimmt aber aktiv und kann im Dunkeln auch Nahrung aufnehmen. Sie zeigt: Die Grenze zwischen Tier und Pflanze ist bei Einzellern nicht immer eindeutig.\n\nHeute ordnet man Einzeller meist eigenen Gruppen zu. Das Prinzip zum Vergleichen bleibt aber gleich."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "Spezialisierte Zellen bilden **Gewebe**, Gewebe bilden **Organe**, Organe bilden **Organsysteme**, und alle zusammen bilden den **Organismus**.\n\nDer Bau einer Zelle passt zu ihrer Aufgabe.",
+    "alltag": "Bei einer Transplantation wird ein ganzes Organ, zum Beispiel eine Niere, übertragen. Bei einer Hauttransplantation dagegen ein Gewebe."
+  },
+  "interaktiv": [],
+  "vertiefung": ["bio-zelle"],
+  "uebungen": [
+    {
+      "id": "bio-sys-01", "typ": "reihenfolge", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Ordne die Systemebenen von der kleinsten zur größten.",
+      "elemente": ["Zellorganell", "Zelle", "Gewebe", "Organ", "Organsystem", "Organismus"],
+      "erklaerung": "Jede Ebene besteht aus Bausteinen der Ebene darunter: Organellen bilden Zellen, Zellen Gewebe, Gewebe Organe, Organe Organsysteme."
+    },
+    {
+      "id": "bio-sys-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Ordne jedes Beispiel der passenden Systemebene zu.",
+      "paare": [
+        { "links": "Mitochondrium", "rechts": "Zellorganell" },
+        { "links": "rotes Blutkörperchen", "rechts": "Zelle" },
+        { "links": "Muskelgewebe", "rechts": "Gewebe" },
+        { "links": "Magen", "rechts": "Organ" },
+        { "links": "Verdauungssystem", "rechts": "Organsystem" }
+      ],
+      "extraRechts": ["Organismus"],
+      "erklaerung": "Der Magen besteht aus mehreren Geweben (Muskel, Schleimhaut, Nerven) und ist deshalb ein Organ. Zusammen mit Darm, Leber und anderen Organen bildet er das Verdauungssystem."
+    },
+    {
+      "id": "bio-sys-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Wurzelhaarzellen haben lange, dünne Ausstülpungen. Wozu dient dieser Bau?",
+      "optionen": [
+        { "text": "Die große Oberfläche nimmt viel Wasser und Mineralstoffe aus dem Boden auf.", "richtig": true },
+        { "text": "Damit verankert sich die Pflanze wie mit Haken.", "feedback": "Verankert wird die Pflanze vor allem durch die dicken Wurzeln. Die feinen Haare dienen der Aufnahme." },
+        { "text": "Damit betreibt die Wurzel Fotosynthese.", "feedback": "Im Boden ist kein Licht. Wurzelhaarzellen haben keine Chloroplasten." },
+        { "text": "Damit leitet die Zelle elektrische Signale.", "feedback": "Signale leiten Nervenzellen bei Tieren. Wurzelhaare dienen der Aufnahme von Stoffen." }
+      ],
+      "erklaerung": "Je größer die Oberfläche, desto mehr Stoffe können aufgenommen werden. Das ist ein Beispiel für den Zusammenhang von Bau und Funktion."
+    },
+    {
+      "id": "bio-sys-04", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Welche Aussagen zum Organ Herz sind richtig?",
+      "optionen": [
+        { "text": "Es besteht aus verschiedenen Geweben.", "richtig": true },
+        { "text": "Es gehört zum Herz-Kreislauf-System.", "richtig": true },
+        { "text": "Seine Muskelzellen sind auf das Zusammenziehen spezialisiert.", "richtig": true },
+        { "text": "Es besteht aus nur einer Sorte Zellen.", "feedback": "Ein Organ besteht immer aus mehreren Geweben, also aus verschiedenen Zelltypen." },
+        { "text": "Es ist ein Zellorganell.", "feedback": "Zellorganellen sind Bestandteile **einer** Zelle. Das Herz besteht aus Milliarden Zellen." }
+      ],
+      "erklaerung": "Das Herz besteht aus Muskelgewebe, Bindegewebe und Nervengewebe. Zusammen mit den Blutgefäßen bildet es das Herz-Kreislauf-System."
+    },
+    {
+      "id": "bio-sys-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Warum hat ein Vielzeller viele verschiedene Zelltypen, ein Einzeller aber nur einen?",
+      "optionen": [
+        { "text": "Beim Vielzeller teilen sich die Zellen die Aufgaben. Beim Einzeller muss eine Zelle alles allein erledigen.", "richtig": true },
+        { "text": "Einzeller brauchen keine Nahrung und keine Bewegung.", "feedback": "Auch Einzeller zeigen alle Kennzeichen des Lebendigen." },
+        { "text": "Die Zellen eines Vielzellers sind alle gleich, sie sehen nur verschieden aus.", "feedback": "Differenzierte Zellen unterscheiden sich wirklich in Bau und Aufgabe." },
+        { "text": "Einzeller sind Tiere, Vielzeller sind Pflanzen.", "feedback": "Es gibt einzellige und vielzellige Tiere, Pflanzen und Pilze." }
+      ],
+      "erklaerung": "Arbeitsteilung macht Zellen effizienter. Die Zellen eines Vielzellers können aber meist nicht mehr allein überleben."
+    },
+    {
+      "id": "bio-sys-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Ein Einzeller aus dem Teich hat eine Zellwand und einen großen grünen Chloroplasten, aber keinen Mund. Wie ordnest du ihn ein?",
+      "optionen": [
+        { "text": "Eher zu den Pflanzen, weil Zellwand und Chloroplast typisch für Pflanzenzellen sind", "richtig": true },
+        { "text": "Eher zu den Tieren, weil er schwimmen kann", "feedback": "Bewegung allein entscheidet nicht. Zellwand und Chloroplast sind die wichtigeren Merkmale." },
+        { "text": "Zu den Bakterien, weil er nur eine Zelle hat", "feedback": "Bakterien haben keinen Zellkern und keine Chloroplasten. Viele Einzeller sind Eukaryoten." },
+        { "text": "Man kann ihn gar nicht einordnen.", "feedback": "Mit den Zellmerkmalen ist ein begründeter Vergleich möglich." }
+      ],
+      "erklaerung": "Ein solcher Einzeller, z. B. die Grünalge Chlamydomonas, stellt seine Nahrung durch Fotosynthese selbst her. Er hat damit die Merkmale einer Pflanzenzelle."
+    },
+    {
+      "id": "bio-sys-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Euglena hat Chloroplasten, bewegt sich aber aktiv mit einer Geißel und kann im Dunkeln Nahrung aufnehmen. Was zeigt dieses Beispiel?",
+      "optionen": [
+        { "text": "Bei Einzellern ist die Grenze zwischen Tier und Pflanze nicht immer eindeutig.", "richtig": true },
+        { "text": "Euglena ist eindeutig ein Tier, weil sie sich bewegt.", "feedback": "Euglena hat auch Chloroplasten und betreibt Fotosynthese. Sie vereint Merkmale beider Gruppen." },
+        { "text": "Chloroplasten können auch in Tierzellen vorkommen.", "feedback": "Euglena ist kein Tier. Sie ist ein Einzeller, der Merkmale beider Gruppen zeigt." },
+        { "text": "Euglena hat keinen Zellkern.", "feedback": "Euglena ist ein Eukaryot und hat einen Zellkern." }
+      ],
+      "erklaerung": "Weil Einzeller wie Euglena nicht eindeutig passen, ordnet die Biologie Einzeller heute eigenen Gruppen zu."
+    }
+  ]
+}

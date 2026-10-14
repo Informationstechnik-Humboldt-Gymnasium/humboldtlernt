@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blutgruppen-Labor: Antigene und Antikörper</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<style>
+  .drop { fill: var(--bg); stroke: var(--border); stroke-width: 2; }
+  .rbc { fill: var(--warn); fill-opacity: .45; stroke: var(--warn); stroke-width: 1.5; }
+  .rbc-in { fill: var(--warn); fill-opacity: .25; }
+  .agA { fill: var(--pos); }
+  .agB { fill: var(--c3); }
+  .abA { stroke: var(--pos); stroke-width: 2.4; fill: none; stroke-linecap: round; }
+  .abB { stroke: var(--c3); stroke-width: 2.4; fill: none; stroke-linecap: round; }
+  .droplbl { font-size: 16px; font-weight: 700; text-anchor: middle; }
+  .result { font-size: 15px; font-weight: 650; text-anchor: middle; }
+  .result.bad { fill: var(--warn) !important; }
+  .result.good { fill: var(--ok) !important; }
+  .legend { display: flex; flex-wrap: wrap; gap: 12px; font-size: .82rem; margin-top: 6px; align-items: center; }
+  .legend svg { width: 16px; height: 16px; flex: none; vertical-align: middle; margin-right: 4px; }
+  .legend span { display: inline-flex; align-items: center; }
+  .ctrl-lbl { font-size: .9rem; font-weight: 600; margin: 0 0 4px; }
+  .verdict { font-weight: 650; margin: 8px 0 0; }
+  .verdict.bad { color: var(--warn); }
+  .verdict.good { color: var(--ok); }
+  .seg button { min-width: 44px; }
+</style>
+</head>
+<body>
+<h1>Blutgruppen-Labor</h1>
+<p class="muted small">Im Modus „Transfusion“ mischst du rote Blutkörperchen eines Spenders mit dem Plasma eines Empfängers. Im Modus „Bluttest“ bestimmst du die Blutgruppe unbekannter Proben mit Testseren.</p>
+
+<div class="lk-grid">
+  <div>
+    <div class="lk-card">
+      <svg id="scene" viewBox="0 0 520 300" role="img" aria-labelledby="scene-title">
+        <title id="scene-title">Blutstropfen mit roten Blutkörperchen, ihren Antigenen und Antikörpern</title>
+        <g id="drops"></g>
+      </svg>
+      <div class="legend">
+        <span><svg width="18" height="18" viewBox="-9 -9 18 18" aria-hidden="true"><circle r="7" class="rbc"/></svg>rotes Blutkörperchen</span>
+        <span><svg width="14" height="14" viewBox="-7 -7 14 14" aria-hidden="true"><path d="M0 -5 L5 4 L-5 4 Z" class="agA"/></svg>Antigen A</span>
+        <span><svg width="14" height="14" viewBox="-7 -7 14 14" aria-hidden="true"><rect x="-4" y="-4" width="8" height="8" class="agB"/></svg>Antigen B</span>
+        <span><svg width="18" height="18" viewBox="-9 -9 18 18" aria-hidden="true"><path d="M0 7 V0 M0 0 L-6 -6 M0 0 L6 -6" class="abA"/></svg>Anti-A</span>
+        <span><svg width="18" height="18" viewBox="-9 -9 18 18" aria-hidden="true"><path d="M0 7 V0 M0 0 L-6 -6 M0 0 L6 -6" class="abB"/></svg>Anti-B</span>
+      </div>
+      <p class="small muted" style="margin:6px 0 0">Modell: Die Formen der Antigene und Antikörper sind Symbole. Jeder Y-förmige Antikörper hat zwei Bindungsstellen und kann so zwei Blutkörperchen verbinden. Der Rhesusfaktor wird hier nicht betrachtet.</p>
+    </div>
+  </div>
+
+  <div>
+    <div class="lk-card">
+      <h2>Einstellungen</h2>
+      <div class="row">
+        <div class="seg" role="group" aria-label="Modus wählen">
+          <button type="button" data-mode="mix" aria-pressed="true">Transfusion</button>
+          <button type="button" data-mode="test" aria-pressed="false">Bluttest</button>
+        </div>
+      </div>
+
+      <div id="mixBox">
+        <p class="ctrl-lbl">Spender: rote Blutkörperchen</p>
+        <div class="row"><div class="seg" role="group" aria-label="Blutgruppe Spender" id="segDon"></div></div>
+        <p class="ctrl-lbl">Empfänger: Plasma mit Antikörpern</p>
+        <div class="row"><div class="seg" role="group" aria-label="Blutgruppe Empfänger" id="segRec"></div></div>
+        <div class="row"><button type="button" id="bMix" class="primary">Mischen</button></div>
+        <div class="readouts">
+          <div class="readout"><span>Antigene Spender</span><b id="rAg">–</b></div>
+          <div class="readout"><span>Antikörper Empfänger</span><b id="rAb">–</b></div>
+        </div>
+        <p class="verdict" id="verdict" aria-live="polite"></p>
+      </div>
+
+      <div id="testBox" hidden>
+        <p class="small" style="margin:0 0 8px">Probe <b id="probeNr">1</b>: Blutgruppe unbekannt.</p>
+        <div class="row"><button type="button" id="bSera" class="primary">Testseren zugeben</button></div>
+        <p class="ctrl-lbl">Welche Blutgruppe hat die Probe?</p>
+        <div class="row"><div class="seg" role="group" aria-label="Blutgruppe der Probe" id="segGuess"></div></div>
+        <p class="verdict" id="tVerdict" aria-live="polite"></p>
+        <div class="row"><button type="button" id="bNext">Neue Probe</button></div>
+        <div class="readouts">
+          <div class="readout"><span>richtig bestimmt</span><b id="rTest">0</b></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lk-card tasks">
+      <h2>Entdecke selbst <span class="small muted" data-task-count></span></h2>
+      <div class="task" data-goal="clump"><p class="task-q">Finde eine Mischung, bei der das Blut verklumpt.</p></div>
+      <div class="task" data-goal="universal"><p class="task-q">Mische rote Blutkörperchen der Gruppe 0 nacheinander mit dem Plasma aller vier Blutgruppen.</p></div>
+      <div class="task">
+        <p class="task-q">Warum verklumpen rote Blutkörperchen der Gruppe 0 mit keinem Plasma?</p>
+        <div class="choices">
+          <button type="button" data-ok data-fb="Richtig: Ohne Antigene A und B finden Anti-A und Anti-B nichts, woran sie binden können.">Sie tragen keine Antigene A oder B.</button>
+          <button type="button" data-fb="Antikörper befinden sich im Plasma. Bei der Transfusion zählen die Antigene auf den gespendeten Zellen.">Sie enthalten keine Antikörper.</button>
+          <button type="button" data-fb="Schau dir die Mischung mit Plasma der Gruppe 0 genau an: Die Antikörper sind da, binden aber nicht.">Weil Plasma keine Antikörper enthält.</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="task" data-goal="test3"><p class="task-q">Bestimme im Bluttest drei unbekannte Proben richtig.</p></div>
+      <div class="task">
+        <p class="task-q">Ein Mensch mit Blutgruppe AB braucht rote Blutkörperchen. Welche Aussage stimmt im AB0-System?</p>
+        <div class="choices">
+          <button type="button" data-fb="Probiere es aus: Stelle den Empfänger auf AB und teste alle Spender.">Er verträgt nur AB.</button>
+          <button type="button" data-ok data-fb="Genau: Plasma der Gruppe AB enthält weder Anti-A noch Anti-B.">Er verträgt rote Blutkörperchen aller vier Gruppen.</button>
+          <button type="button" data-fb="Gruppe AB hat im Plasma keine Antikörper. Teste es in der Simulation.">Er verträgt nur 0.</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="all-done">Alles entdeckt! Weiter geht es mit den Übungen.</div>
+    </div>
+  </div>
+</div>
+
+<script src="../../static/lesson-kit.js"></script>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var NS = 'http://www.w3.org/2000/svg';
+  var GROUPS = ['A', 'B', 'AB', '0'];
+  var ANTIGENE = { A: ['A'], B: ['B'], AB: ['A', 'B'], '0': [] };
+  var ANTIKOERPER = { A: ['B'], B: ['A'], AB: [], '0': ['A', 'B'] };
+  var S = { mode: 'mix', don: 'A', rec: 'A', mixed: false, uni: {}, probe: null, nr: 1, sera: false, guessed: false, right: 0 };
+
+  function el(tag, attrs, parent) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  function list(a) { return a.length ? a.join(', ') : 'keine'; }
+  function clumps(antigene, antikoerper) { return antigene.some(function (x) { return antikoerper.indexOf(x) >= 0; }); }
+
+  // Zufall mit festem Startwert, damit die Bilder beim Umschalten ruhig bleiben
+  function rng(seed) { return function () { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }; }
+
+  // ---------------------------------------------- Ein Tropfen
+  // Gibt ein Objekt zurück, dessen Positionen zwischen „verteilt“ und „verklumpt“ animiert werden.
+  function makeDrop(parent, cx, cy, r, antigene, antikoerper, label, seed) {
+    var g = el('g', {}, parent);
+    el('circle', { cx: cx, cy: cy, r: r, class: 'drop' }, g);
+    if (label) el('text', { x: cx, y: cy - r - 10, class: 'droplbl' }, g).textContent = label;
+    var R = rng(seed), n = 9, cells = [], abs = [];
+    // verteilte Lage: Ring + Mitte
+    for (var i = 0; i < n; i++) {
+      var a = i / n * Math.PI * 2 + R() * 0.3, d = i === 0 ? 0 : r * (0.45 + R() * 0.2);
+      if (i === 0) a = 0;
+      cells.push({ x0: cx + Math.cos(a) * d * (i === 0 ? 0 : 1), y0: cy + Math.sin(a) * d * (i === 0 ? 0 : 1) });
+    }
+    // verklumpte Lage: zwei dichte Haufen
+    var centers = [[cx - r * 0.3, cy - r * 0.12], [cx + r * 0.28, cy + r * 0.2]];
+    cells.forEach(function (c, i) {
+      var k = i % 2, j = Math.floor(i / 2), ang = j * 2.1, dist = j === 0 ? 0 : 15 + (j > 3 ? 10 : 0);
+      c.x1 = centers[k][0] + Math.cos(ang) * dist; c.y1 = centers[k][1] + Math.sin(ang) * dist;
+      c.g = el('g', {}, g);
+      el('circle', { r: 12, class: 'rbc' }, c.g);
+      el('circle', { r: 5, class: 'rbc-in' }, c.g);
+      for (var m = 0; m < 4; m++) {
+        var t = m / 4 * Math.PI * 2 + 0.4, type = antigene.length === 2 ? antigene[m % 2] : antigene[0];
+        if (!type) continue;
+        var mx = Math.cos(t) * 14, my = Math.sin(t) * 14;
+        if (type === 'A') el('path', { d: 'M0 -3.5 L3.5 3 L-3.5 3 Z', class: 'agA', transform: 'translate(' + mx + ' ' + my + ') rotate(' + (t * 180 / Math.PI + 90) + ')' }, c.g);
+        else el('rect', { x: -2.8, y: -2.8, width: 5.6, height: 5.6, class: 'agB', transform: 'translate(' + mx + ' ' + my + ') rotate(' + (t * 180 / Math.PI) + ')' }, c.g);
+      }
+    });
+    // Antikörper: frei schwebend oder zwischen benachbarten Zellen eines Haufens
+    var bind = clumps(antigene, antikoerper);
+    antikoerper.forEach(function (type, ti) {
+      for (var q = 0; q < 5; q++) {
+        var aa = R() * Math.PI * 2, dd = r * (0.2 + R() * 0.65);
+        var ab = { x0: cx + Math.cos(aa) * dd, y0: cy + Math.sin(aa) * dd, rot0: R() * 360 };
+        var matching = antigene.indexOf(type) >= 0;
+        if (bind && matching) {
+          var i1 = (q * 2 + ti) % n, i2 = (i1 + 2) % n;
+          ab.x1 = (cells[i1].x1 + cells[i2].x1) / 2 + (R() - 0.5) * 6; ab.y1 = (cells[i1].y1 + cells[i2].y1) / 2 + (R() - 0.5) * 6; ab.rot1 = R() * 360;
+        } else { ab.x1 = ab.x0; ab.y1 = ab.y0; ab.rot1 = ab.rot0; }
+        ab.g = el('path', { d: 'M0 7 V0 M0 0 L-6 -6 M0 0 L6 -6', class: type === 'A' ? 'abA' : 'abB' }, g);
+        abs.push(ab);
+      }
+    });
+    var res = el('text', { x: cx, y: cy + r + 22, class: 'result' }, g);
+    return { cells: cells, abs: abs, bind: bind, res: res, t: 0, target: 0 };
+  }
+
+  function place(d) {
+    var t = d.t, e = t * t * (3 - 2 * t);
+    d.cells.forEach(function (c) { c.g.setAttribute('transform', 'translate(' + (c.x0 + (c.x1 - c.x0) * e).toFixed(1) + ' ' + (c.y0 + (c.y1 - c.y0) * e).toFixed(1) + ')'); });
+    d.abs.forEach(function (a) { a.g.setAttribute('transform', 'translate(' + (a.x0 + (a.x1 - a.x0) * e).toFixed(1) + ' ' + (a.y0 + (a.y1 - a.y0) * e).toFixed(1) + ') rotate(' + (a.rot0 + (a.rot1 - a.rot0) * e).toFixed(0) + ')'); });
+  }
+
+  var drops = [];
+  function build() {
+    var root = $('drops'); root.innerHTML = ''; drops = [];
+    if (S.mode === 'mix') {
+      var ab = S.mixed ? ANTIKOERPER[S.rec] : [];
+      var d = makeDrop(root, 260, 150, 112, ANTIGENE[S.don], ab, S.mixed ? 'Spender ' + S.don + ' + Plasma ' + S.rec : 'Spender ' + S.don + ' (noch nicht gemischt)', 7);
+      drops.push(d);
+    } else {
+      var ag = ANTIGENE[S.probe];
+      drops.push(makeDrop(root, 135, 150, 100, ag, S.sera ? ['A'] : [], 'Probe + Anti-A', 11));
+      drops.push(makeDrop(root, 385, 150, 100, ag, S.sera ? ['B'] : [], 'Probe + Anti-B', 23));
+    }
+    drops.forEach(function (d) { d.t = 0; d.target = d.bind ? 1 : 0; place(d); });
+  }
+
+  function labelResults() {
+    drops.forEach(function (d) {
+      var shown = S.mode === 'mix' ? S.mixed : S.sera;
+      d.res.textContent = !shown ? '' : d.bind ? 'verklumpt' : 'keine Verklumpung';
+      d.res.setAttribute('class', 'result ' + (!shown ? '' : d.bind ? 'bad' : 'good'));
+    });
+  }
+
+  var last = performance.now();
+  function frame(t) {
+    var dt = Math.min(0.05, (t - last) / 1000); last = t;
+    drops.forEach(function (d) {
+      if (d.t !== d.target) { d.t = d.target > d.t ? Math.min(d.target, d.t + dt / 1.2) : Math.max(d.target, d.t - dt / 1.2); place(d); }
+    });
+    requestAnimationFrame(frame);
+  }
+
+  // ---------------------------------------------- Bedienung
+  function seg(id, value, onPick) {
+    var box = $(id); box.innerHTML = '';
+    GROUPS.forEach(function (gName) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.textContent = gName;
+      b.setAttribute('aria-pressed', value === gName ? 'true' : 'false');
+      b.onclick = function () { onPick(gName); };
+      box.appendChild(b);
+    });
+  }
+
+  function updateMix() {
+    seg('segDon', S.don, function (v) { S.don = v; S.mixed = false; updateMix(); });
+    seg('segRec', S.rec, function (v) { S.rec = v; S.mixed = false; updateMix(); });
+    $('rAg').textContent = list(ANTIGENE[S.don]);
+    $('rAb').textContent = list(ANTIKOERPER[S.rec].map(function (x) { return 'Anti-' + x; }));
+    var v = $('verdict');
+    if (!S.mixed) { v.textContent = ''; v.className = 'verdict'; }
+    else if (clumps(ANTIGENE[S.don], ANTIKOERPER[S.rec])) { v.textContent = 'Verklumpung! Die Antikörper des Empfängers passen zu den Antigenen des Spenders. Diese Transfusion wäre lebensgefährlich.'; v.className = 'verdict bad'; }
+    else { v.textContent = 'Keine Verklumpung: Die Antikörper des Empfängers finden keine passenden Antigene. Im AB0-System verträglich.'; v.className = 'verdict good'; }
+    build(); labelResults();
+  }
+
+  function newProbe() {
+    var prev = S.probe;
+    do { S.probe = GROUPS[Math.floor(Math.random() * 4)]; } while (S.probe === prev);
+    S.sera = false; S.guessed = false;
+    $('probeNr').textContent = S.nr;
+    $('tVerdict').textContent = ''; $('tVerdict').className = 'verdict';
+    seg('segGuess', null, guess);
+    build(); labelResults();
+  }
+  function guess(v) {
+    if (!S.sera) { $('tVerdict').textContent = 'Gib zuerst die Testseren zu, sonst siehst du nichts.'; $('tVerdict').className = 'verdict'; return; }
+    if (S.guessed) return;
+    seg('segGuess', v, guess);
+    var tv = $('tVerdict');
+    if (v === S.probe) {
+      S.guessed = true; S.right++;
+      $('rTest').textContent = S.right;
+      tv.textContent = '✓ Richtig, Blutgruppe ' + S.probe + '. ' + explain(S.probe);
+      tv.className = 'verdict good';
+      if (S.right >= 3) LK.reach('test3');
+    } else {
+      tv.textContent = 'Noch nicht. Überlege: Mit welchem Serum verklumpt die Probe? Welches Antigen trägt sie also?';
+      tv.className = 'verdict bad';
+    }
+  }
+  function explain(g) {
+    return { A: 'Nur Anti-A verklumpt: Antigen A ist vorhanden.', B: 'Nur Anti-B verklumpt: Antigen B ist vorhanden.', AB: 'Beide Seren verklumpen: Antigene A und B.', '0': 'Kein Serum verklumpt: keine Antigene A oder B.' }[g];
+  }
+
+  $('bMix').onclick = function () {
+    S.mixed = true; updateMix();
+    var bad = clumps(ANTIGENE[S.don], ANTIKOERPER[S.rec]);
+    if (bad) LK.reach('clump');
+    if (S.don === '0') { S.uni[S.rec] = true; if (GROUPS.every(function (x) { return S.uni[x]; })) LK.reach('universal'); }
+  };
+  $('bSera').onclick = function () { S.sera = true; build(); labelResults(); };
+  $('bNext').onclick = function () { S.nr++; newProbe(); };
+
+  function setMode(m) {
+    S.mode = m;
+    document.querySelectorAll('[data-mode]').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-mode') === m); });
+    $('mixBox').hidden = m !== 'mix';
+    $('testBox').hidden = m !== 'test';
+    if (m === 'test') { if (!S.probe) newProbe(); else { build(); labelResults(); } }
+    else updateMix();
+  }
+  document.querySelectorAll('[data-mode]').forEach(function (b) { b.onclick = function () { setMode(b.getAttribute('data-mode')); }; });
+
+  updateMix();
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

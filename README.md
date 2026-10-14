@@ -19,6 +19,11 @@ Lerneinheiten sie erledigt haben, und Lehrkräfte sehen den Fortschritt ihrer Kl
 - **Chemie nach dem Schulcurriculum:** Klasse 7 bis 10 mit allen 12 Themenfeldern (Feuer, Periodensystem,
   Gase, Wasser, Salze, Metalle, Säuren und Laugen, Stöchiometrie, Kohlenwasserstoffe, Alkohole,
   organische Säuren, Ester): 36 Themen, 252 Übungen und 10 interaktive Labore.
+- **Biologie nach dem Schulcurriculum** (Zuordnung für Regellerner): Klasse 7 (Zelle, Ökosystem Wald,
+  Sexualität), 8 (Stoffwechsel), 9 (Gesundheit und Krankheit, Nervensystem) und 10 (Entwicklung des
+  Menschen, Genetik, Evolution): 31 Themen, 217 Übungen und 3 interaktive Erklärungen (Zellen-Explorer,
+  Blutgruppen-Labor, Kreuzungs-Labor). Das Themenfeld Sexualität in Klasse 7 ist vorerst gesperrt
+  (`"gesperrt": true` in seiner `themenfeld.json`): sichtbar, aber nicht aufrufbar.
 - **Sandbox:** freie Simulationen ohne Klassenstufen. Erste Simulation ist das **Schaltkreis-Labor**:
   Gleich- und Wechselspannungsquelle, Schalter, Lampe, einstellbarer Widerstand, Diode, Transistor (NPN)
   und Multimeter frei verdrahten, mit
@@ -355,7 +360,7 @@ src/markup.js      Formel-Auszeichnung für Texte
 public/style.css   Aussehen (hell/dunkel automatisch)
 public/uebung.js   Übungen im Browser (Abschicken, Feedback)
 public/lesson-kit.*  gemeinsame Bausteine der interaktiven Erklärungen
-content/<fach>/    Inhalte je Fach nach SchiC (physik, chemie, timp)
+content/<fach>/    Inhalte je Fach nach SchiC (physik, chemie, biologie, timp)
 test/              automatische Tests (npm test)
 ```
 

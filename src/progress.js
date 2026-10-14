@@ -8,7 +8,7 @@ export function gradeOf(klasse) {
 }
 
 /** Alle Themen einer Stufe in Reihenfolge. */
-export const topicsOfGrade = grade => grade.themenfelder.flatMap(tf => tf.topics);
+export const topicsOfGrade = grade => grade.themenfelder.flatMap(tf => tf.topics).filter(t => !t.gesperrt);
 
 /** Fortschritt eines Themas aus der Menge gelöster Übungs-IDs. */
 export function topicProgress(topic, solved, understood) {

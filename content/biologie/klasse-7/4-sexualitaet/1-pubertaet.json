@@ -1,0 +1,116 @@
+{
+  "id": "bio-k7-pubertaet",
+  "titel": "Pubertät und Hormone",
+  "kurz": "Welche körperlichen und seelischen Veränderungen die Pubertät bringt und wie Hormone sie steuern.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Die Pubertät als Zeit körperlicher und geistig-seelischer Veränderungen charakterisieren" },
+    { "id": "lz2", "niveau": "G", "text": "Die Bedeutung der Hormone in der Pubertät beschreiben" },
+    { "id": "lz3", "niveau": "H", "text": "Die hormonelle Steuerung der Veränderungen in der Pubertät mithilfe einer Abbildung erklären" }
+  ],
+  "verstehen": {
+    "einstieg": "Manche in deiner Klasse sind in den letzten Monaten deutlich gewachsen, andere noch gar nicht. Bei manchen ist die Stimme tiefer geworden. Warum passiert das bei allen, aber zu unterschiedlichen Zeiten?",
+    "abschnitte": [
+      {
+        "titel": "Was ist die Pubertät?",
+        "text": "Die **Pubertät** ist die Zeit, in der aus einem Kind ein geschlechtsreifer Mensch wird. Sie beginnt meist zwischen 8 und 14 Jahren und dauert mehrere Jahre. Bei Mädchen beginnt sie im Durchschnitt etwas früher als bei Jungen. Wann sie bei dir beginnt, ist ganz individuell. Früher oder später ist beides normal.\n\nIn der Pubertät verändern sich der **Körper** und auch das **Denken und Fühlen**."
+      },
+      {
+        "titel": "Körperliche Veränderungen",
+        "text": "Bei allen:\n\n- schnelles Wachstum (Wachstumsschub)\n- Haare unter den Achseln und im Schambereich\n- mehr Schweiß und fettigere Haut, manchmal Pickel\n\nBei Mädchen typischerweise:\n\n- Brüste wachsen, das Becken wird breiter\n- erste **Regelblutung** (Menstruation)\n\nBei Jungen typischerweise:\n\n- **Stimmbruch**, die Stimme wird tiefer\n- Bartwuchs, breitere Schultern, mehr Muskeln\n- Hoden und Penis wachsen, erster **Samenerguss**\n\nDie Merkmale, die sich erst in der Pubertät entwickeln, heißen **sekundäre Geschlechtsmerkmale**. Die Geschlechtsorgane, die schon bei der Geburt da sind, heißen **primäre Geschlechtsmerkmale**."
+      },
+      {
+        "titel": "Seelische Veränderungen",
+        "text": "Auch im Gehirn wird umgebaut. Viele Jugendliche erleben:\n\n- Stimmungsschwankungen\n- den Wunsch nach mehr Selbstständigkeit und Abgrenzung von den Eltern\n- dass Freundinnen und Freunde wichtiger werden\n- erste Verliebtheit\n- Unsicherheit mit dem eigenen Körper\n\nDas ist ein normaler Teil der Entwicklung. Es hilft, mit Vertrauenspersonen darüber zu sprechen."
+      },
+      {
+        "titel": "Hormone steuern die Pubertät",
+        "text": "**Hormone** sind Botenstoffe. Sie werden in **Hormondrüsen** gebildet, gelangen mit dem Blut durch den ganzen Körper und wirken an bestimmten Zielorganen.\n\nDie Pubertät startet im Gehirn: Der **Hypothalamus** gibt ein Signal an die **Hirnanhangdrüse** (Hypophyse). Diese schüttet Hormone aus, die zu den Geschlechtsorganen gelangen. Dort werden dann die **Geschlechtshormone** gebildet:\n\n- in den **Eierstöcken** vor allem **Östrogen** und **Progesteron**\n- in den **Hoden** vor allem **Testosteron**\n\nDie Geschlechtshormone bewirken die körperlichen Veränderungen. Sie wirken auch auf das Gehirn und damit auf Gefühle."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "In der **Pubertät** wird der Körper geschlechtsreif. **Hormone** sind Botenstoffe, die mit dem Blut transportiert werden.\n\nDas Gehirn (Hypothalamus und Hirnanhangdrüse) regt die Eierstöcke zur Bildung von **Östrogen** und **Progesteron** und die Hoden zur Bildung von **Testosteron** an.",
+    "alltag": "Ärztinnen der Ärztlichen Gesellschaft zur Gesundheitsförderung (ÄGGF) kommen in Schulen und beantworten in einer Informationsstunde Fragen zur Pubertät."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "bio-pub-01", "typ": "multi", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Welche Veränderungen gibt es in der Pubertät bei allen Geschlechtern?",
+      "optionen": [
+        { "text": "Wachstumsschub", "richtig": true },
+        { "text": "Achsel- und Schambehaarung", "richtig": true },
+        { "text": "mehr Schweiß und Pickel", "richtig": true },
+        { "text": "Stimmbruch mit deutlich tieferer Stimme", "feedback": "Ein deutlicher Stimmbruch ist typisch für Jungen. Bei Mädchen wird die Stimme nur wenig tiefer." },
+        { "text": "Bartwuchs", "feedback": "Bartwuchs ist ein typisches Merkmal bei Jungen." }
+      ],
+      "erklaerung": "Wachstum, Behaarung und Hautveränderungen betreffen alle. Andere Veränderungen sind geschlechtstypisch."
+    },
+    {
+      "id": "bio-pub-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Was sind Hormone?",
+      "optionen": [
+        { "text": "Botenstoffe, die mit dem Blut zu ihren Zielorganen gelangen", "richtig": true },
+        { "text": "Nervenzellen im Gehirn", "feedback": "Hormone sind Stoffe, keine Zellen. Sie werden von Drüsen gebildet." },
+        { "text": "Krankheitserreger, die Pickel verursachen", "feedback": "Hormone sind körpereigene Botenstoffe und keine Erreger." },
+        { "text": "Vitamine aus der Nahrung", "feedback": "Hormone bildet der Körper selbst in Hormondrüsen." }
+      ],
+      "erklaerung": "Hormondrüsen geben Hormone ins Blut ab. So erreichen sie alle Körperteile, wirken aber nur an Zielorganen, die passende Empfänger haben."
+    },
+    {
+      "id": "bio-pub-03", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Ordne jedem Hormon den Ort zu, an dem es vor allem gebildet wird.",
+      "paare": [
+        { "links": "Testosteron", "rechts": "Hoden" },
+        { "links": "Östrogen", "rechts": "Eierstöcke" },
+        { "links": "Steuerhormone für die Geschlechtsorgane", "rechts": "Hirnanhangdrüse" }
+      ],
+      "extraRechts": ["Magen"],
+      "erklaerung": "Die Hirnanhangdrüse steuert die Hormonbildung in Hoden und Eierstöcken."
+    },
+    {
+      "id": "bio-pub-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Lea ist 13 und hat noch keine Anzeichen der Pubertät. Ihre Freundin ist im gleichen Alter schon weit entwickelt. Was stimmt?",
+      "optionen": [
+        { "text": "Das ist normal. Der Beginn der Pubertät ist individuell sehr unterschiedlich.", "richtig": true },
+        { "text": "Lea ist bestimmt krank.", "feedback": "Die Pubertät beginnt meist zwischen 8 und 14 Jahren. Mit 13 ist ein späterer Beginn völlig normal." },
+        { "text": "Die Pubertät beginnt bei allen genau mit 12 Jahren.", "feedback": "Es gibt keinen festen Zeitpunkt. Die Spanne ist groß." },
+        { "text": "Lea kann die Pubertät beschleunigen, wenn sie mehr isst.", "feedback": "Der Beginn wird vor allem von Hormonen und Veranlagung gesteuert." }
+      ],
+      "erklaerung": "Jeder Körper hat sein eigenes Tempo. Wer sich Sorgen macht, kann mit der Kinder- und Jugendärztin sprechen."
+    },
+    {
+      "id": "bio-pub-05", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Primäres oder sekundäres Geschlechtsmerkmal? Ordne zu.",
+      "paare": [
+        { "links": "Eierstöcke", "rechts": "primär: schon bei der Geburt vorhanden" },
+        { "links": "Bartwuchs", "rechts": "sekundär: entsteht in der Pubertät" }
+      ],
+      "erklaerung": "Primäre Geschlechtsmerkmale sind die Geschlechtsorgane. Sekundäre entwickeln sich erst durch die Geschlechtshormone in der Pubertät, z. B. Brüste, Bart, tiefere Stimme."
+    },
+    {
+      "id": "bio-pub-06", "typ": "reihenfolge", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Bringe die Schritte der hormonellen Steuerung in der Pubertät in die richtige Reihenfolge.",
+      "elemente": [
+        "Der Hypothalamus im Gehirn gibt ein Signal.",
+        "Die Hirnanhangdrüse schüttet Steuerhormone ins Blut aus.",
+        "Die Steuerhormone erreichen Hoden oder Eierstöcke.",
+        "Dort werden Geschlechtshormone gebildet.",
+        "Die Geschlechtshormone bewirken die körperlichen Veränderungen."
+      ],
+      "erklaerung": "Die Steuerung beginnt im Gehirn. Die Hirnanhangdrüse ist eine Art Schaltzentrale für viele Hormondrüsen."
+    },
+    {
+      "id": "bio-pub-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Warum können Hormone im ganzen Körper wirken, obwohl sie nur in wenigen Drüsen gebildet werden?",
+      "optionen": [
+        { "text": "Sie werden mit dem Blut im ganzen Körper verteilt.", "richtig": true },
+        { "text": "Sie werden über die Nerven weitergeleitet.", "feedback": "Nerven leiten elektrische Signale. Hormone reisen mit dem Blut." },
+        { "text": "Jede Zelle bildet alle Hormone selbst.", "feedback": "Hormone werden in spezialisierten Hormondrüsen gebildet." },
+        { "text": "Sie werden über die Haut aufgenommen.", "feedback": "Körpereigene Hormone gelangen über das Blut zu den Organen." }
+      ],
+      "erklaerung": "Das Blut verteilt Hormone überall. Wirken können sie aber nur an Zellen, die dafür passende Empfänger haben."
+    }
+  ]
+}

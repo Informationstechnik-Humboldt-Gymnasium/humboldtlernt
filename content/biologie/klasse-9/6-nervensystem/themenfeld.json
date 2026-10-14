@@ -1,0 +1,15 @@
+{
+  "nummer": "6",
+  "reihenfolge": 2,
+  "titel": "Bau und Funktion des Nervensystems",
+  "beschreibung": "Sinnesorgane und Reizarten, das Auge, die Nervenzelle, Aufbau des Nervensystems, Reflexe sowie Sucht und Suchtprävention.",
+  "inhalte": [
+    "Sinne des Menschen: Sinnesorgane und Reizarten",
+    "Bau und Funktion eines Sinnesorgans",
+    "Funktionsstörung des Sinnesorgans",
+    "Bau und Funktion der Nervenzelle",
+    "Aufbau und Funktion des Nervensystems",
+    "Sucht und Suchtprävention"
+  ],
+  "erweiterung": "Informationsaufnahme und -weitergabe auf hohem Abstraktionsniveau; Modelle zur Informationsverarbeitung und -speicherung"
+}

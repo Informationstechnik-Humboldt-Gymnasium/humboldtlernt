@@ -24,6 +24,7 @@ const SCHIC = {
   physik: { 7: ['3.1', '3.4', '3.5'], 8: ['3.2', '3.3'], 9: ['3.6', '3.9', '3.10'], 10: ['3.7', '3.8', '3.11', '3.12'] },
   timp: { 8: ['8.1', '8.2', '8.3'], 9: ['9.1', '9.2'] },
   chemie: { 7: ['7.1', '7.2', '7.3'], 8: ['8.1', '8.2', '8.3'], 9: ['9.1', '9.2', '9.3'], 10: ['10.1', '10.2', '10.3'] },
+  biologie: { 7: ['1', '2', '4'], 8: ['3'], 9: ['5', '6'], 10: ['4', '7', '8'] },
 };
 
 for (const [fachId, plan] of Object.entries(SCHIC)) for (const [stufe, felder] of Object.entries(plan)) {
@@ -93,4 +94,16 @@ test('Fortschritt eines Themas', () => {
   assert.equal(p.total, t.uebungen.length);
   assert.equal(p.prozent, Math.round(300 / t.uebungen.length));
   assert.equal(p.verstanden, true);
+});
+
+test('Gesperrte Themen bleiben sichtbar, zählen aber nicht zum Fortschritt', async () => {
+  const { topicsOfGrade } = await import('../src/progress.js');
+  const bio7 = c.byId.get('biologie').stufen.find(s => s.stufe === 7);
+  const tf = bio7.themenfelder.find(t => t.nummer === '4');
+  assert.equal(tf.gesperrt, true);
+  assert.ok(tf.topics.length >= 2 && tf.topics.every(t => t.gesperrt));
+  const offen = topicsOfGrade(bio7);
+  assert.ok(offen.length > 0);
+  assert.ok(offen.every(t => !t.gesperrt));
+  assert.ok(!offen.some(t => t.themenfeldId === tf.id));
 });

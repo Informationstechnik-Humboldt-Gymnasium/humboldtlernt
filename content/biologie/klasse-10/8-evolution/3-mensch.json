@@ -1,0 +1,110 @@
+{
+  "id": "bio-k10-evolution-mensch",
+  "titel": "Die Evolution des Menschen",
+  "kurz": "Wie sich der Mensch aus gemeinsamen Vorfahren mit den Menschenaffen entwickelte und woran man das an Schädeln erkennt.",
+  "reihenfolge": 3,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Die Abstammung des Menschen herleiten und die Stellung des Menschen unter den Primaten beschreiben" },
+    { "id": "lz2", "niveau": "G", "text": "Wichtige Vertreter der Menschenentwicklung zeitlich einordnen" },
+    { "id": "lz3", "niveau": "H", "text": "Hominidenschädel vergleichen und Merkmale des aufrechten Gangs deuten" }
+  ],
+  "verstehen": {
+    "einstieg": "Oft hört man: „Der Mensch stammt vom Affen ab.“ Stimmt das so?",
+    "abschnitte": [
+      {
+        "titel": "Der Mensch als Primat",
+        "text": "Der Mensch gehört zu den **Primaten**, zusammen mit Affen und Menschenaffen. Unsere nächsten lebenden Verwandten sind **Schimpanse** und **Bonobo**. Unsere DNA stimmt mit ihrer zu etwa 98 bis 99 % überein.\n\nDer Mensch stammt aber **nicht vom Schimpansen ab**. Menschen und Schimpansen haben **gemeinsame Vorfahren**, die vor etwa 6 bis 7 Millionen Jahren in Afrika lebten. Seitdem haben sich beide Linien getrennt weiterentwickelt. Schimpansen sind also eher unsere „Cousins“ als unsere Vorfahren."
+      },
+      {
+        "titel": "Stationen der Menschenentwicklung",
+        "text": "Die Entwicklung verlief nicht als gerade Linie, sondern wie ein verzweigter Busch. Zeitweise lebten mehrere Menschenformen gleichzeitig. Wichtige Vertreter (Zeitangaben gerundet):\n\n- **Australopithecus** (etwa 4 bis 2 Millionen Jahre): ging bereits **aufrecht**, hatte aber ein kleines Gehirn (etwa 400 bis 500 cm³). Bekannt ist das Skelett „Lucy“ aus Äthiopien (etwa 3,2 Millionen Jahre).\n- **Homo habilis** (etwa 2,4 bis 1,5 Millionen Jahre): stellte einfache **Steinwerkzeuge** her.\n- **Homo erectus** (etwa 1,9 Millionen bis 100 000 Jahre): nutzte das **Feuer** und verließ als erster Mensch **Afrika** Richtung Asien und Europa.\n- **Homo neanderthalensis**, der **Neandertaler** (etwa 400 000 bis 40 000 Jahre): lebte in Europa und Westasien, hatte ein großes Gehirn, bestattete Tote. Er ist ausgestorben, viele heutige Menschen tragen aber einen kleinen Anteil Neandertaler-DNA.\n- **Homo sapiens** (seit etwa 300 000 Jahren): entstand in **Afrika** und breitete sich von dort über die ganze Welt aus („Out of Africa“). Gehirn etwa 1350 cm³.\n\nNeue Funde verändern dieses Bild immer wieder."
+      },
+      {
+        "titel": "Schädel vergleichen",
+        "text": "An Schädeln lassen sich Entwicklungen ablesen:\n\n- **Gehirnschädel:** Das Gehirnvolumen nahm stark zu, der Schädel wurde höher und runder.\n- **Gesichtsschädel:** Kiefer und Zähne wurden kleiner, das Gesicht flacher. Typisch für den Homo sapiens ist ein ausgeprägtes **Kinn**. Ältere Formen haben starke **Überaugenwülste**.\n- **Hinterhauptsloch:** Hier tritt das Rückenmark aus dem Schädel. Beim **aufrecht gehenden** Menschen liegt es **mittig unter dem Schädel**, sodass der Kopf auf der Wirbelsäule balanciert. Beim Schimpansen liegt es weiter hinten.\n\nWeitere Hinweise auf den aufrechten Gang: doppelt-S-förmige Wirbelsäule, breites, schüsselförmiges Becken, Fuß mit Gewölbe und nicht abspreizbarer großer Zehe."
+      },
+      {
+        "titel": "Kulturelle Evolution",
+        "text": "Beim Menschen kam zur biologischen Evolution die **kulturelle Evolution** hinzu: Werkzeuge, Sprache, Kunst, Landwirtschaft und Technik. Wissen wird nicht über Gene, sondern durch Lernen und Lehren weitergegeben. Kulturelle Veränderungen laufen deshalb viel schneller ab als biologische."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "Mensch und Schimpanse haben **gemeinsame Vorfahren**, die vor etwa 6 bis 7 Millionen Jahren in **Afrika** lebten. Der Mensch stammt nicht vom heutigen Affen ab.\n\nWichtige Stationen: **Australopithecus** (aufrechter Gang), **Homo habilis** (Werkzeuge), **Homo erectus** (Feuer, verlässt Afrika), **Neandertaler**, **Homo sapiens** (seit etwa 300 000 Jahren).",
+    "alltag": "Der Neandertaler ist nach dem Neandertal bei Düsseldorf benannt, wo 1856 Knochen gefunden wurden. Dort gibt es heute ein Museum zur Menschheitsgeschichte."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "bio-evm-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Welche Aussage über Mensch und Schimpanse ist richtig?",
+      "optionen": [
+        { "text": "Sie haben gemeinsame Vorfahren.", "richtig": true },
+        { "text": "Der Mensch stammt vom Schimpansen ab.", "feedback": "Beide haben sich aus gemeinsamen Vorfahren getrennt entwickelt. Der Schimpanse ist nicht unser Vorfahr." },
+        { "text": "Sie sind überhaupt nicht verwandt.", "feedback": "Schimpansen sind unsere nächsten lebenden Verwandten." },
+        { "text": "Der Schimpanse stammt vom Menschen ab.", "feedback": "Auch das stimmt nicht. Beide Linien gehen auf gemeinsame Vorfahren zurück." }
+      ],
+      "erklaerung": "Die gemeinsamen Vorfahren lebten vor etwa 6 bis 7 Millionen Jahren in Afrika."
+    },
+    {
+      "id": "bio-evm-02", "typ": "reihenfolge", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Ordne die Vertreter nach dem Zeitpunkt ihres ersten Auftretens, beginnend mit dem ältesten.",
+      "elemente": ["Australopithecus", "Homo habilis", "Homo erectus", "Homo neanderthalensis", "Homo sapiens"],
+      "erklaerung": "Die Reihenfolge zeigt kein „Stufenmodell“. Manche Formen lebten zeitweise gleichzeitig, z. B. Neandertaler und Homo sapiens."
+    },
+    {
+      "id": "bio-evm-03", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Ordne jedem Vertreter eine typische Errungenschaft zu.",
+      "paare": [
+        { "links": "Australopithecus", "rechts": "aufrechter Gang bei noch kleinem Gehirn" },
+        { "links": "Homo habilis", "rechts": "erste Steinwerkzeuge" },
+        { "links": "Homo erectus", "rechts": "Nutzung des Feuers, verlässt Afrika" },
+        { "links": "Homo sapiens", "rechts": "entstand vor etwa 300 000 Jahren in Afrika" }
+      ],
+      "erklaerung": "Der aufrechte Gang entstand vor der starken Vergrößerung des Gehirns."
+    },
+    {
+      "id": "bio-evm-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Bei einem fossilen Schädel liegt das Hinterhauptsloch mittig unter dem Schädel. Was schließt du daraus?",
+      "optionen": [
+        { "text": "Das Lebewesen ging aufrecht auf zwei Beinen.", "richtig": true },
+        { "text": "Das Lebewesen hatte ein besonders großes Gehirn.", "feedback": "Die Lage des Hinterhauptslochs sagt etwas über die Haltung des Kopfes aus, nicht über die Gehirngröße." },
+        { "text": "Das Lebewesen lief auf vier Beinen.", "feedback": "Bei Vierbeinern liegt das Hinterhauptsloch weiter hinten." },
+        { "text": "Das Lebewesen konnte sprechen.", "feedback": "Daraus lässt sich nicht auf Sprache schließen." }
+      ],
+      "erklaerung": "Liegt das Loch mittig, balanciert der Kopf auf einer senkrechten Wirbelsäule. Das spricht für den aufrechten Gang."
+    },
+    {
+      "id": "bio-evm-05", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Welche Merkmale unterscheiden einen Schädel von Homo sapiens von dem eines Schimpansen?",
+      "optionen": [
+        { "text": "größerer, runder Gehirnschädel", "richtig": true },
+        { "text": "ausgeprägtes Kinn", "richtig": true },
+        { "text": "flacheres Gesicht mit kleineren Kiefern", "richtig": true },
+        { "text": "starke Überaugenwülste", "feedback": "Starke Überaugenwülste haben Schimpansen und ältere Menschenformen, nicht der Homo sapiens." },
+        { "text": "große Eckzähne", "feedback": "Große Eckzähne sind typisch für Schimpansen." }
+      ],
+      "erklaerung": "Beim Homo sapiens ist der Gehirnschädel groß, der Gesichtsschädel klein."
+    },
+    {
+      "id": "bio-evm-06", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Ein Australopithecus hatte ein Gehirnvolumen von etwa 450 cm³, ein heutiger Mensch etwa 1350 cm³. Um welchen Faktor ist das Gehirn des heutigen Menschen größer?",
+      "gegeben": "V_{Australopithecus} ≈ 450 cm³, V_{Homo sapiens} ≈ 1350 cm³",
+      "gesucht": "Faktor",
+      "loesung": 3, "einheit": "", "toleranz": 0,
+      "rechenweg": ["`\\frac{1350 cm³}{450 cm³} = 3`"],
+      "erklaerung": "Das Gehirn hat sich in etwa 3 Millionen Jahren ungefähr verdreifacht. Die Werte schwanken zwischen Individuen stark."
+    },
+    {
+      "id": "bio-evm-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz1",
+      "frage": "Warum stellt man die Menschenentwicklung heute lieber als verzweigten Busch und nicht als gerade Linie dar?",
+      "optionen": [
+        { "text": "Es gab Seitenlinien, die ausgestorben sind, und zeitweise lebten mehrere Menschenformen gleichzeitig.", "richtig": true },
+        { "text": "Weil jede Art direkt aus der vorherigen hervorging.", "feedback": "Das wäre gerade eine Linie. Die Funde zeigen aber Verzweigungen." },
+        { "text": "Weil Menschen von Pflanzen abstammen.", "feedback": "Der Mensch gehört zu den Tieren, genauer zu den Primaten." },
+        { "text": "Das ist nur eine künstlerische Darstellung ohne Bedeutung.", "feedback": "Die Darstellung als Busch spiegelt den Stand der Forschung wider." }
+      ],
+      "erklaerung": "Neandertaler und Homo sapiens lebten zum Beispiel zehntausende Jahre gleichzeitig. Evolution verläuft nicht zielgerichtet auf den heutigen Menschen zu."
+    }
+  ]
+}

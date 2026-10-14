@@ -1,0 +1,26 @@
+{
+  "fach": "Biologie",
+  "kurz": "Biologie",
+  "reihenfolge": 2.5,
+  "beschreibung": "Biologie nach dem schulinternen Curriculum, Klasse 7 bis 10: von der Zelle und dem Ökosystem Wald über Stoffwechsel, Immunsystem und Nervensystem bis zu Genetik und Evolution.",
+  "quelle": "Schulinternes Curriculum Biologie 7–10, Fachbereich Naturwissenschaften, Humboldt-Gymnasium Berlin-Tegel",
+  "hinweis": "Die Themenfelder sind im Curriculum für die ganze Doppeljahrgangsstufe durchnummeriert (1. bis 8. Themenfeld). Die Zuordnung zu den Klassenstufen folgt dem Plan für Regellerner. Schnelllerner behandeln „Entwicklung des Menschen“ (Themenfeld 4, zweiter Teil) schon in Klasse 9.",
+  "stufen": [
+    {
+      "stufe": 7,
+      "name": "Klasse 7"
+    },
+    {
+      "stufe": 8,
+      "name": "Klasse 8"
+    },
+    {
+      "stufe": 9,
+      "name": "Klasse 9"
+    },
+    {
+      "stufe": 10,
+      "name": "Klasse 10"
+    }
+  ]
+}

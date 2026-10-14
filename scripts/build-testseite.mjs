@@ -83,6 +83,8 @@ window.fetch = async function (url, opts) {
   const body = opts && opts.body ? JSON.parse(opts.body) : {};
   const reply = (data, code) => new Response(JSON.stringify(data), { status: code || 200, headers: { 'Content-Type': 'application/json' } });
   let m;
+  const gesperrt = (m = u.match(/^\\/api\\/(?:uebung\\/([^/]+)|verstanden\\/([^/]+))/)) && (m[1] ? topicById.get(exerciseById.get(decodeURIComponent(m[1]))?.topicId) : topicById.get(decodeURIComponent(m[2])))?.gesperrt;
+  if (gesperrt) return reply({ error: 'Dieses Thema ist noch nicht freigeschaltet.' }, 403);
   if ((m = u.match(/^\\/api\\/uebung\\/([^/]+)$/))) {
     const ex = exerciseById.get(decodeURIComponent(m[1]));
     if (!ex) return reply({ error: 'Diese Aufgabe gibt es nicht.' }, 404);
@@ -158,6 +160,9 @@ function page(p) {
     const grade = grades.find(g => g.stufe === Number(parts[1]));
     if (grade && parts.length === 2) return gradePage({ user: user(), fach, grade, grades, sets: s });
     const topic = topicById.get(parts[2]);
+    if (grade && topic && topic.fach === fach.id && topic.stufe === grade.stufe && topic.gesperrt) {
+      return layout({ title: 'Noch gesperrt', body: '<section class="login"><h1>Noch gesperrt</h1><p>Dieses Thema ist noch nicht freigeschaltet.</p><p><a class="btn" href="/">Zur Übersicht</a></p></section>' });
+    }
     if (grade && topic && topic.fach === fach.id && topic.stufe === grade.stufe) {
       const all = topicsOfGrade(grade);
       const ctx = { user: user(), fach, grade, topic, sets: s, progress: topicProgress(topic, s.solved, s.understood), nextTopic: all[all.indexOf(topic) + 1] || null };
