@@ -1,0 +1,16 @@
+{
+  "nummer": "7",
+  "reihenfolge": 2,
+  "titel": "Genetik",
+  "beschreibung": "Chromosomen und DNA, Mitose und Meiose, die Mendelschen Regeln, Vererbung beim Menschen, Mutation und Modifikation.",
+  "inhalte": [
+    "Zelluläre Grundlagen der Vererbung",
+    "Chromosomen als Träger der Erbanlagen",
+    "Zellteilungsprozesse",
+    "Gregor Mendel und die Vererbungsregeln",
+    "Vererbung beim Menschen, Methoden der Humangenetik",
+    "Vererbung der Blutgruppen und des Geschlechts",
+    "Mutationen, genetisch bedingte Krankheiten"
+  ],
+  "erweiterung": "Modelle hohen Abstraktionsniveaus zu Zellteilungen; Stammbäume aus Fachtexten; Recherche zu genetisch bedingten Krankheiten"
+}

@@ -1,0 +1,117 @@
+{
+  "id": "bio-k8-blut",
+  "titel": "Blut und Blutgruppen",
+  "kurz": "Woraus Blut besteht, welche Aufgaben seine Bestandteile haben und warum bei einer Bluttransfusion die Blutgruppe passen muss.",
+  "reihenfolge": 5,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Die Zusammensetzung des Blutes und die Funktion der Blutbestandteile beschreiben" },
+    { "id": "lz2", "niveau": "G", "text": "Das AB0-System mit den Begriffen Antigen und Antikörper beschreiben" },
+    { "id": "lz3", "niveau": "H", "text": "Die Verklumpung roter Blutkörperchen mit Antigen- und Antikörpermodellen erklären und Blutspendemöglichkeiten beurteilen" }
+  ],
+  "verstehen": {
+    "einstieg": "Im Krankenhaus darf nicht jedes gespendete Blut jedem Menschen gegeben werden. Was passiert, wenn das Blut nicht passt?",
+    "abschnitte": [
+      {
+        "titel": "Bestandteile des Blutes",
+        "text": "Ein Erwachsener hat etwa 5 bis 6 Liter Blut. Lässt man Blut mit einem Mittel gegen Gerinnung stehen, trennt es sich: Oben sammelt sich das gelbliche **Blutplasma** (etwa 55 %), unten die **Blutzellen** (etwa 45 %).\n\n- **Blutplasma:** vor allem Wasser mit gelösten Nährstoffen, Mineralstoffen, Hormonen, Abfallstoffen und Kohlenstoffdioxid. Es transportiert außerdem Wärme.\n- **Rote Blutkörperchen** (Erythrozyten): kleine, beidseitig eingedellte Scheiben ohne Zellkern. Sie enthalten den roten Farbstoff **Hämoglobin**, der **Sauerstoff** bindet. Sie sind die mit Abstand häufigsten Blutzellen.\n- **Weiße Blutkörperchen** (Leukozyten): Sie **wehren Krankheitserreger ab**. Manche können durch die Wände der Kapillaren ins Gewebe wandern.\n- **Blutplättchen** (Thrombozyten): kleine Zellbruchstücke, die bei einer Verletzung die **Blutgerinnung** auslösen und die Wunde verschließen."
+      },
+      {
+        "titel": "Das AB0-System",
+        "text": "Auf der Oberfläche der roten Blutkörperchen können bestimmte Merkmale sitzen, die **Antigene A** und **B**. Danach unterscheidet man vier Blutgruppen:\n\n- **A:** Antigen A; im Plasma Antikörper gegen B (Anti-B)\n- **B:** Antigen B; im Plasma Anti-A\n- **AB:** Antigene A und B; keine dieser Antikörper\n- **0:** keine dieser Antigene; im Plasma Anti-A und Anti-B\n\n**Antikörper** sind Eiweißstoffe im Plasma. Jeder Antikörper passt wie ein Schlüssel ins Schloss genau zu einem Antigen. Man hat immer nur Antikörper gegen die Antigene, die man **selbst nicht** besitzt."
+      },
+      {
+        "titel": "Verklumpung",
+        "text": "Treffen Antikörper auf passende Antigene, binden sie daran. Weil jeder Antikörper zwei Bindungsstellen hat, verbindet er zwei rote Blutkörperchen. So entstehen Klumpen. Diese **Verklumpung** (Agglutination) kann kleine Blutgefäße verstopfen und ist lebensgefährlich.\n\nBeim **Bestimmen der Blutgruppe** gibt man Testseren mit Anti-A und Anti-B zu je einem Tropfen Blut. Verklumpt das Blut mit Anti-A, hat es Antigen A. Verklumpt es mit beiden, ist es Blutgruppe AB. Verklumpt es mit keinem, ist es Blutgruppe 0."
+      },
+      {
+        "titel": "Blutspende",
+        "text": "Bei einer Transfusion bekommt man heute meist nur die roten Blutkörperchen (Erythrozytenkonzentrat). Entscheidend ist dann: Der Empfänger darf **keine Antikörper** gegen die Antigene der gespendeten Blutkörperchen haben.\n\n- Rote Blutkörperchen der Gruppe **0** tragen keine A- oder B-Antigene. Sie passen im AB0-System zu allen Empfängern.\n- Menschen mit **AB** haben keine Anti-A und Anti-B. Sie können im AB0-System rote Blutkörperchen aller Gruppen erhalten.\n\nIn der Praxis prüft man zusätzlich weitere Merkmale wie den **Rhesusfaktor** und gibt möglichst blutgruppengleich. Blut spenden darf man in Deutschland ab 18 Jahren."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "**Rote Blutkörperchen** transportieren Sauerstoff, **weiße Blutkörperchen** wehren Erreger ab, **Blutplättchen** sorgen für die Gerinnung, das **Plasma** transportiert gelöste Stoffe.\n\nDie Blutgruppe richtet sich nach den **Antigenen** auf den roten Blutkörperchen. Im Plasma hat man **Antikörper** gegen die fehlenden Antigene. Passen Antikörper und Antigen zusammen, **verklumpt** das Blut.",
+    "alltag": "In Deutschland haben etwa 40 % der Menschen Blutgruppe A und etwa ebenso viele Blutgruppe 0. Blutgruppe AB ist mit rund 5 % selten. Blutspenden werden ständig gebraucht, weil Blut nur wenige Wochen haltbar ist."
+  },
+  "interaktiv": ["bio-blutgruppen"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "bio-blt-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Ordne jedem Blutbestandteil seine Aufgabe zu.",
+      "paare": [
+        { "links": "rote Blutkörperchen", "rechts": "Sauerstofftransport" },
+        { "links": "weiße Blutkörperchen", "rechts": "Abwehr von Krankheitserregern" },
+        { "links": "Blutplättchen", "rechts": "Blutgerinnung" },
+        { "links": "Blutplasma", "rechts": "Transport gelöster Stoffe und Wärme" }
+      ],
+      "erklaerung": "Jeder Bestandteil hat eine eigene Aufgabe. Zusammen machen sie das Blut zum Transport- und Abwehrsystem des Körpers."
+    },
+    {
+      "id": "bio-blt-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Welche Antikörper hat ein Mensch mit Blutgruppe A im Plasma?",
+      "optionen": [
+        { "text": "Anti-B", "richtig": true },
+        { "text": "Anti-A", "feedback": "Dann würde sein eigenes Blut verklumpen. Man hat nur Antikörper gegen fremde Antigene." },
+        { "text": "Anti-A und Anti-B", "feedback": "Beide Antikörper hat Blutgruppe 0." },
+        { "text": "keine", "feedback": "Keine dieser Antikörper hat Blutgruppe AB." }
+      ],
+      "erklaerung": "Blutgruppe A trägt Antigen A. Antikörper hat man nur gegen das fehlende Antigen, also Anti-B."
+    },
+    {
+      "id": "bio-blt-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Bei einem Blutgruppentest verklumpt ein Bluttropfen mit Anti-B-Serum, aber nicht mit Anti-A-Serum. Welche Blutgruppe liegt vor?",
+      "optionen": [
+        { "text": "B", "richtig": true },
+        { "text": "A", "feedback": "Bei A würde das Blut mit Anti-A verklumpen." },
+        { "text": "AB", "feedback": "Bei AB würde das Blut mit beiden Seren verklumpen." },
+        { "text": "0", "feedback": "Blutgruppe 0 verklumpt mit keinem der beiden Seren." }
+      ],
+      "erklaerung": "Die Verklumpung mit Anti-B zeigt, dass Antigen B vorhanden ist. Antigen A fehlt, sonst hätte auch Anti-A verklumpt."
+    },
+    {
+      "id": "bio-blt-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Warum verklumpen rote Blutkörperchen, wenn passende Antikörper dazukommen?",
+      "optionen": [
+        { "text": "Jeder Antikörper hat zwei Bindungsstellen und verbindet so mehrere Blutkörperchen miteinander.", "richtig": true },
+        { "text": "Die Antikörper lösen die Blutkörperchen auf.", "feedback": "Bei der Verklumpung werden die Zellen verbunden, nicht aufgelöst." },
+        { "text": "Die Blutkörperchen verlieren ihren Zellkern.", "feedback": "Reife rote Blutkörperchen haben ohnehin keinen Zellkern." },
+        { "text": "Das Blut wird durch die Antikörper kälter.", "feedback": "Die Temperatur spielt dabei keine Rolle." }
+      ],
+      "erklaerung": "Antikörper sind Y-förmig mit zwei Bindungsstellen. Sie wirken wie Brücken zwischen den Zellen. Es entsteht ein Netz aus Zellen und Antikörpern."
+    },
+    {
+      "id": "bio-blt-05", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Welche Aussagen über rote Blutkörperchen sind richtig?",
+      "optionen": [
+        { "text": "Sie enthalten Hämoglobin.", "richtig": true },
+        { "text": "Sie haben im reifen Zustand keinen Zellkern.", "richtig": true },
+        { "text": "Sie sind die häufigsten Blutzellen.", "richtig": true },
+        { "text": "Sie bekämpfen Bakterien.", "feedback": "Das ist eine Aufgabe der weißen Blutkörperchen." },
+        { "text": "Sie lösen die Blutgerinnung aus.", "feedback": "Die Gerinnung lösen die Blutplättchen aus." }
+      ],
+      "erklaerung": "Ohne Zellkern ist mehr Platz für Hämoglobin. Ihre flache, eingedellte Form gibt eine große Oberfläche für die Aufnahme von Sauerstoff."
+    },
+    {
+      "id": "bio-blt-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Ein Patient mit Blutgruppe A braucht rote Blutkörperchen. Welche Spenden sind im AB0-System verträglich?",
+      "optionen": [
+        { "text": "A und 0", "richtig": true },
+        { "text": "nur A", "feedback": "Auch rote Blutkörperchen der Gruppe 0 sind verträglich, weil sie keine A- oder B-Antigene tragen." },
+        { "text": "A, B, AB und 0", "feedback": "Der Patient hat Anti-B. Blutkörperchen der Gruppen B und AB würden verklumpen." },
+        { "text": "A und AB", "feedback": "AB-Blutkörperchen tragen Antigen B. Mit dem Anti-B des Patienten würden sie verklumpen." }
+      ],
+      "erklaerung": "Entscheidend sind die Antikörper des **Empfängers**. Er hat Anti-B, also dürfen die gespendeten Blutkörperchen kein Antigen B tragen. Das trifft auf A und 0 zu."
+    },
+    {
+      "id": "bio-blt-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Erkläre, warum rote Blutkörperchen der Blutgruppe 0 im AB0-System allen Menschen gegeben werden können.",
+      "stichworte": [
+        { "aspekt": "Rote Blutkörperchen der Gruppe 0 tragen keine Antigene A oder B.", "woerter": ["kein antigen", "keine antigen", "ohne antigen", "keine a- oder b", "weder a noch b"] },
+        { "aspekt": "Die Antikörper des Empfängers finden kein passendes Antigen.", "woerter": ["antikoerper"] },
+        { "aspekt": "Deshalb kommt es nicht zur Verklumpung.", "woerter": ["verklump", "agglutin"] }
+      ],
+      "musterloesung": "Rote Blutkörperchen der Gruppe 0 tragen keine Antigene A oder B auf ihrer Oberfläche. Egal welche Antikörper der Empfänger im Plasma hat, Anti-A oder Anti-B finden kein passendes Antigen, an das sie binden können. Deshalb kommt es nicht zur Verklumpung. In der Praxis prüft man trotzdem weitere Merkmale wie den Rhesusfaktor.",
+      "erklaerung": "Man nennt Gruppe 0 deshalb oft „Universalspender“ für rote Blutkörperchen. Das gilt aber nur im AB0-System."
+    }
+  ]
+}

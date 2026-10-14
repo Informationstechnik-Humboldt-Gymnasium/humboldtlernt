@@ -179,6 +179,12 @@ export function gradePage({ user, fach, grade, grades, sets }) {
       ${tf.topics.length ? `
       <div class="cards">
         ${tf.topics.map(t => {
+          if (t.gesperrt) return `
+          <div class="card topic locked" aria-disabled="true" title="Dieses Thema ist noch nicht freigeschaltet.">
+            <div class="card-top"><h3>${esc(t.titel)}</h3><span class="chip">gesperrt</span></div>
+            ${t.kurz ? `<p>${md(t.kurz)}</p>` : ''}
+            <div class="card-meta"><span class="chip">noch nicht freigeschaltet</span></div>
+          </div>`;
           const tp = topicProgress(t, sets.solved, sets.understood);
           return `
           <a class="card topic ${tp.total && tp.done === tp.total ? 'done' : ''}" href="/${fach.id}/${grade.stufe}/${esc(t.id)}">

@@ -1,0 +1,110 @@
+{
+  "id": "bio-k9-sinne",
+  "titel": "Sinnesorgane und Reizarten",
+  "kurz": "Welche Reize unsere Sinnesorgane aufnehmen und wie aus einem Reiz eine Reaktion wird.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Sinnesorgane und die passenden Reizarten zuordnen" },
+    { "id": "lz2", "niveau": "G", "text": "Das Reiz-Reaktions-Schema wiedergeben und fachsprachlich korrekt anwenden" },
+    { "id": "lz3", "niveau": "H", "text": "Experimente zu den Leistungen der Sinnesorgane durchführen und auswerten" }
+  ],
+  "verstehen": {
+    "einstieg": "Im Kino hörst du die Musik, siehst die Bilder, riechst Popcorn und spürst den Sessel. Wie gelangen all diese Eindrücke in dein Gehirn?",
+    "abschnitte": [
+      {
+        "titel": "Reize und Sinnesorgane",
+        "text": "Ein **Reiz** ist eine Einwirkung aus der Umwelt oder dem Körper, die von **Sinneszellen** (Rezeptoren) wahrgenommen wird. Jedes Sinnesorgan ist auf eine bestimmte Reizart spezialisiert, den **adäquaten Reiz**:\n\n- **Auge:** Licht\n- **Ohr:** Schall\n- **Gleichgewichtsorgan** im Innenohr: Lage und Beschleunigung\n- **Nase:** chemische Stoffe in der Luft (Geruch)\n- **Zunge:** chemische Stoffe in der Nahrung (Geschmack: süß, sauer, salzig, bitter, umami)\n- **Haut:** Druck, Berührung, Temperatur, Schmerz\n\nSinneszellen wandeln den Reiz in **elektrische Signale** um, die über Nerven zum Gehirn laufen. Erst im Gehirn entsteht die Wahrnehmung, zum Beispiel ein Bild oder ein Geruch."
+      },
+      {
+        "titel": "Das Reiz-Reaktions-Schema",
+        "text": "Wie aus einem Reiz eine Handlung wird, beschreibt das **Reiz-Reaktions-Schema**:\n\nReiz → Sinnesorgan (Rezeptor) → sensorische Nerven → Gehirn oder Rückenmark (Verarbeitung) → motorische Nerven → Erfolgsorgan (z. B. Muskel) → Reaktion\n\nBeispiel: Der Ball fliegt auf dich zu (Reiz). Dein Auge nimmt ihn wahr. Über den Sehnerv gelangt das Signal ins Gehirn. Dort wird entschieden: fangen! Über motorische Nerven werden die Armmuskeln angesteuert, du fängst den Ball.\n\n**Sensorische** Nerven leiten zum Zentralnervensystem hin, **motorische** davon weg zu den Muskeln."
+      },
+      {
+        "titel": "Sinnesleistungen untersuchen",
+        "text": "Mit einfachen Versuchen kannst du Sinnesleistungen messen:\n\n- **Zwei-Punkte-Schwelle:** Mit zwei Zirkelspitzen wird die Haut berührt. Ab welchem Abstand spürt die Versuchsperson zwei Punkte statt einem? An den Fingerkuppen reichen wenige Millimeter, am Rücken braucht man mehrere Zentimeter. Je dichter die Tastkörperchen liegen, desto genauer ist der Tastsinn.\n- **Temperaturversuch:** Eine Hand in kaltes, eine in warmes Wasser, dann beide in lauwarmes. Es fühlt sich für die beiden Hände verschieden an. Die Haut meldet Temperaturunterschiede, keine absolute Temperatur.\n- **Geschmack und Geruch:** Mit zugehaltener Nase lassen sich Apfel und Zwiebel kaum unterscheiden. Viel von dem, was wir „schmecken“, riechen wir.\n\nWichtig für gute Versuche: mehrere Versuchspersonen, Wiederholungen, und die Versuchsperson darf das Ergebnis nicht vorher kennen."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "Jedes Sinnesorgan reagiert auf eine bestimmte **Reizart**. Sinneszellen wandeln Reize in elektrische Signale um.\n\n**Reiz-Reaktions-Schema:** Reiz → Sinnesorgan → sensorische Nerven → Gehirn/Rückenmark → motorische Nerven → Erfolgsorgan → Reaktion.",
+    "alltag": "Bei einer starken Erkältung schmeckt das Essen fade. Die verstopfte Nase kann die Geruchsstoffe nicht mehr wahrnehmen."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "bio-sin-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Ordne jedem Sinnesorgan seinen adäquaten Reiz zu.",
+      "paare": [
+        { "links": "Auge", "rechts": "Licht" },
+        { "links": "Ohr", "rechts": "Schall" },
+        { "links": "Nase", "rechts": "Duftstoffe in der Luft" },
+        { "links": "Haut", "rechts": "Druck und Temperatur" },
+        { "links": "Gleichgewichtsorgan", "rechts": "Lage und Beschleunigung" }
+      ],
+      "erklaerung": "Jedes Sinnesorgan hat Sinneszellen, die auf eine bestimmte Reizart besonders empfindlich reagieren."
+    },
+    {
+      "id": "bio-sin-02", "typ": "reihenfolge", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Ordne die Stationen des Reiz-Reaktions-Schemas.",
+      "elemente": ["Reiz", "Sinnesorgan", "sensorische Nerven", "Gehirn", "motorische Nerven", "Muskel", "Reaktion"],
+      "erklaerung": "Sensorische Nerven führen zum Gehirn hin, motorische Nerven vom Gehirn weg zu den Muskeln."
+    },
+    {
+      "id": "bio-sin-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Wo entsteht die Wahrnehmung „Ich sehe einen roten Apfel“?",
+      "optionen": [
+        { "text": "im Gehirn", "richtig": true },
+        { "text": "in der Linse des Auges", "feedback": "Die Linse bündelt nur das Licht." },
+        { "text": "in den Sinneszellen der Netzhaut", "feedback": "Die Sinneszellen wandeln Licht in elektrische Signale um. Das Bild entsteht aber erst im Gehirn." },
+        { "text": "im Sehnerv", "feedback": "Der Sehnerv leitet die Signale nur weiter." }
+      ],
+      "erklaerung": "Sinnesorgane nehmen Reize auf, das Gehirn verarbeitet sie zu einer Wahrnehmung."
+    },
+    {
+      "id": "bio-sin-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Was ist der Unterschied zwischen sensorischen und motorischen Nerven?",
+      "optionen": [
+        { "text": "Sensorische leiten Signale von den Sinnesorganen zum Zentralnervensystem, motorische vom Zentralnervensystem zu den Muskeln.", "richtig": true },
+        { "text": "Sensorische leiten zu den Muskeln, motorische zu den Sinnesorganen.", "feedback": "Es ist umgekehrt. Merkhilfe: Motor = Bewegung, also Muskeln." },
+        { "text": "Sensorische Nerven gibt es nur im Gehirn.", "feedback": "Sensorische Nerven verlaufen von den Sinnesorganen im ganzen Körper zum Zentralnervensystem." },
+        { "text": "Es gibt keinen Unterschied.", "feedback": "Die beiden Nervenarten leiten in entgegengesetzte Richtungen." }
+      ],
+      "erklaerung": "Sensorisch kommt von lateinisch sensus = Empfindung, motorisch von motor = Beweger."
+    },
+    {
+      "id": "bio-sin-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Beim Zwei-Punkte-Test spürt eine Person an der Fingerkuppe schon bei 3 mm Abstand zwei Punkte, am Rücken erst bei 40 mm. Was folgt daraus?",
+      "optionen": [
+        { "text": "In der Fingerkuppe liegen die Tastkörperchen viel dichter als am Rücken.", "richtig": true },
+        { "text": "Die Haut am Rücken ist dicker und deshalb schmerzunempfindlich.", "feedback": "Der Versuch misst die Auflösung des Tastsinns, nicht die Schmerzempfindung." },
+        { "text": "Der Rücken hat gar keine Tastkörperchen.", "feedback": "Am Rücken spürt man Berührungen, nur weniger genau." },
+        { "text": "Die Person hat geschummelt.", "feedback": "Der Unterschied ist typisch und wiederholbar." }
+      ],
+      "erklaerung": "Je dichter die Sinneszellen liegen, desto feiner kann man Reize unterscheiden. Fingerkuppen, Lippen und Zunge sind besonders empfindlich."
+    },
+    {
+      "id": "bio-sin-06", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Eine Gruppe testet, ob man mit zugehaltener Nase Apfel und Kartoffel unterscheiden kann. Was macht den Versuch aussagekräftig?",
+      "optionen": [
+        { "text": "Die Versuchspersonen tragen eine Augenbinde.", "richtig": true },
+        { "text": "Der Versuch wird mit mehreren Personen wiederholt.", "richtig": true },
+        { "text": "Es gibt einen Vergleichsdurchgang ohne zugehaltene Nase.", "richtig": true },
+        { "text": "Die Versuchsperson erfährt vorher, welches Stück sie bekommt.", "feedback": "Dann wäre das Ergebnis nicht mehr aussagekräftig. Die Person darf es nicht wissen." },
+        { "text": "Man testet nur eine einzige Person einmal.", "feedback": "Ein einzelner Durchgang kann Zufall sein. Wiederholungen machen das Ergebnis sicherer." }
+      ],
+      "erklaerung": "Gute Experimente schließen andere Einflüsse aus (Augenbinde), haben eine Kontrolle (mit Nase) und werden wiederholt."
+    },
+    {
+      "id": "bio-sin-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Du berührst aus Versehen eine heiße Herdplatte und ziehst die Hand zurück. Beschreibe den Ablauf mit dem Reiz-Reaktions-Schema. Verwende die Fachbegriffe.",
+      "stichworte": [
+        { "aspekt": "Reiz: Hitze; Sinnesorgan: Haut mit Temperatur- bzw. Schmerzrezeptoren", "woerter": ["haut", "rezeptor", "sinneszell"] },
+        { "aspekt": "Weiterleitung über sensorische Nerven", "woerter": ["sensorisch"] },
+        { "aspekt": "Verarbeitung im Rückenmark oder Gehirn", "woerter": ["rueckenmark", "gehirn"] },
+        { "aspekt": "Weiterleitung über motorische Nerven zum Muskel, der die Hand zurückzieht", "woerter": ["motorisch"] }
+      ],
+      "musterloesung": "Der Reiz ist die Hitze der Herdplatte. Rezeptoren in der Haut nehmen sie wahr und wandeln sie in elektrische Signale um. Diese gelangen über sensorische Nerven zum Rückenmark. Dort wird das Signal sehr schnell verarbeitet und über motorische Nerven an die Armmuskeln weitergegeben. Die Muskeln ziehen sich zusammen und die Hand wird zurückgezogen. Erst danach meldet das Gehirn den Schmerz.",
+      "erklaerung": "Bei Schutzreflexen wird das Signal schon im Rückenmark umgeschaltet. Das spart Zeit."
+    }
+  ]
+}

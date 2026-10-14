@@ -1,0 +1,215 @@
+{
+  "id": "bio-k10-befruchtung",
+  "titel": "Befruchtung und Keimesentwicklung",
+  "kurz": "Wie aus Eizelle und Spermium eine Zygote wird und wie sich daraus Embryo und Fetus entwickeln.",
+  "reihenfolge": 1,
+  "lernziele": [
+    {
+      "id": "lz1",
+      "niveau": "G",
+      "text": "Den Vorgang der Befruchtung mit den Fachbegriffen Spermium, Eizelle und Zygote beschreiben"
+    },
+    {
+      "id": "lz2",
+      "niveau": "G",
+      "text": "Die Keimesentwicklung bis zur Einnistung erklären"
+    },
+    {
+      "id": "lz3",
+      "niveau": "H",
+      "text": "Entwicklungsstadien von Embryo und Fetus vergleichen"
+    }
+  ],
+  "verstehen": {
+    "einstieg": "Jeder Mensch hat als eine einzige Zelle begonnen, kleiner als ein Punkt auf diesem Bildschirm. Wie wird daraus in rund neun Monaten ein Baby?",
+    "abschnitte": [
+      {
+        "titel": "Befruchtung",
+        "text": "Nach dem Eisprung gelangt die **Eizelle** in den **Eileiter**. Sie ist eine der größten Zellen des Körpers, aber gerade noch mit bloßem Auge erkennbar (etwa 0,1 mm). Die **Spermien** sind viel kleiner und bewegen sich mit ihrem Schwanzfaden fort. Von Millionen Spermien erreichen nur wenige die Eizelle.\n\nDringt ein Spermium in die Eizelle ein, verändert sich deren Hülle sofort, sodass kein weiteres Spermium hineinkommt. Die Zellkerne von Eizelle und Spermium verschmelzen. Diese befruchtete Eizelle heißt **Zygote**. Sie enthält je zur Hälfte Erbinformation von Mutter und Vater."
+      },
+      {
+        "titel": "Von der Zygote zur Einnistung",
+        "text": "Schon auf dem Weg durch den Eileiter teilt sich die Zygote immer wieder: 2 Zellen, 4, 8, 16 … (**Furchung**). Nach einigen Tagen entsteht ein kugeliger Zellhaufen, dann ein flüssigkeitsgefülltes Bläschen, die **Blastozyste**.\n\nEtwa eine Woche nach der Befruchtung **nistet** sie sich in der vorbereiteten Gebärmutterschleimhaut ein. Ab jetzt bildet sich die **Plazenta** (Mutterkuchen). Über sie und die **Nabelschnur** wird der Keim mit Sauerstoff und Nährstoffen versorgt und gibt Abfallstoffe ab. Das Blut von Mutter und Kind vermischt sich dabei nicht.\n\nTeilt sich der Keim in den ersten Tagen vollständig in zwei Teile, entstehen **eineiige Zwillinge** mit gleicher Erbinformation. **Zweieiige Zwillinge** entstehen aus zwei Eizellen, die von zwei Spermien befruchtet wurden."
+      },
+      {
+        "titel": "Embryo und Fetus",
+        "text": "- **Embryo** (bis Ende der 8. Woche nach der Befruchtung): Alle Organe werden angelegt. Schon nach etwa 3 bis 4 Wochen schlägt das Herz. In dieser Zeit ist der Keim besonders empfindlich gegenüber Schadstoffen.\n- **Fetus** (ab der 9. Woche): Die Organe sind angelegt und wachsen und reifen nun. Der Fetus bewegt sich, kann ab etwa der Mitte der Schwangerschaft hören und nimmt stark an Größe und Masse zu.\n\nDas Kind wächst geschützt in der **Fruchtblase** im **Fruchtwasser**, das Stöße abfedert und gleichmäßige Temperatur sichert."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "Bei der **Befruchtung** im Eileiter verschmelzen die Kerne von **Spermium** und **Eizelle** zur **Zygote**. Durch Zellteilungen entsteht die **Blastozyste**, die sich in der Gebärmutterschleimhaut einnistet.\n\nBis zur 8. Woche heißt der Keim **Embryo** (Organanlage), danach **Fetus** (Wachstum und Reifung). Die **Plazenta** versorgt das Kind.",
+    "alltag": "Im Ultraschall sieht man den Herzschlag des Embryos meist ab etwa der 6. bis 7. Schwangerschaftswoche als kleines Flackern. Schwangerschaftswochen werden dabei ab dem ersten Tag der letzten Regelblutung gezählt, also etwa zwei Wochen mehr als ab der Befruchtung."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "bio-bef-01",
+      "typ": "single",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz1",
+      "frage": "Wie heißt die befruchtete Eizelle?",
+      "optionen": [
+        {
+          "text": "Zygote",
+          "richtig": true
+        },
+        {
+          "text": "Fetus",
+          "feedback": "Fetus heißt das ungeborene Kind ab der 9. Woche."
+        },
+        {
+          "text": "Plazenta",
+          "feedback": "Die Plazenta ist das Versorgungsorgan zwischen Mutter und Kind."
+        },
+        {
+          "text": "Spermium",
+          "feedback": "Das Spermium ist die männliche Keimzelle."
+        }
+      ],
+      "erklaerung": "Die Zygote ist die erste Zelle eines neuen Menschen. Sie enthält Erbinformation von beiden Eltern."
+    },
+    {
+      "id": "bio-bef-02",
+      "typ": "reihenfolge",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz2",
+      "frage": "Ordne die Stationen der frühen Entwicklung.",
+      "elemente": [
+        "Eisprung",
+        "Befruchtung im Eileiter",
+        "Zygote",
+        "Furchungsteilungen",
+        "Blastozyste",
+        "Einnistung in die Gebärmutterschleimhaut"
+      ],
+      "erklaerung": "Die Reise vom Eileiter in die Gebärmutter dauert etwa eine Woche. Unterwegs teilt sich der Keim schon mehrfach."
+    },
+    {
+      "id": "bio-bef-03",
+      "typ": "multi",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz2",
+      "frage": "Welche Aufgaben hat die Plazenta?",
+      "optionen": [
+        {
+          "text": "Sie versorgt das Kind mit Sauerstoff.",
+          "richtig": true
+        },
+        {
+          "text": "Sie versorgt das Kind mit Nährstoffen.",
+          "richtig": true
+        },
+        {
+          "text": "Sie nimmt Abfallstoffe des Kindes auf.",
+          "richtig": true
+        },
+        {
+          "text": "Sie mischt das Blut von Mutter und Kind.",
+          "feedback": "Das Blut von Mutter und Kind bleibt getrennt. Die Stoffe gelangen über eine dünne Trennschicht hinüber."
+        },
+        {
+          "text": "Sie bildet das Fruchtwasser als Nahrung.",
+          "feedback": "Das Fruchtwasser dient dem Schutz, nicht als Hauptnahrung."
+        }
+      ],
+      "erklaerung": "Die Plazenta ist das Austauschorgan zwischen Mutter und Kind. Leider gelangen auch Alkohol, Nikotin und manche Medikamente hindurch."
+    },
+    {
+      "id": "bio-bef-04",
+      "typ": "single",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz1",
+      "frage": "Warum kann nur ein einziges Spermium in die Eizelle eindringen?",
+      "optionen": [
+        {
+          "text": "Sobald ein Spermium eingedrungen ist, verändert sich die Hülle der Eizelle und lässt keine weiteren hinein.",
+          "richtig": true
+        },
+        {
+          "text": "Es kommt immer nur ein Spermium bis zur Eizelle.",
+          "feedback": "Es erreichen meist mehrere Spermien die Eizelle. Die Hülle verhindert das Eindringen weiterer."
+        },
+        {
+          "text": "Die übrigen Spermien werden vom Fruchtwasser fortgespült.",
+          "feedback": "Fruchtwasser gibt es erst in der Fruchtblase, die sich später bildet."
+        },
+        {
+          "text": "Spermien können sich gegenseitig zerstören.",
+          "feedback": "Der Schutz geht von der Eizelle aus."
+        }
+      ],
+      "erklaerung": "So erhält die Zygote genau einen Chromosomensatz von der Mutter und einen vom Vater."
+    },
+    {
+      "id": "bio-bef-05",
+      "typ": "single",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz2",
+      "frage": "Wie entstehen eineiige Zwillinge?",
+      "optionen": [
+        {
+          "text": "Ein früher Keim aus einer befruchteten Eizelle teilt sich vollständig in zwei Teile.",
+          "richtig": true
+        },
+        {
+          "text": "Zwei Eizellen werden von zwei Spermien befruchtet.",
+          "feedback": "So entstehen **zweieiige** Zwillinge."
+        },
+        {
+          "text": "Eine Eizelle wird von zwei Spermien befruchtet.",
+          "feedback": "Das Eindringen eines zweiten Spermiums wird normalerweise verhindert."
+        },
+        {
+          "text": "Die Plazenta teilt sich in zwei Teile.",
+          "feedback": "Es teilt sich der Keim selbst, nicht die Plazenta."
+        }
+      ],
+      "erklaerung": "Eineiige Zwillinge haben dieselbe Erbinformation. Deshalb sind sie für die Zwillingsforschung so interessant."
+    },
+    {
+      "id": "bio-bef-06",
+      "typ": "zuordnung",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz3",
+      "frage": "Embryo oder Fetus? Ordne die Beschreibungen zu.",
+      "paare": [
+        {
+          "links": "Alle Organe werden angelegt, besonders empfindlich für Schadstoffe",
+          "rechts": "Embryo"
+        },
+        {
+          "links": "Organe wachsen und reifen, starke Zunahme an Größe",
+          "rechts": "Fetus"
+        }
+      ],
+      "erklaerung": "Die Grenze liegt etwa am Ende der 8. Woche nach der Befruchtung."
+    },
+    {
+      "id": "bio-bef-07",
+      "typ": "single",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz3",
+      "frage": "Warum können Schadstoffe wie Alkohol in den ersten acht Wochen nach der Befruchtung besonders schwere Fehlbildungen verursachen?",
+      "optionen": [
+        {
+          "text": "In dieser Zeit werden alle Organe angelegt. Störungen betreffen dann den Grundbauplan.",
+          "richtig": true
+        },
+        {
+          "text": "Weil es in dieser Zeit noch keine Plazenta gibt, die schützt.",
+          "feedback": "Die Plazenta bildet sich ab der Einnistung. Sie hält Alkohol aber ohnehin nicht zurück."
+        },
+        {
+          "text": "Weil der Embryo dann schon Alkohol trinkt.",
+          "feedback": "Der Alkohol gelangt über das Blut der Mutter und die Plazenta zum Kind."
+        },
+        {
+          "text": "Später ist Alkohol in der Schwangerschaft unbedenklich.",
+          "feedback": "Alkohol schadet in der gesamten Schwangerschaft, vor allem der Gehirnentwicklung."
+        }
+      ],
+      "erklaerung": "Fehler in der Organanlage lassen sich später nicht mehr korrigieren. Deshalb wird empfohlen, in der ganzen Schwangerschaft auf Alkohol zu verzichten."
+    }
+  ]
+}

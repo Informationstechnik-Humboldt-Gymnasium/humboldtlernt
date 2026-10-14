@@ -1,0 +1,117 @@
+{
+  "id": "bio-k7-liebe-verhuetung",
+  "titel": "Liebe, Vielfalt und Verhütung",
+  "kurz": "Partnerschaft und sexuelle Selbstbestimmung, sexuelle Orientierung und Geschlechtsidentität sowie Verhütungsmethoden im Vergleich.",
+  "reihenfolge": 3,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Die Fachbegriffe sexuelle Orientierung und Geschlechtsidentität erläutern" },
+    { "id": "lz2", "niveau": "G", "text": "Das Recht auf sexuelle Selbstbestimmung aus dem Grundgesetz ableiten" },
+    { "id": "lz3", "niveau": "G", "text": "Natürliche, chemische, mechanische und hormonelle Verhütungsmethoden unterscheiden" },
+    { "id": "lz4", "niveau": "H", "text": "Verhütungsmethoden nach Sicherheit, Gesundheitsverträglichkeit und Anwendung vergleichen" }
+  ],
+  "verstehen": {
+    "einstieg": "Liebe kann sich ganz unterschiedlich anfühlen und ganz unterschiedliche Menschen betreffen. Was haben alle guten Partnerschaften gemeinsam?",
+    "abschnitte": [
+      {
+        "titel": "Liebe und Partnerschaft",
+        "text": "In einer guten Partnerschaft gehen beide respektvoll miteinander um. Dazu gehören Vertrauen, Ehrlichkeit und dass beide Nein sagen dürfen. Niemand darf zu etwas gedrängt werden, das er oder sie nicht möchte.\n\nDas **Grundgesetz** sagt in Artikel 2, Absatz 1: Jeder hat das Recht auf die freie Entfaltung seiner Persönlichkeit, solange er die Rechte anderer nicht verletzt. Daraus folgt das Recht auf **sexuelle Selbstbestimmung**: Jeder Mensch entscheidet selbst über seinen Körper und seine Beziehungen."
+      },
+      {
+        "titel": "Sexuelle Orientierung und Geschlechtsidentität",
+        "text": "Die **sexuelle Orientierung** beschreibt, in wen sich ein Mensch verliebt oder von wem er sich angezogen fühlt:\n\n- **heterosexuell:** zu Menschen des anderen Geschlechts\n- **homosexuell:** zu Menschen des gleichen Geschlechts (schwul, lesbisch)\n- **bisexuell:** zu Menschen mehrerer Geschlechter\n\nDie **Geschlechtsidentität** beschreibt, welchem Geschlecht sich ein Mensch selbst zugehörig fühlt. Bei den meisten passt sie zu dem Geschlecht, das bei der Geburt eingetragen wurde. **Transgeschlechtliche** Menschen fühlen sich einem anderen Geschlecht zugehörig. **Intergeschlechtliche** Menschen haben körperliche Merkmale, die nicht eindeutig als männlich oder weiblich eingeordnet werden können.\n\nOrientierung und Identität sind zwei verschiedene Dinge. Beide sucht man sich nicht aus, und beide verdienen Respekt."
+      },
+      {
+        "titel": "Verhütungsmethoden",
+        "text": "Verhütung verhindert eine ungewollte Schwangerschaft. Man unterscheidet:\n\n- **mechanische** Methoden: Sie verhindern, dass Spermien zur Eizelle gelangen, z. B. **Kondom**.\n- **hormonelle** Methoden: Hormone verhindern vor allem den Eisprung, z. B. die **Pille**. Sie wird ärztlich verschrieben.\n- **chemische** Methoden: Gels oder Zäpfchen töten Spermien ab oder machen sie unbeweglich. Allein sind sie wenig sicher.\n- **natürliche** Methoden: Man beobachtet Körperzeichen, um fruchtbare Tage zu erkennen. Sie erfordern viel Erfahrung und sind für Jugendliche ungeeignet, weil Zyklen oft unregelmäßig sind.\n\nDas **Kondom** ist die einzige Methode, die zusätzlich vor sexuell übertragbaren Infektionen wie HIV schützt."
+      },
+      {
+        "titel": "Methoden vergleichen",
+        "text": "Kriterien für den Vergleich sind:\n\n- **Sicherheit:** Der **Pearl-Index** gibt an, wie viele von 100 Frauen innerhalb eines Jahres trotz dieser Methode schwanger werden. Je kleiner er ist, desto sicherer ist die Methode. Fehler bei der Anwendung machen jede Methode unsicherer.\n- **Gesundheitsverträglichkeit:** Hormonelle Methoden können Nebenwirkungen haben.\n- **Anwendung:** Muss man täglich daran denken? Braucht man ein Rezept?\n- **Schutz vor Infektionen:** nur beim Kondom.\n\nBei Fragen helfen Frauenärztinnen und -ärzte sowie Beratungsstellen, zum Beispiel pro familia."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "Jeder Mensch hat das Recht auf **sexuelle Selbstbestimmung** (Art. 2 Abs. 1 GG). Die **sexuelle Orientierung** beschreibt, wen man liebt, die **Geschlechtsidentität**, welchem Geschlecht man sich zugehörig fühlt.\n\nVerhütungsmethoden sind mechanisch, hormonell, chemisch oder natürlich. Nur das **Kondom** schützt auch vor sexuell übertragbaren Infektionen.",
+    "alltag": "Die Bundeszentrale für gesundheitliche Aufklärung (BZgA) bietet unter loveline.de altersgerechte Informationen und beantwortet Fragen anonym."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "bio-vhu-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz3",
+      "frage": "Ordne jede Verhütungsmethode ihrer Art zu.",
+      "paare": [
+        { "links": "Kondom", "rechts": "mechanisch" },
+        { "links": "Pille", "rechts": "hormonell" },
+        { "links": "spermienabtötendes Gel", "rechts": "chemisch" },
+        { "links": "Temperaturmessung", "rechts": "natürlich" }
+      ],
+      "erklaerung": "Mechanische Methoden sind eine Barriere, hormonelle verhindern den Eisprung, chemische wirken auf die Spermien, natürliche beobachten den Zyklus."
+    },
+    {
+      "id": "bio-vhu-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz3",
+      "frage": "Welche Verhütungsmethode schützt zusätzlich vor sexuell übertragbaren Infektionen?",
+      "optionen": [
+        { "text": "das Kondom", "richtig": true },
+        { "text": "die Pille", "feedback": "Die Pille verhindert den Eisprung, schützt aber nicht vor Infektionen." },
+        { "text": "die Temperaturmethode", "feedback": "Natürliche Methoden bieten keinen Schutz vor Infektionen." },
+        { "text": "chemische Gels", "feedback": "Gels schützen nicht zuverlässig vor Infektionen." }
+      ],
+      "erklaerung": "Das Kondom ist eine Barriere. Es verhindert, dass Körperflüssigkeiten und damit Erreger übertragen werden."
+    },
+    {
+      "id": "bio-vhu-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Was beschreibt der Begriff „Geschlechtsidentität“?",
+      "optionen": [
+        { "text": "welchem Geschlecht sich ein Mensch selbst zugehörig fühlt", "richtig": true },
+        { "text": "in wen sich ein Mensch verliebt", "feedback": "Das ist die **sexuelle Orientierung**." },
+        { "text": "welche Kleidung ein Mensch trägt", "feedback": "Kleidung ist eine Frage des Stils. Geschlechtsidentität ist ein inneres Wissen über sich selbst." },
+        { "text": "wie viele Partnerinnen oder Partner jemand hat", "feedback": "Damit hat Geschlechtsidentität nichts zu tun." }
+      ],
+      "erklaerung": "Orientierung und Identität sind zwei unterschiedliche Dinge: Die Identität betrifft das eigene Geschlecht, die Orientierung die Gefühle zu anderen."
+    },
+    {
+      "id": "bio-vhu-04", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Ordne die Fachbegriffe ihrer Bedeutung zu.",
+      "paare": [
+        { "links": "heterosexuell", "rechts": "verliebt sich in Menschen des anderen Geschlechts" },
+        { "links": "homosexuell", "rechts": "verliebt sich in Menschen des gleichen Geschlechts" },
+        { "links": "bisexuell", "rechts": "verliebt sich in Menschen mehrerer Geschlechter" },
+        { "links": "transgeschlechtlich", "rechts": "fühlt sich einem anderen als dem eingetragenen Geschlecht zugehörig" }
+      ],
+      "erklaerung": "Die ersten drei Begriffe beschreiben sexuelle Orientierungen. Transgeschlechtlichkeit betrifft dagegen die Geschlechtsidentität."
+    },
+    {
+      "id": "bio-vhu-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Aus welchem Grundrecht leitet sich das Recht auf sexuelle Selbstbestimmung ab?",
+      "optionen": [
+        { "text": "Recht auf freie Entfaltung der Persönlichkeit (Art. 2 Abs. 1 GG)", "richtig": true },
+        { "text": "Recht auf Meinungsfreiheit", "feedback": "Meinungsfreiheit betrifft das Äußern von Meinungen. Selbstbestimmung über den eigenen Körper gehört zur freien Entfaltung der Persönlichkeit." },
+        { "text": "Recht auf Eigentum", "feedback": "Das Eigentumsrecht betrifft Besitz, nicht Beziehungen oder den eigenen Körper." },
+        { "text": "Wahlrecht", "feedback": "Das Wahlrecht betrifft politische Wahlen." }
+      ],
+      "erklaerung": "Artikel 2 Absatz 1 des Grundgesetzes schützt die freie Entfaltung der Persönlichkeit, solange die Rechte anderer nicht verletzt werden."
+    },
+    {
+      "id": "bio-vhu-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Methode A hat einen Pearl-Index von 0,3, Methode B von 12. Was bedeutet das?",
+      "optionen": [
+        { "text": "Methode A ist deutlich sicherer: Von 100 Frauen wird in einem Jahr weniger als eine schwanger, bei B etwa zwölf.", "richtig": true },
+        { "text": "Methode B ist sicherer, weil die Zahl größer ist.", "feedback": "Beim Pearl-Index gilt: je kleiner, desto sicherer." },
+        { "text": "Beide sind gleich sicher.", "feedback": "Die Werte unterscheiden sich um ein Vielfaches." },
+        { "text": "Der Pearl-Index gibt an, wie viel die Methode kostet.", "feedback": "Der Pearl-Index beschreibt die Sicherheit, nicht den Preis." }
+      ],
+      "erklaerung": "Der Pearl-Index zählt ungewollte Schwangerschaften bei 100 Frauen in einem Jahr. Ein kleiner Wert bedeutet hohe Sicherheit."
+    },
+    {
+      "id": "bio-vhu-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Vergleiche das Kondom und die Pille anhand von zwei Kriterien deiner Wahl, zum Beispiel Sicherheit, Gesundheitsverträglichkeit, Anwendung oder Schutz vor Infektionen.",
+      "stichworte": [
+        { "aspekt": "Nur das Kondom schützt vor sexuell übertragbaren Infektionen.", "woerter": ["infektion", "hiv", "krankheit"] },
+        { "aspekt": "Die Pille ist bei richtiger Anwendung sehr sicher, muss aber täglich genommen werden.", "woerter": ["taeglich", "jeden tag", "regelmaessig"] },
+        { "aspekt": "Die Pille enthält Hormone und kann Nebenwirkungen haben bzw. braucht ein Rezept.", "woerter": ["hormon", "nebenwirkung", "rezept"] }
+      ],
+      "musterloesung": "Das Kondom ist eine mechanische Methode und als einzige schützt sie zusätzlich vor Infektionen wie HIV. Man muss es aber jedes Mal richtig anwenden. Die Pille ist eine hormonelle Methode. Sie muss täglich genommen werden und braucht ein Rezept. Bei richtiger Anwendung ist sie sehr sicher, kann aber Nebenwirkungen haben und schützt nicht vor Infektionen.",
+      "erklaerung": "Ein guter Vergleich nennt für beide Methoden dasselbe Kriterium. So werden Vor- und Nachteile direkt gegenübergestellt."
+    }
+  ]
+}

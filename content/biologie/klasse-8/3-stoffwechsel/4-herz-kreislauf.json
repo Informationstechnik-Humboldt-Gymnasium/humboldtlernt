@@ -1,0 +1,116 @@
+{
+  "id": "bio-k8-herz-kreislauf",
+  "titel": "Herz und Blutkreislauf",
+  "kurz": "Wie das Herz als Doppelpumpe arbeitet, welche Blutgefäße es gibt und wie man Puls und Blutdruck misst.",
+  "reihenfolge": 4,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Aufbau und Funktion des Herz-Kreislauf-Systems mit Lungen- und Körperkreislauf erläutern" },
+    { "id": "lz2", "niveau": "G", "text": "Aufbau und Funktionsweise des Herzens mit Vorhöfen, Kammern und Klappen erläutern" },
+    { "id": "lz3", "niveau": "G", "text": "Arterien, Venen und Kapillaren nach Bau und Funktion unterscheiden" },
+    { "id": "lz4", "niveau": "H", "text": "Puls und Blutdruck in Ruhe und Belastung messen und die Ergebnisse vergleichend interpretieren" }
+  ],
+  "verstehen": {
+    "einstieg": "Dein Herz schlägt ungefähr 100 000-mal am Tag, ohne Pause, dein ganzes Leben lang. Wie schafft es dieser faustgroße Muskel, Blut bis in deine Zehenspitzen zu pumpen?",
+    "abschnitte": [
+      {
+        "titel": "Das Herz: eine Doppelpumpe",
+        "text": "Das Herz ist ein Hohlmuskel. Eine Scheidewand teilt es in eine **rechte** und eine **linke Hälfte**. Jede Hälfte hat einen **Vorhof** oben und eine **Kammer** unten.\n\n- Die **rechte Hälfte** pumpt **sauerstoffarmes** Blut zur Lunge.\n- Die **linke Hälfte** pumpt **sauerstoffreiches** Blut in den Körper. Ihre Wand ist besonders dick, weil sie den ganzen Körper versorgen muss.\n\n**Herzklappen** wirken wie Ventile und sorgen dafür, dass das Blut nur in eine Richtung fließt: **Segelklappen** zwischen Vorhof und Kammer, **Taschenklappen** am Ausgang der Kammern. Das Schließen der Klappen hörst du als Herztöne.\n\nRechts und links beziehen sich übrigens auf den Menschen selbst. Auf Abbildungen von vorn ist die rechte Herzhälfte deshalb links zu sehen."
+      },
+      {
+        "titel": "Lungen- und Körperkreislauf",
+        "text": "Das Blut fließt in einem **doppelten Kreislauf**:\n\n- **Lungenkreislauf:** rechte Kammer → Lungenarterie → Lunge (Blut nimmt Sauerstoff auf, gibt Kohlenstoffdioxid ab) → Lungenvene → linker Vorhof\n- **Körperkreislauf:** linke Kammer → Aorta (Körperschlagader) → Arterien → Kapillaren in den Organen (Blut gibt Sauerstoff und Nährstoffe ab) → Venen → rechter Vorhof\n\nDas Blut transportiert außerdem Nährstoffe vom Darm zu den Zellen, Abfallstoffe zu den Nieren, Wärme und Hormone."
+      },
+      {
+        "titel": "Arterien, Venen, Kapillaren",
+        "text": "- **Arterien** führen Blut **vom Herzen weg**. Sie haben eine dicke, elastische Muskelwand, weil das Blut mit hohem Druck hineingepumpt wird. Den Druckstoß fühlst du als **Puls**.\n- **Venen** führen Blut **zum Herzen hin**. Ihre Wand ist dünner. **Venenklappen** verhindern, dass das Blut zurückfließt. Die Muskeln der Beine drücken die Venen zusammen und helfen beim Transport.\n- **Kapillaren** sind haarfeine Gefäße mit einer Wand aus nur einer Zellschicht. Hier findet der **Stoffaustausch** zwischen Blut und Gewebe statt.\n\nAchtung: Die Namen hängen von der Richtung ab, nicht vom Sauerstoffgehalt. Die **Lungenarterie** führt sauerstoff**armes** Blut."
+      },
+      {
+        "titel": "Puls und Blutdruck",
+        "text": "Den **Puls** misst du am Handgelenk oder am Hals. Zähle die Schläge in 15 Sekunden und nimm sie mal 4. In Ruhe liegt er bei Jugendlichen meist zwischen 60 und 100 Schlägen pro Minute.\n\nDer **Blutdruck** wird mit zwei Werten in Millimeter Quecksilbersäule (mmHg) angegeben, zum Beispiel 120/80. Der obere Wert entsteht, wenn sich die Kammern zusammenziehen, der untere, wenn das Herz erschlafft.\n\nBei Belastung steigen Puls und Blutdruck, damit die Muskeln mehr Sauerstoff bekommen. Bei Trainierten sinkt der Puls nach der Belastung schneller wieder.\n\n`Herzminutenvolumen = Schlagvolumen · Herzfrequenz`"
+      }
+    ],
+    "formeln": [
+      { "formel": "Herzminutenvolumen = Schlagvolumen · Herzfrequenz", "bedeutung": "Blutmenge, die eine Herzhälfte pro Minute pumpt (in Ruhe etwa 70 mL · 70 / min ≈ 5 L / min)" }
+    ],
+    "merksatz": "Das Herz ist eine **Doppelpumpe**: Die rechte Hälfte pumpt Blut durch den **Lungenkreislauf**, die linke durch den **Körperkreislauf**. **Klappen** lassen das Blut nur in eine Richtung fließen.\n\n**Arterien** führen vom Herzen weg, **Venen** zum Herzen hin, in den **Kapillaren** findet der Stoffaustausch statt.",
+    "alltag": "Herz-Kreislauf-Erkrankungen wie Herzinfarkt sind in Deutschland die häufigste Todesursache. Bewegung, Nichtrauchen und gesunde Ernährung senken das Risiko deutlich."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "bio-hkl-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz3",
+      "frage": "Ordne jedem Blutgefäß die passende Beschreibung zu.",
+      "paare": [
+        { "links": "Arterie", "rechts": "führt vom Herzen weg, dicke elastische Wand" },
+        { "links": "Vene", "rechts": "führt zum Herzen hin, hat Klappen" },
+        { "links": "Kapillare", "rechts": "haarfein, Ort des Stoffaustauschs" }
+      ],
+      "erklaerung": "Arterien halten hohen Druck aus, Venen haben Klappen gegen den Rückfluss, Kapillaren ermöglichen durch ihre dünne Wand den Austausch."
+    },
+    {
+      "id": "bio-hkl-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Wozu dienen die Herzklappen?",
+      "optionen": [
+        { "text": "Sie sorgen dafür, dass das Blut nur in eine Richtung fließt.", "richtig": true },
+        { "text": "Sie reichern das Blut mit Sauerstoff an.", "feedback": "Sauerstoff nimmt das Blut in der Lunge auf." },
+        { "text": "Sie trennen sauerstoffreiches von sauerstoffarmem Blut zwischen den Hälften.", "feedback": "Das macht die Herzscheidewand." },
+        { "text": "Sie erzeugen den Herzschlag.", "feedback": "Der Herzschlag entsteht durch das Zusammenziehen des Herzmuskels." }
+      ],
+      "erklaerung": "Herzklappen funktionieren wie Ventile. Ihr Schließen hört man mit dem Stethoskop als Herztöne."
+    },
+    {
+      "id": "bio-hkl-03", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Verfolge ein rotes Blutkörperchen, das gerade im rechten Vorhof ankommt. Ordne die Stationen.",
+      "elemente": ["rechter Vorhof", "rechte Kammer", "Lungenarterie", "Kapillaren der Lunge", "Lungenvene", "linker Vorhof", "linke Kammer", "Aorta"],
+      "erklaerung": "Nach dem Lungenkreislauf kehrt das Blut ins Herz zurück und wird von der linken Kammer in den Körperkreislauf gepumpt."
+    },
+    {
+      "id": "bio-hkl-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Welche Aussage über die Lungenarterie ist richtig?",
+      "optionen": [
+        { "text": "Sie führt sauerstoffarmes Blut vom Herzen zur Lunge.", "richtig": true },
+        { "text": "Sie führt sauerstoffreiches Blut von der Lunge zum Herzen.", "feedback": "Das macht die Lungen**vene**. Arterien führen immer vom Herzen weg." },
+        { "text": "Alle Arterien führen sauerstoffreiches Blut, also auch sie.", "feedback": "Die Lungenarterie ist die Ausnahme: Sie bringt sauerstoffarmes Blut zur Lunge." },
+        { "text": "Sie führt Blut von der Lunge in den Körper.", "feedback": "Blut aus der Lunge fließt immer erst zurück ins Herz." }
+      ],
+      "erklaerung": "Arterie und Vene werden nach der Flussrichtung benannt, nicht nach dem Sauerstoffgehalt."
+    },
+    {
+      "id": "bio-hkl-05", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Jonas zählt nach dem Treppensteigen in 15 Sekunden 32 Pulsschläge. Wie hoch ist sein Puls pro Minute?",
+      "gegeben": "32 Schläge in 15 s",
+      "gesucht": "Puls in Schlägen pro Minute",
+      "loesung": 128, "einheit": "1/min", "toleranz": 0,
+      "rechenweg": [
+        "Eine Minute hat 60 s, das sind 4 · 15 s.",
+        "`32 · 4 = 128`"
+      ],
+      "erklaerung": "128 Schläge pro Minute ist ein typischer Wert nach Belastung. In Ruhe liegt der Puls deutlich niedriger."
+    },
+    {
+      "id": "bio-hkl-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Warum ist die Muskelwand der linken Herzkammer deutlich dicker als die der rechten?",
+      "optionen": [
+        { "text": "Die linke Kammer pumpt das Blut durch den ganzen Körper und muss dafür einen viel höheren Druck erzeugen.", "richtig": true },
+        { "text": "Die linke Kammer enthält mehr Blut als die rechte.", "feedback": "Beide Kammern pumpen pro Schlag etwa gleich viel Blut. Unterschiedlich ist der nötige Druck." },
+        { "text": "Sauerstoffreiches Blut ist schwerer.", "feedback": "Der Sauerstoffgehalt ändert das Gewicht des Blutes kaum." },
+        { "text": "Weil das Herz links im Körper liegt.", "feedback": "Die Lage erklärt den Unterschied nicht. Es geht um die zu leistende Pumparbeit." }
+      ],
+      "erklaerung": "Der Körperkreislauf ist viel länger und hat mehr Widerstand als der kurze Lungenkreislauf. Bau und Funktion passen zusammen."
+    },
+    {
+      "id": "bio-hkl-07", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Bei einer Ausdauersportlerin pumpt das Herz in Ruhe 100 mL Blut pro Schlag bei einem Puls von 50 pro Minute. Berechne das Herzminutenvolumen in Litern pro Minute.",
+      "gegeben": "Schlagvolumen 100 mL, Herzfrequenz 50 / min",
+      "gesucht": "Herzminutenvolumen in L/min",
+      "loesung": 5, "einheit": "L/min", "toleranz": 0,
+      "rechenweg": [
+        "`Herzminutenvolumen = Schlagvolumen · Herzfrequenz`",
+        "`= 100 mL · 50 \\frac{1}{min} = 5000 \\frac{mL}{min}`",
+        "`5000 mL = 5 L`, also `5 \\frac{L}{min}`"
+      ],
+      "erklaerung": "Ein trainiertes Herz pumpt mit jedem Schlag mehr Blut. Deshalb reicht ein niedrigerer Puls für die gleichen etwa 5 Liter pro Minute."
+    }
+  ]
+}

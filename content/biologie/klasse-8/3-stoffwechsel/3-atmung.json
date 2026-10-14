@@ -1,0 +1,242 @@
+{
+  "id": "bio-k8-atmung",
+  "titel": "Atmung und Zellatmung",
+  "kurz": "Wie die Lunge gebaut ist, wie Gase in den Lungenbläschen ausgetauscht werden und wozu die Zellen Sauerstoff brauchen.",
+  "reihenfolge": 3,
+  "lernziele": [
+    {
+      "id": "lz1",
+      "niveau": "G",
+      "text": "Den Zusammenhang zwischen Bau und Funktion der Lunge erklären"
+    },
+    {
+      "id": "lz2",
+      "niveau": "G",
+      "text": "Den Gasaustausch in den Lungenbläschen mit dem Prinzip der Diffusion erklären"
+    },
+    {
+      "id": "lz3",
+      "niveau": "G",
+      "text": "Den unterschiedlichen Kohlenstoffdioxidgehalt in Ein- und Ausatemluft experimentell nachweisen"
+    },
+    {
+      "id": "lz4",
+      "niveau": "H",
+      "text": "Die Zellatmung als Energieumwandlung beschreiben und das Atemzeitvolumen in Ruhe und Belastung auswerten"
+    }
+  ],
+  "verstehen": {
+    "einstieg": "Du kannst einige Wochen ohne Essen überleben, aber nur wenige Minuten ohne Luft. Wofür braucht jede Zelle deines Körpers ständig Sauerstoff?",
+    "abschnitte": [
+      {
+        "titel": "Der Weg der Atemluft",
+        "text": "Die Luft strömt durch **Nase** (oder Mund) und **Rachen** in die **Luftröhre**. In der Nase wird sie angewärmt, angefeuchtet und von Staub gereinigt. Die Luftröhre wird durch Knorpelspangen offen gehalten. Sie teilt sich in die beiden **Bronchien**, die sich in der Lunge immer feiner verzweigen, bis zu den **Bronchiolen**. An deren Enden sitzen traubenförmig die **Lungenbläschen** (Alveolen).\n\nEine Lunge hat Hunderte Millionen Lungenbläschen. Zusammen haben sie eine Oberfläche von etwa 100 m², so viel wie eine kleine Wohnung."
+      },
+      {
+        "titel": "Ein- und Ausatmen",
+        "text": "Die Lunge hat keine eigenen Muskeln. Beim **Einatmen** zieht sich das **Zwerchfell** zusammen und flacht ab, und die Zwischenrippenmuskeln heben die Rippen. Der Brustraum wird größer, die Lunge dehnt sich mit, und Luft strömt hinein. Beim **Ausatmen** entspannen sich die Muskeln, der Brustraum wird kleiner und Luft strömt hinaus.\n\nDas lässt sich mit einem **Glockenmodell** zeigen: Eine Gummihaut unten an einer Glasglocke steht für das Zwerchfell, zwei Luftballons innen für die Lungenflügel. Zieht man die Gummihaut nach unten, füllen sich die Ballons."
+      },
+      {
+        "titel": "Gasaustausch durch Diffusion",
+        "text": "Jedes Lungenbläschen ist von einem Netz feinster Blutgefäße (**Kapillaren**) umgeben. Die Wände von Bläschen und Kapillaren sind extrem dünn.\n\nTeilchen bewegen sich von selbst vom Ort **hoher Konzentration** zum Ort **niedriger Konzentration**. Das nennt man **Diffusion**.\n\n- In der eingeatmeten Luft ist viel **Sauerstoff**, im ankommenden Blut wenig. Sauerstoff diffundiert ins Blut.\n- Im Blut ist viel **Kohlenstoffdioxid**, in der Luft der Bläschen wenig. Kohlenstoffdioxid diffundiert in die Bläschen und wird ausgeatmet.\n\nEingeatmete Luft enthält etwa 21 % Sauerstoff und 0,04 % Kohlenstoffdioxid, ausgeatmete Luft etwa 16 % Sauerstoff und 4 % Kohlenstoffdioxid. Nachweis: Ausgeatmete Luft trübt **Kalkwasser** deutlich schneller als eingeatmete."
+      },
+      {
+        "titel": "Zellatmung und Atemzeitvolumen",
+        "text": "Der Sauerstoff wird in den **Mitochondrien** jeder Zelle gebraucht. Dort wird Traubenzucker mit Sauerstoff abgebaut:\n\nTraubenzucker + Sauerstoff → Kohlenstoffdioxid + Wasser\n\nDabei wird die **chemisch gebundene Energie** des Zuckers in Energie umgewandelt, die die Zelle nutzen kann, zum Beispiel für Bewegung, und in Wärme. Das ist die **Zellatmung**.\n\nBei Belastung brauchen die Muskeln mehr Energie und damit mehr Sauerstoff. Man atmet schneller und tiefer. Das **Atemzeitvolumen** gibt an, wie viel Luft pro Minute ein- und ausgeatmet wird:\n\n`Atemzeitvolumen = Atemzugvolumen · Atemfrequenz`"
+      }
+    ],
+    "formeln": [
+      {
+        "formel": "Atemzeitvolumen = Atemzugvolumen · Atemfrequenz",
+        "bedeutung": "Luftmenge pro Minute (z. B. 0,5 L · 15 / min = 7,5 L / min in Ruhe)"
+      }
+    ],
+    "merksatz": "In den **Lungenbläschen** diffundiert Sauerstoff ins Blut und Kohlenstoffdioxid aus dem Blut in die Atemluft. Die riesige Oberfläche und die dünnen Wände machen den Gasaustausch schnell.\n\nBei der **Zellatmung** wird in den Mitochondrien Traubenzucker mit Sauerstoff zu Kohlenstoffdioxid und Wasser abgebaut. Dabei wird Energie frei.",
+    "alltag": "Rauchen schädigt die Lungenbläschen und lähmt die Flimmerhärchen in den Bronchien. Raucherinnen und Raucher kommen deshalb beim Sport schneller außer Atem."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "bio-atm-01",
+      "typ": "reihenfolge",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz1",
+      "frage": "Ordne die Stationen der eingeatmeten Luft.",
+      "elemente": [
+        "Nase",
+        "Rachen",
+        "Luftröhre",
+        "Bronchien",
+        "Bronchiolen",
+        "Lungenbläschen"
+      ],
+      "erklaerung": "Die Atemwege verzweigen sich wie ein umgedrehter Baum, bis sie in den Lungenbläschen enden."
+    },
+    {
+      "id": "bio-atm-02",
+      "typ": "single",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz3",
+      "frage": "Du bläst Ausatemluft mit einem Strohhalm in Kalkwasser. Das Kalkwasser wird trüb. Welcher Stoff wird damit nachgewiesen?",
+      "optionen": [
+        {
+          "text": "Kohlenstoffdioxid",
+          "richtig": true
+        },
+        {
+          "text": "Sauerstoff",
+          "feedback": "Sauerstoff weist man mit der Glimmspanprobe nach."
+        },
+        {
+          "text": "Wasserdampf",
+          "feedback": "Wasserdampf beschlägt kalte Scheiben, trübt aber kein Kalkwasser."
+        },
+        {
+          "text": "Stickstoff",
+          "feedback": "Stickstoff reagiert nicht mit Kalkwasser."
+        }
+      ],
+      "erklaerung": "Ausatemluft enthält etwa hundertmal mehr Kohlenstoffdioxid als Einatemluft. Deshalb trübt sie Kalkwasser viel schneller."
+    },
+    {
+      "id": "bio-atm-03",
+      "typ": "single",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz2",
+      "frage": "Warum gelangt Sauerstoff in den Lungenbläschen von selbst ins Blut?",
+      "optionen": [
+        {
+          "text": "In der Luft der Bläschen ist die Sauerstoffkonzentration höher als im ankommenden Blut. Er diffundiert zur niedrigeren Konzentration.",
+          "richtig": true
+        },
+        {
+          "text": "Das Herz saugt den Sauerstoff aus der Lunge.",
+          "feedback": "Das Herz pumpt Blut. Der Gasaustausch geschieht durch Diffusion."
+        },
+        {
+          "text": "Muskeln in den Lungenbläschen pressen ihn ins Blut.",
+          "feedback": "Lungenbläschen haben keine Muskeln. Der Austausch geschieht passiv."
+        },
+        {
+          "text": "Das Blut enthält mehr Sauerstoff als die Luft.",
+          "feedback": "Dann würde Sauerstoff aus dem Blut in die Luft diffundieren."
+        }
+      ],
+      "erklaerung": "Diffusion läuft immer vom Ort hoher zum Ort niedriger Konzentration, ohne dass Energie aufgewendet werden muss."
+    },
+    {
+      "id": "bio-atm-04",
+      "typ": "zahl",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz4",
+      "frage": "Beim Joggen atmet Mia 40-mal pro Minute, mit jedem Atemzug 1,5 L Luft. Berechne ihr Atemzeitvolumen.",
+      "gegeben": "Atemfrequenz 40 / min, Atemzugvolumen 1,5 L",
+      "gesucht": "Atemzeitvolumen in L/min",
+      "loesung": 60,
+      "einheit": "L/min",
+      "toleranz": 0,
+      "rechenweg": [
+        "`Atemzeitvolumen = Atemzugvolumen · Atemfrequenz`",
+        "`= 1,5 L · 40 \\frac{1}{min} = 60 \\frac{L}{min}`"
+      ],
+      "erklaerung": "In Ruhe sind es nur etwa 0,5 L · 15 / min = 7,5 L / min. Beim Sport steigt das Atemzeitvolumen also auf ein Vielfaches, weil die Muskeln mehr Sauerstoff brauchen."
+    },
+    {
+      "id": "bio-atm-05",
+      "typ": "multi",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz1",
+      "frage": "Welche Merkmale der Lunge machen den Gasaustausch besonders wirksam?",
+      "optionen": [
+        {
+          "text": "sehr große Oberfläche durch viele Lungenbläschen",
+          "richtig": true
+        },
+        {
+          "text": "sehr dünne Wände von Bläschen und Kapillaren",
+          "richtig": true
+        },
+        {
+          "text": "dichtes Netz von Kapillaren um jedes Bläschen",
+          "richtig": true
+        },
+        {
+          "text": "dicke Muskelschicht um die Lungenbläschen",
+          "feedback": "Lungenbläschen haben keine Muskeln. Eine dicke Wand würde die Diffusion verlangsamen."
+        },
+        {
+          "text": "Knorpelspangen in den Lungenbläschen",
+          "feedback": "Knorpelspangen gibt es in der Luftröhre und den Bronchien. Sie halten diese offen."
+        }
+      ],
+      "erklaerung": "Große Fläche, kurzer Weg und viel Blut sorgen dafür, dass viele Teilchen schnell diffundieren können."
+    },
+    {
+      "id": "bio-atm-06",
+      "typ": "single",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz1",
+      "frage": "Im Glockenmodell stellen die Luftballons die Lungenflügel dar und die Gummihaut das Zwerchfell. Was zeigt das Modell **nicht** richtig?",
+      "optionen": [
+        {
+          "text": "Die Rolle der Rippen und der Zwischenrippenmuskeln beim Atmen",
+          "richtig": true
+        },
+        {
+          "text": "Dass sich die Lunge ausdehnt, wenn der Brustraum größer wird",
+          "feedback": "Genau das zeigt das Modell gut: Die Ballons füllen sich, wenn die Gummihaut nach unten gezogen wird."
+        },
+        {
+          "text": "Dass das Zwerchfell beim Einatmen nach unten geht",
+          "feedback": "Das zeigt das Modell richtig."
+        },
+        {
+          "text": "Dass Luft durch die Luftröhre in die Lunge strömt",
+          "feedback": "Das Glasrohr oben stellt die Luftröhre dar. Das zeigt das Modell."
+        }
+      ],
+      "erklaerung": "Die Glasglocke ist starr. Die Brustatmung mit dem Heben der Rippen kann sie nicht darstellen. Auch Bronchien und Lungenbläschen fehlen."
+    },
+    {
+      "id": "bio-atm-07",
+      "typ": "text",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz4",
+      "frage": "Erkläre, warum du beim Sprinten schneller und tiefer atmest. Gehe dabei auf die Zellatmung ein.",
+      "stichworte": [
+        {
+          "aspekt": "Die Muskeln brauchen bei Belastung mehr Energie.",
+          "woerter": [
+            "energie"
+          ]
+        },
+        {
+          "aspekt": "Die Energie wird bei der Zellatmung in den Mitochondrien aus Traubenzucker und Sauerstoff gewonnen.",
+          "woerter": [
+            "zellatmung",
+            "mitochondri",
+            "traubenzucker",
+            "glucose"
+          ]
+        },
+        {
+          "aspekt": "Dafür wird mehr Sauerstoff benötigt.",
+          "woerter": [
+            "sauerstoff"
+          ]
+        },
+        {
+          "aspekt": "Es entsteht mehr Kohlenstoffdioxid, das abgeatmet werden muss.",
+          "woerter": [
+            "kohlenstoffdioxid",
+            "co2",
+            "co₂"
+          ]
+        }
+      ],
+      "musterloesung": "Beim Sprinten arbeiten die Muskeln stark und brauchen viel Energie. Diese Energie gewinnen die Muskelzellen bei der Zellatmung in den Mitochondrien: Traubenzucker wird mit Sauerstoff zu Kohlenstoffdioxid und Wasser abgebaut. Deshalb brauchen die Muskeln mehr Sauerstoff und es entsteht mehr Kohlenstoffdioxid. Durch schnelleres und tieferes Atmen steigt das Atemzeitvolumen, sodass mehr Sauerstoff aufgenommen und mehr Kohlenstoffdioxid abgegeben wird.",
+      "erklaerung": "Atmung in der Lunge und Zellatmung in den Mitochondrien hängen zusammen: Die Lunge liefert den Sauerstoff, den die Zellen verbrauchen."
+    }
+  ]
+}

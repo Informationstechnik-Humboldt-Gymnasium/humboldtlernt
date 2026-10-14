@@ -1,0 +1,116 @@
+{
+  "id": "bio-k9-auge",
+  "titel": "Das Auge",
+  "kurz": "Bau und Funktion des Auges, wie wir scharf sehen und welche Sehfehler es gibt.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Bau und Funktion der Teile des Auges beschreiben" },
+    { "id": "lz2", "niveau": "G", "text": "Den Zusammenhang zwischen Bau und Funktion beim Nah- und Fernsehen (Akkommodation) und beim Pupillenreflex erläutern" },
+    { "id": "lz3", "niveau": "H", "text": "Funktionsstörungen wie Kurz- und Weitsichtigkeit und ihre Korrektur erläutern" }
+  ],
+  "verstehen": {
+    "einstieg": "Schau abwechselnd auf deinen Finger direkt vor der Nase und auf die Tafel. Beides wird scharf, nur nie gleichzeitig. Was passiert dabei in deinem Auge?",
+    "abschnitte": [
+      {
+        "titel": "Bau des Auges",
+        "text": "Das Licht durchläuft im Auge nacheinander:\n\n- **Hornhaut:** durchsichtige Vorderseite, bricht das Licht stark\n- **Pupille:** Öffnung in der farbigen **Regenbogenhaut** (Iris)\n- **Linse:** elastisch, stellt das Bild scharf. Sie hängt an Linsenbändern, die mit dem ringförmigen **Ziliarmuskel** verbunden sind.\n- **Glaskörper:** durchsichtige, gallertige Masse, gibt dem Auge die Form\n- **Netzhaut:** enthält die Lichtsinneszellen. **Stäbchen** sind sehr lichtempfindlich und zuständig für Hell-Dunkel-Sehen, **Zapfen** für das Farbsehen bei Helligkeit.\n\nAm **gelben Fleck** liegen besonders viele Zapfen, hier sieht man am schärfsten. Am **blinden Fleck** verlässt der **Sehnerv** das Auge. Dort gibt es keine Sinneszellen.\n\nAußen schützen Lederhaut, Lider, Wimpern und Tränenflüssigkeit das Auge."
+      },
+      {
+        "titel": "Das Netzhautbild",
+        "text": "Hornhaut und Linse wirken zusammen wie eine Sammellinse. Auf der Netzhaut entsteht ein **verkleinertes, auf dem Kopf stehendes und seitenverkehrtes Bild**. Das Gehirn verarbeitet die Signale so, dass wir die Welt aufrecht wahrnehmen."
+      },
+      {
+        "titel": "Akkommodation und Pupillenreflex",
+        "text": "**Akkommodation** ist die Anpassung an verschiedene Entfernungen:\n\n- **Nahsehen:** Der Ziliarmuskel zieht sich zusammen. Die Linsenbänder werden locker, die elastische Linse wölbt sich **stärker** und bricht das Licht stärker.\n- **Fernsehen:** Der Ziliarmuskel entspannt sich. Die Linsenbänder werden gespannt und ziehen die Linse **flacher**.\n\nDer **Pupillenreflex** passt die Lichtmenge an: Bei Helligkeit wird die Pupille eng, bei Dunkelheit weit. So wird die Netzhaut vor zu viel Licht geschützt und bei wenig Licht trotzdem genug Licht aufgenommen."
+      },
+      {
+        "titel": "Sehfehler",
+        "text": "- **Kurzsichtigkeit:** Der Augapfel ist meist zu lang. Bilder entfernter Gegenstände entstehen **vor** der Netzhaut, die Ferne ist unscharf. Korrektur mit einer **Zerstreuungslinse** (konkav).\n- **Weitsichtigkeit:** Der Augapfel ist meist zu kurz. Bilder naher Gegenstände entstehen **hinter** der Netzhaut, die Nähe ist unscharf. Korrektur mit einer **Sammellinse** (konvex).\n- **Altersweitsichtigkeit:** Mit dem Alter verliert die Linse ihre Elastizität und kann sich nicht mehr stark wölben. Man braucht eine Lesebrille.\n- **Rot-Grün-Sehschwäche:** Bestimmte Zapfen arbeiten nicht richtig. Sie ist meist erblich und betrifft viel häufiger Jungen und Männer."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "Hornhaut und Linse erzeugen auf der **Netzhaut** ein verkleinertes, umgekehrtes Bild. **Stäbchen** sehen hell-dunkel, **Zapfen** Farben.\n\nBei der **Akkommodation** wird die Linse für die Nähe stärker gewölbt (Ziliarmuskel angespannt), für die Ferne flacher (Ziliarmuskel entspannt). Kurzsichtigkeit korrigiert man mit Zerstreuungslinsen, Weitsichtigkeit mit Sammellinsen.",
+    "alltag": "Viele Stunden am Bildschirm aus kurzer Entfernung lassen die Augen ermüden, weil der Ziliarmuskel dauernd angespannt ist. Ab und zu in die Ferne schauen entspannt ihn."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "bio-aug-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Ordne jedem Teil des Auges seine Aufgabe zu.",
+      "paare": [
+        { "links": "Linse", "rechts": "stellt das Bild scharf" },
+        { "links": "Netzhaut", "rechts": "enthält die Lichtsinneszellen" },
+        { "links": "Iris", "rechts": "regelt die Größe der Pupille" },
+        { "links": "Sehnerv", "rechts": "leitet Signale zum Gehirn" },
+        { "links": "Glaskörper", "rechts": "gibt dem Auge seine Form" }
+      ],
+      "erklaerung": "Jeder Teil des Auges ist auf eine Aufgabe spezialisiert. Zusammen erzeugen sie ein scharfes Bild auf der Netzhaut."
+    },
+    {
+      "id": "bio-aug-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Warum siehst du in der Dämmerung kaum Farben?",
+      "optionen": [
+        { "text": "Bei wenig Licht arbeiten vor allem die Stäbchen, die nur hell und dunkel unterscheiden.", "richtig": true },
+        { "text": "In der Dämmerung haben Gegenstände keine Farbe mehr.", "feedback": "Die Gegenstände ändern sich nicht. Deine Zapfen bekommen zu wenig Licht." },
+        { "text": "Die Pupille ist dann zu eng.", "feedback": "In der Dämmerung ist die Pupille weit, damit mehr Licht hereinkommt." },
+        { "text": "Die Zapfen sind nachts ausgeschaltet, weil der blinde Fleck sie verdeckt.", "feedback": "Der blinde Fleck ist nur die Stelle, an der der Sehnerv austritt." }
+      ],
+      "erklaerung": "Zapfen brauchen viel Licht. Stäbchen sind viel empfindlicher, können aber keine Farben unterscheiden."
+    },
+    {
+      "id": "bio-aug-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Was passiert im Auge, wenn du von der Tafel auf dein Heft schaust?",
+      "optionen": [
+        { "text": "Der Ziliarmuskel zieht sich zusammen, die Linse wölbt sich stärker.", "richtig": true },
+        { "text": "Der Ziliarmuskel entspannt sich, die Linse wird flacher.", "feedback": "Das passiert beim Blick in die Ferne." },
+        { "text": "Die Pupille wird größer.", "feedback": "Die Pupillengröße hängt vor allem von der Helligkeit ab, nicht von der Entfernung." },
+        { "text": "Der Augapfel wird länger.", "feedback": "Der Augapfel ändert seine Länge nicht. Die Anpassung geschieht über die Linse." }
+      ],
+      "erklaerung": "Für nahe Gegenstände muss das Licht stärker gebrochen werden. Dazu wölbt sich die elastische Linse stärker."
+    },
+    {
+      "id": "bio-aug-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Du kommst aus einem dunklen Kino in die helle Sonne. Was macht dein Auge?",
+      "optionen": [
+        { "text": "Die Pupille verengt sich durch den Pupillenreflex.", "richtig": true },
+        { "text": "Die Pupille wird weiter.", "feedback": "Weiter wird sie im Dunkeln. Bei Helligkeit schützt eine enge Pupille die Netzhaut." },
+        { "text": "Die Linse wird flacher.", "feedback": "Die Linsenform ändert sich bei verschiedenen Entfernungen, nicht bei Helligkeit." },
+        { "text": "Die Zapfen werden zu Stäbchen.", "feedback": "Sinneszellen verwandeln sich nicht. Es arbeiten nur je nach Helligkeit andere Zellen hauptsächlich." }
+      ],
+      "erklaerung": "Der Pupillenreflex läuft unwillkürlich ab. Die Iris regelt die Pupillengröße wie eine Blende."
+    },
+    {
+      "id": "bio-aug-05", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Ordne die Sehfehler zu.",
+      "paare": [
+        { "links": "Kurzsichtigkeit", "rechts": "Bild entsteht vor der Netzhaut, Korrektur mit Zerstreuungslinse" },
+        { "links": "Weitsichtigkeit", "rechts": "Bild entsteht hinter der Netzhaut, Korrektur mit Sammellinse" },
+        { "links": "Altersweitsichtigkeit", "rechts": "Linse verliert Elastizität, Lesebrille nötig" }
+      ],
+      "erklaerung": "Die Brillengläser verschieben das Bild genau auf die Netzhaut."
+    },
+    {
+      "id": "bio-aug-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Lukas kann die Tafel nicht scharf sehen, sein Handy aber schon. Sein Augapfel ist etwas zu lang. Welche Brille braucht er und warum?",
+      "optionen": [
+        { "text": "Eine Zerstreuungslinse: Sie streut das Licht etwas auf, sodass das Bild nicht mehr vor, sondern auf der Netzhaut entsteht.", "richtig": true },
+        { "text": "Eine Sammellinse, damit das Licht stärker gebündelt wird.", "feedback": "Bei Kurzsichtigkeit wird das Licht schon zu stark gebündelt. Eine Sammellinse würde es verschlimmern." },
+        { "text": "Er braucht keine Brille, er muss nur näher an die Tafel.", "feedback": "Näher heranzugehen hilft kurz, löst das Problem aber nicht." },
+        { "text": "Eine getönte Sonnenbrille", "feedback": "Getönte Gläser verringern die Helligkeit, ändern aber nicht, wo das Bild entsteht." }
+      ],
+      "erklaerung": "Lukas ist kurzsichtig. Weil der Augapfel zu lang ist, liegt das Bild entfernter Dinge vor der Netzhaut. Die Zerstreuungslinse verschiebt es nach hinten."
+    },
+    {
+      "id": "bio-aug-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz1",
+      "frage": "Warum bemerkst du deinen blinden Fleck im Alltag normalerweise nicht?",
+      "optionen": [
+        { "text": "Das andere Auge sieht die fehlende Stelle, und das Gehirn ergänzt das Bild.", "richtig": true },
+        { "text": "Der blinde Fleck ist so klein, dass er gar keine Stelle verdeckt.", "feedback": "Mit einem einfachen Test kannst du zeigen, dass er einen Punkt verschwinden lassen kann." },
+        { "text": "Der blinde Fleck sieht nur im Dunkeln nichts.", "feedback": "Am blinden Fleck gibt es gar keine Sinneszellen. Er sieht nie etwas." },
+        { "text": "Der blinde Fleck liegt im gelben Fleck.", "feedback": "Der gelbe Fleck ist die Stelle des schärfsten Sehens. Der blinde Fleck liegt daneben, wo der Sehnerv austritt." }
+      ],
+      "erklaerung": "Die blinden Flecken der beiden Augen sehen nicht dieselbe Stelle. Außerdem füllt das Gehirn Lücken mit der Umgebung auf. Wahrnehmung entsteht also im Gehirn."
+    }
+  ]
+}

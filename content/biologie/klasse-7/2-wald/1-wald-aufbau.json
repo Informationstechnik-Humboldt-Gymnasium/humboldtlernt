@@ -1,0 +1,249 @@
+{
+  "id": "bio-k7-wald-aufbau",
+  "titel": "Das Ökosystem Wald",
+  "kurz": "Stockwerke des Waldes, biotische und abiotische Umweltfaktoren und der Laubwald im Jahreslauf.",
+  "reihenfolge": 1,
+  "lernziele": [
+    {
+      "id": "lz1",
+      "niveau": "G",
+      "text": "Den Stockwerkaufbau des Waldes beschreiben und charakteristische Arten zuordnen"
+    },
+    {
+      "id": "lz2",
+      "niveau": "G",
+      "text": "Biotische und abiotische Umweltfaktoren unterscheiden und die Begriffe aus ihrer Wortherkunft erklären"
+    },
+    {
+      "id": "lz3",
+      "niveau": "G",
+      "text": "Die Bedeutung des abiotischen Faktors Licht für das Ökosystem Wald erklären"
+    },
+    {
+      "id": "lz4",
+      "niveau": "H",
+      "text": "Das Erscheinungsbild eines Laubwaldes im Jahreslauf mit einem Diagramm zur Lichtstärke erklären"
+    }
+  ],
+  "verstehen": {
+    "einstieg": "Im April ist der Boden eines Buchenwaldes voller weißer Buschwindröschen. Im Juli findest du dort kaum noch Blumen. Wo sind sie geblieben?",
+    "abschnitte": [
+      {
+        "titel": "Ökosystem",
+        "text": "Ein **Ökosystem** besteht aus einem Lebensraum und allen Lebewesen darin. Der Lebensraum mit seinen Bedingungen heißt **Biotop**, die Gemeinschaft der Lebewesen **Biozönose**.\n\nAuf jedes Lebewesen wirken **Umweltfaktoren**:\n\n- **Abiotische Faktoren** kommen aus der unbelebten Umwelt: Licht, Temperatur, Wasser, Wind, Boden.\n- **Biotische Faktoren** kommen von anderen Lebewesen: Nahrung, Fressfeinde, Konkurrenten, Parasiten, Partner.\n\nDie Wörter kommen aus dem Griechischen: bios = Leben, a- = nicht. Abiotisch heißt also „nicht vom Leben stammend“."
+      },
+      {
+        "titel": "Die Stockwerke des Waldes",
+        "text": "Ein Mischwald ist in **Stockwerke** gegliedert, ähnlich wie ein Haus:\n\n- **Baumschicht** (ab etwa 5 m bis über 30 m): Buche, Eiche, Kiefer, Fichte; Bewohner z. B. Specht, Eichhörnchen\n- **Strauchschicht** (bis etwa 5 m): Hasel, Holunder, junge Bäume\n- **Krautschicht** (bis etwa 1 m): Farne, Buschwindröschen, Gräser\n- **Moosschicht** (wenige Zentimeter): Moose, Pilze, Laubstreu mit Asseln und Käfern\n- **Wurzelschicht** im Boden: Wurzeln, Regenwürmer, Pilzgeflechte\n\nDie Höhen sind nur ungefähre Werte. Durch die Stockwerke nutzen viele Arten denselben Ort, ohne sich im Weg zu sein."
+      },
+      {
+        "titel": "Licht als wichtiger Umweltfaktor",
+        "text": "Die Baumkronen fangen den größten Teil des Sonnenlichts ab. Im Sommer erreichen in einem dichten Buchenwald oft nur wenige Prozent des Lichts den Boden.\n\nPflanzen der unteren Schichten sind daran angepasst. **Schattenpflanzen** wie Farne und Sauerklee kommen mit wenig Licht aus. **Frühblüher** wie das Buschwindröschen nutzen die Zeit im Frühjahr, bevor die Bäume Blätter bekommen. Sie haben Nährstoffe in Zwiebeln, Knollen oder Erdsprossen gespeichert und wachsen deshalb sehr schnell."
+      },
+      {
+        "titel": "Der Laubwald im Jahreslauf",
+        "text": "Ein Diagramm der **relativen Lichtstärke** am Waldboden zeigt den Verlauf übers Jahr:\n\n- **Winter und frühes Frühjahr:** Die Bäume sind kahl, viel Licht erreicht den Boden.\n- **März bis April:** Frühblüher blühen und bilden Samen.\n- **Mai:** Die Bäume treiben aus, die Lichtstärke am Boden fällt stark.\n- **Sommer:** Am Boden ist es dunkel. Die Frühblüher haben sich zurückgezogen und überdauern im Boden.\n- **Herbst:** Die Blätter fallen, es wird wieder heller.\n\nWenn du ein solches Diagramm liest, achte auf die Achsen: Die Lichtstärke wird meist in Prozent des Lichts über den Baumkronen angegeben."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "Ein Ökosystem besteht aus **Biotop** (Lebensraum) und **Biozönose** (Lebensgemeinschaft). **Abiotische** Umweltfaktoren stammen aus der unbelebten Umwelt, **biotische** von Lebewesen.\n\nDer Wald ist in Stockwerke gegliedert. Licht bestimmt, welche Pflanzen in welcher Schicht und zu welcher Jahreszeit wachsen.",
+    "alltag": "Rund um das Tegeler Fließ findest du im Frühjahr Teppiche aus Buschwindröschen und Scharbockskraut, bevor das Laub austreibt."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "bio-wal-01",
+      "typ": "reihenfolge",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz1",
+      "frage": "Ordne die Stockwerke des Waldes von unten nach oben.",
+      "elemente": [
+        "Wurzelschicht",
+        "Moosschicht",
+        "Krautschicht",
+        "Strauchschicht",
+        "Baumschicht"
+      ],
+      "erklaerung": "Von der Wurzelschicht im Boden bis zur Baumschicht in den Kronen nimmt die Höhe zu. In jeder Schicht leben andere Arten."
+    },
+    {
+      "id": "bio-wal-02",
+      "typ": "multi",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz2",
+      "frage": "Welche dieser Umweltfaktoren sind **abiotisch**?",
+      "optionen": [
+        {
+          "text": "Licht",
+          "richtig": true
+        },
+        {
+          "text": "Temperatur",
+          "richtig": true
+        },
+        {
+          "text": "Bodenfeuchtigkeit",
+          "richtig": true
+        },
+        {
+          "text": "Fressfeinde",
+          "feedback": "Fressfeinde sind Lebewesen. Sie sind ein biotischer Faktor."
+        },
+        {
+          "text": "Parasiten",
+          "feedback": "Parasiten sind Lebewesen und damit ein biotischer Faktor."
+        },
+        {
+          "text": "Konkurrenten um Nahrung",
+          "feedback": "Konkurrenten sind andere Lebewesen, also ein biotischer Faktor."
+        }
+      ],
+      "erklaerung": "Bios heißt Leben. Biotische Faktoren gehen von Lebewesen aus. Abiotische Faktoren (a- = nicht) kommen aus der unbelebten Umwelt."
+    },
+    {
+      "id": "bio-wal-03",
+      "typ": "single",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz3",
+      "frage": "Warum blüht das Buschwindröschen schon im März und April?",
+      "optionen": [
+        {
+          "text": "Dann ist der Laubwald noch kahl und es erreicht viel Licht den Boden.",
+          "richtig": true
+        },
+        {
+          "text": "Im Frühling ist es am Boden wärmer als im Sommer.",
+          "feedback": "Im Sommer ist es meist wärmer. Entscheidend ist das Licht, das später von den Baumkronen abgefangen wird."
+        },
+        {
+          "text": "Im Sommer fressen Rehe alle Blüten.",
+          "feedback": "Rehe fressen auch Pflanzen, das erklärt aber nicht den frühen Blühzeitpunkt aller Frühblüher."
+        },
+        {
+          "text": "Es braucht gar kein Licht und blüht deshalb früh.",
+          "feedback": "Auch Frühblüher betreiben Fotosynthese und brauchen Licht. Die gespeicherten Nährstoffe helfen nur beim schnellen Austreiben."
+        }
+      ],
+      "erklaerung": "Frühblüher nutzen das Zeitfenster, in dem viel Licht am Boden ankommt. Mit Nährstoffen aus Speicherorganen treiben sie schnell aus."
+    },
+    {
+      "id": "bio-wal-04",
+      "typ": "multi",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz1",
+      "frage": "Welche Lebewesen findest du typischerweise in der Moosschicht und der Laubstreu?",
+      "optionen": [
+        {
+          "text": "Asseln",
+          "richtig": true
+        },
+        {
+          "text": "Pilze",
+          "richtig": true
+        },
+        {
+          "text": "Moose",
+          "richtig": true
+        },
+        {
+          "text": "Buntspecht",
+          "feedback": "Der Specht lebt in der Baumschicht und hämmert an Stämmen."
+        },
+        {
+          "text": "Holunder",
+          "feedback": "Holunder ist ein Strauch und wächst in der Strauchschicht."
+        }
+      ],
+      "erklaerung": "In der feuchten, dunklen Moosschicht leben Moose, Pilze und viele wirbellose Tiere wie Asseln, Springschwänze und Käfer."
+    },
+    {
+      "id": "bio-wal-05",
+      "typ": "single",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz2",
+      "frage": "Was ist mit dem Begriff „Biozönose“ gemeint?",
+      "optionen": [
+        {
+          "text": "die Gemeinschaft aller Lebewesen in einem Lebensraum",
+          "richtig": true
+        },
+        {
+          "text": "der Lebensraum mit seinen unbelebten Bedingungen",
+          "feedback": "Das ist das **Biotop**."
+        },
+        {
+          "text": "eine Krankheit von Waldbäumen",
+          "feedback": "Biozönose bedeutet Lebensgemeinschaft."
+        },
+        {
+          "text": "die Lichtmenge am Waldboden",
+          "feedback": "Licht ist ein abiotischer Umweltfaktor, keine Biozönose."
+        }
+      ],
+      "erklaerung": "Biotop + Biozönose = Ökosystem."
+    },
+    {
+      "id": "bio-wal-06",
+      "typ": "single",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz4",
+      "frage": "Ein Diagramm zeigt die relative Lichtstärke am Boden eines Buchenwaldes. Von März bis Ende April liegt sie hoch, im Mai fällt sie steil ab, im Juli ist sie sehr niedrig, im November steigt sie wieder. Welche Erklärung passt?",
+      "optionen": [
+        {
+          "text": "Im Mai treiben die Buchen ihre Blätter aus, im Herbst werfen sie das Laub ab.",
+          "richtig": true
+        },
+        {
+          "text": "Im Sommer scheint die Sonne weniger als im Frühling.",
+          "feedback": "Über den Baumkronen ist es im Sommer am hellsten. Unten kommt nur wenig davon an."
+        },
+        {
+          "text": "Im Mai wachsen die Moose so hoch, dass sie den Boden beschatten.",
+          "feedback": "Moose werden nur wenige Zentimeter hoch. Den Schatten werfen die Baumkronen."
+        },
+        {
+          "text": "Im Herbst wird es heller, weil die Tage länger werden.",
+          "feedback": "Im Herbst werden die Tage kürzer. Heller am Boden wird es, weil das Laub fällt."
+        }
+      ],
+      "erklaerung": "Die Lichtstärke am Boden hängt im Laubwald vor allem vom Blätterdach ab. Deshalb ist sie im Sommer am niedrigsten, obwohl die Sonne dann am stärksten scheint."
+    },
+    {
+      "id": "bio-wal-07",
+      "typ": "text",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz3",
+      "frage": "In einem dichten Fichtenforst wachsen am Boden kaum Pflanzen, in einem lichten Eichen-Mischwald dagegen viele. Erkläre den Unterschied mit einem abiotischen Umweltfaktor.",
+      "stichworte": [
+        {
+          "aspekt": "Der entscheidende Faktor ist das Licht.",
+          "woerter": [
+            "licht",
+            "hell",
+            "schatt",
+            "dunkel"
+          ]
+        },
+        {
+          "aspekt": "Die dichten Baumkronen lassen kaum Licht bis zum Boden.",
+          "woerter": [
+            "krone",
+            "nadel",
+            "blaetterdach",
+            "dicht"
+          ]
+        },
+        {
+          "aspekt": "Pflanzen brauchen Licht für die Fotosynthese.",
+          "woerter": [
+            "fotosynthese",
+            "photosynthese"
+          ]
+        }
+      ],
+      "musterloesung": "Entscheidend ist der abiotische Umweltfaktor Licht. Fichten stehen dicht und behalten ihre Nadeln das ganze Jahr. Ihre Kronen lassen deshalb kaum Licht zum Boden durch, es ist dort immer dunkel. Pflanzen brauchen Licht für die Fotosynthese. Im lichten Mischwald kommt mehr Licht am Boden an, besonders im Frühjahr, deshalb wachsen dort viele Kräuter und Sträucher.",
+      "erklaerung": "Nadelbäume wie die Fichte sind immergrün. Anders als im Laubwald gibt es keine helle Phase im Frühjahr."
+    }
+  ]
+}

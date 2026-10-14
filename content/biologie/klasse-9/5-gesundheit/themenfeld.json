@@ -1,0 +1,13 @@
+{
+  "nummer": "5",
+  "reihenfolge": 1,
+  "titel": "Gesundheit – Krankheit",
+  "beschreibung": "Bakterien und Viren als Krankheitserreger, Infektionskrankheiten, das Immunsystem sowie aktive und passive Immunisierung.",
+  "inhalte": [
+    "Bakterien und Viren als Krankheitserreger",
+    "Infektionskrankheiten",
+    "Bestandteile des Immunsystems",
+    "passive und aktive Immunisierung"
+  ],
+  "erweiterung": "Immunabwehr auf hohem Abstraktionsniveau; eigene Modelle von Bakterien und Viren; Recherche zu Infektionskrankheiten"
+}

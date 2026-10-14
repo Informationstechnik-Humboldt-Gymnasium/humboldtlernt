@@ -1,0 +1,117 @@
+{
+  "id": "bio-k10-evolutionstheorien",
+  "titel": "Evolutionstheorien von Lamarck und Darwin",
+  "kurz": "Wie Lamarck und Darwin die Entstehung der Arten erklärten und welche Faktoren die Evolution antreiben.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Die Evolutionstheorien von Lamarck und Darwin am Beispiel vergleichen" },
+    { "id": "lz2", "niveau": "G", "text": "Mutation und Selektion als Evolutionsfaktoren beschreiben und die Fachbegriffe Art und Variabilität erklären" },
+    { "id": "lz3", "niveau": "G", "text": "Angepasstheiten von Organismen an die Umwelt erklären" },
+    { "id": "lz4", "niveau": "H", "text": "Zwischen wissenschaftlichen und religiösen Erklärungen unterscheiden und mögliche künftige Entwicklungen abschätzen" }
+  ],
+  "verstehen": {
+    "einstieg": "Giraffen haben einen extrem langen Hals. Haben sich ihre Vorfahren so lange nach den Blättern gestreckt, bis ihr Hals länger wurde? Oder steckt etwas ganz anderes dahinter?",
+    "abschnitte": [
+      {
+        "titel": "Lamarcks Theorie",
+        "text": "Der französische Naturforscher **Jean-Baptiste de Lamarck** veröffentlichte 1809 eine der ersten Evolutionstheorien. Er nahm an, dass sich Arten im Lauf der Zeit verändern. Seine Erklärung:\n\n- Organe, die viel **gebraucht** werden, werden stärker. Organe, die nicht gebraucht werden, verkümmern.\n- Diese **erworbenen Eigenschaften** werden an die Nachkommen **vererbt**.\n\nGiraffe nach Lamarck: Die Vorfahren streckten sich nach hohen Blättern. Dadurch wurden ihre Hälse etwas länger, und das vererbten sie.\n\nHeute weiß man: **Erworbene Eigenschaften werden nicht vererbt**, denn sie verändern die Erbinformation in den Keimzellen nicht. Lamarcks Verdienst war aber, dass er überhaupt eine Veränderung der Arten annahm."
+      },
+      {
+        "titel": "Darwins Theorie",
+        "text": "**Charles Darwin** beobachtete auf einer Weltreise (1831 bis 1836) viele Tier- und Pflanzenarten, unter anderem auf den Galapagosinseln. 1859 veröffentlichte er sein Buch „Über die Entstehung der Arten“. Seine Theorie:\n\n- **Überproduktion:** Lebewesen haben mehr Nachkommen, als überleben können.\n- **Variabilität:** Die Nachkommen unterscheiden sich in ihren Merkmalen.\n- **Konkurrenz** („Kampf ums Dasein“): Nahrung, Lebensraum und Partner sind knapp.\n- **Natürliche Selektion:** Lebewesen mit günstigen Merkmalen überleben eher und haben mehr Nachkommen („survival of the fittest“, gemeint ist: der am besten Angepassten).\n- **Vererbung:** Die günstigen Merkmale werden weitergegeben. Über viele Generationen verändert sich die Art.\n\nGiraffe nach Darwin: Unter den Vorfahren gab es zufällig Tiere mit etwas längerem Hals. Sie erreichten mehr Blätter, überlebten in Dürrezeiten häufiger und hatten mehr Nachkommen."
+      },
+      {
+        "titel": "Evolutionsfaktoren heute",
+        "text": "Die heutige Evolutionstheorie verbindet Darwins Ideen mit der Genetik. Wichtige **Evolutionsfaktoren** sind:\n\n- **Mutation:** zufällige Veränderungen der Erbinformation. Sie bringen neue Allele hervor.\n- **Rekombination:** Neukombination der Allele bei Meiose und Befruchtung.\n- **Selektion:** Die Umwelt „wählt aus“, welche Varianten mehr Nachkommen haben.\n- **Isolation:** Werden Gruppen getrennt, zum Beispiel durch ein Gebirge, entwickeln sie sich auseinander. So können neue Arten entstehen.\n\nEine **Art** ist eine Gruppe von Lebewesen, die sich untereinander fortpflanzen und **fruchtbare Nachkommen** bekommen können. Pferd und Esel sind zwei Arten: Ihr Nachwuchs, das Maultier, ist unfruchtbar.\n\nBeispiel für Selektion heute: Der **Birkenspanner**, ein Nachtfalter, war in England meist hell. Als Ruß die Baumstämme schwärzte, wurden helle Falter leichter von Vögeln entdeckt, und dunkle Falter wurden häufiger."
+      },
+      {
+        "titel": "Wissenschaft und Glaube",
+        "text": "Eine **naturwissenschaftliche Theorie** erklärt Beobachtungen, macht überprüfbare Vorhersagen und kann durch neue Befunde widerlegt werden. Die Evolutionstheorie ist durch sehr viele Belege aus Fossilien, Anatomie und Genetik gestützt.\n\n**Religiöse Schöpfungserzählungen** beantworten andere Fragen: nach dem Sinn des Lebens, nach Werten und nach Gott. Sie lassen sich naturwissenschaftlich weder beweisen noch widerlegen. Viele gläubige Menschen sehen deshalb keinen Widerspruch zwischen ihrem Glauben und der Evolutionstheorie."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "**Lamarck:** Gebrauch verändert Organe, erworbene Eigenschaften werden vererbt (widerlegt). **Darwin:** Überproduktion, Variabilität, Konkurrenz, **natürliche Selektion** und Vererbung führen zur Angepasstheit.\n\nEvolutionsfaktoren sind **Mutation, Rekombination, Selektion** und **Isolation**. Eine **Art** bekommt untereinander fruchtbare Nachkommen.",
+    "alltag": "Wenn Bakterien gegen Antibiotika resistent werden, kannst du Evolution durch Selektion fast in Echtzeit beobachten."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "bio-evt-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Lamarck oder Darwin? Ordne die Aussagen zu.",
+      "paare": [
+        { "links": "Erworbene Eigenschaften werden vererbt.", "rechts": "Lamarck" },
+        { "links": "Die am besten Angepassten haben die meisten Nachkommen.", "rechts": "Darwin" }
+      ],
+      "erklaerung": "Lamarck erklärte Veränderung durch Gebrauch, Darwin durch natürliche Selektion zufälliger Varianten."
+    },
+    {
+      "id": "bio-evt-02", "typ": "reihenfolge", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Ordne die Schritte von Darwins Erklärung für den langen Giraffenhals.",
+      "elemente": [
+        "Giraffen bekommen mehr Junge, als überleben können.",
+        "Die Jungen unterscheiden sich zufällig in der Halslänge.",
+        "In Dürrezeiten sind Blätter knapp.",
+        "Tiere mit längerem Hals erreichen mehr Blätter und überleben häufiger.",
+        "Sie vererben die Anlage für den längeren Hals an mehr Nachkommen."
+      ],
+      "erklaerung": "Überproduktion, Variabilität, Konkurrenz, Selektion und Vererbung führen über viele Generationen zu einer Veränderung der Art."
+    },
+    {
+      "id": "bio-evt-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Warum gilt Lamarcks Theorie heute als widerlegt?",
+      "optionen": [
+        { "text": "Eigenschaften, die ein Lebewesen im Leben erwirbt, verändern nicht die Erbinformation der Keimzellen und werden daher nicht vererbt.", "richtig": true },
+        { "text": "Lamarck behauptete, dass sich Arten nicht verändern.", "feedback": "Im Gegenteil: Lamarck nahm schon an, dass sich Arten verändern." },
+        { "text": "Giraffen haben gar keinen langen Hals.", "feedback": "Der lange Hals ist real. Die Erklärung dafür war falsch." },
+        { "text": "Lamarck lebte nach Darwin.", "feedback": "Lamarck veröffentlichte seine Theorie 1809, Darwin 1859." }
+      ],
+      "erklaerung": "Wer viel trainiert, bekommt kräftige Muskeln, aber keine Kinder mit kräftigeren Muskeln. Erworbene Eigenschaften sind Modifikationen."
+    },
+    {
+      "id": "bio-evt-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Pferd und Esel können ein Maultier zeugen. Das Maultier ist unfruchtbar. Was folgt daraus?",
+      "optionen": [
+        { "text": "Pferd und Esel sind zwei verschiedene Arten.", "richtig": true },
+        { "text": "Pferd und Esel gehören zur selben Art.", "feedback": "Zur selben Art gehören nur Lebewesen, die **fruchtbare** Nachkommen bekommen." },
+        { "text": "Das Maultier ist eine eigene neue Art.", "feedback": "Weil es sich nicht fortpflanzen kann, bildet es keine eigene Art." },
+        { "text": "Esel stammen von Pferden ab.", "feedback": "Beide haben gemeinsame Vorfahren, stammen aber nicht voneinander ab." }
+      ],
+      "erklaerung": "Das Kriterium für eine biologische Art ist die Fortpflanzungsgemeinschaft mit fruchtbaren Nachkommen."
+    },
+    {
+      "id": "bio-evt-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Vor der Industrialisierung waren Birkenspanner meist hell, nach der Verrußung der Bäume meist dunkel. Wie erklärst du das?",
+      "optionen": [
+        { "text": "Dunkle Falter wurden auf den rußigen Stämmen seltener von Vögeln gefressen und hatten mehr Nachkommen.", "richtig": true },
+        { "text": "Der Ruß färbte die Falter dunkel, und sie vererbten die Farbe.", "feedback": "Das wäre eine Erklärung nach Lamarck. Die Farbe ist genetisch festgelegt." },
+        { "text": "Die Falter wurden dunkel, weil sie es wollten.", "feedback": "Evolution hat kein Ziel und keinen Willen. Zufällige Varianten werden ausgelesen." },
+        { "text": "Helle Falter wanderten alle aus.", "feedback": "Entscheidend war, dass helle Falter häufiger gefressen wurden." }
+      ],
+      "erklaerung": "Dunkle Varianten gab es schon vorher durch Mutation. Die veränderte Umwelt hat sie begünstigt: Selektion."
+    },
+    {
+      "id": "bio-evt-06", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Welche Aussagen beschreiben eine naturwissenschaftliche Theorie?",
+      "optionen": [
+        { "text": "Sie erklärt Beobachtungen.", "richtig": true },
+        { "text": "Sie macht überprüfbare Vorhersagen.", "richtig": true },
+        { "text": "Sie kann durch neue Befunde widerlegt werden.", "richtig": true },
+        { "text": "Sie ist eine bloße Vermutung ohne Belege.", "feedback": "Im Alltag bedeutet „Theorie“ oft Vermutung. In der Wissenschaft ist eine Theorie ein gut belegtes Erklärungssystem." },
+        { "text": "Sie beantwortet Fragen nach dem Sinn des Lebens.", "feedback": "Sinnfragen beantworten Religionen und Philosophie, nicht die Naturwissenschaften." }
+      ],
+      "erklaerung": "Die Evolutionstheorie ist durch Belege aus Fossilien, Anatomie und Genetik sehr gut gestützt."
+    },
+    {
+      "id": "bio-evt-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Erkläre mit den Evolutionsfaktoren Mutation und Selektion, warum heute viele Bakterien gegen Antibiotika resistent sind.",
+      "stichworte": [
+        { "aspekt": "Durch zufällige Mutation sind einzelne Bakterien unempfindlich.", "woerter": ["mutation", "zufaellig"] },
+        { "aspekt": "Das Antibiotikum tötet die empfindlichen Bakterien, die resistenten überleben (Selektion).", "woerter": ["selektion", "ueberleben", "ueberlebt"] },
+        { "aspekt": "Die resistenten Bakterien vermehren sich und geben die Resistenz weiter.", "woerter": ["vermehr", "vererb", "weitergeben", "nachkommen"] }
+      ],
+      "musterloesung": "In einer großen Bakterienpopulation entstehen durch zufällige Mutationen einzelne Bakterien, die gegen ein Antibiotikum unempfindlich sind. Wird das Antibiotikum eingesetzt, sterben die empfindlichen Bakterien ab, die resistenten überleben. Das ist Selektion. Die resistenten Bakterien vermehren sich durch Zweiteilung und geben die Resistenz an ihre Nachkommen weiter. Bei häufigem Einsatz von Antibiotika werden resistente Bakterien so immer häufiger.",
+      "erklaerung": "Das Antibiotikum erzeugt die Resistenz nicht, es wählt nur die schon vorhandenen resistenten Bakterien aus."
+    }
+  ]
+}

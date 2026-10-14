@@ -1,0 +1,221 @@
+{
+  "id": "bio-k10-humangenetik",
+  "titel": "Vererbung beim Menschen",
+  "kurz": "Stammbäume lesen, Blutgruppen und Geschlecht vererben und Erbgänge beim Menschen bestimmen.",
+  "reihenfolge": 4,
+  "lernziele": [
+    {
+      "id": "lz1",
+      "niveau": "G",
+      "text": "Die Vererbung des Geschlechts und der Blutgruppen im AB0-System erklären"
+    },
+    {
+      "id": "lz2",
+      "niveau": "G",
+      "text": "Stammbäume aufstellen und analysieren"
+    },
+    {
+      "id": "lz3",
+      "niveau": "H",
+      "text": "Methoden der Humangenetik nennen und Erbgänge (autosomal, gonosomal, dominant, rezessiv) aus Stammbäumen ableiten"
+    }
+  ],
+  "verstehen": {
+    "einstieg": "Mit Menschen kann man keine Kreuzungsversuche machen wie Mendel mit Erbsen. Wie findet man trotzdem heraus, wie Merkmale beim Menschen vererbt werden?",
+    "abschnitte": [
+      {
+        "titel": "Methoden der Humangenetik",
+        "text": "- **Stammbaumanalyse:** Man verfolgt ein Merkmal über mehrere Generationen einer Familie.\n- **Zwillingsforschung:** Eineiige Zwillinge haben dieselben Gene. Unterschiede zwischen ihnen müssen also von der Umwelt kommen.\n- **Chromosomenuntersuchung** (Karyogramm) und **DNA-Analyse** einzelner Gene.\n\nIn einem **Stammbaum** steht ein **Quadrat** für einen Mann, ein **Kreis** für eine Frau. **Ausgefüllte** Symbole zeigen Merkmalsträger. Eine waagerechte Linie verbindet Eltern, Kinder hängen an einer senkrechten Linie darunter. Die Generationen werden mit römischen Zahlen nummeriert."
+      },
+      {
+        "titel": "Vererbung des Geschlechts",
+        "text": "Frauen haben die Geschlechtschromosomen **XX**, Männer **XY**. Jede Eizelle enthält ein X. Ein Spermium enthält entweder ein X oder ein Y.\n\n- Eizelle (X) + Spermium (X) → XX, Mädchen\n- Eizelle (X) + Spermium (Y) → XY, Junge\n\nDas Geschlecht wird also durch das Spermium bestimmt. Die Wahrscheinlichkeit beträgt jeweils etwa **50 %**."
+      },
+      {
+        "titel": "Vererbung der Blutgruppen",
+        "text": "Für die Blutgruppe im AB0-System gibt es drei Allele: **A**, **B** und **0**. A und B sind **gleichwertig** (kodominant), beide setzen sich durch. 0 ist **rezessiv**.\n\n- Blutgruppe A: Genotyp AA oder A0\n- Blutgruppe B: BB oder B0\n- Blutgruppe AB: AB\n- Blutgruppe 0: 00\n\nBeispiel: Eltern A0 × B0 können Kinder mit allen vier Blutgruppen bekommen: AB, A0, B0 und 00, jeweils mit 25 % Wahrscheinlichkeit."
+      },
+      {
+        "titel": "Erbgänge im Stammbaum erkennen",
+        "text": "- **Autosomal-rezessiv:** Gesunde Eltern können ein krankes Kind haben (beide sind **Überträger**). Männer und Frauen sind gleich häufig betroffen. Beispiele: Mukoviszidose, Albinismus.\n- **Autosomal-dominant:** Jeder Merkmalsträger hat mindestens ein betroffenes Elternteil. Das Merkmal tritt in jeder Generation auf. Beispiele: Chorea Huntington, Kurzfingrigkeit.\n- **X-chromosomal-rezessiv:** Es sind fast nur Männer betroffen, weil sie nur ein X haben. Die Mütter sind oft gesunde Überträgerinnen. Beispiele: Rot-Grün-Sehschwäche, Bluterkrankheit.\n\nEin wichtiger Hinweis: Haben zwei Merkmalsträger ein gesundes Kind, kann der Erbgang nicht rezessiv sein."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "Das **Spermium** bestimmt das Geschlecht: X → Mädchen, Y → Junge. Bei den Blutgruppen sind **A und B kodominant**, **0 ist rezessiv**.\n\nIm **Stammbaum**: Haben gesunde Eltern ein krankes Kind, ist der Erbgang **rezessiv**. Sind fast nur Männer betroffen, spricht das für einen **X-chromosomal-rezessiven** Erbgang.",
+    "alltag": "In einer humangenetischen Beratung können Familien mit einer Erbkrankheit erfahren, wie hoch das Risiko für ihre Kinder ist."
+  },
+  "interaktiv": [],
+  "vertiefung": [
+    "bio-mendel",
+    "bio-blutgruppen"
+  ],
+  "uebungen": [
+    {
+      "id": "bio-hum-01",
+      "typ": "single",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz1",
+      "frage": "Wodurch wird das Geschlecht eines Kindes festgelegt?",
+      "optionen": [
+        {
+          "text": "durch das Geschlechtschromosom im Spermium (X oder Y)",
+          "richtig": true
+        },
+        {
+          "text": "durch das Geschlechtschromosom in der Eizelle",
+          "feedback": "Jede Eizelle enthält ein X. Den Unterschied macht das Spermium."
+        },
+        {
+          "text": "durch die Ernährung der Mutter",
+          "feedback": "Das Geschlecht ist mit der Befruchtung genetisch festgelegt."
+        },
+        {
+          "text": "durch die Zahl der Autosomen",
+          "feedback": "Die Autosomen sind bei Frauen und Männern gleich. Entscheidend sind die Geschlechtschromosomen."
+        }
+      ],
+      "erklaerung": "Eizelle X + Spermium X → XX (Mädchen). Eizelle X + Spermium Y → XY (Junge)."
+    },
+    {
+      "id": "bio-hum-02",
+      "typ": "zuordnung",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz1",
+      "frage": "Ordne jedem Genotyp die Blutgruppe zu.",
+      "paare": [
+        {
+          "links": "A0",
+          "rechts": "Blutgruppe A"
+        },
+        {
+          "links": "BB",
+          "rechts": "Blutgruppe B"
+        },
+        {
+          "links": "AB",
+          "rechts": "Blutgruppe AB"
+        },
+        {
+          "links": "00",
+          "rechts": "Blutgruppe 0"
+        }
+      ],
+      "erklaerung": "A und B setzen sich gegenüber 0 durch. Treffen A und B zusammen, werden beide ausgeprägt."
+    },
+    {
+      "id": "bio-hum-03",
+      "typ": "zahl",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz1",
+      "frage": "Die Mutter hat Blutgruppe A (Genotyp A0), der Vater Blutgruppe B (Genotyp B0). Mit welcher Wahrscheinlichkeit hat ihr Kind Blutgruppe 0? Gib den Wert in Prozent an.",
+      "gegeben": "Mutter A0, Vater B0",
+      "gesucht": "Wahrscheinlichkeit für Blutgruppe 0 in %",
+      "loesung": 25,
+      "einheit": "%",
+      "toleranz": 0,
+      "rechenweg": [
+        "Keimzellen der Mutter: A oder 0 (je 50 %)",
+        "Keimzellen des Vaters: B oder 0 (je 50 %)",
+        "Mögliche Kinder: AB, A0, B0, 00 – jeweils 25 %",
+        "Blutgruppe 0 nur bei 00: 25 %"
+      ],
+      "erklaerung": "Alle vier Blutgruppen sind bei diesen Eltern möglich, jede mit 25 % Wahrscheinlichkeit."
+    },
+    {
+      "id": "bio-hum-04",
+      "typ": "single",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz1",
+      "frage": "Beide Eltern haben Blutgruppe 0. Ihr Kind hat laut einem Test Blutgruppe A. Was folgt aus Sicht der Genetik?",
+      "optionen": [
+        {
+          "text": "Das ist bei normaler Vererbung nicht möglich. Der Test sollte überprüft werden.",
+          "richtig": true
+        },
+        {
+          "text": "Das passiert in 25 % der Fälle.",
+          "feedback": "Eltern mit 00 und 00 können nur das Allel 0 weitergeben."
+        },
+        {
+          "text": "Das A-Allel ist rezessiv und war versteckt.",
+          "feedback": "Wer ein A-Allel hat, hat Blutgruppe A oder AB. Bei Blutgruppe 0 ist kein A vorhanden."
+        },
+        {
+          "text": "Die Blutgruppe ändert sich im Laufe des Lebens.",
+          "feedback": "Die Blutgruppe ist genetisch festgelegt."
+        }
+      ],
+      "erklaerung": "00 × 00 ergibt nur 00. Es gibt sehr seltene genetische Ausnahmen, deshalb wird ein solcher Befund genau geprüft."
+    },
+    {
+      "id": "bio-hum-05",
+      "typ": "single",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz2",
+      "frage": "Was bedeutet ein ausgefülltes Quadrat in einem Stammbaum?",
+      "optionen": [
+        {
+          "text": "ein Mann, der das untersuchte Merkmal zeigt",
+          "richtig": true
+        },
+        {
+          "text": "eine Frau, die das Merkmal zeigt",
+          "feedback": "Frauen werden mit Kreisen dargestellt."
+        },
+        {
+          "text": "ein Mann ohne das Merkmal",
+          "feedback": "Leere Symbole stehen für Personen ohne das Merkmal."
+        },
+        {
+          "text": "eine verstorbene Person",
+          "feedback": "Verstorbene werden durchgestrichen. Ausgefüllt bedeutet Merkmalsträger."
+        }
+      ],
+      "erklaerung": "Quadrat = Mann, Kreis = Frau, ausgefüllt = Merkmalsträger."
+    },
+    {
+      "id": "bio-hum-06",
+      "typ": "single",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz3",
+      "frage": "In einem Stammbaum haben zwei gesunde Eltern eine Tochter mit Mukoviszidose. Welcher Erbgang liegt vor?",
+      "optionen": [
+        {
+          "text": "autosomal-rezessiv",
+          "richtig": true
+        },
+        {
+          "text": "autosomal-dominant",
+          "feedback": "Bei dominanter Vererbung müsste mindestens ein Elternteil erkrankt sein."
+        },
+        {
+          "text": "X-chromosomal-rezessiv",
+          "feedback": "Eine Tochter wäre dann nur krank, wenn auch der Vater erkrankt wäre, denn sie bekommt sein einziges X."
+        },
+        {
+          "text": "Man kann gar nichts sagen.",
+          "feedback": "Gesunde Eltern mit krankem Kind: Das schließt dominante Erbgänge aus. Die kranke Tochter eines gesunden Vaters schließt X-chromosomal-rezessiv aus."
+        }
+      ],
+      "erklaerung": "Beide Eltern sind Überträger (Aa). Die Tochter hat von jedem ein a bekommen (aa). Die Wahrscheinlichkeit dafür beträgt 25 %."
+    },
+    {
+      "id": "bio-hum-07",
+      "typ": "zahl",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz3",
+      "frage": "Eine Frau ist Überträgerin der X-chromosomal-rezessiven Bluterkrankheit (XᴴXʰ), ihr Mann ist gesund (XᴴY). Mit welcher Wahrscheinlichkeit ist ein **Sohn** dieses Paares Bluter? Gib den Wert in Prozent an.",
+      "gegeben": "Mutter XᴴXʰ, Vater XᴴY; gefragt ist nur nach Söhnen",
+      "gesucht": "Wahrscheinlichkeit in %",
+      "loesung": 50,
+      "einheit": "%",
+      "toleranz": 0,
+      "rechenweg": [
+        "Ein Sohn bekommt vom Vater immer das Y, von der Mutter ein X.",
+        "Die Mutter gibt mit gleicher Wahrscheinlichkeit Xᴴ oder Xʰ weiter.",
+        "Sohn XʰY (Bluter) oder XᴴY (gesund): je 50 %"
+      ],
+      "erklaerung": "Töchter dieses Paares sind dagegen nie krank, weil sie vom Vater ein gesundes Xᴴ bekommen. Sie können aber zu 50 % Überträgerinnen sein."
+    }
+  ]
+}

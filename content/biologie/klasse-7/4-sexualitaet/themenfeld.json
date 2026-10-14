@@ -1,0 +1,15 @@
+{
+  "nummer": "4",
+  "reihenfolge": 3,
+  "titel": "Sexualität, Fortpflanzung und Entwicklung",
+  "beschreibung": "Pubertät und Hormone, Bau und Funktion der Geschlechtsorgane, der weibliche Zyklus, Liebe und Partnerschaft, Vielfalt und Verhütung.",
+  "inhalte": [
+    "Grundlagen menschlicher Sexualität",
+    "Bau und Funktion der Geschlechtsorgane",
+    "Hormone und Hormonwirkung, Pubertät",
+    "Liebe und Partnerschaft",
+    "Verhütung"
+  ],
+  "erweiterung": "Verschiedene Informationsquellen; Besuch von Beratungsstellen oder Fachärzten; Regulation der Geschlechtshormone auf unterschiedlichen Abstraktionsniveaus",
+  "gesperrt": true
+}

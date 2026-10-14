@@ -1,0 +1,122 @@
+{
+  "id": "bio-k9-erreger",
+  "titel": "Bakterien und Viren",
+  "kurz": "Wie Bakterien und Viren gebaut sind, wie sie sich vermehren und wie Infektionskrankheiten verlaufen.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Merkmale von Bakterien nennen und den Fachbegriff prokaryotische Zelle erklären" },
+    { "id": "lz2", "niveau": "G", "text": "Den Bau und das Prinzip der Vermehrung von Viren erklären" },
+    { "id": "lz3", "niveau": "G", "text": "Den Verlauf einer Infektionskrankheit und Übertragungswege beschreiben" },
+    { "id": "lz4", "niveau": "H", "text": "Diagramme zum Ablauf von Infektionen und zum Bakterienwachstum auswerten" }
+  ],
+  "verstehen": {
+    "einstieg": "Gegen eine Mittelohrentzündung durch Bakterien hilft oft ein Antibiotikum, gegen eine Grippe nicht. Was unterscheidet Bakterien und Viren so grundlegend?",
+    "abschnitte": [
+      {
+        "titel": "Bakterien",
+        "text": "Bakterien sind **einzellige Lebewesen**, meist nur wenige Tausendstel Millimeter groß. Sie haben **keinen Zellkern**. Ihre Erbinformation liegt als ringförmiges **Bakterienchromosom** frei im Zellplasma, dazu oft kleine DNA-Ringe, die **Plasmide**. Man nennt sie deshalb **Prokaryoten** (pro = vor, karyon = Kern).\n\nWeitere Merkmale: **Zellmembran** und **Zellwand**, oft eine schützende **Kapsel**, manchmal eine **Geißel** zur Fortbewegung und viele **Ribosomen**, an denen Eiweiße hergestellt werden.\n\nBakterien vermehren sich durch **Zweiteilung**. Unter guten Bedingungen teilen sich manche alle 20 Minuten. Die meisten Bakterien sind harmlos oder sogar nützlich, zum Beispiel im Darm. Einige verursachen Krankheiten wie Scharlach, Salmonellose oder Tuberkulose."
+      },
+      {
+        "titel": "Viren",
+        "text": "**Viren** sind viel kleiner als Bakterien. Sie bestehen nur aus **Erbinformation** (DNA oder RNA) in einer **Eiweißhülle** (Kapsid), manche zusätzlich aus einer äußeren Hüllmembran. Viren haben **keinen eigenen Stoffwechsel** und können sich **nicht allein vermehren**. Deshalb zählen sie nicht zu den Lebewesen.\n\nVermehrung in einer Wirtszelle:\n\n- **Anheften:** Das Virus bindet an passende Stellen auf der Zelloberfläche.\n- **Eindringen:** Die Erbinformation gelangt in die Zelle.\n- **Vermehrung:** Die Zelle wird umprogrammiert und stellt nach Anleitung des Virus viele neue Viruserbinformationen und Hüllen her.\n- **Zusammenbau:** Neue Viren entstehen.\n- **Freisetzung:** Die Viren verlassen die Zelle, die dabei oft zugrunde geht.\n\nBeispiele für Viruskrankheiten: Grippe, Erkältung, Masern, COVID-19, HIV-Infektion."
+      },
+      {
+        "titel": "Infektionskrankheiten",
+        "text": "Bei einer **Infektion** dringen Erreger in den Körper ein und vermehren sich. Übertragungswege sind:\n\n- **Tröpfcheninfektion:** Husten, Niesen, Sprechen (z. B. Grippe)\n- **Kontakt- und Schmierinfektion:** Hände, Türklinken, Lebensmittel (z. B. Salmonellen)\n- **Blut und sexueller Kontakt** (z. B. HIV, Hepatitis B, Chlamydien)\n- **Tiere als Überträger** (z. B. Zecken: Borreliose)\n\nTypischer Verlauf: **Infektion** → **Inkubationszeit** (Erreger vermehren sich, noch keine Beschwerden) → **Ausbruch** der Krankheit mit Symptomen wie Fieber → **Genesung**. Schon in der Inkubationszeit kann man ansteckend sein.\n\nVor sexuell übertragbaren Infektionen schützen **Kondome**, gegen HPV und Hepatitis B gibt es Impfungen."
+      },
+      {
+        "titel": "Wachstumskurven auswerten",
+        "text": "Bei Zweiteilung verdoppelt sich die Zahl der Bakterien mit jeder Teilung:\n\n`N = N_{0} · 2^{n}`\n\nDabei ist `N_{0}` die Anfangszahl und `n` die Zahl der Teilungen. Aus einem Bakterium werden bei 20 Minuten Teilungszeit nach 3 Stunden (9 Teilungen) schon 512.\n\nIn der Natur wird das Wachstum gebremst, weil Nährstoffe knapp werden und Abfallstoffe sich anreichern. Im Diagramm sieht man deshalb: erst langsamer Anstieg, dann starker Anstieg, dann ein Abflachen."
+      }
+    ],
+    "formeln": [
+      { "formel": "N = N_{0} · 2^{n}", "bedeutung": "Bakterienzahl nach n Teilungen bei ungebremstem Wachstum" }
+    ],
+    "merksatz": "**Bakterien** sind Prokaryoten: einzellige Lebewesen ohne Zellkern, die sich durch Zweiteilung vermehren. **Viren** bestehen nur aus Erbinformation und Eiweißhülle und können sich nur in Wirtszellen vermehren.\n\nEine Infektionskrankheit verläuft über Infektion, Inkubationszeit, Ausbruch und Genesung.",
+    "alltag": "Gründliches Händewaschen mit Seife für etwa 20 bis 30 Sekunden ist eine der wirksamsten Maßnahmen gegen Schmierinfektionen."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "bio-err-01", "typ": "multi", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Welche Merkmale haben Bakterien?",
+      "optionen": [
+        { "text": "Sie haben keinen Zellkern.", "richtig": true },
+        { "text": "Sie haben eine Zellwand.", "richtig": true },
+        { "text": "Sie vermehren sich durch Zweiteilung.", "richtig": true },
+        { "text": "Sie haben Chloroplasten.", "feedback": "Bakterien haben keine Zellorganellen wie Chloroplasten oder Mitochondrien." },
+        { "text": "Sie können sich nur in einer Wirtszelle vermehren.", "feedback": "Das gilt für Viren. Bakterien vermehren sich selbstständig." }
+      ],
+      "erklaerung": "Bakterien sind Prokaryoten: Ihre Erbinformation liegt frei im Zellplasma, nicht in einem Zellkern."
+    },
+    {
+      "id": "bio-err-02", "typ": "reihenfolge", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Ordne die Schritte der Virusvermehrung.",
+      "elemente": [
+        "Das Virus heftet sich an die Wirtszelle.",
+        "Die Erbinformation des Virus gelangt in die Zelle.",
+        "Die Zelle stellt Viruserbinformation und Hüllen her.",
+        "Neue Viren werden zusammengebaut.",
+        "Die Viren werden freigesetzt."
+      ],
+      "erklaerung": "Das Virus nutzt die Stoffwechselvorgänge der Wirtszelle für die eigene Vermehrung."
+    },
+    {
+      "id": "bio-err-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Warum zählen Viren nicht zu den Lebewesen?",
+      "optionen": [
+        { "text": "Sie haben keinen eigenen Stoffwechsel und können sich nicht selbstständig vermehren.", "richtig": true },
+        { "text": "Sie sind zu klein.", "feedback": "Die Größe ist kein Kennzeichen des Lebendigen. Entscheidend ist, dass ihnen Stoffwechsel und eigenständige Vermehrung fehlen." },
+        { "text": "Sie machen krank.", "feedback": "Auch manche Bakterien machen krank und sind trotzdem Lebewesen." },
+        { "text": "Sie haben keine Erbinformation.", "feedback": "Viren haben Erbinformation (DNA oder RNA). Ihnen fehlt aber der Stoffwechsel." }
+      ],
+      "erklaerung": "Viren bestehen nicht aus Zellen und erfüllen nicht alle Kennzeichen des Lebendigen. Außerhalb einer Wirtszelle sind sie nur Teilchen."
+    },
+    {
+      "id": "bio-err-04", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Ordne jeder Krankheit ihren typischen Übertragungsweg zu.",
+      "paare": [
+        { "links": "Grippe", "rechts": "Tröpfcheninfektion" },
+        { "links": "Salmonellose", "rechts": "verunreinigte Lebensmittel" },
+        { "links": "HIV-Infektion", "rechts": "Blut und sexueller Kontakt" },
+        { "links": "Borreliose", "rechts": "Zeckenstich" }
+      ],
+      "erklaerung": "Wer den Übertragungsweg kennt, kann sich gezielt schützen: Abstand und Masken bei Tröpfchen, Hygiene in der Küche, Kondome, Zeckenschutz."
+    },
+    {
+      "id": "bio-err-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Was versteht man unter der Inkubationszeit?",
+      "optionen": [
+        { "text": "die Zeit zwischen Ansteckung und Auftreten der ersten Krankheitszeichen", "richtig": true },
+        { "text": "die Zeit, in der man Fieber hat", "feedback": "Fieber ist ein Symptom der Krankheit. Die Inkubationszeit liegt davor." },
+        { "text": "die Zeit nach der Genesung", "feedback": "Die Inkubationszeit liegt am Anfang, direkt nach der Infektion." },
+        { "text": "die Haltbarkeit eines Impfstoffs", "feedback": "Die Inkubationszeit beschreibt den Verlauf einer Krankheit." }
+      ],
+      "erklaerung": "In der Inkubationszeit vermehren sich die Erreger, ohne dass man etwas merkt. Man kann aber schon ansteckend sein."
+    },
+    {
+      "id": "bio-err-06", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Ein Bakterium teilt sich in einem Nährmedium alle 20 Minuten. Wie viele Bakterien sind es nach 2 Stunden, wenn das Wachstum ungebremst ist?",
+      "gegeben": "N_{0} = 1, Teilungszeit 20 min, Zeit 2 h",
+      "gesucht": "N",
+      "loesung": 64, "einheit": "", "toleranz": 0,
+      "rechenweg": [
+        "2 h = 120 min, also `n = 120 min : 20 min = 6` Teilungen",
+        "`N = N_{0} · 2^{n} = 1 · 2^{6} = 64`"
+      ],
+      "erklaerung": "Mit jeder Teilung verdoppelt sich die Zahl. Deshalb wächst eine Bakterienkultur anfangs explosionsartig."
+    },
+    {
+      "id": "bio-err-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Ein Diagramm zeigt die Bakterienzahl in einer Nährlösung über 24 Stunden: Erst steigt sie kaum, dann sehr steil, schließlich bleibt sie fast gleich. Warum flacht die Kurve am Ende ab?",
+      "optionen": [
+        { "text": "Die Nährstoffe werden knapp und Abfallstoffe reichern sich an.", "richtig": true },
+        { "text": "Die Bakterien haben sich zu Viren verwandelt.", "feedback": "Bakterien verwandeln sich nicht in Viren. Beides sind ganz unterschiedliche Erreger." },
+        { "text": "Bakterien können sich nur 24 Stunden lang teilen.", "feedback": "Es gibt keine solche Zeitgrenze. Das Wachstum wird durch die Bedingungen begrenzt." },
+        { "text": "Die Messung ist falsch.", "feedback": "Das Abflachen ist typisch für Wachstum in einem begrenzten Raum mit begrenzten Ressourcen." }
+      ],
+      "erklaerung": "In einem geschlossenen Gefäß wird das Wachstum durch knappe Nährstoffe und giftige Abfallstoffe begrenzt."
+    }
+  ]
+}

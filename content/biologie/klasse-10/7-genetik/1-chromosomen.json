@@ -1,0 +1,116 @@
+{
+  "id": "bio-k10-chromosomen",
+  "titel": "Chromosomen, DNA und Gene",
+  "kurz": "Wo die Erbinformation steckt, wie Chromosomen gebaut sind und was ein Karyogramm zeigt.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Die Bedeutung von Chromosomen als Träger der genetischen Information darstellen" },
+    { "id": "lz2", "niveau": "G", "text": "Die Fachbegriffe Chromosom, DNA, Gen und Allel erklären und fachsprachlich korrekt anwenden" },
+    { "id": "lz3", "niveau": "H", "text": "Karyogramme auswerten" }
+  ],
+  "verstehen": {
+    "einstieg": "In jeder deiner Zellen stecken etwa zwei Meter DNA, in einem Zellkern von wenigen Tausendstel Millimetern. Wie passt das hinein, und wie wird daraus deine Augenfarbe?",
+    "abschnitte": [
+      {
+        "titel": "DNA und Gene",
+        "text": "Die Erbinformation ist in der **DNA** gespeichert (Desoxyribonukleinsäure). Sie ist ein sehr langes Molekül in Form einer **Doppelhelix**, einer verdrehten Strickleiter. Die Sprossen bestehen aus vier **Basen**: Adenin (A), Thymin (T), Guanin (G) und Cytosin (C). Dabei paart sich immer A mit T und G mit C.\n\nDie Reihenfolge der Basen ist die Information, ähnlich wie die Reihenfolge der Buchstaben in einem Text.\n\nEin **Gen** ist ein Abschnitt der DNA, der die Information für ein Merkmal enthält, genauer: für den Bau eines Eiweißstoffs. Eiweiße bestimmen dann zum Beispiel die Farbe der Augen oder die Blutgruppe."
+      },
+      {
+        "titel": "Chromosomen",
+        "text": "Damit die lange DNA in den Zellkern passt, ist sie um Eiweiße gewickelt und aufgeknäult. Vor einer Zellteilung verdichtet sie sich so stark, dass man sie unter dem Mikroskop als **Chromosomen** sieht.\n\nDer Mensch hat in jeder Körperzelle **46 Chromosomen**, also **23 Paare**. Von jedem Paar stammt ein Chromosom von der Mutter, eins vom Vater. Die beiden Chromosomen eines Paares heißen **homolog**: Sie tragen dieselben Gene an denselben Stellen.\n\n- 22 Paare sind **Autosomen**.\n- 1 Paar sind die **Geschlechtschromosomen** (Gonosomen): XX bei Frauen, XY bei Männern.\n\nVor einer Zellteilung wird die DNA verdoppelt. Ein Chromosom besteht dann aus zwei identischen Hälften, den **Chromatiden**, die in der Mitte zusammenhängen. So sieht das typische X-förmige Chromosom aus."
+      },
+      {
+        "titel": "Allele",
+        "text": "Weil jedes Chromosom doppelt vorhanden ist, hat man von jedem Gen **zwei Ausprägungen**, eine von jedem Elternteil. Unterschiedliche Varianten eines Gens nennt man **Allele**. Für die Blutgruppe gibt es zum Beispiel die Allele A, B und 0.\n\n- **Reinerbig** (homozygot): zwei gleiche Allele\n- **Mischerbig** (heterozygot): zwei verschiedene Allele"
+      },
+      {
+        "titel": "Das Karyogramm",
+        "text": "Für ein **Karyogramm** werden Chromosomen einer Zelle während der Teilung fotografiert und nach Größe und Form geordnet, Paar für Paar von 1 bis 22, dazu die Geschlechtschromosomen.\n\nMit einem Karyogramm erkennt man:\n\n- das **Geschlecht** (XX oder XY)\n- **Abweichungen in der Chromosomenzahl**, z. B. drei statt zwei Chromosomen 21 (Trisomie 21)\n- größere Veränderungen im Bau einzelner Chromosomen\n\nEinzelne Gene oder kleine Mutationen sieht man im Karyogramm dagegen nicht."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "Die Erbinformation steckt in der **DNA**. Ein **Gen** ist ein DNA-Abschnitt mit der Information für ein Merkmal, **Allele** sind Varianten eines Gens.\n\nDer Mensch hat **46 Chromosomen** (23 Paare): 22 Paare Autosomen und ein Paar Geschlechtschromosomen (XX oder XY). Ein **Karyogramm** zeigt die geordneten Chromosomen einer Zelle.",
+    "alltag": "Bei Vaterschaftstests oder in der Kriminaltechnik werden bestimmte DNA-Abschnitte verglichen, die sich von Mensch zu Mensch stark unterscheiden."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "bio-chr-01", "typ": "zahl", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Wie viele Chromosomen hat eine normale Körperzelle des Menschen?",
+      "gegeben": "23 Chromosomenpaare",
+      "gesucht": "Anzahl der Chromosomen",
+      "loesung": 46, "einheit": "", "toleranz": 0,
+      "rechenweg": ["`23 · 2 = 46`"],
+      "erklaerung": "Von jedem der 23 Paare stammt ein Chromosom von der Mutter und eins vom Vater."
+    },
+    {
+      "id": "bio-chr-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Ordne die Fachbegriffe zu.",
+      "paare": [
+        { "links": "DNA", "rechts": "Molekül, in dem die Erbinformation gespeichert ist" },
+        { "links": "Gen", "rechts": "DNA-Abschnitt mit der Information für ein Merkmal" },
+        { "links": "Allel", "rechts": "Variante eines Gens" },
+        { "links": "Chromosom", "rechts": "verdichtete DNA mit Eiweißen, im Mikroskop sichtbar" },
+        { "links": "Chromatid", "rechts": "eine von zwei identischen Hälften eines verdoppelten Chromosoms" }
+      ],
+      "erklaerung": "Vom Großen zum Kleinen: Chromosom → DNA → Gen. Ein Chromosom trägt viele Gene."
+    },
+    {
+      "id": "bio-chr-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Ein DNA-Strang hat die Basenfolge A-T-T-G-C-A. Wie lautet der gegenüberliegende Strang?",
+      "optionen": [
+        { "text": "T-A-A-C-G-T", "richtig": true },
+        { "text": "A-T-T-G-C-A", "feedback": "Der Gegenstrang ist nicht gleich, sondern ergänzend: A paart mit T, G mit C." },
+        { "text": "G-C-C-A-T-G", "feedback": "A paart mit T, nicht mit G." },
+        { "text": "U-A-A-C-G-U", "feedback": "Uracil (U) kommt in der DNA nicht vor." }
+      ],
+      "erklaerung": "Die Basenpaarung ist festgelegt: A–T und G–C. Deshalb kann jeder Strang als Vorlage für den anderen dienen."
+    },
+    {
+      "id": "bio-chr-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Ein Mensch hat für die Blutgruppe die Allele A und 0. Wie nennt man ihn bezüglich dieses Gens?",
+      "optionen": [
+        { "text": "mischerbig (heterozygot)", "richtig": true },
+        { "text": "reinerbig (homozygot)", "feedback": "Reinerbig wäre er mit zwei gleichen Allelen, z. B. A und A." },
+        { "text": "haploid", "feedback": "Haploid beschreibt Zellen mit nur einem Chromosomensatz, nicht die Allelkombination." },
+        { "text": "dominant", "feedback": "Dominant ist ein Allel, nicht ein Mensch." }
+      ],
+      "erklaerung": "Zwei verschiedene Allele desselben Gens = mischerbig."
+    },
+    {
+      "id": "bio-chr-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Was bedeutet es, dass zwei Chromosomen „homolog“ sind?",
+      "optionen": [
+        { "text": "Sie tragen dieselben Gene an denselben Stellen, eines stammt von der Mutter, eines vom Vater.", "richtig": true },
+        { "text": "Sie sind in allen Allelen genau gleich.", "feedback": "Homologe Chromosomen haben dieselben Gene, aber oft verschiedene Allele." },
+        { "text": "Sie sind die beiden Chromatiden eines Chromosoms.", "feedback": "Die beiden Chromatiden sind identische Kopien. Homologe Chromosomen stammen von verschiedenen Eltern." },
+        { "text": "Es sind die Geschlechtschromosomen.", "feedback": "Bei Frauen sind die beiden X homolog. Homolog sind aber auch alle Autosomenpaare." }
+      ],
+      "erklaerung": "Homologe Chromosomen bilden ein Paar. Bei der Meiose werden sie getrennt."
+    },
+    {
+      "id": "bio-chr-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Ein Karyogramm zeigt 47 Chromosomen: Das Chromosom 21 ist dreimal vorhanden, dazu die Geschlechtschromosomen X und Y. Was liest du daraus ab?",
+      "optionen": [
+        { "text": "Ein Junge mit Trisomie 21", "richtig": true },
+        { "text": "Ein Mädchen mit Trisomie 21", "feedback": "Das Y-Chromosom zeigt, dass es sich um einen Jungen handelt." },
+        { "text": "Ein Junge ohne Abweichung", "feedback": "47 statt 46 Chromosomen ist eine Abweichung." },
+        { "text": "Man kann daraus nichts ablesen.", "feedback": "Chromosomenzahl und Geschlechtschromosomen sind im Karyogramm gut erkennbar." }
+      ],
+      "erklaerung": "XY bedeutet männlich. Drei Chromosomen 21 bedeuten Trisomie 21 (Down-Syndrom)."
+    },
+    {
+      "id": "bio-chr-07", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Was kann man in einem Karyogramm erkennen?",
+      "optionen": [
+        { "text": "das chromosomale Geschlecht", "richtig": true },
+        { "text": "eine falsche Anzahl von Chromosomen", "richtig": true },
+        { "text": "größere Veränderungen im Bau eines Chromosoms", "richtig": true },
+        { "text": "die Basenfolge eines einzelnen Gens", "feedback": "Dafür braucht man eine DNA-Sequenzierung. Im Mikroskop sieht man keine einzelnen Basen." },
+        { "text": "die Augenfarbe", "feedback": "Allele für einzelne Merkmale lassen sich im Karyogramm nicht erkennen." }
+      ],
+      "erklaerung": "Ein Karyogramm zeigt die „grobe“ Ebene: Zahl, Größe und Form der Chromosomen."
+    }
+  ]
+}

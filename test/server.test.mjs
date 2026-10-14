@@ -148,6 +148,21 @@ test('Schülerliste, Klassenstufe, Übungen, Fortschritt und Lehrer-Übersicht',
   assert.match(ester, /\/inhalt\/ch-veresterung\/index\.html/);
   assert.equal((await max.req('/physik/10/ch-k10-ester')).status, 404);
 
+  // Viertes Fach: Biologie, mit gesperrtem Themenfeld (Klasse 7, Sexualität)
+  assert.match(home, /class="grade-name">Biologie</);
+  const mendel = await (await max.req('/biologie/10/bio-k10-mendel')).text();
+  assert.match(mendel, /\/inhalt\/bio-mendel\/index\.html/);
+  const bio7 = await (await max.req('/biologie/7')).text();
+  assert.match(bio7, /Pubertät und Hormone/, 'gesperrtes Thema ist sichtbar');
+  assert.match(bio7, /class="card topic locked"/);
+  assert.doesNotMatch(bio7, /href="\/biologie\/7\/bio-k7-pubertaet"/, 'gesperrtes Thema ist nicht verlinkt');
+  assert.match(bio7, /href="\/biologie\/7\/bio-k7-zellaufbau"/);
+  assert.equal((await max.req('/biologie/7/bio-k7-pubertaet')).status, 403);
+  assert.equal((await max.req('/biologie/7/bio-k7-pubertaet/ueben')).status, 403);
+  assert.equal((await max.json('/api/uebung/bio-pub-02', { antwort: { wahl: '0' } })).status, 403);
+  assert.equal((await max.json('/api/uebung/bio-pub-02/loesung', {})).status, 403);
+  assert.equal((await max.json('/api/verstanden/bio-k7-pubertaet', { done: true })).status, 403);
+
   // Schüler dürfen nicht in die Verwaltung
   assert.equal((await max.req('/admin')).status, 403);
 

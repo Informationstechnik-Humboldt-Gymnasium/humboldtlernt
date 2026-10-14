@@ -1,0 +1,239 @@
+{
+  "id": "bio-k7-nahrungsbeziehungen",
+  "titel": "Fotosynthese, Nahrungsnetze und Stoffkreislauf",
+  "kurz": "Wie Pflanzen Nahrung herstellen und wie Stoffe und Energie durch das Ökosystem Wald fließen.",
+  "reihenfolge": 2,
+  "lernziele": [
+    {
+      "id": "lz1",
+      "niveau": "G",
+      "text": "Die zentrale Bedeutung der Fotosynthese beschreiben"
+    },
+    {
+      "id": "lz2",
+      "niveau": "G",
+      "text": "Produzenten, Konsumenten und Destruenten unterscheiden und die Begriffe aus ihrer Wortherkunft erklären"
+    },
+    {
+      "id": "lz3",
+      "niveau": "G",
+      "text": "Nahrungsketten und Nahrungsnetze darstellen"
+    },
+    {
+      "id": "lz4",
+      "niveau": "H",
+      "text": "Den Stoffkreislauf und den Energiefluss im Ökosystem Wald erläutern"
+    }
+  ],
+  "verstehen": {
+    "einstieg": "Eine große Buche wiegt viele Tonnen. Aus dem Boden hat sie aber nur Wasser und ein paar Mineralstoffe aufgenommen. Woraus besteht dann ihr Holz?",
+    "abschnitte": [
+      {
+        "titel": "Fotosynthese",
+        "text": "Grüne Pflanzen stellen ihre Nährstoffe selbst her. In den **Chloroplasten** ihrer Blätter nutzen sie **Lichtenergie**:\n\nKohlenstoffdioxid + Wasser → Traubenzucker + Sauerstoff\n\nDas Kohlenstoffdioxid nehmen die Blätter aus der Luft auf, das Wasser kommt über die Wurzeln. Der grüne Farbstoff **Chlorophyll** fängt das Licht ein. Aus dem Traubenzucker baut die Pflanze Stärke, Cellulose und damit auch Holz auf. Der Sauerstoff wird an die Luft abgegeben.\n\nDie Fotosynthese ist die Grundlage fast allen Lebens: Sie liefert die Nahrung für alle anderen Lebewesen und den Sauerstoff zum Atmen."
+      },
+      {
+        "titel": "Produzenten, Konsumenten, Destruenten",
+        "text": "Nach ihrer Rolle im Ökosystem teilt man Lebewesen in drei Gruppen ein:\n\n- **Produzenten** (lateinisch producere = hervorbringen) stellen durch Fotosynthese Nährstoffe her: grüne Pflanzen.\n- **Konsumenten** (consumere = verbrauchen) ernähren sich von anderen Lebewesen. Pflanzenfresser wie das Reh sind **Konsumenten 1. Ordnung**, Fleischfresser wie der Fuchs, der Pflanzenfresser frisst, sind **Konsumenten 2. Ordnung**.\n- **Destruenten** (destruere = zerstören, abbauen) zersetzen tote Lebewesen, Laub und Kot zu Mineralstoffen: Bakterien und Pilze. Regenwürmer, Asseln und Springschwänze zerkleinern die Reste vorher und helfen so beim Abbau."
+      },
+      {
+        "titel": "Nahrungskette und Nahrungsnetz",
+        "text": "Eine **Nahrungskette** zeigt, wer wen frisst. Die Pfeile zeigen dabei vom Gefressenen zum Fresser, also in Richtung des Stoff- und Energieflusses:\n\nEichenblatt → Raupe → Kohlmeise → Sperber\n\nIn Wirklichkeit fressen die meisten Tiere mehrere Nahrungsarten und haben mehrere Feinde. Die Ketten sind deshalb zu einem **Nahrungsnetz** verknüpft. Ein Netz ist stabiler: Fällt eine Art aus, können andere sie oft ersetzen."
+      },
+      {
+        "titel": "Stoffkreislauf und Energiefluss",
+        "text": "Die Destruenten bauen alle toten Reste zu Mineralstoffen, Wasser und Kohlenstoffdioxid ab. Diese nehmen die Pflanzen wieder auf. So entsteht ein **Stoffkreislauf**: Die Stoffe werden immer wieder verwendet.\n\nMit der **Energie** ist es anders. Sie kommt als Sonnenlicht ins Ökosystem und wird in den Nährstoffen gespeichert. Auf jeder Stufe der Nahrungskette wird aber ein großer Teil als Wärme abgegeben. Die Energie **fließt** also durch das Ökosystem und muss ständig durch die Sonne nachgeliefert werden."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "**Produzenten** stellen durch Fotosynthese Nährstoffe her, **Konsumenten** fressen andere Lebewesen, **Destruenten** zersetzen tote Reste zu Mineralstoffen.\n\nStoffe bewegen sich im **Kreislauf**, Energie **fließt** von der Sonne durch das Ökosystem und wird dabei als Wärme abgegeben.",
+    "alltag": "Im Komposthaufen arbeiten Destruenten für dich: Bakterien, Pilze und Würmer machen aus Küchenabfällen nährstoffreiche Erde."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "bio-nah-01",
+      "typ": "zuordnung",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz2",
+      "frage": "Ordne jedes Lebewesen seiner Rolle im Ökosystem Wald zu.",
+      "paare": [
+        {
+          "links": "Buche",
+          "rechts": "Produzent"
+        },
+        {
+          "links": "Reh",
+          "rechts": "Konsument 1. Ordnung"
+        },
+        {
+          "links": "Fuchs, der Mäuse frisst",
+          "rechts": "Konsument 2. Ordnung"
+        },
+        {
+          "links": "Schimmelpilz auf Laub",
+          "rechts": "Destruent"
+        }
+      ],
+      "erklaerung": "Die Buche betreibt Fotosynthese. Das Reh frisst Pflanzen. Der Fuchs frisst Pflanzenfresser. Pilze zersetzen tote Reste."
+    },
+    {
+      "id": "bio-nah-02",
+      "typ": "multi",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz1",
+      "frage": "Was braucht eine Pflanze für die Fotosynthese?",
+      "optionen": [
+        {
+          "text": "Licht",
+          "richtig": true
+        },
+        {
+          "text": "Kohlenstoffdioxid",
+          "richtig": true
+        },
+        {
+          "text": "Wasser",
+          "richtig": true
+        },
+        {
+          "text": "Chlorophyll in den Chloroplasten",
+          "richtig": true
+        },
+        {
+          "text": "Traubenzucker aus dem Boden",
+          "feedback": "Traubenzucker ist das **Produkt** der Fotosynthese. Die Pflanze stellt ihn selbst her."
+        }
+      ],
+      "erklaerung": "Kohlenstoffdioxid + Wasser → Traubenzucker + Sauerstoff. Die Energie liefert das Licht, das vom Chlorophyll eingefangen wird."
+    },
+    {
+      "id": "bio-nah-03",
+      "typ": "reihenfolge",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz3",
+      "frage": "Ordne die Lebewesen zu einer Nahrungskette. Beginne beim Produzenten.",
+      "elemente": [
+        "Eichenblatt",
+        "Raupe",
+        "Kohlmeise",
+        "Sperber"
+      ],
+      "erklaerung": "Die Raupe frisst das Blatt, die Kohlmeise frisst Raupen, der Sperber jagt Meisen. Am Anfang einer Nahrungskette steht immer ein Produzent."
+    },
+    {
+      "id": "bio-nah-04",
+      "typ": "single",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz3",
+      "frage": "In einer Nahrungskette steht „Gras → Hase → Fuchs“. Wofür stehen die Pfeile?",
+      "optionen": [
+        {
+          "text": "Sie zeigen, wohin Stoffe und Energie fließen: vom Gefressenen zum Fresser.",
+          "richtig": true
+        },
+        {
+          "text": "Sie zeigen, wer wen jagt: vom Jäger zur Beute.",
+          "feedback": "Die Richtung ist umgekehrt. Der Pfeil zeigt vom Gefressenen zum Fresser."
+        },
+        {
+          "text": "Sie zeigen die Größe der Tiere.",
+          "feedback": "Die Pfeile beschreiben die Nahrungsbeziehung, nicht die Größe."
+        },
+        {
+          "text": "Sie zeigen die zeitliche Reihenfolge, in der die Arten entstanden sind.",
+          "feedback": "Nahrungsketten beschreiben Fressbeziehungen heute, keine Stammesgeschichte."
+        }
+      ],
+      "erklaerung": "Lies den Pfeil als „wird gefressen von“: Gras wird gefressen vom Hasen, der Hase vom Fuchs."
+    },
+    {
+      "id": "bio-nah-05",
+      "typ": "single",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz2",
+      "frage": "Was würde passieren, wenn es im Wald plötzlich keine Destruenten mehr gäbe?",
+      "optionen": [
+        {
+          "text": "Laub und tote Tiere würden sich anhäufen, und den Pflanzen fehlten bald die Mineralstoffe.",
+          "richtig": true
+        },
+        {
+          "text": "Die Pflanzen würden schneller wachsen, weil niemand sie frisst.",
+          "feedback": "Destruenten fressen keine lebenden Pflanzen. Sie bauen tote Reste ab und liefern den Pflanzen Mineralstoffe."
+        },
+        {
+          "text": "Es würde nichts passieren, Destruenten sind unwichtig.",
+          "feedback": "Ohne Destruenten wäre der Stoffkreislauf unterbrochen."
+        },
+        {
+          "text": "Die Fotosynthese würde aufhören, weil kein Licht mehr da ist.",
+          "feedback": "Licht kommt von der Sonne. Es fehlten aber nach und nach die Mineralstoffe aus dem Boden."
+        }
+      ],
+      "erklaerung": "Destruenten schließen den Stoffkreislauf. Sie machen aus toten Resten wieder Mineralstoffe, die Pflanzen aufnehmen."
+    },
+    {
+      "id": "bio-nah-06",
+      "typ": "single",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz4",
+      "frage": "Warum spricht man von einem Stoff**kreislauf**, aber von einem Energie**fluss**?",
+      "optionen": [
+        {
+          "text": "Stoffe werden immer wieder verwendet. Energie wird auf jeder Stufe teilweise als Wärme abgegeben und muss von der Sonne nachgeliefert werden.",
+          "richtig": true
+        },
+        {
+          "text": "Energie verschwindet in der Nahrungskette spurlos.",
+          "feedback": "Energie verschwindet nicht. Sie wird in Wärme umgewandelt, die das Ökosystem nicht mehr nutzen kann."
+        },
+        {
+          "text": "Stoffe kommen von der Sonne, Energie aus dem Boden.",
+          "feedback": "Es ist umgekehrt: Die Energie kommt von der Sonne, Mineralstoffe stammen aus dem Boden."
+        },
+        {
+          "text": "Es gibt keinen Unterschied, beide Begriffe bedeuten dasselbe.",
+          "feedback": "Der Unterschied ist wichtig: Stoffe kreisen, Energie strömt hindurch."
+        }
+      ],
+      "erklaerung": "Kohlenstoff, Sauerstoff und Mineralstoffe wechseln immer wieder zwischen Lebewesen und Umwelt. Die Energie dagegen gelangt als Licht hinein und verlässt das Ökosystem als Wärme."
+    },
+    {
+      "id": "bio-nah-07",
+      "typ": "text",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz1",
+      "frage": "Erkläre, warum auch ein Fuchs, der nie eine Pflanze frisst, auf die Fotosynthese angewiesen ist.",
+      "stichworte": [
+        {
+          "aspekt": "Pflanzen stellen durch Fotosynthese Nährstoffe (Traubenzucker) her.",
+          "woerter": [
+            "traubenzucker",
+            "naehrstoff",
+            "zucker"
+          ]
+        },
+        {
+          "aspekt": "Die Beutetiere des Fuchses fressen Pflanzen (Nahrungskette).",
+          "woerter": [
+            "nahrungskette",
+            "maus",
+            "hase",
+            "pflanzenfresser",
+            "beute"
+          ]
+        },
+        {
+          "aspekt": "Die Fotosynthese liefert den Sauerstoff zum Atmen.",
+          "woerter": [
+            "sauerstoff"
+          ]
+        }
+      ],
+      "musterloesung": "Pflanzen stellen durch Fotosynthese mit Lichtenergie Traubenzucker und andere Nährstoffe her. Mäuse und Hasen sind Pflanzenfresser und nehmen diese Nährstoffe auf. Der Fuchs frisst diese Beutetiere und bekommt so am Ende der Nahrungskette Stoffe und Energie, die ursprünglich aus der Fotosynthese stammen. Außerdem atmet der Fuchs Sauerstoff, den die Pflanzen bei der Fotosynthese abgegeben haben.",
+      "erklaerung": "Jede Nahrungskette beginnt bei einem Produzenten. Ohne Fotosynthese gäbe es weder Nahrung noch Sauerstoff für Tiere."
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "id": "bio-k10-mendel",
+  "titel": "Gregor Mendel und die Vererbungsregeln",
+  "kurz": "Wie Mendel mit Erbsen die Gesetze der Vererbung entdeckte und wie man Erbgänge mit Kreuzungsschemata vorhersagt.",
+  "reihenfolge": 3,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Die Fachbegriffe Genotyp, Phänotyp, dominant, rezessiv und Kreuzungsschema erklären und anwenden" },
+    { "id": "lz2", "niveau": "G", "text": "Die Mendelschen Regeln anwenden" },
+    { "id": "lz3", "niveau": "H", "text": "Gesetzmäßigkeiten von Erbgängen mit Kreuzungsschemata erfassen, auch bei intermediärer und dihybrider Vererbung" }
+  ],
+  "verstehen": {
+    "einstieg": "Zwei braunäugige Eltern bekommen ein blauäugiges Kind. Wie kann ein Merkmal eine Generation „überspringen“?",
+    "abschnitte": [
+      {
+        "titel": "Mendels Erbsenversuche",
+        "text": "Der Mönch **Gregor Mendel** kreuzte im 19. Jahrhundert im Klostergarten von Brünn Tausende Erbsenpflanzen. Er wählte Merkmale mit zwei klar unterscheidbaren Ausprägungen, zum Beispiel gelbe oder grüne Samen. Und er **zählte** die Nachkommen. 1866 veröffentlichte er seine Ergebnisse. Anerkannt wurden sie erst um 1900.\n\nFachbegriffe:\n\n- **Genotyp:** die Kombination der Allele, z. B. Gg\n- **Phänotyp:** das sichtbare Erscheinungsbild, z. B. gelb\n- **dominant:** Das Allel setzt sich durch, schon wenn es einmal vorhanden ist (Großbuchstabe, G).\n- **rezessiv:** Das Allel zeigt sich nur, wenn es doppelt vorhanden ist (Kleinbuchstabe, g).\n- **P-Generation** (Eltern), **F₁** (1. Tochtergeneration), **F₂** (2. Tochtergeneration)"
+      },
+      {
+        "titel": "1. und 2. Mendelsche Regel",
+        "text": "**1. Uniformitätsregel:** Kreuzt man zwei reinerbige Eltern, die sich in einem Merkmal unterscheiden, sind alle Nachkommen der F₁ gleich (uniform).\n\nGG (gelb) × gg (grün) → alle Gg (gelb)\n\n**2. Spaltungsregel:** Kreuzt man die F₁ untereinander, spalten sich die Merkmale in der F₂ in einem festen Zahlenverhältnis auf. Bei dominant-rezessiver Vererbung im Verhältnis **3 : 1**.\n\nKreuzungsschema (Gg × Gg):\n\n- Keimzellen jedes Elternteils: G oder g\n- GG, Gg, gG, gg\n- Genotypen 1 GG : 2 Gg : 1 gg\n- Phänotypen 3 gelb : 1 grün\n\nDas Verhältnis gilt nur im Durchschnitt vieler Nachkommen, wie beim Würfeln."
+      },
+      {
+        "titel": "Intermediärer Erbgang",
+        "text": "Nicht immer ist ein Allel dominant. Bei der **Wunderblume** ergibt eine Kreuzung aus rot (RR) und weiß (WW) in der F₁ nur **rosa** Blüten (RW). Beide Allele wirken zusammen, man nennt das **intermediär**.\n\nIn der F₂ spalten sich die Phänotypen dann **1 rot : 2 rosa : 1 weiß** auf, also genauso wie die Genotypen."
+      },
+      {
+        "titel": "3. Unabhängigkeitsregel",
+        "text": "Betrachtet man zwei Merkmale gleichzeitig (**dihybrider Erbgang**), werden sie unabhängig voneinander vererbt, wenn ihre Gene auf verschiedenen Chromosomen liegen. Es entstehen neue Kombinationen.\n\nBeispiel: gelb-rund (GGRR) × grün-runzelig (ggrr). Die F₁ ist gelb-rund (GgRr). In der F₂ treten die Phänotypen im Verhältnis **9 : 3 : 3 : 1** auf: 9 gelb-rund, 3 gelb-runzelig, 3 grün-rund, 1 grün-runzelig.\n\nMit einer **Rückkreuzung** mit dem rezessiven Elternteil (gg) kann man prüfen, ob ein Lebewesen mit dominantem Phänotyp reinerbig (GG) oder mischerbig (Gg) ist."
+      }
+    ],
+    "formeln": [
+      { "formel": "Gg × Gg → 1 GG : 2 Gg : 1 gg", "bedeutung": "Spaltungsregel: Genotypen in der F₂" },
+      { "formel": "3 : 1", "bedeutung": "Phänotypen in der F₂ bei dominant-rezessiver Vererbung" },
+      { "formel": "9 : 3 : 3 : 1", "bedeutung": "Phänotypen in der F₂ bei zwei unabhängigen Merkmalen" }
+    ],
+    "merksatz": "**Uniformitätsregel:** Reinerbige Eltern → einheitliche F₁. **Spaltungsregel:** F₁ × F₁ → F₂ spaltet 3 : 1 (dominant-rezessiv) oder 1 : 2 : 1 (intermediär). **Unabhängigkeitsregel:** Zwei Merkmale werden unabhängig vererbt → 9 : 3 : 3 : 1.\n\nDer **Genotyp** ist die Allelkombination, der **Phänotyp** das Erscheinungsbild.",
+    "alltag": "Züchterinnen und Züchter nutzen die Mendelschen Regeln, um gezielt Pflanzen oder Tiere mit gewünschten Eigenschaften zu erhalten, zum Beispiel Weizen, der gegen Pilzkrankheiten widerstandsfähig ist."
+  },
+  "interaktiv": ["bio-mendel"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "bio-mdl-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Ordne die Fachbegriffe zu.",
+      "paare": [
+        { "links": "Genotyp", "rechts": "Kombination der Allele, z. B. Gg" },
+        { "links": "Phänotyp", "rechts": "sichtbares Erscheinungsbild, z. B. gelb" },
+        { "links": "dominant", "rechts": "setzt sich schon bei einfachem Vorhandensein durch" },
+        { "links": "rezessiv", "rechts": "zeigt sich nur bei doppeltem Vorhandensein" }
+      ],
+      "erklaerung": "Dominante Allele schreibt man mit Großbuchstaben, rezessive mit Kleinbuchstaben."
+    },
+    {
+      "id": "bio-mdl-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Reinerbig gelbe Erbsen (GG) werden mit reinerbig grünen (gg) gekreuzt. Gelb ist dominant. Wie sieht die F₁ aus?",
+      "optionen": [
+        { "text": "alle gelb (Gg)", "richtig": true },
+        { "text": "alle grün (gg)", "feedback": "Jede Pflanze der F₁ bekommt ein G-Allel. Gelb ist dominant." },
+        { "text": "3 gelb : 1 grün", "feedback": "Dieses Verhältnis tritt erst in der F₂ auf." },
+        { "text": "alle gelb-grün gefleckt", "feedback": "Bei dominant-rezessiver Vererbung setzt sich die dominante Ausprägung vollständig durch." }
+      ],
+      "erklaerung": "Das ist die Uniformitätsregel: Alle Nachkommen reinerbiger Eltern sind gleich, hier mischerbig Gg und gelb."
+    },
+    {
+      "id": "bio-mdl-03", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Mendel kreuzte mischerbig gelbe Erbsen (Gg) untereinander und erhielt 800 Samen. Wie viele davon erwartest du gelb?",
+      "gegeben": "Gg × Gg, 800 Nachkommen, gelb dominant",
+      "gesucht": "Anzahl gelber Samen",
+      "loesung": 600, "einheit": "", "toleranz": 0,
+      "rechenweg": [
+        "Kreuzungsschema: GG, Gg, gG, gg → 3 gelb : 1 grün",
+        "Anteil gelb: `\\frac{3}{4}`",
+        "`\\frac{3}{4} · 800 = 600`"
+      ],
+      "erklaerung": "Das ist ein Erwartungswert. In echten Versuchen weicht die Zahl etwas ab, Mendel erhielt bei 8023 Samen 6022 gelbe und 2001 grüne, also fast genau 3 : 1."
+    },
+    {
+      "id": "bio-mdl-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Zwei braunäugige Eltern bekommen ein blauäugiges Kind. Braun soll hier vereinfacht dominant über blau sein. Was folgt daraus?",
+      "optionen": [
+        { "text": "Beide Eltern sind mischerbig (Bb).", "richtig": true },
+        { "text": "Beide Eltern sind reinerbig (BB).", "feedback": "Dann hätte das Kind mindestens ein B-Allel und braune Augen." },
+        { "text": "Ein Elternteil muss blaue Augen haben.", "feedback": "Beide Eltern haben braune Augen. Das b-Allel kann trotzdem in ihnen stecken." },
+        { "text": "Das ist unmöglich.", "feedback": "Ein rezessives Merkmal kann eine Generation überspringen." }
+      ],
+      "erklaerung": "Das Kind ist bb. Es hat von jedem Elternteil ein b bekommen. Weil die Eltern braun sind, haben beide auch ein B: Sie sind Bb. Die echte Vererbung der Augenfarbe hängt von mehreren Genen ab."
+    },
+    {
+      "id": "bio-mdl-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Rote (RR) und weiße (WW) Wunderblumen werden gekreuzt, die F₁ ist rosa. Welches Verhältnis erwartest du in der F₂?",
+      "optionen": [
+        { "text": "1 rot : 2 rosa : 1 weiß", "richtig": true },
+        { "text": "3 rot : 1 weiß", "feedback": "Das gilt bei dominant-rezessiver Vererbung. Hier ist der Erbgang intermediär." },
+        { "text": "alle rosa", "feedback": "Das gilt nur für die F₁ (Uniformitätsregel)." },
+        { "text": "9 : 3 : 3 : 1", "feedback": "Dieses Verhältnis gilt für zwei Merkmale gleichzeitig." }
+      ],
+      "erklaerung": "Beim intermediären Erbgang hat jeder Genotyp einen eigenen Phänotyp: RR rot, RW rosa, WW weiß."
+    },
+    {
+      "id": "bio-mdl-06", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Erbsen GgRr (gelb, rund) werden untereinander gekreuzt. Gelb und rund sind dominant. Es entstehen 320 Samen. Wie viele grün-runde Samen erwartest du?",
+      "gegeben": "GgRr × GgRr, 320 Nachkommen",
+      "gesucht": "Anzahl grün-rund",
+      "loesung": 60, "einheit": "", "toleranz": 0,
+      "rechenweg": [
+        "Unabhängigkeitsregel: F₂ spaltet 9 gelb-rund : 3 gelb-runzelig : 3 grün-rund : 1 grün-runzelig",
+        "Anteil grün-rund: `\\frac{3}{16}`",
+        "`\\frac{3}{16} · 320 = 60`"
+      ],
+      "erklaerung": "Grün-rund ist eine neue Kombination, die bei keinem der ursprünglichen Eltern vorkam. Das zeigt, dass die Merkmale unabhängig vererbt werden."
+    },
+    {
+      "id": "bio-mdl-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Du willst wissen, ob eine gelbe Erbse reinerbig (GG) oder mischerbig (Gg) ist. Du kreuzt sie mit einer grünen (gg). Unter den Nachkommen sind gelbe und grüne etwa im Verhältnis 1 : 1. Was folgt?",
+      "optionen": [
+        { "text": "Die Erbse war mischerbig (Gg).", "richtig": true },
+        { "text": "Die Erbse war reinerbig (GG).", "feedback": "Bei GG × gg wären alle Nachkommen Gg und gelb." },
+        { "text": "Gelb ist rezessiv.", "feedback": "Das Ergebnis passt genau zu gelb dominant und einem mischerbigen Elternteil." },
+        { "text": "Man kann es nicht entscheiden.", "feedback": "Genau dafür ist die Rückkreuzung da: Das Verhältnis zeigt den Genotyp." }
+      ],
+      "erklaerung": "Gg × gg → 1 Gg (gelb) : 1 gg (grün). Diese Rückkreuzung mit dem rezessiven Elternteil heißt Testkreuzung."
+    }
+  ]
+}

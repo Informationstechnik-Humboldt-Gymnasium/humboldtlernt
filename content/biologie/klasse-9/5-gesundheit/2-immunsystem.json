@@ -1,0 +1,117 @@
+{
+  "id": "bio-k9-immunsystem",
+  "titel": "Das Immunsystem",
+  "kurz": "Wie der Körper Erreger mit unspezifischer und spezifischer Abwehr bekämpft und warum man manche Krankheiten nur einmal bekommt.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Unspezifische und spezifische Abwehr unterscheiden und Fachbegriffe korrekt anwenden" },
+    { "id": "lz2", "niveau": "G", "text": "Die Antigen-Antikörper-Reaktion darstellen" },
+    { "id": "lz3", "niveau": "H", "text": "Bestandteile des Immunsystems (humorale und zelluläre Abwehr) in ihrer Funktion erläutern" }
+  ],
+  "verstehen": {
+    "einstieg": "Wer als Kind Windpocken hatte, bekommt sie meist nie wieder. Woher „weiß“ der Körper Jahrzehnte später noch, wie der Erreger aussieht?",
+    "abschnitte": [
+      {
+        "titel": "Erste Barrieren und unspezifische Abwehr",
+        "text": "Die meisten Erreger kommen gar nicht erst in den Körper:\n\n- **Haut** als dichte Barriere\n- **Schleimhäute** mit Schleim und Flimmerhärchen in den Atemwegen\n- **Magensäure**, die viele Keime abtötet\n- Tränen und Speichel mit keimtötenden Stoffen\n\nGelangen Erreger doch hinein, greift die **unspezifische Abwehr** sofort an. **Fresszellen** (Makrophagen) sind weiße Blutkörperchen, die Erreger umfließen und verdauen. Es kommt zu einer **Entzündung**: Die Stelle wird rot, warm und schwillt an, weil mehr Blut und Abwehrzellen hinfließen. **Fieber** kann die Vermehrung mancher Erreger bremsen.\n\nUnspezifisch heißt: Diese Abwehr richtet sich gegen alle Fremdkörper gleich."
+      },
+      {
+        "titel": "Antigene und Antikörper",
+        "text": "Jeder Erreger trägt auf seiner Oberfläche typische Merkmale, die **Antigene**. Der Körper erkennt sie als fremd.\n\n**Antikörper** sind Y-förmige Eiweißstoffe. Ihre beiden Bindungsstellen passen wie ein Schlüssel ins Schloss genau zu **einem** Antigen. Binden Antikörper an die Antigene, werden die Erreger **verklumpt** und unschädlich gemacht. Fresszellen können die Klumpen dann leicht beseitigen. Das ist die **Antigen-Antikörper-Reaktion**."
+      },
+      {
+        "titel": "Spezifische Abwehr",
+        "text": "Die **spezifische Abwehr** richtet sich gezielt gegen einen bestimmten Erreger. Sie braucht beim ersten Kontakt einige Tage.\n\n- Fresszellen präsentieren Bruchstücke des Erregers. **T-Helferzellen** erkennen diese und aktivieren die anderen Abwehrzellen.\n- **Humorale Abwehr** (humor = Flüssigkeit): Aktivierte **B-Lymphozyten** vermehren sich und werden zu **Plasmazellen**, die massenhaft passende Antikörper ins Blut abgeben. Sie wirken gegen Erreger in den Körperflüssigkeiten.\n- **Zelluläre Abwehr:** **T-Killerzellen** erkennen und zerstören **körpereigene Zellen, die bereits von Viren befallen** sind. So wird die Virusvermehrung gestoppt.\n\nNach der Infektion bleiben **Gedächtniszellen** zurück. Beim zweiten Kontakt mit demselben Erreger reagieren sie sehr schnell und stark. Meist bemerkt man die zweite Infektion gar nicht. Man ist **immun**."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "Die **unspezifische Abwehr** (Barrieren, Fresszellen, Entzündung) wirkt sofort gegen alle Eindringlinge. Die **spezifische Abwehr** richtet sich gezielt gegen einen Erreger: **Antikörper** aus Plasmazellen (humoral) und **T-Killerzellen** gegen befallene Zellen (zellulär).\n\n**Gedächtniszellen** sorgen für Immunität.",
+    "alltag": "Eine Allergie ist eine überschießende Reaktion des Immunsystems auf eigentlich harmlose Stoffe wie Pollen oder Hausstaub."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "bio-imm-01", "typ": "multi", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Welche gehören zu den ersten Barrieren gegen Krankheitserreger?",
+      "optionen": [
+        { "text": "Haut", "richtig": true },
+        { "text": "Schleimhäute mit Flimmerhärchen", "richtig": true },
+        { "text": "Magensäure", "richtig": true },
+        { "text": "Gedächtniszellen", "feedback": "Gedächtniszellen gehören zur spezifischen Abwehr und entstehen erst nach dem ersten Kontakt mit einem Erreger." },
+        { "text": "Antikörper", "feedback": "Antikörper werden erst von Plasmazellen gebildet, wenn Erreger schon im Körper sind." }
+      ],
+      "erklaerung": "Barrieren verhindern, dass Erreger überhaupt in den Körper gelangen."
+    },
+    {
+      "id": "bio-imm-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz3",
+      "frage": "Ordne jeder Abwehrzelle ihre Aufgabe zu.",
+      "paare": [
+        { "links": "Fresszelle", "rechts": "umfließt und verdaut Erreger" },
+        { "links": "Plasmazelle", "rechts": "bildet Antikörper" },
+        { "links": "T-Killerzelle", "rechts": "zerstört von Viren befallene Körperzellen" },
+        { "links": "T-Helferzelle", "rechts": "aktiviert andere Abwehrzellen" },
+        { "links": "Gedächtniszelle", "rechts": "ermöglicht schnelle Reaktion bei erneutem Kontakt" }
+      ],
+      "erklaerung": "Die Abwehrzellen arbeiten zusammen. Die T-Helferzellen haben dabei eine zentrale Steuerfunktion."
+    },
+    {
+      "id": "bio-imm-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Warum wirken Antikörper gegen Masernviren nicht gegen Grippeviren?",
+      "optionen": [
+        { "text": "Antikörper passen wie ein Schlüssel ins Schloss nur zu einem bestimmten Antigen.", "richtig": true },
+        { "text": "Grippeviren haben keine Antigene.", "feedback": "Alle Erreger tragen Antigene. Grippeviren haben aber andere als Masernviren." },
+        { "text": "Antikörper wirken nur gegen Bakterien.", "feedback": "Antikörper wirken gegen Viren und Bakterien, aber jeweils spezifisch." },
+        { "text": "Die Masern-Antikörper sind schon verbraucht.", "feedback": "Der Grund ist nicht die Menge, sondern die fehlende Passform." }
+      ],
+      "erklaerung": "Das ist die Spezifität der Abwehr: Für jeden Erreger werden eigene, genau passende Antikörper gebildet."
+    },
+    {
+      "id": "bio-imm-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Was ist der wichtigste Unterschied zwischen unspezifischer und spezifischer Abwehr?",
+      "optionen": [
+        { "text": "Die unspezifische Abwehr wirkt sofort gegen alle Eindringlinge, die spezifische gezielt gegen einen bestimmten Erreger.", "richtig": true },
+        { "text": "Die unspezifische Abwehr wirkt nur gegen Viren, die spezifische nur gegen Bakterien.", "feedback": "Beide Abwehrformen wirken gegen verschiedene Erregerarten." },
+        { "text": "Die spezifische Abwehr ist schneller.", "feedback": "Beim ersten Kontakt braucht die spezifische Abwehr einige Tage." },
+        { "text": "Es gibt keinen Unterschied.", "feedback": "Die beiden Abwehrformen arbeiten zusammen, unterscheiden sich aber deutlich." }
+      ],
+      "erklaerung": "Unspezifisch = schnell, aber ungezielt. Spezifisch = beim ersten Mal langsam, aber gezielt und mit Gedächtnis."
+    },
+    {
+      "id": "bio-imm-05", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Ordne die Schritte der humoralen Abwehr bei einer ersten Infektion.",
+      "elemente": [
+        "Erreger dringen in den Körper ein.",
+        "Fresszellen nehmen Erreger auf und präsentieren Bruchstücke.",
+        "T-Helferzellen erkennen die Bruchstücke und aktivieren B-Lymphozyten.",
+        "B-Lymphozyten werden zu Plasmazellen und bilden Antikörper.",
+        "Antikörper verklumpen die Erreger, Fresszellen beseitigen sie.",
+        "Gedächtniszellen bleiben zurück."
+      ],
+      "erklaerung": "Unspezifische und spezifische Abwehr greifen ineinander. Die Fresszellen stehen am Anfang und am Ende."
+    },
+    {
+      "id": "bio-imm-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Ein Virus hat sich bereits in Körperzellen eingenistet. Welche Abwehr kann es dort am besten bekämpfen?",
+      "optionen": [
+        { "text": "die zelluläre Abwehr: T-Killerzellen zerstören die befallenen Zellen", "richtig": true },
+        { "text": "die humorale Abwehr: Antikörper dringen in die Zellen ein", "feedback": "Antikörper wirken in den Körperflüssigkeiten. In Zellen gelangen sie nicht." },
+        { "text": "die Magensäure", "feedback": "Die Magensäure wirkt nur im Magen als Barriere." },
+        { "text": "gar keine, Viren in Zellen sind sicher", "feedback": "Genau dafür gibt es die zelluläre Abwehr." }
+      ],
+      "erklaerung": "Antikörper fangen Viren außerhalb der Zellen ab. Befallene Zellen werden von T-Killerzellen erkannt und zerstört."
+    },
+    {
+      "id": "bio-imm-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz1",
+      "frage": "Erkläre, warum man an Windpocken in der Regel nur einmal erkrankt.",
+      "stichworte": [
+        { "aspekt": "Bei der ersten Infektion bildet die spezifische Abwehr Antikörper bzw. Abwehrzellen gegen das Virus.", "woerter": ["antikoerper", "plasmazell", "spezifisch"] },
+        { "aspekt": "Es bleiben Gedächtniszellen zurück.", "woerter": ["gedaechtnis"] },
+        { "aspekt": "Bei erneutem Kontakt reagiert das Immunsystem sehr schnell, bevor man krank wird.", "woerter": ["schnell", "sofort"] },
+        { "aspekt": "Man ist immun.", "woerter": ["immun"] }
+      ],
+      "musterloesung": "Bei der ersten Infektion mit dem Windpockenvirus braucht die spezifische Abwehr einige Tage, bis Plasmazellen genug passende Antikörper gebildet haben. Deshalb wird man krank. Nach der Krankheit bleiben Gedächtniszellen zurück, die das Antigen des Virus erkennen. Kommt das Virus erneut in den Körper, reagieren sie sehr schnell und es werden sofort viele Antikörper gebildet. Die Viren werden vernichtet, bevor man krank wird. Man ist immun.",
+      "erklaerung": "Das Immungedächtnis ist auch die Grundlage jeder Impfung."
+    }
+  ]
+}

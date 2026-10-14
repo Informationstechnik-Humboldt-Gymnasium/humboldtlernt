@@ -142,6 +142,8 @@ th { color: var(--muted); font-weight: 600; font-size: .82rem; }
 .card.planned { border-style: dashed; color: var(--muted); }
 .card.planned ul { margin: 0; padding-left: 18px; }
 .card.planned:hover { transform: none; border-color: var(--border); }
+.card.locked { border-style: dashed; color: var(--muted); opacity: .7; cursor: not-allowed; }
+.card.locked:hover { transform: none; border-color: var(--border); }
 
 .topic-head h1 { margin-bottom: 8px; }
 .topic-status { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 14px; font-size: .9rem; }
@@ -168,7 +170,7 @@ th { color: var(--muted); font-weight: 600; font-size: .82rem; }
 .formula:first-of-type { border-top: 0; }
 .formula-main { font-family: "Cambria Math", "STIX Two Math", Cambria, Georgia, serif; font-style: italic; font-size: 1.35rem; white-space: nowrap; }
 .formula-legend { font-size: .9rem; color: var(--muted); }
-@media (max-width: 600px) { .formula { grid-template-columns: 1fr; } }
+@media (max-width: 600px) { .formula { grid-template-columns: 1fr; } .formula-main { white-space: normal; overflow-wrap: break-word; } }
 
 .interactive { margin: 22px 0; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
 .interactive figcaption { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; padding: 10px 14px; border-bottom: 1px solid var(--border); }
@@ -208,6 +210,8 @@ th { color: var(--muted); font-weight: 600; font-size: .82rem; }
 .match { display: grid; gap: 8px; }
 .match-row { display: grid; grid-template-columns: minmax(120px, 1fr) minmax(160px, 1.3fr); gap: 10px; align-items: center; padding: 6px 10px; border: 1px solid var(--border); border-radius: 10px; }
 @media (max-width: 600px) { .match-row { grid-template-columns: 1fr; } }
+.match-row select { width: 100%; min-width: 0; max-width: 100%; text-overflow: ellipsis; }
+.match-row > * { min-width: 0; }
 .order { list-style: decimal; padding-left: 26px; margin: 0; display: grid; gap: 6px; }
 .order li { display: flex; align-items: center; gap: 10px; justify-content: space-between; padding: 7px 10px; border: 1px solid var(--border); border-radius: 10px; background: var(--card); }
 .order-btns { display: flex; gap: 4px; flex: none; }

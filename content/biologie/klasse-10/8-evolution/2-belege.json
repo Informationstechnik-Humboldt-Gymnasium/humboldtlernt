@@ -1,0 +1,117 @@
+{
+  "id": "bio-k10-evolutionsbelege",
+  "titel": "Belege für die Evolution",
+  "kurz": "Was Fossilien, homologe und analoge Organe und Rudimente über die Verwandtschaft der Lebewesen verraten.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Fossilien als Belege für die Evolution einordnen und vergleichen" },
+    { "id": "lz2", "niveau": "G", "text": "Homologie und Analogie unterscheiden und an Beispielen erklären" },
+    { "id": "lz3", "niveau": "G", "text": "Den Fachbegriff Rudiment erklären" },
+    { "id": "lz4", "niveau": "H", "text": "Stammesgeschichtliche Verwandtschaften ausgewählter Tiere interpretieren" }
+  ],
+  "verstehen": {
+    "einstieg": "Der Arm eines Menschen, der Flügel einer Fledermaus und die Brustflosse eines Wals sehen völlig verschieden aus. Unter der Haut steckt aber jeweils fast derselbe Knochenbauplan. Warum?",
+    "abschnitte": [
+      {
+        "titel": "Fossilien",
+        "text": "**Fossilien** sind Überreste oder Spuren von Lebewesen aus vergangenen Erdzeitaltern: versteinerte Knochen, Schalen, Abdrücke oder in Bernstein eingeschlossene Insekten. Tiefere Gesteinsschichten sind meist älter als höhere. So kann man Fossilien zeitlich ordnen.\n\nFossilien zeigen:\n\n- Früher lebten andere Arten als heute, viele sind ausgestorben.\n- Je älter die Schichten, desto einfacher gebaut sind die Lebewesen meist.\n\nBesonders wichtig sind **Brückentiere** (Mosaikformen) mit Merkmalen zweier Gruppen. Der **Urvogel Archaeopteryx** (etwa 150 Millionen Jahre alt) hatte **Federn und Flügel** wie ein Vogel, aber auch **Zähne, Krallen an den Fingern und eine lange Schwanzwirbelsäule** wie ein Reptil. Er zeigt, dass Vögel von Reptilien abstammen."
+      },
+      {
+        "titel": "Homologie",
+        "text": "**Homologe Organe** haben den **gleichen Grundbauplan**, weil sie von einem **gemeinsamen Vorfahren** stammen. Ihre Funktion kann ganz verschieden sein.\n\nBeispiel: Die Vordergliedmaßen der Säugetiere bestehen immer aus Oberarmknochen, Elle und Speiche, Handwurzel-, Mittelhand- und Fingerknochen:\n\n- Mensch: Greifarm\n- Fledermaus: Flügel mit stark verlängerten Fingern\n- Wal: Flosse\n- Maulwurf: Grabschaufel\n\nHomologien sind ein Beleg für **Verwandtschaft**."
+      },
+      {
+        "titel": "Analogie",
+        "text": "**Analoge Organe** haben die **gleiche Funktion**, aber einen **unterschiedlichen Bauplan**. Sie sind unabhängig voneinander entstanden, weil ähnliche Umweltbedingungen ähnliche Angepasstheiten begünstigt haben.\n\nBeispiele:\n\n- Vogelflügel (Knochen und Federn) und Insektenflügel (dünne Chitinhaut)\n- Grabbeine von Maulwurf (Säugetier) und Maulwurfsgrille (Insekt)\n- Stromlinienform von Hai (Fisch) und Delfin (Säugetier)\n\nAnalogien zeigen **keine** nahe Verwandtschaft. Sie zeigen, dass die Selektion bei gleichen Anforderungen ähnliche Lösungen hervorbringt."
+      },
+      {
+        "titel": "Rudimente",
+        "text": "**Rudimente** sind zurückgebildete Organe, die ihre ursprüngliche Funktion verloren haben. Sie sind Hinweise auf Vorfahren, bei denen diese Organe noch gebraucht wurden:\n\n- **Steißbein** des Menschen: Rest einer Schwanzwirbelsäule\n- **Wurmfortsatz** des Blinddarms\n- **Beckenknochenreste** beim Wal: Wale stammen von Landsäugetieren ab.\n- **Weisheitszähne** und Muskeln, mit denen manche Menschen die Ohren bewegen können\n\nHeute liefert auch die **Molekularbiologie** Belege: Je ähnlicher die DNA zweier Arten ist, desto näher sind sie verwandt."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "**Fossilien** und **Brückentiere** wie Archaeopteryx belegen die Veränderung der Arten. **Homologe** Organe haben gleichen Bauplan durch gemeinsame Abstammung, **analoge** Organe gleiche Funktion bei verschiedenem Bauplan. **Rudimente** sind zurückgebildete Organe ohne ursprüngliche Funktion.",
+    "alltag": "Im Museum für Naturkunde in Berlin ist eines der berühmtesten Exemplare des Archaeopteryx ausgestellt, das „Berliner Exemplar“."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "bio-evb-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Homolog oder analog? Ordne zu.",
+      "paare": [
+        { "links": "Arm des Menschen und Flügel der Fledermaus", "rechts": "homolog" },
+        { "links": "Flügel des Vogels und Flügel der Biene", "rechts": "analog" }
+      ],
+      "erklaerung": "Homolog: gleicher Bauplan, gemeinsame Abstammung. Analog: gleiche Funktion, verschiedener Bauplan."
+    },
+    {
+      "id": "bio-evb-02", "typ": "multi", "schwierigkeit": "leicht", "lernziel": "lz3",
+      "frage": "Welche Organe des Menschen gelten als Rudimente?",
+      "optionen": [
+        { "text": "Steißbein", "richtig": true },
+        { "text": "Wurmfortsatz des Blinddarms", "richtig": true },
+        { "text": "Muskeln zum Bewegen der Ohren", "richtig": true },
+        { "text": "Herz", "feedback": "Das Herz ist voll funktionsfähig und lebenswichtig." },
+        { "text": "Lunge", "feedback": "Die Lunge ist voll funktionsfähig." }
+      ],
+      "erklaerung": "Rudimente erinnern an Vorfahren, bei denen diese Organe noch eine Funktion hatten, z. B. einen Schwanz."
+    },
+    {
+      "id": "bio-evb-03", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Archaeopteryx gilt als Brückentier zwischen Reptilien und Vögeln. Welche seiner Merkmale sind typisch für Reptilien?",
+      "optionen": [
+        { "text": "Zähne im Kiefer", "richtig": true },
+        { "text": "Krallen an den Fingern", "richtig": true },
+        { "text": "lange Schwanzwirbelsäule", "richtig": true },
+        { "text": "Federn", "feedback": "Federn sind ein typisches Vogelmerkmal." },
+        { "text": "Flügel", "feedback": "Flügel sind ein Vogelmerkmal." }
+      ],
+      "erklaerung": "Archaeopteryx hatte eine Mischung aus Reptilien- und Vogelmerkmalen. Deshalb nennt man ihn auch Mosaikform."
+    },
+    {
+      "id": "bio-evb-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Haie und Delfine haben beide eine Stromlinienform und Flossen. Was folgt daraus für ihre Verwandtschaft?",
+      "optionen": [
+        { "text": "Es handelt sich um Analogien. Haie und Delfine sind nicht nah verwandt; ähnliche Lebensbedingungen haben ähnliche Formen begünstigt.", "richtig": true },
+        { "text": "Haie und Delfine sind eng verwandt, weil sie gleich aussehen.", "feedback": "Der Delfin ist ein Säugetier, der Hai ein Fisch. Die äußere Ähnlichkeit ist analog." },
+        { "text": "Der Delfin stammt vom Hai ab.", "feedback": "Delfine stammen von Landsäugetieren ab, die ins Wasser zurückgekehrt sind." },
+        { "text": "Es handelt sich um Homologien.", "feedback": "Homologien beruhen auf gemeinsamer Abstammung. Hier hat sich die Form unabhängig entwickelt." }
+      ],
+      "erklaerung": "Im Wasser ist eine Stromlinienform günstig. Die Selektion hat sie bei Fischen und Säugetieren unabhängig entstehen lassen."
+    },
+    {
+      "id": "bio-evb-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "In einem Steinbruch findet man in tiefen Schichten nur Fossilien von Fischen, in höheren auch von Amphibien und ganz oben von Säugetieren. Was folgt daraus?",
+      "optionen": [
+        { "text": "Fische gab es schon vor Amphibien und Säugetieren.", "richtig": true },
+        { "text": "Säugetiere sind älter als Fische.", "feedback": "Höhere Schichten sind meist jünger. Säugetiere kamen also später." },
+        { "text": "Alle Tiere lebten gleichzeitig, wurden aber verschieden tief begraben.", "feedback": "Die Schichten wurden nacheinander abgelagert. Ihre Reihenfolge zeigt die zeitliche Abfolge." },
+        { "text": "Fossilien sagen nichts über das Alter aus.", "feedback": "Die Lage in den Gesteinsschichten zeigt das relative Alter." }
+      ],
+      "erklaerung": "Gesteinsschichten lagern sich nacheinander ab. Tiefer heißt in der Regel älter."
+    },
+    {
+      "id": "bio-evb-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Wale haben im Körper kleine Reste von Beckenknochen, die nicht mit der Wirbelsäule verbunden sind. Was schließt du daraus?",
+      "optionen": [
+        { "text": "Wale stammen von Vorfahren mit Hinterbeinen ab, also von Landsäugetieren.", "richtig": true },
+        { "text": "Wale werden in Zukunft Beine bekommen.", "feedback": "Evolution hat kein vorgegebenes Ziel. Das Rudiment weist in die Vergangenheit." },
+        { "text": "Wale sind mit Fischen näher verwandt als mit Säugetieren.", "feedback": "Wale sind Säugetiere: Sie atmen mit Lungen und säugen ihre Jungen." },
+        { "text": "Die Knochen sind zufällig entstanden und haben keine Bedeutung.", "feedback": "Rudimente sind wichtige Hinweise auf die Stammesgeschichte." }
+      ],
+      "erklaerung": "Das Beckenrudiment ist ein Rest der Hinterbeine. Fossilien von Urwalen mit kleinen Hinterbeinen bestätigen das."
+    },
+    {
+      "id": "bio-evb-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Der Maulwurf (Säugetier) und die Maulwurfsgrille (Insekt) haben beide schaufelartige Grabbeine. Erkläre, ob es sich um homologe oder analoge Organe handelt, und begründe, was das über ihre Verwandtschaft aussagt.",
+      "stichworte": [
+        { "aspekt": "Es sind analoge Organe.", "woerter": ["analog"] },
+        { "aspekt": "Gleiche Funktion (Graben), aber unterschiedlicher Bauplan (Knochen innen vs. Chitinpanzer außen)", "woerter": ["bauplan", "aufbau", "knochen", "chitin"] },
+        { "aspekt": "Keine nahe Verwandtschaft, unabhängig entstanden durch ähnliche Lebensweise bzw. Selektion", "woerter": ["nicht nah verwandt", "nicht verwandt", "unabhaengig", "selektion", "lebensweise"] }
+      ],
+      "musterloesung": "Die Grabbeine sind analoge Organe. Sie haben die gleiche Funktion, nämlich das Graben im Boden, aber einen ganz unterschiedlichen Bauplan: Der Maulwurf hat ein Innenskelett aus Knochen, die Maulwurfsgrille einen Außenpanzer aus Chitin. Die Tiere sind nicht nah verwandt. Die ähnliche Form ist unabhängig entstanden, weil bei beiden die Lebensweise im Boden durch Selektion ähnliche Angepasstheiten begünstigt hat.",
+      "erklaerung": "Um homolog und analog zu unterscheiden, schaust du auf den inneren Bau, nicht auf die äußere Form."
+    }
+  ]
+}

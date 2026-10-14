@@ -1,0 +1,124 @@
+{
+  "id": "bio-k7-kennzeichen",
+  "titel": "Kennzeichen des Lebendigen und das Mikroskop",
+  "kurz": "Woran du erkennst, ob etwas lebt, und wie du mit dem Mikroskop Zellen sichtbar machst.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Die Kennzeichen des Lebendigen bei Tieren, Pflanzen und einzelligen Lebewesen beschreiben" },
+    { "id": "lz2", "niveau": "G", "text": "Die Teile eines Lichtmikroskops benennen und die Gesamtvergrößerung berechnen" },
+    { "id": "lz3", "niveau": "G", "text": "Die Mikroskopierregeln beachten und ein Frischpräparat herstellen" },
+    { "id": "lz4", "niveau": "H", "text": "Mit den Kennzeichen des Lebendigen begründet entscheiden, ob ein Gegenstand lebt" }
+  ],
+  "verstehen": {
+    "einstieg": "Eine Kerze „wächst“ nicht, aber ihre Flamme bewegt sich, verbraucht Sauerstoff und gibt Wärme ab. Lebt eine Flamme? Und lebt ein Samenkorn, das jahrelang in einer Tüte liegt?",
+    "abschnitte": [
+      {
+        "titel": "Die Kennzeichen des Lebendigen",
+        "text": "Biologie ist die Lehre vom Leben (griechisch bios = Leben, logos = Lehre). Alle Lebewesen haben gemeinsame **Kennzeichen**:\n\n- **Aufbau aus Zellen:** Jedes Lebewesen besteht aus mindestens einer Zelle.\n- **Stoffwechsel:** Lebewesen nehmen Stoffe auf, wandeln sie um und geben andere Stoffe ab. Dabei gewinnen sie Energie.\n- **Reizbarkeit:** Sie nehmen Reize aus der Umwelt wahr und reagieren darauf.\n- **Bewegung:** Sie bewegen sich selbst oder Teile von sich. Pflanzen drehen zum Beispiel ihre Blätter zum Licht.\n- **Wachstum und Entwicklung:** Sie werden größer und verändern sich im Lauf ihres Lebens.\n- **Fortpflanzung:** Sie bringen Nachkommen hervor.\n\nEtwas ist erst dann ein Lebewesen, wenn **alle** Kennzeichen zutreffen. Eine Flamme zeigt einige davon, besteht aber nicht aus Zellen."
+      },
+      {
+        "titel": "Auch Einzeller leben",
+        "text": "Manche Lebewesen bestehen nur aus einer einzigen Zelle, zum Beispiel das **Pantoffeltierchen** aus dem Teichwasser. Es schwimmt mit feinen Wimpern, nimmt Nahrung auf, reagiert auf Hindernisse, wächst und teilt sich. Diese eine Zelle erfüllt also alle Kennzeichen des Lebendigen.\n\nEin Samenkorn wirkt leblos. Sein Stoffwechsel läuft aber sehr langsam weiter. Mit Wasser und Wärme keimt es und wächst."
+      },
+      {
+        "titel": "Das Lichtmikroskop",
+        "text": "Zellen sind meist kleiner als 0,1 mm. Mit dem bloßen Auge siehst du sie nicht. Das **Lichtmikroskop** vergrößert sie mit zwei Linsensystemen:\n\n- **Okular:** die Linse, durch die du schaust\n- **Objektiv:** die Linse dicht über dem Präparat; meist sind drei am drehbaren **Objektivrevolver**\n- **Objekttisch** mit Klemmen für den **Objektträger**\n- **Blende** und **Lichtquelle** unter dem Tisch\n- **Grobtrieb** und **Feintrieb** zum Scharfstellen\n\nDie Gesamtvergrößerung ist das Produkt der beiden Vergrößerungen:\n\n`V_{ges} = V_{Okular} · V_{Objektiv}`"
+      },
+      {
+        "titel": "Mikroskopierregeln und Frischpräparat",
+        "text": "So gehst du vor:\n\n- Trage das Mikroskop mit beiden Händen am Stativ.\n- Beginne immer mit dem **kleinsten Objektiv**.\n- Fahre den Objekttisch unter seitlicher Kontrolle nah an das Objektiv. Stelle dann scharf, indem du den Abstand **vergrößerst**. So zerdrückst du kein Präparat.\n- Bei starker Vergrößerung nur noch den **Feintrieb** benutzen.\n- Mit der Blende regelst du Helligkeit und Kontrast.\n\n**Frischpräparat:** Gib einen Tropfen Wasser auf den Objektträger. Lege das Objekt hinein, zum Beispiel ein dünnes Häutchen aus einer Zwiebelschuppe. Setze das Deckgläschen schräg an und senke es langsam ab, damit keine Luftblasen entstehen."
+      }
+    ],
+    "formeln": [
+      { "formel": "V_{ges} = V_{Okular} · V_{Objektiv}", "bedeutung": "Gesamtvergrößerung des Lichtmikroskops" }
+    ],
+    "merksatz": "Ein **Lebewesen** zeigt alle Kennzeichen des Lebendigen: Aufbau aus Zellen, Stoffwechsel, Reizbarkeit, Bewegung, Wachstum und Entwicklung sowie Fortpflanzung.\n\nBeim **Mikroskopieren** beginnst du mit der kleinsten Vergrößerung. Die Gesamtvergrößerung ist Okular- mal Objektivvergrößerung.",
+    "alltag": "Ärztinnen und Ärzte untersuchen Blut und Gewebeproben unter dem Mikroskop. So erkennen sie zum Beispiel Entzündungen oder Krankheitserreger."
+  },
+  "interaktiv": [],
+  "vertiefung": ["bio-zelle"],
+  "uebungen": [
+    {
+      "id": "bio-kz-01", "typ": "multi", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Welche Kennzeichen hat jedes Lebewesen?",
+      "optionen": [
+        { "text": "Es besteht aus Zellen.", "richtig": true },
+        { "text": "Es hat einen Stoffwechsel.", "richtig": true },
+        { "text": "Es pflanzt sich fort.", "richtig": true },
+        { "text": "Es hat ein Herz.", "feedback": "Pflanzen, Pilze und Einzeller haben kein Herz und leben trotzdem." },
+        { "text": "Es atmet mit einer Lunge.", "feedback": "Fische atmen mit Kiemen, Pflanzen und Einzeller haben gar keine Lunge." }
+      ],
+      "erklaerung": "Die Kennzeichen des Lebendigen sind: Aufbau aus Zellen, Stoffwechsel, Reizbarkeit, Bewegung, Wachstum und Entwicklung, Fortpflanzung. Organe wie Herz oder Lunge haben nur manche Lebewesen."
+    },
+    {
+      "id": "bio-kz-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Ordne jedem Teil des Mikroskops seine Aufgabe zu.",
+      "paare": [
+        { "links": "Okular", "rechts": "Linse, durch die man hineinschaut" },
+        { "links": "Objektiv", "rechts": "Linse dicht über dem Präparat" },
+        { "links": "Blende", "rechts": "regelt Helligkeit und Kontrast" },
+        { "links": "Feintrieb", "rechts": "genaues Scharfstellen bei starker Vergrößerung" },
+        { "links": "Objekttisch", "rechts": "Auflage für den Objektträger" }
+      ],
+      "erklaerung": "Okular und Objektiv vergrößern gemeinsam. Mit Grob- und Feintrieb änderst du den Abstand zwischen Objektiv und Präparat."
+    },
+    {
+      "id": "bio-kz-03", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Auf dem Okular steht 10×, auf dem eingestellten Objektiv 40×. Wie stark wird das Präparat insgesamt vergrößert?",
+      "gegeben": "V_{Okular} = 10, V_{Objektiv} = 40",
+      "gesucht": "V_{ges}",
+      "loesung": 400, "einheit": "", "toleranz": 0,
+      "rechenweg": [
+        "`V_{ges} = V_{Okular} · V_{Objektiv}`",
+        "`V_{ges} = 10 · 40 = 400`"
+      ],
+      "erklaerung": "Die Vergrößerungen werden multipliziert, nicht addiert. Das Präparat erscheint 400-fach vergrößert."
+    },
+    {
+      "id": "bio-kz-04", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Bringe die Schritte zum Herstellen und Betrachten eines Zwiebelhaut-Präparats in die richtige Reihenfolge.",
+      "elemente": [
+        "Einen Tropfen Wasser auf den Objektträger geben",
+        "Ein dünnes Häutchen der Zwiebelschuppe in den Tropfen legen",
+        "Das Deckgläschen schräg ansetzen und langsam absenken",
+        "Mit dem kleinsten Objektiv beginnen und scharf stellen",
+        "Zum größeren Objektiv wechseln und mit dem Feintrieb nachstellen"
+      ],
+      "erklaerung": "Das Deckgläschen wird schräg angesetzt, damit keine Luftblasen eingeschlossen werden. Mikroskopiert wird immer von der kleinsten zur größeren Vergrößerung."
+    },
+    {
+      "id": "bio-kz-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Warum stellst du beim Mikroskopieren scharf, indem du den Abstand zwischen Objektiv und Präparat vergrößerst?",
+      "optionen": [
+        { "text": "So kann das Objektiv nicht auf das Präparat stoßen und es zerdrücken.", "richtig": true },
+        { "text": "Weil das Bild dann heller wird.", "feedback": "Die Helligkeit regelst du mit der Blende und der Lichtquelle." },
+        { "text": "Weil sich die Vergrößerung dadurch verdoppelt.", "feedback": "Die Vergrößerung hängt nur von Okular und Objektiv ab, nicht vom Abstand." },
+        { "text": "Weil die Zellen sonst aus dem Bild schwimmen.", "feedback": "Das Deckgläschen hält das Präparat fest. Es geht um den Schutz von Objektiv und Präparat." }
+      ],
+      "erklaerung": "Zuerst fährst du unter seitlicher Kontrolle nah heran. Beim Blick ins Okular entfernst du dich dann nur noch vom Präparat. So kann nichts zerbrechen."
+    },
+    {
+      "id": "bio-kz-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Ein Kristall wächst in einer Salzlösung und wird immer größer. Warum ist er trotzdem kein Lebewesen?",
+      "optionen": [
+        { "text": "Er besteht nicht aus Zellen und hat keinen Stoffwechsel.", "richtig": true },
+        { "text": "Weil er sich nicht bewegt.", "feedback": "Auch viele Pflanzen bewegen sich kaum sichtbar. Entscheidend ist, dass ihm grundlegende Kennzeichen fehlen, vor allem Zellen und Stoffwechsel." },
+        { "text": "Weil er zu klein ist.", "feedback": "Auch Einzeller sind winzig und leben trotzdem. Die Größe spielt keine Rolle." },
+        { "text": "Er ist ein Lebewesen, weil er wächst.", "feedback": "Wachstum allein reicht nicht. Ein Lebewesen muss **alle** Kennzeichen zeigen." }
+      ],
+      "erklaerung": "Der Kristall wächst nur, weil sich gelöste Teilchen außen anlagern. Er nimmt keine Stoffe auf, wandelt sie nicht um, reagiert nicht auf Reize und besteht nicht aus Zellen."
+    },
+    {
+      "id": "bio-kz-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz1",
+      "frage": "Begründe mit den Kennzeichen des Lebendigen, dass ein Pantoffeltierchen ein Lebewesen ist, obwohl es nur aus einer einzigen Zelle besteht. Nenne mindestens drei Kennzeichen mit Beispiel.",
+      "stichworte": [
+        { "aspekt": "Es besteht aus einer Zelle (Aufbau aus Zellen).", "woerter": ["zelle"] },
+        { "aspekt": "Es hat einen Stoffwechsel: Es nimmt Nahrung auf und scheidet Stoffe aus.", "woerter": ["stoffwechsel", "nahrung"] },
+        { "aspekt": "Es bewegt sich oder reagiert auf Reize.", "woerter": ["beweg", "reiz", "reagiert", "schwimmt"] },
+        { "aspekt": "Es wächst und pflanzt sich durch Teilung fort.", "woerter": ["fortpflanz", "teilt", "teilung", "waechst", "wachstum"] }
+      ],
+      "musterloesung": "Das Pantoffeltierchen besteht aus einer Zelle und erfüllt damit das Kennzeichen Aufbau aus Zellen. Es hat einen Stoffwechsel, denn es nimmt Nahrung auf und gibt Stoffe wieder ab. Es bewegt sich mit seinen Wimpern und reagiert auf Reize, zum Beispiel weicht es Hindernissen aus. Außerdem wächst es und pflanzt sich durch Teilung fort. Da alle Kennzeichen zutreffen, ist es ein Lebewesen.",
+      "erklaerung": "Bei Einzellern erfüllt eine einzige Zelle alle Aufgaben, die bei Vielzellern auf viele verschiedene Zellen verteilt sind."
+    }
+  ]
+}

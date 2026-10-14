@@ -1,0 +1,116 @@
+{
+  "id": "bio-k9-sucht",
+  "titel": "Sucht und Suchtprävention",
+  "kurz": "Was Sucht ist, wie Suchtmittel im Gehirn wirken und was vor einer Abhängigkeit schützt.",
+  "reihenfolge": 4,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Merkmale einer Sucht beschreiben und stoffgebundene und stoffungebundene Süchte unterscheiden" },
+    { "id": "lz2", "niveau": "G", "text": "Die Wirkung von Suchtmitteln auf das Nervensystem und Gesundheitsfolgen am Beispiel Nikotin und Alkohol erklären" },
+    { "id": "lz3", "niveau": "H", "text": "Biologische, soziale und ethische Fragen des Drogenmissbrauchs bewerten und Möglichkeiten der Suchtprävention nennen" }
+  ],
+  "verstehen": {
+    "einstieg": "„Ich kann jederzeit aufhören“, sagen viele, die rauchen oder stundenlang zocken. Warum fällt es dann so schwer?",
+    "abschnitte": [
+      {
+        "titel": "Was ist Sucht?",
+        "text": "**Sucht** (Abhängigkeit) ist ein starkes, kaum kontrollierbares Verlangen nach einem Stoff oder Verhalten, obwohl man merkt, dass es schadet. Typische Merkmale:\n\n- **Kontrollverlust:** Man nimmt mehr oder länger als geplant.\n- **Toleranz:** Man braucht immer mehr für die gleiche Wirkung.\n- **Entzugserscheinungen** beim Weglassen, z. B. Unruhe, Gereiztheit, Schwitzen.\n- **Vernachlässigung** von Freundschaften, Hobbys und Schule.\n\nMan unterscheidet **stoffgebundene** Süchte (Nikotin, Alkohol, Cannabis, Medikamente, andere Drogen) und **stoffungebundene** Süchte (Glücksspiel, Computerspiele, soziale Medien)."
+      },
+      {
+        "titel": "Wirkung im Gehirn",
+        "text": "Im Gehirn gibt es ein **Belohnungssystem**. Wenn wir etwas Angenehmes erleben, schütten Nervenzellen den Botenstoff **Dopamin** an den Synapsen aus. Das fühlt sich gut an und motiviert, das Verhalten zu wiederholen.\n\nSuchtmittel wirken an den **Synapsen** und lassen besonders viel Dopamin frei oder ahmen Botenstoffe nach. Das Gehirn passt sich an: Es bildet weniger Empfänger für die Botenstoffe. Dann braucht man mehr vom Suchtmittel (Toleranz), und ohne fühlt man sich schlecht (Entzug). Weil sich das Gehirn bis etwa Mitte 20 noch stark entwickelt, ist es bei Jugendlichen besonders anfällig."
+      },
+      {
+        "titel": "Nikotin und Alkohol",
+        "text": "**Nikotin** im Tabakrauch macht sehr schnell abhängig. Der Rauch enthält außerdem Teer, Kohlenstoffmonooxid und viele krebserregende Stoffe. Folgen: Lungenkrebs, Herz-Kreislauf-Erkrankungen, schlechtere Ausdauer. Auch E-Zigaretten enthalten meist Nikotin.\n\n**Alkohol** wirkt im ganzen Nervensystem dämpfend: Reaktion und Urteilsvermögen werden schlechter, die Unfallgefahr steigt. Große Mengen können zu einer lebensgefährlichen Vergiftung führen. Langfristig schädigt Alkohol Leber, Gehirn und Herz.\n\nDas **Jugendschutzgesetz** verbietet die Abgabe von Tabakwaren an Jugendliche unter 18 Jahren. Bier und Wein dürfen erst ab 16, Spirituosen erst ab 18 Jahren abgegeben werden."
+      },
+      {
+        "titel": "Suchtprävention",
+        "text": "Sucht hat selten nur eine Ursache. Neben der Wirkung des Stoffes spielen Persönlichkeit, Freundeskreis, Familie und Lebensumstände eine Rolle.\n\nSchützend wirken:\n\n- ein gutes Selbstwertgefühl und Freundschaften\n- Hobbys und Sport, bei denen man Erfolg erlebt\n- Wissen über Wirkungen und Risiken\n- Nein sagen können, auch gegen Gruppendruck\n- mit Problemen nicht allein bleiben\n\nHilfe gibt es bei Suchtberatungsstellen, bei Vertrauenslehrkräften und anonym bei der Bundeszentrale für gesundheitliche Aufklärung (BZgA)."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "**Sucht** zeigt sich durch Kontrollverlust, Toleranz, Entzugserscheinungen und Vernachlässigung anderer Lebensbereiche. Sie kann **stoffgebunden** oder **stoffungebunden** sein.\n\nSuchtmittel wirken an den **Synapsen** auf das **Belohnungssystem** des Gehirns. Selbstwertgefühl, Freundschaften und Nein-Sagen-Können schützen vor Sucht.",
+    "alltag": "Viele Smartphone-Apps sind bewusst so gestaltet, dass sie das Belohnungssystem ansprechen, zum Beispiel durch Likes oder endloses Scrollen. Bildschirmzeit-Funktionen können helfen, die eigene Nutzung im Blick zu behalten."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "bio-suc-01", "typ": "multi", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Welche Merkmale deuten auf eine Sucht hin?",
+      "optionen": [
+        { "text": "Man braucht immer mehr für die gleiche Wirkung.", "richtig": true },
+        { "text": "Ohne das Mittel wird man unruhig und gereizt.", "richtig": true },
+        { "text": "Man vernachlässigt Freunde und Schule.", "richtig": true },
+        { "text": "Man spielt am Wochenende ab und zu ein Computerspiel.", "feedback": "Gelegentliches Spielen ohne Kontrollverlust ist kein Zeichen einer Sucht." },
+        { "text": "Man trinkt jeden Tag Wasser.", "feedback": "Wasser zu trinken ist lebensnotwendig und keine Sucht." }
+      ],
+      "erklaerung": "Toleranz, Entzugserscheinungen und Vernachlässigung sind typische Suchtmerkmale."
+    },
+    {
+      "id": "bio-suc-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Stoffgebunden oder stoffungebunden? Ordne zu.",
+      "paare": [
+        { "links": "Nikotinsucht", "rechts": "stoffgebunden" },
+        { "links": "Glücksspielsucht", "rechts": "stoffungebunden" }
+      ],
+      "erklaerung": "Bei stoffgebundenen Süchten nimmt man einen Stoff auf. Stoffungebundene Süchte beziehen sich auf ein Verhalten."
+    },
+    {
+      "id": "bio-suc-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "An welcher Stelle im Nervensystem wirken die meisten Suchtmittel?",
+      "optionen": [
+        { "text": "an den Synapsen", "richtig": true },
+        { "text": "an der Myelinscheide", "feedback": "Suchtmittel beeinflussen vor allem die Übertragung von Botenstoffen, also die Synapsen." },
+        { "text": "nur in den Muskeln", "feedback": "Suchtmittel wirken vor allem im Gehirn." },
+        { "text": "im Zellkern der Nervenzellen", "feedback": "Die Wirkung setzt bei der Signalübertragung zwischen Zellen an." }
+      ],
+      "erklaerung": "Suchtmittel verstärken, blockieren oder imitieren Botenstoffe an den Synapsen, vor allem im Belohnungssystem."
+    },
+    {
+      "id": "bio-suc-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Warum braucht ein Mensch mit Suchterkrankung mit der Zeit immer mehr vom Suchtmittel?",
+      "optionen": [
+        { "text": "Das Gehirn passt sich an und bildet weniger Empfänger für den Botenstoff. Die gleiche Menge wirkt schwächer.", "richtig": true },
+        { "text": "Das Suchtmittel wird mit der Zeit schwächer hergestellt.", "feedback": "Die Ursache liegt im Körper, nicht in der Qualität des Stoffes." },
+        { "text": "Der Körper scheidet das Mittel sofort komplett aus.", "feedback": "Toleranz entsteht vor allem durch Anpassung des Nervensystems." },
+        { "text": "Weil man vergisst, wie viel man genommen hat.", "feedback": "Toleranz ist eine körperliche Anpassung, kein Vergessen." }
+      ],
+      "erklaerung": "Diese Anpassung nennt man Toleranz. Sie erklärt auch die Entzugserscheinungen: Ohne das Mittel fehlt die gewohnte Wirkung."
+    },
+    {
+      "id": "bio-suc-05", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Welche Folgen kann regelmäßiges Rauchen haben?",
+      "optionen": [
+        { "text": "Lungenkrebs", "richtig": true },
+        { "text": "Herz-Kreislauf-Erkrankungen", "richtig": true },
+        { "text": "schlechtere Ausdauer", "richtig": true },
+        { "text": "bessere Lungenfunktion", "feedback": "Rauchen schädigt die Lungenbläschen und Flimmerhärchen. Die Lungenfunktion wird schlechter." },
+        { "text": "schnellere Wundheilung", "feedback": "Rauchen verschlechtert die Durchblutung. Wunden heilen langsamer." }
+      ],
+      "erklaerung": "Neben Nikotin enthält Tabakrauch Teer, Kohlenstoffmonooxid und viele krebserregende Stoffe."
+    },
+    {
+      "id": "bio-suc-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Auf einer Party bieten Freunde Max eine E-Zigarette an. Er will nicht, hat aber Angst, als langweilig zu gelten. Welche Reaktion zeigt am meisten Schutzfaktoren gegen Sucht?",
+      "optionen": [
+        { "text": "Er sagt freundlich, aber klar Nein und bleibt trotzdem bei der Gruppe.", "richtig": true },
+        { "text": "Er probiert einmal, damit er nicht auffällt.", "feedback": "Gruppendruck nachzugeben ist ein Risikofaktor. Gerade Nikotin macht schnell abhängig." },
+        { "text": "Er geht wortlos nach Hause und erzählt niemandem davon.", "feedback": "Weggehen kann in Ordnung sein. Dauerhaft allein mit Problemen zu bleiben, schützt aber nicht." },
+        { "text": "Er sagt, er hätte schon geraucht, und nimmt es nur in die Hand.", "feedback": "So bleibt der Gruppendruck bestehen. Ein klares Nein stärkt das Selbstbewusstsein." }
+      ],
+      "erklaerung": "Nein sagen können und ein gutes Selbstwertgefühl sind wichtige Schutzfaktoren. Echte Freunde akzeptieren ein Nein."
+    },
+    {
+      "id": "bio-suc-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Erkläre, warum Jugendliche besonders gefährdet sind, eine Sucht zu entwickeln, und nenne zwei Maßnahmen, die vor Sucht schützen.",
+      "stichworte": [
+        { "aspekt": "Das Gehirn entwickelt sich noch bis etwa Mitte 20 und ist besonders anfällig.", "woerter": ["entwickl", "gehirn"] },
+        { "aspekt": "Neugier oder Gruppendruck spielen eine Rolle.", "woerter": ["gruppendruck", "neugier", "freunde", "dazugehoeren"] },
+        { "aspekt": "Schutzmaßnahme: Nein sagen, Selbstwertgefühl, Hobbys, Information, Hilfe holen", "woerter": ["nein sagen", "selbstwert", "hobby", "sport", "beratung", "hilfe", "information"] }
+      ],
+      "musterloesung": "Das Gehirn von Jugendlichen entwickelt sich noch bis etwa Mitte 20. Suchtmittel greifen in diese Entwicklung ein und verändern das Belohnungssystem besonders leicht. Außerdem spielen Neugier und Gruppendruck in diesem Alter eine große Rolle. Schützen kann ein gutes Selbstwertgefühl, sodass man auch Nein sagen kann. Hobbys und Sport, bei denen man Erfolg erlebt, helfen ebenfalls. Bei Problemen sollte man sich Hilfe bei einer Beratungsstelle oder einer Vertrauensperson holen.",
+      "erklaerung": "Suchtprävention setzt bei den Ursachen an: Sie stärkt die Person, nicht nur das Wissen über Gefahren."
+    }
+  ]
+}

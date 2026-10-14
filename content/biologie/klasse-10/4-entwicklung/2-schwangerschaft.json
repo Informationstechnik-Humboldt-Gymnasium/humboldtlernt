@@ -1,0 +1,245 @@
+{
+  "id": "bio-k10-schwangerschaft",
+  "titel": "Schwangerschaft, Geburt und pränatale Diagnostik",
+  "kurz": "Wie Hormone die Schwangerschaft steuern, wie eine Geburt abläuft und welche Untersuchungen vor der Geburt möglich sind.",
+  "reihenfolge": 2,
+  "lernziele": [
+    {
+      "id": "lz1",
+      "niveau": "G",
+      "text": "Den Einfluss verschiedener Hormone auf Schwangerschaft und Geburt erklären"
+    },
+    {
+      "id": "lz2",
+      "niveau": "G",
+      "text": "Den Ablauf der Geburt beschreiben"
+    },
+    {
+      "id": "lz3",
+      "niveau": "G",
+      "text": "Verfahren der pränatalen Diagnostik nennen und den Fachbegriff erklären"
+    },
+    {
+      "id": "lz4",
+      "niveau": "H",
+      "text": "Ethische Fragen der pränatalen Diagnostik und Präimplantationsdiagnostik diskutieren"
+    }
+  ],
+  "verstehen": {
+    "einstieg": "Ein Schwangerschaftstest aus der Drogerie zeigt schon wenige Tage nach dem Ausbleiben der Regelblutung ein Ergebnis. Was misst er eigentlich?",
+    "abschnitte": [
+      {
+        "titel": "Hormone in der Schwangerschaft",
+        "text": "- **hCG:** Schon kurz nach der Einnistung bildet der Keim dieses Hormon. Es sorgt dafür, dass der Gelbkörper erhalten bleibt und weiter Progesteron bildet. Schwangerschaftstests weisen hCG im Urin nach.\n- **Progesteron:** erhält die Gebärmutterschleimhaut und verhindert, dass sich die Gebärmutter zu früh zusammenzieht. Später bildet es vor allem die Plazenta. Es gibt keine Menstruation mehr.\n- **Östrogen:** fördert das Wachstum von Gebärmutter und Brustdrüsen.\n- **Oxytocin:** löst bei der Geburt die **Wehen** aus, also das Zusammenziehen der Gebärmuttermuskeln.\n- **Prolaktin:** regt nach der Geburt die Milchbildung an.\n\nEine Schwangerschaft dauert etwa 40 Wochen, gerechnet ab dem ersten Tag der letzten Regelblutung, also etwa 38 Wochen ab der Befruchtung."
+      },
+      {
+        "titel": "Die Geburt",
+        "text": "Die Geburt verläuft in drei Phasen:\n\n- **Eröffnungsphase:** Regelmäßige Wehen öffnen den Muttermund. Die Fruchtblase platzt, Fruchtwasser fließt ab. Diese Phase dauert meist mehrere Stunden.\n- **Austreibungsphase:** Mit kräftigen Presswehen wird das Kind durch den Geburtskanal geboren, meist mit dem Kopf voran. Nach der Geburt atmet es selbstständig, die Nabelschnur wird durchtrennt.\n- **Nachgeburtsphase:** Die Plazenta löst sich und wird als **Nachgeburt** ausgestoßen.\n\nWenn eine natürliche Geburt zu riskant ist, wird ein **Kaiserschnitt** gemacht."
+      },
+      {
+        "titel": "Pränatale Diagnostik",
+        "text": "**Pränatale Diagnostik** (prä = vor, natal = Geburt) umfasst Untersuchungen des Kindes vor der Geburt:\n\n- **Ultraschall:** zeigt Größe, Lage, Herzschlag und manche Fehlbildungen. Ungefährlich, gehört zur normalen Vorsorge.\n- **Bluttest der Mutter:** Im Blut der Mutter schwimmen kleine Erbgutstücke des Kindes. Damit lässt sich z. B. die Wahrscheinlichkeit für eine Trisomie 21 abschätzen. Kein Risiko für das Kind.\n- **Fruchtwasseruntersuchung** (Amniozentese): Mit einer Nadel wird durch die Bauchdecke Fruchtwasser mit Zellen des Kindes entnommen. Damit kann man Chromosomen genau untersuchen. Sie ist **invasiv** und mit einem kleinen Risiko einer Fehlgeburt verbunden.\n\nDie **Präimplantationsdiagnostik (PID)** untersucht Embryonen nach einer künstlichen Befruchtung im Labor, bevor sie in die Gebärmutter eingesetzt werden. In Deutschland ist sie nur in engen Ausnahmefällen nach Prüfung durch eine Ethikkommission erlaubt."
+      },
+      {
+        "titel": "Ethische Fragen",
+        "text": "Pränatale Diagnostik kann Eltern Sicherheit geben und helfen, sich auf ein Kind mit Erkrankung vorzubereiten oder es schon vor der Geburt zu behandeln. Sie kann aber auch zu schweren Entscheidungen führen, zum Beispiel über einen Schwangerschaftsabbruch.\n\nMenschen mit Behinderung und ihre Verbände kritisieren, dass solche Tests den Druck erhöhen können, nur „gesunde“ Kinder zu bekommen. Jede Schwangere hat ein Recht auf Wissen, aber auch ein **Recht auf Nichtwissen**. Vor solchen Untersuchungen ist eine Beratung vorgeschrieben."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "**hCG** aus dem Keim erhält den Gelbkörper und wird im Schwangerschaftstest nachgewiesen. **Progesteron** erhält die Schwangerschaft, **Oxytocin** löst die Wehen aus, **Prolaktin** die Milchbildung.\n\nDie Geburt verläuft in **Eröffnungs-, Austreibungs-** und **Nachgeburtsphase**. **Pränatale Diagnostik** untersucht das Kind vor der Geburt; sie wirft auch ethische Fragen auf.",
+    "alltag": "Hebammen begleiten Schwangere vor, während und nach der Geburt. Krankenhäuser bieten Infoabende und Kreißsaalführungen für werdende Eltern an."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "bio-sws-01",
+      "typ": "zuordnung",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz1",
+      "frage": "Ordne jedem Hormon seine Wirkung zu.",
+      "paare": [
+        {
+          "links": "hCG",
+          "rechts": "erhält den Gelbkörper, wird im Schwangerschaftstest nachgewiesen"
+        },
+        {
+          "links": "Progesteron",
+          "rechts": "erhält die Gebärmutterschleimhaut"
+        },
+        {
+          "links": "Oxytocin",
+          "rechts": "löst die Wehen aus"
+        },
+        {
+          "links": "Prolaktin",
+          "rechts": "regt die Milchbildung an"
+        }
+      ],
+      "erklaerung": "Viele Hormone wirken zusammen, damit Schwangerschaft, Geburt und Stillzeit gelingen."
+    },
+    {
+      "id": "bio-sws-02",
+      "typ": "reihenfolge",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz2",
+      "frage": "Ordne die Phasen der Geburt.",
+      "elemente": [
+        "Eröffnungsphase: Muttermund öffnet sich",
+        "Austreibungsphase: Kind wird geboren",
+        "Nachgeburtsphase: Plazenta wird ausgestoßen"
+      ],
+      "erklaerung": "Die Eröffnungsphase ist meist die längste. Nach der Geburt des Kindes folgt noch die Nachgeburt."
+    },
+    {
+      "id": "bio-sws-03",
+      "typ": "single",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz1",
+      "frage": "Warum gibt es während einer Schwangerschaft keine Menstruation?",
+      "optionen": [
+        {
+          "text": "Der Progesteronspiegel bleibt hoch, deshalb wird die Gebärmutterschleimhaut nicht abgestoßen.",
+          "richtig": true
+        },
+        {
+          "text": "Weil der Körper kein Blut mehr übrig hat.",
+          "feedback": "Das Blutvolumen nimmt in der Schwangerschaft sogar zu."
+        },
+        {
+          "text": "Weil Oxytocin die Blutung stoppt.",
+          "feedback": "Oxytocin wirkt vor allem bei der Geburt und beim Stillen."
+        },
+        {
+          "text": "Weil die Eierstöcke entfernt werden.",
+          "feedback": "Die Eierstöcke bleiben. Die hormonelle Lage verhindert die Menstruation."
+        }
+      ],
+      "erklaerung": "Zuerst sorgt hCG dafür, dass der Gelbkörper weiter Progesteron bildet. Später übernimmt die Plazenta die Progesteronbildung."
+    },
+    {
+      "id": "bio-sws-04",
+      "typ": "single",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz3",
+      "frage": "Was bedeutet „pränatale Diagnostik“?",
+      "optionen": [
+        {
+          "text": "Untersuchungen des Kindes vor der Geburt",
+          "richtig": true
+        },
+        {
+          "text": "Untersuchungen nach der Geburt",
+          "feedback": "Prä heißt vor. Untersuchungen nach der Geburt heißen postnatal."
+        },
+        {
+          "text": "Untersuchungen der Eltern vor der Schwangerschaft",
+          "feedback": "Pränatal bezieht sich auf das ungeborene Kind."
+        },
+        {
+          "text": "eine Behandlung gegen Unfruchtbarkeit",
+          "feedback": "Diagnostik bedeutet Untersuchung, nicht Behandlung."
+        }
+      ],
+      "erklaerung": "Prä = vor, natal = die Geburt betreffend."
+    },
+    {
+      "id": "bio-sws-05",
+      "typ": "zuordnung",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz3",
+      "frage": "Ordne die Verfahren der pränatalen Diagnostik zu.",
+      "paare": [
+        {
+          "links": "Ultraschall",
+          "rechts": "zeigt Lage, Größe und Herzschlag, kein Risiko"
+        },
+        {
+          "links": "Bluttest der Mutter",
+          "rechts": "untersucht Erbgutstücke des Kindes im mütterlichen Blut"
+        },
+        {
+          "links": "Fruchtwasseruntersuchung",
+          "rechts": "invasiv, kleines Risiko einer Fehlgeburt"
+        }
+      ],
+      "erklaerung": "Nicht-invasive Verfahren sind für das Kind ungefährlich. Invasive Verfahren liefern genauere Befunde, bergen aber ein Risiko."
+    },
+    {
+      "id": "bio-sws-06",
+      "typ": "single",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz4",
+      "frage": "Was ist mit dem „Recht auf Nichtwissen“ in der pränatalen Diagnostik gemeint?",
+      "optionen": [
+        {
+          "text": "Eine Schwangere darf selbst entscheiden, bestimmte Untersuchungen oder Ergebnisse nicht wissen zu wollen.",
+          "richtig": true
+        },
+        {
+          "text": "Ärztinnen und Ärzte dürfen Befunde verschweigen.",
+          "feedback": "Es geht um die Entscheidung der Schwangeren, nicht der Ärzte."
+        },
+        {
+          "text": "Untersuchungen vor der Geburt sind in Deutschland verboten.",
+          "feedback": "Pränatale Diagnostik ist erlaubt. Niemand muss sie aber in Anspruch nehmen."
+        },
+        {
+          "text": "Die Eltern dürfen das Geschlecht des Kindes nie erfahren.",
+          "feedback": "Das Geschlecht darf nach dem Gendiagnostikgesetz erst nach Ablauf der 12. Schwangerschaftswoche mitgeteilt werden, wenn die Eltern es wissen wollen. Das Recht auf Nichtwissen ist viel umfassender."
+        }
+      ],
+      "erklaerung": "Das Recht auf Nichtwissen schützt die Selbstbestimmung. Deshalb ist vor genetischen Untersuchungen eine Beratung vorgeschrieben."
+    },
+    {
+      "id": "bio-sws-07",
+      "typ": "text",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz4",
+      "frage": "Ein Bluttest kann schon früh in der Schwangerschaft die Wahrscheinlichkeit für eine Trisomie 21 abschätzen. Nenne ein Argument dafür und eines dagegen, diesen Test allen Schwangeren anzubieten, und begründe deine eigene Meinung.",
+      "stichworte": [
+        {
+          "aspekt": "Argument dafür: kein Risiko für das Kind, Eltern können sich vorbereiten",
+          "woerter": [
+            "vorbereit",
+            "kein risiko",
+            "ohne risiko",
+            "sicherheit",
+            "fehlgeburt"
+          ]
+        },
+        {
+          "aspekt": "Argument dagegen: Druck, Diskriminierung von Menschen mit Behinderung, schwere Entscheidungen",
+          "woerter": [
+            "druck",
+            "behinderung",
+            "diskrimin",
+            "entscheidung",
+            "abbruch"
+          ]
+        },
+        {
+          "aspekt": "Hinweis auf Beratung oder Selbstbestimmung",
+          "woerter": [
+            "beratung",
+            "selbst entscheiden",
+            "selbstbestimm",
+            "nichtwissen",
+            "freiwillig"
+          ]
+        },
+        {
+          "aspekt": "Eigene begründete Meinung",
+          "woerter": [
+            "ich finde",
+            "meiner meinung",
+            "ich meine",
+            "ich bin"
+          ]
+        }
+      ],
+      "musterloesung": "Für den Test spricht, dass er kein Risiko einer Fehlgeburt hat, anders als die Fruchtwasseruntersuchung. Eltern können sich so frühzeitig auf ein Kind mit Trisomie 21 vorbereiten. Gegen ein Angebot für alle spricht, dass der Druck auf Schwangere steigt und Menschen mit Behinderung sich diskriminiert fühlen können. Außerdem kann das Ergebnis zu schweren Entscheidungen bis zum Schwangerschaftsabbruch führen. Ich finde, der Test sollte angeboten werden, aber nur freiwillig und mit guter Beratung, damit jede Schwangere selbst entscheiden kann, auch für das Recht auf Nichtwissen.",
+      "erklaerung": "Bei ethischen Fragen gibt es keine einzig richtige Antwort. Wichtig sind Argumente auf beiden Seiten und eine begründete eigene Position."
+    }
+  ]
+}
