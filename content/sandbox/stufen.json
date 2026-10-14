@@ -36,6 +36,14 @@
       "untertitel": "Baue Netzwerke aus PCs, Laptops, Servern, Switches, Access Points, Routern und Firewalls, vergib IPv4-Adressen, richte WLAN und Firewall-Regeln ein und verfolge Datenpakete Schritt für Schritt.",
       "bereich": "Netzwerke",
       "icon": "netzwerk"
+    },
+    {
+      "id": "biolab",
+      "lesson": "sandbox-biolab",
+      "titel": "BioLab",
+      "untertitel": "Virtuelles Mikroskop mit Präparaten, Mikroorganismen, Viren, Zellbiologie mit Diffusion und Osmose, Herz, Atmung, Verdauung und Nerven sowie DNA und Erbgänge.",
+      "bereich": "Biologie",
+      "icon": "mikroskop"
     }
   ]
 }

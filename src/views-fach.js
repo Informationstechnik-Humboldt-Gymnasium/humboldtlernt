@@ -95,6 +95,12 @@ const SIM_SYMBOLE = {
     <rect x="18" y="28" width="28" height="8" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
     <path d="M12 15 V22 H26 V28 M52 15 V22 H38 V28" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/>
   </svg>`,
+  // Lichtmikroskop: Tubus mit Okular, Objektiv, Objekttisch, Stativ und Fuß
+  mikroskop: `<svg viewBox="0 0 64 40" width="64" height="40" focusable="false">
+    <path d="M26 3 L33 6 L27 20 L20 17 Z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/>
+    <path d="M23.5 19 L22 23" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M17 26 H35 M33 6 C44 10 44 26 38 30 V36 M24 36 H46" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  </svg>`,
 };
 const simSymbol = icon => SIM_SYMBOLE[icon] || esc(icon);
 

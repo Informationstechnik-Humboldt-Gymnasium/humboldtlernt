@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BioLab</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<link rel="stylesheet" href="biolab.css">
+</head>
+<body class="biolab">
+<header class="bl-kopf">
+  <nav class="bl-pfad" aria-label="Pfad">
+    <a href="#" id="pfad-sandbox" target="_top">Sandbox</a><span class="trenner" aria-hidden="true">›</span>
+    <a href="#" id="pfad-biolab">BioLab</a>
+    <span class="trenner" aria-hidden="true" id="pfad-trenner" hidden>›</span>
+    <span id="pfad-modul" aria-current="page"></span>
+  </nav>
+  <button type="button" class="bl-zurueck" id="zur-uebersicht" hidden>← Übersicht</button>
+</header>
+
+<main>
+  <section id="uebersicht" class="bl-uebersicht" aria-labelledby="ue-titel">
+    <h1 id="ue-titel">BioLab</h1>
+    <p class="einleitung muted">Ein digitales Biologielabor: Präparate mikroskopieren, Einzeller und Viren untersuchen, Zellen und Organe erkunden, Abläufe Schritt für Schritt verfolgen und Erbgänge durchspielen. Alle Darstellungen sind gezeichnete Schemata oder Modelle und als solche gekennzeichnet.</p>
+    <div class="bl-kacheln" id="kacheln"></div>
+  </section>
+
+  <section id="m-mikroskopie" class="bl-modul" hidden aria-label="Mikroskopie"></section>
+  <section id="m-mikroorganismen" class="bl-modul" hidden aria-label="Mikroorganismen"></section>
+  <section id="m-viren" class="bl-modul" hidden aria-label="Viren"></section>
+  <section id="m-zelle" class="bl-modul" hidden aria-label="Zellbiologie"></section>
+  <section id="m-anatomie" class="bl-modul" hidden aria-label="Anatomie"></section>
+  <section id="m-genetik" class="bl-modul" hidden aria-label="Genetik"></section>
+</main>
+
+<script src="../../static/lesson-kit.js"></script>
+<script src="ui.js"></script>
+<script src="daten-mikroskopie.js"></script>
+<script src="daten-organismen.js"></script>
+<script src="daten-viren.js"></script>
+<script src="daten-zelle.js"></script>
+<script src="daten-anatomie.js"></script>
+<script src="daten-genetik.js"></script>
+<script src="optik.js"></script>
+<script src="osmose.js"></script>
+<script src="genetik.js"></script>
+<script src="modul-mikroskopie.js"></script>
+<script src="modul-mikroorganismen.js"></script>
+<script src="modul-viren.js"></script>
+<script src="modul-zelle.js"></script>
+<script src="modul-anatomie.js"></script>
+<script src="modul-genetik.js"></script>
+<script src="labor.js"></script>
+</body>
+</html>

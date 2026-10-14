@@ -42,6 +42,11 @@ Lerneinheiten sie erledigt haben, und Lehrkräfte sehen den Fortschritt ihrer Kl
   Reichweite) und Firewall-Regeln konfigurieren, Verbindungen mit Ping, HTTP oder HTTPS testen und Pakete Schritt für
   Schritt verfolgen (Hin- und Rückweg, MAC-Lernen), mit freiem Testmodus und sieben Lernaufgaben zur Fehlersuche
   (`lessons/sandbox-netzwerk/MODELL.md`).
+  Fünfte Simulation: das **BioLab** mit eigener Übersicht und sechs Modulen: virtuelles Lichtmikroskop (zehn Präparate,
+  Objektive 4×–100×, Fokus, Färbung, Auflösungsgrenze), Mikroorganismen (Amöbe, Pantoffeltierchen, Euglena, Bakterien,
+  Größenvergleich), Viren (Modelle, Vermehrungszyklen, Vergleich mit Bakterien), Zellbiologie (Pflanzen-/Tierzelle,
+  Diffusion, Osmose), Anatomie (Herz und Kreislauf, Atmung, Verdauung, Nervensystem) und Genetik (DNA-Modell, Erbgänge).
+  Alle Bilder sind gezeichnete Schemata oder Modelle und als solche gekennzeichnet. Direktlinks wie `/sandbox/biolab#viren/zyklus`.
 - **Weitere Fächer** lassen sich ohne Programmieren ergänzen (siehe Abschnitt 6).
 
 > **Schnellstart:** Wie du das Projekt auf GitHub hochlädst und ohne IServ-Login testest,
