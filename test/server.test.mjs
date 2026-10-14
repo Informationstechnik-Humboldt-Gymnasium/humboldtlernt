@@ -212,7 +212,14 @@ test('Sandbox: Simulationsübersicht, Schaltkreis-Labor und Rückweg zur Fachüb
   assert.match(uebersicht, /href="\/sandbox\/logik"/);
   assert.match(uebersicht, /Logik-Labor/);
   assert.doesNotMatch(uebersicht, /⚡|🔀/, 'Schaltzeichen statt Emojis');
-  assert.equal((uebersicht.match(/<span class="sim-icon" aria-hidden="true"><svg/g) || []).length, 4);
+  assert.equal((uebersicht.match(/<span class="sim-icon" aria-hidden="true"><svg/g) || []).length, 5);
+  // Fünfte Simulation: BioLab
+  assert.match(uebersicht, /href="\/sandbox\/biolab"/);
+  const bio = await (await t.req('/sandbox/biolab')).text();
+  assert.match(bio, /src="\/inhalt\/sandbox-biolab\/index\.html"/);
+  for (const f of ['index.html', 'biolab.css', 'ui.js', 'labor.js', 'optik.js', 'modul-genetik.js']) {
+    assert.equal((await t.req(`/inhalt/sandbox-biolab/${f}`)).status, 200, f);
+  }
   // Vierte Simulation: Netzwerk-Labor (nutzt Bedienung und Grundlayout des Schaltkreis-Labors mit)
   assert.match(uebersicht, /href="\/sandbox\/netzwerk"/);
   const netz = await (await t.req('/sandbox/netzwerk')).text();
