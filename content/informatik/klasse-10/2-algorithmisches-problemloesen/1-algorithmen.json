@@ -1,0 +1,123 @@
+{
+  "id": "inf-k10-algorithmen",
+  "titel": "Algorithmen entwerfen und darstellen",
+  "kurz": "Was einen Algorithmus ausmacht, wie Sequenz, Auswahl und Wiederholung zusammenspielen und wie man Abläufe als Pseudocode, Struktogramm oder Programmablaufplan darstellt.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Die Eigenschaften eines Algorithmus nennen und prüfen, ob eine Anleitung ein Algorithmus ist" },
+    { "id": "lz2", "niveau": "G", "text": "Die Grundstrukturen Sequenz, Auswahl und Wiederholung erkennen und unterscheiden" },
+    { "id": "lz3", "niveau": "G", "text": "Programmablaufplan, Struktogramm und Pseudocode lesen und ihre Symbole zuordnen" },
+    { "id": "lz4", "niveau": "H", "text": "Gegebene Algorithmen Schritt für Schritt ausführen und eigene Algorithmen entwerfen" }
+  ],
+  "verstehen": {
+    "einstieg": "Ein Kochrezept, eine Bauanleitung für ein Regal, die Wegbeschreibung zur Schule: Das alles sind Anleitungen. Aber könnte ein Computer sie ausführen? Was müsste dafür genauer beschrieben sein?",
+    "abschnitte": [
+      {
+        "titel": "Was ist ein Algorithmus?",
+        "text": "Ein **Algorithmus** ist eine Handlungsvorschrift, die ein Problem in endlich vielen, eindeutigen Schritten löst. Er hat diese Eigenschaften:\n\n- **endlich beschrieben:** Die Vorschrift hat eine begrenzte Länge.\n- **eindeutig:** Nach jedem Schritt ist klar, welcher Schritt als Nächstes kommt.\n- **ausführbar:** Jeder Schritt kann vom Ausführenden wirklich erledigt werden.\n- **terminierend:** Er kommt nach endlich vielen Schritten zu einem Ende.\n\n„Salz nach Geschmack“ ist für einen Computer nicht eindeutig. „Gib 5 g Salz dazu“ dagegen schon."
+      },
+      {
+        "titel": "Drei Grundstrukturen",
+        "text": "Jeder Algorithmus lässt sich aus drei Bausteinen zusammensetzen:\n\n- **Sequenz:** Schritte werden der Reihe nach ausgeführt.\n- **Auswahl (Verzweigung):** Abhängig von einer Bedingung wird der eine oder der andere Weg gegangen: ``falls … dann … sonst``.\n- **Wiederholung (Schleife):** Schritte werden mehrfach ausgeführt, eine feste Anzahl lang oder solange eine Bedingung gilt.\n\nDazu kommen **Variablen**, die Werte speichern. Im Pseudocode schreiben wir für eine Wertzuweisung ``x ← 5``: „x bekommt den Wert 5“."
+      },
+      {
+        "titel": "Pseudocode",
+        "text": "**Pseudocode** beschreibt einen Algorithmus in einer genauen, aber nicht an eine Programmiersprache gebundenen Form. Beispiel: die Summe der Quadratzahlen von 1 bis 4.\n\n```\nsumme ← 0\nfür i von 1 bis 4\n  summe ← summe + i · i\nausgabe summe\n```\n\nDie Einrückung zeigt, was zur Schleife gehört. Ergebnis: 1 + 4 + 9 + 16 = 30."
+      },
+      {
+        "titel": "Programmablaufplan und Struktogramm",
+        "text": "Im **Programmablaufplan (PAP)** verbinden Pfeile diese Symbole:\n\n- **Oval** (abgerundetes Rechteck): Start und Ende\n- **Rechteck:** Anweisung, z. B. ``summe ← 0``\n- **Raute:** Verzweigung mit einer Bedingung, zwei Ausgänge „ja“ und „nein“\n- **Parallelogramm:** Eingabe oder Ausgabe\n\nEine Schleife erkennt man im PAP an einem Pfeil, der zurück nach oben führt.\n\nIm **Struktogramm** (Nassi-Shneiderman-Diagramm) gibt es keine Pfeile. Blöcke werden von oben nach unten gelesen. Eine Verzweigung ist ein Block mit einem Dreieck oben und zwei Spalten für „ja“ und „nein“. Eine Schleife ist ein Block, der die wiederholten Anweisungen von links umschließt."
+      }
+    ],
+    "merksatz": "Ein Algorithmus ist endlich, eindeutig, ausführbar und kommt zu einem Ende. Er besteht aus Sequenz, Auswahl und Wiederholung. Pseudocode, PAP und Struktogramm sind drei Darstellungen desselben Ablaufs.",
+    "alltag": "Navigations-Apps berechnen mit Algorithmen den kürzesten Weg, Streamingdienste den nächsten Vorschlag. Schon bevor es Computer gab, beschrieb der griechische Mathematiker Euklid einen Algorithmus, mit dem man den größten gemeinsamen Teiler zweier Zahlen findet."
+  },
+  "interaktiv": [],
+  "vertiefung": ["timp-programmierlabor"],
+  "uebungen": [
+    {
+      "id": "inf-alg-01", "typ": "multi", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Welche Anweisungen verletzen die Eigenschaften eines Algorithmus?",
+      "optionen": [
+        { "text": "„Backe den Kuchen, bis er schön aussieht.“", "richtig": true },
+        { "text": "„Gib 200 ml Milch in die Schüssel.“", "feedback": "Diese Anweisung ist eindeutig und ausführbar." },
+        { "text": "„Zähle so lange, bis du bei der größten natürlichen Zahl angekommen bist.“", "richtig": true },
+        { "text": "„Biege am Ende der Straße links oder rechts ab.“", "richtig": true },
+        { "text": "„Wiederhole 3-mal: Rühre 10 Sekunden lang.“", "feedback": "Die Wiederholung hat eine feste Anzahl. Sie endet sicher." }
+      ],
+      "erklaerung": "„Schön“ ist nicht eindeutig. Eine größte natürliche Zahl gibt es nicht, deshalb endet das Zählen nie. „Links oder rechts“ legt den nächsten Schritt nicht eindeutig fest."
+    },
+    {
+      "id": "inf-alg-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz3",
+      "frage": "Ordne die Symbole des Programmablaufplans ihrer Bedeutung zu.",
+      "paare": [
+        { "links": "Oval", "rechts": "Start oder Ende" },
+        { "links": "Rechteck", "rechts": "Anweisung (z. B. Wertzuweisung)" },
+        { "links": "Raute", "rechts": "Verzweigung mit Bedingung" },
+        { "links": "Parallelogramm", "rechts": "Eingabe oder Ausgabe" }
+      ],
+      "erklaerung": "Aus diesen vier Symbolen und Pfeilen lässt sich jeder einfache Ablauf zeichnen. Eine Schleife entsteht, wenn ein Pfeil zu einer früheren Stelle zurückführt."
+    },
+    {
+      "id": "inf-alg-03", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Welche Grundstruktur steckt jeweils hinter der Beschreibung?",
+      "paare": [
+        { "links": "Erst die Zutaten abwiegen, dann mischen, dann in die Form füllen.", "rechts": "Sequenz" },
+        { "links": "Falls es regnet, nimm den Bus, sonst das Fahrrad.", "rechts": "Auswahl" },
+        { "links": "Rühre, solange noch Klumpen im Teig sind.", "rechts": "Wiederholung" }
+      ],
+      "erklaerung": "Sequenz: der Reihe nach. Auswahl: abhängig von einer Bedingung genau einer von zwei Wegen. Wiederholung: dieselben Schritte mehrfach, hier abhängig von einer Bedingung."
+    },
+    {
+      "id": "inf-alg-04", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Welcher Wert wird ausgegeben?\n\n```\nx ← 1\nzaehler ← 0\nsolange x < 100\n  x ← x · 3\n  zaehler ← zaehler + 1\nausgabe zaehler\n```",
+      "loesung": 5, "toleranz": 0, "einheit": "",
+      "gegeben": "Startwerte x = 1, zaehler = 0; Schleife, solange x < 100",
+      "gesucht": "Wert von zaehler am Ende",
+      "rechenweg": [
+        "Durchlauf 1: x = 3, zaehler = 1",
+        "Durchlauf 2: x = 9, zaehler = 2",
+        "Durchlauf 3: x = 27, zaehler = 3",
+        "Durchlauf 4: x = 81, zaehler = 4 (81 < 100, also weiter)",
+        "Durchlauf 5: x = 243, zaehler = 5; jetzt ist x < 100 falsch, die Schleife endet"
+      ],
+      "erklaerung": "Eine Wertetabelle hilft beim Nachverfolgen: Nach jedem Durchlauf trägst du alle Variablen ein. Die Bedingung wird immer **vor** dem nächsten Durchlauf geprüft."
+    },
+    {
+      "id": "inf-alg-05", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Bringe die Schritte in die richtige Reihenfolge, damit der Algorithmus die **größte Zahl** einer Liste findet.",
+      "elemente": [
+        "Merke dir die erste Zahl der Liste als ``max``.",
+        "Nimm die nächste Zahl der Liste.",
+        "Falls diese Zahl größer als ``max`` ist, merke sie dir als neues ``max``.",
+        "Wiederhole ab Schritt 2, bis alle Zahlen geprüft sind.",
+        "Gib ``max`` aus."
+      ],
+      "erklaerung": "Der Algorithmus verbindet alle drei Grundstrukturen: eine Sequenz von Schritten, eine Auswahl (größer?) und eine Wiederholung über alle Zahlen."
+    },
+    {
+      "id": "inf-alg-06", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "In einem Struktogramm siehst du einen Block mit einem Dreieck oben. Links steht „ja“, rechts „nein“, darunter zwei Spalten mit Anweisungen. Was stellt dieser Block dar?",
+      "optionen": [
+        { "text": "Eine Verzweigung (Auswahl)", "richtig": true },
+        { "text": "Eine Schleife", "feedback": "Eine Schleife umschließt die wiederholten Anweisungen von links. Sie hat keine Ja-/Nein-Spalten." },
+        { "text": "Den Start des Programms", "feedback": "Ein Struktogramm hat keine eigenen Start-Symbole. Man liest es einfach von oben." },
+        { "text": "Eine Ausgabe", "feedback": "Eine Ausgabe ist ein einfacher Anweisungsblock." }
+      ],
+      "erklaerung": "Das Dreieck enthält die Bedingung. Je nachdem, ob sie wahr oder falsch ist, wird die linke oder die rechte Spalte ausgeführt."
+    },
+    {
+      "id": "inf-alg-07", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Der Algorithmus von Euklid berechnet den größten gemeinsamen Teiler. ``a mod b`` ist der Rest beim Teilen von a durch b. Welcher Wert wird für a = 84 und b = 36 ausgegeben?\n\n```\nsolange b ≠ 0\n  r ← a mod b\n  a ← b\n  b ← r\nausgabe a\n```",
+      "loesung": 12, "toleranz": 0, "einheit": "",
+      "gegeben": "a = 84, b = 36",
+      "gesucht": "ausgegebener Wert von a",
+      "rechenweg": [
+        "Durchlauf 1: r = 84 mod 36 = 12, a = 36, b = 12",
+        "Durchlauf 2: r = 36 mod 12 = 0, a = 12, b = 0",
+        "b = 0, die Schleife endet. Ausgabe: 12"
+      ],
+      "erklaerung": "Der größte gemeinsame Teiler von 84 und 36 ist 12. Der Algorithmus terminiert immer, weil der Rest b in jedem Durchlauf kleiner wird und irgendwann 0 ist."
+    }
+  ]
+}

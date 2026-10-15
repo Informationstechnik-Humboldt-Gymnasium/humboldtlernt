@@ -1,0 +1,126 @@
+{
+  "id": "inf-k10-java-grundlagen",
+  "titel": "Variablen, Datentypen und Kontrollstrukturen in Java",
+  "kurz": "Wie du in Java Variablen anlegst, welche einfachen Datentypen es gibt und wie Verzweigungen und Schleifen geschrieben werden.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Variablen deklarieren, ihnen Werte zuweisen und einen passenden einfachen Datentyp (int, double, boolean, char, String) wählen" },
+    { "id": "lz2", "niveau": "G", "text": "Ausdrücke mit Rechenoperatoren auswerten, auch mit ganzzahliger Division und Rest" },
+    { "id": "lz3", "niveau": "H", "text": "Verzweigungen (if/else) und Schleifen (while, for) in Java lesen und die Ausgabe vorhersagen" },
+    { "id": "lz4", "niveau": "H", "text": "Typische Fehler in kurzen Java-Programmen finden und beheben" }
+  ],
+  "verstehen": {
+    "einstieg": "In Scratch hast du Blöcke zusammengeschoben. In Greenfoot schreibst du dieselben Ideen als Text in der Sprache Java. Warum muss man dort zum Beispiel vorher sagen, ob eine Variable eine Zahl oder ein Wort speichert?",
+    "abschnitte": [
+      {
+        "titel": "Variablen und Datentypen",
+        "text": "In Java hat jede Variable einen festen **Datentyp**. Er wird bei der **Deklaration** vor den Namen geschrieben:\n\n```\nint punkte = 0;\ndouble tempo = 2.5;\nboolean amLeben = true;\nchar taste = 'w';\nString name = \"Lena\";\n```\n\n- ``int``: ganze Zahlen\n- ``double``: Kommazahlen, mit Punkt geschrieben (``2.5``)\n- ``boolean``: nur ``true`` oder ``false``\n- ``char``: ein einzelnes Zeichen in einfachen Anführungszeichen\n- ``String``: Text in doppelten Anführungszeichen (ein Klassentyp, darum groß geschrieben)\n\nJede Anweisung endet mit einem Semikolon. Mit ``punkte = punkte + 10;`` bekommt die Variable einen neuen Wert: Erst wird rechts gerechnet, dann links gespeichert."
+      },
+      {
+        "titel": "Rechnen mit int",
+        "text": "Die Rechenzeichen sind ``+``, ``-``, ``*`` und ``/``. Achtung: Teilt man zwei ``int``-Werte, ist das Ergebnis wieder ganzzahlig, der Rest fällt weg.\n\n- ``17 / 5`` ergibt ``3``\n- ``17 % 5`` ergibt den Rest ``2`` (Modulo)\n- ``17.0 / 5`` ergibt ``3.4``, weil eine Kommazahl beteiligt ist\n\nMit ``% 2`` prüft man oft, ob eine Zahl gerade ist: ``x % 2 == 0``."
+      },
+      {
+        "titel": "Verzweigung",
+        "text": "```\nif (punkte >= 100) {\n    level = level + 1;\n} else {\n    System.out.println(\"Weiter sammeln!\");\n}\n```\n\nDie Bedingung steht in runden Klammern, die Anweisungen in geschweiften. **Vergleiche** schreibt man mit ``==``, ``!=``, ``<``, ``<=``, ``>``, ``>=``. Ein einzelnes ``=`` ist eine Zuweisung, kein Vergleich. Bedingungen verknüpft man mit ``&&`` (und) und ``||`` (oder)."
+      },
+      {
+        "titel": "Schleifen",
+        "text": "Die ``while``-Schleife wiederholt, **solange** die Bedingung wahr ist:\n\n```\nint leben = 3;\nwhile (leben > 0) {\n    leben = leben - 1;\n}\n```\n\nDie ``for``-Schleife fasst Startwert, Bedingung und Schritt in einer Zeile zusammen. Diese Schleife gibt die Zahlen 1 bis 5 aus:\n\n```\nfor (int i = 1; i <= 5; i++) {\n    System.out.println(i);\n}\n```\n\n``i++`` ist eine Kurzform für ``i = i + 1``. Ändert sich in einer ``while``-Schleife nichts an der Bedingung, entsteht eine Endlosschleife."
+      }
+    ],
+    "formeln": [
+      { "formel": "a = (a / b) · b + a % b", "bedeutung": "Zusammenhang von ganzzahliger Division und Rest bei int-Werten, z. B. 17 = 3 · 5 + 2" }
+    ],
+    "merksatz": "In Java hat jede Variable einen Datentyp: int, double, boolean, char oder String. = weist zu, == vergleicht. int / int schneidet den Rest ab, % liefert ihn. if/else verzweigt, while und for wiederholen.",
+    "alltag": "In Greenfoot läuft die Methode act() jedes Mal, wenn die Welt einen Schritt weiterzählt. Darin prüfen if-Anweisungen zum Beispiel, ob eine Taste gedrückt ist oder ob die Figur einen Gegner berührt."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "inf-jgr-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Welcher Datentyp passt zu welchem Wert?",
+      "paare": [
+        { "links": "``42``", "rechts": "int" },
+        { "links": "``3.75``", "rechts": "double" },
+        { "links": "``false``", "rechts": "boolean" },
+        { "links": "``'Q'``", "rechts": "char" },
+        { "links": "``\"Game over\"``", "rechts": "String" }
+      ],
+      "erklaerung": "Ganze Zahlen sind int, Kommazahlen double. Wahrheitswerte sind boolean. Ein einzelnes Zeichen in einfachen Anführungszeichen ist ein char, Text in doppelten Anführungszeichen ein String."
+    },
+    {
+      "id": "inf-jgr-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Welche Zeile legt in Java richtig eine Variable ``punkte`` mit dem Startwert 10 an?",
+      "optionen": [
+        { "text": "``int punkte = 10;``", "richtig": true },
+        { "text": "``punkte int = 10;``", "feedback": "Der Datentyp steht vor dem Namen der Variablen." },
+        { "text": "``int punkte == 10;``", "feedback": "== ist ein Vergleich. Für die Zuweisung braucht man ein einzelnes =." },
+        { "text": "``Int punkte = 10``", "feedback": "Java unterscheidet Groß- und Kleinschreibung: Der Typ heißt int. Außerdem fehlt das Semikolon." }
+      ],
+      "erklaerung": "Aufbau einer Deklaration mit Startwert: Datentyp, Name, =, Wert, Semikolon."
+    },
+    {
+      "id": "inf-jgr-03", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Welche Zahl gibt das Programm aus?\n\n```\nint a = 17;\nint b = 5;\nint c = a / b + a % b;\nSystem.out.println(c);\n```",
+      "loesung": 5, "toleranz": 0, "einheit": "",
+      "gegeben": "a = 17, b = 5 (beides int)",
+      "gesucht": "Wert von c",
+      "rechenweg": [
+        "a / b = 17 / 5 = 3 (ganzzahlige Division, der Rest fällt weg)",
+        "a % b = 17 % 5 = 2 (Rest)",
+        "c = 3 + 2 = 5"
+      ],
+      "erklaerung": "Bei zwei int-Werten rechnet / ohne Nachkommastellen. Wer 3.4 erwartet hat, hat wie mit double gerechnet."
+    },
+    {
+      "id": "inf-jgr-04", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Welche Zahl gibt das Programm aus?\n\n```\nint x = 7;\nif (x % 2 == 0) {\n    x = x / 2;\n} else {\n    x = 3 * x + 1;\n}\nSystem.out.println(x);\n```",
+      "loesung": 22, "toleranz": 0, "einheit": "",
+      "gegeben": "x = 7",
+      "gesucht": "Ausgabe",
+      "rechenweg": [
+        "Bedingung: 7 % 2 = 1, also ist 7 % 2 == 0 falsch",
+        "Es wird der else-Zweig ausgeführt: x = 3 · 7 + 1 = 22"
+      ],
+      "erklaerung": "x % 2 == 0 prüft, ob x gerade ist. Für ungerade Zahlen läuft der else-Zweig."
+    },
+    {
+      "id": "inf-jgr-05", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Welche Zahl gibt das Programm aus?\n\n```\nint summe = 0;\nfor (int i = 1; i <= 10; i = i + 2) {\n    summe = summe + i;\n}\nSystem.out.println(summe);\n```",
+      "loesung": 25, "toleranz": 0, "einheit": "",
+      "gegeben": "Startwert i = 1, Schritt +2, solange i ≤ 10",
+      "gesucht": "Wert von summe",
+      "rechenweg": [
+        "i nimmt nacheinander die Werte 1, 3, 5, 7, 9 an",
+        "Bei i = 11 ist i <= 10 falsch, die Schleife endet",
+        "summe = 1 + 3 + 5 + 7 + 9 = 25"
+      ],
+      "erklaerung": "Die Schleife addiert alle ungeraden Zahlen bis 10. Der Schritt steht im dritten Teil des for-Kopfes."
+    },
+    {
+      "id": "inf-jgr-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Was passiert, wenn dieses Programm läuft?\n\n```\nint leben = 3;\nwhile (leben > 0) {\n    System.out.println(\"Noch \" + leben + \" Leben\");\n}\n```",
+      "optionen": [
+        { "text": "Es gibt endlos „Noch 3 Leben“ aus, weil sich leben nie ändert.", "richtig": true },
+        { "text": "Es gibt „Noch 3 Leben“, „Noch 2 Leben“ und „Noch 1 Leben“ aus.", "feedback": "Dafür müsste in der Schleife leben = leben - 1; stehen." },
+        { "text": "Es gibt gar nichts aus, weil leben > 0 falsch ist.", "feedback": "3 > 0 ist wahr. Die Schleife beginnt also." },
+        { "text": "Der Compiler meldet einen Fehler.", "feedback": "Das Programm ist korrekt geschrieben. Der Fehler zeigt sich erst beim Ausführen." }
+      ],
+      "erklaerung": "In einer while-Schleife muss sich etwas ändern, das die Bedingung irgendwann falsch macht. Abhilfe: In die Schleife gehört leben = leben - 1;."
+    },
+    {
+      "id": "inf-jgr-07", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Welche Zeilen meldet der Java-Compiler als **Fehler**?",
+      "optionen": [
+        { "text": "``int alter = 15.5;``", "richtig": true },
+        { "text": "``double preis = 3;``", "feedback": "Das geht: Die ganze Zahl 3 wird automatisch zu 3.0. Dabei geht nichts verloren." },
+        { "text": "``boolean fertig = \"true\";``", "richtig": true },
+        { "text": "``int haelfte = 5 / 2;``", "feedback": "Das ist erlaubt. Ergebnis ist allerdings 2, nicht 2.5." },
+        { "text": "``String name = Lena;``", "richtig": true }
+      ],
+      "erklaerung": "15.5 passt nicht in einen int, die Nachkommastellen gingen verloren. \"true\" ist Text und kein Wahrheitswert. Ohne Anführungszeichen hält Java Lena für eine Variable, die es nicht gibt."
+    }
+  ]
+}

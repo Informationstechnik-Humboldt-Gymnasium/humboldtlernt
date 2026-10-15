@@ -1,0 +1,120 @@
+{
+  "id": "inf-k10-sichere-daten",
+  "titel": "Verschlüsselung und digitaler Fingerabdruck",
+  "kurz": "Wie die Caesar-Verschlüsselung funktioniert und warum sie unsicher ist, wie moderne Verschlüsselung mit Schlüsselpaaren arbeitet und wozu Hashwerte als digitaler Fingerabdruck dienen.",
+  "reihenfolge": 6,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Texte mit der Caesar-Verschlüsselung ver- und entschlüsseln und die Begriffe Klartext, Geheimtext und Schlüssel verwenden" },
+    { "id": "lz2", "niveau": "H", "text": "Erklären, warum die Caesar-Verschlüsselung durch Ausprobieren und Häufigkeitsanalyse leicht zu brechen ist" },
+    { "id": "lz3", "niveau": "G", "text": "Eigenschaften und Anwendungen eines digitalen Fingerabdrucks (Hashwert) erklären" },
+    { "id": "lz4", "niveau": "H", "text": "Symmetrische, asymmetrische und Ende-zu-Ende-Verschlüsselung unterscheiden" }
+  ],
+  "verstehen": {
+    "einstieg": "Deine Chatnachrichten laufen über viele fremde Rechner, bis sie ankommen. Trotzdem soll sie niemand unterwegs mitlesen können. Und wenn ein Online-Shop gehackt wird, sollen die Angreifer nicht an dein Passwort kommen. Wie geht das?",
+    "abschnitte": [
+      {
+        "titel": "Caesar-Verschlüsselung",
+        "text": "Schon Julius Caesar verschob jeden Buchstaben um eine feste Anzahl von Stellen im Alphabet. Bei einer Verschiebung um 3 wird A zu D, B zu E … X zu A, Y zu B und Z zu C.\n\n- **Klartext:** ``HUND``\n- **Schlüssel:** 3\n- **Geheimtext:** ``KXQG``\n\nZum **Entschlüsseln** verschiebt man um 3 Stellen zurück. Wer den Schlüssel nicht kennt, soll den Geheimtext nicht lesen können."
+      },
+      {
+        "titel": "Warum Caesar unsicher ist",
+        "text": "- **Ausprobieren:** Es gibt nur 25 sinnvolle Schlüssel. Man probiert sie einfach alle durch (**Brute-Force-Angriff**).\n- **Häufigkeitsanalyse:** Im Deutschen ist E der häufigste Buchstabe. Ist im Geheimtext H am häufigsten, war der Schlüssel wahrscheinlich 3, denn von E nach H sind es 3 Stellen.\n\nSichere Verfahren haben deshalb riesig viele mögliche Schlüssel. Bei einem 128-Bit-Schlüssel sind es 2^{128}, das sind über 10^{38}. Außerdem verwischen sie Buchstabenhäufigkeiten."
+      },
+      {
+        "titel": "Schlüssel heute",
+        "text": "- **Symmetrische Verschlüsselung:** Sender und Empfänger benutzen **denselben geheimen Schlüssel**. Das ist schnell, aber der Schlüssel muss sicher ausgetauscht werden.\n- **Asymmetrische Verschlüsselung:** Jeder hat ein **Schlüsselpaar**. Mit dem **öffentlichen Schlüssel** darf jeder verschlüsseln, entschlüsseln kann nur, wer den passenden **privaten Schlüssel** hat. Wie ein Briefkasten: Jeder kann etwas einwerfen, öffnen kann ihn nur der Besitzer.\n\nIn der Praxis kombiniert man beides, etwa bei HTTPS im Browser. Messenger mit **Ende-zu-Ende-Verschlüsselung** verschlüsseln so, dass nur die Geräte von Sender und Empfänger die Nachricht lesen können, nicht einmal der Anbieter."
+      },
+      {
+        "titel": "Digitaler Fingerabdruck",
+        "text": "Eine **Hashfunktion** berechnet aus beliebigen Daten, also einem Wort oder einem ganzen Film, einen kurzen **Hashwert** fester Länge. Er heißt auch **digitaler Fingerabdruck**, denn:\n\n- Gleiche Daten ergeben immer denselben Hashwert.\n- Schon eine winzige Änderung ergibt einen völlig anderen Hashwert.\n- Aus dem Hashwert kann man die Daten nicht zurückberechnen (Einwegfunktion).\n\nAnwendungen: Nach einem Download vergleicht man den Hashwert mit dem Wert auf der Herstellerseite. Stimmt er, wurde nichts verändert. Und gute Webseiten speichern nicht dein Passwort, sondern nur seinen Hashwert. Beim Anmelden berechnen sie den Hashwert der Eingabe und vergleichen."
+      }
+    ],
+    "merksatz": "Verschlüsselung macht Klartext mit einem Schlüssel zu Geheimtext. Caesar ist unsicher: zu wenige Schlüssel, verräterische Buchstabenhäufigkeit. Symmetrisch heißt: ein gemeinsamer Schlüssel. Asymmetrisch heißt: ein öffentlicher und ein privater Schlüssel. Ein Hashwert ist ein digitaler Fingerabdruck, der jede Änderung verrät und sich nicht umkehren lässt.",
+    "alltag": "Das Schloss-Symbol in der Adresszeile des Browsers zeigt, dass die Verbindung per HTTPS verschlüsselt ist. Und wenn eine Webseite dir dein vergessenes Passwort im Klartext zuschicken kann, speichert sie es nicht als Hashwert. Das ist ein Warnzeichen."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "inf-sdv-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Verschlüssele ``HUND`` mit der Caesar-Verschlüsselung und dem Schlüssel 3.",
+      "optionen": [
+        { "text": "``KXQG``", "richtig": true },
+        { "text": "``ERKA``", "feedback": "Hier wurde um 3 Stellen zurück verschoben. Das wäre das Entschlüsseln." },
+        { "text": "``IVOE``", "feedback": "Das ist nur eine Verschiebung um 1." },
+        { "text": "``KXQD``", "feedback": "Der letzte Buchstabe D muss auch verschoben werden: D → G." }
+      ],
+      "erklaerung": "H → K, U → X, N → Q, D → G. Jeder Buchstabe rückt 3 Stellen weiter im Alphabet."
+    },
+    {
+      "id": "inf-sdv-02", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Entschlüssele den Geheimtext ``FDHVDU``. Der Schlüssel ist 3.",
+      "optionen": [
+        { "text": "``CAESAR``", "richtig": true },
+        { "text": "``IGKYGX``", "feedback": "Hier wurde noch einmal um 3 vorwärts verschoben. Zum Entschlüsseln geht es 3 Stellen zurück." },
+        { "text": "``CAESER``", "feedback": "Prüfe den fünften Buchstaben: D wird zu A, nicht zu E." },
+        { "text": "``ECGUCT``", "feedback": "Das ist nur eine Verschiebung um 1 zurück." }
+      ],
+      "erklaerung": "F → C, D → A, H → E, V → S, D → A, U → R."
+    },
+    {
+      "id": "inf-sdv-03", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Ein Angreifer kennt das Verfahren (Caesar mit 26 Buchstaben), aber nicht den Schlüssel. Wie viele Schlüssel muss er **höchstens** ausprobieren? Der Schlüssel 0 ändert nichts und zählt nicht mit.",
+      "loesung": 25, "toleranz": 0, "einheit": "",
+      "gegeben": "26 Buchstaben, Verschiebung 0 ist sinnlos",
+      "gesucht": "Anzahl der sinnvollen Schlüssel",
+      "rechenweg": [
+        "Mögliche Verschiebungen: 0 bis 25, also 26",
+        "Die Verschiebung 0 lässt den Text unverändert",
+        "26 − 1 = 25 Schlüssel"
+      ],
+      "erklaerung": "Eine Verschiebung um 26 ergibt wieder den Klartext. Mit 25 Versuchen ist jeder Caesar-Text in wenigen Minuten von Hand geknackt, von einem Computer in Sekundenbruchteilen."
+    },
+    {
+      "id": "inf-sdv-04", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "In einem langen deutschen Geheimtext, der mit Caesar verschlüsselt wurde, kommt der Buchstabe ``I`` mit Abstand am häufigsten vor. Welcher Schlüssel wurde vermutlich verwendet?",
+      "loesung": 4, "toleranz": 0, "einheit": "",
+      "gegeben": "häufigster Buchstabe im Geheimtext: I; häufigster Buchstabe im Deutschen: E",
+      "gesucht": "Verschiebung von E nach I",
+      "rechenweg": [
+        "E ist der 5. Buchstabe, I der 9. Buchstabe",
+        "9 − 5 = 4"
+      ],
+      "erklaerung": "Die Häufigkeitsanalyse funktioniert nur bei langen Texten zuverlässig. Bei kurzen Texten probiert man einfach die nächsthäufigen Buchstaben N, I und S aus."
+    },
+    {
+      "id": "inf-sdv-05", "typ": "multi", "schwierigkeit": "leicht", "lernziel": "lz3",
+      "frage": "Welche Eigenschaften hat ein digitaler Fingerabdruck (Hashwert)?",
+      "optionen": [
+        { "text": "Gleiche Daten ergeben immer denselben Hashwert.", "richtig": true },
+        { "text": "Eine kleine Änderung der Daten ergibt einen ganz anderen Hashwert.", "richtig": true },
+        { "text": "Der Hashwert hat immer dieselbe Länge, egal wie groß die Daten sind.", "richtig": true },
+        { "text": "Aus dem Hashwert kann man die Originaldaten zurückberechnen.", "feedback": "Eine Hashfunktion ist eine Einwegfunktion. Gerade deshalb eignet sie sich zum Speichern von Passwörtern." },
+        { "text": "Man braucht einen geheimen Schlüssel, um ihn zu berechnen.", "feedback": "Jeder kann den Hashwert berechnen. Er dient nicht der Geheimhaltung, sondern dem Erkennen von Änderungen." }
+      ],
+      "erklaerung": "Ein Hashwert ist wie ein Fingerabdruck: Er ist kurz, gehört zu genau diesen Daten und verrät trotzdem nicht, wie die Daten aussehen."
+    },
+    {
+      "id": "inf-sdv-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Warum speichert eine gut programmierte Webseite nur den Hashwert deines Passworts und nicht das Passwort selbst?",
+      "optionen": [
+        { "text": "Wird die Datenbank gestohlen, haben die Angreifer nur Hashwerte, aus denen sich die Passwörter nicht zurückberechnen lassen.", "richtig": true },
+        { "text": "Weil Hashwerte weniger Speicher brauchen als Passwörter.", "feedback": "Ein Hashwert ist oft sogar länger als ein Passwort. Der Grund ist die Sicherheit." },
+        { "text": "Damit die Webseite dir dein Passwort zuschicken kann, wenn du es vergisst.", "feedback": "Genau das geht mit Hashwerten nicht mehr. Man bekommt stattdessen einen Link zum Zurücksetzen." },
+        { "text": "Weil man mit dem Hashwert die Anmeldung überspringen kann.", "feedback": "Bei der Anmeldung wird der Hashwert deiner Eingabe berechnet und verglichen. Übersprungen wird nichts." }
+      ],
+      "erklaerung": "Beim Anmelden berechnet der Server den Hashwert deiner Eingabe und vergleicht ihn mit dem gespeicherten. Moderne Verfahren wie Argon2 sind zusätzlich absichtlich langsam und fügen jedem Passwort einen zufälligen Zusatz (Salt) hinzu. Das erschwert das massenhafte Ausprobieren."
+    },
+    {
+      "id": "inf-sdv-07", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Ordne die Beschreibungen den Verfahren zu.",
+      "paare": [
+        { "links": "Sender und Empfänger benutzen denselben geheimen Schlüssel.", "rechts": "symmetrische Verschlüsselung" },
+        { "links": "Jeder verschlüsselt mit dem öffentlichen Schlüssel, nur der Besitzer des privaten Schlüssels kann entschlüsseln.", "rechts": "asymmetrische Verschlüsselung" },
+        { "links": "Nur die Geräte von Sender und Empfänger können die Chatnachricht lesen, nicht der Anbieter.", "rechts": "Ende-zu-Ende-Verschlüsselung" },
+        { "links": "Aus einer Datei wird ein kurzer Prüfwert fester Länge berechnet.", "rechts": "Hashfunktion" }
+      ],
+      "erklaerung": "Asymmetrische Verfahren lösen das Problem, einen gemeinsamen Schlüssel sicher auszutauschen. Ende-zu-Ende beschreibt, wo ver- und entschlüsselt wird, nämlich nur auf den Endgeräten. Eine Hashfunktion verschlüsselt nicht, sie erzeugt einen Fingerabdruck."
+    }
+  ]
+}

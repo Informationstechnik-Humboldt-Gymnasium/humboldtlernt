@@ -1,0 +1,128 @@
+{
+  "id": "inf-k10-codierung",
+  "titel": "Codes im Alltag",
+  "kurz": "Wie Erzeugercode auf Eiern, Morsecode, Blindenschrift, Barcode und QR-Code Informationen darstellen und wie Prüfziffern Fehler aufdecken.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Den Begriff Code erklären und Codes im Alltag lesen (Erzeugercode auf Eiern, Morsecode, Blindenschrift)" },
+    { "id": "lz2", "niveau": "G", "text": "Codes mit fester und variabler Länge vergleichen und die Anzahl möglicher Codewörter berechnen" },
+    { "id": "lz3", "niveau": "H", "text": "Die Prüfziffer eines EAN-13-Barcodes berechnen und erklären, wie Prüfziffern und Fehlerkorrektur (QR-Code) Übertragungsfehler aufdecken" },
+    { "id": "lz4", "niveau": "H", "text": "Codierung und Verschlüsselung unterscheiden" }
+  ],
+  "verstehen": {
+    "einstieg": "Auf jedem Ei im Supermarkt steht ein Stempel wie „1-DE-0312341“. An der Kasse piepst der Scanner beim Barcode, und auf Plakaten klebt ein QR-Code. Was steckt in diesen Zeichen, und warum benutzt man sie?",
+    "abschnitte": [
+      {
+        "titel": "Was ist ein Code?",
+        "text": "Ein **Code** ist eine Vorschrift, die jedem Zeichen eines Zeichenvorrats ein Zeichen oder eine Zeichenfolge eines anderen Vorrats zuordnet. Das Ergebnis heißt **Codewort**. Codes machen Informationen für einen bestimmten Zweck handlich: kurz zum Drucken, maschinenlesbar oder tastbar.\n\n**Erzeugercode auf Eiern**, z. B. ``1-DE-0312341``:\n\n- erste Ziffer: Haltungsform: **0** ökologische Erzeugung, **1** Freilandhaltung, **2** Bodenhaltung, **3** Käfighaltung (Kleingruppenhaltung)\n- ``DE``: Herkunftsland Deutschland\n- danach die Nummer des Betriebs (in Deutschland mit Bundesland, Betrieb und Stall)"
+      },
+      {
+        "titel": "Morsecode und Blindenschrift",
+        "text": "Der **Morsecode** codiert Buchstaben mit kurzen (·) und langen (−) Signalen: E = ·, T = −, A = · −, S = · · ·, O = − − −. Häufige Buchstaben haben kurze Codewörter. Er ist ein Code mit **variabler Länge**. Darum braucht man **Pausen**, um zu erkennen, wo ein Buchstabe endet. Der Notruf SOS lautet · · · − − − · · ·.\n\nDie **Blindenschrift** (Brailleschrift) nutzt Zellen mit 6 Punkten in zwei Spalten zu je drei. Jeder Punkt ist erhaben oder flach, also 2 Zustände. Damit gibt es 2^{6} = 64 Muster, die leere Zelle mitgezählt. Das ist ein Code mit **fester Länge**: Jede Zelle hat 6 Stellen."
+      },
+      {
+        "titel": "Barcode und Prüfziffer",
+        "text": "Der **EAN-13-Barcode** auf Waren besteht aus 13 Ziffern. Die letzte ist eine **Prüfziffer**. So wird sie berechnet:\n\n- Die ersten 12 Ziffern abwechselnd mit 1 und 3 multiplizieren, mit 1 beginnend.\n- Die Produkte addieren.\n- Die Prüfziffer ergänzt die Summe zur nächsten Zehnerzahl. Ist die Summe schon durch 10 teilbar, ist die Prüfziffer 0.\n\nDie Kasse rechnet nach. Passt die Prüfziffer nicht, wurde falsch gelesen. Ein einzelner falscher Ziffernwert fällt so immer auf. Korrigieren kann die Prüfziffer den Fehler aber nicht."
+      },
+      {
+        "titel": "QR-Code und Fehlerkorrektur",
+        "text": "Der **QR-Code** ist ein zweidimensionaler Code aus schwarzen und weißen Quadraten (Modulen). Drei große Quadrate in den Ecken zeigen dem Scanner Lage und Größe. Ein QR-Code enthält zusätzliche Daten zur **Fehlerkorrektur**: Je nach Stufe bleibt er lesbar, selbst wenn etwa 7 % bis 30 % zerkratzt oder verdeckt sind. Deshalb funktionieren QR-Codes sogar mit einem Logo in der Mitte."
+      },
+      {
+        "titel": "Codieren ist nicht Verschlüsseln",
+        "text": "Die Regeln eines Codes sind meist **öffentlich**: Jeder kann Morsecode oder einen Barcode lesen, der die Tabelle kennt. Bei einer **Verschlüsselung** soll dagegen nur lesen können, wer einen **geheimen Schlüssel** besitzt. Codierung macht Informationen nutzbar, Verschlüsselung macht sie geheim."
+      }
+    ],
+    "formeln": [
+      { "formel": "N = z^{n}", "bedeutung": "Anzahl der Codewörter fester Länge n, wenn jede Stelle z Zustände hat (Braille: 2^{6} = 64)" },
+      { "formel": "Prüfziffer = (10 − Summe mod 10) mod 10", "bedeutung": "EAN-13: Summe der mit 1, 3, 1, 3 … gewichteten ersten 12 Ziffern" }
+    ],
+    "merksatz": "Ein Code ordnet Zeichen eines Vorrats Zeichen eines anderen zu. Codes mit variabler Länge (Morse) brauchen Trennzeichen, Codes mit fester Länge (Braille) nicht. Prüfziffern erkennen Fehler, Fehlerkorrektur (QR-Code) kann sie sogar beheben. Codieren ist nicht dasselbe wie Verschlüsseln.",
+    "alltag": "Mit der Erzeugernummer auf dem Ei kann man im Internet nachsehen, aus welchem Betrieb es stammt. Und der Barcode auf einem Schulbuch enthält die ISBN, an der Bibliotheken das Buch erkennen."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "inf-cod-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Die erste Ziffer im Erzeugercode auf Eiern gibt die Haltungsform an. Ordne zu.",
+      "paare": [
+        { "links": "0", "rechts": "ökologische Erzeugung" },
+        { "links": "1", "rechts": "Freilandhaltung" },
+        { "links": "2", "rechts": "Bodenhaltung" },
+        { "links": "3", "rechts": "Käfighaltung (Kleingruppenhaltung)" }
+      ],
+      "erklaerung": "Der Code ist kurz genug für einen Stempel auf der Eierschale und trotzdem eindeutig. Ein Ei mit „0-DE-…“ stammt aus ökologischer Erzeugung in Deutschland."
+    },
+    {
+      "id": "inf-cod-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Warum braucht man beim Morsecode Pausen zwischen den Buchstaben?",
+      "optionen": [
+        { "text": "Weil die Codewörter verschieden lang sind; ohne Pausen wüsste man nicht, wo ein Buchstabe endet.", "richtig": true },
+        { "text": "Damit der Funker sich zwischendurch ausruhen kann.", "feedback": "Die Pausen haben eine Bedeutung im Code: Sie trennen die Buchstaben." },
+        { "text": "Weil jeder Buchstabe aus genau vier Zeichen besteht.", "feedback": "E besteht aus einem Zeichen, S aus drei. Genau deshalb braucht man Pausen." },
+        { "text": "Pausen sind überflüssig, man könnte sie weglassen.", "feedback": "· · − könnte dann EET, EA, IT oder U bedeuten." }
+      ],
+      "erklaerung": "Bei einem Code mit variabler Länge muss man die Grenzen der Codewörter erkennen. Beim Morsecode übernehmen das die Pausen. Die Pause ist also praktisch ein drittes Zeichen."
+    },
+    {
+      "id": "inf-cod-03", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Eine Braillezelle hat 6 Punkte, jeder ist erhaben oder flach. Wie viele verschiedene Muster sind möglich, wenn man die leere Zelle mitzählt?",
+      "loesung": 64, "toleranz": 0, "einheit": "",
+      "gegeben": "6 Punkte mit je 2 Zuständen",
+      "gesucht": "Anzahl der Muster",
+      "rechenweg": [
+        "N = 2^{6}",
+        "N = 2 · 2 · 2 · 2 · 2 · 2 = 64"
+      ],
+      "erklaerung": "Die Braillezelle ist ein Code mit fester Länge, ähnlich wie 6 Bit. 64 Muster reichen für das Alphabet, Ziffern, Satzzeichen und Umlaute."
+    },
+    {
+      "id": "inf-cod-04", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Die ersten 12 Ziffern eines EAN-13-Barcodes sind ``4 0 1 2 3 4 5 6 7 8 9 0``. Berechne die Prüfziffer.",
+      "loesung": 1, "toleranz": 0, "einheit": "",
+      "gegeben": "Ziffern 4 0 1 2 3 4 5 6 7 8 9 0, Gewichte 1 3 1 3 1 3 …",
+      "gesucht": "13. Ziffer (Prüfziffer)",
+      "rechenweg": [
+        "Gewichtete Produkte: 4·1 + 0·3 + 1·1 + 2·3 + 3·1 + 4·3 + 5·1 + 6·3 + 7·1 + 8·3 + 9·1 + 0·3",
+        "= 4 + 0 + 1 + 6 + 3 + 12 + 5 + 18 + 7 + 24 + 9 + 0 = 89",
+        "Bis zur nächsten Zehnerzahl 90 fehlt 1, die Prüfziffer ist 1"
+      ],
+      "erklaerung": "Der vollständige Barcode lautet 4012345678901. Mit der Prüfziffer ergibt die gewichtete Summe aller 13 Ziffern 90, eine Zehnerzahl. Genau das prüft die Kasse."
+    },
+    {
+      "id": "inf-cod-05", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Welche Aussagen über QR-Codes stimmen?",
+      "optionen": [
+        { "text": "Sie speichern Daten in zwei Dimensionen, also in Zeilen und Spalten.", "richtig": true },
+        { "text": "Sie enthalten zusätzliche Daten, mit denen sich beschädigte Teile rekonstruieren lassen.", "richtig": true },
+        { "text": "Die drei großen Quadrate in den Ecken zeigen dem Scanner Lage und Ausrichtung.", "richtig": true },
+        { "text": "Sie sind verschlüsselt, man kann sie nur mit einer bestimmten App lesen.", "feedback": "Der QR-Code ist ein öffentlich beschriebener Code. Jede Scanner-App kann ihn lesen." },
+        { "text": "Ein kleiner Kratzer macht sie immer unlesbar.", "feedback": "Dank der Fehlerkorrektur bleiben je nach Stufe etwa 7 % bis 30 % Beschädigung verkraftbar." }
+      ],
+      "erklaerung": "Fehlerkorrektur kostet Platz: Je mehr Korrekturdaten ein QR-Code enthält, desto weniger Nutzdaten passen bei gleicher Größe hinein."
+    },
+    {
+      "id": "inf-cod-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Mia sagt: „Morsecode ist eine Verschlüsselung, denn ohne Tabelle versteht man nichts.“ Was ist an der Aussage falsch?",
+      "optionen": [
+        { "text": "Die Regeln des Morsecodes sind öffentlich; es gibt keinen geheimen Schlüssel. Deshalb ist er eine Codierung.", "richtig": true },
+        { "text": "Nichts, Morsecode ist eine Verschlüsselung.", "feedback": "Bei einer Verschlüsselung soll nur lesen können, wer einen geheimen Schlüssel hat. Die Morsetabelle steht in jedem Lexikon." },
+        { "text": "Morsecode ist gar kein Code, weil er aus Tönen besteht.", "feedback": "Ein Code kann aus Tönen, Lichtzeichen oder Punkten bestehen. Morse ordnet Buchstaben Signalfolgen zu." },
+        { "text": "Morsecode kann man auch ohne Tabelle verstehen.", "feedback": "Die Tabelle braucht man schon, aber sie ist für alle frei zugänglich." }
+      ],
+      "erklaerung": "Codierung: Die Darstellung ändert sich nach öffentlichen Regeln, damit Informationen übertragen oder gelesen werden können. Verschlüsselung: Die Darstellung hängt von einem geheimen Schlüssel ab, damit Unbefugte nichts verstehen."
+    },
+    {
+      "id": "inf-cod-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Beim Scannen an der Kasse wird eine Ziffer des Barcodes falsch gelesen. Erkläre, wie die Kasse das bemerkt und was die Prüfziffer **nicht** leisten kann.",
+      "stichworte": [
+        { "aspekt": "Die Kasse berechnet die Prüfziffer aus den ersten 12 Ziffern neu", "woerter": ["berechnet", "rechnet", "neu", "nach"] },
+        { "aspekt": "Sie vergleicht mit der gelesenen Prüfziffer; passt sie nicht, liegt ein Fehler vor", "woerter": ["vergleich", "passt nicht", "stimmt nicht", "unterschied"] },
+        { "aspekt": "Die Prüfziffer erkennt den Fehler, kann ihn aber nicht korrigieren (erneut scannen)", "woerter": ["nicht korrig", "nicht beheb", "nicht welche", "erneut", "noch einmal", "nochmal"] }
+      ],
+      "musterloesung": "Die Kasse berechnet aus den ersten 12 gelesenen Ziffern die Prüfziffer neu, mit den Gewichten 1 und 3. Dann vergleicht sie das Ergebnis mit der gelesenen 13. Ziffer. Stimmt sie nicht überein, ist beim Lesen ein Fehler passiert, und die Kasse piept nicht. Die Prüfziffer erkennt den Fehler, kann ihn aber nicht korrigieren, denn sie verrät nicht, welche Ziffer falsch ist. Deshalb muss man den Artikel noch einmal scannen.",
+      "erklaerung": "Wenn die gewichtete Summe aller 13 Ziffern durch 10 teilbar ist, gilt der Code als korrekt. Ein einzelner falscher Ziffernwert verändert diese Summe immer so, dass das nicht mehr stimmt."
+    }
+  ]
+}

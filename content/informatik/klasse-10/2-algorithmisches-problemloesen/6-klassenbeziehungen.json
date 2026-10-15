@@ -1,0 +1,117 @@
+{
+  "id": "inf-k10-klassenbeziehungen",
+  "titel": "Klassenbeziehungen: Assoziation, Aggregation, Vererbung",
+  "kurz": "Wie Klassen zusammenhängen: Ein Objekt kennt ein anderes, besteht aus anderen oder erbt von einer Oberklasse – und wie Objekte miteinander arbeiten.",
+  "reihenfolge": 6,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Beziehungen der Art „kennt“, „hat“ und „ist ein“ erkennen und als Assoziation, Aggregation und Vererbung benennen" },
+    { "id": "lz2", "niveau": "G", "text": "Vererbung mit extends erklären und bestimmen, welche Methoden ein Objekt einer Unterklasse hat" },
+    { "id": "lz3", "niveau": "H", "text": "Klassenbeziehungen in UML-Klassendiagrammen lesen und darstellen" },
+    { "id": "lz4", "niveau": "H", "text": "Die Zusammenarbeit von Objekten über Methodenaufrufe und überschriebene Methoden nachverfolgen" }
+  ],
+  "verstehen": {
+    "einstieg": "In einem Spiel gibt es Spieler, Münzen, Gegner und Hindernisse. Gegner und Spieler können sich beide bewegen, eine Münze gibt dem Spieler Punkte, und ein Level besteht aus vielen Hindernissen. Wie bildet man solche Zusammenhänge im Programm ab?",
+    "abschnitte": [
+      {
+        "titel": "Assoziation: „kennt“",
+        "text": "Bei einer **Assoziation** kennt ein Objekt ein anderes und kann dessen Methoden aufrufen. Ein Spieler kennt zum Beispiel seine Spielfigur, ein Lehrer seine Klassen. Im Klassendiagramm ist das eine Linie zwischen den Klassen, oft mit einem Pfeil in Richtung der Klasse, die gekannt wird."
+      },
+      {
+        "titel": "Aggregation: „hat“ bzw. „besteht aus“",
+        "text": "Eine **Aggregation** ist eine Teil-Ganzes-Beziehung: Ein Level hat viele Hindernisse, eine Schulklasse hat viele Schüler. Die Teile können auch ohne das Ganze existieren: Die Schüler gibt es auch dann noch, wenn die Klasse nach dem Abschluss aufgelöst wird. Im Klassendiagramm sitzt eine **leere Raute** an der Seite des Ganzen."
+      },
+      {
+        "titel": "Vererbung: „ist ein“",
+        "text": "Bei der **Vererbung** übernimmt eine **Unterklasse** alle Attribute und Methoden ihrer **Oberklasse** und fügt eigene hinzu. Ein Hund ist ein Tier, ein Held ist ein Actor.\n\n```\npublic class Held extends Actor {\n    public void act() {\n        move(2);\n    }\n}\n```\n\nIn Greenfoot erben alle Figuren von ``Actor``. Deshalb können sie ``move`` und ``turn`` aufrufen, ohne die Methoden selbst zu schreiben. Eine Unterklasse kann eine geerbte Methode auch **überschreiben**, also neu schreiben, wie hier ``act()``.\n\nIm Klassendiagramm zeigt ein Pfeil mit **leerer Dreiecksspitze** von der Unterklasse zur Oberklasse."
+      },
+      {
+        "titel": "Objekte arbeiten zusammen",
+        "text": "Objekte erledigen Aufgaben oft gemeinsam, indem sie sich gegenseitig Methoden aufrufen. Eine Münze, die eingesammelt wird, ruft beim Spieler eine Methode auf:\n\n```\npublic void wirdEingesammelt(Spieler s) {\n    s.addierePunkte(wert);\n}\n```\n\nDie Münze ändert die Punkte also nicht selbst. Sie bittet den Spieler darum, und der Spieler entscheidet in seiner Methode, was passiert. So bleiben beide Klassen gekapselt."
+      }
+    ],
+    "merksatz": "Assoziation: Ein Objekt kennt ein anderes. Aggregation: Ein Ganzes hat Teile (leere Raute am Ganzen). Vererbung: Die Unterklasse ist eine besondere Oberklasse und erbt deren Attribute und Methoden (extends, leere Dreiecksspitze zur Oberklasse).",
+    "alltag": "Ein Auto ist ein Fahrzeug (Vererbung), es hat vier Räder (Aggregation) und kennt seinen Fahrer bzw. seine Fahrerin (Assoziation). Diese drei Fragen helfen dir auch beim Modellieren eigener Spiele."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "inf-kbz-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Welche Beziehung beschreibt der Satz?",
+      "paare": [
+        { "links": "Ein Hai ist ein Fisch.", "rechts": "Vererbung" },
+        { "links": "Ein Orchester hat viele Musikerinnen und Musiker.", "rechts": "Aggregation" },
+        { "links": "Eine Ärztin kennt ihre Patienten.", "rechts": "Assoziation" }
+      ],
+      "erklaerung": "„ist ein“ deutet auf Vererbung, „hat“ oder „besteht aus“ auf Aggregation, „kennt“ oder „benutzt“ auf Assoziation."
+    },
+    {
+      "id": "inf-kbz-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Was bedeutet ``public class Hai extends Fisch``?",
+      "optionen": [
+        { "text": "Hai ist eine Unterklasse von Fisch und erbt dessen Attribute und Methoden.", "richtig": true },
+        { "text": "Fisch ist eine Unterklasse von Hai.", "feedback": "Umgekehrt: Die Klasse hinter extends ist die Oberklasse." },
+        { "text": "Ein Hai-Objekt enthält ein Fisch-Objekt als Attribut.", "feedback": "Das wäre eine Aggregation. extends bedeutet Vererbung." },
+        { "text": "Hai und Fisch sind dieselbe Klasse.", "feedback": "Hai kann eigene Attribute und Methoden ergänzen, die Fisch nicht hat." }
+      ],
+      "erklaerung": "extends heißt „erweitert“: Hai übernimmt alles von Fisch und kann Neues hinzufügen, z. B. eine Methode jagen()."
+    },
+    {
+      "id": "inf-kbz-03", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Ordne die Zeichen im UML-Klassendiagramm der Beziehung zu.",
+      "paare": [
+        { "links": "Pfeil mit leerer Dreiecksspitze, zeigt zur allgemeineren Klasse", "rechts": "Vererbung" },
+        { "links": "Linie mit leerer Raute an einer Klasse", "rechts": "Aggregation" },
+        { "links": "Einfache Linie, evtl. mit offener Pfeilspitze", "rechts": "Assoziation" }
+      ],
+      "erklaerung": "Die Raute sitzt immer am Ganzen (z. B. an Level), die Dreiecksspitze immer an der Oberklasse (z. B. an Actor)."
+    },
+    {
+      "id": "inf-kbz-04", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Die Klasse ``Tier`` hat die Methode ``fressen()``. Die Klasse ``Katze extends Tier`` ergänzt die Methode ``miauen()``. Es gibt die Objekte ``Katze k = new Katze();`` und ``Tier t = new Tier();``. Welche Aufrufe sind möglich?",
+      "optionen": [
+        { "text": "``k.fressen();``", "richtig": true },
+        { "text": "``k.miauen();``", "richtig": true },
+        { "text": "``t.fressen();``", "richtig": true },
+        { "text": "``t.miauen();``", "feedback": "Ein allgemeines Tier hat die Methode miauen() nicht. Sie gibt es erst in der Unterklasse Katze." }
+      ],
+      "erklaerung": "Vererbung geht nur von oben nach unten: Die Unterklasse hat alles, was die Oberklasse hat, und mehr. Die Oberklasse kennt die Ergänzungen der Unterklasse nicht."
+    },
+    {
+      "id": "inf-kbz-05", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "In der Klasse ``Spieler`` startet ``punkte`` bei 0, und ``addierePunkte(p)`` erhöht punkte um p. Eine ``Muenze`` speichert ihren Wert und hat die Methode:\n\n```\npublic void wirdEingesammelt(Spieler s) {\n    s.addierePunkte(wert);\n}\n```\n\nWie viele Punkte hat ``lena`` am Ende?\n\n```\nSpieler lena = new Spieler();\nMuenze m1 = new Muenze(5);\nMuenze m2 = new Muenze(20);\nm1.wirdEingesammelt(lena);\nm2.wirdEingesammelt(lena);\nm1.wirdEingesammelt(lena);\n```",
+      "loesung": 30, "toleranz": 0, "einheit": "",
+      "gegeben": "m1 hat den Wert 5, m2 den Wert 20; lena startet mit 0 Punkten",
+      "gesucht": "Punkte von lena",
+      "rechenweg": [
+        "m1.wirdEingesammelt(lena): lena.addierePunkte(5), Punkte 5",
+        "m2.wirdEingesammelt(lena): lena.addierePunkte(20), Punkte 25",
+        "m1.wirdEingesammelt(lena): lena.addierePunkte(5), Punkte 30"
+      ],
+      "erklaerung": "Die Münze bekommt das Spieler-Objekt als Parameter und ruft dessen Methode auf. In einem echten Spiel würde man die Münze nach dem Einsammeln natürlich entfernen."
+    },
+    {
+      "id": "inf-kbz-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Was gibt das Programm aus?\n\n```\npublic class Tier {\n    public String laut() {\n        return \"???\";\n    }\n}\npublic class Hund extends Tier {\n    public String laut() {\n        return \"Wuff\";\n    }\n}\npublic class Katze extends Tier {\n}\n```\n\n```\nHund h = new Hund();\nKatze k = new Katze();\nSystem.out.println(h.laut() + k.laut());\n```",
+      "optionen": [
+        { "text": "``Wuff???``", "richtig": true },
+        { "text": "``WuffMiau``", "feedback": "Die Klasse Katze schreibt laut() nicht selbst. Sie benutzt die geerbte Methode von Tier." },
+        { "text": "``??????``", "feedback": "Hund überschreibt laut(). Für h wird deshalb die Methode aus Hund verwendet." },
+        { "text": "Fehlermeldung, weil Katze keine Methode laut() hat", "feedback": "Katze hat laut(): Sie hat die Methode von Tier geerbt." }
+      ],
+      "erklaerung": "Hund überschreibt laut() und liefert \"Wuff\". Katze erbt laut() unverändert und liefert \"???\". Das + hängt die beiden Strings aneinander."
+    },
+    {
+      "id": "inf-kbz-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz1",
+      "frage": "Für eine Schulverwaltung gibt es die Klassen ``Person``, ``Schueler``, ``Lehrer`` und ``Schulklasse``. Beschreibe, welche Beziehungen zwischen ihnen sinnvoll sind, und begründe jeweils mit „ist ein“, „hat“ oder „kennt“.",
+      "stichworte": [
+        { "aspekt": "Schueler und Lehrer erben von Person (Vererbung, „ist ein“)", "woerter": ["vererb", "erbt", "ist ein", "extends", "oberklasse"] },
+        { "aspekt": "Schulklasse hat Schüler (Aggregation, „hat“)", "woerter": ["aggregation", "hat", "besteht aus"] },
+        { "aspekt": "Lehrer kennt bzw. unterrichtet Schulklassen (Assoziation, „kennt“)", "woerter": ["assoziation", "kennt", "unterricht"] },
+        { "aspekt": "Gemeinsame Attribute wie Name stehen nur einmal in Person", "woerter": ["gemeinsam", "name", "nur einmal", "beide"] }
+      ],
+      "musterloesung": "Schueler und Lehrer sind Unterklassen von Person, denn ein Schüler ist eine Person und ein Lehrer ist eine Person (Vererbung). Gemeinsame Attribute wie name und geburtsdatum stehen deshalb nur einmal in Person. Eine Schulklasse hat viele Schüler, das ist eine Aggregation. Ein Lehrer kennt die Schulklassen, die er unterrichtet, das ist eine Assoziation.",
+      "erklaerung": "Man könnte auch sagen, dass eine Schulklasse ihre Klassenleitung kennt. Wichtig ist, jede Beziehung mit der passenden Frage zu begründen."
+    }
+  ]
+}

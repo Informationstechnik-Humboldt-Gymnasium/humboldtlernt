@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bit-Labor: Dual, Dezimal, Hexadezimal</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<style>
+  .lk-grid > * { min-width: 0; }
+  .seg { flex-wrap: wrap; }
+  .register { display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 4px; align-items: end; }
+  .register .lab { font-size: .72rem; color: var(--muted); text-align: center; font-variant-numeric: tabular-nums; overflow: hidden; }
+  .register .lab.links { text-align: right; padding-right: 2px; font-weight: 700; color: var(--text); font-size: .8rem; align-self: center; }
+  .bit { height: 46px; padding: 0; font: 700 1.25rem/1 ui-monospace, "SF Mono", Menlo, Consolas, monospace; border-radius: 9px; border: 2px solid var(--border); background: var(--bg); color: var(--muted); }
+  .bit[aria-pressed=true] { background: var(--accent); border-color: var(--accent); color: var(--accent-text); }
+  .bit.fest { cursor: default; }
+  .bit.fest[aria-pressed=true] { background: var(--ok); border-color: var(--ok); }
+  .bit.ueber[aria-pressed=true] { background: var(--warn); border-color: var(--warn); }
+  .bit.ueber { border-style: dashed; }
+  .carry { font-size: .8rem; text-align: center; color: var(--pos); font-weight: 700; min-height: 1.1em; }
+  .strich { grid-column: 1 / -1; border-top: 2px solid var(--line); margin: 2px 0; }
+  .hex { grid-column: span 4; text-align: center; border-top: 3px solid var(--c3); padding-top: 4px; font-size: .9rem; }
+  .hex b { font: 700 1.2rem ui-monospace, "SF Mono", Menlo, Consolas, monospace; color: var(--c3); }
+  .rechnung { margin: 10px 0 0; font-size: .92rem; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+  .mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+  .hinweis { margin: 10px 0 0; padding: 8px 10px; border-radius: 10px; background: var(--soft-accent); font-size: .9rem; }
+  .hinweis.warn { background: var(--warn-soft); color: var(--warn); }
+  .hinweis:empty { display: none; }
+</style>
+</head>
+<body>
+<h1>Bit-Labor: Dual, Dezimal, Hexadezimal</h1>
+<p class="muted small">Ein Byte hat 8 Bit. Tippe auf ein Bit, um es zwischen 0 und 1 umzuschalten. Darüber steht der Stellenwert jedes Bits. Im Modus „Addieren“ rechnest du zwei Dualzahlen schriftlich zusammen.</p>
+
+<div class="lk-grid">
+  <div>
+    <div class="lk-card">
+      <h2 id="titel">Ein Byte</h2>
+      <div class="register" id="register" aria-describedby="rechnung"></div>
+      <p class="rechnung" id="rechnung" aria-live="polite"></p>
+      <p class="hinweis" id="hinweis" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <div>
+    <div class="lk-card">
+      <h2>Einstellungen</h2>
+      <div class="row">
+        <div class="seg" role="group" aria-label="Modus">
+          <button type="button" id="mUm" aria-pressed="true">Umrechnen</button>
+          <button type="button" id="mAdd" aria-pressed="false">Addieren</button>
+        </div>
+      </div>
+      <div class="row" id="knoepfeUm">
+        <button type="button" id="bPlus">+ 1</button>
+        <button type="button" id="bMinus">− 1</button>
+        <button type="button" id="bLinks">← verschieben</button>
+        <button type="button" id="bRechts">verschieben →</button>
+        <button type="button" id="bNull">alle 0</button>
+      </div>
+      <div class="row" id="knoepfeAdd" hidden>
+        <button type="button" id="bNullAdd">A und B auf 0</button>
+        <button type="button" id="bTausch">A und B tauschen</button>
+      </div>
+      <div class="readouts" id="readouts"></div>
+      <p class="small muted" style="margin-top:10px">„← verschieben“ schiebt alle Bits eine Stelle nach links, rechts kommt eine 0 dazu. Was dabei vorne herausfällt, ist verloren.</p>
+    </div>
+  </div>
+</div>
+
+<div class="lk-card tasks">
+  <h2>Entdecke selbst <span class="small muted" data-task-count></span></h2>
+  <div class="task" data-goal="z42"><p class="task-q">Stelle die Dezimalzahl <b>42</b> ein.</p></div>
+  <div class="task" data-goal="max"><p class="task-q">Stelle die <b>größte</b> Zahl ein, die in ein Byte passt.</p></div>
+  <div class="task" data-goal="hex"><p class="task-q">Stelle die Hexadezimalzahl <b class="mono">A0</b> ein.</p></div>
+  <div class="task" data-goal="shift"><p class="task-q">Verdopple eine Zahl (nicht 0), ohne zu rechnen: nur mit „← verschieben“.</p></div>
+  <div class="task" data-goal="ueberlauf"><p class="task-q">Wechsle zu „Addieren“ und erzeuge einen <b>Überlauf</b>: Die Summe passt nicht mehr in 8 Bit.</p></div>
+  <div class="task">
+    <p class="task-q">Warum steht eine Hexadezimalziffer immer für genau 4 Bit?</p>
+    <div class="choices">
+      <button type="button" data-ok data-fb="Richtig: Mit 4 Bit gibt es 2 · 2 · 2 · 2 = 16 Muster, von 0000 bis 1111. Das sind genau die 16 Ziffern 0 bis F.">Weil 4 Bit genau 16 verschiedene Muster haben.</button>
+      <button type="button" data-fb="Ein Byte hat 8 Bit, und es wird mit zwei Hex-Ziffern geschrieben. Zähle, wie viele Muster 4 Bit haben.">Weil ein Byte aus 4 Bit besteht.</button>
+      <button type="button" data-fb="Das ist eine Vereinbarung, aber sie hat einen Grund: Probiere aus, welche Zahl bei 1111 herauskommt.">Das ist reiner Zufall.</button>
+    </div><p class="fb"></p>
+  </div>
+  <div class="all-done">Alles entdeckt! Weiter geht es mit den Übungen.</div>
+</div>
+
+<script src="../../static/lesson-kit.js"></script>
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+  var S = { modus: 'um', a: 0, b: 0 };
+  var WERTE = [128, 64, 32, 16, 8, 4, 2, 1];
+  var HEX = '0123456789ABCDEF';
+
+  function bit(n, i) { return (n >> i) & 1; }
+  function dual(n, stellen) { var s = n.toString(2); while (s.length < stellen) s = '0' + s; return s; }
+  function hex(n) { return HEX[(n >> 4) & 15] + HEX[n & 15]; }
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined) e.textContent = text; return e; }
+
+  function bitKnopf(wert, i, welche, fest, extraCls) {
+    var b = el('button', 'bit' + (fest ? ' fest' : '') + (extraCls ? ' ' + extraCls : ''), String(wert));
+    b.type = 'button';
+    b.setAttribute('aria-pressed', String(wert === 1));
+    var name = welche === 'erg' ? 'Ergebnis' : welche.toUpperCase();
+    b.setAttribute('aria-label', (S.modus === 'add' ? name + ', ' : '') + 'Bit mit Stellenwert ' + (i === 8 ? 256 : WERTE[7 - i]) + ': ' + wert);
+    if (fest) { b.disabled = true; return b; }
+    b.addEventListener('click', function () {
+      S[welche] ^= (1 << i);
+      zeichne();
+    });
+    return b;
+  }
+
+  function lab(text, cls) { return el('div', 'lab' + (cls ? ' ' + cls : ''), text); }
+
+  function zeichne() {
+    var r = $('register');
+    r.textContent = '';
+    var ro = $('readouts');
+    ro.textContent = '';
+    function readout(name, wert) { var d = el('div', 'readout'); d.appendChild(el('span', '', name)); d.appendChild(el('b', '', wert)); ro.appendChild(d); }
+
+    if (S.modus === 'um') {
+      $('titel').textContent = 'Ein Byte';
+      r.appendChild(lab(''));
+      WERTE.forEach(function (w) { r.appendChild(lab(String(w))); });
+      r.appendChild(lab('', 'links'));
+      for (var i = 7; i >= 0; i--) r.appendChild(bitKnopf(bit(S.a, i), i, 'a'));
+      // Hex-Gruppen
+      r.appendChild(lab('hex', 'links'));
+      [S.a >> 4, S.a & 15].forEach(function (n) {
+        var h = el('div', 'hex');
+        h.appendChild(el('b', '', HEX[n]));
+        h.appendChild(document.createTextNode(' = ' + n));
+        r.appendChild(h);
+      });
+      var teile = WERTE.filter(function (w) { return S.a & w; });
+      $('rechnung').textContent = dual(S.a, 8) + '₂ = ' + (teile.length ? teile.join(' + ') : '0') + ' = ' + S.a;
+      readout('dezimal', String(S.a));
+      readout('dual', dual(S.a, 8));
+      readout('hexadezimal', hex(S.a));
+      if (S.a === 42) LK.reach('z42');
+      if (S.a === 255) LK.reach('max');
+      if (S.a === 160) LK.reach('hex');
+    } else {
+      $('titel').textContent = 'Schriftliche Addition';
+      var summe = S.a + S.b, carry = [0];
+      for (var k = 0; k < 8; k++) carry[k + 1] = (bit(S.a, k) + bit(S.b, k) + carry[k]) >= 2 ? 1 : 0;
+      // Überträge: carry[p] steht über der Stelle p, in die er addiert wird (Stelle 0 bekommt nie einen).
+      // Der Übertrag aus Stelle 7 ist das 9. Bit des Ergebnisses ganz links.
+      r.appendChild(lab('Ü', 'links'));
+      for (var p = 7; p >= 0; p--) r.appendChild(el('div', 'carry', p >= 1 && carry[p] ? '1' : ''));
+      r.appendChild(lab('A', 'links'));
+      for (var a = 7; a >= 0; a--) r.appendChild(bitKnopf(bit(S.a, a), a, 'a'));
+      r.appendChild(lab('+ B', 'links'));
+      for (var b = 7; b >= 0; b--) r.appendChild(bitKnopf(bit(S.b, b), b, 'b'));
+      r.appendChild(el('div', 'strich'));
+      // Ergebnis: 9 Stellen, die vorderste (256) passt nicht mehr ins Byte
+      r.appendChild(bitKnopf(carry[8], 8, 'erg', true, 'ueber'));
+      for (var e = 7; e >= 0; e--) r.appendChild(bitKnopf(bit(summe, e), e, 'erg', true));
+      r.appendChild(lab(carry[8] ? 'Übertrag 256' : ''));
+      WERTE.forEach(function (w) { r.appendChild(lab(String(w))); });
+      var gespeichert = summe & 255;
+      $('rechnung').textContent = S.a + ' + ' + S.b + ' = ' + summe + (carry[8] ? ', gespeichert werden nur 8 Bit: ' + gespeichert : '');
+      readout('A', String(S.a));
+      readout('B', String(S.b));
+      readout('A + B', String(summe));
+      readout('im Byte', String(gespeichert));
+      if (carry[8]) {
+        $('hinweis').textContent = 'Überlauf! Die Summe braucht 9 Bit. Das vorderste Bit (Wert 256) hat keinen Platz und geht verloren: ' + summe + ' − 256 = ' + gespeichert + '.';
+        $('hinweis').className = 'hinweis warn';
+        LK.reach('ueberlauf');
+      } else if ($('hinweis').className.indexOf('warn') >= 0 || !$('hinweis').textContent) {
+        $('hinweis').textContent = 'Addiert wird von rechts nach links: 1 + 1 = 10₂, also 0 schreiben und 1 übertragen. Die Überträge stehen orange über der nächsten Stelle.';
+        $('hinweis').className = 'hinweis';
+      }
+    }
+  }
+
+  function setzeModus(m) {
+    S.modus = m;
+    $('mUm').setAttribute('aria-pressed', String(m === 'um'));
+    $('mAdd').setAttribute('aria-pressed', String(m === 'add'));
+    $('knoepfeUm').hidden = m !== 'um';
+    $('knoepfeAdd').hidden = m !== 'add';
+    $('hinweis').textContent = ''; $('hinweis').className = 'hinweis';
+    if (m === 'add' && S.a === 0 && S.b === 0) { S.a = 11; S.b = 14; }
+    zeichne();
+  }
+  function hinweis(text, warn) { $('hinweis').textContent = text; $('hinweis').className = 'hinweis' + (warn ? ' warn' : ''); }
+
+  $('mUm').addEventListener('click', function () { setzeModus('um'); });
+  $('mAdd').addEventListener('click', function () { setzeModus('add'); });
+  $('bPlus').addEventListener('click', function () {
+    if (S.a === 255) { S.a = 0; hinweis('255 + 1 passt nicht mehr in 8 Bit: Überlauf, das Byte zeigt wieder 0.', true); }
+    else { S.a++; hinweis(''); }
+    zeichne();
+  });
+  $('bMinus').addEventListener('click', function () {
+    if (S.a === 0) { S.a = 255; hinweis('0 − 1 geht ohne Vorzeichen nicht: Das Byte springt auf 255 (Unterlauf).', true); }
+    else { S.a--; hinweis(''); }
+    zeichne();
+  });
+  $('bLinks').addEventListener('click', function () {
+    var vorher = S.a;
+    S.a = (S.a << 1) & 255;
+    if (vorher & 128) hinweis('Die vorderste 1 ist herausgefallen: ' + vorher + ' · 2 = ' + vorher * 2 + ' passt nicht in ein Byte. Übrig bleibt ' + S.a + '.', true);
+    else { hinweis('Alle Bits sind eine Stelle nach links gerückt: ' + vorher + ' · 2 = ' + S.a + '.'); if (vorher > 0) LK.reach('shift'); }
+    zeichne();
+  });
+  $('bRechts').addEventListener('click', function () {
+    var vorher = S.a;
+    S.a = S.a >> 1;
+    hinweis('Alle Bits sind eine Stelle nach rechts gerückt: ' + vorher + ' : 2 = ' + S.a + (vorher % 2 ? ' Rest 1 (die hinterste 1 ist herausgefallen).' : '.'));
+    zeichne();
+  });
+  $('bNull').addEventListener('click', function () { S.a = 0; hinweis(''); zeichne(); });
+  $('bNullAdd').addEventListener('click', function () { S.a = 0; S.b = 0; zeichne(); });
+  $('bTausch').addEventListener('click', function () { var t = S.a; S.a = S.b; S.b = t; zeichne(); });
+
+  S.a = 5;
+  zeichne();
+})();
+</script>
+</body>
+</html>

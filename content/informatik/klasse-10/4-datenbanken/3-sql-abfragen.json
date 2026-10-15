@@ -1,0 +1,120 @@
+{
+  "id": "inf-k10-sql-abfragen",
+  "titel": "Abfragen mit SQL",
+  "kurz": "Wie man mit SELECT, FROM und WHERE Daten aus einer Tabelle abfragt, Bedingungen verknüpft, mit LIKE nach Mustern sucht und Ergebnisse mit ORDER BY sortiert.",
+  "reihenfolge": 3,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Den Aufbau einer Abfrage mit SELECT, FROM und WHERE beschreiben und einfache Abfragen formulieren" },
+    { "id": "lz2", "niveau": "G", "text": "Bedingungen mit Vergleichsoperatoren, AND, OR, NOT, LIKE und BETWEEN formulieren" },
+    { "id": "lz3", "niveau": "G", "text": "Ergebnisse mit ORDER BY sortieren und mit DISTINCT doppelte Zeilen entfernen" },
+    { "id": "lz4", "niveau": "H", "text": "Das Ergebnis einer gegebenen Abfrage vorhersagen und fehlerhafte Abfragen korrigieren" }
+  ],
+  "verstehen": {
+    "einstieg": "Die Schulbibliothek hat Hunderte Bücher. Du suchst alle Fantasy-Bücher, die nach 1970 erschienen sind, sortiert nach Jahr. In einer Oberfläche klickst du dafür Filter zusammen. Wie sagt man das einer Datenbank direkt?",
+    "abschnitte": [
+      {
+        "titel": "Die Tabelle buch",
+        "text": "Alle Beispiele beziehen sich auf diese Tabelle. Im SQL-Labor kannst du sie selbst abfragen.\n\n```\nbid | titel                     | autor              | jahr | genre\n----+---------------------------+--------------------+------+----------------\n  1 | Momo                      | Michael Ende       | 1973 | Fantasy\n  2 | Die unendliche Geschichte | Michael Ende       | 1979 | Fantasy\n  3 | Krabat                    | Otfried Preußler   | 1971 | Fantasy\n  4 | Tschick                   | Wolfgang Herrndorf | 2010 | Roman\n  5 | Die Welle                 | Morton Rhue        | 1981 | Roman\n  6 | Emil und die Detektive    | Erich Kästner      | 1929 | Krimi\n  7 | Das doppelte Lottchen     | Erich Kästner      | 1949 | Roman\n  8 | Der Hobbit                | J. R. R. Tolkien   | 1937 | Fantasy\n  9 | Die Tribute von Panem     | Suzanne Collins    | 2008 | Science-Fiction\n 10 | Wunder                    | R. J. Palacio      | 2012 | Roman\n```"
+      },
+      {
+        "titel": "SELECT, FROM, WHERE",
+        "text": "```\nSELECT titel, jahr\nFROM buch\nWHERE genre = 'Fantasy' AND jahr > 1970;\n```\n\n- ``SELECT``: welche **Spalten** angezeigt werden. ``*`` heißt alle Spalten.\n- ``FROM``: aus welcher **Tabelle**.\n- ``WHERE``: welche **Zeilen**, also eine Bedingung, die für jede Zeile geprüft wird.\n\nErgebnis: Momo (1973), Die unendliche Geschichte (1979), Krabat (1971). Texte stehen in einfachen Anführungszeichen, Zahlen nicht. Die Schlüsselwörter darf man auch klein schreiben. Am Ende steht oft ein Semikolon."
+      },
+      {
+        "titel": "Bedingungen",
+        "text": "- Vergleiche: ``=``, ``<>`` (ungleich), ``<``, ``<=``, ``>``, ``>=``\n- ``AND``: beide Bedingungen müssen gelten. ``OR``: mindestens eine. ``NOT``: das Gegenteil.\n- ``BETWEEN 1970 AND 1980``: zwischen den Grenzen, die Grenzen gehören dazu.\n- ``LIKE`` sucht nach Mustern: ``%`` steht für beliebig viele Zeichen, ``_`` für genau eines. ``titel LIKE 'Die %'`` findet alle Titel, die mit „Die “ beginnen.\n\nAchtung: Nach ``AND`` muss die Spalte wiederholt werden: ``jahr > 1970 AND jahr < 1980``, nicht ``jahr > 1970 AND < 1980``."
+      },
+      {
+        "titel": "Sortieren und Doppelte entfernen",
+        "text": "``ORDER BY jahr`` sortiert aufsteigend, ``ORDER BY jahr DESC`` absteigend. Man kann nach mehreren Spalten sortieren: ``ORDER BY genre, titel``.\n\n``SELECT DISTINCT autor FROM buch`` zeigt jeden Autor nur einmal, auch wenn er mehrere Bücher geschrieben hat. Die Reihenfolge der Teile ist fest: ``SELECT … FROM … WHERE … ORDER BY …``"
+      }
+    ],
+    "formeln": [
+      { "formel": "SELECT spalten FROM tabelle WHERE bedingung ORDER BY spalte", "bedeutung": "Grundform einer SQL-Abfrage; WHERE und ORDER BY sind freiwillig" }
+    ],
+    "merksatz": "SELECT wählt Spalten, FROM die Tabelle, WHERE die Zeilen. Bedingungen verknüpft man mit AND, OR und NOT. LIKE sucht Muster mit % und _. ORDER BY sortiert (DESC absteigend), DISTINCT entfernt doppelte Zeilen. Texte stehen in einfachen Anführungszeichen.",
+    "alltag": "Wenn du in einem Online-Shop „Schuhe, Größe 42, unter 60 €, nach Preis sortiert“ einstellst, erzeugt die Seite im Hintergrund eine ganz ähnliche Abfrage mit WHERE und ORDER BY."
+  },
+  "interaktiv": ["inf-sql-labor"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "inf-sql-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Welche Abfrage zeigt Titel und Autor aller Bücher der Tabelle ``buch``?",
+      "optionen": [
+        { "text": "``SELECT titel, autor FROM buch;``", "richtig": true },
+        { "text": "``SELECT buch FROM titel, autor;``", "feedback": "Hinter SELECT stehen die Spalten, hinter FROM die Tabelle. Hier ist es vertauscht." },
+        { "text": "``SHOW titel, autor FROM buch;``", "feedback": "Abfragen beginnen in SQL mit SELECT." },
+        { "text": "``SELECT titel autor FROM buch;``", "feedback": "Ohne Komma hält SQL autor für einen neuen Namen der Spalte titel. Angezeigt wird dann nur der Titel." }
+      ],
+      "erklaerung": "Spalten werden durch Kommas getrennt. Die Spalten stehen hinter SELECT, die Tabelle hinter FROM."
+    },
+    {
+      "id": "inf-sql-02", "typ": "reihenfolge", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Bringe die Teile der Abfrage in die richtige Reihenfolge. Gesucht sind die Titel aller Bücher nach 2000, sortiert nach Jahr.",
+      "elemente": ["``SELECT titel``", "``FROM buch``", "``WHERE jahr > 2000``", "``ORDER BY jahr;``"],
+      "erklaerung": "Die Reihenfolge ist in SQL fest vorgegeben: SELECT … FROM … WHERE … ORDER BY …"
+    },
+    {
+      "id": "inf-sql-03", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Wie viele Zeilen liefert diese Abfrage für die Tabelle ``buch`` (siehe „Verstehen“)?\n\n```\nSELECT * FROM buch\nWHERE genre = 'Fantasy' OR jahr > 2000;\n```",
+      "loesung": 7, "toleranz": 0, "einheit": "",
+      "gegeben": "Tabelle buch mit 10 Büchern",
+      "gesucht": "Anzahl der Zeilen im Ergebnis",
+      "rechenweg": [
+        "genre = 'Fantasy': Momo, Die unendliche Geschichte, Krabat, Der Hobbit (4)",
+        "jahr > 2000: Tschick (2010), Die Tribute von Panem (2008), Wunder (2012) (3)",
+        "Kein Buch erfüllt beide Bedingungen, also wird keins doppelt gezählt",
+        "4 + 3 = 7"
+      ],
+      "erklaerung": "Bei OR reicht es, wenn eine der Bedingungen erfüllt ist. Mit AND wäre das Ergebnis leer, denn kein Fantasy-Buch der Tabelle ist nach 2000 erschienen."
+    },
+    {
+      "id": "inf-sql-04", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Welche WHERE-Bedingungen finden in der Tabelle ``buch`` **genau** die beiden Bücher von Michael Ende?",
+      "optionen": [
+        { "text": "``WHERE autor = 'Michael Ende'``", "richtig": true },
+        { "text": "``WHERE autor LIKE '%Ende'``", "richtig": true },
+        { "text": "``WHERE autor LIKE 'Ende%'``", "feedback": "Dieses Muster findet Autoren, deren Name mit „Ende“ beginnt. Das ist keiner." },
+        { "text": "``WHERE autor = Michael Ende``", "feedback": "Texte müssen in Anführungszeichen stehen. Sonst hält SQL Michael für einen Spaltennamen." },
+        { "text": "``WHERE genre = 'Fantasy'``", "feedback": "Das findet alle vier Fantasy-Bücher, also auch Krabat und den Hobbit." }
+      ],
+      "erklaerung": "``%`` steht für beliebig viele Zeichen. '%Ende' passt zu allem, was auf „Ende“ endet. In dieser Tabelle ist das nur Michael Ende."
+    },
+    {
+      "id": "inf-sql-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Was liefert diese Abfrage für die Tabelle ``buch``?\n\n```\nSELECT titel FROM buch\nWHERE autor = 'Erich Kästner'\nORDER BY jahr DESC;\n```",
+      "optionen": [
+        { "text": "Zuerst „Das doppelte Lottchen“, dann „Emil und die Detektive“", "richtig": true },
+        { "text": "Zuerst „Emil und die Detektive“, dann „Das doppelte Lottchen“", "feedback": "Das wäre aufsteigend sortiert (1929 vor 1949). DESC sortiert absteigend." },
+        { "text": "Nur „Emil und die Detektive“", "feedback": "Erich Kästner hat in der Tabelle zwei Bücher." },
+        { "text": "Die Titel und die Jahre beider Bücher", "feedback": "Hinter SELECT steht nur titel. Nach jahr wird sortiert, angezeigt wird es nicht." }
+      ],
+      "erklaerung": "DESC heißt absteigend: Das Buch von 1949 kommt vor dem von 1929. Man kann nach einer Spalte sortieren, die gar nicht angezeigt wird."
+    },
+    {
+      "id": "inf-sql-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Diese Abfrage soll alle Bücher aus den Siebzigerjahren finden, liefert aber eine Fehlermeldung:\n\n```\nSELECT titel FROM buch\nWHERE jahr >= 1970 AND <= 1979;\n```\n\nWelche Verbesserung ist richtig?",
+      "optionen": [
+        { "text": "``WHERE jahr >= 1970 AND jahr <= 1979``", "richtig": true },
+        { "text": "``WHERE jahr >= 1970 OR jahr <= 1979``", "feedback": "Mit OR erfüllt jedes Buch mindestens eine der Bedingungen. Dann kämen alle 10 Bücher heraus." },
+        { "text": "``WHERE jahr = 1970 AND jahr = 1979``", "feedback": "Kein Buch kann gleichzeitig 1970 und 1979 erschienen sein. Das Ergebnis wäre leer." },
+        { "text": "``WHERE jahr >= 1970 AND <= 1979 FROM buch``", "feedback": "Das Problem bleibt: Nach AND fehlt die Spalte. Außerdem steht FROM vor WHERE." }
+      ],
+      "erklaerung": "Jede Teilbedingung braucht ihre eigene Spalte. Kürzer geht es mit ``WHERE jahr BETWEEN 1970 AND 1979``. Ergebnis: Momo, Die unendliche Geschichte und Krabat."
+    },
+    {
+      "id": "inf-sql-07", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Wie viele Zeilen liefert diese Abfrage für die Tabelle ``buch``?\n\n```\nSELECT DISTINCT autor FROM buch\nWHERE jahr < 1980;\n```",
+      "loesung": 4, "toleranz": 0, "einheit": "",
+      "gegeben": "Tabelle buch mit 10 Büchern",
+      "gesucht": "Anzahl der verschiedenen Autoren mit Büchern vor 1980",
+      "rechenweg": [
+        "Bücher vor 1980: Momo, Die unendliche Geschichte, Krabat, Emil und die Detektive, Das doppelte Lottchen, Der Hobbit (6 Zeilen)",
+        "Autoren dieser Bücher: Michael Ende (2-mal), Otfried Preußler, Erich Kästner (2-mal), J. R. R. Tolkien",
+        "DISTINCT zeigt jeden Autor nur einmal: 4 Zeilen"
+      ],
+      "erklaerung": "Ohne DISTINCT kämen 6 Zeilen heraus, Michael Ende und Erich Kästner je zweimal."
+    }
+  ]
+}

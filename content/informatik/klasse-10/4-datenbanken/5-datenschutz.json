@@ -1,0 +1,119 @@
+{
+  "id": "inf-k10-datenschutz",
+  "titel": "Datenschutz, Data Mining und Bezahlen mit Daten",
+  "kurz": "Was personenbezogene Daten sind, was das Recht auf informationelle Selbstbestimmung und die DSGVO dir garantieren, wie kostenlose Dienste mit Daten bezahlt werden und welche Chancen und Risiken Data Mining hat.",
+  "reihenfolge": 5,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Personenbezogene Daten erkennen und das Recht auf informationelle Selbstbestimmung erklären" },
+    { "id": "lz2", "niveau": "G", "text": "Grundsätze der Datenschutz-Grundverordnung (DSGVO) und die Rechte betroffener Personen nennen und anwenden" },
+    { "id": "lz3", "niveau": "G", "text": "Erklären, wie kostenlose Dienste mit persönlichen Daten bezahlt werden und welche Rolle Einwilligung, Datenschutzerklärung und AGB spielen" },
+    { "id": "lz4", "niveau": "H", "text": "Chancen und Risiken von Data Mining und Big Data an Beispielen beurteilen" }
+  ],
+  "verstehen": {
+    "einstieg": "Eine Foto-App ist kostenlos, ein Spiel auch, und das soziale Netzwerk sowieso. Trotzdem verdienen die Firmen dahinter Milliarden. Womit bezahlst du eigentlich?",
+    "abschnitte": [
+      {
+        "titel": "Personenbezogene Daten",
+        "text": "**Personenbezogene Daten** sind alle Angaben, die sich auf eine bestimmte oder bestimmbare Person beziehen: Name, Adresse, Telefonnummer, Geburtsdatum, Fotos, Standortdaten, Noten, aber auch Kundennummern oder Kennungen, über die man jemanden herausfinden kann. Besonders geschützt sind z. B. Gesundheitsdaten, Religion, politische Meinung und biometrische Daten wie der Fingerabdruck.\n\nKeine personenbezogenen Daten sind Angaben, die sich auf niemanden zurückführen lassen, z. B. die Durchschnittstemperatur in Berlin."
+      },
+      {
+        "titel": "Informationelle Selbstbestimmung und DSGVO",
+        "text": "Das **Bundesverfassungsgericht** hat 1983 im **Volkszählungsurteil** das **Recht auf informationelle Selbstbestimmung** formuliert: Jeder darf grundsätzlich selbst entscheiden, wer welche Daten über ihn erhält und was damit geschieht.\n\nIn der EU gilt seit 2018 die **Datenschutz-Grundverordnung (DSGVO)**, in Deutschland ergänzt durch das Bundesdatenschutzgesetz. Wichtige Grundsätze:\n\n- **Rechtmäßigkeit:** Daten nur mit Einwilligung oder einer gesetzlichen Erlaubnis verarbeiten\n- **Zweckbindung:** nur für den angegebenen Zweck\n- **Datenminimierung:** nur so viele Daten wie nötig\n- **Speicherbegrenzung:** löschen, wenn sie nicht mehr gebraucht werden\n- **Transparenz:** verständlich erklären, was passiert\n\nDeine Rechte: **Auskunft** (was ist über mich gespeichert?), **Berichtigung**, **Löschung**, **Widerspruch** und **Datenübertragbarkeit** (meine Daten zu einem anderen Anbieter mitnehmen)."
+      },
+      {
+        "titel": "Bezahlen mit Daten",
+        "text": "Viele Dienste kosten kein Geld, weil sie mit **Werbung** verdienen. Je genauer sie dich kennen, desto teurer können sie Werbeplätze verkaufen. Dafür werden Daten gesammelt und zu **Profilen** verknüpft: Was schaust du an, wie lange, wo bist du, wer sind deine Kontakte?\n\nWas ein Anbieter darf, steht in seinen **Allgemeinen Geschäftsbedingungen (AGB)** und in der **Datenschutzerklärung**. Mit einem Klick auf „Akzeptieren“ stimmst du oft weitreichenden Regeln zu, die kaum jemand liest. Für eine wirksame **Einwilligung** muss man aber wissen, wozu man Ja sagt. In Deutschland dürfen Jugendliche ab 16 Jahren selbst in die Verarbeitung ihrer Daten durch Online-Dienste einwilligen, darunter müssen die Eltern zustimmen."
+      },
+      {
+        "titel": "Data Mining und Big Data",
+        "text": "**Big Data** meint riesige, schnell wachsende Datenmengen aus vielen Quellen. Beim **Data Mining** sucht man darin mit Computern nach Mustern und Zusammenhängen.\n\n- **Chancen:** Krankheiten früher erkennen, Kreditkartenbetrug aufdecken, Staus vorhersagen, Energie sparen\n- **Risiken:** genaue Persönlichkeitsprofile, Benachteiligung (z. B. schlechtere Kredite oder Tarife wegen eines Musters), gezielte Beeinflussung, Überwachung, Schäden bei Datenlecks\n\nAus harmlosen Einzeldaten lässt sich viel ableiten: Einkaufsdaten können etwa auf eine Schwangerschaft oder eine Krankheit hindeuten, bevor die Person es selbst erzählt hat."
+      }
+    ],
+    "merksatz": "Personenbezogene Daten gehören zu einer bestimmbaren Person. Nach dem Recht auf informationelle Selbstbestimmung entscheidet jeder selbst über seine Daten. Die DSGVO verlangt Zweckbindung und Datenminimierung und gibt dir Rechte auf Auskunft, Berichtigung und Löschung. Kostenlose Dienste werden oft mit Daten bezahlt. Data Mining bietet Chancen, birgt aber Risiken durch Profilbildung.",
+    "alltag": "Du kannst bei jedem Anbieter schriftlich oder per E-Mail Auskunft verlangen, welche Daten er über dich speichert. Er muss in der Regel innerhalb eines Monats antworten, und das kostenlos."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "inf-dsz-01", "typ": "multi", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Welche Angaben sind **personenbezogene Daten**?",
+      "optionen": [
+        { "text": "Deine Handynummer", "richtig": true },
+        { "text": "Der Standortverlauf deines Smartphones", "richtig": true },
+        { "text": "Ein Klassenfoto, auf dem man dich erkennt", "richtig": true },
+        { "text": "Die Durchschnittstemperatur im Juli in Berlin", "feedback": "Diese Angabe bezieht sich auf keine Person." },
+        { "text": "Die Gesamtzahl der Schüler in Berlin", "feedback": "Eine solche Statistik lässt sich keiner einzelnen Person zuordnen." }
+      ],
+      "erklaerung": "Entscheidend ist, ob sich die Angabe einer bestimmten Person zuordnen lässt. Das gilt auch für Fotos und Standortdaten."
+    },
+    {
+      "id": "inf-dsz-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Welches Recht aus der DSGVO nutzt du?",
+      "paare": [
+        { "links": "Du willst wissen, welche Daten eine Lern-App über dich gespeichert hat.", "rechts": "Recht auf Auskunft" },
+        { "links": "In deinem Kundenkonto steht eine falsche Adresse.", "rechts": "Recht auf Berichtigung" },
+        { "links": "Dein altes Profil in einem Forum soll komplett verschwinden.", "rechts": "Recht auf Löschung" },
+        { "links": "Du wechselst den Musikdienst und willst deine Playlists mitnehmen.", "rechts": "Recht auf Datenübertragbarkeit" }
+      ],
+      "erklaerung": "Diese Rechte gelten gegenüber allen Stellen, die deine Daten verarbeiten, z. B. Firmen, Vereinen oder Behörden. Das Recht auf Löschung hat Grenzen, z. B. wenn ein Gesetz das Aufbewahren vorschreibt."
+    },
+    {
+      "id": "inf-dsz-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Für die Teilnahme an einem Gewinnspiel um Kinokarten verlangt eine Webseite Name, E-Mail-Adresse, Religion und das Einkommen der Eltern. Gegen welchen Grundsatz der DSGVO verstößt das vor allem?",
+      "optionen": [
+        { "text": "Datenminimierung: Für ein Gewinnspiel sind Religion und Einkommen nicht nötig.", "richtig": true },
+        { "text": "Gegen keinen, wenn das Gewinnspiel kostenlos ist.", "feedback": "Ob etwas Geld kostet, spielt für die Datenschutzregeln keine Rolle." },
+        { "text": "Gegen das Recht auf Datenübertragbarkeit.", "feedback": "Dabei geht es um das Mitnehmen von Daten zu einem anderen Anbieter, nicht um das Sammeln." },
+        { "text": "Gegen das Urheberrecht.", "feedback": "Das Urheberrecht schützt Werke wie Bilder oder Texte, nicht persönliche Daten." }
+      ],
+      "erklaerung": "Um den Gewinner zu benachrichtigen, reichen Name und E-Mail-Adresse. Religion gehört sogar zu den besonders geschützten Daten."
+    },
+    {
+      "id": "inf-dsz-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Was bedeutet das Recht auf informationelle Selbstbestimmung?",
+      "optionen": [
+        { "text": "Jeder darf grundsätzlich selbst entscheiden, wer welche persönlichen Daten über ihn erhält und verwendet.", "richtig": true },
+        { "text": "Jeder darf alle Informationen im Internet frei verwenden.", "feedback": "Das hat mit diesem Recht nichts zu tun. Es schützt die Daten über dich selbst." },
+        { "text": "Firmen dürfen selbst bestimmen, welche Daten sie sammeln.", "feedback": "Umgekehrt: Das Recht schützt die einzelne Person vor unkontrollierter Datensammlung." },
+        { "text": "Man muss dem Staat alle Daten freiwillig geben.", "feedback": "Das Recht wurde 1983 gerade gegen eine zu weitgehende staatliche Datenerhebung formuliert." }
+      ],
+      "erklaerung": "Das Bundesverfassungsgericht leitete das Recht 1983 im Volkszählungsurteil aus dem Grundgesetz ab. Es darf nur durch Gesetze und im überwiegenden Interesse der Allgemeinheit eingeschränkt werden."
+    },
+    {
+      "id": "inf-dsz-05", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Ein soziales Netzwerk ist kostenlos. Welche Aussagen dazu stimmen?",
+      "optionen": [
+        { "text": "Es verdient Geld, indem es Werbung möglichst genau auf die Nutzer zuschneidet.", "richtig": true },
+        { "text": "Was das Netzwerk mit den Daten machen darf, steht in den AGB und in der Datenschutzerklärung.", "richtig": true },
+        { "text": "Eine Einwilligung ist nur wirksam, wenn man weiß, wozu man zustimmt.", "richtig": true },
+        { "text": "Weil es nichts kostet, gilt dort kein Datenschutz.", "feedback": "Die DSGVO gilt unabhängig davon, ob ein Dienst Geld kostet." },
+        { "text": "Wer die AGB nicht gelesen hat, ist an sie nie gebunden.", "feedback": "Wer zustimmt, ist grundsätzlich gebunden. Allerdings sind überraschende oder unfaire Klauseln unwirksam." }
+      ],
+      "erklaerung": "Man sagt: Wenn du für ein Produkt nicht bezahlst, bist du oft selbst das Produkt. Deine Aufmerksamkeit und deine Daten werden an Werbekunden verkauft."
+    },
+    {
+      "id": "inf-dsz-06", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Welche Beispiele beschreiben ein **Risiko** von Data Mining (und keine Chance)?",
+      "optionen": [
+        { "text": "Eine Versicherung verlangt höhere Beiträge, weil ein Programm aus Einkaufsdaten auf ungesunde Ernährung schließt.", "richtig": true },
+        { "text": "Aus Standort-, Kontakt- und Einkaufsdaten entsteht ein genaues Persönlichkeitsprofil, ohne dass die Person davon weiß.", "richtig": true },
+        { "text": "Eine Bank erkennt an ungewöhnlichen Mustern, dass eine Kreditkarte gestohlen wurde.", "feedback": "Das ist eine Chance: Betrug wird schneller entdeckt und gestoppt." },
+        { "text": "Ärzte entdecken in anonymisierten Patientendaten frühe Anzeichen einer Krankheit.", "feedback": "Das ist eine Chance für die Medizin, vor allem wenn die Daten anonymisiert sind." }
+      ],
+      "erklaerung": "Dieselbe Technik kann schützen oder schaden. Entscheidend ist, wozu die Ergebnisse genutzt werden, ob die Betroffenen zugestimmt haben und ob die Daten anonymisiert sind."
+    },
+    {
+      "id": "inf-dsz-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Eine Krankenversicherung bietet einen günstigeren Tarif an, wenn man ihr täglich die Daten seines Fitness-Trackers (Schritte, Puls, Schlaf) überträgt. Nimm begründet Stellung: Nenne mindestens eine Chance und ein Risiko und komme zu einem eigenen Urteil.",
+      "stichworte": [
+        { "aspekt": "Chance: Geld sparen bzw. Motivation, gesünder zu leben", "woerter": ["sparen", "guenstig", "motivation", "motiviert", "gesuender", "bewegung"] },
+        { "aspekt": "Risiko: Gesundheitsdaten sind besonders sensibel (Datenleck, Weitergabe, Profil)", "woerter": ["sensibel", "gesundheitsdaten", "datenleck", "weitergabe", "profil", "missbrauch", "hack"] },
+        { "aspekt": "Risiko: Benachteiligung von Kranken oder Menschen, die nicht mitmachen", "woerter": ["benachteilig", "kranke", "teurer", "druck", "unfair", "nicht mitmach"] },
+        { "aspekt": "Eigenes Urteil mit Begründung (z. B. „deshalb“, „ich finde“)", "woerter": ["deshalb", "daher", "ich finde", "meiner meinung", "insgesamt", "ich halte"] }
+      ],
+      "musterloesung": "Eine Chance ist, dass man Geld sparen kann und motiviert wird, sich mehr zu bewegen. Ein Risiko ist, dass Gesundheitsdaten besonders sensibel sind: Bei einem Datenleck oder einer Weitergabe könnten andere ein genaues Profil über mich erstellen. Außerdem entsteht Druck auf alle, die nicht mitmachen wollen, und kranke Menschen, die weniger Schritte schaffen, werden benachteiligt, weil für sie der Tarif teurer bleibt. Insgesamt halte ich das Angebot deshalb für bedenklich. Wer es nutzt, sollte genau prüfen, welche Daten übertragen werden und wie lange sie gespeichert bleiben.",
+      "erklaerung": "Bewertet wird nicht, ob du dafür oder dagegen bist, sondern ob du Chancen und Risiken nennst und dein Urteil begründest. Ein gut begründetes Ja ist genauso möglich."
+    }
+  ]
+}

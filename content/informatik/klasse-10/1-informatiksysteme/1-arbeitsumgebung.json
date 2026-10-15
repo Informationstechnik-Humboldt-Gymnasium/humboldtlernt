@@ -1,0 +1,125 @@
+{
+  "id": "inf-k10-arbeitsumgebung",
+  "titel": "Anmeldung, Rechte und Verzeichnisse",
+  "kurz": "Wie du dich im Schulnetz sicher anmeldest, wer welche Dateien lesen und ändern darf und wie Verzeichnisbaum und Pfade aufgebaut sind.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Identifikation, Authentifizierung und Autorisierung bei der Anmeldung unterscheiden" },
+    { "id": "lz2", "niveau": "G", "text": "Anmeldeverfahren nach Wissen, Besitz und Biometrie einordnen und die Zwei-Faktor-Authentifizierung erklären" },
+    { "id": "lz3", "niveau": "G", "text": "Zugriffsrechte (lesen, schreiben, ausführen) für Besitzer, Gruppe und andere lesen und festlegen" },
+    { "id": "lz4", "niveau": "H", "text": "Absolute und relative Pfade im Verzeichnisbaum lesen und angeben" }
+  ],
+  "verstehen": {
+    "einstieg": "Am Schulrechner meldest du dich mit deinem Namen und Passwort an. Danach siehst du dein eigenes Heimatverzeichnis, den Tauschordner der Klasse, aber nicht die Dateien der Lehrkräfte. Woher weiß der Rechner, wer du bist und was du darfst?",
+    "abschnitte": [
+      {
+        "titel": "Drei Schritte beim Anmelden",
+        "text": "- **Identifikation:** Du sagst, wer du bist, z. B. mit dem Benutzernamen ``lena.hoffmann``.\n- **Authentifizierung:** Du weist nach, dass du es wirklich bist, z. B. mit dem Passwort.\n- **Autorisierung:** Das System legt fest, was du jetzt darfst, z. B. deinen Ordner öffnen, aber keine Noten ändern.\n\nDer Benutzername allein ist kein Schutz, denn er ist oft öffentlich. Erst der Nachweis macht die Anmeldung sicher."
+      },
+      {
+        "titel": "Wissen, Besitz, Biometrie",
+        "text": "Für den Nachweis gibt es drei Arten von **Faktoren**:\n\n- **Wissen:** Passwort, PIN, Antwort auf eine Sicherheitsfrage\n- **Besitz:** Smartphone mit Authenticator-App, Bankkarte, Schlüssel-Chip\n- **Biometrie (Sein):** Fingerabdruck, Gesichtserkennung\n\nBei der **Zwei-Faktor-Authentifizierung (2FA)** braucht man zwei Faktoren aus **verschiedenen** Arten, z. B. Passwort und einen Code vom Handy. Wer nur das Passwort erbeutet, kommt dann noch nicht hinein. Passwort und PIN zusammen sind dagegen zweimal Wissen und damit kein echter zweiter Faktor."
+      },
+      {
+        "titel": "Zugriffsrechte",
+        "text": "Jede Datei und jeder Ordner hat Rechte. In Linux-Systemen gibt es drei Rechte:\n\n- ``r`` (read): lesen\n- ``w`` (write): ändern und löschen\n- ``x`` (execute): ein Programm ausführen bzw. einen Ordner betreten\n\nSie werden für drei Personenkreise festgelegt: **Besitzer**, **Gruppe** (z. B. die Klasse) und **andere**. Die Angabe ``rwxr-x---`` bedeutet: Der Besitzer darf alles, die Gruppe darf lesen und ausführen, alle anderen dürfen nichts. Jedes Recht hat eine Zahl (r = 4, w = 2, x = 1). Addiert ergibt ``rwxr-x---`` die Schreibweise 750.\n\nGrundsatz: Jeder bekommt nur die Rechte, die er für seine Arbeit wirklich braucht."
+      },
+      {
+        "titel": "Verzeichnisbaum und Pfade",
+        "text": "Ordner (Verzeichnisse) können weitere Ordner enthalten. So entsteht ein **Verzeichnisbaum** mit der **Wurzel** ganz oben. Unter Linux heißt die Wurzel ``/``, unter Windows beginnt jedes Laufwerk mit einem Buchstaben, z. B. ``C:\\``. Dein persönlicher Ordner heißt **Heimatverzeichnis**.\n\n- Ein **absoluter Pfad** beginnt an der Wurzel: ``/home/lena/info/spiel.java``\n- Ein **relativer Pfad** beginnt im aktuellen Ordner: Steht man in ``/home/lena/info``, reicht ``spiel.java``.\n- ``..`` bedeutet „eine Ebene höher“: Von ``/home/lena/info`` aus zeigt ``../bilder/logo.png`` auf ``/home/lena/bilder/logo.png``."
+      }
+    ],
+    "formeln": [
+      { "formel": "r = 4, w = 2, x = 1", "bedeutung": "Zahlenwerte der Rechte; je Personenkreis werden sie addiert, z. B. rw- = 6" }
+    ],
+    "merksatz": "Identifikation sagt, wer du bist, Authentifizierung beweist es, Autorisierung legt fest, was du darfst. 2FA verbindet zwei verschiedene Arten von Faktoren. Rechte r, w, x gelten getrennt für Besitzer, Gruppe und andere. Absolute Pfade beginnen an der Wurzel, relative im aktuellen Ordner.",
+    "alltag": "Auf der Schulplattform kann die Lehrkraft einen Ordner so einstellen, dass die Klasse Dateien darin lesen, aber nicht löschen kann. Und wenn dein Konto bei einem Spiele-Anbieter 2FA nutzt, nützt einem Angreifer dein geklautes Passwort allein nichts."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "inf-arb-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Ordne die Vorgänge bei der Anmeldung richtig zu.",
+      "paare": [
+        { "links": "Du gibst deinen Benutzernamen ein.", "rechts": "Identifikation" },
+        { "links": "Du gibst dein Passwort ein.", "rechts": "Authentifizierung" },
+        { "links": "Das System erlaubt dir, den Klassenordner zu öffnen.", "rechts": "Autorisierung" }
+      ],
+      "erklaerung": "Erst behauptest du, wer du bist (Identifikation). Dann beweist du es (Authentifizierung). Danach entscheidet das System anhand deiner Rechte, was du darfst (Autorisierung)."
+    },
+    {
+      "id": "inf-arb-02", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Welche Kombinationen sind eine echte **Zwei-Faktor-Authentifizierung**?",
+      "optionen": [
+        { "text": "Passwort und ein Code aus einer App auf dem Smartphone", "richtig": true },
+        { "text": "Bankkarte und PIN am Geldautomaten", "richtig": true },
+        { "text": "Passwort und Antwort auf eine Sicherheitsfrage", "feedback": "Beides ist Wissen. Wer dich gut kennt oder ausspioniert, kann beides herausfinden." },
+        { "text": "Fingerabdruck und Passwort", "richtig": true },
+        { "text": "Zwei verschiedene Passwörter nacheinander", "feedback": "Zweimal Wissen ist nur ein Faktor, auch wenn es zwei Eingaben sind." }
+      ],
+      "erklaerung": "Zwei Faktoren müssen aus verschiedenen Arten stammen: Wissen, Besitz oder Biometrie. Nur dann reicht es nicht, eine einzige Sache zu stehlen."
+    },
+    {
+      "id": "inf-arb-03", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz3",
+      "frage": "Eine Datei hat die Rechte ``rw-r-----``. Was darf ein Mitglied der Gruppe?",
+      "optionen": [
+        { "text": "Die Datei lesen, aber nicht ändern", "richtig": true },
+        { "text": "Die Datei lesen und ändern", "feedback": "Lesen und Ändern (rw-) darf nur der Besitzer, das sind die ersten drei Zeichen." },
+        { "text": "Nichts", "feedback": "Nichts dürfen die anderen (letzte drei Zeichen ---). Die Gruppe hat r--." },
+        { "text": "Die Datei ausführen", "feedback": "Ein x kommt in der Angabe gar nicht vor." }
+      ],
+      "erklaerung": "Die neun Zeichen sind drei Dreiergruppen: Besitzer ``rw-``, Gruppe ``r--``, andere ``---``. Die Gruppe darf also nur lesen."
+    },
+    {
+      "id": "inf-arb-04", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Ein Projektordner soll diese Rechte bekommen: Der Besitzer darf alles (rwx). Die Gruppe darf lesen und den Ordner betreten (r-x). Andere dürfen nichts. Wie lautet die dreistellige Zahl für diese Rechte?",
+      "loesung": 750, "toleranz": 0, "einheit": "",
+      "gegeben": "Besitzer rwx, Gruppe r-x, andere ---; r = 4, w = 2, x = 1",
+      "gesucht": "Rechte als dreistellige Zahl",
+      "rechenweg": [
+        "Besitzer: r + w + x = 4 + 2 + 1 = 7",
+        "Gruppe: r + x = 4 + 1 = 5",
+        "andere: keine Rechte = 0",
+        "Zusammen: 750"
+      ],
+      "erklaerung": "Jede Ziffer steht für einen Personenkreis. Weil 4, 2 und 1 sich nie überschneiden, lässt sich jede Ziffer eindeutig zurückübersetzen: 5 kann nur 4 + 1 sein, also r-x."
+    },
+    {
+      "id": "inf-arb-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Du arbeitest im Ordner ``/home/lena/info/spiel``. Wohin zeigt der relative Pfad ``../bilder/held.png``?",
+      "optionen": [
+        { "text": "``/home/lena/info/bilder/held.png``", "richtig": true },
+        { "text": "``/home/lena/info/spiel/bilder/held.png``", "feedback": "Das wäre ``bilder/held.png`` ohne ``..``. Die zwei Punkte gehen erst eine Ebene nach oben." },
+        { "text": "``/home/lena/bilder/held.png``", "feedback": "Das wären zwei Ebenen nach oben: ``../../bilder/held.png``." },
+        { "text": "``/bilder/held.png``", "feedback": "Ein Pfad, der mit / beginnt, wäre absolut. Hier wird vom aktuellen Ordner aus gerechnet." }
+      ],
+      "erklaerung": "``..`` führt von ``/home/lena/info/spiel`` eine Ebene hoch nach ``/home/lena/info``. Dort geht es in den Ordner ``bilder`` zur Datei ``held.png``."
+    },
+    {
+      "id": "inf-arb-06", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Ein Tablet ist mit einer 4-stelligen Ziffern-PIN gesperrt (0000 bis 9999). Ein Angreifer könnte ohne Sperre 5 PINs pro Sekunde ausprobieren. Wie viele **Minuten** braucht er höchstens, um alle PINs durchzuprobieren? Runde auf ganze Minuten.",
+      "loesung": 33, "toleranz": 0.05, "einheit": "min",
+      "gegeben": "4 Stellen mit je 10 Ziffern; 5 Versuche pro Sekunde",
+      "gesucht": "Zeit für alle Möglichkeiten in Minuten",
+      "rechenweg": [
+        "Anzahl der PINs: 10 · 10 · 10 · 10 = 10^{4} = 10 000",
+        "Zeit: 10 000 : 5 = 2000 s",
+        "In Minuten: 2000 s : 60 ≈ 33 min"
+      ],
+      "erklaerung": "Kurze PINs sind schnell durchprobiert. Deshalb sperren Geräte nach einigen Fehlversuchen für immer längere Zeit. Mit 6 Ziffern gäbe es schon 1 000 000 Möglichkeiten, also 100-mal so viele."
+    },
+    {
+      "id": "inf-arb-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Im Klassenordner liegt eine Arbeitsblatt-Datei der Lehrerin. Alle Schülerinnen und Schüler der Klasse sollen sie lesen können, aber nicht verändern oder löschen. Gib passende Rechte für Besitzer, Gruppe und andere an und begründe deine Wahl.",
+      "stichworte": [
+        { "aspekt": "Besitzerin (Lehrerin) darf lesen und schreiben (rw)", "woerter": ["rw", "lesen und schreiben", "lesen und aendern", "6"] },
+        { "aspekt": "Gruppe (Klasse) darf nur lesen (r)", "woerter": ["nur lesen", "r--", "nur r", "4"] },
+        { "aspekt": "Andere bekommen keine Rechte", "woerter": ["keine", "nichts", "---", "0"] },
+        { "aspekt": "Begründung: so wenig Rechte wie nötig / Schutz vor Löschen", "woerter": ["noetig", "brauch", "loesch", "schutz", "versehen"] }
+      ],
+      "musterloesung": "Die Lehrerin als Besitzerin bekommt rw-, also 6: Sie muss die Datei lesen und ändern können. Die Gruppe, also die Klasse, bekommt nur r--, also 4: Sie soll nur lesen. Andere bekommen keine Rechte (---, also 0). Zusammen sind das die Rechte 640. Begründung: Jeder bekommt nur so viele Rechte, wie er braucht. So kann niemand aus der Klasse das Arbeitsblatt aus Versehen löschen.",
+      "erklaerung": "Das Prinzip der geringsten Rechte schützt vor Fehlern und Missbrauch. Ein x ist für ein Arbeitsblatt nicht nötig, weil es kein Programm ist."
+    }
+  ]
+}

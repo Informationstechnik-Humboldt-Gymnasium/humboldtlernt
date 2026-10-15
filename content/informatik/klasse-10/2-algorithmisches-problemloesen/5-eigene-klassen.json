@@ -1,0 +1,117 @@
+{
+  "id": "inf-k10-eigene-klassen",
+  "titel": "Eigene Klassen implementieren",
+  "kurz": "Wie eine Java-Klasse mit Attributen, Konstruktor und Methoden aufgebaut ist und warum man Attribute mit private schützt.",
+  "reihenfolge": 5,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Den Aufbau einer Java-Klasse aus Attributen, Konstruktor und Methoden erkennen" },
+    { "id": "lz2", "niveau": "G", "text": "Die Aufgabe des Konstruktors erklären und Objekte mit Startwerten erzeugen" },
+    { "id": "lz3", "niveau": "H", "text": "Das Prinzip der Kapselung erklären und get- und set-Methoden mit Prüfung schreiben" },
+    { "id": "lz4", "niveau": "H", "text": "Methodenaufrufe an eigenen Objekten nachverfolgen und Fehler in Klassen finden" }
+  ],
+  "verstehen": {
+    "einstieg": "Bei einem Bankkonto darf der Kontostand nicht einfach von außen auf eine Million gesetzt werden. Geld kommt nur durch Einzahlen dazu, und Abheben geht nur, wenn genug da ist. Wie sorgt man in einer Klasse dafür?",
+    "abschnitte": [
+      {
+        "titel": "Aufbau einer Klasse",
+        "text": "```\npublic class Konto {\n    private String inhaber;\n    private double kontostand;\n    public Konto(String inhaber) {\n        this.inhaber = inhaber;\n        kontostand = 0;\n    }\n    public void einzahlen(double betrag) {\n        if (betrag > 0) {\n            kontostand = kontostand + betrag;\n        }\n    }\n    public double getKontostand() {\n        return kontostand;\n    }\n}\n```\n\n- **Attribute** stehen oben, meist mit ``private``.\n- Der **Konstruktor** heißt genau wie die Klasse und hat keinen Rückgabetyp.\n- Danach folgen die **Methoden**."
+      },
+      {
+        "titel": "Der Konstruktor",
+        "text": "``Konto k = new Konto(\"Lena\");`` erzeugt ein neues Objekt und ruft dabei den Konstruktor auf. Er gibt den Attributen ihre **Startwerte**.\n\nHeißen Parameter und Attribut gleich, unterscheidet ``this`` sie: ``this.inhaber`` ist das Attribut des Objekts, ``inhaber`` allein der Parameter. Ohne ``this`` würde der Parameter sich selbst zugewiesen, und das Attribut bliebe leer."
+      },
+      {
+        "titel": "Kapselung",
+        "text": "Weil die Attribute ``private`` sind, kann niemand von außen ``k.kontostand = 1000000;`` schreiben. Zugriff gibt es nur über Methoden. Das heißt **Kapselung** (Datenkapselung).\n\n- **get-Methoden** (sondierende Methoden) liefern einen Wert: ``getKontostand()``.\n- **set-Methoden** oder andere **verändernde Methoden** ändern ihn und können dabei prüfen: ``einzahlen`` nimmt nur positive Beträge an.\n\nSo bleibt das Objekt immer in einem sinnvollen Zustand. Außerdem kann man das Innere der Klasse später ändern, ohne dass anderer Code angepasst werden muss."
+      }
+    ],
+    "merksatz": "Eine Klasse besteht aus privaten Attributen, einem Konstruktor mit dem Namen der Klasse und Methoden. Der Konstruktor setzt die Startwerte, this meint das eigene Objekt. Kapselung heißt: Attribute nur über Methoden lesen und ändern, die dabei prüfen können.",
+    "alltag": "Ein Getränkeautomat ist gekapselt: Du kommst nicht direkt an die Flaschen oder an die Kasse. Du kannst nur über Knöpfe und Münzschlitz mit ihm arbeiten, und er prüft, ob du genug bezahlt hast."
+  },
+  "interaktiv": ["inf-objekte"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "inf-ekl-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Ordne die Zeilen aus der Klasse ``Gegner`` zu.",
+      "paare": [
+        { "links": "``private int leben;``", "rechts": "Attribut" },
+        { "links": "``public Gegner(int start) {``", "rechts": "Konstruktor" },
+        { "links": "``public int getLeben() {``", "rechts": "get-Methode (sondierend)" },
+        { "links": "``public void setLeben(int l) {``", "rechts": "set-Methode (verändernd)" }
+      ],
+      "erklaerung": "Den Konstruktor erkennt man daran, dass er wie die Klasse heißt und keinen Rückgabetyp hat. get-Methoden liefern einen Wert zurück, set-Methoden sind meist void und bekommen den neuen Wert als Parameter."
+    },
+    {
+      "id": "inf-ekl-02", "typ": "multi", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Welche Aussagen über den Konstruktor stimmen?",
+      "optionen": [
+        { "text": "Er heißt genau wie die Klasse.", "richtig": true },
+        { "text": "Er wird bei ``new`` automatisch aufgerufen.", "richtig": true },
+        { "text": "Er gibt den Attributen ihre Startwerte.", "richtig": true },
+        { "text": "Er hat den Rückgabetyp void.", "feedback": "Ein Konstruktor hat gar keinen Rückgabetyp, auch nicht void." },
+        { "text": "Man ruft ihn wie eine normale Methode mit ``k.Konto();`` auf.", "feedback": "Der Konstruktor wird nur beim Erzeugen mit new aufgerufen." }
+      ],
+      "erklaerung": "Der Konstruktor sorgt dafür, dass jedes neue Objekt von Anfang an einen sinnvollen Zustand hat."
+    },
+    {
+      "id": "inf-ekl-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Warum deklariert man die Attribute einer Klasse meist als ``private``?",
+      "optionen": [
+        { "text": "Damit sie nur über Methoden geändert werden können, die ungültige Werte abfangen.", "richtig": true },
+        { "text": "Damit das Programm schneller läuft.", "feedback": "Mit der Geschwindigkeit hat private nichts zu tun." },
+        { "text": "Damit niemand die Werte jemals lesen kann.", "feedback": "Lesen ist über get-Methoden weiter möglich, nur eben kontrolliert." },
+        { "text": "Weil Java public für Attribute verbietet.", "feedback": "Java erlaubt public-Attribute. Man verzichtet aus gutem Grund darauf." }
+      ],
+      "erklaerung": "Das ist Kapselung: Das Objekt schützt seinen Zustand selbst. Ein Kontostand kann dann nicht von außen auf einen beliebigen Wert gesetzt werden."
+    },
+    {
+      "id": "inf-ekl-04", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Die Klasse ``Konto`` hat diese Methoden:\n\n```\npublic void einzahlen(double betrag) {\n    if (betrag > 0) {\n        kontostand = kontostand + betrag;\n    }\n}\npublic void abheben(double betrag) {\n    if (betrag > 0 && betrag <= kontostand) {\n        kontostand = kontostand - betrag;\n    }\n}\n```\n\nEin neues Konto startet mit 0. Welchen Kontostand hat ``k`` am Ende?\n\n```\nKonto k = new Konto(\"Lena\");\nk.einzahlen(50);\nk.einzahlen(-20);\nk.abheben(80);\nk.abheben(15);\n```",
+      "loesung": 35, "toleranz": 0, "einheit": "€",
+      "gegeben": "Startwert 0 €; einzahlen(50), einzahlen(−20), abheben(80), abheben(15)",
+      "gesucht": "Kontostand am Ende",
+      "rechenweg": [
+        "einzahlen(50): 50 > 0, Kontostand 50 €",
+        "einzahlen(−20): −20 > 0 ist falsch, nichts passiert",
+        "abheben(80): 80 ≤ 50 ist falsch, nichts passiert",
+        "abheben(15): 15 ≤ 50, Kontostand 50 € − 15 € = 35 €"
+      ],
+      "erklaerung": "Die Prüfungen in den Methoden verhindern ungültige Änderungen. Genau dafür ist die Kapselung da."
+    },
+    {
+      "id": "inf-ekl-05", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Was passiert bei ``Konto k = new Konto(\"Lena\");``? Bringe die Schritte in die richtige Reihenfolge.",
+      "elemente": [
+        "Für ein neues Konto-Objekt wird Speicher reserviert.",
+        "Der Konstruktor wird mit dem Wert \"Lena\" aufgerufen.",
+        "Der Konstruktor setzt inhaber auf \"Lena\" und kontostand auf 0.",
+        "Ein Verweis auf das fertige Objekt wird in der Variablen k gespeichert."
+      ],
+      "erklaerung": "Die Variable k enthält nicht das Objekt selbst, sondern einen Verweis darauf. Über diesen Verweis ruft man später Methoden auf, z. B. k.einzahlen(50)."
+    },
+    {
+      "id": "inf-ekl-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Nach ``g.setLeben(5);`` hat der Gegner immer noch 0 Leben. Woran liegt das?\n\n```\npublic class Gegner {\n    private int leben;\n    public void setLeben(int leben) {\n        leben = leben;\n    }\n}\n```",
+      "optionen": [
+        { "text": "Der Parameter leben verdeckt das Attribut; es müsste ``this.leben = leben;`` heißen.", "richtig": true },
+        { "text": "Die Methode müsste ``int`` statt ``void`` zurückgeben.", "feedback": "Eine set-Methode muss nichts zurückgeben. Das Problem liegt in der Zuweisung." },
+        { "text": "Private Attribute können auch innerhalb der Klasse nicht geändert werden.", "feedback": "Innerhalb der eigenen Klasse darf man private Attribute ändern. Genau dafür gibt es set-Methoden." },
+        { "text": "Der Compiler hat die Zeile gelöscht.", "feedback": "Die Zeile wird ausgeführt, aber sie weist nur den Parameter sich selbst zu." }
+      ],
+      "erklaerung": "Innerhalb der Methode meint leben den Parameter. leben = leben; ändert also nur ihn. this.leben verweist auf das Attribut des Objekts."
+    },
+    {
+      "id": "inf-ekl-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Die Klasse ``Person`` hat das Attribut ``private int alter;``. Schreibe eine Methode ``setAlter``, die das Alter nur dann ändert, wenn der neue Wert zwischen 0 und 120 liegt. Erkläre, warum diese Prüfung sinnvoll ist.",
+      "stichworte": [
+        { "aspekt": "Methodenkopf public void setAlter(int …)", "woerter": ["void setalter", "void setAlter"] },
+        { "aspekt": "Prüfung mit if und den Grenzen 0 und 120", "woerter": ["120"] },
+        { "aspekt": "Zuweisung an das Attribut (z. B. this.alter = …)", "woerter": ["this.alter", "alter ="] },
+        { "aspekt": "Begründung: ungültige Werte verhindern / Kapselung", "woerter": ["ungueltig", "sinnlos", "falsch", "kapsel", "negativ", "unmoeglich"] }
+      ],
+      "musterloesung": "public void setAlter(int neuesAlter) { if (neuesAlter >= 0 && neuesAlter <= 120) { this.alter = neuesAlter; } }\n\nDie Prüfung verhindert ungültige Werte wie ein negatives Alter oder 500 Jahre. Weil das Attribut private ist, kann es nur über diese Methode geändert werden. Das ist Kapselung: Das Objekt bleibt immer in einem sinnvollen Zustand.",
+      "erklaerung": "Statt einen falschen Wert still zu ignorieren, könnte die Methode auch eine Meldung ausgeben oder false zurückliefern. Wichtig ist, dass der ungültige Wert nicht im Objekt landet."
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "id": "inf-k10-er-modell",
+  "titel": "ER-Modell und relationales Modell",
+  "kurz": "Wie man eine Datenbank mit Entitätstypen, Attributen und Beziehungen plant, welche Kardinalitäten es gibt und wie aus dem ER-Modell Tabellen mit Fremdschlüsseln werden.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Entität, Entitätstyp, Attribut und Beziehung unterscheiden und ihre Symbole im ER-Diagramm kennen" },
+    { "id": "lz2", "niveau": "G", "text": "Die Kardinalität einer Beziehung (1:1, 1:n, n:m) bestimmen" },
+    { "id": "lz3", "niveau": "H", "text": "Ein ER-Modell in Tabellen mit Primär- und Fremdschlüsseln umsetzen, auch mit Zwischentabellen für n:m-Beziehungen" },
+    { "id": "lz4", "niveau": "H", "text": "Ein Datenbankmodell für einen bestimmten Zweck beurteilen und verbessern" }
+  ],
+  "verstehen": {
+    "einstieg": "Bevor ein Haus gebaut wird, zeichnet jemand einen Bauplan. Bevor eine Datenbank gebaut wird, überlegt man: Welche Dinge sollen gespeichert werden, welche Eigenschaften haben sie, und wie hängen sie zusammen?",
+    "abschnitte": [
+      {
+        "titel": "Entitäten, Attribute, Beziehungen",
+        "text": "- Eine **Entität** ist ein einzelnes Objekt der realen Welt, z. B. das Buch „Momo“ oder die Schülerin Lena.\n- Ein **Entitätstyp** fasst gleichartige Entitäten zusammen, z. B. ``Buch`` oder ``Schueler``.\n- **Attribute** beschreiben die Eigenschaften, z. B. ``titel`` und ``jahr``.\n- Eine **Beziehung** verbindet Entitätstypen, z. B. Schueler **leiht** Buch.\n\nIm **ER-Diagramm** (Entity-Relationship-Diagramm) ist ein Entitätstyp ein **Rechteck**, ein Attribut eine **Ellipse** und eine Beziehung eine **Raute**. Der Primärschlüssel wird **unterstrichen**."
+      },
+      {
+        "titel": "Kardinalitäten",
+        "text": "Die **Kardinalität** sagt, mit wie vielen Entitäten eine Entität höchstens in Beziehung steht:\n\n- **1:1:** Ein Land hat genau eine Hauptstadt, jede Hauptstadt gehört zu genau einem Land.\n- **1:n:** Eine Klasse hat viele Schüler, jeder Schüler gehört zu genau einer Klasse.\n- **n:m:** Ein Schüler besucht mehrere AGs, eine AG hat mehrere Schüler.\n\nUm sie zu finden, fragt man in **beide** Richtungen: „Wie viele B gehören zu einem A?“ und „Wie viele A gehören zu einem B?“."
+      },
+      {
+        "titel": "Vom ER-Modell zu Tabellen",
+        "text": "- Jeder **Entitätstyp** wird zu einer **Tabelle** mit einem Primärschlüssel.\n- **1:n:** Die Tabelle auf der n-Seite bekommt einen **Fremdschlüssel**, also ein Attribut mit dem Primärschlüssel der anderen Tabelle. In ``schueler`` steht z. B. ``klasse_id``.\n- **n:m:** Man braucht eine eigene **Zwischentabelle** mit zwei Fremdschlüsseln, z. B. ``teilnahme(sid, ag_id)``. Jede Zeile bedeutet: Dieser Schüler ist in dieser AG.\n- **1:1:** Der Fremdschlüssel kann in einer der beiden Tabellen stehen.\n\nIn der Schulbibliothek ist „leiht aus“ eine n:m-Beziehung, denn ein Schüler leiht viele Bücher, und ein Buch wird von vielen Schülern geliehen. Die Zwischentabelle ``ausleihe(aid, sid, bid, datum)`` speichert zusätzlich das Datum."
+      },
+      {
+        "titel": "Ein Modell beurteilen",
+        "text": "Ein gutes Modell passt zum **Zweck**: Es enthält die Daten, die gebraucht werden, und nicht mehr, denn unnötige Daten sind auch ein Datenschutzproblem. Warnzeichen für ein schlechtes Modell sind:\n\n- Spalten wie ``sportart1``, ``sportart2``, ``sportart3``: Was ist mit der vierten Sportart?\n- dieselben Angaben in vielen Zeilen (Redundanz)\n- Attribute, die mehrere Werte enthalten, z. B. „Fußball, Tennis“ in einer Zelle"
+      }
+    ],
+    "merksatz": "Im ER-Modell sind Entitätstypen Rechtecke, Attribute Ellipsen, Beziehungen Rauten, Primärschlüssel unterstrichen. Kardinalitäten: 1:1, 1:n, n:m. Entitätstyp wird Tabelle, 1:n wird Fremdschlüssel auf der n-Seite, n:m wird Zwischentabelle mit zwei Fremdschlüsseln.",
+    "alltag": "In einem Online-Shop ist „Kunde bestellt Produkt“ eine n:m-Beziehung. Die Zwischentabelle ist die Tabelle der Bestellpositionen: Sie speichert, wer welches Produkt in welcher Menge bestellt hat."
+  },
+  "interaktiv": ["inf-sql-labor"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "inf-erm-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Ordne die Symbole im ER-Diagramm ihrer Bedeutung zu.",
+      "paare": [
+        { "links": "Rechteck", "rechts": "Entitätstyp" },
+        { "links": "Ellipse", "rechts": "Attribut" },
+        { "links": "Raute", "rechts": "Beziehung" },
+        { "links": "unterstrichener Attributname", "rechts": "Primärschlüssel" }
+      ],
+      "erklaerung": "Beispiel: Das Rechteck Buch ist mit den Ellipsen bid (unterstrichen), titel und jahr verbunden und über die Raute „leiht“ mit dem Rechteck Schueler."
+    },
+    {
+      "id": "inf-erm-02", "typ": "multi", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Du modellierst eine Schulbibliothek. Welche Begriffe sind **Entitätstypen** und nicht bloß Attribute?",
+      "optionen": [
+        { "text": "Buch", "richtig": true },
+        { "text": "Schueler", "richtig": true },
+        { "text": "Erscheinungsjahr", "feedback": "Das Erscheinungsjahr ist eine Eigenschaft eines Buches, also ein Attribut." },
+        { "text": "Titel", "feedback": "Der Titel beschreibt ein Buch näher und ist ein Attribut." },
+        { "text": "Nachname", "feedback": "Der Nachname ist ein Attribut des Entitätstyps Schueler." }
+      ],
+      "erklaerung": "Faustregel: Entitätstypen sind Dinge, über die man mehrere Angaben speichert. Attribute sind die einzelnen Angaben."
+    },
+    {
+      "id": "inf-erm-03", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Bestimme die Kardinalität der Beziehung.",
+      "paare": [
+        { "links": "Land – hat – Hauptstadt", "rechts": "1:1" },
+        { "links": "Klasse – hat – Schüler (jeder Schüler ist in genau einer Klasse)", "rechts": "1:n" },
+        { "links": "Schüler – besucht – AG (mehrere AGs möglich)", "rechts": "n:m" }
+      ],
+      "erklaerung": "Frage in beide Richtungen: Wie viele Schüler hat eine Klasse? Viele. In wie vielen Klassen ist ein Schüler? In einer. Also 1:n."
+    },
+    {
+      "id": "inf-erm-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Zwischen ``Klasse`` und ``Schueler`` besteht eine 1:n-Beziehung. Wie setzt man sie in Tabellen um?",
+      "optionen": [
+        { "text": "Die Tabelle schueler bekommt einen Fremdschlüssel klasse_id.", "richtig": true },
+        { "text": "Die Tabelle klasse bekommt die Spalten schueler1, schueler2, schueler3 …", "feedback": "Dann wüsste man nie, wie viele Spalten man braucht. Der Fremdschlüssel gehört auf die n-Seite." },
+        { "text": "Man braucht eine Zwischentabelle mit zwei Fremdschlüsseln.", "feedback": "Eine Zwischentabelle braucht man bei n:m-Beziehungen. Für 1:n reicht ein Fremdschlüssel." },
+        { "text": "Gar nicht, Beziehungen werden in Datenbanken nicht gespeichert.", "feedback": "Doch: Beziehungen werden über Fremdschlüssel gespeichert." }
+      ],
+      "erklaerung": "Jeder Schüler hat genau eine Klasse. Deshalb passt in jede Zeile von schueler genau ein Wert für klasse_id. Er verweist auf den Primärschlüssel der Tabelle klasse."
+    },
+    {
+      "id": "inf-erm-05", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Ein ER-Modell für einen Sportverein hat die Entitätstypen ``Mitglied``, ``Mannschaft`` und ``Trainer``. Mitglied – spielt in – Mannschaft ist n:m, Trainer – trainiert – Mannschaft ist 1:n. Wie viele Tabellen entstehen im relationalen Modell?",
+      "loesung": 4, "toleranz": 0, "einheit": "",
+      "gegeben": "3 Entitätstypen, eine n:m-Beziehung, eine 1:n-Beziehung",
+      "gesucht": "Anzahl der Tabellen",
+      "rechenweg": [
+        "Jeder Entitätstyp wird eine Tabelle: 3 Tabellen",
+        "Die n:m-Beziehung braucht eine Zwischentabelle: +1",
+        "Die 1:n-Beziehung wird nur ein Fremdschlüssel in mannschaft: +0",
+        "Zusammen: 4 Tabellen"
+      ],
+      "erklaerung": "Die Tabellen heißen z. B. mitglied, mannschaft, trainer und spielt_in(mitglied_id, mannschaft_id). In mannschaft steht zusätzlich trainer_id."
+    },
+    {
+      "id": "inf-erm-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Ein Schüler kann mehrere AGs besuchen, und eine AG hat mehrere Schüler. Welche Tabellenstruktur ist richtig?",
+      "optionen": [
+        { "text": "schueler(sid, name), ag(ag_id, titel), teilnahme(sid, ag_id)", "richtig": true },
+        { "text": "schueler(sid, name, ag_id), ag(ag_id, titel)", "feedback": "So könnte jeder Schüler nur in einer einzigen AG sein. Das wäre eine 1:n-Beziehung." },
+        { "text": "schueler(sid, name), ag(ag_id, titel, sid)", "feedback": "So hätte jede AG nur einen einzigen Schüler." },
+        { "text": "schueler(sid, name, ags) mit ags = „Chor, Schach, Theater“", "feedback": "Mehrere Werte in einer Zelle lassen sich schlecht durchsuchen und ändern." }
+      ],
+      "erklaerung": "Eine n:m-Beziehung wird zu einer Zwischentabelle. Jede Zeile von teilnahme verbindet genau einen Schüler mit genau einer AG. Lena in Chor und Schach ergibt zwei Zeilen."
+    },
+    {
+      "id": "inf-erm-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Ein Tanzverein speichert seine Mitglieder in **einer** Tabelle: ``mitglied(nr, name, telefon, kurs1, kurs2, kurs3, trainer_kurs1, trainer_kurs2, trainer_kurs3)``. Beurteile dieses Modell und schlage ein besseres vor.",
+      "stichworte": [
+        { "aspekt": "Problem: begrenzte Zahl an Kursen / leere Spalten", "woerter": ["vierte", "4. kurs", "mehr als drei", "begrenzt", "leer", "nur drei"] },
+        { "aspekt": "Problem: Trainer stehen mehrfach da (Redundanz, Widersprüche)", "woerter": ["redundan", "mehrfach", "doppelt", "widersp", "inkonsistent"] },
+        { "aspekt": "Besser: eigene Tabellen für Kurs (und Trainer)", "woerter": ["tabelle kurs", "kurs(", "eigene tabelle", "trainer(", "tabelle trainer"] },
+        { "aspekt": "n:m zwischen Mitglied und Kurs über eine Zwischentabelle mit Fremdschlüsseln", "woerter": ["zwischentabelle", "teilnahme", "n:m", "fremdschluessel"] }
+      ],
+      "musterloesung": "Das Modell ist schlecht. Ein Mitglied kann nur drei Kurse belegen, für einen vierten Kurs fehlt eine Spalte, und bei vielen Mitgliedern bleiben Spalten leer. Außerdem steht derselbe Trainer bei vielen Mitgliedern immer wieder da. Diese Redundanz führt leicht zu Widersprüchen. Besser sind eigene Tabellen: mitglied(nr, name, telefon), trainer(tid, name) und kurs(kid, titel, tid). Zwischen Mitglied und Kurs besteht eine n:m-Beziehung. Sie wird über die Zwischentabelle teilnahme(nr, kid) mit zwei Fremdschlüsseln umgesetzt.",
+      "erklaerung": "Nummerierte Spalten wie kurs1, kurs2, kurs3 sind fast immer ein Zeichen dafür, dass eine Beziehung fehlt."
+    }
+  ]
+}

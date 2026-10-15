@@ -1,0 +1,11 @@
+{
+  "fach": "Informatik",
+  "kurz": "Informatik",
+  "reihenfolge": 3.2,
+  "beschreibung": "Wahlpflichtfach Informatik in Klasse 10: Informatiksysteme, algorithmisches Problemlösen und objektorientiertes Programmieren mit Java, Codierung von Informationen und Daten sowie relationale Datenbanken mit SQL.",
+  "quelle": "Schulinternes Curriculum Informatik, Wahlpflicht Klasse 10, Humboldt-Gymnasium Berlin-Tegel (gültig ab Schuljahr 2019/20)",
+  "hinweis": "Das Curriculum nennt keine Reihenfolge und keinen Zeitumfang. Themenfeld 1 wird laut Curriculum integrativ, also begleitend zu den anderen Themenfeldern, unterrichtet. Programmbeispiele sind in Java geschrieben, wie im Unterricht mit Greenfoot und BlueJ.",
+  "stufen": [
+    { "stufe": 10, "name": "Klasse 10" }
+  ]
+}

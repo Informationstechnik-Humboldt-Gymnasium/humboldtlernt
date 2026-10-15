@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SQL-Labor: Schulbibliothek</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<style>
+  .lk-grid > * { min-width: 0; }
+  .seg { flex-wrap: wrap; }
+  textarea { width: 100%; min-height: 108px; resize: vertical; font: 14px/1.5 ui-monospace, "SF Mono", Menlo, Consolas, monospace; padding: 8px 10px;
+    border: 1px solid var(--border); border-radius: 10px; background: var(--bg); color: var(--text); }
+  textarea:focus { border-color: var(--accent); }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 0; }
+  .chips button { font-size: .8rem; padding: 4px 9px; border-radius: 99px; }
+  .meldung { margin: 10px 0 0; padding: 8px 10px; border-radius: 10px; font-size: .9rem; }
+  .meldung.ok { background: var(--ok-soft); color: var(--ok); }
+  .meldung.fehler { background: var(--warn-soft); color: var(--warn); }
+  .meldung.info { background: var(--soft-accent); color: var(--text); }
+  .meldung:empty { display: none; }
+  .tabwrap { overflow: auto; max-height: 320px; margin-top: 8px; border: 1px solid var(--border); border-radius: 10px; }
+  table { border-collapse: collapse; width: 100%; font-size: .84rem; font-variant-numeric: tabular-nums; }
+  th, td { padding: 4px 8px; border-bottom: 1px solid var(--border); text-align: left; white-space: nowrap; }
+  th { position: sticky; top: 0; background: var(--card); font-weight: 700; }
+  td.zahl { text-align: right; }
+  td.null { color: var(--muted); font-style: italic; }
+  .leer { padding: 10px; color: var(--muted); font-size: .86rem; }
+  .schema .box { fill: var(--card); stroke: var(--line); stroke-width: 1.4; cursor: pointer; }
+  .schema .kopf { fill: var(--soft-accent); stroke: var(--line); stroke-width: 1.4; cursor: pointer; }
+  .schema g.aktiv .box, .schema g.aktiv .kopf { stroke: var(--accent); stroke-width: 2.6; }
+  .schema text { font-size: 11px; }
+  .schema .tn { font-weight: 700; font-size: 12px; }
+  .schema .pk { text-decoration: underline; font-weight: 700; }
+  .schema .fk { fill: var(--accent) !important; }
+  .schema .fkline { fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-dasharray: 4 3; }
+  code, .mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: .86em; }
+  .hinweis { font-size: .84rem; color: var(--muted); margin: 6px 0 0; }
+</style>
+</head>
+<body>
+<h1>SQL-Labor: Schulbibliothek</h1>
+<p class="muted small">Schreibe eine SQL-Anfrage und führe sie aus (Knopf oder Strg + Enter). Rechts siehst du die drei Tabellen. Du darfst auch Daten einfügen, ändern oder löschen: Mit „Datenbank zurücksetzen“ ist alles wieder wie am Anfang.</p>
+
+<div class="lk-grid">
+  <div>
+    <div class="lk-card">
+      <h2>Anfrage</h2>
+      <textarea id="eingabe" aria-label="SQL-Anfrage" spellcheck="false" autocapitalize="off" autocomplete="off" aria-describedby="hilfeEingabe">SELECT titel, autor
+FROM buch
+WHERE jahr < 1950;</textarea>
+      <p id="hilfeEingabe" class="hinweis">Texte stehen in einfachen Anführungszeichen, z. B. <code>'Fantasy'</code>. Schlüsselwörter darfst du auch klein schreiben.</p>
+      <div class="row" style="margin-top:10px">
+        <button type="button" id="bRun" class="primary">Ausführen</button>
+        <button type="button" id="bLeeren">Leeren</button>
+        <button type="button" id="bReset">Datenbank zurücksetzen</button>
+      </div>
+      <div class="chips" role="group" aria-label="Beispiele einfügen">
+        <span class="small muted" style="align-self:center">Beispiele:</span>
+        <button type="button" data-bsp="SELECT * FROM schueler;">alle Schüler</button>
+        <button type="button" data-bsp="SELECT titel, jahr FROM buch&#10;ORDER BY jahr DESC;">sortieren</button>
+        <button type="button" data-bsp="SELECT * FROM buch&#10;WHERE titel LIKE 'Die %';">LIKE</button>
+        <button type="button" data-bsp="SELECT klasse, COUNT(*) AS anzahl&#10;FROM schueler&#10;GROUP BY klasse;">zählen</button>
+        <button type="button" data-bsp="SELECT ausleihe.datum, buch.titel&#10;FROM ausleihe JOIN buch ON ausleihe.bid = buch.bid&#10;WHERE ausleihe.zurueck = 'nein';">verknüpfen</button>
+        <button type="button" data-bsp="INSERT INTO buch&#10;VALUES (11, 'Rico, Oskar und die Tieferschatten', 'Andreas Steinhöfel', 2008, 'Krimi');">einfügen</button>
+      </div>
+    </div>
+
+    <div class="lk-card">
+      <h2>Ergebnis</h2>
+      <p id="meldung" class="meldung info" aria-live="polite">Noch keine Anfrage ausgeführt.</p>
+      <div class="readouts">
+        <div class="readout"><span>Zeilen</span><b id="rZeilen">–</b></div>
+        <div class="readout"><span>Spalten</span><b id="rSpalten">–</b></div>
+      </div>
+      <div id="ergebnis"></div>
+    </div>
+  </div>
+
+  <div>
+    <div class="lk-card">
+      <h2>Tabellen der Datenbank</h2>
+      <svg id="schema" class="schema" viewBox="0 0 360 128" role="img" aria-label="Datenbankschema: Tabelle schueler mit Primärschlüssel sid, Tabelle ausleihe mit den Fremdschlüsseln sid und bid, Tabelle buch mit Primärschlüssel bid. Gestrichelte Linien verbinden die Fremdschlüssel mit den Primärschlüsseln."></svg>
+      <p class="small muted" style="margin:6px 0 0">Unterstrichen: Primärschlüssel. Blau: Fremdschlüssel. Tippe auf eine Tabelle, um ihre Daten zu sehen.</p>
+      <div class="row" style="margin-top:10px">
+        <div class="seg" role="group" aria-label="Tabelle anzeigen" id="tabWahl"></div>
+      </div>
+      <p id="tabInfo" class="small muted" style="margin:0"></p>
+      <div id="vorschau"></div>
+    </div>
+  </div>
+</div>
+
+<div class="lk-card tasks">
+  <h2>Entdecke selbst <span class="small muted" data-task-count></span></h2>
+  <div class="task" data-goal="alle"><p class="task-q">Lass dir alle Datensätze der Tabelle <span class="mono">buch</span> anzeigen.</p></div>
+  <div class="task" data-goal="filter"><p class="task-q">Zeige <span class="mono">titel</span> und <span class="mono">jahr</span> aller Fantasy-Bücher, die <b>nach 1970</b> erschienen sind.</p></div>
+  <div class="task" data-goal="sortiert"><p class="task-q">Zeige <span class="mono">vorname</span> und <span class="mono">nachname</span> aller Schüler der Klasse 10a, <b>sortiert nach dem Nachnamen</b>.</p></div>
+  <div class="task" data-goal="gruppe"><p class="task-q">Zähle, wie viele Bücher es in jedem Genre gibt. Das Ergebnis hat zwei Spalten: das Genre und die Anzahl.</p></div>
+  <div class="task" data-goal="join"><p class="task-q">Welche Bücher hat <b>Mia Schulz</b> ausgeliehen? Zeige nur die Titel. Tipp: Du brauchst alle drei Tabellen.</p></div>
+  <div class="task">
+    <p class="task-q">In der Tabelle <span class="mono">ausleihe</span> steht in einer Zeile <span class="mono">sid = 5</span>. Was bedeutet das?</p>
+    <div class="choices">
+      <button type="button" data-ok data-fb="Richtig: sid ist ein Fremdschlüssel. Er verweist auf den Datensatz mit sid = 5 in der Tabelle schueler, und das ist Mia Schulz.">Mia Schulz hat dieses Buch ausgeliehen.</button>
+      <button type="button" data-fb="Die Nummer der Ausleihe steht in aid, dem Primärschlüssel der Tabelle ausleihe.">Es ist die fünfte Ausleihe.</button>
+      <button type="button" data-fb="Die Buchnummer steht in bid. Schau, auf welche Tabelle sid verweist.">Das Buch hat die Nummer 5.</button>
+    </div><p class="fb"></p>
+  </div>
+  <div class="all-done">Alles entdeckt! Weiter geht es mit den Übungen.</div>
+</div>
+
+<script src="sql.js"></script>
+<script src="bibliothek.js"></script>
+<script src="../../static/lesson-kit.js"></script>
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+  var NS = 'http://www.w3.org/2000/svg';
+  var db = new SQLLab.Datenbank(SQLLab.BIBLIOTHEK);
+  var aktTab = 'buch';
+
+  var AUFGABEN = [
+    { id: 'alle', ref: 'SELECT * FROM buch', geordnet: false },
+    { id: 'filter', ref: "SELECT titel, jahr FROM buch WHERE genre = 'Fantasy' AND jahr > 1970", geordnet: false },
+    { id: 'sortiert', ref: "SELECT vorname, nachname FROM schueler WHERE klasse = '10a' ORDER BY nachname", geordnet: true },
+    { id: 'gruppe', ref: 'SELECT genre, COUNT(*) FROM buch GROUP BY genre', geordnet: false },
+    { id: 'join', ref: "SELECT buch.titel FROM schueler JOIN ausleihe ON schueler.sid = ausleihe.sid JOIN buch ON ausleihe.bid = buch.bid WHERE schueler.vorname = 'Mia' AND schueler.nachname = 'Schulz'", geordnet: false },
+  ];
+  var NAMEN = { alle: 'alle Bücher', filter: 'Fantasy nach 1970', sortiert: 'Klasse 10a sortiert', gruppe: 'Bücher je Genre', join: 'Mias Bücher' };
+
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined) e.textContent = text; return e; }
+
+  function tabelleHtml(spalten, zeilen, ziel, leerText) {
+    ziel.textContent = '';
+    if (!spalten.length) return;
+    var wrap = el('div', 'tabwrap'), t = el('table'), kopf = el('tr');
+    spalten.forEach(function (s) { kopf.appendChild(el('th', '', s)); });
+    var thead = el('thead'); thead.appendChild(kopf); t.appendChild(thead);
+    var tb = el('tbody');
+    zeilen.slice(0, 200).forEach(function (z) {
+      var tr = el('tr');
+      z.forEach(function (v) {
+        var td = el('td', v === null ? 'null' : typeof v === 'number' ? 'zahl' : '', v === null ? 'NULL' : String(v));
+        tr.appendChild(td);
+      });
+      tb.appendChild(tr);
+    });
+    t.appendChild(tb); wrap.appendChild(t);
+    if (!zeilen.length) wrap.appendChild(el('p', 'leer', leerText || 'Keine Zeile erfüllt die Bedingung.'));
+    if (zeilen.length > 200) wrap.appendChild(el('p', 'leer', 'Es werden nur die ersten 200 Zeilen gezeigt.'));
+    ziel.appendChild(wrap);
+  }
+
+  // ------------------------------------------------ Schema (SVG)
+  var BOX = { schueler: { x: 6, w: 104 }, ausleihe: { x: 128, w: 104 }, buch: { x: 250, w: 104 } };
+  var REIHE = 17, KOPF = 22, OBEN = 8;
+  function zeichneSchema() {
+    var svg = $('schema');
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    function t(x, y, s, cls) { var e = document.createElementNS(NS, 'text'); e.setAttribute('x', x); e.setAttribute('y', y); if (cls) e.setAttribute('class', cls); e.textContent = s; return e; }
+    var lage = {};
+    db.tabellen.forEach(function (tab) {
+      var b = BOX[tab.name]; if (!b) return;
+      var g = document.createElementNS(NS, 'g');
+      g.setAttribute('data-tab', tab.name);
+      if (tab.name === aktTab) g.setAttribute('class', 'aktiv');
+      var h = KOPF + tab.spalten.length * REIHE + 4;
+      var r = document.createElementNS(NS, 'rect');
+      r.setAttribute('x', b.x); r.setAttribute('y', OBEN); r.setAttribute('width', b.w); r.setAttribute('height', h); r.setAttribute('rx', 6); r.setAttribute('class', 'box');
+      var k = document.createElementNS(NS, 'rect');
+      k.setAttribute('x', b.x); k.setAttribute('y', OBEN); k.setAttribute('width', b.w); k.setAttribute('height', KOPF); k.setAttribute('rx', 6); k.setAttribute('class', 'kopf');
+      g.appendChild(r); g.appendChild(k);
+      g.appendChild(t(b.x + 8, OBEN + 15, tab.name, 'tn'));
+      tab.spalten.forEach(function (sp, i) {
+        var y = OBEN + KOPF + 13 + i * REIHE;
+        g.appendChild(t(b.x + 8, y, sp.name, sp.pk ? 'pk' : sp.fk ? 'fk' : ''));
+        lage[tab.name + '.' + sp.name] = { y: y - 4, links: b.x, rechts: b.x + b.w };
+      });
+      g.addEventListener('click', function () { zeigeTabelle(tab.name); });
+      svg.appendChild(g);
+    });
+    // Fremdschlüssel-Linien
+    db.tabellen.forEach(function (tab) {
+      tab.spalten.forEach(function (sp) {
+        if (!sp.fk) return;
+        var von = lage[tab.name + '.' + sp.name], zu = lage[sp.fk];
+        if (!von || !zu) return;
+        var p = document.createElementNS(NS, 'path');
+        var x1 = zu.links > von.links ? von.rechts : von.links, x2 = zu.links > von.links ? zu.links : zu.rechts;
+        var mx = (x1 + x2) / 2;
+        p.setAttribute('d', 'M' + x1 + ' ' + von.y + ' C' + mx + ' ' + von.y + ' ' + mx + ' ' + zu.y + ' ' + x2 + ' ' + zu.y);
+        p.setAttribute('class', 'fkline');
+        svg.insertBefore(p, svg.firstChild);
+      });
+    });
+  }
+
+  function zeigeTabelle(name) {
+    aktTab = name;
+    var tab = db.tabelle(name);
+    $('tabWahl').querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.tab === name)); });
+    $('tabInfo').textContent = tab.beschreibung + ' · ' + tab.zeilen.length + (tab.zeilen.length === 1 ? ' Datensatz' : ' Datensätze');
+    tabelleHtml(tab.spalten.map(function (s) { return s.name + (s.pk ? ' (PK)' : s.fk ? ' (FK)' : ''); }), tab.zeilen, $('vorschau'), 'Die Tabelle ist leer.');
+    zeichneSchema();
+  }
+  db.tabellen.forEach(function (tab) {
+    var b = el('button', '', tab.name); b.type = 'button'; b.dataset.tab = tab.name; b.setAttribute('aria-pressed', 'false');
+    b.addEventListener('click', function () { zeigeTabelle(tab.name); });
+    $('tabWahl').appendChild(b);
+  });
+
+  // ------------------------------------------------ Ausführen
+  function meldung(text, art) { var m = $('meldung'); m.textContent = text; m.className = 'meldung ' + art; }
+
+  function pruefeAufgaben(erg) {
+    var hinweis = '';
+    AUFGABEN.forEach(function (a) {
+      var task = document.querySelector('.task[data-goal="' + a.id + '"]');
+      if (!task || task.classList.contains('done')) return;
+      var ref = db.ausfuehren(a.ref);
+      var v = SQLLab.gleichesErgebnis(erg, ref, a.geordnet);
+      if (v.ok) { LK.reach(a.id); hinweis = 'Aufgabe „' + NAMEN[a.id] + '“ gelöst!'; return; }
+      if (hinweis) return;
+      if (v.grund === 'reihenfolge') hinweis = 'Fast: Für „' + NAMEN[a.id] + '“ stimmen die Zeilen, aber die Reihenfolge noch nicht. Sortiere mit ORDER BY.';
+      else if (v.grund === 'spalten' && erg.zeilen.length === ref.zeilen.length && erg.zeilen.length > 0 && a.id !== 'alle') hinweis = 'Tipp zu „' + NAMEN[a.id] + '“: Die Anzahl der Zeilen passt. Prüfe, ob du genau die verlangten Spalten ausgibst.';
+    });
+    return hinweis;
+  }
+
+  function markiereFehler(pos) {
+    var ta = $('eingabe'), q = ta.value;
+    if (typeof pos !== 'number' || pos < 0 || pos > q.length) return '';
+    var ende = pos;
+    while (ende < q.length && !/[\s,;()]/.test(q[ende])) ende++;
+    if (ende === pos && pos < q.length) ende = pos + 1;
+    try { ta.focus(); ta.setSelectionRange(pos, ende); } catch (e) { /* ältere Browser */ }
+    var zeile = q.slice(0, pos).split('\n').length;
+    return ' (Zeile ' + zeile + ')';
+  }
+
+  function ausfuehren() {
+    var q = $('eingabe').value;
+    var erg = db.ausfuehren(q);
+    if (erg.fehler) {
+      meldung('Fehler: ' + erg.fehler + markiereFehler(erg.pos), 'fehler');
+      $('rZeilen').textContent = '–'; $('rSpalten').textContent = '–';
+      $('ergebnis').textContent = '';
+      return;
+    }
+    if (erg.art === 'aenderung') {
+      meldung(erg.meldung + ' Die Vorschau rechts ist aktualisiert.', 'ok');
+      $('rZeilen').textContent = LK.fmt(erg.anzahl, 0); $('rSpalten').textContent = '–';
+      $('ergebnis').textContent = '';
+      var m = /^\s*(?:insert\s+into|update|delete\s+from)\s+([A-Za-z_]+)/i.exec(q);
+      zeigeTabelle(m && db.tabellen.some(function (t) { return t.name === m[1].toLowerCase(); }) ? m[1].toLowerCase() : aktTab);
+      return;
+    }
+    $('rZeilen').textContent = LK.fmt(erg.zeilen.length, 0);
+    $('rSpalten').textContent = LK.fmt(erg.spalten.length, 0);
+    tabelleHtml(erg.spalten, erg.zeilen, $('ergebnis'));
+    var h = pruefeAufgaben(erg);
+    meldung((erg.zeilen.length === 1 ? '1 Zeile' : LK.fmt(erg.zeilen.length, 0) + ' Zeilen') + ' gefunden.' + (h ? ' ' + h : ''), h && /gelöst/.test(h) ? 'ok' : 'info');
+  }
+
+  $('bRun').addEventListener('click', ausfuehren);
+  $('eingabe').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) { e.preventDefault(); ausfuehren(); }
+  });
+  $('bLeeren').addEventListener('click', function () { $('eingabe').value = ''; $('eingabe').focus(); });
+  $('bReset').addEventListener('click', function () {
+    db.zuruecksetzen(); zeigeTabelle(aktTab);
+    meldung('Die Datenbank ist wieder im Anfangszustand.', 'info');
+  });
+  document.querySelectorAll('[data-bsp]').forEach(function (b) {
+    b.addEventListener('click', function () { $('eingabe').value = b.dataset.bsp; $('eingabe').focus(); });
+  });
+
+  zeigeTabelle('buch');
+})();
+</script>
+</body>
+</html>

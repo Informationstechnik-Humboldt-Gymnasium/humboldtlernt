@@ -1,0 +1,121 @@
+{
+  "id": "inf-k10-information-daten",
+  "titel": "Information, Nachricht und Daten",
+  "kurz": "Was der Unterschied zwischen Information, Nachricht und Daten ist, was ein Bit und ein Byte sind und wie man Speichergrößen umrechnet.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Information, Nachricht und Daten unterscheiden und an Beispielen erklären, dass Daten interpretiert werden müssen" },
+    { "id": "lz2", "niveau": "G", "text": "Bit und Byte erklären und berechnen, wie viele Zustände sich mit n Bit darstellen lassen" },
+    { "id": "lz3", "niveau": "H", "text": "Speichergrößen in Dezimal- und Binärpräfixen (kB, MB, GB bzw. KiB, MiB, GiB) umrechnen" }
+  ],
+  "verstehen": {
+    "einstieg": "Auf einem Zettel steht nur „42“. Ist das eine Hausnummer, eine Temperatur, ein Alter oder die Punktzahl im Test? Und woher weiß ein Computer, was eine Folge aus Nullen und Einsen bedeutet?",
+    "abschnitte": [
+      {
+        "titel": "Nachricht, Daten, Information",
+        "text": "- Eine **Nachricht** ist eine Folge von Zeichen oder Signalen, die von einem Sender zu einem Empfänger übertragen wird, z. B. „Bin um 5 da“.\n- **Daten** sind Zeichen in einer Form, die eine Maschine speichern und verarbeiten kann, im Rechner als Folge von Nullen und Einsen.\n- Eine **Information** ist die **Bedeutung**, die ein Empfänger einer Nachricht zuordnet: „Mein Freund kommt um 17 Uhr.“\n\nDer Computer verarbeitet nur Daten. Zur Information werden sie erst, wenn jemand sie **interpretiert**. Dafür braucht man den Zusammenhang: „Bin um 5 da“ meint am Nachmittag wohl 17 Uhr."
+      },
+      {
+        "titel": "Bit und Byte",
+        "text": "Ein **Bit** ist die kleinste Dateneinheit. Es kann genau zwei Zustände haben: 0 oder 1, aus oder an, Strom oder kein Strom. 8 Bit bilden ein **Byte**.\n\nMit mehreren Bits lassen sich mehr Zustände darstellen. Jedes weitere Bit verdoppelt die Anzahl:\n\n- 1 Bit: 2 Zustände (0, 1)\n- 2 Bit: 4 Zustände (00, 01, 10, 11)\n- 3 Bit: 8 Zustände\n- 8 Bit: 256 Zustände\n\nUm 26 Buchstaben zu unterscheiden, reichen 4 Bit nicht (nur 16 Zustände). Man braucht 5 Bit (32 Zustände)."
+      },
+      {
+        "titel": "Große Datenmengen",
+        "text": "Für große Mengen benutzt man Vorsätze. Nach dem internationalen Einheitensystem stehen sie für Zehnerpotenzen:\n\n- 1 Kilobyte (kB) = 1000 Byte\n- 1 Megabyte (MB) = 1000 kB = 10^{6} Byte\n- 1 Gigabyte (GB) = 1000 MB = 10^{9} Byte\n- 1 Terabyte (TB) = 1000 GB = 10^{12} Byte\n\nWeil Rechner mit Zweierpotenzen arbeiten, gibt es zusätzlich **Binärpräfixe**: 1 Kibibyte (KiB) = 2^{10} Byte = 1024 Byte, 1 MiB = 1024 KiB, 1 GiB = 1024 MiB. Manche Betriebssysteme rechnen intern mit 1024, schreiben aber „GB“. Darum zeigt der Rechner bei einer neuen 1-TB-Festplatte weniger an als erwartet."
+      }
+    ],
+    "formeln": [
+      { "formel": "N = 2^{n}", "bedeutung": "Anzahl N der verschiedenen Zustände, die sich mit n Bit darstellen lassen" },
+      { "formel": "1 Byte = 8 Bit", "bedeutung": "Umrechnung von Byte in Bit" },
+      { "formel": "1 KiB = 2^{10} Byte = 1024 Byte", "bedeutung": "Binärpräfix; dagegen 1 kB = 1000 Byte" }
+    ],
+    "merksatz": "Eine Nachricht wird übertragen, Daten werden verarbeitet, Information ist die Bedeutung, die ein Mensch daraus gewinnt. Ein Bit hat zwei Zustände, ein Byte hat 8 Bit, mit n Bit gibt es 2^n Zustände. kB, MB, GB rechnen mit 1000, KiB, MiB, GiB mit 1024.",
+    "alltag": "Ein Handy-Tarif mit 10 GB Datenvolumen klingt viel. Ein Video in hoher Qualität verbraucht aber leicht 1 bis 3 GB pro Stunde. Wer weiß, wie groß Daten sind, kann solche Angebote besser einschätzen."
+  },
+  "interaktiv": ["inf-zahlensysteme"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "inf-ind-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Lena schreibt Jonas: „Bin um 5 da“. Ordne zu.",
+      "paare": [
+        { "links": "Die Zeichenfolge „Bin um 5 da“, die verschickt wird", "rechts": "Nachricht" },
+        { "links": "Die Nullen und Einsen, die das Handy speichert und sendet", "rechts": "Daten" },
+        { "links": "Jonas versteht: Lena kommt um 17 Uhr zu ihm.", "rechts": "Information" }
+      ],
+      "erklaerung": "Übertragen wird eine Nachricht, technisch als Daten. Die Information entsteht erst im Kopf von Jonas, der die Nachricht deutet."
+    },
+    {
+      "id": "inf-ind-02", "typ": "zahl", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Wie viele verschiedene Zustände kann man mit **5 Bit** darstellen?",
+      "loesung": 32, "toleranz": 0, "einheit": "",
+      "gegeben": "n = 5 Bit",
+      "gesucht": "Anzahl N der Zustände",
+      "rechenweg": [
+        "N = 2^{n}",
+        "N = 2^{5} = 2 · 2 · 2 · 2 · 2 = 32"
+      ],
+      "erklaerung": "Jedes Bit verdoppelt die Möglichkeiten. Von 00000 bis 11111 gibt es 32 verschiedene Bitfolgen."
+    },
+    {
+      "id": "inf-ind-03", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Eine Schule möchte jedem der 150 Schüler einer Jahrgangsstufe eine eigene Bitfolge gleicher Länge geben. Wie viele Bit braucht man **mindestens**?",
+      "loesung": 8, "toleranz": 0, "einheit": "Bit",
+      "gegeben": "150 verschiedene Schüler",
+      "gesucht": "kleinstes n mit 2^{n} ≥ 150",
+      "rechenweg": [
+        "2^{7} = 128 < 150, das reicht nicht",
+        "2^{8} = 256 ≥ 150, das reicht",
+        "Man braucht mindestens 8 Bit."
+      ],
+      "erklaerung": "Man sucht die kleinste Zweierpotenz, die mindestens so groß ist wie die Anzahl der Möglichkeiten. 106 der 256 Bitfolgen bleiben ungenutzt."
+    },
+    {
+      "id": "inf-ind-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Die Bitfolge ``01000001`` kann als Zahl 65, als Buchstabe A oder als Helligkeit eines Bildpunkts gelesen werden. Was zeigt dieses Beispiel?",
+      "optionen": [
+        { "text": "Daten haben erst mit einer vereinbarten Interpretation eine Bedeutung.", "richtig": true },
+        { "text": "Der Computer hat sich verrechnet.", "feedback": "Die Bitfolge ist immer dieselbe. Nur die Deutung ist verschieden." },
+        { "text": "Jede Bitfolge enthält immer genau eine Information.", "feedback": "Welche Information gemeint ist, hängt von der Interpretation ab." },
+        { "text": "Bitfolgen können nur Zahlen speichern.", "feedback": "Mit Bitfolgen lassen sich Zahlen, Zeichen, Bilder und Töne speichern." }
+      ],
+      "erklaerung": "Ob ein Programm die Bits als Zahl, als Zeichen oder als Farbe liest, legt der Datentyp bzw. das Dateiformat fest. Das ist die vereinbarte Interpretation."
+    },
+    {
+      "id": "inf-ind-05", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Ein Foto ist 4 MB groß. Wie viele dieser Fotos passen auf einen USB-Stick mit 16 GB? Rechne mit 1 GB = 1000 MB.",
+      "loesung": 4000, "toleranz": 0, "einheit": "",
+      "gegeben": "Foto 4 MB, Speicher 16 GB, 1 GB = 1000 MB",
+      "gesucht": "Anzahl der Fotos",
+      "rechenweg": [
+        "16 GB = 16 · 1000 MB = 16 000 MB",
+        "16 000 MB : 4 MB = 4000"
+      ],
+      "erklaerung": "In Wirklichkeit passen etwas weniger Fotos darauf, denn das Dateisystem braucht selbst etwas Platz."
+    },
+    {
+      "id": "inf-ind-06", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Auf einer neuen Festplatte steht „1 TB“, also 10^{12} Byte. Das Betriebssystem rechnet mit Binärpräfixen. Wie viele **GiB** zeigt es an? Runde auf ganze GiB.",
+      "loesung": 931, "toleranz": 0.002, "einheit": "GiB",
+      "gegeben": "1 TB = 10^{12} Byte; 1 GiB = 2^{30} Byte = 1 073 741 824 Byte",
+      "gesucht": "Größe in GiB",
+      "rechenweg": [
+        "1 GiB = 1024 · 1024 · 1024 Byte = 1 073 741 824 Byte",
+        "10^{12} Byte : 1 073 741 824 Byte ≈ 931,3",
+        "Angezeigt werden etwa 931 GiB."
+      ],
+      "erklaerung": "Die Festplatte ist nicht kleiner als versprochen. Hersteller und Betriebssystem rechnen nur mit verschiedenen Einheiten: 1000 bzw. 1024."
+    },
+    {
+      "id": "inf-ind-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz1",
+      "frage": "Eine Wetter-App zeigt „12“. Erkläre an diesem Beispiel, warum Daten allein noch keine Information sind und was zur Information fehlt.",
+      "stichworte": [
+        { "aspekt": "Die 12 ist zunächst nur Daten bzw. eine Zeichenfolge", "woerter": ["daten", "zeichen", "zahl"] },
+        { "aspekt": "Es braucht eine Interpretation / Bedeutung", "woerter": ["interpret", "bedeut", "deut"] },
+        { "aspekt": "Es fehlt der Zusammenhang, z. B. Einheit, Ort oder Zeit (12 °C in Berlin um 14 Uhr)", "woerter": ["einheit", "grad", "°c", "ort", "uhrzeit", "zusammenhang", "kontext"] }
+      ],
+      "musterloesung": "Die 12 ist zunächst nur ein Wert in den Daten der App, also eine Zeichenfolge, die gespeichert und angezeigt wird. Zur Information wird es erst, wenn man es interpretiert und ihm eine Bedeutung gibt. Dafür fehlt der Zusammenhang: Ist es die Temperatur in Grad Celsius, die Windgeschwindigkeit oder die Uhrzeit? Erst mit Einheit, Ort und Zeit, etwa „12 °C in Berlin heute um 14 Uhr“, kann ich etwas damit anfangen.",
+      "erklaerung": "Gute Apps zeigen deshalb immer Einheiten und Beschriftungen an. Sie liefern die nötige Interpretation gleich mit."
+    }
+  ]
+}

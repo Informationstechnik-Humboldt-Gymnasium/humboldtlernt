@@ -1,0 +1,17 @@
+{
+  "nummer": "1",
+  "reihenfolge": 1,
+  "titel": "Informatiksysteme",
+  "beschreibung": "Das schulische Rechnernetz als Arbeitsumgebung: Anmeldung, Zugriffsrechte und Verzeichnisse, Aufgaben eines Betriebssystems und die Bereiche der Informatik.",
+  "inhalte": [
+    "Arbeitsumgebung im schulischen Rechnernetz",
+    "Anmeldung und Authentifikation",
+    "Zugriffsrechte",
+    "Verzeichnisbaum und Heimatverzeichnis",
+    "Betriebssysteme und deren Aufgaben",
+    "Anwendungsprogramme zielgerichtet auswählen und nutzen",
+    "Arbeiten mit einer Online-Plattform",
+    "Bereiche der Informatik (Technische, Theoretische und Praktische Informatik, Informatik und Gesellschaft) und deren Anwendungen"
+  ],
+  "erweiterung": "Wird integrativ unterrichtet; unterschiedliche Architekturen (Smartphone, Tablet, PC) und Betriebssysteme (Linux, Windows, Android, iOS)."
+}

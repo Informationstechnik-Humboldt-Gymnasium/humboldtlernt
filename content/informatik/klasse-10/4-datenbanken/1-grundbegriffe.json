@@ -1,0 +1,121 @@
+{
+  "id": "inf-k10-datenbanken",
+  "titel": "Datenbanken: Tabellen, Datensätze, Schlüssel",
+  "kurz": "Wo dir Datenbanken im Alltag begegnen, wie eine relationale Datenbank mit Tabellen, Datensätzen, Attributen und Primärschlüsseln aufgebaut ist und warum sie besser ist als eine große Tabellenkalkulation.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Datenbanken im Alltag erkennen und Datenbank, Tabelle, Datensatz, Attribut und Attributwert unterscheiden" },
+    { "id": "lz2", "niveau": "G", "text": "Die Aufgabe eines Primärschlüssels erklären und einen geeigneten Primärschlüssel auswählen" },
+    { "id": "lz3", "niveau": "H", "text": "Vorteile eines Datenbanksystems gegenüber einer Tabellenkalkulation begründen (Redundanz, Konsistenz, Mehrbenutzerbetrieb, Zugriffsrechte)" },
+    { "id": "lz4", "niveau": "G", "text": "Die Grundoperationen Suchen, Sortieren, Einfügen, Ändern und Löschen unterscheiden" }
+  ],
+  "verstehen": {
+    "einstieg": "Wenn du in einer Video-App den Namen einer Band eintippst, erscheinen in Sekundenbruchteilen passende Videos aus Millionen. Gleichzeitig laden andere Menschen neue Videos hoch und schreiben Kommentare. Wie werden so riesige Datenmengen geordnet?",
+    "abschnitte": [
+      {
+        "titel": "Datenbanken im Alltag",
+        "text": "Hinter fast jeder App steckt eine **Datenbank**: Die Kontakte im Handy, die Nachrichten im Messenger, die Produkte und Bestellungen eines Online-Shops, die Videos, Kanäle und Kommentare einer Videoplattform, aber auch die Schülerdaten der Schule.\n\nEin **Datenbanksystem** besteht aus zwei Teilen: der **Datenbank** mit den gespeicherten Daten und dem **Datenbankmanagementsystem (DBMS)**, einem Programm, das die Daten verwaltet, Anfragen beantwortet und Zugriffe regelt."
+      },
+      {
+        "titel": "Tabellen in relationalen Datenbanken",
+        "text": "In einer **relationalen Datenbank** stehen die Daten in **Tabellen**. Beispiel aus einer Schulbibliothek:\n\n```\nschueler\nsid | vorname | nachname | klasse\n----+---------+----------+-------\n  1 | Lena    | Hoffmann | 10a\n  2 | Jonas   | Becker   | 10a\n  3 | Amira   | Haddad   | 10b\n```\n\n- Eine **Zeile** ist ein **Datensatz**: alle Angaben zu einem Schüler.\n- Eine **Spalte** ist ein **Attribut**, z. B. ``nachname``.\n- Ein einzelner Eintrag ist ein **Attributwert**, z. B. ``Becker``.\n- Alle Tabellen zusammen bilden die **Datenbank**."
+      },
+      {
+        "titel": "Der Primärschlüssel",
+        "text": "Jeder Datensatz muss eindeutig zu finden sein. Dafür gibt es den **Primärschlüssel**: ein Attribut, dessen Wert in der Tabelle **nie doppelt** vorkommt, hier ``sid``. Namen eignen sich schlecht, denn es kann zwei Lena Hoffmann geben. Auch die Klasse ist ungeeignet, weil sie sich ändert und mehrere Schüler dieselbe haben. Oft nimmt man deshalb eine fortlaufende Nummer, die das System automatisch vergibt."
+      },
+      {
+        "titel": "Warum nicht einfach eine Tabellenkalkulation?",
+        "text": "Für eine kleine Liste reicht eine Tabellenkalkulation. Bei großen Datenmengen hat ein Datenbanksystem viele Vorteile:\n\n- **Keine unnötig doppelten Daten (Redundanz):** Die Schülerdaten stehen nur einmal in ``schueler``. Ausleihen verweisen nur auf die Nummer.\n- **Widerspruchsfreie Daten (Konsistenz):** Ändert sich die Klasse, wird sie an einer einzigen Stelle geändert.\n- **Mehrbenutzerbetrieb:** Viele können gleichzeitig lesen und schreiben, ohne sich Daten zu überschreiben.\n- **Zugriffsrechte:** Jeder sieht nur, was er sehen darf.\n- **Schnelle Abfragen** auch bei Millionen Datensätzen, mit der Abfragesprache SQL.\n\nDie Grundoperationen sind **Suchen**, **Sortieren**, **Einfügen**, **Ändern** und **Löschen** von Datensätzen."
+      }
+    ],
+    "merksatz": "Eine relationale Datenbank speichert Daten in Tabellen: Zeilen sind Datensätze, Spalten sind Attribute. Der Primärschlüssel kennzeichnet jeden Datensatz eindeutig. Datenbanksysteme vermeiden Redundanz, halten Daten konsistent und erlauben vielen Nutzern gleichzeitig den Zugriff.",
+    "alltag": "Wenn du online etwas bestellst, landet ein neuer Datensatz in der Tabelle der Bestellungen. Er enthält nicht noch einmal deine ganze Adresse, sondern nur deine Kundennummer, also den Primärschlüssel deines Datensatzes in der Kundentabelle."
+  },
+  "interaktiv": ["inf-sql-labor"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "inf-dbg-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Ordne die Begriffe der relationalen Datenbank zu.",
+      "paare": [
+        { "links": "Eine Zeile der Tabelle schueler mit allen Angaben zu Lena", "rechts": "Datensatz" },
+        { "links": "Die Spalte nachname", "rechts": "Attribut" },
+        { "links": "Der Eintrag „Becker“ in einer Zelle", "rechts": "Attributwert" },
+        { "links": "Die Spalte sid, deren Werte nie doppelt vorkommen", "rechts": "Primärschlüssel" },
+        { "links": "Alle Tabellen der Schulbibliothek zusammen", "rechts": "Datenbank" }
+      ],
+      "erklaerung": "Tabelle, Datensatz, Attribut und Attributwert sind wie Buch, Zeile, Spaltenüberschrift und Eintrag. Der Primärschlüssel ist ein besonderes Attribut."
+    },
+    {
+      "id": "inf-dbg-02", "typ": "zahl", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Die Tabelle ``buch`` hat die Attribute bid, titel, autor, jahr und genre. Sie enthält 120 Datensätze. Wie viele Attributwerte stehen in der Tabelle, wenn keine Zelle leer ist?",
+      "loesung": 600, "toleranz": 0, "einheit": "",
+      "gegeben": "5 Attribute (Spalten), 120 Datensätze (Zeilen)",
+      "gesucht": "Anzahl der Attributwerte",
+      "rechenweg": [
+        "Jeder Datensatz hat für jedes Attribut einen Wert",
+        "120 · 5 = 600"
+      ],
+      "erklaerung": "Ein Attributwert ist der Schnittpunkt von einem Datensatz (Zeile) und einem Attribut (Spalte)."
+    },
+    {
+      "id": "inf-dbg-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Welches Attribut eignet sich am besten als Primärschlüssel einer Tabelle mit allen Schülerinnen und Schülern der Schule?",
+      "optionen": [
+        { "text": "Eine von der Schule vergebene Schülernummer", "richtig": true },
+        { "text": "Der Nachname", "feedback": "Mehrere Schüler können denselben Nachnamen haben, etwa Geschwister." },
+        { "text": "Die Klasse", "feedback": "Viele Schüler haben dieselbe Klasse, und sie ändert sich jedes Jahr." },
+        { "text": "Das Geburtsdatum", "feedback": "Bei über tausend Schülern haben sicher einige am selben Tag Geburtstag." }
+      ],
+      "erklaerung": "Ein Primärschlüssel muss eindeutig sein und sollte sich nie ändern. Eine künstliche Nummer erfüllt beides."
+    },
+    {
+      "id": "inf-dbg-04", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Welche Grundoperation führt die Bibliothekarin aus?",
+      "paare": [
+        { "links": "Ein neu gekauftes Buch wird aufgenommen.", "rechts": "Einfügen" },
+        { "links": "Ein falsch geschriebener Autorname wird korrigiert.", "rechts": "Ändern" },
+        { "links": "Ein verlorenes Buch wird aus dem Bestand entfernt.", "rechts": "Löschen" },
+        { "links": "Sie lässt sich alle Bücher von Michael Ende anzeigen.", "rechts": "Suchen" },
+        { "links": "Sie ordnet die Liste nach dem Erscheinungsjahr.", "rechts": "Sortieren" }
+      ],
+      "erklaerung": "Diese fünf Operationen gibt es in jeder Datenbank-Oberfläche. In SQL heißen sie INSERT, UPDATE, DELETE und SELECT (mit WHERE zum Suchen und ORDER BY zum Sortieren)."
+    },
+    {
+      "id": "inf-dbg-05", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Welche Vorteile hat ein Datenbanksystem gegenüber einer großen Tabellenkalkulationsdatei?",
+      "optionen": [
+        { "text": "Viele Personen können gleichzeitig Daten eintragen, ohne sich gegenseitig zu überschreiben.", "richtig": true },
+        { "text": "Daten, die mehrfach gebraucht werden, stehen nur einmal da und werden über Schlüssel verknüpft.", "richtig": true },
+        { "text": "Man kann genau festlegen, wer welche Daten sehen und ändern darf.", "richtig": true },
+        { "text": "Man braucht keinerlei Planung, wie die Tabellen aussehen sollen.", "feedback": "Im Gegenteil: Eine Datenbank muss gut geplant werden, z. B. mit einem ER-Modell." },
+        { "text": "Man kann damit besonders gut Diagramme für Präsentationen gestalten.", "feedback": "Das kann eine Tabellenkalkulation meist besser. Datenbanken sind für große, verknüpfte Datenmengen gemacht." }
+      ],
+      "erklaerung": "Datenbanksysteme sind für viele Nutzer, große Datenmengen und verknüpfte Tabellen gebaut. Für eine kleine Notenliste mit Diagramm ist eine Tabellenkalkulation völlig in Ordnung."
+    },
+    {
+      "id": "inf-dbg-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "In der Tabelle ``ausleihe`` steht für jede Ausleihe die Schülernummer ``sid`` und die Buchnummer ``bid``. Ein Schüler leiht dasselbe Buch im Lauf der Jahre mehrmals aus. Warum ist ``sid`` allein **kein** geeigneter Primärschlüssel dieser Tabelle?",
+      "optionen": [
+        { "text": "Ein Schüler kann mehrere Ausleihen haben; seine sid käme dann mehrfach vor.", "richtig": true },
+        { "text": "Weil sid eine Zahl ist und Primärschlüssel aus Text bestehen müssen.", "feedback": "Primärschlüssel sind sehr oft Zahlen." },
+        { "text": "Weil sid schon in der Tabelle schueler vorkommt und deshalb in anderen Tabellen verboten ist.", "feedback": "Im Gegenteil: Genau so verweist man auf andere Tabellen. sid ist in ausleihe ein Fremdschlüssel." },
+        { "text": "sid wäre geeignet, es gibt kein Problem.", "feedback": "Ein Primärschlüssel darf in einer Tabelle nicht doppelt vorkommen. Bei mehreren Ausleihen eines Schülers wäre das aber so." }
+      ],
+      "erklaerung": "Auch die Kombination aus sid und bid reicht nicht, wenn dasselbe Buch mehrmals ausgeliehen wird. Darum bekommt jede Ausleihe eine eigene Nummer aid als Primärschlüssel."
+    },
+    {
+      "id": "inf-dbg-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Die Bibliothek führt bisher eine einzige Tabellenkalkulation: In jeder Zeile steht eine Ausleihe mit Vorname, Nachname und Klasse des Schülers sowie Titel und Autor des Buches. Lena hat 30 Bücher ausgeliehen und wechselt in die Klasse 10b. Beschreibe das Problem und wie eine Datenbank mit mehreren Tabellen es löst.",
+      "stichworte": [
+        { "aspekt": "Lenas Daten stehen 30-mal da (Redundanz)", "woerter": ["redundan", "mehrfach", "30-mal", "30 mal", "doppelt", "oft"] },
+        { "aspekt": "Die Klasse muss überall geändert werden, sonst widersprechen sich die Daten (Inkonsistenz)", "woerter": ["inkonsistent", "widerspr", "vergessen", "ueberall", "jede zeile", "uneinheitlich"] },
+        { "aspekt": "Lösung: eigene Tabelle schueler, Lenas Daten nur einmal", "woerter": ["eigene tabelle", "tabelle schueler", "nur einmal", "getrennt", "mehrere tabellen"] },
+        { "aspekt": "Ausleihen verweisen über die Schülernummer (Schlüssel) auf Lena", "woerter": ["schluessel", "nummer", "sid", "verweis", "verknuepf"] }
+      ],
+      "musterloesung": "Lenas Name und Klasse stehen in 30 Zeilen, die Daten sind also redundant. Wechselt sie die Klasse, muss man alle 30 Zeilen ändern. Vergisst man eine, widersprechen sich die Daten, sie sind inkonsistent. In einer Datenbank gibt es eine eigene Tabelle schueler, in der Lenas Daten nur einmal stehen. Die Tabelle ausleihe verweist nur über die Schülernummer sid auf Lena. Die Klasse wird dann an einer einzigen Stelle geändert.",
+      "erklaerung": "Das Aufteilen in mehrere verknüpfte Tabellen nennt man Normalisierung. Ihr Ziel: Jede Information steht nur einmal in der Datenbank."
+    }
+  ]
+}

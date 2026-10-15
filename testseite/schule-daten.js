@@ -13,6 +13,7 @@
     { id: '9b', name: 'Klasse 9b', typ: 'klasse', stufe: 9 },
     { id: '10a', name: 'Klasse 10a', typ: 'klasse', stufe: 10 },
     { id: 'wp-timp-9', name: 'Wahlpflichtkurs TIMP 9', typ: 'kurs', stufe: 9 },
+    { id: 'wp-inf-10', name: 'Wahlpflichtkurs Informatik 10', typ: 'kurs', stufe: 10 },
   ];
 
   // Fächer der Lernseite (gleiche IDs wie die Ordner unter content/)
@@ -22,6 +23,7 @@
     { id: 'biologie', name: 'Biologie' },
     { id: 'ethik', name: 'Ethik' },
     { id: 'timp', name: 'TIMP' },
+    { id: 'informatik', name: 'Informatik' },
   ];
 
   // s = Schüler/in: [Benutzername, Vorname, Nachname, Klasse, weitere Lerngruppen, Status]
@@ -37,8 +39,8 @@
     ['sofia.ivanova', 'Sofia', 'Ivanova', '9b', ['wp-timp-9'], 'aktiv'],
     ['ben.hartmann', 'Ben', 'Hartmann', '9b', [], 'aktiv'],
     ['lea.fischer', 'Lea', 'Fischer', '9b', [], 'aktiv'],
-    ['leon.schmitt', 'Leon', 'Schmitt', '10a', [], 'aktiv'],
-    ['hannah.wolf', 'Hannah', 'Wolf', '10a', [], 'aktiv'],
+    ['leon.schmitt', 'Leon', 'Schmitt', '10a', ['wp-inf-10'], 'aktiv'],
+    ['hannah.wolf', 'Hannah', 'Wolf', '10a', ['wp-inf-10'], 'aktiv'],
     ['elias.braun', 'Elias', 'Braun', '10a', [], 'aktiv'],
     ['zeynep.arslan', 'Zeynep', 'Arslan', '10a', [], 'aktiv'],
     ['tim.lorenz', 'Tim', 'Lorenz', '10a', [], 'deaktiviert'],
@@ -49,7 +51,7 @@
     ['sabine.keller', 'Sabine', 'Keller', 'KEL', [['9a', 'physik'], ['9b', 'physik']], '9a'],
     ['murat.yilmaz', 'Murat', 'Yilmaz', 'YIL', [['9a', 'chemie'], ['9b', 'chemie'], ['10a', 'chemie']], null],
     ['julia.brandt', 'Julia', 'Brandt', 'BRA', [['9b', 'biologie'], ['10a', 'biologie'], ['9a', 'ethik']], '10a'],
-    ['tobias.novak', 'Tobias', 'Novak', 'NOV', [['wp-timp-9', 'timp'], ['10a', 'physik']], null],
+    ['tobias.novak', 'Tobias', 'Novak', 'NOV', [['wp-timp-9', 'timp'], ['10a', 'physik'], ['wp-inf-10', 'informatik']], null],
   ];
   var ADMINS = [
     ['petra.lindner', 'Petra', 'Lindner', 'LIN', 'Schulleitung'],

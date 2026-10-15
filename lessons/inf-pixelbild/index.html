@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pixel-Labor: Auflösung und Farbtiefe</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<style>
+  .lk-grid > * { min-width: 0; }
+  .seg { flex-wrap: wrap; }
+  #bild { max-width: 420px; margin: 0 auto; cursor: crosshair; border-radius: 6px; }
+  #bild .gitter { stroke: var(--border); stroke-width: .6; }
+  #bild .rahmen { fill: none; stroke: var(--line); stroke-width: 1.4; }
+  #bild .wahl { fill: none; stroke: var(--accent); stroke-width: 2.4; }
+  .etikett { display: inline-block; font-size: .72rem; font-weight: 700; padding: 1px 7px; border-radius: 99px; background: var(--bg); color: var(--muted); border: 1px solid var(--border); }
+  .farben { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 12px; }
+  .farben button { width: 40px; height: 36px; padding: 0; border-width: 2px; }
+  .farben button[aria-pressed=true] { outline: 3px solid var(--accent); outline-offset: 2px; }
+  .vorschau { display: flex; align-items: center; gap: 10px; margin: 0 0 12px; }
+  .vorschau i { width: 40px; height: 32px; border-radius: 8px; border: 1px solid var(--line); display: inline-block; }
+  .code { font: .82rem/1.45 ui-monospace, "SF Mono", Menlo, Consolas, monospace; background: var(--bg); border-radius: 10px; padding: 8px 10px; overflow-wrap: anywhere; margin: 6px 0 0; }
+  .code .px { padding: 0 1px; border-radius: 3px; }
+  .code .px:nth-child(odd) { background: var(--soft-accent); }
+  .hinweis { margin: 10px 0 0; padding: 8px 10px; border-radius: 10px; background: var(--soft-accent); font-size: .88rem; }
+  .hinweis:empty { display: none; }
+</style>
+</head>
+<body>
+<h1>Pixel-Labor: Auflösung und Farbtiefe</h1>
+<p class="muted small">Male mit dem Finger oder der Maus ins Raster. Wähle Auflösung und Farbtiefe und beobachte, wie viele Bit das Bild braucht und wie die Pixel als Nullen und Einsen gespeichert werden.</p>
+
+<div class="lk-grid">
+  <div>
+    <div class="lk-card">
+      <h2>Bild <span class="etikett">Modell</span></h2>
+      <svg id="bild" viewBox="0 0 320 320" role="img" aria-label="Pixelraster zum Malen. Jedes Quadrat ist ein Pixel."></svg>
+      <p class="small muted" style="margin:6px 0 0">Darstellung vergrößert: Jedes Quadrat ist ein Pixel.</p>
+    </div>
+    <div class="lk-card">
+      <h2>So wird gespeichert</h2>
+      <p class="small" id="codeTitel" style="margin:0"></p>
+      <div class="code" id="code" aria-live="polite"></div>
+      <p class="small muted" id="codeInfo"></p>
+    </div>
+  </div>
+
+  <div>
+    <div class="lk-card">
+      <h2>Einstellungen</h2>
+      <p class="small" style="margin:0 0 4px"><b>Auflösung</b></p>
+      <div class="row">
+        <div class="seg" role="group" aria-label="Auflösung" id="wahlGroesse">
+          <button type="button" data-n="8" aria-pressed="true">8 × 8</button>
+          <button type="button" data-n="12" aria-pressed="false">12 × 12</button>
+          <button type="button" data-n="16" aria-pressed="false">16 × 16</button>
+        </div>
+      </div>
+      <p class="small" style="margin:0 0 4px"><b>Farbtiefe</b></p>
+      <div class="row">
+        <div class="seg" role="group" aria-label="Farbtiefe" id="wahlTiefe">
+          <button type="button" data-t="1" aria-pressed="true">1 Bit</button>
+          <button type="button" data-t="2" aria-pressed="false">2 Bit</button>
+          <button type="button" data-t="8" aria-pressed="false">8 Bit grau</button>
+          <button type="button" data-t="24" aria-pressed="false">24 Bit RGB</button>
+        </div>
+      </div>
+      <p class="small" style="margin:0 0 4px"><b>Farbe zum Malen</b></p>
+      <div id="palette"></div>
+      <div class="row">
+        <div class="seg" role="group" aria-label="Werkzeug">
+          <button type="button" id="tStift" aria-pressed="true">Stift</button>
+          <button type="button" id="tPipette" aria-pressed="false">Pixel ablesen</button>
+        </div>
+        <button type="button" id="bBeispiel">Beispiel</button>
+        <button type="button" id="bLeeren">Leeren</button>
+      </div>
+      <div class="readouts" id="readouts"></div>
+      <p class="hinweis" id="hinweis" aria-live="polite"></p>
+    </div>
+  </div>
+</div>
+
+<div class="lk-card tasks">
+  <h2>Entdecke selbst <span class="small muted" data-task-count></span></h2>
+  <div class="task" data-goal="malen"><p class="task-q">Male bei 1 Bit Farbtiefe mindestens 10 schwarze Pixel.</p></div>
+  <div class="task" data-goal="zeile"><p class="task-q">Stelle 8 × 8 Pixel und 1 Bit ein. Male die oberste Zeile so, dass ihr Code <b>10101010</b> lautet.</p></div>
+  <div class="task" data-goal="gelb"><p class="task-q">Mische bei 24 Bit die Farbe <b>Gelb</b> (Rot 255, Grün 255, Blau 0) und male damit ein Pixel.</p></div>
+  <div class="task" data-goal="gross"><p class="task-q">Stelle 16 × 16 Pixel und 24 Bit ein und lies ab, wie viele Byte das Bild unkomprimiert braucht.</p></div>
+  <div class="task">
+    <p class="task-q">Du hast ein buntes Bild gemalt und stellst die Farbtiefe auf 1 Bit. Was passiert?</p>
+    <div class="choices">
+      <button type="button" data-ok data-fb="Richtig: Mit 1 Bit gibt es nur zwei Zustände. Helle Pixel werden weiß, dunkle schwarz. Stellst du danach wieder 24 Bit ein, kommen die Farben nicht zurück.">Jedes Pixel wird schwarz oder weiß, die Farben sind danach verloren.</button>
+      <button type="button" data-fb="Probiere es aus: Male bunt bei 24 Bit und schalte dann auf 1 Bit.">Das Bild bleibt bunt, es wird nur kleiner gespeichert.</button>
+      <button type="button" data-fb="Die Pixel bleiben erhalten, aber jedes kann nur noch zwei Zustände haben.">Das Bild wird gelöscht.</button>
+    </div><p class="fb"></p>
+  </div>
+  <div class="task">
+    <p class="task-q">Wie ändert sich der Speicherbedarf, wenn du bei gleicher Farbtiefe von 8 × 8 auf 16 × 16 Pixel wechselst?</p>
+    <div class="choices">
+      <button type="button" data-fb="Breite und Höhe verdoppeln sich beide. Vergleiche die Anzahl der Pixel: 64 und 256.">Er verdoppelt sich.</button>
+      <button type="button" data-ok data-fb="Richtig: 16 · 16 = 256 Pixel statt 8 · 8 = 64 Pixel, also viermal so viele.">Er wird viermal so groß.</button>
+      <button type="button" data-fb="Die Farbtiefe bleibt gleich, aber die Zahl der Pixel ändert sich.">Er bleibt gleich.</button>
+    </div><p class="fb"></p>
+  </div>
+  <div class="all-done">Alles entdeckt! Weiter geht es mit den Übungen.</div>
+</div>
+
+<script src="../../static/lesson-kit.js"></script>
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+  var NS = 'http://www.w3.org/2000/svg';
+  var WEISS = [255, 255, 255], SCHWARZ = [0, 0, 0];
+  var S = { n: 8, tiefe: 1, werkzeug: 'stift', farbe: SCHWARZ.slice(), px: [], wahl: null };
+  var SMILEY = ['00111100', '01000010', '10100101', '10000001', '10100101', '10011001', '01000010', '00111100'];
+
+  function hell(c) { return 0.299 * c[0] + 0.587 * c[1] + 0.114 * c[2]; }
+  // Farbe auf die aktuelle Farbtiefe abbilden (dabei gehen Informationen verloren)
+  function quantisiere(c, t) {
+    if (t === 24) return c.slice();
+    var g = hell(c);
+    if (t === 1) return g < 128 ? SCHWARZ.slice() : WEISS.slice();
+    if (t === 2) { var v = Math.round(g / 85) * 85; return [v, v, v]; }
+    var w = Math.round(g); return [w, w, w];
+  }
+  function bin(n, stellen) { var s = n.toString(2); while (s.length < stellen) s = '0' + s; return s; }
+  function hex2(n) { return (n < 16 ? '0' : '') + n.toString(16).toUpperCase(); }
+  // Bitfolge eines Pixels: 1 Bit: 1 = schwarz, 0 = weiß. Graustufen: 0 = schwarz bis Maximum = weiß.
+  function code(c, t) {
+    if (t === 1) return c[0] === 0 ? '1' : '0';
+    if (t === 2) return bin(Math.round(c[0] / 85), 2);
+    if (t === 8) return bin(c[0], 8);
+    return bin(c[0], 8) + bin(c[1], 8) + bin(c[2], 8);
+  }
+  function rgb(c) { return 'rgb(' + c[0] + ',' + c[1] + ',' + c[2] + ')'; }
+  function anzahlFarben(t) { return Math.pow(2, t); }
+  function leer(n) { var a = []; for (var i = 0; i < n * n; i++) a.push(WEISS.slice()); return a; }
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined) e.textContent = text; return e; }
+
+  // ------------------------------------------------ Raster zeichnen
+  var rects = [];
+  function baueRaster() {
+    var svg = $('bild'), z = 320 / S.n;
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    rects = [];
+    for (var y = 0; y < S.n; y++) for (var x = 0; x < S.n; x++) {
+      var r = document.createElementNS(NS, 'rect');
+      r.setAttribute('x', x * z); r.setAttribute('y', y * z); r.setAttribute('width', z); r.setAttribute('height', z);
+      r.setAttribute('class', 'gitter');
+      svg.appendChild(r); rects.push(r);
+    }
+    var rahmen = document.createElementNS(NS, 'rect');
+    rahmen.setAttribute('x', 0.7); rahmen.setAttribute('y', 0.7); rahmen.setAttribute('width', 318.6); rahmen.setAttribute('height', 318.6); rahmen.setAttribute('class', 'rahmen');
+    svg.appendChild(rahmen);
+    var wahl = document.createElementNS(NS, 'rect');
+    wahl.setAttribute('id', 'wahlRect'); wahl.setAttribute('class', 'wahl'); wahl.setAttribute('width', z); wahl.setAttribute('height', z);
+    wahl.toggleAttribute('hidden', true);
+    svg.appendChild(wahl);
+    $('bild').setAttribute('aria-label', 'Pixelraster mit ' + S.n + ' mal ' + S.n + ' Pixeln zum Malen.');
+  }
+  function zeichne() {
+    S.px.forEach(function (c, i) { rects[i].setAttribute('fill', rgb(c)); });
+    var w = $('wahlRect'), z = 320 / S.n;
+    if (S.wahl !== null && S.wahl < S.px.length) { w.setAttribute('x', (S.wahl % S.n) * z); w.setAttribute('y', Math.floor(S.wahl / S.n) * z); w.toggleAttribute('hidden', false); }
+    else w.toggleAttribute('hidden', true);
+    zeigeCode(); zeigeWerte(); pruefe();
+  }
+
+  function zeigeCode() {
+    var c = $('code'); c.textContent = '';
+    var zeile = S.px.slice(0, S.n), teile = zeile.map(function (p) { return code(p, S.tiefe); });
+    $('codeTitel').textContent = 'Code der obersten Zeile (' + S.n + ' Pixel · ' + S.tiefe + ' Bit = ' + S.n * S.tiefe + ' Bit):';
+    teile.forEach(function (t) { c.appendChild(el('span', 'px', t)); c.appendChild(document.createTextNode(' ')); });
+    var info = '';
+    if (S.tiefe === 1) info = '1 = schwarz, 0 = weiß.' + (S.n === 8 ? ' Als Byte geschrieben: ' + hex2(parseInt(teile.join(''), 2)) + ' (hexadezimal).' : '');
+    else if (S.tiefe === 2) info = 'Je Pixel 2 Bit: 00 = schwarz, 01 = dunkelgrau, 10 = hellgrau, 11 = weiß.';
+    else if (S.tiefe === 8) info = 'Je Pixel 8 Bit Helligkeit: 00000000 = schwarz (0) bis 11111111 = weiß (255).';
+    else info = 'Je Pixel 24 Bit: 8 Bit Rot, 8 Bit Grün, 8 Bit Blau.';
+    if (S.wahl !== null) {
+      var p = S.px[S.wahl];
+      info += ' Abgelesenes Pixel (Spalte ' + (S.wahl % S.n + 1) + ', Zeile ' + (Math.floor(S.wahl / S.n) + 1) + '): ' + code(p, S.tiefe) +
+        (S.tiefe === 24 ? ' = R ' + p[0] + ', G ' + p[1] + ', B ' + p[2] + ' = #' + hex2(p[0]) + hex2(p[1]) + hex2(p[2]) : S.tiefe >= 2 ? ' = ' + parseInt(code(p, S.tiefe), 2) : '');
+    }
+    $('codeInfo').textContent = info;
+  }
+
+  function zeigeWerte() {
+    var ro = $('readouts'); ro.textContent = '';
+    function readout(name, wert) { var d = el('div', 'readout'); d.appendChild(el('span', '', name)); d.appendChild(el('b', '', wert)); ro.appendChild(d); }
+    var bits = S.n * S.n * S.tiefe;
+    readout('Pixel', S.n + ' · ' + S.n + ' = ' + LK.fmt(S.n * S.n, 0));
+    readout('Farben', LK.fmt(anzahlFarben(S.tiefe), 0));
+    readout('Speicher', LK.fmt(bits, 0) + ' Bit');
+    readout('in Byte', LK.fmt(bits / 8, 0) + ' Byte');
+  }
+
+  // ------------------------------------------------ Palette je Farbtiefe
+  function bauePalette() {
+    var p = $('palette'); p.textContent = '';
+    if (S.tiefe === 1 || S.tiefe === 2) {
+      var box = el('div', 'farben');
+      box.setAttribute('role', 'group'); box.setAttribute('aria-label', 'Farbe wählen');
+      var stufen = S.tiefe === 1 ? [[0, 'schwarz'], [255, 'weiß']] : [[0, 'schwarz'], [85, 'dunkelgrau'], [170, 'hellgrau'], [255, 'weiß']];
+      stufen.forEach(function (s) {
+        var b = el('button'); b.type = 'button';
+        b.style.background = rgb([s[0], s[0], s[0]]);
+        b.setAttribute('aria-label', s[1]); b.title = s[1];
+        b.setAttribute('aria-pressed', String(S.farbe[0] === s[0] && S.farbe[1] === s[0]));
+        b.addEventListener('click', function () { S.farbe = [s[0], s[0], s[0]]; S.werkzeug = 'stift'; setzeWerkzeug(); bauePalette(); });
+        box.appendChild(b);
+      });
+      p.appendChild(box);
+      return;
+    }
+    var kanaele = S.tiefe === 8 ? [['Helligkeit', 0]] : [['Rot', 0], ['Grün', 1], ['Blau', 2]];
+    kanaele.forEach(function (k) {
+      var lab = el('label', 'ctrl'), sp = el('span', '', k[0] + ' '), out = el('output', '', String(S.farbe[k[1]]));
+      sp.appendChild(out); lab.appendChild(sp);
+      var inp = el('input'); inp.type = 'range'; inp.min = 0; inp.max = 255; inp.step = 1; inp.value = S.farbe[k[1]];
+      inp.addEventListener('input', function () {
+        var v = Number(inp.value);
+        if (S.tiefe === 8) S.farbe = [v, v, v]; else S.farbe[k[1]] = v;
+        out.textContent = String(v); vorschau();
+      });
+      lab.appendChild(inp); p.appendChild(lab);
+    });
+    var v = el('div', 'vorschau'); v.appendChild(el('i')); v.appendChild(el('span', 'small mono'));
+    p.appendChild(v);
+    vorschau();
+  }
+  function vorschau() {
+    var v = $('palette').querySelector('.vorschau'); if (!v) return;
+    v.firstChild.style.background = rgb(S.farbe);
+    v.lastChild.textContent = S.tiefe === 24 ? '#' + hex2(S.farbe[0]) + hex2(S.farbe[1]) + hex2(S.farbe[2]) + ' · ' + code(S.farbe, 24).replace(/(.{8})/g, '$1 ').trim() : 'Wert ' + S.farbe[0] + ' = ' + bin(S.farbe[0], 8);
+  }
+
+  // ------------------------------------------------ Malen (Zeiger, auch Touch)
+  var malt = false;
+  function zelle(ev) {
+    var svg = $('bild'), r = svg.getBoundingClientRect();
+    var x = Math.floor((ev.clientX - r.left) / r.width * S.n), y = Math.floor((ev.clientY - r.top) / r.height * S.n);
+    if (x < 0 || y < 0 || x >= S.n || y >= S.n) return -1;
+    return y * S.n + x;
+  }
+  function anwenden(i) {
+    if (i < 0) return;
+    if (S.werkzeug === 'pipette') {
+      S.wahl = i; S.farbe = S.px[i].slice(); bauePalette(); zeichne(); return;
+    }
+    S.wahl = null;
+    S.px[i] = quantisiere(S.farbe, S.tiefe);
+    zeichne();
+  }
+  $('bild').addEventListener('pointerdown', function (ev) {
+    ev.preventDefault(); malt = true;
+    try { $('bild').setPointerCapture(ev.pointerId); } catch (e) { /* ältere Browser */ }
+    anwenden(zelle(ev));
+  });
+  $('bild').addEventListener('pointermove', function (ev) { if (malt && S.werkzeug === 'stift') anwenden(zelle(ev)); });
+  ['pointerup', 'pointercancel', 'pointerleave'].forEach(function (t) { $('bild').addEventListener(t, function () { malt = false; }); });
+
+  // ------------------------------------------------ Einstellungen
+  function setzeGroesse(n) {
+    var alt = S.px, altN = S.n, neu = leer(n);
+    for (var y = 0; y < Math.min(n, altN); y++) for (var x = 0; x < Math.min(n, altN); x++) neu[y * n + x] = alt[y * altN + x];
+    S.n = n; S.px = neu; S.wahl = null;
+    $('wahlGroesse').querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-pressed', String(Number(b.dataset.n) === n)); });
+    baueRaster(); zeichne();
+  }
+  function setzeTiefe(t) {
+    var verlust = false;
+    S.px = S.px.map(function (c) { var q = quantisiere(c, t); if (q.join() !== c.join()) verlust = true; return q; });
+    S.farbe = quantisiere(S.farbe, t);
+    if (t <= 2 && S.farbe.join() === WEISS.join()) S.farbe = SCHWARZ.slice();
+    S.tiefe = t;
+    $('wahlTiefe').querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-pressed', String(Number(b.dataset.t) === t)); });
+    $('hinweis').textContent = verlust ? 'Beim Umstellen auf ' + t + ' Bit wurden Pixel an die neue Farbtiefe angepasst. Diese Information ist verloren, auch wenn du wieder mehr Bit einstellst.' : '';
+    bauePalette(); zeichne();
+  }
+  function setzeWerkzeug() {
+    $('tStift').setAttribute('aria-pressed', String(S.werkzeug === 'stift'));
+    $('tPipette').setAttribute('aria-pressed', String(S.werkzeug === 'pipette'));
+    if (S.werkzeug === 'stift') S.wahl = null;
+  }
+  $('wahlGroesse').querySelectorAll('button').forEach(function (b) { b.addEventListener('click', function () { setzeGroesse(Number(b.dataset.n)); }); });
+  $('wahlTiefe').querySelectorAll('button').forEach(function (b) { b.addEventListener('click', function () { setzeTiefe(Number(b.dataset.t)); }); });
+  $('tStift').addEventListener('click', function () { S.werkzeug = 'stift'; setzeWerkzeug(); zeichne(); });
+  $('tPipette').addEventListener('click', function () { S.werkzeug = 'pipette'; setzeWerkzeug(); $('hinweis').textContent = 'Tippe auf ein Pixel, um seinen Code abzulesen.'; });
+  $('bLeeren').addEventListener('click', function () { S.px = leer(S.n); S.wahl = null; $('hinweis').textContent = ''; zeichne(); });
+  $('bBeispiel').addEventListener('click', function () {
+    S.px = leer(S.n); S.wahl = null;
+    var off = Math.floor((S.n - 8) / 2);
+    SMILEY.forEach(function (row, y) { row.split('').forEach(function (b, x) { if (b === '1') S.px[(y + off) * S.n + x + off] = quantisiere(SCHWARZ, S.tiefe); }); });
+    $('hinweis').textContent = '';
+    zeichne();
+  });
+
+  // ------------------------------------------------ Aufgaben
+  function pruefe() {
+    if (S.tiefe === 1 && S.px.filter(function (c) { return c[0] === 0; }).length >= 10) LK.reach('malen');
+    if (S.tiefe === 1 && S.n === 8 && S.px.slice(0, 8).map(function (c) { return code(c, 1); }).join('') === '10101010') LK.reach('zeile');
+    if (S.tiefe === 24 && S.px.some(function (c) { return c[0] === 255 && c[1] === 255 && c[2] === 0; })) LK.reach('gelb');
+    if (S.tiefe === 24 && S.n === 16) LK.reach('gross');
+  }
+
+  S.px = leer(S.n);
+  baueRaster(); bauePalette(); zeichne();
+})();
+</script>
+</body>
+</html>

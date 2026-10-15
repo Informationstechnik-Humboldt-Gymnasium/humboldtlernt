@@ -1,0 +1,20 @@
+{
+  "nummer": "4",
+  "reihenfolge": 4,
+  "titel": "Datenbanken",
+  "beschreibung": "Datenbanken im Alltag, Tabellen, Datensätze und Schlüssel, ER-Modell und relationales Modell, Abfragen mit SQL sowie Datenschutz und Datensicherheit.",
+  "inhalte": [
+    "Datenbanksysteme im Alltag (z. B. YouTube, WhatsApp, Amazon, Kontakte auf dem Smartphone)",
+    "Benutzung eines einfachen relationalen Datenbanksystems: Daten suchen, sortieren, eintragen, ändern, löschen",
+    "Tabellen zur Strukturierung von Daten erstellen",
+    "Datensatz, Attribut, Primärschlüssel, Tabelle und Datenbank unterscheiden",
+    "Verknüpfung von Tabellen",
+    "Entwurf und Beurteilung eines einfachen ER-Modells; Zusammenhang von ER-Modell und relationalem Modell",
+    "Einfache SQL-Anfragen, auch über mehrere Tabellen, ggf. mit Aggregatfunktionen",
+    "Vorteile von Datenbanken gegenüber Tabellenkalkulation",
+    "Auswirkungen auf die Gesellschaft: Chancen und Risiken von Data Mining, Bezahlen mit persönlichen Daten",
+    "Rechtliche Rahmenbedingungen: Recht auf informationelle Selbstbestimmung, Datenschutzgesetz, Allgemeine Geschäftsbedingungen",
+    "Datensicherheit, Zugriffsschutz und Benutzersichten"
+  ],
+  "erweiterung": "Leistungsstärkere Schülerinnen und Schüler modellieren und implementieren eigene Datenbanken; Urheber- und Persönlichkeitsrecht an Fallbeispielen."
+}

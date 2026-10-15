@@ -1,0 +1,126 @@
+{
+  "id": "inf-k10-zeichen-bilder",
+  "titel": "Zeichen und Bilder codieren",
+  "kurz": "Wie Buchstaben als Zahlen (ASCII, Unicode) und Bilder als Pixel mit Farbtiefe gespeichert werden, wie groß Bilddateien sind und welches Grafikformat wofür passt.",
+  "reihenfolge": 5,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Zeichen mit dem ASCII-Code codieren und decodieren und erklären, wozu es Unicode gibt" },
+    { "id": "lz2", "niveau": "G", "text": "Pixel, Auflösung und Farbtiefe erklären und Schwarz-Weiß-, Graustufen- und Farbbilder (RGB) unterscheiden" },
+    { "id": "lz3", "niveau": "H", "text": "Den Speicherbedarf unkomprimierter Bilder berechnen" },
+    { "id": "lz4", "niveau": "H", "text": "Pixel- und Vektorgrafiken unterscheiden und ein passendes Grafikformat (BMP, PNG, JPEG, GIF, SVG) auswählen" }
+  ],
+  "verstehen": {
+    "einstieg": "Du tippst „Hallo“ und schickst ein Selfie hinterher. Für den Rechner ist beides nur eine lange Folge aus Nullen und Einsen. Wie wird aus einem Buchstaben oder einem Foto eine Bitfolge?",
+    "abschnitte": [
+      {
+        "titel": "Zeichen: ASCII und Unicode",
+        "text": "Im **ASCII-Code** hat jedes Zeichen eine Nummer von 0 bis 127, also 7 Bit:\n\n- Leerzeichen = 32, Ziffer ``0`` = 48, ``1`` = 49 …\n- ``A`` = 65, ``B`` = 66 … ``Z`` = 90\n- ``a`` = 97, ``b`` = 98 … ``z`` = 122\n\nEin Kleinbuchstabe hat also immer die Nummer seines Großbuchstabens plus 32. „Hi“ wird als 72 105 gespeichert.\n\nFür Umlaute, andere Schriften und Emojis reichen 128 Zeichen nicht. Darum gibt es **Unicode** mit über 150 000 Zeichen. Die übliche Speicherform **UTF-8** braucht für ASCII-Zeichen 1 Byte, für ``ä`` 2 Byte und für viele Emojis 4 Byte."
+      },
+      {
+        "titel": "Pixel, Auflösung, Farbtiefe",
+        "text": "Ein Pixelbild ist ein Raster aus **Pixeln** (Bildpunkten). Die **Auflösung** gibt an, wie viele Pixel es in der Breite und Höhe hat, z. B. 1920 × 1080. Die **Farbtiefe** sagt, wie viele Bit pro Pixel gespeichert werden:\n\n- **1 Bit:** 2 Farben, Schwarz-Weiß-Bild (0 = weiß, 1 = schwarz)\n- **8 Bit:** 2^{8} = 256 Graustufen von Schwarz bis Weiß\n- **24 Bit (RGB):** je 8 Bit für Rot, Grün und Blau, also 2^{24} = 16 777 216 Farben\n\nBei RGB mischt der Bildschirm Licht: Rot 255, Grün 255, Blau 0 ergibt Gelb, alle drei auf 255 ergibt Weiß."
+      },
+      {
+        "titel": "Wie groß ist ein Bild?",
+        "text": "Ohne Komprimierung braucht ein Bild\n\n`Speicherbedarf = Breite · Höhe · Farbtiefe`\n\nin Bit. Durch 8 geteilt ergibt das Byte. Ein Foto mit 1920 × 1080 Pixeln und 24 Bit braucht 1920 · 1080 · 24 Bit = 49 766 400 Bit = 6 220 800 Byte, also etwa 6,2 MB. Echte Dateien sind meist kleiner, weil sie **komprimiert** werden. Dazu kommen noch ein paar Byte für Kopfdaten wie Breite und Höhe."
+      },
+      {
+        "titel": "Grafikformate",
+        "text": "- **BMP:** speichert jedes Pixel einzeln, meist ohne Komprimierung, daher sehr groß.\n- **PNG:** **verlustfrei** komprimiert, gut für Grafiken, Screenshots und Logos, auch mit transparentem Hintergrund.\n- **JPEG:** **verlustbehaftet** komprimiert, sehr klein, ideal für Fotos. Bei starker Komprimierung entstehen Klötzchen und Schlieren.\n- **GIF:** höchstens 256 Farben, kann kurze Animationen speichern.\n- **SVG:** eine **Vektorgrafik**. Sie speichert keine Pixel, sondern Formen wie Linien, Kreise und Kurven. Man kann sie beliebig vergrößern, ohne dass sie pixelig wird.\n\nPixelgrafiken eignen sich für Fotos, Vektorgrafiken für Logos, Symbole und Diagramme."
+      }
+    ],
+    "formeln": [
+      { "formel": "Speicherbedarf in Bit = Breite · Höhe · Farbtiefe", "bedeutung": "unkomprimiertes Pixelbild; geteilt durch 8 ergibt Byte" },
+      { "formel": "Anzahl Farben = 2^{Farbtiefe}", "bedeutung": "z. B. 8 Bit: 256, 24 Bit: 16 777 216" }
+    ],
+    "merksatz": "ASCII ordnet 128 Zeichen Nummern zu (A = 65, a = 97), Unicode umfasst fast alle Schriften und Emojis. Ein Pixelbild besteht aus Breite · Höhe Pixeln mit je so vielen Bit wie die Farbtiefe. PNG ist verlustfrei, JPEG verlustbehaftet, SVG eine Vektorgrafik.",
+    "alltag": "Wenn ein Messenger ein Foto verschickt, wird es oft als JPEG stärker komprimiert. Darum sieht es beim Empfänger manchmal etwas unschärfer aus als im Original."
+  },
+  "interaktiv": ["inf-pixelbild"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "inf-zbi-01", "typ": "zahl", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Im ASCII-Code hat ``A`` die Nummer 65. Welche Nummer hat ``C``?",
+      "loesung": 67, "toleranz": 0, "einheit": "",
+      "gegeben": "A = 65, die Großbuchstaben sind fortlaufend nummeriert",
+      "gesucht": "Nummer von C",
+      "rechenweg": [
+        "A = 65, B = 66, C = 67"
+      ],
+      "erklaerung": "Weil die Buchstaben fortlaufend nummeriert sind, lassen sich Texte leicht alphabetisch sortieren: Man vergleicht einfach die Nummern."
+    },
+    {
+      "id": "inf-zbi-02", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Eine Nachricht ist im ASCII-Code als ``72 105`` gespeichert. Was steht dort? (A = 65, a = 97)",
+      "optionen": [
+        { "text": "Hi", "richtig": true },
+        { "text": "HI", "feedback": "105 liegt im Bereich der Kleinbuchstaben (97 bis 122). Großes I wäre 73." },
+        { "text": "hi", "feedback": "72 ist ein Großbuchstabe: 72 − 65 = 7, also der 8. Buchstabe H. Kleines h wäre 104." },
+        { "text": "GI", "feedback": "G wäre 71. Rechne nach: 65 + 7 = 72 ist H." }
+      ],
+      "erklaerung": "72 − 65 = 7: der 8. Buchstabe des Alphabets, H. 105 − 97 = 8: der 9. Buchstabe als Kleinbuchstabe, i."
+    },
+    {
+      "id": "inf-zbi-03", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Wie viele Farben bzw. Helligkeitsstufen sind mit der Farbtiefe möglich?",
+      "paare": [
+        { "links": "1 Bit", "rechts": "2 (Schwarz und Weiß)" },
+        { "links": "4 Bit", "rechts": "16" },
+        { "links": "8 Bit", "rechts": "256 (z. B. Graustufen)" },
+        { "links": "24 Bit", "rechts": "16 777 216 (RGB)" }
+      ],
+      "erklaerung": "Die Anzahl ist immer 2 hoch Farbtiefe. Bei 24 Bit stehen je 8 Bit für Rot, Grün und Blau."
+    },
+    {
+      "id": "inf-zbi-04", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Ein Bild hat 800 × 600 Pixel und eine Farbtiefe von 24 Bit. Wie viel Speicher braucht es **unkomprimiert** in kB? Rechne mit 1 kB = 1000 Byte.",
+      "loesung": 1440, "toleranz": 0, "einheit": "kB",
+      "alternativEinheiten": { "MB": 1000 },
+      "gegeben": "Breite 800 Pixel, Höhe 600 Pixel, Farbtiefe 24 Bit = 3 Byte",
+      "gesucht": "Speicherbedarf in kB",
+      "rechenweg": [
+        "Anzahl der Pixel: 800 · 600 = 480 000",
+        "Je Pixel 24 Bit = 3 Byte: 480 000 · 3 Byte = 1 440 000 Byte",
+        "1 440 000 Byte : 1000 = 1440 kB (= 1,44 MB)"
+      ],
+      "erklaerung": "Als JPEG wäre dasselbe Foto oft nur 100 bis 300 kB groß, weil die Komprimierung Speicher spart."
+    },
+    {
+      "id": "inf-zbi-05", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Welches Grafikformat passt am besten?",
+      "paare": [
+        { "links": "Urlaubsfoto, das wenig Speicher brauchen soll", "rechts": "JPEG" },
+        { "links": "Screenshot mit scharfer Schrift, ohne Qualitätsverlust", "rechts": "PNG" },
+        { "links": "Schullogo, das auf Plakaten beliebig groß gedruckt wird", "rechts": "SVG" },
+        { "links": "Kurze, einfache Animation mit wenigen Farben", "rechts": "GIF" }
+      ],
+      "extraRechts": ["BMP"],
+      "erklaerung": "JPEG verkleinert Fotos stark, verändert aber Kanten und Schrift. PNG ist verlustfrei. SVG speichert Formen und skaliert ohne Pixel. GIF kann Animationen. BMP ist meist unkomprimiert und dadurch selten die beste Wahl."
+    },
+    {
+      "id": "inf-zbi-06", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Ein Kreis wird einmal als PNG-Bild (200 × 200 Pixel) und einmal als SVG gespeichert. Beide werden auf das Zehnfache vergrößert. Was beobachtest du?",
+      "optionen": [
+        { "text": "Das PNG wird pixelig, das SVG bleibt scharf.", "richtig": true },
+        { "text": "Beide bleiben gleich scharf.", "feedback": "Ein PNG hat feste Pixel. Beim Vergrößern werden sie einfach größer und als Klötzchen sichtbar." },
+        { "text": "Das SVG wird pixelig, das PNG bleibt scharf.", "feedback": "Umgekehrt: Das SVG speichert die Form, und der Kreis wird in der neuen Größe neu gezeichnet." },
+        { "text": "Beide werden gleich pixelig.", "feedback": "Eine Vektorgrafik hat keine festen Pixel, sie wird neu berechnet." }
+      ],
+      "erklaerung": "Eine Vektorgrafik beschreibt den Kreis z. B. als Mittelpunkt und Radius. Der Rechner zeichnet ihn in jeder Größe neu. Ein Pixelbild kennt nur seine 200 × 200 Punkte."
+    },
+    {
+      "id": "inf-zbi-07", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Ein unkomprimiertes Graustufenbild (8 Bit) wird neu aufgenommen: Breite und Höhe werden jeweils verdoppelt, und es wird als Farbbild mit 24 Bit gespeichert. Um welchen Faktor wächst der Speicherbedarf?",
+      "loesung": 12, "toleranz": 0, "einheit": "",
+      "gegeben": "Breite · 2, Höhe · 2, Farbtiefe von 8 Bit auf 24 Bit",
+      "gesucht": "Faktor, um den der Speicherbedarf steigt",
+      "rechenweg": [
+        "Pixelzahl: 2 · 2 = 4-mal so viele Pixel",
+        "Farbtiefe: 24 Bit : 8 Bit = 3-mal so viele Bit je Pixel",
+        "Zusammen: 4 · 3 = 12"
+      ],
+      "erklaerung": "Verdoppelt man Breite und Höhe, vervierfacht sich die Fläche. Viele unterschätzen das und rechnen nur mit dem Faktor 2."
+    }
+  ]
+}

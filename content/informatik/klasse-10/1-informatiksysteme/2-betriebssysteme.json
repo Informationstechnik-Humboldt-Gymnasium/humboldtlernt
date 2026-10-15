@@ -1,0 +1,120 @@
+{
+  "id": "inf-k10-betriebssysteme",
+  "titel": "Betriebssysteme, Programme und Bereiche der Informatik",
+  "kurz": "Welche Aufgaben ein Betriebssystem übernimmt, wie du passende Anwendungsprogramme auswählst und womit sich die vier Bereiche der Informatik beschäftigen.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Die Aufgaben eines Betriebssystems nennen und Beispielen zuordnen" },
+    { "id": "lz2", "niveau": "G", "text": "Betriebssystem, Anwendungsprogramm und Hardware unterscheiden und Betriebssysteme verschiedener Geräte nennen" },
+    { "id": "lz3", "niveau": "G", "text": "Für eine Aufgabe ein passendes Anwendungsprogramm und Dateiformat auswählen" },
+    { "id": "lz4", "niveau": "H", "text": "Fragestellungen den Bereichen Technische, Theoretische, Praktische Informatik sowie Informatik und Gesellschaft zuordnen" }
+  ],
+  "verstehen": {
+    "einstieg": "Auf deinem Handy laufen gleichzeitig Musik, ein Chat und ein Spiel. Alle wollen den Prozessor, den Speicher und den Bildschirm nutzen. Wer sorgt dafür, dass sie sich nicht gegenseitig stören?",
+    "abschnitte": [
+      {
+        "titel": "Schichten eines Informatiksystems",
+        "text": "Man kann sich einen Rechner in Schichten vorstellen:\n\n- **Hardware:** Prozessor, Arbeitsspeicher, Festplatte bzw. SSD, Bildschirm, Tastatur, Netzwerkkarte\n- **Betriebssystem:** verwaltet die Hardware und stellt sie den Programmen zur Verfügung\n- **Anwendungsprogramme:** Browser, Textverarbeitung, Spiele, Programmierumgebungen wie Greenfoot\n\nAnwendungen greifen nicht direkt auf die Hardware zu, sondern bitten das Betriebssystem darum. Darum läuft dasselbe Programm auf Rechnern mit ganz unterschiedlicher Hardware."
+      },
+      {
+        "titel": "Aufgaben des Betriebssystems",
+        "text": "- **Prozessverwaltung:** teilt die Rechenzeit des Prozessors auf die laufenden Programme auf. Sie wechseln so schnell, dass alles gleichzeitig zu laufen scheint.\n- **Speicherverwaltung:** gibt jedem Programm einen eigenen Bereich im Arbeitsspeicher, damit sich Programme nicht gegenseitig überschreiben.\n- **Dateiverwaltung:** organisiert Dateien und Ordner im Dateisystem.\n- **Geräteverwaltung:** steuert Drucker, Kamera, WLAN usw. über **Treiber**.\n- **Benutzerverwaltung:** prüft die Anmeldung und achtet auf die Zugriffsrechte.\n- **Benutzeroberfläche:** Fenster, Startmenü, Homescreen oder Kommandozeile.\n\nBekannte Betriebssysteme sind Windows, macOS und Linux auf PCs sowie Android und iOS auf Smartphones und Tablets."
+      },
+      {
+        "titel": "Das passende Programm wählen",
+        "text": "Für jede Aufgabe gibt es Programme, die darauf spezialisiert sind:\n\n- Text mit Gliederung: Textverarbeitung (Dateiformat z. B. ``.docx`` oder ``.odt``)\n- Rechnen mit Tabellen und Diagrammen: Tabellenkalkulation (``.xlsx``, ``.ods``)\n- Vortrag: Präsentationsprogramm (``.pptx``, ``.odp``)\n- Quelltext eines Programms: Editor oder Entwicklungsumgebung (``.java``)\n- Dokument, das überall gleich aussehen soll: ``.pdf``\n\nGute Frage vor der Wahl: Wer soll die Datei später öffnen oder bearbeiten, und mit welchem Programm?"
+      },
+      {
+        "titel": "Die Bereiche der Informatik",
+        "text": "- **Technische Informatik:** Wie ist ein Rechner gebaut? Schaltungen, Prozessoren, Speicherchips, Logikgatter.\n- **Theoretische Informatik:** Was kann man überhaupt berechnen und wie schnell? Automaten, formale Sprachen, Grenzen von Algorithmen.\n- **Praktische Informatik:** Wie entwickelt man Software? Programmiersprachen, Algorithmen, Datenbanken, Betriebssysteme.\n- **Informatik und Gesellschaft:** Wie verändert Informatik unser Leben? Datenschutz, Urheberrecht, Arbeitswelt, Verantwortung.\n\nViele echte Fragen berühren mehrere Bereiche. Die Einteilung hilft aber, eine Frage genauer zu verstehen."
+      }
+    ],
+    "merksatz": "Das Betriebssystem ist der Vermittler zwischen Hardware und Anwendungsprogrammen: Es verwaltet Prozesse, Speicher, Dateien, Geräte und Benutzer. Die Informatik teilt sich in Technische, Theoretische und Praktische Informatik sowie Informatik und Gesellschaft.",
+    "alltag": "Wenn du ein neues Gerät per USB anschließt und es sofort funktioniert, hat das Betriebssystem den passenden Treiber gefunden. Und wenn eine App „Zugriff auf die Kamera“ möchte, fragt das Betriebssystem dich um Erlaubnis."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "inf-bsy-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Ordne jedem Vorgang die Aufgabe des Betriebssystems zu, die dahintersteckt.",
+      "paare": [
+        { "links": "Musik und Chat laufen gleichzeitig, der Prozessor wechselt ständig zwischen ihnen.", "rechts": "Prozessverwaltung" },
+        { "links": "Ein abgestürztes Spiel kann die Daten im Browser nicht überschreiben.", "rechts": "Speicherverwaltung" },
+        { "links": "Ein neuer Drucker funktioniert nach dem Einstecken.", "rechts": "Geräteverwaltung" },
+        { "links": "Deine Fotos liegen im Ordner „Bilder“.", "rechts": "Dateiverwaltung" },
+        { "links": "Nach der Anmeldung siehst du nur deine eigenen Dateien.", "rechts": "Benutzerverwaltung" }
+      ],
+      "erklaerung": "Das Betriebssystem teilt die Hardware fair und sicher auf alle Programme und Benutzer auf. Jede Aufgabe kümmert sich um ein anderes Betriebsmittel."
+    },
+    {
+      "id": "inf-bsy-02", "typ": "multi", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Welche davon sind **Betriebssysteme**?",
+      "optionen": [
+        { "text": "Android", "richtig": true },
+        { "text": "Linux", "richtig": true },
+        { "text": "Greenfoot", "feedback": "Greenfoot ist eine Entwicklungsumgebung, also ein Anwendungsprogramm, das auf einem Betriebssystem läuft." },
+        { "text": "iOS", "richtig": true },
+        { "text": "Google Chrome", "feedback": "Chrome ist ein Browser und damit ein Anwendungsprogramm." },
+        { "text": "Prozessor", "feedback": "Der Prozessor ist Hardware." }
+      ],
+      "erklaerung": "Android und iOS laufen auf Smartphones und Tablets, Linux auf PCs, Servern und vielen anderen Geräten. Android baut übrigens selbst auf einem Linux-Kern auf."
+    },
+    {
+      "id": "inf-bsy-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Warum läuft dasselbe Spiel auf Laptops mit ganz unterschiedlichen Grafikkarten?",
+      "optionen": [
+        { "text": "Das Spiel spricht die Grafikkarte über das Betriebssystem und dessen Treiber an.", "richtig": true },
+        { "text": "Alle Grafikkarten sind innen gleich gebaut.", "feedback": "Grafikkarten unterscheiden sich stark. Gerade deshalb braucht man Treiber." },
+        { "text": "Das Spiel enthält für jede Grafikkarte der Welt ein eigenes Programm.", "feedback": "Das wäre kaum möglich. Die Anpassung an die Hardware übernehmen Betriebssystem und Treiber." },
+        { "text": "Die Grafikkarte wird beim Spielen gar nicht benutzt.", "feedback": "Doch, sie berechnet das Bild. Sie wird nur nicht direkt angesprochen." }
+      ],
+      "erklaerung": "Das Betriebssystem bietet Programmen einheitliche Schnittstellen. Der Treiber übersetzt diese Befehle in die Sprache des jeweiligen Geräts."
+    },
+    {
+      "id": "inf-bsy-04", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Welches Dateiformat passt am besten zur Aufgabe?",
+      "paare": [
+        { "links": "Bewerbung, die beim Empfänger genau so aussehen soll wie bei dir", "rechts": ".pdf" },
+        { "links": "Haushaltsbuch mit Summen und Diagramm", "rechts": ".xlsx" },
+        { "links": "Quelltext deiner Klasse Spieler", "rechts": ".java" },
+        { "links": "Folien für ein Referat", "rechts": ".pptx" }
+      ],
+      "extraRechts": [".mp3"],
+      "erklaerung": "Das Format bestimmt, welches Programm die Datei öffnen kann und ob man sie noch leicht bearbeiten kann. Ein PDF eignet sich zum Verschicken, aber kaum zum Weiterbearbeiten."
+    },
+    {
+      "id": "inf-bsy-05", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Ordne jede Frage dem Bereich der Informatik zu, zu dem sie am besten passt.",
+      "paare": [
+        { "links": "Wie baut man aus Transistoren ein Rechenwerk, das zwei Zahlen addiert?", "rechts": "Technische Informatik" },
+        { "links": "Gibt es Probleme, die kein Computer jemals lösen kann?", "rechts": "Theoretische Informatik" },
+        { "links": "Wie programmiert man eine App, mit der man Bücher ausleihen kann?", "rechts": "Praktische Informatik" },
+        { "links": "Darf eine Firma die Standortdaten ihrer Kunden verkaufen?", "rechts": "Informatik und Gesellschaft" }
+      ],
+      "erklaerung": "Technische Informatik: Hardware. Theoretische Informatik: Grenzen und Grundlagen des Berechnens. Praktische Informatik: Software entwickeln. Informatik und Gesellschaft: Folgen für Menschen, Recht und Ethik."
+    },
+    {
+      "id": "inf-bsy-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Eine Gruppe untersucht, ob ein Programm zur Bewerberauswahl Frauen benachteiligt, weil es aus alten Einstellungsdaten gelernt hat. Zu welchem Bereich gehört diese Frage **vor allem**?",
+      "optionen": [
+        { "text": "Informatik und Gesellschaft", "richtig": true },
+        { "text": "Technische Informatik", "feedback": "Es geht nicht um den Bau von Hardware." },
+        { "text": "Theoretische Informatik", "feedback": "Es geht nicht um die Grenzen der Berechenbarkeit, sondern um die Wirkung auf Menschen." },
+        { "text": "Gar keinem, das ist keine Informatik-Frage", "feedback": "Doch: Die Folgen von Informatiksystemen für die Gesellschaft sind ein eigener Bereich der Informatik." }
+      ],
+      "erklaerung": "Wer das Programm verbessern will, braucht auch Praktische Informatik. Die Frage nach Gerechtigkeit und Benachteiligung gehört aber vor allem zu Informatik und Gesellschaft."
+    },
+    {
+      "id": "inf-bsy-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz1",
+      "frage": "Ein Smartphone hat wenig Arbeitsspeicher. Du öffnest viele Apps nacheinander und wechselst dann zu einer alten App zurück. Sie startet neu, und dein letzter Stand ist weg. Erkläre, welche Aufgabe des Betriebssystems hier eine Rolle spielt und warum es so handelt.",
+      "stichworte": [
+        { "aspekt": "Speicherverwaltung / Arbeitsspeicher wird verteilt", "woerter": ["speicherverwalt", "arbeitsspeicher", "ram", "speicher"] },
+        { "aspekt": "Das Betriebssystem beendet ältere Apps, um Platz zu schaffen", "woerter": ["beendet", "schliesst", "entfernt", "platz", "frei"] },
+        { "aspekt": "Grund: aktuelle App soll flüssig laufen / Speicher reicht nicht für alle", "woerter": ["reicht nicht", "nicht genug", "zu wenig", "fluessig", "aktuell", "vordergrund"] }
+      ],
+      "musterloesung": "Hier spielt die Speicherverwaltung eine Rolle. Das Betriebssystem verteilt den Arbeitsspeicher auf die laufenden Apps. Weil der Speicher nicht für alle Apps reicht, beendet es ältere Apps im Hintergrund und gibt ihren Speicher frei. So läuft die App im Vordergrund flüssig. Hat die alte App ihren Stand nicht gespeichert, ist er danach weg.",
+      "erklaerung": "Gut programmierte Apps speichern ihren Zustand, bevor das Betriebssystem sie beendet. Dann merkst du davon kaum etwas."
+    }
+  ]
+}

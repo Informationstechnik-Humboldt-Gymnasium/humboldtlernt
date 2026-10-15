@@ -9,7 +9,7 @@
 (function (root) {
   'use strict';
 
-  var VERSION = 3;                       // Schema-Version der Datenbank (Migrationen unten)
+  var VERSION = 4;                       // Schema-Version der Datenbank (Migrationen unten)
   var SPEICHER_SCHLUESSEL = 'lernseite-schule-db';
   var CLIENT_ID = 'lernseite-testseite';
   var MIN = 60 * 1000, TAG = 24 * 60 * MIN;
@@ -137,6 +137,26 @@
         if (bra && d.klassen.some(function (k) { return k.id === '9a'; }) && !d.lehrerzuordnungen.some(function (z) { return z.lehrerId === bra.id && z.klasseId === '9a' && z.fachId === 'ethik'; })) {
           d.seq = (d.seq || 0) + 1;
           d.lehrerzuordnungen.push({ id: 'lz' + d.seq, lehrerId: bra.id, klasseId: '9a', fachId: 'ethik' });
+        }
+      },
+      4: function (d) {
+        // Version 4: neues Fach Informatik (Wahlpflicht Kl. 10), Kurs wp-inf-10 mit Leon Schmitt und Hannah Wolf, Lehrkraft Tobias Novak
+        if (!d.faecher.some(function (f) { return f.id === 'informatik'; })) {
+          var lb = [];
+          INH.topics.forEach(function (t) { if (t.fach === 'informatik' && t.themenfeld && lb.indexOf(t.themenfeld) < 0) lb.push(t.themenfeld); });
+          d.faecher.push({ id: 'informatik', name: 'Informatik', aktiv: true, lernbereiche: lb });
+        }
+        if (!d.klassen.some(function (k) { return k.id === 'wp-inf-10'; })) {
+          d.klassen.push({ id: 'wp-inf-10', name: 'Wahlpflichtkurs Informatik 10', typ: 'kurs', stufe: 10, aktiv: true, leitungId: null });
+        }
+        ['leon.schmitt', 'hannah.wolf'].forEach(function (name) {
+          var s = d.users.find(function (u) { return u.username === name && u.rolle === 'student'; });
+          if (s && !d.mitgliedschaften.some(function (m) { return m.userId === s.id && m.klasseId === 'wp-inf-10'; })) d.mitgliedschaften.push({ userId: s.id, klasseId: 'wp-inf-10' });
+        });
+        var nov = d.users.find(function (u) { return u.username === 'tobias.novak' && u.rolle === 'teacher'; });
+        if (nov && !d.lehrerzuordnungen.some(function (z) { return z.lehrerId === nov.id && z.klasseId === 'wp-inf-10' && z.fachId === 'informatik'; })) {
+          d.seq = (d.seq || 0) + 1;
+          d.lehrerzuordnungen.push({ id: 'lz' + d.seq, lehrerId: nov.id, klasseId: 'wp-inf-10', fachId: 'informatik' });
         }
       },
     };

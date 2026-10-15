@@ -496,6 +496,23 @@ test('17 · Datenbank: Startdaten konsistent, Migration erhält Daten, Zurückse
   assert.ok(m3.faecher.some(f => f.id === 'ethik' && f.lernbereiche.length >= 16), 'Ethik mit Lernbereichen (Thema 8 und 14 haben denselben Titel)');
   assert.equal(m3.faecher.length, altOhneEthik.faecher.length + 1);
   assert.ok(m3.lehrerzuordnungen.some(z => z.fachId === 'ethik' && z.klasseId === '9a'));
+  // Version 4: Fach Informatik, Wahlpflichtkurs wp-inf-10 mit Mitgliedern und Lehrkraft
+  const altV3 = JSON.parse(sp.getItem(ctx.SchulBackend.SPEICHER_SCHLUESSEL));
+  altV3.version = 3;
+  altV3.faecher = altV3.faecher.filter(f => f.id !== 'informatik');
+  altV3.klassen = altV3.klassen.filter(k => k.id !== 'wp-inf-10');
+  altV3.mitgliedschaften = altV3.mitgliedschaften.filter(x => x.klasseId !== 'wp-inf-10');
+  altV3.lehrerzuordnungen = altV3.lehrerzuordnungen.filter(z => z.fachId !== 'informatik');
+  const sp5 = speicher(); sp5.setItem(ctx.SchulBackend.SPEICHER_SCHLUESSEL, JSON.stringify(altV3));
+  const b4 = neu({ speicher: sp5 }).b, m4 = b4._db();
+  assert.equal(m4.version, 4);
+  assert.ok(m4.faecher.some(f => f.id === 'informatik' && f.lernbereiche.length === 4), 'Informatik mit 4 Lernbereichen');
+  assert.ok(m4.klassen.some(k => k.id === 'wp-inf-10' && k.typ === 'kurs' && k.stufe === 10));
+  assert.equal(m4.mitgliedschaften.filter(x => x.klasseId === 'wp-inf-10').length, 2);
+  const novak = m4.users.find(u => u.username === 'tobias.novak');
+  assert.ok(m4.lehrerzuordnungen.some(z => z.lehrerId === novak.id && z.klasseId === 'wp-inf-10' && z.fachId === 'informatik'));
+  assert.equal(m4.users.length, altV3.users.length, 'keine Konten verändert');
+  assert.deepEqual(plain(b4._integritaet()), []);
   assert.ok(m.audit.some(l => l.aktion === 'migration'));
   assert.deepEqual(plain(b2._integritaet()), []);
   // Zurücksetzen
