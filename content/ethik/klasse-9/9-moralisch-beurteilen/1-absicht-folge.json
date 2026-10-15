@@ -1,0 +1,224 @@
+{
+  "id": "eth-k9-absicht-folge",
+  "titel": "Absicht oder Folge? Kant und der Utilitarismus",
+  "kurz": "Zwei Grundtypen ethischer Theorien: Kants Menschheitszweckformel und der Nutzenkalkül des Utilitarismus.",
+  "reihenfolge": 1,
+  "lernziele": [
+    {
+      "id": "lz1",
+      "niveau": "G",
+      "text": "Absicht und Folge als Kriterien der moralischen Beurteilung unterscheiden"
+    },
+    {
+      "id": "lz2",
+      "niveau": "G",
+      "text": "Deontologische und konsequentialistische Ethik unterscheiden"
+    },
+    {
+      "id": "lz3",
+      "niveau": "G",
+      "text": "Kants Menschheitszweckformel wiedergeben und anwenden"
+    },
+    {
+      "id": "lz4",
+      "niveau": "H",
+      "text": "Den Grundgedanken des Utilitarismus und einen einfachen Nutzenkalkül anwenden und beide Theorien vergleichen"
+    }
+  ],
+  "verstehen": {
+    "einstieg": "Jemand will einem Fremden helfen, schiebt ihn über die Straße – und ein Radfahrer stürzt dabei. Ein anderer will nur angeben und spendet viel Geld, das vielen Menschen hilft. Wer hat moralisch besser gehandelt?",
+    "abschnitte": [
+      {
+        "titel": "Absicht oder Folge?",
+        "text": "Man kann eine Handlung nach zwei Gesichtspunkten beurteilen:\n\n- nach der **Absicht** (Gesinnung): Was wollte die Person, aus welchem Grund hat sie gehandelt?\n- nach den **Folgen**: Was hat die Handlung tatsächlich bewirkt, für wen?\n\nDaraus ergeben sich zwei Grundtypen ethischer Theorien:\n\n- **Deontologische Ethik** (griech. *deon* = Pflicht): Manche Handlungen sind an sich geboten oder verboten, unabhängig von den Folgen.\n- **Konsequentialistische Ethik:** Richtig ist die Handlung mit den besten Folgen."
+      },
+      {
+        "titel": "Kant: die Menschheitszweckformel",
+        "text": "**Immanuel Kant** (1724–1804) ist der bekannteste Vertreter der deontologischen Ethik. Eine Formulierung seines obersten Prinzips (des **kategorischen Imperativs**) ist die **Menschheitszweckformel**:\n\n„Handle so, dass du die Menschheit, sowohl in deiner Person als in der Person eines jeden andern, jederzeit zugleich als **Zweck**, niemals bloß als **Mittel** brauchst.“\n\nGemeint: Jeder Mensch hat eine **Würde**. Man darf andere zwar auch als Mittel nutzen (der Bäcker backt mein Brot), aber nie **bloß** als Mittel, also so, dass man ihre eigenen Ziele und ihre Zustimmung missachtet. Lügen, Betrügen, Erpressen und Zwingen machen Menschen zu bloßen Mitteln. Für Kant zählt dabei die **Absicht**: Gut ist der Wille, der aus Pflicht das Richtige tut."
+      },
+      {
+        "titel": "Der Utilitarismus",
+        "text": "Der **Utilitarismus** (lat. *utilitas* = Nutzen) wurde von **Jeremy Bentham** (1748–1832) und **John Stuart Mill** (1806–1873) begründet. Grundgedanken:\n\n- **Folgenprinzip:** Nur die Folgen einer Handlung zählen.\n- **Nutzenprinzip:** Gut sind Folgen, die Glück (Freude) vermehren und Leid verringern.\n- **Universalprinzip:** Das Glück **aller** Betroffenen zählt, jedes gleich viel – auch das eigene, aber nicht mehr.\n\nFaustformel: Handle so, dass das **größte Glück der größten Zahl** entsteht.\n\n**Einfacher Nutzenkalkül:** Für jede Handlungsmöglichkeit schätzt man für alle Betroffenen Freude (+) und Leid (−) und addiert. Man wählt die Möglichkeit mit der größten Summe."
+      },
+      {
+        "titel": "Stärken und Kritik",
+        "text": "- **Kant** schützt die Würde jedes Einzelnen: Niemand darf geopfert werden, auch wenn es vielen nützt. Kritik: Starre Pflichten können zu Ergebnissen führen, die viele für falsch halten (z. B. darf man nach Kant nicht einmal lügen, um einen Freund zu retten).\n- Der **Utilitarismus** nimmt die Folgen ernst und behandelt alle gleich. Kritik: Glück lässt sich schwer messen, und im Extremfall könnte das Glück der Mehrheit es rechtfertigen, Einzelnen Unrecht zu tun."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "**Deontologische Ethik** beurteilt Handlungen an sich, **konsequentialistische** nach ihren Folgen.\n\n**Kant (Menschheitszweckformel):** Behandle Menschen immer zugleich als Zweck, **niemals bloß als Mittel**.\n\n**Utilitarismus (Bentham, Mill):** Richtig ist die Handlung, die für **alle** Betroffenen das größte Glück und das geringste Leid bewirkt.",
+    "alltag": "Die Frage „Heiligt der Zweck die Mittel?“ ist genau der Streit zwischen beiden Theorien."
+  },
+  "interaktiv": [
+    "eth-nutzenkalkuel"
+  ],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "eth-abf-01",
+      "typ": "zuordnung",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz2",
+      "frage": "Ordne die Aussagen den ethischen Theorien zu.",
+      "paare": [
+        {
+          "links": "„Lügen ist immer falsch, egal was dabei herauskommt.“",
+          "rechts": "deontologische Ethik"
+        },
+        {
+          "links": "„Richtig ist, was insgesamt das meiste Glück bewirkt.“",
+          "rechts": "konsequentialistische Ethik"
+        }
+      ],
+      "erklaerung": "Die deontologische Ethik beurteilt Handlungen an sich, die konsequentialistische nach den Folgen."
+    },
+    {
+      "id": "eth-abf-02",
+      "typ": "single",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz3",
+      "frage": "Was verbietet Kants Menschheitszweckformel?",
+      "optionen": [
+        {
+          "text": "Andere Menschen **bloß** als Mittel für eigene Zwecke zu benutzen",
+          "richtig": true
+        },
+        {
+          "text": "Andere Menschen überhaupt um Hilfe zu bitten",
+          "feedback": "Um Hilfe bitten ist erlaubt: Man achtet dabei die Entscheidung des anderen."
+        },
+        {
+          "text": "Für Geld zu arbeiten",
+          "feedback": "Arbeit für Geld ist ein freiwilliger Tausch, bei dem beide Zwecke verfolgen."
+        },
+        {
+          "text": "Das eigene Glück zu suchen",
+          "feedback": "Das verbietet Kant nicht. Man darf nur andere dafür nicht bloß benutzen."
+        }
+      ],
+      "erklaerung": "Das Wort „bloß“ ist entscheidend: Wir nutzen ständig andere als Mittel, aber wir dürfen ihre Würde und ihre Zustimmung nicht übergehen."
+    },
+    {
+      "id": "eth-abf-03",
+      "typ": "multi",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz3",
+      "frage": "In welchen Fällen wird ein Mensch nach Kant **bloß** als Mittel benutzt?",
+      "optionen": [
+        {
+          "text": "Lena verspricht, das geliehene Geld zurückzuzahlen, obwohl sie es nie vorhatte.",
+          "richtig": true
+        },
+        {
+          "text": "Jonas kauft beim Bäcker Brötchen.",
+          "feedback": "Beide verfolgen ihre Zwecke und stimmen dem Tausch zu."
+        },
+        {
+          "text": "Ein Händler verkauft einem Kunden mit Lügen ein kaputtes Rad.",
+          "richtig": true
+        },
+        {
+          "text": "Mia bittet ihren Bruder, ihr bei Mathe zu helfen, und er sagt Ja.",
+          "feedback": "Der Bruder stimmt frei zu – er wird nicht bloß benutzt."
+        }
+      ],
+      "erklaerung": "Wer täuscht, nimmt dem anderen die Möglichkeit, frei zuzustimmen. Dann wird er bloß als Mittel benutzt."
+    },
+    {
+      "id": "eth-abf-04",
+      "typ": "zahl",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz4",
+      "frage": "Ein einfacher Nutzenkalkül: Die Klasse überlegt, ob die Klassenfahrt ans Meer oder in die Berge geht. Meer: 18 Schüler je +3, 8 Schüler je −1. Berge: 10 Schüler je +4, 16 Schüler je 0. Welche Gesamtsumme ergibt sich für die **bessere** Möglichkeit?",
+      "loesung": 46,
+      "toleranz": 0,
+      "einheit": "",
+      "rechenweg": [
+        "Meer: 18 · 3 − 8 · 1 = 54 − 8 = 46",
+        "Berge: 10 · 4 + 16 · 0 = 40",
+        "46 > 40, also ist das Meer die bessere Möglichkeit."
+      ],
+      "erklaerung": "Der Utilitarismus addiert Freude und Leid aller Betroffenen. Jede Person zählt gleich. Ob man Freude so genau in Zahlen fassen kann, ist allerdings eine wichtige Kritik.",
+      "gegeben": "Meer: 18 × (+3), 8 × (−1); Berge: 10 × (+4), 16 × 0",
+      "gesucht": "Summe der besseren Möglichkeit"
+    },
+    {
+      "id": "eth-abf-05",
+      "typ": "single",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz4",
+      "frage": "Was besagt das **Universalprinzip** des Utilitarismus?",
+      "optionen": [
+        {
+          "text": "Das Glück aller Betroffenen zählt, und zwar jedes gleich viel.",
+          "richtig": true
+        },
+        {
+          "text": "Nur das eigene Glück zählt.",
+          "feedback": "Das wäre Egoismus. Im Utilitarismus zählt das eigene Glück nicht mehr als das anderer."
+        },
+        {
+          "text": "Man soll universell immer die Wahrheit sagen.",
+          "feedback": "Das klingt nach Kant. Der Utilitarismus hat keine solchen festen Pflichten."
+        },
+        {
+          "text": "Nur das Glück von Menschen in der eigenen Stadt zählt.",
+          "feedback": "Alle Betroffenen zählen, egal wo sie leben."
+        }
+      ],
+      "erklaerung": "Der Utilitarismus ist unparteiisch: Niemandes Glück zählt mehr, auch nicht das eigene."
+    },
+    {
+      "id": "eth-abf-06",
+      "typ": "single",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz4",
+      "frage": "Fünf Patienten brauchen dringend Organe. Ein gesunder Besucher hätte passende Organe. Warum zeigt dieses Gedankenexperiment eine **Schwäche** des einfachen Utilitarismus?",
+      "optionen": [
+        {
+          "text": "Eine reine Nutzenrechnung (5 gerettet, 1 getötet) könnte die Tötung erlauben – das widerspricht unserer Überzeugung, dass Einzelne Rechte haben.",
+          "richtig": true
+        },
+        {
+          "text": "Der Utilitarismus verbietet Organspenden.",
+          "feedback": "Freiwillige Organspenden sind nach dem Utilitarismus sehr gut."
+        },
+        {
+          "text": "Der Utilitarismus kann nicht bis fünf zählen.",
+          "feedback": "Das ist kein ernsthafter Einwand."
+        },
+        {
+          "text": "Es zeigt keine Schwäche.",
+          "feedback": "Das Beispiel wird oft genutzt, um zu zeigen, dass Rechte Einzelner im reinen Nutzenkalkül fehlen."
+        }
+      ],
+      "erklaerung": "Kant würde hier klar sagen: Der Besucher darf nicht bloß als Mittel benutzt werden. Utilitaristen antworten oft, dass solche Taten langfristig Vertrauen zerstören und deshalb auch schlechte Folgen hätten."
+    },
+    {
+      "id": "eth-abf-07",
+      "typ": "single",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz1",
+      "frage": "Zurück zum Einstieg: Wie würden Kant und ein Utilitarist die beiden Personen beurteilen?",
+      "optionen": [
+        {
+          "text": "Kant lobt eher den Hilfsbereiten wegen seiner guten Absicht, der Utilitarist eher den Angeber wegen der guten Folgen.",
+          "richtig": true
+        },
+        {
+          "text": "Beide loben den Angeber.",
+          "feedback": "Für Kant zählt die Absicht – Angeberei ist kein moralisches Motiv."
+        },
+        {
+          "text": "Beide loben den Hilfsbereiten.",
+          "feedback": "Für den Utilitarismus zählen die Folgen, und die Spende hilft vielen."
+        },
+        {
+          "text": "Kant lobt den Angeber, der Utilitarist den Hilfsbereiten.",
+          "feedback": "Es ist genau umgekehrt."
+        }
+      ],
+      "erklaerung": "An solchen Fällen sieht man, warum es auf das Kriterium ankommt: Absicht oder Folge."
+    }
+  ]
+}

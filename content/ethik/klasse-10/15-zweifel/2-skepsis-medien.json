@@ -1,0 +1,111 @@
+{
+  "id": "eth-k10-skepsis",
+  "titel": "Skepsis, Descartes und mediale Manipulation",
+  "kurz": "Positionen der Skepsis von Pyrrhon bis Descartes und wie Medien unsere Wahrnehmung beeinflussen und manipulieren können.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Alltagszweifel und philosophischen Zweifel unterscheiden" },
+    { "id": "lz2", "niveau": "G", "text": "Descartes' methodischen Zweifel und das „Ich denke, also bin ich“ wiedergeben" },
+    { "id": "lz3", "niveau": "H", "text": "Den Zusammenhang zwischen medial vermittelter und realer Welt analysieren und Methoden medialer Manipulation untersuchen" },
+    { "id": "lz4", "niveau": "H", "text": "Den Einfluss von Medien auf Wahrnehmung und Wertvorstellungen bewerten" }
+  ],
+  "verstehen": {
+    "einstieg": "Du träumst manchmal so lebhaft, dass du beim Aufwachen kurz nicht weißt, was echt war. Woher weißt du eigentlich, dass du gerade nicht träumst?",
+    "abschnitte": [
+      {
+        "titel": "Alltagszweifel und philosophischer Zweifel",
+        "text": "- Der **Alltagszweifel** betrifft einzelne Dinge: „Habe ich die Tür abgeschlossen?“ Man kann ihn durch Nachschauen beseitigen.\n- Der **philosophische Zweifel** betrifft das Wissen überhaupt: Können wir **irgendetwas** sicher wissen? Wer diese Frage stellt, ist ein **Skeptiker**.\n\nSchon in der Antike lehrte **Pyrrhon von Elis** (um 360–270 v. Chr.): Zu jeder Behauptung gibt es gleich starke Gegengründe. Man soll sich deshalb des Urteils **enthalten**. Das führe zu Seelenruhe."
+      },
+      {
+        "titel": "Descartes: Zweifeln, um Gewissheit zu finden",
+        "text": "**René Descartes** (1596–1650) zweifelte nicht, um beim Zweifel stehen zu bleiben, sondern um ein **sicheres Fundament** des Wissens zu finden. Sein **methodischer Zweifel** geht in Stufen:\n\n1. **Sinnestäuschungen:** Die Sinne täuschen manchmal – vielleicht immer?\n2. **Traumargument:** Im Traum halte ich alles für echt. Woran erkenne ich sicher, dass ich wach bin?\n3. **Böser Geist (genius malignus):** Vielleicht täuscht mich ein mächtiger Geist sogar bei einfachen Rechnungen wie 2 + 3 = 5.\n\nDoch eines kann ich nicht bezweifeln: Selbst wenn ich getäuscht werde, muss **ich** es sein, der zweifelt und getäuscht wird. **„Ich denke, also bin ich“** (*cogito, ergo sum*). Das ist die erste Gewissheit.\n\nEine moderne Version des Zweifels ist das Gedankenexperiment vom **Gehirn im Tank**, das von einem Computer mit Reizen versorgt wird – wie in Filmen wie *Matrix*."
+      },
+      {
+        "titel": "Medien und Wirklichkeit",
+        "text": "Wir kennen die meisten Ereignisse nur aus **Medien**. Medien **wählen aus**, **rahmen** und **inszenieren**. Methoden, die Wahrnehmung zu beeinflussen oder zu manipulieren:\n\n- **Framing:** Dieselbe Sache wird durch Wortwahl unterschiedlich gedeutet („Flüchtlingswelle“ vs. „Menschen auf der Flucht“).\n- **Auswahl und Weglassen:** Nur ein Ausschnitt des Bildes oder der Fakten wird gezeigt.\n- **Bild- und Videofälschung, Deepfakes:** Mit künstlicher Intelligenz lassen sich täuschend echte Aufnahmen erzeugen.\n- **Irreführende Statistiken:** Achsen, die nicht bei null beginnen, lassen kleine Unterschiede riesig wirken.\n- **Algorithmen und Filterblasen:** Man sieht vor allem, was die eigene Sicht bestätigt.\n\nMedien beeinflussen auch **Wertvorstellungen**: Was oft und positiv gezeigt wird, erscheint normal und erstrebenswert. Ein gesunder Zweifel – kein totaler – hilft: Quellen prüfen, mehrere Perspektiven suchen, nach Interessen fragen."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "Der **Alltagszweifel** betrifft Einzelnes, der **philosophische Zweifel** das Wissen überhaupt. **Pyrrhon** empfahl Urteilsenthaltung.\n\n**Descartes** zweifelt methodisch (Sinnestäuschung, Traum, böser Geist) und findet eine erste Gewissheit: **„Ich denke, also bin ich.“**\n\nMedien **wählen aus, rahmen und inszenieren**. Gegen Manipulation hilft gezielter Zweifel: Quellen prüfen, Perspektiven vergleichen, Interessen erkennen.",
+    "alltag": "Bei Diagrammen in Werbung oder Nachrichten immer zuerst auf die Achsen schauen: Beginnt die y-Achse bei null?"
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "eth-skp-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Alltagszweifel oder philosophischer Zweifel?",
+      "paare": [
+        { "links": "„Habe ich den Herd ausgeschaltet?“", "rechts": "Alltagszweifel" },
+        { "links": "„Kann ich überhaupt irgendetwas sicher wissen?“", "rechts": "philosophischer Zweifel" }
+      ],
+      "erklaerung": "Den Alltagszweifel beseitigt man durch Nachsehen. Der philosophische Zweifel stellt das Wissen grundsätzlich in Frage."
+    },
+    {
+      "id": "eth-skp-02", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Bringe die Stufen von Descartes' methodischem Zweifel in die richtige Reihenfolge.",
+      "elemente": [
+        "Die Sinne täuschen manchmal.",
+        "Ich kann nicht sicher unterscheiden, ob ich träume oder wach bin.",
+        "Ein böser Geist könnte mich sogar bei einfachen Rechnungen täuschen.",
+        "Wenn ich zweifle, muss ich existieren: Ich denke, also bin ich."
+      ],
+      "erklaerung": "Der Zweifel wird immer radikaler, bis Descartes auf etwas stößt, das sich nicht bezweifeln lässt."
+    },
+    {
+      "id": "eth-skp-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Warum kann man nach Descartes nicht an der eigenen Existenz zweifeln?",
+      "optionen": [
+        { "text": "Weil das Zweifeln selbst ein Denken ist – und wer denkt, muss existieren.", "richtig": true },
+        { "text": "Weil man seinen Körper sehen kann.", "feedback": "Den Körper könnte man nach Descartes noch bezweifeln – die Sinne könnten täuschen." },
+        { "text": "Weil andere einem sagen, dass man existiert.", "feedback": "Auch das könnte eine Täuschung sein." },
+        { "text": "Doch, man kann daran zweifeln.", "feedback": "Wer daran zweifelt, beweist durch das Zweifeln seine Existenz." }
+      ],
+      "erklaerung": "Selbst ein allmächtiger Täuscher braucht jemanden, den er täuscht."
+    },
+    {
+      "id": "eth-skp-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Was empfahl **Pyrrhon** angesichts des Zweifels?",
+      "optionen": [
+        { "text": "Sich des Urteils zu enthalten, weil es zu jeder Behauptung gleich starke Gegengründe gibt", "richtig": true },
+        { "text": "Immer der Mehrheit zu glauben", "feedback": "Das wäre keine skeptische Haltung." },
+        { "text": "Mit dem Zweifel ein sicheres Fundament zu suchen", "feedback": "Das war das Ziel von Descartes." },
+        { "text": "Nur den Sinnen zu vertrauen", "feedback": "Gerade den Sinnen misstrauen die Skeptiker." }
+      ],
+      "erklaerung": "Pyrrhon glaubte, die Urteilsenthaltung führe zur Seelenruhe."
+    },
+    {
+      "id": "eth-skp-05", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Ordne die Beispiele den Methoden medialer Beeinflussung zu.",
+      "paare": [
+        { "links": "Ein Balkendiagramm beginnt bei 95 statt bei 0, sodass 97 % wie das Doppelte von 96 % aussieht.", "rechts": "irreführende Statistik" },
+        { "links": "Dieselbe Steuer wird einmal „Strafsteuer“, einmal „Klimabeitrag“ genannt.", "rechts": "Framing" },
+        { "links": "Ein KI-Video zeigt eine Politikerin, die etwas sagt, was sie nie gesagt hat.", "rechts": "Deepfake" },
+        { "links": "Ein Foto einer Demonstration wird so beschnitten, dass sie riesig wirkt.", "rechts": "Auswahl und Weglassen" }
+      ],
+      "erklaerung": "Manipulation arbeitet oft nicht mit Lügen, sondern mit Auswahl, Darstellung und Wortwahl."
+    },
+    {
+      "id": "eth-skp-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Jemand sagt: „Medien lügen sowieso alle, ich glaube gar nichts mehr.“ Was ist an dieser Haltung problematisch?",
+      "optionen": [
+        { "text": "Totaler Zweifel macht unfähig, zwischen sorgfältigen und unsorgfältigen Quellen zu unterscheiden – und macht anfällig für Quellen, die genau das ausnutzen.", "richtig": true },
+        { "text": "Nichts, das ist die einzig vernünftige Haltung.", "feedback": "Wer gar nichts glaubt, kann sich auch nicht begründet orientieren." },
+        { "text": "Medien lügen nie.", "feedback": "Auch Medien machen Fehler oder manipulieren. Das Problem ist die Pauschalität." },
+        { "text": "Zweifeln ist immer schlecht.", "feedback": "Gezielter Zweifel ist wichtig. Problematisch ist der pauschale Zweifel." }
+      ],
+      "erklaerung": "Descartes zweifelte, um Gewissheit zu finden. Sinnvoller Zweifel prüft – er verwirft nicht alles."
+    },
+    {
+      "id": "eth-skp-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Wie können Medien **Wertvorstellungen** beeinflussen?",
+      "optionen": [
+        { "text": "Was häufig und positiv gezeigt wird (z. B. bestimmte Körper oder Lebensstile), erscheint normal und erstrebenswert.", "richtig": true },
+        { "text": "Gar nicht, Werte sind angeboren.", "feedback": "Werte werden auch durch Sozialisation geprägt – und Medien sind ein Teil davon." },
+        { "text": "Nur durch Gesetze", "feedback": "Medien wirken vor allem durch Wiederholung und Darstellung." },
+        { "text": "Nur bei Erwachsenen", "feedback": "Gerade Jugendliche orientieren sich stark an medialen Vorbildern." }
+      ],
+      "erklaerung": "Was dauernd gezeigt wird, prägt Vorstellungen davon, was normal und gut ist."
+    }
+  ]
+}

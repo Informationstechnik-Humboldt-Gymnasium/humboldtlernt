@@ -1,0 +1,110 @@
+{
+  "id": "eth-k10-kunst",
+  "titel": "Was ist Kunst, und wozu ist sie gut?",
+  "kurz": "Der Begriff „Kunst“, Autonomieästhetik und engagierte Kunst, Kunst und Moral und die Grenzen der Kunstfreiheit.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Schwierigkeiten bei der Definition des Begriffs „Kunst“ erläutern" },
+    { "id": "lz2", "niveau": "G", "text": "Autonomieästhetik und engagierte Kunst unterscheiden" },
+    { "id": "lz3", "niveau": "H", "text": "Den Zusammenhang von Kunst und Moral sowie Grenzen der Kunstfreiheit erörtern" }
+  ],
+  "verstehen": {
+    "einstieg": "1917 reichte der Künstler Marcel Duchamp ein gewöhnliches Urinal mit der Signatur „R. Mutt“ für eine Ausstellung ein. Heute gilt das Werk als eines der einflussreichsten des 20. Jahrhunderts. Ist das Kunst?",
+    "abschnitte": [
+      {
+        "titel": "Was ist Kunst?",
+        "text": "Kunst ist schwer zu definieren. Mögliche Kriterien:\n\n- **Können:** Kunst kommt von „können“ – sie erfordert besondere Fertigkeit. Aber viele moderne Werke könnte technisch jeder herstellen.\n- **Schönheit:** Kunst ist schön. Aber viele Kunstwerke wollen gar nicht schön sein, sondern verstören.\n- **Ausdruck:** Kunst drückt Gefühle oder Ideen aus. Aber auch ein Wutanfall drückt Gefühle aus.\n- **Absicht und Kontext:** Kunst ist, was als Kunst geschaffen und in der Kunstwelt (Museen, Kritik, Publikum) als Kunst anerkannt wird. Das erklärt Duchamps Urinal, wirkt aber zirkulär.\n\nDuchamps **Readymades** (Alltagsgegenstände, zur Kunst erklärt) zeigen: Was Kunst ist, hängt auch von **Deutung und Kontext** ab."
+      },
+      {
+        "titel": "Funktionen der Kunst",
+        "text": "- **Autonomieästhetik** (*l’art pour l’art*, „Kunst um der Kunst willen“): Kunst braucht keinen äußeren Zweck. Sie muss weder belehren noch nützen noch gefallen. Ihr Wert liegt in ihr selbst.\n- **Engagierte Kunst:** Kunst soll sich in die Gesellschaft einmischen, auf Missstände aufmerksam machen und zum Handeln bewegen. Der Philosoph **Jean-Paul Sartre** forderte eine engagierte Literatur. Ein Beispiel ist Pablo Picassos Bild **„Guernica“** (1937) über die Bombardierung der baskischen Stadt im Spanischen Bürgerkrieg.\n- Weitere Funktionen: **Unterhaltung**, **Erkenntnis** (Kunst zeigt etwas über die Welt), **Ausdruck** von Gefühlen, **Gemeinschaft** (Feste, Rituale)."
+      },
+      {
+        "titel": "Kunst und Moral",
+        "text": "Kann Kunst Menschen **besser** machen? **Friedrich Schiller** meinte in seinen *Briefen über die ästhetische Erziehung des Menschen* (1795): Die Erfahrung des Schönen bringt Gefühl und Vernunft ins Gleichgewicht und bereitet so auf ein freies, moralisches Leben vor.\n\nUmgekehrt fragt man: Darf Kunst **alles**? Das Grundgesetz garantiert die **Kunstfreiheit** (Art. 5 Abs. 3). Sie ist sehr weitgehend, findet ihre Grenzen aber an anderen Grundrechten, etwa der **Menschenwürde** und dem **Persönlichkeitsrecht** anderer.\n\nUmstritten sind z. B. Gewaltdarstellungen, Provokationen gegenüber religiösen Gefühlen oder Werke, die reale Personen verletzen. Und: Darf man ein großartiges Werk eines Künstlers genießen, der sich moralisch schwer schuldig gemacht hat?"
+      }
+    ],
+    "formeln": [],
+    "merksatz": "Kunst lässt sich schwer definieren: Können, Schönheit, Ausdruck und **Kontext** (Kunstwelt) sind mögliche Kriterien.\n\n**Autonomieästhetik:** Kunst um ihrer selbst willen. **Engagierte Kunst** (Sartre, Picassos *Guernica*): Kunst soll gesellschaftlich wirken. **Schiller:** ästhetische Erziehung als Weg zur Freiheit. Die **Kunstfreiheit** (Art. 5 Abs. 3 GG) endet an Menschenwürde und Persönlichkeitsrechten anderer.",
+    "alltag": "Ob Graffiti Kunst oder Sachbeschädigung ist, hängt nicht nur vom Bild ab, sondern auch davon, ob die Wand dem Sprayer gehört oder ob er gefragt hat."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "eth-kun-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Autonomieästhetik oder engagierte Kunst?",
+      "paare": [
+        { "links": "„Kunst muss nichts erreichen, sie ist um ihrer selbst willen da.“", "rechts": "Autonomieästhetik" },
+        { "links": "„Kunst soll auf Ungerechtigkeit aufmerksam machen und Menschen bewegen.“", "rechts": "engagierte Kunst" }
+      ],
+      "erklaerung": "Beide Positionen geben eine Antwort auf die Frage, wozu Kunst gut ist."
+    },
+    {
+      "id": "eth-kun-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Picasso malte „Guernica“ nach der Bombardierung einer Stadt im Spanischen Bürgerkrieg. Welche Funktion von Kunst zeigt das Werk besonders?",
+      "optionen": [
+        { "text": "engagierte Kunst, die auf Leid und Unrecht aufmerksam macht", "richtig": true },
+        { "text": "reine Dekoration", "feedback": "Das Bild ist gerade nicht dekorativ gemeint." },
+        { "text": "l’art pour l’art", "feedback": "Guernica will sehr wohl etwas außerhalb der Kunst bewirken." },
+        { "text": "Werbung", "feedback": "Das Bild wirbt nicht für ein Produkt." }
+      ],
+      "erklaerung": "Guernica gilt als eines der bekanntesten Antikriegsbilder."
+    },
+    {
+      "id": "eth-kun-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Was zeigt Duchamps Readymade „Fountain“ (das Urinal) für die Definition von Kunst?",
+      "optionen": [
+        { "text": "Was Kunst ist, hängt nicht nur vom Gegenstand ab, sondern auch von Absicht, Deutung und Kontext.", "richtig": true },
+        { "text": "Kunst muss immer schön sein.", "feedback": "Das Urinal stellt gerade diese Auffassung infrage." },
+        { "text": "Kunst erfordert immer großes handwerkliches Können.", "feedback": "Duchamp hat das Urinal nicht selbst hergestellt." },
+        { "text": "Nur Gemälde sind Kunst.", "feedback": "Das Werk zeigt im Gegenteil, wie weit der Kunstbegriff geworden ist." }
+      ],
+      "erklaerung": "Readymades fordern dazu heraus, über den Kunstbegriff nachzudenken. Das ist selbst ein Zweck dieser Kunst."
+    },
+    {
+      "id": "eth-kun-04", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Welche Kriterien für Kunst haben **Gegenbeispiele**?",
+      "optionen": [
+        { "text": "„Kunst ist immer schön.“ – Viele Kunstwerke wollen verstören.", "richtig": true },
+        { "text": "„Kunst erfordert großes Können.“ – Manche Werke könnte technisch jeder herstellen.", "richtig": true },
+        { "text": "„Kunst ist Ausdruck von Gefühlen.“ – Auch ein Wutanfall drückt Gefühle aus, ist aber keine Kunst.", "richtig": true },
+        { "text": "„Kunst kann nicht definiert werden.“ – Das ist ein Gegenbeispiel.", "feedback": "Das ist kein Gegenbeispiel, sondern eine Behauptung über die Definition." }
+      ],
+      "erklaerung": "Jedes einzelne Kriterium greift zu kurz. Deshalb ist der Kunstbegriff bis heute umstritten."
+    },
+    {
+      "id": "eth-kun-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Was erhoffte sich Friedrich Schiller von der **ästhetischen Erziehung**?",
+      "optionen": [
+        { "text": "Die Erfahrung des Schönen bringt Gefühl und Vernunft ins Gleichgewicht und bereitet so auf ein freies, moralisches Leben vor.", "richtig": true },
+        { "text": "Dass alle Menschen Künstler werden.", "feedback": "Es geht um Bildung durch Kunst, nicht um einen Beruf." },
+        { "text": "Dass Kunst die Moral ersetzt.", "feedback": "Kunst soll auf Moral vorbereiten, nicht sie ersetzen." },
+        { "text": "Dass man nur noch schöne Dinge kauft.", "feedback": "Schiller ging es nicht um Konsum." }
+      ],
+      "erklaerung": "Schiller schrieb seine Briefe 1795, unter dem Eindruck der gewaltsamen Phasen der Französischen Revolution."
+    },
+    {
+      "id": "eth-kun-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Wo findet die **Kunstfreiheit** nach dem Grundgesetz ihre Grenzen?",
+      "optionen": [
+        { "text": "An anderen Grundrechten, etwa der Menschenwürde und dem Persönlichkeitsrecht anderer", "richtig": true },
+        { "text": "Dort, wo ein Werk der Mehrheit nicht gefällt", "feedback": "Missfallen ist keine Grenze. Gerade unbequeme Kunst ist geschützt." },
+        { "text": "Sie hat keine Grenzen.", "feedback": "Sie ist sehr weitgehend, muss aber mit anderen Grundrechten abgewogen werden." },
+        { "text": "Bei allen Werken, die Geld kosten", "feedback": "Ob Kunst verkauft wird, spielt für die Kunstfreiheit keine Rolle." }
+      ],
+      "erklaerung": "Die Kunstfreiheit steht ohne ausdrückliche Einschränkung im Grundgesetz, wird aber durch andere Verfassungswerte begrenzt."
+    },
+    {
+      "id": "eth-kun-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Ein Graffiti auf einer fremden Hauswand ist künstlerisch beeindruckend. Wie lässt sich die Lage ethisch beurteilen?",
+      "optionen": [
+        { "text": "Der künstlerische Wert ändert nichts daran, dass das Eigentum eines anderen ohne seine Erlaubnis verändert wurde – Kunstfreiheit erlaubt keinen Eingriff in fremde Rechte.", "richtig": true },
+        { "text": "Weil es Kunst ist, ist alles erlaubt.", "feedback": "Auch die Kunstfreiheit endet an den Rechten anderer." },
+        { "text": "Graffiti kann nie Kunst sein.", "feedback": "Viele Graffiti gelten als Kunst. Das Problem ist die fehlende Erlaubnis." },
+        { "text": "Es kommt nur darauf an, ob es der Mehrheit gefällt.", "feedback": "Gefallen ersetzt keine Erlaubnis." }
+      ],
+      "erklaerung": "Man kann zwei Fragen trennen: Ist es Kunst? Und durfte es so entstehen? Die Antworten können verschieden ausfallen."
+    }
+  ]
+}

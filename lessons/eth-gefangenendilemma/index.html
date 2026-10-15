@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gefangenendilemma: Kooperation oder Verrat?</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<style>
+  .lk-grid > * { min-width: 0; }
+  select { max-width: 100%; }
+  .seg { flex-wrap: wrap; }
+  .cell { fill: var(--card); stroke: var(--border); stroke-width: 1.5; }
+  .cell.on { fill: var(--soft-accent); stroke: var(--accent); stroke-width: 3; }
+  .head { fill: var(--bg); stroke: var(--border); stroke-width: 1.5; }
+  .big { font-size: 15px; font-weight: 700; text-anchor: middle; }
+  .mid { font-size: 12px; text-anchor: middle; }
+  .you { fill: var(--accent) !important; }
+  .other { fill: var(--c3) !important; }
+  .hist-c { fill: var(--ok); }
+  .hist-d { fill: var(--warn); }
+  .bar-you { fill: var(--accent); }
+  .bar-other { fill: var(--c3); }
+  .moves { display: flex; gap: 8px; flex-wrap: wrap; }
+  .moves button { flex: 1 1 140px; padding: 10px; font-weight: 650; }
+  table.tour { width: 100%; border-collapse: collapse; font-size: .9rem; margin-top: 8px; }
+  table.tour th, table.tour td { padding: 4px 6px; border-bottom: 1px solid var(--border); text-align: left; }
+  table.tour td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  table.tour tr.best td { font-weight: 700; color: var(--ok); }
+  .lastmsg { font-weight: 600; min-height: 1.4em; }
+  .legend { display: flex; gap: 12px; flex-wrap: wrap; font-size: .8rem; margin-top: 6px; color: var(--muted); }
+  .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 4px; vertical-align: -1px; }
+</style>
+</head>
+<body>
+<h1>Gefangenendilemma</h1>
+<p class="muted small">Du und ein Komplize werdet getrennt verhört. Jeder kann <b>schweigen</b> (kooperieren) oder den anderen <b>verraten</b>. Die Zahlen sind Jahre im Gefängnis – <b>weniger ist besser</b>. Spiele mehrere Runden gegen verschiedene Strategien und starte danach ein Turnier.</p>
+
+<div class="lk-grid">
+  <div>
+    <div class="lk-card">
+      <svg id="matrix" viewBox="0 0 420 270" role="img" aria-labelledby="m-title">
+        <title id="m-title">Auszahlungsmatrix des Gefangenendilemmas: Jahre Haft für dich und den Komplizen</title>
+        <g id="mx"></g>
+      </svg>
+      <p class="lastmsg" id="lastmsg" aria-live="polite">Wähle deinen ersten Zug.</p>
+      <svg id="hist" viewBox="0 0 420 110" role="img" aria-labelledby="h-title">
+        <title id="h-title">Verlauf der bisherigen Runden und Summe der Haftjahre</title>
+        <g id="hx"></g>
+      </svg>
+      <div class="legend"><span><i style="background:var(--ok)"></i>schweigen</span><span><i style="background:var(--warn)"></i>verraten</span></div>
+    </div>
+    <div class="lk-card">
+      <h2>Turnier der Strategien</h2>
+      <p class="small muted">Jede Strategie spielt gegen jede andere (und gegen sich selbst) je 10 Runden. Gezählt werden alle Haftjahre – wer am wenigsten hat, gewinnt.</p>
+      <div class="row"><button type="button" class="primary" id="bTour">Turnier starten</button></div>
+      <div id="tourBox"></div>
+    </div>
+  </div>
+
+  <div>
+    <div class="lk-card">
+      <h2>Einstellungen</h2>
+      <label class="ctrl"><span>Strategie des Komplizen</span>
+        <select id="strat" aria-label="Strategie des Komplizen">
+          <option value="tft">Wie du mir, so ich dir</option>
+          <option value="schweigen">Immer schweigen</option>
+          <option value="verraten">Immer verraten</option>
+          <option value="groll">Groll (schweigt bis zum ersten Verrat)</option>
+          <option value="zufall">Zufällig</option>
+        </select>
+      </label>
+      <p class="small muted" id="stratInfo"></p>
+      <div class="moves" role="group" aria-label="Dein Zug">
+        <button type="button" id="bC">Schweigen</button>
+        <button type="button" id="bD">Verraten</button>
+      </div>
+      <div class="row" style="margin-top:10px"><button type="button" id="bReset">Neues Spiel</button></div>
+      <div class="readouts">
+        <div class="readout"><span>Runde</span><b id="rRound">0</b></div>
+        <div class="readout"><span>deine Jahre</span><b id="rYou">0</b></div>
+        <div class="readout"><span>Jahre Komplize</span><b id="rOther">0</b></div>
+        <div class="readout"><span>zusammen</span><b id="rSum">0</b></div>
+      </div>
+    </div>
+
+    <div class="lk-card tasks">
+      <h2>Entdecke selbst <span class="small muted" data-task-count></span></h2>
+      <div class="task" data-goal="both"><p class="task-q">Spiele eine Runde, in der ihr beide schweigt.</p></div>
+      <div class="task" data-goal="sucker"><p class="task-q">Spiele eine Runde, in der du schweigst und verraten wirst.</p></div>
+      <div class="task">
+        <p class="task-q">Der Komplize hat sich schon entschieden, du weißt nur nicht wie. Was bringt dir in <b>beiden</b> Fällen weniger Jahre?</p>
+        <div class="choices">
+          <button type="button" data-ok data-fb="Genau: Schweigt er, kommst du frei statt 1 Jahr; verrät er, bekommst du 3 statt 5 Jahre. Deshalb ist Verraten für jeden Einzelnen „vernünftig“.">Verraten</button>
+          <button type="button" data-fb="Vergleiche in der Matrix spaltenweise: Wie viele Jahre bekommst du, wenn er schweigt – und wenn er verrät?">Schweigen</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="task" data-goal="tft5"><p class="task-q">Spiele 5 Runden gegen „Wie du mir, so ich dir“ und habe am Ende höchstens 5 Jahre.</p></div>
+      <div class="task" data-goal="tour"><p class="task-q">Starte das Turnier der Strategien.</p></div>
+      <div class="task">
+        <p class="task-q">Was haben die beiden erfolgreichsten Strategien im Turnier gemeinsam?</p>
+        <div class="choices">
+          <button type="button" data-fb="„Immer verraten“ schneidet im Turnier schlechter ab. Sieh dir die Tabelle an.">Sie verraten immer.</button>
+          <button type="button" data-ok data-fb="Richtig: Sie beginnen kooperativ, lassen sich aber Verrat nicht gefallen. So entsteht Vertrauen, ohne dass man ausgenutzt wird.">Sie beginnen mit Schweigen, reagieren aber auf Verrat.</button>
+          <button type="button" data-fb="„Zufällig“ ist im Turnier ganz hinten. Berechenbarkeit hilft beim Vertrauen.">Sie entscheiden zufällig.</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="all-done">Alles entdeckt! Weiter geht es mit den Übungen.</div>
+    </div>
+  </div>
+</div>
+
+<script src="../../static/lesson-kit.js"></script>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var NS = 'http://www.w3.org/2000/svg';
+  // Haftjahre [du, Komplize] für die Züge (du, Komplize): C = schweigen, D = verraten
+  var P = { CC: [1, 1], CD: [5, 0], DC: [0, 5], DD: [3, 3] };
+  var NAMEN = { tft: 'Wie du mir, so ich dir', schweigen: 'Immer schweigen', verraten: 'Immer verraten', groll: 'Groll', zufall: 'Zufällig' };
+  var INFO = {
+    tft: 'Schweigt in der ersten Runde und macht danach immer das, was du in der Runde davor gemacht hast.',
+    schweigen: 'Schweigt in jeder Runde, egal was du tust.',
+    verraten: 'Verrät in jeder Runde.',
+    groll: 'Schweigt, bis du einmal verrätst – danach verrät er für immer.',
+    zufall: 'Entscheidet jede Runde zufällig.'
+  };
+  function rng(seed) { return function () { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }; }
+  var STRAT = {
+    schweigen: function () { return 'C'; },
+    verraten: function () { return 'D'; },
+    tft: function (mine, theirs) { return theirs.length ? theirs[theirs.length - 1] : 'C'; },
+    groll: function (mine, theirs) { return theirs.indexOf('D') >= 0 ? 'D' : 'C'; },
+    zufall: function (mine, theirs, r) { return r() < 0.5 ? 'C' : 'D'; }
+  };
+  var S = { strat: 'tft', you: [], other: [], yy: 0, oy: 0, r: rng(42), last: null };
+
+  function el(tag, attrs, parent, text) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    if (text !== undefined) e.textContent = text;
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+
+  function drawMatrix() {
+    var g = $('mx'); g.innerHTML = '';
+    var x0 = 130, y0 = 60, w = 140, h = 95;
+    el('text', { x: x0 + w, y: 18, class: 'lbl', 'text-anchor': 'middle' }, g, 'Komplize');
+    el('text', { x: 20, y: y0 + h, class: 'lbl', 'text-anchor': 'middle', transform: 'rotate(-90 20 ' + (y0 + h) + ')' }, g, 'du');
+    ['schweigt', 'verrät'].forEach(function (t, i) {
+      el('rect', { x: x0 + i * w, y: y0 - 32, width: w, height: 32, class: 'head' }, g);
+      el('text', { x: x0 + i * w + w / 2, y: y0 - 11, class: 'mid' }, g, t);
+      el('rect', { x: x0 - 92, y: y0 + i * h, width: 92, height: h, class: 'head' }, g);
+      el('text', { x: x0 - 46, y: y0 + i * h + h / 2 + 4, class: 'mid' }, g, i ? 'verrätst' : 'schweigst');
+    });
+    var moves = ['C', 'D'];
+    moves.forEach(function (a, i) {
+      moves.forEach(function (b, j) {
+        var key = a + b, p = P[key];
+        el('rect', { x: x0 + j * w, y: y0 + i * h, width: w, height: h, class: 'cell' + (S.last === key ? ' on' : '') }, g);
+        el('text', { x: x0 + j * w + w / 2, y: y0 + i * h + 38, class: 'big you' }, g, 'du: ' + (p[0] ? p[0] + (p[0] === 1 ? ' Jahr' : ' Jahre') : 'frei'));
+        el('text', { x: x0 + j * w + w / 2, y: y0 + i * h + 62, class: 'big other' }, g, 'er: ' + (p[1] ? p[1] + (p[1] === 1 ? ' Jahr' : ' Jahre') : 'frei'));
+      });
+    });
+  }
+
+  function drawHistory() {
+    var g = $('hx'); g.innerHTML = '';
+    var n = S.you.length, max = 10, start = Math.max(0, n - max);
+    el('text', { x: 4, y: 22, class: 'val' }, g, 'du');
+    el('text', { x: 4, y: 48, class: 'val' }, g, 'er');
+    for (var i = start; i < n; i++) {
+      var x = 56 + (i - start) * 36;
+      el('circle', { cx: x, cy: 18, r: 9, class: S.you[i] === 'C' ? 'hist-c' : 'hist-d' }, g);
+      el('circle', { cx: x, cy: 44, r: 9, class: S.other[i] === 'C' ? 'hist-c' : 'hist-d' }, g);
+      el('text', { x: x, y: 70, class: 'val', 'text-anchor': 'middle' }, g, String(i + 1));
+    }
+    if (!n) el('text', { x: 56, y: 36, class: 'val' }, g, 'noch keine Runde gespielt');
+    var maxY = Math.max(10, S.yy, S.oy), bw = 300;
+    el('rect', { x: 56, y: 82, width: bw * S.yy / maxY, height: 9, class: 'bar-you', rx: 3 }, g);
+    el('rect', { x: 56, y: 94, width: bw * S.oy / maxY, height: 9, class: 'bar-other', rx: 3 }, g);
+    el('text', { x: 4, y: 92, class: 'val' }, g, 'Jahre');
+  }
+
+  function play(move) {
+    var mine = S.other.slice(), theirs = S.you.slice();
+    var o = STRAT[S.strat](mine, theirs, S.r);
+    S.you.push(move); S.other.push(o);
+    var key = move + o, p = P[key];
+    S.yy += p[0]; S.oy += p[1]; S.last = key;
+    var t = { CC: 'Ihr habt beide geschwiegen: je 1 Jahr.', CD: 'Du hast geschwiegen, er hat dich verraten: du 5 Jahre, er frei.', DC: 'Du hast verraten, er hat geschwiegen: du frei, er 5 Jahre.', DD: 'Ihr habt euch gegenseitig verraten: je 3 Jahre.' }[key];
+    $('lastmsg').textContent = 'Runde ' + S.you.length + ': ' + t;
+    if (key === 'CC') LK.reach('both');
+    if (key === 'CD') LK.reach('sucker');
+    if (S.strat === 'tft' && S.you.length === 5 && S.yy <= 5) LK.reach('tft5');
+    update();
+  }
+
+  function update() {
+    $('rRound').textContent = LK.fmt(S.you.length);
+    $('rYou').textContent = LK.fmt(S.yy);
+    $('rOther').textContent = LK.fmt(S.oy);
+    $('rSum').textContent = LK.fmt(S.yy + S.oy);
+    $('stratInfo').textContent = INFO[S.strat];
+    drawMatrix(); drawHistory();
+  }
+
+  function reset() { S.you = []; S.other = []; S.yy = 0; S.oy = 0; S.last = null; S.r = rng(42); $('lastmsg').textContent = 'Neues Spiel gegen „' + NAMEN[S.strat] + '“. Wähle deinen Zug.'; update(); }
+
+  function tournament() {
+    var names = ['schweigen', 'verraten', 'tft', 'groll', 'zufall'], tot = {};
+    names.forEach(function (n) { tot[n] = 0; });
+    for (var i = 0; i < names.length; i++) for (var j = i; j < names.length; j++) {
+      var a = names[i], b = names[j], r = rng(7 + i * 13 + j), ma = [], mb = [];
+      for (var k = 0; k < 10; k++) {
+        var x = STRAT[a](ma, mb, r), y = STRAT[b](mb, ma, r);
+        ma.push(x); mb.push(y);
+        var p = P[x + y];
+        tot[a] += p[0]; if (i !== j) tot[b] += p[1];
+      }
+    }
+    var order = names.slice().sort(function (x, y) { return tot[x] - tot[y]; });
+    var html = '<table class="tour"><thead><tr><th>Platz</th><th>Strategie</th><th class="num">Haftjahre</th></tr></thead><tbody>';
+    order.forEach(function (n, i) { html += '<tr' + (i < 2 ? ' class="best"' : '') + '><td>' + (i + 1) + '.</td><td>' + NAMEN[n] + '</td><td class="num">' + LK.fmt(tot[n]) + '</td></tr>'; });
+    html += '</tbody></table><p class="small muted">Weniger Jahre ist besser. Die Ergebnisse hängen von den Teilnehmern und der Rundenzahl ab – in Robert Axelrods berühmten Computerturnieren (1980er) gewann „Wie du mir, so ich dir“.</p>';
+    $('tourBox').innerHTML = html;
+    LK.reach('tour');
+  }
+
+  $('bC').addEventListener('click', function () { play('C'); });
+  $('bD').addEventListener('click', function () { play('D'); });
+  $('bReset').addEventListener('click', reset);
+  $('strat').addEventListener('change', function () { S.strat = this.value; reset(); });
+  $('bTour').addEventListener('click', tournament);
+  update();
+})();
+</script>
+</body>
+</html>

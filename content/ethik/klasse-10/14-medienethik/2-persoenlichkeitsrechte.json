@@ -1,0 +1,107 @@
+{
+  "id": "eth-k10-persoenlichkeitsrechte",
+  "titel": "Persönlichkeitsrechte, Urheberrecht und Datenschutz",
+  "kurz": "Das Recht am eigenen Bild, informationelle Selbstbestimmung und Urheberrecht – rechtliche Grundlagen und ihre ethische Begründung.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Das allgemeine Persönlichkeitsrecht und das Recht am eigenen Bild erklären" },
+    { "id": "lz2", "niveau": "G", "text": "Grundlagen des Datenschutzes und des Urheberrechts altersgemäß berücksichtigen" },
+    { "id": "lz3", "niveau": "H", "text": "Die Rechte ethisch begründen und auf Fälle aus dem Netz anwenden" }
+  ],
+  "verstehen": {
+    "einstieg": "Du findest im Netz ein tolles Foto und nutzt es für dein Referat. Ein Mitschüler filmt heimlich die Lehrerin und stellt das Video online. Wo ist der Unterschied – und ist beides in Ordnung?",
+    "abschnitte": [
+      {
+        "titel": "Das allgemeine Persönlichkeitsrecht",
+        "text": "Das **allgemeine Persönlichkeitsrecht** ergibt sich aus der Menschenwürde (Art. 1 GG) und dem Recht auf freie Entfaltung der Persönlichkeit (Art. 2 GG). Es schützt das Recht, **selbst zu bestimmen**, wie man sich der Öffentlichkeit zeigt. Dazu gehören:\n\n- **Recht am eigenen Bild:** Bilder von Personen dürfen grundsätzlich nur mit deren **Einwilligung** veröffentlicht werden (§ 22 Kunsturhebergesetz). Ausnahmen gibt es z. B. für Personen des öffentlichen Lebens bei öffentlichen Auftritten oder für Menschen, die nur als „Beiwerk“ neben einer Sehenswürdigkeit erscheinen.\n- **Schutz der Ehre:** Beleidigungen und unwahre, rufschädigende Behauptungen sind verboten.\n- **Schutz der Privatsphäre.**\n\n**Ethische Begründung:** Wer die Bilder und Informationen eines Menschen ohne dessen Willen verbreitet, verfügt über ihn wie über eine Sache – er missachtet seine Selbstbestimmung."
+      },
+      {
+        "titel": "Datenschutz",
+        "text": "Das Bundesverfassungsgericht entwickelte 1983 im **Volkszählungsurteil** das **Recht auf informationelle Selbstbestimmung**: Jeder darf grundsätzlich selbst entscheiden, wer welche Daten über ihn erhebt und nutzt.\n\nIn der EU regelt die **Datenschutz-Grundverordnung (DSGVO)** seit 2018 den Umgang mit personenbezogenen Daten (Name, Adresse, Fotos, Standort usw.). Wer Daten verarbeitet, braucht z. B. eine Einwilligung oder einen gesetzlichen Grund. Man hat ein Recht auf **Auskunft** und auf **Löschung**.\n\nWarum ist das wichtig? Daten verraten viel über Vorlieben, Gesundheit und Beziehungen. Wer viele Daten hat, kann Menschen beeinflussen oder benachteiligen."
+      },
+      {
+        "titel": "Urheberrecht",
+        "text": "Das **Urheberrecht** schützt geistige Schöpfungen wie Texte, Fotos, Musik, Filme und Software. Der Urheber entscheidet, ob und wie sein Werk genutzt wird. Der Schutz endet in Deutschland in der Regel **70 Jahre nach dem Tod** des Urhebers.\n\n- **Zitieren** ist erlaubt, wenn man das fremde Werk in eigene Überlegungen einbettet und die **Quelle** angibt.\n- Für den **Unterricht** gibt es Ausnahmen, aber nicht für die Veröffentlichung im Netz.\n- Manche Werke stehen unter **freien Lizenzen** (z. B. Creative Commons) und dürfen unter Bedingungen genutzt werden.\n\n**Ethische Begründung:** Wer etwas geschaffen hat, hat Arbeit und Ideen hineingesteckt. Die Anerkennung und oft auch das Einkommen gebühren ihm."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "Das **allgemeine Persönlichkeitsrecht** (aus Art. 1 und 2 GG) schützt die Selbstbestimmung über das eigene Bild, die Ehre und die Privatsphäre. Bilder anderer dürfen grundsätzlich nur mit **Einwilligung** veröffentlicht werden.\n\n**Informationelle Selbstbestimmung** und die **DSGVO** schützen persönliche Daten. Das **Urheberrecht** schützt Werke; Zitieren ist mit **Quellenangabe** erlaubt.",
+    "alltag": "Auf der Schulplattform gilt: Material aus dem Unterricht nicht öffentlich posten, Fotos nur mit Einverständnis, und bei Bildern im Referat die Quelle angeben."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "eth-pkr-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Darf man ein Video, auf dem die Lehrerin klar zu erkennen ist, ohne ihre Erlaubnis online stellen?",
+      "optionen": [
+        { "text": "Nein, das verletzt ihr Recht am eigenen Bild.", "richtig": true },
+        { "text": "Ja, Lehrer sind Personen des öffentlichen Lebens.", "feedback": "Eine Lehrerin im Unterricht ist keine Person der Zeitgeschichte bei einem öffentlichen Auftritt." },
+        { "text": "Ja, wenn das Video lustig ist.", "feedback": "Ob etwas lustig ist, spielt für das Recht am eigenen Bild keine Rolle." },
+        { "text": "Ja, wenn man es nur der Klasse schickt.", "feedback": "Auch die Weitergabe an viele Personen ohne Einwilligung ist problematisch." }
+      ],
+      "erklaerung": "Bilder und Videos von Personen dürfen grundsätzlich nur mit ihrer Einwilligung veröffentlicht werden."
+    },
+    {
+      "id": "eth-pkr-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Ordne die Rechte zu.",
+      "paare": [
+        { "links": "Selbst entscheiden, wer welche Daten über mich nutzt", "rechts": "informationelle Selbstbestimmung" },
+        { "links": "Der Fotograf entscheidet, wer sein Foto nutzen darf.", "rechts": "Urheberrecht" },
+        { "links": "Fotos von mir dürfen nur mit meiner Einwilligung veröffentlicht werden.", "rechts": "Recht am eigenen Bild" }
+      ],
+      "erklaerung": "Alle drei Rechte schützen die Selbstbestimmung, aber in verschiedenen Bereichen."
+    },
+    {
+      "id": "eth-pkr-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Du verwendest in deinem Referat ein Foto aus dem Netz. Was musst du mindestens tun?",
+      "optionen": [
+        { "text": "Die Quelle angeben – und beim Veröffentlichen im Netz zusätzlich prüfen, ob die Nutzung erlaubt ist (z. B. freie Lizenz).", "richtig": true },
+        { "text": "Gar nichts, alles im Netz ist frei.", "feedback": "Im Netz zu finden heißt nicht, frei nutzbar zu sein." },
+        { "text": "Das Foto spiegeln, dann ist es ein neues Werk.", "feedback": "Durch kleine Veränderungen entsteht kein neues Werk." },
+        { "text": "Den Fotografen anrufen, egal wofür man es nutzt.", "feedback": "Für den Unterricht gelten Ausnahmen. Die Quelle anzugeben ist aber immer richtig." }
+      ],
+      "erklaerung": "Die Quellenangabe würdigt den Urheber. Für eine Veröffentlichung braucht man außerdem eine Erlaubnis oder freie Lizenz."
+    },
+    {
+      "id": "eth-pkr-04", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Eine Schriftstellerin ist 1950 gestorben. Ab welchem Jahr sind ihre Werke in Deutschland in der Regel gemeinfrei? (Der Schutz endet mit Ablauf des 70. Kalenderjahres nach dem Tod.)",
+      "loesung": 2021, "toleranz": 0, "einheit": "",
+      "rechenweg": ["1950 + 70 = 2020", "Der Schutz endet mit Ablauf des Jahres 2020.", "Ab dem 1. Januar 2021 sind die Werke gemeinfrei."],
+      "erklaerung": "Nach Ablauf der Schutzfrist darf jeder die Werke frei nutzen, z. B. drucken oder verfilmen."
+    },
+    {
+      "id": "eth-pkr-05", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Welche Angaben sind **personenbezogene Daten**?",
+      "optionen": [
+        { "text": "dein Name und deine Adresse", "richtig": true },
+        { "text": "ein Foto, auf dem du zu erkennen bist", "richtig": true },
+        { "text": "dein Standort, den eine App speichert", "richtig": true },
+        { "text": "die durchschnittliche Temperatur in Berlin", "feedback": "Diese Angabe bezieht sich auf keine Person." }
+      ],
+      "erklaerung": "Personenbezogen sind alle Daten, die sich einer bestimmten Person zuordnen lassen."
+    },
+    {
+      "id": "eth-pkr-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Wie lässt sich das Recht am eigenen Bild **ethisch** begründen?",
+      "optionen": [
+        { "text": "Wer Bilder eines Menschen ohne dessen Willen verbreitet, missachtet seine Selbstbestimmung und behandelt ihn wie eine verfügbare Sache.", "richtig": true },
+        { "text": "Weil Fotos immer hässlich sind.", "feedback": "Es geht nicht um das Aussehen, sondern um die Entscheidung der Person." },
+        { "text": "Weil das Gesetz es so sagt.", "feedback": "Das ist eine rechtliche, keine ethische Begründung. Ethik fragt, warum das Gesetz gut ist." },
+        { "text": "Weil Kameras zu teuer sind.", "feedback": "Das hat mit dem Recht nichts zu tun." }
+      ],
+      "erklaerung": "Die ethische Begründung knüpft an Würde und Selbstbestimmung an – ähnlich wie Kants Menschheitszweckformel."
+    },
+    {
+      "id": "eth-pkr-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Eine kostenlose App will Zugriff auf Kontakte, Standort und Fotos, obwohl sie nur eine Taschenlampe ist. Warum ist das ein ethisches Problem?",
+      "optionen": [
+        { "text": "Die Daten (auch die der Kontakte, die nicht gefragt wurden) können für Werbung oder Profile genutzt werden – die informationelle Selbstbestimmung wird untergraben.", "richtig": true },
+        { "text": "Weil Taschenlampen-Apps verboten sind.", "feedback": "Sie sind erlaubt. Problematisch ist der unnötige Datenzugriff." },
+        { "text": "Es ist kein Problem, solange die App kostenlos ist.", "feedback": "Oft zahlt man mit Daten statt mit Geld." },
+        { "text": "Weil die App zu hell leuchtet.", "feedback": "Das hat mit Datenschutz nichts zu tun." }
+      ],
+      "erklaerung": "Besonders heikel: Mit den Kontakten gibt man Daten anderer Menschen weiter, die nicht zugestimmt haben."
+    }
+  ]
+}

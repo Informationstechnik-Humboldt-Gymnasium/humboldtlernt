@@ -488,6 +488,14 @@ test('17 · Datenbank: Startdaten konsistent, Migration erhält Daten, Zurückse
   assert.equal(m.einstellungen.sitzungMinuten, 60);
   assert.ok(m.aufgaben.every(a => a.hinweiseFreigabe === 'sofort'));
   assert.equal(m.abgaben.length, alt.abgaben.length, 'Daten bleiben erhalten');
+  // Version 3: Fach Ethik ergänzt, ohne bestehende Fächer zu verändern
+  const altOhneEthik = JSON.parse(JSON.stringify(alt)); altOhneEthik.faecher = altOhneEthik.faecher.filter(f => f.id !== 'ethik');
+  altOhneEthik.lehrerzuordnungen = altOhneEthik.lehrerzuordnungen.filter(z => z.fachId !== 'ethik');
+  const sp4 = speicher(); sp4.setItem(ctx.SchulBackend.SPEICHER_SCHLUESSEL, JSON.stringify(altOhneEthik));
+  const m3 = neu({ speicher: sp4 }).b._db();
+  assert.ok(m3.faecher.some(f => f.id === 'ethik' && f.lernbereiche.length >= 16), 'Ethik mit Lernbereichen (Thema 8 und 14 haben denselben Titel)');
+  assert.equal(m3.faecher.length, altOhneEthik.faecher.length + 1);
+  assert.ok(m3.lehrerzuordnungen.some(z => z.fachId === 'ethik' && z.klasseId === '9a'));
   assert.ok(m.audit.some(l => l.aktion === 'migration'));
   assert.deepEqual(plain(b2._integritaet()), []);
   // Zurücksetzen

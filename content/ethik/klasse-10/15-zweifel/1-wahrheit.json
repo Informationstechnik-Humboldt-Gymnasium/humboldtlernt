@@ -1,0 +1,114 @@
+{
+  "id": "eth-k10-wahrheit",
+  "titel": "Was ist Wahrheit? Realismus und Konstruktivismus",
+  "kurz": "Wahrheit im Alltag und in der Wissenschaft, drei Wahrheitstheorien sowie naiver Realismus und Konstruktivismus.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Den Begriff „Wahrheit“ erklären und Wahrheit von Wahrhaftigkeit unterscheiden" },
+    { "id": "lz2", "niveau": "G", "text": "Korrespondenz-, Kohärenz- und Konsenstheorie der Wahrheit unterscheiden" },
+    { "id": "lz3", "niveau": "G", "text": "Naiven Realismus und Konstruktivismus beschreiben" },
+    { "id": "lz4", "niveau": "H", "text": "Kriterien für wahre bzw. wahrscheinliche Aussagen entwickeln und beschreiben, wie Wissenschaften zu Aussagen gelangen" }
+  ],
+  "verstehen": {
+    "einstieg": "Zwei gleich lange Linien sehen verschieden lang aus, sobald man Pfeilspitzen daran malt. Wenn uns schon so einfache Bilder täuschen – woher wissen wir dann, dass die Welt so ist, wie wir sie sehen?",
+    "abschnitte": [
+      {
+        "titel": "Wahrheit und Wahrhaftigkeit",
+        "text": "- **Wahr** oder **falsch** sind **Aussagen**: „Berlin ist die Hauptstadt Deutschlands“ ist wahr.\n- **Wahrhaftig** ist ein **Mensch**, der sagt, was er für wahr hält. Wer sich irrt, ist wahrhaftig, sagt aber etwas Falsches. Wer lügt, sagt bewusst etwas, das er für falsch hält – auch wenn es zufällig stimmt.\n\nIm Alltag sagen wir oft „wahr“, wenn wir „sicher“ oder „ehrlich“ meinen. In der Philosophie lohnt es, genau zu sein."
+      },
+      {
+        "titel": "Drei Theorien der Wahrheit",
+        "text": "- **Korrespondenztheorie:** Eine Aussage ist wahr, wenn sie mit der **Wirklichkeit übereinstimmt**. „Es regnet“ ist wahr, wenn es regnet. Diese Idee geht auf Aristoteles zurück. Problem: Wie prüfen wir die Übereinstimmung, wenn wir die Wirklichkeit nur durch unsere Wahrnehmung kennen?\n- **Kohärenztheorie:** Eine Aussage ist wahr, wenn sie **widerspruchsfrei** zu unseren übrigen gut begründeten Überzeugungen passt. Problem: Auch ein erfundenes Märchen kann in sich stimmig sein.\n- **Konsenstheorie:** Eine Aussage ist wahr, wenn alle vernünftig Prüfenden in einer **freien, fairen Diskussion** zustimmen würden (z. B. Jürgen Habermas). Problem: Auch Mehrheiten haben sich schon geirrt – die Theorie meint deshalb einen idealen Konsens, keinen tatsächlichen."
+      },
+      {
+        "titel": "Naiver Realismus und Konstruktivismus",
+        "text": "- **Naiver Realismus:** Die Welt ist genau so, wie wir sie wahrnehmen. Wir sehen die Dinge, wie sie sind.\n- **Konstruktivismus:** Unser Gehirn **konstruiert** ein Bild der Welt aus Sinnesreizen, Erfahrungen und Erwartungen. Wir haben keinen direkten Zugang zur Wirklichkeit „an sich“. Der **radikale Konstruktivismus** (z. B. Ernst von Glasersfeld) behauptet sogar, wir könnten gar nicht wissen, ob unser Bild der Welt ihr entspricht; es muss nur **funktionieren**.\n\nFür den Konstruktivismus sprechen **Sinnestäuschungen**, Farben (die es so nur in unserer Wahrnehmung gibt) und die Tatsache, dass Tiere die Welt ganz anders wahrnehmen (Fledermäuse mit Ultraschall, Bienen mit UV-Licht).\n\nGegen einen radikalen Konstruktivismus spricht: Wir können Täuschungen gerade deshalb **erkennen**, weil wir messen und vergleichen können. Und die Welt „wehrt sich“: Wer glaubt, die Wand sei nicht da, stößt trotzdem dagegen."
+      },
+      {
+        "titel": "Wie kommen Wissenschaften zu Aussagen?",
+        "text": "Wissenschaften versuchen, Täuschungen zu vermeiden:\n\n- **Experimente** unter kontrollierten Bedingungen, die andere **wiederholen** können\n- **Umfragen** mit großen, gut ausgewählten Stichproben\n- **Begutachtung** durch andere Fachleute und offene Kritik\n- Theorien müssen **überprüfbar** sein. Der Philosoph **Karl Popper** betonte: Eine wissenschaftliche Theorie muss **falsifizierbar** sein, also durch Beobachtungen widerlegt werden können.\n\nWissenschaftliche Aussagen sind deshalb oft nicht „absolut sicher“, sondern **gut begründet und bisher bewährt**."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "**Wahr** sind Aussagen, **wahrhaftig** sind Menschen. Wahrheitstheorien: **Korrespondenz** (Übereinstimmung mit der Wirklichkeit), **Kohärenz** (Widerspruchsfreiheit), **Konsens** (Zustimmung aller vernünftig Prüfenden).\n\n**Naiver Realismus:** Die Welt ist, wie wir sie wahrnehmen. **Konstruktivismus:** Das Gehirn konstruiert unser Bild der Welt. Wissenschaft prüft mit Experimenten, Wiederholbarkeit und Kritik.",
+    "alltag": "„Ich hab's doch mit eigenen Augen gesehen!“ – Zeugenaussagen sind oft weniger zuverlässig, als man denkt, weil Erinnerung und Erwartung mitkonstruieren."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "eth-wah-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Ordne die Wahrheitstheorien zu.",
+      "paare": [
+        { "links": "Wahr ist, was mit der Wirklichkeit übereinstimmt.", "rechts": "Korrespondenztheorie" },
+        { "links": "Wahr ist, was widerspruchsfrei zu unseren übrigen Überzeugungen passt.", "rechts": "Kohärenztheorie" },
+        { "links": "Wahr ist, worauf sich alle vernünftig Prüfenden in einer freien Diskussion einigen würden.", "rechts": "Konsenstheorie" }
+      ],
+      "erklaerung": "Die drei Theorien geben verschiedene Antworten darauf, was „wahr“ bedeutet."
+    },
+    {
+      "id": "eth-wah-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Lena glaubt fest, der Test sei am Montag, und sagt das ihrer Freundin. Der Test ist aber am Dienstag. Was trifft zu?",
+      "optionen": [
+        { "text": "Lena war wahrhaftig, ihre Aussage war aber falsch.", "richtig": true },
+        { "text": "Lena hat gelogen.", "feedback": "Lügen heißt, bewusst etwas Falsches zu sagen. Lena hat sich nur geirrt." },
+        { "text": "Lenas Aussage war wahr, weil sie es glaubte.", "feedback": "Ob eine Aussage wahr ist, hängt nicht davon ab, was man glaubt." },
+        { "text": "Lena war unwahrhaftig.", "feedback": "Sie hat gesagt, was sie für wahr hielt – also war sie wahrhaftig." }
+      ],
+      "erklaerung": "Wahrhaftigkeit betrifft die Ehrlichkeit eines Menschen, Wahrheit die Aussage selbst."
+    },
+    {
+      "id": "eth-wah-03", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Naiver Realismus oder Konstruktivismus?",
+      "paare": [
+        { "links": "„Die Farbe Rot ist einfach da draußen, so wie ich sie sehe.“", "rechts": "naiver Realismus" },
+        { "links": "„Was ich als Rot sehe, erzeugt mein Gehirn aus Lichtreizen.“", "rechts": "Konstruktivismus" }
+      ],
+      "erklaerung": "Licht hat Wellenlängen, aber das Rot-Erleben entsteht erst in unserer Wahrnehmung."
+    },
+    {
+      "id": "eth-wah-04", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Was spricht **für** den Konstruktivismus?",
+      "optionen": [
+        { "text": "Optische Täuschungen", "richtig": true },
+        { "text": "Bienen sehen UV-Licht, Fledermäuse orientieren sich mit Ultraschall – sie haben ein ganz anderes Bild der Welt.", "richtig": true },
+        { "text": "Wer gegen eine Wand läuft, stößt sich, egal was er glaubt.", "feedback": "Das spricht eher dafür, dass es eine Wirklichkeit unabhängig von unseren Vorstellungen gibt." },
+        { "text": "Zeugen erinnern sich oft unterschiedlich an dasselbe Ereignis.", "richtig": true }
+      ],
+      "erklaerung": "Täuschungen, verschiedene Wahrnehmungsweisen und unzuverlässige Erinnerung zeigen, dass Wahrnehmung aktiv konstruiert wird."
+    },
+    {
+      "id": "eth-wah-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Welches Problem hat die **Kohärenztheorie**?",
+      "optionen": [
+        { "text": "Auch eine erfundene Geschichte kann in sich völlig widerspruchsfrei sein.", "richtig": true },
+        { "text": "Sie verlangt, dass alle zustimmen.", "feedback": "Das betrifft die Konsenstheorie." },
+        { "text": "Man kann die Übereinstimmung mit der Wirklichkeit nicht direkt prüfen.", "feedback": "Das ist ein Problem der Korrespondenztheorie." },
+        { "text": "Sie hat kein Problem.", "feedback": "Widerspruchsfreiheit allein garantiert keinen Bezug zur Wirklichkeit." }
+      ],
+      "erklaerung": "Kohärenz ist ein wichtiges Kriterium, aber allein reicht sie nicht, um Wahrheit zu sichern."
+    },
+    {
+      "id": "eth-wah-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Was meint Karl Popper damit, dass wissenschaftliche Theorien **falsifizierbar** sein müssen?",
+      "optionen": [
+        { "text": "Es muss Beobachtungen geben können, die die Theorie widerlegen würden.", "richtig": true },
+        { "text": "Wissenschaftliche Theorien sind alle falsch.", "feedback": "Falsifizierbar heißt nicht falsch, sondern widerlegbar, falls sie falsch wäre." },
+        { "text": "Man soll Daten fälschen dürfen.", "feedback": "Das wäre ein schwerer Verstoß gegen die Wissenschaftsethik." },
+        { "text": "Eine Theorie ist bewiesen, wenn viele sie glauben.", "feedback": "Zustimmung allein macht eine Theorie nicht wissenschaftlich." }
+      ],
+      "erklaerung": "„Alle Schwäne sind weiß“ ist falsifizierbar: Ein schwarzer Schwan widerlegt den Satz. Eine Aussage, die nichts ausschließt, sagt auch nichts über die Welt."
+    },
+    {
+      "id": "eth-wah-07", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Welche Kriterien sprechen dafür, dass eine Aussage **wahrscheinlich wahr** ist?",
+      "optionen": [
+        { "text": "Unabhängige Quellen bestätigen sie.", "richtig": true },
+        { "text": "Sie lässt sich durch ein wiederholbares Experiment prüfen.", "richtig": true },
+        { "text": "Sie passt widerspruchsfrei zu gut gesichertem Wissen.", "richtig": true },
+        { "text": "Sie wird besonders oft geteilt.", "feedback": "Viele Shares sagen nichts über Wahrheit – Falschmeldungen verbreiten sich oft schneller." }
+      ],
+      "erklaerung": "Bestätigung durch unabhängige Quellen, Überprüfbarkeit und Kohärenz sind gute Kriterien. Beliebtheit ist keines."
+    }
+  ]
+}

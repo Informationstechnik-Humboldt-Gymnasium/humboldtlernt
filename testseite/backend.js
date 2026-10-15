@@ -9,7 +9,7 @@
 (function (root) {
   'use strict';
 
-  var VERSION = 2;                       // Schema-Version der Datenbank (Migrationen unten)
+  var VERSION = 3;                       // Schema-Version der Datenbank (Migrationen unten)
   var SPEICHER_SCHLUESSEL = 'lernseite-schule-db';
   var CLIENT_ID = 'lernseite-testseite';
   var MIN = 60 * 1000, TAG = 24 * 60 * MIN;
@@ -125,6 +125,19 @@
         d.einstellungen.sitzungMinuten = d.einstellungen.sitzungMinuten || 60;
         d.faecher.forEach(function (f) { if (!Array.isArray(f.lernbereiche)) f.lernbereiche = []; });
         d.aufgaben.forEach(function (a) { if (!a.hinweiseFreigabe) a.hinweiseFreigabe = 'sofort'; });
+      },
+      3: function (d) {
+        // Version 3: neues Fach Ethik (mit Lernbereichen aus den Inhalten) und Ethik-Unterricht von Julia Brandt in 9a
+        if (!d.faecher.some(function (f) { return f.id === 'ethik'; })) {
+          var lb = [];
+          INH.topics.forEach(function (t) { if (t.fach === 'ethik' && t.themenfeld && lb.indexOf(t.themenfeld) < 0) lb.push(t.themenfeld); });
+          d.faecher.push({ id: 'ethik', name: 'Ethik', aktiv: true, lernbereiche: lb });
+        }
+        var bra = d.users.find(function (u) { return u.username === 'julia.brandt' && u.rolle === 'teacher'; });
+        if (bra && d.klassen.some(function (k) { return k.id === '9a'; }) && !d.lehrerzuordnungen.some(function (z) { return z.lehrerId === bra.id && z.klasseId === '9a' && z.fachId === 'ethik'; })) {
+          d.seq = (d.seq || 0) + 1;
+          d.lehrerzuordnungen.push({ id: 'lz' + d.seq, lehrerId: bra.id, klasseId: '9a', fachId: 'ethik' });
+        }
       },
     };
     function migriere() {

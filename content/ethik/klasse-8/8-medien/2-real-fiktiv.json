@@ -1,0 +1,117 @@
+{
+  "id": "eth-k8-real-fiktiv",
+  "titel": "Real oder fiktiv? Manipulation und sprachliche Gewalt",
+  "kurz": "Medial vermittelte und reale Welt unterscheiden, Manipulationen erkennen und verantwortungsvoll kommunizieren.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Zwischen medial vermittelter und realer Welt unterscheiden" },
+    { "id": "lz2", "niveau": "G", "text": "Mediale Manipulationen aus der eigenen Lebenswelt erkennen und beschreiben" },
+    { "id": "lz3", "niveau": "G", "text": "Den Begriff „sprachliche Gewalt“ erklären" },
+    { "id": "lz4", "niveau": "H", "text": "Regeln für eine verantwortungsvolle Kommunikation begründen" }
+  ],
+  "verstehen": {
+    "einstieg": "Auf einem Foto sieht eine Influencerin perfekt aus: glatte Haut, weiße Zähne, Sonnenuntergang. Wie viel davon ist echt?",
+    "abschnitte": [
+      {
+        "titel": "Medien zeigen eine Auswahl",
+        "text": "Medien bilden die Welt nie einfach ab. Sie **wählen aus**, **bearbeiten** und **inszenieren**:\n\n- Fotos werden mit Filtern geschönt, Ausschnitte gewählt, Störendes weggelassen.\n- Reality-Shows und Casting-Shows sind oft geplant und geschnitten, auch wenn sie „echt“ wirken.\n- Spiele und Filme sind **fiktiv**: Sie erzählen erfundene Geschichten. Das ist nicht schlimm, solange man es weiß.\n\nDie **medial vermittelte Welt** ist also nie dieselbe wie die **reale Welt**. Problematisch wird es, wenn man Inszenierungen für die Wirklichkeit hält und sich etwa ständig mit geschönten Bildern vergleicht."
+      },
+      {
+        "titel": "Manipulation erkennen",
+        "text": "**Manipulation** heißt: Menschen werden beeinflusst, ohne dass sie es merken, oft zum Vorteil anderer. Beispiele:\n\n- **Bildbearbeitung und Deepfakes:** Bilder und Videos zeigen etwas, das so nie passiert ist.\n- **Falschmeldungen (Fake News):** erfundene oder verdrehte Nachrichten, die sich schnell verbreiten.\n- **Clickbait:** reißerische Überschriften („Du wirst nicht glauben, was dann passierte!“), die zum Klicken verleiten.\n- **Versteckte Werbung:** Influencer stellen Produkte vor, für die sie bezahlt werden. Das muss als Werbung gekennzeichnet sein.\n\nPrüffragen: Wer hat das veröffentlicht? Gibt es andere Quellen? Wann ist es entstanden? Wem nützt es?"
+      },
+      {
+        "titel": "Sprachliche Gewalt",
+        "text": "Gewalt kann auch mit Worten ausgeübt werden. **Sprachliche Gewalt** liegt vor, wenn Worte andere absichtlich verletzen, herabsetzen, bedrohen oder ausgrenzen: Beleidigungen, Beschimpfungen, Drohungen, Hasskommentare (**Hate Speech**) gegen Menschen wegen ihrer Herkunft, Religion, ihres Aussehens oder ihrer sexuellen Orientierung.\n\nIm Netz fällt sie oft leichter, weil man die Reaktion des anderen nicht sieht. Die Verletzung ist trotzdem real. Manche Formen sind auch strafbar, z. B. Beleidigung oder Bedrohung."
+      },
+      {
+        "titel": "Verantwortungsvoll kommunizieren",
+        "text": "- Erst denken, dann posten: Würde ich das auch ins Gesicht sagen?\n- Kritik an der Sache üben, nicht die Person herabsetzen.\n- Nichts weiterleiten, dessen Wahrheit man nicht geprüft hat.\n- Bei Hasskommentaren widersprechen oder melden, statt mitzumachen."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "Medien **wählen aus, bearbeiten und inszenieren**. Die medial vermittelte Welt ist nicht die reale Welt. **Manipulation** beeinflusst, ohne dass man es merkt (Bildbearbeitung, Fake News, Clickbait, versteckte Werbung).\n\n**Sprachliche Gewalt** verletzt mit Worten – auch im Netz ist die Verletzung real.",
+    "alltag": "Bevor du eine aufregende Nachricht weiterleitest, such sie bei einer zweiten, seriösen Quelle. Das kostet eine Minute und verhindert, dass du Falsches verbreitest."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "eth-rfk-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Ordne die Beispiele den Formen der Manipulation zu.",
+      "paare": [
+        { "links": "„Du wirst nicht glauben, was dieser Lehrer gemacht hat!!!“", "rechts": "Clickbait" },
+        { "links": "Ein Video zeigt einen Politiker, der Dinge sagt, die er nie gesagt hat.", "rechts": "Deepfake" },
+        { "links": "Eine Influencerin lobt eine Creme, ohne zu sagen, dass sie dafür bezahlt wird.", "rechts": "versteckte Werbung" },
+        { "links": "Eine erfundene Meldung über eine Schulschließung verbreitet sich in Gruppen.", "rechts": "Falschmeldung" }
+      ],
+      "erklaerung": "Manipulation hat viele Formen. Gemeinsam ist ihnen, dass sie täuschen oder unbemerkt beeinflussen."
+    },
+    {
+      "id": "eth-rfk-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Warum zeigt ein Urlaubsfoto in sozialen Netzwerken meist nicht die ganze Wirklichkeit?",
+      "optionen": [
+        { "text": "Weil ausgewählt, bearbeitet und inszeniert wird – Regen, Streit oder Langeweile werden selten gepostet.", "richtig": true },
+        { "text": "Weil Fotos immer gefälscht sind.", "feedback": "Nicht jedes Foto ist gefälscht. Aber jedes zeigt nur einen ausgewählten Ausschnitt." },
+        { "text": "Weil Urlaub immer perfekt ist.", "feedback": "Gerade das ist der Eindruck, den die Auswahl erzeugt." },
+        { "text": "Das Foto zeigt die ganze Wirklichkeit.", "feedback": "Ein Foto zeigt einen Moment und einen Ausschnitt." }
+      ],
+      "erklaerung": "Medien zeigen immer eine Auswahl. Wer das weiß, vergleicht sich weniger mit geschönten Bildern."
+    },
+    {
+      "id": "eth-rfk-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Welches Beispiel ist **sprachliche Gewalt**?",
+      "optionen": [
+        { "text": "Unter das Foto einer Mitschülerin werden immer wieder abwertende Kommentare über ihr Aussehen geschrieben.", "richtig": true },
+        { "text": "Jemand schreibt: „Ich finde deine Argumentation nicht überzeugend, weil …“", "feedback": "Sachliche Kritik an einem Argument ist keine Gewalt." },
+        { "text": "Ein Freund sagt ehrlich, dass ihm das Spiel nicht gefallen hat.", "feedback": "Eine ehrliche Meinung ohne Herabsetzung ist keine Gewalt." },
+        { "text": "Eine Lehrerin bittet um Ruhe.", "feedback": "Eine Bitte um Ruhe verletzt niemanden absichtlich." }
+      ],
+      "erklaerung": "Sprachliche Gewalt verletzt, setzt herab oder grenzt aus. Kritik an einer Sache ist dagegen erlaubt und oft nötig."
+    },
+    {
+      "id": "eth-rfk-04", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Mit welchen Fragen kannst du eine Nachricht auf Manipulation prüfen?",
+      "optionen": [
+        { "text": "Wer hat sie veröffentlicht?", "richtig": true },
+        { "text": "Berichten auch andere, seriöse Quellen darüber?", "richtig": true },
+        { "text": "Wem nützt es, wenn ich das glaube?", "richtig": true },
+        { "text": "Hat sie schon viele Likes?", "feedback": "Viele Likes sagen nichts über die Wahrheit. Falschmeldungen verbreiten sich oft sogar schneller." }
+      ],
+      "erklaerung": "Quelle, Bestätigung durch andere und Interessen sind wichtige Prüfkriterien."
+    },
+    {
+      "id": "eth-rfk-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "In einem Computerspiel kann man Gegner besiegen. Ist das deshalb dasselbe wie Gewalt in der realen Welt?",
+      "optionen": [
+        { "text": "Nein, das Spiel ist fiktiv. Wichtig ist aber, die Grenze zwischen Spiel und Wirklichkeit zu kennen und zu prüfen, wie das Spiel auf einen wirkt.", "richtig": true },
+        { "text": "Ja, es gibt keinen Unterschied zwischen Spiel und Wirklichkeit.", "feedback": "Im Spiel wird niemand wirklich verletzt. Fiktion und Realität sind zu unterscheiden." },
+        { "text": "Nein, und Spiele haben überhaupt keine Wirkung auf Menschen.", "feedback": "Ob und wie Spiele wirken, wird diskutiert. „Gar keine Wirkung“ ist zu einfach." },
+        { "text": "Ja, deshalb sind alle Spiele verboten.", "feedback": "Spiele sind nicht verboten. Für Inhalte gibt es Altersfreigaben." }
+      ],
+      "erklaerung": "Fiktion ist nicht Wirklichkeit. Trotzdem lohnt es, über die Wirkung von Medien auf das eigene Denken und Fühlen nachzudenken."
+    },
+    {
+      "id": "eth-rfk-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Unter einem Video stehen viele Hasskommentare gegen den Sänger wegen seiner Herkunft. Welche Reaktion ist am verantwortungsvollsten?",
+      "optionen": [
+        { "text": "Sachlich widersprechen oder die Kommentare melden – nicht mit eigenen Beleidigungen antworten.", "richtig": true },
+        { "text": "Mitkommentieren, damit man dazugehört.", "feedback": "Damit verstärkt man die Gewalt." },
+        { "text": "Die Kommentatoren ebenfalls beschimpfen.", "feedback": "Gegen-Beleidigungen sind selbst sprachliche Gewalt und heizen die Stimmung an." },
+        { "text": "Nichts tun, das geht mich nichts an.", "feedback": "Schweigen kann wie Zustimmung wirken. Melden oder Widersprechen ist leicht möglich." }
+      ],
+      "erklaerung": "Verantwortungsvolle Kommunikation heißt, Hass nicht zu verstärken und Betroffene zu unterstützen."
+    },
+    {
+      "id": "eth-rfk-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Formuliere zwei Regeln für eure Klassen-Chatgruppe, die zu einer verantwortungsvollen Kommunikation beitragen, und begründe jede.",
+      "stichworte": [
+        { "aspekt": "Eine Regel zum respektvollen Umgang (keine Beleidigungen, keine Bloßstellung)", "woerter": ["beleidig", "respekt", "nicht lustig machen", "bloss", "peinlich", "verletz"] },
+        { "aspekt": "Eine Regel zu Fotos, Daten oder geprüften Informationen", "woerter": ["foto", "bild", "erlaubnis", "fragen", "pruef", "weiterleit", "falsch"] },
+        { "aspekt": "Begründungen", "woerter": ["weil", "damit", "denn", "sonst"] }
+      ],
+      "musterloesung": "Regel 1: Wir beleidigen niemanden und machen uns nicht über andere lustig, weil Worte im Chat genauso verletzen wie im Klassenraum. Regel 2: Fotos von anderen schicken wir nur mit ihrer Erlaubnis, denn jeder hat ein Recht am eigenen Bild und Bilder verbreiten sich schnell.",
+      "erklaerung": "Gute Regeln sind konkret und lassen sich begründen. So können alle sie verstehen und akzeptieren."
+    }
+  ]
+}

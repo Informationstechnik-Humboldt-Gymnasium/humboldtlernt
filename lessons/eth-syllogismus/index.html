@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Praktischer Syllogismus: Begründungen bauen</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<style>
+  .lk-grid > * { min-width: 0; }
+  select { max-width: 100%; }
+  .seg { flex-wrap: wrap; }
+  .karten { display: grid; gap: 8px; }
+  .karte { display: flex; gap: 8px; align-items: center; justify-content: space-between; flex-wrap: wrap; border: 1px solid var(--border); border-radius: 10px; padding: 8px 10px; }
+  .karte.richtig { border-color: var(--ok); background: var(--ok-soft); }
+  .karte.falsch { border-color: var(--warn); background: var(--warn-soft); }
+  .karte p { margin: 0; flex: 1 1 220px; }
+  .karte .seg button { font-size: .82rem; padding: 5px 9px; }
+  .slot { display: grid; gap: 4px; margin: 0 0 10px; }
+  .slot > span { font-size: .82rem; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; color: var(--muted); }
+  .slot select { width: 100%; }
+  .konkl { background: var(--soft-accent); border-radius: 10px; padding: 8px 10px; font-weight: 650; }
+  .pfeil { text-align: center; color: var(--muted); font-size: 1.2rem; line-height: 1; margin: 2px 0 6px; }
+  .ergebnis { margin-top: 10px; padding: 8px 10px; border-radius: 10px; font-weight: 600; }
+  .ergebnis.ok { background: var(--ok-soft); color: var(--ok); }
+  .ergebnis.no { background: var(--warn-soft); color: var(--warn); }
+  .ergebnis:empty { display: none; }
+  .tag { font-size: .72rem; font-weight: 700; padding: 1px 6px; border-radius: 99px; background: var(--bg); color: var(--muted); }
+</style>
+</head>
+<body>
+<h1>Praktischer Syllogismus</h1>
+<p class="muted small">Eine moralische Begründung braucht eine <b>normative Prämisse</b> (eine allgemeine Regel, was man soll), eine <b>deskriptive Prämisse</b> (eine Tatsache über den Fall) und daraus die <b>Konklusion</b>. Sortiere zuerst Aussagen, dann baue drei Begründungen.</p>
+
+<div class="lk-grid">
+  <div>
+    <div class="lk-card">
+      <h2>1. Deskriptiv oder normativ?</h2>
+      <p class="small muted">Deskriptiv: beschreibt, was ist. Normativ: sagt, was sein soll oder was gut ist.</p>
+      <div class="karten" id="karten"></div>
+      <div class="readouts"><div class="readout"><span>richtig sortiert</span><b id="rSort">0 / 8</b></div></div>
+    </div>
+    <div class="lk-card">
+      <h2>2. Begründung bauen</h2>
+      <div class="row"><div class="seg" role="group" aria-label="Fall wählen" id="segFall"></div></div>
+      <div class="slot"><span>Normative Prämisse (Regel)</span><select id="selN" aria-label="Normative Prämisse wählen"></select></div>
+      <div class="slot"><span>Deskriptive Prämisse (Tatsache)</span><select id="selD" aria-label="Deskriptive Prämisse wählen"></select></div>
+      <div class="pfeil" aria-hidden="true">↓</div>
+      <div class="konkl" id="konkl"></div>
+      <div class="row" style="margin-top:10px"><button type="button" class="primary" id="bPruef">Begründung prüfen</button></div>
+      <p class="ergebnis" id="erg" aria-live="polite"></p>
+    </div>
+  </div>
+  <div>
+    <div class="lk-card">
+      <h2>So prüfst du eine Begründung</h2>
+      <ol class="small" style="padding-left:18px;margin:0">
+        <li>Steht oben eine allgemeine <b>Soll-Regel</b>? Sonst fehlt die normative Prämisse.</li>
+        <li>Beschreibt die zweite Prämisse eine <b>Tatsache</b> über genau diesen Fall?</li>
+        <li>Folgt die Konklusion, wenn beide Prämissen stimmen?</li>
+        <li>Kritik setzt an den <b>Prämissen</b> an: Stimmt die Tatsache? Gilt die Regel ohne Ausnahme?</li>
+      </ol>
+      <div class="readouts"><div class="readout"><span>gültige Begründungen</span><b id="rFaelle">0 / 3</b></div></div>
+    </div>
+    <div class="lk-card tasks">
+      <h2>Entdecke selbst <span class="small muted" data-task-count></span></h2>
+      <div class="task" data-goal="sortiert"><p class="task-q">Sortiere alle acht Aussagen richtig.</p></div>
+      <div class="task" data-goal="fehlschluss"><p class="task-q">Setze eine deskriptive Aussage an die Stelle der Regel und prüfe. Was meldet die Prüfung?</p></div>
+      <div class="task" data-goal="alle"><p class="task-q">Baue für alle drei Fälle eine gültige Begründung.</p></div>
+      <div class="task">
+        <p class="task-q">Im Fall „Tierhaltung“ ist die Begründung gültig. Woran kann jemand, der widerspricht, trotzdem Kritik üben?</p>
+        <div class="choices">
+          <button type="button" data-fb="Die Form ist gültig: Wenn beide Prämissen stimmen, folgt der Schluss.">An der Logik des Schlusses</button>
+          <button type="button" data-ok data-fb="Genau: Man kann bestreiten, dass das Leid unnötig ist (Tatsache), oder dass die Regel immer gilt. Gültig heißt nicht wahr.">An den Prämissen – z. B. ob das Leid wirklich unnötig ist</button>
+          <button type="button" data-fb="Die Konklusion folgt aus den Prämissen. Kritik muss bei den Prämissen ansetzen.">Nur an der Konklusion</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="task">
+        <p class="task-q">„Viele Menschen behalten Fundsachen. Also darf Jonas den Geldbeutel behalten.“ Was ist das?</p>
+        <div class="choices">
+          <button type="button" data-ok data-fb="Richtig: Aus einer Tatsache (viele tun es) folgt keine Erlaubnis. Es fehlt eine normative Prämisse.">ein Sein-Sollens-Fehlschluss</button>
+          <button type="button" data-fb="Es fehlt gerade die allgemeine Soll-Regel. Nur eine Beschreibung ist da.">ein gültiger praktischer Syllogismus</button>
+          <button type="button" data-fb="Eine Konklusion ist vorhanden: „Also darf Jonas …“.">eine Aussage ohne Konklusion</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="all-done">Alles entdeckt! Weiter geht es mit den Übungen.</div>
+    </div>
+  </div>
+</div>
+
+<script src="../../static/lesson-kit.js"></script>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var AUSSAGEN = [
+    ['In Deutschland leben etwa 84 Millionen Menschen.', 'd'],
+    ['Man soll Versprechen halten.', 'n'],
+    ['Viele Jugendliche nutzen täglich soziale Netzwerke.', 'd'],
+    ['Es ist ungerecht, Menschen wegen ihrer Herkunft zu benachteiligen.', 'n'],
+    ['Lügen ist schlecht.', 'n'],
+    ['Tim hat seiner Schwester versprochen, ihr zu helfen.', 'd'],
+    ['Schweine sind leidensfähige Lebewesen.', 'd'],
+    ['Man darf Tiere nicht grundlos quälen.', 'n']
+  ];
+  // Fälle: Konklusion, Auswahl an Aussagen (Typ d/n), richtige normative und deskriptive Prämisse
+  var FAELLE = [
+    { name: 'Fundsache', konkl: 'Also soll Jonas den Geldbeutel Frau Weber zurückgeben.',
+      opts: [['Viele Menschen behalten Fundsachen.', 'd'], ['Man soll seinen Freunden helfen.', 'n'], ['Jonas hat einen Geldbeutel gefunden, der Frau Weber gehört.', 'd', 'D'], ['Jonas braucht Geld für ein Fahrrad.', 'd'], ['Man soll Fundsachen ihren Eigentümern zurückgeben.', 'n', 'N']] },
+    { name: 'Video', konkl: 'Also darf Tim das Video nicht ohne Mias Erlaubnis posten.',
+      opts: [['Auf Tims Video ist Mia zu sehen, und sie hat nicht zugestimmt.', 'd', 'D'], ['Fast alle posten Videos von Freunden.', 'd'], ['Man soll lustige Videos teilen.', 'n'], ['Man darf Bilder von Personen nicht ohne ihre Erlaubnis veröffentlichen.', 'n', 'N'], ['Das Video hat schon 50 Aufrufe.', 'd']] },
+    { name: 'Tierhaltung', konkl: 'Also soll man die Massentierhaltung einschränken.',
+      opts: [['Massentierhaltung ist erlaubt.', 'd'], ['Man soll möglichst billig einkaufen.', 'n'], ['Viele Menschen essen gern Fleisch.', 'd'], ['Man soll leidensfähigen Wesen kein unnötiges Leid zufügen.', 'n', 'N'], ['In der Massentierhaltung leiden Tiere unnötig.', 'd', 'D']] }
+  ];
+  var S = { sort: {}, fall: 0, geloest: {} };
+
+  function buildKarten() {
+    var box = $('karten'); box.innerHTML = '';
+    AUSSAGEN.forEach(function (a, i) {
+      var d = document.createElement('div');
+      var st = S.sort[i];
+      d.className = 'karte' + (st ? (st === a[1] ? ' richtig' : ' falsch') : '');
+      var p = document.createElement('p'); p.textContent = a[0]; d.appendChild(p);
+      var seg = document.createElement('div'); seg.className = 'seg'; seg.setAttribute('role', 'group'); seg.setAttribute('aria-label', 'Einordnen: ' + a[0]);
+      [['d', 'deskriptiv'], ['n', 'normativ']].forEach(function (x) {
+        var b = document.createElement('button'); b.type = 'button'; b.textContent = x[1];
+        b.setAttribute('aria-pressed', st === x[0] ? 'true' : 'false');
+        b.addEventListener('click', function () { S.sort[i] = x[0]; buildKarten(); });
+        seg.appendChild(b);
+      });
+      d.appendChild(seg);
+      box.appendChild(d);
+    });
+    var n = AUSSAGEN.filter(function (a, i) { return S.sort[i] === a[1]; }).length;
+    $('rSort').textContent = n + ' / ' + AUSSAGEN.length;
+    if (n === AUSSAGEN.length) LK.reach('sortiert');
+  }
+
+  function buildSeg() {
+    var seg = $('segFall'); seg.innerHTML = '';
+    FAELLE.forEach(function (f, i) {
+      var b = document.createElement('button'); b.type = 'button'; b.textContent = f.name + (S.geloest[i] ? ' ✓' : '');
+      b.setAttribute('aria-pressed', i === S.fall ? 'true' : 'false');
+      b.addEventListener('click', function () { S.fall = i; buildSeg(); buildFall(); });
+      seg.appendChild(b);
+    });
+  }
+  function fuelle(sel, opts) {
+    sel.innerHTML = '<option value="">– Aussage wählen –</option>';
+    opts.forEach(function (o, i) { var op = document.createElement('option'); op.value = i; op.textContent = o[0]; sel.appendChild(op); });
+  }
+  function buildFall() {
+    var f = FAELLE[S.fall];
+    // gemischte Reihenfolge, für beide Felder dieselben Aussagen
+    fuelle($('selN'), f.opts); fuelle($('selD'), f.opts);
+    $('konkl').textContent = f.konkl;
+    $('erg').textContent = ''; $('erg').className = 'ergebnis';
+  }
+
+  function pruefe() {
+    var f = FAELLE[S.fall], n = $('selN').value, d = $('selD').value, e = $('erg');
+    var on = f.opts[n], od = f.opts[d];
+    var msg, ok = false;
+    if (n === '' || d === '') msg = 'Wähle für beide Prämissen eine Aussage.';
+    else if (n === d) msg = 'Zweimal dieselbe Aussage reicht nicht: Du brauchst eine Regel und eine Tatsache.';
+    else if (on[1] === 'd') { msg = 'Oben steht keine Soll-Regel, sondern eine Beschreibung. Aus Tatsachen allein folgt kein Sollen – das ist ein Sein-Sollens-Fehlschluss.'; LK.reach('fehlschluss'); }
+    else if (od[1] === 'n') msg = 'Die zweite Prämisse ist keine Tatsache über den Fall, sondern selbst eine Regel.';
+    else if (on[2] !== 'N') msg = 'Diese Regel ist normativ, aber aus ihr folgt die Konklusion nicht. Welche Regel passt genau zum Fall?';
+    else if (od[2] !== 'D') msg = 'Diese Tatsache ist für die Konklusion nicht entscheidend. Welche Tatsache verbindet die Regel mit dem Fall?';
+    else { msg = 'Gültig! Wenn beide Prämissen stimmen, folgt die Konklusion zwingend.'; ok = true; }
+    e.textContent = msg; e.className = 'ergebnis ' + (ok ? 'ok' : 'no');
+    if (ok) {
+      S.geloest[S.fall] = true; buildSeg();
+      var anz = Object.keys(S.geloest).length;
+      $('rFaelle').textContent = anz + ' / ' + FAELLE.length;
+      if (anz === FAELLE.length) LK.reach('alle');
+    }
+  }
+
+  $('bPruef').addEventListener('click', pruefe);
+  buildKarten(); buildSeg(); buildFall();
+})();
+</script>
+</body>
+</html>

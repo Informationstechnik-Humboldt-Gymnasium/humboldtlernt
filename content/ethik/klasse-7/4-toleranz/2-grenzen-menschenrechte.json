@@ -1,0 +1,110 @@
+{
+  "id": "eth-k7-grenzen-toleranz",
+  "titel": "Menschenrechte und Grenzen der Toleranz",
+  "kurz": "Was Menschenrechte sind, warum sie Toleranz zugleich ermöglichen und begrenzen und wo Toleranz aufhört.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Wichtige Menschenrechte und ihre Merkmale nennen" },
+    { "id": "lz2", "niveau": "G", "text": "Zu tolerierende Privatsachen von nicht zu tolerierenden Handlungen unterscheiden" },
+    { "id": "lz3", "niveau": "H", "text": "Die Menschenrechte als Ermöglichung und als Begrenzung von Toleranz erläutern" },
+    { "id": "lz4", "niveau": "H", "text": "Das Toleranz-Paradoxon erklären" }
+  ],
+  "verstehen": {
+    "einstieg": "„Bei uns ist das halt so üblich.“ Reicht dieser Satz, um alles zu rechtfertigen, zum Beispiel dass Mädchen nicht zur Schule dürfen?",
+    "abschnitte": [
+      {
+        "titel": "Die Menschenrechte",
+        "text": "Die **Allgemeine Erklärung der Menschenrechte** wurde am 10. Dezember 1948 von den Vereinten Nationen verkündet, nach den Verbrechen des Zweiten Weltkriegs. Artikel 1 beginnt: „Alle Menschen sind frei und gleich an Würde und Rechten geboren.“\n\nBeispiele: Recht auf Leben und Freiheit, Verbot von Folter und Sklaverei, Gleichheit vor dem Gesetz, Gedanken-, Gewissens- und Religionsfreiheit, Meinungsfreiheit, Recht auf Bildung.\n\nMenschenrechte gelten als\n\n- **universell:** für alle Menschen, überall,\n- **unveräußerlich:** man kann sie nicht verlieren oder verkaufen,\n- **unteilbar:** sie gehören zusammen, man kann sich nicht nur einige aussuchen.\n\nIm deutschen Grundgesetz steht in Art. 1: „Die Würde des Menschen ist unantastbar.“"
+      },
+      {
+        "titel": "Menschenrechte ermöglichen und begrenzen Toleranz",
+        "text": "- **Ermöglichung:** Religions- und Meinungsfreiheit schützen gerade die Minderheiten, die andere ablehnen. Die Menschenrechte verlangen also Toleranz.\n- **Begrenzung:** Wer im Namen einer Kultur, Religion oder Tradition die Rechte anderer verletzt, kann sich nicht auf Toleranz berufen. Zwangsheirat, Gewalt in der Erziehung oder die Benachteiligung von Mädchen beim Schulbesuch muss man nicht dulden.\n\nEine Prüffrage: Ist es eine **Privatsache**, die nur die Person selbst betrifft (Kleidung, Essen, Glaube, Musik)? Oder eine **Handlung, die anderen schadet** oder ihre Rechte verletzt?"
+      },
+      {
+        "titel": "Das Toleranz-Paradoxon",
+        "text": "Der Philosoph **Karl Popper** schrieb 1945: Wenn eine Gesellschaft **unbegrenzt** tolerant ist, auch gegenüber den Intoleranten, dann können die Intoleranten die Toleranz abschaffen. Unbegrenzte Toleranz führt also zum Ende der Toleranz.\n\nDaraus folgt: Eine tolerante Gesellschaft darf **Intoleranz** begrenzen, etwa wenn zu Gewalt aufgerufen wird. Wichtig ist aber, dass nicht jede unbequeme **Meinung** schon Intoleranz ist."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "Die **Menschenrechte** (1948) gelten für alle Menschen, sind unveräußerlich und unteilbar. Sie **verlangen** Toleranz, etwa als Religions- und Meinungsfreiheit, und **begrenzen** sie: Wer die Rechte anderer verletzt, kann sich nicht auf Toleranz berufen.\n\nNach dem **Toleranz-Paradoxon** (Popper) muss eine tolerante Gesellschaft Intoleranz begrenzen, um sich selbst zu schützen.",
+    "alltag": "Ob eine Mitschülerin Kopftuch trägt oder ein Mitschüler sich die Nägel lackiert, ist ihre Privatsache. Wer sie dafür ausgrenzt, überschreitet die Grenze – nicht sie."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "eth-tgr-01", "typ": "multi", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Welche Rechte gehören zu den Menschenrechten?",
+      "optionen": [
+        { "text": "Recht auf Leben", "richtig": true },
+        { "text": "Religionsfreiheit", "richtig": true },
+        { "text": "Recht auf ein eigenes Auto", "feedback": "Ein Auto ist kein Menschenrecht. Menschenrechte schützen Grundlegendes wie Leben, Freiheit und Würde." },
+        { "text": "Verbot von Folter", "richtig": true }
+      ],
+      "erklaerung": "Menschenrechte schützen die grundlegenden Bedingungen eines menschenwürdigen Lebens."
+    },
+    {
+      "id": "eth-tgr-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Ordne den Merkmalen der Menschenrechte ihre Bedeutung zu.",
+      "paare": [
+        { "links": "universell", "rechts": "gelten für alle Menschen, überall" },
+        { "links": "unveräußerlich", "rechts": "man kann sie nicht verlieren oder verkaufen" },
+        { "links": "unteilbar", "rechts": "gehören zusammen, man kann sich nicht nur einige aussuchen" }
+      ],
+      "erklaerung": "Diese drei Merkmale unterscheiden Menschenrechte von Rechten, die nur in einem Land oder für bestimmte Gruppen gelten."
+    },
+    {
+      "id": "eth-tgr-03", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Privatsache oder Verletzung der Rechte anderer?",
+      "paare": [
+        { "links": "Eine Familie isst kein Schweinefleisch.", "rechts": "Privatsache – zu tolerieren" },
+        { "links": "Eltern verbieten ihrer Tochter den Schulbesuch.", "rechts": "verletzt ein Recht des Kindes – nicht zu tolerieren" }
+      ],
+      "erklaerung": "Essensregeln betreffen die eigene Lebensweise. Ein Schulverbot verletzt das Recht des Mädchens auf Bildung."
+    },
+    {
+      "id": "eth-tgr-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Inwiefern **ermöglichen** die Menschenrechte Toleranz?",
+      "optionen": [
+        { "text": "Sie schützen durch Religions- und Meinungsfreiheit gerade auch Menschen, deren Ansichten andere ablehnen.", "richtig": true },
+        { "text": "Sie schreiben allen dieselbe Meinung vor.", "feedback": "Im Gegenteil: Sie schützen die Freiheit verschiedener Meinungen." },
+        { "text": "Sie erlauben, alles zu tun, was die eigene Kultur verlangt.", "feedback": "Die Menschenrechte begrenzen auch, was im Namen einer Kultur getan werden darf." },
+        { "text": "Gar nicht, sie haben mit Toleranz nichts zu tun.", "feedback": "Freiheitsrechte sind eine wichtige Grundlage der Toleranz." }
+      ],
+      "erklaerung": "Wer eine Meinung oder Religion hat, die andere ablehnen, wird durch die Menschenrechte geschützt. Das verlangt von allen Toleranz."
+    },
+    {
+      "id": "eth-tgr-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Jemand sagt: „Ich schlage meine Kinder, das ist in meiner Kultur so üblich. Ihr müsst tolerant sein!“ Was antwortest du am besten?",
+      "optionen": [
+        { "text": "Toleranz endet, wo die Rechte anderer verletzt werden – hier das Recht der Kinder auf körperliche Unversehrtheit.", "richtig": true },
+        { "text": "Er hat recht, jede Kultur muss man in allem tolerieren.", "feedback": "Dann könnte man jede Gewalt mit „Kultur“ rechtfertigen. Die Menschenrechte setzen hier eine Grenze." },
+        { "text": "Toleranz gibt es nur für Erwachsene.", "feedback": "Das ist nicht der Punkt. Die Kinder werden in ihren Rechten verletzt." },
+        { "text": "Seine Kultur ist schlechter als unsere.", "feedback": "Das ist eine pauschale Abwertung. Der Grund ist nicht die Kultur, sondern die Gewalt gegen Kinder." }
+      ],
+      "erklaerung": "Toleranz bedeutet nicht, Unrecht zu dulden. Die Begründung sollte sich auf die verletzten Rechte stützen, nicht auf ein Urteil über eine ganze Kultur."
+    },
+    {
+      "id": "eth-tgr-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Was besagt das **Toleranz-Paradoxon** von Karl Popper?",
+      "optionen": [
+        { "text": "Unbegrenzte Toleranz auch gegenüber den Intoleranten kann dazu führen, dass die Toleranz verschwindet.", "richtig": true },
+        { "text": "Tolerante Menschen sind in Wahrheit intolerant.", "feedback": "Das Paradoxon behauptet nicht, dass Toleranz ein Widerspruch ist." },
+        { "text": "Man soll alles tolerieren, ohne Ausnahme.", "feedback": "Genau davor warnt Popper." },
+        { "text": "Man darf keine Meinung tolerieren, die man nicht teilt.", "feedback": "Das wäre selbst intolerant. Popper meint nur: Intoleranz, die die Toleranz bedroht, darf begrenzt werden." }
+      ],
+      "erklaerung": "Wer alles erlaubt, erlaubt auch denen, die die Freiheit abschaffen wollen. Deshalb braucht Toleranz Grenzen."
+    },
+    {
+      "id": "eth-tgr-07", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Welche Folgerungen aus dem Toleranz-Paradoxon sind **berechtigt**?",
+      "optionen": [
+        { "text": "Aufrufe zur Gewalt gegen eine Minderheit muss eine tolerante Gesellschaft nicht dulden.", "richtig": true },
+        { "text": "Jede Meinung, die mich ärgert, darf verboten werden.", "feedback": "Eine unbequeme Meinung ist noch keine Bedrohung der Toleranz." },
+        { "text": "Die Grenze muss gut begründet werden, damit sie nicht selbst zur Unterdrückung wird.", "richtig": true },
+        { "text": "Toleranz ist sinnlos und sollte abgeschafft werden.", "feedback": "Popper will Toleranz schützen, nicht abschaffen." }
+      ],
+      "erklaerung": "Das Paradoxon rechtfertigt Grenzen gegen echte Intoleranz, nicht gegen alles Unbequeme."
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "id": "eth-k7-goldene-regel-dilemma",
+  "titel": "Goldene Regel und moralische Dilemmata",
+  "kurz": "Die Goldene Regel, ihre Grenzen und wie man ein moralisches Dilemma Schritt für Schritt bearbeitet.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Die Goldene Regel in negativer und positiver Form wiedergeben und anwenden" },
+    { "id": "lz2", "niveau": "H", "text": "Grenzen der Goldenen Regel an Beispielen erläutern" },
+    { "id": "lz3", "niveau": "G", "text": "Ein moralisches Dilemma erkennen und von einem einfachen Problem unterscheiden" },
+    { "id": "lz4", "niveau": "H", "text": "Eine Entscheidung in einem Dilemma mit moralischen Regeln begründen" }
+  ],
+  "verstehen": {
+    "einstieg": "„Was du nicht willst, dass man dir tu, das füg auch keinem andern zu.“ Diesen Satz kennen fast alle. Aber reicht er, um immer richtig zu handeln?",
+    "abschnitte": [
+      {
+        "titel": "Die Goldene Regel",
+        "text": "Die **Goldene Regel** findet sich in vielen Religionen und Kulturen, z. B. bei Konfuzius, in der Bibel, im Talmud und in islamischen Überlieferungen. Es gibt sie in zwei Formen:\n\n- **negativ:** „Was du nicht willst, dass man dir tu, das füg auch keinem andern zu.“\n- **positiv:** „Behandle andere so, wie du von ihnen behandelt werden willst.“\n\nSie fordert einen **Perspektivwechsel**: Stell dir vor, du wärst der andere. Damit ist sie ein einfacher Test für Fairness."
+      },
+      {
+        "titel": "Grenzen der Goldenen Regel",
+        "text": "- **Verschiedene Wünsche:** Ich mag laute Musik und Überraschungspartys, mein Freund nicht. Wenn ich ihn behandle, wie ich behandelt werden will, liege ich daneben. Besser wäre: Behandle andere so, wie **sie** es vernünftigerweise wollen können.\n- **Ausnutzbar:** Jemand könnte sagen: „Ich will, dass man mich in Ruhe lässt, wenn ich klaue, also lasse ich andere auch klauen.“ Die Regel prüft nicht, ob die eigenen Wünsche selbst in Ordnung sind.\n- **Rollen:** Eine Richterin kann einen Dieb nicht freisprechen, nur weil sie an seiner Stelle auch nicht bestraft werden wollte.\n\nDie Goldene Regel ist also eine gute **Faustregel**, aber kein vollständiges Prüfverfahren."
+      },
+      {
+        "titel": "Was ist ein moralisches Dilemma?",
+        "text": "In einem **moralischen Dilemma** muss man sich zwischen Handlungen entscheiden, und **jede** Möglichkeit verletzt eine wichtige moralische Regel. Es gibt keinen Ausweg, bei dem alles gut ist.\n\nBekannt ist das **Heinz-Dilemma** (nach dem Psychologen Lawrence Kohlberg): Heinz' Frau ist todkrank. Ein Apotheker hat ein Medikament, verlangt aber viel mehr Geld, als Heinz aufbringen kann. Soll Heinz das Medikament stehlen? Hier stehen „Leben retten“ und „nicht stehlen“ gegeneinander.\n\nKein Dilemma ist es, wenn eine Seite nur ein Wunsch ist („Ich will lieber zocken als helfen“)."
+      },
+      {
+        "titel": "Ein Dilemma bearbeiten",
+        "text": "1. **Situation beschreiben:** Wer ist beteiligt? Welche Möglichkeiten gibt es?\n2. **Regeln benennen:** Welche moralischen Regeln stehen gegeneinander?\n3. **Folgen bedenken:** Was passiert bei jeder Möglichkeit, für wen?\n4. **Abwägen:** Welche Regel wiegt hier schwerer, und warum?\n5. **Urteilen:** Eine Entscheidung treffen und mit einer Regel begründen, z. B. „Heinz darf stehlen, **weil** das Leben eines Menschen wichtiger ist als das Eigentum des Apothekers.“\n\nWichtig: Eine gute Begründung beruft sich auf einen **moralischen Grundsatz**, nicht nur auf ein Gefühl („Ich finde das halt so“)."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "Die **Goldene Regel** fordert, sich in andere hineinzuversetzen. Sie ist eine gute Faustregel, hat aber Grenzen: Menschen haben verschiedene Wünsche, und eigene Wünsche können selbst falsch sein.\n\nIn einem **moralischen Dilemma** verletzt jede Möglichkeit eine moralische Regel. Man wägt ab und begründet die Entscheidung mit einem Grundsatz.",
+    "alltag": "Viele Streits in der Klasse sind kleine Dilemmata: Soll ich einer Freundin sagen, dass ihr Referat schlecht war? Ehrlichkeit und Rücksicht stehen dann gegeneinander."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "eth-grd-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Welcher Satz ist die **positive** Form der Goldenen Regel?",
+      "optionen": [
+        { "text": "„Behandle andere so, wie du von ihnen behandelt werden willst.“", "richtig": true },
+        { "text": "„Was du nicht willst, dass man dir tu, das füg auch keinem andern zu.“", "feedback": "Das ist die negative Form: Sie sagt, was man unterlassen soll." },
+        { "text": "„Wie du mir, so ich dir.“", "feedback": "Das ist Vergeltung, nicht die Goldene Regel. Man reagiert nur auf das, was der andere getan hat." },
+        { "text": "„Jeder ist sich selbst der Nächste.“", "feedback": "Das ist ein egoistischer Spruch, keine Regel für Fairness." }
+      ],
+      "erklaerung": "Die positive Form sagt, was man tun soll. Die negative Form sagt, was man lassen soll."
+    },
+    {
+      "id": "eth-grd-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz3",
+      "frage": "Welche Situation ist ein **moralisches Dilemma**?",
+      "optionen": [
+        { "text": "Lea hat versprochen, ein Geheimnis zu bewahren. Nun erfährt sie, dass ihre Freundin dadurch in Gefahr ist.", "richtig": true },
+        { "text": "Tom kann sich nicht entscheiden, ob er Pizza oder Nudeln essen soll.", "feedback": "Das ist eine Geschmacksfrage. Keine Möglichkeit verletzt eine moralische Regel." },
+        { "text": "Mia will ihr Handy behalten, obwohl ihre Mutter es zum Lernen einsammelt.", "feedback": "Auf einer Seite steht nur ein Wunsch, keine moralische Regel." },
+        { "text": "Jan weiß nicht, ob er Mathe oder Deutsch zuerst lernen soll.", "feedback": "Hier geht es um Planung, nicht um Moral." }
+      ],
+      "erklaerung": "Bei Lea stehen zwei moralische Regeln gegeneinander: „Halte Versprechen“ und „Schütze andere vor Gefahr“."
+    },
+    {
+      "id": "eth-grd-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Sara liebt Spinnen und schenkt ihrer Freundin zum Geburtstag eine Vogelspinne, weil sie selbst sich darüber riesig freuen würde. Die Freundin hat aber große Angst vor Spinnen. Welche Grenze der Goldenen Regel zeigt das?",
+      "optionen": [
+        { "text": "Menschen haben unterschiedliche Wünsche. Was ich mir wünsche, muss nicht gut für andere sein.", "richtig": true },
+        { "text": "Die Goldene Regel verbietet Geschenke.", "feedback": "Die Regel verbietet keine Geschenke. Sie setzt aber stillschweigend voraus, dass andere dasselbe wollen wie ich." },
+        { "text": "Die Goldene Regel gilt nur für Erwachsene.", "feedback": "Die Regel gilt für alle. Das Problem liegt woanders." },
+        { "text": "Sara hat die Goldene Regel falsch zitiert.", "feedback": "Sara hat sie genau nach dem Wortlaut angewendet. Gerade das zeigt die Grenze." }
+      ],
+      "erklaerung": "Eine Verbesserung wäre: Behandle andere so, wie sie es vernünftigerweise wollen können. Dazu muss man sich wirklich in ihre Lage versetzen."
+    },
+    {
+      "id": "eth-grd-04", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Bringe die Schritte zur Bearbeitung eines moralischen Dilemmas in eine sinnvolle Reihenfolge.",
+      "elemente": [
+        "Situation und Beteiligte beschreiben",
+        "Die moralischen Regeln benennen, die gegeneinander stehen",
+        "Die Folgen jeder Möglichkeit für alle Beteiligten bedenken",
+        "Abwägen, welche Regel hier schwerer wiegt",
+        "Eine Entscheidung treffen und mit einem Grundsatz begründen"
+      ],
+      "erklaerung": "Erst verstehen, dann die Regeln und Folgen prüfen, dann abwägen und begründet urteilen. So bleibt man nicht beim ersten Bauchgefühl stehen."
+    },
+    {
+      "id": "eth-grd-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Welche Begründung für das Heinz-Dilemma beruft sich auf einen **moralischen Grundsatz**?",
+      "optionen": [
+        { "text": "„Heinz darf das Medikament stehlen, weil ein Menschenleben mehr zählt als Eigentum.“", "richtig": true },
+        { "text": "„Heinz soll stehlen, weil er sonst traurig ist.“", "feedback": "Das nennt nur ein Gefühl von Heinz, keinen Grundsatz, der auch für andere gelten könnte." },
+        { "text": "„Heinz soll es lassen, weil er erwischt werden könnte.“", "feedback": "Das ist eine kluge Überlegung zum eigenen Vorteil, aber keine moralische Begründung." },
+        { "text": "„Ich finde das halt so.“", "feedback": "Eine Meinung ohne Grund ist noch keine Begründung." }
+      ],
+      "erklaerung": "Eine moralische Begründung nennt eine Regel, die allgemein gelten soll, hier: Leben retten geht vor Eigentum schützen. Auch die Gegenseite kann so begründet werden („Stehlen untergräbt das Vertrauen aller“)."
+    },
+    {
+      "id": "eth-grd-06", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Welche Einwände zeigen echte **Grenzen** der Goldenen Regel?",
+      "optionen": [
+        { "text": "Wer selbst nichts dagegen hat, betrogen zu werden, könnte damit Betrug rechtfertigen.", "richtig": true },
+        { "text": "Eine Richterin müsste jeden freisprechen, weil sie an seiner Stelle auch nicht bestraft werden wollte.", "richtig": true },
+        { "text": "Die Regel ist zu kurz, um sie sich zu merken.", "feedback": "Die Kürze ist eher ein Vorteil. Das ist kein inhaltlicher Einwand." },
+        { "text": "Andere Menschen können andere Bedürfnisse haben als ich.", "richtig": true }
+      ],
+      "erklaerung": "Die Goldene Regel nimmt die eigenen Wünsche als Maßstab. Diese können seltsam, falsch oder für eine Rolle unpassend sein."
+    },
+    {
+      "id": "eth-grd-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Lea hat ihrer Freundin Nele versprochen, niemandem zu verraten, dass Nele seit Wochen kaum noch isst. Lea macht sich große Sorgen. Soll sie es einer Vertrauenslehrerin erzählen? Nenne die beiden Regeln, die gegeneinander stehen, und begründe eine Entscheidung.",
+      "stichworte": [
+        { "aspekt": "Regel 1: Versprechen halten bzw. ein Geheimnis bewahren", "woerter": ["versprechen", "geheimnis", "vertrauen", "verraten"] },
+        { "aspekt": "Regel 2: Die Gesundheit der Freundin schützen bzw. Hilfe holen", "woerter": ["gesundheit", "hilfe", "gefahr", "krank", "schuetzen"] },
+        { "aspekt": "Eine Entscheidung mit Begründung", "woerter": ["weil", "deshalb", "daher", "wichtiger", "schwerer"] }
+      ],
+      "musterloesung": "Lea muss zwischen zwei Regeln abwägen: Sie soll ihr Versprechen halten und Neles Vertrauen nicht verraten. Gleichzeitig soll sie Nele vor einer Gefahr für ihre Gesundheit schützen und Hilfe holen. Ich finde, Lea sollte mit der Vertrauenslehrerin sprechen, weil Neles Gesundheit wichtiger ist als das Geheimnis. Sie sollte Nele aber vorher sagen, dass sie das tun wird.",
+      "erklaerung": "Eine gute Antwort benennt beide Regeln und sagt, warum eine hier schwerer wiegt. Auch eine andere Entscheidung kann gut sein, wenn sie begründet ist."
+    }
+  ]
+}

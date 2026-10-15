@@ -1,0 +1,113 @@
+{
+  "id": "eth-k8-verantwortung",
+  "titel": "Verantwortung als Relationsbegriff – Natur und Kultur",
+  "kurz": "Wer ist wofür, wem gegenüber und vor wem verantwortlich? Und was unterscheidet den Menschen als Natur- und Kulturwesen?",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Den Begriff „Verantwortung“ als Relationsbegriff mit seinen Bestandteilen erklären" },
+    { "id": "lz2", "niveau": "G", "text": "Verantwortung für Vergangenes und für die Zukunft sowie individuelle und kollektive Verantwortung unterscheiden" },
+    { "id": "lz3", "niveau": "G", "text": "Natur und Kultur unterscheiden und die Doppelrolle des Menschen beschreiben" },
+    { "id": "lz4", "niveau": "H", "text": "Die Relationen der Verantwortung auf einen Fall aus dem Umweltschutz anwenden" }
+  ],
+  "verstehen": {
+    "einstieg": "„Für den Klimawandel bin ich doch nicht verantwortlich!“ – Stimmt das? Und wer ist es dann?",
+    "abschnitte": [
+      {
+        "titel": "Verantwortung ist ein Relationsbegriff",
+        "text": "„Verantwortung“ ist ein **Relationsbegriff**: Man ist nie einfach „verantwortlich“, sondern immer in Beziehung zu etwas. Vollständig lautet ein Satz über Verantwortung:\n\n**Wer** (Träger) ist **für was** (Gegenstand) **gegenüber wem** (Betroffene) **vor wem** (Instanz) **aufgrund welcher Normen** verantwortlich?\n\nBeispiel: **Ein Fabrikbesitzer** (wer) ist **für das Abwasser seiner Fabrik** (was) **gegenüber den Anwohnern** (wem) **vor dem Gericht und der Öffentlichkeit** (Instanz) **aufgrund des Umweltrechts und der Pflicht, niemandem zu schaden** (Normen) verantwortlich.\n\nInstanzen können ein Gericht, die Gesellschaft, die Eltern, das eigene Gewissen oder, für Gläubige, Gott sein."
+      },
+      {
+        "titel": "Arten der Verantwortung",
+        "text": "- **Rückblickend:** Man muss für das, was man getan hat, Rechenschaft ablegen („Wer hat das kaputt gemacht?“).\n- **Vorausblickend (für die Zukunft):** Man ist dafür zuständig, dass etwas gut wird oder bleibt („Wer kümmert sich um den Klassenhamster?“). Der Philosoph **Hans Jonas** forderte 1979, Verantwortung auch für **künftige Generationen** zu übernehmen, weil moderne Technik die Natur dauerhaft verändern kann.\n- **Individuell:** Eine einzelne Person ist verantwortlich.\n- **Kollektiv:** Eine Gruppe ist gemeinsam verantwortlich, etwa ein Staat oder die ganze Menschheit für das Klima. Dabei trägt jeder einen Teil, auch wenn der eigene Beitrag klein ist."
+      },
+      {
+        "titel": "Natur und Kultur",
+        "text": "- **Natur** ist alles, was ohne Zutun des Menschen entsteht und sich entwickelt: Pflanzen, Tiere, Gebirge, Wetter.\n- **Kultur** ist alles, was der Mensch schafft und gestaltet: Werkzeuge, Häuser, Sprache, Kunst, Regeln.\n\nDer Mensch ist ein **Doppelwesen**: Als **Naturwesen** ist er ein Lebewesen mit Körper und Bedürfnissen, abhängig von Luft, Wasser und Nahrung. Als **Kulturwesen** verändert er die Natur und kann darüber nachdenken, was er tun soll. Weil er die Folgen seines Handelns bedenken kann, kann er Verantwortung tragen."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "**Verantwortung** ist ein **Relationsbegriff**: **Wer** ist **für was** **gegenüber wem** **vor wem** **aufgrund welcher Normen** verantwortlich? Man unterscheidet rückblickende und **zukunftsbezogene**, individuelle und **kollektive** Verantwortung.\n\nDer Mensch ist **Natur- und Kulturwesen**: Er gehört zur Natur und gestaltet sie zugleich.",
+    "alltag": "Bei Gruppenarbeiten fühlt sich oft niemand verantwortlich. Klärt vorher: Wer ist wofür zuständig? Das ist angewandte Verantwortungsethik."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "eth-ver-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "„Lena ist für ihren Hund gegenüber den Nachbarn vor dem Ordnungsamt nach der Hundeverordnung verantwortlich.“ Ordne die Teile den Relationen zu.",
+      "paare": [
+        { "links": "Lena", "rechts": "Träger (wer?)" },
+        { "links": "ihr Hund", "rechts": "Gegenstand (für was?)" },
+        { "links": "die Nachbarn", "rechts": "Betroffene (gegenüber wem?)" },
+        { "links": "das Ordnungsamt", "rechts": "Instanz (vor wem?)" },
+        { "links": "die Hundeverordnung", "rechts": "Norm (aufgrund wovon?)" }
+      ],
+      "erklaerung": "Wer die fünf Relationen benennt, kann genauer sagen, worin eine Verantwortung besteht."
+    },
+    {
+      "id": "eth-ver-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz3",
+      "frage": "Was gehört zur **Kultur**?",
+      "optionen": [
+        { "text": "Eine Brücke über einen Fluss", "richtig": true },
+        { "text": "Ein Gewitter", "feedback": "Ein Gewitter entsteht ohne Zutun des Menschen – es gehört zur Natur." },
+        { "text": "Ein Wald, der von selbst gewachsen ist", "feedback": "Ein von selbst gewachsener Wald ist Natur." },
+        { "text": "Ein Berg", "feedback": "Berge entstehen durch natürliche Vorgänge." }
+      ],
+      "erklaerung": "Kultur ist alles, was der Mensch geschaffen oder gestaltet hat."
+    },
+    {
+      "id": "eth-ver-03", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Ordne die Beispiele den Arten der Verantwortung zu.",
+      "paare": [
+        { "links": "Tim muss erklären, warum er die Scheibe eingeworfen hat.", "rechts": "rückblickende Verantwortung" },
+        { "links": "Mia übernimmt in den Ferien die Pflege der Schulpflanzen.", "rechts": "vorausblickende Verantwortung" },
+        { "links": "Alle Staaten der Erde müssen gemeinsam den Ausstoß von Treibhausgasen senken.", "rechts": "kollektive Verantwortung" }
+      ],
+      "erklaerung": "Verantwortung kann sich auf Vergangenes oder Zukünftiges beziehen und Einzelne oder Gruppen betreffen."
+    },
+    {
+      "id": "eth-ver-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Warum forderte Hans Jonas eine Verantwortung für **künftige Generationen**?",
+      "optionen": [
+        { "text": "Weil moderne Technik die Natur so stark und dauerhaft verändern kann, dass auch Menschen in der Zukunft betroffen sind.", "richtig": true },
+        { "text": "Weil künftige Generationen bereits jetzt abstimmen dürfen.", "feedback": "Gerade weil sie noch nicht mitreden können, müssen wir an sie denken." },
+        { "text": "Weil Technik immer gut ist.", "feedback": "Jonas warnte vor den Risiken der Technik." },
+        { "text": "Weil die Vergangenheit unwichtig ist.", "feedback": "Es geht um die Zukunft, die Vergangenheit wird dadurch nicht unwichtig." }
+      ],
+      "erklaerung": "Jonas (1979) meinte: Früher reichten die Folgen menschlichen Handelns nicht weit. Heute können sie Jahrhunderte wirken."
+    },
+    {
+      "id": "eth-ver-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Inwiefern ist der Mensch ein **Doppelwesen**?",
+      "optionen": [
+        { "text": "Er ist als Lebewesen Teil der Natur und gestaltet sie zugleich als Kulturwesen.", "richtig": true },
+        { "text": "Er hat zwei Hände.", "feedback": "Das ist wörtlich gemeint, aber nicht der philosophische Gedanke." },
+        { "text": "Er ist manchmal gut und manchmal böse.", "feedback": "Das ist ein anderes Thema. Es geht um Natur und Kultur." },
+        { "text": "Er lebt halb in der Stadt und halb auf dem Land.", "feedback": "Der Wohnort spielt keine Rolle." }
+      ],
+      "erklaerung": "Weil der Mensch zur Natur gehört und sie zugleich verändert, kann und muss er über seinen Umgang mit ihr nachdenken."
+    },
+    {
+      "id": "eth-ver-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "„Mein Beitrag zum Klimawandel ist winzig, also trage ich keine Verantwortung.“ Welcher Einwand ist am stärksten?",
+      "optionen": [
+        { "text": "Bei kollektiver Verantwortung trägt jeder einen Teil – wenn alle so dächten, würde niemand handeln.", "richtig": true },
+        { "text": "Der Beitrag jedes Einzelnen ist riesig.", "feedback": "Das stimmt nicht. Der Einzelbeitrag ist tatsächlich klein – der Einwand muss trotzdem greifen." },
+        { "text": "Für das Klima ist nur die Regierung verantwortlich.", "feedback": "Auch Regierungen tragen Verantwortung, aber das schließt die anderer nicht aus." },
+        { "text": "Der Klimawandel ist natürlich.", "feedback": "Der heutige Klimawandel ist zum größten Teil vom Menschen verursacht." }
+      ],
+      "erklaerung": "Kollektive Probleme entstehen aus vielen kleinen Beiträgen. Wer sich wegen der Kleinheit seines Beitrags entlastet, könnte das Problem nie lösen."
+    },
+    {
+      "id": "eth-ver-07", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz1",
+      "frage": "Welche können eine **Instanz** sein, vor der man sich verantworten muss?",
+      "optionen": [
+        { "text": "ein Gericht", "richtig": true },
+        { "text": "das eigene Gewissen", "richtig": true },
+        { "text": "die Öffentlichkeit", "richtig": true },
+        { "text": "der Gegenstand, für den man verantwortlich ist", "feedback": "Der Gegenstand ist das, wofür man verantwortlich ist, nicht die Instanz, vor der man sich rechtfertigt." }
+      ],
+      "erklaerung": "Die Instanz ist diejenige, die Rechenschaft verlangt und urteilt."
+    }
+  ]
+}

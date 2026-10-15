@@ -1,0 +1,107 @@
+{
+  "id": "eth-k10-strafrecht",
+  "titel": "Grundsätze des Strafrechts in Deutschland",
+  "kurz": "Keine Strafe ohne Gesetz, keine Strafe ohne Schuld, Unschuldsvermutung, Strafmündigkeit und Resozialisierung – und was gilt, wenn Gesetze selbst Unrecht sind.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Grundsätze des deutschen Strafrechts nennen und erklären" },
+    { "id": "lz2", "niveau": "G", "text": "Die Regeln zur Strafmündigkeit und zum Jugendstrafrecht wiedergeben" },
+    { "id": "lz3", "niveau": "H", "text": "Grundsätze des Strafrechts den Straftheorien zuordnen" },
+    { "id": "lz4", "niveau": "H", "text": "Das Verhältnis von positivem Recht und Naturrecht an einem historischen Beispiel erläutern" }
+  ],
+  "verstehen": {
+    "einstieg": "Darf jemand für etwas bestraft werden, das erst nach seiner Tat verboten wurde? Und darf ein Gericht jemanden verurteilen, nur weil er „verdächtig aussieht“?",
+    "abschnitte": [
+      {
+        "titel": "Wichtige Grundsätze",
+        "text": "- **Keine Strafe ohne Gesetz** (*nulla poena sine lege*): Eine Tat darf nur bestraft werden, wenn die Strafbarkeit **vor** der Tat gesetzlich bestimmt war (Art. 103 Abs. 2 Grundgesetz, § 1 Strafgesetzbuch). Niemand soll von einer Strafe überrascht werden.\n- **Keine Strafe ohne Schuld** (Schuldprinzip): Bestraft wird nur, wer schuldhaft gehandelt hat. Die Strafe darf die Schuld nicht übersteigen.\n- **Unschuldsvermutung:** Jeder gilt als unschuldig, bis seine Schuld in einem fairen Verfahren bewiesen ist. Im Zweifel wird für den Angeklagten entschieden (*in dubio pro reo*).\n- **Verbot der Doppelbestrafung:** Niemand darf wegen derselben Tat zweimal bestraft werden (Art. 103 Abs. 3 GG).\n- **Verhältnismäßigkeit und Menschenwürde:** Die Todesstrafe ist abgeschafft (Art. 102 GG), grausame Strafen sind verboten.\n- **Resozialisierung:** Im Strafvollzug soll der Gefangene fähig werden, künftig ein Leben ohne Straftaten zu führen."
+      },
+      {
+        "titel": "Strafmündigkeit und Jugendstrafrecht",
+        "text": "- **Unter 14 Jahren** sind Kinder **schuldunfähig** und werden nicht bestraft (§ 19 StGB). Jugendamt und Familiengericht können aber eingreifen.\n- **Jugendliche (14–17 Jahre)** werden nach dem **Jugendgerichtsgesetz** behandelt. Im Vordergrund steht der **Erziehungsgedanke**: Weisungen, Sozialstunden, Arrest, in schweren Fällen Jugendstrafe.\n- **Heranwachsende (18–20 Jahre)** können je nach Reife nach Jugend- oder Erwachsenenstrafrecht verurteilt werden.\n\nDas zeigt: Das deutsche Recht verbindet Schuldausgleich mit **Spezialprävention**, besonders bei jungen Menschen."
+      },
+      {
+        "titel": "Wenn Gesetze Unrecht sind",
+        "text": "Was, wenn das **positive Recht** selbst Unrecht befiehlt?\n\n- In den **Nürnberger Prozessen** (1945/46) wurden führende Nationalsozialisten verurteilt. Sie beriefen sich darauf, nur Befehlen und Gesetzen gefolgt zu sein. Das Gericht urteilte: Verbrechen gegen die Menschlichkeit bleiben Verbrechen.\n- In den **Mauerschützenprozessen** (1990er Jahre) wurden DDR-Grenzsoldaten verurteilt, die Flüchtende erschossen hatten. Nach DDR-Recht war das scheinbar gedeckt. Die Gerichte beriefen sich auf die **Radbruch'sche Formel** des Juristen Gustav Radbruch (1946): Wenn ein Gesetz in **unerträglichem Maß** gegen die Gerechtigkeit verstößt, muss es der Gerechtigkeit weichen.\n\nHier wird das **Naturrecht** (bzw. die Menschenrechte) zum Maßstab für das positive Recht. Zugleich entsteht eine Spannung zum Grundsatz „keine Strafe ohne Gesetz“."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "Grundsätze: **Keine Strafe ohne Gesetz**, **keine Strafe ohne Schuld**, **Unschuldsvermutung** (im Zweifel für den Angeklagten), **kein Doppelbestrafen**, keine Todesstrafe, **Resozialisierung**.\n\nUnter 14 Jahren ist man schuldunfähig, Jugendliche fallen unter das **Jugendstrafrecht** mit Erziehungsgedanken. Nach der **Radbruch'schen Formel** muss extrem ungerechtes Gesetz der Gerechtigkeit weichen.",
+    "alltag": "„Im Zweifel für den Angeklagten“ bedeutet: Lieber einen Schuldigen freisprechen als einen Unschuldigen verurteilen. Das ist eine bewusste Wertentscheidung."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "eth-srr-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Ordne die Grundsätze ihrer Bedeutung zu.",
+      "paare": [
+        { "links": "Keine Strafe ohne Gesetz", "rechts": "Die Strafbarkeit muss vor der Tat gesetzlich bestimmt sein." },
+        { "links": "Unschuldsvermutung", "rechts": "Jeder gilt als unschuldig, bis die Schuld bewiesen ist." },
+        { "links": "Verbot der Doppelbestrafung", "rechts": "Niemand wird für dieselbe Tat zweimal bestraft." },
+        { "links": "Schuldprinzip", "rechts": "Bestraft wird nur, wer schuldhaft gehandelt hat." }
+      ],
+      "erklaerung": "Diese Grundsätze schützen Bürger vor willkürlicher Strafe durch den Staat."
+    },
+    {
+      "id": "eth-srr-02", "typ": "zahl", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Ab welchem Alter kann man in Deutschland strafrechtlich verantwortlich sein (Strafmündigkeit)?",
+      "loesung": 14, "toleranz": 0, "einheit": "Jahre",
+      "rechenweg": ["§ 19 StGB: Wer bei der Tat noch nicht 14 Jahre alt ist, ist schuldunfähig.", "Ab 14 Jahren gilt man also als strafmündig."],
+      "erklaerung": "Für Jugendliche von 14 bis 17 Jahren gilt das Jugendstrafrecht mit dem Erziehungsgedanken."
+    },
+    {
+      "id": "eth-srr-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Ein Gericht ist nicht sicher, ob die Angeklagte die Tat begangen hat. Wie muss es entscheiden?",
+      "optionen": [
+        { "text": "Freispruch – im Zweifel für die Angeklagte", "richtig": true },
+        { "text": "Verurteilung, sicher ist sicher", "feedback": "Das widerspricht der Unschuldsvermutung." },
+        { "text": "Eine halbe Strafe", "feedback": "Eine Strafe ohne bewiesene Schuld ist nicht zulässig." },
+        { "text": "Der Fall wird per Los entschieden.", "feedback": "Das wäre völlig willkürlich." }
+      ],
+      "erklaerung": "*In dubio pro reo*: Lieber einen Schuldigen freisprechen als einen Unschuldigen bestrafen."
+    },
+    {
+      "id": "eth-srr-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Was steht im **Jugendstrafrecht** im Vordergrund?",
+      "optionen": [
+        { "text": "der Erziehungsgedanke: Jugendliche sollen lernen, künftig keine Straftaten mehr zu begehen", "richtig": true },
+        { "text": "möglichst harte Abschreckung", "feedback": "Jugendliche sollen vor allem erzogen werden, nicht abgeschreckt." },
+        { "text": "Vergeltung ohne Rücksicht auf das Alter", "feedback": "Gerade das Alter wird besonders berücksichtigt." },
+        { "text": "Jugendliche werden nie bestraft.", "feedback": "Es gibt Maßnahmen bis hin zur Jugendstrafe." }
+      ],
+      "erklaerung": "Das Jugendstrafrecht ist vor allem auf Spezialprävention ausgerichtet."
+    },
+    {
+      "id": "eth-srr-05", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Welcher Straftheorie entspricht der Grundsatz am ehesten?",
+      "paare": [
+        { "links": "Die Strafe darf die Schuld nicht übersteigen.", "rechts": "absolute Theorie (Schuldausgleich)" },
+        { "links": "Der Strafvollzug soll auf ein Leben ohne Straftaten vorbereiten.", "rechts": "Spezialprävention" }
+      ],
+      "erklaerung": "Das deutsche Strafrecht folgt einer Vereinigungstheorie: Die Schuld begrenzt, die Prävention gibt den Zweck."
+    },
+    {
+      "id": "eth-srr-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Was besagt die **Radbruch'sche Formel**?",
+      "optionen": [
+        { "text": "Wenn ein Gesetz in unerträglichem Maß gegen die Gerechtigkeit verstößt, muss es der Gerechtigkeit weichen.", "richtig": true },
+        { "text": "Jedes Gesetz ist gerecht, weil es ein Gesetz ist.", "feedback": "Genau diese Haltung wollte Radbruch nach dem Nationalsozialismus überwinden." },
+        { "text": "Gesetze darf man ignorieren, wenn sie einem nicht gefallen.", "feedback": "Die Formel gilt nur bei extremem, unerträglichem Unrecht, nicht bei bloßem Missfallen." },
+        { "text": "Strafen müssen immer mild sein.", "feedback": "Die Formel betrifft das Verhältnis von Gesetz und Gerechtigkeit." }
+      ],
+      "erklaerung": "Die Formel macht das Naturrecht bzw. die Menschenrechte zum Maßstab für extremes Unrecht im positiven Recht."
+    },
+    {
+      "id": "eth-srr-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Warum entsteht bei den Mauerschützenprozessen eine **Spannung** zwischen zwei Grundsätzen?",
+      "optionen": [
+        { "text": "Die Verurteilung schützt die Menschenrechte, steht aber in Spannung zu „keine Strafe ohne Gesetz“, weil die Taten nach DDR-Recht scheinbar gedeckt waren.", "richtig": true },
+        { "text": "Weil die Soldaten zu jung waren.", "feedback": "Das Alter ist nicht der Kern der Spannung." },
+        { "text": "Weil es in der DDR keine Gesetze gab.", "feedback": "Es gab Gesetze – gerade das ist das Problem." },
+        { "text": "Es gibt keine Spannung.", "feedback": "Die Frage, ob man nach damaligem Recht gedeckte Taten bestrafen darf, war juristisch und ethisch heftig umstritten." }
+      ],
+      "erklaerung": "Hier stehen Rechtssicherheit und Gerechtigkeit gegeneinander. Die Gerichte entschieden, dass die Tötung unbewaffneter Flüchtender auch damals offensichtliches Unrecht war."
+    }
+  ]
+}

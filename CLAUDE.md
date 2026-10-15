@@ -1,7 +1,7 @@
 # humboldtlernt – Regeln für Claude-Sitzungen
 
 Lernplattform des Humboldt-Gymnasiums Berlin-Tegel (Node 20+, Express, SQLite, kein Build-Schritt).
-Fächer nach dem schulinternen Curriculum (SchiC): **Physik**, **Chemie** und **Biologie** (Kl. 7–10) sowie **TIMP** (Wahlpflicht, Kl. 8–9). Dazu die **Sandbox** mit freien Simulationen (Schaltkreis-, Logik-, Atom- & Chemie- und Netzwerk-Labor).
+Fächer nach dem schulinternen Curriculum (SchiC): **Physik**, **Chemie**, **Biologie** und **Ethik** (ab Kl. 9 Ethik/Philosophie) (Kl. 7–10) sowie **TIMP** (Wahlpflicht, Kl. 8–9). Dazu die **Sandbox** mit freien Simulationen (Schaltkreis-, Logik-, Atom- & Chemie- und Netzwerk-Labor).
 Mehrere Personen arbeiten gleichzeitig mit eigenen Claude-Sitzungen am Repo. Halte dich deshalb genau an diese Regeln.
 
 ## Zusammenarbeit (wichtig)
@@ -59,6 +59,7 @@ Thema:
   - TIMP: Thema `timp-k<klasse>-<name>`, Übungen `timp-<kürzel>-01`.
   - Chemie: Thema `ch-k<klasse>-<name>`, Übungen `ch-<kürzel>-01`. Chemische Formeln mit Unicode-Indizes direkt im Text (H₂O, SO₄²⁻, →), nicht als Formel-Backticks (die sind kursiv).
   - Biologie: Thema `bio-k<klasse>-<name>`, Übungen `bio-<kürzel>-01`. Themenfelder heißen wie im SchiC `1` bis `8` (Themenfeld 4 ist auf Kl. 7 und 10 verteilt).
+  - Ethik: Thema `eth-k<klasse>-<name>`, Übungen `eth-<kürzel>-01`. Themenfelder heißen wie die Unterrichtsthemen im SchiC `1` bis `17` (7/8: 1–8, 9/10: 9–17; die Verteilung auf einzelne Klassen ist ein Vorschlag). Übungen prüfen Begriffe, Positionen und Argumentationsschritte – nie eine bestimmte Meinung als „richtig“; Stellungnahmen nur als `text` mit Stichworten zu Struktur und Begründung.
   - Neues Fach: eigenes Präfix, z. B. `geo-k8-…`.
   - Kürzel vorher mit `grep -r '"<präfix>-<kürzel>-' content` auf Eindeutigkeit prüfen.
 - **IDs bestehender Themen und Übungen nie ändern oder wiederverwenden**, sonst geht Schülerfortschritt verloren.

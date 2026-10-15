@@ -1,0 +1,110 @@
+{
+  "id": "eth-k10-theodizee",
+  "titel": "Die Theodizee: Warum lässt Gott das Leid zu?",
+  "kurz": "Das Theodizee-Problem, moralische und natürliche Übel und wichtige Antwortversuche.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Das Theodizee-Problem formulieren" },
+    { "id": "lz2", "niveau": "G", "text": "Moralische und natürliche Übel unterscheiden" },
+    { "id": "lz3", "niveau": "H", "text": "Antwortversuche auf die Theodizee-Frage (Willensfreiheit, Läuterung, beste aller Welten, begrenzte Allmacht) erläutern und prüfen" }
+  ],
+  "verstehen": {
+    "einstieg": "Nach einem Erdbeben mit Tausenden Toten fragen viele: Wenn es einen guten und allmächtigen Gott gibt, warum hat er das nicht verhindert?",
+    "abschnitte": [
+      {
+        "titel": "Das Problem",
+        "text": "Das Wort **Theodizee** (griech. *theos* = Gott, *dike* = Gerechtigkeit) prägte **Gottfried Wilhelm Leibniz** 1710. Gemeint ist die Rechtfertigung Gottes angesichts des Leids in der Welt.\n\nDas Problem lässt sich als Widerspruch zwischen vier Sätzen darstellen:\n\n1. Gott ist **allmächtig** (er **kann** das Leid verhindern).\n2. Gott ist **allgütig** (er **will** das Leid verhindern).\n3. Gott ist **allwissend** (er **weiß** vom Leid).\n4. Es gibt **Leid** in der Welt.\n\nAlle vier zugleich scheinen nicht zusammenzupassen. Eine ähnliche Überlegung wird schon dem antiken Philosophen Epikur zugeschrieben."
+      },
+      {
+        "titel": "Zwei Arten von Übel",
+        "text": "- **Moralische Übel** verursachen Menschen durch ihr Handeln: Krieg, Mord, Unterdrückung.\n- **Natürliche Übel** entstehen ohne menschliches Zutun: Erdbeben, Krankheiten, Dürren.\n\nDie Unterscheidung ist wichtig, weil manche Antworten nur für eine Art von Übel funktionieren."
+      },
+      {
+        "titel": "Antwortversuche",
+        "text": "- **Willensfreiheit:** Gott hat den Menschen frei geschaffen. Freiheit ist ein hohes Gut, schließt aber die Möglichkeit ein, Böses zu tun. Diese Antwort erklärt **moralische** Übel, aber kaum natürliche.\n- **Läuterung / Seelenbildung:** Leid kann Menschen reifen lassen, Mitgefühl wecken und Hilfe hervorbringen. Einwand: Viel Leid zerstört Menschen eher, etwa bei Kindern.\n- **Die beste aller möglichen Welten** (Leibniz): Gott hat aus allen möglichen Welten die beste geschaffen. Eine Welt mit Freiheit und Naturgesetzen enthält auch Übel, sie ist insgesamt aber besser als jede andere. Voltaire verspottete diese Antwort nach dem Erdbeben von Lissabon (1755) in seinem Roman *Candide*.\n- **Begrenzte Allmacht:** Gott ist nicht allmächtig im vollen Sinn, er leidet mit der Welt mit (u. a. Hans Jonas nach Auschwitz).\n- **Unbegreiflichkeit / Hiob:** Im biblischen Buch Hiob wird das Leid eines Gerechten nicht erklärt. Der Mensch kann Gottes Wege nicht durchschauen.\n\nFür Atheisten ist die Theodizee ein starkes Argument **gegen** die Existenz eines allmächtigen und allgütigen Gottes. Für viele Gläubige bleibt sie eine offene Frage, mit der man leben und gegen das Leid handeln muss."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "**Theodizee** (Leibniz, 1710): Wie lassen sich ein **allmächtiger**, **allgütiger** und **allwissender** Gott und das **Leid** in der Welt vereinbaren?\n\n**Moralische Übel** verursachen Menschen, **natürliche Übel** die Natur. Antworten: **Willensfreiheit**, **Läuterung**, **beste aller möglichen Welten**, **begrenzte Allmacht**, Unbegreiflichkeit Gottes (Hiob).",
+    "alltag": "Die Theodizee-Frage stellt sich oft ganz persönlich, nach einem Todesfall oder einer schweren Krankheit. Dann helfen eher Zuwendung und Zuhören als Argumente."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "eth-the-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Moralisches oder natürliches Übel?",
+      "paare": [
+        { "links": "Ein Tsunami zerstört eine Küstenstadt.", "rechts": "natürliches Übel" },
+        { "links": "Ein Diktator lässt Oppositionelle foltern.", "rechts": "moralisches Übel" }
+      ],
+      "erklaerung": "Moralische Übel gehen auf menschliches Handeln zurück, natürliche auf Naturvorgänge."
+    },
+    {
+      "id": "eth-the-02", "typ": "multi", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Welche Annahmen bilden zusammen mit der Existenz von Leid das Theodizee-Problem?",
+      "optionen": [
+        { "text": "Gott ist allmächtig.", "richtig": true },
+        { "text": "Gott ist allgütig.", "richtig": true },
+        { "text": "Gott ist allwissend.", "richtig": true },
+        { "text": "Gott ist sichtbar.", "feedback": "Sichtbarkeit spielt für das Theodizee-Problem keine Rolle." }
+      ],
+      "erklaerung": "Wenn Gott das Leid kennt, verhindern kann und verhindern will – warum gibt es es dann?"
+    },
+    {
+      "id": "eth-the-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Was bedeutet das Wort **Theodizee**?",
+      "optionen": [
+        { "text": "Rechtfertigung Gottes angesichts des Leids in der Welt", "richtig": true },
+        { "text": "Beweis, dass es keinen Gott gibt", "feedback": "Die Theodizee versucht im Gegenteil, Gott zu rechtfertigen." },
+        { "text": "Lehre von den Göttern der Antike", "feedback": "Das wäre eher Mythologie." },
+        { "text": "Ein anderes Wort für Gebet", "feedback": "Das Wort kommt von griech. *theos* (Gott) und *dike* (Gerechtigkeit)." }
+      ],
+      "erklaerung": "Leibniz prägte das Wort 1710 in seinem Werk *Theodizee*."
+    },
+    {
+      "id": "eth-the-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Warum erklärt die Antwort mit der **Willensfreiheit** vor allem **moralische** Übel?",
+      "optionen": [
+        { "text": "Weil moralische Übel aus freien Entscheidungen von Menschen entstehen, Erdbeben oder Krankheiten aber nicht.", "richtig": true },
+        { "text": "Weil natürliche Übel gar nicht existieren.", "feedback": "Natürliche Übel gibt es – sie sind gerade das Problem für diese Antwort." },
+        { "text": "Weil Freiheit nichts mit Moral zu tun hat.", "feedback": "Freiheit ist gerade die Voraussetzung für moralisches Handeln." },
+        { "text": "Sie erklärt alle Übel gleich gut.", "feedback": "Für einen Tsunami ist kein menschlicher Wille verantwortlich." }
+      ],
+      "erklaerung": "Wer Freiheit will, muss die Möglichkeit des Bösen in Kauf nehmen. Für Naturkatastrophen braucht es eine andere Antwort."
+    },
+    {
+      "id": "eth-the-05", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Ordne die Antwortversuche zu.",
+      "paare": [
+        { "links": "„Diese Welt ist von allen möglichen die beste, auch wenn sie Übel enthält.“", "rechts": "Leibniz" },
+        { "links": "„Gott hat dem Menschen Freiheit geschenkt – auch die Freiheit, Böses zu tun.“", "rechts": "Argument der Willensfreiheit" },
+        { "links": "„Leid kann Menschen reifen lassen und Mitgefühl wecken.“", "rechts": "Läuterung / Seelenbildung" },
+        { "links": "„Der Mensch kann Gottes Wege nicht durchschauen.“", "rechts": "Unbegreiflichkeit (Hiob)" }
+      ],
+      "erklaerung": "Jeder Antwortversuch hat Stärken und Schwächen. Keiner hat sich allgemein durchgesetzt."
+    },
+    {
+      "id": "eth-the-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Welcher Einwand trifft die Antwort „Leid lässt Menschen reifen“ am stärksten?",
+      "optionen": [
+        { "text": "Viel Leid zerstört Menschen eher, als dass es sie reifen lässt – etwa wenn Kinder sterben, die gar nicht mehr reifen können.", "richtig": true },
+        { "text": "Menschen reifen nie.", "feedback": "Menschen können durchaus an Schwierigkeiten wachsen. Das Problem ist das Ausmaß des Leids." },
+        { "text": "Leid gibt es nicht.", "feedback": "Leid ist unbestreitbar real." },
+        { "text": "Reifen ist unwichtig.", "feedback": "Der Einwand bestreitet nicht den Wert des Reifens, sondern dass er alles Leid erklärt." }
+      ],
+      "erklaerung": "Das Maß und die Verteilung des Leids sind für viele das größte Problem jeder Theodizee."
+    },
+    {
+      "id": "eth-the-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Wie lösen Vertreter einer **begrenzten Allmacht** Gottes das Problem?",
+      "optionen": [
+        { "text": "Sie geben die Annahme auf, dass Gott alles kann – Gott leidet mit der Welt, kann das Leid aber nicht einfach verhindern.", "richtig": true },
+        { "text": "Sie bestreiten, dass es Leid gibt.", "feedback": "Leid wird hier gerade ernst genommen." },
+        { "text": "Sie bestreiten, dass Gott gut ist.", "feedback": "Die Güte Gottes wird beibehalten, die Allmacht eingeschränkt." },
+        { "text": "Sie erklären die Frage für verboten.", "feedback": "Es handelt sich um einen ernsthaften Lösungsversuch." }
+      ],
+      "erklaerung": "Wer eine der vier Annahmen aufgibt, löst den Widerspruch – muss aber sein Gottesbild verändern. Hans Jonas tat das nach Auschwitz."
+    }
+  ]
+}

@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nutzenkalkül und Menschheitszweckformel</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<style>
+  .lk-grid > * { min-width: 0; }
+  select { max-width: 100%; }
+  .seg { flex-wrap: wrap; }
+  .fall { background: var(--bg); border-radius: 10px; padding: 10px 12px; margin: 0 0 12px; }
+  .opts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 560px) { .opts { grid-template-columns: 1fr; } }
+  .opt { border: 1px solid var(--border); border-radius: 10px; padding: 10px; }
+  .opt.util { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+  .opt h3 { font-size: .95rem; margin: 0 0 8px; }
+  .grp { display: grid; gap: 2px; margin: 0 0 8px; }
+  .grp label { font-size: .82rem; display: flex; justify-content: space-between; gap: 6px; }
+  .grp output { font-variant-numeric: tabular-nums; color: var(--accent); white-space: nowrap; }
+  .grp.lang label { font-style: italic; }
+  .sum { display: flex; justify-content: space-between; font-weight: 700; border-top: 1px solid var(--border); padding-top: 6px; margin-top: 4px; font-variant-numeric: tabular-nums; }
+  .kant { font-size: .82rem; margin-top: 8px; padding: 6px 8px; border-radius: 8px; }
+  .kant.ok { background: var(--ok-soft); color: var(--ok); }
+  .kant.no { background: var(--warn-soft); color: var(--warn); }
+  .verdict { display: grid; gap: 6px; margin-top: 12px; }
+  .verdict div { padding: 8px 10px; border-radius: 10px; background: var(--bg); }
+  .verdict .conflict { background: var(--warn-soft); color: var(--warn); font-weight: 650; }
+  .verdict .agree { background: var(--ok-soft); color: var(--ok); font-weight: 650; }
+  .bars rect.pos { fill: var(--ok); }
+  .bars rect.neg { fill: var(--warn); }
+  .check { display: flex; gap: 8px; align-items: center; font-size: .9rem; margin: 0 0 10px; }
+  .check input { width: 18px; height: 18px; accent-color: var(--accent); }
+</style>
+</head>
+<body>
+<h1>Nutzenkalkül und Menschheitszweckformel</h1>
+<p class="muted small">Wähle einen Fall. Schätze mit den Reglern, wie viel Freude (+) oder Leid (−) jede Möglichkeit für jede betroffene Person bringt. Der <b>Utilitarismus</b> rechnet alles zusammen. <b>Kant</b> prüft dagegen, ob jemand <b>bloß als Mittel</b> benutzt wird.</p>
+
+<div class="lk-grid">
+  <div>
+    <div class="lk-card">
+      <div class="row"><div class="seg" role="group" aria-label="Fall wählen" id="segFall"></div></div>
+      <div class="fall" id="fallText"></div>
+      <label class="check"><input type="checkbox" id="lang"> Langfristige Folgen berücksichtigen</label>
+      <div class="opts" id="opts"></div>
+      <svg id="bars" class="bars" viewBox="0 0 420 110" role="img" aria-labelledby="b-title">
+        <title id="b-title">Summen des Nutzenkalküls für beide Möglichkeiten</title>
+        <g id="bx"></g>
+      </svg>
+    </div>
+  </div>
+  <div>
+    <div class="lk-card">
+      <h2>Urteile der beiden Theorien</h2>
+      <div class="verdict" id="verdict" aria-live="polite"></div>
+      <div class="readouts">
+        <div class="readout"><span>Summe Möglichkeit A</span><b id="rA">0</b></div>
+        <div class="readout"><span>Summe Möglichkeit B</span><b id="rB">0</b></div>
+      </div>
+      <p class="small muted" style="margin-top:10px">Modell: Glück und Leid lassen sich in Wirklichkeit nicht genau in Zahlen fassen. Die Werte sind Schätzungen, die du verändern kannst. Die Kant-Prüfung zeigt nur die Menschheitszweckformel.</p>
+    </div>
+    <div class="lk-card tasks">
+      <h2>Entdecke selbst <span class="small muted" data-task-count></span></h2>
+      <div class="task" data-goal="konflikt"><p class="task-q">Öffne den Fall „Sündenbock“: Wozu raten der Utilitarismus und Kant?</p></div>
+      <div class="task">
+        <p class="task-q">Warum verbietet Kant, den Unschuldigen zu verurteilen, obwohl viele Menschen davon profitieren würden?</p>
+        <div class="choices">
+          <button type="button" data-ok data-fb="Richtig: Der Unschuldige wird nur als Werkzeug zur Beruhigung der Menge benutzt. Seine Würde zählt mehr als jede Summe.">Weil er bloß als Mittel benutzt wird.</button>
+          <button type="button" data-fb="Kant rechnet gerade nicht. Die Zahl der Betroffenen spielt für die Menschheitszweckformel keine Rolle.">Weil die Summe zu klein ist.</button>
+          <button type="button" data-fb="Kant urteilt nicht nach Gesetzen, sondern nach einem moralischen Prinzip.">Weil es gesetzlich verboten ist.</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="task" data-goal="einig"><p class="task-q">Finde einen Fall, in dem beide Theorien zum gleichen Ergebnis kommen.</p></div>
+      <div class="task" data-goal="lang"><p class="task-q">Berücksichtige im „Sündenbock“ die langfristigen Folgen. Was ändert sich beim Nutzenkalkül?</p></div>
+      <div class="task" data-goal="kippen"><p class="task-q">Ändere bei der „Notlüge“ ohne langfristige Folgen die Regler so, dass auch der Utilitarismus Ehrlichkeit empfiehlt.</p></div>
+      <div class="task">
+        <p class="task-q">Was zeigt dir das Verschieben der Regler über den Utilitarismus?</p>
+        <div class="choices">
+          <button type="button" data-fb="Gerade weil sich das Ergebnis mit den Werten ändert, ist es nicht so eindeutig.">Sein Ergebnis ist immer eindeutig.</button>
+          <button type="button" data-ok data-fb="Genau: Das Ergebnis hängt von Schätzungen ab, die schwer zu messen sind. Das ist eine wichtige Kritik am Nutzenkalkül.">Sein Ergebnis hängt stark von schwer messbaren Schätzungen ab.</button>
+          <button type="button" data-fb="Die Folgen sind im Utilitarismus das Einzige, was zählt.">Folgen spielen keine Rolle.</button>
+        </div><p class="fb"></p>
+      </div>
+      <div class="all-done">Alles entdeckt! Weiter geht es mit den Übungen.</div>
+    </div>
+  </div>
+</div>
+
+<script src="../../static/lesson-kit.js"></script>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var NS = 'http://www.w3.org/2000/svg';
+  // Jede Gruppe: Name, Anzahl Personen, Schätzung pro Person (−5 … +5); lang = nur bei langfristigen Folgen
+  var FAELLE = {
+    suendenbock: {
+      name: 'Sündenbock',
+      text: 'In einer Stadt ist ein schweres Verbrechen geschehen, der Täter ist unbekannt. Eine wütende Menge droht mit Unruhen, bei denen viele verletzt würden. Der Richter könnte einen Unschuldigen verurteilen, um die Menge zu beruhigen.',
+      optionen: [
+        { titel: 'A: Unschuldigen verurteilen', kantOk: false, kant: 'Der Unschuldige wird bloß als Mittel zur Beruhigung benutzt – er kann dem nicht zustimmen.',
+          gruppen: [{ n: 'der Unschuldige', k: 1, w: -5 }, { n: 'Stadtbewohner (Ruhe, Sicherheit)', k: 100, w: 1 }, { n: 'Vertrauen in die Justiz sinkt, wenn es herauskommt', k: 100, w: -3, lang: true }] },
+        { titel: 'B: Niemanden ohne Beweise verurteilen', kantOk: true, kant: 'Niemand wird getäuscht oder geopfert. Für Unruhen sind die Randalierer selbst verantwortlich.',
+          gruppen: [{ n: 'der Unschuldige', k: 1, w: 1 }, { n: 'Stadtbewohner (Angst)', k: 100, w: -1 }, { n: 'Verletzte bei Unruhen', k: 10, w: -4 }] }
+      ]
+    },
+    notluege: {
+      name: 'Notlüge',
+      text: 'Deine Freundin hat ein Lied geschrieben und tritt morgen damit beim Schulfest auf. Sie fragt dich, ob es gut ist. Du findest es ziemlich schwach.',
+      optionen: [
+        { titel: 'A: Lügen – „Es ist super!“', kantOk: false, kant: 'Durch die Lüge wird die Freundin getäuscht: Sie entscheidet auf Grundlage einer falschen Information, der sie nicht zustimmen würde.',
+          gruppen: [{ n: 'Freundin (freut sich heute)', k: 1, w: 3 }, { n: 'du (kein unangenehmes Gespräch)', k: 1, w: 1 }, { n: 'Freundin merkt später, dass du gelogen hast', k: 1, w: -3, lang: true }] },
+        { titel: 'B: Ehrlich und freundlich sein', kantOk: true, kant: 'Die Freundin wird als vernünftige Person ernst genommen und kann selbst entscheiden.',
+          gruppen: [{ n: 'Freundin (enttäuscht)', k: 1, w: -2 }, { n: 'du (unangenehmes Gespräch)', k: 1, w: -1 }, { n: 'Freundin verbessert das Lied, Vertrauen wächst', k: 1, w: 3, lang: true }] }
+      ]
+    },
+    klassenkasse: {
+      name: 'Klassenkasse',
+      text: 'In der Klassenkasse sind 300 € übrig. Drei Mitschüler können sich die Klassenfahrt nicht leisten. Die Klasse kann das Geld als Zuschuss für sie verwenden oder eine Party feiern.',
+      optionen: [
+        { titel: 'A: Zuschuss für die Klassenfahrt', kantOk: true, kant: 'Niemand wird getäuscht oder gezwungen. Alle werden als Zweck behandelt.',
+          gruppen: [{ n: 'drei Mitschüler (können mitfahren)', k: 3, w: 5 }, { n: 'übrige Klasse (Fahrt mit allen)', k: 25, w: 1 }] },
+        { titel: 'B: Party feiern', kantOk: true, kant: 'Auch hier wird niemand bloß als Mittel benutzt – die Entscheidung ist erlaubt.',
+          gruppen: [{ n: 'alle 28 (Spaß auf der Party)', k: 28, w: 1 }, { n: 'drei Mitschüler fehlen auf der Fahrt', k: 3, w: -4 }] }
+      ]
+    }
+  };
+  var S = { fall: 'suendenbock', lang: false, werte: {} };
+
+  function key(f, i, j) { return f + ':' + i + ':' + j; }
+  function wert(f, i, j) { var k = key(f, i, j); return k in S.werte ? S.werte[k] : FAELLE[f].optionen[i].gruppen[j].w; }
+  function summe(f, i, lang) {
+    return FAELLE[f].optionen[i].gruppen.reduce(function (s, g, j) { return g.lang && !lang ? s : s + g.k * wert(f, i, j); }, 0);
+  }
+  function el(tag, attrs, parent, text) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); if (text !== undefined) e.textContent = text; if (parent) parent.appendChild(e); return e; }
+
+  function buildSeg() {
+    var seg = $('segFall'); seg.innerHTML = '';
+    Object.keys(FAELLE).forEach(function (f) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.textContent = FAELLE[f].name; b.setAttribute('aria-pressed', f === S.fall ? 'true' : 'false');
+      b.addEventListener('click', function () { S.fall = f; buildSeg(); build(); });
+      seg.appendChild(b);
+    });
+  }
+
+  function build() {
+    var F = FAELLE[S.fall];
+    $('fallText').textContent = F.text;
+    var box = $('opts'); box.innerHTML = '';
+    F.optionen.forEach(function (o, i) {
+      var d = document.createElement('div'); d.className = 'opt'; d.id = 'opt' + i;
+      var h = document.createElement('h3'); h.textContent = o.titel; d.appendChild(h);
+      o.gruppen.forEach(function (g, j) {
+        if (g.lang && !S.lang) return;
+        var w = document.createElement('div'); w.className = 'grp' + (g.lang ? ' lang' : '');
+        var id = 's' + i + '_' + j;
+        w.innerHTML = '<label for="' + id + '"><span>' + g.n + ' (' + g.k + (g.k === 1 ? ' Person' : ' Personen') + ')</span><output id="o' + id + '"></output></label>' +
+          '<input type="range" id="' + id + '" min="-5" max="5" step="1" value="' + wert(S.fall, i, j) + '">';
+        d.appendChild(w);
+        w.querySelector('input').addEventListener('input', function () { S.werte[key(S.fall, i, j)] = Number(this.value); update(); });
+      });
+      var s = document.createElement('div'); s.className = 'sum'; s.innerHTML = '<span>Summe</span><span id="sum' + i + '"></span>'; d.appendChild(s);
+      var k = document.createElement('div'); k.className = 'kant ' + (o.kantOk ? 'ok' : 'no');
+      k.textContent = (o.kantOk ? 'Kant: erlaubt. ' : 'Kant: verboten. ') + o.kant; d.appendChild(k);
+      box.appendChild(d);
+    });
+    update();
+  }
+
+  function update() {
+    var F = FAELLE[S.fall];
+    F.optionen.forEach(function (o, i) {
+      o.gruppen.forEach(function (g, j) {
+        var out = $('os' + i + '_' + j); if (!out) return;
+        var v = wert(S.fall, i, j);
+        out.textContent = (v > 0 ? '+' : '') + LK.fmt(v) + ' × ' + g.k + ' = ' + (v * g.k > 0 ? '+' : '') + LK.fmt(v * g.k);
+      });
+    });
+    var a = summe(S.fall, 0, S.lang), b = summe(S.fall, 1, S.lang);
+    $('sum0').textContent = (a > 0 ? '+' : '') + LK.fmt(a);
+    $('sum1').textContent = (b > 0 ? '+' : '') + LK.fmt(b);
+    $('rA').textContent = LK.fmt(a); $('rB').textContent = LK.fmt(b);
+    var util = a === b ? -1 : (a > b ? 0 : 1);
+    $('opt0').classList.toggle('util', util === 0);
+    $('opt1').classList.toggle('util', util === 1);
+    var kantErlaubt = F.optionen.map(function (o) { return o.kantOk; });
+    var v = $('verdict'); v.innerHTML = '';
+    var u = document.createElement('div');
+    u.innerHTML = '<b>Utilitarismus:</b> ' + (util < 0 ? 'Beide Möglichkeiten sind gleich gut.' : 'empfiehlt ' + F.optionen[util].titel.split(':')[0] + ' (größere Summe).');
+    v.appendChild(u);
+    var k = document.createElement('div');
+    k.innerHTML = '<b>Kant:</b> ' + (kantErlaubt[0] && kantErlaubt[1] ? 'Beide Möglichkeiten sind erlaubt.' : 'Nur ' + F.optionen[kantErlaubt[0] ? 0 : 1].titel.split(':')[0] + ' ist erlaubt.');
+    v.appendChild(k);
+    var widerspruch = util >= 0 && !kantErlaubt[util];
+    var c = document.createElement('div');
+    c.className = widerspruch ? 'conflict' : 'agree';
+    c.textContent = widerspruch ? 'Die Theorien widersprechen sich: Der Utilitarismus empfiehlt, was Kant verbietet.' : 'Die Theorien kommen hier nicht in Widerspruch.';
+    v.appendChild(c);
+    drawBars(a, b);
+    // Ziele
+    if (S.fall === 'suendenbock') LK.reach('konflikt');
+    if (!widerspruch && util >= 0 && kantErlaubt[util]) { if (S.fall === 'klassenkasse' || (kantErlaubt[0] !== kantErlaubt[1])) LK.reach('einig'); }
+    if (S.fall === 'suendenbock' && S.lang && summe('suendenbock', 0, false) > summe('suendenbock', 1, false) && util === 1) LK.reach('lang');
+    if (S.fall === 'notluege' && !S.lang && util === 1) LK.reach('kippen');
+  }
+
+  function drawBars(a, b) {
+    var g = $('bx'); g.innerHTML = '';
+    var max = Math.max(10, Math.abs(a), Math.abs(b)), mid = 210, half = 190;
+    el('line', { x1: mid, y1: 10, x2: mid, y2: 100, class: 'axis' }, g);
+    [[a, 'A', 30], [b, 'B', 70]].forEach(function (x) {
+      var w = Math.abs(x[0]) / max * half;
+      el('rect', { x: x[0] >= 0 ? mid : mid - w, y: x[2] - 12, width: w, height: 24, rx: 4, class: x[0] >= 0 ? 'pos' : 'neg' }, g);
+      el('text', { x: x[0] >= 0 ? mid - 8 : mid + 8, y: x[2] + 5, class: 'lbl', 'text-anchor': x[0] >= 0 ? 'end' : 'start' }, g, x[1]);
+      el('text', { x: x[0] >= 0 ? mid + w + 6 : mid - w - 6, y: x[2] + 5, class: 'val', 'text-anchor': x[0] >= 0 ? 'start' : 'end' }, g, (x[0] > 0 ? '+' : '') + LK.fmt(x[0]));
+    });
+  }
+
+  $('lang').addEventListener('change', function () { S.lang = this.checked; build(); });
+  buildSeg(); build();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+{
+  "id": "eth-k7-toleranz",
+  "titel": "Was ist Toleranz? Locke und Mill",
+  "kurz": "Was Toleranz von Gleichgültigkeit und Akzeptanz unterscheidet und wie John Locke und John Stuart Mill sie begründen.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Den Begriff „Toleranz“ erklären und von Gleichgültigkeit und Akzeptanz abgrenzen" },
+    { "id": "lz2", "niveau": "G", "text": "Tolerantes, intolerantes und gleichgültiges Verhalten an Beispielen unterscheiden" },
+    { "id": "lz3", "niveau": "H", "text": "Die Toleranzbegründungen von John Locke und John Stuart Mill wiedergeben" },
+    { "id": "lz4", "niveau": "H", "text": "Das Schadensprinzip auf Fälle anwenden" }
+  ],
+  "verstehen": {
+    "einstieg": "Ein neuer Mitschüler trägt jeden Tag Kleidung, die du seltsam findest. Musst du sie gut finden, um tolerant zu sein?",
+    "abschnitte": [
+      {
+        "titel": "Toleranz heißt dulden, was man ablehnt",
+        "text": "Das Wort kommt vom lateinischen *tolerare*: ertragen, erdulden. **Toleranz** ist mehr als Nettsein. Zu ihr gehören zwei Teile:\n\n1. **Ablehnung:** Ich finde eine Überzeugung oder Lebensweise falsch, fremd oder unangenehm.\n2. **Duldung:** Trotzdem lasse ich sie zu und gehe respektvoll mit dem Menschen um, weil ich gute Gründe dafür habe.\n\nDavon zu unterscheiden:\n\n- **Gleichgültigkeit:** Mir ist es egal. Ohne Ablehnung braucht man keine Toleranz.\n- **Akzeptanz/Anerkennung:** Ich finde es gut oder gleichwertig. Auch dann muss ich nichts „ertragen“.\n- **Intoleranz:** Ich lehne ab und versuche, das andere zu unterdrücken, z. B. durch Spott, Ausgrenzung oder Gewalt."
+      },
+      {
+        "titel": "John Locke: Glauben kann man nicht erzwingen",
+        "text": "Nach blutigen Religionskriegen schrieb der englische Philosoph **John Locke** 1689 seinen **„Brief über die Toleranz“**. Seine Hauptgedanken:\n\n- Der **Staat** soll sich um die **bürgerlichen Güter** kümmern: Leben, Freiheit, Gesundheit, Besitz. Um das Seelenheil soll er sich nicht kümmern.\n- **Glauben lässt sich nicht erzwingen.** Wer mit Gewalt zu einem Bekenntnis gebracht wird, glaubt nicht wirklich. Zwang ist also sinnlos.\n- Deshalb sollen verschiedene Religionsgemeinschaften geduldet werden.\n\nLockes Toleranz hatte aber Grenzen, die wir heute kritisieren: Atheisten wollte er nicht dulden, weil er glaubte, ohne Glauben an Gott seien Versprechen nichts wert."
+      },
+      {
+        "titel": "John Stuart Mill: das Schadensprinzip",
+        "text": "Der englische Philosoph **John Stuart Mill** begründete 1859 in **„Über die Freiheit“** eine weitergehende Toleranz:\n\n- **Schadensprinzip:** Der einzige Grund, jemanden gegen seinen Willen einzuschränken, ist, **Schaden von anderen abzuwenden**. Was nur einen selbst betrifft (Kleidung, Hobbys, Lebensweise), geht andere nichts an, auch wenn sie es unvernünftig finden.\n- **Meinungsfreiheit** nützt allen: Eine unterdrückte Meinung könnte wahr sein. Und auch eine falsche Meinung zwingt uns, unsere eigenen Ansichten besser zu begründen."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "**Toleranz** heißt: etwas, das man **ablehnt**, trotzdem **dulden** und den Menschen respektieren. Sie unterscheidet sich von **Gleichgültigkeit** (keine Ablehnung) und **Akzeptanz** (positive Bewertung).\n\n**Locke:** Glauben lässt sich nicht erzwingen, der Staat ist für bürgerliche Güter zuständig. **Mill:** Einschränken darf man nur, um **Schaden von anderen** abzuwenden.",
+    "alltag": "„Ich toleriere das“ sagt man oft, wenn einem etwas egal ist. Genau genommen ist Toleranz anstrengender: Man hält etwas aus, das einen stört."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "eth-tol-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Ordne das Verhalten zu.",
+      "paare": [
+        { "links": "Emil findet Paulas Musik furchtbar, lässt sie aber in Ruhe hören und lästert nicht.", "rechts": "tolerant" },
+        { "links": "Ben macht sich über das Kopftuch seiner Mitschülerin lustig.", "rechts": "intolerant" },
+        { "links": "Lea interessiert sich nicht dafür, welche Musik ihre Banknachbarin hört.", "rechts": "gleichgültig" },
+        { "links": "Tom findet die Religion seines Freundes genauso wertvoll wie seine eigene.", "rechts": "akzeptierend (anerkennend)" }
+      ],
+      "erklaerung": "Toleranz setzt Ablehnung voraus, die man aushält. Ohne Ablehnung ist man gleichgültig oder akzeptierend. Wer ablehnt und angreift, ist intolerant."
+    },
+    {
+      "id": "eth-tol-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Was bedeutet das lateinische Wort *tolerare*?",
+      "optionen": [
+        { "text": "ertragen, erdulden", "richtig": true },
+        { "text": "gut finden", "feedback": "Das wäre Akzeptanz. Toleranz bedeutet, etwas zu ertragen, das man nicht gut findet." },
+        { "text": "verbieten", "feedback": "Das wäre das Gegenteil." },
+        { "text": "nicht beachten", "feedback": "Das wäre Gleichgültigkeit." }
+      ],
+      "erklaerung": "Toleranz heißt wörtlich, etwas auszuhalten, das einem nicht gefällt."
+    },
+    {
+      "id": "eth-tol-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Warum ist jemand, dem eine Sache völlig egal ist, in dieser Sache **nicht** tolerant?",
+      "optionen": [
+        { "text": "Weil zur Toleranz eine Ablehnung gehört, die man aushält.", "richtig": true },
+        { "text": "Weil Gleichgültigkeit verboten ist.", "feedback": "Gleichgültigkeit ist nicht verboten, nur etwas anderes als Toleranz." },
+        { "text": "Weil Toleranz nur für Religionen gilt.", "feedback": "Toleranz kann sich auf alle Überzeugungen und Lebensweisen beziehen." },
+        { "text": "Doch, Gleichgültigkeit ist die höchste Form der Toleranz.", "feedback": "Wer nichts ablehnt, muss nichts ertragen – das ist keine Toleranz." }
+      ],
+      "erklaerung": "Toleranz braucht zwei Teile: Ablehnung und trotzdem Duldung."
+    },
+    {
+      "id": "eth-tol-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Welches Argument verwendet John Locke für religiöse Toleranz?",
+      "optionen": [
+        { "text": "Glauben lässt sich nicht erzwingen. Zwang führt höchstens zu einem vorgetäuschten Bekenntnis.", "richtig": true },
+        { "text": "Alle Religionen sind gleich wahr.", "feedback": "Das behauptet Locke nicht. Er begründet Toleranz, ohne die Wahrheitsfrage zu entscheiden." },
+        { "text": "Der Staat soll eine Religion für alle vorschreiben.", "feedback": "Das ist genau das, was Locke ablehnt." },
+        { "text": "Religion ist unwichtig.", "feedback": "Locke war selbst gläubig. Er hielt Glauben für wichtig, aber für eine Sache des Gewissens." }
+      ],
+      "erklaerung": "Für Locke ist der Staat für bürgerliche Güter zuständig. Weil echter Glaube nicht erzwingbar ist, ist religiöser Zwang sinnlos."
+    },
+    {
+      "id": "eth-tol-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Was besagt das **Schadensprinzip** von John Stuart Mill?",
+      "optionen": [
+        { "text": "Man darf die Freiheit eines Menschen nur einschränken, um Schaden von anderen abzuwenden.", "richtig": true },
+        { "text": "Man darf alles verbieten, was die Mehrheit stört.", "feedback": "Gerade das lehnt Mill ab: Störung oder Missfallen sind kein Schaden." },
+        { "text": "Wer anderen schadet, muss Schadenersatz zahlen.", "feedback": "Das ist eine Rechtsregel, aber nicht das Schadensprinzip." },
+        { "text": "Man muss jeden vor sich selbst schützen.", "feedback": "Mill meint im Gegenteil: Was nur einen selbst betrifft, darf jeder selbst entscheiden." }
+      ],
+      "erklaerung": "Nach Mill geht das, was nur einen selbst betrifft, andere nichts an, auch wenn sie es unvernünftig finden."
+    },
+    {
+      "id": "eth-tol-06", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Nach Mills Schadensprinzip: Welche Verhaltensweisen dürfte man **nicht** verbieten?",
+      "optionen": [
+        { "text": "Grüne Haare tragen", "richtig": true },
+        { "text": "Einer Religion angehören, die die Mehrheit seltsam findet", "richtig": true },
+        { "text": "Andere im Netz bedrohen", "feedback": "Bedrohungen schaden anderen, sie dürfen also eingeschränkt werden." },
+        { "text": "Eine unbeliebte, aber friedliche Meinung äußern", "richtig": true }
+      ],
+      "erklaerung": "Grüne Haare, eine Religion oder eine friedliche Meinung schaden niemandem. Eine Bedrohung schon."
+    },
+    {
+      "id": "eth-tol-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Warum hilft nach Mill auch eine **falsche** Meinung der Gesellschaft?",
+      "optionen": [
+        { "text": "Sie zwingt uns, unsere eigenen Ansichten besser zu begründen, statt sie nur nachzuplappern.", "richtig": true },
+        { "text": "Falsche Meinungen sind genauso wahr wie richtige.", "feedback": "Mill behauptet nicht, dass alles gleich wahr ist." },
+        { "text": "Sie macht die Diskussion lustiger.", "feedback": "Mill geht es um Erkenntnis, nicht um Unterhaltung." },
+        { "text": "Sie hilft gar nicht, deshalb sollte man sie verbieten.", "feedback": "Mill argumentiert gerade gegen das Verbieten von Meinungen." }
+      ],
+      "erklaerung": "Wer seine Überzeugung nie gegen Widerspruch verteidigen muss, hält sie oft nur aus Gewohnheit. Widerspruch macht sie lebendig."
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "id": "eth-k9-subjektiv-objektiv",
+  "titel": "Subjektiv, objektiv, relativ, universal – Quellen moralischen Urteilens",
+  "kurz": "Was es heißt, dass ein Urteil subjektiv oder objektiv, relativ oder universal gültig ist, und woher moralische Urteile stammen.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Die Begriffe „subjektiv“ und „objektiv“ erklären und an Beispielen anwenden" },
+    { "id": "lz2", "niveau": "G", "text": "Die Begriffe „relativ gültig“ und „universal gültig“ erklären" },
+    { "id": "lz3", "niveau": "H", "text": "Quellen moralischen Urteilens (Vernunft, Gefühl, externe Autorität) unterscheiden und ihre Stärken und Schwächen beurteilen" }
+  ],
+  "verstehen": {
+    "einstieg": "„Pizza Hawaii ist eklig.“ – „Sklaverei ist Unrecht.“ Sind beide Sätze nur persönliche Meinungen? Oder ist der zweite in einem anderen Sinn wahr als der erste?",
+    "abschnitte": [
+      {
+        "titel": "Subjektiv und objektiv",
+        "text": "- **Subjektiv** ist ein Urteil, dessen Richtigkeit von der urteilenden Person abhängt, von ihren Gefühlen, Vorlieben oder ihrer Perspektive. „Pizza Hawaii ist eklig“ ist subjektiv: Für mich kann es stimmen, für dich nicht.\n- **Objektiv** ist ein Urteil, dessen Richtigkeit nicht davon abhängt, wer urteilt. „Wasser kocht auf Meereshöhe bei etwa 100 °C“ ist objektiv wahr, egal was jemand darüber denkt.\n\nUmstritten ist, wohin **moralische** Urteile gehören. Für ihre Objektivität spricht, dass wir über sie mit Gründen streiten und sagen, jemand habe sich **geirrt** („Früher dachte man, Sklaverei sei in Ordnung – das war falsch“). Bei bloßem Geschmack spricht man nicht von Irrtum."
+      },
+      {
+        "titel": "Relativ gültig und universal gültig",
+        "text": "- **Relativ gültig** ist eine Norm, wenn sie nur in Bezug auf eine bestimmte Gruppe, Kultur oder Zeit gilt. Beispiel: „Man begrüßt sich mit Handschlag.“\n- **Universal gültig** ist eine Norm, wenn sie für alle Menschen überall und zu jeder Zeit gilt. Beispiel (nach vielen Ethiken): „Man darf Unschuldige nicht foltern.“\n\nMan muss genau unterscheiden: Dass Menschen **tatsächlich** unterschiedliche Normen haben, ist eine **deskriptive** Feststellung. Ob Normen nur relativ **gelten**, ist eine **normative** Frage."
+      },
+      {
+        "titel": "Woher kommen moralische Urteile?",
+        "text": "- **Vernunft/Verstand:** Man prüft Gründe, achtet auf Widerspruchsfreiheit und Allgemeingültigkeit (z. B. bei Kant). Stärke: Urteile lassen sich begründen und prüfen. Schwäche: Vernunft allein motiviert oft nicht zum Handeln.\n- **Gefühl:** Mitgefühl, Empörung, Scham zeigen uns, dass etwas moralisch wichtig ist (z. B. David Hume, Mitleidsethik). Stärke: Gefühle bewegen zum Handeln. Schwäche: Gefühle können täuschen, sie gelten oft eher Nahestehenden als Fremden.\n- **Externe Autorität:** Eltern, Gesetze, religiöse Schriften oder Vorbilder sagen, was richtig ist. Stärke: Orientierung und Erfahrung vieler Generationen. Schwäche: Autoritäten können irren – und man muss selbst prüfen, welcher Autorität man folgt.\n\nIn der Praxis wirken oft alle drei zusammen."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "**Subjektiv** ist ein Urteil, das von der urteilenden Person abhängt, **objektiv** eines, das unabhängig davon gilt. **Relativ gültig** ist eine Norm, die nur für eine Gruppe gilt, **universal gültig** eine, die für alle gilt.\n\nMoralische Urteile können aus **Vernunft**, **Gefühl** oder **Autorität** stammen. Jede Quelle hat Stärken und Schwächen.",
+    "alltag": "„Das ist halt deine Meinung“ beendet oft Diskussionen. Man kann fragen: Ist das hier wirklich nur Geschmack – oder gibt es Gründe, die für alle zählen?"
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "eth-sob-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Subjektives oder objektives Urteil?",
+      "paare": [
+        { "links": "„Erdbeereis schmeckt besser als Vanilleeis.“", "rechts": "subjektiv" },
+        { "links": "„Berlin liegt an der Spree.“", "rechts": "objektiv" }
+      ],
+      "erklaerung": "Ein Geschmacksurteil hängt von der Person ab, eine geografische Tatsache nicht."
+    },
+    {
+      "id": "eth-sob-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Ordne die Normen zu.",
+      "paare": [
+        { "links": "„In Japan zieht man in der Wohnung die Schuhe aus.“", "rechts": "relativ gültig" },
+        { "links": "„Niemand darf versklavt werden.“", "rechts": "universal gültig (Anspruch der Menschenrechte)" }
+      ],
+      "erklaerung": "Konventionen gelten für eine Gruppe. Menschenrechte beanspruchen, für alle Menschen zu gelten."
+    },
+    {
+      "id": "eth-sob-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Welches Argument spricht dafür, dass moralische Urteile **nicht nur subjektiv** sind?",
+      "optionen": [
+        { "text": "Wir sagen, dass Menschen sich moralisch geirrt haben, z. B. als sie Sklaverei für richtig hielten.", "richtig": true },
+        { "text": "Menschen haben unterschiedliche Meinungen über Moral.", "feedback": "Unterschiedliche Meinungen gibt es auch bei Geschmacksfragen. Das spricht eher für Subjektivität." },
+        { "text": "Moralische Urteile haben mit Gefühlen zu tun.", "feedback": "Das spricht eher für Subjektivität." },
+        { "text": "Jeder darf seine Meinung sagen.", "feedback": "Meinungsfreiheit sagt nichts darüber, ob eine Meinung objektiv richtig ist." }
+      ],
+      "erklaerung": "Von Irrtum spricht man nur, wo es etwas gibt, worüber man sich irren kann. Bei Geschmack sagt man nicht, jemand habe sich geirrt."
+    },
+    {
+      "id": "eth-sob-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "„In verschiedenen Kulturen gelten verschiedene Regeln.“ Was ist das für eine Aussage?",
+      "optionen": [
+        { "text": "Eine deskriptive Feststellung – sie sagt noch nichts darüber, ob die Regeln auch gleich gut begründet sind.", "richtig": true },
+        { "text": "Eine normative Aussage, die alle Regeln für gleichwertig erklärt.", "feedback": "Der Satz beschreibt nur, was der Fall ist." },
+        { "text": "Ein moralisches Urteil über eine Kultur", "feedback": "Es wird nichts bewertet." },
+        { "text": "Eine subjektive Geschmacksäußerung", "feedback": "Es ist eine überprüfbare Tatsachenbehauptung." }
+      ],
+      "erklaerung": "Wer aus der Verschiedenheit der Regeln folgert, dass alle Regeln gleich gut sind, begeht einen Sein-Sollens-Fehlschluss."
+    },
+    {
+      "id": "eth-sob-05", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Aus welcher Quelle stammt das Urteil?",
+      "paare": [
+        { "links": "„Wenn ich das Video von hungernden Kindern sehe, weiß ich, dass wir helfen müssen.“", "rechts": "Gefühl" },
+        { "links": "„In der Bibel steht: Du sollst nicht töten.“", "rechts": "externe Autorität" },
+        { "links": "„Wenn ich für mich eine Ausnahme mache, müsste ich sie allen erlauben – das kann ich nicht wollen.“", "rechts": "Vernunft" }
+      ],
+      "erklaerung": "Gefühle, Autoritäten und vernünftige Prüfung sind drei verschiedene Quellen moralischen Urteilens."
+    },
+    {
+      "id": "eth-sob-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Welche Schwäche hat das **Gefühl** als einzige Quelle moralischen Urteilens?",
+      "optionen": [
+        { "text": "Gefühle gelten oft stärker Nahestehenden als Fremden und können durch Stimmungen oder Bilder leicht beeinflusst werden.", "richtig": true },
+        { "text": "Gefühle motivieren nie zum Handeln.", "feedback": "Im Gegenteil: Gefühle sind oft die stärkste Motivation." },
+        { "text": "Gefühle haben mit Moral nichts zu tun.", "feedback": "Mitgefühl und Empörung sind wichtige moralische Signale." },
+        { "text": "Gefühle sind immer falsch.", "feedback": "Gefühle sind nicht immer falsch, aber sie brauchen Prüfung." }
+      ],
+      "erklaerung": "Gefühle sind wichtig, aber parteiisch. Deshalb sollte man sie mit vernünftigen Gründen prüfen."
+    },
+    {
+      "id": "eth-sob-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Warum reicht der Verweis auf eine Autorität allein nicht aus, um ein moralisches Urteil zu begründen?",
+      "optionen": [
+        { "text": "Autoritäten können irren, und man muss selbst begründen, warum man gerade dieser Autorität folgt.", "richtig": true },
+        { "text": "Weil Autoritäten immer lügen.", "feedback": "Das ist eine pauschale Unterstellung." },
+        { "text": "Weil man Eltern nie gehorchen darf.", "feedback": "Es geht nicht um Gehorsam im Alltag, sondern um die Begründung moralischer Urteile." },
+        { "text": "Er reicht immer aus.", "feedback": "Dann wäre alles richtig, was irgendeine Autorität sagt – auch wenn sich Autoritäten widersprechen." }
+      ],
+      "erklaerung": "Autoritäten bieten oft gute Orientierung. Wer sich aber nur auf sie beruft, ohne die Gründe zu prüfen, gibt die eigene Verantwortung ab."
+    }
+  ]
+}

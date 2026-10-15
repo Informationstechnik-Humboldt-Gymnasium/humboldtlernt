@@ -1,0 +1,114 @@
+{
+  "id": "eth-k10-das-schoene",
+  "titel": "Was ist schön? Subjektivität und Objektivität ästhetischer Urteile",
+  "kurz": "Der Begriff „schön“, Kriterien des Schönen bei Thomas von Aquin, Kants Geschmacksurteil und die Frage, ob Schönheitsideale relativ sind.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Den Begriff „schön“ als deskriptiven und normativen Begriff untersuchen" },
+    { "id": "lz2", "niveau": "G", "text": "Die Kriterien des Schönen bei Thomas von Aquin wiedergeben und anwenden" },
+    { "id": "lz3", "niveau": "H", "text": "Subjektivität und Objektivität des ästhetischen Urteils (u. a. Kant) erläutern" },
+    { "id": "lz4", "niveau": "H", "text": "Die Relativität von Schönheitsidealen beurteilen" }
+  ],
+  "verstehen": {
+    "einstieg": "„Über Geschmack lässt sich nicht streiten“, sagt das Sprichwort. Trotzdem streiten wir ständig darüber, welche Musik, welche Mode, welcher Film „wirklich“ gut ist. Warum eigentlich?",
+    "abschnitte": [
+      {
+        "titel": "Was meinen wir mit „schön“?",
+        "text": "Wir nennen sehr Verschiedenes schön: Sonnenuntergänge, Gesichter, Musik, Mathematikbeweise, ein gelungenes Tor. Die **Ästhetik** (griech. *aisthesis* = Wahrnehmung) ist die Philosophie des Schönen und der Kunst. **Alexander Gottlieb Baumgarten** begründete sie 1750 als „Wissenschaft der sinnlichen Erkenntnis“.\n\n„Schön“ kann man **deskriptiv** verstehen (es beschreibt eine Eigenschaft, z. B. Symmetrie) oder **normativ** (es bewertet und fordert gewissermaßen Zustimmung: „Das solltest du auch schön finden“).\n\nEine Grundfrage lautet: Ist Schönheit eine **Eigenschaft der Dinge** – oder entsteht sie erst durch das **Urteil** dessen, der sie betrachtet?"
+      },
+      {
+        "titel": "Thomas von Aquin: objektive Kriterien",
+        "text": "Der mittelalterliche Philosoph **Thomas von Aquin** (13. Jh.) nannte drei Bedingungen der Schönheit:\n\n- **Vollständigkeit** (*integritas*): Es fehlt nichts Wesentliches, das Ding ist unversehrt.\n- **Ebenmaß** (*proportio* bzw. *consonantia*): Die Teile stehen in einem harmonischen Verhältnis zueinander.\n- **Klarheit** (*claritas*): Glanz, Leuchtkraft, Deutlichkeit.\n\nSchön ist demnach, was diese Eigenschaften hat. Das ist eine **objektive** Auffassung: Schönheit liegt im Ding."
+      },
+      {
+        "titel": "Kant: subjektiv und doch allgemein",
+        "text": "**Immanuel Kant** (*Kritik der Urteilskraft*, 1790) sieht es anders: Das Geschmacksurteil gründet auf einem **Gefühl** der Lust, also auf etwas **Subjektivem**. Trotzdem ist es kein bloßes „Mir gefällt’s“:\n\n- Es ist ein **interesseloses Wohlgefallen**: Ich finde ein Bild schön, nicht weil ich es besitzen will oder es mir nützt.\n- Wer etwas schön nennt, **erwartet**, dass auch andere zustimmen. „Schön ist, was ohne Begriff allgemein gefällt.“\n\nKant unterscheidet das **Schöne** vom bloß **Angenehmen** („Kanarienwein schmeckt mir“), bei dem man keine Zustimmung anderer erwartet."
+      },
+      {
+        "titel": "Sind Schönheitsideale relativ?",
+        "text": "Schönheitsideale ändern sich zwischen Epochen und Kulturen stark: Körperbilder, Mode, Musikgeschmack. Das spricht für **Relativität**.\n\nEs gibt aber auch **Konstanten**: Menschen bevorzugen weltweit eher symmetrische Gesichter, Landschaften mit Wasser und Weitblick oder harmonische Tonfolgen. **Charles Darwin** erklärte manche Schönheitsvorlieben mit der **sexuellen Selektion**: Was auf Gesundheit hinweist, wirkt anziehend.\n\nProblematisch wird es, wenn Schönheitsideale zur **Norm** werden, an der Menschen gemessen und ausgegrenzt werden, etwa durch Filter, Schönheitsoperationen oder Bodyshaming."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "Die **Ästhetik** ist die Philosophie des Schönen (Baumgarten, 1750). **Thomas von Aquin:** Schön ist, was **Vollständigkeit**, **Ebenmaß** und **Klarheit** hat (objektiv).\n\n**Kant:** Das Geschmacksurteil ist ein **interesseloses Wohlgefallen** – subjektiv begründet, aber mit dem Anspruch auf **allgemeine Zustimmung**. Schönheitsideale sind teils relativ, teils gibt es Konstanten.",
+    "alltag": "Wer sagt „Dieser Film ist schön“, meint meist mehr als „Er gefällt mir“. Genau deshalb lohnt es sich, über Geschmack zu streiten – mit Gründen."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "eth-sch-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Ordne die Kriterien des Schönen nach Thomas von Aquin zu.",
+      "paare": [
+        { "links": "Vollständigkeit (integritas)", "rechts": "Es fehlt nichts Wesentliches." },
+        { "links": "Ebenmaß (proportio)", "rechts": "Die Teile stehen in harmonischem Verhältnis." },
+        { "links": "Klarheit (claritas)", "rechts": "Glanz, Leuchtkraft, Deutlichkeit" }
+      ],
+      "erklaerung": "Thomas versteht Schönheit als objektive Eigenschaft, die man an diesen Merkmalen erkennen kann."
+    },
+    {
+      "id": "eth-sch-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Was bedeutet das griechische Wort *aisthesis*, von dem „Ästhetik“ kommt?",
+      "optionen": [
+        { "text": "Wahrnehmung", "richtig": true },
+        { "text": "Schönheit", "feedback": "Schönheit heißt auf Griechisch *kallos*. *Aisthesis* betont die sinnliche Wahrnehmung." },
+        { "text": "Kunst", "feedback": "Kunst heißt *techne*." },
+        { "text": "Wahrheit", "feedback": "Wahrheit heißt *aletheia*." }
+      ],
+      "erklaerung": "Baumgarten verstand die Ästhetik als Wissenschaft der sinnlichen Erkenntnis."
+    },
+    {
+      "id": "eth-sch-03", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Nach Kant: Das Schöne oder das Angenehme?",
+      "paare": [
+        { "links": "„Diese Schokolade schmeckt mir.“", "rechts": "das Angenehme" },
+        { "links": "„Diese Sinfonie ist schön.“ (mit der Erwartung, dass andere zustimmen)", "rechts": "das Schöne" }
+      ],
+      "erklaerung": "Beim Angenehmen erwartet man keine Zustimmung anderer. Beim Schönen schon."
+    },
+    {
+      "id": "eth-sch-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Was meint Kant mit **interesselosem Wohlgefallen**?",
+      "optionen": [
+        { "text": "Man findet etwas schön, ohne es besitzen oder nutzen zu wollen.", "richtig": true },
+        { "text": "Man interessiert sich nicht für Kunst.", "feedback": "„Interesselos“ heißt hier: ohne Besitz- oder Nutzinteresse, nicht ohne Interesse an der Sache." },
+        { "text": "Man findet nur Dinge schön, die nichts kosten.", "feedback": "Der Preis spielt keine Rolle." },
+        { "text": "Man findet alles gleich schön.", "feedback": "Das Geschmacksurteil unterscheidet gerade zwischen schön und nicht schön." }
+      ],
+      "erklaerung": "Wer ein Gemälde schön findet, muss es nicht besitzen wollen. Diese Freiheit vom Nutzen unterscheidet das Schöne vom Angenehmen und Nützlichen."
+    },
+    {
+      "id": "eth-sch-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Ein antiker Tempel ist zur Hälfte eingestürzt. Welches Kriterium von Thomas ist verletzt?",
+      "optionen": [
+        { "text": "Vollständigkeit (integritas)", "richtig": true },
+        { "text": "Klarheit (claritas)", "feedback": "Klarheit betrifft Glanz und Deutlichkeit, nicht Vollständigkeit." },
+        { "text": "Ebenmaß (proportio)", "feedback": "Auch das Ebenmaß kann leiden, aber zuerst fehlt hier etwas Wesentliches." },
+        { "text": "keines", "feedback": "Es fehlt ein wesentlicher Teil." }
+      ],
+      "erklaerung": "Interessant: Viele empfinden Ruinen trotzdem als schön. Das ist ein Einwand gegen eine rein objektive Theorie."
+    },
+    {
+      "id": "eth-sch-06", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Was spricht dafür, dass es **Konstanten** in Schönheitsurteilen gibt?",
+      "optionen": [
+        { "text": "Menschen in vielen Kulturen bevorzugen eher symmetrische Gesichter.", "richtig": true },
+        { "text": "Landschaften mit Wasser und Weitblick werden weltweit oft als schön empfunden.", "richtig": true },
+        { "text": "Die Mode verändert sich jedes Jahr.", "feedback": "Das spricht eher für Relativität." },
+        { "text": "Manche Vorlieben lassen sich als Hinweise auf Gesundheit evolutionär erklären.", "richtig": true }
+      ],
+      "erklaerung": "Schönheitsideale sind teils kulturell geprägt, teils scheinen sie auf gemeinsamen Grundlagen zu beruhen."
+    },
+    {
+      "id": "eth-sch-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "„Schönheit liegt im Auge des Betrachters.“ Nimm Stellung zu diesem Satz und beziehe dich auf Thomas von Aquin oder Kant.",
+      "stichworte": [
+        { "aspekt": "Der Satz vertritt eine subjektive Auffassung von Schönheit", "woerter": ["subjektiv", "betrachter", "geschmack", "jeder"] },
+        { "aspekt": "Bezug auf Thomas (objektive Kriterien wie Ebenmaß) oder Kant (Anspruch auf allgemeine Zustimmung)", "woerter": ["thomas", "kant", "ebenmass", "vollstaendig", "klarheit", "allgemein", "zustimmung", "interesselos"] },
+        { "aspekt": "Eigene begründete Stellungnahme", "woerter": ["ich finde", "ich meine", "deshalb", "weil", "meiner meinung"] }
+      ],
+      "musterloesung": "Der Satz vertritt eine subjektive Auffassung: Jeder Betrachter entscheidet selbst, was schön ist. Kant würde zustimmen, dass das Urteil auf einem subjektiven Gefühl beruht. Er betont aber, dass wir mit dem Wort schön eine allgemeine Zustimmung anderer erwarten. Ich finde, Kant hat recht, weil wir über Schönheit mit Gründen streiten und nicht nur sagen, dass uns etwas gefällt.",
+      "erklaerung": "Eine gute Stellungnahme ordnet den Satz ein, bezieht eine Position ein und begründet die eigene Sicht."
+    }
+  ]
+}

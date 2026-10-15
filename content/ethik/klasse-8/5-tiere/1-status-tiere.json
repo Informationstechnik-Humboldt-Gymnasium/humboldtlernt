@@ -1,0 +1,117 @@
+{
+  "id": "eth-k8-status-tiere",
+  "titel": "Der moralische Status von Tieren",
+  "kurz": "Worin sich Menschen und Tiere gleichen und unterscheiden und welche Positionen der Tierethik es gibt.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Gemeinsamkeiten und Unterschiede von Mensch und Tier für die Frage nach dem moralischen Status nennen" },
+    { "id": "lz2", "niveau": "G", "text": "Moralisches Subjekt und moralisches Objekt unterscheiden" },
+    { "id": "lz3", "niveau": "H", "text": "Positionen der Tierethik (Kant, Mitleidsethik, Utilitarismus, Tierrechte) unterscheiden" },
+    { "id": "lz4", "niveau": "H", "text": "Den Vorwurf des Speziesismus erklären" }
+  ],
+  "verstehen": {
+    "einstieg": "Ein Hund wird getreten. Die meisten finden das schlimm. Aber warum eigentlich – weil der Hund leidet, weil es dem Besitzer gehört oder weil es den Täter verroht?",
+    "abschnitte": [
+      {
+        "titel": "Moralisches Subjekt und moralisches Objekt",
+        "text": "- Ein **moralisches Subjekt** kann moralisch handeln und Verantwortung tragen: Es kann Regeln verstehen und sein Handeln danach richten. Das können (erwachsene) Menschen.\n- Ein **moralisches Objekt** ist ein Wesen, auf das wir moralisch Rücksicht nehmen müssen, ihm gegenüber können wir richtig oder falsch handeln.\n\nTiere sind keine moralischen Subjekte: Ein Fuchs, der ein Huhn reißt, handelt nicht unmoralisch. Umstritten ist, ob und wie weit Tiere **moralische Objekte** sind. Auch Babys sind übrigens keine moralischen Subjekte, aber selbstverständlich moralische Objekte."
+      },
+      {
+        "titel": "Mensch und Tier",
+        "text": "**Gemeinsamkeiten:** Viele Tiere, besonders Wirbeltiere, können Schmerz, Angst und Freude empfinden. Manche haben ein Gedächtnis, soziale Bindungen und lösen Probleme.\n\n**Unterschiede:** Menschen haben eine komplexe Sprache, können über ihr Leben nachdenken, Pläne für die ferne Zukunft machen und moralische Regeln aufstellen.\n\nWelche Eigenschaft ist **moralisch** entscheidend? Darauf geben die Positionen der Tierethik verschiedene Antworten."
+      },
+      {
+        "titel": "Positionen der Tierethik",
+        "text": "- **Immanuel Kant (18. Jh.):** Nur vernünftige Wesen haben Würde. Gegenüber Tieren haben wir nur **indirekte Pflichten**: Wer Tiere quält, verroht und wird auch gegenüber Menschen grausam.\n- **Mitleidsethik (Arthur Schopenhauer, 19. Jh.):** Grundlage der Moral ist **Mitleid** mit allem, was leiden kann. Grausamkeit gegen Tiere ist deshalb direkt falsch.\n- **Utilitarismus:** Jeremy Bentham schrieb: „Die Frage ist nicht: Können sie denken? oder: Können sie sprechen?, sondern: **Können sie leiden?**“ Peter Singer (heute) folgert: Das Leiden eines Tieres zählt genauso viel wie gleich starkes Leiden eines Menschen.\n- **Tierrechte (Tom Regan, 20. Jh.):** Tiere, die ein eigenes Erleben haben, besitzen einen Eigenwert und **Rechte**, z. B. nicht als bloßes Mittel benutzt zu werden – auch dann nicht, wenn es Menschen großen Nutzen brächte."
+      },
+      {
+        "titel": "Speziesismus",
+        "text": "Peter Singer prägte den Vorwurf des **Speziesismus**: Wer Lebewesen nur deshalb schlechter behandelt, weil sie zu einer anderen **Art** (Spezies) gehören, handelt ähnlich ungerecht wie jemand, der andere wegen ihrer Hautfarbe benachteiligt. Entscheidend sei die **Leidensfähigkeit**, nicht die Artzugehörigkeit.\n\nKritiker antworten: Es gibt moralisch bedeutsame Unterschiede zwischen Menschen und Tieren, etwa Vernunft und Selbstbewusstsein."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "Tiere sind keine **moralischen Subjekte**, können aber **moralische Objekte** sein.\n\n**Kant:** nur indirekte Pflichten gegenüber Tieren. **Mitleidsethik:** Mitleid mit allem Leidenden. **Utilitarismus (Bentham, Singer):** Entscheidend ist, ob ein Wesen leiden kann. **Tierrechte (Regan):** Tiere haben einen Eigenwert. **Speziesismus** heißt, Wesen allein wegen ihrer Art zu benachteiligen.",
+    "alltag": "Wir streicheln Hunde und essen Schweine, obwohl beide ähnlich empfindungsfähig sind. Diesen Widerspruch zu bemerken ist schon ethisches Nachdenken."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "eth-tst-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Ein Fuchs tötet ein Huhn. Warum handelt der Fuchs **nicht** unmoralisch?",
+      "optionen": [
+        { "text": "Weil er kein moralisches Subjekt ist – er kann keine moralischen Regeln verstehen und befolgen.", "richtig": true },
+        { "text": "Weil Hühner keine Schmerzen haben.", "feedback": "Hühner können sehr wohl Schmerzen empfinden. Der Grund liegt beim Fuchs." },
+        { "text": "Weil Füchse Hühner besitzen.", "feedback": "Besitz spielt hier keine Rolle." },
+        { "text": "Doch, der Fuchs handelt unmoralisch.", "feedback": "Moralisch handeln kann nur, wer Regeln verstehen und sein Handeln danach richten kann." }
+      ],
+      "erklaerung": "Moralisch richtig oder falsch handeln kann nur ein moralisches Subjekt. Tiere folgen ihren Instinkten."
+    },
+    {
+      "id": "eth-tst-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz3",
+      "frage": "Ordne die Positionen zu.",
+      "paare": [
+        { "links": "„Können sie leiden?“", "rechts": "Utilitarismus (Bentham, Singer)" },
+        { "links": "Grausamkeit gegen Tiere verroht den Menschen.", "rechts": "Kant: indirekte Pflichten" },
+        { "links": "Mitleid mit allem, was leiden kann, ist die Grundlage der Moral.", "rechts": "Mitleidsethik (Schopenhauer)" },
+        { "links": "Tiere mit eigenem Erleben haben Rechte und einen Eigenwert.", "rechts": "Tierrechtsposition (Regan)" }
+      ],
+      "erklaerung": "Die Positionen unterscheiden sich darin, warum wir Rücksicht auf Tiere nehmen sollen: wegen des Menschen, aus Mitleid, wegen des Leidens oder wegen eigener Rechte der Tiere."
+    },
+    {
+      "id": "eth-tst-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Warum hat Tierquälerei nach Kant nur einen **indirekten** moralischen Fehler?",
+      "optionen": [
+        { "text": "Weil sie den Menschen verroht und ihn auch gegenüber anderen Menschen grausamer macht.", "richtig": true },
+        { "text": "Weil Tiere genauso Würde haben wie Menschen.", "feedback": "Würde haben nach Kant nur vernünftige Wesen." },
+        { "text": "Weil Tiere keine Schmerzen haben.", "feedback": "Kant bestreitet nicht, dass Tiere Schmerzen empfinden. Er begründet die Pflicht aber über den Menschen." },
+        { "text": "Weil Tierquälerei verboten ist.", "feedback": "Kant begründet moralisch, nicht mit einem Gesetz." }
+      ],
+      "erklaerung": "Die Pflicht besteht eigentlich gegenüber dem Menschen. Kritiker sagen: Dann wäre Tierquälerei, die niemand sieht und niemanden verroht, nicht falsch – das überzeugt viele nicht."
+    },
+    {
+      "id": "eth-tst-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Was meint Peter Singer mit **Speziesismus**?",
+      "optionen": [
+        { "text": "Lebewesen allein wegen ihrer Artzugehörigkeit schlechter zu behandeln", "richtig": true },
+        { "text": "Die Erforschung verschiedener Tierarten", "feedback": "Das wäre Zoologie, kein moralischer Vorwurf." },
+        { "text": "Die Liebe zu Haustieren", "feedback": "Speziesismus ist ein kritischer Begriff, kein Ausdruck von Tierliebe." },
+        { "text": "Die Meinung, dass alle Tiere gleich sind", "feedback": "Singer kritisiert Benachteiligung wegen der Art, nicht Unterschiede zwischen Tieren." }
+      ],
+      "erklaerung": "Singer vergleicht Speziesismus mit Rassismus: Ein moralisch unwichtiges Merkmal (die Art) wird zum Grund für Benachteiligung gemacht."
+    },
+    {
+      "id": "eth-tst-05", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Welche Eigenschaften teilen viele Wirbeltiere mit Menschen?",
+      "optionen": [
+        { "text": "Schmerzempfinden", "richtig": true },
+        { "text": "Angst und Freude", "richtig": true },
+        { "text": "soziale Bindungen", "richtig": true },
+        { "text": "das Aufstellen moralischer Regeln", "feedback": "Moralische Regeln aufstellen und begründen können nach heutigem Wissen nur Menschen." }
+      ],
+      "erklaerung": "Empfindungsfähigkeit verbindet Mensch und Tier. Unterschiede gibt es bei Sprache, Selbstreflexion und Moral."
+    },
+    {
+      "id": "eth-tst-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Ein Tierversuch könnte ein Medikament ermöglichen, das vielen Menschen hilft. Welche Position würde den Versuch **grundsätzlich ablehnen**, auch wenn der Nutzen groß ist?",
+      "optionen": [
+        { "text": "die Tierrechtsposition", "richtig": true },
+        { "text": "der Utilitarismus", "feedback": "Der Utilitarismus wägt Leid und Nutzen ab. Bei sehr großem Nutzen könnte er den Versuch erlauben." },
+        { "text": "Kants Position", "feedback": "Nach Kant haben Tiere keine Würde. Ein nützlicher Versuch wäre für ihn nicht grundsätzlich falsch." },
+        { "text": "keine Position", "feedback": "Eine Position lehnt die Benutzung von Tieren als bloßes Mittel grundsätzlich ab." }
+      ],
+      "erklaerung": "Rechte schützen unabhängig vom Nutzen für andere. Der Utilitarismus dagegen rechnet Leid und Nutzen gegeneinander."
+    },
+    {
+      "id": "eth-tst-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Ein Baby kann keine moralischen Regeln befolgen. Was folgt daraus für die Unterscheidung von moralischem Subjekt und Objekt?",
+      "optionen": [
+        { "text": "Man kann moralisches Objekt sein, ohne moralisches Subjekt zu sein – das gilt für Babys und möglicherweise auch für Tiere.", "richtig": true },
+        { "text": "Babys verdienen keine moralische Rücksicht.", "feedback": "Das wäre absurd. Gerade das Beispiel zeigt, dass Rücksicht nicht davon abhängt, selbst moralisch handeln zu können." },
+        { "text": "Babys sind moralische Subjekte.", "feedback": "Babys können noch keine Verantwortung übernehmen. Sie sind keine moralischen Subjekte." },
+        { "text": "Die Unterscheidung ist sinnlos.", "feedback": "Im Gegenteil: Sie hilft zu zeigen, dass Rücksicht und Verantwortung zwei verschiedene Dinge sind." }
+      ],
+      "erklaerung": "Wer moralische Rücksicht nur mit Vernunft begründet, bekommt Schwierigkeiten bei Babys oder Menschen mit schweren Beeinträchtigungen. Das ist ein wichtiges Argument in der Tierethik."
+    }
+  ]
+}

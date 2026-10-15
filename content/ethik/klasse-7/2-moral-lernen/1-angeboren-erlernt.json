@@ -1,0 +1,234 @@
+{
+  "id": "eth-k7-angeboren-erlernt",
+  "titel": "Angeboren oder erlernt? Egoismus und Altruismus",
+  "kurz": "Ob Moral angeboren oder anerzogen ist, was Egoismus und Altruismus bedeuten und warum man aus „ist“ nicht einfach „soll“ folgern darf.",
+  "reihenfolge": 1,
+  "lernziele": [
+    {
+      "id": "lz1",
+      "niveau": "G",
+      "text": "Argumente für angeborene und für erlernte Moral unterscheiden"
+    },
+    {
+      "id": "lz2",
+      "niveau": "G",
+      "text": "Die Begriffe „Egoismus“ und „Altruismus“ erklären und auf Beispiele anwenden"
+    },
+    {
+      "id": "lz3",
+      "niveau": "H",
+      "text": "Den Sein-Sollens-Fehlschluss erkennen"
+    },
+    {
+      "id": "lz4",
+      "niveau": "H",
+      "text": "In einfachen argumentierenden Texten These, Begründung und Beispiel unterscheiden"
+    }
+  ],
+  "verstehen": {
+    "einstieg": "Schon Kleinkinder heben manchmal einem Erwachsenen etwas auf, das ihm heruntergefallen ist – ohne Belohnung. Haben sie das gelernt, oder steckt Hilfsbereitschaft schon in uns?",
+    "abschnitte": [
+      {
+        "titel": "Angeboren …",
+        "text": "Für eine **angeborene** Grundlage der Moral spricht:\n\n- Versuche zeigen, dass schon Kleinkinder mit etwa 18 Monaten spontan helfen, ohne Belohnung (Versuche von Felix Warneken und Michael Tomasello).\n- In allen bekannten Kulturen gibt es Regeln gegen Mord, für Fairness und für die Sorge um Kinder.\n- Auch manche Tiere zeigen **moralanaloges** Verhalten: Schimpansen trösten, teilen Futter oder reagieren auf ungleiche Belohnungen. Man nennt es „moralanalog“, weil man nicht weiß, ob Tiere wirklich moralisch urteilen.\n\nDie Fähigkeit zu Mitgefühl (**Empathie**) scheint also angelegt zu sein."
+      },
+      {
+        "titel": "… oder erlernt?",
+        "text": "Für **erlernte** Moral spricht:\n\n- Was genau als richtig gilt, ist in verschiedenen Kulturen und Zeiten teils sehr verschieden.\n- Kinder übernehmen Regeln von Eltern, Freunden, Schule und Medien. Das nennt man **Sozialisation**.\n- Kinder, die ohne Zuwendung aufwachsen, haben oft Schwierigkeiten, Mitgefühl zu zeigen.\n\nViele Fachleute verbinden beides: Die **Fähigkeit** zur Moral ist angeboren, der **Inhalt** wird erlernt – ähnlich wie bei der Sprache."
+      },
+      {
+        "titel": "Egoismus und Altruismus",
+        "text": "- **Egoismus:** Man handelt vor allem zum eigenen Vorteil.\n- **Altruismus:** Man handelt selbstlos zum Wohl anderer, auch wenn man selbst einen Nachteil hat.\n\nUmstritten ist, ob es echten Altruismus gibt. Der **psychologische Egoismus** behauptet: Auch wer hilft, will eigentlich nur ein gutes Gefühl oder Anerkennung. Dagegen kann man einwenden: Dass man sich beim Helfen gut fühlt, heißt nicht, dass man **deshalb** hilft. Und Menschen opfern sich manchmal für Fremde, die sie nie wiedersehen."
+      },
+      {
+        "titel": "Der Sein-Sollens-Fehlschluss",
+        "text": "Aus einer Beschreibung, **wie etwas ist**, folgt nicht, **wie es sein soll**. Diesen Denkfehler beschrieb der Philosoph David Hume (18. Jh.).\n\nFalsch: „Menschen sind von Natur aus egoistisch. **Also** ist es richtig, egoistisch zu sein.“\n\nAuch wenn die erste Aussage stimmte, fehlt eine Regel, die sagt, dass Natürliches gut ist. Viele natürliche Dinge sind nicht gut, z. B. Krankheiten.\n\n**Argumente** bestehen aus einer **These** (was behauptet wird), einer **Begründung** (warum) und oft einem **Beispiel** oder Beleg."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "Vieles spricht dafür, dass die **Fähigkeit** zur Moral (Mitgefühl, Fairness) angeboren ist und die **Inhalte** in der Sozialisation erlernt werden.\n\n**Egoismus** ist Handeln zum eigenen Vorteil, **Altruismus** selbstloses Handeln für andere. Aus dem, was ist, folgt nicht, was sein soll (**Sein-Sollens-Fehlschluss**).",
+    "alltag": "Werbung und Diskussionen arbeiten oft mit „Das ist doch natürlich!“ als Argument. Frag dann: Und warum soll das gut sein?"
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "eth-aeb-01",
+      "typ": "multi",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz1",
+      "frage": "Welche Beobachtungen sprechen eher für eine **angeborene** Grundlage der Moral?",
+      "optionen": [
+        {
+          "text": "Kleinkinder helfen spontan, ohne belohnt zu werden.",
+          "richtig": true
+        },
+        {
+          "text": "In allen bekannten Kulturen gibt es Regeln gegen das Töten.",
+          "richtig": true
+        },
+        {
+          "text": "Tischmanieren unterscheiden sich stark zwischen Ländern.",
+          "feedback": "Unterschiede zwischen Kulturen sprechen eher dafür, dass solche Regeln erlernt werden."
+        },
+        {
+          "text": "Kinder übernehmen die Werte ihrer Familie.",
+          "feedback": "Das Übernehmen von Werten ist Sozialisation, also Lernen."
+        }
+      ],
+      "erklaerung": "Gemeinsames in allen Kulturen und Verhalten schon bei Kleinkindern sprechen für eine angeborene Grundlage. Unterschiede und das Übernehmen von Werten sprechen für Erlerntes."
+    },
+    {
+      "id": "eth-aeb-02",
+      "typ": "single",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz2",
+      "frage": "Welche Handlung ist **altruistisch**?",
+      "optionen": [
+        {
+          "text": "Jonas spendet heimlich sein Taschengeld für Erdbebenopfer.",
+          "richtig": true
+        },
+        {
+          "text": "Mia hilft beim Umzug, weil sie dafür 30 Euro bekommt.",
+          "feedback": "Hier steht der eigene Vorteil im Vordergrund."
+        },
+        {
+          "text": "Tim teilt sein Pausenbrot, damit die anderen ihn cool finden.",
+          "feedback": "Er will Anerkennung – das ist eher egoistisch motiviert."
+        },
+        {
+          "text": "Lea lernt viel, damit sie eine gute Note bekommt.",
+          "feedback": "Lernen für eine gute Note dient dem eigenen Ziel, nicht anderen."
+        }
+      ],
+      "erklaerung": "Altruistisch ist eine Handlung, die selbstlos dem Wohl anderer dient. Heimlich spenden bringt weder Geld noch Anerkennung."
+    },
+    {
+      "id": "eth-aeb-03",
+      "typ": "single",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz1",
+      "frage": "Was meinen viele Fachleute, wenn sie Moral mit Sprache vergleichen?",
+      "optionen": [
+        {
+          "text": "Die Fähigkeit ist angeboren, die konkreten Inhalte werden erlernt.",
+          "richtig": true
+        },
+        {
+          "text": "Moral ist völlig angeboren, man muss nichts lernen.",
+          "feedback": "Dann gäbe es keine Unterschiede zwischen Kulturen. Bei der Sprache muss man ja auch Wörter lernen."
+        },
+        {
+          "text": "Moral ist völlig erlernt, es gibt keine Anlage dafür.",
+          "feedback": "Dagegen sprechen die Beobachtungen bei Kleinkindern und in allen Kulturen."
+        },
+        {
+          "text": "Moral entsteht erst, wenn man lesen kann.",
+          "feedback": "Kleinkinder zeigen schon vor dem Lesen hilfsbereites Verhalten."
+        }
+      ],
+      "erklaerung": "Jedes Kind kann sprechen lernen, aber welche Sprache, lernt es von seiner Umgebung. Ähnlich ist es mit der Moral."
+    },
+    {
+      "id": "eth-aeb-04",
+      "typ": "single",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz3",
+      "frage": "Welcher Schluss ist ein **Sein-Sollens-Fehlschluss**?",
+      "optionen": [
+        {
+          "text": "„Der Stärkere setzt sich in der Natur durch. Also ist es richtig, dass sich der Stärkere durchsetzt.“",
+          "richtig": true
+        },
+        {
+          "text": "„Es regnet. Also wird die Straße nass.“",
+          "feedback": "Hier folgt eine Tatsache aus einer anderen Tatsache. Es geht nicht ums Sollen."
+        },
+        {
+          "text": "„Man soll helfen. Lukas braucht Hilfe. Also soll man Lukas helfen.“",
+          "feedback": "Dieser Schluss ist gültig, weil eine Soll-Regel als Voraussetzung genannt wird."
+        },
+        {
+          "text": "„Viele Menschen essen gern Pizza.“",
+          "feedback": "Das ist nur eine Beschreibung, kein Schluss auf ein Sollen."
+        }
+      ],
+      "erklaerung": "Aus einer Tatsache allein („ist“) folgt keine Pflicht („soll“). Dazu braucht man zusätzlich eine Regel, die sagt, was gut ist."
+    },
+    {
+      "id": "eth-aeb-05",
+      "typ": "zuordnung",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz4",
+      "frage": "Ordne die Teile des Arguments zu: „Moral ist zum Teil angeboren, denn schon Kleinkinder helfen ohne Belohnung. Zum Beispiel heben sie heruntergefallene Dinge für Fremde auf.“",
+      "paare": [
+        {
+          "links": "„Moral ist zum Teil angeboren“",
+          "rechts": "These"
+        },
+        {
+          "links": "„schon Kleinkinder helfen ohne Belohnung“",
+          "rechts": "Begründung"
+        },
+        {
+          "links": "„sie heben heruntergefallene Dinge für Fremde auf“",
+          "rechts": "Beispiel"
+        }
+      ],
+      "erklaerung": "Die These ist die Behauptung, die Begründung sagt, warum sie stimmen soll, und das Beispiel macht die Begründung anschaulich."
+    },
+    {
+      "id": "eth-aeb-06",
+      "typ": "single",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz2",
+      "frage": "Jemand behauptet: „Wer hilft, will sich doch nur selbst gut fühlen. Echten Altruismus gibt es nicht.“ Welcher Einwand ist am stärksten?",
+      "optionen": [
+        {
+          "text": "Dass man sich beim Helfen gut fühlt, heißt nicht, dass man nur deswegen hilft.",
+          "richtig": true
+        },
+        {
+          "text": "Helfen fühlt sich nie gut an.",
+          "feedback": "Das stimmt nicht und widerlegt die Behauptung auch nicht."
+        },
+        {
+          "text": "Egoismus ist verboten.",
+          "feedback": "Das ist kein Einwand gegen die Behauptung, sondern eine Bewertung."
+        },
+        {
+          "text": "Es ist egal, warum jemand hilft.",
+          "feedback": "Damit weicht man der Frage aus, statt sie zu beantworten."
+        }
+      ],
+      "erklaerung": "Das gute Gefühl kann eine Folge der Hilfe sein, nicht ihr Ziel. Dazu kommt: Menschen helfen manchmal auch, wenn sie dabei einen großen Nachteil haben."
+    },
+    {
+      "id": "eth-aeb-07",
+      "typ": "single",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz3",
+      "frage": "„Fleisch zu essen ist natürlich, also ist es moralisch in Ordnung.“ Was fehlt diesem Argument?",
+      "optionen": [
+        {
+          "text": "Eine Begründung, warum das Natürliche auch das moralisch Richtige sein soll.",
+          "richtig": true
+        },
+        {
+          "text": "Ein Beispiel für ein Tier, das Fleisch isst.",
+          "feedback": "Ein Beispiel stützt nur die Tatsache („ist natürlich“), nicht den Schluss auf das Sollen."
+        },
+        {
+          "text": "Nichts, das Argument ist vollständig.",
+          "feedback": "Es ist ein Sein-Sollens-Fehlschluss: Von „ist natürlich“ wird auf „ist richtig“ geschlossen."
+        },
+        {
+          "text": "Eine Statistik, wie viele Menschen Fleisch essen.",
+          "feedback": "Auch das wäre nur eine Tatsache. Was viele tun, ist nicht automatisch richtig."
+        }
+      ],
+      "erklaerung": "Ob das Ergebnis stimmt, ist eine andere Frage. Aber so begründet ist das Argument unvollständig: Es fehlt eine normative Prämisse."
+    }
+  ]
+}

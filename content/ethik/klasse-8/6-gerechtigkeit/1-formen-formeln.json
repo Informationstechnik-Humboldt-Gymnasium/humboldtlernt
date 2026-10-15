@@ -1,0 +1,108 @@
+{
+  "id": "eth-k8-gerechtigkeit",
+  "titel": "Formen der Gerechtigkeit und Gerechtigkeitsformeln",
+  "kurz": "Ausgleichende und verteilende Gerechtigkeit nach Aristoteles und wann welche Gerechtigkeitsformel passt.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Ausgleichende Gerechtigkeit und Verteilungsgerechtigkeit unterscheiden" },
+    { "id": "lz2", "niveau": "G", "text": "Gerechtigkeitsformeln (Gleichheit, Leistung, Bedürfnis) nennen und erklären" },
+    { "id": "lz3", "niveau": "H", "text": "Prüfen, welche Gerechtigkeitsformel in einer Situation angemessen ist" }
+  ],
+  "verstehen": {
+    "einstieg": "Drei Geschwister bekommen zusammen 30 Euro Taschengeld. Die Älteste sagt: „Ich mache die meiste Hausarbeit.“ Der Jüngste sagt: „Jeder bekommt gleich viel!“ Die Mittlere sagt: „Ich brauche Geld für die Klassenfahrt.“ Wer hat recht?",
+    "abschnitte": [
+      {
+        "titel": "Zwei Formen der Gerechtigkeit (Aristoteles)",
+        "text": "Schon **Aristoteles** unterschied zwei Formen:\n\n- **Ausgleichende Gerechtigkeit** gilt bei Tausch, Schaden und Strafe zwischen Einzelnen. Leistung und Gegenleistung sollen gleich viel wert sein. Wer einen Schaden verursacht, soll ihn ausgleichen. Hier zählt nicht, wer die Beteiligten sind: Ein Brot kostet für alle gleich viel.\n- **Verteilungsgerechtigkeit** (austeilende Gerechtigkeit) gilt, wenn eine Gemeinschaft Güter, Ämter oder Lasten verteilt. Hier muss man fragen: **Nach welchem Maßstab** wird verteilt?"
+      },
+      {
+        "titel": "Gerechtigkeitsformeln",
+        "text": "Für die Verteilung gibt es verschiedene Maßstäbe:\n\n- **Jedem das Gleiche** (Gleichheit): Alle bekommen gleich viel, z. B. eine Stimme bei der Wahl.\n- **Jedem nach seiner Leistung:** Wer mehr leistet, bekommt mehr, z. B. Noten oder Lohn.\n- **Jedem nach seinen Bedürfnissen:** Wer mehr braucht, bekommt mehr, z. B. Hilfe für Kranke oder ein Nachteilsausgleich.\n\nOft wird noch genannt: **Jedem nach seinem Anspruch** (z. B. nach Vertrag oder erworbenen Rechten)."
+      },
+      {
+        "titel": "Welche Formel passt wann?",
+        "text": "Keine Formel ist immer richtig. Es kommt auf die **Situation** und den **Zweck** der Verteilung an:\n\n- Beim **Wahlrecht** passt Gleichheit: Jede Stimme zählt gleich.\n- Bei **Noten** passt Leistung: Sie sollen Leistung abbilden.\n- Bei **medizinischer Versorgung** passt Bedürfnis: Wer schwerer krank ist, braucht mehr Hilfe.\n\nGerecht ist es oft auch, **Gleiches gleich und Ungleiches ungleich** zu behandeln: Ein Schüler mit gebrochenem Arm bekommt bei der Klassenarbeit mehr Zeit. Das ist keine Bevorzugung, sondern ein Ausgleich."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "**Ausgleichende Gerechtigkeit** betrifft Tausch und Schadensausgleich zwischen Einzelnen. **Verteilungsgerechtigkeit** betrifft die Verteilung von Gütern und Lasten in einer Gemeinschaft.\n\nGerechtigkeitsformeln: **Jedem das Gleiche**, **jedem nach seiner Leistung**, **jedem nach seinen Bedürfnissen**. Welche passt, hängt von der Situation ab.",
+    "alltag": "Wenn jemand ruft „Das ist unfair!“, kann man fragen: Nach welcher Formel ist es unfair? Oft streiten die Beteiligten nur darüber, welcher Maßstab gelten soll."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "eth-gfo-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Ordne die Geschwister aus dem Einstieg den Gerechtigkeitsformeln zu.",
+      "paare": [
+        { "links": "„Ich mache die meiste Hausarbeit.“", "rechts": "Jedem nach seiner Leistung" },
+        { "links": "„Jeder bekommt gleich viel!“", "rechts": "Jedem das Gleiche" },
+        { "links": "„Ich brauche Geld für die Klassenfahrt.“", "rechts": "Jedem nach seinen Bedürfnissen" }
+      ],
+      "erklaerung": "Alle drei berufen sich auf Gerechtigkeit, aber auf verschiedene Maßstäbe."
+    },
+    {
+      "id": "eth-gfo-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Ausgleichende Gerechtigkeit oder Verteilungsgerechtigkeit?",
+      "paare": [
+        { "links": "Wer das Fenster des Nachbarn kaputt macht, ersetzt es.", "rechts": "ausgleichende Gerechtigkeit" },
+        { "links": "Die Schule verteilt Plätze in der begehrten Theater-AG.", "rechts": "Verteilungsgerechtigkeit" }
+      ],
+      "erklaerung": "Schadensersatz und Tausch zwischen Einzelnen betreffen die ausgleichende Gerechtigkeit. Wenn eine Gemeinschaft etwas verteilt, geht es um Verteilungsgerechtigkeit."
+    },
+    {
+      "id": "eth-gfo-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Warum kostet ein Brot beim Bäcker für eine reiche und eine arme Kundin gleich viel?",
+      "optionen": [
+        { "text": "Beim Tausch gilt ausgleichende Gerechtigkeit: Ware und Preis sollen gleichwertig sein, egal wer kauft.", "richtig": true },
+        { "text": "Weil der Bäcker nach Bedürfnissen verteilt.", "feedback": "Dann müsste die arme Kundin weniger bezahlen." },
+        { "text": "Weil die reiche Kundin mehr leistet.", "feedback": "Leistung spielt beim Brotkauf keine Rolle." },
+        { "text": "Das ist ungerecht.", "feedback": "Für einen Tausch ist es gerecht. Ob Armut ausgeglichen werden soll, ist eine Frage der Verteilungsgerechtigkeit, nicht des Brotpreises." }
+      ],
+      "erklaerung": "Bei der ausgleichenden Gerechtigkeit zählt das Verhältnis von Leistung und Gegenleistung, nicht die Person."
+    },
+    {
+      "id": "eth-gfo-04", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Welche Gerechtigkeitsformel passt am besten?",
+      "paare": [
+        { "links": "Stimmen bei der Wahl der Klassensprecherin", "rechts": "Gleichheit" },
+        { "links": "Noten für einen Aufsatz", "rechts": "Leistung" },
+        { "links": "Reihenfolge der Behandlung in der Notaufnahme", "rechts": "Bedürfnis" }
+      ],
+      "erklaerung": "Die passende Formel hängt vom Zweck ab: gleiche Mitbestimmung, Rückmeldung über Leistung oder Hilfe für die, die sie am dringendsten brauchen."
+    },
+    {
+      "id": "eth-gfo-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Amir hat eine Lese-Rechtschreib-Schwäche und bekommt bei Diktaten mehr Zeit. Ein Mitschüler findet das ungerecht. Was spricht dafür, dass es gerecht ist?",
+      "optionen": [
+        { "text": "Ungleiches ungleich zu behandeln kann gerecht sein: Der Ausgleich gleicht einen Nachteil aus, für den Amir nichts kann.", "richtig": true },
+        { "text": "Gerecht ist nur, wenn alle genau dasselbe bekommen.", "feedback": "Dann wäre auch die Brille für Kurzsichtige ungerecht." },
+        { "text": "Amir ist eben ein Liebling der Lehrerin.", "feedback": "Ein Nachteilsausgleich ist keine Bevorzugung, sondern hat einen sachlichen Grund." },
+        { "text": "Gar nichts, es ist ungerecht.", "feedback": "Es gibt gute Gründe: Ohne Ausgleich würde die Note eher die Schwäche als das Können messen." }
+      ],
+      "erklaerung": "Gleiche Chancen erfordern manchmal ungleiche Behandlung. Entscheidend ist, dass der Unterschied sachlich begründet ist."
+    },
+    {
+      "id": "eth-gfo-06", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Nach einem Erdbeben sollen Hilfsgüter verteilt werden. Welche Überlegungen sind gerechtigkeitsethisch sinnvoll?",
+      "optionen": [
+        { "text": "Wer verletzt ist oder kein Dach mehr hat, sollte zuerst versorgt werden.", "richtig": true },
+        { "text": "Wer am meisten Geld hat, bekommt am meisten.", "feedback": "Bei Nothilfe ist Reichtum kein angemessener Maßstab." },
+        { "text": "Bei gleicher Not sollten alle gleich viel bekommen.", "richtig": true },
+        { "text": "Wer am lautesten fordert, bekommt zuerst.", "feedback": "Das belohnt Durchsetzungsstärke, nicht Bedürftigkeit." }
+      ],
+      "erklaerung": "Bei Nothilfe passt vor allem die Bedürfnisformel. Wo die Not gleich ist, gilt Gleichheit."
+    },
+    {
+      "id": "eth-gfo-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Welches Problem hat die Formel „Jedem nach seiner Leistung“, wenn man sie **überall** anwendet?",
+      "optionen": [
+        { "text": "Wer wegen Krankheit oder Behinderung wenig leisten kann, würde auch das Nötigste nicht bekommen.", "richtig": true },
+        { "text": "Leistung lässt sich nie messen.", "feedback": "Leistung lässt sich oft messen, z. B. bei Noten. Das Problem liegt woanders." },
+        { "text": "Sie führt dazu, dass alle gleich viel bekommen.", "feedback": "Im Gegenteil: Sie führt zu Unterschieden." },
+        { "text": "Es gibt kein Problem.", "feedback": "Die Formel blendet aus, was Menschen zum Leben brauchen." }
+      ],
+      "erklaerung": "Jede Formel hat Stärken und Schwächen. Deshalb kombinieren Gesellschaften sie, z. B. Lohn nach Leistung und Sozialhilfe nach Bedarf."
+    }
+  ]
+}

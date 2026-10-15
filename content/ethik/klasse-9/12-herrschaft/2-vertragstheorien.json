@@ -1,0 +1,114 @@
+{
+  "id": "eth-k9-vertragstheorien",
+  "titel": "Naturzustand und Gesellschaftsvertrag: Hobbes, Locke, Rousseau",
+  "kurz": "Wie Hobbes, Locke und Rousseau politische Herrschaft mit einem Vertrag begründen, Naturrecht und positives Recht und das Gewaltmonopol des Staates.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Die Naturzustandsannahmen und Vertragsbegründungen von Hobbes, Locke und Rousseau unterscheiden" },
+    { "id": "lz2", "niveau": "G", "text": "Naturrecht und positives Recht unterscheiden" },
+    { "id": "lz3", "niveau": "G", "text": "Das Gewaltmonopol des Staates und den Begriff „Gewalt“ erklären" },
+    { "id": "lz4", "niveau": "H", "text": "Vertragstheorien vergleichen und ansatzweise kritisieren" }
+  ],
+  "verstehen": {
+    "einstieg": "Stell dir vor, es gäbe keinen Staat: keine Polizei, keine Gerichte, keine Gesetze. Wie würden die Menschen miteinander leben?",
+    "abschnitte": [
+      {
+        "titel": "Die Idee der Vertragstheorie",
+        "text": "**Vertragstheorien** begründen politische Herrschaft so: Man denkt sich einen **Naturzustand** ohne Staat. Dann fragt man, ob vernünftige Menschen aus diesem Zustand heraus einem **Gesellschaftsvertrag** zustimmen würden, der einen Staat gründet. Wenn ja, ist der Staat **legitim** (gerechtfertigt), weil er auf der möglichen Zustimmung aller beruht.\n\nDer Naturzustand ist eine **Fiktion**, ein Gedankenexperiment, kein historischer Bericht. Wie er ausgemalt wird, hängt vom **Menschenbild** (der anthropologischen Grundannahme) ab."
+      },
+      {
+        "titel": "Hobbes, Locke, Rousseau",
+        "text": "- **Thomas Hobbes** (*Leviathan*, 1651): Menschen sind von Natur aus auf Selbsterhaltung bedacht, misstrauisch und konkurrieren um knappe Güter. Der Naturzustand ist ein **„Krieg aller gegen alle“**, das Leben dort „einsam, armselig, ekelhaft, tierisch und kurz“. Um Frieden zu sichern, übertragen alle ihre Macht an einen **Souverän** mit fast unbegrenzter Gewalt.\n- **John Locke** (*Zwei Abhandlungen über die Regierung*, 1689): Schon im Naturzustand gilt ein **Naturrecht**: Jeder hat ein Recht auf **Leben, Freiheit und Eigentum**. Weil es aber keinen unparteiischen Richter gibt, schließen die Menschen einen Vertrag. Der Staat soll diese Rechte schützen. Tut er das nicht, haben die Bürger ein **Widerstandsrecht**. Er fordert die **Gewaltenteilung** zwischen Gesetzgebung und Ausführung.\n- **Jean-Jacques Rousseau** (*Vom Gesellschaftsvertrag*, 1762): Im Naturzustand lebt der Mensch frei, friedlich und mitleidig. Erst Eigentum und Konkurrenz verderben ihn. Der richtige Vertrag schafft eine Gemeinschaft, die vom **Gemeinwillen** (*volonté générale*) geleitet wird. Indem jeder nur Gesetzen gehorcht, die er selbst mitbeschlossen hat, bleibt er frei: **Volkssouveränität**."
+      },
+      {
+        "titel": "Naturrecht und positives Recht",
+        "text": "- **Positives Recht** ist das von Menschen gesetzte, geltende Recht eines Staates (lat. *ponere* = setzen), z. B. das Strafgesetzbuch.\n- **Naturrecht** ist ein Recht, das dem Menschen von Natur aus oder aus Vernunft zukommt und **vor** jedem Staat gilt, z. B. das Recht auf Leben. Es dient als **Maßstab** für das positive Recht.\n\nWenn positives Recht schweres Unrecht vorschreibt, etwa Gesetze im Nationalsozialismus, kann man es mit dem Naturrecht kritisieren. Das Grundgesetz knüpft daran an: Es bekennt sich zu „unverletzlichen und unveräußerlichen Menschenrechten“ (Art. 1 Abs. 2)."
+      },
+      {
+        "titel": "Gewalt und Gewaltmonopol",
+        "text": "Das Wort **Gewalt** hat zwei Bedeutungen: Einerseits **Zwang, Verletzung, Zerstörung** (lat. *violentia*), andererseits **rechtmäßige Macht, Herrschaft** (lat. *potestas*), etwa in „Staatsgewalt“ oder „elterliche Gewalt“.\n\nDer Soziologe **Max Weber** beschrieb den modernen Staat als die Gemeinschaft, die das **Monopol legitimer physischer Gewaltsamkeit** beansprucht. **Gewaltmonopol** heißt: Nur der Staat (Polizei, Gerichte) darf Zwang anwenden, nach Gesetzen und unter Kontrolle. Bürger dürfen ihr Recht nicht selbst mit Gewalt durchsetzen (keine Selbstjustiz), außer in Notwehr. Im Gegenzug muss der Staat sie schützen."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "**Vertragstheorien** rechtfertigen den Staat durch die mögliche Zustimmung aller aus einem gedachten **Naturzustand**.\n\n**Hobbes:** Krieg aller gegen alle → starker Souverän. **Locke:** Naturrechte auf Leben, Freiheit, Eigentum → Staat schützt sie, sonst Widerstandsrecht. **Rousseau:** Gemeinwille, Volkssouveränität.\n\n**Positives Recht** ist gesetztes Recht, **Naturrecht** sein Maßstab. Das **Gewaltmonopol** liegt beim Staat.",
+    "alltag": "Wenn jemand sagt „Den knöpf ich mir selbst vor!“, verstößt er gegen das Gewaltmonopol. Dafür gibt es Polizei und Gerichte."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "eth-vtr-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Ordne die Aussagen den Philosophen zu.",
+      "paare": [
+        { "links": "Im Naturzustand herrscht ein Krieg aller gegen alle.", "rechts": "Thomas Hobbes" },
+        { "links": "Der Staat soll die Naturrechte auf Leben, Freiheit und Eigentum schützen.", "rechts": "John Locke" },
+        { "links": "Der Gemeinwille soll die Gesetze bestimmen, so bleibt jeder frei.", "rechts": "Jean-Jacques Rousseau" }
+      ],
+      "erklaerung": "Die drei Denker gehen von verschiedenen Menschenbildern aus und kommen deshalb zu verschiedenen Staatsformen."
+    },
+    {
+      "id": "eth-vtr-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Naturrecht oder positives Recht?",
+      "paare": [
+        { "links": "§ 242 StGB: Diebstahl wird mit Freiheitsstrafe oder Geldstrafe bestraft.", "rechts": "positives Recht" },
+        { "links": "Jeder Mensch hat ein Recht auf Leben, unabhängig davon, was ein Staat beschließt.", "rechts": "Naturrecht" }
+      ],
+      "erklaerung": "Positives Recht wird vom Staat gesetzt, Naturrecht gilt als Maßstab vor und über jedem Staat."
+    },
+    {
+      "id": "eth-vtr-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Warum ist der Naturzustand bei Hobbes so schrecklich?",
+      "optionen": [
+        { "text": "Menschen sind auf Selbsterhaltung bedacht, misstrauisch und konkurrieren um knappe Güter – ohne Staat muss jeder jeden fürchten.", "richtig": true },
+        { "text": "Weil es im Naturzustand zu kalt ist.", "feedback": "Es geht um das Verhalten der Menschen, nicht ums Klima." },
+        { "text": "Weil der Gemeinwille fehlt.", "feedback": "Der Gemeinwille ist ein Begriff von Rousseau." },
+        { "text": "Weil es zu viele Gesetze gibt.", "feedback": "Im Naturzustand gibt es gerade keine staatlichen Gesetze." }
+      ],
+      "erklaerung": "Hobbes' pessimistisches Menschenbild führt zu einem Naturzustand ständiger Unsicherheit. Daraus begründet er einen starken Staat."
+    },
+    {
+      "id": "eth-vtr-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Was bedeutet das **Gewaltmonopol** des Staates?",
+      "optionen": [
+        { "text": "Nur der Staat darf nach Gesetzen und unter Kontrolle Zwang anwenden; Bürger dürfen ihr Recht nicht selbst mit Gewalt durchsetzen.", "richtig": true },
+        { "text": "Der Staat darf mit seinen Bürgern machen, was er will.", "feedback": "Das Gewaltmonopol ist an Gesetze gebunden und kontrolliert." },
+        { "text": "Jeder Bürger darf sein Recht selbst durchsetzen.", "feedback": "Das wäre Selbstjustiz – genau das schließt das Gewaltmonopol aus." },
+        { "text": "Nur ein einziger Mensch darf im Land Gewalt anwenden.", "feedback": "Es geht um staatliche Organe wie Polizei und Gerichte, nicht um eine Person." }
+      ],
+      "erklaerung": "Das Gewaltmonopol schützt vor Selbstjustiz. Notwehr bleibt erlaubt."
+    },
+    {
+      "id": "eth-vtr-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "In welchem Satz bedeutet „Gewalt“ **rechtmäßige Macht** (*potestas*)?",
+      "optionen": [
+        { "text": "„Im Grundgesetz heißt es: Alle Staatsgewalt geht vom Volke aus.“", "richtig": true },
+        { "text": "„Auf dem Schulhof kam es zu Gewalt.“", "feedback": "Hier ist Verletzung, also *violentia*, gemeint." },
+        { "text": "„Er hat die Tür mit Gewalt aufgebrochen.“", "feedback": "Hier geht es um körperliche Kraft und Zerstörung." },
+        { "text": "„Gewalt ist keine Lösung.“", "feedback": "Gemeint ist Gewalttätigkeit." }
+      ],
+      "erklaerung": "Das deutsche Wort „Gewalt“ verbindet zwei lateinische Begriffe: rechtmäßige Herrschaft und gewaltsamen Zwang."
+    },
+    {
+      "id": "eth-vtr-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Welche Kritik trifft besonders die Theorie von **Hobbes**?",
+      "optionen": [
+        { "text": "Der Souverän hat fast unbegrenzte Macht – die Bürger sind ihm schutzlos ausgeliefert, wenn er sie selbst bedroht.", "richtig": true },
+        { "text": "Sie gibt den Bürgern ein zu starkes Widerstandsrecht.", "feedback": "Das Widerstandsrecht betont Locke, nicht Hobbes." },
+        { "text": "Sie hält Menschen für zu friedlich.", "feedback": "Hobbes hat ein eher pessimistisches Menschenbild." },
+        { "text": "Sie kennt keinen Naturzustand.", "feedback": "Der Naturzustand ist zentral für Hobbes." }
+      ],
+      "erklaerung": "Locke wandte ein: Warum sollten Menschen sich vor Füchsen schützen und sich dafür einem Löwen ausliefern? Daher seine Forderung nach Grenzen der Macht."
+    },
+    {
+      "id": "eth-vtr-07", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Welche Einwände betreffen **alle** Vertragstheorien?",
+      "optionen": [
+        { "text": "Es hat nie einen wirklichen Vertragsschluss gegeben – wer heute geboren wird, hat nichts unterschrieben.", "richtig": true },
+        { "text": "Das Ergebnis hängt stark vom angenommenen Menschenbild ab.", "richtig": true },
+        { "text": "Wer nicht vertragsfähig ist (z. B. Kinder, Tiere, künftige Generationen), kommt im Vertrag nur indirekt vor.", "richtig": true },
+        { "text": "Sie lehnen jede staatliche Herrschaft ab.", "feedback": "Im Gegenteil: Sie wollen staatliche Herrschaft rechtfertigen." }
+      ],
+      "erklaerung": "Vertragstheoretiker antworten: Es geht nicht um einen echten Vertrag, sondern darum, ob vernünftige Menschen zustimmen könnten."
+    }
+  ]
+}

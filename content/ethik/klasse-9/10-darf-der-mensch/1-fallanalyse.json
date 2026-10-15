@@ -1,0 +1,111 @@
+{
+  "id": "eth-k9-fallanalyse",
+  "titel": "Fallanalyse in der angewandten Ethik: Doping",
+  "kurz": "Wie man einen Fall der angewandten Ethik Schritt für Schritt analysiert – am Beispiel Doping im Sport.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Bereiche der angewandten Ethik nennen und Beispiele zuordnen" },
+    { "id": "lz2", "niveau": "G", "text": "Die Schritte einer Fallanalyse vom Spontanurteil bis zum begründeten Urteil beschreiben" },
+    { "id": "lz3", "niveau": "H", "text": "In einem Fall Sachfragen und ethische Fragen sowie Interessen und Normen unterscheiden" },
+    { "id": "lz4", "niveau": "H", "text": "Einen Fall aus deontologischer und utilitaristischer Sicht beurteilen" }
+  ],
+  "verstehen": {
+    "einstieg": "Eine Radfahrerin gewinnt ein großes Rennen. Später kommt heraus: Sie hat Mittel genommen, die ihren Körper leistungsfähiger machen. „Das machen doch alle!“, sagt sie. Was ist eigentlich das Problem?",
+    "abschnitte": [
+      {
+        "titel": "Angewandte Ethik",
+        "text": "Die **angewandte Ethik** wendet ethisches Nachdenken auf konkrete Bereiche an, in denen neue Möglichkeiten neue Fragen aufwerfen:\n\n- **Medizinethik:** Klonen, Präimplantationsdiagnostik (Untersuchung von Embryonen vor der Einpflanzung), Stammzellforschung, Schwangerschaftsabbruch, Sterbehilfe\n- **Sportethik:** Doping, Fairness\n- **Technikethik:** Atomenergie, künstliche Intelligenz, Gentechnik\n- **Wissenschaftsethik:** Plagiate, Tierversuche, Verantwortung für Forschungsergebnisse\n- Fragen des **ethischen Konsums**: Kleidung aus Kinderarbeit, Billigfleisch\n\nDie Leitfrage lautet oft: **Darf der Mensch alles, was er kann?**"
+      },
+      {
+        "titel": "Schritte einer Fallanalyse",
+        "text": "Eine Fallanalyse ist ein **Urteilsprozess**:\n\n1. **Spontanurteil:** Was denke ich zuerst? (Das wird festgehalten, aber noch nicht bewertet.)\n2. **Sachverhalt klären (deskriptiv):** Was ist passiert? Welche Fakten sind wichtig? Hier helfen oft andere Fächer, z. B. Biologie.\n3. **Ethisches Problem benennen (normativ):** Welche Werte und Normen stehen im Konflikt?\n4. **Interessen und Normen analysieren:** Wer ist betroffen, was wollen die Beteiligten, auf welche Regeln berufen sie sich?\n5. **Argumente bilden,** z. B. als praktischen Syllogismus, und mit **ethischen Theorien** prüfen.\n6. **Begründetes Urteil:** Wie urteile ich jetzt? Was hat sich gegenüber dem Spontanurteil verändert?"
+      },
+      {
+        "titel": "Beispiel Doping",
+        "text": "**Sachfragen:** Welche Mittel? Welche Gesundheitsrisiken (z. B. Herzschäden)? Wie viele dopen? Was sagen die Regeln?\n\n**Ethische Fragen:** Ist Doping unfair? Darf man seiner eigenen Gesundheit schaden? Darf ein Verband Erwachsenen verbieten, was nur ihnen selbst schadet?\n\n**Interessen:** Sportlerin (Erfolg, Geld), andere Sportler (fairer Wettkampf, eigene Gesundheit), Publikum (echter Sport), Jugendliche (Vorbilder).\n\n**Normen:** Fairness, Gesundheitsschutz, Regeltreue, Selbstbestimmung.\n\n**Theorien:**\n\n- **Deontologisch:** Doping täuscht Gegner und Publikum, die von einem fairen Wettkampf ausgehen, und benutzt sie damit bloß als Mittel.\n- **Utilitaristisch:** Gesundheitsschäden, Druck auf alle anderen mitzudopen und Vertrauensverlust überwiegen den Nutzen für die Siegerin.\n\n„Das machen doch alle!“ ist übrigens kein moralisches Argument, sondern eine (oft falsche) deskriptive Behauptung."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "Die **angewandte Ethik** untersucht konkrete Bereiche wie Medizin, Sport, Technik und Wissenschaft.\n\n**Fallanalyse:** Spontanurteil → Sachverhalt (deskriptiv) → ethisches Problem (normativ) → Interessen und Normen → Argumente und Theorien → begründetes Urteil.",
+    "alltag": "Auch im Schulsport gibt es Fallfragen: Darf man im Fußball eine Schwalbe machen, wenn sie die Mannschaft gewinnen lässt? Die Schritte der Fallanalyse helfen auch hier."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "eth-fal-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Ordne die Fragen den Bereichen der angewandten Ethik zu.",
+      "paare": [
+        { "links": "Darf man Embryonen vor der Einpflanzung genetisch untersuchen?", "rechts": "Medizinethik" },
+        { "links": "Darf ein Läufer leistungssteigernde Mittel nehmen?", "rechts": "Sportethik" },
+        { "links": "Soll ein Land Atomkraftwerke betreiben?", "rechts": "Technikethik" },
+        { "links": "Darf eine Forscherin Textstellen ohne Quellenangabe übernehmen?", "rechts": "Wissenschaftsethik" }
+      ],
+      "erklaerung": "Die angewandte Ethik ist in Bereiche gegliedert, in denen jeweils typische Fragen auftreten."
+    },
+    {
+      "id": "eth-fal-02", "typ": "reihenfolge", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Bringe die Schritte einer Fallanalyse in die richtige Reihenfolge.",
+      "elemente": [
+        "Spontanurteil festhalten",
+        "Sachverhalt klären",
+        "Ethisches Problem benennen",
+        "Interessen und Normen analysieren",
+        "Argumente bilden und mit ethischen Theorien prüfen",
+        "Begründetes Urteil fällen"
+      ],
+      "erklaerung": "Erst die Fakten, dann die ethische Frage, dann Argumente – so wird aus dem Bauchgefühl ein begründetes Urteil."
+    },
+    {
+      "id": "eth-fal-03", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Sachfrage oder ethische Frage?",
+      "paare": [
+        { "links": "Welche Gesundheitsschäden kann Doping verursachen?", "rechts": "Sachfrage" },
+        { "links": "Darf ein Verband Erwachsenen etwas verbieten, das vor allem ihnen selbst schadet?", "rechts": "ethische Frage" }
+      ],
+      "erklaerung": "Sachfragen werden mit Fakten beantwortet, ethische Fragen mit Argumenten über Werte und Normen."
+    },
+    {
+      "id": "eth-fal-04", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Welche **Normen** spielen im Doping-Fall eine Rolle?",
+      "optionen": [
+        { "text": "Fairness im Wettkampf", "richtig": true },
+        { "text": "Schutz der Gesundheit", "richtig": true },
+        { "text": "Selbstbestimmung über den eigenen Körper", "richtig": true },
+        { "text": "Die Höhe des Preisgelds", "feedback": "Das Preisgeld ist ein Interesse bzw. eine Tatsache, keine Norm." }
+      ],
+      "erklaerung": "Normen sind Regeln oder Werte, auf die sich die Beteiligten berufen. Interessen sind das, was jemand erreichen will."
+    },
+    {
+      "id": "eth-fal-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "„Das machen doch alle!“ Warum ist das kein überzeugendes moralisches Argument?",
+      "optionen": [
+        { "text": "Es ist eine deskriptive Behauptung – daraus, dass viele etwas tun, folgt nicht, dass es richtig ist.", "richtig": true },
+        { "text": "Weil es grammatisch falsch ist.", "feedback": "Der Satz ist grammatisch korrekt. Das Problem ist logisch." },
+        { "text": "Weil es immer gelogen ist.", "feedback": "Es kann sogar stimmen, dass viele dopen. Trotzdem rechtfertigt das nichts." },
+        { "text": "Es ist ein sehr gutes Argument.", "feedback": "Dann wäre alles erlaubt, was verbreitet ist." }
+      ],
+      "erklaerung": "Das ist ein Sein-Sollens-Fehlschluss: Aus „viele tun es“ folgt nicht „es ist erlaubt“."
+    },
+    {
+      "id": "eth-fal-06", "typ": "zuordnung", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Ordne die Argumente gegen Doping den Theorien zu.",
+      "paare": [
+        { "links": "Doping täuscht Gegner und Publikum und benutzt sie so bloß als Mittel.", "rechts": "deontologisch (Kant)" },
+        { "links": "Gesundheitsschäden und der Druck auf alle, mitzudopen, überwiegen den Nutzen für die Siegerin.", "rechts": "utilitaristisch" }
+      ],
+      "erklaerung": "Beide Theorien kommen hier zum selben Ergebnis, aber mit verschiedenen Begründungen."
+    },
+    {
+      "id": "eth-fal-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Ein erwachsener Sportler sagt: „Ich schade mit Doping nur mir selbst. Das ist meine Sache.“ Prüfe dieses Argument.",
+      "stichworte": [
+        { "aspekt": "Das Argument beruft sich auf Selbstbestimmung bzw. das Schadensprinzip", "woerter": ["selbstbestimm", "eigene", "schadensprinzip", "freiheit", "mill"] },
+        { "aspekt": "Einwand: Doping schadet auch anderen (unfairer Wettkampf, Druck auf Konkurrenten, Vorbild für Jugendliche)", "woerter": ["andere", "konkurrent", "gegner", "druck", "vorbild", "jugendliche", "unfair", "fairness"] },
+        { "aspekt": "Eigenes begründetes Urteil", "woerter": ["deshalb", "daher", "ich finde", "ich halte", "also"] }
+      ],
+      "musterloesung": "Der Sportler beruft sich auf Selbstbestimmung: Nach Mills Schadensprinzip darf man tun, was nur einem selbst schadet. Doping schadet aber auch anderen. Die Gegner werden in einem unfairen Wettkampf getäuscht und stehen unter Druck, ebenfalls zu dopen. Außerdem ist er ein Vorbild für Jugendliche. Deshalb halte ich das Argument für nicht überzeugend.",
+      "erklaerung": "Die Stärke einer Prüfung liegt darin, das Argument erst fair darzustellen und dann gezielt eine Prämisse anzugreifen – hier: „nur mir selbst“."
+    }
+  ]
+}

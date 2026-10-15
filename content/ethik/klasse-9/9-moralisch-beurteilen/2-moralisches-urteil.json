@@ -1,0 +1,114 @@
+{
+  "id": "eth-k9-moralisches-urteil",
+  "titel": "Moralische Urteile begründen: praktischer Syllogismus und religiöse Moralbegründung",
+  "kurz": "Woran man moralische Urteile erkennt, wie man sie mit einem praktischen Syllogismus begründet und was das Euthyphron-Dilemma fragt.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Kennzeichen moralischer Urteile nennen (Allgemeingültigkeit, Interessenunabhängigkeit, Sollensanspruch)" },
+    { "id": "lz2", "niveau": "G", "text": "Deskriptive und normative Aussagen unterscheiden" },
+    { "id": "lz3", "niveau": "G", "text": "Moralische Begründungen als praktischen Syllogismus formulieren und Prämissen kritisieren" },
+    { "id": "lz4", "niveau": "H", "text": "Religiöse Moralbegründung und das Euthyphron-Dilemma erläutern" }
+  ],
+  "verstehen": {
+    "einstieg": "„Das solltest du nicht tun!“ – „Wieso?“ – „Weil …“ Was muss nach dem „weil“ kommen, damit die Begründung überzeugt?",
+    "abschnitte": [
+      {
+        "titel": "Kennzeichen moralischer Urteile",
+        "text": "Ein **moralisches Urteil** sagt, ob eine Handlung richtig oder falsch, geboten oder verboten ist. Es unterscheidet sich von bloßen Vorlieben („Ich mag keinen Spinat“):\n\n- **Sollensanspruch (normativ):** Es sagt, was getan werden **soll**, nicht nur, was ist.\n- **Allgemeingültigkeit (Universalisierbarkeit):** Es beansprucht, für alle gleichen Fälle zu gelten. Wer sagt „Lügen ist falsch“, muss das auch sagen, wenn er selbst lügt.\n- **Interessenunabhängigkeit (Unparteilichkeit):** Es soll nicht nur dem eigenen Vorteil dienen, sondern auch aus Sicht der anderen Betroffenen vertretbar sein.\n- **Begründungsanspruch:** Man muss Gründe nennen können."
+      },
+      {
+        "titel": "Deskriptiv und normativ",
+        "text": "- **Deskriptive Aussagen** beschreiben, wie etwas ist: „Viele Jugendliche schreiben in Arbeiten ab.“ Sie sind wahr oder falsch und lassen sich mit Fakten prüfen.\n- **Normative Aussagen** sagen, wie etwas sein soll oder was gut ist: „Man soll nicht abschreiben.“ Man erkennt sie oft an Wörtern wie *sollen, dürfen, gut, schlecht, richtig, falsch, gerecht*.\n\nAus deskriptiven Aussagen allein folgt nie eine normative (**Sein-Sollens-Fehlschluss**)."
+      },
+      {
+        "titel": "Der praktische Syllogismus",
+        "text": "Ein **praktischer Syllogismus** ist die Grundform einer moralischen Begründung. Er besteht aus drei Sätzen:\n\n1. **Normative Prämisse (Obersatz):** eine allgemeine Regel. „Man soll Menschen in Not helfen.“\n2. **Deskriptive Prämisse (Untersatz):** eine Tatsache über den Fall. „Der Mann auf der Straße ist in Not.“\n3. **Konklusion (Schluss):** das moralische Urteil. „Also soll man dem Mann helfen.“\n\nSind beide Prämissen wahr bzw. gültig, folgt die Konklusion zwingend. Kritik kann deshalb an den **Prämissen** ansetzen: Stimmt die Tatsache? Ist die Regel richtig, und gilt sie ohne Ausnahme? Oft ist eine Prämisse **unausgesprochen (implizit)** – dann lohnt es sich, sie zu ergänzen.\n\nNeben solchen Prämissen gibt es auch Berufungen auf eine **Autorität** („Die Ärztin sagt …“) oder Hinweise auf **Fakten** („Statistiken zeigen …“)."
+      },
+      {
+        "titel": "Religiöse Moralbegründung",
+        "text": "Viele Religionen begründen Moral mit dem **Willen Gottes**: Richtig ist, was Gott gebietet, z. B. die Zehn Gebote. Der Philosoph **Platon** stellte in seinem Dialog *Euthyphron* (um 400 v. Chr.) eine berühmte Frage, das **Euthyphron-Dilemma**:\n\nIst etwas gut, **weil** Gott es gebietet? Dann wäre Moral willkürlich – Gott könnte auch Grausamkeit gebieten.\n\nOder gebietet Gott es, **weil** es gut ist? Dann gibt es einen Maßstab für das Gute, der unabhängig von Gott ist, und man könnte ihn auch ohne Religion erkennen.\n\nGläubige antworten oft: Gott ist selbst das Gute, deshalb gebietet er nichts Willkürliches."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "**Moralische Urteile** sind normativ, beanspruchen **Allgemeingültigkeit**, sind **interessenunabhängig** und müssen begründet werden.\n\n**Praktischer Syllogismus:** normative Prämisse + deskriptive Prämisse → moralisches Urteil. Kritik setzt an den Prämissen an.\n\n**Euthyphron-Dilemma:** Ist etwas gut, weil Gott es will, oder will Gott es, weil es gut ist?",
+    "alltag": "In Diskussionen hilft die Frage: „Welche Regel steckt hinter deinem Urteil?“ Oft wird die normative Prämisse nicht ausgesprochen."
+  },
+  "interaktiv": ["eth-syllogismus"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "eth-mur-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Deskriptiv oder normativ?",
+      "paare": [
+        { "links": "„In Deutschland ist das Wahlalter bei Bundestagswahlen 18.“", "rechts": "deskriptiv" },
+        { "links": "„Auch 16-Jährige sollten wählen dürfen.“", "rechts": "normativ" }
+      ],
+      "erklaerung": "Die erste Aussage beschreibt eine Tatsache, die zweite sagt, wie es sein soll."
+    },
+    {
+      "id": "eth-mur-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz3",
+      "frage": "Ordne die Sätze den Teilen des praktischen Syllogismus zu.",
+      "paare": [
+        { "links": "„Man soll Versprechen halten.“", "rechts": "normative Prämisse" },
+        { "links": "„Tim hat Lea versprochen, ihr beim Umzug zu helfen.“", "rechts": "deskriptive Prämisse" },
+        { "links": "„Also soll Tim Lea beim Umzug helfen.“", "rechts": "Konklusion" }
+      ],
+      "erklaerung": "Die allgemeine Regel und die Tatsache über den Fall ergeben zusammen das moralische Urteil."
+    },
+    {
+      "id": "eth-mur-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Welche Aussage ist ein **moralisches Urteil** und keine bloße Vorliebe?",
+      "optionen": [
+        { "text": "„Es ist falsch, Schwächere zu erpressen.“", "richtig": true },
+        { "text": "„Ich mag lieber Hunde als Katzen.“", "feedback": "Das ist eine persönliche Vorliebe ohne Anspruch, dass andere sie teilen müssen." },
+        { "text": "„Blau ist die schönste Farbe.“", "feedback": "Das ist ein Geschmacksurteil." },
+        { "text": "„Heute ist es kalt.“", "feedback": "Das ist eine deskriptive Aussage über das Wetter." }
+      ],
+      "erklaerung": "Ein moralisches Urteil sagt, was richtig oder falsch ist, und beansprucht, für alle gleichen Fälle zu gelten."
+    },
+    {
+      "id": "eth-mur-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "„Paul darf die Tasche nicht behalten, die er gefunden hat, denn sie gehört jemand anderem.“ Welche **implizite** Prämisse fehlt?",
+      "optionen": [
+        { "text": "„Man darf nicht behalten, was einem anderen gehört.“", "richtig": true },
+        { "text": "„Paul hat die Tasche gefunden.“", "feedback": "Das steht schon im Satz." },
+        { "text": "„Die Tasche ist blau.“", "feedback": "Das ist für die Begründung unerheblich." },
+        { "text": "„Paul darf die Tasche nicht behalten.“", "feedback": "Das ist die Konklusion, keine Prämisse." }
+      ],
+      "erklaerung": "Die Tatsache (die Tasche gehört jemand anderem) wird genannt, die allgemeine Regel nicht. Erst mit ihr wird der Schluss vollständig."
+    },
+    {
+      "id": "eth-mur-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Nils sagt: „Abschreiben ist falsch.“ Später schreibt er selbst ab und sagt: „Bei mir war das in Ordnung.“ Gegen welches Kennzeichen moralischer Urteile verstößt er?",
+      "optionen": [
+        { "text": "Allgemeingültigkeit – das Urteil muss für alle gleichen Fälle gelten, auch für ihn selbst.", "richtig": true },
+        { "text": "Er verstößt gegen kein Kennzeichen.", "feedback": "Wer eine Regel nur für andere gelten lässt, urteilt nicht moralisch, sondern parteiisch." },
+        { "text": "Gegen die Pflicht, deskriptiv zu sein", "feedback": "Moralische Urteile sind gerade normativ, nicht deskriptiv." },
+        { "text": "Gegen das Verbot, Gefühle zu haben", "feedback": "Ein solches Verbot gibt es nicht." }
+      ],
+      "erklaerung": "Moralische Urteile sind universalisierbar: Was für andere gilt, gilt auch für mich, wenn der Fall gleich ist."
+    },
+    {
+      "id": "eth-mur-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "„Man soll niemals Tiere töten. Fische sind Tiere. Also soll man niemals Fische töten.“ Wo setzt eine **inhaltliche Kritik** am besten an?",
+      "optionen": [
+        { "text": "An der normativen Prämisse: Gilt die Regel wirklich ausnahmslos, z. B. auch bei Notwehr oder Schädlingen?", "richtig": true },
+        { "text": "An der Logik: Der Schluss folgt nicht aus den Prämissen.", "feedback": "Der Schluss ist logisch gültig. Wenn man ihn bestreiten will, muss man eine Prämisse bestreiten." },
+        { "text": "An der deskriptiven Prämisse: Fische sind keine Tiere.", "feedback": "Fische sind Tiere. Diese Prämisse ist wahr." },
+        { "text": "Gar nicht, gültige Argumente kann man nicht kritisieren.", "feedback": "Gültig heißt nur, dass der Schluss aus den Prämissen folgt. Die Prämissen können trotzdem falsch sein." }
+      ],
+      "erklaerung": "Bei einem gültigen Argument prüft man die Prämissen. Hier ist die Ausnahmslosigkeit der Regel der umstrittene Punkt."
+    },
+    {
+      "id": "eth-mur-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Was ist das Problem der ersten Antwort im **Euthyphron-Dilemma** („Etwas ist gut, weil Gott es gebietet“)?",
+      "optionen": [
+        { "text": "Dann wäre Moral willkürlich: Würde Gott Grausamkeit gebieten, wäre sie gut.", "richtig": true },
+        { "text": "Dann gäbe es einen Maßstab des Guten unabhängig von Gott.", "feedback": "Das ist das Problem der zweiten Antwort." },
+        { "text": "Dann gäbe es keine Religion.", "feedback": "Das folgt nicht. Es geht um die Begründung der Moral." },
+        { "text": "Es gibt kein Problem.", "feedback": "Platon wollte zeigen, dass beide Antworten Schwierigkeiten haben." }
+      ],
+      "erklaerung": "Das Dilemma fragt, ob Gottes Wille das Gute bestimmt oder ob Gott das unabhängig Gute erkennt und gebietet. Beide Antworten haben Folgen für die Begründung der Moral."
+    }
+  ]
+}

@@ -20,6 +20,7 @@
     { id: 'physik', name: 'Physik' },
     { id: 'chemie', name: 'Chemie' },
     { id: 'biologie', name: 'Biologie' },
+    { id: 'ethik', name: 'Ethik' },
     { id: 'timp', name: 'TIMP' },
   ];
 
@@ -47,7 +48,7 @@
   var LEHRER = [
     ['sabine.keller', 'Sabine', 'Keller', 'KEL', [['9a', 'physik'], ['9b', 'physik']], '9a'],
     ['murat.yilmaz', 'Murat', 'Yilmaz', 'YIL', [['9a', 'chemie'], ['9b', 'chemie'], ['10a', 'chemie']], null],
-    ['julia.brandt', 'Julia', 'Brandt', 'BRA', [['9b', 'biologie'], ['10a', 'biologie']], '10a'],
+    ['julia.brandt', 'Julia', 'Brandt', 'BRA', [['9b', 'biologie'], ['10a', 'biologie'], ['9a', 'ethik']], '10a'],
     ['tobias.novak', 'Tobias', 'Novak', 'NOV', [['wp-timp-9', 'timp'], ['10a', 'physik']], null],
   ];
   var ADMINS = [
