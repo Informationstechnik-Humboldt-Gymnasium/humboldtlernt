@@ -1,0 +1,115 @@
+{
+  "id": "eth-k7-gewissen",
+  "titel": "Das Gewissen",
+  "kurz": "Was das Gewissen ist und wie Religion, Psychologie und Philosophie es erklären.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Den Begriff „Gewissen“ erklären und gutes und schlechtes Gewissen unterscheiden" },
+    { "id": "lz2", "niveau": "G", "text": "Religiöse, psychologische und entwicklungspsychologische Gewissensmodelle beschreiben" },
+    { "id": "lz3", "niveau": "H", "text": "Gewissensmodelle vergleichen und ihre Grenzen erläutern" }
+  ],
+  "verstehen": {
+    "einstieg": "Du hast einer Freundin etwas Gemeines gesagt. Niemand hat es mitbekommen, trotzdem kannst du abends nicht einschlafen. Was meldet sich da?",
+    "abschnitte": [
+      {
+        "titel": "Was ist das Gewissen?",
+        "text": "Das **Gewissen** ist eine innere Instanz, die unser eigenes Handeln moralisch bewertet. Es kann\n\n- **vorher** warnen oder auffordern („Das solltest du nicht tun“),\n- **nachher** urteilen: Ein **schlechtes Gewissen** zeigt sich als Schuldgefühl oder Reue, ein **gutes Gewissen** als innere Ruhe.\n\nDas Gewissen ist **persönlich**: Es beurteilt das **eigene** Handeln, nicht das anderer. Man spricht auch von **Gewissensfreiheit**: Niemand darf gezwungen werden, gegen sein Gewissen zu handeln. Sie steht in Art. 4 des Grundgesetzes."
+      },
+      {
+        "titel": "Religiöses Modell",
+        "text": "In vielen religiösen Traditionen gilt das Gewissen als **Stimme Gottes** im Menschen. Es zeigt, was gut und böse ist, und verbindet den Menschen mit einer höheren Ordnung. Wer seinem Gewissen folgt, folgt Gottes Willen."
+      },
+      {
+        "titel": "Psychologische Modelle",
+        "text": "- **Sigmund Freud** (Psychoanalyse, um 1900) unterscheidet drei Teile der Persönlichkeit: Das **Es** (Triebe, Wünsche), das **Ich** (vermittelt mit der Wirklichkeit) und das **Über-Ich**. Das Über-Ich ist das Gewissen: Es entsteht, indem das Kind die Gebote und Verbote der Eltern verinnerlicht. Es kann auch übertrieben streng sein.\n- **Erich Fromm** unterscheidet ein **autoritäres Gewissen** (die verinnerlichte Stimme einer Autorität, man gehorcht aus Angst vor Strafe) von einem **humanistischen Gewissen** (die eigene Stimme, die fragt, was einem selbst und anderen als Menschen guttut).\n- **Lawrence Kohlberg** beschrieb, wie sich moralisches Urteilen entwickelt: zuerst **vorkonventionell** (Strafe vermeiden, Vorteil suchen), dann **konventionell** (Erwartungen der Gruppe und Gesetze erfüllen), dann **postkonventionell** (nach allgemeinen Prinzipien wie Gerechtigkeit und Menschenwürde urteilen). Nicht alle Menschen erreichen die letzte Stufe."
+      },
+      {
+        "titel": "Kann das Gewissen irren?",
+        "text": "Ja. Ein Gewissen, das nur verinnerlichte Regeln wiederholt, kann auch falsche Regeln wiederholen. Manche Menschen hatten ein „gutes Gewissen“ bei schlimmen Taten, weil man es ihnen so beigebracht hatte. Deshalb sollte man das eigene Gewissen auch **prüfen**: Kann ich meine innere Stimme mit guten Gründen rechtfertigen?"
+      }
+    ],
+    "formeln": [],
+    "merksatz": "Das **Gewissen** bewertet das eigene Handeln moralisch, als Warnung vorher und als gutes oder schlechtes Gewissen nachher.\n\nModelle: **Stimme Gottes** (religiös), **Über-Ich** als verinnerlichte Elternregeln (Freud), **autoritäres vs. humanistisches Gewissen** (Fromm), **Stufen** des moralischen Urteilens (Kohlberg). Das Gewissen kann irren und sollte geprüft werden.",
+    "alltag": "„Ich hatte ein schlechtes Gewissen“ heißt nicht immer, dass man etwas Falsches getan hat. Manchmal meldet sich nur eine strenge Regel, die man gar nicht teilt. Darüber nachzudenken lohnt sich."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "eth-gew-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Was beurteilt das Gewissen?",
+      "optionen": [
+        { "text": "Das eigene Handeln", "richtig": true },
+        { "text": "Das Handeln der anderen", "feedback": "Über andere urteilen wir auch, aber das Gewissen betrifft das eigene Handeln." },
+        { "text": "Ob etwas gegen ein Gesetz verstößt", "feedback": "Das prüfen Gerichte. Das Gewissen urteilt moralisch, nicht juristisch." },
+        { "text": "Ob etwas schön ist", "feedback": "Schönheit ist eine ästhetische Frage, keine Gewissensfrage." }
+      ],
+      "erklaerung": "Das Gewissen ist eine innere Instanz, die das eigene Handeln als gut oder schlecht bewertet."
+    },
+    {
+      "id": "eth-gew-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Ordne die Gewissensmodelle zu.",
+      "paare": [
+        { "links": "Stimme Gottes im Menschen", "rechts": "religiöses Modell" },
+        { "links": "Über-Ich aus verinnerlichten Geboten der Eltern", "rechts": "Sigmund Freud" },
+        { "links": "autoritäres und humanistisches Gewissen", "rechts": "Erich Fromm" },
+        { "links": "Stufen von vorkonventionell bis postkonventionell", "rechts": "Lawrence Kohlberg" }
+      ],
+      "erklaerung": "Die Modelle erklären unterschiedlich, woher das Gewissen kommt: von Gott, von den Eltern, aus einer Autorität oder aus einer Entwicklung des Urteilens."
+    },
+    {
+      "id": "eth-gew-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Nach Freud: Wie entsteht das Über-Ich?",
+      "optionen": [
+        { "text": "Das Kind verinnerlicht die Gebote und Verbote seiner Eltern.", "richtig": true },
+        { "text": "Es ist von Geburt an fertig vorhanden.", "feedback": "Freud meint, dass es in der Kindheit entsteht, nicht dass es angeboren ist." },
+        { "text": "Es entsteht durch Lesen philosophischer Bücher.", "feedback": "Das Über-Ich bildet sich viel früher, durch die Erziehung." },
+        { "text": "Es ist dasselbe wie das Es.", "feedback": "Das Es steht für Triebe und Wünsche, das Über-Ich für Gebote und Verbote." }
+      ],
+      "erklaerung": "Das Über-Ich ist eine Art verinnerlichte Elternstimme. Deshalb kann es auch zu streng oder unvernünftig sein."
+    },
+    {
+      "id": "eth-gew-04", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Ordne die Aussagen den Stufen nach Kohlberg zu.",
+      "paare": [
+        { "links": "„Ich mache das nicht, sonst bekomme ich Ärger.“", "rechts": "vorkonventionell" },
+        { "links": "„Das tut man nicht, das steht so im Gesetz.“", "rechts": "konventionell" },
+        { "links": "„Jeder Mensch hat eine Würde, die man achten muss – auch wenn das Gesetz etwas anderes sagt.“", "rechts": "postkonventionell" }
+      ],
+      "erklaerung": "Kohlberg unterscheidet, worauf sich ein Urteil stützt: auf Strafe und Vorteil, auf die Erwartungen der Gruppe und Gesetze oder auf allgemeine Prinzipien."
+    },
+    {
+      "id": "eth-gew-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Tim hat kein schlechtes Gewissen, weil er nur aus Angst vor Strafe keine Hausaufgaben abschreibt. Welches Gewissen beschreibt das nach Fromm?",
+      "optionen": [
+        { "text": "ein autoritäres Gewissen", "richtig": true },
+        { "text": "ein humanistisches Gewissen", "feedback": "Das humanistische Gewissen ist die eigene Stimme, die fragt, was gut ist, nicht die Angst vor Strafe." },
+        { "text": "das Es", "feedback": "Das Es ist bei Freud der Teil mit den Trieben, kein Gewissen." },
+        { "text": "gar kein Gewissen", "feedback": "Tim hat eine innere Regel – nur folgt er ihr aus Angst vor einer Autorität." }
+      ],
+      "erklaerung": "Beim autoritären Gewissen gehorcht man einer verinnerlichten Autorität aus Angst. Beim humanistischen urteilt man selbst, was menschlich gut ist."
+    },
+    {
+      "id": "eth-gew-06", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Welche Aussagen begründen, warum man das eigene Gewissen prüfen sollte?",
+      "optionen": [
+        { "text": "Ein Gewissen kann auch falsche Regeln verinnerlicht haben.", "richtig": true },
+        { "text": "Manche Täter hatten bei schlimmen Taten ein gutes Gewissen.", "richtig": true },
+        { "text": "Das Gewissen ist immer unfehlbar.", "feedback": "Gerade das stimmt nicht – sonst müsste man es nicht prüfen." },
+        { "text": "Ein übertrieben strenges Über-Ich kann Schuldgefühle erzeugen, wo keine Schuld ist.", "richtig": true }
+      ],
+      "erklaerung": "Das Gewissen ist ein wichtiger Hinweis, aber kein Beweis. Man sollte die innere Stimme mit Gründen prüfen."
+    },
+    {
+      "id": "eth-gew-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Worin unterscheiden sich das religiöse Modell und Freuds Modell am deutlichsten?",
+      "optionen": [
+        { "text": "In der Frage, woher das Gewissen stammt: von Gott oder aus der Erziehung durch die Eltern.", "richtig": true },
+        { "text": "Im Namen: Das eine heißt Gewissen, das andere nicht.", "feedback": "Freud nennt es Über-Ich, beschreibt aber dieselbe innere Instanz. Der Unterschied ist inhaltlich." },
+        { "text": "Nur das religiöse Modell kennt ein schlechtes Gewissen.", "feedback": "Auch das Über-Ich erzeugt Schuldgefühle." },
+        { "text": "Nur Freuds Modell gilt für Kinder.", "feedback": "Beide Modelle wollen das Gewissen aller Menschen erklären." }
+      ],
+      "erklaerung": "Nach dem religiösen Modell spricht im Gewissen eine höhere Wahrheit. Nach Freud spricht darin die verinnerlichte Erziehung. Das hat Folgen dafür, wie sehr man dem Gewissen trauen kann."
+    }
+  ]
+}

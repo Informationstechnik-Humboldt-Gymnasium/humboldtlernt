@@ -1,0 +1,110 @@
+{
+  "id": "eth-k8-tierschutz",
+  "titel": "Tierschutz in Deutschland und Fallbeispiele",
+  "kurz": "Was das Tierschutzgesetz verlangt und wie man Fälle wie Tierversuche, Zoos oder Nutztierhaltung beurteilen kann.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Grundgedanken des deutschen Tierschutzgesetzes und des Grundgesetzes zum Tierschutz wiedergeben" },
+    { "id": "lz2", "niveau": "G", "text": "Den Begriff „vernünftiger Grund“ an Beispielen erläutern" },
+    { "id": "lz3", "niveau": "H", "text": "Fallbeispiele zum Umgang mit Tieren mit Positionen der Tierethik beurteilen" }
+  ],
+  "verstehen": {
+    "einstieg": "Ein Wellensittich allein in einem kleinen Käfig, ein Schwein in einem Stall mit tausend anderen, eine Maus im Labor. Ist das alles erlaubt? Und ist es auch richtig?",
+    "abschnitte": [
+      {
+        "titel": "Das Tierschutzgesetz",
+        "text": "Das deutsche **Tierschutzgesetz** beginnt in § 1 so:\n\n„Zweck dieses Gesetzes ist es, aus der Verantwortung des Menschen für das Tier als **Mitgeschöpf** dessen Leben und Wohlbefinden zu schützen. Niemand darf einem Tier **ohne vernünftigen Grund** Schmerzen, Leiden oder Schäden zufügen.“\n\nWeitere Regeln:\n\n- Wer ein Tier hält, muss es **angemessen ernähren, pflegen und verhaltensgerecht unterbringen** (§ 2).\n- **Tierversuche** sind nur erlaubt, wenn sie unerlässlich sind und genehmigt wurden. Man soll sie möglichst **ersetzen, verringern und schonender gestalten** (die „3 R“: Replace, Reduce, Refine).\n\nSeit 2002 steht der Tierschutz auch als **Staatsziel** im Grundgesetz (Art. 20a). Im Bürgerlichen Gesetzbuch heißt es: „Tiere sind keine Sachen.“"
+      },
+      {
+        "titel": "Was ist ein „vernünftiger Grund“?",
+        "text": "Das Gesetz verbietet nicht jedes Leid, sondern Leid **ohne vernünftigen Grund**. Was als vernünftig gilt, ist oft umstritten:\n\n- Fleischerzeugung gilt rechtlich als vernünftiger Grund für die Schlachtung.\n- Das Töten männlicher Küken, nur weil sie keine Eier legen, wurde 2019 vom Bundesverwaltungsgericht als nicht mehr vernünftig bewertet und ist seit 2022 verboten.\n- Tierversuche für Kosmetik sind in der EU verboten.\n\nDas zeigt: Was **legal** ist, ist nicht automatisch **moralisch unumstritten**. Gesetze verändern sich, auch durch ethische Debatten."
+      },
+      {
+        "titel": "Fallbeispiele beurteilen",
+        "text": "Bei einem Fall hilft es, Schritt für Schritt zu fragen:\n\n1. Welche **Tiere** sind betroffen, und wie leidensfähig sind sie?\n2. Welchen **Nutzen** haben Menschen?\n3. Gibt es **Alternativen**, die weniger Leid verursachen?\n4. Was würden die **Positionen** sagen: Der Utilitarismus wägt Leid und Nutzen ab. Die Tierrechtsposition fragt, ob Tiere als bloßes Mittel benutzt werden. Kant fragt, ob der Mensch verroht.\n\nBeispiele: Tierversuche in der Medizin, Zoos (Artenschutz und Bildung vs. Gefangenschaft), Zirkus mit Wildtieren, Massentierhaltung, Haustiere."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "Nach dem **Tierschutzgesetz** darf niemand einem Tier **ohne vernünftigen Grund** Schmerzen, Leiden oder Schäden zufügen. Tierschutz ist seit 2002 **Staatsziel** im Grundgesetz (Art. 20a).\n\nWas ein vernünftiger Grund ist, ist oft umstritten. Was legal ist, ist nicht automatisch moralisch richtig.",
+    "alltag": "Beim Einkaufen von Eiern oder Fleisch zeigen Haltungskennzeichnungen, wie die Tiere gehalten wurden. Wer sie liest, trifft eine informiertere Entscheidung."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "eth-tsg-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Was verbietet § 1 des Tierschutzgesetzes?",
+      "optionen": [
+        { "text": "Einem Tier ohne vernünftigen Grund Schmerzen, Leiden oder Schäden zuzufügen", "richtig": true },
+        { "text": "Jede Nutzung von Tieren durch Menschen", "feedback": "Das Gesetz erlaubt Nutzung, wenn es einen vernünftigen Grund gibt." },
+        { "text": "Haustiere zu halten", "feedback": "Haustierhaltung ist erlaubt, wenn die Tiere angemessen versorgt werden." },
+        { "text": "Fleisch zu essen", "feedback": "Fleischerzeugung gilt rechtlich als vernünftiger Grund." }
+      ],
+      "erklaerung": "Das Gesetz verbietet nicht jedes Leid, sondern Leid ohne vernünftigen Grund. Was vernünftig ist, ist oft umstritten."
+    },
+    {
+      "id": "eth-tsg-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Wie bezeichnet das Tierschutzgesetz das Tier?",
+      "optionen": [
+        { "text": "als Mitgeschöpf", "richtig": true },
+        { "text": "als Sache", "feedback": "Im Gesetz steht ausdrücklich: Tiere sind keine Sachen." },
+        { "text": "als Person", "feedback": "Rechtlich sind Tiere keine Personen." },
+        { "text": "als Eigentum des Staates", "feedback": "Davon ist im Tierschutzgesetz keine Rede." }
+      ],
+      "erklaerung": "Das Wort „Mitgeschöpf“ drückt aus, dass der Mensch für das Tier Verantwortung trägt."
+    },
+    {
+      "id": "eth-tsg-03", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Ordne die „3 R“ für Tierversuche zu.",
+      "paare": [
+        { "links": "Replace", "rechts": "Tierversuche durch andere Methoden ersetzen, z. B. Zellkulturen" },
+        { "links": "Reduce", "rechts": "die Zahl der Versuchstiere verringern" },
+        { "links": "Refine", "rechts": "Versuche so schonend wie möglich gestalten" }
+      ],
+      "erklaerung": "Die 3 R sollen das Leid von Versuchstieren so gering wie möglich halten."
+    },
+    {
+      "id": "eth-tsg-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Warum wurde das Töten männlicher Küken in Deutschland verboten?",
+      "optionen": [
+        { "text": "Es wurde nicht mehr als vernünftiger Grund anerkannt, Tiere nur wegen fehlender wirtschaftlicher Nutzung zu töten.", "richtig": true },
+        { "text": "Weil Küken keine Tiere sind.", "feedback": "Küken sind selbstverständlich Tiere." },
+        { "text": "Weil männliche Küken Eier legen.", "feedback": "Gerade weil sie keine Eier legen, wurden sie getötet." },
+        { "text": "Weil das Tierschutzgesetz jede Tötung verbietet.", "feedback": "Das Gesetz verbietet nur Tötung ohne vernünftigen Grund." }
+      ],
+      "erklaerung": "Das Bundesverwaltungsgericht entschied 2019: Wirtschaftliche Gründe allein rechtfertigen das Töten nicht. Seit 2022 gilt ein Verbot."
+    },
+    {
+      "id": "eth-tsg-05", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Welche Fragen helfen bei der Beurteilung eines Zoobesuchs?",
+      "optionen": [
+        { "text": "Werden die Tiere verhaltensgerecht gehalten?", "richtig": true },
+        { "text": "Trägt der Zoo zum Schutz bedrohter Arten bei?", "richtig": true },
+        { "text": "Welche Farbe hat das Eingangstor?", "feedback": "Das ist für die ethische Frage unerheblich." },
+        { "text": "Gibt es Alternativen, wie man Tiere ohne Gefangenschaft kennenlernen kann?", "richtig": true }
+      ],
+      "erklaerung": "Bei Fällen fragt man nach dem Leid der Tiere, dem Nutzen und möglichen Alternativen."
+    },
+    {
+      "id": "eth-tsg-06", "typ": "zuordnung", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Wie würden die Positionen einen Tierversuch für ein lebensrettendes Medikament wohl beurteilen?",
+      "paare": [
+        { "links": "Utilitarismus", "rechts": "erlaubt, wenn der Nutzen das Leid deutlich überwiegt und es keine Alternative gibt" },
+        { "links": "Tierrechtsposition", "rechts": "abzulehnen, weil das Tier als bloßes Mittel benutzt wird" },
+        { "links": "Kant", "rechts": "erlaubt, solange der Mensch dabei nicht verroht und unnötige Grausamkeit vermieden wird" }
+      ],
+      "erklaerung": "Die Positionen kommen zu verschiedenen Ergebnissen, weil sie verschiedene Gründe für Rücksicht auf Tiere nennen."
+    },
+    {
+      "id": "eth-tsg-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "„Massentierhaltung ist erlaubt, also ist sie moralisch in Ordnung.“ Was ist an diesem Argument problematisch?",
+      "optionen": [
+        { "text": "Was legal ist, ist nicht automatisch moralisch richtig – Gesetze können selbst moralisch geprüft werden.", "richtig": true },
+        { "text": "Massentierhaltung ist in Deutschland verboten.", "feedback": "Sie ist erlaubt, unter bestimmten Auflagen. Das Problem liegt im Schluss." },
+        { "text": "Nichts, Gesetze sind immer moralisch richtig.", "feedback": "Viele Gesetze wurden geändert, weil sie als ungerecht erkannt wurden, z. B. beim Kükentöten." },
+        { "text": "Tiere haben keine Gefühle.", "feedback": "Das stimmt nicht und hat mit dem Fehler im Argument nichts zu tun." }
+      ],
+      "erklaerung": "Recht und Moral sind nicht dasselbe. Die Frage, ob ein Gesetz gerecht ist, ist selbst eine ethische Frage."
+    }
+  ]
+}

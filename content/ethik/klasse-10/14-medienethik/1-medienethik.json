@@ -1,0 +1,114 @@
+{
+  "id": "eth-k10-medienethik",
+  "titel": "Medienethische Normen: liberale und kritische Medienethik",
+  "kurz": "Welche Normen für Journalismus gelten, wie man sie begründet und wie liberale und kritische Medienethik die Verantwortung verteilen.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Medienethische Normen (z. B. aus dem Pressekodex) nennen und begründen" },
+    { "id": "lz2", "niveau": "G", "text": "Liberale und kritische Medienethik unterscheiden" },
+    { "id": "lz3", "niveau": "H", "text": "Den eigenen Mediengebrauch und die Einflüsse von Medien auf Alltag und Persönlichkeit kritisch reflektieren" }
+  ],
+  "verstehen": {
+    "einstieg": "Nach einem Unglück zeigt eine Zeitung groß das Foto eines weinenden Kindes mit vollem Namen. Die Auflage steigt. Durfte sie das?",
+    "abschnitte": [
+      {
+        "titel": "Medienethische Normen",
+        "text": "Medien haben große Macht: Sie entscheiden mit, was Menschen wissen und denken. In Deutschland hat sich die Presse im **Pressekodex** des Deutschen Presserats selbst Regeln gegeben, z. B.:\n\n- **Wahrhaftigkeit und Achtung der Menschenwürde** (Ziffer 1)\n- **Sorgfalt:** Informationen vor der Veröffentlichung prüfen, Gerüchte als solche kennzeichnen (Ziffer 2)\n- **Trennung von Werbung und Redaktion** (Ziffer 7)\n- **Schutz der Persönlichkeit:** Privatleben achten, Opfer besonders schützen (Ziffer 8)\n- **Keine Diskriminierung** (Ziffer 12)\n\n**Begründung:** Die Pressefreiheit (Art. 5 Grundgesetz) ist für die Demokratie unverzichtbar, weil Bürger informiert entscheiden müssen. Diese Freiheit verpflichtet aber auch: Wer Öffentlichkeit herstellt, kann Menschen schaden und Vertrauen verspielen."
+      },
+      {
+        "titel": "Liberale Medienethik",
+        "text": "Die **liberale Medienethik** betont die **Freiheit**:\n\n- Medien sollen möglichst frei von staatlicher Kontrolle sein.\n- Im freien **Wettbewerb** setzen sich gute Angebote durch, Fehler werden durch andere Medien korrigiert.\n- Verantwortung liegt vor allem beim **Einzelnen**: bei Journalisten (Berufsethos, Selbstkontrolle) und beim **mündigen Publikum**, das selbst auswählt.\n\nKritik: Der Markt belohnt oft das, was Aufmerksamkeit bringt, nicht das, was wahr oder wichtig ist."
+      },
+      {
+        "titel": "Kritische Medienethik",
+        "text": "Die **kritische Medienethik** blickt auf **Macht und Strukturen**:\n\n- Medien gehören oft großen Konzernen, die eigene wirtschaftliche Interessen haben (**Medienkonzentration**).\n- Kommerzialisierung führt zu Sensationen, Vereinfachung und Unterhaltung statt Information.\n- Die Philosophen **Theodor W. Adorno** und **Max Horkheimer** kritisierten 1944 die **„Kulturindustrie“**: Massenmedien erzeugen standardisierte Produkte, lenken ab und passen Menschen an, statt sie mündig zu machen.\n- Gefordert werden deshalb **strukturelle** Lösungen: unabhängiger öffentlich-rechtlicher Rundfunk, Regeln gegen Medienmacht, Medienbildung.\n\nKritik: Sie unterschätzt manchmal, dass das Publikum durchaus kritisch auswählen kann."
+      },
+      {
+        "titel": "Der eigene Mediengebrauch",
+        "text": "Heute sind alle auch **Sender**: Wer postet, teilt oder kommentiert, übernimmt Verantwortung wie im Kleinen ein Journalist. Fragen zur Selbstprüfung:\n\n- Wie viel Zeit verbringe ich mit welchen Medien, und wie geht es mir danach?\n- Woher stammen meine Informationen, und prüfe ich sie?\n- Wie beeinflussen Algorithmen, was ich sehe (**Filterblase**)?\n- Welche Vorbilder und Schönheitsideale übernehme ich aus Medien?"
+      }
+    ],
+    "formeln": [],
+    "merksatz": "Medienethische Normen wie **Wahrhaftigkeit, Sorgfalt, Trennung von Werbung und Redaktion** und **Schutz der Persönlichkeit** (Pressekodex) begründen sich aus der öffentlichen Aufgabe der Medien in der Demokratie.\n\n**Liberale Medienethik:** Freiheit, Markt, Verantwortung von Journalisten und mündigem Publikum. **Kritische Medienethik:** Medienmacht und Kommerz als Problem, strukturelle Lösungen (Adorno/Horkheimer: Kulturindustrie).",
+    "alltag": "Wer eine Nachricht teilt, ist selbst Teil der Medienlandschaft. Die Regeln des Pressekodex – erst prüfen, dann veröffentlichen – sind auch für Privatleute sinnvoll."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "eth-mde-01", "typ": "multi", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Welche Normen gehören zum Pressekodex?",
+      "optionen": [
+        { "text": "Sorgfalt bei der Prüfung von Informationen", "richtig": true },
+        { "text": "Trennung von Werbung und Redaktion", "richtig": true },
+        { "text": "Möglichst hohe Auflage um jeden Preis", "feedback": "Wirtschaftlicher Erfolg ist ein Interesse, keine medienethische Norm." },
+        { "text": "Schutz der Persönlichkeit und des Privatlebens", "richtig": true }
+      ],
+      "erklaerung": "Der Pressekodex ist eine freiwillige Selbstverpflichtung der Presse. Der Presserat kann Rügen aussprechen."
+    },
+    {
+      "id": "eth-mde-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Liberale oder kritische Medienethik?",
+      "paare": [
+        { "links": "„Der freie Wettbewerb und mündige Leser sorgen für gute Medien.“", "rechts": "liberale Medienethik" },
+        { "links": "„Große Medienkonzerne verfolgen eigene Interessen; wir brauchen strukturelle Gegengewichte.“", "rechts": "kritische Medienethik" }
+      ],
+      "erklaerung": "Die liberale Sicht betont Freiheit und individuelle Verantwortung, die kritische Sicht Machtstrukturen."
+    },
+    {
+      "id": "eth-mde-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Wie lässt sich begründen, dass Journalisten Informationen sorgfältig prüfen müssen?",
+      "optionen": [
+        { "text": "Bürger brauchen verlässliche Informationen, um in der Demokratie entscheiden zu können; Falschmeldungen können Menschen schaden.", "richtig": true },
+        { "text": "Weil sonst die Zeitung zu dünn wird.", "feedback": "Es geht nicht um den Umfang." },
+        { "text": "Weil Journalisten keine Meinung haben dürfen.", "feedback": "Kommentare mit Meinung sind erlaubt, wenn sie als solche erkennbar sind." },
+        { "text": "Weil es gesetzlich verboten ist, Fehler zu machen.", "feedback": "Fehler sind menschlich. Sorgfalt soll sie möglichst vermeiden und dann korrigieren." }
+      ],
+      "erklaerung": "Medienethische Normen werden mit der öffentlichen Aufgabe der Medien und dem Schutz Betroffener begründet."
+    },
+    {
+      "id": "eth-mde-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Was kritisierten Adorno und Horkheimer mit dem Begriff **„Kulturindustrie“**?",
+      "optionen": [
+        { "text": "Massenmedien erzeugen standardisierte Produkte, die ablenken und anpassen, statt Menschen mündig zu machen.", "richtig": true },
+        { "text": "Dass es zu wenige Fabriken gibt.", "feedback": "Der Begriff bezieht sich auf die Herstellung von Kultur wie Industrieware." },
+        { "text": "Dass Kunst zu teuer ist.", "feedback": "Es geht um Wirkung und Struktur der Massenkultur, nicht um Preise." },
+        { "text": "Dass Medien zu kritisch sind.", "feedback": "Im Gegenteil: Sie hielten Massenmedien für zu wenig kritisch." }
+      ],
+      "erklaerung": "Die Kritik gehört zur kritischen Medienethik: Medien werden als Teil von Machtstrukturen betrachtet."
+    },
+    {
+      "id": "eth-mde-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Das Foto des weinenden Kindes aus dem Einstieg: Gegen welche Norm des Pressekodex verstößt die Zeitung wahrscheinlich?",
+      "optionen": [
+        { "text": "Schutz der Persönlichkeit, besonders von Opfern und Kindern", "richtig": true },
+        { "text": "Trennung von Werbung und Redaktion", "feedback": "Es geht nicht um Werbung." },
+        { "text": "Gegen keine, Fotos sind immer erlaubt.", "feedback": "Opfer, besonders Kinder, sind besonders zu schützen." },
+        { "text": "Gegen das Verbot, über Unglücke zu berichten.", "feedback": "Ein solches Verbot gibt es nicht – berichtet werden darf, aber mit Rücksicht." }
+      ],
+      "erklaerung": "Die Zeitung darf über das Unglück berichten. Die Identität eines Opfers, besonders eines Kindes, zu zeigen, verletzt aber seine Persönlichkeitsrechte."
+    },
+    {
+      "id": "eth-mde-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Was ist eine **Filterblase**, und warum ist sie ein medienethisches Thema?",
+      "optionen": [
+        { "text": "Algorithmen zeigen vor allem, was zu den bisherigen Vorlieben passt – andere Sichtweisen kommen seltener vor, das kann die Meinungsbildung verengen.", "richtig": true },
+        { "text": "Ein Werkzeug, das Spam-Nachrichten filtert.", "feedback": "Das ist ein Spamfilter, keine Filterblase." },
+        { "text": "Ein Fotofilter, der die Haut glättet.", "feedback": "Das ist Bildbearbeitung." },
+        { "text": "Eine Datenschutz-Einstellung", "feedback": "Die Filterblase entsteht durch Auswahl von Inhalten, nicht durch Einstellungen zum Datenschutz." }
+      ],
+      "erklaerung": "Wer nur noch bestätigende Inhalte sieht, kann andere Sichtweisen schlechter verstehen. Das betrifft die Verantwortung von Plattformen und Nutzern."
+    },
+    {
+      "id": "eth-mde-07", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Welche Einwände passen zur jeweiligen Medienethik?",
+      "optionen": [
+        { "text": "Gegen die liberale Sicht: Der Markt belohnt oft Aufmerksamkeit statt Wahrheit.", "richtig": true },
+        { "text": "Gegen die kritische Sicht: Sie unterschätzt, dass das Publikum durchaus kritisch auswählen kann.", "richtig": true },
+        { "text": "Gegen die liberale Sicht: Sie will die Pressefreiheit abschaffen.", "feedback": "Die liberale Medienethik betont gerade die Freiheit." },
+        { "text": "Gegen die kritische Sicht: Sie interessiert sich nicht für Macht.", "feedback": "Macht ist gerade ihr zentrales Thema." }
+      ],
+      "erklaerung": "Beide Ansätze haben Stärken und blinde Flecken. In der Praxis werden sie oft kombiniert."
+    }
+  ]
+}

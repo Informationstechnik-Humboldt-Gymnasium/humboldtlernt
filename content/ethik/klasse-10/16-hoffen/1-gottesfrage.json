@@ -1,0 +1,113 @@
+{
+  "id": "eth-k10-gottesfrage",
+  "titel": "Gott und Religion: Theismus, Atheismus, Agnostizismus",
+  "kurz": "Was „Gott“ und „Religion“ bedeuten, welche Haltungen es zur Gottesfrage gibt und welche Argumente für und gegen die Existenz Gottes vorgebracht werden.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Theismus, Atheismus und Agnostizismus unterscheiden" },
+    { "id": "lz2", "niveau": "G", "text": "Die Begriffe „Gott“ und „Religion“ erklären" },
+    { "id": "lz3", "niveau": "H", "text": "Das kosmologische und das teleologische Argument sowie Flews Gärtner-Parabel wiedergeben und prüfen" }
+  ],
+  "verstehen": {
+    "einstieg": "Etwa die Hälfte der Menschen in Deutschland gehört einer Religionsgemeinschaft an, weltweit glaubt eine große Mehrheit an einen Gott oder eine höhere Macht. Kann man über diese Frage überhaupt mit Argumenten streiten?",
+    "abschnitte": [
+      {
+        "titel": "Drei Haltungen",
+        "text": "- **Theismus:** Es gibt einen Gott (oder Götter). Im **Monotheismus** (Judentum, Christentum, Islam) gibt es einen einzigen Gott, im **Polytheismus** viele.\n- **Atheismus:** Es gibt keinen Gott.\n- **Agnostizismus:** Ob es einen Gott gibt, können wir nicht wissen.\n\nWichtig: Diese Haltungen sagen nichts darüber, ob jemand ein guter Mensch ist. Gläubige und Nichtgläubige können gleichermaßen moralisch handeln."
+      },
+      {
+        "titel": "Gott und Religion",
+        "text": "In den monotheistischen Religionen wird **Gott** meist so beschrieben: Schöpfer der Welt, **allmächtig**, **allwissend** und **allgütig**, ewig und nicht an Raum und Zeit gebunden, ein personales Gegenüber, zu dem man beten kann.\n\n**Religion** (lat. *religio*, vielleicht von *religare* = zurückbinden) ist schwer zu definieren. Typische Merkmale:\n\n- Bezug auf etwas **Heiliges** oder **Transzendentes** (die Erfahrungswelt Übersteigendes)\n- **Glaube** an bestimmte Lehren\n- **Rituale** (Gebet, Feste, Gottesdienst)\n- **Gemeinschaft**\n- **Ethik**: Regeln für das Zusammenleben\n- Antworten auf **Sinnfragen** (Woher komme ich? Was kommt nach dem Tod?)\n\nNicht jede Religion hat alle Merkmale: Der Buddhismus kennt z. B. keinen Schöpfergott."
+      },
+      {
+        "titel": "Argumente für die Existenz Gottes",
+        "text": "- **Kosmologisches Argument** (z. B. Thomas von Aquin, 13. Jh.): Alles, was existiert, hat eine Ursache. Die Kette der Ursachen kann nicht unendlich zurückgehen. Also muss es eine **erste Ursache** geben, die selbst nicht verursacht ist – und das nennen wir Gott.\n- **Teleologisches Argument** (griech. *telos* = Ziel; z. B. William Paley, 1802): Wer im Wald eine Uhr findet, schließt auf einen Uhrmacher, weil die Teile so zweckmäßig zusammenwirken. Auch Lebewesen und das Universum sind zweckmäßig geordnet – also muss es einen intelligenten **Schöpfer** geben."
+      },
+      {
+        "titel": "Einwände",
+        "text": "- **Gegen das kosmologische Argument:** Wenn alles eine Ursache braucht, warum nicht auch Gott? Und warum sollte die erste Ursache der Gott der Religionen sein?\n- **Gegen das teleologische Argument:** Die **Evolutionstheorie** (Charles Darwin, 1859) erklärt die Zweckmäßigkeit der Lebewesen durch natürliche Auslese – ohne Planer. Außerdem gibt es auch Unzweckmäßiges in der Natur.\n- **Flews Gärtner-Parabel** (Antony Flew, 1950): Zwei Forscher finden in einer Lichtung Blumen und Unkraut. Einer meint, ein Gärtner pflege sie. Sie legen sich auf die Lauer, ziehen einen Elektrozaun, halten Spürhunde bereit – nie zeigt sich ein Gärtner. Der Gläubige sagt: „Er ist unsichtbar, unhörbar, unfühlbar.“ Der Skeptiker fragt: „Was unterscheidet einen solchen Gärtner noch von gar keinem Gärtner?“ Flews Punkt: Eine Behauptung, die mit **keiner** Beobachtung widerlegt werden kann, sagt am Ende nichts mehr aus.\n\nGläubige antworten oft: Glaube ist keine wissenschaftliche Hypothese, sondern ein Vertrauen, eine Lebenshaltung. Die Frage nach Gott lässt sich mit Argumenten weder sicher beweisen noch sicher widerlegen."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "**Theismus:** Es gibt einen Gott. **Atheismus:** Es gibt keinen Gott. **Agnostizismus:** Wir können es nicht wissen.\n\n**Kosmologisches Argument:** Es muss eine erste Ursache geben. **Teleologisches Argument:** Zweckmäßige Ordnung verweist auf einen Planer. Einwände: Wer verursachte Gott? Evolution erklärt Zweckmäßigkeit. **Flews Gärtner-Parabel:** Eine unwiderlegbare Behauptung sagt nichts mehr aus.",
+    "alltag": "Ein respektvolles Gespräch über Glauben gelingt, wenn man Argumente prüft, statt Menschen für ihren Glauben oder Unglauben abzuwerten."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "eth-got-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Ordne die Aussagen den Haltungen zu.",
+      "paare": [
+        { "links": "„Ich bin überzeugt, dass es einen Gott gibt.“", "rechts": "Theismus" },
+        { "links": "„Ich bin überzeugt, dass es keinen Gott gibt.“", "rechts": "Atheismus" },
+        { "links": "„Ob es einen Gott gibt, kann man nicht wissen.“", "rechts": "Agnostizismus" }
+      ],
+      "erklaerung": "Die drei Haltungen unterscheiden sich darin, ob man die Existenz Gottes bejaht, verneint oder für unentscheidbar hält."
+    },
+    {
+      "id": "eth-got-02", "typ": "multi", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Welche Merkmale sind typisch für Religionen?",
+      "optionen": [
+        { "text": "Bezug auf etwas Heiliges oder Transzendentes", "richtig": true },
+        { "text": "Rituale wie Gebet oder Feste", "richtig": true },
+        { "text": "eine Gemeinschaft von Gläubigen", "richtig": true },
+        { "text": "ein festes Steuersystem", "feedback": "Das ist kein Merkmal von Religion an sich." }
+      ],
+      "erklaerung": "Religionen verbinden meist Glauben, Rituale, Gemeinschaft, Ethik und Antworten auf Sinnfragen."
+    },
+    {
+      "id": "eth-got-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Welche Eigenschaften werden Gott in den monotheistischen Religionen meist zugeschrieben?",
+      "optionen": [
+        { "text": "allmächtig, allwissend und allgütig", "richtig": true },
+        { "text": "sterblich und an einen Ort gebunden", "feedback": "Gott wird gerade als ewig und unbegrenzt gedacht." },
+        { "text": "nur eines von vielen gleichrangigen Wesen", "feedback": "Das wäre eher ein polytheistisches Gottesbild." },
+        { "text": "gleichgültig gegenüber den Menschen", "feedback": "Im Gegenteil: Gott wird als personales Gegenüber gedacht." }
+      ],
+      "erklaerung": "Diese drei Eigenschaften werden bei der Theodizee-Frage wichtig."
+    },
+    {
+      "id": "eth-got-04", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Ordne die Argumente zu.",
+      "paare": [
+        { "links": "Die Kette der Ursachen braucht einen Anfang, der selbst nicht verursacht ist.", "rechts": "kosmologisches Argument" },
+        { "links": "Wie eine Uhr auf einen Uhrmacher verweist, verweist die Ordnung der Natur auf einen Schöpfer.", "rechts": "teleologisches Argument" }
+      ],
+      "erklaerung": "Das kosmologische Argument geht von der Existenz der Welt aus, das teleologische von ihrer zweckmäßigen Ordnung."
+    },
+    {
+      "id": "eth-got-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Welcher Einwand richtet sich vor allem gegen das **teleologische** Argument?",
+      "optionen": [
+        { "text": "Die Evolutionstheorie erklärt die Zweckmäßigkeit der Lebewesen durch natürliche Auslese ohne Planer.", "richtig": true },
+        { "text": "Wer hat Gott verursacht?", "feedback": "Das richtet sich vor allem gegen das kosmologische Argument." },
+        { "text": "Uhren gibt es nicht.", "feedback": "Uhren gibt es natürlich. Die Frage ist, ob der Vergleich mit Lebewesen trägt." },
+        { "text": "Thomas von Aquin lebte im Mittelalter.", "feedback": "Wann jemand gelebt hat, sagt nichts über die Stärke eines Arguments." }
+      ],
+      "erklaerung": "Darwin zeigte, wie zweckmäßige Merkmale ohne Absicht entstehen können. Gläubige antworten teils, Gott könne durch die Evolution wirken."
+    },
+    {
+      "id": "eth-got-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Was will Antony Flew mit der **Gärtner-Parabel** zeigen?",
+      "optionen": [
+        { "text": "Eine Behauptung, die mit keiner möglichen Beobachtung widerlegt werden kann, sagt am Ende nichts mehr über die Welt aus.", "richtig": true },
+        { "text": "Gärtner sind unsichtbar.", "feedback": "Der Gärtner ist ein Bild für Gott, keine Aussage über Gärtner." },
+        { "text": "Gott existiert sicher.", "feedback": "Flew will gerade zeigen, dass eine immer weiter abgeschwächte Behauptung leer wird." },
+        { "text": "Man sollte keine Gärten anlegen.", "feedback": "Die Parabel ist ein Gleichnis, kein Gartentipp." }
+      ],
+      "erklaerung": "Der Gläubige passt seine Behauptung so lange an, bis kein Unterschied mehr zu „kein Gärtner“ bleibt. Flew nennt das „Tod durch tausend Einschränkungen“."
+    },
+    {
+      "id": "eth-got-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Wie können Gläubige auf Flews Gärtner-Parabel antworten?",
+      "optionen": [
+        { "text": "Glaube ist keine wissenschaftliche Hypothese, sondern ein Vertrauen und eine Lebenshaltung, die sich nicht wie eine Messung prüfen lässt.", "richtig": true },
+        { "text": "Sie müssen zugeben, dass Gott nicht existiert.", "feedback": "Die Parabel beweist nicht, dass Gott nicht existiert. Sie stellt eine bestimmte Art von Behauptung in Frage." },
+        { "text": "Der Gärtner hätte sich mit dem Elektrozaun zeigen müssen.", "feedback": "Das wäre keine Antwort, sondern eine Wiederholung des Einwands." },
+        { "text": "Parabeln sind keine Argumente.", "feedback": "Gleichnisse können durchaus Argumente veranschaulichen." }
+      ],
+      "erklaerung": "Die Debatte zeigt: Ob man den Glauben als Tatsachenbehauptung oder als Haltung versteht, verändert die Frage nach seiner Begründung."
+    }
+  ]
+}

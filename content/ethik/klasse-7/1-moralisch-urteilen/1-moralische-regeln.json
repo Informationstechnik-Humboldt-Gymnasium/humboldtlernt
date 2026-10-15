@@ -1,0 +1,116 @@
+{
+  "id": "eth-k7-moralische-regeln",
+  "titel": "Moralische Regeln und andere Regeln",
+  "kurz": "Was eine moralische Regel von Spielregeln, Konventionen und Gesetzen unterscheidet und was „moralisch“ und „gut“ bedeuten.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Moralische Regeln von Spielregeln, Konventionen und Gesetzen unterscheiden" },
+    { "id": "lz2", "niveau": "G", "text": "Die Begriffe „Moral“, „moralisch“ und „gut“ erklären" },
+    { "id": "lz3", "niveau": "G", "text": "Gebotene, verbotene und freigestellte Handlungen sowie Gebots- und Verbotsregeln unterscheiden" },
+    { "id": "lz4", "niveau": "H", "text": "Regeln in einem Konflikt heranziehen und ihre Folgen prüfen" }
+  ],
+  "verstehen": {
+    "einstieg": "Beim Fußball darf nur der Torwart den Ball mit der Hand spielen. Im Bus bietet man älteren Menschen seinen Platz an. Man darf nicht bei Rot über die Ampel gehen. Und man soll niemanden auslachen, der gerade traurig ist. Sind das alles dieselbe Art von Regeln?",
+    "abschnitte": [
+      {
+        "titel": "Vier Arten von Regeln",
+        "text": "Regeln sagen uns, was wir tun sollen oder nicht tun dürfen. Sie unterscheiden sich aber darin, **wofür** sie gelten und **was passiert**, wenn man sie bricht.\n\n- **Spielregeln** gelten nur innerhalb eines Spiels. Wer nicht mitspielt, für den gelten sie nicht. Wer sie bricht, verstößt gegen das Spiel, aber nicht gegen die Moral.\n- **Konventionen** sind Gewohnheiten einer Gruppe, z. B. Begrüßungsformen oder Tischmanieren. Sie sind von Ort zu Ort verschieden. Wer sie bricht, wirkt unhöflich oder seltsam.\n- **Gesetze** werden vom Staat beschlossen und mit Strafen durchgesetzt. Sie gelten für alle Menschen in einem Land.\n- **Moralische Regeln (Normen)** betreffen, wie wir mit anderen umgehen, besonders wenn es um ihr Wohl, ihre Rechte und ihre Würde geht. Sie beanspruchen, für **alle** Menschen zu gelten. Wer sie bricht, handelt **falsch**, auch wenn ihn niemand bestraft."
+      },
+      {
+        "titel": "Überschneidungen",
+        "text": "Viele Regeln gehören zu mehreren Arten. „Du sollst nicht stehlen“ ist eine moralische Regel und zugleich ein Gesetz. Es gibt aber auch Gesetze ohne moralisches Gewicht (z. B. die Rechtsfahrordnung, man könnte genauso links fahren) und moralische Regeln, die kein Gesetz sind (z. B. „Lüge deine Freunde nicht an“).\n\nEin guter Test: Wäre die Handlung auch dann falsch, wenn es **kein Gesetz** dagegen gäbe und **niemand es merkt**? Dann geht es um Moral."
+      },
+      {
+        "titel": "Moral, moralisch, gut",
+        "text": "- **Moral** ist die Gesamtheit der Regeln und Werte, nach denen Menschen in einer Gemeinschaft das Handeln als richtig oder falsch beurteilen.\n- **Moralisch** kann zweierlei heißen: (1) „zur Moral gehörend“ – eine moralische Frage ist eine Frage nach richtig und falsch. Das Gegenteil ist **außermoralisch** (z. B. „Welche Farbe hat das Auto?“). (2) „moralisch gut“ – dann ist das Gegenteil **unmoralisch**.\n- **Gut** hat viele Bedeutungen: Ein gutes Messer schneidet gut (gut für einen Zweck). Ein guter Mensch handelt moralisch richtig (moralisch gut).\n- **Ethik** ist das Nachdenken über Moral: Sie fragt, welche Regeln gut begründet sind."
+      },
+      {
+        "titel": "Geboten, verboten, freigestellt",
+        "text": "Jede Handlung lässt sich moralisch einordnen:\n\n- **geboten:** Man soll sie tun (z. B. einem Verletzten helfen).\n- **verboten:** Man darf sie nicht tun (z. B. jemanden schlagen).\n- **freigestellt (erlaubt):** Man darf sie tun oder lassen (z. B. ein Eis essen).\n\nEine **Gebotsregel** sagt, was man tun soll („Hilf Menschen in Not!“). Eine **Verbotsregel** sagt, was man unterlassen soll („Du sollst nicht lügen!“)."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "**Moralische Regeln** betreffen das Wohl, die Rechte und die Würde anderer und beanspruchen, für alle zu gelten. Davon unterscheiden sich **Spielregeln** (nur im Spiel), **Konventionen** (Gewohnheiten einer Gruppe) und **Gesetze** (vom Staat erlassen und mit Strafe durchgesetzt).\n\nHandlungen sind **geboten**, **verboten** oder **freigestellt**.",
+    "alltag": "Wenn jemand sagt „Ist doch nicht verboten!“, lohnt die Nachfrage: Nicht verboten nach welcher Regel? Etwas kann erlaubt sein und trotzdem gemein."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "eth-mrg-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Ordne jede Regel ihrer Art zu.",
+      "paare": [
+        { "links": "Beim Schach zieht der Läufer nur diagonal.", "rechts": "Spielregel" },
+        { "links": "Zur Begrüßung gibt man sich die Hand.", "rechts": "Konvention" },
+        { "links": "Wer mit dem Auto bei Rot über die Ampel fährt, zahlt ein Bußgeld.", "rechts": "Gesetz" },
+        { "links": "Man soll niemanden bloßstellen.", "rechts": "moralische Regel" }
+      ],
+      "erklaerung": "Spielregeln gelten nur im Spiel, Konventionen sind Gewohnheiten einer Gruppe, Gesetze setzt der Staat mit Strafen durch. Moralische Regeln betreffen, wie wir andere behandeln."
+    },
+    {
+      "id": "eth-mrg-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Woran erkennst du am ehesten, dass eine Regel eine **moralische** Regel ist?",
+      "optionen": [
+        { "text": "Sie betrifft das Wohl oder die Rechte anderer und wäre auch ohne Strafe und Gesetz verbindlich.", "richtig": true },
+        { "text": "Wer sie bricht, muss Strafe zahlen.", "feedback": "Strafen gehören zu Gesetzen. Viele moralische Regeln werden gar nicht bestraft." },
+        { "text": "Sie gilt nur in einer bestimmten Gruppe.", "feedback": "Das ist typisch für Konventionen. Moralische Regeln beanspruchen, für alle zu gelten." },
+        { "text": "Sie wurde von einer Mehrheit beschlossen.", "feedback": "Auch Spielregeln oder Gesetze werden so beschlossen. Das macht eine Regel noch nicht moralisch." }
+      ],
+      "erklaerung": "Der Test lautet: Wäre die Handlung auch dann falsch, wenn es kein Gesetz gäbe und niemand es bemerkte?"
+    },
+    {
+      "id": "eth-mrg-03", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz3",
+      "frage": "Ordne die Handlungen moralisch ein.",
+      "paare": [
+        { "links": "Einem Kind, das ins Wasser gefallen ist, Hilfe holen", "rechts": "geboten" },
+        { "links": "Das Fahrrad eines Mitschülers absichtlich beschädigen", "rechts": "verboten" },
+        { "links": "Am Wochenende lieber Basketball als Fußball spielen", "rechts": "freigestellt" }
+      ],
+      "erklaerung": "Gebotene Handlungen soll man tun, verbotene darf man nicht tun, freigestellte darf man tun oder lassen."
+    },
+    {
+      "id": "eth-mrg-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "In welchem Satz bedeutet „gut“ **moralisch gut**?",
+      "optionen": [
+        { "text": "„Es war gut von dir, dass du deiner Nachbarin die Einkäufe getragen hast.“", "richtig": true },
+        { "text": "„Das ist ein gutes Fahrrad, es fährt sehr schnell.“", "feedback": "Hier ist „gut“ im Sinn von „gut für einen Zweck“ gemeint." },
+        { "text": "„Mia ist gut in Mathe.“", "feedback": "Hier geht es um Können, nicht um Moral." },
+        { "text": "„Die Pizza schmeckt gut.“", "feedback": "Das ist ein Geschmacksurteil, kein moralisches Urteil." }
+      ],
+      "erklaerung": "Moralisch gut ist eine Handlung, die anderen gegenüber richtig ist. „Gut“ kann aber auch nützlich, geschickt oder angenehm bedeuten."
+    },
+    {
+      "id": "eth-mrg-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Was ist das Gegenteil von „moralisch“ in der Frage „Ist die Farbe deines Rucksacks eine moralische Frage?“",
+      "optionen": [
+        { "text": "außermoralisch – die Frage hat nichts mit richtig oder falsch im moralischen Sinn zu tun", "richtig": true },
+        { "text": "unmoralisch – die Farbe ist schlecht", "feedback": "„Unmoralisch“ ist das Gegenteil von „moralisch gut“. Hier geht es aber darum, ob die Frage überhaupt zur Moral gehört." },
+        { "text": "illegal", "feedback": "Illegal heißt „gegen das Gesetz“. Das passt hier nicht." },
+        { "text": "unhöflich", "feedback": "Unhöflich bezieht sich auf Konventionen." }
+      ],
+      "erklaerung": "„Moralisch“ hat zwei Bedeutungen: „zur Moral gehörend“ (Gegenteil: außermoralisch) und „moralisch gut“ (Gegenteil: unmoralisch)."
+    },
+    {
+      "id": "eth-mrg-06", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz1",
+      "frage": "Welche Aussagen über das Verhältnis von Gesetz und Moral sind richtig?",
+      "optionen": [
+        { "text": "Manche Gesetze haben kaum moralisches Gewicht, z. B. dass man rechts fährt.", "richtig": true },
+        { "text": "Manche moralischen Regeln sind kein Gesetz, z. B. dass man Freunde nicht anlügen soll.", "richtig": true },
+        { "text": "Was erlaubt ist, ist automatisch auch moralisch gut.", "feedback": "Auch erlaubte Handlungen können gemein sein, z. B. jemanden auszulachen." },
+        { "text": "Es kann vorkommen, dass ein Gesetz selbst moralisch falsch ist.", "richtig": true }
+      ],
+      "erklaerung": "Gesetz und Moral überschneiden sich, sind aber nicht dasselbe. Deshalb kann man Gesetze auch moralisch prüfen."
+    },
+    {
+      "id": "eth-mrg-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Ben hat gesehen, wie sein bester Freund im Laden einen Schokoriegel eingesteckt hat. Der Ladenbesitzer fragt Ben, ob er etwas gesehen hat. Welche **zwei Regeln** stehen hier im Konflikt?",
+      "optionen": [
+        { "text": "„Man soll nicht lügen“ und „Man soll Freunden gegenüber loyal sein“", "richtig": true },
+        { "text": "„Man soll leise sein“ und „Man soll höflich grüßen“", "feedback": "Das sind Konventionen, die hier keine Rolle spielen." },
+        { "text": "„Kein Schokoriegel vor dem Abendessen“ und „Man soll pünktlich sein“", "feedback": "Diese Regeln haben mit dem Konflikt nichts zu tun." },
+        { "text": "Es gibt keinen Konflikt, Ben muss einfach schweigen.", "feedback": "Schweigen ist auch eine Entscheidung. Ben muss zwischen Ehrlichkeit und Loyalität abwägen." }
+      ],
+      "erklaerung": "In moralischen Konflikten widersprechen sich zwei Regeln, die beide gut begründet sind. Man muss abwägen, welche hier schwerer wiegt, und die Folgen bedenken."
+    }
+  ]
+}

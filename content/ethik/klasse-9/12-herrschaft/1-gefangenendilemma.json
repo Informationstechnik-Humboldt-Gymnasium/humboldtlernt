@@ -1,0 +1,110 @@
+{
+  "id": "eth-k9-gefangenendilemma",
+  "titel": "Kooperation und Eigeninteresse: das Gefangenendilemma",
+  "kurz": "Warum vernünftiges Eigeninteresse zu einem schlechten Ergebnis für alle führen kann und was das für das Zusammenleben bedeutet.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Das Gefangenendilemma beschreiben und die Auszahlungsmatrix lesen" },
+    { "id": "lz2", "niveau": "G", "text": "Erklären, warum individuell rationales Handeln zu einem kollektiv schlechten Ergebnis führen kann" },
+    { "id": "lz3", "niveau": "H", "text": "Wege zur Kooperation (Wiederholung, Vertrauen, Regeln mit Sanktionen) erläutern" },
+    { "id": "lz4", "niveau": "H", "text": "Das Gefangenendilemma auf Probleme des Zusammenlebens übertragen" }
+  ],
+  "verstehen": {
+    "einstieg": "Ihr sollt als Gruppe ein Referat halten. Wenn alle mitarbeiten, wird es gut. Wenn du dich drückst und die anderen arbeiten, bekommst du die gute Note ohne Arbeit. Wenn sich alle drücken, wird es eine Katastrophe. Was ist für dich am klügsten?",
+    "abschnitte": [
+      {
+        "titel": "Das Gefangenendilemma",
+        "text": "Zwei Verdächtige werden getrennt verhört. Jeder kann **schweigen** (kooperieren) oder den anderen **verraten**:\n\n- Schweigen beide: je **1 Jahr** Haft (nur für ein kleines Vergehen beweisbar).\n- Verraten beide: je **3 Jahre**.\n- Verrät nur einer: Der Verräter kommt **frei**, der Schweigende bekommt **5 Jahre**.\n\nFür jeden Einzelnen gilt: Egal was der andere tut, **Verraten ist besser** für mich (frei statt 1 Jahr, oder 3 statt 5 Jahre). Wenn aber beide so überlegen, bekommen beide 3 Jahre – obwohl sie mit Schweigen nur 1 Jahr bekommen hätten.\n\n**Kern:** Jeder handelt vernünftig im eigenen Interesse, und trotzdem ist das Ergebnis für **beide** schlechter als bei Kooperation."
+      },
+      {
+        "titel": "Wie kann Kooperation entstehen?",
+        "text": "- **Wiederholung:** Wenn man sich immer wieder begegnet, lohnt sich Vertrauen. Bei Computerturnieren (Robert Axelrod, 1980er) war die einfache Strategie **„Wie du mir, so ich dir“** (Tit for Tat) sehr erfolgreich: Beginne freundlich, dann mache, was der andere zuletzt getan hat.\n- **Vertrauen und Moral:** Wer Versprechen hält, weil er es für richtig hält, verlässt das Dilemma.\n- **Regeln mit Sanktionen:** Eine Instanz, die Verrat bestraft, verändert die Auszahlungen, sodass Kooperation sich lohnt. Genau hier setzen die **Vertragstheorien** an: Ein Staat kann Kooperation sichern."
+      },
+      {
+        "titel": "Gefangenendilemmata im Alltag",
+        "text": "Viele Probleme haben diese Struktur: Klimaschutz (jedes Land profitiert, wenn die anderen sparen), Überfischung, Doping, Gruppenarbeiten, Wettrüsten. Das Gefangenendilemma zeigt: Eigeninteresse allein reicht nicht für ein gutes Zusammenleben. Man braucht Vertrauen, Moral oder verbindliche Regeln."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "Im **Gefangenendilemma** ist Verraten für jeden Einzelnen die beste Wahl – wenn aber beide verraten, stehen beide schlechter da als bei Kooperation.\n\nKooperation entsteht durch **Wiederholung** (z. B. „Wie du mir, so ich dir“), **Vertrauen** und **Regeln mit Sanktionen**. Das ist ein Grundgedanke der Vertragstheorien.",
+    "alltag": "Beim Gruppenreferat könnt ihr das Dilemma auflösen: Aufgaben verteilen, Zwischenstände vereinbaren und festlegen, was passiert, wenn jemand nicht liefert."
+  },
+  "interaktiv": ["eth-gefangenendilemma"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "eth-gfd-01", "typ": "zahl", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Im Gefangenendilemma aus dem Text: Wie viele Jahre Haft bekommen **beide zusammen**, wenn beide verraten?",
+      "gegeben": "beide verraten: je 3 Jahre", "gesucht": "Summe der Haftjahre",
+      "loesung": 6, "toleranz": 0, "einheit": "",
+      "rechenweg": ["Jeder bekommt 3 Jahre.", "3 + 3 = 6 Jahre"],
+      "erklaerung": "Zum Vergleich: Schweigen beide, sind es nur 1 + 1 = 2 Jahre. Gemeinsam wäre Kooperation also viel besser."
+    },
+    {
+      "id": "eth-gfd-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Was bekommt der Gefangene A, wenn er **schweigt** und B ihn **verrät**?",
+      "optionen": [
+        { "text": "5 Jahre", "richtig": true },
+        { "text": "1 Jahr", "feedback": "1 Jahr bekommt man, wenn beide schweigen." },
+        { "text": "3 Jahre", "feedback": "3 Jahre bekommt man, wenn beide verraten." },
+        { "text": "frei", "feedback": "Frei kommt nur, wer verrät, während der andere schweigt." }
+      ],
+      "erklaerung": "Der Schweigende, der verraten wird, ist der große Verlierer. Diese Angst treibt beide zum Verrat."
+    },
+    {
+      "id": "eth-gfd-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Warum ist Verraten für jeden Einzelnen „vernünftig“?",
+      "optionen": [
+        { "text": "Egal was der andere tut, mit Verraten steht man selbst besser da: frei statt 1 Jahr oder 3 statt 5 Jahre.", "richtig": true },
+        { "text": "Weil Verraten moralisch richtig ist.", "feedback": "Es geht um das Eigeninteresse, nicht um Moral." },
+        { "text": "Weil man dann immer frei kommt.", "feedback": "Frei kommt man nur, wenn der andere schweigt." },
+        { "text": "Weil beide dann nur 1 Jahr bekommen.", "feedback": "1 Jahr gibt es nur bei gegenseitigem Schweigen." }
+      ],
+      "erklaerung": "Verraten ist für jeden die beste Antwort auf beide Möglichkeiten des anderen. Genau deshalb ist das Dilemma so hartnäckig."
+    },
+    {
+      "id": "eth-gfd-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Wie funktioniert die Strategie **„Wie du mir, so ich dir“** in einem wiederholten Spiel?",
+      "optionen": [
+        { "text": "Man kooperiert in der ersten Runde und macht danach immer, was der andere in der Runde zuvor getan hat.", "richtig": true },
+        { "text": "Man verrät immer.", "feedback": "Das ist „Immer verraten“. Tit for Tat beginnt freundlich." },
+        { "text": "Man kooperiert immer, egal was der andere tut.", "feedback": "Das wäre leicht auszunutzen. Tit for Tat reagiert auf Verrat." },
+        { "text": "Man entscheidet zufällig.", "feedback": "Tit for Tat ist gerade berechenbar und dadurch vertrauensbildend." }
+      ],
+      "erklaerung": "Die Strategie ist freundlich, wehrt sich gegen Ausnutzung und verzeiht schnell. In Axelrods Turnieren war sie sehr erfolgreich."
+    },
+    {
+      "id": "eth-gfd-05", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Welche Situationen haben die Struktur eines Gefangenendilemmas?",
+      "optionen": [
+        { "text": "Jedes Land profitiert, wenn die anderen CO₂ einsparen, während es selbst weiter viel ausstößt.", "richtig": true },
+        { "text": "Jeder Fischer fängt so viel wie möglich, obwohl dann der Fischbestand zusammenbricht.", "richtig": true },
+        { "text": "Zwei Freunde entscheiden, welchen Film sie zusammen sehen.", "feedback": "Hier gibt es keinen Anreiz, den anderen auszunutzen – es ist eine Abstimmungsfrage." },
+        { "text": "Jeder Sportler ist versucht zu dopen, obwohl ein sauberer Wettkampf für alle besser wäre.", "richtig": true }
+      ],
+      "erklaerung": "Typisch ist: Für jeden lohnt sich Nicht-Kooperation, aber wenn alle so handeln, verlieren alle."
+    },
+    {
+      "id": "eth-gfd-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Wie kann ein **Staat** helfen, ein Gefangenendilemma zu lösen?",
+      "optionen": [
+        { "text": "Er setzt verbindliche Regeln mit Sanktionen, sodass Nicht-Kooperation sich nicht mehr lohnt.", "richtig": true },
+        { "text": "Er verbietet allen, miteinander zu sprechen.", "feedback": "Fehlende Kommunikation verschärft das Dilemma eher." },
+        { "text": "Er belohnt den, der den anderen verrät.", "feedback": "Das wäre genau die Struktur des Dilemmas." },
+        { "text": "Gar nicht, Staaten haben damit nichts zu tun.", "feedback": "Viele Vertragstheorien begründen den Staat gerade so." }
+      ],
+      "erklaerung": "Wenn Betrug bestraft wird, ändern sich die Auszahlungen. Dann ist Kooperation auch im Eigeninteresse."
+    },
+    {
+      "id": "eth-gfd-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Was zeigt das Gefangenendilemma über das Verhältnis von Eigeninteresse und Gemeinwohl?",
+      "optionen": [
+        { "text": "Wenn jeder nur sein Eigeninteresse verfolgt, entsteht nicht automatisch das Beste für alle.", "richtig": true },
+        { "text": "Eigeninteresse führt immer zum Besten für alle.", "feedback": "Genau das widerlegt das Dilemma." },
+        { "text": "Menschen sind immer böse.", "feedback": "Das Dilemma braucht keine bösen Menschen, nur vernünftiges Eigeninteresse." },
+        { "text": "Kooperation ist unmöglich.", "feedback": "Kooperation ist möglich – durch Wiederholung, Vertrauen oder Regeln." }
+      ],
+      "erklaerung": "Das Dilemma ist ein Gegenbeispiel zur Annahme, dass Eigeninteresse von selbst zum Gemeinwohl führt."
+    }
+  ]
+}

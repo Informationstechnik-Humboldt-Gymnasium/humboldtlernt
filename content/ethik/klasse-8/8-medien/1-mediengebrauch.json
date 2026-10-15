@@ -1,0 +1,116 @@
+{
+  "id": "eth-k8-mediengebrauch",
+  "titel": "Mediengebrauch: Kriterien, Chancen, Risiken, Privatheit",
+  "kurz": "Nach welchen Kriterien man Mediengebrauch beurteilt, welche Chancen und Risiken es gibt und was privat bleiben sollte.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Ethische, pragmatische und ökonomische Kriterien für Mediengebrauch unterscheiden" },
+    { "id": "lz2", "niveau": "G", "text": "Chancen und Risiken des eigenen und fremden Mediengebrauchs diskutieren" },
+    { "id": "lz3", "niveau": "G", "text": "Privatheit und Öffentlichkeit im eigenen Mediengebrauch unterscheiden" },
+    { "id": "lz4", "niveau": "H", "text": "Handlungsmöglichkeiten bei Cybermobbing entwickeln und begründen" }
+  ],
+  "verstehen": {
+    "einstieg": "Du postest ein lustiges Foto von deiner Freundin in der Klassengruppe. Alle lachen – nur sie nicht. Was ist schiefgelaufen?",
+    "abschnitte": [
+      {
+        "titel": "Drei Arten von Kriterien",
+        "text": "Wenn man fragt, ob ein bestimmter Mediengebrauch gut ist, kann man ganz verschiedene Kriterien anlegen:\n\n- **ethische Kriterien:** Werden die Rechte und die Würde anderer geachtet? Schadet es jemandem? („Darf ich dieses Foto posten?“)\n- **pragmatische Kriterien:** Ist es praktisch, nützlich, zweckmäßig? („Komme ich so schneller an die Hausaufgaben?“)\n- **ökonomische Kriterien:** Was kostet es, wer verdient daran? („Ist das Abo zu teuer? Bezahle ich mit meinen Daten?“)\n\nEine Entscheidung kann pragmatisch und ökonomisch sinnvoll, aber ethisch falsch sein – oder umgekehrt. Ethische Kriterien haben dabei besonderes Gewicht, wenn andere betroffen sind."
+      },
+      {
+        "titel": "Chancen und Risiken",
+        "text": "**Chancen:** Kommunikation unabhängig von Zeit und Ort, Kontakt zu Familie und Freunden weltweit, Zugang zu Wissen, kreatives Gestalten, sich für etwas engagieren.\n\n**Risiken:**\n\n- **Cybermobbing:** wiederholtes absichtliches Beleidigen, Bloßstellen oder Ausgrenzen über digitale Medien. Es hört nach der Schule nicht auf, erreicht schnell viele und ist schwer zu löschen.\n- Weitergabe persönlicher Daten, Abzocke, übermäßige Nutzung bis zur Sucht, Kontakt mit Fremden, die sich verstellen."
+      },
+      {
+        "titel": "Privat und öffentlich",
+        "text": "**Privat** ist, was nur einen selbst oder einen kleinen, selbst gewählten Kreis betrifft. **Öffentlich** ist, was für viele Menschen zugänglich ist.\n\nIm Netz verschwimmt die Grenze: Eine Nachricht in einer Gruppe mit 30 Personen ist schon halb öffentlich. Ein Screenshot macht Privates in Sekunden öffentlich. Und was einmal im Netz ist, lässt sich kaum zurückholen.\n\nDeshalb gilt: Fotos und Informationen über **andere** nur mit ihrer **Erlaubnis** teilen. Das ist auch rechtlich so: Jeder Mensch hat ein **Recht am eigenen Bild**."
+      },
+      {
+        "titel": "Was tun bei Cybermobbing?",
+        "text": "- **Nicht mitmachen:** nicht liken, nicht weiterleiten, nicht mitlachen.\n- **Betroffene unterstützen:** Nachricht schreiben, zeigen, dass sie nicht allein sind.\n- **Beweise sichern:** Screenshots machen.\n- **Melden und blockieren:** auf der Plattform melden.\n- **Hilfe holen:** Eltern, Vertrauenslehrkraft, Schulsozialarbeit, oder anonym bei Beratungsstellen wie der „Nummer gegen Kummer“ (116 111).\n\nWer nur zuschaut, trägt auch Verantwortung: Mobbing lebt vom Publikum."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "Mediengebrauch kann man nach **ethischen** (Rechte und Würde anderer), **pragmatischen** (Nutzen) und **ökonomischen** (Kosten, Daten) Kriterien beurteilen.\n\nIm Netz wird Privates schnell **öffentlich**. Fotos anderer nur mit Erlaubnis teilen. Bei **Cybermobbing**: nicht mitmachen, Betroffene unterstützen, Beweise sichern, melden und Hilfe holen.",
+    "alltag": "Bevor du etwas über jemanden postest, frag: Würde ich das auch tun, wenn die Person neben mir stünde und mitliest?"
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "eth-mgb-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Ordne jeder Überlegung die Art des Kriteriums zu.",
+      "paare": [
+        { "links": "„Verletze ich jemanden, wenn ich das Video teile?“", "rechts": "ethisch" },
+        { "links": "„Mit der App kann ich Vokabeln schneller lernen.“", "rechts": "pragmatisch" },
+        { "links": "„Das Spiel ist kostenlos, aber verkauft meine Daten.“", "rechts": "ökonomisch" }
+      ],
+      "erklaerung": "Ethische Kriterien fragen nach Rechten und Würde anderer, pragmatische nach dem Nutzen, ökonomische nach Kosten und Geld."
+    },
+    {
+      "id": "eth-mgb-02", "typ": "multi", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Welche Merkmale machen Cybermobbing besonders belastend?",
+      "optionen": [
+        { "text": "Es hört nach der Schule nicht auf.", "richtig": true },
+        { "text": "Es erreicht schnell sehr viele Menschen.", "richtig": true },
+        { "text": "Einmal Gepostetes ist schwer zu löschen.", "richtig": true },
+        { "text": "Es betrifft nur Erwachsene.", "feedback": "Cybermobbing betrifft besonders häufig Kinder und Jugendliche." }
+      ],
+      "erklaerung": "Anders als Mobbing auf dem Schulhof verfolgt Cybermobbing die Betroffenen bis nach Hause und erreicht ein großes Publikum."
+    },
+    {
+      "id": "eth-mgb-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Ist eine Nachricht in einer Klassengruppe mit 28 Mitgliedern privat?",
+      "optionen": [
+        { "text": "Nur eingeschränkt: Viele Personen können sie lesen und weiterleiten – sie ist halb öffentlich.", "richtig": true },
+        { "text": "Ja, alles in Messengern ist privat.", "feedback": "Ein Screenshot reicht, um die Nachricht für alle sichtbar zu machen." },
+        { "text": "Nein, sie ist genauso öffentlich wie ein Zeitungsartikel.", "feedback": "Sie ist nicht für alle zugänglich, aber auch nicht privat." },
+        { "text": "Das hängt nur davon ab, wie lang die Nachricht ist.", "feedback": "Die Länge spielt keine Rolle, entscheidend ist der Empfängerkreis." }
+      ],
+      "erklaerung": "Je größer der Kreis, desto weniger privat. Und jedes Gruppenmitglied kann die Nachricht weitergeben."
+    },
+    {
+      "id": "eth-mgb-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Was ist beim Posten eines Fotos von einer Freundin zu beachten?",
+      "optionen": [
+        { "text": "Man sollte vorher fragen, denn jeder hat ein Recht am eigenen Bild.", "richtig": true },
+        { "text": "Wenn das Foto lustig ist, darf man es immer posten.", "feedback": "Was der eine lustig findet, ist für die andere vielleicht peinlich. Und sie hat ein Recht am eigenen Bild." },
+        { "text": "Man darf es posten, wenn man es selbst aufgenommen hat.", "feedback": "Wer das Foto macht, entscheidet nicht allein darüber, ob es veröffentlicht wird." },
+        { "text": "Fotos darf man nur in Gruppen, nicht öffentlich posten.", "feedback": "Auch in Gruppen sollte man fragen. Gruppen sind oft halb öffentlich." }
+      ],
+      "erklaerung": "Das Recht am eigenen Bild schützt die Entscheidung jedes Menschen, ob Bilder von ihm veröffentlicht werden."
+    },
+    {
+      "id": "eth-mgb-05", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "In deiner Klassengruppe wird ein peinliches Bild eines Mitschülers herumgeschickt. Bringe die Schritte in eine sinnvolle Reihenfolge.",
+      "elemente": [
+        "Nicht liken und nicht weiterleiten",
+        "Dem Betroffenen zeigen, dass man auf seiner Seite ist",
+        "Screenshots als Beweise sichern",
+        "Den Beitrag melden und eine Vertrauensperson informieren"
+      ],
+      "erklaerung": "Zuerst nicht mitmachen, dann unterstützen, Beweise sichern und Hilfe holen. Je schneller Erwachsene Bescheid wissen, desto eher lässt sich etwas tun."
+    },
+    {
+      "id": "eth-mgb-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "„Ich habe nur zugeschaut, also habe ich nichts mit dem Mobbing zu tun.“ Was spricht dagegen?",
+      "optionen": [
+        { "text": "Mobbing lebt vom Publikum. Wer schweigt, lässt die Täter gewähren und trägt so Mitverantwortung.", "richtig": true },
+        { "text": "Zuschauen ist gesetzlich verboten.", "feedback": "Es geht hier um moralische Verantwortung, nicht um ein Gesetz." },
+        { "text": "Nichts, Zuschauer haben keine Verantwortung.", "feedback": "Zuschauer können viel bewirken, indem sie nicht mitlachen und Hilfe holen." },
+        { "text": "Zuschauer sind immer die eigentlichen Täter.", "feedback": "Die Hauptverantwortung tragen die Täter. Zuschauer tragen aber Mitverantwortung." }
+      ],
+      "erklaerung": "Verantwortung kann auch durch Unterlassen entstehen, besonders wenn Helfen leicht möglich wäre."
+    },
+    {
+      "id": "eth-mgb-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz1",
+      "frage": "Ein Spiel ist praktisch und kostenlos, aber man kann dort andere anonym beleidigen, ohne dass etwas passiert. Was zeigt das Beispiel?",
+      "optionen": [
+        { "text": "Pragmatische und ökonomische Vorteile machen ein Angebot noch nicht ethisch unbedenklich.", "richtig": true },
+        { "text": "Kostenlose Angebote sind immer ethisch gut.", "feedback": "Ob etwas kostet, sagt nichts darüber, ob es andere schützt." },
+        { "text": "Ethische Kriterien sind unwichtig, wenn etwas praktisch ist.", "feedback": "Gerade wenn andere verletzt werden können, wiegen ethische Kriterien schwer." },
+        { "text": "Anonymität ist immer schlecht.", "feedback": "Anonymität kann auch schützen, z. B. bei Beratung. Das Problem ist der fehlende Schutz vor Beleidigungen." }
+      ],
+      "erklaerung": "Die drei Kriterienarten können zu verschiedenen Ergebnissen führen. Man muss sie gewichten."
+    }
+  ]
+}

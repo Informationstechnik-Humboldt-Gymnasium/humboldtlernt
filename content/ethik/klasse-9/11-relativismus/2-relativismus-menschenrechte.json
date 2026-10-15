@@ -1,0 +1,111 @@
+{
+  "id": "eth-k9-relativismus",
+  "titel": "Kulturrelativismus, ethischer Relativismus und die Begründung der Menschenrechte",
+  "kurz": "Was Kulturrelativismus und ethischer Relativismus behaupten, was gegen sie spricht und wie man Menschenrechte begründen kann.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Kulturrelativismus (deskriptiv) und ethischen Relativismus (normativ) unterscheiden" },
+    { "id": "lz2", "niveau": "H", "text": "Einwände gegen den ethischen Relativismus erläutern" },
+    { "id": "lz3", "niveau": "G", "text": "Formen der Begründung von Menschenrechten unterscheiden" },
+    { "id": "lz4", "niveau": "H", "text": "Einen kulturell bedingten Konflikt mit Bezug auf Relativismus und Menschenrechte beurteilen" }
+  ],
+  "verstehen": {
+    "einstieg": "„Wer sind wir, dass wir anderen Kulturen sagen, was richtig ist?“ Klingt bescheiden und tolerant. Aber was folgt daraus, wenn man es ernst nimmt?",
+    "abschnitte": [
+      {
+        "titel": "Zwei Arten von Relativismus",
+        "text": "- **Kulturrelativismus** (deskriptiver Relativismus): Die Feststellung, dass in verschiedenen Kulturen und Zeiten **tatsächlich** verschiedene Moralvorstellungen gelten. Das ist eine empirische Aussage, die man mit Ethnologie und Geschichte prüfen kann. Oft sind die Unterschiede kleiner, als es scheint: Viele Unterschiede entstehen aus unterschiedlichen Tatsachenannahmen oder Lebensbedingungen, bei gleichen Grundwerten.\n- **Ethischer Relativismus** (normativer Relativismus): Die These, dass moralische Normen nur **relativ zu einer Kultur gültig** sind. Richtig ist, was in einer Kultur als richtig gilt. Es gibt keinen Maßstab, der für alle gilt.\n\nAus dem Kulturrelativismus folgt **nicht** der ethische Relativismus – das wäre ein Sein-Sollens-Fehlschluss."
+      },
+      {
+        "titel": "Einwände gegen den ethischen Relativismus",
+        "text": "1. **Keine Kritik möglich:** Man könnte Sklaverei oder Unterdrückung in einer anderen Kultur nicht mehr kritisieren, wenn sie dort als richtig gilt.\n2. **Reformer wären immer im Unrecht:** Wer gegen die Mehrheitsmoral seiner Kultur kämpfte, etwa gegen Rassentrennung, hätte per Definition falsch gehandelt.\n3. **Kein moralischer Fortschritt:** Man könnte nicht sagen, dass die Abschaffung der Sklaverei ein Fortschritt war, nur eine Veränderung.\n4. **Selbstwiderspruch:** Wer fordert, alle Kulturen sollten tolerant sein, stellt selbst eine **universale** Norm auf.\n5. **Was ist „eine Kultur“?** Kulturen sind nicht einheitlich, in jeder gibt es Streit und Minderheiten."
+      },
+      {
+        "titel": "Wie kann man Menschenrechte begründen?",
+        "text": "Die Menschenrechte beanspruchen **universale** Geltung. Begründet werden sie unterschiedlich:\n\n- **religiös:** Alle Menschen sind Geschöpfe Gottes bzw. nach seinem Bild geschaffen und haben deshalb gleiche Würde.\n- **naturrechtlich:** Jeder Mensch hat von Natur aus Rechte, die dem Staat vorausgehen (z. B. John Locke: Leben, Freiheit, Eigentum). In der Aufklärung wurde das zur Grundlage der amerikanischen Unabhängigkeitserklärung (1776) und der französischen Erklärung der Menschen- und Bürgerrechte (1789).\n- **vernunftrechtlich:** Jeder Mensch ist ein vernünftiges, selbstbestimmtes Wesen und hat deshalb **Würde** (Kant).\n- **aus historischer Erfahrung:** Nach den Verbrechen des Nationalsozialismus wurde 1948 die Allgemeine Erklärung der Menschenrechte verabschiedet, damit sich solches Unrecht nicht wiederholt.\n- **durch Übereinkunft:** Staaten mit verschiedenen Kulturen und Religionen haben sich gemeinsam auf sie geeinigt.\n\nDie Begründungen ergänzen sich: Wer eine nicht teilt, kann eine andere überzeugend finden."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "**Kulturrelativismus** stellt fest, dass Moralvorstellungen verschieden sind (deskriptiv). **Ethischer Relativismus** behauptet, Normen gelten nur relativ zu einer Kultur (normativ). Aus dem einen folgt nicht das andere.\n\nGegen den ethischen Relativismus spricht: Er macht Kritik an Unrecht, Reformen und moralischen Fortschritt unmöglich. **Menschenrechte** werden religiös, naturrechtlich, vernunftrechtlich, aus historischer Erfahrung und durch Übereinkunft begründet.",
+    "alltag": "Respekt vor anderen Kulturen und universale Menschenrechte schließen sich nicht aus: Man kann fremde Bräuche achten und trotzdem Gewalt gegen Menschen überall ablehnen."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "eth-rel-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Ordne die Aussagen zu.",
+      "paare": [
+        { "links": "„In manchen Gesellschaften war Blutrache üblich, in anderen nicht.“", "rechts": "Kulturrelativismus (deskriptiv)" },
+        { "links": "„Blutrache ist dort richtig, wo sie als richtig gilt.“", "rechts": "ethischer Relativismus (normativ)" }
+      ],
+      "erklaerung": "Die erste Aussage beschreibt, die zweite bewertet. Aus der ersten folgt die zweite nicht."
+    },
+    {
+      "id": "eth-rel-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz3",
+      "frage": "Welche Begründung der Menschenrechte stützt sich auf die Würde des Menschen als vernünftiges, selbstbestimmtes Wesen?",
+      "optionen": [
+        { "text": "die vernunftrechtliche Begründung (Kant)", "richtig": true },
+        { "text": "die religiöse Begründung", "feedback": "Sie stützt sich auf Gott als Schöpfer." },
+        { "text": "die Begründung aus historischer Erfahrung", "feedback": "Sie stützt sich auf erlebtes Unrecht." },
+        { "text": "die Begründung durch Übereinkunft", "feedback": "Sie stützt sich auf die Einigung der Staaten." }
+      ],
+      "erklaerung": "Für Kant hat jeder Mensch Würde, weil er sich selbst vernünftige Gesetze geben kann."
+    },
+    {
+      "id": "eth-rel-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Warum folgt aus dem Kulturrelativismus **nicht** der ethische Relativismus?",
+      "optionen": [
+        { "text": "Aus der Tatsache, dass Menschen verschiedene Normen haben, folgt nicht, dass alle Normen gleich gut begründet sind.", "richtig": true },
+        { "text": "Weil es gar keine kulturellen Unterschiede gibt.", "feedback": "Es gibt Unterschiede. Die Frage ist nur, was daraus folgt." },
+        { "text": "Weil beide dasselbe behaupten.", "feedback": "Der eine beschreibt, der andere bewertet." },
+        { "text": "Doch, das folgt zwingend.", "feedback": "Auch über Tatsachen sind Menschen verschiedener Meinung – trotzdem sind nicht alle Meinungen gleich richtig." }
+      ],
+      "erklaerung": "Auch in der Naturwissenschaft gab es verschiedene Ansichten (z. B. über die Form der Erde). Daraus folgt nicht, dass alle gleich wahr sind."
+    },
+    {
+      "id": "eth-rel-04", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Welche Einwände gegen den **ethischen Relativismus** sind zutreffend?",
+      "optionen": [
+        { "text": "Menschen, die sich gegen Unrecht in ihrer eigenen Kultur wehrten, hätten immer falsch gehandelt.", "richtig": true },
+        { "text": "Man könnte die Abschaffung der Sklaverei nicht mehr als Fortschritt bezeichnen.", "richtig": true },
+        { "text": "Er führt dazu, dass alle Menschen die gleiche Sprache sprechen müssen.", "feedback": "Das hat mit dem Relativismus nichts zu tun." },
+        { "text": "Die Forderung, alle Kulturen sollten tolerant sein, ist selbst eine universale Norm.", "richtig": true }
+      ],
+      "erklaerung": "Diese Einwände zeigen, dass der ethische Relativismus Folgen hat, die selbst viele Relativisten nicht akzeptieren wollen."
+    },
+    {
+      "id": "eth-rel-05", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Ordne die Begründungen der Menschenrechte zu.",
+      "paare": [
+        { "links": "„Alle Menschen sind nach Gottes Bild geschaffen.“", "rechts": "religiös" },
+        { "links": "„Jeder Mensch hat von Natur aus ein Recht auf Leben, Freiheit und Eigentum.“", "rechts": "naturrechtlich (Locke)" },
+        { "links": "„Nach Krieg und Völkermord darf so etwas nie wieder geschehen.“", "rechts": "aus historischer Erfahrung" },
+        { "links": "„Staaten aller Kontinente haben die Erklärung gemeinsam angenommen.“", "rechts": "durch Übereinkunft" }
+      ],
+      "erklaerung": "Die Menschenrechte lassen sich auf verschiedenen Wegen begründen. Das macht sie für Menschen mit unterschiedlichen Weltanschauungen annehmbar."
+    },
+    {
+      "id": "eth-rel-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Jemand sagt: „Es gibt keine universal gültigen Normen. Deshalb müssen alle Kulturen einander tolerieren.“ Was ist an diesem Satz problematisch?",
+      "optionen": [
+        { "text": "Er widerspricht sich: „Alle müssen einander tolerieren“ ist selbst eine universal gültige Norm.", "richtig": true },
+        { "text": "Toleranz ist immer falsch.", "feedback": "Das Problem liegt nicht in der Toleranz, sondern im Widerspruch." },
+        { "text": "Es gibt nur eine Kultur.", "feedback": "Das stimmt nicht und betrifft den Fehler nicht." },
+        { "text": "Nichts, der Satz ist schlüssig.", "feedback": "Der zweite Teil setzt voraus, was der erste bestreitet." }
+      ],
+      "erklaerung": "Wer Toleranz von allen fordert, kann nicht gleichzeitig behaupten, dass keine Norm für alle gilt."
+    },
+    {
+      "id": "eth-rel-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "In einem Land dürfen Frauen nach den dortigen Gesetzen nicht ohne Erlaubnis ihres Mannes reisen. Eine Person sagt: „Das ist deren Kultur, da dürfen wir nichts sagen.“ Beurteile diese Haltung.",
+      "stichworte": [
+        { "aspekt": "Die Haltung entspricht dem ethischen Relativismus", "woerter": ["relativis", "kultur", "relativ"] },
+        { "aspekt": "Einwand: Menschenrechte (Freiheit, Gleichberechtigung) beanspruchen universale Geltung bzw. Kritik muss möglich sein", "woerter": ["menschenrecht", "universal", "gleichberechtig", "freiheit", "wuerde", "kritik"] },
+        { "aspekt": "Hinweis, dass Kulturen nicht einheitlich sind bzw. auch Betroffene im Land widersprechen", "woerter": ["frauen", "betroffen", "einheitlich", "nicht alle", "widersprech", "wehren"] }
+      ],
+      "musterloesung": "Die Haltung entspricht dem ethischen Relativismus: Was in einer Kultur gilt, soll dort richtig sein. Dagegen spricht, dass die Menschenrechte universale Geltung beanspruchen, auch Freiheit und Gleichberechtigung der Frauen. Ohne einen solchen Maßstab wäre Kritik an Unrecht unmöglich. Außerdem ist eine Kultur nicht einheitlich: Viele Frauen in diesem Land wehren sich selbst gegen die Regel. Man kann die Kultur achten und trotzdem diese Regel kritisieren.",
+      "erklaerung": "Eine gute Antwort ordnet die Haltung ein, bringt einen Einwand mit Bezug auf die Menschenrechte und bedenkt, dass Kulturen vielstimmig sind."
+    }
+  ]
+}

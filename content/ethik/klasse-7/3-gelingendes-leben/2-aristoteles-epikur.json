@@ -1,0 +1,235 @@
+{
+  "id": "eth-k7-aristoteles-epikur",
+  "titel": "Aristoteles und Epikur: Modelle des guten Lebens",
+  "kurz": "Zwei antike Antworten auf die Frage nach dem gelingenden Leben und wie man sie bewerten kann.",
+  "reihenfolge": 2,
+  "lernziele": [
+    {
+      "id": "lz1",
+      "niveau": "G",
+      "text": "Das Glücksverständnis des Aristoteles (Eudaimonia, Tugend, rechte Mitte) wiedergeben"
+    },
+    {
+      "id": "lz2",
+      "niveau": "G",
+      "text": "Das Glücksverständnis Epikurs (Lust als Freiheit von Schmerz, Arten von Begierden) wiedergeben"
+    },
+    {
+      "id": "lz3",
+      "niveau": "H",
+      "text": "Beide Modelle vergleichen und auf heutige Lebensentwürfe anwenden"
+    },
+    {
+      "id": "lz4",
+      "niveau": "H",
+      "text": "Konzepte gelingenden Lebens begründet bewerten"
+    }
+  ],
+  "verstehen": {
+    "einstieg": "Ist ein Leben gut, wenn es möglichst viel Spaß macht? Oder wenn man ein guter Mensch ist? Über diese Frage stritten schon die Philosophen im alten Griechenland.",
+    "abschnitte": [
+      {
+        "titel": "Aristoteles: Glück durch ein tätiges, tugendhaftes Leben",
+        "text": "**Aristoteles** (384–322 v. Chr.) nennt das höchste Ziel des Menschen **Eudaimonia**, meist übersetzt als „Glückseligkeit“ oder „gelingendes Leben“. Alles andere (Geld, Ehre, Vergnügen) wollen wir nur als Mittel, die Eudaimonia aber um ihrer selbst willen.\n\nGlücklich wird man nach Aristoteles, indem man das tut, was den Menschen besonders auszeichnet: **vernünftig handeln** und seine Fähigkeiten gut entfalten. Dazu braucht man **Tugenden** (gute Charaktereigenschaften).\n\nEine Tugend ist die **rechte Mitte** zwischen zwei Extremen: **Tapferkeit** liegt zwischen Feigheit und Tollkühnheit, **Großzügigkeit** zwischen Geiz und Verschwendung. Tugenden erwirbt man durch **Übung**, so wie man ein Instrument lernt. Auch Freunde gehören für Aristoteles zum guten Leben, und ein Mindestmaß an äußeren Gütern."
+      },
+      {
+        "titel": "Epikur: Glück als Freiheit von Schmerz",
+        "text": "**Epikur** (341–270 v. Chr.) sagt: Das Ziel des Lebens ist **Lust** (griechisch *hedone*). Damit meint er aber kein wildes Feiern, sondern vor allem die **Abwesenheit von körperlichem Schmerz** und von **seelischer Unruhe**. Diese Seelenruhe heißt **Ataraxie**.\n\nEpikur unterscheidet Begierden:\n\n- **natürliche und notwendige** (Essen, Trinken, Wärme, Freundschaft) – leicht zu erfüllen,\n- **natürliche, aber nicht notwendige** (Luxusessen) – kann man genießen, braucht man nicht,\n- **weder natürliche noch notwendige** (Ruhm, Macht, Reichtum) – sie machen unruhig und sind nie gestillt.\n\nWer klug wählt, lebt einfach, pflegt Freundschaften und verzichtet auf eine Lust, wenn sie später größeren Schmerz bringt."
+      },
+      {
+        "titel": "Vergleich und Bewertung",
+        "text": "Gemeinsam ist beiden: Glück ist ein **ganzes gelungenes Leben**, kein kurzer Kick. Beide halten **Freundschaft** und **Maßhalten** für wichtig.\n\nUnterschiede: Bei Aristoteles steht das **tätige, tugendhafte Handeln** im Mittelpunkt, bei Epikur das **angenehme, ruhige Leben**.\n\nUm ein Konzept des guten Lebens zu bewerten, kann man fragen:\n\n- Passt es zu meinen Erfahrungen?\n- Ist es für alle Menschen erreichbar, oder nur für wenige?\n- Lässt es sich mit Rücksicht auf andere vereinbaren?"
+      }
+    ],
+    "formeln": [],
+    "merksatz": "**Aristoteles:** Glück (**Eudaimonia**) ist ein tätiges Leben nach der Vernunft. Tugenden sind die **rechte Mitte** zwischen zwei Extremen und werden durch Übung erworben.\n\n**Epikur:** Glück ist **Lust** im Sinn von Schmerzfreiheit und **Seelenruhe** (Ataraxie). Man erreicht sie, indem man natürliche und notwendige Begierden erfüllt und auf überflüssige verzichtet.",
+    "alltag": "Wer vor dem Kauf fragt: „Brauche ich das, oder will ich es nur, weil andere es haben?“, denkt schon ein bisschen wie Epikur."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "eth-are-01",
+      "typ": "zuordnung",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz1",
+      "frage": "Ordne jeder Tugend die beiden Extreme zu, zwischen denen sie nach Aristoteles liegt.",
+      "paare": [
+        {
+          "links": "Tapferkeit",
+          "rechts": "zwischen Feigheit und Tollkühnheit"
+        },
+        {
+          "links": "Großzügigkeit",
+          "rechts": "zwischen Geiz und Verschwendung"
+        },
+        {
+          "links": "Wahrhaftigkeit (über sich selbst)",
+          "rechts": "zwischen Prahlerei und Tiefstapelei"
+        }
+      ],
+      "erklaerung": "Für Aristoteles ist eine Tugend die rechte Mitte: weder zu viel noch zu wenig."
+    },
+    {
+      "id": "eth-are-02",
+      "typ": "single",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz2",
+      "frage": "Was meint Epikur mit „Lust“ als Ziel des Lebens?",
+      "optionen": [
+        {
+          "text": "Vor allem die Abwesenheit von körperlichem Schmerz und seelischer Unruhe",
+          "richtig": true
+        },
+        {
+          "text": "Jeden Tag so viel feiern wie möglich",
+          "feedback": "Das ist ein verbreitetes Missverständnis. Epikur empfahl gerade ein einfaches Leben."
+        },
+        {
+          "text": "Möglichst viel Geld verdienen",
+          "feedback": "Reichtum zählt Epikur zu den Begierden, die unruhig machen."
+        },
+        {
+          "text": "Möglichst berühmt werden",
+          "feedback": "Ruhm ist für Epikur eine Begierde, die weder natürlich noch notwendig ist."
+        }
+      ],
+      "erklaerung": "Epikurs Ideal ist die Seelenruhe (Ataraxie): ein ruhiges, schmerzfreies Leben mit Freunden."
+    },
+    {
+      "id": "eth-are-03",
+      "typ": "zuordnung",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz2",
+      "frage": "Ordne die Begierden nach Epikur ein.",
+      "paare": [
+        {
+          "links": "Durst stillen",
+          "rechts": "natürlich und notwendig"
+        },
+        {
+          "links": "ein Fünf-Gänge-Menü",
+          "rechts": "natürlich, aber nicht notwendig"
+        },
+        {
+          "links": "berühmt werden",
+          "rechts": "weder natürlich noch notwendig"
+        }
+      ],
+      "erklaerung": "Natürliche und notwendige Begierden sind leicht zu erfüllen. Begierden wie Ruhm sind nie gestillt und machen unruhig."
+    },
+    {
+      "id": "eth-are-04",
+      "typ": "single",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz1",
+      "frage": "Wie wird man nach Aristoteles tugendhaft?",
+      "optionen": [
+        {
+          "text": "Durch Übung: Man wird tapfer, indem man immer wieder tapfer handelt.",
+          "richtig": true
+        },
+        {
+          "text": "Tugend ist angeboren und lässt sich nicht verändern.",
+          "feedback": "Aristoteles betont gerade, dass man Tugenden durch Gewöhnung erwirbt."
+        },
+        {
+          "text": "Indem man ein Buch über Tugenden liest.",
+          "feedback": "Wissen allein reicht nicht. Man muss die Tugend einüben."
+        },
+        {
+          "text": "Durch viel Geld.",
+          "feedback": "Äußere Güter helfen nur begrenzt. Tugend ist eine Haltung."
+        }
+      ],
+      "erklaerung": "Wie beim Erlernen eines Instruments wird gutes Handeln durch Wiederholung zur Gewohnheit."
+    },
+    {
+      "id": "eth-are-05",
+      "typ": "zuordnung",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz3",
+      "frage": "Wer könnte das gesagt haben?",
+      "paare": [
+        {
+          "links": "„Glück ist ein tätiges Leben, in dem man seine Fähigkeiten nach der Vernunft entfaltet.“",
+          "rechts": "Aristoteles"
+        },
+        {
+          "links": "„Wer mit wenig zufrieden ist, lebt ruhig und frei von Angst.“",
+          "rechts": "Epikur"
+        }
+      ],
+      "erklaerung": "Aristoteles betont das tätige, tugendhafte Leben, Epikur das ruhige, genügsame Leben."
+    },
+    {
+      "id": "eth-are-06",
+      "typ": "multi",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz3",
+      "frage": "Welche Aussagen treffen auf **beide**, Aristoteles und Epikur, zu?",
+      "optionen": [
+        {
+          "text": "Glück ist ein ganzes gelungenes Leben, nicht ein kurzes Vergnügen.",
+          "richtig": true
+        },
+        {
+          "text": "Freundschaft gehört zum guten Leben.",
+          "richtig": true
+        },
+        {
+          "text": "Maßhalten ist wichtig.",
+          "richtig": true
+        },
+        {
+          "text": "Möglichst viel Reichtum ist der Schlüssel zum Glück.",
+          "feedback": "Beide halten Reichtum höchstens für ein Hilfsmittel, Epikur sogar für eine Quelle der Unruhe."
+        }
+      ],
+      "erklaerung": "Trotz verschiedener Schwerpunkte sind sich beide einig: Glück braucht Maß, Freunde und eine Lebensweise auf Dauer."
+    },
+    {
+      "id": "eth-are-07",
+      "typ": "text",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz4",
+      "frage": "Ein Influencer sagt: „Glück ist, alles zu haben, was man will.“ Prüfe diese Aussage mit Epikur oder Aristoteles und beziehe Stellung.",
+      "stichworte": [
+        {
+          "aspekt": "Bezug auf Epikur (Begierden, Seelenruhe) oder Aristoteles (Tugend, rechte Mitte, tätiges Leben)",
+          "woerter": [
+            "epikur",
+            "aristoteles",
+            "begierde",
+            "seelenruhe",
+            "ataraxie",
+            "tugend",
+            "mitte"
+          ]
+        },
+        {
+          "aspekt": "Kritik: Wünsche nach Besitz oder Ruhm werden nie gestillt bzw. machen unruhig",
+          "woerter": [
+            "nie",
+            "immer mehr",
+            "unruhig",
+            "gewoehn",
+            "unzufrieden"
+          ]
+        },
+        {
+          "aspekt": "Eigene begründete Stellungnahme",
+          "woerter": [
+            "ich finde",
+            "meiner meinung",
+            "ich meine",
+            "deshalb",
+            "weil"
+          ]
+        }
+      ],
+      "musterloesung": "Nach Epikur ist die Aussage falsch. Viele Begierden, etwa nach Ruhm oder Reichtum, sind weder natürlich noch notwendig. Sie werden nie gestillt, man will immer mehr und wird unruhig. Glück ist für Epikur Seelenruhe. Ich finde, Epikur hat recht, weil man sich an Besitz schnell gewöhnt und dann wieder unzufrieden ist.",
+      "erklaerung": "Eine gute Antwort wendet eine Position korrekt an und begründet ein eigenes Urteil. Man kann auch zu einem anderen Ergebnis kommen, wenn man es begründet."
+    }
+  ]
+}

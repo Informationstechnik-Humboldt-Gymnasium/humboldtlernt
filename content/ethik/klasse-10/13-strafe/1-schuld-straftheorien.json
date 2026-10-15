@@ -1,0 +1,110 @@
+{
+  "id": "eth-k10-straftheorien",
+  "titel": "Schuld, Strafe und klassische Straftheorien",
+  "kurz": "Was Schuld und Strafe sind und wie absolute und relative Straftheorien Strafen rechtfertigen.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Die Begriffe „Schuld“ und „Strafe“ erklären" },
+    { "id": "lz2", "niveau": "G", "text": "Absolute und relative Straftheorien unterscheiden" },
+    { "id": "lz3", "niveau": "G", "text": "General- und Spezialprävention unterscheiden" },
+    { "id": "lz4", "niveau": "H", "text": "Straftheorien vergleichen und ihre Schwächen erläutern" }
+  ],
+  "verstehen": {
+    "einstieg": "Ein Mann hat vor 30 Jahren eine schwere Straftat begangen. Seitdem lebt er friedlich, hilft anderen und würde es nie wieder tun. Soll er trotzdem bestraft werden?",
+    "abschnitte": [
+      {
+        "titel": "Schuld und Strafe",
+        "text": "**Strafe** ist ein Übel (z. B. Freiheitsentzug, Geldbuße), das eine dazu berechtigte Instanz einem Menschen zufügt, **weil** er gegen eine Norm verstoßen hat. Sie unterscheidet sich von Rache, weil sie von einer unparteiischen Instanz nach Regeln verhängt wird.\n\n**Schuld** setzt voraus, dass jemand **verantwortlich** ist: Er hat die Tat begangen, hätte anders handeln können und konnte das Unrecht erkennen. Ein Kleinkind oder ein schwer psychisch kranker Mensch kann ohne Schuld handeln. Man unterscheidet **moralische** Schuld (vor dem Gewissen, anderen Menschen) und **rechtliche** Schuld (vor Gericht).\n\nWarum darf der Staat überhaupt strafen? Darauf antworten die **Straftheorien**."
+      },
+      {
+        "titel": "Absolute Straftheorien: Vergeltung",
+        "text": "Absolute Theorien rechtfertigen Strafe **unabhängig von ihren Folgen** (lat. *absolutus* = losgelöst). Gestraft wird, **weil** Unrecht geschehen ist. Die Strafe soll die Schuld **ausgleichen**.\n\n- **Immanuel Kant:** Strafe ist eine Forderung der Gerechtigkeit. Sie muss der Tat entsprechen. Würde man einen Täter nur zur Abschreckung anderer bestrafen, würde man ihn bloß als Mittel benutzen. Kant schreibt sogar: Würde sich eine Gesellschaft auf einer Insel auflösen, müsste vorher noch der letzte Mörder hingerichtet werden – damit die Schuld nicht am Volk haften bleibt.\n- **G. W. F. Hegel:** Das Verbrechen verneint das Recht, die Strafe verneint das Verbrechen und stellt so das Recht wieder her („Negation der Negation“). Der Täter wird dabei als vernünftiges Wesen ernst genommen.\n\nStärke: Strafe ist an die Schuld gebunden, niemand wird härter bestraft, als er verdient. Schwäche: Wozu Leid zufügen, wenn es niemandem nützt?"
+      },
+      {
+        "titel": "Relative Straftheorien: Prävention",
+        "text": "Relative Theorien rechtfertigen Strafe durch ihren **Zweck**: künftige Straftaten verhindern (lat. *praevenire* = zuvorkommen). Gestraft wird, **damit** nichts mehr passiert.\n\n- **Generalprävention** (Wirkung auf die Allgemeinheit): Die Strafe **schreckt andere ab** (negative Generalprävention, z. B. Paul Johann Anselm von Feuerbach) und **bestärkt** das Vertrauen der Bürger in die Geltung des Rechts (positive Generalprävention).\n- **Spezialprävention** (Wirkung auf den Täter, z. B. Franz von Liszt): Die Strafe soll den Täter **bessern** (Resozialisierung), ihn **abschrecken** oder die Gesellschaft vor ihm **sichern**.\n\nStärke: Strafe hat einen sinnvollen Zweck. Schwäche: Wenn nur der Nutzen zählt, könnte man Unschuldige zur Abschreckung bestrafen oder kleine Taten extrem hart.\n\n**Vereinigungstheorien** verbinden beide Gedanken: Die Schuld begrenzt die Strafe, innerhalb dieser Grenze verfolgt sie präventive Zwecke. So arbeitet auch das deutsche Strafrecht."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "**Strafe** ist ein Übel, das eine berechtigte Instanz wegen eines Normverstoßes zufügt. **Schuld** setzt Verantwortlichkeit voraus.\n\n**Absolute Theorien (Kant, Hegel):** Strafe als **Vergeltung**, weil Unrecht geschah. **Relative Theorien:** Strafe zur **Prävention** – **Generalprävention** wirkt auf alle, **Spezialprävention** auf den Täter. **Vereinigungstheorien** verbinden beides.",
+    "alltag": "Auch Strafen in der Erziehung lassen sich so prüfen: Soll die Strafe ausgleichen, abschrecken oder dabei helfen, sich zu bessern?"
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "eth-str-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Ordne die Begründungen den Straftheorien zu.",
+      "paare": [
+        { "links": "„Er wird bestraft, weil er Unrecht getan hat.“", "rechts": "absolute Straftheorie" },
+        { "links": "„Er wird bestraft, damit er und andere es nicht wieder tun.“", "rechts": "relative Straftheorie" }
+      ],
+      "erklaerung": "Absolute Theorien blicken zurück auf die Tat („weil“), relative nach vorn auf die Wirkung („damit“)."
+    },
+    {
+      "id": "eth-str-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz3",
+      "frage": "Ordne die Zwecke zu.",
+      "paare": [
+        { "links": "Andere sollen durch die Strafe abgeschreckt werden.", "rechts": "negative Generalprävention" },
+        { "links": "Die Bürger sollen darauf vertrauen können, dass Recht gilt.", "rechts": "positive Generalprävention" },
+        { "links": "Der Täter soll im Gefängnis eine Ausbildung machen und ein Leben ohne Straftaten führen.", "rechts": "Spezialprävention (Resozialisierung)" }
+      ],
+      "erklaerung": "Generalprävention wirkt auf die Allgemeinheit, Spezialprävention auf den einzelnen Täter."
+    },
+    {
+      "id": "eth-str-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Was unterscheidet Strafe von Rache?",
+      "optionen": [
+        { "text": "Strafe wird von einer berechtigten, unparteiischen Instanz nach Regeln verhängt.", "richtig": true },
+        { "text": "Strafe tut nie weh.", "feedback": "Strafe ist gerade ein Übel – aber nach Regeln und von einer berechtigten Instanz." },
+        { "text": "Rache ist immer härter.", "feedback": "Rache kann auch milder sein. Der Unterschied liegt in der Instanz und den Regeln." },
+        { "text": "Es gibt keinen Unterschied.", "feedback": "Bei Rache urteilt der Betroffene selbst, oft maßlos. Das verhindert das Gewaltmonopol." }
+      ],
+      "erklaerung": "Strafe ist an Regeln, Verfahren und Unparteilichkeit gebunden. Rache folgt dem Gefühl des Verletzten."
+    },
+    {
+      "id": "eth-str-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Ein dreijähriges Kind zündet aus Versehen eine Gardine an. Warum ist es **nicht schuldig**?",
+      "optionen": [
+        { "text": "Es konnte das Unrecht und die Folgen nicht erkennen und ist deshalb nicht verantwortlich.", "richtig": true },
+        { "text": "Weil kein Schaden entstanden ist.", "feedback": "Es ist ein Schaden entstanden. Schuld hängt aber von der Verantwortlichkeit ab." },
+        { "text": "Weil Kinder immer unschuldig sind, egal wie alt.", "feedback": "Mit zunehmendem Alter können Kinder Unrecht erkennen. Es kommt auf die Fähigkeit an." },
+        { "text": "Weil Gardinen nicht wichtig sind.", "feedback": "Das hat mit Schuld nichts zu tun." }
+      ],
+      "erklaerung": "Schuld setzt voraus, dass man das Unrecht erkennen und anders handeln konnte."
+    },
+    {
+      "id": "eth-str-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Warum lehnt **Kant** eine Strafe ab, die nur zur Abschreckung anderer verhängt wird?",
+      "optionen": [
+        { "text": "Weil der Täter dann bloß als Mittel für einen Zweck benutzt würde, statt nach seiner Schuld behandelt zu werden.", "richtig": true },
+        { "text": "Weil Abschreckung nie funktioniert.", "feedback": "Kant argumentiert nicht mit der Wirksamkeit, sondern mit der Würde." },
+        { "text": "Weil er gegen jede Strafe war.", "feedback": "Kant hielt Strafe für eine Forderung der Gerechtigkeit." },
+        { "text": "Weil Abschreckung zu mild ist.", "feedback": "Es geht nicht um die Härte, sondern um die Begründung." }
+      ],
+      "erklaerung": "Hier zeigt sich die Verbindung zur Menschheitszweckformel: Auch der Täter hat Würde."
+    },
+    {
+      "id": "eth-str-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Welche Schwäche hat eine **rein** relative (präventive) Straftheorie?",
+      "optionen": [
+        { "text": "Sie könnte es rechtfertigen, Unschuldige zur Abschreckung zu bestrafen oder kleine Taten unverhältnismäßig hart zu ahnden.", "richtig": true },
+        { "text": "Sie kümmert sich nicht um die Zukunft.", "feedback": "Im Gegenteil: Sie blickt gerade auf künftige Taten." },
+        { "text": "Sie bestraft zu mild.", "feedback": "Das Problem ist eher, dass sie keine Obergrenze durch die Schuld kennt." },
+        { "text": "Sie hat keine Schwäche.", "feedback": "Ohne Bindung an die Schuld fehlt eine gerechte Grenze." }
+      ],
+      "erklaerung": "Deshalb verbinden Vereinigungstheorien beides: Die Schuld begrenzt die Strafe, Prävention gibt ihr einen Zweck."
+    },
+    {
+      "id": "eth-str-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Zurück zum Einstieg: Der Mann hat sich seit 30 Jahren nichts zuschulden kommen lassen. Welche Theorie spricht am deutlichsten **für** eine Bestrafung?",
+      "optionen": [
+        { "text": "die absolute Theorie: Die Schuld besteht weiter und verlangt Ausgleich.", "richtig": true },
+        { "text": "die Spezialprävention: Er muss gebessert werden.", "feedback": "Er hat sich offenbar schon gebessert. Spezialprävention spricht eher gegen eine Strafe." },
+        { "text": "keine Theorie", "feedback": "Eine Theorie verlangt Strafe unabhängig von der Wirkung." },
+        { "text": "die Resozialisierung", "feedback": "Resozialisierung ist hier schon erreicht." }
+      ],
+      "erklaerung": "Auch die positive Generalprävention könnte für eine Strafe sprechen: Die Bürger sollen sehen, dass schweres Unrecht nicht folgenlos bleibt. Das Recht kennt zudem Verjährung – bei Mord aber nicht."
+    }
+  ]
+}

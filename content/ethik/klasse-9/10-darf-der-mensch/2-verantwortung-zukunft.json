@@ -1,0 +1,111 @@
+{
+  "id": "eth-k9-verantwortung-zukunft",
+  "titel": "Verantwortung für die Zukunft: Technik und Wissenschaft",
+  "kurz": "Individuelle und kollektive Verantwortung, Hans Jonas' Prinzip Verantwortung und Fälle aus Technik- und Wissenschaftsethik.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Verantwortung als Relationsbegriff erläutern und individuelle und kollektive Verantwortung unterscheiden" },
+    { "id": "lz2", "niveau": "G", "text": "Den Imperativ von Hans Jonas wiedergeben und erklären" },
+    { "id": "lz3", "niveau": "H", "text": "Jonas' Prinzip Verantwortung auf einen Fall der Technikethik anwenden" },
+    { "id": "lz4", "niveau": "H", "text": "Verantwortung in der Wissenschaft am Beispiel von Plagiaten beurteilen" }
+  ],
+  "verstehen": {
+    "einstieg": "Atommüll strahlt noch Hunderttausende Jahre. Die Menschen, die dann leben, können heute nicht mitreden. Haben wir ihnen gegenüber Pflichten?",
+    "abschnitte": [
+      {
+        "titel": "Verantwortung als Relationsbegriff – Wiederholung und Erweiterung",
+        "text": "Verantwortung ist immer eine Beziehung: **Wer** ist **für was** **gegenüber wem** **vor welcher Instanz** **aufgrund welcher Normen** verantwortlich?\n\n- **Individuelle Verantwortung:** Eine einzelne Person ist verantwortlich, z. B. die Ingenieurin für ihre Berechnung.\n- **Kollektive Verantwortung:** Gruppen, Firmen, Staaten oder die ganze Menschheit tragen gemeinsam Verantwortung, z. B. für das Klima. Problem: Bei vielen Beteiligten fühlt sich oft niemand zuständig („Verantwortungsdiffusion“).\n- **Verantwortung für die Zukunft:** für Menschen, die noch nicht geboren sind."
+      },
+      {
+        "titel": "Hans Jonas: Das Prinzip Verantwortung",
+        "text": "Der Philosoph **Hans Jonas** (1903–1993) schrieb 1979 *Das Prinzip Verantwortung*. Er meinte: Die traditionelle Ethik bezog sich auf Nahes – auf die Menschen um uns, hier und jetzt. Die moderne **Technik** hat aber Folgen, die weit in die Zukunft und um den ganzen Planeten reichen. Deshalb braucht es eine neue Ethik.\n\nSein **Imperativ**: „Handle so, dass die Wirkungen deiner Handlung verträglich sind mit der Permanenz echten menschlichen Lebens auf Erden.“\n\nDazu gehört die **„Heuristik der Furcht“**: Wenn eine Technik katastrophale, nicht umkehrbare Folgen haben kann, soll man der schlechten Prognose mehr Gewicht geben als der guten. Heute spricht man vom **Vorsorgeprinzip**."
+      },
+      {
+        "titel": "Fälle aus Technik- und Wissenschaftsethik",
+        "text": "- **Atomenergie:** Sie liefert Strom fast ohne CO₂-Ausstoß. Aber Unfälle (z. B. Tschernobyl 1986, Fukushima 2011) können ganze Regionen unbewohnbar machen, und der Atommüll muss sehr lange sicher gelagert werden. Deutschland hat 2023 seine letzten Atomkraftwerke abgeschaltet. Andere Länder setzen weiter auf Atomkraft – auch, um den Klimawandel zu bremsen.\n- **Plagiate:** Wer fremde Texte oder Ideen ohne Quellenangabe als eigene ausgibt, täuscht Leser und Prüfer und nutzt die Arbeit anderer aus. In der Wissenschaft untergräbt das das Vertrauen, auf dem Forschung beruht. Mehrere Politiker verloren deshalb ihren Doktortitel."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "Verantwortung kann **individuell** oder **kollektiv** sein und sich auf die **Zukunft** beziehen.\n\n**Hans Jonas:** „Handle so, dass die Wirkungen deiner Handlung verträglich sind mit der Permanenz echten menschlichen Lebens auf Erden.“ Bei möglichen Katastrophen gilt das **Vorsorgeprinzip** (Heuristik der Furcht).",
+    "alltag": "Auch in der Schule gibt es Plagiate: Wer bei einem Referat Wikipedia kopiert, ohne es anzugeben, schreibt sich fremde Arbeit zu."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "eth-vzk-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Warum fordert Hans Jonas eine **neue** Ethik?",
+      "optionen": [
+        { "text": "Weil moderne Technik Folgen hat, die weit in die Zukunft und über den ganzen Planeten reichen.", "richtig": true },
+        { "text": "Weil die alten Ethiken alle falsch waren.", "feedback": "Jonas sagt nicht, dass sie falsch waren, sondern dass sie für die neuen Folgen nicht ausreichen." },
+        { "text": "Weil es keine Technik mehr gibt.", "feedback": "Im Gegenteil: Die Technik ist sehr mächtig geworden." },
+        { "text": "Weil Menschen heute klüger sind.", "feedback": "Es geht um die Reichweite der Handlungen, nicht um Klugheit." }
+      ],
+      "erklaerung": "Früher waren die Folgen menschlichen Handelns meist nah und überschaubar. Heute können sie Generationen betreffen."
+    },
+    {
+      "id": "eth-vzk-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Individuelle oder kollektive Verantwortung?",
+      "paare": [
+        { "links": "Ein Statiker rechnet die Tragfähigkeit einer Brücke falsch.", "rechts": "individuelle Verantwortung" },
+        { "links": "Die Industriestaaten haben den größten Teil der bisherigen Treibhausgase ausgestoßen.", "rechts": "kollektive Verantwortung" }
+      ],
+      "erklaerung": "Bei kollektiver Verantwortung tragen viele gemeinsam die Verantwortung, oft ohne dass ein Einzelner den Ausschlag gibt."
+    },
+    {
+      "id": "eth-vzk-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Was meint Jonas mit der **„Heuristik der Furcht“**?",
+      "optionen": [
+        { "text": "Bei möglicherweise katastrophalen, nicht umkehrbaren Folgen soll man der schlechten Prognose mehr Gewicht geben als der guten.", "richtig": true },
+        { "text": "Man soll vor jeder Technik Angst haben.", "feedback": "Jonas lehnt nicht jede Technik ab. Es geht um Fälle mit möglicherweise katastrophalen Folgen." },
+        { "text": "Angst ist das wichtigste Gefühl im Leben.", "feedback": "Es ist eine Regel für Entscheidungen, keine Lebensweisheit." },
+        { "text": "Man soll Menschen Angst machen, damit sie gehorchen.", "feedback": "Das hat mit Jonas nichts zu tun." }
+      ],
+      "erklaerung": "Wenn viel auf dem Spiel steht und Fehler nicht korrigierbar sind, ist Vorsicht vernünftig. Das nennt man heute Vorsorgeprinzip."
+    },
+    {
+      "id": "eth-vzk-04", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Welche Argumente beziehen sich auf die **Verantwortung für künftige Generationen** in der Debatte um Atomenergie?",
+      "optionen": [
+        { "text": "Atommüll muss Hunderttausende Jahre sicher gelagert werden.", "richtig": true },
+        { "text": "Atomkraft verursacht kaum CO₂ und kann den Klimawandel bremsen, der künftige Generationen bedroht.", "richtig": true },
+        { "text": "Atomkraftwerke sichern heute Arbeitsplätze in ihrer Region.", "feedback": "Das betrifft Menschen, die heute leben, nicht künftige Generationen." },
+        { "text": "Ein großer Unfall kann eine Region für Jahrzehnte unbewohnbar machen.", "richtig": true }
+      ],
+      "erklaerung": "Die Zukunftsverantwortung spricht hier für beide Seiten. Das macht den Fall so schwierig."
+    },
+    {
+      "id": "eth-vzk-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Warum ist ein Plagiat in der Wissenschaft ein ethisches Problem und nicht nur ein Regelverstoß?",
+      "optionen": [
+        { "text": "Es täuscht Leser und Prüfer, eignet sich fremde Arbeit an und zerstört das Vertrauen, auf dem Forschung beruht.", "richtig": true },
+        { "text": "Weil die Texte dann zu lang werden.", "feedback": "Die Länge spielt keine Rolle." },
+        { "text": "Weil man in der Wissenschaft nie fremde Texte verwenden darf.", "feedback": "Man darf zitieren – man muss die Quelle aber angeben." },
+        { "text": "Es ist kein ethisches Problem.", "feedback": "Täuschung und Ausnutzung fremder Arbeit sind klar ethische Fragen." }
+      ],
+      "erklaerung": "Wissenschaft funktioniert nur, wenn man sich auf die Angaben anderer verlassen kann. Plagiate missbrauchen dieses Vertrauen."
+    },
+    {
+      "id": "eth-vzk-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz1",
+      "frage": "Bei einem Unfall stehen 30 Menschen herum, niemand ruft den Notruf. Jeder denkt, ein anderer macht es schon. Wie nennt man das?",
+      "optionen": [
+        { "text": "Verantwortungsdiffusion – je mehr Beteiligte, desto weniger fühlt sich der Einzelne zuständig.", "richtig": true },
+        { "text": "kollektive Verantwortung", "feedback": "Die Gruppe hätte kollektiv Verantwortung, aber das Phänomen, dass sie verloren geht, heißt anders." },
+        { "text": "Heuristik der Furcht", "feedback": "Das ist Jonas' Entscheidungsregel bei Risiken." },
+        { "text": "Vorsorgeprinzip", "feedback": "Das betrifft den Umgang mit unsicheren Risiken." }
+      ],
+      "erklaerung": "Verantwortungsdiffusion ist ein Grund, warum kollektive Probleme wie der Klimawandel so schwer zu lösen sind."
+    },
+    {
+      "id": "eth-vzk-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Ein Kritiker sagt zu Jonas: „Wenn man immer der schlechtesten Prognose folgt, darf man nie etwas Neues wagen.“ Welche Antwort passt am besten zu Jonas?",
+      "optionen": [
+        { "text": "Die Heuristik der Furcht gilt nur, wenn katastrophale und nicht umkehrbare Folgen möglich sind, nicht bei jedem kleinen Risiko.", "richtig": true },
+        { "text": "Der Kritiker hat recht, man soll nie etwas Neues wagen.", "feedback": "So weit geht Jonas nicht. Er nennt eine Bedingung." },
+        { "text": "Gute Prognosen sind immer falsch.", "feedback": "Das behauptet Jonas nicht." },
+        { "text": "Neue Technik ist immer gut.", "feedback": "Das widerspricht gerade dem Grundgedanken von Jonas." }
+      ],
+      "erklaerung": "Der Einwand ist wichtig. Jonas' Antwort lautet: Die besondere Vorsicht gilt dort, wo das Überleben der Menschheit oder unumkehrbare Schäden auf dem Spiel stehen."
+    }
+  ]
+}

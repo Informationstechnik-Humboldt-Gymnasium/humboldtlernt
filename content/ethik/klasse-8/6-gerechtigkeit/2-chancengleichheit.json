@@ -1,0 +1,110 @@
+{
+  "id": "eth-k8-chancengleichheit",
+  "titel": "Chancengleichheit und Unparteilichkeit",
+  "kurz": "Was Chancengleichheit bedeutet, warum Unparteilichkeit zur Gerechtigkeit gehört und wie der Schleier des Nichtwissens dabei hilft.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Den Begriff „Chancengleichheit“ erklären und formale von fairer Chancengleichheit unterscheiden" },
+    { "id": "lz2", "niveau": "G", "text": "Den Begriff „Unparteilichkeit“ erklären und an Beispielen anwenden" },
+    { "id": "lz3", "niveau": "H", "text": "Das Gedankenexperiment des Schleiers des Nichtwissens beschreiben und anwenden" }
+  ],
+  "verstehen": {
+    "einstieg": "Bei einem Wettlauf starten alle an derselben Linie. Aber manche haben Laufschuhe, andere laufen barfuß. Ist der Lauf gerecht?",
+    "abschnitte": [
+      {
+        "titel": "Chancengleichheit",
+        "text": "**Chancengleichheit** bedeutet: Alle sollen die gleichen Möglichkeiten haben, ihre Ziele zu erreichen, z. B. einen guten Schulabschluss oder einen Beruf. Ergebnisse dürfen sich dann unterscheiden, die **Startbedingungen** sollen aber fair sein.\n\n- **Formale Chancengleichheit:** Niemand wird ausdrücklich ausgeschlossen. Alle dürfen sich bewerben, alle dürfen aufs Gymnasium.\n- **Faire Chancengleichheit:** Es wird auch darauf geachtet, dass Menschen tatsächlich gleiche Chancen haben, unabhängig von Herkunft, Geld der Eltern oder Geschlecht. Dazu gehören z. B. kostenlose Schulen, Nachhilfe-Angebote oder BAföG.\n\nIn Deutschland hängt der Bildungserfolg von Kindern laut vielen Studien noch stark vom Bildungsabschluss der Eltern ab."
+      },
+      {
+        "titel": "Unparteilichkeit",
+        "text": "**Unparteilich** ist, wer bei einer Entscheidung keine Seite bevorzugt, weil er sie mag, mit ihr verwandt ist oder einen Vorteil davon hat. Alle Beteiligten werden nach denselben Maßstäben behandelt.\n\nBeispiele: Eine Schiedsrichterin pfeift für beide Mannschaften gleich. Eine Richterin entscheidet nicht über einen Fall, in dem ihr Bruder angeklagt ist. Ein Lehrer bewertet nach den Kriterien, nicht nach Sympathie.\n\nUnparteilichkeit heißt nicht, dass einem alle egal sind. Man darf seine Freunde lieben, aber nicht bevorzugen, wenn man über andere entscheidet."
+      },
+      {
+        "titel": "Der Schleier des Nichtwissens",
+        "text": "Der Philosoph **John Rawls** (1921–2002) schlug ein Gedankenexperiment vor: Stell dir vor, du sollst die Regeln einer Gesellschaft festlegen, weißt aber **nicht**, welche Rolle du darin später haben wirst: ob du reich oder arm, gesund oder krank, Mädchen oder Junge, aus welcher Familie du kommst.\n\nHinter diesem **Schleier des Nichtwissens** kann niemand Regeln zu seinem eigenen Vorteil wählen. Man würde wohl Regeln wählen, die auch für die **Schlechtestgestellten** erträglich sind. So erzwingt das Experiment Unparteilichkeit."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "**Chancengleichheit**: Alle sollen faire Startbedingungen haben. **Formal** heißt: niemand wird ausgeschlossen. **Fair** heißt: auch tatsächliche Nachteile wie die Herkunft werden ausgeglichen.\n\n**Unparteilichkeit**: Niemand wird wegen Sympathie oder eigenem Vorteil bevorzugt. Der **Schleier des Nichtwissens** (Rawls) zwingt dazu, Regeln so zu wählen, als könnte man selbst in jeder Lage sein.",
+    "alltag": "Wenn ihr in der Klasse Regeln für die Sitzordnung festlegt, bevor ausgelost wird, wer wo sitzt, arbeitet ihr schon mit einem kleinen Schleier des Nichtwissens."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "eth-cgl-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Welches Verhalten ist **unparteilich**?",
+      "optionen": [
+        { "text": "Die Schiedsrichterin pfeift ein Foul, obwohl es ihr eigener Lieblingsverein begangen hat.", "richtig": true },
+        { "text": "Der Lehrer gibt seinem Lieblingsschüler eine bessere Note.", "feedback": "Hier entscheidet Sympathie, nicht der Maßstab." },
+        { "text": "Die Klassensprecherin teilt die besten Plätze ihren Freundinnen zu.", "feedback": "Das bevorzugt Freunde und ist deshalb parteiisch." },
+        { "text": "Der Trainer stellt seinen Sohn immer auf, egal wie er spielt.", "feedback": "Verwandtschaft ist kein sachlicher Grund." }
+      ],
+      "erklaerung": "Unparteilich ist, wer alle Beteiligten nach denselben Maßstäben behandelt, unabhängig von Sympathie oder eigenem Vorteil."
+    },
+    {
+      "id": "eth-cgl-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Formale oder faire Chancengleichheit?",
+      "paare": [
+        { "links": "Alle Kinder dürfen sich am Gymnasium anmelden.", "rechts": "formale Chancengleichheit" },
+        { "links": "Kinder aus Familien mit wenig Geld bekommen kostenlose Lernförderung.", "rechts": "faire Chancengleichheit" }
+      ],
+      "erklaerung": "Formale Chancengleichheit schließt niemanden aus. Faire Chancengleichheit gleicht auch tatsächliche Nachteile aus."
+    },
+    {
+      "id": "eth-cgl-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Beim Wettlauf aus dem Einstieg starten alle an derselben Linie, aber nur manche haben Laufschuhe. Was fehlt?",
+      "optionen": [
+        { "text": "Faire Chancengleichheit: Die tatsächlichen Startbedingungen sind ungleich.", "richtig": true },
+        { "text": "Formale Chancengleichheit: Manche dürfen nicht mitlaufen.", "feedback": "Alle dürfen mitlaufen. Formal ist der Lauf also gleich." },
+        { "text": "Unparteilichkeit des Siegers", "feedback": "Der Sieger muss nicht unparteiisch sein. Es geht um die Bedingungen des Laufs." },
+        { "text": "Nichts, wer schneller ist, gewinnt eben.", "feedback": "Wer gewinnt, hängt hier auch von den Schuhen ab, nicht nur vom Können." }
+      ],
+      "erklaerung": "Gleiche Regeln reichen nicht, wenn die Ausgangslage sehr ungleich ist."
+    },
+    {
+      "id": "eth-cgl-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Was weiß man hinter dem **Schleier des Nichtwissens** nicht?",
+      "optionen": [
+        { "text": "Welche Position man selbst später in der Gesellschaft haben wird", "richtig": true },
+        { "text": "Was Gerechtigkeit bedeutet", "feedback": "Man soll ja gerade gerechte Regeln wählen. Unbekannt ist die eigene Lage." },
+        { "text": "Wie man spricht und schreibt", "feedback": "Man kann denken und argumentieren. Unbekannt ist nur die eigene Rolle." },
+        { "text": "Ob es überhaupt Regeln geben soll", "feedback": "Es geht darum, welche Regeln man festlegt." }
+      ],
+      "erklaerung": "Weil man nicht weiß, ob man reich oder arm, gesund oder krank sein wird, kann man keine Regeln zum eigenen Vorteil wählen."
+    },
+    {
+      "id": "eth-cgl-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Warum entscheidet eine Richterin nicht über den Fall ihres eigenen Bruders?",
+      "optionen": [
+        { "text": "Weil sie dann nicht unparteiisch wäre – Verwandtschaft könnte ihr Urteil beeinflussen.", "richtig": true },
+        { "text": "Weil Richterinnen keine Geschwister haben dürfen.", "feedback": "Natürlich dürfen sie das. Sie geben solche Fälle nur ab." },
+        { "text": "Weil der Fall dann zu einfach wäre.", "feedback": "Es geht nicht um Schwierigkeit, sondern um Befangenheit." },
+        { "text": "Weil ihr Bruder sonst immer verlieren müsste.", "feedback": "Auch eine zu strenge Behandlung wäre parteiisch." }
+      ],
+      "erklaerung": "Schon der Anschein, befangen zu sein, untergräbt das Vertrauen in ein faires Urteil."
+    },
+    {
+      "id": "eth-cgl-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Ihr legt hinter dem Schleier des Nichtwissens fest, wie Pausenzeiten zwischen Klassen aufgeteilt werden. Welche Regel würde man dort wahrscheinlich **nicht** wählen?",
+      "optionen": [
+        { "text": "„Die Abschlussklassen bekommen den ganzen Schulhof, die anderen bleiben drinnen.“", "richtig": true },
+        { "text": "„Jede Klasse bekommt abwechselnd die besten Plätze.“", "feedback": "Diese Regel ist fair für alle – man würde sie gut wählen können." },
+        { "text": "„Klassen mit Kindern, die einen Rollstuhl nutzen, bekommen den barrierefreien Bereich.“", "feedback": "Diese Regel berücksichtigt Bedürfnisse und wäre für alle annehmbar." },
+        { "text": "„Die Plätze werden jede Woche neu ausgelost.“", "feedback": "Auslosen ist unparteiisch. Man könnte es gut wählen." }
+      ],
+      "erklaerung": "Weil man nicht weiß, ob man selbst zur Abschlussklasse gehört, würde man keine Regel wählen, die alle anderen stark benachteiligt."
+    },
+    {
+      "id": "eth-cgl-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz1",
+      "frage": "„In Deutschland darf jeder studieren, also gibt es Chancengleichheit.“ Prüfe diese Aussage mit der Unterscheidung von formaler und fairer Chancengleichheit.",
+      "stichworte": [
+        { "aspekt": "Formale Chancengleichheit ist gegeben: niemand ist ausgeschlossen", "woerter": ["formal", "darf", "ausgeschlossen", "erlaubt"] },
+        { "aspekt": "Faire Chancengleichheit fehlt teilweise: Herkunft, Geld oder Bildung der Eltern beeinflussen die Chancen", "woerter": ["fair", "herkunft", "eltern", "geld", "familie"] },
+        { "aspekt": "Folgerung oder Beispiel für Ausgleich", "woerter": ["deshalb", "also", "foerder", "bafoeg", "nachhilfe", "ausgleich"] }
+      ],
+      "musterloesung": "Die Aussage stimmt nur für die formale Chancengleichheit: Niemand ist vom Studium ausgeschlossen, jeder darf studieren. Faire Chancengleichheit gibt es aber nur teilweise, denn ob jemand studiert, hängt oft von der Herkunft, dem Geld und der Bildung der Eltern ab. Deshalb braucht es Förderung wie BAföG oder Nachhilfe, damit die Chancen tatsächlich gleicher werden.",
+      "erklaerung": "Wer formale und faire Chancengleichheit unterscheidet, kann solche Behauptungen genauer prüfen."
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "id": "eth-k8-naturethik",
+  "titel": "Positionen der Naturethik",
+  "kurz": "Hat die Natur einen eigenen Wert? Anthropozentrismus, Pathozentrismus, Biozentrismus und Holismus im Vergleich.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Instrumentellen Wert und Eigenwert der Natur unterscheiden" },
+    { "id": "lz2", "niveau": "G", "text": "Anthropozentrismus, Pathozentrismus, Biozentrismus und Holismus beschreiben" },
+    { "id": "lz3", "niveau": "H", "text": "Naturethische Positionen auf Fallbeispiele anwenden und vergleichen" }
+  ],
+  "verstehen": {
+    "einstieg": "Ein uralter Baum steht dort, wo eine neue Straße gebaut werden soll. Niemand wohnt in der Nähe, kein Tier lebt nur dort. Wäre es falsch, ihn zu fällen?",
+    "abschnitte": [
+      {
+        "titel": "Wofür ist die Natur wertvoll?",
+        "text": "- **Instrumenteller Wert:** Die Natur ist wertvoll, weil sie **uns nützt**: Sie liefert Nahrung, Wasser, saubere Luft, Erholung und Schönheit.\n- **Eigenwert:** Die Natur ist **um ihrer selbst willen** wertvoll, auch wenn sie niemandem nützt.\n\nDie Positionen der Naturethik unterscheiden sich darin, **wer oder was** einen moralischen Eigenwert hat, also zum Kreis derer gehört, auf die wir direkt Rücksicht nehmen müssen."
+      },
+      {
+        "titel": "Vier Positionen – ein immer größerer Kreis",
+        "text": "- **Anthropozentrismus** (griech. *anthropos* = Mensch): Nur **Menschen** haben einen Eigenwert. Die Natur soll geschützt werden, weil heutige und künftige Menschen sie brauchen.\n- **Pathozentrismus** (griech. *pathos* = Leiden): Alle **leidensfähigen Wesen** haben einen Eigenwert, also auch viele Tiere. Bäume und Steine nicht.\n- **Biozentrismus** (griech. *bios* = Leben): **Alles Lebendige** hat einen Eigenwert, auch Pflanzen. Bekannt ist **Albert Schweitzer** mit seiner „Ehrfurcht vor dem Leben“: „Ich bin Leben, das leben will, inmitten von Leben, das leben will.“\n- **Holismus** (griech. *holos* = ganz): Auch **Ganzheiten** wie Arten, Ökosysteme, Flüsse oder Landschaften haben einen Eigenwert. Der Förster **Aldo Leopold** schrieb: Eine Handlung ist richtig, wenn sie die Unversehrtheit, Stabilität und Schönheit der biotischen Gemeinschaft bewahrt."
+      },
+      {
+        "titel": "Stärken und Schwächen",
+        "text": "- Der **Anthropozentrismus** ist leicht zu begründen, kann aber Natur nur schützen, solange Menschen sie brauchen.\n- Der **Pathozentrismus** schützt Tiere direkt, aber keine Pflanzen oder Ökosysteme.\n- Der **Biozentrismus** schützt alles Leben, aber man muss trotzdem essen, Medikamente gegen Bakterien nehmen und Unkraut jäten. Er braucht Regeln zum Abwägen.\n- Der **Holismus** schützt ganze Ökosysteme, kann aber den einzelnen Lebewesen zu wenig Gewicht geben.\n\nAuch Religionen sprechen über die Natur: Viele verstehen sie als **Schöpfung**, die der Mensch bewahren soll."
+      }
+    ],
+    "formeln": [],
+    "merksatz": "Die Natur kann **instrumentell** (weil sie uns nützt) oder **um ihrer selbst willen** wertvoll sein.\n\nEigenwert haben im **Anthropozentrismus** nur Menschen, im **Pathozentrismus** alle leidensfähigen Wesen, im **Biozentrismus** alles Lebendige (Schweitzer) und im **Holismus** auch Ganzheiten wie Ökosysteme (Leopold).",
+    "alltag": "Auch ein Anthropozentriker kann für Klimaschutz sein: weil künftige Menschen sonst leiden. Viele Positionen kommen bei konkreten Fragen zum gleichen Ergebnis, aber aus verschiedenen Gründen."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "eth-nat-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Wer hat nach welcher Position einen moralischen Eigenwert?",
+      "paare": [
+        { "links": "Anthropozentrismus", "rechts": "nur Menschen" },
+        { "links": "Pathozentrismus", "rechts": "alle leidensfähigen Wesen" },
+        { "links": "Biozentrismus", "rechts": "alles Lebendige" },
+        { "links": "Holismus", "rechts": "auch Ganzheiten wie Arten und Ökosysteme" }
+      ],
+      "erklaerung": "Von Position zu Position wird der Kreis derer größer, auf die man direkt Rücksicht nehmen muss."
+    },
+    {
+      "id": "eth-nat-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "„Wir müssen die Wälder schützen, weil wir ihren Sauerstoff und ihr Holz brauchen.“ Welcher Wert der Natur wird hier betont?",
+      "optionen": [
+        { "text": "der instrumentelle Wert", "richtig": true },
+        { "text": "der Eigenwert", "feedback": "Ein Eigenwert wäre ein Wert unabhängig vom Nutzen für uns." },
+        { "text": "der ästhetische Wert", "feedback": "Schönheit wird hier nicht erwähnt." },
+        { "text": "gar kein Wert", "feedback": "Der Wald wird als nützlich bewertet." }
+      ],
+      "erklaerung": "Der Wald wird geschützt, weil er Menschen nützt. Das ist ein instrumenteller Wert."
+    },
+    {
+      "id": "eth-nat-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Wer sagte: „Ich bin Leben, das leben will, inmitten von Leben, das leben will“?",
+      "optionen": [
+        { "text": "Albert Schweitzer, ein Vertreter des Biozentrismus", "richtig": true },
+        { "text": "Aldo Leopold, ein Vertreter des Holismus", "feedback": "Leopold betonte die Gemeinschaft des Lebens als Ganzes, nicht das einzelne Lebewesen." },
+        { "text": "Jeremy Bentham, ein Vertreter des Pathozentrismus", "feedback": "Bentham fragte, ob Wesen leiden können." },
+        { "text": "Immanuel Kant, ein Vertreter des Anthropozentrismus", "feedback": "Für Kant haben nur vernünftige Wesen Würde." }
+      ],
+      "erklaerung": "Schweitzers „Ehrfurcht vor dem Leben“ verlangt Achtung vor allem Lebendigen."
+    },
+    {
+      "id": "eth-nat-04", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Mit welcher Position lässt sich das Argument am besten begründen?",
+      "paare": [
+        { "links": "„Der Fluss darf nicht verschmutzt werden, weil die Fische darin Schmerzen leiden.“", "rechts": "Pathozentrismus" },
+        { "links": "„Der Fluss darf nicht verschmutzt werden, weil wir Trinkwasser brauchen.“", "rechts": "Anthropozentrismus" },
+        { "links": "„Der Fluss als lebendiges Ökosystem hat einen eigenen Wert.“", "rechts": "Holismus" }
+      ],
+      "erklaerung": "Alle drei kommen zum gleichen Ergebnis, aber mit verschiedenen Begründungen."
+    },
+    {
+      "id": "eth-nat-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Welche Schwierigkeit hat der **Biozentrismus**?",
+      "optionen": [
+        { "text": "Menschen müssen leben, essen und sich gegen Krankheitserreger wehren – er braucht Regeln, wie man zwischen Lebewesen abwägt.", "richtig": true },
+        { "text": "Er schützt nur Menschen.", "feedback": "Das wäre der Anthropozentrismus." },
+        { "text": "Er schützt keine Pflanzen.", "feedback": "Gerade Pflanzen bezieht der Biozentrismus mit ein." },
+        { "text": "Er hat keine Schwierigkeiten.", "feedback": "Wenn alles Leben Eigenwert hat, wird jede Handlung, die Leben beendet, begründungsbedürftig." }
+      ],
+      "erklaerung": "Schweitzer selbst sagte: Wer Leben schädigt, muss sich fragen, ob es notwendig ist."
+    },
+    {
+      "id": "eth-nat-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Der uralte Baum aus dem Einstieg soll für eine Straße gefällt werden. Welche Position kann am ehesten begründen, dass das **an sich** falsch ist, auch wenn kein Mensch und kein Tier geschädigt wird?",
+      "optionen": [
+        { "text": "Biozentrismus", "richtig": true },
+        { "text": "Anthropozentrismus", "feedback": "Wenn kein Mensch geschädigt wird, gibt es für den Anthropozentrismus keinen direkten Grund dagegen." },
+        { "text": "Pathozentrismus", "feedback": "Ein Baum ist nach heutigem Wissen nicht leidensfähig." },
+        { "text": "Keine Position", "feedback": "Eine Position schreibt auch dem einzelnen Baum einen Eigenwert zu." }
+      ],
+      "erklaerung": "Für den Biozentrismus hat jedes Lebewesen, also auch der Baum, einen Eigenwert."
+    },
+    {
+      "id": "eth-nat-07", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Welche Aussagen über den **Anthropozentrismus** sind zutreffend?",
+      "optionen": [
+        { "text": "Er kann Klimaschutz mit dem Wohl künftiger Menschen begründen.", "richtig": true },
+        { "text": "Er schützt eine Art nur, solange sie für Menschen nützlich oder schön ist.", "richtig": true },
+        { "text": "Er verbietet grundsätzlich, Pflanzen zu essen.", "feedback": "Das wäre eher eine extreme Form des Biozentrismus." },
+        { "text": "Er hält Tiere für Wesen mit eigenem moralischem Wert.", "feedback": "Im Anthropozentrismus haben nur Menschen einen Eigenwert." }
+      ],
+      "erklaerung": "Der Anthropozentrismus kann viel Naturschutz begründen, aber immer über den Nutzen für Menschen."
+    }
+  ]
+}

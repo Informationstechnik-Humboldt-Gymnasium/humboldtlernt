@@ -1,0 +1,238 @@
+{
+  "id": "eth-k7-glueck",
+  "titel": "Glück haben und glücklich sein",
+  "kurz": "Was Glück bedeutet, warum Glückhaben nicht dasselbe ist wie Glücklichsein und welche Rolle Medien, Konsum und Vorbilder spielen.",
+  "reihenfolge": 1,
+  "lernziele": [
+    {
+      "id": "lz1",
+      "niveau": "G",
+      "text": "„Glück haben“ und „glücklich sein“ unterscheiden"
+    },
+    {
+      "id": "lz2",
+      "niveau": "G",
+      "text": "Äußere Glücksgüter und inneres Glücksempfinden unterscheiden"
+    },
+    {
+      "id": "lz3",
+      "niveau": "G",
+      "text": "Die Bedeutung von Medienangeboten und Vorbildern für den eigenen Alltag beschreiben"
+    },
+    {
+      "id": "lz4",
+      "niveau": "H",
+      "text": "Eine Arbeitsdefinition von Glück formulieren und prüfen, ob sie zu eng oder zu weit ist"
+    }
+  ],
+  "verstehen": {
+    "einstieg": "Jemand gewinnt im Lotto eine Million Euro. Ein Jahr später ist er unglücklicher als vorher. Wie kann das sein?",
+    "abschnitte": [
+      {
+        "titel": "Zwei Bedeutungen von Glück",
+        "text": "Das deutsche Wort „Glück“ hat zwei Bedeutungen, für die andere Sprachen zwei Wörter haben (Englisch: *luck* und *happiness*):\n\n- **Glück haben (Zufallsglück):** Etwas Gutes passiert, ohne dass man es selbst bewirkt hat, z. B. ein Lottogewinn oder ein gefundener Geldschein.\n- **Glücklich sein (Lebensglück):** ein länger anhaltender Zustand von Zufriedenheit und Freude am eigenen Leben.\n\nGlück haben kann glücklich machen, muss es aber nicht. Und man kann glücklich sein, ohne besonderes Glück gehabt zu haben."
+      },
+      {
+        "titel": "Äußere Glücksgüter und inneres Glücksempfinden",
+        "text": "- **Äußere Glücksgüter** sind Dinge oder Umstände außerhalb von uns: Geld, Besitz, neue Kleidung, Likes und Follower, Ruhm.\n- **Inneres Glücksempfinden** entsteht aus dem, was wir tun und erleben: das Glück des **tätigen Lebens** (etwas können und schaffen), das Glück **gelungener Beziehungen** (Freundschaft, Familie, Liebe) und das Glück **intensiven Erlebens** (Musik, Natur, Sport).\n\nÄußere Güter können helfen, machen aber nicht dauerhaft glücklich. Wenn man sich an sie gewöhnt, ist die Freude oft schnell vorbei. Forscher nennen das die **hedonistische Tretmühle**: Man will immer mehr, ohne zufriedener zu werden."
+      },
+      {
+        "titel": "Medien, Konsum und Vorbilder",
+        "text": "Soziale Netzwerke, Computerspiele und Werbung versprechen Glück. Sie können Spaß machen und verbinden. Sie können aber auch:\n\n- durch ständige **Vergleiche** mit perfekt inszenierten Bildern unzufrieden machen,\n- durch **Belohnungen** wie Likes oder Spielpunkte dazu bringen, immer weiterzumachen,\n- **Idole** zeigen, deren Leben vor allem aus Konsum, Aussehen und Ruhm zu bestehen scheint.\n\nEin **Vorbild** ist jemand, dessen Haltung oder Taten man nachahmen möchte. Ein **Idol** wird vor allem bewundert, oft für Aussehen, Ruhm oder Erfolg. Fragen helfen: Wofür bewundere ich diese Person? Würde ich so leben wollen?"
+      },
+      {
+        "titel": "Begriffe definieren",
+        "text": "Eine **Arbeitsdefinition** sagt, was ein Wort bedeuten soll. Man prüft sie mit Beispielen:\n\n- **zu eng:** Sie schließt Fälle aus, die dazugehören. „Glück ist, viel Geld zu haben“ schließt glückliche Menschen ohne viel Geld aus.\n- **zu weit:** Sie schließt Fälle ein, die nicht dazugehören. „Glück ist ein Gefühl“ würde auch Angst oder Wut einschließen.\n\nEine bessere Definition wäre z. B.: „Glücklich sein ist eine anhaltende Zufriedenheit mit dem eigenen Leben.“"
+      }
+    ],
+    "formeln": [],
+    "merksatz": "**Glück haben** ist zufällig, **glücklich sein** ist ein anhaltender Zustand der Zufriedenheit.\n\n**Äußere Glücksgüter** (Geld, Besitz, Likes) machen nicht dauerhaft glücklich. Wichtiger ist **inneres Glücksempfinden** aus Tätigkeit, Beziehungen und intensivem Erleben.",
+    "alltag": "Wenn du nach einer Stunde am Handy schlechter gelaunt bist als vorher, lohnt die Frage: Welches Glück hat mir die App versprochen, und welches hat sie gehalten?"
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "eth-glk-01",
+      "typ": "single",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz1",
+      "frage": "Welcher Satz beschreibt **glücklich sein** und nicht nur **Glück haben**?",
+      "optionen": [
+        {
+          "text": "„Ich bin mit meinem Leben, meinen Freunden und meiner Familie im Großen und Ganzen zufrieden.“",
+          "richtig": true
+        },
+        {
+          "text": "„Ich habe im Gewinnspiel ein Fahrrad gewonnen.“",
+          "feedback": "Das ist Zufallsglück: Etwas Gutes ist passiert, ohne dass man es bewirkt hat."
+        },
+        {
+          "text": "„Der Bus hatte Verspätung, so habe ich ihn noch erwischt.“",
+          "feedback": "Auch das ist ein glücklicher Zufall."
+        },
+        {
+          "text": "„Ich habe auf der Straße zehn Euro gefunden.“",
+          "feedback": "Das ist Glück haben, kein anhaltender Zustand."
+        }
+      ],
+      "erklaerung": "Glück haben ist ein zufälliges Ereignis. Glücklich sein ist ein länger anhaltender Zustand der Zufriedenheit."
+    },
+    {
+      "id": "eth-glk-02",
+      "typ": "multi",
+      "schwierigkeit": "leicht",
+      "lernziel": "lz2",
+      "frage": "Welche Beispiele gehören zum **inneren Glücksempfinden**?",
+      "optionen": [
+        {
+          "text": "Stolz, nach langem Üben ein Musikstück zu können",
+          "richtig": true
+        },
+        {
+          "text": "Ein langer Abend mit der besten Freundin",
+          "richtig": true
+        },
+        {
+          "text": "1000 neue Follower",
+          "feedback": "Follower sind ein äußeres Glücksgut – sie kommen von außen."
+        },
+        {
+          "text": "Das neueste Smartphone",
+          "feedback": "Besitz gehört zu den äußeren Glücksgütern."
+        }
+      ],
+      "erklaerung": "Inneres Glücksempfinden entsteht aus Tätigkeit, Beziehungen und Erleben. Äußere Güter sind Dinge oder Anerkennung von außen."
+    },
+    {
+      "id": "eth-glk-03",
+      "typ": "single",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz2",
+      "frage": "Lisa hat sich lange ein neues Handy gewünscht. Nach zwei Wochen freut sie sich nicht mehr darüber und wünscht sich schon das nächste. Wie nennt man diese Beobachtung?",
+      "optionen": [
+        {
+          "text": "hedonistische Tretmühle – man gewöhnt sich an äußere Güter und will immer mehr",
+          "richtig": true
+        },
+        {
+          "text": "Goldene Regel",
+          "feedback": "Die Goldene Regel betrifft den Umgang mit anderen, nicht Glück."
+        },
+        {
+          "text": "Altruismus",
+          "feedback": "Altruismus ist selbstloses Handeln für andere."
+        },
+        {
+          "text": "Zufallsglück",
+          "feedback": "Lisa hat das Handy nicht zufällig bekommen. Es geht um die Gewöhnung."
+        }
+      ],
+      "erklaerung": "Die Freude an äußeren Gütern lässt durch Gewöhnung schnell nach. Deshalb machen sie selten dauerhaft glücklich."
+    },
+    {
+      "id": "eth-glk-04",
+      "typ": "single",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz4",
+      "frage": "„Glück ist, viel Geld zu haben.“ Warum ist diese Definition **zu eng**?",
+      "optionen": [
+        {
+          "text": "Sie schließt Menschen aus, die ohne viel Geld glücklich sind.",
+          "richtig": true
+        },
+        {
+          "text": "Sie schließt zu viele Dinge ein, die kein Glück sind.",
+          "feedback": "Das wäre eine zu weite Definition."
+        },
+        {
+          "text": "Sie ist zu lang.",
+          "feedback": "Die Länge ist nicht das Problem, sondern welche Fälle sie erfasst."
+        },
+        {
+          "text": "Sie ist richtig, weil Geld immer glücklich macht.",
+          "feedback": "Es gibt viele Gegenbeispiele, z. B. unglückliche reiche Menschen."
+        }
+      ],
+      "erklaerung": "Eine Definition ist zu eng, wenn sie Fälle ausschließt, die eigentlich dazugehören."
+    },
+    {
+      "id": "eth-glk-05",
+      "typ": "single",
+      "schwierigkeit": "mittel",
+      "lernziel": "lz3",
+      "frage": "Was unterscheidet ein **Vorbild** von einem **Idol**?",
+      "optionen": [
+        {
+          "text": "Ein Vorbild möchte man in Haltung oder Taten nachahmen, ein Idol wird vor allem bewundert, oft für Ruhm oder Aussehen.",
+          "richtig": true
+        },
+        {
+          "text": "Ein Idol ist immer eine erfundene Figur.",
+          "feedback": "Auch reale Stars können Idole sein."
+        },
+        {
+          "text": "Es gibt keinen Unterschied.",
+          "feedback": "Im Alltag werden die Wörter manchmal gleich benutzt, aber es lohnt sich, sie zu unterscheiden."
+        },
+        {
+          "text": "Ein Vorbild muss berühmt sein.",
+          "feedback": "Auch Eltern, Trainer oder Freunde können Vorbilder sein."
+        }
+      ],
+      "erklaerung": "Bei Vorbildern geht es darum, wie jemand handelt. Idole werden oft für Äußerlichkeiten bewundert, die man nicht einfach nachahmen kann."
+    },
+    {
+      "id": "eth-glk-06",
+      "typ": "multi",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz3",
+      "frage": "Wie können soziale Netzwerke das Glücksempfinden **beeinträchtigen**?",
+      "optionen": [
+        {
+          "text": "Durch ständige Vergleiche mit geschönten Bildern anderer",
+          "richtig": true
+        },
+        {
+          "text": "Durch Belohnungen wie Likes, die zum Weitermachen verleiten",
+          "richtig": true
+        },
+        {
+          "text": "Indem sie Kontakt zu weit entfernten Freunden ermöglichen",
+          "feedback": "Das ist eher eine Chance, die Beziehungen stärken kann."
+        },
+        {
+          "text": "Indem Idole vor allem Konsum und Aussehen als Glück darstellen",
+          "richtig": true
+        }
+      ],
+      "erklaerung": "Medien können verbinden und Spaß machen. Sie können aber auch durch Vergleiche und Belohnungssysteme unzufrieden machen."
+    },
+    {
+      "id": "eth-glk-07",
+      "typ": "single",
+      "schwierigkeit": "schwer",
+      "lernziel": "lz4",
+      "frage": "Welche Arbeitsdefinition von „glücklich sein“ ist am besten?",
+      "optionen": [
+        {
+          "text": "„Glücklich sein ist eine anhaltende Zufriedenheit mit dem eigenen Leben.“",
+          "richtig": true
+        },
+        {
+          "text": "„Glücklich sein ist ein Gefühl.“",
+          "feedback": "Zu weit: Auch Angst und Wut sind Gefühle."
+        },
+        {
+          "text": "„Glücklich sein heißt, im Lotto zu gewinnen.“",
+          "feedback": "Zu eng – und verwechselt Glück haben mit glücklich sein."
+        },
+        {
+          "text": "„Glücklich sein ist, wenn man glücklich ist.“",
+          "feedback": "Diese Definition dreht sich im Kreis. Sie erklärt das Wort mit sich selbst."
+        }
+      ],
+      "erklaerung": "Eine gute Definition ist weder zu eng noch zu weit und erklärt das Wort nicht mit sich selbst."
+    }
+  ]
+}

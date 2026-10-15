@@ -24,6 +24,12 @@ Lerneinheiten sie erledigt haben, und Lehrkräfte sehen den Fortschritt ihrer Kl
   Menschen, Genetik, Evolution): 31 Themen, 217 Übungen und 3 interaktive Erklärungen (Zellen-Explorer,
   Blutgruppen-Labor, Kreuzungs-Labor). Das Themenfeld Sexualität in Klasse 7 ist vorerst gesperrt
   (`"gesperrt": true` in seiner `themenfeld.json`): sichtbar, aber nicht aufrufbar.
+- **Ethik (ab Klasse 9 Ethik/Philosophie) nach dem Schulcurriculum:** alle 17 Unterrichtsthemen, Klasse 7/8
+  (moralische Regeln, Gewissen, Glück, Toleranz, Tierethik, Gerechtigkeit, Naturethik, Medien) und 9/10 (Kant und
+  Utilitarismus, angewandte Ethik, Relativismus, Vertragstheorien, Strafe, Medienethik, Wahrheit und Skepsis,
+  Gottesfrage, Ästhetik): 34 Themen, 238 Übungen und 3 interaktive Erklärungen (Gefangenendilemma,
+  Nutzenkalkül und Menschheitszweckformel, praktischer Syllogismus). Die Übungen prüfen Begriffe, Positionen und
+  Argumente – keine Meinungen.
 - **Sandbox:** freie Simulationen ohne Klassenstufen. Erste Simulation ist das **Schaltkreis-Labor**:
   Gleich- und Wechselspannungsquelle, Schalter, Lampe, einstellbarer Widerstand, Diode, Transistor (NPN)
   und Multimeter frei verdrahten, mit
