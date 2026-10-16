@@ -76,6 +76,16 @@ falls es ihn gibt – radioaktiv ist. Das Labor berechnet selbst keine Halbwerts
   Formalladungen, geladene Teilchen und Ausnahmen wie CO werden nicht gebaut. Geometrien nach dem
   Elektronenpaarabstoßungsmodell sind Modellwerte; die Zeichnung ist flach. Lernaufgaben (`aufgaben-molekuel.js`)
   werden ebenfalls strukturell geprüft. Molekül und gelöste Aufgaben liegen im LocalStorage (`chemielabor-molekuel`).
+- **3D-Ansicht im Molecule Builder:** zeigt dasselbe Modell räumlich (`raum.js` rechnet ohne DOM, `ansicht-molekuel-3d.js`
+  zeichnet mit Three.js). Die Richtungen folgen dem Elektronenpaarabstoßungsmodell (2 linear, 3 trigonal-planar,
+  4 tetraedrisch, 5 trigonal-bipyramidal, 6 oktaedrisch; freie Elektronenpaare und offene Bindungsmöglichkeiten zählen mit).
+  Nur am Zentralatom eines erkannten Datensatz-Moleküls mit hinterlegtem Messwinkel (H₂O, H₂S, NH₃, PH₃, CH₄, CO₂, HCN)
+  steht der **gemessene** Winkel; überall sonst der ideale **Modellwinkel** – auch dort, wo echte Moleküle davon abweichen
+  (z. B. SO₂). Die Anzeige sagt jeweils „gemessen“ oder „Modell“. **Bindungslängen und Atomgrößen sind schematisch**
+  (1 zwischen schweren Atomen, 0,8 zu Wasserstoff), weil das Labor keine gemessenen Längen hinterlegt. Ketten sind
+  gestaffelt, Doppelbindungen eben; Ringe werden mit einer einfachen Ausgleichsrechnung angenähert (Benzol eben,
+  Cyclohexan gewellt), Kumulene (C=C=C) werden vereinfacht eben gezeichnet. Three.js (r160, MIT-Lizenz, `THREE-LIZENZ.txt`)
+  liegt als Datei `three.js` im Ordner; es wird nichts von fremden Servern geladen und nichts gespeichert.
 - **Formelrechner:** Summenformeln mit Klammern `()`/`[]`, Vorfaktoren, Kristallwasser (`·`, `*`, `.`) und Ladung am
   Ende. Keine Isotopenangaben, Strukturformeln oder Reaktionsgleichungen. Für Elemente ohne Standardatomgewicht wird
   keine molare Masse berechnet. Die Elektronenmasse bei Ionen wird vernachlässigt.
