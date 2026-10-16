@@ -1,0 +1,122 @@
+{
+  "id": "en-k7-scotland",
+  "titel": "Scotland – the place to be? Places, traditions and stereotypes",
+  "kurz": "Landschaften, Städte, Mythen und Traditionen Schottlands, nationale Stereotype erkennen und einen überzeugenden Text schreiben.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Wichtige Orte, Landschaften und Traditionen Schottlands nennen und erklären" },
+    { "id": "lz2", "niveau": "G", "text": "Schottische Wörter wie loch, ben und glen sowie Begriffe wie tartan und haggis verstehen" },
+    { "id": "lz3", "niveau": "H", "text": "Nationale Stereotype erkennen und von Tatsachen unterscheiden" },
+    { "id": "lz4", "niveau": "H", "text": "Einen überzeugenden Text (z. B. für eine Reisewebsite) mit persuasive expressions schreiben und überarbeiten" }
+  ],
+  "verstehen": {
+    "einstieg": "Dudelsäcke, Männer in Röcken, ein Seeungeheuer und Regen – so stellen sich viele Schottland vor. Was davon stimmt, und was ist nur ein Klischee?",
+    "abschnitte": [
+      {
+        "titel": "Places",
+        "text": "- Schottland ist ein Landesteil des **United Kingdom** im Norden der Insel Großbritannien und hat seit 1999 ein eigenes Parlament in Edinburgh.\n- **Edinburgh** ist die Hauptstadt: mit **Edinburgh Castle** auf einem Felsen, der Altstadt mit unterirdischen Gassen wie **Mary King’s Close** und dem großen Kulturfestival im August.\n- **Glasgow** ist die größte Stadt.\n- Die **Highlands** im Norden sind gebirgig. Dort liegt **Ben Nevis**, mit 1345 m der höchste Berg des Vereinigten Königreichs.\n- Inseln: **Isle of Skye**, **Orkney** und **Shetland**\n- Schottische Wörter: **loch** (See), **ben** (Berg), **glen** (Tal)"
+      },
+      {
+        "titel": "Myths and traditions",
+        "text": "- **Nessie**: das angebliche Ungeheuer im **Loch Ness**. Ein berühmtes Foto von 1934 stellte sich später als Fälschung heraus. Bewiesen ist Nessie nie worden – aber die Legende lockt viele Touristen an.\n- **Kilt** aus **tartan**: Karostoff. Viele schottische Familien (**clans**) haben ihr eigenes Muster. Kilts trägt man heute vor allem zu besonderen Anlässen.\n- **Bagpipes**: Dudelsack\n- **Haggis**: Nationalgericht aus Schafsinnereien, Hafer, Zwiebeln und Gewürzen\n- **Burns Night** (25. Januar) zu Ehren des Dichters Robert Burns, **Hogmanay**: Silvester\n- Sprachen: neben Englisch auch **Scottish Gaelic** und **Scots**"
+      },
+      {
+        "titel": "Stereotypes",
+        "text": "Ein **Stereotyp** ist eine vereinfachte, verallgemeinernde Vorstellung von einer Gruppe: „Alle Schotten tragen Kilts.“ Stereotype enthalten oft einen wahren Kern, treffen aber auf die meisten Menschen nicht zu und können verletzen. Achte auf Wörter wie **all**, **always** oder **every**: Sie sind oft ein Hinweis auf ein Klischee."
+      },
+      {
+        "titel": "Writing a persuasive text",
+        "text": "Ein überzeugender Text (z. B. für eine Tourismus-Website) will Leserinnen und Leser zu etwas bewegen.\n\n- **Persuasive expressions:** You simply can’t miss … / It’s the perfect place for … / Don’t forget to … / Have you ever dreamed of …? / … is a must-see.\n- **Starke Adjektive:** breathtaking, stunning, spectacular, unforgettable\n- **Direkte Ansprache** (you) und **rhetorische Fragen**\n- **Schreibprozess:** Kriterien sammeln – Entwurf (**draft**) – Rückmeldung eines Mitschülers (**peer correction**) – überarbeiten"
+      }
+    ],
+    "merksatz": "Schottland: Hauptstadt Edinburgh, größte Stadt Glasgow, Highlands mit Ben Nevis; loch = See, ben = Berg, glen = Tal. Kilt aus tartan, bagpipes, haggis, Nessie. Stereotype sind verallgemeinernde Klischees. Überzeugend schreiben: starke Adjektive, du-Ansprache, rhetorische Fragen.",
+    "alltag": "Das Nationaltier Schottlands ist ein Fabelwesen: das Einhorn (unicorn). Du findest es im königlichen Wappen."
+  },
+  "interaktiv": ["en-bildbeschreibung"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-sco-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Match the Scottish words with their meanings.",
+      "paare": [
+        { "links": "loch", "rechts": "lake" },
+        { "links": "ben", "rechts": "mountain" },
+        { "links": "glen", "rechts": "valley" },
+        { "links": "tartan", "rechts": "cloth with a check pattern" },
+        { "links": "bagpipes", "rechts": "a musical instrument" }
+      ],
+      "erklaerung": "Loch Ness, Ben Nevis, Glen Coe: Die schottischen Wörter stecken in vielen Ortsnamen."
+    },
+    {
+      "id": "en-sco-02", "typ": "multi", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Which facts about Scotland are true?",
+      "optionen": [
+        { "text": "Edinburgh is the capital of Scotland.", "richtig": true },
+        { "text": "Ben Nevis is the highest mountain in the UK.", "richtig": true },
+        { "text": "Glasgow is Scotland’s biggest city.", "richtig": true },
+        { "text": "Scotland is an independent country outside the UK.", "feedback": "Schottland gehört zum Vereinigten Königreich, hat aber ein eigenes Parlament." },
+        { "text": "Cardiff is the capital of Scotland.", "feedback": "Cardiff ist die Hauptstadt von Wales." }
+      ],
+      "erklaerung": "Hauptstadt Edinburgh, größte Stadt Glasgow, höchster Berg Ben Nevis (1345 m)."
+    },
+    {
+      "id": "en-sco-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "What is haggis?",
+      "optionen": [
+        { "text": "A traditional Scottish dish made with sheep’s organs, oats, onions and spices", "richtig": true },
+        { "text": "A small animal that lives in the Highlands", "feedback": "Manche Schotten erzählen Touristen diesen Witz – in Wirklichkeit ist haggis ein Gericht." },
+        { "text": "A kind of Scottish dance", "feedback": "Schottische Tänze heißen z. B. ceilidh-Tänze. Haggis isst man." },
+        { "text": "The Scottish word for a mountain", "feedback": "Ein Berg heißt ben." }
+      ],
+      "erklaerung": "Haggis ist das Nationalgericht. Traditionell isst man es an Burns Night."
+    },
+    {
+      "id": "en-sco-04", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Which statements are stereotypes (and not facts)?",
+      "optionen": [
+        { "text": "All Scottish men wear kilts every day.", "richtig": true },
+        { "text": "It always rains in Scotland.", "richtig": true },
+        { "text": "Many people visit Loch Ness every year.", "feedback": "Das ist eine Tatsache. Loch Ness ist ein beliebtes Reiseziel." },
+        { "text": "Every Scot plays the bagpipes.", "richtig": true },
+        { "text": "Scotland has its own parliament.", "feedback": "Das ist eine Tatsache (seit 1999)." }
+      ],
+      "erklaerung": "Wörter wie all, always und every verraten oft Stereotype: Sie verallgemeinern."
+    },
+    {
+      "id": "en-sco-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Which sentence is the most persuasive for a travel website?",
+      "optionen": [
+        { "text": "Have you ever dreamed of exploring a real castle? Then Edinburgh is a must-see!", "richtig": true },
+        { "text": "Edinburgh has a castle.", "feedback": "Das stimmt, aber es überzeugt niemanden. Es fehlen Ansprache und starke Wörter." },
+        { "text": "Edinburgh is okay, I think.", "feedback": "Unsicher und schwach – das lockt keine Touristen." },
+        { "text": "Some people say Edinburgh is boring.", "feedback": "Das schreckt eher ab." }
+      ],
+      "erklaerung": "Rhetorische Frage, direkte Ansprache und „a must-see“ machen den Satz überzeugend."
+    },
+    {
+      "id": "en-sco-06", "typ": "reihenfolge", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Put the steps of the writing process in the right order.",
+      "elemente": [
+        "Collect ideas and make a list of criteria for a good text.",
+        "Write a first draft.",
+        "Swap texts with a partner and give each other feedback (peer correction).",
+        "Revise your draft and correct mistakes.",
+        "Think about what went well and what you want to do better next time."
+      ],
+      "erklaerung": "Planen – Entwurf – Rückmeldung – Überarbeiten – Nachdenken über den Schreibprozess."
+    },
+    {
+      "id": "en-sco-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Write a short persuasive text (4–5 sentences) for a travel website: „Visit the Scottish Highlands!“ Use strong adjectives, address the reader directly and use at least one rhetorical question.",
+      "stichworte": [
+        { "aspekt": "Direkte Ansprache des Lesers (you, your)", "woerter": ["you"] },
+        { "aspekt": "Rhetorische Frage", "woerter": ["?"] },
+        { "aspekt": "Starke Adjektive", "woerter": ["breathtaking", "stunning", "spectacular", "unforgettable", "amazing", "beautiful", "magical", "wild"] },
+        { "aspekt": "Inhalte aus Schottland (Highlands, loch, Ben Nevis, castle …)", "woerter": ["loch", "ben nevis", "highland", "castle", "skye", "glen", "mountain"] },
+        { "aspekt": "Aufforderung (Don’t miss / Come and …)", "woerter": ["don't", "don’t", "come", "visit", "must-see", "can't miss", "can’t miss"] }
+      ],
+      "musterloesung": "Are you looking for an unforgettable adventure? Then come to the Scottish Highlands! You can climb Ben Nevis, the highest mountain in the UK, and enjoy breathtaking views. Take a boat trip on Loch Ness – maybe you will see Nessie! Don’t miss the magical Isle of Skye with its wild cliffs and old castles.",
+      "erklaerung": "Ein überzeugender Text spricht dich direkt an, weckt Neugier und benutzt starke Adjektive."
+    }
+  ]
+}

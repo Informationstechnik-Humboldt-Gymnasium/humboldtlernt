@@ -1,0 +1,110 @@
+{
+  "id": "en-k9-advertising",
+  "titel": "Buy me! Advertising strategies and cartoon analysis",
+  "kurz": "Wie Werbung überzeugt (means of persuasion, AIDA) und wie man einen Cartoon beschreibt, analysiert und seine Botschaft deutet.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Werbestrategien (means of persuasion) erkennen und benennen" },
+    { "id": "lz2", "niveau": "G", "text": "Das AIDA-Modell erklären" },
+    { "id": "lz3", "niveau": "H", "text": "Einen Cartoon in den Schritten describe – analyse – interpret beschreiben und deuten" },
+    { "id": "lz4", "niveau": "H", "text": "Gestaltungsmittel von Cartoons (exaggeration, symbols, irony, caption) benennen und ihre Wirkung erklären" }
+  ],
+  "verstehen": {
+    "einstieg": "Ein Fußballstar trinkt lächelnd ein Getränk, dazu der Slogan „Be a winner“. Du weißt nichts über den Geschmack – und hast trotzdem Lust darauf. Wie funktioniert das?",
+    "abschnitte": [
+      {
+        "titel": "Means of persuasion",
+        "text": "- **celebrity endorsement / testimonial**: Ein Star oder ein „echter Kunde“ empfiehlt das Produkt.\n- **emotional appeal**: Gefühle wie Glück, Freundschaft, Angst, Stolz\n- **bandwagon**: „Alle haben es schon“ – ``Join millions of happy customers!``\n- **slogan**: kurzer, einprägsamer Spruch, oft mit **rhyme** oder **alliteration**\n- **facts and figures**: ``9 out of 10 dentists recommend …`` (Wer hat das gemessen?)\n- **superlatives** und starke Adjektive: the best, the newest, amazing\n- **rhetorical questions** und direkte Ansprache: ``Tired of boring breakfasts?``\n- **humour**, **attractive pictures and colours**"
+      },
+      {
+        "titel": "The AIDA model",
+        "text": "Viele Werbungen folgen dem **AIDA**-Schema:\n\n- **Attention**: Aufmerksamkeit wecken (Bild, Farbe, überraschende Überschrift)\n- **Interest**: Interesse wecken (Was ist neu? Was bringt es mir?)\n- **Desire**: den Wunsch wecken, das Produkt zu besitzen\n- **Action**: zum Handeln auffordern (``Order now!`` ``Download the app today!``)"
+      },
+      {
+        "titel": "Analysing a cartoon",
+        "text": "**1. Describe**: Was ist zu sehen? Personen, Ort, Gegenstände, Sprechblasen (**speech bubbles**), Bildunterschrift (**caption**), Beschriftungen. Im **simple present** bzw. **present progressive**: ``The cartoon shows a family sitting at the dinner table. Everybody is looking at their phone.``\n\n**2. Analyse**: Welche Mittel nutzt der Zeichner?\n\n- **exaggeration / caricature**: Übertreibung, verzerrte Körper\n- **symbols**: z. B. eine Kette als Zeichen für Abhängigkeit\n- **irony**: Das Gesagte widerspricht dem Gezeigten.\n- **contrast**: z. B. leerer Teller und volles Handy\n\n**3. Interpret**: Was ist die Botschaft (**message**)? ``The cartoonist criticises that …`` ``The cartoon suggests that …``\n\n**4. Evaluate** (wenn verlangt): Ist die Kritik berechtigt? ``In my opinion, the cartoonist exaggerates, but …``"
+      }
+    ],
+    "merksatz": "Werbung überzeugt mit Stars, Gefühlen, Mitläufer-Effekt, Slogans, Zahlen, Superlativen und rhetorischen Fragen. AIDA: Attention – Interest – Desire – Action. Cartoon: describe – analyse (exaggeration, symbols, irony, contrast) – interpret (message) – evaluate.",
+    "alltag": "Influencer müssen bezahlte Beiträge als Werbung kennzeichnen („ad“, „sponsored“). Sie sind moderne testimonials."
+  },
+  "interaktiv": ["en-bildbeschreibung"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-adt-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Which strategy is used?",
+      "paare": [
+        { "links": "A famous footballer says: „I only drink PowerPlus.“", "rechts": "celebrity endorsement" },
+        { "links": "„Join over 5 million happy users!“", "rechts": "bandwagon" },
+        { "links": "„9 out of 10 teachers recommend Brainy Snacks.“", "rechts": "facts and figures" },
+        { "links": "„Tired of boring holidays?“", "rechts": "rhetorical question" },
+        { "links": "A happy family laughs together at a sunny beach.", "rechts": "emotional appeal" }
+      ],
+      "erklaerung": "Werbung kombiniert meist mehrere Strategien gleichzeitig."
+    },
+    {
+      "id": "en-adt-02", "typ": "reihenfolge", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Put the steps of the AIDA model in the right order.",
+      "elemente": ["Attention", "Interest", "Desire", "Action"],
+      "erklaerung": "Erst Aufmerksamkeit, dann Interesse, dann der Wunsch und am Ende die Aufforderung zu handeln."
+    },
+    {
+      "id": "en-adt-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Which part of an advert belongs to the step „Action“?",
+      "optionen": [
+        { "text": "„Download the app now and get your first month free!“", "richtig": true },
+        { "text": "A big, bright picture of a surprised face", "feedback": "Ein auffälliges Bild weckt Aufmerksamkeit (Attention)." },
+        { "text": "„Our new app helps you learn languages in just ten minutes a day.“", "feedback": "Das weckt Interesse (Interest)." },
+        { "text": "„Imagine ordering food in perfect Spanish on your next holiday!“", "feedback": "Das weckt den Wunsch (Desire)." }
+      ],
+      "erklaerung": "Action: konkrete Aufforderung, jetzt etwas zu tun."
+    },
+    {
+      "id": "en-adt-04", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Put the parts of a cartoon analysis in the right order.",
+      "elemente": [
+        "The cartoon shows a family sitting at the dinner table. Everybody is staring at their smartphone.",
+        "The cartoonist exaggerates the size of the phones, which are bigger than the plates.",
+        "The empty chair with a sign saying „Grandma – offline“ is ironic.",
+        "The cartoonist criticises that digital media can destroy real family time.",
+        "In my opinion, the criticism is partly justified, although phones can also connect families."
+      ],
+      "erklaerung": "Describe – analyse – interpret – evaluate."
+    },
+    {
+      "id": "en-adt-05", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Match the cartoon techniques with the examples.",
+      "paare": [
+        { "links": "exaggeration", "rechts": "A teenager has a huge thumb and tiny eyes." },
+        { "links": "symbol", "rechts": "A phone is shown with a chain around a person’s neck." },
+        { "links": "irony", "rechts": "The caption says „Family time“, but nobody is talking." },
+        { "links": "caption", "rechts": "the text under the picture" }
+      ],
+      "erklaerung": "Übertreibung, Symbole und Ironie machen Kritik sichtbar."
+    },
+    {
+      "id": "en-adt-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "In a cartoon, a man is drowning in a sea of plastic bottles, but he is smiling and holding a sign saying „Life is good!“. Which technique is most important here?",
+      "optionen": [
+        { "text": "Irony: the text contradicts the dangerous situation.", "richtig": true },
+        { "text": "Celebrity endorsement: a famous person recommends plastic.", "feedback": "Es gibt keinen Star, und es ist keine Werbung." },
+        { "text": "Bandwagon: everybody is drowning.", "feedback": "Es geht um den Widerspruch zwischen Bild und Text." },
+        { "text": "Facts and figures: the cartoon shows statistics.", "feedback": "Im Cartoon gibt es keine Zahlen." }
+      ],
+      "erklaerung": "Wenn das Gesagte dem Gezeigten widerspricht, spricht man von Ironie. Sie macht die Kritik an der Plastikflut deutlich."
+    },
+    {
+      "id": "en-adt-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Imagine a cartoon: Two teenagers are sitting on a park bench. A beautiful sunset is behind them, but both are only looking at a sunset photo on their phones. The caption says: „Wow, look at that sunset!“ Describe, analyse and interpret the cartoon (5–6 sentences).",
+      "stichworte": [
+        { "aspekt": "Beschreibung im present tense (The cartoon shows …)", "woerter": ["the cartoon shows", "the cartoon depicts", "in the cartoon"] },
+        { "aspekt": "Gestaltungsmittel benannt (irony, contrast, caption)", "woerter": ["irony", "ironic", "contrast", "caption"] },
+        { "aspekt": "Botschaft/Kritik des Zeichners", "woerter": ["criticis", "message", "suggests", "wants to show", "point out"] },
+        { "aspekt": "Bezug zu Mediennutzung", "woerter": ["phone", "screen", "digital", "real life", "social media"] }
+      ],
+      "musterloesung": "The cartoon shows two teenagers who are sitting on a park bench. Behind them, there is a beautiful sunset, but they are looking at a photo of a sunset on their phones. The caption „Wow, look at that sunset!“ is ironic, because they don’t look at the real sunset at all. The contrast between the real sky and the small screens makes this very clear. The cartoonist criticises that many young people experience the world only through their phones and miss real life.",
+      "erklaerung": "Erst beschreiben, dann Mittel benennen, dann die Botschaft deuten – so ist eine Cartoon-Analyse aufgebaut."
+    }
+  ]
+}

@@ -30,6 +30,14 @@ Lerneinheiten sie erledigt haben, und Lehrkräfte sehen den Fortschritt ihrer Kl
   Gottesfrage, Ästhetik): 34 Themen, 238 Übungen und 3 interaktive Erklärungen (Gefangenendilemma,
   Nutzenkalkül und Menschheitszweckformel, praktischer Syllogismus). Die Übungen prüfen Begriffe, Positionen und
   Argumente – keine Meinungen.
+- **Englisch (Klasse 5–10) nach dem Schulcurriculum:** alle 18 ausgearbeiteten Pflichtmodule (UK, Wales, London,
+  Schottland, USA, New York, Einwanderung, Australien, Bewerbung, Medien, Lektüre), Grammatik von to be bis
+  sentence transformation, Schreiben, Bild-, Film- und Textanalyse: 39 Themen, 273 Übungen und 4 interaktive
+  Erklärungen (Zeitenmaschine, Satzbaukasten, Kamera-Labor, Bild-Labor).
+- **Informatik (Wahlpflicht Klasse 10) nach dem Schulcurriculum:** alle 4 Themenfelder (Informatiksysteme,
+  algorithmisches Problemlösen mit Java und objektorientierter Modellierung, Informationen und Daten,
+  Datenbanken mit SQL, Datenschutz und Datensicherheit): 21 Themen, 147 Übungen und 4 interaktive Erklärungen
+  (SQL-Labor mit eigener kleiner SQL-Engine und Beispieldatenbank, Bit-Labor, Pixel-Labor, Objekt-Labor).
 - **Sandbox:** freie Simulationen ohne Klassenstufen. Erste Simulation ist das **Schaltkreis-Labor**:
   Gleich- und Wechselspannungsquelle, Schalter, Lampe, einstellbarer Widerstand, Diode, Transistor (NPN)
   und Multimeter frei verdrahten, mit

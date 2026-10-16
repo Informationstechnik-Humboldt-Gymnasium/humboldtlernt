@@ -1,0 +1,16 @@
+{
+  "nummer": "3",
+  "reihenfolge": 3,
+  "titel": "Informationen und Daten",
+  "beschreibung": "Information, Nachricht und Daten unterscheiden, Codes im Alltag, Dual- und Hexadezimalzahlen, Codierung von Zeichen und Bildern sowie Verschlüsselung und digitale Fingerabdrücke.",
+  "inhalte": [
+    "Was sind Daten (Bits, Bytes, Binärcode)?",
+    "Codierung (z. B. Erzeugercode von Hühnereiern, Barcodes, Morsecode, Blindenschrift, QR-Code, einfache Verschlüsselungsverfahren)",
+    "Darstellung und Bedeutung von Nachrichten",
+    "Digitale Codierung von Zahlen (dual, dezimal, hexadezimal)",
+    "Rechnen in unterschiedlichen Zahlensystemen",
+    "Digitale Codierung von Zeichen (z. B. ASCII-Code) und Grafiken (Pixel, Schwarz-Weiß-Bilder, Graustufen, Farbbilder, Grafikformate)",
+    "Einblicke in die technische Realisierung sicherer Datenverarbeitung (z. B. digitaler Fingerabdruck, Verschlüsselungsverfahren)"
+  ],
+  "erweiterung": "Aktuelle Entwicklungen wie Big Data, Internet of Things und Smart Home, verknüpft mit dem Themenfeld Datenbanken."
+}

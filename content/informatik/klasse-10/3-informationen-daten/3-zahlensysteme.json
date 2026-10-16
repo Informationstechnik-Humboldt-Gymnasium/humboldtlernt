@@ -1,0 +1,128 @@
+{
+  "id": "inf-k10-zahlensysteme",
+  "titel": "Dual-, Dezimal- und Hexadezimalzahlen",
+  "kurz": "Wie Stellenwertsysteme funktionieren und wie man Zahlen zwischen dem Dezimal-, Dual- und Hexadezimalsystem umrechnet.",
+  "reihenfolge": 3,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Das Prinzip von Stellenwertsystemen erklären und Dualzahlen in Dezimalzahlen umrechnen" },
+    { "id": "lz2", "niveau": "G", "text": "Dezimalzahlen mit dem Restverfahren oder über Zweierpotenzen in Dualzahlen umrechnen" },
+    { "id": "lz3", "niveau": "H", "text": "Hexadezimalzahlen lesen und zwischen Dual-, Dezimal- und Hexadezimalsystem umrechnen" }
+  ],
+  "verstehen": {
+    "einstieg": "Wir rechnen mit zehn Ziffern, vermutlich weil wir zehn Finger haben. Ein Rechner kennt aber nur „Strom an“ und „Strom aus“. Wie kann er damit trotzdem jede Zahl darstellen?",
+    "abschnitte": [
+      {
+        "titel": "Stellenwertsysteme",
+        "text": "Im **Dezimalsystem** (Basis 10) hat jede Stelle den zehnfachen Wert der Stelle rechts davon: 1, 10, 100, 1000 … Die Zahl 352 bedeutet 3 · 100 + 5 · 10 + 2 · 1.\n\nIm **Dualsystem** (Binärsystem, Basis 2) gibt es nur die Ziffern 0 und 1. Jede Stelle hat den doppelten Wert der Stelle rechts davon: 1, 2, 4, 8, 16, 32, 64, 128 …\n\n1011_{2} = 1 · 8 + 0 · 4 + 1 · 2 + 1 · 1 = 11\n\nDie kleine 2 zeigt die Basis an. So verwechselt man 1011_{2} (elf) nicht mit der Dezimalzahl 1011 (tausendelf)."
+      },
+      {
+        "titel": "Von dezimal nach dual",
+        "text": "**Restverfahren:** Teile die Zahl immer wieder durch 2 und notiere die Reste. Von unten nach oben gelesen ergeben sie die Dualzahl.\n\n- 13 : 2 = 6 Rest **1**\n- 6 : 2 = 3 Rest **0**\n- 3 : 2 = 1 Rest **1**\n- 1 : 2 = 0 Rest **1**\n\nVon unten gelesen: 13 = 1101_{2}.\n\n**Über Zweierpotenzen:** Ziehe die größte passende Zweierpotenz ab und wiederhole: 13 = 8 + 4 + 1, also Einsen an den Stellen 8, 4 und 1: 1101_{2}."
+      },
+      {
+        "titel": "Hexadezimalsystem",
+        "text": "Lange Dualzahlen sind schwer zu lesen. Das **Hexadezimalsystem** (Basis 16) fasst sie kürzer zusammen. Es braucht 16 Ziffern: 0 bis 9 und A = 10, B = 11, C = 12, D = 13, E = 14, F = 15. Die Stellenwerte sind 1, 16, 256 …\n\n3F_{16} = 3 · 16 + 15 · 1 = 63\n\nDer Trick: Eine Hex-Ziffer entspricht genau **4 Bit**, denn 2^{4} = 16. Ein Byte lässt sich also mit zwei Hex-Ziffern schreiben:\n\n1101 0110_{2} → 1101 = D, 0110 = 6 → D6_{16}\n\nHexzahlen begegnen dir bei Farbcodes im Web (``#FF8800``) und bei Speicheradressen."
+      }
+    ],
+    "formeln": [
+      { "formel": "z = a_{n} · b^{n} + … + a_{1} · b^{1} + a_{0} · b^{0}", "bedeutung": "Wert einer Zahl mit den Ziffern a im Stellenwertsystem zur Basis b" },
+      { "formel": "16 = 2^{4}", "bedeutung": "Eine Hexadezimalziffer entspricht genau 4 Bit" }
+    ],
+    "merksatz": "In einem Stellenwertsystem zur Basis b hat jede Stelle den b-fachen Wert der Stelle rechts davon. Dualsystem: Basis 2, Stellenwerte 1, 2, 4, 8 … Hexadezimalsystem: Basis 16, Ziffern 0–9 und A–F, eine Hex-Ziffer = 4 Bit.",
+    "alltag": "Im Web steht die Farbe #FF0000 für Rot: FF ist der Rotanteil (255), 00 der Grünanteil und 00 der Blauanteil. Wer Hexzahlen lesen kann, kann Farben direkt im Code ändern."
+  },
+  "interaktiv": ["inf-zahlensysteme"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "inf-zsy-01", "typ": "zahl", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Rechne die Dualzahl 1011_{2} in eine Dezimalzahl um.",
+      "loesung": 11, "toleranz": 0, "einheit": "",
+      "gegeben": "1011_{2}",
+      "gesucht": "Dezimalzahl",
+      "rechenweg": [
+        "Stellenwerte von rechts: 1, 2, 4, 8",
+        "1 · 8 + 0 · 4 + 1 · 2 + 1 · 1 = 8 + 0 + 2 + 1 = 11"
+      ],
+      "erklaerung": "Man addiert nur die Stellenwerte, an denen eine 1 steht."
+    },
+    {
+      "id": "inf-zsy-02", "typ": "zahl", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Rechne die Dualzahl 101101_{2} in eine Dezimalzahl um.",
+      "loesung": 45, "toleranz": 0, "einheit": "",
+      "gegeben": "101101_{2}",
+      "gesucht": "Dezimalzahl",
+      "rechenweg": [
+        "Stellenwerte von rechts: 1, 2, 4, 8, 16, 32",
+        "Einsen bei 32, 8, 4 und 1",
+        "32 + 8 + 4 + 1 = 45"
+      ],
+      "erklaerung": "Schreibe die Stellenwerte über die Ziffern. Dann übersiehst du keine Stelle."
+    },
+    {
+      "id": "inf-zsy-03", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Rechne die Dezimalzahl 42 in eine Dualzahl um. Gib nur die Ziffern 0 und 1 ein.",
+      "loesung": 101010, "toleranz": 0, "einheit": "",
+      "gegeben": "42 (dezimal)",
+      "gesucht": "Dualzahl",
+      "rechenweg": [
+        "42 : 2 = 21 Rest 0",
+        "21 : 2 = 10 Rest 1",
+        "10 : 2 = 5 Rest 0",
+        "5 : 2 = 2 Rest 1",
+        "2 : 2 = 1 Rest 0",
+        "1 : 2 = 0 Rest 1",
+        "Reste von unten nach oben: 101010_{2}"
+      ],
+      "erklaerung": "Probe: 32 + 8 + 2 = 42. Der letzte Rest ist die höchste Stelle, deshalb liest man von unten nach oben."
+    },
+    {
+      "id": "inf-zsy-04", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Rechne die Hexadezimalzahl 3F_{16} in eine Dezimalzahl um.",
+      "loesung": 63, "toleranz": 0, "einheit": "",
+      "gegeben": "3F_{16}, F = 15",
+      "gesucht": "Dezimalzahl",
+      "rechenweg": [
+        "Stellenwerte von rechts: 1, 16",
+        "3 · 16 + 15 · 1 = 48 + 15 = 63"
+      ],
+      "erklaerung": "63 ist eins weniger als 64 = 4 · 16. Dual ist das 111111_{2}, also sechs Einsen."
+    },
+    {
+      "id": "inf-zsy-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Wie lautet die Dualzahl 11010110_{2} im Hexadezimalsystem?",
+      "optionen": [
+        { "text": "D6", "richtig": true },
+        { "text": "6D", "feedback": "Die Reihenfolge ist vertauscht. Die linke Vierergruppe 1101 wird zur linken Hex-Ziffer." },
+        { "text": "214", "feedback": "214 ist der Wert im Dezimalsystem, nicht im Hexadezimalsystem." },
+        { "text": "C6", "feedback": "1101 ist 8 + 4 + 1 = 13, also D. C wäre 1100." }
+      ],
+      "erklaerung": "Teile die Bits von rechts in Vierergruppen: 1101 | 0110. 1101 = 13 = D, 0110 = 6. Ergebnis: D6_{16}."
+    },
+    {
+      "id": "inf-zsy-06", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Rechne die Hexadezimalzahl 2A3_{16} in eine Dezimalzahl um.",
+      "loesung": 675, "toleranz": 0, "einheit": "",
+      "gegeben": "2A3_{16}, A = 10",
+      "gesucht": "Dezimalzahl",
+      "rechenweg": [
+        "Stellenwerte von rechts: 1, 16, 256",
+        "2 · 256 + 10 · 16 + 3 · 1",
+        "= 512 + 160 + 3 = 675"
+      ],
+      "erklaerung": "Die dritte Stelle von rechts hat im Hexadezimalsystem den Wert 16 · 16 = 256."
+    },
+    {
+      "id": "inf-zsy-07", "typ": "zuordnung", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Welche Zahlen haben denselben Wert? Ordne die Dezimalzahl zu.",
+      "paare": [
+        { "links": "10000_{2}", "rechts": "16" },
+        { "links": "1F_{16}", "rechts": "31" },
+        { "links": "1100100_{2}", "rechts": "100" },
+        { "links": "100_{16}", "rechts": "256" }
+      ],
+      "extraRechts": ["4"],
+      "erklaerung": "10000_{2} = 2^{4} = 16. 1F_{16} = 16 + 15 = 31. 1100100_{2} = 64 + 32 + 4 = 100. 100_{16} = 16^{2} = 256. Die 4 wäre 100_{2}, nicht 100_{16}."
+    }
+  ]
+}

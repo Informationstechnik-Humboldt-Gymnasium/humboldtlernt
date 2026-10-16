@@ -1,0 +1,119 @@
+{
+  "id": "en-k8-new-york",
+  "titel": "New York City and American English",
+  "kurz": "New York als Metropole: Stadtteile, Sehenswürdigkeiten, Vor- und Nachteile des Großstadtlebens – und die Unterschiede zwischen British und American English.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Sehenswürdigkeiten und Stadtteile von New York City nennen und beschreiben" },
+    { "id": "lz2", "niveau": "H", "text": "Vor- und Nachteile des Lebens in einer Großstadt nennen und abwägen" },
+    { "id": "lz3", "niveau": "G", "text": "Wortschatzunterschiede zwischen British und American English kennen" },
+    { "id": "lz4", "niveau": "G", "text": "Rechtschreibunterschiede zwischen British und American English erkennen" }
+  ],
+  "verstehen": {
+    "einstieg": "In London fährst du mit der „underground“ und wohnst in einem „flat“. In New York nimmst du die „subway“ und wohnst in einem „apartment“. Ist das dieselbe Sprache?",
+    "abschnitte": [
+      {
+        "titel": "The Big Apple",
+        "text": "New York City ist mit über 8 Millionen Einwohnern die größte Stadt der USA. Ihr Spitzname ist **the Big Apple**. Sie besteht aus fünf Stadtbezirken (**boroughs**): **Manhattan**, **Brooklyn**, **Queens**, **the Bronx** und **Staten Island**.\n\n- **Times Square**: Kreuzung mit riesigen Leuchtreklamen, Theater am **Broadway**\n- **Central Park**: großer Park mitten in Manhattan\n- **Empire State Building** und **One World Trade Center**: berühmte Wolkenkratzer (**skyscrapers**)\n- **Brooklyn Bridge**: verbindet Manhattan und Brooklyn\n- Unterwegs mit der **subway** oder in einem gelben Taxi (**yellow cab**)"
+      },
+      {
+        "titel": "A multicultural city",
+        "text": "Menschen aus der ganzen Welt leben in New York. In der Stadt werden Hunderte Sprachen gesprochen, und Viertel wie **Chinatown**, **Little Italy** oder **Harlem** zeigen die vielen Kulturen."
+      },
+      {
+        "titel": "City life: pros and cons",
+        "text": "- **Advantages**: lots of jobs, culture (museums, theatres, concerts), good public transport, people from all over the world, there’s always something to do\n- **Disadvantages**: expensive flats, noise, traffic, crowds, pollution, stress, little nature\n\nUseful phrases: **On the one hand … on the other hand …**, **One advantage/disadvantage is …**, **What I like most about … is …**"
+      },
+      {
+        "titel": "British and American English",
+        "text": "Wortschatz (BE – AE):\n\n- flat – **apartment**, underground – **subway**, lift – **elevator**\n- holiday – **vacation**, autumn – **fall**, rubbish – **garbage/trash**\n- biscuit – **cookie**, crisps – **chips**, chips – **(French) fries**\n- pavement – **sidewalk**, mobile (phone) – **cell phone**, film – **movie**\n\nRechtschreibung (BE – AE): colour – **color**, favourite – **favorite**, centre – **center**, theatre – **theater**, travelled – **traveled**, organise – **organize**\n\nBeides ist richtig. Wichtig ist, in einem Text **bei einer Variante zu bleiben**."
+      }
+    ],
+    "merksatz": "NYC: fünf boroughs (Manhattan, Brooklyn, Queens, the Bronx, Staten Island), Times Square, Central Park, Brooklyn Bridge, subway. BE/AE: flat/apartment, underground/subway, holiday/vacation, autumn/fall; colour/color, centre/center. In einem Text bei einer Variante bleiben.",
+    "alltag": "Bestellst du in London „chips“, bekommst du Pommes. In New York bekommst du Kartoffelchips aus der Tüte."
+  },
+  "interaktiv": ["en-bildbeschreibung"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-nyc-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Match the New York sights with the descriptions.",
+      "paare": [
+        { "links": "Central Park", "rechts": "a huge park in the middle of Manhattan" },
+        { "links": "Times Square", "rechts": "a busy square with giant bright advertisements" },
+        { "links": "Brooklyn Bridge", "rechts": "a bridge between Manhattan and Brooklyn" },
+        { "links": "Empire State Building", "rechts": "a famous skyscraper" }
+      ],
+      "erklaerung": "Diese vier Orte gehören zu den bekanntesten in New York City."
+    },
+    {
+      "id": "en-nyc-02", "typ": "multi", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Which of these are boroughs of New York City?",
+      "optionen": [
+        { "text": "Brooklyn", "richtig": true },
+        { "text": "Queens", "richtig": true },
+        { "text": "the Bronx", "richtig": true },
+        { "text": "Hollywood", "feedback": "Hollywood liegt in Los Angeles, Kalifornien." },
+        { "text": "Westminster", "feedback": "Westminster ist ein Stadtteil von London." }
+      ],
+      "erklaerung": "Die fünf boroughs: Manhattan, Brooklyn, Queens, the Bronx, Staten Island."
+    },
+    {
+      "id": "en-nyc-03", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Match the British English words with their American English words.",
+      "paare": [
+        { "links": "flat", "rechts": "apartment" },
+        { "links": "lift", "rechts": "elevator" },
+        { "links": "holiday", "rechts": "vacation" },
+        { "links": "pavement", "rechts": "sidewalk" },
+        { "links": "autumn", "rechts": "fall" }
+      ],
+      "extraRechts": ["underground"],
+      "erklaerung": "underground ist selbst britisch. Das amerikanische Wort dafür ist subway."
+    },
+    {
+      "id": "en-nyc-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Which sentence is written completely in American English?",
+      "optionen": [
+        { "text": "My favorite color is blue, and I often go to the theater.", "richtig": true },
+        { "text": "My favourite colour is blue, and I often go to the theatre.", "feedback": "Das ist britische Rechtschreibung." },
+        { "text": "My favorite colour is blue, and I often go to the theater.", "feedback": "colour ist britisch – die Varianten sind gemischt." },
+        { "text": "My favourite color is blue, and I often go to the theatre.", "feedback": "Hier sind britische und amerikanische Schreibweisen gemischt." }
+      ],
+      "erklaerung": "AE: favorite, color, theater. Wichtig: Nicht mischen."
+    },
+    {
+      "id": "en-nyc-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "An American friend says: „Let’s take the subway and grab some fries.“ What does she mean?",
+      "optionen": [
+        { "text": "Let’s take the underground and get some chips.", "richtig": true },
+        { "text": "Let’s take the bus and get some crisps.", "feedback": "subway ist die U-Bahn, fries sind Pommes (britisch: chips)." },
+        { "text": "Let’s walk and buy some biscuits.", "feedback": "subway heißt U-Bahn, fries sind Pommes." },
+        { "text": "Let’s take a taxi and eat some cookies.", "feedback": "subway = underground, fries = chips (BE)." }
+      ],
+      "erklaerung": "AE subway = BE underground, AE fries = BE chips."
+    },
+    {
+      "id": "en-nyc-06", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Match each advantage of big-city life with a disadvantage that weighs against it.",
+      "paare": [
+        { "links": "There are lots of jobs in big cities.", "rechts": "But many jobs don’t pay enough for the high rents." },
+        { "links": "There is always something to do.", "rechts": "But it’s often noisy and crowded." },
+        { "links": "Public transport is very good.", "rechts": "But the streets are full of traffic and pollution." }
+      ],
+      "erklaerung": "Abwägen heißt: Zu jedem Vorteil einen passenden Nachteil finden (On the one hand … on the other hand …)."
+    },
+    {
+      "id": "en-nyc-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Would you like to live in New York City? Write 5–6 sentences. Mention at least two advantages and two disadvantages and give your own opinion.",
+      "stichworte": [
+        { "aspekt": "Vorteile des Großstadtlebens", "woerter": ["job", "culture", "museum", "theater", "theatre", "transport", "subway", "always something", "people from"] },
+        { "aspekt": "Nachteile des Großstadtlebens", "woerter": ["expensive", "noise", "noisy", "traffic", "crowd", "pollution", "stress", "dangerous"] },
+        { "aspekt": "Abwägende Verknüpfung", "woerter": ["on the one hand", "on the other hand", "however", "but", "although"] },
+        { "aspekt": "Eigene Meinung", "woerter": ["i would", "i'd", "i’d", "i think", "in my opinion", "personally"] }
+      ],
+      "musterloesung": "On the one hand, New York is an exciting city with lots of museums, theaters and jobs. There is always something to do, and the subway takes you everywhere. On the other hand, apartments are very expensive and the streets are often noisy and crowded. The traffic and the pollution can also be stressful. Personally, I would love to live there for one year, but not forever.",
+      "erklaerung": "Bewertet wird das Abwägen mit Gründen. Deine Entscheidung selbst ist frei."
+    }
+  ]
+}

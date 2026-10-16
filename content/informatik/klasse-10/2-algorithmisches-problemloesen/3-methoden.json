@@ -1,0 +1,119 @@
+{
+  "id": "inf-k10-methoden",
+  "titel": "Methoden, Parameter und Arrays",
+  "kurz": "Wie man Abläufe in Methoden verpackt, ihnen Werte als Parameter übergibt, Ergebnisse mit return zurückbekommt und viele Werte in einem Array speichert.",
+  "reihenfolge": 3,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Den Zweck von Methoden erklären und Methoden mit und ohne Rückgabewert aufrufen" },
+    { "id": "lz2", "niveau": "G", "text": "Einen Methodenkopf lesen (Sichtbarkeit, Rückgabetyp, Name, Parameter) und den Rückgabewert eines Aufrufs bestimmen" },
+    { "id": "lz3", "niveau": "H", "text": "Arrays anlegen, über den Index auf Elemente zugreifen und ein Array mit einer Schleife durchlaufen" },
+    { "id": "lz4", "niveau": "H", "text": "Eigene Methoden mit Parametern und Rückgabewert entwerfen und prüfen" }
+  ],
+  "verstehen": {
+    "einstieg": "Deine Spielfigur soll an zehn Stellen im Programm einen Sprung machen. Schreibst du die fünf Zeilen für den Sprung zehnmal hin? Und was passiert, wenn du den Sprung später höher machen willst?",
+    "abschnitte": [
+      {
+        "titel": "Methoden",
+        "text": "Eine **Methode** fasst Anweisungen unter einem Namen zusammen. Man schreibt sie einmal und kann sie beliebig oft **aufrufen**.\n\n```\npublic void springe() {\n    setLocation(getX(), getY() - 40);\n}\n```\n\nDer Aufruf ist dann nur noch ``springe();``. Das macht Programme kürzer und übersichtlicher. Eine Änderung am Sprung erfolgt an einer einzigen Stelle. In Greenfoot rufst du ständig fertige Methoden auf, z. B. ``move(5);`` oder ``turn(90);``."
+      },
+      {
+        "titel": "Parameter und Rückgabewert",
+        "text": "```\npublic int flaeche(int breite, int hoehe) {\n    return breite * hoehe;\n}\n```\n\n- ``public``: Die Methode darf von außen aufgerufen werden.\n- ``int`` vor dem Namen: der **Rückgabetyp**. Die Methode liefert eine ganze Zahl.\n- ``(int breite, int hoehe)``: die **Parameter**. Beim Aufruf werden Werte übergeben.\n- ``return``: beendet die Methode und gibt den Wert zurück.\n\nDer Aufruf ``flaeche(4, 3)`` liefert 12. Diesen Wert kann man speichern: ``int f = flaeche(4, 3);``. Liefert eine Methode nichts zurück, steht ``void`` als Rückgabetyp, wie bei ``springe()``."
+      },
+      {
+        "titel": "Arrays",
+        "text": "Ein **Array** speichert mehrere Werte desselben Typs unter einem Namen:\n\n```\nint[] punkte = {12, 7, 30, 5};\n```\n\nDie Werte heißen **Elemente**. Man erreicht sie über ihren **Index**, und der beginnt bei **0**: ``punkte[0]`` ist 12, ``punkte[3]`` ist 5. ``punkte.length`` ist die Anzahl der Elemente, hier 4. Der größte Index ist also ``length - 1``. Ein Zugriff auf ``punkte[4]`` führt zu einem Fehler beim Ausführen.\n\nMit einer for-Schleife durchläuft man alle Elemente:\n\n```\nint summe = 0;\nfor (int i = 0; i < punkte.length; i++) {\n    summe = summe + punkte[i];\n}\n```"
+      }
+    ],
+    "merksatz": "Methoden geben Abläufen einen Namen und machen sie wiederverwendbar. Parameter übergeben Werte hinein, return gibt einen Wert heraus; void heißt „ohne Rückgabe“. Ein Array speichert mehrere Werte; der Index läuft von 0 bis length − 1.",
+    "alltag": "Die Highscore-Liste eines Spiels ist oft ein Array. Eine Methode wie istNeuerRekord(int punkte) prüft, ob deine Punkte hineingehören, und liefert true oder false zurück."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "inf-mth-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Was bedeutet das Wort ``void`` im Methodenkopf ``public void springe()``?",
+      "optionen": [
+        { "text": "Die Methode gibt keinen Wert zurück.", "richtig": true },
+        { "text": "Die Methode ist leer und tut nichts.", "feedback": "Die Methode kann viele Anweisungen enthalten. Sie liefert nur kein Ergebnis zurück." },
+        { "text": "Die Methode darf nicht aufgerufen werden.", "feedback": "Ob man sie aufrufen darf, regelt public oder private." },
+        { "text": "Die Methode hat keine Parameter.", "feedback": "Das erkennt man an den leeren Klammern (), nicht an void." }
+      ],
+      "erklaerung": "void steht an der Stelle des Rückgabetyps. Methoden wie move(5) bewirken etwas, liefern aber keinen Wert zurück."
+    },
+    {
+      "id": "inf-mth-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Ordne die Teile des Methodenkopfes ``public double preis(int anzahl, double einzelpreis)`` zu.",
+      "paare": [
+        { "links": "``public``", "rechts": "Sichtbarkeit" },
+        { "links": "``double`` (vor dem Namen)", "rechts": "Rückgabetyp" },
+        { "links": "``preis``", "rechts": "Name der Methode" },
+        { "links": "``int anzahl, double einzelpreis``", "rechts": "Parameterliste" }
+      ],
+      "erklaerung": "Der Rückgabetyp double sagt, dass die Methode eine Kommazahl liefert. Die beiden Parameter haben jeweils einen eigenen Typ."
+    },
+    {
+      "id": "inf-mth-03", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Eine Klasse enthält diese Methode:\n\n```\npublic int rechne(int a, int b) {\n    return a * a - b;\n}\n```\n\nWelche Zahl gibt ``System.out.println(rechne(4, 3) + rechne(2, 5));`` aus?",
+      "loesung": 12, "toleranz": 0, "einheit": "",
+      "gegeben": "rechne(a, b) = a · a − b",
+      "gesucht": "rechne(4, 3) + rechne(2, 5)",
+      "rechenweg": [
+        "rechne(4, 3): a = 4, b = 3, also 4 · 4 − 3 = 13",
+        "rechne(2, 5): a = 2, b = 5, also 2 · 2 − 5 = −1",
+        "13 + (−1) = 12"
+      ],
+      "erklaerung": "Bei jedem Aufruf bekommen die Parameter neue Werte, und zwar in der Reihenfolge der Klammer: der erste Wert für a, der zweite für b."
+    },
+    {
+      "id": "inf-mth-04", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Welche Zahl gibt das Programm aus?\n\n```\nint[] punkte = {12, 7, 30, 5};\nSystem.out.println(punkte[1] * punkte.length);\n```",
+      "loesung": 28, "toleranz": 0, "einheit": "",
+      "gegeben": "punkte = {12, 7, 30, 5}",
+      "gesucht": "punkte[1] · punkte.length",
+      "rechenweg": [
+        "Der Index beginnt bei 0: punkte[0] = 12, punkte[1] = 7",
+        "punkte.length = 4 (vier Elemente)",
+        "7 · 4 = 28"
+      ],
+      "erklaerung": "Wer 48 erhalten hat, hat mit punkte[1] = 12 gerechnet. Das ist aber punkte[0]."
+    },
+    {
+      "id": "inf-mth-05", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Welche Zahl gibt das Programm aus?\n\n```\nint[] w = {4, 9, 2, 7, 3};\nint s = 0;\nfor (int i = 0; i < w.length; i++) {\n    if (w[i] > 3) {\n        s = s + w[i];\n    }\n}\nSystem.out.println(s);\n```",
+      "loesung": 20, "toleranz": 0, "einheit": "",
+      "gegeben": "w = {4, 9, 2, 7, 3}",
+      "gesucht": "Summe aller Elemente größer als 3",
+      "rechenweg": [
+        "Die Schleife geht alle Indizes 0 bis 4 durch",
+        "Größer als 3 sind 4, 9 und 7 (die 3 selbst nicht, denn 3 > 3 ist falsch)",
+        "s = 4 + 9 + 7 = 20"
+      ],
+      "erklaerung": "Schleife und Verzweigung arbeiten zusammen: Die Schleife besucht jedes Element, die Verzweigung entscheidet, ob es mitgezählt wird."
+    },
+    {
+      "id": "inf-mth-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Welche Methode liefert korrekt die **größere** von zwei Zahlen zurück?",
+      "optionen": [
+        { "text": "``public int max(int a, int b) { if (a > b) { return a; } return b; }``", "richtig": true },
+        { "text": "``public void max(int a, int b) { if (a > b) { return a; } return b; }``", "feedback": "Eine void-Methode darf keinen Wert zurückgeben. Der Compiler meldet einen Fehler." },
+        { "text": "``public int max(int a, int b) { if (a > b) { return b; } return a; }``", "feedback": "Diese Methode gibt bei a > b die Zahl b zurück, also die kleinere." },
+        { "text": "``public int max(a, b) { if (a > b) { return a; } return b; }``", "feedback": "In Java braucht jeder Parameter einen Datentyp: int a, int b." }
+      ],
+      "erklaerung": "Nach return a; ist die Methode sofort beendet. Das return b; wird deshalb nur erreicht, wenn a > b falsch war, also wenn b mindestens so groß ist wie a."
+    },
+    {
+      "id": "inf-mth-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz1",
+      "frage": "Jonas hat in seinem Spiel den Code für eine Explosion an fünf Stellen kopiert und jeweils nur die Größe geändert. Erkläre ihm, warum eine Methode ``explodiere(int groesse)`` besser ist.",
+      "stichworte": [
+        { "aspekt": "Der Code steht nur einmal da / Wiederverwendung", "woerter": ["einmal", "wiederverwend", "nicht kopier", "mehrfach aufruf"] },
+        { "aspekt": "Änderungen oder Fehlerkorrekturen nur an einer Stelle", "woerter": ["einer stelle", "einmal aendern", "fehler", "aenderung"] },
+        { "aspekt": "Der Parameter groesse macht die Methode für verschiedene Größen nutzbar", "woerter": ["parameter", "groesse", "uebergeb"] },
+        { "aspekt": "Programm wird kürzer bzw. übersichtlicher", "woerter": ["kuerzer", "uebersicht", "lesbar", "verstaendlich"] }
+      ],
+      "musterloesung": "Mit einer Methode steht der Code für die Explosion nur einmal im Programm und wird an den fünf Stellen nur noch aufgerufen. Will Jonas die Explosion ändern oder einen Fehler beheben, muss er das nur an einer Stelle tun. Über den Parameter groesse übergibt er beim Aufruf jeweils die gewünschte Größe, zum Beispiel explodiere(3). Dadurch wird das Programm kürzer und übersichtlicher.",
+      "erklaerung": "Kopierter Code ist eine häufige Fehlerquelle: Man ändert eine Kopie und vergisst die anderen. Methoden mit Parametern vermeiden das."
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Satzbaukasten: Building English sentences</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<style>
+  .lk-grid > * { min-width: 0; }
+  .seg { flex-wrap: wrap; }
+  .auftrag { font-size: 1.05rem; font-weight: 650; margin: 2px 0 10px; }
+  .bau { min-height: 58px; border: 2px dashed var(--border); border-radius: 12px; padding: 8px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; background: var(--bg); }
+  .bau.ok { border-color: var(--ok); border-style: solid; background: var(--ok-soft); }
+  .bau .leer { color: var(--muted); font-size: .88rem; }
+  .vorrat { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 0; min-height: 44px; }
+  .kachel { font: 600 1rem/1 system-ui, sans-serif; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--border); background: var(--card); color: var(--text); min-height: 42px; }
+  .bau .kachel { background: var(--soft-accent); border-color: var(--accent); }
+  .satzanzeige { font-size: 1.1rem; margin: 10px 0 0; min-height: 1.6em; }
+  .meldung { margin: 10px 0 0; padding: 8px 10px; border-radius: 10px; font-size: .92rem; }
+  .meldung.ok { background: var(--ok-soft); color: var(--ok); }
+  .meldung.no { background: var(--warn-soft); color: var(--warn); }
+  .meldung:empty { display: none; }
+  .liste { display: grid; gap: 6px; }
+  .liste button { text-align: left; display: flex; justify-content: space-between; gap: 8px; }
+  .liste button[aria-current=true] { border-color: var(--accent); background: var(--soft-accent); }
+  .haken { color: var(--ok); font-weight: 700; }
+</style>
+</head>
+<body>
+<h1>Satzbaukasten: Building English sentences</h1>
+<p class="muted small">Übersetze den deutschen Satz, indem du die Wörter in der richtigen Reihenfolge antippst. Tippe ein Wort im Satz an, um es zurückzulegen. Nicht jedes Wort wird gebraucht – manche sind Fallen.</p>
+
+<div class="lk-grid">
+  <div>
+    <div class="lk-card">
+      <h2 id="titel">Aufgabe</h2>
+      <p class="auftrag" id="auftrag"></p>
+      <div class="bau" id="bau" aria-label="Dein Satz" role="group"></div>
+      <div class="vorrat" id="vorrat" aria-label="Wörter" role="group"></div>
+      <p class="satzanzeige" id="anzeige" aria-live="polite"></p>
+      <div class="row" style="margin-top:10px">
+        <button type="button" id="bPruef" class="primary">Prüfen</button>
+        <button type="button" id="bReset">Neu anfangen</button>
+        <button type="button" id="bWeiter">Nächste Aufgabe</button>
+      </div>
+      <p class="meldung" id="meldung" aria-live="polite"></p>
+    </div>
+  </div>
+  <div>
+    <div class="lk-card">
+      <h2>Aufgaben</h2>
+      <div class="liste" id="liste"></div>
+      <div class="readouts" style="margin-top:12px">
+        <div class="readout"><span>gelöst</span><b id="rGeloest">0</b></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="lk-card tasks">
+  <h2>Entdecke selbst <span class="small muted" data-task-count></span></h2>
+  <div class="task" data-goal="wortstellung"><p class="task-q">Löse beide Aufgaben zur <b>Wortstellung</b>.</p></div>
+  <div class="task" data-goal="fragen"><p class="task-q">Löse beide <b>Fragen</b> – achte auf did und auf die Frage nach dem Subjekt.</p></div>
+  <div class="task" data-goal="if"><p class="task-q">Löse je einen <b>if-Satz Typ I, II und III</b>.</p></div>
+  <div class="task" data-goal="reported"><p class="task-q">Löse eine Aufgabe zur <b>indirekten Rede</b> und eine zum <b>Passiv</b>.</p></div>
+  <div class="task">
+    <p class="task-q">Warum steht in „If it rains tomorrow, we will stay at home“ im if-Teil kein will?</p>
+    <div class="choices">
+      <button type="button" data-ok data-fb="Richtig: Im if-Teil steht beim Typ I das simple present, auch wenn es um die Zukunft geht. will gehört in den Hauptsatz.">Weil im if-Teil von Typ I das simple present steht.</button>
+      <button type="button" data-fb="Es geht sehr wohl um die Zukunft (tomorrow). Trotzdem steht im if-Teil das simple present.">Weil es nicht um die Zukunft geht.</button>
+      <button type="button" data-fb="Man könnte auch „If it rains“ ganz ohne tomorrow sagen. Die Regel gilt trotzdem.">Weil tomorrow schon die Zukunft ausdrückt.</button>
+    </div><p class="fb"></p>
+  </div>
+  <div class="all-done">Alles entdeckt! Weiter geht es mit den Übungen.</div>
+</div>
+
+<script src="saetze.js"></script>
+<script src="../../static/lesson-kit.js"></script>
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+  var SB = EN.satzbau, A = SB.AUFGABEN;
+  var akt = 0, gebaut = [], geloest = {};
+
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined) e.textContent = text; return e; }
+
+  function liste() {
+    var l = $('liste'); l.textContent = '';
+    A.forEach(function (a, i) {
+      var b = el('button'); b.type = 'button';
+      b.setAttribute('aria-current', String(i === akt));
+      b.appendChild(el('span', '', (i + 1) + '. ' + SB.GRUPPEN[a.gruppe] + (a.typ ? ' (Typ ' + a.typ + ')' : '')));
+      b.appendChild(el('span', 'haken', geloest[a.id] ? '✓' : ''));
+      b.addEventListener('click', function () { waehle(i); });
+      l.appendChild(b);
+    });
+    $('rGeloest').textContent = Object.keys(geloest).length + ' / ' + A.length;
+  }
+
+  function waehle(i) {
+    akt = i; gebaut = [];
+    $('meldung').textContent = ''; $('meldung').className = 'meldung';
+    zeichne(); liste();
+  }
+
+  function zeichne() {
+    var a = A[akt];
+    $('titel').textContent = 'Aufgabe ' + (akt + 1) + ': ' + SB.GRUPPEN[a.gruppe] + (a.typ ? ' (Typ ' + a.typ + ')' : '');
+    $('auftrag').textContent = a.auftrag;
+    var bau = $('bau'); bau.textContent = ''; bau.classList.toggle('ok', !!geloest[a.id] && gebaut.length > 0 && SB.pruefe(a, gebaut.map(function (g) { return a.woerter[g]; })).ok);
+    if (!gebaut.length) bau.appendChild(el('span', 'leer', 'Tippe unten auf die Wörter …'));
+    gebaut.forEach(function (idx, pos) {
+      var b = el('button', 'kachel', a.woerter[idx]); b.type = 'button';
+      b.setAttribute('aria-label', a.woerter[idx] + ' – entfernen');
+      b.addEventListener('click', function () { gebaut.splice(pos, 1); zeichne(); });
+      bau.appendChild(b);
+    });
+    var v = $('vorrat'); v.textContent = '';
+    a.woerter.forEach(function (w, idx) {
+      if (gebaut.indexOf(idx) >= 0) return;
+      var b = el('button', 'kachel', w); b.type = 'button';
+      b.addEventListener('click', function () { gebaut.push(idx); $('meldung').textContent = ''; $('meldung').className = 'meldung'; zeichne(); });
+      v.appendChild(b);
+    });
+    $('anzeige').textContent = SB.satz(gebaut.map(function (g) { return a.woerter[g]; }), a.punkt);
+  }
+
+  function pruefeAufgaben() {
+    var hat = function (id) { return !!geloest[id]; };
+    if (hat('w1') && hat('w2')) LK.reach('wortstellung');
+    if (hat('f1') && hat('f2')) LK.reach('fragen');
+    if (hat('i1') && hat('i2') && hat('i3')) LK.reach('if');
+    if ((hat('r1') || hat('r2')) && (hat('p1') || hat('p2'))) LK.reach('reported');
+  }
+
+  $('bPruef').addEventListener('click', function () {
+    var a = A[akt], w = gebaut.map(function (g) { return a.woerter[g]; });
+    var r = SB.pruefe(a, w);
+    $('meldung').textContent = (r.ok ? '✓ ' : '') + r.meldung;
+    $('meldung').className = 'meldung ' + (r.ok ? 'ok' : 'no');
+    if (r.ok) { geloest[a.id] = 1; liste(); pruefeAufgaben(); }
+    $('bau').classList.toggle('ok', r.ok);
+  });
+  $('bReset').addEventListener('click', function () { waehle(akt); });
+  $('bWeiter').addEventListener('click', function () { waehle((akt + 1) % A.length); });
+
+  waehle(0);
+})();
+</script>
+</body>
+</html>

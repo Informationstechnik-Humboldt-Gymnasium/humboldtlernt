@@ -1,7 +1,7 @@
 # humboldtlernt – Regeln für Claude-Sitzungen
 
 Lernplattform des Humboldt-Gymnasiums Berlin-Tegel (Node 20+, Express, SQLite, kein Build-Schritt).
-Fächer nach dem schulinternen Curriculum (SchiC): **Physik**, **Chemie**, **Biologie** und **Ethik** (ab Kl. 9 Ethik/Philosophie) (Kl. 7–10) sowie **TIMP** (Wahlpflicht, Kl. 8–9). Dazu die **Sandbox** mit freien Simulationen (Schaltkreis-, Logik-, Atom- & Chemie- und Netzwerk-Labor).
+Fächer nach dem schulinternen Curriculum (SchiC): **Physik**, **Chemie**, **Biologie** und **Ethik** (ab Kl. 9 Ethik/Philosophie) (Kl. 7–10) sowie **Englisch** (Kl. 5–10), **TIMP** (Wahlpflicht, Kl. 8–9) und **Informatik** (Wahlpflicht, Kl. 10). Dazu die **Sandbox** mit freien Simulationen (Schaltkreis-, Logik-, Atom- & Chemie- und Netzwerk-Labor).
 Mehrere Personen arbeiten gleichzeitig mit eigenen Claude-Sitzungen am Repo. Halte dich deshalb genau an diese Regeln.
 
 ## Zusammenarbeit (wichtig)
@@ -60,6 +60,8 @@ Thema:
   - Chemie: Thema `ch-k<klasse>-<name>`, Übungen `ch-<kürzel>-01`. Chemische Formeln mit Unicode-Indizes direkt im Text (H₂O, SO₄²⁻, →), nicht als Formel-Backticks (die sind kursiv).
   - Biologie: Thema `bio-k<klasse>-<name>`, Übungen `bio-<kürzel>-01`. Themenfelder heißen wie im SchiC `1` bis `8` (Themenfeld 4 ist auf Kl. 7 und 10 verteilt).
   - Ethik: Thema `eth-k<klasse>-<name>`, Übungen `eth-<kürzel>-01`. Themenfelder heißen wie die Unterrichtsthemen im SchiC `1` bis `17` (7/8: 1–8, 9/10: 9–17; die Verteilung auf einzelne Klassen ist ein Vorschlag). Übungen prüfen Begriffe, Positionen und Argumentationsschritte – nie eine bestimmte Meinung als „richtig“; Stellungnahmen nur als `text` mit Stichworten zu Struktur und Begründung.
+  - Englisch: Thema `en-k<klasse>-<name>`, Übungen `en-<kürzel>-01`. Themenfelder = Pflichtmodule des SchiC, `nummer` `<klasse>.<modul>` (z. B. `9.1` Australia). Erklärungen auf Deutsch mit englischen Beispielen, Aufgaben und Optionen auf Englisch; typografischer Apostroph (’) im Text, in `stichworte` beide Formen (' und ’) angeben. Literarische Beispieltexte selbst schreiben, keine Auszüge aus urheberrechtlich geschützten Werken.
+  - Informatik: Thema `inf-k10-<name>`, Übungen `inf-<kürzel>-01`. Themenfelder `1` bis `4` wie im SchiC (Informatiksysteme, Algorithmisches Problemlösen, Informationen und Daten, Datenbanken).
   - Neues Fach: eigenes Präfix, z. B. `geo-k8-…`.
   - Kürzel vorher mit `grep -r '"<präfix>-<kürzel>-' content` auf Eindeutigkeit prüfen.
 - **IDs bestehender Themen und Übungen nie ändern oder wiederverwenden**, sonst geht Schülerfortschritt verloren.
@@ -79,7 +81,7 @@ Thema:
   - Absatz: Leerzeile
   - Programmcode im Text: ` ``x = 1`` `
   - Code-Block: eigener Absatz zwischen zwei ```` ``` ````-Zeilen, ohne Leerzeilen darin
-- **Informatik-Programme** in der deutschen Scratch-ähnlichen Schreibweise der bestehenden TIMP-Themen (`setze … auf …`, `ändere … um …`, `wiederhole …-mal`, `wiederhole bis …`, `falls … dann … sonst`, `sage …`, `definiere …`). Ausgaben exakt nachrechnen.
+- **Informatik-Programme** in der deutschen Scratch-ähnlichen Schreibweise der bestehenden TIMP-Themen (`setze … auf …`, `ändere … um …`, `wiederhole …-mal`, `wiederhole bis …`, `falls … dann … sonst`, `sage …`, `definiere …`). Ausgaben exakt nachrechnen. Im Fach Informatik (Kl. 10) dagegen **Java** wie im Unterricht (Greenfoot/BlueJ); Ausgaben mit `javac`/`java` prüfen. SQL-Übungen beziehen sich auf die Beispieldatenbank `lessons/inf-sql-labor/bibliothek.js`; `test/informatik.test.mjs` gleicht ihre Lösungen mit der SQL-Engine (`sql.js`) ab.
 - **Fachlich korrekt:** Werte, Einheiten und Formeln prüfen, Rechnungen nachrechnen (z. B. mit `node -e`). g = 9,81 N/kg. Vereinfachungen offen benennen.
 - **Sprache:** Deutsch, Du-Form, kurze klare Sätze, für 12- bis 16-Jährige.
 

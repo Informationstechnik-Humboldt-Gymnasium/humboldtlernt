@@ -1,0 +1,128 @@
+{
+  "id": "inf-k10-sql-verknuepfen",
+  "titel": "Tabellen verknüpfen und zählen mit SQL",
+  "kurz": "Wie man mit JOIN Daten aus mehreren Tabellen zusammenführt, warum ohne Verknüpfungsbedingung ein Kreuzprodukt entsteht und wie man mit COUNT, SUM, AVG, MIN, MAX und GROUP BY auswertet.",
+  "reihenfolge": 4,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Tabellen über Primär- und Fremdschlüssel verknüpfen (JOIN … ON oder Bedingung in WHERE) und das Kreuzprodukt erklären" },
+    { "id": "lz2", "niveau": "H", "text": "Datensätze mit GROUP BY gruppieren und mit HAVING Bedingungen an Gruppen stellen" },
+    { "id": "lz3", "niveau": "G", "text": "Die Aggregatfunktionen COUNT, SUM, AVG, MIN und MAX anwenden" },
+    { "id": "lz4", "niveau": "H", "text": "Abfragen über mehrere Tabellen mit Aggregatfunktionen formulieren und ihr Ergebnis bestimmen" }
+  ],
+  "verstehen": {
+    "einstieg": "In der Tabelle ausleihe steht nur: Schüler 5 hat Buch 3 ausgeliehen. Wer ist Schüler 5, und wie heißt Buch 3? Und wie findet man heraus, wer die meisten Bücher ausgeliehen hat?",
+    "abschnitte": [
+      {
+        "titel": "Die Tabellen schueler und ausleihe",
+        "text": "Zur Tabelle ``buch`` (siehe „Abfragen mit SQL“) kommen zwei weitere Tabellen. In ``ausleihe`` sind ``sid`` und ``bid`` **Fremdschlüssel**: Sie verweisen auf ``schueler`` und ``buch``.\n\n```\nschueler                          ausleihe\nsid | vorname | nachname | klasse  aid | sid | bid | datum      | zurueck\n----+---------+----------+------   ----+-----+-----+------------+--------\n  1 | Lena    | Hoffmann | 10a       1 |   1 |   4 | 2026-09-01 | ja\n  2 | Jonas   | Becker   | 10a       2 |   1 |   1 | 2026-09-15 | nein\n  3 | Amira   | Haddad   | 10b       3 |   2 |   8 | 2026-09-03 | ja\n  4 | Felix   | Wagner   | 10b       4 |   3 |   4 | 2026-09-10 | ja\n  5 | Mia     | Schulz   | 10a       5 |   3 |   9 | 2026-09-22 | nein\n  6 | Noah    | Krüger   | 10c       6 |   5 |   2 | 2026-09-05 | ja\n  7 | Emma    | Richter  | 10c       7 |   5 |   3 | 2026-09-18 | nein\n  8 | Paul    | Neumann  | 10b       8 |   5 |   6 | 2026-09-25 | nein\n                                     9 |   6 |   5 | 2026-09-12 | ja\n                                    10 |   7 |   4 | 2026-09-28 | nein\n                                    11 |   8 |  10 | 2026-10-01 | nein\n                                    12 |   2 |   9 | 2026-10-02 | nein\n```"
+      },
+      {
+        "titel": "Tabellen verknüpfen",
+        "text": "Nennt man zwei Tabellen hinter FROM, kombiniert SQL **jede** Zeile der einen mit **jeder** Zeile der anderen. Dieses **Kreuzprodukt** hat bei 10 Büchern und 12 Ausleihen 10 · 12 = 120 Zeilen, die meisten davon unsinnig. Man braucht eine **Verknüpfungsbedingung**: Fremdschlüssel = Primärschlüssel.\n\n```\nSELECT buch.titel, ausleihe.datum\nFROM ausleihe JOIN buch ON ausleihe.bid = buch.bid\nWHERE ausleihe.zurueck = 'nein';\n```\n\nGleichwertig ist ``FROM ausleihe, buch WHERE ausleihe.bid = buch.bid AND …``. Gibt es eine Spalte in beiden Tabellen, z. B. ``bid``, schreibt man den Tabellennamen davor. Für drei Tabellen braucht man zwei Verknüpfungen:\n\n```\nSELECT buch.titel\nFROM schueler\nJOIN ausleihe ON schueler.sid = ausleihe.sid\nJOIN buch ON ausleihe.bid = buch.bid\nWHERE schueler.vorname = 'Mia';\n```\n\nErgebnis: Die unendliche Geschichte, Krabat, Emil und die Detektive."
+      },
+      {
+        "titel": "Aggregatfunktionen",
+        "text": "Aggregatfunktionen fassen viele Zeilen zu **einem** Wert zusammen:\n\n- ``COUNT(*)``: Anzahl der Zeilen\n- ``SUM(spalte)``: Summe\n- ``AVG(spalte)``: Durchschnitt\n- ``MIN(spalte)``, ``MAX(spalte)``: kleinster bzw. größter Wert\n\n``SELECT COUNT(*) FROM ausleihe WHERE zurueck = 'nein';`` ergibt 7: So viele Bücher sind gerade ausgeliehen. ``SELECT MIN(jahr) FROM buch;`` ergibt 1929."
+      },
+      {
+        "titel": "Gruppieren mit GROUP BY",
+        "text": "``GROUP BY`` bildet Gruppen von Zeilen mit gleichem Wert. Die Aggregatfunktion wird dann **pro Gruppe** berechnet:\n\n```\nSELECT genre, COUNT(*) AS anzahl\nFROM buch\nGROUP BY genre;\n```\n\nErgebnis: Fantasy 4, Roman 4, Krimi 1, Science-Fiction 1. Hinter SELECT dürfen dann nur Spalten aus GROUP BY und Aggregatfunktionen stehen. Bedingungen an Gruppen stellt man mit ``HAVING``, nicht mit WHERE: ``… GROUP BY genre HAVING COUNT(*) > 1``. Die feste Reihenfolge lautet ``SELECT … FROM … WHERE … GROUP BY … HAVING … ORDER BY …``"
+      }
+    ],
+    "formeln": [
+      { "formel": "Zeilen des Kreuzprodukts = Zeilen(A) · Zeilen(B)", "bedeutung": "ohne Verknüpfungsbedingung wird jede Zeile mit jeder kombiniert" }
+    ],
+    "merksatz": "Tabellen verknüpft man über Fremdschlüssel = Primärschlüssel, mit JOIN … ON oder in WHERE. Ohne Bedingung entsteht ein Kreuzprodukt. COUNT, SUM, AVG, MIN und MAX fassen Zeilen zu einem Wert zusammen, GROUP BY macht das pro Gruppe, HAVING filtert Gruppen.",
+    "alltag": "Eine Musik-App, die dir am Jahresende deine meistgehörten Bands zeigt, macht im Grunde dasselbe: Sie verknüpft deine Wiedergaben mit den Titeln und Bands, gruppiert nach Band und zählt mit COUNT."
+  },
+  "interaktiv": ["inf-sql-labor"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "inf-sqv-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz3",
+      "frage": "Ordne die Aggregatfunktionen ihrer Bedeutung zu.",
+      "paare": [
+        { "links": "``COUNT(*)``", "rechts": "Anzahl der Zeilen" },
+        { "links": "``SUM(punkte)``", "rechts": "Summe aller Werte" },
+        { "links": "``AVG(punkte)``", "rechts": "Durchschnitt (Mittelwert)" },
+        { "links": "``MIN(punkte)``", "rechts": "kleinster Wert" },
+        { "links": "``MAX(punkte)``", "rechts": "größter Wert" }
+      ],
+      "erklaerung": "AVG kommt vom englischen average (Durchschnitt). Alle fünf Funktionen liefern aus vielen Zeilen einen einzigen Wert, bei GROUP BY einen pro Gruppe."
+    },
+    {
+      "id": "inf-sqv-02", "typ": "zahl", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Die Tabelle ``buch`` hat 10 Zeilen, die Tabelle ``ausleihe`` 12 Zeilen. Wie viele Zeilen liefert ``SELECT * FROM buch, ausleihe;`` ohne WHERE?",
+      "loesung": 120, "toleranz": 0, "einheit": "",
+      "gegeben": "10 Zeilen in buch, 12 Zeilen in ausleihe, keine Bedingung",
+      "gesucht": "Zeilen des Ergebnisses",
+      "rechenweg": [
+        "Ohne Bedingung wird jede Zeile von buch mit jeder Zeile von ausleihe kombiniert (Kreuzprodukt)",
+        "10 · 12 = 120"
+      ],
+      "erklaerung": "Mit der Bedingung ``WHERE buch.bid = ausleihe.bid`` bleiben nur die 12 sinnvollen Kombinationen übrig: zu jeder Ausleihe das passende Buch."
+    },
+    {
+      "id": "inf-sqv-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Welche Abfrage liefert die Titel der Bücher, die **Lena** ausgeliehen hat?",
+      "optionen": [
+        { "text": "``SELECT titel FROM schueler, ausleihe, buch WHERE schueler.sid = ausleihe.sid AND ausleihe.bid = buch.bid AND vorname = 'Lena';``", "richtig": true },
+        { "text": "``SELECT titel FROM schueler, buch WHERE vorname = 'Lena';``", "feedback": "Ohne die Tabelle ausleihe weiß die Datenbank nicht, welche Bücher Lena hat. Das Ergebnis wären alle 10 Titel." },
+        { "text": "``SELECT titel FROM schueler, ausleihe, buch WHERE vorname = 'Lena';``", "feedback": "Es fehlen die Verknüpfungsbedingungen. Es entsteht ein Kreuzprodukt mit allen Titeln, und zwar mehrfach." },
+        { "text": "``SELECT titel FROM ausleihe, buch WHERE ausleihe.sid = buch.bid AND vorname = 'Lena';``", "feedback": "sid und bid verweisen auf verschiedene Tabellen. Außerdem gibt es vorname nur in schueler." }
+      ],
+      "erklaerung": "Für drei Tabellen braucht man zwei Verknüpfungen: schueler mit ausleihe über sid und ausleihe mit buch über bid. Ergebnis: Tschick und Momo."
+    },
+    {
+      "id": "inf-sqv-04", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Welchen Wert liefert diese Abfrage für die Tabelle ``ausleihe``?\n\n```\nSELECT COUNT(*) FROM ausleihe\nWHERE zurueck = 'nein';\n```",
+      "loesung": 7, "toleranz": 0, "einheit": "",
+      "gegeben": "Tabelle ausleihe mit 12 Zeilen",
+      "gesucht": "Anzahl der Zeilen mit zurueck = 'nein'",
+      "rechenweg": [
+        "zurueck = 'nein' gilt für die Ausleihen 2, 5, 7, 8, 10, 11 und 12",
+        "COUNT(*) zählt diese Zeilen: 7"
+      ],
+      "erklaerung": "Erst filtert WHERE die Zeilen, dann zählt COUNT, was übrig bleibt."
+    },
+    {
+      "id": "inf-sqv-05", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Die Abfrage ``SELECT klasse, COUNT(*) FROM schueler GROUP BY klasse;`` liefert eine Zeile pro Klasse. Welche Zahl steht in der Zeile der Klasse **10c**?",
+      "loesung": 2, "toleranz": 0, "einheit": "",
+      "gegeben": "Tabelle schueler mit 8 Schülern",
+      "gesucht": "COUNT(*) für die Gruppe 10c",
+      "rechenweg": [
+        "Gruppe 10a: Lena, Jonas, Mia (3)",
+        "Gruppe 10b: Amira, Felix, Paul (3)",
+        "Gruppe 10c: Noah, Emma (2)"
+      ],
+      "erklaerung": "GROUP BY klasse bildet drei Gruppen. COUNT(*) wird für jede Gruppe einzeln berechnet."
+    },
+    {
+      "id": "inf-sqv-06", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Wie viele Ausleihen haben Schülerinnen und Schüler der Klasse 10a insgesamt?\n\n```\nSELECT COUNT(*)\nFROM schueler JOIN ausleihe ON schueler.sid = ausleihe.sid\nWHERE schueler.klasse = '10a';\n```",
+      "loesung": 7, "toleranz": 0, "einheit": "",
+      "gegeben": "10a: Lena (sid 1), Jonas (sid 2), Mia (sid 5)",
+      "gesucht": "Anzahl der Ausleihen dieser drei",
+      "rechenweg": [
+        "sid 1 (Lena): Ausleihen 1 und 2, also 2",
+        "sid 2 (Jonas): Ausleihen 3 und 12, also 2",
+        "sid 5 (Mia): Ausleihen 6, 7 und 8, also 3",
+        "2 + 2 + 3 = 7"
+      ],
+      "erklaerung": "Der JOIN erzeugt für jede Ausleihe eine Zeile mit den Schülerdaten. WHERE behält die Zeilen der 10a, COUNT zählt sie."
+    },
+    {
+      "id": "inf-sqv-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Schreibe eine SQL-Abfrage, die für jeden Autor die Anzahl seiner Bücher in der Tabelle ``buch`` ausgibt, aber nur für Autoren mit mehr als einem Buch. Erkläre kurz, warum du HAVING und nicht WHERE brauchst.",
+      "stichworte": [
+        { "aspekt": "SELECT autor, COUNT(*) FROM buch", "woerter": ["count("] },
+        { "aspekt": "GROUP BY autor", "woerter": ["group by autor"] },
+        { "aspekt": "HAVING COUNT(*) > 1", "woerter": ["having count", "having"] },
+        { "aspekt": "Begründung: Die Bedingung betrifft Gruppen bzw. die Anzahl, WHERE prüft einzelne Zeilen vor dem Gruppieren", "woerter": ["gruppe", "einzelne zeile", "vor dem", "jede zeile", "erst nach"] }
+      ],
+      "musterloesung": "SELECT autor, COUNT(*) FROM buch GROUP BY autor HAVING COUNT(*) > 1;\n\nIch brauche HAVING, weil sich die Bedingung auf die Anzahl der Bücher einer ganzen Gruppe bezieht. WHERE prüft jede Zeile einzeln, und zwar vor dem Gruppieren. Zu diesem Zeitpunkt ist COUNT(*) noch gar nicht berechnet. Ergebnis: Michael Ende 2 und Erich Kästner 2.",
+      "erklaerung": "WHERE filtert Zeilen vor dem Gruppieren, HAVING filtert Gruppen danach. Beides kann man auch kombinieren, z. B. WHERE jahr > 1950 … HAVING COUNT(*) > 1."
+    }
+  ]
+}

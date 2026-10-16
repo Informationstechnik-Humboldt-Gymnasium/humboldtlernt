@@ -1,0 +1,114 @@
+{
+  "id": "en-k8-reported-speech",
+  "titel": "She said that she had arrived: reported speech and conditional III",
+  "kurz": "Berichten, was jemand gesagt hat (reported speech mit backshift), Fragen und Aufforderungen wiedergeben und mit if-Sätzen Typ III über die Vergangenheit spekulieren.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Aussagen in die indirekte Rede setzen und dabei Zeiten zurückverschieben (backshift)" },
+    { "id": "lz2", "niveau": "H", "text": "Pronomen, Orts- und Zeitangaben in der indirekten Rede anpassen und Fragen sowie Aufforderungen wiedergeben" },
+    { "id": "lz3", "niveau": "G", "text": "If-Sätze Typ III bilden (past perfect – would have + past participle)" },
+    { "id": "lz4", "niveau": "H", "text": "If-Sätze der Typen I, II und III nach ihrer Bedeutung unterscheiden" }
+  ],
+  "verstehen": {
+    "einstieg": "Ein Einwanderer erzählte 1907 auf Ellis Island: „I have travelled for three weeks.“ Wie berichtest du heute, was er gesagt hat? Und was wäre passiert, wenn er zu Hause geblieben wäre?",
+    "abschnitte": [
+      {
+        "titel": "Reported speech",
+        "text": "Steht das einleitende Verb in der Vergangenheit (**said, told, asked**), rückt die Zeit der wörtlichen Rede **eine Stufe zurück** (backshift):\n\n- simple present → **simple past**: „I am tired.“ → He said (that) he **was** tired.\n- present progressive → **past progressive**: „We are waiting.“ → They said they **were** waiting.\n- simple past / present perfect → **past perfect**: „I have travelled for weeks.“ → He said he **had travelled** for weeks.\n- will → **would**: „I will find a job.“ → She said she **would** find a job.\n- can → **could**, must → **had to**"
+      },
+      {
+        "titel": "Was sich noch ändert",
+        "text": "- **Pronomen**: „I love **my** new home.“ → She said **she** loved **her** new home.\n- **Orts- und Zeitangaben**: now → **then**, today → **that day**, tomorrow → **the next day**, yesterday → **the day before**, here → **there**, ago → **before**\n- **say** ohne Person, **tell** mit Person: He said that … / He told **me** that …\n- **Fragen**: Wortstellung wie im Aussagesatz, ohne do/did; bei Ja/Nein-Fragen **if/whether**: „Where do you live?“ → She asked me where I **lived**. „Are you hungry?“ → He asked **if** I was hungry.\n- **Aufforderungen**: tell/ask + **to** + Grundform: „Open your bags!“ → The officer told them **to open** their bags. Verneint: told them **not to** …"
+      },
+      {
+        "titel": "Conditional III",
+        "text": "Mit Typ III stellt man sich vor, wie die **Vergangenheit** anders verlaufen wäre. Es ist nicht mehr zu ändern.\n\n**if + past perfect, would have + past participle**\n\n``If they hadn’t left Ireland, they would have starved.``\n``If I had known about the test, I would have studied.``\n\nÜberblick:\n\n- Typ I (möglich): If it **rains**, we **will** stay inside.\n- Typ II (gedacht, Gegenwart/Zukunft): If it **rained**, we **would** stay inside.\n- Typ III (gedacht, Vergangenheit): If it **had rained**, we **would have stayed** inside."
+      }
+    ],
+    "merksatz": "Indirekte Rede: Zeit eine Stufe zurück (am → was, have done → had done, will → would), Pronomen und Zeitangaben anpassen, Fragen ohne do mit if/whether, Aufforderungen mit to. Typ III: if + had done, would have done – Vergangenheit, die man nicht mehr ändern kann.",
+    "alltag": "Nachrichten berichten fast nur in indirekter Rede: „The President said that the country would …“ Wer die Regeln kennt, versteht Zeitungsartikel viel besser."
+  },
+  "interaktiv": ["en-satzbaukasten"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-rsp-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "„I am very tired,“ Maria said. → Maria said that she ___ very tired.",
+      "optionen": [
+        { "text": "was", "richtig": true },
+        { "text": "is", "feedback": "Nach said rückt die Zeit zurück: am → was." },
+        { "text": "has been", "feedback": "simple present wird zu simple past: was." },
+        { "text": "were", "feedback": "she → was." }
+      ],
+      "erklaerung": "Backshift: simple present → simple past."
+    },
+    {
+      "id": "en-rsp-02", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Match the direct speech with the backshifted tense in reported speech.",
+      "paare": [
+        { "links": "„We are waiting.“", "rechts": "they were waiting" },
+        { "links": "„I have lost my ticket.“", "rechts": "he had lost his ticket" },
+        { "links": "„I will write to you.“", "rechts": "she would write to me" },
+        { "links": "„We can’t stay.“", "rechts": "they couldn’t stay" }
+      ],
+      "erklaerung": "are → were, have lost → had lost, will → would, can’t → couldn’t."
+    },
+    {
+      "id": "en-rsp-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "„Where do you come from?“ the officer asked me. → The officer asked me …",
+      "optionen": [
+        { "text": "… where I came from.", "richtig": true },
+        { "text": "… where did I come from.", "feedback": "In indirekten Fragen gibt es kein did und keine Umstellung." },
+        { "text": "… where do I come from.", "feedback": "Keine Fragewortstellung, und die Zeit rückt zurück." },
+        { "text": "… where you came from.", "feedback": "Das Pronomen muss angepasst werden: you (zu mir gesagt) → I." }
+      ],
+      "erklaerung": "Indirekte Frage: Fragewort + Subjekt + Verb (zurückverschoben), ohne do/did."
+    },
+    {
+      "id": "en-rsp-04", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Which reported sentences are correct?",
+      "optionen": [
+        { "text": "„Show me your passport!“ → He told me to show him my passport.", "richtig": true },
+        { "text": "„Are you hungry?“ → She asked if I was hungry.", "richtig": true },
+        { "text": "„I’ll leave tomorrow.“ → He said he would leave the next day.", "richtig": true },
+        { "text": "„I saw her yesterday.“ → He said me that he had seen her the day before.", "feedback": "say ohne Person: He told me / He said that …" },
+        { "text": "„Don’t touch it!“ → She told us don’t touch it.", "feedback": "Verneinte Aufforderung: She told us not to touch it." }
+      ],
+      "erklaerung": "Aufforderungen mit (not) to, Ja/Nein-Fragen mit if, tomorrow → the next day, tell + Person."
+    },
+    {
+      "id": "en-rsp-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Complete (type III): ``If my great-grandparents ___ to America, I ___ in New York.``",
+      "optionen": [
+        { "text": "hadn’t emigrated … wouldn’t have been born", "richtig": true },
+        { "text": "didn’t emigrate … wouldn’t be born", "feedback": "Es geht um die Vergangenheit, die nicht mehr zu ändern ist: Typ III." },
+        { "text": "wouldn’t have emigrated … hadn’t been born", "feedback": "Die Teile sind vertauscht: if + past perfect, would have im Hauptsatz." },
+        { "text": "haven’t emigrated … won’t be born", "feedback": "Das wäre eine falsche Mischung aus present perfect und will." }
+      ],
+      "erklaerung": "Typ III: if + past perfect, would have + past participle."
+    },
+    {
+      "id": "en-rsp-06", "typ": "zuordnung", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Which type of conditional sentence is it?",
+      "paare": [
+        { "links": "If you miss the ferry, you’ll have to wait an hour.", "rechts": "type I – possible in the future" },
+        { "links": "If I lived in New York, I would go to Broadway every week.", "rechts": "type II – imagined present" },
+        { "links": "If he had taken the earlier ship, he would have arrived in time.", "rechts": "type III – imagined past" }
+      ],
+      "erklaerung": "Typ I: will, Typ II: would, Typ III: would have."
+    },
+    {
+      "id": "en-rsp-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz1",
+      "frage": "An immigrant arriving at Ellis Island in 1910 says: „My name is Anna. I come from Italy. I have been on the ship for two weeks. I will work in my cousin’s shop.“ Report what she said in reported speech (3–4 sentences).",
+      "stichworte": [
+        { "aspekt": "Einleitung mit said / told", "woerter": ["said", "told", "explained"] },
+        { "aspekt": "simple present → simple past (her name was, she came)", "woerter": ["was anna", "came from", "her name was"] },
+        { "aspekt": "present perfect → past perfect (had been)", "woerter": ["had been"] },
+        { "aspekt": "will → would", "woerter": ["would work"] },
+        { "aspekt": "Pronomen angepasst (she, her)", "woerter": ["she ", "her "] }
+      ],
+      "musterloesung": "Anna said that her name was Anna and that she came from Italy. She told the officer that she had been on the ship for two weeks. She said that she would work in her cousin’s shop.",
+      "erklaerung": "Jede Zeit eine Stufe zurück, my → her, I → she."
+    }
+  ]
+}

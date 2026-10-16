@@ -1,0 +1,119 @@
+{
+  "id": "en-k7-modals",
+  "titel": "can, must, mustn’t, needn’t – and children, feet, mice",
+  "kurz": "Modalverben und ihre Ersatzformen, der wichtige Unterschied zwischen mustn’t und needn’t sowie unregelmäßige Pluralformen.",
+  "reihenfolge": 3,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Die Modalverben can, could, may, must und should in ihrer Bedeutung verwenden" },
+    { "id": "lz2", "niveau": "H", "text": "mustn’t (nicht dürfen) und needn’t / don’t have to (nicht müssen) unterscheiden" },
+    { "id": "lz3", "niveau": "G", "text": "Ersatzformen (be able to, be allowed to, have to) für andere Zeiten bilden" },
+    { "id": "lz4", "niveau": "G", "text": "Regelmäßige und unregelmäßige Pluralformen bilden" }
+  ],
+  "verstehen": {
+    "einstieg": "„You mustn’t eat that!“ und „You needn’t eat that!“ klingen fast gleich. Das eine heißt „Du darfst das nicht essen“, das andere „Du musst das nicht essen“. Ein gefährlicher Unterschied!",
+    "abschnitte": [
+      {
+        "titel": "Modalverben",
+        "text": "- **can**: können, dürfen – ``I can swim.`` ``Can I go now?``\n- **could**: konnte; höfliche Bitte – ``I could read at four.`` ``Could you help me?``\n- **may**: dürfen (höflich, formell); vielleicht – ``May I come in?`` ``It may rain.``\n- **must**: müssen (der Sprecher findet es nötig) – ``I must study harder.``\n- **should**: sollte (Rat) – ``You should see a doctor.``\n\nModalverben haben kein -s bei he/she/it, bilden Fragen und Verneinung ohne do und stehen mit der Grundform ohne to: ``She can’t come.``"
+      },
+      {
+        "titel": "mustn’t oder needn’t?",
+        "text": "- **mustn’t** = **nicht dürfen** (Verbot): ``You mustn’t use your phone in the exam.``\n- **needn’t** / **don’t have to** = **nicht müssen** (keine Pflicht): ``You needn’t bring a pencil – I’ve got one.`` ``We don’t have to wear a uniform.``\n\nVorsicht Falle: „must not“ heißt also **nicht** „nicht müssen“!"
+      },
+      {
+        "titel": "Ersatzformen",
+        "text": "Modalverben haben nicht alle Zeiten. Dann helfen Ersatzformen:\n\n- can → **be able to** (können): ``I will be able to come.`` ``She has been able to swim since she was five.``\n- can/may → **be allowed to** (dürfen): ``We weren’t allowed to leave.``\n- must → **have to** (müssen): ``I had to wait for an hour.`` ``Will you have to work tomorrow?``"
+      },
+      {
+        "titel": "Plural",
+        "text": "- normal: **-s**: book → books; nach s, sh, ch, x: **-es**: bus → buses, box → boxes\n- Konsonant + y: **-ies**: city → cities (aber: day → days)\n- -f/-fe → oft **-ves**: knife → knives, shelf → shelves, wife → wives\n- unregelmäßig: man → **men**, woman → **women**, child → **children**, person → **people**, foot → **feet**, tooth → **teeth**, mouse → **mice**\n- gleich: sheep → **sheep**, fish → **fish**"
+      }
+    ],
+    "merksatz": "Modalverben: kein -s, kein do, Grundform ohne to. mustn’t = nicht dürfen, needn’t / don’t have to = nicht müssen. Ersatzformen: be able to, be allowed to, have to. Plural: cities, knives, children, feet, mice, sheep.",
+    "alltag": "Auf Schildern liest du „Visitors must not feed the animals“. Das ist ein Verbot. „You don’t have to pay“ dagegen heißt: Es ist kostenlos."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-mod-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz4",
+      "frage": "Match the singular with the plural.",
+      "paare": [
+        { "links": "child", "rechts": "children" },
+        { "links": "foot", "rechts": "feet" },
+        { "links": "knife", "rechts": "knives" },
+        { "links": "city", "rechts": "cities" },
+        { "links": "mouse", "rechts": "mice" }
+      ],
+      "extraRechts": ["foots"],
+      "erklaerung": "Diese Pluralformen sind unregelmäßig oder haben eine besondere Schreibweise."
+    },
+    {
+      "id": "en-mod-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Your friend has a bad headache. Which piece of advice fits best?",
+      "optionen": [
+        { "text": "You should lie down for a while.", "richtig": true },
+        { "text": "You may lie down for a while.", "feedback": "may erteilt eine Erlaubnis. Für einen Rat benutzt man should." },
+        { "text": "You should to lie down for a while.", "feedback": "Nach should steht kein to." },
+        { "text": "You shoulds lie down for a while.", "feedback": "Modalverben haben nie ein -s." }
+      ],
+      "erklaerung": "Rat: should + Grundform."
+    },
+    {
+      "id": "en-mod-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "It’s Saturday. There is no school. What do you say?",
+      "optionen": [
+        { "text": "I don’t have to get up early today.", "richtig": true },
+        { "text": "I mustn’t get up early today.", "feedback": "mustn’t heißt „nicht dürfen“. Es ist dir ja nicht verboten, früh aufzustehen." },
+        { "text": "I must get up early today.", "feedback": "Ohne Schule musst du nicht früh aufstehen." },
+        { "text": "I haven’t to get up early today.", "feedback": "Die Verneinung von have to bildet man mit don’t: I don’t have to." }
+      ],
+      "erklaerung": "Keine Pflicht: don’t have to / needn’t."
+    },
+    {
+      "id": "en-mod-04", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "What does it mean?",
+      "paare": [
+        { "links": "You mustn’t swim here.", "rechts": "Swimming is not allowed." },
+        { "links": "You needn’t swim here.", "rechts": "It isn’t necessary to swim." },
+        { "links": "You can swim here.", "rechts": "Swimming is allowed." },
+        { "links": "You must swim here.", "rechts": "It is necessary to swim." }
+      ],
+      "erklaerung": "mustn’t = Verbot, needn’t = keine Pflicht, can = Erlaubnis, must = Pflicht."
+    },
+    {
+      "id": "en-mod-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Complete: ``Last year we ___ wear a uniform, but now we don’t.``",
+      "optionen": [
+        { "text": "had to", "richtig": true },
+        { "text": "must", "feedback": "must hat keine Vergangenheitsform. Man nimmt had to." },
+        { "text": "musted", "feedback": "Diese Form gibt es nicht." },
+        { "text": "have to", "feedback": "Last year → Vergangenheit: had to." }
+      ],
+      "erklaerung": "must in der Vergangenheit: had to."
+    },
+    {
+      "id": "en-mod-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Complete: ``After the course you ___ speak a little Gaelic.``",
+      "optionen": [
+        { "text": "will be able to", "richtig": true },
+        { "text": "will can", "feedback": "can hat kein Futur. Man nimmt be able to." },
+        { "text": "can will", "feedback": "Zwei Modalverben kann man nicht verbinden." },
+        { "text": "will able to", "feedback": "Es fehlt be: will be able to." }
+      ],
+      "erklaerung": "Zukunft von can: will be able to."
+    },
+    {
+      "id": "en-mod-07", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Which plural forms are correct?",
+      "optionen": [
+        { "text": "two women", "richtig": true },
+        { "text": "three sheep", "richtig": true },
+        { "text": "many peoples (= many persons)", "feedback": "Der Plural von person ist people. „peoples“ bedeutet Völker." },
+        { "text": "five boxes", "richtig": true },
+        { "text": "two tooths", "feedback": "tooth → teeth." }
+      ],
+      "erklaerung": "women, sheep, boxes sind richtig. person → people, tooth → teeth."
+    }
+  ]
+}

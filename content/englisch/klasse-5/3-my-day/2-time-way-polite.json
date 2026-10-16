@@ -1,0 +1,118 @@
+{
+  "id": "en-k5-time-polite",
+  "titel": "What’s the time? Asking the way and being polite",
+  "kurz": "Die Uhrzeit sagen, nach dem Weg fragen und den Weg beschreiben, höflich sein – und die Objektformen der Pronomen (me, him, her …).",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Nach der Uhrzeit fragen und sie mit past, to, quarter und half angeben" },
+    { "id": "lz2", "niveau": "G", "text": "Nach dem Weg fragen und einen Weg beschreiben" },
+    { "id": "lz3", "niveau": "G", "text": "Höflichkeitsformeln im Alltag verwenden (please, thank you, excuse me, sorry, could you …)" },
+    { "id": "lz4", "niveau": "H", "text": "Die Objektpronomen me, you, him, her, it, us, them richtig einsetzen" }
+  ],
+  "verstehen": {
+    "einstieg": "Du stehst in Greenwich, einem Stadtteil von London, und suchst das Museum. Wie sprichst du eine fremde Person höflich an, und wie verstehst du, wenn sie „It’s half past ten“ sagt?",
+    "abschnitte": [
+      {
+        "titel": "Telling the time",
+        "text": "- ``What’s the time?`` / ``What time is it?``\n- 7:00 – **seven o’clock**\n- 7:05 – **five past seven**\n- 7:15 – **quarter past seven**\n- 7:30 – **half past seven** (Achtung: Im Deutschen sagt man „halb acht“!)\n- 7:45 – **quarter to eight**\n- 7:50 – **ten to eight**\n\nUm Missverständnisse zu vermeiden, sagt man **a.m.** (vormittags) und **p.m.** (nachmittags, abends): 3 p.m. = 15 Uhr. Man kann auch einfach die Ziffern sagen: 7:30 = „seven thirty“."
+      },
+      {
+        "titel": "Asking the way",
+        "text": "- Fragen: ``Excuse me, how do I get to the museum, please?`` ``Is there a bank near here?``\n- Antworten: **Go straight on.** (geradeaus) **Turn left / right.** **Take the second street on the left.** **It’s on your right.** **It’s opposite the park.** (gegenüber) **It’s next to the station.**"
+      },
+      {
+        "titel": "How to be polite",
+        "text": "Engländer benutzen sehr viele Höflichkeitsformeln:\n\n- **Excuse me** – Entschuldigung (um jemanden anzusprechen)\n- **Sorry** – Entschuldigung (wenn etwas passiert ist oder man nicht verstanden hat: „Sorry?“)\n- **please**, **thank you / thanks**, **You’re welcome.** (Gern geschehen.)\n- Bitten werden höflicher mit **Could you …?** oder **Can I have …, please?** statt mit einem Befehl."
+      },
+      {
+        "titel": "me, him, her …",
+        "text": "Steht ein Pronomen als Objekt (nach dem Verb oder nach einer Präposition), benutzt man die Objektform:\n\n- I → **me**, you → **you**, he → **him**, she → **her**, it → **it**, we → **us**, they → **them**\n\n``Can you help me?`` ``I like her.`` ``Look at them!``"
+      }
+    ],
+    "merksatz": "half past seven = halb acht! quarter past / quarter to. Den Weg: go straight on, turn left/right, it’s on your left. Höflich mit Excuse me, please, thank you, Could you …? Objektformen: me, you, him, her, it, us, them.",
+    "alltag": "Wenn du in einem englischen Café „Give me a cola!“ sagst, klingt das unhöflich. „Could I have a cola, please?“ öffnet dir alle Türen."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-tim-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Match the times.",
+      "paare": [
+        { "links": "quarter past four", "rechts": "4:15" },
+        { "links": "half past four", "rechts": "4:30" },
+        { "links": "quarter to five", "rechts": "4:45" },
+        { "links": "ten to five", "rechts": "4:50" }
+      ],
+      "extraRechts": ["3:30"],
+      "erklaerung": "half past four = 4:30 (im Deutschen „halb fünf“). Die 3:30 wäre half past three."
+    },
+    {
+      "id": "en-tim-02", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Your German friend says: „Der Film beginnt um halb acht abends.“ How do you say this in English?",
+      "optionen": [
+        { "text": "The film starts at half past seven p.m.", "richtig": true },
+        { "text": "The film starts at half past eight p.m.", "feedback": "„Halb acht“ ist 7:30, also half past seven." },
+        { "text": "The film starts at half eight a.m.", "feedback": "a.m. ist vormittags. Abends sagt man p.m." },
+        { "text": "The film starts at seven thirty a.m.", "feedback": "Die Uhrzeit stimmt, aber abends heißt p.m." }
+      ],
+      "erklaerung": "halb acht = 7:30 = half past seven. Abends: p.m."
+    },
+    {
+      "id": "en-tim-03", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Match the directions with the German meaning.",
+      "paare": [
+        { "links": "Go straight on.", "rechts": "Geh geradeaus." },
+        { "links": "Turn left.", "rechts": "Bieg links ab." },
+        { "links": "It’s opposite the bank.", "rechts": "Es ist gegenüber der Bank." },
+        { "links": "It’s on your right.", "rechts": "Es ist auf deiner rechten Seite." }
+      ],
+      "erklaerung": "opposite = gegenüber, on your right = auf der rechten Seite."
+    },
+    {
+      "id": "en-tim-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "You want to ask a stranger in London for the way to the station. What do you say first?",
+      "optionen": [
+        { "text": "Excuse me, how do I get to the station, please?", "richtig": true },
+        { "text": "Sorry, where is station?", "feedback": "„Excuse me“ sagt man, um jemanden anzusprechen. Außerdem fehlt „the“." },
+        { "text": "Hey you! Station?", "feedback": "Das ist sehr unhöflich." },
+        { "text": "Give me the way to the station!", "feedback": "Ein Befehl klingt unhöflich. Frage lieber mit please." }
+      ],
+      "erklaerung": "Excuse me … please – so sprichst du Fremde höflich an."
+    },
+    {
+      "id": "en-tim-05", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "What do you say in these situations?",
+      "paare": [
+        { "links": "Someone says „Thank you!“ to you.", "rechts": "You’re welcome." },
+        { "links": "You step on someone’s foot.", "rechts": "Sorry!" },
+        { "links": "You didn’t understand what someone said.", "rechts": "Sorry? Could you say that again, please?" },
+        { "links": "You want a glass of water in a café.", "rechts": "Could I have a glass of water, please?" }
+      ],
+      "erklaerung": "„Sorry?“ mit fragender Stimme heißt: Wie bitte?"
+    },
+    {
+      "id": "en-tim-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Complete: ``This is my cousin Ben. Do you know ___? I play football with ___ every Saturday.``",
+      "optionen": [
+        { "text": "him … him", "richtig": true },
+        { "text": "he … he", "feedback": "Nach dem Verb (know) und nach with steht die Objektform: him." },
+        { "text": "his … him", "feedback": "his ist ein Possessivbegleiter (sein …). Hier brauchst du die Objektform." },
+        { "text": "him … he", "feedback": "Auch nach with steht die Objektform: with him." }
+      ],
+      "erklaerung": "Objektform nach Verben und Präpositionen: know him, with him."
+    },
+    {
+      "id": "en-tim-07", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Which sentences are correct?",
+      "optionen": [
+        { "text": "Can you help us, please?", "richtig": true },
+        { "text": "My grandparents are great. I visit them every week.", "richtig": true },
+        { "text": "Look at she!", "feedback": "Nach at steht die Objektform: Look at her!" },
+        { "text": "Give it to me, please.", "richtig": true },
+        { "text": "Me and they are friends.", "feedback": "Als Subjekt braucht man die Subjektformen: They and I are friends." }
+      ],
+      "erklaerung": "Subjektformen (I, he, she, we, they) stehen vor dem Verb, Objektformen (me, him, her, us, them) danach oder nach Präpositionen."
+    }
+  ]
+}

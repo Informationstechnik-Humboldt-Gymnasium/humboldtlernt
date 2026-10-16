@@ -185,6 +185,9 @@ th { color: var(--muted); font-weight: 600; font-size: .82rem; }
 .chip-btn { font: inherit; font-size: .88rem; padding: 6px 14px; border-radius: 99px; border: 1px solid var(--border); background: var(--card); color: var(--text); cursor: pointer; }
 .chip-btn.active { background: var(--text); color: var(--card); border-color: var(--text); }
 .exercises { display: grid; gap: 14px; max-width: 860px; }
+/* Lange Programmzeilen und Pfade dürfen die Übungskarten nicht über den Bildschirm hinaus verbreitern */
+.exercises > .exercise { min-width: 0; }
+.exercise code { overflow-wrap: anywhere; }
 .exercise { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px; }
 .exercise.solved { border-color: color-mix(in srgb, var(--ok) 50%, var(--border)); }
 .ex-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: .85rem; }

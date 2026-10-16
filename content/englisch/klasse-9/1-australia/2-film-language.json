@@ -1,0 +1,117 @@
+{
+  "id": "en-k9-film-language",
+  "titel": "Film language: field sizes, camera angles and sound",
+  "kurz": "Einstellungsgrößen, Kameraperspektiven, Kamerabewegungen und Ton benennen und ihre Wirkung an Filmszenen (z. B. aus „Rabbit-Proof Fence“) beschreiben.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Einstellungsgrößen (field sizes) von extreme long shot bis extreme close-up benennen" },
+    { "id": "lz2", "niveau": "G", "text": "Kameraperspektiven (high angle, eye level, low angle, bird’s-eye view) und Kamerabewegungen (pan, tilt, zoom, tracking shot) unterscheiden" },
+    { "id": "lz3", "niveau": "H", "text": "Diegetischen und nicht-diegetischen Ton unterscheiden" },
+    { "id": "lz4", "niveau": "H", "text": "Die Wirkung filmischer Mittel an einer Szene beschreiben und deuten" }
+  ],
+  "verstehen": {
+    "einstieg": "Ein Mädchen läuft allein durch die endlose rote Wüste – die Kamera ist weit weg, das Mädchen winzig. Dann plötzlich: nur ihr Gesicht, ganz nah. Warum wechselt der Film so, und was sollen wir dabei fühlen?",
+    "abschnitte": [
+      {
+        "titel": "Field sizes",
+        "text": "- **extreme long shot**: weite Landschaft, Menschen winzig – zeigt den Ort (oft am Anfang: **establishing shot**), wirkt oft einsam oder verloren\n- **long shot**: ganze Person mit viel Umgebung – Person in ihrer Umgebung\n- **medium shot**: Person etwa ab der Hüfte – Gespräche, Gestik\n- **close-up**: Gesicht – Gefühle, Nähe zur Figur\n- **extreme close-up**: kleines Detail (Augen, Hand, Gegenstand) – betont etwas Wichtiges, kann Spannung erzeugen"
+      },
+      {
+        "titel": "Camera angles",
+        "text": "- **bird’s-eye view**: senkrecht von oben – Überblick, Figuren wirken klein\n- **high angle**: von schräg oben – Figur wirkt **klein, schwach, hilflos**\n- **eye level**: auf Augenhöhe – neutral, wir begegnen der Figur auf Augenhöhe\n- **low angle**: von unten – Figur wirkt **groß, mächtig, bedrohlich**\n- **worm’s-eye view**: extrem von unten"
+      },
+      {
+        "titel": "Camera movements",
+        "text": "- **pan**: Kamera dreht sich waagerecht (z. B. über eine Landschaft)\n- **tilt**: Kamera neigt sich nach oben oder unten\n- **zoom**: Bildausschnitt wird größer oder kleiner, ohne dass die Kamera sich bewegt\n- **tracking shot**: Kamera fährt mit (z. B. neben einer laufenden Figur)"
+      },
+      {
+        "titel": "Sound",
+        "text": "- **diegetic sound**: Ton, der in der Filmwelt entsteht und den die Figuren hören können: Dialoge, Schritte, Wind, ein Radio in der Szene\n- **non-diegetic sound**: Ton von außerhalb der Filmwelt: **soundtrack** (Filmmusik), **voice-over** (Erzählstimme)\n- **sound effects**: Geräusche, die bewusst eingesetzt werden, um Stimmung zu erzeugen\n\nMusik lenkt unsere Gefühle stark: Leise, langsame Musik wirkt traurig oder ruhig, schneller Rhythmus erzeugt Spannung."
+      },
+      {
+        "titel": "Describing the effect",
+        "text": "Nicht nur benennen – erklären, **wie** das Mittel wirkt:\n\n``In this scene, an extreme long shot shows Molly alone in the huge desert. This makes her look small and lost, and the viewer feels how dangerous her journey is. Then a close-up of her face shows her determination.``\n\nNützliche Wendungen: **The camera shows …**, **… is filmed from a low angle, which makes him look …**, **The music creates a … atmosphere.**, **The viewer feels …**"
+      }
+    ],
+    "merksatz": "Field sizes: extreme long shot – long shot – medium shot – close-up – extreme close-up. Angles: high angle (schwach), eye level (neutral), low angle (mächtig), bird’s-eye view. Movements: pan, tilt, zoom, tracking shot. Diegetic sound gehört zur Filmwelt, non-diegetic (Filmmusik, voice-over) nicht. Immer die Wirkung erklären.",
+    "alltag": "Achte beim nächsten Film darauf: Bösewichte werden oft von unten gefilmt, Opfer von oben. Wenn du das einmal gesehen hast, entdeckst du es überall."
+  },
+  "interaktiv": ["en-kamera"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-fil-01", "typ": "reihenfolge", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Put the field sizes in order from the widest to the closest.",
+      "elemente": ["extreme long shot", "long shot", "medium shot", "close-up", "extreme close-up"],
+      "erklaerung": "Von der ganzen Landschaft bis zum kleinsten Detail."
+    },
+    {
+      "id": "en-fil-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "What does each shot show?",
+      "paare": [
+        { "links": "extreme long shot", "rechts": "a huge landscape with a tiny person in it" },
+        { "links": "medium shot", "rechts": "a person from the waist up" },
+        { "links": "close-up", "rechts": "a person’s face" },
+        { "links": "extreme close-up", "rechts": "only the eyes of a person" }
+      ],
+      "erklaerung": "Je näher die Einstellung, desto mehr sehen wir von den Gefühlen – und desto weniger von der Umgebung."
+    },
+    {
+      "id": "en-fil-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "A policeman is filmed from below. What effect does this low angle usually have?",
+      "optionen": [
+        { "text": "He looks powerful and threatening.", "richtig": true },
+        { "text": "He looks small and weak.", "feedback": "Diese Wirkung hat der high angle (von oben)." },
+        { "text": "He looks neutral, like the viewer.", "feedback": "Neutral wirkt eye level." },
+        { "text": "The landscape becomes more important than the person.", "feedback": "Das erreicht eher ein extreme long shot." }
+      ],
+      "erklaerung": "Low angle: Figur wirkt groß, mächtig, bedrohlich."
+    },
+    {
+      "id": "en-fil-04", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Match the camera movements with the descriptions.",
+      "paare": [
+        { "links": "pan", "rechts": "the camera turns from left to right" },
+        { "links": "tilt", "rechts": "the camera moves up or down from a fixed point" },
+        { "links": "zoom", "rechts": "the picture gets closer although the camera doesn’t move" },
+        { "links": "tracking shot", "rechts": "the camera moves along with a running person" }
+      ],
+      "erklaerung": "Pan und tilt drehen die Kamera, beim tracking shot bewegt sie sich selbst, der zoom verändert nur die Brennweite."
+    },
+    {
+      "id": "en-fil-05", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Which sounds are **diegetic**?",
+      "optionen": [
+        { "text": "The girls’ footsteps in the sand", "richtig": true },
+        { "text": "A dog barking in the camp", "richtig": true },
+        { "text": "Sad music that the characters can’t hear", "feedback": "Filmmusik von außen ist non-diegetic." },
+        { "text": "The voice of a narrator who is not in the scene", "feedback": "Ein voice-over gehört nicht zur Filmwelt: non-diegetic." },
+        { "text": "A conversation between two characters", "richtig": true }
+      ],
+      "erklaerung": "Diegetic: Die Figuren könnten den Ton hören. Non-diegetic: nur das Publikum hört ihn."
+    },
+    {
+      "id": "en-fil-06", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Why does a film often start with an extreme long shot of a landscape?",
+      "optionen": [
+        { "text": "To show where the story takes place (establishing shot).", "richtig": true },
+        { "text": "To show the feelings of the main character in detail.", "feedback": "Gefühle zeigt eher ein close-up." },
+        { "text": "Because the actors are not ready yet.", "feedback": "Das ist eine bewusste Entscheidung der Regie." },
+        { "text": "To make the characters look powerful.", "feedback": "Mächtig wirken Figuren eher im low angle." }
+      ],
+      "erklaerung": "Der establishing shot zeigt Ort und Stimmung, bevor die Handlung beginnt."
+    },
+    {
+      "id": "en-fil-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Describe and interpret this imagined scene (4–5 sentences): An extreme long shot shows three small girls walking through the endless desert. Then the camera shows the face of the youngest girl in a close-up; she is crying. Quiet, sad music is playing. Name the film techniques and explain their effect on the viewer.",
+      "stichworte": [
+        { "aspekt": "extreme long shot benannt und gedeutet (klein, allein, verloren, gefährlich)", "woerter": ["extreme long shot"] },
+        { "aspekt": "close-up benannt und gedeutet (Gefühle, Nähe)", "woerter": ["close-up", "close up"] },
+        { "aspekt": "Musik als non-diegetic sound / Stimmung", "woerter": ["music", "non-diegetic", "soundtrack"] },
+        { "aspekt": "Wirkung auf den Zuschauer", "woerter": ["viewer", "audience", "feel", "sympathy", "effect", "makes"] }
+      ],
+      "musterloesung": "The extreme long shot shows the three girls as tiny figures in the huge desert. This makes them look lonely and lost, and the viewer understands how dangerous their journey is. The close-up of the youngest girl’s face shows her tears, so the viewer feels close to her and shares her fear. The quiet, sad non-diegetic music creates a sad atmosphere. Together, these techniques make the audience feel sympathy for the girls.",
+      "erklaerung": "Eine gute Filmanalyse nennt das Mittel, beschreibt, was man sieht oder hört, und erklärt die Wirkung."
+    }
+  ]
+}

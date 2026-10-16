@@ -1,0 +1,120 @@
+{
+  "id": "inf-k10-klassen-objekte",
+  "titel": "Klassen und Objekte",
+  "kurz": "Wie man Dinge als Objekte mit Attributen und Methoden beschreibt, warum eine Klasse der Bauplan ist und wie man Klassen- und Objektdiagramme liest.",
+  "reihenfolge": 4,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Objekte durch ihre Attribute (Eigenschaften) und Methoden (Fähigkeiten) beschreiben" },
+    { "id": "lz2", "niveau": "G", "text": "Klassen und Objekte unterscheiden und erklären, wie mit new ein Objekt entsteht" },
+    { "id": "lz3", "niveau": "G", "text": "Klassendiagramme und Objektdiagramme lesen und erstellen" },
+    { "id": "lz4", "niveau": "H", "text": "Vorhandene Klassen mithilfe ihrer Dokumentation verwenden und Methoden von Objekten mit der Punktnotation aufrufen" }
+  ],
+  "verstehen": {
+    "einstieg": "In einem Spiel laufen zwanzig Gegner herum. Jeder hat eine eigene Position und eigene Lebenspunkte, aber alle können dasselbe: laufen, angreifen, getroffen werden. Muss man jeden Gegner einzeln programmieren?",
+    "abschnitte": [
+      {
+        "titel": "Objekte: Zustand und Verhalten",
+        "text": "In der objektorientierten Programmierung beschreibt man Dinge als **Objekte**. Jedes Objekt hat:\n\n- **Attribute:** Eigenschaften mit Werten, z. B. ``x = 3``, ``leben = 5``. Alle Attributwerte zusammen bilden den **Zustand** des Objekts.\n- **Methoden:** Fähigkeiten, also was das Objekt tun kann, z. B. ``bewege()``, ``greifeAn()``.\n\nMethoden können den Zustand ändern: Nach ``bewege()`` hat der Gegner eine neue Position."
+      },
+      {
+        "titel": "Klasse als Bauplan",
+        "text": "Eine **Klasse** legt fest, welche Attribute und Methoden ihre Objekte haben. Sie ist der **Bauplan**. Die Objekte sind die nach diesem Plan gebauten **Exemplare** (auch **Instanzen**).\n\n```\nGegner g1 = new Gegner();\nGegner g2 = new Gegner();\n```\n\nMit ``new`` entsteht ein neues Objekt. g1 und g2 haben dieselben Attribute, aber jeweils eigene Werte. Ein Methodenaufruf betrifft nur das Objekt vor dem Punkt: ``g1.bewege();`` bewegt nur g1. Das nennt man **Punktnotation**."
+      },
+      {
+        "titel": "Klassendiagramm und Objektdiagramm",
+        "text": "Ein **Klassendiagramm** (in UML) ist ein Kasten mit drei Teilen:\n\n- oben der **Name** der Klasse, z. B. ``Gegner``\n- in der Mitte die **Attribute** mit Datentyp, z. B. ``- leben: int``\n- unten die **Methoden**, z. B. ``+ bewege(): void``\n\n``-`` heißt **private** (nur innerhalb der Klasse sichtbar), ``+`` heißt **public** (von außen nutzbar).\n\nEin **Objektdiagramm** zeigt ein bestimmtes Objekt mit seinen aktuellen Werten. Oben steht unterstrichen ``g1 : Gegner`` (Objekt g1 der Klasse Gegner), darunter z. B. ``leben = 5``. Methoden stehen dort nicht, weil sie für alle Objekte gleich sind."
+      },
+      {
+        "titel": "Vorhandene Klassen nutzen",
+        "text": "Man muss nicht alles selbst schreiben. Greenfoot bringt die Klasse ``Actor`` mit, und ihre **Dokumentation** beschreibt die Methoden, zum Beispiel:\n\n- ``void move(int distance)``: bewegt den Actor um distance Zellen in Blickrichtung\n- ``void turn(int amount)``: dreht um amount Grad im Uhrzeigersinn\n- ``int getX()``: liefert die x-Koordinate\n- ``boolean isAtEdge()``: true, wenn der Actor am Rand der Welt ist\n\nAus dem Kopf liest du ab, welche Werte du übergeben musst und was zurückkommt. Wie die Methode innen arbeitet, musst du dafür nicht wissen."
+      }
+    ],
+    "merksatz": "Ein Objekt hat Attribute (Zustand) und Methoden (Verhalten). Die Klasse ist der Bauplan, Objekte sind ihre Exemplare und entstehen mit new. Im Klassendiagramm stehen Name, Attribute und Methoden, im Objektdiagramm ein Objekt mit seinen aktuellen Werten.",
+    "alltag": "Ein Formular zur Anmeldung im Sportverein ist wie eine Klasse: Es legt fest, welche Angaben es gibt (Name, Geburtsdatum, Sportart). Jedes ausgefüllte Formular ist wie ein Objekt mit eigenen Werten."
+  },
+  "interaktiv": ["inf-objekte"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "inf-kob-01", "typ": "multi", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Ein Objekt der Klasse ``Hund`` soll in einem Spiel vorkommen. Welche davon sind **Attribute** (und keine Methoden)?",
+      "optionen": [
+        { "text": "``name``", "richtig": true },
+        { "text": "``bellen()``", "feedback": "Bellen ist etwas, das der Hund tut. Das ist eine Methode." },
+        { "text": "``fellfarbe``", "richtig": true },
+        { "text": "``alter``", "richtig": true },
+        { "text": "``holeBall()``", "feedback": "Das ist eine Fähigkeit, also eine Methode." }
+      ],
+      "erklaerung": "Attribute beschreiben, wie ein Objekt ist (Eigenschaften mit Werten). Methoden beschreiben, was es tun kann. In Java erkennt man Methoden an den runden Klammern."
+    },
+    {
+      "id": "inf-kob-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Welche Aussage über Klassen und Objekte ist richtig?",
+      "optionen": [
+        { "text": "Eine Klasse ist der Bauplan; nach ihr können beliebig viele Objekte mit eigenen Attributwerten erzeugt werden.", "richtig": true },
+        { "text": "Jede Klasse hat genau ein Objekt.", "feedback": "Aus einer Klasse kann man so viele Objekte erzeugen, wie man braucht, z. B. 20 Gegner." },
+        { "text": "Alle Objekte einer Klasse haben immer dieselben Attributwerte.", "feedback": "Sie haben dieselben Attribute, aber jeweils eigene Werte, z. B. verschiedene Positionen." },
+        { "text": "Ein Objekt ist ein Teil einer Klasse, so wie ein Kapitel ein Teil eines Buches ist.", "feedback": "Ein Objekt ist kein Teil der Klasse, sondern ein Exemplar, das nach ihrem Plan gebaut wurde." }
+      ],
+      "erklaerung": "Bauplan und Haus: Aus einem Bauplan kann man viele Häuser bauen. Jedes hat dieselben Räume, aber vielleicht andere Farben und andere Bewohner."
+    },
+    {
+      "id": "inf-kob-03", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Ordne die Teile eines UML-Klassendiagramms ihrer Bedeutung zu.",
+      "paare": [
+        { "links": "Oberster Teil des Kastens, z. B. ``Gegner``", "rechts": "Name der Klasse" },
+        { "links": "``- leben: int``", "rechts": "privates Attribut mit Datentyp" },
+        { "links": "``+ bewege(): void``", "rechts": "öffentliche Methode ohne Rückgabewert" },
+        { "links": "``+ getLeben(): int``", "rechts": "öffentliche Methode mit Rückgabewert" }
+      ],
+      "erklaerung": "Das Minus steht für private, das Plus für public. Hinter dem Doppelpunkt steht der Datentyp des Attributs bzw. der Rückgabetyp der Methode."
+    },
+    {
+      "id": "inf-kob-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "In einem Objektdiagramm steht oben unterstrichen ``mia : Schueler``, darunter ``klasse = \"10a\"`` und ``alter = 15``. Was stellt das Diagramm dar?",
+      "optionen": [
+        { "text": "Ein Objekt namens mia der Klasse Schueler mit seinen aktuellen Attributwerten", "richtig": true },
+        { "text": "Die Klasse mia mit dem Attribut Schueler", "feedback": "Vor dem Doppelpunkt steht der Objektname, dahinter die Klasse." },
+        { "text": "Eine Methode mia, die einen Schueler zurückgibt", "feedback": "Methoden sehen anders aus (Klammern) und stehen nicht im Objektdiagramm." },
+        { "text": "Alle Objekte der Klasse Schueler", "feedback": "Ein Objektdiagramm zeigt ein bestimmtes Objekt, hier mia." }
+      ],
+      "erklaerung": "Objektdiagramme zeigen eine Momentaufnahme: welches Objekt, von welcher Klasse, mit welchen Werten. Die Unterstreichung unterscheidet Objekte von Klassen."
+    },
+    {
+      "id": "inf-kob-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Laut Dokumentation hat die Klasse ``Actor`` die Methode ``void turn(int amount)``, die um amount Grad im Uhrzeigersinn dreht. Welcher Aufruf dreht das Objekt ``held`` um eine Vierteldrehung nach rechts?",
+      "optionen": [
+        { "text": "``held.turn(90);``", "richtig": true },
+        { "text": "``turn.held(90);``", "feedback": "Vor dem Punkt steht das Objekt, dahinter die Methode." },
+        { "text": "``held.turn(\"90\");``", "feedback": "Der Parameter ist ein int. \"90\" wäre ein String." },
+        { "text": "``int r = held.turn(90);``", "feedback": "turn ist void und liefert keinen Wert, den man speichern könnte." }
+      ],
+      "erklaerung": "Aus dem Methodenkopf liest man alles Nötige ab: Name turn, ein Parameter vom Typ int, kein Rückgabewert (void). Eine Vierteldrehung sind 90 Grad."
+    },
+    {
+      "id": "inf-kob-06", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Die Klasse ``Figur`` hat ein Attribut ``x``, das bei jedem neuen Objekt mit 0 beginnt. ``bewege(n)`` erhöht x um n, ``getX()`` liefert x. Welche Zahl wird ausgegeben?\n\n```\nFigur a = new Figur();\na.bewege(3);\nFigur b = new Figur();\nb.bewege(5);\na.bewege(2);\nSystem.out.println(a.getX() + b.getX());\n```",
+      "loesung": 10, "toleranz": 0, "einheit": "",
+      "gegeben": "Jedes neue Objekt startet mit x = 0",
+      "gesucht": "a.getX() + b.getX()",
+      "rechenweg": [
+        "a: 0 + 3 = 3, später 3 + 2 = 5",
+        "b ist ein eigenes Objekt: 0 + 5 = 5",
+        "5 + 5 = 10"
+      ],
+      "erklaerung": "Jedes Objekt hat seine eigenen Attributwerte. a.bewege(2) ändert nur a, nicht b."
+    },
+    {
+      "id": "inf-kob-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz1",
+      "frage": "Ein Fahrradverleih möchte seine Räder mit einem Programm verwalten. Modelliere eine Klasse ``Fahrrad``: Nenne mindestens drei Attribute mit Datentyp und zwei Methoden. Erkläre kurz, was ein Objekt dieser Klasse ist.",
+      "stichworte": [
+        { "aspekt": "Attribute mit passenden Datentypen (z. B. nummer: int, farbe: String)", "woerter": ["int", "string", "double"] },
+        { "aspekt": "Ein Attribut für den Zustand ausgeliehen ja/nein (boolean)", "woerter": ["boolean", "ausgeliehen", "verfuegbar", "frei"] },
+        { "aspekt": "Methoden wie ausleihen() und zurueckgeben()", "woerter": ["ausleihen", "zurueckgeb", "reparier", "methode"] },
+        { "aspekt": "Ein Objekt ist ein bestimmtes Fahrrad des Verleihs", "woerter": ["bestimmt", "einzeln", "konkret", "exemplar", "jedes fahrrad", "ein fahrrad"] }
+      ],
+      "musterloesung": "Die Klasse Fahrrad hat die Attribute nummer: int, farbe: String, preisProTag: double und ausgeliehen: boolean. Methoden sind ausleihen(), die ausgeliehen auf true setzt, und zurueckgeben(), die es wieder auf false setzt. Ein Objekt der Klasse ist ein bestimmtes Fahrrad des Verleihs, zum Beispiel das rote Rad mit der Nummer 17.",
+      "erklaerung": "Beim Modellieren wählt man nur die Eigenschaften, die für den Zweck wichtig sind. Für den Verleih zählt der Preis, die Zahl der Speichen eher nicht."
+    }
+  ]
+}

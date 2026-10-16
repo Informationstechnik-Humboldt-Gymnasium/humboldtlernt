@@ -1,0 +1,118 @@
+{
+  "id": "inf-k10-datensicherheit",
+  "titel": "Datensicherheit, Zugriffsschutz und Benutzersichten",
+  "kurz": "Was Datensicherheit von Datenschutz unterscheidet, welche Schutzziele es gibt, wie man in einer Datenbank Rechte nach Rollen vergibt und wozu Benutzersichten (Views) und Backups dienen.",
+  "reihenfolge": 6,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Datenschutz und Datensicherheit unterscheiden und die Schutzziele Vertraulichkeit, Integrität und Verfügbarkeit erklären" },
+    { "id": "lz2", "niveau": "G", "text": "Zugriffsrechte für verschiedene Rollen einer Datenbank nach dem Prinzip der geringsten Rechte festlegen" },
+    { "id": "lz3", "niveau": "H", "text": "Benutzersichten (Views) erklären und angeben, welche Daten eine Sicht zeigt" },
+    { "id": "lz4", "niveau": "H", "text": "Maßnahmen der Datensicherheit wie Backups, Updates, Verschlüsselung und Zugangsschutz bewerten" }
+  ],
+  "verstehen": {
+    "einstieg": "Die Schule speichert Noten, Adressen und Krankmeldungen in einer Datenbank. Die Lehrkraft soll Noten eintragen, du sollst nur deine eigenen sehen, und wenn der Server kaputtgeht, darf nichts verloren sein. Wie organisiert man das?",
+    "abschnitte": [
+      {
+        "titel": "Datenschutz und Datensicherheit",
+        "text": "- **Datenschutz** schützt **Menschen**: Es geht darum, ob und wofür ihre persönlichen Daten überhaupt verarbeitet werden dürfen.\n- **Datensicherheit** schützt **Daten**, und zwar alle, auch nicht-persönliche: vor Verlust, Diebstahl und Manipulation.\n\nDatensicherheit hat drei **Schutzziele**:\n\n- **Vertraulichkeit:** Nur Berechtigte können die Daten lesen.\n- **Integrität:** Die Daten sind vollständig und nicht unbemerkt verändert.\n- **Verfügbarkeit:** Die Daten sind da, wenn man sie braucht.\n\nOhne Datensicherheit gibt es keinen Datenschutz: Ein gestohlener Datensatz ist auch eine Verletzung der Privatsphäre."
+      },
+      {
+        "titel": "Rechte nach Rollen",
+        "text": "In einem Datenbanksystem bekommt nicht jeder Benutzer einzeln Rechte, sondern jede **Rolle**: z. B. Schüler, Lehrkraft, Sekretariat, Administrator. Rechte gibt es für jede Tabelle getrennt: lesen (SELECT), einfügen (INSERT), ändern (UPDATE), löschen (DELETE).\n\nEs gilt das **Prinzip der geringsten Rechte**: Jede Rolle bekommt genau die Rechte, die sie für ihre Aufgabe braucht. Ein Schüler muss in der Bibliothek Bücher suchen können, er braucht aber kein Recht, Ausleihen zu löschen. In SQL vergibt man Rechte z. B. mit ``GRANT SELECT ON buch TO schueler;``."
+      },
+      {
+        "titel": "Benutzersichten (Views)",
+        "text": "Eine **Sicht** (englisch view) ist eine gespeicherte Abfrage, die wie eine eigene Tabelle benutzt wird. Sie zeigt nur bestimmte Spalten oder Zeilen:\n\n```\nCREATE VIEW katalog AS\nSELECT titel, autor, jahr, genre FROM buch;\n```\n\nGibt man der Rolle Schüler nur das Leserecht für ``katalog``, sieht sie die Bücher, aber z. B. keine Ausleihen anderer Schüler. Eine Sicht kann auch Tabellen verknüpfen oder Zeilen filtern, etwa nur die Noten der eigenen Klasse. Die Daten liegen dabei nur einmal in der Datenbank. Die Sicht ist nur ein anderer Blick darauf."
+      },
+      {
+        "titel": "Weitere Maßnahmen",
+        "text": "- **Backups (Datensicherungen):** regelmäßig Kopien anlegen. Faustregel 3-2-1: 3 Kopien, auf 2 verschiedenen Speichermedien, 1 davon an einem anderen Ort und nicht ständig mit dem Netz verbunden.\n- **Updates:** Sicherheitslücken in Programmen und Betriebssystemen schließen.\n- **Verschlüsselung:** Daten auf Festplatten und bei der Übertragung (HTTPS) verschlüsseln.\n- **Zugangsschutz:** starke Passwörter, Zwei-Faktor-Authentifizierung, gesperrte Serverräume.\n- **Protokollierung:** festhalten, wer wann was geändert hat, damit Manipulationen auffallen."
+      }
+    ],
+    "merksatz": "Datenschutz schützt Menschen, Datensicherheit schützt Daten. Die Schutzziele sind Vertraulichkeit, Integrität und Verfügbarkeit. Rechte werden nach Rollen und nach dem Prinzip der geringsten Rechte vergeben. Sichten (Views) zeigen jeder Rolle nur die Daten, die sie braucht. Backups, Updates und Verschlüsselung gehören immer dazu.",
+    "alltag": "Erpressungsprogramme (Ransomware) verschlüsseln die Daten ganzer Firmen, Krankenhäuser und Schulen und verlangen Lösegeld. Wer eine aktuelle Sicherung hat, die nicht mit dem Netz verbunden war, kann seine Daten trotzdem wiederherstellen."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "inf-dsi-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Welches Schutzziel ist gemeint?",
+      "paare": [
+        { "links": "Mitschüler sollen deine Noten nicht lesen können.", "rechts": "Vertraulichkeit" },
+        { "links": "Niemand soll eine Note unbemerkt von 5 auf 1 ändern können.", "rechts": "Integrität" },
+        { "links": "Am Zeugnistag muss die Notenverwaltung funktionieren.", "rechts": "Verfügbarkeit" }
+      ],
+      "erklaerung": "Vertraulichkeit schützt vor unbefugtem Lesen, Integrität vor unbefugtem Ändern, Verfügbarkeit vor Ausfall und Verlust."
+    },
+    {
+      "id": "inf-dsi-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Ein Server mit den Aufgabenblättern einer Schule fällt aus, und die Dateien sind verloren. Personenbezogene Daten waren nicht darauf. Was wurde verletzt?",
+      "optionen": [
+        { "text": "Die Datensicherheit (Schutzziel Verfügbarkeit)", "richtig": true },
+        { "text": "Der Datenschutz", "feedback": "Datenschutz betrifft personenbezogene Daten. Die waren hier nicht betroffen." },
+        { "text": "Das Urheberrecht", "feedback": "Niemand hat die Blätter unerlaubt kopiert. Sie sind verloren gegangen." },
+        { "text": "Gar nichts, weil keine Personen betroffen sind", "feedback": "Datensicherheit schützt alle Daten, nicht nur persönliche." }
+      ],
+      "erklaerung": "Ein aktuelles Backup hätte die Verfügbarkeit gesichert. Datensicherheit betrifft alle Daten einer Organisation."
+    },
+    {
+      "id": "inf-dsi-03", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Für die Datenbank der Schulbibliothek wird die Rolle **schueler** eingerichtet. Welche Rechte sollte sie nach dem Prinzip der geringsten Rechte bekommen?",
+      "optionen": [
+        { "text": "Lesen der Sicht katalog (Titel, Autor, Jahr, Genre)", "richtig": true },
+        { "text": "Lesen der eigenen Ausleihen über eine passende Sicht", "richtig": true },
+        { "text": "Löschen von Datensätzen in der Tabelle ausleihe", "feedback": "Dann könnte jemand seine überfälligen Ausleihen einfach verschwinden lassen." },
+        { "text": "Ändern der Tabelle schueler", "feedback": "Die Schülerdaten pflegt das Sekretariat bzw. die Bibliothek, nicht jeder Schüler selbst." },
+        { "text": "Lesen aller Ausleihen aller Schüler", "feedback": "Wer was liest, ist eine persönliche Information. Andere Schüler brauchen sie nicht." }
+      ],
+      "erklaerung": "Jede Rolle bekommt nur, was sie für ihre Aufgabe braucht. Das begrenzt den Schaden durch Fehler, Neugier oder ein gestohlenes Passwort."
+    },
+    {
+      "id": "inf-dsi-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Was ist eine Benutzersicht (View) in einer Datenbank?",
+      "optionen": [
+        { "text": "Eine gespeicherte Abfrage, die wie eine Tabelle benutzt wird und nur ausgewählte Daten zeigt", "richtig": true },
+        { "text": "Eine Kopie der Datenbank auf einem anderen Server", "feedback": "Das wäre eine Sicherung bzw. Spiegelung. Eine Sicht speichert keine eigenen Daten." },
+        { "text": "Die Bildschirmoberfläche, mit der man Daten eintippt", "feedback": "Eine Sicht ist kein Fenster der Oberfläche, sondern ein Objekt in der Datenbank selbst." },
+        { "text": "Ein Passwort, mit dem man die Datenbank öffnet", "feedback": "Passwörter gehören zur Anmeldung. Eine Sicht legt fest, was man danach sieht." }
+      ],
+      "erklaerung": "Sichten sind ein wichtiges Werkzeug für den Datenschutz: Jede Rolle bekommt Zugriff auf eine Sicht statt auf die ganze Tabelle."
+    },
+    {
+      "id": "inf-dsi-05", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Die Bibliothek legt diese Sicht an:\n\n```\nCREATE VIEW katalog AS\nSELECT titel, autor, jahr FROM buch\nWHERE genre <> 'Krimi';\n```\n\nWas kann jemand sehen, der **nur** die Sicht ``katalog`` lesen darf?",
+      "optionen": [
+        { "text": "Titel und Autor der Bücher, die keine Krimis sind", "richtig": true },
+        { "text": "Das Erscheinungsjahr dieser Bücher", "richtig": true },
+        { "text": "Die Buchnummer bid", "feedback": "bid steht nicht hinter SELECT und gehört nicht zur Sicht." },
+        { "text": "Das Buch „Emil und die Detektive“", "feedback": "Es hat das Genre Krimi und wird durch die WHERE-Bedingung ausgeblendet." },
+        { "text": "Wer welches Buch ausgeliehen hat", "feedback": "Die Sicht greift nur auf die Tabelle buch zu, nicht auf ausleihe." }
+      ],
+      "erklaerung": "Eine Sicht begrenzt Spalten (über SELECT) und Zeilen (über WHERE). Alles andere bleibt für diese Rolle unsichtbar."
+    },
+    {
+      "id": "inf-dsi-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Ein Erpressungsprogramm verschlüsselt alle Dateien auf dem Schulserver. Welche Sicherung hilft am zuverlässigsten, die Daten wiederherzustellen?",
+      "optionen": [
+        { "text": "Eine regelmäßige Sicherung auf einem Medium, das danach vom Netz getrennt an einem anderen Ort lagert", "richtig": true },
+        { "text": "Ein Cloud-Ordner, der jede Änderung sofort synchronisiert", "feedback": "Die Synchronisation überträgt auch die verschlüsselten Dateien und überschreibt die guten Kopien." },
+        { "text": "Eine zweite Festplatte im selben Server, die alles spiegelt", "feedback": "Die Spiegelung schützt vor einem Festplattendefekt, aber nicht vor dem Erpressungsprogramm. Es verschlüsselt beide Platten." },
+        { "text": "Eine USB-Festplatte, die dauerhaft am Server angeschlossen bleibt", "feedback": "Das Programm erreicht auch angeschlossene Laufwerke und verschlüsselt sie mit." }
+      ],
+      "erklaerung": "Nur eine Kopie, die das Schadprogramm nicht erreichen kann, ist sicher. Darum gehört nach der 3-2-1-Regel eine Kopie an einen anderen Ort und nicht ständig ins Netz. Und man sollte regelmäßig testen, ob sich die Sicherung auch wirklich wiederherstellen lässt."
+    },
+    {
+      "id": "inf-dsi-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Lege für die Datenbank der Schulbibliothek mit den Tabellen ``schueler``, ``buch`` und ``ausleihe`` Rechte für die Rollen **Bibliothekarin** und **Lehrkraft** fest. Begründe mit dem Prinzip der geringsten Rechte.",
+      "stichworte": [
+        { "aspekt": "Bibliothekarin: Bücher und Ausleihen eintragen, ändern und löschen", "woerter": ["einfuegen", "eintragen", "aendern", "loeschen", "insert", "update", "delete", "alle rechte"] },
+        { "aspekt": "Lehrkraft: nur lesen (z. B. Katalog / Sicht), nichts ändern", "woerter": ["nur lesen", "lesen", "select", "katalog", "sicht"] },
+        { "aspekt": "Lehrkraft sieht nicht, was einzelne Schüler ausleihen (Datenschutz)", "woerter": ["nicht sehen", "keine ausleihen", "privat", "persoenlich", "datenschutz", "geht sie nichts an"] },
+        { "aspekt": "Begründung: Jede Rolle bekommt nur die Rechte, die sie für ihre Aufgabe braucht", "woerter": ["geringsten", "braucht", "noetig", "aufgabe"] }
+      ],
+      "musterloesung": "Die Bibliothekarin darf in allen drei Tabellen lesen, einfügen, ändern und löschen. Sie muss neue Bücher aufnehmen, Ausleihen eintragen und Rückgaben vermerken. Die Lehrkraft darf nur lesen, und zwar die Sicht katalog mit den Büchern, um Lektüre für den Unterricht zu finden. Welche Bücher einzelne Schüler ausleihen, sieht sie nicht, denn das ist eine persönliche Information. Begründung: Nach dem Prinzip der geringsten Rechte bekommt jede Rolle nur die Rechte, die sie für ihre Aufgabe braucht. So können weniger Fehler und weniger Missbrauch passieren.",
+      "erklaerung": "Man kann das auch als Tabelle mit Rollen in den Zeilen und Rechten in den Spalten darstellen, als sogenannte Rechtematrix."
+    }
+  ]
+}

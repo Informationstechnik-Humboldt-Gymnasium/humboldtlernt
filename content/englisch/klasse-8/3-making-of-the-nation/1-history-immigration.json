@@ -1,0 +1,119 @@
+{
+  "id": "en-k8-making-nation",
+  "titel": "The making of the nation: Native Americans, immigrants and holidays",
+  "kurz": "Die ersten Bewohner Nordamerikas, die Besiedlung durch Europäer, Einwanderung über Ellis Island, push- und pull-Faktoren, der American Dream sowie Thanksgiving und Independence Day.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Wichtige Stationen der Geschichte der USA in die richtige Reihenfolge bringen" },
+    { "id": "lz2", "niveau": "G", "text": "Push- und pull-Faktoren der Einwanderung unterscheiden" },
+    { "id": "lz3", "niveau": "G", "text": "Amerikanische Feiertage und Traditionen erklären (Thanksgiving, Independence Day, Pledge of Allegiance)" },
+    { "id": "lz4", "niveau": "H", "text": "Die Geschichte aus der Sicht der Native Americans betrachten und Bilder wie melting pot und salad bowl erklären" }
+  ],
+  "verstehen": {
+    "einstieg": "Fast alle Menschen in den USA haben Vorfahren, die irgendwann eingewandert sind – mit einer großen Ausnahme. Wer lebte dort zuerst, und was hat Millionen Menschen nach Amerika gezogen?",
+    "abschnitte": [
+      {
+        "titel": "The first Americans",
+        "text": "Lange bevor Europäer kamen, lebten in Nordamerika seit vielen Tausend Jahren die **Native Americans** in Hunderten von Völkern (**tribes / nations**) mit eigenen Sprachen und Kulturen. Mit der europäischen Besiedlung verloren sie ihr Land. Viele starben an eingeschleppten Krankheiten und in Kriegen. Im 19. Jahrhundert wurden ganze Völker gewaltsam umgesiedelt und in **reservations** gedrängt. Heute kämpfen viele Native Americans für ihre Rechte und ihre Kultur."
+      },
+      {
+        "titel": "From colonies to a nation",
+        "text": "- **1607**: Jamestown in Virginia, die erste dauerhafte englische Siedlung\n- **1620**: Die **Pilgrims** kommen mit der **Mayflower** nach Plymouth (Massachusetts).\n- **1621**: Die Pilgrims feiern mit den Wampanoag ein Erntefest – der Ursprung von **Thanksgiving**.\n- **4 July 1776**: Die 13 Kolonien erklären ihre Unabhängigkeit von Großbritannien (**Declaration of Independence**) – heute **Independence Day**."
+      },
+      {
+        "titel": "Immigration",
+        "text": "Menschen wanderten aus **push factors** aus (Gründe, die sie aus der Heimat drängen: Armut, Hunger, Krieg, Verfolgung) und wegen **pull factors** (Gründe, die sie anziehen: Arbeit, Land, Freiheit, Familie). Die Hoffnung, durch harte Arbeit ein besseres Leben zu erreichen, nennt man den **American Dream**.\n\nVon **1892 bis 1954** kamen rund 12 Millionen Einwanderer über die Station **Ellis Island** im Hafen von New York. Als Erstes sahen sie die **Statue of Liberty**, ein Geschenk Frankreichs (1886).\n\nWie leben so viele Kulturen zusammen? Das Bild vom **melting pot** meint, dass alle zu einer neuen Kultur verschmelzen. Das Bild der **salad bowl** betont, dass die Gruppen ihre eigene Kultur behalten und trotzdem zusammengehören."
+      },
+      {
+        "titel": "Holidays and traditions",
+        "text": "- **Thanksgiving**: am vierten Donnerstag im November; Familienessen mit Truthahn (turkey)\n- **Independence Day** (4. Juli): Paraden, Picknicks, Feuerwerk\n- **Pledge of Allegiance**: ein Treueschwur auf die Flagge, den viele Schulkinder morgens sprechen\n\nAus Sicht vieler Native Americans ist die Geschichte von Thanksgiving vor allem eine Geschichte des Landverlusts. Manche begehen den Tag deshalb als **National Day of Mourning** (Trauertag)."
+      }
+    ],
+    "merksatz": "Native Americans lebten zuerst in Nordamerika und verloren durch die Besiedlung ihr Land. 1620 Mayflower, 4 July 1776 Unabhängigkeit. Push factors drängen weg, pull factors ziehen an. Ellis Island 1892–1954, Statue of Liberty. Melting pot vs. salad bowl.",
+    "alltag": "Im Sockel der Statue of Liberty hängt eine Tafel mit dem Gedicht „The New Colossus“ von Emma Lazarus (1883) und der Zeile „Give me your tired, your poor …“ – ein Versprechen an die Einwanderer, die mit dem Schiff ankamen."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-imm-01", "typ": "reihenfolge", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Put the events in chronological order.",
+      "elemente": [
+        "Native Americans live in North America for thousands of years.",
+        "The Pilgrims arrive on the Mayflower (1620).",
+        "The thirteen colonies declare their independence (1776).",
+        "The Statue of Liberty is dedicated (1886).",
+        "Ellis Island opens as an immigration station (1892)."
+      ],
+      "erklaerung": "1620 – 1776 – 1886 – 1892. Native Americans lebten schon lange vorher dort."
+    },
+    {
+      "id": "en-imm-02", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Which of these are **push factors**?",
+      "optionen": [
+        { "text": "There was a famine in their home country.", "richtig": true },
+        { "text": "They were persecuted because of their religion.", "richtig": true },
+        { "text": "There was a war in their region.", "richtig": true },
+        { "text": "There were lots of jobs in American factories.", "feedback": "Arbeit in Amerika zieht an – ein pull factor." },
+        { "text": "Their relatives already lived in New York.", "feedback": "Familie im neuen Land ist ein pull factor." }
+      ],
+      "erklaerung": "Push factors drängen aus der Heimat weg, pull factors ziehen in das neue Land."
+    },
+    {
+      "id": "en-imm-03", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz3",
+      "frage": "Match the words with the explanations.",
+      "paare": [
+        { "links": "Thanksgiving", "rechts": "a holiday on the fourth Thursday in November" },
+        { "links": "Independence Day", "rechts": "the national holiday on 4 July" },
+        { "links": "Ellis Island", "rechts": "the immigration station in New York Harbor" },
+        { "links": "Pledge of Allegiance", "rechts": "a promise of loyalty to the flag" }
+      ],
+      "erklaerung": "Harbor ist hier amerikanisch geschrieben (britisch: harbour)."
+    },
+    {
+      "id": "en-imm-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "What does the term „American Dream“ mean?",
+      "optionen": [
+        { "text": "The hope that everybody can have a better life through hard work", "richtig": true },
+        { "text": "A famous Hollywood film", "feedback": "Es ist eine Idee, kein Film." },
+        { "text": "The dream of Native Americans to get their land back", "feedback": "Das ist eine berechtigte Forderung, aber nicht die Bedeutung des Begriffs." },
+        { "text": "A law that gives every immigrant money", "feedback": "Es ist eine Hoffnung, kein Gesetz." }
+      ],
+      "erklaerung": "Der American Dream ist ein Versprechen von Freiheit und Aufstieg. Ob er für alle gilt, wird bis heute diskutiert."
+    },
+    {
+      "id": "en-imm-05", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Which idea is expressed by the image of the **salad bowl**?",
+      "optionen": [
+        { "text": "Different cultural groups live together but keep their own traditions.", "richtig": true },
+        { "text": "All cultures mix and become one new culture.", "feedback": "Das ist das Bild vom melting pot." },
+        { "text": "Immigrants should give up their language.", "feedback": "Im Salat bleiben die Zutaten erkennbar – das Bild betont gerade das Bewahren." },
+        { "text": "Americans eat a lot of salad.", "feedback": "Es ist eine Metapher für das Zusammenleben." }
+      ],
+      "erklaerung": "Melting pot: Verschmelzen. Salad bowl: Vielfalt bleibt sichtbar."
+    },
+    {
+      "id": "en-imm-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Why do some Native Americans call Thanksgiving a „National Day of Mourning“?",
+      "optionen": [
+        { "text": "Because for them the arrival of the settlers led to the loss of their land and many lives.", "richtig": true },
+        { "text": "Because they don’t like turkey.", "feedback": "Es geht um Geschichte, nicht ums Essen." },
+        { "text": "Because Thanksgiving is in winter.", "feedback": "Der Grund ist die Geschichte der Besiedlung." },
+        { "text": "Because the first Thanksgiving never happened.", "feedback": "Das Erntefest 1621 gab es. Es geht um das, was danach folgte." }
+      ],
+      "erklaerung": "Perspektivwechsel: Dasselbe Ereignis kann für verschiedene Gruppen sehr unterschiedliche Bedeutungen haben."
+    },
+    {
+      "id": "en-imm-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Mediation: Your American pen friend asks about a German holiday or tradition (e.g. St Martin’s Day, Advent, Fasching, Tag der Deutschen Einheit). Explain it in English in 4–5 sentences: when it is, why people celebrate and what they do.",
+      "stichworte": [
+        { "aspekt": "Name und Datum", "woerter": ["november", "december", "october", "february", "march", "every year", "on the", "in "] },
+        { "aspekt": "Grund oder Herkunft", "woerter": ["because", "remember", "celebrate", "history", "tradition"] },
+        { "aspekt": "Was man tut", "woerter": ["people", "children", "we "] },
+        { "aspekt": "Erklärung oder Vergleich für Amerikaner", "woerter": ["like", "similar", "in the us", "in america", "a bit like", "you"] }
+      ],
+      "musterloesung": "St Martin’s Day is on 11 November every year. We remember St Martin, a Roman soldier who shared his coat with a poor man. In the evening, children walk through the streets with paper lanterns and sing songs. Sometimes a man on a horse dressed as St Martin leads the parade. It’s a bit like Halloween because children walk around in the dark, but there are no costumes and it is much quieter.",
+      "erklaerung": "Gute Mediation erklärt Hintergründe und verbindet das Neue mit etwas, das die Zielperson kennt."
+    }
+  ]
+}

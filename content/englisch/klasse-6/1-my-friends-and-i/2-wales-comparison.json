@@ -1,0 +1,121 @@
+{
+  "id": "en-k6-wales",
+  "titel": "A trip to Wales: comparing and reporting",
+  "kurz": "Wales als Landesteil Großbritanniens kennenlernen, Adjektive steigern (bigger, more beautiful, the best) und einen Reisebericht aufbauen.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Wichtige Informationen über Wales nennen (Hauptstadt, Sprache, Flagge, Landschaft)" },
+    { "id": "lz2", "niveau": "G", "text": "Adjektive steigern: -er/-est, more/most und unregelmäßige Formen" },
+    { "id": "lz3", "niveau": "G", "text": "Vergleiche mit than und as … as bilden" },
+    { "id": "lz4", "niveau": "H", "text": "Einen Reisebericht gliedern und mit Zeitadverbien und Adjektiven gestalten" }
+  ],
+  "verstehen": {
+    "einstieg": "Auf Ortsschildern in Wales stehen zwei Sprachen, auf der Flagge ist ein roter Drache, und an der Küste stehen alte Burgen. Wales gehört zum Vereinigten Königreich – und ist trotzdem ganz eigen.",
+    "abschnitte": [
+      {
+        "titel": "Wales",
+        "text": "- Wales liegt im Westen der Insel Großbritannien und gehört zum **United Kingdom** (zusammen mit England, Schottland und Nordirland).\n- Hauptstadt: **Cardiff**\n- Sprachen: **English** und **Welsh** (auf Walisisch: Cymraeg). Schilder sind oft zweisprachig.\n- Flagge: ein **roter Drache** auf Grün und Weiß\n- Der höchste Berg ist **Snowdon** (walisisch Yr Wyddfa), 1085 m.\n- Bekannt für Burgen (**castles**) wie Conwy und Caernarfon, Nationalparks und Küsten.\n- Nationalfeiertag: **St David’s Day** am 1. März"
+      },
+      {
+        "titel": "Adjektive steigern",
+        "text": "- kurze Adjektive: **-er / -est**: tall → taller → the tallest; big → **bigger** → the **biggest** (Konsonant verdoppeln); happy → **happier** → the **happiest**\n- lange Adjektive (meist ab drei Silben, auch viele mit zwei): **more / most**: beautiful → more beautiful → the most beautiful; interesting → more interesting\n- unregelmäßig: **good → better → the best**, **bad → worse → the worst**"
+      },
+      {
+        "titel": "Vergleichen",
+        "text": "- ungleich: **than**: ``Ben Nevis is higher than Snowdon.``\n- gleich: **as … as**: ``Cardiff is not as big as London.``\n- der/die/das …ste: **the …est / the most …**: ``It was the best day of my holiday.``\n\nAchtung: „als“ heißt beim Vergleich **than**, nicht „then“ (dann)."
+      },
+      {
+        "titel": "Ein Reisebericht",
+        "text": "- **Einleitung:** Wohin, wann, mit wem? ``Last August I went to Wales with my parents.``\n- **Hauptteil:** Was habt ihr erlebt? In zeitlicher Reihenfolge mit Zeitadverbien: **first**, **then**, **after that**, **the next day**, **finally**\n- **Schluss:** Wie war es? Gefühle und Eindrücke: ``It was the most exciting trip ever.``\n\nAdjektive machen den Bericht lebendig: amazing, beautiful, exciting, boring, tired, happy."
+      }
+    ],
+    "merksatz": "Wales: Hauptstadt Cardiff, Welsh und English, roter Drache. Steigerung: -er/-est (bigger, happier), more/most bei langen Adjektiven, good–better–best, bad–worse–worst. Vergleich mit than oder as … as.",
+    "alltag": "Einer der längsten Ortsnamen der Welt gehört zu einem Dorf in Wales: Llanfairpwllgwyngyll… – der volle Name hat 58 Buchstaben. Touristen fotografieren gern das Bahnhofsschild."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-wal-01", "typ": "multi", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Which facts about Wales are true?",
+      "optionen": [
+        { "text": "The capital of Wales is Cardiff.", "richtig": true },
+        { "text": "Many people in Wales speak Welsh and English.", "richtig": true },
+        { "text": "There is a red dragon on the Welsh flag.", "richtig": true },
+        { "text": "Wales is not part of the United Kingdom.", "feedback": "Wales gehört zum UK, zusammen mit England, Schottland und Nordirland." },
+        { "text": "The capital of Wales is Edinburgh.", "feedback": "Edinburgh ist die Hauptstadt von Schottland." }
+      ],
+      "erklaerung": "Cardiff, zwei Sprachen, roter Drache – das sind typische Kennzeichen von Wales."
+    },
+    {
+      "id": "en-wal-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Match the adjectives with their comparative form.",
+      "paare": [
+        { "links": "big", "rechts": "bigger" },
+        { "links": "happy", "rechts": "happier" },
+        { "links": "good", "rechts": "better" },
+        { "links": "bad", "rechts": "worse" },
+        { "links": "interesting", "rechts": "more interesting" }
+      ],
+      "extraRechts": ["gooder"],
+      "erklaerung": "good und bad sind unregelmäßig. Lange Adjektive steigert man mit more."
+    },
+    {
+      "id": "en-wal-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Complete: ``Conwy Castle was ___ castle we saw on our trip.``",
+      "optionen": [
+        { "text": "the most beautiful", "richtig": true },
+        { "text": "the beautifullest", "feedback": "beautiful ist lang: the most beautiful." },
+        { "text": "the more beautiful", "feedback": "Für den Superlativ braucht man most, nicht more." },
+        { "text": "most beautifuller", "feedback": "Man benutzt entweder -est oder most, nie beides." }
+      ],
+      "erklaerung": "Superlativ langer Adjektive: the most + Adjektiv."
+    },
+    {
+      "id": "en-wal-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Which sentence is correct?",
+      "optionen": [
+        { "text": "London is bigger than Cardiff.", "richtig": true },
+        { "text": "London is bigger then Cardiff.", "feedback": "„then“ heißt „dann“. Beim Vergleich heißt „als“ than." },
+        { "text": "London is more big than Cardiff.", "feedback": "big ist kurz: bigger." },
+        { "text": "London is as bigger as Cardiff.", "feedback": "Bei as … as steht die Grundform – und London ist ja nicht gleich groß." }
+      ],
+      "erklaerung": "Komparativ + than: bigger than."
+    },
+    {
+      "id": "en-wal-05", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Snowdon is 1085 m high, Ben Nevis in Scotland 1345 m. Which sentence is true?",
+      "optionen": [
+        { "text": "Snowdon isn’t as high as Ben Nevis.", "richtig": true },
+        { "text": "Snowdon is higher than Ben Nevis.", "feedback": "1085 m ist weniger als 1345 m." },
+        { "text": "Snowdon is as high as Ben Nevis.", "feedback": "as … as bedeutet „genauso … wie“. Die Berge sind aber unterschiedlich hoch." },
+        { "text": "Ben Nevis isn’t as high as Snowdon.", "feedback": "Umgekehrt: Ben Nevis ist der höhere Berg." }
+      ],
+      "erklaerung": "not as … as = nicht so … wie. Ben Nevis ist der höchste Berg des Vereinigten Königreichs."
+    },
+    {
+      "id": "en-wal-06", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Put the parts of the travel report in a good order.",
+      "elemente": [
+        "Last August I went to Wales with my parents and my little brother.",
+        "First we visited Cardiff and walked around the castle.",
+        "After that we drove to the mountains and climbed Snowdon.",
+        "Finally we spent two days at the beach.",
+        "It was the best holiday ever, and I want to go back one day."
+      ],
+      "erklaerung": "Einleitung (wohin, wann, mit wem), Hauptteil in zeitlicher Reihenfolge (first, after that, finally), Schluss mit Eindruck."
+    },
+    {
+      "id": "en-wal-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Write a short travel report (5–6 sentences) about a real or imaginary trip. Use time adverbs (first, then, after that, finally), the simple past and at least one comparative or superlative.",
+      "stichworte": [
+        { "aspekt": "Einleitung: wohin, wann, mit wem", "woerter": ["last ", "ago", "went to", "travelled", "with my"] },
+        { "aspekt": "Zeitadverbien für die Reihenfolge", "woerter": ["first", "then", "after that", "finally", "the next day"] },
+        { "aspekt": "Komparativ oder Superlativ", "woerter": ["er than", "more ", "most ", "the best", "better", "worse", "the worst", "est "] },
+        { "aspekt": "Gefühle und Eindrücke", "woerter": ["amazing", "exciting", "beautiful", "boring", "happy", "tired", "great", "loved"] }
+      ],
+      "musterloesung": "Two years ago I went to Scotland with my aunt. First we visited Edinburgh, which is older than Berlin. Then we took a bus to Loch Ness. After that we walked through the mountains, and I was very tired. Finally we went back home by train. It was the most exciting trip of my life.",
+      "erklaerung": "Ein guter Bericht hat eine klare Reihenfolge, Zeitadverbien und Adjektive für Eindrücke."
+    }
+  ]
+}

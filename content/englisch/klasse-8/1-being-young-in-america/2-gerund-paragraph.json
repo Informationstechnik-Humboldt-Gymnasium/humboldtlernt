@@ -1,0 +1,119 @@
+{
+  "id": "en-k8-gerund",
+  "titel": "I enjoy debating: the gerund and the English paragraph",
+  "kurz": "Das Gerund nach bestimmten Verben, nach Präpositionen und als Subjekt – und wie man einen argumentativen englischen Absatz aufbaut (topic sentence, explanation, illustration).",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Das Gerund nach Verben wie enjoy, avoid, finish, mind, suggest und nach Präpositionen verwenden" },
+    { "id": "lz2", "niveau": "H", "text": "Das Gerund als Subjekt eines Satzes einsetzen" },
+    { "id": "lz3", "niveau": "G", "text": "Den Aufbau eines englischen Absatzes (topic sentence, explanation, illustration, concluding sentence) erkennen" },
+    { "id": "lz4", "niveau": "H", "text": "Einen argumentativen Absatz mit Konnektoren schreiben" }
+  ],
+  "verstehen": {
+    "einstieg": "„Ich freue mich darauf, dich zu sehen“ heißt auf Englisch nicht „I look forward to see you“, sondern „I look forward to seeing you“. Warum steht hier die -ing-Form?",
+    "abschnitte": [
+      {
+        "titel": "Was ist ein Gerund?",
+        "text": "Das **Gerund** ist die -ing-Form eines Verbs, die wie ein **Nomen** benutzt wird: ``Swimming is fun.`` (Das Schwimmen macht Spaß.)"
+      },
+      {
+        "titel": "Wann steht das Gerund?",
+        "text": "- nach bestimmten **Verben**: **enjoy**, **avoid** (vermeiden), **finish**, **mind** (etwas dagegen haben), **suggest** (vorschlagen), **keep** (weiter …), **miss**, **practise**, **can’t stand** (nicht ausstehen können) – ``I enjoy playing basketball.`` ``Would you mind opening the window?``\n- nach **Präpositionen**, auch in festen Wendungen: interested **in**, good **at**, afraid **of**, instead **of**, **before**/**after**, **look forward to**, **be used to** – ``She’s good at debating.`` ``Before leaving, he said goodbye.``\n- als **Subjekt** am Satzanfang: ``Wearing a uniform makes everybody equal.``"
+      },
+      {
+        "titel": "The English paragraph",
+        "text": "Ein englischer Absatz behandelt **genau einen Gedanken**:\n\n- **Topic sentence**: der Hauptgedanke – ``School uniforms have several advantages.``\n- **Explanation**: Erklärung, Begründung – ``First of all, nobody is judged by their clothes.``\n- **Illustration**: Beispiel oder Beleg – ``For example, students from poorer families don’t feel left out.``\n- **Concluding sentence**: Abschluss oder Überleitung – ``All in all, uniforms can make school a fairer place.``\n\nKonnektoren: **First of all, Moreover, In addition, However, For example, For instance, Therefore, All in all**."
+      },
+      {
+        "titel": "Statement, post, blog",
+        "text": "In einem **statement** oder **blog post** vertrittst du deine Meinung. Beginne mit einer klaren Position (``In my opinion, …``), begründe sie in Absätzen und schließe mit einem Fazit. Ein Blog darf persönlicher und lockerer klingen, ein Statement für die Schulzeitung eher sachlicher."
+      }
+    ],
+    "merksatz": "Gerund = -ing-Form als Nomen: nach enjoy, avoid, finish, mind, suggest, keep, nach Präpositionen (good at, look forward to) und als Subjekt. Ein englischer Absatz: topic sentence – explanation – illustration – concluding sentence.",
+    "alltag": "Englische Briefe und E-Mails enden oft mit „I look forward to hearing from you.“ – mit Gerund!"
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-ger-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Complete: ``My brother enjoys ___ video games.``",
+      "optionen": [
+        { "text": "playing", "richtig": true },
+        { "text": "to play", "feedback": "Nach enjoy steht das Gerund." },
+        { "text": "play", "feedback": "Nach enjoy steht die -ing-Form." },
+        { "text": "played", "feedback": "Nach enjoy steht die -ing-Form." }
+      ],
+      "erklaerung": "enjoy + Gerund."
+    },
+    {
+      "id": "en-ger-02", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Complete: ``I’m looking forward to ___ you in New York.``",
+      "optionen": [
+        { "text": "seeing", "richtig": true },
+        { "text": "see", "feedback": "to ist hier eine Präposition (look forward to). Danach steht das Gerund." },
+        { "text": "saw", "feedback": "Nach einer Präposition steht die -ing-Form." },
+        { "text": "be seeing", "feedback": "Einfach: look forward to + Gerund." }
+      ],
+      "erklaerung": "look forward to + Gerund – ein Klassiker."
+    },
+    {
+      "id": "en-ger-03", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Which sentences are correct?",
+      "optionen": [
+        { "text": "She is interested in joining the debate club.", "richtig": true },
+        { "text": "Would you mind closing the door?", "richtig": true },
+        { "text": "He avoided to talk about the problem.", "feedback": "avoid + Gerund: He avoided talking …" },
+        { "text": "They finished decorating the gym.", "richtig": true },
+        { "text": "I’m good at play the trumpet.", "feedback": "Nach at (Präposition): playing." }
+      ],
+      "erklaerung": "Gerund nach mind, finish, avoid und nach Präpositionen wie in und at."
+    },
+    {
+      "id": "en-ger-04", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Which sentence uses a gerund as the subject?",
+      "optionen": [
+        { "text": "Going to prom is a big event for many American teenagers.", "richtig": true },
+        { "text": "Many teenagers are going to the prom.", "feedback": "Hier ist going Teil des present progressive, nicht Subjekt." },
+        { "text": "She suggested going to the prom together.", "feedback": "Das Gerund steht hier nach suggest, nicht als Subjekt." },
+        { "text": "The prom is going to be great.", "feedback": "Das ist going-to future." }
+      ],
+      "erklaerung": "Subjekt am Satzanfang: Going to prom is …"
+    },
+    {
+      "id": "en-ger-05", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Put the sentences of the paragraph in the right order.",
+      "elemente": [
+        "After-school clubs are a great part of American school life.",
+        "They give students the chance to discover new talents outside the classroom.",
+        "For example, many students join the drama club or the school band and later perform in front of the whole school.",
+        "All in all, clubs help students make friends and feel part of their school."
+      ],
+      "erklaerung": "topic sentence – explanation – illustration (For example) – concluding sentence (All in all)."
+    },
+    {
+      "id": "en-ger-06", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Which part of a paragraph usually starts like this?",
+      "paare": [
+        { "links": "There are several reasons why …", "rechts": "topic sentence" },
+        { "links": "For instance, …", "rechts": "illustration" },
+        { "links": "All in all, …", "rechts": "concluding sentence" },
+        { "links": "This is because …", "rechts": "explanation" }
+      ],
+      "erklaerung": "Typische Satzanfänge zeigen, welche Aufgabe ein Satz im Absatz hat."
+    },
+    {
+      "id": "en-ger-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Write one argumentative paragraph (5–6 sentences) for a blog: „Should German schools have more after-school clubs like American schools?“ Use a topic sentence, an explanation, an example and a concluding sentence. Use at least one gerund.",
+      "stichworte": [
+        { "aspekt": "Topic sentence mit klarer Position", "woerter": ["should", "i think", "in my opinion", "i believe"] },
+        { "aspekt": "Begründung mit Konnektoren", "woerter": ["because", "first", "moreover", "in addition", "this is"] },
+        { "aspekt": "Beispiel (for example / for instance)", "woerter": ["for example", "for instance", "such as"] },
+        { "aspekt": "Schlusssatz", "woerter": ["all in all", "to sum up", "in conclusion", "therefore"] },
+        { "aspekt": "Ein Gerund (-ing-Form)", "woerter": ["ing"] }
+      ],
+      "musterloesung": "In my opinion, German schools should offer more after-school clubs. First of all, clubs give students the chance to try out new things outside the classroom. For example, joining a robotics club or a theatre group can help you discover talents you didn’t know about. Moreover, spending time with students from other classes helps you make new friends. All in all, more clubs would make school a place where people enjoy being.",
+      "erklaerung": "Bewertet wird der Aufbau des Absatzes und die Begründung. Auch eine gut begründete Gegenposition ist richtig."
+    }
+  ]
+}

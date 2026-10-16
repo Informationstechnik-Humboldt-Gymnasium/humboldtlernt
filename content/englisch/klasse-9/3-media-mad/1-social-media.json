@@ -1,0 +1,122 @@
+{
+  "id": "en-k9-social-media",
+  "titel": "Media mad: social networks, digital footprint and fake news",
+  "kurz": "Chancen und Risiken sozialer Netzwerke, der digitale Fußabdruck, Identitätsdiebstahl, Fake News erkennen und einen argumentativen Text mit Konnektoren schreiben.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Wortschatz zu Medien und sozialen Netzwerken anwenden (digital footprint, identity theft, privacy settings, fake news)" },
+    { "id": "lz2", "niveau": "G", "text": "Vor- und Nachteile analoger und digitaler Medien nennen" },
+    { "id": "lz3", "niveau": "H", "text": "Strategien zum Erkennen von Fake News anwenden" },
+    { "id": "lz4", "niveau": "H", "text": "Einen argumentativen Text mit Einleitung, Pro- und Contra-Argumenten, Konnektoren und Schluss schreiben" }
+  ],
+  "verstehen": {
+    "einstieg": "Ein Foto von einer Party, ein witziger Kommentar, ein geteilter Post: Alles bleibt irgendwo gespeichert. Wer könnte das in fünf Jahren lesen – vielleicht dein zukünftiger Chef?",
+    "abschnitte": [
+      {
+        "titel": "Media vocabulary",
+        "text": "- **social network / social media platform**, **post**, **share**, **like**, **follower**, **comment**, **story**\n- **digital footprint**: alle Spuren, die du online hinterlässt (Posts, Fotos, Likes, Suchanfragen)\n- **privacy settings**: Einstellungen zur Privatsphäre\n- **identity theft**: Identitätsdiebstahl – jemand gibt sich mit deinen Daten als du aus\n- **cyberbullying**: Mobbing im Netz\n- **fake news**: absichtlich falsche Nachrichten\n- **algorithm**, **filter bubble**: Die Plattform zeigt dir vor allem, was zu deinen bisherigen Klicks passt."
+      },
+      {
+        "titel": "Pros and cons",
+        "text": "- **Advantages**: staying in touch with friends all over the world, quick information, creativity, finding people with the same interests, organising events\n- **Disadvantages**: addiction and wasting time, pressure to look perfect, cyberbullying, data protection problems, fake news, less face-to-face contact\n\nAnaloge Medien (Zeitung, Buch, Brief) sind langsamer, oft aber gründlicher geprüft und weniger ablenkend."
+      },
+      {
+        "titel": "Spotting fake news",
+        "text": "- **Check the source**: Wer hat das veröffentlicht? Gibt es ein Impressum? Ist die Seite bekannt?\n- **Check other sources**: Berichten seriöse Medien darüber?\n- **Check the date**: Ist die Meldung alt und wird neu verbreitet?\n- **Look at the pictures**: Stammt das Foto aus einem ganz anderen Zusammenhang? (reverse image search)\n- **Watch your feelings**: Fake News wollen oft wütend oder ängstlich machen. Erst prüfen, dann teilen."
+      },
+      {
+        "titel": "Writing an argumentative text",
+        "text": "- **Introduction**: das Thema vorstellen, Interesse wecken: ``Nowadays, almost every teenager uses social media. But should schools ban phones?``\n- **Main part**: Argumente in Absätzen, jeweils mit Begründung und Beispiel; erst die Gegenseite, dann die eigene, stärkere Seite\n- **Conclusion**: Abwägen und eigene Meinung: ``All in all, I believe that …``\n\nKonnektoren: **Firstly, Secondly, Moreover, In addition, However, On the other hand, Although, Whereas, Therefore, As a result, To sum up**"
+      }
+    ],
+    "merksatz": "Digital footprint = alle Spuren im Netz. Vorsicht vor identity theft, cyberbullying und fake news. Fake News prüfen: Quelle, andere Quellen, Datum, Bilder, eigene Gefühle. Argumentativer Text: introduction – Argumente mit Begründung und Beispiel – conclusion, verbunden durch Konnektoren.",
+    "alltag": "Viele Unternehmen schauen sich die öffentlichen Profile von Bewerberinnen und Bewerbern an. Dein digital footprint ist also auch eine Art Lebenslauf."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-smd-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Match the terms with their definitions.",
+      "paare": [
+        { "links": "digital footprint", "rechts": "all the traces you leave online" },
+        { "links": "identity theft", "rechts": "when someone uses your personal data to pretend to be you" },
+        { "links": "privacy settings", "rechts": "options that control who can see your posts" },
+        { "links": "filter bubble", "rechts": "when you mostly see content that matches your opinions" },
+        { "links": "cyberbullying", "rechts": "hurting or threatening someone online" }
+      ],
+      "erklaerung": "Diese Begriffe brauchst du, um über Chancen und Risiken des Netzes zu diskutieren."
+    },
+    {
+      "id": "en-smd-02", "typ": "multi", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Which of these are **disadvantages** of social media?",
+      "optionen": [
+        { "text": "Some people feel pressure to look perfect.", "richtig": true },
+        { "text": "Fake news can spread very quickly.", "richtig": true },
+        { "text": "You can stay in touch with friends who live far away.", "feedback": "Das ist ein Vorteil." },
+        { "text": "Personal data can be misused.", "richtig": true },
+        { "text": "You can find people who share your hobbies.", "feedback": "Das ist ein Vorteil." }
+      ],
+      "erklaerung": "Druck, Fake News und Datenmissbrauch sind Nachteile; Kontakt und Gemeinschaft sind Vorteile."
+    },
+    {
+      "id": "en-smd-03", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "A post says: „Scientists confirm: chocolate makes you smarter!!! Share before it’s deleted!“ What should you do?",
+      "optionen": [
+        { "text": "Check who published it.", "richtig": true },
+        { "text": "Look for the story on reliable news websites.", "richtig": true },
+        { "text": "Check when the article was published.", "richtig": true },
+        { "text": "Share it quickly, as the post says.", "feedback": "„Share before it’s deleted“ ist ein typischer Trick, um Druck zu machen." },
+        { "text": "Believe it because it says „scientists“.", "feedback": "Welche Wissenschaftler? Ohne Quelle sagt das gar nichts." }
+      ],
+      "erklaerung": "Quelle, andere Medien, Datum prüfen – und misstrauisch werden, wenn ein Post Zeitdruck macht."
+    },
+    {
+      "id": "en-smd-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Which piece of advice best protects you against identity theft?",
+      "optionen": [
+        { "text": "Don’t share your address, date of birth or passwords publicly.", "richtig": true },
+        { "text": "Use the same password for everything so you don’t forget it.", "feedback": "Wird ein Passwort gestohlen, sind dann alle Konten in Gefahr." },
+        { "text": "Accept every friend request so you have more followers.", "feedback": "Fremde können so an deine Daten kommen." },
+        { "text": "Post your holiday plans so your friends know you’re away.", "feedback": "Das verrät auch Fremden, wann deine Wohnung leer ist." }
+      ],
+      "erklaerung": "Wenige persönliche Daten öffentlich, sichere und verschiedene Passwörter."
+    },
+    {
+      "id": "en-smd-05", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "What is the function of these connectives?",
+      "paare": [
+        { "links": "Moreover, …", "rechts": "adding an argument" },
+        { "links": "However, …", "rechts": "showing contrast" },
+        { "links": "As a result, …", "rechts": "showing a consequence" },
+        { "links": "To sum up, …", "rechts": "concluding" }
+      ],
+      "erklaerung": "Konnektoren zeigen, wie Gedanken zusammenhängen."
+    },
+    {
+      "id": "en-smd-06", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Put the parts of an argumentative text in a logical order.",
+      "elemente": [
+        "Nowadays, almost every teenager has a smartphone. But should phones be banned at school?",
+        "On the one hand, phones can distract students and lead to cyberbullying during breaks.",
+        "On the other hand, phones can be useful tools for research and learning apps.",
+        "Moreover, students learn to use media responsibly only if they are allowed to practise.",
+        "All in all, I believe that clear rules are better than a complete ban."
+      ],
+      "erklaerung": "Einleitung – Gegenargument – eigene Argumente – Fazit."
+    },
+    {
+      "id": "en-smd-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "„Social media does more harm than good to teenagers.“ Discuss this statement in a short argumentative text (6–8 sentences): introduction, at least two arguments for each side, conclusion with your opinion.",
+      "stichworte": [
+        { "aspekt": "Einleitung, die zum Thema hinführt", "woerter": ["nowadays", "today", "these days", "many teenagers", "almost every"] },
+        { "aspekt": "Argumente für Nachteile (harm)", "woerter": ["addict", "pressure", "cyberbullying", "fake news", "waste", "privacy", "data"] },
+        { "aspekt": "Argumente für Vorteile (good)", "woerter": ["stay in touch", "friends", "information", "creative", "learn", "communit"] },
+        { "aspekt": "Konnektoren für Gegensätze und Ergänzungen", "woerter": ["however", "on the other hand", "moreover", "in addition", "although", "whereas"] },
+        { "aspekt": "Schluss mit eigener Meinung", "woerter": ["all in all", "to sum up", "in conclusion", "i believe", "in my opinion"] }
+      ],
+      "musterloesung": "Nowadays, almost every teenager uses social media for several hours a day. On the one hand, social media can do a lot of harm. Many young people feel pressure to look perfect, and some even become addicted to their phones. Moreover, cyberbullying and fake news spread very quickly online. On the other hand, social media helps teenagers stay in touch with friends and find people with the same interests. In addition, they can learn a lot and be creative, for example by making videos. All in all, I believe that social media does not do more harm than good if young people learn to use it responsibly.",
+      "erklaerung": "Bewertet werden Aufbau, Argumente, Konnektoren und eine begründete Meinung – egal, welche Seite du vertrittst."
+    }
+  ]
+}

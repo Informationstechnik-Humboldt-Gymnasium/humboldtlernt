@@ -1,0 +1,117 @@
+{
+  "id": "en-k10-sentence-transformation",
+  "titel": "Sentence transformation: complex sentences for upper school",
+  "kurz": "Sätze umformen, ohne die Bedeutung zu ändern: Passiv in allen Zeiten und mit Modalverben, if-Sätze, indirekte Rede, Relativ- und Partizipialsätze, Gerund und Infinitiv.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Das Passiv in verschiedenen Zeiten und mit Modalverben bilden (has been built, will be opened, must be done)" },
+    { "id": "lz2", "niveau": "H", "text": "If-Sätze der Typen 0 bis III und unless sicher verwenden" },
+    { "id": "lz3", "niveau": "H", "text": "Sätze mithilfe vorgegebener Wörter umformen, ohne die Bedeutung zu ändern (sentence transformation)" },
+    { "id": "lz4", "niveau": "G", "text": "Kurze Hauptsätze mit Relativsätzen, Partizipien und Konnektoren zu komplexen Sätzen verbinden" }
+  ],
+  "verstehen": {
+    "einstieg": "„They built the bridge in 1894. The bridge is famous. People call it Tower Bridge.“ Drei kurze Sätze – korrekt, aber hölzern. In der Oberstufe wird erwartet, dass du solche Informationen elegant in einem Satz verbindest.",
+    "abschnitte": [
+      {
+        "titel": "The passive in all tenses",
+        "text": "Form von **be** in der passenden Zeit + **past participle**:\n\n- present perfect: ``The bridge **has been repaired**.``\n- past perfect: ``The tickets **had been sold** before we arrived.``\n- progressive: ``The road **is being built**.`` ``It **was being repaired**.``\n- future: ``The museum **will be opened** next year.``\n- modal: ``The work **must be done** by Friday.`` ``It **can’t be explained**.``"
+      },
+      {
+        "titel": "Conditionals overview",
+        "text": "- **Type 0** (immer gültig): If you heat ice, it **melts**.\n- **Type I**: If you **study**, you **will pass**.\n- **Type II**: If I **had** more time, I **would join** the team.\n- **Type III**: If she **had left** earlier, she **would have caught** the train.\n- **unless** = if … not: ``You won’t pass **unless** you study.`` (= if you don’t study)"
+      },
+      {
+        "titel": "Sentence transformation",
+        "text": "Bei dieser Aufgabe bekommst du einen Satz und ein Schlüsselwort und sollst die Bedeutung mit anderen Mitteln ausdrücken:\n\n- ``It’s not necessary to bring food.`` (**need**) → ``You **needn’t** bring food.``\n- ``Somebody stole my bike yesterday.`` (**was**) → ``My bike **was stolen** yesterday.``\n- ``I’m sorry I didn’t call you.`` (**wish**) → ``I **wish I had called** you.``\n- ``„Don’t be late,“ Mum told me.`` (**not**) → ``Mum told me **not to be** late.``\n- ``She started learning Spanish two years ago.`` (**for**) → ``She **has been learning** Spanish **for** two years.``\n\nTipp: Erst die Bedeutung klären, dann die passende Struktur wählen und zum Schluss die Zeit prüfen."
+      },
+      {
+        "titel": "Combining sentences",
+        "text": "- Relativsatz: ``Tower Bridge, which was built in 1894, is one of London’s most famous sights.``\n- Partizip: ``Opened in 1894, Tower Bridge is …`` / ``Walking across the bridge, we saw a ship.``\n- Konnektoren: **although, whereas, despite + -ing/Nomen, in order to, so that**: ``Despite the rain, we went out.`` ``We left early in order to catch the train.``"
+      }
+    ],
+    "merksatz": "Passiv: be (in jeder Zeit) + 3. Form, auch mit Modalverben (must be done). If-Sätze 0–III, unless = if not. Sentence transformation: Bedeutung behalten, Struktur wechseln. Kurze Sätze mit Relativsätzen, Partizipien und Konnektoren verbinden.",
+    "alltag": "Sentence transformation ist ein fester Aufgabentyp in den Cambridge-Prüfungen (z. B. B2 First), die viele Schulen als Zusatzkurs anbieten."
+  },
+  "interaktiv": ["en-satzbaukasten"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-stf-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Complete: ``The new sports hall ___ next spring.``",
+      "optionen": [
+        { "text": "will be opened", "richtig": true },
+        { "text": "will opened", "feedback": "Es fehlt be: will be opened." },
+        { "text": "will be open", "feedback": "Im Passiv braucht man die 3. Form: opened." },
+        { "text": "is opening by", "feedback": "Passiv Futur: will be + past participle." }
+      ],
+      "erklaerung": "Passiv Futur: will be + 3. Form."
+    },
+    {
+      "id": "en-stf-02", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Match the active sentences with the correct passive sentences.",
+      "paare": [
+        { "links": "They have cancelled the match.", "rechts": "The match has been cancelled." },
+        { "links": "They are painting the classroom.", "rechts": "The classroom is being painted." },
+        { "links": "You must hand in the essay on Monday.", "rechts": "The essay must be handed in on Monday." },
+        { "links": "They had sold all the tickets.", "rechts": "All the tickets had been sold." }
+      ],
+      "erklaerung": "Die Zeit bleibt gleich, nur be wird angepasst: has been, is being, must be, had been."
+    },
+    {
+      "id": "en-stf-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Which sentence has the same meaning as ``If you don’t hurry, you’ll miss the bus.``?",
+      "optionen": [
+        { "text": "Unless you hurry, you’ll miss the bus.", "richtig": true },
+        { "text": "Unless you don’t hurry, you’ll miss the bus.", "feedback": "unless enthält schon „not“ – keine doppelte Verneinung." },
+        { "text": "If you hurried, you missed the bus.", "feedback": "Die Zeit und die Bedeutung haben sich verändert." },
+        { "text": "Unless you hurry, you won’t miss the bus.", "feedback": "Das ist das Gegenteil." }
+      ],
+      "erklaerung": "unless = if … not."
+    },
+    {
+      "id": "en-stf-04", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "„Ich bin zu spät gekommen, weil mein Wecker nicht geklingelt hat. Wenn er geklingelt hätte, …“ – How do you continue in English?",
+      "optionen": [
+        { "text": "If my alarm clock had rung, I wouldn’t have been late.", "richtig": true },
+        { "text": "If my alarm clock rang, I wouldn’t be late.", "feedback": "Es geht um die Vergangenheit: Typ III." },
+        { "text": "If my alarm clock would have rung, I wouldn’t have been late.", "feedback": "Kein would im if-Teil: If it had rung …" },
+        { "text": "If my alarm clock has rung, I won’t be late.", "feedback": "Die Situation ist vorbei und nicht mehr zu ändern: Typ III." }
+      ],
+      "erklaerung": "Typ III: if + past perfect, would have + past participle."
+    },
+    {
+      "id": "en-stf-05", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Transform with the word in brackets, keeping the meaning: ``I started playing the guitar three years ago.`` (FOR)",
+      "optionen": [
+        { "text": "I have been playing the guitar for three years.", "richtig": true },
+        { "text": "I played the guitar for three years.", "feedback": "Das klingt, als hättest du aufgehört." },
+        { "text": "I am playing the guitar for three years.", "feedback": "Dauer bis jetzt → present perfect (progressive)." },
+        { "text": "I have been playing the guitar since three years.", "feedback": "Zeitraum → for, nicht since." }
+      ],
+      "erklaerung": "Begonnen und dauert noch an: have been + -ing + for + Zeitraum."
+    },
+    {
+      "id": "en-stf-06", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Which transformations keep the meaning of the original sentence?",
+      "optionen": [
+        { "text": "„It isn’t necessary to wear a suit.“ → You needn’t wear a suit.", "richtig": true },
+        { "text": "„Somebody has stolen my wallet.“ → My wallet has been stolen.", "richtig": true },
+        { "text": "She said to me: „Please close the window.“ → She asked me to close the window.", "richtig": true },
+        { "text": "„You mustn’t use your phone.“ → You don’t have to use your phone.", "feedback": "mustn’t = Verbot, don’t have to = keine Pflicht. Die Bedeutung ändert sich." },
+        { "text": "„Although it was cold, we swam.“ → Because it was cold, we swam.", "feedback": "although (Gegensatz) und because (Grund) bedeuten etwas anderes." }
+      ],
+      "erklaerung": "Bei sentence transformation muss die Bedeutung genau gleich bleiben."
+    },
+    {
+      "id": "en-stf-07", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Combine the sentences: ``The Scottish Parliament opened in 1999. It is in Edinburgh. It makes laws for Scotland.`` Which sentence is correct?",
+      "optionen": [
+        { "text": "The Scottish Parliament, which opened in 1999, is in Edinburgh and makes laws for Scotland.", "richtig": true },
+        { "text": "The Scottish Parliament which opened in 1999 is in Edinburgh, and it makes laws for Scotland, it is important.", "feedback": "Es gibt nur ein schottisches Parlament – Kommas um den Relativsatz. Außerdem kommt am Ende ein unpassender Zusatzsatz." },
+        { "text": "The Scottish Parliament, that opened in 1999, is in Edinburgh and makes laws for Scotland.", "feedback": "In non-defining relative clauses steht kein that." },
+        { "text": "Opening in 1999, the Scottish Parliament makes laws for Scotland is in Edinburgh.", "feedback": "Das Satzende ist ungrammatisch: makes … is." }
+      ],
+      "erklaerung": "Zusatzinformation als non-defining relative clause in Kommas, zwei Prädikate mit and verbunden."
+    }
+  ]
+}

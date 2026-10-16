@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Objekt-Labor: Klassen und Objekte</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<style>
+  .lk-grid > * { min-width: 0; }
+  .seg { flex-wrap: wrap; }
+  select, input[type=text] { max-width: 100%; }
+  input[type=text] { font: inherit; font-size: .92rem; padding: 7px 10px; border-radius: 9px; border: 1px solid var(--border); background: var(--card); color: var(--text); width: 9em; }
+  .mono, code { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+  #welt .feld { fill: var(--bg); stroke: var(--border); stroke-width: 1; }
+  #welt .ziel { fill: var(--ok-soft); stroke: var(--ok); stroke-width: 2; stroke-dasharray: 5 3; }
+  #welt .zieltext { font-size: 10px; font-weight: 700; fill: var(--ok) !important; text-anchor: middle; }
+  #welt .koord { font-size: 9px; fill: var(--muted) !important; text-anchor: middle; }
+  #welt .koerper { stroke: var(--line); stroke-width: 1.5; }
+  #welt .nase { fill: var(--line); }
+  #welt .ring { fill: none; stroke: var(--text); stroke-width: 2.5; stroke-dasharray: 3 3; }
+  #welt .name { font-size: 10px; font-weight: 700; text-anchor: middle; }
+  .uml { border: 1.5px solid var(--line); border-radius: 4px; font: .82rem/1.5 ui-monospace, "SF Mono", Menlo, Consolas, monospace; overflow: hidden; }
+  .uml > div { padding: 4px 10px; }
+  .uml > div + div { border-top: 1.5px solid var(--line); }
+  .uml .kopf { text-align: center; font-weight: 700; background: var(--soft-accent); }
+  .uml .kopf u { text-underline-offset: 3px; }
+  .uml.objekt { border-style: solid; border-radius: 10px; }
+  .methoden { display: flex; flex-wrap: wrap; gap: 6px; }
+  .methoden button { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: .84rem; padding: 6px 9px; }
+  .protokoll { font: .82rem/1.5 ui-monospace, "SF Mono", Menlo, Consolas, monospace; background: var(--bg); border-radius: 10px; padding: 8px 10px; margin: 0; min-height: 3.2em; max-height: 200px; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; }
+  .protokoll .rueck { color: var(--ok); }
+  .protokoll .kommentar { color: var(--muted); }
+  .protokoll .fehler { color: var(--warn); }
+  .etikett { display: inline-block; font-size: .72rem; font-weight: 700; padding: 1px 7px; border-radius: 99px; background: var(--bg); color: var(--muted); border: 1px solid var(--border); }
+  .zwei { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @media (max-width: 460px) { .zwei { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<h1>Objekt-Labor: Klassen und Objekte</h1>
+<p class="muted small">Die Klasse <code>Figur</code> ist ein Bauplan. Erzeuge mit <code>new</code> Objekte, wähle eines aus und rufe seine Methoden auf. Jede Aktion erscheint als Java-Anweisung im Protokoll.</p>
+
+<div class="lk-grid">
+  <div>
+    <div class="lk-card">
+      <h2>Welt <span class="etikett">Simulation</span></h2>
+      <svg id="welt" viewBox="0 0 340 264" role="img" aria-label="Welt mit 8 mal 6 Feldern"></svg>
+      <p class="small muted" style="margin:6px 0 0">x zählt nach rechts, y nach unten, beide ab 0 – wie in Greenfoot. Richtung 0° zeigt nach rechts, 90° nach unten.</p>
+    </div>
+    <div class="lk-card">
+      <h2>Protokoll (Java)</h2>
+      <pre class="protokoll" id="protokoll" aria-live="polite"></pre>
+    </div>
+  </div>
+
+  <div>
+    <div class="lk-card">
+      <h2>Neues Objekt</h2>
+      <div class="row">
+        <label class="small" for="eName">Name</label>
+        <input type="text" id="eName" value="held" autocomplete="off" autocapitalize="off" spellcheck="false">
+      </div>
+      <div class="row">
+        <label class="small" for="eX">x</label>
+        <select id="eX"></select>
+        <label class="small" for="eY">y</label>
+        <select id="eY"></select>
+        <button type="button" id="bNeu" class="primary">new Figur(…)</button>
+      </div>
+      <p class="small muted mono" id="neuCode" style="margin:0"></p>
+    </div>
+    <div class="lk-card">
+      <h2>Methoden aufrufen</h2>
+      <div class="row">
+        <div class="seg" role="group" aria-label="Objekt auswählen" id="objWahl"></div>
+      </div>
+      <div class="methoden" id="methoden">
+        <button type="button" data-m="bewege">bewege()</button>
+        <button type="button" data-m="dreheRechts">dreheRechts()</button>
+        <button type="button" data-m="dreheLinks">dreheLinks()</button>
+        <button type="button" data-m="getX">getX()</button>
+        <button type="button" data-m="getY">getY()</button>
+      </div>
+      <div class="row" style="margin-top:8px">
+        <label class="small" for="eFarbe">setzeFarbe(</label>
+        <select id="eFarbe"><option value="rot">"rot"</option><option value="blau">"blau"</option><option value="grün">"grün"</option><option value="gelb">"gelb"</option></select>
+        <span class="small">)</span>
+        <button type="button" id="bFarbe">aufrufen</button>
+      </div>
+    </div>
+    <div class="lk-card">
+      <div class="zwei">
+        <div>
+          <h2>Klassendiagramm</h2>
+          <div class="uml" aria-label="Klassendiagramm der Klasse Figur">
+            <div class="kopf">Figur</div>
+            <div>- x: int<br>- y: int<br>- richtung: int<br>- farbe: String</div>
+            <div>+ Figur(x: int, y: int)<br>+ bewege(): void<br>+ dreheRechts(): void<br>+ dreheLinks(): void<br>+ setzeFarbe(f: String): void<br>+ getX(): int<br>+ getY(): int</div>
+          </div>
+        </div>
+        <div>
+          <h2>Objektdiagramm</h2>
+          <div id="objDiagramm"><p class="small muted">Noch kein Objekt erzeugt.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="lk-card tasks">
+  <h2>Entdecke selbst <span class="small muted" data-task-count></span></h2>
+  <div class="task" data-goal="zwei"><p class="task-q">Erzeuge zwei Objekte der Klasse <code>Figur</code>.</p></div>
+  <div class="task" data-goal="ziel"><p class="task-q">Bringe ein Objekt nur mit seinen Methoden auf das grüne Zielfeld.</p></div>
+  <div class="task" data-goal="farbe"><p class="task-q">Gib zwei Objekten <b>verschiedene</b> Farben.</p></div>
+  <div class="task" data-goal="getter"><p class="task-q">Rufe eine Methode auf, die einen Wert <b>zurückgibt</b>, und lies das Ergebnis im Protokoll ab.</p></div>
+  <div class="task">
+    <p class="task-q">Du hast die Objekte <code>held</code> und <code>robo</code>. Was passiert mit <code>robo</code>, wenn du <code>held.bewege()</code> aufrufst?</p>
+    <div class="choices">
+      <button type="button" data-ok data-fb="Richtig: Jedes Objekt hat eigene Attributwerte. Die Methode ändert nur das Objekt vor dem Punkt.">Nichts, nur held bewegt sich.</button>
+      <button type="button" data-fb="Probiere es aus: Erzeuge zwei Objekte und bewege eines davon.">robo bewegt sich mit, weil beide zur selben Klasse gehören.</button>
+      <button type="button" data-fb="Die Klasse bleibt unverändert. Sie ist nur der Bauplan.">Die Klasse Figur ändert sich, und damit alle Objekte.</button>
+    </div><p class="fb"></p>
+  </div>
+  <div class="task">
+    <p class="task-q">Was zeigt das Objektdiagramm, aber nicht das Klassendiagramm?</p>
+    <div class="choices">
+      <button type="button" data-fb="Die Methoden stehen im Klassendiagramm. Sie sind für alle Objekte gleich.">Die Methoden der Klasse</button>
+      <button type="button" data-ok data-fb="Richtig: Das Objektdiagramm zeigt ein bestimmtes Objekt mit seinen aktuellen Werten, z. B. x = 3.">Die aktuellen Attributwerte eines bestimmten Objekts</button>
+      <button type="button" data-fb="Die Datentypen stehen im Klassendiagramm, z. B. x: int.">Die Datentypen der Attribute</button>
+    </div><p class="fb"></p>
+  </div>
+  <div class="all-done">Alles entdeckt! Weiter geht es mit den Übungen.</div>
+</div>
+
+<script src="../../static/lesson-kit.js"></script>
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+  var NS = 'http://www.w3.org/2000/svg';
+  var B = 8, H = 6, Z = 40, OX = 14, OY = 8;
+  var ZIEL = { x: 6, y: 1 };
+  var FARBEN = { rot: 'var(--warn)', blau: 'var(--accent)', 'grün': 'var(--ok)', gelb: 'var(--lamp)' };
+  var JAVA = ['abstract', 'boolean', 'break', 'byte', 'case', 'catch', 'char', 'class', 'const', 'continue', 'default', 'do', 'double', 'else', 'enum', 'extends', 'final', 'finally', 'float', 'for', 'if', 'implements', 'import', 'instanceof', 'int', 'interface', 'long', 'new', 'null', 'package', 'private', 'protected', 'public', 'return', 'short', 'static', 'super', 'switch', 'this', 'throw', 'true', 'false', 'try', 'void', 'while', 'var'];
+  var VORSCHLAEGE = ['held', 'robo', 'mia', 'gegner', 'bot'];
+  var objekte = [], aktiv = null, log = [];
+
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined) e.textContent = text; return e; }
+  function sv(tag, attrs) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); return e; }
+
+  // Auswahl für die Startposition
+  for (var i = 0; i < B; i++) { var o = el('option', '', String(i)); o.value = i; $('eX').appendChild(o); }
+  for (var j = 0; j < H; j++) { var o2 = el('option', '', String(j)); o2.value = j; $('eY').appendChild(o2); }
+  $('eX').value = 1; $('eY').value = 4;
+
+  function protokoll(code, art, kommentar) {
+    log.push({ code: code, art: art || '', kommentar: kommentar || '' });
+    if (log.length > 30) log.shift();
+    var p = $('protokoll'); p.textContent = '';
+    log.forEach(function (z) {
+      var zeile = el('span', z.art === 'fehler' || z.art === 'kommentar' ? z.art : '', z.code);
+      p.appendChild(zeile);
+      if (z.kommentar) p.appendChild(el('span', z.art === 'rueck' ? 'rueck' : 'kommentar', '   ' + z.kommentar));
+      p.appendChild(document.createTextNode('\n'));
+    });
+    p.scrollTop = p.scrollHeight;
+  }
+
+  // ------------------------------------------------ Welt zeichnen
+  function zeichneWelt() {
+    var svg = $('welt');
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    for (var y = 0; y < H; y++) for (var x = 0; x < B; x++) {
+      var istZiel = x === ZIEL.x && y === ZIEL.y;
+      svg.appendChild(sv('rect', { x: OX + x * Z, y: OY + y * Z, width: Z, height: Z, 'class': istZiel ? 'ziel' : 'feld' }));
+      if (istZiel) { var zt = sv('text', { x: OX + x * Z + Z / 2, y: OY + y * Z + Z / 2 + 4, 'class': 'zieltext' }); zt.textContent = 'Ziel'; svg.appendChild(zt); }
+    }
+    for (var k = 0; k < B; k++) { var t = sv('text', { x: OX + k * Z + Z / 2, y: OY + H * Z + 12, 'class': 'koord' }); t.textContent = k; svg.appendChild(t); }
+    for (var m = 0; m < H; m++) { var t2 = sv('text', { x: 6, y: OY + m * Z + Z / 2 + 3, 'class': 'koord' }); t2.textContent = m; svg.appendChild(t2); }
+    var beschreibung = [];
+    objekte.forEach(function (ob) {
+      var cx = OX + ob.x * Z + Z / 2, cy = OY + ob.y * Z + Z / 2;
+      var g = sv('g', { transform: 'translate(' + cx + ' ' + cy + ')' });
+      if (ob === aktiv) g.appendChild(sv('circle', { r: 18, 'class': 'ring' }));
+      var c = sv('circle', { r: 12, 'class': 'koerper' }); c.setAttribute('fill', FARBEN[ob.farbe]);
+      g.appendChild(c);
+      var nase = sv('path', { d: 'M12 -5 L19 0 L12 5 Z', 'class': 'nase', transform: 'rotate(' + ob.richtung + ')' });
+      g.appendChild(nase);
+      var n = sv('text', { y: -21, 'class': 'name' }); n.textContent = ob.name;
+      // Name nicht über den Rand hinaus
+      if (ob.y === 0) n.setAttribute('y', 27);
+      g.appendChild(n);
+      g.style.cursor = 'pointer';
+      g.addEventListener('click', function () { waehle(ob); });
+      svg.appendChild(g);
+      beschreibung.push(ob.name + ' (' + ob.farbe + ') auf x = ' + ob.x + ', y = ' + ob.y + ', Richtung ' + ob.richtung + '°');
+    });
+    svg.setAttribute('aria-label', 'Welt mit 8 mal 6 Feldern, Zielfeld bei x = ' + ZIEL.x + ', y = ' + ZIEL.y + '. ' + (beschreibung.length ? 'Objekte: ' + beschreibung.join('; ') + '.' : 'Noch keine Objekte.'));
+  }
+
+  function zeichneAuswahl() {
+    var w = $('objWahl'); w.textContent = '';
+    if (!objekte.length) w.appendChild(el('span', 'small muted', 'Erzeuge zuerst ein Objekt.'));
+    objekte.forEach(function (ob) {
+      var b = el('button', 'mono', ob.name); b.type = 'button';
+      b.setAttribute('aria-pressed', String(ob === aktiv));
+      b.addEventListener('click', function () { waehle(ob); });
+      w.appendChild(b);
+    });
+    var aus = !aktiv;
+    $('methoden').querySelectorAll('button').forEach(function (b) { b.disabled = aus; });
+    $('bFarbe').disabled = aus; $('eFarbe').disabled = aus;
+    var d = $('objDiagramm'); d.textContent = '';
+    if (!aktiv) { d.appendChild(el('p', 'small muted', 'Noch kein Objekt erzeugt.')); return; }
+    var box = el('div', 'uml objekt');
+    var kopf = el('div', 'kopf'), u = el('u', '', aktiv.name + ' : Figur'); kopf.appendChild(u); box.appendChild(kopf);
+    var att = el('div');
+    att.appendChild(document.createTextNode('x = ' + aktiv.x)); att.appendChild(el('br'));
+    att.appendChild(document.createTextNode('y = ' + aktiv.y)); att.appendChild(el('br'));
+    att.appendChild(document.createTextNode('richtung = ' + aktiv.richtung)); att.appendChild(el('br'));
+    att.appendChild(document.createTextNode('farbe = "' + aktiv.farbe + '"'));
+    box.appendChild(att);
+    d.appendChild(box);
+    d.appendChild(el('p', 'small muted', 'Momentaufnahme von ' + aktiv.name + '. Methoden stehen hier nicht, sie sind für alle Objekte gleich.'));
+  }
+  function alles() { zeichneWelt(); zeichneAuswahl(); neuCode(); pruefe(); }
+  function waehle(ob) { aktiv = ob; alles(); }
+
+  // ------------------------------------------------ Objekte erzeugen
+  function nameFehler(n) {
+    if (!n) return 'Gib dem Objekt einen Namen.';
+    if (!/^[A-Za-z_][A-Za-z0-9_]*$/.test(n)) return 'Ein Name in Java besteht aus Buchstaben ohne Umlaute, Ziffern und _ und beginnt nicht mit einer Ziffer.';
+    if (JAVA.indexOf(n) >= 0) return '„' + n + '“ ist ein Java-Schlüsselwort und kann kein Name sein.';
+    if (objekte.some(function (o) { return o.name === n; })) return 'Ein Objekt namens „' + n + '“ gibt es schon.';
+    return '';
+  }
+  function neuCode() {
+    $('neuCode').textContent = 'Figur ' + ($('eName').value.trim() || '…') + ' = new Figur(' + $('eX').value + ', ' + $('eY').value + ');';
+  }
+  ['input', 'change'].forEach(function (ev) { $('eName').addEventListener(ev, neuCode); $('eX').addEventListener(ev, neuCode); $('eY').addEventListener(ev, neuCode); });
+  $('bNeu').addEventListener('click', function () {
+    var n = $('eName').value.trim(), x = Number($('eX').value), y = Number($('eY').value);
+    var code = 'Figur ' + (n || '?') + ' = new Figur(' + x + ', ' + y + ');';
+    var f = nameFehler(n);
+    if (!f && objekte.length >= 5) f = 'In diesem Labor reichen 5 Objekte.';
+    if (f) { protokoll(code, 'fehler', '// ' + f); return; }
+    if (n[0] !== n[0].toLowerCase()) protokoll('// Hinweis: Objektnamen schreibt man in Java üblicherweise klein.', 'kommentar');
+    var ob = { name: n, x: x, y: y, richtung: 0, farbe: 'blau' };
+    objekte.push(ob); aktiv = ob;
+    protokoll(code, '', '// neues Objekt: x = ' + x + ', y = ' + y + ', richtung = 0, farbe = "blau"');
+    var frei = VORSCHLAEGE.filter(function (v) { return !objekte.some(function (o) { return o.name === v; }); });
+    $('eName').value = frei[0] || '';
+    $('eX').value = (x + 2) % B;
+    alles();
+  });
+
+  // ------------------------------------------------ Methoden
+  $('methoden').addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b || !aktiv) return;
+    var m = b.dataset.m, ob = aktiv, code = ob.name + '.' + m + '()';
+    if (m === 'bewege') {
+      var dx = [1, 0, -1, 0][ob.richtung / 90], dy = [0, 1, 0, -1][ob.richtung / 90];
+      var nx = ob.x + dx, ny = ob.y + dy;
+      if (nx < 0 || ny < 0 || nx >= B || ny >= H) protokoll(code + ';', '', '// am Rand: ' + ob.name + ' bleibt stehen');
+      else {
+        ob.x = nx; ob.y = ny; protokoll(code + ';', '', '// x = ' + ob.x + ', y = ' + ob.y);
+        if (ob.x === ZIEL.x && ob.y === ZIEL.y) LK.reach('ziel');
+      }
+    } else if (m === 'dreheRechts' || m === 'dreheLinks') {
+      ob.richtung = (ob.richtung + (m === 'dreheRechts' ? 90 : 270)) % 360;
+      protokoll(code + ';', '', '// richtung = ' + ob.richtung);
+    } else {
+      var wert = m === 'getX' ? ob.x : ob.y;
+      protokoll('int ' + (m === 'getX' ? 'px' : 'py') + ' = ' + code + ';', 'rueck', '// Rückgabewert: ' + wert);
+      LK.reach('getter');
+    }
+    alles();
+  });
+  $('bFarbe').addEventListener('click', function () {
+    if (!aktiv) return;
+    aktiv.farbe = $('eFarbe').value;
+    protokoll(aktiv.name + '.setzeFarbe("' + aktiv.farbe + '");', '', '// farbe = "' + aktiv.farbe + '"');
+    alles();
+  });
+
+  // ------------------------------------------------ Aufgaben
+  function pruefe() {
+    if (objekte.length >= 2) LK.reach('zwei');
+    var farben = {};
+    objekte.forEach(function (o) { farben[o.farbe] = 1; });
+    if (Object.keys(farben).length >= 2) LK.reach('farbe');
+  }
+
+  protokoll('// Hier erscheinen deine Anweisungen.', 'kommentar');
+  alles();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+{
+  "id": "inf-k10-urheberrecht-projekt",
+  "titel": "Urheberrecht, Lizenzen und Softwareprojekte",
+  "kurz": "Was das Urheberrecht schützt, wie Creative-Commons-Lizenzen funktionieren und wie ein Team ein Softwareprojekt in Phasen oder mit Prototypen plant.",
+  "reihenfolge": 7,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Grundregeln des Urheberrechts nennen, auch für Software, Bilder und Musik" },
+    { "id": "lz2", "niveau": "G", "text": "Creative-Commons-Lizenzen lesen und fremde Werke korrekt nennen" },
+    { "id": "lz3", "niveau": "G", "text": "Die Phasen eines Softwareprojekts in die richtige Reihenfolge bringen und Tätigkeiten zuordnen" },
+    { "id": "lz4", "niveau": "H", "text": "Rapid Prototyping beschreiben und mit dem Phasenmodell vergleichen" }
+  ],
+  "verstehen": {
+    "einstieg": "Für euer Greenfoot-Spiel braucht ihr eine Hintergrundmusik und ein paar Figuren. Im Internet findet man in Sekunden Tausende Bilder und Lieder. Darf man die einfach nehmen?",
+    "abschnitte": [
+      {
+        "titel": "Urheberrecht",
+        "text": "Wer ein Werk schafft, z. B. ein Bild, ein Lied, einen Text oder ein **Programm**, ist **Urheber**. Das Urheberrecht entsteht in Deutschland **automatisch** mit dem Werk. Man muss es nirgends anmelden, und ein ©-Zeichen ist nicht nötig. Es endet erst **70 Jahre nach dem Tod** des Urhebers.\n\nNur der Urheber entscheidet, ob und wie andere sein Werk kopieren, verändern und veröffentlichen dürfen. Dass ein Bild frei im Internet zu finden ist, heißt also nicht, dass man es verwenden darf."
+      },
+      {
+        "titel": "Creative Commons",
+        "text": "Viele Urheber wollen, dass andere ihre Werke nutzen. Mit einer **Lizenz** erlauben sie das unter Bedingungen. Die **Creative-Commons-Lizenzen** (CC) setzen sich aus Bausteinen zusammen:\n\n- **BY**: Namensnennung, der Urheber muss genannt werden\n- **SA**: Weitergabe unter gleichen Bedingungen, Bearbeitungen müssen dieselbe Lizenz bekommen\n- **NC**: nicht kommerziell, kein Geld damit verdienen\n- **ND**: keine Bearbeitung, nur unverändert weitergeben\n\n**CC0** bedeutet: Der Urheber verzichtet so weit wie möglich auf seine Rechte. Bei der Nennung hilft die Regel **TULLU**: Titel, Urheber, Lizenz, Link zur Lizenz, Ursprungsort (wo das Werk zu finden ist). Für Programmcode gibt es eigene freie Lizenzen, z. B. die MIT-Lizenz oder die GPL."
+      },
+      {
+        "titel": "Das Phasenmodell",
+        "text": "Größere Softwareprojekte plant man in **Phasen**:\n\n- **Analyse:** Was soll das Programm können? Die Anforderungen werden aufgeschrieben, z. B. in einem Pflichtenheft.\n- **Entwurf:** Wie wird es aufgebaut? Klassendiagramm, Aufgabenverteilung im Team.\n- **Implementierung:** Die Klassen werden programmiert.\n- **Test:** Erfüllt das Programm die Anforderungen? Fehler werden gesucht und behoben.\n- **Einsatz und Wartung:** Das Programm wird genutzt und verbessert.\n\nNebenher wird alles **dokumentiert**. Beim strengen Phasenmodell (Wasserfallmodell) beginnt eine Phase erst, wenn die vorige fertig ist."
+      },
+      {
+        "titel": "Rapid Prototyping",
+        "text": "Beim **Rapid Prototyping** baut das Team früh einen einfachen, lauffähigen **Prototyp**, etwa eine Figur, die schon läuft und springt, aber noch ohne Level und Punkte. Andere probieren ihn aus und geben Rückmeldung. Dann wird der Prototyp Schritt für Schritt erweitert.\n\nVorteil: Missverständnisse und schlechte Ideen fallen früh auf, und es gibt immer eine Version, die läuft. Nachteil: Ohne Plan wird der Code leicht unübersichtlich."
+      }
+    ],
+    "merksatz": "Das Urheberrecht entsteht automatisch und gilt auch für Software. CC-Lizenzen erlauben die Nutzung unter Bedingungen (BY, SA, NC, ND); genannt wird nach TULLU. Softwareprojekte laufen in Phasen von Analyse bis Wartung oder wachsen beim Rapid Prototyping von Prototyp zu Prototyp.",
+    "alltag": "Viele Spieleentwickler bieten ihre Grafiken und Sounds unter CC0 oder CC BY an, damit Einsteiger sie nutzen können. Und auch große Apps erscheinen oft erst als einfache „Beta-Version“, die mit den Rückmeldungen der Nutzer wächst."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "inf-urp-01", "typ": "multi", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Welche Aussagen zum Urheberrecht in Deutschland stimmen?",
+      "optionen": [
+        { "text": "Es entsteht automatisch, sobald ein Werk geschaffen ist.", "richtig": true },
+        { "text": "Es gilt auch für Programme, die jemand geschrieben hat.", "richtig": true },
+        { "text": "Es endet 70 Jahre nach dem Tod des Urhebers.", "richtig": true },
+        { "text": "Es gilt nur, wenn das Werk ein ©-Zeichen trägt.", "feedback": "Das Zeichen ist ein Hinweis, aber keine Voraussetzung. Der Schutz besteht auch ohne." },
+        { "text": "Bilder, die man mit einer Suchmaschine findet, darf man frei verwenden.", "feedback": "Auffindbar heißt nicht erlaubt. Man braucht die Erlaubnis des Urhebers, z. B. über eine Lizenz." }
+      ],
+      "erklaerung": "Das Urheberrecht schützt geistige Schöpfungen, auch Programmcode. Für die Nutzung braucht man eine Erlaubnis, sofern das Gesetz keine Ausnahme vorsieht, wie etwa beim Zitat."
+    },
+    {
+      "id": "inf-urp-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Ordne die Bausteine der Creative-Commons-Lizenzen ihrer Bedeutung zu.",
+      "paare": [
+        { "links": "BY", "rechts": "Der Urheber muss genannt werden." },
+        { "links": "SA", "rechts": "Bearbeitungen müssen unter derselben Lizenz weitergegeben werden." },
+        { "links": "NC", "rechts": "Keine kommerzielle Nutzung." },
+        { "links": "ND", "rechts": "Das Werk darf nicht verändert werden." }
+      ],
+      "erklaerung": "BY (by = von) steht für Namensnennung, SA für share alike, NC für non-commercial, ND für no derivatives."
+    },
+    {
+      "id": "inf-urp-03", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Ihr wollt euer Spiel für 0,99 € in einem App-Store verkaufen. Eine Figur stammt von einer Grafik mit der Lizenz **CC BY-NC-SA**, die ihr verändert habt. Was gilt?",
+      "optionen": [
+        { "text": "Der Verkauf ist so nicht erlaubt, weil NC die kommerzielle Nutzung ausschließt.", "richtig": true },
+        { "text": "Es ist erlaubt, wenn ihr den Urheber nennt.", "feedback": "Die Namensnennung (BY) reicht nicht. NC verbietet zusätzlich das Geldverdienen." },
+        { "text": "Es ist erlaubt, weil ihr die Grafik verändert habt und sie damit euch gehört.", "feedback": "Eine Bearbeitung bleibt an die Lizenz des Originals gebunden. SA verlangt sogar dieselbe Lizenz." },
+        { "text": "Es ist erlaubt, weil 0,99 € nur ein kleiner Betrag ist.", "feedback": "Auch ein kleiner Preis ist kommerziell." }
+      ],
+      "erklaerung": "Für den Verkauf bräuchtet ihr eine eigene Erlaubnis des Urhebers oder eine andere Grafik, z. B. unter CC BY oder CC0. Ein kostenloses Schulprojekt mit Namensnennung und derselben Lizenz wäre dagegen erlaubt."
+    },
+    {
+      "id": "inf-urp-04", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Ihr nutzt ein Foto unter CC BY 4.0 in eurer Projektdokumentation. Was gehört nach der TULLU-Regel in die Bildquelle?",
+      "optionen": [
+        { "text": "Titel des Fotos", "richtig": true },
+        { "text": "Name des Urhebers", "richtig": true },
+        { "text": "Name der Lizenz mit Link zum Lizenztext", "richtig": true },
+        { "text": "Ursprungsort, also wo das Foto zu finden ist", "richtig": true },
+        { "text": "Die Wohnadresse des Fotografen", "feedback": "Persönliche Daten wie die Adresse gehören nicht dazu und wären auch aus Datenschutzgründen falsch." }
+      ],
+      "erklaerung": "Beispiel: „Sonnenuntergang“ von M. Muster, Lizenz CC BY 4.0 (mit Link), gefunden auf einer Bilderplattform (mit Link)."
+    },
+    {
+      "id": "inf-urp-05", "typ": "reihenfolge", "schwierigkeit": "leicht", "lernziel": "lz3",
+      "frage": "Bringe die Phasen eines Softwareprojekts nach dem Phasenmodell in die richtige Reihenfolge.",
+      "elemente": ["Analyse", "Entwurf", "Implementierung", "Test", "Einsatz und Wartung"],
+      "erklaerung": "Erst klären, was gebraucht wird, dann planen, wie es gebaut wird, dann bauen, prüfen und schließlich nutzen und pflegen."
+    },
+    {
+      "id": "inf-urp-06", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "In welcher Phase findet die Tätigkeit statt?",
+      "paare": [
+        { "links": "Das Team schreibt auf, was das Spiel können soll.", "rechts": "Analyse" },
+        { "links": "Ihr zeichnet ein Klassendiagramm und verteilt die Klassen im Team.", "rechts": "Entwurf" },
+        { "links": "Ihr schreibt die Methoden der Klasse Gegner in Java.", "rechts": "Implementierung" },
+        { "links": "Mitschüler spielen das Spiel und melden Fehler.", "rechts": "Test" }
+      ],
+      "erklaerung": "Wer die Phasen kennt, plant realistischer: Analyse und Entwurf sparen später viel Zeit beim Programmieren und Fehlersuchen."
+    },
+    {
+      "id": "inf-urp-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Euer Team hat sechs Wochen Zeit für ein Spiel. Erkläre, wie ihr mit Rapid Prototyping vorgehen würdet, und nenne je einen Vorteil und einen Nachteil gegenüber dem strengen Phasenmodell.",
+      "stichworte": [
+        { "aspekt": "Früh einen einfachen, lauffähigen Prototyp bauen", "woerter": ["prototyp", "frueh", "einfache version", "lauffaehig"] },
+        { "aspekt": "Ausprobieren lassen und Rückmeldung einholen", "woerter": ["rueckmeld", "feedback", "testen", "ausprobier"] },
+        { "aspekt": "Schritt für Schritt erweitern / verbessern", "woerter": ["erweiter", "schritt", "verbesser", "nach und nach"] },
+        { "aspekt": "Vorteil: Fehler/Missverständnisse früh erkennen bzw. immer eine lauffähige Version", "woerter": ["frueh erkenn", "frueh auf", "immer eine", "lauffaehig", "missverst"] },
+        { "aspekt": "Nachteil: Code wird ohne Plan unübersichtlich", "woerter": ["unuebersicht", "chaos", "ohne plan", "durcheinander", "planung fehlt"] }
+      ],
+      "musterloesung": "Wir bauen in der ersten Woche einen einfachen Prototyp: Die Spielfigur läuft und springt schon, es gibt aber noch keine Level. Mitschüler probieren ihn aus und geben uns Rückmeldung. Danach erweitern wir das Spiel Schritt für Schritt um Gegner, Punkte und Level. Vorteil: Fehler und Missverständnisse fallen früh auf, und es gibt immer eine lauffähige Version. Nachteil: Ohne Plan kann der Code unübersichtlich werden. Deshalb sollten wir trotzdem ein Klassendiagramm zeichnen.",
+      "erklaerung": "In der Praxis mischt man beide Ideen: einen groben Plan und kurze Schritte mit lauffähigen Zwischenständen."
+    }
+  ]
+}

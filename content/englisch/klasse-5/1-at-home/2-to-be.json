@@ -1,0 +1,107 @@
+{
+  "id": "en-k5-to-be",
+  "titel": "I am, you are: the verb „to be“",
+  "kurz": "Die Formen von „to be“ mit den Personalpronomen, Kurzformen, Verneinung, Fragen und Kurzantworten.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Die Personalpronomen und die passenden Formen von „to be“ (am, is, are) verwenden" },
+    { "id": "lz2", "niveau": "G", "text": "Lang- und Kurzformen bilden (I’m, she’s, they’re) und Sätze mit „not“ verneinen" },
+    { "id": "lz3", "niveau": "H", "text": "Fragen mit „to be“ stellen und mit Kurzantworten antworten" }
+  ],
+  "verstehen": {
+    "einstieg": "„Ich bin Lena. Ich bin elf. Mein Bruder ist neun.“ Das Verb „sein“ brauchst du in fast jedem Satz, wenn du dich vorstellst. Auf Englisch heißt es „to be“ – und es hat drei verschiedene Formen.",
+    "abschnitte": [
+      {
+        "titel": "Die Formen",
+        "text": "- **I am** (I’m) – ich bin\n- **you are** (you’re) – du bist\n- **he / she / it is** (he’s, she’s, it’s) – er / sie / es ist\n- **we are** (we’re) – wir sind\n- **you are** (you’re) – ihr seid\n- **they are** (they’re) – sie sind\n\n**you** heißt „du“ und „ihr“ (und „Sie“). **it** benutzt man für Dinge und Tiere."
+      },
+      {
+        "titel": "Verneinung",
+        "text": "Man setzt **not** hinter die Form von „to be“:\n\n- ``I’m not tired.``\n- ``He isn’t at home.`` (is not)\n- ``They aren’t my cousins.`` (are not)\n\nFür „I am not“ gibt es nur die Kurzform **I’m not**, nicht „I amn’t“."
+      },
+      {
+        "titel": "Fragen und Kurzantworten",
+        "text": "In der Frage tauschen Subjekt und Verb den Platz:\n\n- ``You are eleven.`` → ``Are you eleven?``\n- ``She is your sister.`` → ``Is she your sister?``\n\nAuf Ja/Nein-Fragen antwortet man im Englischen oft nicht nur mit „Yes“ oder „No“, sondern mit einer **Kurzantwort**:\n\n- ``Are you eleven?`` – ``Yes, I am.`` / ``No, I’m not.``\n- ``Is it your cat?`` – ``Yes, it is.`` / ``No, it isn’t.``\n\nIn einer Ja-Kurzantwort benutzt man keine Kurzform: „Yes, I am.“ – nicht „Yes, I’m.“"
+      }
+    ],
+    "merksatz": "I am, you are, he/she/it is, we are, you are, they are. Verneinung mit not (isn’t, aren’t, I’m not). Frage: Verb vor das Subjekt. Kurzantwort: Yes, I am. / No, I’m not.",
+    "alltag": "Wenn dich jemand in London fragt „Are you from Germany?“, kannst du höflich mit „Yes, I am. I’m from Berlin.“ antworten."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-tob-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Match the pronouns with the correct form of „to be“.",
+      "paare": [
+        { "links": "I", "rechts": "am" },
+        { "links": "she", "rechts": "is" },
+        { "links": "they", "rechts": "are" }
+      ],
+      "erklaerung": "I → am, he/she/it → is, you/we/they → are."
+    },
+    {
+      "id": "en-tob-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Complete: ``My grandparents ___ from Scotland.``",
+      "optionen": [
+        { "text": "are", "richtig": true },
+        { "text": "is", "feedback": "„My grandparents“ sind mehrere Personen, also they → are." },
+        { "text": "am", "feedback": "„am“ gibt es nur bei „I“." },
+        { "text": "be", "feedback": "„be“ ist die Grundform. Im Satz brauchst du am, is oder are." }
+      ],
+      "erklaerung": "My grandparents = they → are."
+    },
+    {
+      "id": "en-tob-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Which sentence is the correct negative of ``I am hungry.``?",
+      "optionen": [
+        { "text": "I’m not hungry.", "richtig": true },
+        { "text": "I amn’t hungry.", "feedback": "Eine Kurzform „amn’t“ gibt es nicht. Man sagt I’m not." },
+        { "text": "I don’t hungry.", "feedback": "Bei „to be“ braucht man kein „don’t“. Das not kommt einfach hinter am." },
+        { "text": "I not am hungry.", "feedback": "Das not steht hinter der Form von „to be“: I am not / I’m not." }
+      ],
+      "erklaerung": "Verneinung von to be: am not / is not / are not. Bei I nur die Kurzform I’m not."
+    },
+    {
+      "id": "en-tob-04", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Which short forms are correct?",
+      "optionen": [
+        { "text": "she is → she’s", "richtig": true },
+        { "text": "they are → they’re", "richtig": true },
+        { "text": "it is not → it isn’t", "richtig": true },
+        { "text": "we are not → we amn’t", "feedback": "we are not → we aren’t (oder we’re not)." },
+        { "text": "I am → I’am", "feedback": "Das a fällt weg: I am → I’m." }
+      ],
+      "erklaerung": "Der Apostroph steht dort, wo Buchstaben wegfallen: they are → they’re, is not → isn’t."
+    },
+    {
+      "id": "en-tob-05", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Put the words in the right order to make a question.",
+      "elemente": ["Is", "your", "brother", "in", "the", "garden?"],
+      "erklaerung": "In Fragen mit „to be“ steht die Form von to be vorne: Is your brother in the garden?"
+    },
+    {
+      "id": "en-tob-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "``Are you and Tom friends?`` – Yes, you are. Which short answer is correct?",
+      "optionen": [
+        { "text": "Yes, we are.", "richtig": true },
+        { "text": "Yes, we’re.", "feedback": "In Ja-Kurzantworten gibt es keine Kurzform: Yes, we are." },
+        { "text": "Yes, you are.", "feedback": "Du sprichst über dich und Tom, also „we“." },
+        { "text": "Yes, they are.", "feedback": "„They“ wären andere Personen. Du gehörst ja dazu." }
+      ],
+      "erklaerung": "Die Frage richtet sich an dich und Tom (you), du antwortest für euch beide (we): Yes, we are."
+    },
+    {
+      "id": "en-tob-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz1",
+      "frage": "Introduce yourself and one person from your family in three or four English sentences. Use different forms of „to be“ and one negative sentence.",
+      "stichworte": [
+        { "aspekt": "Satz mit „I am“ / „I’m“", "woerter": ["i am", "i'm", "i’m"] },
+        { "aspekt": "Satz mit „is“ über eine andere Person", "woerter": [" is ", "he's", "she's", "he’s", "she’s"] },
+        { "aspekt": "Verneinter Satz (not / isn’t / aren’t)", "woerter": ["not", "isn't", "isn’t", "aren't", "aren’t"] },
+        { "aspekt": "Ein Familienmitglied wird genannt", "woerter": ["mother", "mum", "father", "dad", "sister", "brother", "grandma", "grandpa", "aunt", "uncle", "cousin"] }
+      ],
+      "musterloesung": "Hi, I’m Lena and I am eleven years old. I’m from Berlin. This is my brother Max. He is eight, and he isn’t very tall.",
+      "erklaerung": "Überprüfe jedes Verb: Passt am, is oder are zu der Person davor?"
+    }
+  ]
+}

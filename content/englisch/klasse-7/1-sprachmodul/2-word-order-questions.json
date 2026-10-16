@@ -1,0 +1,112 @@
+{
+  "id": "en-k7-word-order",
+  "titel": "Word order, questions and connecting words",
+  "kurz": "Die englische Satzstellung (S-V-O, Ort vor Zeit), Fragen und Verneinungen in allen Zeiten, Fragen nach dem Subjekt und Konjunktionen wie because und although.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Die Wortstellung Subjekt – Verb – Objekt – Ort – Zeit anwenden" },
+    { "id": "lz2", "niveau": "G", "text": "Fragen und Verneinungen in den bekannten Zeiten mit dem passenden Hilfsverb bilden" },
+    { "id": "lz3", "niveau": "H", "text": "Fragen nach dem Subjekt (Who called you?) von Fragen nach dem Objekt unterscheiden" },
+    { "id": "lz4", "niveau": "G", "text": "Sätze mit and, but, because, so und although verbinden" }
+  ],
+  "verstehen": {
+    "einstieg": "„Gestern habe ich im Park meinen Lehrer gesehen.“ Wer das Wort für Wort übersetzt, landet bei „Yesterday have I in the park my teacher seen.“ Das Englische hat eine viel strengere Satzstellung.",
+    "abschnitte": [
+      {
+        "titel": "S – V – O – P – T",
+        "text": "Im englischen Aussagesatz steht fast immer: **Subjekt – Verb – Objekt – Ort (Place) – Zeit (Time)**.\n\n``I saw my teacher in the park yesterday.``\n\n- Das Verb bleibt beim Subjekt, auch wenn der Satz mit einer Zeit beginnt: ``Yesterday I saw my teacher.`` (nicht: Yesterday saw I …)\n- Ort vor Zeit: ``We play football in the park on Saturdays.``"
+      },
+      {
+        "titel": "Fragen und Verneinung",
+        "text": "Jede Zeit hat ihr Hilfsverb:\n\n- simple present: **do/does** – ``Does she like jazz? She doesn’t like jazz.``\n- simple past: **did** – ``Where did you go? We didn’t go out.``\n- progressive: **am/is/are, was/were** – ``Are they coming? He wasn’t listening.``\n- present perfect: **have/has** – ``Have you finished? I haven’t seen it.``\n- future: **will** – ``Will it rain? It won’t rain.``\n- Modalverben: ``Can you swim? You mustn’t go.``\n\nFragewortfrage: **Fragewort – Hilfsverb – Subjekt – Verb**: ``Why did you leave?``"
+      },
+      {
+        "titel": "Fragen nach dem Subjekt",
+        "text": "Fragt **who** oder **what** nach dem **Subjekt**, gibt es kein do/does/did:\n\n- ``Who called you?`` – ``Tom called me.`` (Tom ist Subjekt)\n- ``Who did you call?`` – ``I called Tom.`` (Tom ist Objekt)\n- ``What happened?`` (nicht: What did happen?)"
+      },
+      {
+        "titel": "Connecting words",
+        "text": "- **and**: und – ``I like Maths and I like Art.``\n- **but**: aber – ``I like Maths, but I don’t like Art.``\n- **because**: weil – ``I stayed at home because I was ill.`` (keine Umstellung des Verbs wie im Deutschen!)\n- **so**: also, deshalb – ``I was ill, so I stayed at home.``\n- **although**: obwohl – ``Although it was raining, we went to the beach.``"
+      }
+    ],
+    "merksatz": "S-V-O-P-T: Subjekt, Verb, Objekt, Ort, Zeit. Fragen und Verneinungen mit dem Hilfsverb der Zeit. Fragen nach dem Subjekt ohne do. Nach because und although bleibt die normale Wortstellung.",
+    "alltag": "Viele deutsche Lernende sagen „I have yesterday seen …“. Engländer verstehen das zwar, merken aber sofort, dass jemand aus dem Deutschen übersetzt."
+  },
+  "interaktiv": ["en-satzbaukasten"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-qwo-01", "typ": "reihenfolge", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Put the words in the correct order.",
+      "elemente": ["We", "met", "our", "friends", "at", "the", "station", "yesterday."],
+      "erklaerung": "Subjekt (We) – Verb (met) – Objekt (our friends) – Ort (at the station) – Zeit (yesterday)."
+    },
+    {
+      "id": "en-qwo-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Which sentence has the correct word order?",
+      "optionen": [
+        { "text": "Last week I visited my grandma in Hamburg.", "richtig": true },
+        { "text": "Last week visited I my grandma in Hamburg.", "feedback": "Das Verb bleibt hinter dem Subjekt, auch wenn der Satz mit einer Zeit beginnt." },
+        { "text": "I visited in Hamburg my grandma last week.", "feedback": "Das Objekt (my grandma) steht direkt hinter dem Verb, der Ort danach." },
+        { "text": "I last week my grandma in Hamburg visited.", "feedback": "Das Verb steht direkt hinter dem Subjekt." }
+      ],
+      "erklaerung": "Eine Zeitangabe darf am Anfang stehen, danach aber Subjekt + Verb."
+    },
+    {
+      "id": "en-qwo-03", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Which auxiliary (helping verb) do you need for the question?",
+      "paare": [
+        { "links": "___ you finished your project yet?", "rechts": "Have" },
+        { "links": "___ your brother play the drums?", "rechts": "Does" },
+        { "links": "___ you watch the match last night?", "rechts": "Did" },
+        { "links": "___ they waiting for the bus when you saw them?", "rechts": "Were" }
+      ],
+      "extraRechts": ["Do"],
+      "erklaerung": "yet → present perfect (Have), Gewohnheit bei he → Does, last night → Did, Handlung im Gange in der Vergangenheit → Were."
+    },
+    {
+      "id": "en-qwo-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Make a question: ``She went to Glasgow.`` → Where …?",
+      "optionen": [
+        { "text": "Where did she go?", "richtig": true },
+        { "text": "Where did she went?", "feedback": "Nach did steht die Grundform: go." },
+        { "text": "Where she went?", "feedback": "Fragen brauchen ein Hilfsverb: Where did she go?" },
+        { "text": "Where went she?", "feedback": "Englische Fragen mit Vollverb stellen nicht einfach um. Man braucht did." }
+      ],
+      "erklaerung": "Fragewort – did – Subjekt – Grundform."
+    },
+    {
+      "id": "en-qwo-05", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Answer: ``Mia invited Jonas.`` You want to know **who invited** Jonas. Which question is correct?",
+      "optionen": [
+        { "text": "Who invited Jonas?", "richtig": true },
+        { "text": "Who did invite Jonas?", "feedback": "Wenn who nach dem Subjekt fragt, braucht man kein did." },
+        { "text": "Who did Jonas invite?", "feedback": "Diese Frage fragt, wen Jonas eingeladen hat. Das ist eine andere Frage." },
+        { "text": "Whom invited Jonas?", "feedback": "Gesucht ist das Subjekt: Who invited Jonas?" }
+      ],
+      "erklaerung": "Frage nach dem Subjekt: Who + Verb in der normalen Form, ohne do/did."
+    },
+    {
+      "id": "en-qwo-06", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Choose the best connecting word.",
+      "paare": [
+        { "links": "I missed the bus, ___ I was late for school.", "rechts": "so" },
+        { "links": "I was late for school ___ I missed the bus.", "rechts": "because" },
+        { "links": "___ I ran to the bus stop, I missed the bus.", "rechts": "Although" },
+        { "links": "I ran to the bus stop, ___ I missed the bus.", "rechts": "but" }
+      ],
+      "erklaerung": "so: Folge, because: Grund, although/but: Gegensatz. Although leitet einen Nebensatz ein, but verbindet zwei Hauptsätze."
+    },
+    {
+      "id": "en-qwo-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Which sentence is correct?",
+      "optionen": [
+        { "text": "I didn’t go to the party because I had a cold.", "richtig": true },
+        { "text": "I didn’t go to the party because I a cold had.", "feedback": "Anders als im Deutschen bleibt nach because die normale Wortstellung." },
+        { "text": "I didn’t go to the party, because had I a cold.", "feedback": "Nach because folgt Subjekt – Verb: because I had …" },
+        { "text": "Because I had a cold I go not to the party.", "feedback": "Die Verneinung braucht ein Hilfsverb: I didn’t go." }
+      ],
+      "erklaerung": "Englische Nebensätze haben dieselbe Wortstellung wie Hauptsätze: Subjekt – Verb – Objekt."
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "id": "en-k7-tenses",
+  "titel": "Tenses compared: present, past and future",
+  "kurz": "Die Zeiten der ersten Lernjahre sicher unterscheiden: simple present oder present progressive, simple past oder present perfect, will oder going to.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Simple present und present progressive nach ihrer Verwendung und ihren Signalwörtern unterscheiden" },
+    { "id": "lz2", "niveau": "G", "text": "Das present perfect bilden (have/has + past participle) und unregelmäßige Formen kennen" },
+    { "id": "lz3", "niveau": "H", "text": "Simple past und present perfect kontrastiv verwenden" },
+    { "id": "lz4", "niveau": "H", "text": "Will-future und going-to future unterscheiden" }
+  ],
+  "verstehen": {
+    "einstieg": "„Ich habe gestern Pizza gegessen“ und „Ich habe schon gegessen“ – im Deutschen dieselbe Zeitform. Im Englischen sind es zwei verschiedene: „I ate pizza yesterday“ und „I have already eaten“. Warum?",
+    "abschnitte": [
+      {
+        "titel": "Simple present oder present progressive?",
+        "text": "- **Simple present**: Gewohnheiten, Fakten, Fahrpläne. Signalwörter: always, usually, often, every day. ``I walk to school every day.``\n- **Present progressive** (am/is/are + -ing): Handlung, die **gerade jetzt** passiert oder nur vorübergehend ist. Signalwörter: now, at the moment, Look!, Listen! ``Look! Tom is walking to school today, because his bike is broken.``\n\nVerben wie **like, love, hate, want, know, believe, understand** stehen fast nie in der -ing-Form: ``I know the answer.`` (nicht: I’m knowing)"
+      },
+      {
+        "titel": "Simple past oder present perfect?",
+        "text": "- **Simple past**: abgeschlossene Handlung zu einem **genannten Zeitpunkt in der Vergangenheit**: yesterday, last week, in 2019, two days ago, when … ``I saw the film last week.``\n- **Present perfect** (have/has + 3. Form): Der Zeitpunkt ist **unwichtig oder nicht genannt**, das **Ergebnis** zählt jetzt; oder etwas dauert bis jetzt an. Signalwörter: already, just, ever, never, yet, so far, since, for. ``I have already seen the film.`` ``Have you ever been to London?`` ``We have lived here for five years.``\n\n3. Form: regelmäßig auf -ed (played), unregelmäßig lernen: be – **been**, go – **gone**, see – **seen**, eat – **eaten**, write – **written**, take – **taken**, do – **done**.\n\nMerke: Steht ein vergangener Zeitpunkt im Satz, ist das present perfect falsch. Nicht „I have seen him yesterday“, sondern ``I saw him yesterday.``"
+      },
+      {
+        "titel": "will oder going to?",
+        "text": "- **going to**: Pläne, Absichten (schon entschieden), Vorhersagen mit sichtbaren Anzeichen. ``We’re going to visit Scotland in July.``\n- **will**: spontane Entschlüsse, Versprechen, Vermutungen über die Zukunft. ``The phone is ringing. – I’ll get it!`` ``I think it will be sunny tomorrow.`` ``I promise I won’t tell anybody.``\n\nVerneinung: will not = **won’t**."
+      }
+    ],
+    "merksatz": "Gewohnheit: simple present – gerade jetzt: present progressive. Vergangener Zeitpunkt genannt: simple past – Ergebnis/bis jetzt: present perfect (already, ever, never, yet, since, for). Plan: going to – spontan oder Vermutung: will.",
+    "alltag": "„Have you finished your homework?“ fragen Eltern auf Englisch – das Ergebnis interessiert, nicht der Zeitpunkt. Antwort: „Yes, I finished it an hour ago.“"
+  },
+  "interaktiv": ["en-zeitenmaschine"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-ten-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Complete: ``Be quiet! The baby ___.``",
+      "optionen": [
+        { "text": "is sleeping", "richtig": true },
+        { "text": "sleeps", "feedback": "Es passiert gerade jetzt → present progressive." },
+        { "text": "slept", "feedback": "„Be quiet!“ zeigt: Es geht um jetzt." },
+        { "text": "has slept", "feedback": "Das Baby schläft gerade, also: is sleeping." }
+      ],
+      "erklaerung": "Gerade jetzt → am/is/are + -ing."
+    },
+    {
+      "id": "en-ten-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Match the verbs with their past participle (3rd form).",
+      "paare": [
+        { "links": "go", "rechts": "gone" },
+        { "links": "write", "rechts": "written" },
+        { "links": "eat", "rechts": "eaten" },
+        { "links": "do", "rechts": "done" },
+        { "links": "be", "rechts": "been" }
+      ],
+      "extraRechts": ["went"],
+      "erklaerung": "went ist das simple past von go, nicht die 3. Form."
+    },
+    {
+      "id": "en-ten-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Which sentence is correct?",
+      "optionen": [
+        { "text": "We went to Edinburgh last summer.", "richtig": true },
+        { "text": "We have gone to Edinburgh last summer.", "feedback": "last summer ist ein genannter Zeitpunkt in der Vergangenheit → simple past." },
+        { "text": "We have been to Edinburgh last summer.", "feedback": "Mit last summer kein present perfect." },
+        { "text": "We go to Edinburgh last summer.", "feedback": "last summer liegt in der Vergangenheit." }
+      ],
+      "erklaerung": "Genannter Zeitpunkt in der Vergangenheit → simple past."
+    },
+    {
+      "id": "en-ten-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Complete: ``___ you ever ___ haggis?``",
+      "optionen": [
+        { "text": "Have … eaten", "richtig": true },
+        { "text": "Did … eaten", "feedback": "Nach did steht die Grundform. Mit ever fragt man meist im present perfect." },
+        { "text": "Have … ate", "feedback": "ate ist das simple past. Nach have steht die 3. Form: eaten." },
+        { "text": "Do … eat", "feedback": "ever (jemals) fragt nach Erfahrungen bis jetzt → present perfect." }
+      ],
+      "erklaerung": "Erfahrungen bis jetzt (ever, never) → present perfect."
+    },
+    {
+      "id": "en-ten-05", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Which sentences are correct?",
+      "optionen": [
+        { "text": "I know what you mean.", "richtig": true },
+        { "text": "My sister usually takes the bus.", "richtig": true },
+        { "text": "I’m wanting a new phone.", "feedback": "want steht nicht in der -ing-Form: I want a new phone." },
+        { "text": "Listen! Somebody is playing the piano.", "richtig": true },
+        { "text": "She is playing tennis every Monday.", "feedback": "every Monday ist eine Gewohnheit: She plays tennis every Monday." }
+      ],
+      "erklaerung": "Gewohnheit → simple present, gerade jetzt → progressive; know, want, like … ohne -ing."
+    },
+    {
+      "id": "en-ten-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Your friend says: „Oh no, I’ve forgotten my lunch.“ You answer spontaneously:",
+      "optionen": [
+        { "text": "Don’t worry, I’ll share my sandwiches with you.", "richtig": true },
+        { "text": "Don’t worry, I’m going to share my sandwiches with you.", "feedback": "going to drückt einen vorher gefassten Plan aus. Hier entscheidest du spontan." },
+        { "text": "Don’t worry, I share my sandwiches with you.", "feedback": "Für einen spontanen Entschluss braucht man will." },
+        { "text": "Don’t worry, I shared my sandwiches with you.", "feedback": "Das wäre Vergangenheit." }
+      ],
+      "erklaerung": "Spontane Entscheidung im Moment des Sprechens → will (I’ll)."
+    },
+    {
+      "id": "en-ten-07", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Which sentences use the present perfect correctly?",
+      "optionen": [
+        { "text": "We have lived in Berlin since 2018.", "richtig": true },
+        { "text": "I haven’t finished my homework yet.", "richtig": true },
+        { "text": "She has just arrived.", "richtig": true },
+        { "text": "He has broken his arm two weeks ago.", "feedback": "two weeks ago → simple past: He broke his arm two weeks ago." },
+        { "text": "Have you seen the match yesterday?", "feedback": "yesterday → simple past: Did you see the match yesterday?" }
+      ],
+      "erklaerung": "since, yet, just passen zum present perfect, ago und yesterday nicht."
+    }
+  ]
+}

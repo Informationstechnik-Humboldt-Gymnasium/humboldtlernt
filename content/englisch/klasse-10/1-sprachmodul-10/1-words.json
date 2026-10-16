@@ -1,0 +1,118 @@
+{
+  "id": "en-k10-words",
+  "titel": "Working with words: word formation, collocations, false friends and register",
+  "kurz": "Wortschatz gezielt erweitern: Vorsilben und Nachsilben, Synonyme und Antonyme, feste Wortverbindungen (make/do), false friends, Umschreiben und Sprachebenen.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Wörter mit Präfixen (un-, dis-, im-, in-, ir-, il-, mis-, re-) und Suffixen (-ness, -ment, -ful, -less, -able) bilden" },
+    { "id": "lz2", "niveau": "G", "text": "Typische Kollokationen kennen (make a mistake, do homework, take a photo)" },
+    { "id": "lz3", "niveau": "H", "text": "False friends erkennen und vermeiden" },
+    { "id": "lz4", "niveau": "H", "text": "Wörter umschreiben (paraphrasing) und zwischen formellem und informellem Register wählen" }
+  ],
+  "verstehen": {
+    "einstieg": "„I become a new phone for my birthday.“ Englische Freunde würden lachen: Du verwandelst dich in ein Handy! Viele Fehler in der Oberstufe sind keine Grammatik-, sondern Wortschatzfehler.",
+    "abschnitte": [
+      {
+        "titel": "Word formation",
+        "text": "- Verneinende Präfixe: **un**happy, **dis**honest, **im**possible (vor p, m, b), **in**correct, **ir**regular (vor r), **il**legal (vor l)\n- **mis-** (falsch): misunderstand; **re-** (wieder): rewrite; **over-** (zu viel): oversleep\n- Nomen: kind → kind**ness**, develop → develop**ment**, decide → deci**sion**, free → free**dom**\n- Adjektive: help → help**ful** / help**less**, accept → accept**able**, danger → danger**ous**\n\nWer die Bausteine kennt, versteht viele neue Wörter ohne Wörterbuch."
+      },
+      {
+        "titel": "Collocations",
+        "text": "Kollokationen sind Wörter, die „gern zusammen auftreten“. Man muss sie als Paar lernen:\n\n- **make**: a mistake, a decision, an effort, friends, money, a phone call, progress\n- **do**: homework, a favour, research, sport, your best, damage\n- **take**: a photo, a break, part in, a decision (auch: make a decision)\n- **have**: a party, a look, fun, a shower\n- **heavy** rain, **strong** coffee, **high** temperature, **fast** food"
+      },
+      {
+        "titel": "False friends",
+        "text": "Wörter, die deutschen Wörtern ähneln, aber etwas anderes bedeuten:\n\n- **become** = werden (bekommen = **get / receive**)\n- **actual(ly)** = tatsächlich (aktuell = **current**, **up to date**)\n- **eventually** = schließlich, am Ende (eventuell = **perhaps**, **possibly**)\n- **sensible** = vernünftig (sensibel = **sensitive**)\n- **gift** = Geschenk (Gift = **poison**)\n- **handy** = praktisch (Handy = **mobile phone**)\n- **chef** = Koch (Chef = **boss**)\n- **also** = auch (also = **so**, **therefore**)"
+      },
+      {
+        "titel": "Paraphrasing and register",
+        "text": "Fehlt dir ein Wort, **umschreibe** es: ``It’s a person who …`` ``It’s something you use to …`` ``It’s the opposite of …`` – mit **Synonymen** (big – large – huge) oder **Antonymen** (cheap ↔ expensive).\n\n**Register** (Sprachebene):\n\n- informell: ``kids``, ``get``, ``a lot of``, ``Thanks!``, Kurzformen (I’m)\n- formell: ``children``, ``receive/obtain``, ``a great deal of / numerous``, ``Thank you for …``, keine Kurzformen\n\nIn Aufsätzen, Briefen an Behörden und Bewerbungen schreibt man formell."
+      }
+    ],
+    "merksatz": "Präfixe verneinen (un-, dis-, im-, ir-, il-, in-) oder verändern (mis-, re-), Suffixe bilden Nomen (-ness, -ment) und Adjektive (-ful, -less, -able). Kollokationen lernen: make a mistake, do homework. False friends: become = werden, eventually = schließlich, sensible = vernünftig. Formelles Register in Aufsätzen.",
+    "alltag": "Ein einsprachiges Wörterbuch (z. B. ein Learner’s Dictionary) zeigt dir auch die Kollokationen und das Register eines Wortes – das zweisprachige oft nicht."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-wds-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Which prefix makes the opposite?",
+      "paare": [
+        { "links": "___possible", "rechts": "im" },
+        { "links": "___regular", "rechts": "ir" },
+        { "links": "___legal", "rechts": "il" },
+        { "links": "___honest", "rechts": "dis" }
+      ],
+      "extraRechts": ["re"],
+      "erklaerung": "impossible, irregular, illegal, dishonest. re- heißt „wieder“ und verneint nicht."
+    },
+    {
+      "id": "en-wds-02", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Complete with the right form of „help“: ``Without his glasses, the old man felt completely ___.``",
+      "optionen": [
+        { "text": "helpless", "richtig": true },
+        { "text": "helpful", "feedback": "helpful heißt hilfsbereit. Ohne Brille fühlt er sich eher hilflos." },
+        { "text": "helping", "feedback": "Gesucht ist ein Adjektiv mit der Bedeutung „hilflos“." },
+        { "text": "unhelpful", "feedback": "unhelpful heißt „nicht hilfsbereit“ – das passt nicht." }
+      ],
+      "erklaerung": "-less = ohne: helpless (hilflos)."
+    },
+    {
+      "id": "en-wds-03", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "make or do? Match the phrases.",
+      "paare": [
+        { "links": "___ a mistake", "rechts": "make" },
+        { "links": "___ your homework", "rechts": "do" }
+      ],
+      "erklaerung": "make a mistake, make a decision, make money; do homework, do research, do sport."
+    },
+    {
+      "id": "en-wds-04", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Which collocations are correct?",
+      "optionen": [
+        { "text": "take a photo", "richtig": true },
+        { "text": "heavy rain", "richtig": true },
+        { "text": "make a decision", "richtig": true },
+        { "text": "do a mistake", "feedback": "Es heißt make a mistake." },
+        { "text": "strong rain", "feedback": "Starker Regen heißt heavy rain." }
+      ],
+      "erklaerung": "Kollokationen lassen sich nicht wörtlich aus dem Deutschen übertragen."
+    },
+    {
+      "id": "en-wds-05", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Which sentences contain a false-friend mistake?",
+      "optionen": [
+        { "text": "I became a lot of presents for my birthday.", "richtig": true },
+        { "text": "Eventually I will come to your party, but I’m not sure yet.", "richtig": true },
+        { "text": "She is a very sensible person who always makes good decisions.", "feedback": "Richtig verwendet: sensible = vernünftig." },
+        { "text": "The actual news is on the website.", "richtig": true },
+        { "text": "He received a nice gift from his aunt.", "feedback": "Richtig: gift = Geschenk." }
+      ],
+      "erklaerung": "Richtig wäre: I got/received a lot of presents. Perhaps I will come … The current news …"
+    },
+    {
+      "id": "en-wds-06", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Match the informal words with their formal equivalents.",
+      "paare": [
+        { "links": "kids", "rechts": "children" },
+        { "links": "get (a letter)", "rechts": "receive" },
+        { "links": "a lot of", "rechts": "numerous" },
+        { "links": "Thanks!", "rechts": "Thank you for your help." },
+        { "links": "find out", "rechts": "discover" }
+      ],
+      "erklaerung": "Formelle Texte vermeiden Umgangssprache und viele phrasal verbs."
+    },
+    {
+      "id": "en-wds-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "You don’t know the English words for „Mülltrennung“ and „Pfandflasche“. Explain both to an English-speaking guest by paraphrasing (2–4 sentences).",
+      "stichworte": [
+        { "aspekt": "Mülltrennung: verschiedene Tonnen / Arten von Müll trennen", "woerter": ["separate", "different bins", "sort", "rubbish", "waste", "recycl"] },
+        { "aspekt": "Pfandflasche: man bekommt Geld zurück", "woerter": ["money back", "get some money", "deposit", "return"] },
+        { "aspekt": "Umschreibungs-Strategien (It’s something …, It’s when …)", "woerter": ["it's something", "it’s something", "it's when", "it’s when", "it's a", "it’s a", "it means", "you use"] }
+      ],
+      "musterloesung": "„Mülltrennung“ means that you separate your rubbish into different bins, for example paper, plastic and food waste, so that it can be recycled. A „Pfandflasche“ is a bottle that you take back to the shop after you have finished your drink. It’s a bit like a small deposit: you get some money back when you return it.",
+      "erklaerung": "Umschreiben mit It means …, It’s something …, It’s a bit like … hilft dir, wenn dir ein Wort fehlt."
+    }
+  ]
+}

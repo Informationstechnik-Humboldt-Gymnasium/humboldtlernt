@@ -1,0 +1,125 @@
+{
+  "id": "en-k5-family-home",
+  "titel": "My family and my home",
+  "kurz": "Familie, Räume und Dinge im Haus auf Englisch benennen, mit there is / there are beschreiben und britische Adressen lesen.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Familienmitglieder, Räume und Gegenstände im Haus auf Englisch benennen" },
+    { "id": "lz2", "niveau": "G", "text": "Mit there is und there are beschreiben, was es in einem Raum gibt" },
+    { "id": "lz3", "niveau": "G", "text": "Mit Präpositionen sagen, wo sich etwas befindet" },
+    { "id": "lz4", "niveau": "H", "text": "Britische und deutsche Adressen vergleichen und britische Haustypen kennen" }
+  ],
+  "verstehen": {
+    "einstieg": "Du bekommst einen Brieffreund in London. Er fragt: „What’s your home like?“ Wie beschreibst du dein Zimmer, deine Familie und eure Wohnung auf Englisch?",
+    "abschnitte": [
+      {
+        "titel": "Family",
+        "text": "- **mother / mum**, **father / dad**: Mutter, Vater – zusammen **parents**\n- **sister**, **brother**: Schwester, Bruder\n- **grandmother / grandma**, **grandfather / grandpa**: Großeltern (**grandparents**)\n- **aunt**, **uncle**, **cousin**: Tante, Onkel, Cousin oder Cousine\n\nAchtung: **parents** heißt Eltern. Verwandte heißen **relatives**."
+      },
+      {
+        "titel": "Rooms and things",
+        "text": "- Räume: **kitchen** (Küche), **living room** (Wohnzimmer), **bedroom** (Schlafzimmer), **bathroom** (Bad), **hall** (Flur), **garden** (Garten)\n- Dinge: **bed**, **desk** (Schreibtisch), **chair**, **cupboard** (Schrank), **shelf** (Regal, Mehrzahl **shelves**), **lamp**, **window**, **door**, **carpet** (Teppich)"
+      },
+      {
+        "titel": "There is / there are",
+        "text": "Wenn du sagst, was es gibt, benutzt du:\n\n- **There is** (kurz **There’s**) + eine Sache: ``There is a bed in my room.``\n- **There are** + mehrere Sachen: ``There are two windows.``\n- Verneinung: ``There isn’t a TV.`` / ``There aren’t any posters.``\n- Frage: ``Is there a desk?`` – ``Yes, there is.`` / ``No, there isn’t.``\n\nAuf Deutsch sagt man „Es gibt“ – auf Englisch nie „It gives“."
+      },
+      {
+        "titel": "Where is it?",
+        "text": "- **in** (in), **on** (auf), **under** (unter)\n- **next to** (neben), **behind** (hinter), **in front of** (vor)\n- **between** (zwischen)\n\n``The cat is under the bed. My bag is next to the desk.``"
+      },
+      {
+        "titel": "Homes and addresses in Britain",
+        "text": "Viele Briten wohnen in Häusern: in einer Reihe (**terraced house**), als Doppelhaushälfte (**semi-detached house**) oder in einem freistehenden Haus (**detached house**). In Städten gibt es auch Wohnungen (**flats**).\n\nIn britischen Adressen steht die **Hausnummer vor dem Straßennamen**: ``12 Park Road``. Die Postleitzahl (**postcode**) besteht aus Buchstaben und Zahlen und steht am Ende, z. B. ``London SE10 8XJ``. In Deutschland steht die Hausnummer hinter der Straße und die Postleitzahl hat fünf Ziffern vor dem Ort."
+      }
+    ],
+    "merksatz": "There is + eine Sache, there are + mehrere Sachen. Präpositionen sagen, wo etwas ist: in, on, under, next to, behind, in front of, between. In britischen Adressen steht die Hausnummer vor der Straße.",
+    "alltag": "In englischen Wohnungsanzeigen liest du oft „2-bed flat“ oder „semi-detached house with garden“. Mit diesen Wörtern verstehst du sofort, was gemeint ist."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-fho-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Match the English words with the German words.",
+      "paare": [
+        { "links": "kitchen", "rechts": "Küche" },
+        { "links": "cupboard", "rechts": "Schrank" },
+        { "links": "aunt", "rechts": "Tante" },
+        { "links": "parents", "rechts": "Eltern" },
+        { "links": "shelf", "rechts": "Regal" }
+      ],
+      "extraRechts": ["Verwandte"],
+      "erklaerung": "„Parents“ sind nur Mutter und Vater. Für alle Verwandten sagt man „relatives“."
+    },
+    {
+      "id": "en-fho-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Complete the sentence: ``___ two windows in my bedroom.``",
+      "optionen": [
+        { "text": "There are", "richtig": true },
+        { "text": "There is", "feedback": "„Two windows“ sind mehrere Sachen. Dann brauchst du „there are“." },
+        { "text": "It gives", "feedback": "„Es gibt“ heißt auf Englisch nie „it gives“." },
+        { "text": "They are", "feedback": "„They are“ heißt „sie sind“. Für „es gibt“ sagt man „there are“." }
+      ],
+      "erklaerung": "There are + Mehrzahl: There are two windows."
+    },
+    {
+      "id": "en-fho-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Which answer is correct? ``Is there a TV in your room?`` – Your room has no TV.",
+      "optionen": [
+        { "text": "No, there isn’t.", "richtig": true },
+        { "text": "No, there aren’t.", "feedback": "Die Frage ist „Is there …?“. Die Kurzantwort nimmt dasselbe Verb: isn’t." },
+        { "text": "No, it isn’t.", "feedback": "Bei Fragen mit „Is there …?“ antwortet man auch mit „there“." },
+        { "text": "No, there is.", "feedback": "Das wäre gar keine Verneinung." }
+      ],
+      "erklaerung": "Kurzantworten wiederholen den Anfang der Frage: Is there …? – Yes, there is. / No, there isn’t."
+    },
+    {
+      "id": "en-fho-04", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Where is it? Match the English prepositions with the German words.",
+      "paare": [
+        { "links": "under", "rechts": "unter" },
+        { "links": "next to", "rechts": "neben" },
+        { "links": "behind", "rechts": "hinter" },
+        { "links": "in front of", "rechts": "vor" },
+        { "links": "between", "rechts": "zwischen" }
+      ],
+      "erklaerung": "Merke besonders „in front of“ (vor) – es besteht aus drei Wörtern."
+    },
+    {
+      "id": "en-fho-05", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Which sentences are correct?",
+      "optionen": [
+        { "text": "There’s a lamp on my desk.", "richtig": true },
+        { "text": "There are three chairs in the kitchen.", "richtig": true },
+        { "text": "There is two beds in the room.", "feedback": "Zwei Betten sind Mehrzahl: There are two beds." },
+        { "text": "There aren’t any posters on the wall.", "richtig": true },
+        { "text": "It gives a garden behind the house.", "feedback": "Richtig wäre: There is a garden behind the house." }
+      ],
+      "erklaerung": "There’s ist die Kurzform von there is. In der Verneinung mit Mehrzahl sagt man oft „aren’t any“."
+    },
+    {
+      "id": "en-fho-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Which address is written the British way?",
+      "optionen": [
+        { "text": "Emma Brown, 12 Park Road, London SE10 8XJ", "richtig": true },
+        { "text": "Emma Brown, Park Road 12, 10115 London", "feedback": "So schreibt man in Deutschland: Hausnummer hinter der Straße, fünfstellige Postleitzahl vor dem Ort." },
+        { "text": "Emma Brown, London, 12 Park Road SE10 8XJ", "feedback": "Der Ort steht nicht vor der Straße. Die Reihenfolge ist: Hausnummer und Straße, dann Ort und Postcode." },
+        { "text": "Emma Brown, Road Park 12, London", "feedback": "Der Straßenname heißt „Park Road“, und die Nummer steht davor." }
+      ],
+      "erklaerung": "Britische Adressen: Hausnummer vor dem Straßennamen, am Ende Ort und Postcode aus Buchstaben und Zahlen."
+    },
+    {
+      "id": "en-fho-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Describe your room in three or four English sentences. Use „there is“, „there are“ and at least one preposition (in, on, under, next to …).",
+      "stichworte": [
+        { "aspekt": "„There is …“ für eine Sache", "woerter": ["there is", "there's"] },
+        { "aspekt": "„There are …“ für mehrere Sachen", "woerter": ["there are"] },
+        { "aspekt": "Eine Präposition, die sagt, wo etwas ist", "woerter": ["next to", "under", "behind", "in front of", "between", " on ", " in "] },
+        { "aspekt": "Wörter für Möbel oder Dinge im Zimmer", "woerter": ["bed", "desk", "chair", "cupboard", "shelf", "lamp", "window", "carpet", "poster"] }
+      ],
+      "musterloesung": "My room is small but nice. There is a bed next to the window. There are two shelves on the wall, and there is a lamp on my desk. My cat often sleeps under the bed.",
+      "erklaerung": "Achte auf is bei einer Sache und are bei mehreren Sachen. Präpositionen machen deine Beschreibung genauer."
+    }
+  ]
+}

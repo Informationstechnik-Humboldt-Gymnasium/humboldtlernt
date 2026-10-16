@@ -1,0 +1,112 @@
+{
+  "id": "en-k9-narrative-perspective",
+  "titel": "Who tells the story? Narrative perspective and quoting",
+  "kurz": "First-person und third-person narrator, allwissender und begrenzter Erzähler, unzuverlässiges Erzählen, Exposition – und wie man richtig aus einem Text zitiert.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "First-person narrator, third-person limited und omniscient narrator unterscheiden" },
+    { "id": "lz2", "niveau": "H", "text": "Die Wirkung der Erzählperspektive und die Frage der reliability erklären" },
+    { "id": "lz3", "niveau": "G", "text": "Grundbegriffe des Aufbaus einer Geschichte kennen (exposition, climax, ending)" },
+    { "id": "lz4", "niveau": "G", "text": "Korrekt aus einem Text zitieren und auf Zeilen verweisen" }
+  ],
+  "verstehen": {
+    "einstieg": "„I didn’t steal the money. Everybody knows I’m honest.“ Glaubst du dem Erzähler? Bei einer Ich-Erzählung sehen wir alles durch die Augen einer einzigen Figur – und die kann sich irren oder lügen.",
+    "abschnitte": [
+      {
+        "titel": "Narrative perspectives",
+        "text": "- **First-person narrator**: Eine Figur erzählt selbst (I, we). Wir erfahren ihre Gedanken und Gefühle, aber nur, was sie weiß. Wirkung: Nähe, Identifikation – aber auch eine eingeschränkte, subjektive Sicht.\n- **Third-person limited narrator**: Erzählt in der dritten Person (he, she), folgt aber nur einer Figur und kennt nur deren Gedanken.\n- **Third-person omniscient narrator**: allwissend; kennt die Gedanken aller Figuren, weiß, was an verschiedenen Orten passiert, und kommentiert manchmal.\n\nWichtig: Der **narrator** ist nicht der **author**! Der Autor erfindet den Erzähler."
+      },
+      {
+        "titel": "Reliability",
+        "text": "Ein **unreliable narrator** (unzuverlässiger Erzähler) erzählt nicht ganz die Wahrheit: weil er ein Kind ist und vieles nicht versteht, weil er sich selbst belügt, weil er etwas verbergen will oder weil er die Welt ungewöhnlich wahrnimmt. Leser müssen dann zwischen den Zeilen lesen. Hinweise: Widersprüche, auffällige Rechtfertigungen, Reaktionen anderer Figuren."
+      },
+      {
+        "titel": "Structure of a story",
+        "text": "- **exposition**: Einführung in Figuren, Ort (**setting**) und Situation\n- **rising action**: der Konflikt entwickelt sich, Spannung steigt\n- **climax**: Höhepunkt, Wendepunkt\n- **falling action** und **ending**: Auflösung – oder ein **open ending**, bei dem die Leser selbst weiterdenken müssen"
+      },
+      {
+        "titel": "Quoting correctly",
+        "text": "- Zitate stehen in Anführungszeichen und **genau** wie im Text; Zeilenangabe in Klammern: ``Anna says she feels „completely invisible“ (l. 14).``\n- Mehrere Zeilen: **(ll. 14–16)**; Auslassungen: **[…]**\n- Zitate müssen sich in deinen Satz einfügen und **erklärt** werden: Was zeigt das Zitat?\n- Oft reicht ein **Verweis** ohne Zitat: ``(cf. l. 20)`` (cf. = vergleiche)\n- Einleitende Verben: says, claims, admits, explains, describes, points out"
+      }
+    ],
+    "merksatz": "First-person: Ich-Erzähler, nah, aber subjektiv. Third-person limited: er/sie, nur eine Figur von innen. Omniscient: allwissend. Narrator ≠ author. Unreliable narrator: Leser müssen zwischen den Zeilen lesen. Zitate genau, mit (l. …) oder (ll. …–…), und immer erklären.",
+    "alltag": "In vielen Jugendromanen erzählt eine Ich-Erzählerin – deshalb fühlt man sich der Hauptfigur so nah. Ein Perspektivwechsel in einem neuen Kapitel kann die ganze Geschichte plötzlich anders aussehen lassen."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-nar-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Which narrative perspective is used?",
+      "paare": [
+        { "links": "„I knew something was wrong the moment I opened the door.“", "rechts": "first-person narrator" },
+        { "links": "„Tom was nervous. He wondered if Lisa would come. Meanwhile, across town, Lisa was deciding to stay at home.“", "rechts": "omniscient narrator" },
+        { "links": "„Sara walked into the room. She had no idea why everybody suddenly stopped talking.“", "rechts": "third-person limited narrator" }
+      ],
+      "erklaerung": "Der allwissende Erzähler weiß, was Tom denkt und was Lisa an einem anderen Ort tut. Der begrenzte Erzähler kennt nur Saras Sicht."
+    },
+    {
+      "id": "en-nar-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Which statement is true?",
+      "optionen": [
+        { "text": "The narrator and the author are not the same person.", "richtig": true },
+        { "text": "A first-person narrator always tells the truth.", "feedback": "Gerade Ich-Erzähler können unzuverlässig sein." },
+        { "text": "An omniscient narrator only knows the thoughts of the main character.", "feedback": "Ein allwissender Erzähler kennt die Gedanken aller Figuren." },
+        { "text": "Stories with „he“ and „she“ are always told by an omniscient narrator.", "feedback": "Es gibt auch den third-person limited narrator." }
+      ],
+      "erklaerung": "Der Autor erfindet den Erzähler – auch einen Ich-Erzähler, der ganz anders ist als er selbst."
+    },
+    {
+      "id": "en-nar-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "What is the main effect of a first-person narrator?",
+      "optionen": [
+        { "text": "The reader feels close to the narrator but only sees the events from one subjective point of view.", "richtig": true },
+        { "text": "The reader knows everything about all characters.", "feedback": "Das wäre die Wirkung eines allwissenden Erzählers." },
+        { "text": "The story becomes completely objective.", "feedback": "Ein Ich-Erzähler ist immer subjektiv." },
+        { "text": "The reader cannot learn anything about the narrator’s feelings.", "feedback": "Im Gegenteil: Gedanken und Gefühle stehen im Mittelpunkt." }
+      ],
+      "erklaerung": "Nähe und Identifikation – aber eine eingeschränkte Sicht."
+    },
+    {
+      "id": "en-nar-04", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Which signs can show that a narrator is **unreliable**?",
+      "optionen": [
+        { "text": "The narrator contradicts himself.", "richtig": true },
+        { "text": "Other characters react in a way that doesn’t fit the narrator’s description.", "richtig": true },
+        { "text": "The narrator keeps saying that everything was not his fault.", "richtig": true },
+        { "text": "The story is written in the past tense.", "feedback": "Die Zeitform sagt nichts über die Zuverlässigkeit." },
+        { "text": "The story has a title.", "feedback": "Das hat mit der Zuverlässigkeit nichts zu tun." }
+      ],
+      "erklaerung": "Widersprüche, auffällige Rechtfertigungen und abweichende Reaktionen anderer machen misstrauisch."
+    },
+    {
+      "id": "en-nar-05", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Put the parts of a typical story structure in order.",
+      "elemente": ["exposition", "rising action", "climax", "falling action", "ending"],
+      "erklaerung": "Einführung – steigende Spannung – Höhepunkt – fallende Handlung – Ende."
+    },
+    {
+      "id": "en-nar-06", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Which sentence quotes correctly?",
+      "optionen": [
+        { "text": "Anna feels lonely at her new school, as she says she is „completely invisible“ (l. 14).", "richtig": true },
+        { "text": "Anna feels lonely at her new school. „completely invisible“", "feedback": "Das Zitat steht unverbunden da und hat keine Zeilenangabe." },
+        { "text": "Anna feels lonely at her new school, as she says she is completely invisible (line fourteen, page 3, paragraph 2).", "feedback": "Es fehlen die Anführungszeichen, und die Angabe ist viel zu umständlich: (l. 14)." },
+        { "text": "Anna says on line 14 that she feels completely invisible and very lonely and sad.", "feedback": "Hier wird nicht wörtlich zitiert, sondern ungenau umschrieben – ohne Anführungszeichen." }
+      ],
+      "erklaerung": "Zitat in Anführungszeichen, in den eigenen Satz eingebaut, mit (l. …)."
+    },
+    {
+      "id": "en-nar-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Read the extract and analyse the narrative perspective and its effect (3–4 sentences).\n\n„(1) I didn’t take the phone. (2) Okay, I picked it up, but only to look at it. (3) Everybody always blames me, so I didn’t say anything when Mr Carter asked. (4) Later I found it in my bag – somebody must have put it there.“",
+      "stichworte": [
+        { "aspekt": "First-person narrator", "woerter": ["first-person", "first person", "i-narrator"] },
+        { "aspekt": "Subjektive, eingeschränkte Sicht / Nähe", "woerter": ["subjective", "only his", "only her", "point of view", "close", "thoughts"] },
+        { "aspekt": "Unreliable narrator mit Beleg (Widerspruch, Rechtfertigung)", "woerter": ["unreliable", "contradict", "doesn't tell the truth", "doesn’t tell the truth", "excuse", "lie"] },
+        { "aspekt": "Zeilenverweis", "woerter": ["(l.", "line", "ll."] }
+      ],
+      "musterloesung": "The extract is told by a first-person narrator, so the reader only gets his subjective point of view. At first he says he didn’t take the phone (l. 1), but then he admits that he picked it up (l. 2) and later finds it in his bag (l. 4). These contradictions and his excuses show that he is an unreliable narrator. The reader has to read between the lines and probably doubts his version of the story.",
+      "erklaerung": "Perspektive benennen, Wirkung erklären und Belege mit Zeilenangaben nennen – so sieht eine kurze Analyse aus."
+    }
+  ]
+}

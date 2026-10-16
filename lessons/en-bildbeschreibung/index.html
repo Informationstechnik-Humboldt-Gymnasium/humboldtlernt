@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bild-Labor: Describing a picture</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<style>
+  .lk-grid > * { min-width: 0; }
+  .seg { flex-wrap: wrap; }
+  #bild { border-radius: 10px; border: 2px solid var(--line); }
+  #bild .himmel { fill: var(--soft-accent); }
+  #bild .wiese { fill: var(--ok-soft); }
+  #bild .weg { fill: var(--bg); stroke: var(--border); }
+  #bild .linie { stroke: var(--line); stroke-width: 1.4; fill: none; }
+  #bild .fl1 { fill: var(--accent); stroke: var(--line); stroke-width: 1; }
+  #bild .fl2 { fill: var(--pos); stroke: var(--line); stroke-width: 1; }
+  #bild .fl3 { fill: var(--ok); stroke: var(--line); stroke-width: 1; }
+  #bild .fl4 { fill: var(--lamp); stroke: var(--line); stroke-width: 1; }
+  #bild .fl5 { fill: var(--card); stroke: var(--line); stroke-width: 1; }
+  #bild .fl6 { fill: var(--muted); stroke: var(--line); stroke-width: 1; }
+  #bild .wasser { fill: var(--neg); opacity: .35; }
+  #bild .obj { cursor: pointer; }
+  #bild .obj:focus { outline: none; }
+  #bild .rahmen { fill: none; stroke: var(--accent); stroke-width: 3; stroke-dasharray: 6 4; }
+  #bild .raster line { stroke: var(--text); stroke-width: 1; stroke-dasharray: 3 4; opacity: .55; }
+  #bild .raster text { font-size: 10px; font-weight: 700; fill: var(--text) !important; opacity: .8; text-anchor: middle; }
+  .etikett { display: inline-block; font-size: .72rem; font-weight: 700; padding: 1px 7px; border-radius: 99px; background: var(--bg); color: var(--muted); border: 1px solid var(--border); }
+  .beschreibung { font-size: 1.05rem; margin: 10px 0 0; min-height: 1.6em; }
+  .beschreibung .ort { background: var(--soft-accent); padding: 1px 5px; border-radius: 6px; font-weight: 650; }
+  .beschreibung .verb { background: var(--ok-soft); color: var(--ok); padding: 1px 5px; border-radius: 6px; font-weight: 650; }
+  .objekte { display: flex; flex-wrap: wrap; gap: 6px; }
+  .objekte button { font-size: .85rem; padding: 5px 9px; }
+  .objekte button.gesehen::after { content: " ✓"; color: var(--ok); }
+  .quiz { margin: 10px 0 0; padding: 8px 10px; border-radius: 10px; background: var(--bg); font-size: .95rem; }
+  .quiz b { color: var(--accent); }
+  .meldung { margin: 6px 0 0; font-size: .9rem; }
+  .meldung.ok { color: var(--ok); } .meldung.no { color: var(--warn); }
+</style>
+</head>
+<body>
+<h1>Bild-Labor: Describing a picture</h1>
+<p class="muted small">Tippe auf Personen und Dinge im Bild. Du erhältst einen englischen Beschreibungssatz mit der Ortsangabe im Bild und dem passenden Verb im present progressive. Im Quiz suchst du selbst, was beschrieben wird.</p>
+
+<div class="lk-grid">
+  <div>
+    <div class="lk-card">
+      <h2>A day in the park <span class="etikett">Zeichnung</span></h2>
+      <svg id="bild" viewBox="0 0 360 240" role="img" aria-label="Zeichnung eines Stadtparks mit Hochhäusern, Teich, Bank, Imbissstand, Picknick, Jogger, Mädchen mit Hund und Drachen"></svg>
+      <p class="beschreibung" id="beschreibung" aria-live="polite">Tippe auf etwas im Bild.</p>
+    </div>
+  </div>
+  <div>
+    <div class="lk-card">
+      <h2>Einstellungen</h2>
+      <div class="row"><div class="seg" role="group" aria-label="Modus">
+        <button type="button" id="mErk" aria-pressed="true">Erkunden</button>
+        <button type="button" id="mQuiz" aria-pressed="false">Quiz</button>
+      </div>
+      <button type="button" id="bRaster" aria-pressed="false">Raster zeigen</button></div>
+      <div class="quiz" id="quiz" hidden></div>
+      <p class="small" style="margin:10px 0 4px"><b>Objekte</b> (auch ohne Maus wählbar)</p>
+      <div class="objekte" id="objekte"></div>
+      <div class="readouts" style="margin-top:12px">
+        <div class="readout"><span>beschrieben</span><b id="rAnz">0 / 9</b></div>
+        <div class="readout"><span>Quiz richtig</span><b id="rQuiz">0</b></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="lk-card tasks">
+  <h2>Entdecke selbst <span class="small muted" data-task-count></span></h2>
+  <div class="task" data-goal="raster"><p class="task-q">Blende das <b>Raster</b> ein: Welche drei Bereiche gibt es von oben nach unten?</p></div>
+  <div class="task" data-goal="vier"><p class="task-q">Lass dir mindestens <b>vier verschiedene</b> Dinge im Bild beschreiben.</p></div>
+  <div class="task" data-goal="quiz"><p class="task-q">Löse im Quiz <b>drei</b> Aufgaben richtig.</p></div>
+  <div class="task">
+    <p class="task-q">Welche Zeitform benutzt man, um zu beschreiben, was auf einem Bild gerade passiert?</p>
+    <div class="choices">
+      <button type="button" data-ok data-fb="Richtig: A girl is walking her dog. Ducks are swimming in the pond.">present progressive</button>
+      <button type="button" data-fb="Das Bild zeigt einen Moment in der Gegenwart, nicht die Vergangenheit.">simple past</button>
+      <button type="button" data-fb="Für Gewohnheiten ja – aber das Bild zeigt, was gerade passiert.">simple present</button>
+    </div><p class="fb"></p>
+  </div>
+  <div class="task">
+    <p class="task-q">Welcher Satz beschreibt die <b>Atmosphäre</b> des Bildes am besten?</p>
+    <div class="choices">
+      <button type="button" data-fb="Nichts im Bild wirkt gefährlich.">The picture creates a threatening atmosphere.</button>
+      <button type="button" data-ok data-fb="Richtig: Sonne, Picknick, spielende Kinder – alles wirkt entspannt und friedlich.">The bright colours and people enjoying their free time create a relaxed and peaceful atmosphere.</button>
+      <button type="button" data-fb="Die Menschen wirken eher fröhlich als traurig.">The picture makes the viewer feel sad and lonely.</button>
+    </div><p class="fb"></p>
+  </div>
+  <div class="all-done">Alles entdeckt! Weiter geht es mit den Übungen.</div>
+</div>
+
+<script src="../../static/lesson-kit.js"></script>
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+  var NS = 'http://www.w3.org/2000/svg';
+  // Bildbereiche: Zeile 0 = background, 1 = middle, 2 = foreground; Spalte 0 = left, 1 = centre, 2 = right
+  var OBJEKTE = [
+    { id: 'kite', name: 'kite', ort: 'At the top in the centre', rest: ['a red kite', 'is flying', 'in the sky.'] },
+    { id: 'trees', name: 'trees', ort: 'In the background on the left', rest: ['some tall trees', 'are moving', 'in the wind.'] },
+    { id: 'towers', name: 'skyscrapers', ort: 'In the background on the right', rest: ['you', 'can see', 'tall skyscrapers.'] },
+    { id: 'pond', name: 'ducks', ort: 'In the middle on the left', rest: ['three ducks', 'are swimming', 'in a pond.'] },
+    { id: 'bench', name: 'old couple', ort: 'In the centre', rest: ['an old couple', 'is sitting', 'on a bench.'] },
+    { id: 'stand', name: 'food stand', ort: 'In the middle on the right', rest: ['a man', 'is selling', 'hot dogs at a food stand.'] },
+    { id: 'girl', name: 'girl and dog', ort: 'In the foreground on the left', rest: ['a girl', 'is walking', 'her dog.'] },
+    { id: 'picnic', name: 'family', ort: 'In the foreground in the centre', rest: ['a family', 'is having', 'a picnic.'] },
+    { id: 'jogger', name: 'jogger', ort: 'In the foreground on the right', rest: ['a man in a blue T-shirt', 'is jogging', 'along the path.'] },
+  ];
+  var S = { modus: 'erk', raster: false, wahl: null, gesehen: {}, quiz: null, richtig: 0, reihe: [] };
+
+  function sv(tag, a, eltern) { var e = document.createElementNS(NS, tag); for (var k in a) e.setAttribute(k, a[k]); if (eltern) eltern.appendChild(e); return e; }
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined) e.textContent = text; return e; }
+
+  // ------------------------------------------------ Zeichnung
+  var gruppen = {};
+  function obj(id) {
+    var g = sv('g', { 'class': 'obj', 'data-id': id }, $('bild'));
+    g.addEventListener('click', function () { waehle(id); });
+    gruppen[id] = g;
+    return g;
+  }
+  function figur(g, x, y, s, kleid) {
+    sv('circle', { cx: x, cy: y - 22 * s, r: 4.5 * s, 'class': 'fl5' }, g);
+    sv('rect', { x: x - 4 * s, y: y - 17 * s, width: 8 * s, height: 11 * s, rx: 2 * s, 'class': kleid }, g);
+    sv('path', { d: 'M' + (x - 2.5 * s) + ' ' + (y - 6 * s) + ' L' + (x - 3.5 * s) + ' ' + y + ' M' + (x + 2.5 * s) + ' ' + (y - 6 * s) + ' L' + (x + 3.5 * s) + ' ' + y, 'class': 'linie' }, g);
+  }
+  function zeichneBild() {
+    var svg = $('bild');
+    sv('rect', { x: 0, y: 0, width: 360, height: 80, 'class': 'himmel' }, svg);
+    sv('rect', { x: 0, y: 80, width: 360, height: 160, 'class': 'wiese' }, svg);
+    sv('path', { d: 'M150 240 C 170 190 200 150 250 120 L 270 120 C 230 155 205 195 200 240 Z', 'class': 'weg' }, svg);
+    // Drachen
+    var g = obj('kite');
+    sv('path', { d: 'M180 14 L192 28 L180 46 L168 28 Z', 'class': 'fl2' }, g);
+    sv('path', { d: 'M180 46 C 176 56 186 62 182 72', 'class': 'linie' }, g);
+    // Bäume
+    g = obj('trees');
+    [[30, 78], [62, 72], [95, 80]].forEach(function (p) {
+      sv('rect', { x: p[0] - 3, y: p[1] - 4, width: 6, height: 18, 'class': 'fl6' }, g);
+      sv('circle', { cx: p[0], cy: p[1] - 16, r: 16, 'class': 'fl3' }, g);
+    });
+    // Hochhäuser
+    g = obj('towers');
+    [[250, 30, 22], [276, 14, 26], [306, 38, 20], [330, 22, 24]].forEach(function (b) {
+      sv('rect', { x: b[0], y: b[1], width: b[2], height: 80 - b[1], 'class': 'fl6' }, g);
+      for (var yy = b[1] + 6; yy < 74; yy += 10) sv('line', { x1: b[0] + 4, y1: yy, x2: b[0] + b[2] - 4, y2: yy, 'class': 'linie', style: 'stroke-width:.8;opacity:.6' }, g);
+    });
+    // Teich mit Enten
+    g = obj('pond');
+    sv('ellipse', { cx: 62, cy: 128, rx: 50, ry: 18, 'class': 'wasser' }, g);
+    [[40, 126], [62, 132], [82, 124]].forEach(function (d) {
+      sv('ellipse', { cx: d[0], cy: d[1], rx: 6, ry: 3.5, 'class': 'fl4' }, g);
+      sv('circle', { cx: d[0] + 5, cy: d[1] - 4, r: 2.6, 'class': 'fl3' }, g);
+    });
+    // Bank mit Paar
+    g = obj('bench');
+    figur(g, 170, 132, 1, 'fl1'); figur(g, 186, 132, 1, 'fl2');
+    sv('rect', { x: 156, y: 122, width: 46, height: 5, 'class': 'fl6' }, g);
+    sv('path', { d: 'M160 127 L160 136 M198 127 L198 136', 'class': 'linie' }, g);
+    // Imbissstand
+    g = obj('stand');
+    sv('rect', { x: 282, y: 112, width: 52, height: 30, 'class': 'fl5' }, g);
+    sv('path', { d: 'M278 112 L338 112 L332 100 L284 100 Z', 'class': 'fl2' }, g);
+    figur(g, 308, 112, 0.8, 'fl1');
+    sv('text', { x: 308, y: 132, 'font-size': 8, 'text-anchor': 'middle' }, g).textContent = 'HOT DOGS';
+    // Mädchen mit Hund
+    g = obj('girl');
+    figur(g, 50, 214, 1.6, 'fl2');
+    sv('path', { d: 'M56 192 C 70 196 80 200 86 204', 'class': 'linie' }, g);
+    sv('ellipse', { cx: 92, cy: 208, rx: 11, ry: 6, 'class': 'fl4' }, g);
+    sv('circle', { cx: 103, cy: 202, r: 5, 'class': 'fl4' }, g);
+    sv('path', { d: 'M86 212 L85 218 M98 212 L99 218', 'class': 'linie' }, g);
+    // Picknick
+    g = obj('picnic');
+    sv('rect', { x: 140, y: 196, width: 70, height: 26, 'class': 'fl2', transform: 'skewX(-12)' }, g);
+    figur(g, 150, 212, 1.3, 'fl1'); figur(g, 172, 212, 1, 'fl3'); figur(g, 194, 212, 1.3, 'fl4');
+    // Jogger
+    g = obj('jogger');
+    sv('circle', { cx: 300, cy: 172, r: 7, 'class': 'fl5' }, g);
+    sv('rect', { x: 293, y: 180, width: 14, height: 20, rx: 3, 'class': 'fl1', transform: 'rotate(12 300 190)' }, g);
+    sv('path', { d: 'M298 200 L286 220 M304 200 L316 216 L322 222 M294 186 L282 196 M306 184 L318 178', 'class': 'linie', style: 'stroke-width:2.4' }, g);
+    // Auswahlrahmen und Raster
+    sv('rect', { id: 'auswahl', x: 0, y: 0, width: 10, height: 10, rx: 8, 'class': 'rahmen' }, svg).toggleAttribute('hidden', true);
+    var r = sv('g', { id: 'raster', 'class': 'raster' }, svg);
+    r.toggleAttribute('hidden', true);
+    [80, 160].forEach(function (y) { sv('line', { x1: 0, y1: y, x2: 360, y2: y }, r); });
+    [120, 240].forEach(function (x) { sv('line', { x1: x, y1: 0, x2: x, y2: 240 }, r); });
+    [['background', 12], ['middle', 92], ['foreground', 172]].forEach(function (z) {
+      ['left', 'centre', 'right'].forEach(function (s, i) { sv('text', { x: 60 + i * 120, y: z[1] }, r).textContent = z[0] + ' · ' + s; });
+    });
+  }
+
+  // ------------------------------------------------ Auswahl und Beschreibung
+  function waehle(id) {
+    var o = OBJEKTE.find(function (x) { return x.id === id; });
+    var bb = gruppen[id].getBBox(), rah = $('auswahl');
+    rah.setAttribute('x', bb.x - 5); rah.setAttribute('y', bb.y - 5); rah.setAttribute('width', bb.width + 10); rah.setAttribute('height', bb.height + 10);
+    rah.toggleAttribute('hidden', false);
+    if (S.modus === 'quiz') { quizAntwort(id); return; }
+    S.gesehen[id] = 1;
+    var b = $('beschreibung'); b.textContent = '';
+    b.appendChild(el('span', 'ort', o.ort));
+    b.appendChild(document.createTextNode(', ' + o.rest[0] + ' '));
+    b.appendChild(el('span', 'verb', o.rest[1]));
+    b.appendChild(document.createTextNode(' ' + o.rest[2]));
+    knopfliste();
+    if (Object.keys(S.gesehen).length >= 4) LK.reach('vier');
+  }
+
+  function knopfliste() {
+    var box = $('objekte'); box.textContent = '';
+    OBJEKTE.forEach(function (o) {
+      var b = el('button', S.gesehen[o.id] ? 'gesehen' : '', o.name); b.type = 'button';
+      b.addEventListener('click', function () { waehle(o.id); });
+      box.appendChild(b);
+    });
+    $('rAnz').textContent = Object.keys(S.gesehen).length + ' / ' + OBJEKTE.length;
+    $('rQuiz').textContent = String(S.richtig);
+  }
+
+  // ------------------------------------------------ Quiz
+  function neueFrage() {
+    if (!S.reihe.length) S.reihe = ['towers', 'girl', 'bench', 'kite', 'stand', 'pond', 'jogger', 'trees', 'picnic'];
+    S.quiz = S.reihe.shift();
+    var o = OBJEKTE.find(function (x) { return x.id === S.quiz; });
+    var q = $('quiz'); q.textContent = '';
+    q.appendChild(document.createTextNode('Tippe an, was hier beschrieben wird: '));
+    q.appendChild(el('b', '', '„' + o.ort + ', …“'));
+    q.appendChild(document.createTextNode(' – what can you see there?'));
+    q.appendChild(el('p', 'meldung', ''));
+  }
+  function quizAntwort(id) {
+    var o = OBJEKTE.find(function (x) { return x.id === S.quiz; });
+    var m = $('quiz').querySelector('.meldung');
+    if (id === S.quiz) {
+      S.richtig++; S.gesehen[id] = 1;
+      m.className = 'meldung ok';
+      m.textContent = '✓ Richtig: ' + o.ort + ', ' + o.rest.join(' ');
+      knopfliste();
+      if (S.richtig >= 3) LK.reach('quiz');
+      setTimeout(neueFrage, 1600);
+    } else {
+      m.className = 'meldung no';
+      m.textContent = 'Nicht ganz. Achte auf die Ortsangabe: foreground = vorne/unten, background = hinten/oben, left/right aus deiner Sicht.';
+    }
+  }
+
+  function setzeModus(m) {
+    S.modus = m;
+    $('mErk').setAttribute('aria-pressed', String(m === 'erk'));
+    $('mQuiz').setAttribute('aria-pressed', String(m === 'quiz'));
+    $('quiz').hidden = m !== 'quiz';
+    $('auswahl').toggleAttribute('hidden', true);
+    if (m === 'quiz') { $('beschreibung').textContent = 'Quiz: Lies die Ortsangabe rechts und tippe auf das passende Motiv.'; neueFrage(); }
+    else $('beschreibung').textContent = 'Tippe auf etwas im Bild.';
+  }
+
+  $('mErk').addEventListener('click', function () { setzeModus('erk'); });
+  $('mQuiz').addEventListener('click', function () { setzeModus('quiz'); });
+  $('bRaster').addEventListener('click', function () {
+    S.raster = !S.raster;
+    this.setAttribute('aria-pressed', String(S.raster));
+    $('raster').toggleAttribute('hidden', !S.raster);
+    if (S.raster) LK.reach('raster');
+  });
+
+  zeichneBild();
+  knopfliste();
+})();
+</script>
+</body>
+</html>

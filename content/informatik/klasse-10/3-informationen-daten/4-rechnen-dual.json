@@ -1,0 +1,135 @@
+{
+  "id": "inf-k10-rechnen-dual",
+  "titel": "Rechnen im Dual- und Hexadezimalsystem",
+  "kurz": "Wie man Dualzahlen schriftlich addiert, warum Verschieben nach links verdoppelt, was ein Überlauf ist und wie man Hexadezimalzahlen addiert.",
+  "reihenfolge": 4,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Dualzahlen schriftlich addieren und dabei Überträge beachten" },
+    { "id": "lz2", "niveau": "G", "text": "Erklären, dass das Verschieben einer Dualzahl um eine Stelle nach links eine Multiplikation mit 2 bedeutet" },
+    { "id": "lz3", "niveau": "H", "text": "Einen Überlauf bei einer festen Anzahl von Bits erkennen, berechnen und seine Folgen erklären" },
+    { "id": "lz4", "niveau": "H", "text": "Hexadezimalzahlen addieren" }
+  ],
+  "verstehen": {
+    "einstieg": "Ein Prozessor kann eigentlich nur mit Nullen und Einsen umgehen. Trotzdem berechnet dein Handy in Sekundenbruchteilen ganze Videospiele. Wie rechnet man überhaupt mit Dualzahlen?",
+    "abschnitte": [
+      {
+        "titel": "Schriftliche Addition",
+        "text": "Man addiert stellenweise von rechts nach links, genau wie im Dezimalsystem. Es gibt nur vier Fälle:\n\n- 0 + 0 = 0\n- 0 + 1 = 1\n- 1 + 1 = 10_{2}: schreibe 0, Übertrag 1\n- 1 + 1 + 1 (mit Übertrag) = 11_{2}: schreibe 1, Übertrag 1\n\nBeispiel: 1011_{2} + 1110_{2}\n\n```\n   1 0 1 1   (11)\n + 1 1 1 0   (14)\n 1 1 1       Übertrag\n ---------\n 1 1 0 0 1   (25)\n```\n\nProbe im Dezimalsystem: 11 + 14 = 25 = 16 + 8 + 1."
+      },
+      {
+        "titel": "Verschieben verdoppelt",
+        "text": "Hängt man an eine Dezimalzahl eine 0 an, wird sie zehnmal so groß. Im Dualsystem wird sie **doppelt** so groß, denn jede Ziffer rückt auf eine Stelle mit doppeltem Wert:\n\n101_{2} = 5 → 1010_{2} = 10 → 10100_{2} = 20\n\nDieses **Verschieben nach links** (englisch shift) ist für einen Prozessor viel schneller als eine echte Multiplikation. Verschieben nach rechts halbiert, wobei ein Rest wegfällt."
+      },
+      {
+        "titel": "Überlauf",
+        "text": "Ein Rechner speichert Zahlen mit einer **festen Anzahl von Bits**. Mit 8 Bit gehen die Zahlen von 0 bis 255. Was passiert bei 255 + 1?\n\n```\n   1 1 1 1 1 1 1 1   (255)\n +               1\n -----------------\n 1 0 0 0 0 0 0 0 0\n```\n\nDas Ergebnis braucht 9 Bit. Die vorderste 1 hat keinen Platz und geht verloren. Übrig bleibt 00000000, also 0. Das nennt man **Überlauf**. Allgemein: Bei 8 Bit wird vom echten Ergebnis 256 abgezogen, wenn es größer als 255 ist."
+      },
+      {
+        "titel": "Hexadezimal addieren",
+        "text": "Auch hier addiert man stellenweise. Ein Übertrag entsteht, sobald eine Stelle 16 oder mehr ergibt:\n\n2B_{16} + 15_{16}: rechts B + 5 = 11 + 5 = 16 = 10_{16}, also schreibe 0, Übertrag 1. Links 2 + 1 + 1 = 4. Ergebnis: 40_{16}.\n\nProbe: 43 + 21 = 64 = 4 · 16."
+      }
+    ],
+    "formeln": [
+      { "formel": "1_{2} + 1_{2} = 10_{2}", "bedeutung": "0 schreiben, 1 übertragen" },
+      { "formel": "Höchste Zahl mit n Bit: 2^{n} − 1", "bedeutung": "z. B. 8 Bit: 255, 16 Bit: 65 535" }
+    ],
+    "merksatz": "Dualzahlen addiert man stellenweise von rechts; 1 + 1 ergibt 0 mit Übertrag 1. Verschieben um eine Stelle nach links verdoppelt die Zahl. Reicht die feste Bitanzahl nicht, entsteht ein Überlauf: Die vorderste Stelle geht verloren.",
+    "alltag": "YouTube zählte Aufrufe früher mit einer 32-Bit-Zahl mit Vorzeichen, deren Höchstwert etwa 2,1 Milliarden ist. Als ein Musikvideo 2014 dieser Grenze nahekam, stellte YouTube auf 64 Bit um, damit der Zähler nicht überläuft."
+  },
+  "interaktiv": ["inf-zahlensysteme"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "inf-rdu-01", "typ": "zahl", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Berechne 0101_{2} + 0011_{2}. Gib das Ergebnis als Dualzahl ein.",
+      "loesung": 1000, "toleranz": 0, "einheit": "",
+      "gegeben": "0101_{2} und 0011_{2}",
+      "gesucht": "Summe als Dualzahl",
+      "rechenweg": [
+        "Stelle 1: 1 + 1 = 10_{2}, schreibe 0, Übertrag 1",
+        "Stelle 2: 0 + 1 + 1 = 10_{2}, schreibe 0, Übertrag 1",
+        "Stelle 3: 1 + 0 + 1 = 10_{2}, schreibe 0, Übertrag 1",
+        "Stelle 4: 0 + 0 + 1 = 1",
+        "Ergebnis: 1000_{2} (Probe: 5 + 3 = 8)"
+      ],
+      "erklaerung": "Hier entsteht dreimal hintereinander ein Übertrag. Das ist wie 999 + 1 im Dezimalsystem."
+    },
+    {
+      "id": "inf-rdu-02", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Berechne 10110_{2} + 01111_{2}. Gib das Ergebnis als Dualzahl ein.",
+      "loesung": 100101, "toleranz": 0, "einheit": "",
+      "gegeben": "10110_{2} (22) und 01111_{2} (15)",
+      "gesucht": "Summe als Dualzahl",
+      "rechenweg": [
+        "Stelle 1: 0 + 1 = 1",
+        "Stelle 2: 1 + 1 = 10_{2}, schreibe 0, Übertrag 1",
+        "Stelle 3: 1 + 1 + 1 = 11_{2}, schreibe 1, Übertrag 1",
+        "Stelle 4: 0 + 1 + 1 = 10_{2}, schreibe 0, Übertrag 1",
+        "Stelle 5: 1 + 0 + 1 = 10_{2}, schreibe 0, Übertrag 1",
+        "Stelle 6: Übertrag 1",
+        "Ergebnis: 100101_{2} (Probe: 22 + 15 = 37 = 32 + 4 + 1)"
+      ],
+      "erklaerung": "Bei 1 + 1 + 1 bleibt eine 1 stehen, und zusätzlich wird eine 1 übertragen."
+    },
+    {
+      "id": "inf-rdu-03", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Man hängt an die Dualzahl 1101_{2} eine 0 an: 11010_{2}. Wie verändert sich ihr Wert?",
+      "optionen": [
+        { "text": "Er verdoppelt sich (von 13 auf 26).", "richtig": true },
+        { "text": "Er verzehnfacht sich.", "feedback": "Das gilt für das Anhängen einer 0 im Dezimalsystem. Im Dualsystem ist jede Stelle doppelt so viel wert." },
+        { "text": "Er bleibt gleich, weil 0 nichts wert ist.", "feedback": "Die 0 ändert die Stellen aller anderen Ziffern. Jede rückt eine Stelle nach links." },
+        { "text": "Er erhöht sich um 1.", "feedback": "Dann müsste eine 1 hinzukommen. Hier rücken alle Ziffern auf den doppelten Stellenwert." }
+      ],
+      "erklaerung": "Verschieben um eine Stelle nach links multipliziert mit der Basis, im Dualsystem also mit 2."
+    },
+    {
+      "id": "inf-rdu-04", "typ": "zahl", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Die Dualzahl 1011_{2} wird um **zwei** Stellen nach links verschoben. Welchen Dezimalwert hat das Ergebnis?",
+      "loesung": 44, "toleranz": 0, "einheit": "",
+      "gegeben": "1011_{2} = 11, Verschiebung um 2 Stellen nach links",
+      "gesucht": "Dezimalwert des Ergebnisses",
+      "rechenweg": [
+        "1011_{2} → 101100_{2}",
+        "Jede Verschiebung verdoppelt: 11 · 2 · 2 = 44",
+        "Probe: 32 + 8 + 4 = 44"
+      ],
+      "erklaerung": "Zwei Stellen nach links bedeuten zweimal verdoppeln, also mal 4."
+    },
+    {
+      "id": "inf-rdu-05", "typ": "zahl", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Ein Spiel speichert die Münzen in einer 8-Bit-Variablen ohne Vorzeichen (0 bis 255). Ein Spieler hat 180 Münzen und bekommt 100 dazu. Welcher Wert steht nach dem Überlauf in der Variablen?",
+      "loesung": 24, "toleranz": 0, "einheit": "",
+      "gegeben": "8 Bit (0 bis 255), 180 + 100",
+      "gesucht": "gespeicherter Wert",
+      "rechenweg": [
+        "Echtes Ergebnis: 180 + 100 = 280",
+        "280 > 255, es kommt zum Überlauf",
+        "Das 9. Bit (Wert 256) geht verloren: 280 − 256 = 24"
+      ],
+      "erklaerung": "Der Spieler hätte plötzlich viel weniger Münzen. Solche Fehler gab es in echten Spielen. Gute Programme prüfen deshalb vor dem Addieren, ob das Ergebnis noch passt."
+    },
+    {
+      "id": "inf-rdu-06", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Berechne 2B_{16} + 15_{16}.",
+      "optionen": [
+        { "text": "40_{16}", "richtig": true },
+        { "text": "3G_{16}", "feedback": "Eine Ziffer G gibt es nicht. B + 5 = 16 = 10_{16}: schreibe 0, Übertrag 1." },
+        { "text": "4A_{16}", "feedback": "Rechts ergibt B + 5 = 16. Das ist genau ein Übertrag und Rest 0." },
+        { "text": "64_{16}", "feedback": "64 ist das Ergebnis im Dezimalsystem (43 + 21). Hexadezimal ist das 40_{16}." }
+      ],
+      "erklaerung": "Rechts: B + 5 = 11 + 5 = 16 = 10_{16}, also 0 mit Übertrag 1. Links: 2 + 1 + 1 = 4. Ergebnis 40_{16} = 64."
+    },
+    {
+      "id": "inf-rdu-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Ein Schrittzähler speichert die Schritte in einer 16-Bit-Variablen (0 bis 65 535). Nach einer langen Wanderung zeigt er plötzlich eine sehr kleine Zahl an. Erkläre, was passiert ist und wie man das Problem beheben könnte.",
+      "stichworte": [
+        { "aspekt": "Es kam zu einem Überlauf", "woerter": ["ueberlauf", "overflow", "laeuft ueber", "uebergelaufen"] },
+        { "aspekt": "Mit 16 Bit ist 65 535 der größte Wert; mehr passt nicht hinein", "woerter": ["65535", "65 535", "groesste", "hoechst", "nicht genug bit", "zu wenig bit", "passt nicht"] },
+        { "aspekt": "Das vorderste Bit geht verloren, der Zähler fängt wieder bei 0 an", "woerter": ["verloren", "wieder bei 0", "von vorn", "faengt wieder", "null"] },
+        { "aspekt": "Abhilfe: mehr Bits verwenden (z. B. 32 Bit) oder vorher prüfen", "woerter": ["32", "mehr bit", "groesser", "pruef"] }
+      ],
+      "musterloesung": "Es ist ein Überlauf passiert. Mit 16 Bit ist 65 535 die größte Zahl, die gespeichert werden kann. Beim nächsten Schritt braucht das Ergebnis ein 17. Bit, das es nicht gibt. Dieses vorderste Bit geht verloren, und der Zähler fängt wieder bei 0 an. Danach zählt er von vorn weiter. Abhilfe: Man nimmt mehr Bits, z. B. 32 Bit, oder prüft vor dem Hochzählen, ob der Höchstwert erreicht ist.",
+      "erklaerung": "Mit 32 Bit reicht der Zähler bis über 4 Milliarden Schritte. Das schafft niemand."
+    }
+  ]
+}

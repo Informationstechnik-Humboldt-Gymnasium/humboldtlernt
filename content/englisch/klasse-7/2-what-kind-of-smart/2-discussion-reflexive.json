@@ -1,0 +1,116 @@
+{
+  "id": "en-k7-discussion",
+  "titel": "Talking about yourself and discussing: reflexive pronouns and discussion phrases",
+  "kurz": "Sich selbst beschreiben, Reflexivpronomen (myself, themselves) und each other richtig verwenden und in einer Diskussion zustimmen, widersprechen, nachfragen und verhandeln.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Mit Adjektiven sich selbst und andere beschreiben (z. B. creative, reliable, shy, patient)" },
+    { "id": "lz2", "niveau": "G", "text": "Reflexivpronomen bilden und verwenden und von each other unterscheiden" },
+    { "id": "lz3", "niveau": "G", "text": "Redemittel zum Zustimmen, Widersprechen, Nachfragen und Verhandeln einsetzen" },
+    { "id": "lz4", "niveau": "H", "text": "In einem Rollenspiel einen Kompromiss vorschlagen (meeting half-way)" }
+  ],
+  "verstehen": {
+    "einstieg": "Du willst mit deinen Eltern aushandeln, wie lange du abends am Handy sein darfst. Mit „No!“ und „But I want it!“ kommst du nicht weit. Welche englischen Redemittel helfen dir, fair zu diskutieren?",
+    "abschnitte": [
+      {
+        "titel": "Describing yourself",
+        "text": "- **creative** (kreativ), **reliable** (zuverlässig), **patient** (geduldig), **helpful**, **hard-working** (fleißig)\n- **shy** (schüchtern), **outgoing** (kontaktfreudig), **funny** (lustig), **curious** (neugierig), **sporty**\n- Satzanfänge: ``I’m good at …`` ``I’m interested in …`` ``My friends say I’m …`` ``One of my strengths is …``"
+      },
+      {
+        "titel": "myself, yourself …",
+        "text": "Reflexivpronomen benutzt man, wenn Subjekt und Objekt dieselbe Person sind, oder zur Betonung („selbst“):\n\n- I → **myself**, you → **yourself** (Mehrzahl **yourselves**), he → **himself**, she → **herself**, it → **itself**, we → **ourselves**, they → **themselves**\n- ``I hurt myself.`` ``She made the cake herself.`` (ganz allein, selbst)\n\nVorsicht: Viele deutsche Verben mit „sich“ sind im Englischen **nicht** reflexiv: sich freuen – be happy, sich erinnern – remember, sich treffen – meet, sich fühlen – feel, sich entspannen – relax.\n\n**each other** heißt „einander, sich gegenseitig“: ``Tom and Lisa help each other.`` (Tom hilft Lisa, Lisa hilft Tom) – anders als ``Tom and Lisa help themselves.`` (jeder sich selbst)."
+      },
+      {
+        "titel": "Discussion phrases",
+        "text": "- **Agreeing:** I agree with you. That’s a good point. Exactly!\n- **Disagreeing (höflich):** I see your point, but … I’m not sure about that. I don’t really agree, because …\n- **Clarifying (nachfragen):** What do you mean by …? Could you explain that, please? So you mean that …?\n- **Negotiating (verhandeln):** What about …? How about a compromise? Let’s meet half-way. Would it be OK if …?"
+      }
+    ],
+    "merksatz": "Reflexivpronomen: myself, yourself, himself, herself, itself, ourselves, yourselves, themselves – aber nicht bei meet, feel, remember, relax. each other = einander. In Diskussionen höflich widersprechen: I see your point, but … Kompromiss: How about …? Let’s meet half-way.",
+    "alltag": "Englischsprachige widersprechen oft sehr indirekt. „I’m not sure that’s the best idea“ kann ein ziemlich klares Nein sein."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-dis-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Match the adjectives with their German meaning.",
+      "paare": [
+        { "links": "reliable", "rechts": "zuverlässig" },
+        { "links": "patient", "rechts": "geduldig" },
+        { "links": "shy", "rechts": "schüchtern" },
+        { "links": "curious", "rechts": "neugierig" },
+        { "links": "hard-working", "rechts": "fleißig" }
+      ],
+      "extraRechts": ["ungeduldig"],
+      "erklaerung": "ungeduldig wäre impatient."
+    },
+    {
+      "id": "en-dis-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Complete: ``Did you make this birthday card ___?`` – ``Yes, I did it all by myself.``",
+      "optionen": [
+        { "text": "yourself", "richtig": true },
+        { "text": "you", "feedback": "Gemeint ist „selbst“: yourself." },
+        { "text": "myself", "feedback": "Die Frage richtet sich an you → yourself." },
+        { "text": "yourselfs", "feedback": "Diese Form gibt es nicht. Mehrzahl wäre yourselves." }
+      ],
+      "erklaerung": "you → yourself (eine Person)."
+    },
+    {
+      "id": "en-dis-03", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Which sentences are correct?",
+      "optionen": [
+        { "text": "We met at the cinema.", "richtig": true },
+        { "text": "I can’t remember his name.", "richtig": true },
+        { "text": "I feel myself tired.", "feedback": "feel ist hier nicht reflexiv: I feel tired." },
+        { "text": "The children enjoyed themselves at the party.", "richtig": true },
+        { "text": "Please relax yourself.", "feedback": "relax wird ohne Reflexivpronomen benutzt: Please relax." }
+      ],
+      "erklaerung": "meet, remember, feel, relax sind nicht reflexiv. enjoy yourself (sich amüsieren) dagegen schon."
+    },
+    {
+      "id": "en-dis-04", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Ben writes to Sara and Sara writes to Ben. Which sentence fits?",
+      "optionen": [
+        { "text": "Ben and Sara write to each other.", "richtig": true },
+        { "text": "Ben and Sara write to themselves.", "feedback": "Das hieße, jeder schreibt sich selbst Briefe." },
+        { "text": "Ben and Sara write to theirselves.", "feedback": "Diese Form gibt es nicht." },
+        { "text": "Ben and Sara write to them.", "feedback": "them wären andere Personen." }
+      ],
+      "erklaerung": "Gegenseitig = each other."
+    },
+    {
+      "id": "en-dis-05", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "What is the function of these phrases?",
+      "paare": [
+        { "links": "That’s a good point.", "rechts": "agreeing" },
+        { "links": "I see your point, but I don’t think that’s fair.", "rechts": "disagreeing politely" },
+        { "links": "What do you mean by „too late“?", "rechts": "clarifying" },
+        { "links": "How about a compromise?", "rechts": "negotiating" }
+      ],
+      "erklaerung": "Wer die Funktion der Phrasen kennt, findet in der Diskussion schnell die passende."
+    },
+    {
+      "id": "en-dis-06", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Your partner says: „Homework should be banned.“ You disagree. Which reaction is polite?",
+      "optionen": [
+        { "text": "I’m not sure about that. Homework helps us practise.", "richtig": true },
+        { "text": "That’s rubbish!", "feedback": "Das ist sehr unhöflich." },
+        { "text": "You are wrong, full stop.", "feedback": "So endet die Diskussion sofort – ohne Argument." },
+        { "text": "Exactly!", "feedback": "Damit stimmst du zu." }
+      ],
+      "erklaerung": "Höflich widersprechen und begründen: I’m not sure about that, because …"
+    },
+    {
+      "id": "en-dis-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Role-play: Your parents want you to stop using your phone at 8 p.m., but you want to use it until 10 p.m. Write 4–5 sentences you could say: react politely to their point and suggest a compromise.",
+      "stichworte": [
+        { "aspekt": "Auf das Argument der Eltern eingehen (I see your point / I understand)", "woerter": ["i see your point", "i understand", "you're right", "you’re right", "that's true", "that’s true", "good point"] },
+        { "aspekt": "Eigenes Argument mit Begründung", "woerter": ["because", "since", "as "] },
+        { "aspekt": "Kompromissvorschlag", "woerter": ["how about", "what about", "compromise", "half-way", "would it be ok", "let's", "let’s"] },
+        { "aspekt": "Eine konkrete Uhrzeit oder Regel", "woerter": ["9", "nine", "o'clock", "o’clock", "p.m."] }
+      ],
+      "musterloesung": "I see your point – I need enough sleep for school. But I often chat with my friends in the evening, because we make plans for the weekend. How about a compromise? I could use my phone until 9 p.m., and at the weekend until 10. Would it be OK if I put it in the kitchen at night?",
+      "erklaerung": "Eine faire Verhandlung erkennt das Argument der anderen Seite an, begründet die eigene Meinung und macht einen Vorschlag."
+    }
+  ]
+}

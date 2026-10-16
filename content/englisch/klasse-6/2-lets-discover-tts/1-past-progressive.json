@@ -1,0 +1,113 @@
+{
+  "id": "en-k6-past-progressive",
+  "titel": "What were you doing? The past progressive",
+  "kurz": "Mit dem past progressive sagen, was gerade im Gange war – und es mit dem simple past kombinieren (when / while).",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Das past progressive mit was/were + -ing bilden, auch verneint und als Frage" },
+    { "id": "lz2", "niveau": "G", "text": "Erklären, wann man das past progressive benutzt (Handlung war gerade im Gange)" },
+    { "id": "lz3", "niveau": "H", "text": "Past simple und past progressive in einem Satz mit when und while kombinieren" }
+  ],
+  "verstehen": {
+    "einstieg": "„Ich war gerade beim Duschen, als das Telefon klingelte.“ Im Englischen gibt es zwei Vergangenheitsformen, die hier zusammenarbeiten: eine für das Hintergrundgeschehen und eine für das plötzliche Ereignis.",
+    "abschnitte": [
+      {
+        "titel": "Bildung",
+        "text": "**was / were + Verb mit -ing**\n\n- ``I was reading.`` ``She was playing chess.`` ``They were talking.``\n- Verneinung: ``We weren’t listening.`` ``He wasn’t sleeping.``\n- Frage: ``Were you watching TV at eight?`` – ``Yes, I was.``\n\nSchreibweise der -ing-Form: make → making (stummes e fällt weg), sit → sitting, swim → swimming (Konsonant verdoppeln)."
+      },
+      {
+        "titel": "Wann?",
+        "text": "Das past progressive beschreibt, was **zu einem Zeitpunkt in der Vergangenheit gerade im Gange war**:\n\n- ``At 8 o’clock yesterday I was having dinner.``\n- ``It was raining all afternoon.``\n\nEs zeichnet den Hintergrund einer Geschichte: ``The sun was shining and the birds were singing.``"
+      },
+      {
+        "titel": "Simple past oder past progressive?",
+        "text": "Wird eine laufende Handlung durch ein neues Ereignis **unterbrochen**, steht die laufende im past progressive, das neue Ereignis im simple past:\n\n- ``I was doing my homework **when** my friend called.``\n- ``**While** we were playing football, it started to rain.``\n\n**while** (während) leitet meist die lange, laufende Handlung ein, **when** (als) oft das kurze Ereignis. Folgen Handlungen nacheinander, steht alles im simple past: ``He opened the door and went in.``"
+      }
+    ],
+    "merksatz": "Past progressive = was/were + -ing: Handlung war gerade im Gange (Hintergrund). Unterbricht ein Ereignis, steht es im simple past: I was reading when the phone rang. While + laufende Handlung.",
+    "alltag": "Krimis leben vom past progressive: „Where were you at ten o’clock last night?“ – „I was watching a film at home.“"
+  },
+  "interaktiv": ["en-zeitenmaschine"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-ppr-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Complete: ``At seven o’clock my parents ___ breakfast.``",
+      "optionen": [
+        { "text": "were having", "richtig": true },
+        { "text": "was having", "feedback": "my parents = they → were." },
+        { "text": "were have", "feedback": "Nach were kommt die -ing-Form: having." },
+        { "text": "are having", "feedback": "Der Satz spricht von gestern früh um sieben, also Vergangenheit: were having." }
+      ],
+      "erklaerung": "they → were + having."
+    },
+    {
+      "id": "en-ppr-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Match the verbs with their -ing form.",
+      "paare": [
+        { "links": "make", "rechts": "making" },
+        { "links": "swim", "rechts": "swimming" },
+        { "links": "play", "rechts": "playing" },
+        { "links": "write", "rechts": "writing" }
+      ],
+      "extraRechts": ["swiming"],
+      "erklaerung": "Stummes e fällt weg (making, writing). Nach kurzem betontem Vokal wird der Konsonant verdoppelt (swimming)."
+    },
+    {
+      "id": "en-ppr-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Why is the past progressive used here? ``At 10 p.m. I was sleeping.``",
+      "optionen": [
+        { "text": "Because the action was in progress at that moment.", "richtig": true },
+        { "text": "Because the action happens every day.", "feedback": "Gewohnheiten stehen im simple present oder simple past, nicht im progressive." },
+        { "text": "Because the action is in the future.", "feedback": "was zeigt die Vergangenheit." },
+        { "text": "Because the action was finished at 10 p.m.", "feedback": "Um 22 Uhr war das Schlafen gerade im Gange, nicht beendet." }
+      ],
+      "erklaerung": "Past progressive: zu einem bestimmten Zeitpunkt gerade im Gange."
+    },
+    {
+      "id": "en-ppr-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Which sentence is correct?",
+      "optionen": [
+        { "text": "I was walking home when I saw the accident.", "richtig": true },
+        { "text": "I walked home when I was seeing the accident.", "feedback": "Das kurze Ereignis (see) steht im simple past, die laufende Handlung (walk) im progressive." },
+        { "text": "I was walk home when I saw the accident.", "feedback": "was + -ing-Form: was walking." },
+        { "text": "I were walking home when I saw the accident.", "feedback": "I → was." }
+      ],
+      "erklaerung": "Laufende Handlung (was walking) wird von einem Ereignis (saw) unterbrochen."
+    },
+    {
+      "id": "en-ppr-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Complete: ``While Tom ___ the dishes, he ___ a plate.``",
+      "optionen": [
+        { "text": "was washing … broke", "richtig": true },
+        { "text": "washed … was breaking", "feedback": "Das Spülen dauerte an (progressive), der Teller zerbrach plötzlich (simple past)." },
+        { "text": "was washing … was breaking", "feedback": "Das Zerbrechen ist ein kurzes, plötzliches Ereignis: broke." },
+        { "text": "washes … breaks", "feedback": "Die Geschichte spielt in der Vergangenheit." }
+      ],
+      "erklaerung": "while + lange Handlung (past progressive), kurzes Ereignis im simple past."
+    },
+    {
+      "id": "en-ppr-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Which sentence describes actions that happened **one after the other**?",
+      "optionen": [
+        { "text": "She came home, took off her shoes and made a sandwich.", "richtig": true },
+        { "text": "She was coming home when it started to snow.", "feedback": "Hier wird eine laufende Handlung unterbrochen." },
+        { "text": "While she was making a sandwich, the dog was barking.", "feedback": "Hier laufen zwei Handlungen gleichzeitig ab." },
+        { "text": "She was making a sandwich at 6 p.m.", "feedback": "Hier geht es um eine Handlung, die zu einem Zeitpunkt im Gange war." }
+      ],
+      "erklaerung": "Handlungen nacheinander (Handlungskette) stehen im simple past."
+    },
+    {
+      "id": "en-ppr-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Write the beginning of a story (3–4 sentences). First describe the background with the past progressive, then let something surprising happen in the simple past (use „when“ or „while“).",
+      "stichworte": [
+        { "aspekt": "Hintergrund im past progressive (was/were + -ing)", "woerter": ["was ", "were "] },
+        { "aspekt": "-ing-Formen", "woerter": ["ing"] },
+        { "aspekt": "Verbindung mit when oder while", "woerter": ["when", "while"] },
+        { "aspekt": "Plötzliches Ereignis im simple past", "woerter": ["suddenly", "rang", "saw", "heard", "came", "fell", "opened", "jumped", "started", "ed "] }
+      ],
+      "musterloesung": "It was a cold evening. The wind was blowing and my little sister was watching TV. I was sitting at my desk when suddenly the lights went out. While I was looking for a torch, somebody knocked at the door.",
+      "erklaerung": "Der Hintergrund läuft (progressive), die Handlung springt (simple past) – so entsteht Spannung."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "nummer": "2",
+  "reihenfolge": 2,
+  "titel": "Algorithmisches Problemlösen",
+  "beschreibung": "Algorithmen lesen, entwerfen und darstellen, die Grundstrukturen in Java, objektorientiertes Modellieren und Programmieren mit Klassen und Objekten sowie Urheberrecht und Projektmanagement.",
+  "inhalte": [
+    "Interpretation von gegebenen Algorithmen und Ausführung in einer Programmiersprache",
+    "Entwurf von Algorithmen",
+    "Algorithmische Grundstrukturen: Sequenz, Auswahl, Wiederholung, Variable, Wertzuweisung, einfache Datentypen, Methoden, Parameter, Array (optional)",
+    "Diagramme für Programmentwürfe und Algorithmen (Struktogramm, Pseudocode, Programmablaufplan, Klassendiagramm, Objektdiagramm)",
+    "Grundlagen der objektorientierten Modellierung und Programmierung: Objekte mit Eigenschaften und Methoden, Klassen und Objekte unterscheiden",
+    "Analyse und Verwendung vorhandener Klassen",
+    "Modellierung und Implementierung eigener Klassen",
+    "Klassenbeziehungen und Objektinteraktion (Aggregation, Assoziation, Vererbung)",
+    "Urheberrecht und Lizenzmodelle, z. B. Creative Commons",
+    "Projektmanagement"
+  ],
+  "erweiterung": "Einstieg mit Scratch, dann Java mit Greenfoot (zusätzlich BlueJ). Mindestens eine Einheit endet mit einem bewerteten Softwareprojekt mit Dokumentation und Präsentation."
+}
