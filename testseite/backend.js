@@ -9,7 +9,7 @@
 (function (root) {
   'use strict';
 
-  var VERSION = 4;                       // Schema-Version der Datenbank (Migrationen unten)
+  var VERSION = 5;                       // Schema-Version der Datenbank (Migrationen unten)
   var SPEICHER_SCHLUESSEL = 'lernseite-schule-db';
   var CLIENT_ID = 'lernseite-testseite';
   var MIN = 60 * 1000, TAG = 24 * 60 * MIN;
@@ -157,6 +157,19 @@
         if (nov && !d.lehrerzuordnungen.some(function (z) { return z.lehrerId === nov.id && z.klasseId === 'wp-inf-10' && z.fachId === 'informatik'; })) {
           d.seq = (d.seq || 0) + 1;
           d.lehrerzuordnungen.push({ id: 'lz' + d.seq, lehrerId: nov.id, klasseId: 'wp-inf-10', fachId: 'informatik' });
+        }
+      },
+      5: function (d) {
+        // Version 5: neues Fach Englisch (Kl. 5–10) und Englischunterricht von Sabine Keller in 9a
+        if (!d.faecher.some(function (f) { return f.id === 'englisch'; })) {
+          var lb = [];
+          INH.topics.forEach(function (t) { if (t.fach === 'englisch' && t.themenfeld && lb.indexOf(t.themenfeld) < 0) lb.push(t.themenfeld); });
+          d.faecher.push({ id: 'englisch', name: 'Englisch', aktiv: true, lernbereiche: lb });
+        }
+        var kel = d.users.find(function (u) { return u.username === 'sabine.keller' && u.rolle === 'teacher'; });
+        if (kel && d.klassen.some(function (k) { return k.id === '9a'; }) && !d.lehrerzuordnungen.some(function (z) { return z.lehrerId === kel.id && z.klasseId === '9a' && z.fachId === 'englisch'; })) {
+          d.seq = (d.seq || 0) + 1;
+          d.lehrerzuordnungen.push({ id: 'lz' + d.seq, lehrerId: kel.id, klasseId: '9a', fachId: 'englisch' });
         }
       },
     };

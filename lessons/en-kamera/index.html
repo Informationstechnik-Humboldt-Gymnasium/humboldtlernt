@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kamera-Labor: Film language</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<style>
+  .lk-grid > * { min-width: 0; }
+  .seg { flex-wrap: wrap; }
+  #bild { border-radius: 10px; border: 2px solid var(--line); background: var(--soft-accent); }
+  #bild .himmel { fill: var(--soft-accent); }
+  #bild .boden { fill: var(--pos); opacity: .45; }
+  #bild .sonne { fill: var(--lamp); }
+  #bild .zaun { stroke: var(--line); stroke-width: 1.6; fill: none; }
+  #bild .haut { fill: var(--lamp); stroke: var(--line); stroke-width: 1.2; }
+  #bild .gesicht { stroke: var(--neg); fill: none; }
+  #bild .kleid { fill: var(--accent); stroke: var(--line); stroke-width: 1.2; }
+  #bild .haar { fill: var(--pos); }
+  #bild .auge { fill: var(--neg); }
+  #bild .schatten { fill: var(--line); opacity: .2; }
+  .etikett { display: inline-block; font-size: .72rem; font-weight: 700; padding: 1px 7px; border-radius: 99px; background: var(--bg); color: var(--muted); border: 1px solid var(--border); }
+  .ton { margin: 8px 0 0; font-size: .9rem; min-height: 1.4em; }
+  .wirkung { margin: 10px 0 0; padding: 8px 10px; border-radius: 10px; background: var(--soft-accent); font-size: .92rem; }
+</style>
+</head>
+<body>
+<h1>Kamera-Labor: Film language</h1>
+<p class="muted small">Du bist die Kamerafrau oder der Kameramann. Wähle Einstellungsgröße, Perspektive und Ton und beobachte, wie sich die Wirkung des Bildes verändert.</p>
+
+<div class="lk-grid">
+  <div>
+    <div class="lk-card">
+      <h2>Film frame <span class="etikett">Modell</span></h2>
+      <svg id="bild" viewBox="0 0 320 180" role="img" aria-label="Filmbild"></svg>
+      <p class="ton" id="ton"></p>
+      <p class="wirkung" id="wirkung" aria-live="polite"></p>
+    </div>
+  </div>
+  <div>
+    <div class="lk-card">
+      <h2>Einstellungen</h2>
+      <p class="small" style="margin:0 0 4px"><b>Field size</b> (Einstellungsgröße)</p>
+      <div class="row"><div class="seg" role="group" aria-label="Field size" id="segGroesse"></div></div>
+      <p class="small" style="margin:0 0 4px"><b>Camera angle</b> (Perspektive)</p>
+      <div class="row"><div class="seg" role="group" aria-label="Camera angle" id="segWinkel"></div></div>
+      <p class="small" style="margin:0 0 4px"><b>Sound</b></p>
+      <div class="row"><div class="seg" role="group" aria-label="Sound" id="segTon"></div></div>
+      <div class="readouts">
+        <div class="readout"><span>field size</span><b id="rGroesse">–</b></div>
+        <div class="readout"><span>angle</span><b id="rWinkel">–</b></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="lk-card tasks">
+  <h2>Entdecke selbst <span class="small muted" data-task-count></span></h2>
+  <div class="task" data-goal="els"><p class="task-q">Zeige, wie <b>allein und verloren</b> das Mädchen in der riesigen Landschaft ist.</p></div>
+  <div class="task" data-goal="augen"><p class="task-q">Zeige nur die <b>Augen</b> des Mädchens, um ihre Entschlossenheit zu betonen.</p></div>
+  <div class="task" data-goal="maechtig"><p class="task-q">Lass das Mädchen <b>groß und stark</b> wirken (ohne extreme long shot).</p></div>
+  <div class="task" data-goal="klein"><p class="task-q">Lass das Mädchen in einem <b>long shot</b> klein und schutzlos wirken.</p></div>
+  <div class="task">
+    <p class="task-q">Welcher Ton ist <b>non-diegetic</b>?</p>
+    <div class="choices">
+      <button type="button" data-fb="Die Schritte gehören zur Filmwelt – das Mädchen hört sie selbst. Das ist diegetic sound.">die Schritte des Mädchens im Sand</button>
+      <button type="button" data-ok data-fb="Richtig: Die Filmmusik hört nur das Publikum, nicht die Figur. Sie lenkt unsere Gefühle.">traurige Filmmusik, die nur das Publikum hört</button>
+      <button type="button" data-fb="Der Wind ist Teil der Filmwelt. Das ist diegetic sound.">der Wind in der Wüste</button>
+    </div><p class="fb"></p>
+  </div>
+  <div class="task">
+    <p class="task-q">Warum beginnt ein Film oft mit einem extreme long shot?</p>
+    <div class="choices">
+      <button type="button" data-ok data-fb="Richtig: Dieser establishing shot zeigt Ort und Stimmung, bevor die Handlung beginnt.">Er zeigt, wo die Geschichte spielt (establishing shot).</button>
+      <button type="button" data-fb="Gefühle zeigt eher ein close-up.">Er zeigt die Gefühle der Hauptfigur genau.</button>
+      <button type="button" data-fb="Mächtig wirken Figuren eher im low angle.">Er lässt die Hauptfigur mächtig wirken.</button>
+    </div><p class="fb"></p>
+  </div>
+  <div class="all-done">Alles entdeckt! Weiter geht es mit den Übungen.</div>
+</div>
+
+<script src="../../static/lesson-kit.js"></script>
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+  var NS = 'http://www.w3.org/2000/svg';
+  var GROESSEN = [
+    { id: 'els', name: 'extreme long shot', box: [0, -150, 1600, 900], w: 'Die riesige Landschaft beherrscht das Bild, das Mädchen ist winzig. Wirkung: Einsamkeit, Verlorenheit, die Gefahr der Reise. Am Filmanfang zeigt so ein establishing shot den Ort.' },
+    { id: 'ls', name: 'long shot', box: [0, -50, 260, 146.25], w: 'Wir sehen die ganze Figur und ihre Umgebung. Wirkung: Die Figur wird in ihrer Situation gezeigt – was tut sie, wo ist sie?' },
+    { id: 'ms', name: 'medium shot', box: [0, -74, 120, 67.5], w: 'Die Figur ist etwa ab der Hüfte zu sehen. Wirkung: Gestik und Mimik werden sichtbar – typisch für Gespräche.' },
+    { id: 'cu', name: 'close-up', box: [0, -86, 56, 31.5], w: 'Das Gesicht füllt das Bild. Wirkung: Wir sehen Gefühle ganz genau und fühlen uns der Figur nah.' },
+    { id: 'ecu', name: 'extreme close-up', box: [0, -89, 26, 14.6], w: 'Nur ein Detail – hier die Augen. Wirkung: Etwas wird stark betont, z. B. Angst oder Entschlossenheit. Das kann Spannung erzeugen.' },
+  ];
+  var WINKEL = [
+    { id: 'bird', name: 'bird’s-eye view', w: 'Senkrecht von oben: Wir haben den Überblick, die Figur wirkt klein und ausgeliefert.' },
+    { id: 'high', name: 'high angle', w: 'Von schräg oben: Die Figur wirkt klein, schwach oder hilflos.' },
+    { id: 'eye', name: 'eye level', w: 'Auf Augenhöhe: neutral – wir begegnen der Figur auf Augenhöhe.' },
+    { id: 'low', name: 'low angle', w: 'Von unten: Die Figur wirkt groß, stark, vielleicht bedrohlich.' },
+  ];
+  var TOENE = [
+    { id: 'diegetic', name: 'wind and footsteps', text: 'Sound: wind and footsteps in the sand – diegetic sound (the girl can hear it, too).' },
+    { id: 'music', name: 'film music', text: 'Sound: ♪ slow, sad violin music – non-diegetic sound (only the audience hears it).' },
+    { id: 'voice', name: 'voice-over', text: 'Sound: a narrator’s voice: „She had walked for days …“ – non-diegetic voice-over.' },
+  ];
+  var S = { g: 'ls', w: 'eye', t: 'diegetic' };
+  var box = GROESSEN[1].box.slice();
+
+  function sv(tag, a) { var e = document.createElementNS(NS, tag); for (var k in a) e.setAttribute(k, a[k]); return e; }
+  function finde(l, id) { return l.find(function (x) { return x.id === id; }); }
+
+  // Szene in Weltkoordinaten: Füße des Mädchens bei (0|0), Körpergröße 100
+  function szene() {
+    var svg = $('bild');
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    var g = sv('g', { id: 'welt' });
+    svg.appendChild(g);
+    if (S.w === 'bird') {
+      g.appendChild(sv('rect', { x: -2000, y: -2000, width: 4000, height: 4000, 'class': 'boden' }));
+      // Zaun als Linie mit Pfosten, von oben gesehen
+      g.appendChild(sv('line', { x1: -2000, y1: -40, x2: 2000, y2: -40, 'class': 'zaun' }));
+      for (var px = -2000; px <= 2000; px += 60) g.appendChild(sv('circle', { cx: px, cy: -40, r: 2.5, 'class': 'haar' }));
+      // Mädchen von oben: Schatten, Schultern, Kopf
+      g.appendChild(sv('ellipse', { cx: 8, cy: -78, rx: 18, ry: 8, 'class': 'schatten' }));
+      g.appendChild(sv('ellipse', { cx: 0, cy: -86, rx: 16, ry: 7, 'class': 'kleid' }));
+      g.appendChild(sv('circle', { cx: 0, cy: -87, r: 7, 'class': 'haar' }));
+      return;
+    }
+    // Horizont je nach Perspektive (von oben sieht man mehr Boden, von unten mehr Himmel)
+    var horizont = S.w === 'high' ? -240 : S.w === 'low' ? 10 : -95;
+    g.appendChild(sv('rect', { x: -3000, y: -3000, width: 6000, height: 3000 + horizont, 'class': 'himmel' }));
+    g.appendChild(sv('rect', { x: -3000, y: horizont, width: 6000, height: 3000, 'class': 'boden' }));
+    g.appendChild(sv('circle', { cx: 520, cy: horizont - 120, r: 45, 'class': 'sonne' }));
+    // Kaninchenzaun: Pfosten und Draht in die Tiefe
+    var zaun = 'M-3000 ' + (horizont + 40) + ' L 3000 ' + (horizont + 40);
+    g.appendChild(sv('path', { d: zaun, 'class': 'zaun' }));
+    for (var x = -3000; x <= 3000; x += 120) g.appendChild(sv('line', { x1: x, y1: horizont + 40, x2: x, y2: horizont + 15, 'class': 'zaun' }));
+    // Mädchen: Verkürzung je nach Perspektive (high: Kopf groß, Beine kurz; low: umgekehrt)
+    var kopf = S.w === 'high' ? 1.15 : S.w === 'low' ? 0.85 : 1;
+    var bein = S.w === 'high' ? 0.7 : S.w === 'low' ? 1.25 : 1;
+    var hueft = -50 * bein;                 // Hüfthöhe
+    var schulter = hueft - 28;              // Schulterhöhe
+    var kopfY = -88;                        // Kopfmitte bleibt für die Bildausschnitte gleich
+    var hals = kopfY + 10 * kopf;
+    var f = sv('g', {});
+    f.appendChild(sv('ellipse', { cx: 6, cy: 1, rx: 16, ry: 3, 'class': 'schatten' }));
+    f.appendChild(sv('path', { d: 'M-4 0 L-5 ' + hueft + ' M4 0 L5 ' + hueft, 'class': 'haut', style: 'stroke-width:3.2' }));
+    f.appendChild(sv('path', { d: 'M-11 ' + (hueft + 4) + ' L-8 ' + schulter + ' L8 ' + schulter + ' L11 ' + (hueft + 4) + ' Z', 'class': 'kleid' }));
+    f.appendChild(sv('path', { d: 'M-8 ' + (schulter + 2) + ' L-14 ' + (hueft + 2) + ' M8 ' + (schulter + 2) + ' L14 ' + (hueft + 2), 'class': 'haut', style: 'stroke-width:3' }));
+    f.appendChild(sv('rect', { x: -2.5, y: schulter - 1, width: 5, height: Math.max(1, hals - schulter + 1), 'class': 'haut' }));
+    f.appendChild(sv('circle', { cx: 0, cy: kopfY, r: 10 * kopf, 'class': 'haut' }));
+    f.appendChild(sv('path', { d: 'M' + (-10 * kopf) + ' ' + kopfY + ' A ' + (10 * kopf) + ' ' + (10 * kopf) + ' 0 0 1 ' + (10 * kopf) + ' ' + kopfY + ' L ' + (8 * kopf) + ' ' + (kopfY - 3) + ' L ' + (-8 * kopf) + ' ' + (kopfY - 3) + ' Z', 'class': 'haar' }));
+    f.appendChild(sv('ellipse', { cx: -3.6 * kopf, cy: kopfY - 1, rx: 1.3 * kopf, ry: 1.6 * kopf, 'class': 'auge' }));
+    f.appendChild(sv('ellipse', { cx: 3.6 * kopf, cy: kopfY - 1, rx: 1.3 * kopf, ry: 1.6 * kopf, 'class': 'auge' }));
+    f.appendChild(sv('path', { d: 'M' + (-6.2 * kopf) + ' ' + (kopfY - 4.2) + ' L' + (-1.5 * kopf) + ' ' + (kopfY - 3.6) + ' M' + (1.5 * kopf) + ' ' + (kopfY - 3.6) + ' L' + (6.2 * kopf) + ' ' + (kopfY - 4.2), 'class': 'gesicht', style: 'stroke-width:0.8' }));
+    f.appendChild(sv('path', { d: 'M' + (-2.5 * kopf) + ' ' + (kopfY + 5 * kopf) + ' L' + (2.5 * kopf) + ' ' + (kopfY + 5 * kopf), 'class': 'gesicht', style: 'stroke-width:0.8' }));
+    g.appendChild(f);
+  }
+
+  // Bildausschnitt weich anpassen
+  var anim = null;
+  function setzeBox(ziel) {
+    var start = box.slice(), t0 = performance.now(), dauer = matchMedia('(prefers-reduced-motion: reduce)').matches ? 1 : 450;
+    if (anim) cancelAnimationFrame(anim);
+    function schritt(t) {
+      var k = Math.min(1, (t - t0) / dauer); k = 1 - Math.pow(1 - k, 3);
+      // Breite logarithmisch interpolieren, damit der Zoom gleichmäßig wirkt
+      var w = Math.exp(Math.log(start[2]) + (Math.log(ziel[2]) - Math.log(start[2])) * k);
+      var cx = start[0] + (ziel[0] - start[0]) * k, cy = start[1] + (ziel[1] - start[1]) * k;
+      box = [cx, cy, w, w * 9 / 16];
+      $('welt').setAttribute('transform', 'translate(160 90) scale(' + (320 / w) + ') translate(' + (-cx) + ' ' + (-cy) + ')');
+      if (k < 1) anim = requestAnimationFrame(schritt);
+    }
+    anim = requestAnimationFrame(schritt);
+  }
+
+  function zeichne() {
+    var g = finde(GROESSEN, S.g), w = finde(WINKEL, S.w), t = finde(TOENE, S.t);
+    szene();
+    $('welt').setAttribute('transform', 'translate(160 90) scale(' + (320 / box[2]) + ') translate(' + (-box[0]) + ' ' + (-box[1]) + ')');
+    setzeBox(g.box);
+    $('ton').textContent = t.text;
+    $('wirkung').textContent = g.name + ': ' + g.w + ' ' + w.name + ': ' + w.w;
+    $('rGroesse').textContent = g.name; $('rWinkel').textContent = w.name;
+    $('bild').setAttribute('aria-label', 'Filmbild, ' + g.name + ', ' + w.name + ': ein Mädchen in der Wüste am Kaninchenzaun.');
+    ['segGroesse', 'segWinkel', 'segTon'].forEach(function (id) {
+      $(id).querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.v === S[b.dataset.k])); });
+    });
+    if (S.g === 'els') LK.reach('els');
+    if (S.g === 'ecu' && S.w !== 'bird') LK.reach('augen');
+    if (S.w === 'low' && S.g !== 'els') LK.reach('maechtig');
+    if ((S.w === 'high' || S.w === 'bird') && S.g === 'ls') LK.reach('klein');
+  }
+
+  function knoepfe(ziel, liste, key) {
+    liste.forEach(function (x) {
+      var b = document.createElement('button'); b.type = 'button'; b.textContent = x.name;
+      b.dataset.v = x.id; b.dataset.k = key;
+      b.addEventListener('click', function () { S[key] = x.id; zeichne(); });
+      $(ziel).appendChild(b);
+    });
+  }
+  knoepfe('segGroesse', GROESSEN, 'g');
+  knoepfe('segWinkel', WINKEL, 'w');
+  knoepfe('segTon', TOENE, 't');
+  zeichne();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+{
+  "id": "en-k6-simple-past",
+  "titel": "What did you do? The simple past",
+  "kurz": "Über Vergangenes berichten: regelmäßige und unregelmäßige Verben im simple past, Verneinung und Fragen mit did, Zeitangaben wie yesterday und ago.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Das simple past regelmäßiger Verben bilden und richtig schreiben (played, stopped, studied, liked)" },
+    { "id": "lz2", "niveau": "G", "text": "Häufige unregelmäßige Verben im simple past kennen" },
+    { "id": "lz3", "niveau": "G", "text": "Verneinung mit didn’t und Fragen mit did bilden" },
+    { "id": "lz4", "niveau": "H", "text": "Signalwörter des simple past erkennen und Ereignisse in der richtigen Zeit erzählen" }
+  ],
+  "verstehen": {
+    "einstieg": "Nach den Ferien fragt dich deine Freundin: „What did you do in the holidays?“ Um zu erzählen, wohin du gefahren bist und was du erlebt hast, brauchst du das simple past.",
+    "abschnitte": [
+      {
+        "titel": "Wann?",
+        "text": "Das simple past benutzt man für Handlungen, die zu einem **bestimmten Zeitpunkt in der Vergangenheit** abgeschlossen sind. Signalwörter: **yesterday**, **last week / last year**, **two days ago** (vor zwei Tagen), **in 2020**, **when I was ten**."
+      },
+      {
+        "titel": "Regelmäßige Verben: -ed",
+        "text": "- play → **played**, walk → **walked**\n- endet auf -e: nur **-d**: like → liked, live → lived\n- kurzer betonter Vokal + ein Konsonant: Konsonant verdoppeln: stop → **stopped**, plan → planned\n- Konsonant + y: **-ied**: study → studied, try → tried (aber: play → played)\n\nDie Form ist für alle Personen gleich: I played, she played, they played."
+      },
+      {
+        "titel": "Unregelmäßige Verben",
+        "text": "Viele häufige Verben sind unregelmäßig und müssen gelernt werden:\n\n- be → **was / were** (I/he/she/it was, you/we/they were)\n- go → **went**, have → **had**, see → **saw**, eat → **ate**\n- take → **took**, come → **came**, get → **got**, buy → **bought**\n- make → **made**, swim → **swam**, write → **wrote**, find → **found**"
+      },
+      {
+        "titel": "Verneinung und Fragen mit did",
+        "text": "Das Hilfsverb ist **did** – für alle Personen. Das Hauptverb steht dann wieder in der **Grundform**:\n\n- ``We didn’t go to the beach.`` (nicht: didn’t went)\n- ``Did you see the castle?`` – ``Yes, I did.`` / ``No, I didn’t.``\n- ``Where did you stay?``\n\nAusnahme **was/were**: ``It wasn’t cold.`` ``Were you tired?``"
+      }
+    ],
+    "merksatz": "Simple past für abgeschlossene Handlungen zu einem bestimmten Zeitpunkt (yesterday, last week, ago). Regelmäßig: -ed (stopped, studied). Unregelmäßige Formen lernen. Verneinung/Frage: did + Grundform.",
+    "alltag": "Märchen beginnen auf Englisch mit „Once upon a time there was …“ – und werden komplett im simple past erzählt."
+  },
+  "interaktiv": ["en-zeitenmaschine"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-spa-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Match the verbs with their simple past forms.",
+      "paare": [
+        { "links": "go", "rechts": "went" },
+        { "links": "see", "rechts": "saw" },
+        { "links": "buy", "rechts": "bought" },
+        { "links": "eat", "rechts": "ate" },
+        { "links": "take", "rechts": "took" }
+      ],
+      "extraRechts": ["goed"],
+      "erklaerung": "Diese Verben sind unregelmäßig. Ein „goed“ gibt es nicht."
+    },
+    {
+      "id": "en-spa-02", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Which simple past forms are spelt correctly?",
+      "optionen": [
+        { "text": "stop → stopped", "richtig": true },
+        { "text": "study → studied", "richtig": true },
+        { "text": "live → lived", "richtig": true },
+        { "text": "play → plaied", "feedback": "Vokal + y: nur -ed anhängen: played." },
+        { "text": "plan → planed", "feedback": "Kurzer betonter Vokal + ein Konsonant: verdoppeln: planned." }
+      ],
+      "erklaerung": "Verdoppeln bei stop/plan, -ied bei Konsonant + y, nur -d bei einem stummen -e."
+    },
+    {
+      "id": "en-spa-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Which sentence is correct?",
+      "optionen": [
+        { "text": "We didn’t visit the castle.", "richtig": true },
+        { "text": "We didn’t visited the castle.", "feedback": "Nach didn’t steht die Grundform: visit." },
+        { "text": "We don’t visited the castle.", "feedback": "In der Vergangenheit heißt die Verneinung didn’t." },
+        { "text": "We not visited the castle.", "feedback": "Die Verneinung braucht did: didn’t visit." }
+      ],
+      "erklaerung": "didn’t + Grundform. Die Vergangenheit steckt schon in did."
+    },
+    {
+      "id": "en-spa-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "``___ you ___ any souvenirs in Cardiff?``",
+      "optionen": [
+        { "text": "Did … buy", "richtig": true },
+        { "text": "Did … bought", "feedback": "Nach did steht die Grundform: buy." },
+        { "text": "Do … bought", "feedback": "Für die Vergangenheit braucht man did." },
+        { "text": "Were … buy", "feedback": "Mit Vollverben bildet man die Frage mit did." }
+      ],
+      "erklaerung": "Did + Subjekt + Grundform: Did you buy …?"
+    },
+    {
+      "id": "en-spa-05", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Complete: ``The weather ___ great, but the hotel rooms ___ small.``",
+      "optionen": [
+        { "text": "was … were", "richtig": true },
+        { "text": "were … was", "feedback": "the weather = it → was; the rooms = they → were." },
+        { "text": "was … was", "feedback": "the hotel rooms ist Mehrzahl → were." },
+        { "text": "is … are", "feedback": "Der Satz erzählt von den Ferien, also in der Vergangenheit." }
+      ],
+      "erklaerung": "I/he/she/it was, you/we/they were."
+    },
+    {
+      "id": "en-spa-06", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Which time expressions are signal words for the simple past?",
+      "optionen": [
+        { "text": "yesterday", "richtig": true },
+        { "text": "three days ago", "richtig": true },
+        { "text": "last summer", "richtig": true },
+        { "text": "every day", "feedback": "every day steht für Gewohnheiten, also simple present." },
+        { "text": "tomorrow", "feedback": "tomorrow liegt in der Zukunft." }
+      ],
+      "erklaerung": "Simple past: yesterday, last …, … ago, in 2019, when I was …"
+    },
+    {
+      "id": "en-spa-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Write 4–5 sentences about your last holiday or a great day out. Use the simple past, at least two irregular verbs and a time expression like „last summer“ or „two weeks ago“.",
+      "stichworte": [
+        { "aspekt": "Zeitangabe der Vergangenheit", "woerter": ["last ", "ago", "yesterday", "in 20", "when i was"] },
+        { "aspekt": "Unregelmäßige Verben im simple past", "woerter": ["went", "saw", "ate", "took", "came", "got", "bought", "swam", "had", "was", "were", "made", "found"] },
+        { "aspekt": "Regelmäßige Verben auf -ed", "woerter": ["ed "] },
+        { "aspekt": "Gefühl oder Eindruck (it was great, exciting …)", "woerter": ["great", "fun", "exciting", "boring", "amazing", "beautiful", "happy", "tired", "loved"] }
+      ],
+      "musterloesung": "Last summer I went to Wales with my family. We stayed in a small hotel near the sea. On the first day we visited a castle and I bought a postcard. The weather was great, so we swam every afternoon. It was an amazing holiday.",
+      "erklaerung": "Prüfe jedes Verb: Ist es im simple past? Bei unregelmäßigen Verben hilft die Liste im Buch."
+    }
+  ]
+}

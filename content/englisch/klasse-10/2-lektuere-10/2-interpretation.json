@@ -1,0 +1,116 @@
+{
+  "id": "en-k10-interpretation",
+  "titel": "Interpreting fiction: theme, message and analytical writing",
+  "kurz": "Vom Inhalt zur Deutung: Thema und Botschaft eines Textes erkennen, Analyseabsätze nach dem PEE-Muster (point – evidence – explanation) schreiben und eine Interpretation aufbauen.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Zwischen plot (Handlung), theme (Thema) und message (Botschaft) unterscheiden" },
+    { "id": "lz2", "niveau": "H", "text": "Analyseabsätze nach dem Muster point – evidence – explanation schreiben" },
+    { "id": "lz3", "niveau": "G", "text": "Den Aufbau einer Textanalyse (introduction – main part – conclusion) kennen" },
+    { "id": "lz4", "niveau": "H", "text": "Diskursiven Wortschatz zur Deutung und Bewertung verwenden (suggests, implies, conveys, it can be argued that)" }
+  ],
+  "verstehen": {
+    "einstieg": "In einer Kurzgeschichte bekommen Kinder alles, was sie sich wünschen – von einem Zimmer, das jede Fantasie lebendig werden lässt. Am Ende wenden sie sich gegen ihre Eltern. Ist das nur eine spannende Geschichte, oder will der Autor uns damit etwas sagen?",
+    "abschnitte": [
+      {
+        "titel": "Plot, theme, message",
+        "text": "- **Plot**: Was passiert? (die Handlung)\n- **Theme**: Worum geht es im Kern? Ein allgemeines Thema in wenigen Wörtern: growing up, freedom, the dangers of technology, family conflict, identity, prejudice\n- **Message**: Was will der Text über dieses Thema sagen? ``The story warns that parents who let technology raise their children may lose them.``\n\nViele Schullektüren haben große Themen: Unterdrückung und Macht (z. B. „Animal Farm“), eine scheinbar perfekte Gesellschaft ohne Erinnerungen und Gefühle (z. B. „The Giver“), Technik und Familie (z. B. Kurzgeschichten von Ray Bradbury)."
+      },
+      {
+        "titel": "Point – Evidence – Explanation",
+        "text": "Jeder Absatz einer Analyse folgt dem **PEE**-Muster:\n\n- **Point**: deine Aussage – ``The narrator’s mother is presented as cold and distant.``\n- **Evidence**: ein Beleg mit Zeilenangabe – ``She „did not look up from her phone“ (l. 23) when her son came home crying.``\n- **Explanation**: Was zeigt der Beleg, und wie wirkt er? ``This shows that she cares more about her phone than about her child, which makes the reader feel sympathy for the boy.``"
+      },
+      {
+        "titel": "Structure of an analysis",
+        "text": "- **Introduction**: Titel, Autor, Textsorte, Jahr, Thema und die Leitfrage (Was wird untersucht?)\n- **Main part**: mehrere PEE-Absätze, geordnet (z. B. erst Figuren, dann Erzählperspektive, dann Sprache)\n- **Conclusion**: Ergebnis zusammenfassen und auf die Leitfrage antworten – keine neuen Argumente\n\nAnalysen schreibt man im **simple present** und in **formellem Englisch**."
+      },
+      {
+        "titel": "Useful phrases",
+        "text": "- Deuten: **This suggests / implies / indicates that …**, **The author conveys the idea that …**, **This can be seen as a symbol of …**\n- Vorsichtig formulieren: **It seems that …**, **It can be argued that …**, **Apparently, …**\n- Belegen: **As can be seen in line …**, **The narrator states that …** (l. …)\n- Schließen: **All in all, …**, **To conclude, …**, **This shows that …**"
+      }
+    ],
+    "merksatz": "Plot = was passiert, theme = worum es geht, message = was der Text darüber sagt. Analyseabsatz: Point – Evidence (Zitat mit Zeile) – Explanation. Analyse: introduction – PEE-Absätze – conclusion, im simple present.",
+    "alltag": "Das PEE-Muster hilft nicht nur im Englischunterricht: In jeder Argumentation, auch auf Deutsch, überzeugen Behauptung, Beleg und Erklärung zusammen am meisten."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-int-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Plot, theme or message? Match.",
+      "paare": [
+        { "links": "A boy runs away from home and lives alone in the woods for a summer.", "rechts": "plot" },
+        { "links": "growing up and independence", "rechts": "theme" },
+        { "links": "You have to learn to rely on yourself before you can truly be free.", "rechts": "message" }
+      ],
+      "erklaerung": "Plot: Handlung. Theme: allgemeines Thema in Stichworten. Message: Aussage zum Thema."
+    },
+    {
+      "id": "en-int-02", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Put the parts of a PEE paragraph in the right order.",
+      "elemente": [
+        "The father is presented as a man who is unable to show his feelings.",
+        "When his daughter wins the prize, he only says „Good. Now go to bed“ (l. 31).",
+        "His short, cold reply suggests that he finds it hard to show pride, which deeply disappoints his daughter."
+      ],
+      "erklaerung": "Point – Evidence – Explanation."
+    },
+    {
+      "id": "en-int-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "What is missing in this analysis sentence? ``The mother is very strict. She says „You will not go out tonight“ (l. 8).``",
+      "optionen": [
+        { "text": "the explanation of what the quotation shows and how it works", "richtig": true },
+        { "text": "the point", "feedback": "Die Aussage ist da: The mother is very strict." },
+        { "text": "the evidence", "feedback": "Das Zitat mit Zeilenangabe ist der Beleg." },
+        { "text": "nothing – the paragraph is complete", "feedback": "Ohne Erklärung bleibt offen, was das Zitat beweist." }
+      ],
+      "erklaerung": "Ohne explanation ist es nur eine Behauptung mit Zitat. Die Deutung fehlt."
+    },
+    {
+      "id": "en-int-04", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Put the parts of a text analysis in the right order.",
+      "elemente": [
+        "Introduction: title, author, text type, year, topic and the aspect you analyse",
+        "Main part: paragraph on the characters with quotations",
+        "Main part: paragraph on narrative perspective and language with quotations",
+        "Conclusion: summary of the results and answer to the task"
+      ],
+      "erklaerung": "Einleitung – geordneter Hauptteil – Schluss ohne neue Argumente."
+    },
+    {
+      "id": "en-int-05", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Which phrases are useful for **interpreting** a text?",
+      "optionen": [
+        { "text": "This suggests that …", "richtig": true },
+        { "text": "The author conveys the idea that …", "richtig": true },
+        { "text": "It can be argued that …", "richtig": true },
+        { "text": "I think the story is boring.", "feedback": "Das ist eine persönliche Bewertung, keine Deutung – und zu umgangssprachlich." },
+        { "text": "Once upon a time …", "feedback": "So beginnt ein Märchen, keine Analyse." }
+      ],
+      "erklaerung": "Deutende Verben wie suggest, imply, convey und vorsichtige Formulierungen zeigen analytisches Schreiben."
+    },
+    {
+      "id": "en-int-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz1",
+      "frage": "A story describes a perfect town where everybody wears the same clothes, nobody feels pain and all decisions are made by a council. The main character slowly discovers that people have lost all their memories and real feelings. What is the most convincing message?",
+      "optionen": [
+        { "text": "A society without pain and choice also loses love, freedom and individuality.", "richtig": true },
+        { "text": "Everybody should wear the same clothes.", "feedback": "Die gleiche Kleidung wird gerade als Teil des Problems gezeigt." },
+        { "text": "Councils always make good decisions.", "feedback": "Der Text stellt die Macht des Rates eher in Frage." },
+        { "text": "The story is about a boy who discovers something.", "feedback": "Das ist eine knappe Handlungsangabe, keine Botschaft." }
+      ],
+      "erklaerung": "Die Botschaft ist eine allgemeine Aussage über das Thema – hier: Der Preis einer „perfekten“ Gesellschaft."
+    },
+    {
+      "id": "en-int-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Write one PEE paragraph (3–4 sentences) about the narrator in this extract.\n\n„(1) Everybody at the party was laughing. (2) I stood by the window, holding a glass I didn’t want, and counted the cars outside. (3) Twenty-three. (4) Nobody asked me anything all evening.“",
+      "stichworte": [
+        { "aspekt": "Point: Der Erzähler fühlt sich einsam / ausgeschlossen", "woerter": ["lonely", "isolated", "excluded", "outsider", "alone", "left out"] },
+        { "aspekt": "Evidence: Zitat mit Zeilenangabe", "woerter": ["(l.", "line"] },
+        { "aspekt": "Explanation: deutende Formulierung", "woerter": ["suggests", "shows", "implies", "indicates", "emphasises", "conveys"] },
+        { "aspekt": "Kontrast zu den anderen (laughing / nobody asked)", "woerter": ["contrast", "laughing", "nobody", "the others", "everybody else"] }
+      ],
+      "musterloesung": "The narrator is presented as lonely and isolated at the party. While „everybody“ is laughing (l. 1), he stands by the window and counts the cars outside (l. 2). This contrast suggests that he does not feel part of the group and is bored and uncomfortable. The short sentence „Twenty-three.“ (l. 3) and the fact that „nobody asked [him] anything“ (l. 4) emphasise how invisible he feels.",
+      "erklaerung": "Aussage – Zitat mit Zeile – Deutung: So überzeugt ein Analyseabsatz."
+    }
+  ]
+}

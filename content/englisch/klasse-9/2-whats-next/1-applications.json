@@ -1,0 +1,120 @@
+{
+  "id": "en-k9-application",
+  "titel": "What’s next? Applications, CVs and job interviews",
+  "kurz": "Pläne nach der Schule (gap year, work and travel, Praktikum), Aufbau eines englischen Bewerbungsschreibens und Lebenslaufs, formelle Wendungen und Tipps für das job interview.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Möglichkeiten nach der Schule auf Englisch beschreiben (internship, gap year, work and travel, apprenticeship)" },
+    { "id": "lz2", "niveau": "G", "text": "Aufbau und typische Wendungen eines formellen Bewerbungsschreibens (letter of application) kennen" },
+    { "id": "lz3", "niveau": "H", "text": "Formelles und informelles Register unterscheiden und die richtige Grußformel wählen (Yours sincerely / Yours faithfully)" },
+    { "id": "lz4", "niveau": "H", "text": "Sich auf ein Vorstellungsgespräch vorbereiten und typische Fragen beantworten" }
+  ],
+  "verstehen": {
+    "einstieg": "Du möchtest in den Sommerferien ein Praktikum in einem Hostel in Dublin machen. Die Bewerbung muss auf Englisch sein. Reicht „Hi, I want the job“?",
+    "abschnitte": [
+      {
+        "titel": "Plans for the future",
+        "text": "- **internship / work experience**: Praktikum\n- **apprenticeship**: Ausbildung (Lehre)\n- **gap year**: ein Jahr Pause zwischen Schule und Studium oder Beruf, z. B. für Reisen oder ein freiwilliges soziales Jahr (**volunteering**)\n- **work and travel**: im Ausland reisen und unterwegs jobben, z. B. in Australien, Neuseeland oder Kanada (mit einem working holiday visa)\n- **university / college**, **degree** (Abschluss)"
+      },
+      {
+        "titel": "The letter of application",
+        "text": "Ein britisches Bewerbungsschreiben ist **formell**:\n\n- Absenderadresse oben rechts, darunter das Datum; Empfängeradresse links\n- **Anrede**: ``Dear Ms Walsh,`` (Name bekannt) oder ``Dear Sir or Madam,`` (Name unbekannt)\n- **Einleitung**: ``I am writing to apply for the position of … which was advertised on …``\n- **Hauptteil**: Warum du? ``I am particularly interested in … because …`` ``I have experience in …`` ``My friends describe me as reliable and outgoing.``\n- **Schluss**: ``I would be grateful for the opportunity to …`` ``Please do not hesitate to contact me if you need any further information.`` ``I look forward to hearing from you.``\n- **Grußformel**: **Yours sincerely,** wenn du den Namen genannt hast, **Yours faithfully,** nach „Dear Sir or Madam“ (britisch; im amerikanischen Englisch meist **Sincerely,**)\n\nFormelles Register: **keine Kurzformen** (I am statt I’m), keine Umgangssprache, höfliche Wendungen."
+      },
+      {
+        "titel": "The CV",
+        "text": "Der Lebenslauf (BE: **CV**, AE: **résumé**) enthält: personal details (Name, Kontakt), **education**, **work experience**, **skills** (Sprachen, Computer), **interests**. In Großbritannien und den USA verzichtet man meist auf ein Foto und auf Angaben wie Geburtsdatum oder Religion, damit niemand benachteiligt wird."
+      },
+      {
+        "titel": "The job interview",
+        "text": "- Typische Fragen: ``Tell me about yourself.`` ``Why do you want to work for us?`` ``What are your strengths and weaknesses?`` ``Where do you see yourself in five years?``\n- Tipps: pünktlich sein, passende Kleidung, Blickkontakt, freundlich lächeln, ausreden lassen, Beispiele für Stärken nennen, selbst eine Frage vorbereiten (``What would a typical day look like?``)\n- Körpersprache und Höflichkeit sind in vielen englischsprachigen Ländern sehr wichtig: Bitte, Danke und ein freundlicher Small Talk am Anfang gehören dazu."
+      }
+    ],
+    "merksatz": "Bewerbung: formell, keine Kurzformen. Dear Ms … → Yours sincerely; Dear Sir or Madam → Yours faithfully. Typische Wendungen: I am writing to apply for …, I look forward to hearing from you. CV/résumé: education, work experience, skills, interests – meist ohne Foto.",
+    "alltag": "Viele britische Firmen sortieren Bewerbungen mit falscher Grußformel oder mit Kurzformen sofort aus – die Form zeigt, wie sorgfältig jemand arbeitet."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-app-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Match the English words with their meanings.",
+      "paare": [
+        { "links": "internship", "rechts": "Praktikum" },
+        { "links": "apprenticeship", "rechts": "Ausbildung (Lehre)" },
+        { "links": "gap year", "rechts": "Auszeit zwischen Schule und Studium/Beruf" },
+        { "links": "volunteering", "rechts": "ehrenamtliche Arbeit" }
+      ],
+      "extraRechts": ["Studienabschluss"],
+      "erklaerung": "Studienabschluss heißt degree."
+    },
+    {
+      "id": "en-app-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Which sentence is a good beginning for a letter of application?",
+      "optionen": [
+        { "text": "I am writing to apply for the position of summer intern which was advertised on your website.", "richtig": true },
+        { "text": "Hi, I want this job!", "feedback": "Zu informell für eine Bewerbung." },
+        { "text": "I’m writing cos I need some money in the summer.", "feedback": "Kurzformen und Umgangssprache passen nicht in ein formelles Schreiben." },
+        { "text": "You should give me this job because I am the best.", "feedback": "Unhöflich und ohne Begründung." }
+      ],
+      "erklaerung": "Formeller Einstieg: I am writing to apply for …"
+    },
+    {
+      "id": "en-app-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "You start your letter with „Dear Sir or Madam,“. How do you end it (British English)?",
+      "optionen": [
+        { "text": "Yours faithfully,", "richtig": true },
+        { "text": "Yours sincerely,", "feedback": "Yours sincerely verwendet man, wenn man die Person mit Namen angesprochen hat." },
+        { "text": "Love,", "feedback": "Viel zu persönlich für eine Bewerbung." },
+        { "text": "See you,", "feedback": "Informell – passt nicht in einen formellen Brief." }
+      ],
+      "erklaerung": "Unbekannter Name (Dear Sir or Madam) → Yours faithfully. Bekannter Name (Dear Ms Walsh) → Yours sincerely."
+    },
+    {
+      "id": "en-app-04", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Match the informal phrases with their formal versions.",
+      "paare": [
+        { "links": "I want to …", "rechts": "I would like to …" },
+        { "links": "Get back to me soon.", "rechts": "I look forward to hearing from you." },
+        { "links": "Just call me if you’ve got questions.", "rechts": "Please do not hesitate to contact me if you need any further information." },
+        { "links": "Thanks a lot!", "rechts": "Thank you for considering my application." }
+      ],
+      "erklaerung": "Formelles Register: höflich, vollständig, ohne Kurzformen."
+    },
+    {
+      "id": "en-app-05", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Put the parts of a letter of application in the right order.",
+      "elemente": [
+        "Dear Ms Walsh,",
+        "I am writing to apply for the position of summer assistant which was advertised on your website.",
+        "I am particularly interested in this job because I enjoy working with people, and I have already helped at my school’s reception.",
+        "I would be grateful for the opportunity to discuss my application with you. I look forward to hearing from you.",
+        "Yours sincerely,"
+      ],
+      "erklaerung": "Anrede – Grund des Schreibens – Qualifikationen und Motivation – Bitte um Gespräch – Grußformel."
+    },
+    {
+      "id": "en-app-06", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Which pieces of advice for a job interview are good?",
+      "optionen": [
+        { "text": "Prepare a question to ask at the end of the interview.", "richtig": true },
+        { "text": "Give examples when you talk about your strengths.", "richtig": true },
+        { "text": "Make eye contact and listen carefully.", "richtig": true },
+        { "text": "Answer every question with only „yes“ or „no“.", "feedback": "Kurze Antworten wirken desinteressiert. Erzähle mit Beispielen." },
+        { "text": "Check your phone during the interview.", "feedback": "Das wirkt sehr unhöflich." }
+      ],
+      "erklaerung": "Vorbereitung, Beispiele, Aufmerksamkeit und eine eigene Frage zeigen echtes Interesse."
+    },
+    {
+      "id": "en-app-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "In a job interview you are asked: „Tell me about yourself and why you want this internship at our animal shelter.“ Write your answer (4–5 sentences) in a polite, formal style.",
+      "stichworte": [
+        { "aspekt": "Kurze Vorstellung (Alter, Schule)", "woerter": ["years old", "i am", "school", "year"] },
+        { "aspekt": "Stärken oder Fähigkeiten mit Beispiel", "woerter": ["reliable", "responsible", "patient", "hard-working", "for example", "experience", "i have"] },
+        { "aspekt": "Motivation für das Praktikum", "woerter": ["because", "interested", "would like", "love animals", "learn"] },
+        { "aspekt": "Formelles Register (keine Kurzformen wie I’m)", "woerter": ["i would", "i am"] }
+      ],
+      "musterloesung": "I am fifteen years old and I am in Year 9 at the Humboldt-Gymnasium in Berlin. I have loved animals since I was a child, and I often look after my neighbours’ dog. My friends describe me as reliable and patient, which I think is important when you work with animals. I would like to do this internship because I am interested in becoming a vet and I would like to learn how an animal shelter works.",
+      "erklaerung": "Eine gute Antwort ist kurz, konkret und begründet – mit Beispielen statt bloßer Behauptungen."
+    }
+  ]
+}

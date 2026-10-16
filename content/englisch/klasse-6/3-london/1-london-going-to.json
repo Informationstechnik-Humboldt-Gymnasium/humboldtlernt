@@ -1,0 +1,110 @@
+{
+  "id": "en-k6-london",
+  "titel": "London: sights, the Tube and the going-to future",
+  "kurz": "Bekannte Sehenswürdigkeiten Londons, Tipps für die U-Bahn und Pläne für einen Besuch mit dem going-to future.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Bekannte Sehenswürdigkeiten Londons beschreiben und zuordnen" },
+    { "id": "lz2", "niveau": "G", "text": "Ansagen und Hinweise im Londoner Nahverkehr verstehen" },
+    { "id": "lz3", "niveau": "G", "text": "Pläne und Absichten mit dem going-to future ausdrücken, auch verneint und als Frage" },
+    { "id": "lz4", "niveau": "H", "text": "Mit going to Vorhersagen machen, wenn man schon Anzeichen sieht" }
+  ],
+  "verstehen": {
+    "einstieg": "Deine Klasse fährt für drei Tage nach London. Was wollt ihr sehen, wie kommt ihr von A nach B – und wie erzählst du deinem englischen Gastgeber von euren Plänen?",
+    "abschnitte": [
+      {
+        "titel": "Famous sights",
+        "text": "- **Big Ben**: eigentlich der Name der großen Glocke im Uhrturm (**Elizabeth Tower**) am Parlament, den **Houses of Parliament**\n- **Buckingham Palace**: der Londoner Wohnsitz des Königs, mit der Wachablösung (**Changing of the Guard**)\n- **Tower of London**: eine alte Burg an der Themse, dort werden die Kronjuwelen (**Crown Jewels**) aufbewahrt\n- **Tower Bridge**: die Brücke mit zwei Türmen, die sich für Schiffe öffnet (nicht zu verwechseln mit der schlichten London Bridge)\n- **London Eye**: ein großes Riesenrad an der Themse (**River Thames**)\n- **Greenwich**: hier verläuft der Nullmeridian (Längengrad 0°)"
+      },
+      {
+        "titel": "Getting around",
+        "text": "Die Londoner U-Bahn heißt **the Underground** oder **the Tube**. Sie ist die älteste U-Bahn der Welt (eröffnet 1863). Bezahlt wird mit einer **Oyster card** oder kontaktlos mit Karte oder Handy. Typische Ansagen und Schilder:\n\n- **Mind the gap.** – Vorsicht, Spalt zwischen Zug und Bahnsteig!\n- **Stand on the right.** – Auf der Rolltreppe rechts stehen, links gehen.\n- **This is a Circle line train to …** / **The next station is …**\n- **Please change here for the Jubilee line.** – Hier umsteigen.\n\nBekannt sind auch die roten Doppeldeckerbusse (**double-decker buses**)."
+      },
+      {
+        "titel": "The going-to future",
+        "text": "Mit **am / is / are going to + Grundform** sagt man, was man **vorhat** oder **geplant** hat:\n\n- ``We’re going to visit the Tower tomorrow.``\n- ``I’m not going to take the bus.``\n- ``Are you going to see a musical?`` – ``Yes, we are.``\n\nAußerdem sagt man damit voraus, was gleich passiert, wenn man **Anzeichen** sieht: ``Look at those clouds! It’s going to rain.``"
+      }
+    ],
+    "merksatz": "Big Ben ist die Glocke im Elizabeth Tower. Die U-Bahn heißt Tube: Mind the gap! Going-to future: am/is/are going to + Grundform für Pläne und für Vorhersagen mit Anzeichen.",
+    "alltag": "Auf der Rolltreppe der Tube links stehen zu bleiben, ist für Londoner fast so schlimm wie Drängeln in der Warteschlange (queue)."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-lon-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Match the London sights with the descriptions.",
+      "paare": [
+        { "links": "Big Ben", "rechts": "the great bell in the clock tower of the Houses of Parliament" },
+        { "links": "Tower of London", "rechts": "an old castle where the Crown Jewels are kept" },
+        { "links": "Tower Bridge", "rechts": "a bridge with two towers that opens for ships" },
+        { "links": "London Eye", "rechts": "a big wheel next to the River Thames" },
+        { "links": "Buckingham Palace", "rechts": "the King’s home in London" }
+      ],
+      "erklaerung": "Big Ben ist eigentlich nur die Glocke – der Turm heißt Elizabeth Tower."
+    },
+    {
+      "id": "en-lon-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "You hear „Mind the gap!“ on the Tube. What does it mean?",
+      "optionen": [
+        { "text": "Be careful of the space between the train and the platform.", "richtig": true },
+        { "text": "The train is late.", "feedback": "gap heißt Lücke oder Spalt – hier zwischen Zug und Bahnsteig." },
+        { "text": "Please buy a ticket.", "feedback": "Mind heißt hier „Achte auf …“." },
+        { "text": "This is the last station.", "feedback": "Das wäre z. B. „This train terminates here.“" }
+      ],
+      "erklaerung": "Mind the gap = Achtung, Spalt! Eine der bekanntesten Ansagen der Welt."
+    },
+    {
+      "id": "en-lon-03", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Which tips for using the London Underground are correct?",
+      "optionen": [
+        { "text": "Stand on the right on the escalator.", "richtig": true },
+        { "text": "You can pay with an Oyster card or contactless.", "richtig": true },
+        { "text": "Change trains when you hear „Please change here for …“ and need that line.", "richtig": true },
+        { "text": "Stand on the left so people can walk on the right.", "feedback": "Umgekehrt: rechts stehen, links gehen." },
+        { "text": "The Tube is the newest underground in the world.", "feedback": "Die Tube ist die älteste U-Bahn der Welt (1863)." }
+      ],
+      "erklaerung": "Stand on the right, walk on the left – und immer: Mind the gap."
+    },
+    {
+      "id": "en-lon-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Complete: ``Tomorrow we ___ the Science Museum.``",
+      "optionen": [
+        { "text": "are going to visit", "richtig": true },
+        { "text": "are going visit", "feedback": "Es fehlt to: are going to visit." },
+        { "text": "is going to visit", "feedback": "we → are." },
+        { "text": "going to visit", "feedback": "Es fehlt are: we are going to …" }
+      ],
+      "erklaerung": "am/is/are + going to + Grundform."
+    },
+    {
+      "id": "en-lon-05", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Put the words in the right order to make a question.",
+      "elemente": ["Are", "you", "going", "to", "take", "the", "Tube?"],
+      "erklaerung": "In der Frage steht are vor dem Subjekt: Are you going to …?"
+    },
+    {
+      "id": "en-lon-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "In which situation does „going to“ express a prediction because you can see the signs?",
+      "optionen": [
+        { "text": "Look at the sky! It’s going to rain.", "richtig": true },
+        { "text": "We’re going to visit our aunt next week.", "feedback": "Das ist ein Plan, keine Vorhersage." },
+        { "text": "I’m going to learn the guitar this year.", "feedback": "Das ist eine Absicht." },
+        { "text": "Are you going to watch the film tonight?", "feedback": "Hier wird nach einem Plan gefragt." }
+      ],
+      "erklaerung": "Dunkle Wolken sind das Anzeichen: It’s going to rain."
+    },
+    {
+      "id": "en-lon-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Your class is going to spend one day in London. Write 4–5 sentences about your plans. Use the going-to future and name at least two sights.",
+      "stichworte": [
+        { "aspekt": "going-to future", "woerter": ["going to"] },
+        { "aspekt": "Mindestens eine Londoner Sehenswürdigkeit", "woerter": ["big ben", "tower", "london eye", "buckingham", "thames", "greenwich", "museum", "parliament"] },
+        { "aspekt": "Verkehrsmittel", "woerter": ["tube", "underground", "bus", "boat", "walk"] },
+        { "aspekt": "Zeitliche Gliederung (first, then, in the afternoon …)", "woerter": ["first", "then", "after that", "afternoon", "evening", "morning", "finally"] }
+      ],
+      "musterloesung": "In the morning we are going to take the Tube to Westminster. First we are going to see Big Ben and the Houses of Parliament. Then we are going to walk along the Thames to the London Eye. In the afternoon we are going to visit the Tower of London, because I want to see the Crown Jewels. In the evening we aren’t going to do anything – we are going to be very tired!",
+      "erklaerung": "Für Pläne passt das going-to future. Zeitangaben gliedern deinen Text."
+    }
+  ]
+}

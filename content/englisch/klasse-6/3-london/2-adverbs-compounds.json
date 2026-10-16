@@ -1,0 +1,120 @@
+{
+  "id": "en-k6-adverbs",
+  "titel": "quick or quickly? Adverbs and compounds",
+  "kurz": "Adjektive und Adverbien der Art und Weise unterscheiden, Adverbien steigern und Zusammensetzungen mit some, any, no und every verwenden.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Adverbien der Art und Weise bilden (careful → carefully, happy → happily) und unregelmäßige Formen kennen (good → well, fast, hard)" },
+    { "id": "lz2", "niveau": "G", "text": "Entscheiden, ob ein Adjektiv oder ein Adverb gebraucht wird" },
+    { "id": "lz3", "niveau": "H", "text": "Adverbien steigern (more carefully, faster, better)" },
+    { "id": "lz4", "niveau": "G", "text": "Zusammensetzungen mit some-, any-, no- und every- richtig verwenden" }
+  ],
+  "verstehen": {
+    "einstieg": "Im Deutschen sagt man „Sie ist schnell“ und „Sie läuft schnell“ – beides mit demselben Wort. Im Englischen ist das anders: She is quick. She runs quickly.",
+    "abschnitte": [
+      {
+        "titel": "Adjektiv oder Adverb?",
+        "text": "- Das **Adjektiv** beschreibt ein **Nomen** (eine Person, eine Sache) oder steht nach **be, look, seem**: ``a careful driver``, ``The bus is slow.``\n- Das **Adverb** beschreibt ein **Verb**, also **wie** jemand etwas tut: ``He drives carefully.`` ``The bus moves slowly.``"
+      },
+      {
+        "titel": "Bildung",
+        "text": "- Adjektiv + **-ly**: quick → quickly, careful → carefully, quiet → quietly\n- -y → **-ily**: happy → happily, easy → easily\n- -le → **-ly**: terrible → terribly\n- unregelmäßig: **good → well**, **fast → fast**, **hard → hard** (hardly heißt „kaum“!), **late → late**\n\n``She is a good singer. She sings well.``"
+      },
+      {
+        "titel": "Adverbien steigern",
+        "text": "- Adverbien auf -ly: **more / most**: carefully → more carefully → most carefully\n- fast, hard, early: **-er / -est**: faster, harder, earlier\n- **well → better → best**, **badly → worse → worst**\n\n``Tom runs faster than me, but Lena runs fastest.``"
+      },
+      {
+        "titel": "some, any, no, every",
+        "text": "- **some-** in bejahten Sätzen (und Bitten/Angeboten): **somebody/someone**, **something**, **somewhere**\n- **any-** in Fragen und verneinten Sätzen: ``Is there anything to eat?`` ``I can’t see anybody.``\n- **no-** (= not any): **nobody**, **nothing**, **nowhere** – ohne weitere Verneinung: ``Nobody was there.``\n- **every-**: **everybody**, **everything**, **everywhere** – das Verb steht in der Einzahl: ``Everybody is here.``"
+      }
+    ],
+    "merksatz": "Adjektiv beschreibt ein Nomen (a quick runner), Adverb beschreibt, wie man etwas tut (he runs quickly). good → well. Steigerung: more carefully, faster, better. some- in bejahten Sätzen, any- in Fragen und Verneinungen, no- ohne zweite Verneinung, every- mit Einzahl.",
+    "alltag": "„Drive slowly – children playing“ steht auf englischen Straßenschildern. Wer „Drive slow“ liest, sieht umgangssprachliches Englisch, das in Prüfungen als Fehler zählt."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-adv-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Match the adjectives with their adverbs.",
+      "paare": [
+        { "links": "careful", "rechts": "carefully" },
+        { "links": "happy", "rechts": "happily" },
+        { "links": "good", "rechts": "well" },
+        { "links": "fast", "rechts": "fast" },
+        { "links": "terrible", "rechts": "terribly" }
+      ],
+      "extraRechts": ["goodly"],
+      "erklaerung": "good → well und fast → fast sind unregelmäßig."
+    },
+    {
+      "id": "en-adv-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Complete: ``Please speak ___. The baby is sleeping.``",
+      "optionen": [
+        { "text": "quietly", "richtig": true },
+        { "text": "quiet", "feedback": "Es beschreibt, wie man spricht (Verb), also brauchst du das Adverb." },
+        { "text": "quietlier", "feedback": "Diese Form gibt es nicht." },
+        { "text": "more quiet", "feedback": "Hier wird nichts verglichen. Du brauchst das Adverb quietly." }
+      ],
+      "erklaerung": "speak (Verb) + Adverb: speak quietly."
+    },
+    {
+      "id": "en-adv-03", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Which sentences are correct?",
+      "optionen": [
+        { "text": "She plays the piano very well.", "richtig": true },
+        { "text": "The test was easy.", "richtig": true },
+        { "text": "He is a careful driver.", "richtig": true },
+        { "text": "You look tiredly.", "feedback": "Nach look (aussehen) steht ein Adjektiv: You look tired." },
+        { "text": "He speaks English good.", "feedback": "Wie spricht er? → Adverb: He speaks English well." }
+      ],
+      "erklaerung": "Nach be, look, seem steht ein Adjektiv. Beschreibt das Wort ein anderes Verb, brauchst du ein Adverb."
+    },
+    {
+      "id": "en-adv-04", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz1",
+      "frage": "What does this sentence mean? ``I could hardly hear the guide on the bus.``",
+      "optionen": [
+        { "text": "I could almost not hear the guide.", "richtig": true },
+        { "text": "I could hear the guide very well.", "feedback": "hardly heißt „kaum“, nicht „gut“." },
+        { "text": "The guide spoke very loudly.", "feedback": "Dann hätte man ihn gut gehört. hardly bedeutet „kaum“." },
+        { "text": "I worked hard to hear the guide.", "feedback": "Das Adverb zu hard (schwer, hart) ist hard. hardly ist ein anderes Wort." }
+      ],
+      "erklaerung": "hard = hart, fleißig (Adjektiv und Adverb). hardly = kaum."
+    },
+    {
+      "id": "en-adv-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Complete: ``Next time, please write ___. I can’t read your handwriting.``",
+      "optionen": [
+        { "text": "more carefully", "richtig": true },
+        { "text": "carefullier", "feedback": "Adverbien auf -ly steigert man mit more." },
+        { "text": "more careful", "feedback": "Es beschreibt, wie man schreibt → Adverb: more carefully." },
+        { "text": "most carefully than", "feedback": "Für einen Vergleich brauchst du more …, nicht most." }
+      ],
+      "erklaerung": "Steigerung von Adverbien auf -ly: more carefully, most carefully."
+    },
+    {
+      "id": "en-adv-06", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Complete: ``Is there ___ in the fridge? I’m hungry.``",
+      "optionen": [
+        { "text": "anything", "richtig": true },
+        { "text": "something", "feedback": "In normalen Fragen benutzt man meist any-: anything." },
+        { "text": "nothing", "feedback": "nothing passt nicht in diese Frage." },
+        { "text": "everything", "feedback": "Du fragst nicht, ob alles im Kühlschrank ist." }
+      ],
+      "erklaerung": "Fragen und verneinte Sätze: anything, anybody, anywhere."
+    },
+    {
+      "id": "en-adv-07", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Which sentences are correct?",
+      "optionen": [
+        { "text": "Nobody knows the answer.", "richtig": true },
+        { "text": "Everybody is ready for the trip.", "richtig": true },
+        { "text": "I didn’t see nobody.", "feedback": "Doppelte Verneinung! Richtig: I didn’t see anybody. oder I saw nobody." },
+        { "text": "Everybody are happy.", "feedback": "Nach everybody steht das Verb in der Einzahl: is." },
+        { "text": "I’d like something to drink, please.", "richtig": true }
+      ],
+      "erklaerung": "no- ersetzt not any. every- steht mit Einzahl. Bei Bitten und Angeboten benutzt man some-."
+    }
+  ]
+}

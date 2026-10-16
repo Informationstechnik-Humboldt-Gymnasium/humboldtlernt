@@ -1,0 +1,117 @@
+{
+  "id": "en-k5-school-britain",
+  "titel": "A school day in Britain",
+  "kurz": "Schulfächer, Schuluniform, Clubs und Regeln an einer britischen Schule – und Regeln mit Imperativ und can/can’t.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Schulfächer, Gegenstände und Orte in der Schule auf Englisch benennen" },
+    { "id": "lz2", "niveau": "G", "text": "Wichtige Unterschiede zwischen britischen und deutschen Schulen nennen (school uniform, after-school clubs)" },
+    { "id": "lz3", "niveau": "G", "text": "Regeln mit dem Imperativ (auch verneint) und mit can / can’t formulieren" },
+    { "id": "lz4", "niveau": "H", "text": "Einen kurzen Text über die eigene Schule oder eine Traumschule schreiben" }
+  ],
+  "verstehen": {
+    "einstieg": "Stell dir vor, du bist eine Woche Gast an einer Schule in England. Du trägst eine Krawatte, isst mittags in der Schule und bleibst nachmittags im Theaterclub. Was ist dort anders als bei dir?",
+    "abschnitte": [
+      {
+        "titel": "School subjects and places",
+        "text": "- Fächer: **Maths**, **English**, **German**, **Science** (Naturwissenschaften), **History**, **Geography**, **Art**, **Music**, **PE** (Physical Education, Sport), **RE** (Religious Education)\n- Orte: **classroom**, **library**, **canteen** (Kantine), **playground** / **schoolyard**, **gym** (Turnhalle), **staff room** (Lehrerzimmer)\n- Dinge: **exercise book** (Heft), **pencil case** (Federmäppchen), **rubber** (Radiergummi), **ruler** (Lineal), **timetable** (Stundenplan)"
+      },
+      {
+        "titel": "British schools are different",
+        "text": "- Die meisten Schülerinnen und Schüler tragen eine **school uniform**, oft mit Blazer oder Pullover in den Schulfarben und Krawatte.\n- Der Schultag dauert meist bis etwa 15 Uhr. Mittags gibt es **lunch** in der Schule.\n- Nach dem Unterricht gibt es viele **after-school clubs**: Sport, Theater, Musik, Schach …\n- Der Tag beginnt oft mit **registration**: Die Klasse trifft sich mit dem **form tutor** (Klassenlehrer), der die Anwesenheit prüft.\n- Die Lehrkräfte spricht man mit **Mr**, **Mrs**, **Miss** oder **Ms** und dem Nachnamen an, z. B. „Good morning, Mr Smith.“"
+      },
+      {
+        "titel": "School rules",
+        "text": "Regeln formuliert man oft im **Imperativ** (Befehlsform). Er ist einfach die Grundform des Verbs:\n\n- ``Listen to your teacher.``\n- ``Put up your hand.``\n- Verneint mit **Don’t**: ``Don’t run in the corridor.`` ``Don’t eat in class.``\n\nMit **can** und **can’t** sagt man, was erlaubt ist und was nicht: ``You can use the library at lunchtime. You can’t use your phone in class.`` Nach can steht das Verb ohne to und ohne -s: „She can swim.“"
+      }
+    ],
+    "merksatz": "Britische Schulen: school uniform, lunch in der Schule, after-school clubs, form tutor. Regeln: Imperativ (Listen!), verneint mit Don’t (Don’t run!), Erlaubnis mit can / can’t + Grundform.",
+    "alltag": "Auf Schildern in Großbritannien liest du ständig Imperative: „Keep off the grass“, „Mind the gap“, „Please don’t feed the ducks“."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-sch-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Match the English and German words.",
+      "paare": [
+        { "links": "timetable", "rechts": "Stundenplan" },
+        { "links": "pencil case", "rechts": "Federmäppchen" },
+        { "links": "rubber", "rechts": "Radiergummi" },
+        { "links": "PE", "rechts": "Sport" },
+        { "links": "canteen", "rechts": "Kantine" }
+      ],
+      "extraRechts": ["Lehrerzimmer"],
+      "erklaerung": "PE steht für Physical Education. Das Lehrerzimmer heißt staff room."
+    },
+    {
+      "id": "en-sch-02", "typ": "multi", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Which things are typical of many British schools?",
+      "optionen": [
+        { "text": "Students wear a school uniform.", "richtig": true },
+        { "text": "Students have lunch at school.", "richtig": true },
+        { "text": "There are lots of after-school clubs.", "richtig": true },
+        { "text": "Students call their teachers by their first names.", "feedback": "Lehrkräfte spricht man mit Mr, Mrs, Miss oder Ms und dem Nachnamen an." },
+        { "text": "School always ends at 11 o’clock.", "feedback": "Der Schultag dauert meist bis zum Nachmittag, etwa bis 15 Uhr." }
+      ],
+      "erklaerung": "Uniform, lunch in der Schule und Clubs am Nachmittag gehören an den meisten britischen Schulen dazu."
+    },
+    {
+      "id": "en-sch-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Which school rule is correct English?",
+      "optionen": [
+        { "text": "Don’t run in the corridor.", "richtig": true },
+        { "text": "Not run in the corridor.", "feedback": "Der verneinte Imperativ beginnt mit Don’t." },
+        { "text": "Doesn’t run in the corridor.", "feedback": "Im Imperativ gibt es kein -s. Es heißt immer Don’t." },
+        { "text": "Don’t running in the corridor.", "feedback": "Nach Don’t steht die Grundform: run." }
+      ],
+      "erklaerung": "Verneinter Imperativ: Don’t + Grundform des Verbs."
+    },
+    {
+      "id": "en-sch-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Complete: ``My sister ___ very well.``",
+      "optionen": [
+        { "text": "can swim", "richtig": true },
+        { "text": "can swims", "feedback": "Nach can steht die Grundform ohne -s." },
+        { "text": "cans swim", "feedback": "can bekommt nie ein -s." },
+        { "text": "can to swim", "feedback": "Nach can steht kein to." }
+      ],
+      "erklaerung": "can + Grundform, für alle Personen gleich: I can, she can, they can swim."
+    },
+    {
+      "id": "en-sch-05", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Where do you do these things at school?",
+      "paare": [
+        { "links": "You borrow books.", "rechts": "library" },
+        { "links": "You eat your lunch.", "rechts": "canteen" },
+        { "links": "You play basketball when it rains.", "rechts": "gym" },
+        { "links": "The teachers have a break.", "rechts": "staff room" }
+      ],
+      "extraRechts": ["bathroom"],
+      "erklaerung": "library: Bücherei, canteen: Kantine, gym: Turnhalle, staff room: Lehrerzimmer."
+    },
+    {
+      "id": "en-sch-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "It’s your first day at a British school. How do you greet your teacher, Mrs Taylor?",
+      "optionen": [
+        { "text": "Good morning, Mrs Taylor.", "richtig": true },
+        { "text": "Hi, Sarah!", "feedback": "Lehrkräfte spricht man nicht mit dem Vornamen an." },
+        { "text": "Good morning, teacher Taylor.", "feedback": "„Teacher“ ist keine Anrede. Man sagt Mr, Mrs, Miss oder Ms + Nachname." },
+        { "text": "Hello, Mrs Sarah.", "feedback": "Nach Mrs kommt der Nachname, nicht der Vorname." }
+      ],
+      "erklaerung": "In Großbritannien: Mr/Mrs/Miss/Ms + Nachname. Kinder sagen manchmal auch nur „Miss“ oder „Sir“."
+    },
+    {
+      "id": "en-sch-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Write about your dream school (4–5 sentences). Write about subjects, clubs and two school rules. Use „can“ or „can’t“ and one imperative.",
+      "stichworte": [
+        { "aspekt": "Schulfächer oder Clubs werden genannt", "woerter": ["maths", "english", "science", "art", "music", "pe", "history", "club"] },
+        { "aspekt": "Satz mit can oder can’t", "woerter": ["can"] },
+        { "aspekt": "Eine Regel im Imperativ (z. B. Don’t …)", "woerter": ["don't", "don’t", "be ", "listen", "please"] },
+        { "aspekt": "Begründung oder Meinung (because, I like …)", "woerter": ["because", "i like", "i love", "favourite", "cool", "great"] }
+      ],
+      "musterloesung": "My dream school starts at nine o’clock. We have Art, Music and Science every day, because I like them. There is a cooking club and a football club after school. You can bring your dog to school, but you can’t use your phone in class. Don’t be late for lunch!",
+      "erklaerung": "Eine gute Beschreibung nennt Fächer und Clubs, verwendet can/can’t und gibt Gründe mit because."
+    }
+  ]
+}

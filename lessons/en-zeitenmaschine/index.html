@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zeitenmaschine: English tenses</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<style>
+  .lk-grid > * { min-width: 0; }
+  select { max-width: 100%; }
+  .seg { flex-wrap: wrap; }
+  .satz { display: flex; flex-wrap: wrap; gap: 6px; align-items: baseline; font-size: 1.25rem; font-weight: 650; margin: 4px 0 10px; }
+  .satz span { padding: 3px 8px; border-radius: 8px; }
+  .r-subjekt { background: var(--soft-accent); color: var(--text); }
+  .r-hilfsverb { background: var(--warn-soft); color: var(--warn); }
+  .r-verb { background: var(--ok-soft); color: var(--ok); }
+  .r-rest { color: var(--muted); font-weight: 500; }
+  .legende { display: flex; flex-wrap: wrap; gap: 10px; font-size: .8rem; margin: 0 0 8px; }
+  .legende span { padding: 1px 7px; border-radius: 6px; }
+  #zeitstrahl .achse { stroke: var(--line); stroke-width: 2; }
+  #zeitstrahl .jetzt { stroke: var(--accent); stroke-width: 2; stroke-dasharray: 4 3; }
+  #zeitstrahl .lbl2 { font-size: 12px; fill: var(--muted) !important; text-anchor: middle; }
+  #zeitstrahl .lbl3 { font-size: 12px; font-weight: 700; text-anchor: middle; }
+  #zeitstrahl .punkt { fill: var(--pos); }
+  #zeitstrahl .band { fill: var(--pos); opacity: .35; }
+  #zeitstrahl .pfeil { stroke: var(--pos); stroke-width: 2.4; fill: none; }
+  #zeitstrahl .strich { stroke: var(--pos); stroke-width: 2; stroke-dasharray: 5 4; fill: none; }
+  #zeitstrahl .zweit { fill: var(--accent); }
+  .info p { margin: 4px 0; }
+  .ctrl select { width: 100%; }
+</style>
+</head>
+<body>
+<h1>Zeitenmaschine: English tenses</h1>
+<p class="muted small">Wähle Person, Verb, Zeitform und Satzart. Die Zeitenmaschine baut den Satz, färbt Hilfsverb und Verbform ein und zeigt auf dem Zeitstrahl, wann die Handlung stattfindet.</p>
+
+<div class="lk-grid">
+  <div>
+    <div class="lk-card">
+      <h2>Your sentence</h2>
+      <div class="legende"><span class="r-subjekt">Subjekt</span><span class="r-hilfsverb">Hilfsverb</span><span class="r-verb">Verbform</span></div>
+      <div class="satz" id="satz" aria-live="polite"></div>
+      <svg id="zeitstrahl" viewBox="0 0 520 150" role="img" aria-label="Zeitstrahl"></svg>
+      <div class="info small" id="info"></div>
+    </div>
+  </div>
+  <div>
+    <div class="lk-card">
+      <h2>Einstellungen</h2>
+      <label class="ctrl"><span>Person (Subjekt)</span><select id="selSubj"></select></label>
+      <label class="ctrl"><span>Verb</span><select id="selVerb"></select></label>
+      <p class="small" style="margin:0 0 4px"><b>Zeitform</b></p>
+      <div class="row"><div class="seg" role="group" aria-label="Zeitform" id="segZeit"></div></div>
+      <p class="small" style="margin:0 0 4px"><b>Satzart</b></p>
+      <div class="row"><div class="seg" role="group" aria-label="Satzart" id="segArt">
+        <button type="button" data-art="pos" aria-pressed="true">bejaht</button>
+        <button type="button" data-art="neg" aria-pressed="false">verneint</button>
+        <button type="button" data-art="frage" aria-pressed="false">Frage</button>
+      </div></div>
+      <div class="readouts">
+        <div class="readout"><span>Hilfsverb</span><b id="rHilf">–</b></div>
+        <div class="readout"><span>Verbform</span><b id="rForm">–</b></div>
+        <div class="readout"><span>ausprobiert</span><b id="rAnz">0 / 9</b></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="lk-card tasks">
+  <h2>Entdecke selbst <span class="small muted" data-task-count></span></h2>
+  <div class="task" data-goal="frage3"><p class="task-q">Bilde eine <b>Frage im simple present</b> über Lena oder Tom. Welches Hilfsverb erscheint?</p></div>
+  <div class="task" data-goal="negpast"><p class="task-q">Bilde einen <b>verneinten Satz im simple past</b> mit einem unregelmäßigen Verb. Welche Form hat das Hauptverb?</p></div>
+  <div class="task" data-goal="perfirr"><p class="task-q">Bilde einen bejahten Satz im <b>present perfect</b> mit einem unregelmäßigen Verb (z. B. write, eat, go).</p></div>
+  <div class="task" data-goal="sechs"><p class="task-q">Probiere mindestens <b>sechs verschiedene Zeitformen</b> aus und vergleiche die Zeitstrahlen.</p></div>
+  <div class="task">
+    <p class="task-q">„Ich lerne seit zwei Stunden Englisch.“ Welche Zeitform brauchst du?</p>
+    <div class="choices">
+      <button type="button" data-ok data-fb="Richtig: Die Handlung hat vor zwei Stunden begonnen und dauert bis jetzt: I have been studying English for two hours.">present perfect progressive</button>
+      <button type="button" data-fb="Das present progressive beschreibt nur das Jetzt. Für „seit“ + Dauer bis jetzt braucht man das present perfect progressive.">present progressive</button>
+      <button type="button" data-fb="Das simple present steht für Gewohnheiten. Schau dir den Zeitstrahl des present perfect progressive an.">simple present</button>
+    </div><p class="fb"></p>
+  </div>
+  <div class="task">
+    <p class="task-q">Nach welchen Hilfsverben steht das Hauptverb immer in der <b>Grundform</b>?</p>
+    <div class="choices">
+      <button type="button" data-fb="Nach have/has steht die 3. Form (past participle), z. B. has written.">have / has</button>
+      <button type="button" data-ok data-fb="Richtig: do/does/did und will verlangen die Grundform: doesn’t write, did write, will write.">do / does / did und will</button>
+      <button type="button" data-fb="Nach am/is/are steht die -ing-Form (oder im going-to future: going to + Grundform).">am / is / are</button>
+    </div><p class="fb"></p>
+  </div>
+  <div class="all-done">Alles entdeckt! Weiter geht es mit den Übungen.</div>
+</div>
+
+<script src="zeiten.js"></script>
+<script src="../../static/lesson-kit.js"></script>
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+  var NS = 'http://www.w3.org/2000/svg';
+  var Z = EN.zeiten;
+  var S = { subj: 'lena', verb: 'write', zeit: 'ps', art: 'pos' };
+  var probiert = {};
+  var FORM = { ps: 'Grundform / s-Form', pp: '-ing-Form', past: 'simple past (2. Form)', pastp: '-ing-Form', perf: 'past participle (3. Form)', perfp: '-ing-Form', pastperf: 'past participle (3. Form)', will: 'Grundform', going: 'Grundform' };
+
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined) e.textContent = text; return e; }
+  function sv(tag, a) { var e = document.createElementNS(NS, tag); for (var k in a) e.setAttribute(k, a[k]); return e; }
+
+  Z.SUBJEKTE.forEach(function (s) { var o = el('option', '', s.text); o.value = s.id; $('selSubj').appendChild(o); });
+  Z.VERBEN.forEach(function (v) { var o = el('option', '', v.v[0] + (v.regel ? '' : ' (unregelmäßig: ' + v.v[1] + ', ' + v.v[2] + ')')); o.value = v.id; $('selVerb').appendChild(o); });
+  Z.ZEITEN.forEach(function (z) {
+    var b = el('button', '', z.name); b.type = 'button'; b.dataset.zeit = z.id;
+    b.addEventListener('click', function () { S.zeit = z.id; zeichne(); });
+    $('segZeit').appendChild(b);
+  });
+  $('selSubj').value = S.subj; $('selVerb').value = S.verb;
+
+  // ------------------------------------------------ Zeitstrahl
+  var X0 = 24, X1 = 496, JETZT = 300, Y = 88;
+  function text(x, y, s, cls) { var t = sv('text', { x: x, y: y, 'class': cls }); t.textContent = s; return t; }
+  function zeitstrahl(zeit) {
+    var svg = $('zeitstrahl');
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    svg.appendChild(sv('line', { x1: X0, y1: Y, x2: X1, y2: Y, 'class': 'achse' }));
+    svg.appendChild(sv('path', { d: 'M' + (X1 - 10) + ' ' + (Y - 6) + ' L' + X1 + ' ' + Y + ' L' + (X1 - 10) + ' ' + (Y + 6), 'class': 'achse', fill: 'none' }));
+    svg.appendChild(sv('line', { x1: JETZT, y1: 30, x2: JETZT, y2: 120, 'class': 'jetzt' }));
+    svg.appendChild(text(JETZT, 140, 'now', 'lbl3'));
+    svg.appendChild(text(70, 140, 'past', 'lbl2'));
+    svg.appendChild(text(450, 140, 'future', 'lbl2'));
+    var beschr = '';
+    if (zeit === 'ps') {
+      [70, 130, 190, 250, 350, 410, 470].forEach(function (x) { svg.appendChild(sv('circle', { cx: x, cy: Y, r: 6, 'class': 'punkt' })); });
+      svg.appendChild(text(270, 60, 'every day – again and again', 'lbl3'));
+      beschr = 'Viele Punkte vor und nach jetzt: Die Handlung wiederholt sich regelmäßig.';
+    } else if (zeit === 'pp') {
+      svg.appendChild(sv('rect', { x: JETZT - 28, y: Y - 12, width: 56, height: 24, rx: 8, 'class': 'band' }));
+      svg.appendChild(text(JETZT, 52, 'right now', 'lbl3'));
+      beschr = 'Ein Band um „jetzt“: Die Handlung läuft gerade.';
+    } else if (zeit === 'past') {
+      svg.appendChild(sv('circle', { cx: 160, cy: Y, r: 8, 'class': 'punkt' }));
+      svg.appendChild(text(160, 60, 'yesterday', 'lbl3'));
+      beschr = 'Ein Punkt in der Vergangenheit: abgeschlossen, Zeitpunkt bekannt.';
+    } else if (zeit === 'pastp') {
+      svg.appendChild(sv('rect', { x: 100, y: Y - 12, width: 130, height: 24, rx: 8, 'class': 'band' }));
+      svg.appendChild(sv('circle', { cx: 170, cy: Y, r: 7, 'class': 'zweit' }));
+      svg.appendChild(text(165, 52, 'was …ing', 'lbl3'));
+      svg.appendChild(text(170, 118, 'the phone rang', 'lbl2'));
+      beschr = 'Ein Band in der Vergangenheit (lief gerade), unterbrochen von einem Ereignis (Punkt, simple past).';
+    } else if (zeit === 'perf') {
+      svg.appendChild(sv('path', { d: 'M60 ' + Y + ' Q 180 30 ' + (JETZT - 6) + ' ' + (Y - 4), 'class': 'strich' }));
+      svg.appendChild(sv('circle', { cx: JETZT, cy: Y, r: 8, 'class': 'punkt' }));
+      svg.appendChild(text(150, 40, 'some time before now – when? not important', 'lbl2'));
+      svg.appendChild(text(JETZT + 50, 64, 'result now', 'lbl3'));
+      beschr = 'Irgendwann vor jetzt (Zeitpunkt unwichtig) – wichtig ist das Ergebnis oder die Erfahrung jetzt.';
+    } else if (zeit === 'perfp') {
+      svg.appendChild(sv('rect', { x: 150, y: Y - 12, width: JETZT - 150, height: 24, rx: 8, 'class': 'band' }));
+      svg.appendChild(sv('path', { d: 'M150 ' + (Y - 26) + ' L ' + JETZT + ' ' + (Y - 26), 'class': 'pfeil' }));
+      svg.appendChild(sv('path', { d: 'M' + (JETZT - 8) + ' ' + (Y - 32) + ' L' + JETZT + ' ' + (Y - 26) + ' L' + (JETZT - 8) + ' ' + (Y - 20), 'class': 'pfeil' }));
+      svg.appendChild(text(225, 46, 'for two hours (until now)', 'lbl3'));
+      beschr = 'Ein Band von einem Startpunkt in der Vergangenheit bis jetzt: Die Handlung dauert an.';
+    } else if (zeit === 'pastperf') {
+      svg.appendChild(sv('circle', { cx: 100, cy: Y, r: 8, 'class': 'punkt' }));
+      svg.appendChild(sv('circle', { cx: 210, cy: Y, r: 8, 'class': 'zweit' }));
+      svg.appendChild(text(100, 60, '① had written', 'lbl3'));
+      svg.appendChild(text(210, 60, '② film started', 'lbl3'));
+      svg.appendChild(sv('path', { d: 'M112 ' + (Y + 18) + ' L 198 ' + (Y + 18), 'class': 'pfeil' }));
+      beschr = 'Zwei Punkte in der Vergangenheit: Das past perfect steht für das, was davor geschah (①).';
+    } else if (zeit === 'will') {
+      svg.appendChild(sv('circle', { cx: 420, cy: Y, r: 8, 'class': 'punkt', 'stroke-dasharray': '3 3' }));
+      svg.appendChild(text(420, 60, 'tomorrow (I think …)', 'lbl3'));
+      beschr = 'Ein Punkt in der Zukunft: Vermutung, Versprechen oder spontaner Entschluss.';
+    } else if (zeit === 'going') {
+      svg.appendChild(sv('circle', { cx: JETZT, cy: Y, r: 6, 'class': 'zweit' }));
+      svg.appendChild(sv('path', { d: 'M' + (JETZT + 8) + ' ' + (Y - 14) + ' Q 370 40 ' + (428) + ' ' + (Y - 12), 'class': 'pfeil' }));
+      svg.appendChild(sv('circle', { cx: 430, cy: Y, r: 8, 'class': 'punkt' }));
+      svg.appendChild(text(JETZT, 118, 'plan made', 'lbl2'));
+      svg.appendChild(text(430, 60, 'next week', 'lbl3'));
+      beschr = 'Der Plan steht jetzt schon fest (Punkt bei „now“), die Handlung folgt in der Zukunft.';
+    }
+    svg.setAttribute('aria-label', 'Zeitstrahl für ' + Z.ZEITEN.find(function (x) { return x.id === zeit; }).name + ': ' + beschr);
+    return beschr;
+  }
+
+  // ------------------------------------------------ Zeichnen
+  function zeichne() {
+    var r = Z.bilde(S.subj, S.verb, S.zeit, S.art);
+    var box = $('satz'); box.textContent = '';
+    r.teile.forEach(function (t, i) {
+      var txt = t.text;
+      if (i === r.teile.length - 1) txt += S.art === 'frage' ? '?' : '.';
+      if (i > 0) box.appendChild(document.createTextNode(' '));
+      box.appendChild(el('span', 'r-' + t.rolle, txt));
+    });
+    var beschr = zeitstrahl(S.zeit);
+    var info = $('info'); info.textContent = '';
+    var p1 = el('p'); p1.appendChild(el('b', '', r.zeit.name + ': ')); p1.appendChild(document.createTextNode(r.zeit.wann + '.')); info.appendChild(p1);
+    var p2 = el('p'); p2.appendChild(el('b', '', 'Signalwörter: ')); p2.appendChild(document.createTextNode(r.zeit.signal)); info.appendChild(p2);
+    info.appendChild(el('p', 'muted', beschr));
+    var hilf = r.teile.filter(function (t) { return t.rolle === 'hilfsverb'; }).map(function (t) { return t.text; }).join(' ');
+    $('rHilf').textContent = hilf || '– (keins)';
+    $('rForm').textContent = (S.zeit === 'past' && S.art !== 'pos') || (S.zeit === 'ps' && S.art !== 'pos') ? 'Grundform' : FORM[S.zeit];
+    $('segZeit').querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.zeit === S.zeit)); });
+    $('segArt').querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.art === S.art)); });
+    probiert[S.zeit] = 1;
+    $('rAnz').textContent = Object.keys(probiert).length + ' / 9';
+    // Aufgaben
+    var dritte = S.subj === 'lena' || S.subj === 'tom';
+    if (S.zeit === 'ps' && S.art === 'frage' && dritte) LK.reach('frage3');
+    if (S.zeit === 'past' && S.art === 'neg' && r.unregelmaessig) LK.reach('negpast');
+    if (S.zeit === 'perf' && S.art === 'pos' && r.unregelmaessig) LK.reach('perfirr');
+    if (Object.keys(probiert).length >= 6) LK.reach('sechs');
+  }
+
+  $('selSubj').addEventListener('change', function () { S.subj = this.value; zeichne(); });
+  $('selVerb').addEventListener('change', function () { S.verb = this.value; zeichne(); });
+  $('segArt').querySelectorAll('button').forEach(function (b) { b.addEventListener('click', function () { S.art = b.dataset.art; zeichne(); }); });
+  zeichne();
+})();
+</script>
+</body>
+</html>

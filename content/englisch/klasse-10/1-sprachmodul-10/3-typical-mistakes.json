@@ -1,0 +1,114 @@
+{
+  "id": "en-k10-typical-mistakes",
+  "titel": "Typical mistakes: articles, uncountable nouns and German interference",
+  "kurz": "Die häufigsten Fehler deutschsprachiger Lernender vermeiden: Artikel (the oder kein Artikel?), unzählbare Nomen wie information und advice und typische Übertragungen aus dem Deutschen.",
+  "reihenfolge": 3,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Entscheiden, wann man the, a/an oder keinen Artikel benutzt" },
+    { "id": "lz2", "niveau": "G", "text": "Unzählbare Nomen (information, advice, news, furniture, homework) richtig verwenden" },
+    { "id": "lz3", "niveau": "H", "text": "Typische Fehler durch Übertragung aus dem Deutschen (interference) erkennen und verbessern" }
+  ],
+  "verstehen": {
+    "einstieg": "„The life is beautiful.“ „She is doctor.“ „Can you give me an advice?“ Alle drei Sätze klingen für deutsche Ohren normal – und sind auf Englisch falsch. Warum?",
+    "abschnitte": [
+      {
+        "titel": "the or no article?",
+        "text": "- **Kein Artikel** bei Allgemeinem (Mehrzahl oder Unzählbares im allgemeinen Sinn): ``Life is beautiful.`` ``I love music.`` ``Dogs are loyal.``\n- **the** bei etwas Bestimmtem: ``The music at the party was too loud.``\n- **Kein Artikel**: bei Mahlzeiten (have breakfast), Sprachen (speak English), den meisten Ländern (Germany, France) und bei school, bed, church, hospital, prison, wenn es um ihren Zweck geht (go to school, go to bed)\n- **the** bei Ländern mit States/Kingdom/Republic oder Mehrzahl (the USA, the UK, the Netherlands), Flüssen und Meeren (the Thames, the Pacific), aber nicht bei einzelnen Bergen und Seen (Mount Everest, Lake Michigan)\n- **a/an** bei Berufen: ``She is a doctor.`` (Sie ist Ärztin.)"
+      },
+      {
+        "titel": "Uncountable nouns",
+        "text": "Manche Nomen sind im Englischen **unzählbar**: kein a/an, keine Mehrzahl, Verb in der Einzahl.\n\n- **information**, **advice**, **news**, **furniture** (Möbel), **homework**, **luggage** (Gepäck), **equipment**, **knowledge**, **progress**\n- ``The news is good.`` ``Can you give me some advice?``\n- Zum Zählen: **a piece of** advice / information / furniture\n\nUmgekehrt: **people** ist Mehrzahl (``People are …``), ebenso **the police** (``The police are coming.``)."
+      },
+      {
+        "titel": "German interference",
+        "text": "- seit + Dauer bis jetzt: nicht „I live here since two years“, sondern ``I have lived here for two years.``\n- als beim Vergleich: nicht „bigger as“, sondern ``bigger than``\n- erklären: nicht „explain me“, sondern ``explain to me``\n- zustimmen: nicht „I am agree“, sondern ``I agree``\n- fragen nach Meinung: ``What do you think about it?`` (nicht „How do you think?“)\n- ein Foto machen: ``take a photo``; eine Entscheidung treffen: ``make a decision``\n- „Ich freue mich darauf“: ``I’m looking forward to it.``\n- Wortstellung: ``I often play tennis.`` (nicht „I play often tennis“)"
+      }
+    ],
+    "merksatz": "Allgemeines ohne Artikel (Life is …, I love music), Bestimmtes mit the. Berufe mit a/an. Unzählbar: information, advice, news, furniture, homework – kein a, keine Mehrzahl, a piece of … People und the police sind Mehrzahl. Typische Fehler: since/for, than, explain to, I agree.",
+    "alltag": "Wer in der Oberstufe Texte schreibt, verliert die meisten Sprachpunkte nicht bei schwieriger Grammatik, sondern bei genau diesen kleinen, häufigen Fehlern."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-itf-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Which sentence is correct?",
+      "optionen": [
+        { "text": "My mother is a nurse.", "richtig": true },
+        { "text": "My mother is nurse.", "feedback": "Bei Berufen braucht man im Englischen a/an." },
+        { "text": "My mother is the nurse.", "feedback": "the würde eine ganz bestimmte Krankenschwester meinen." },
+        { "text": "My mother is an nurse.", "feedback": "nurse beginnt mit einem Konsonantenlaut: a nurse." }
+      ],
+      "erklaerung": "Beruf: a/an + Nomen."
+    },
+    {
+      "id": "en-itf-02", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Which sentences are correct?",
+      "optionen": [
+        { "text": "Life in big cities can be stressful.", "richtig": true },
+        { "text": "We had breakfast at eight.", "richtig": true },
+        { "text": "She has travelled to the USA twice.", "richtig": true },
+        { "text": "The nature is important for all of us.", "feedback": "Allgemein gemeint: Nature is important …" },
+        { "text": "He goes to the school by bus.", "feedback": "Um den Schulbesuch geht es: He goes to school by bus." }
+      ],
+      "erklaerung": "Kein Artikel bei Allgemeinem, bei Mahlzeiten und bei go to school; aber the USA."
+    },
+    {
+      "id": "en-itf-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Which sentence is correct?",
+      "optionen": [
+        { "text": "Can you give me some advice?", "richtig": true },
+        { "text": "Can you give me an advice?", "feedback": "advice ist unzählbar: kein an. Möglich: some advice / a piece of advice." },
+        { "text": "Can you give me some advices?", "feedback": "advice hat keine Mehrzahl." },
+        { "text": "Can you give me a advise?", "feedback": "advise ist das Verb (raten). Das Nomen heißt advice – und ist unzählbar." }
+      ],
+      "erklaerung": "advice, information, news: kein a, keine Mehrzahl."
+    },
+    {
+      "id": "en-itf-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Complete: ``The news ___ really surprising, and the people at the meeting ___ shocked.``",
+      "optionen": [
+        { "text": "was … were", "richtig": true },
+        { "text": "were … was", "feedback": "news ist Einzahl (was), people ist Mehrzahl (were)." },
+        { "text": "were … were", "feedback": "news steht mit dem Verb in der Einzahl." },
+        { "text": "was … was", "feedback": "people ist Mehrzahl: were." }
+      ],
+      "erklaerung": "news + Einzahl, people + Mehrzahl."
+    },
+    {
+      "id": "en-itf-05", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Match the typical mistakes with their corrections.",
+      "paare": [
+        { "links": "I am agree with you.", "rechts": "I agree with you." },
+        { "links": "Can you explain me the rule?", "rechts": "Can you explain the rule to me?" },
+        { "links": "She is taller as her brother.", "rechts": "She is taller than her brother." },
+        { "links": "How do you think about it?", "rechts": "What do you think about it?" }
+      ],
+      "erklaerung": "Diese Fehler entstehen, weil man Wort für Wort aus dem Deutschen überträgt."
+    },
+    {
+      "id": "en-itf-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Translate: „Ich lerne seit drei Jahren Spanisch.“",
+      "optionen": [
+        { "text": "I have been learning Spanish for three years.", "richtig": true },
+        { "text": "I learn Spanish since three years.", "feedback": "Typischer Fehler: Dauer bis jetzt → present perfect (progressive) mit for." },
+        { "text": "I am learning Spanish since three years.", "feedback": "Zeitform und Präposition stimmen nicht: have been learning … for." },
+        { "text": "I have been learning Spanish since three years.", "feedback": "Zeitraum (three years) → for. since nur mit Zeitpunkt (since 2023)." }
+      ],
+      "erklaerung": "seit + Zeitraum → for, mit present perfect (progressive)."
+    },
+    {
+      "id": "en-itf-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Correct the mistakes in this text and rewrite it correctly.\n\n„I live in Berlin since five years. The life here is exciting, but the furnitures in our flat are old. Yesterday my teacher gave me an useful information and explained me the homeworks.“",
+      "stichworte": [
+        { "aspekt": "have lived / have been living … for five years", "woerter": ["have lived", "have been living", "for five years"] },
+        { "aspekt": "Life (ohne the)", "woerter": ["life here is"] },
+        { "aspekt": "furniture … is (unzählbar)", "woerter": ["furniture in our flat is", "furniture is"] },
+        { "aspekt": "some useful information / a piece of useful information", "woerter": ["some useful information", "a piece of useful information", "useful information"] },
+        { "aspekt": "explained the homework to me", "woerter": ["explained the homework to me", "homework to me"] }
+      ],
+      "musterloesung": "I have lived in Berlin for five years. Life here is exciting, but the furniture in our flat is old. Yesterday my teacher gave me some useful information and explained the homework to me.",
+      "erklaerung": "Fünf typische Fehler: since/for, Artikel bei Allgemeinem, unzählbare Nomen (furniture, information, homework) und explain to."
+    }
+  ]
+}

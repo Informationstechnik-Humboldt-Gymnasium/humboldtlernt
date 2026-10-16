@@ -1,0 +1,118 @@
+{
+  "id": "en-k5-have-got",
+  "titel": "have got, my/your and Tom’s bag",
+  "kurz": "Besitz ausdrücken: have got / has got, Possessivbegleiter (my, your, his, her …), der s-Genitiv und der unbestimmte Artikel a / an.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Mit have got / has got sagen, was jemand hat, auch verneint und als Frage" },
+    { "id": "lz2", "niveau": "G", "text": "Die Possessivbegleiter my, your, his, her, its, our, their richtig verwenden" },
+    { "id": "lz3", "niveau": "G", "text": "Den s-Genitiv bilden (Tom’s bag, the girls’ room)" },
+    { "id": "lz4", "niveau": "H", "text": "Zwischen a und an nach dem Anfangslaut des nächsten Wortes entscheiden" }
+  ],
+  "verstehen": {
+    "einstieg": "„Ich habe einen Hund. Er hat ein rotes Halsband. Das ist Toms Fahrrad.“ Auf Englisch sagst du das mit have got, his, her und einem kleinen Apostroph.",
+    "abschnitte": [
+      {
+        "titel": "have got / has got",
+        "text": "- I / you / we / they **have got** (’ve got): ``I’ve got a new pencil case.``\n- he / she / it **has got** (’s got): ``She’s got two brothers.``\n- Verneinung: ``I haven’t got a pet.`` ``He hasn’t got a bike.``\n- Frage: ``Have you got a ruler?`` – ``Yes, I have.`` / ``No, I haven’t.`` ``Has she got a cat?`` – ``Yes, she has.``\n\nIn der Frage steht have / has vorne, got bleibt hinter dem Subjekt."
+      },
+      {
+        "titel": "my, your, his, her …",
+        "text": "- I → **my**, you → **your**, he → **his**, she → **her**, it → **its**, we → **our**, they → **their**\n\n**his** benutzt man, wenn der Besitzer ein Mann oder Junge ist, **her**, wenn die Besitzerin eine Frau oder ein Mädchen ist. Es kommt also nur auf die Person an, der etwas gehört: ``Tom and his sister`` (Tom und seine Schwester), ``Emma and her brother`` (Emma und ihr Bruder).\n\nAchtung: **its** (sein/ihr, für Dinge und Tiere) hat keinen Apostroph. **it’s** heißt „it is“."
+      },
+      {
+        "titel": "Der s-Genitiv",
+        "text": "Mit **’s** sagt man, wem etwas gehört:\n\n- ``Tom’s bag`` – Toms Tasche\n- ``my mum’s car`` – das Auto meiner Mutter\n- Mehrzahl auf -s: nur ein Apostroph: ``the girls’ room`` – das Zimmer der Mädchen\n- Unregelmäßige Mehrzahl: ``the children’s toys`` – die Spielsachen der Kinder"
+      },
+      {
+        "titel": "a oder an?",
+        "text": "Es kommt auf den **Laut** am Anfang des nächsten Wortes an, nicht auf den Buchstaben:\n\n- **a** vor einem Konsonantenlaut: a book, a uniform (gesprochen „ju…“), a house\n- **an** vor einem Vokallaut: an apple, an English lesson, an hour (das h ist stumm)"
+      }
+    ],
+    "merksatz": "I/you/we/they have got, he/she/it has got; Frage: Have you got …? Possessivbegleiter: my, your, his, her, its, our, their. Besitz mit ’s (Tom’s), bei Mehrzahl auf -s nur ’ (the girls’). a vor Konsonantenlaut, an vor Vokallaut.",
+    "alltag": "In Großbritannien hörst du ständig „Have you got a minute?“ oder „I haven’t got time“. In den USA sagt man dafür oft „Do you have …?“."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-hgt-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Complete: ``My best friend ___ a dog and two cats.``",
+      "optionen": [
+        { "text": "has got", "richtig": true },
+        { "text": "have got", "feedback": "My best friend = he oder she → has got." },
+        { "text": "is got", "feedback": "Es heißt has got, nicht is got." },
+        { "text": "haves got", "feedback": "Die Form von have bei he/she/it ist has." }
+      ],
+      "erklaerung": "he/she/it → has got."
+    },
+    {
+      "id": "en-hgt-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Match the pronoun with its possessive determiner.",
+      "paare": [
+        { "links": "I", "rechts": "my" },
+        { "links": "he", "rechts": "his" },
+        { "links": "she", "rechts": "her" },
+        { "links": "we", "rechts": "our" },
+        { "links": "they", "rechts": "their" }
+      ],
+      "extraRechts": ["there"],
+      "erklaerung": "„their“ (ihr, Mehrzahl) und „there“ (dort) klingen gleich, bedeuten aber etwas anderes."
+    },
+    {
+      "id": "en-hgt-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "„Emma und ihr Bruder“ – which is correct?",
+      "optionen": [
+        { "text": "Emma and her brother", "richtig": true },
+        { "text": "Emma and his brother", "feedback": "his gehört zu einem Jungen oder Mann. Emma ist ein Mädchen → her." },
+        { "text": "Emma and their brother", "feedback": "their benutzt man für mehrere Personen." },
+        { "text": "Emma and she brother", "feedback": "she ist ein Personalpronomen. Vor einem Nomen steht der Possessivbegleiter her." }
+      ],
+      "erklaerung": "Der Possessivbegleiter richtet sich nach dem Besitzer: Emma → her."
+    },
+    {
+      "id": "en-hgt-04", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Which phrases are correct?",
+      "optionen": [
+        { "text": "Tom’s bike", "richtig": true },
+        { "text": "the girls’ bedroom (= the bedroom of two girls)", "richtig": true },
+        { "text": "the children’s books", "richtig": true },
+        { "text": "the bike of Tom", "feedback": "Bei Personen benutzt man den s-Genitiv: Tom’s bike." },
+        { "text": "my sisters’s room (= the room of my sister)", "feedback": "Eine Schwester: my sister’s room." }
+      ],
+      "erklaerung": "Einzahl: ’s. Mehrzahl auf -s: nur ’. Unregelmäßige Mehrzahl (children, men, women): ’s."
+    },
+    {
+      "id": "en-hgt-05", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "a or an? Match.",
+      "paare": [
+        { "links": "___ orange", "rechts": "an" },
+        { "links": "___ ruler", "rechts": "a" }
+      ],
+      "erklaerung": "orange beginnt mit einem Vokallaut → an. ruler beginnt mit einem Konsonantenlaut → a."
+    },
+    {
+      "id": "en-hgt-06", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Which phrases are correct? Think about the **sound** at the beginning of the word.",
+      "optionen": [
+        { "text": "an hour", "richtig": true },
+        { "text": "a uniform", "richtig": true },
+        { "text": "an English book", "richtig": true },
+        { "text": "an house", "feedback": "Bei house spricht man das h: a house." },
+        { "text": "an university", "feedback": "university beginnt mit dem Laut „ju“ – einem Konsonantenlaut: a university." }
+      ],
+      "erklaerung": "Entscheidend ist der gesprochene Anfangslaut: an hour (h stumm), aber a uniform („ju-“)."
+    },
+    {
+      "id": "en-hgt-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz1",
+      "frage": "Which question and answer are correct?",
+      "optionen": [
+        { "text": "Has your brother got a phone? – No, he hasn’t.", "richtig": true },
+        { "text": "Have your brother got a phone? – No, he haven’t.", "feedback": "your brother = he → has / hasn’t." },
+        { "text": "Has got your brother a phone? – No, he hasn’t got.", "feedback": "In der Frage steht nur has vorne, got bleibt hinter dem Subjekt. Die Kurzantwort hat kein got." },
+        { "text": "Does your brother got a phone? – No, he doesn’t.", "feedback": "Mit got bildet man die Frage mit has: Has your brother got …?" }
+      ],
+      "erklaerung": "Frage: Has + Subjekt + got …? Kurzantwort: Yes, he has. / No, he hasn’t."
+    }
+  ]
+}

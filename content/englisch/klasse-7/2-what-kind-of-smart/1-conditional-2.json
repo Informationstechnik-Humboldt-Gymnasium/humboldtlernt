@@ -1,0 +1,114 @@
+{
+  "id": "en-k7-conditional-2",
+  "titel": "If I were a famous singer … Conditional sentences I and II",
+  "kurz": "Bedingungssätze: Typ I für wahrscheinliche Bedingungen, Typ II für unwahrscheinliche oder gedachte Situationen – mit Wünschen und Träumen über die eigenen Stärken.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "If-Sätze Typ I bilden (simple present – will)" },
+    { "id": "lz2", "niveau": "G", "text": "If-Sätze Typ II bilden (simple past – would + Grundform), auch mit „If I were“" },
+    { "id": "lz3", "niveau": "H", "text": "Entscheiden, ob eine Bedingung realistisch (Typ I) oder unwahrscheinlich bzw. gedacht ist (Typ II)" },
+    { "id": "lz4", "niveau": "H", "text": "Über Fähigkeiten, Stärken und Träume mit Bedingungssätzen sprechen" }
+  ],
+  "verstehen": {
+    "einstieg": "Was würdest du tun, wenn du einen Tag lang unsichtbar wärst? Und was machst du, wenn es morgen regnet? Beides sind Bedingungen – aber die eine ist reine Fantasie, die andere ganz realistisch.",
+    "abschnitte": [
+      {
+        "titel": "Typ I: realistisch",
+        "text": "**if + simple present, will + Grundform**\n\n``If it rains tomorrow, we will stay at home.``\n\nDie Bedingung kann gut eintreten. Im if-Teil steht **kein will** (also nicht „If it will rain“). Statt will gehen auch can, must oder ein Imperativ: ``If you finish early, you can go.`` ``If you see Tom, tell him to call me.``"
+      },
+      {
+        "titel": "Typ II: unwahrscheinlich oder gedacht",
+        "text": "**if + simple past, would + Grundform**\n\n``If I had more time, I would learn the guitar.`` (Ich habe aber keine Zeit.)\n``If I won a million euros, I would buy a horse.``\n\nBei **be** sagt man im if-Teil für alle Personen gern **were**: ``If I were you, I would ask the teacher.`` (Ratschlag: An deiner Stelle …)\n\nKurzform: I’d, she’d, we’d = I would usw. Verneinung: **wouldn’t**. Statt would kann auch **could** stehen: ``If I were taller, I could play basketball better.``"
+      },
+      {
+        "titel": "Komma und Satzstellung",
+        "text": "Steht der if-Satz **vorne**, folgt meist ein **Komma**. Steht er hinten, kein Komma:\n\n- ``If I were a bird, I would fly to Scotland.``\n- ``I would fly to Scotland if I were a bird.``"
+      }
+    ],
+    "merksatz": "Typ I (realistisch): if + simple present, will + Grundform. Typ II (unwahrscheinlich/gedacht): if + simple past, would + Grundform; If I were you … Kein will und kein would im if-Teil.",
+    "alltag": "„If I were you, I would …“ ist im Englischen die höflichste Art, einen Rat zu geben – du hörst sie in fast jeder Serie."
+  },
+  "interaktiv": ["en-satzbaukasten"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-cd2-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Complete (type I): ``If you ___ hard, you will pass the test.``",
+      "optionen": [
+        { "text": "study", "richtig": true },
+        { "text": "will study", "feedback": "Im if-Teil steht kein will." },
+        { "text": "studied", "feedback": "Das wäre Typ II. Der zweite Teil mit will zeigt Typ I." },
+        { "text": "would study", "feedback": "Im if-Teil steht kein would." }
+      ],
+      "erklaerung": "Typ I: if + simple present, will + Grundform."
+    },
+    {
+      "id": "en-cd2-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Complete (type II): ``If I ___ a dog, I would take it for a walk every day.``",
+      "optionen": [
+        { "text": "had", "richtig": true },
+        { "text": "have", "feedback": "Typ II: im if-Teil simple past: had." },
+        { "text": "would have", "feedback": "would steht nicht im if-Teil." },
+        { "text": "will have", "feedback": "will gehört nicht in den if-Teil." }
+      ],
+      "erklaerung": "Typ II: if + simple past (had), would + Grundform."
+    },
+    {
+      "id": "en-cd2-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Your friend can’t decide which club to join. How do you give advice?",
+      "optionen": [
+        { "text": "If I were you, I would join the drama club.", "richtig": true },
+        { "text": "If I am you, I will join the drama club.", "feedback": "Du kannst nicht dein Freund sein – das ist eine gedachte Situation: If I were you, I would …" },
+        { "text": "If I would be you, I would join the drama club.", "feedback": "Im if-Teil steht kein would." },
+        { "text": "If I were you, I will join the drama club.", "feedback": "Typ II: im Hauptsatz would." }
+      ],
+      "erklaerung": "Rat mit Typ II: If I were you, I would …"
+    },
+    {
+      "id": "en-cd2-04", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Match the beginnings with the correct endings.",
+      "paare": [
+        { "links": "If it’s sunny tomorrow,", "rechts": "we’ll have a picnic." },
+        { "links": "If I could fly,", "rechts": "I’d fly to New York." },
+        { "links": "If you don’t hurry,", "rechts": "you’ll miss the bus." },
+        { "links": "If I lived in Scotland,", "rechts": "I’d learn to play the bagpipes." }
+      ],
+      "erklaerung": "Typ I (it’s, don’t hurry) passt zu will (’ll), Typ II (could, lived) zu would (’d)."
+    },
+    {
+      "id": "en-cd2-05", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Which sentence talks about something that is **not true now**?",
+      "optionen": [
+        { "text": "If I spoke Spanish, I would help you with your homework.", "richtig": true },
+        { "text": "If I finish my homework, I’ll help you.", "feedback": "Das ist realistisch (Typ I): Ich werde die Hausaufgaben wahrscheinlich fertig machen." },
+        { "text": "If you need help, call me.", "feedback": "Eine realistische Bedingung mit Imperativ." },
+        { "text": "If it snows, we’ll build a snowman.", "feedback": "Schnee ist möglich – Typ I." }
+      ],
+      "erklaerung": "Typ II beschreibt etwas Gedachtes: Ich spreche kein Spanisch, aber wenn …"
+    },
+    {
+      "id": "en-cd2-06", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Which sentences are correct?",
+      "optionen": [
+        { "text": "If she had more money, she would travel more.", "richtig": true },
+        { "text": "We wouldn’t be late if we left now.", "richtig": true },
+        { "text": "If he would know the answer, he would tell us.", "feedback": "Kein would im if-Teil: If he knew the answer …" },
+        { "text": "If I were taller, I could reach the shelf.", "richtig": true },
+        { "text": "If they would come, we will be happy.", "feedback": "Typ I: If they come, we will be happy." }
+      ],
+      "erklaerung": "Im if-Teil stehen nie will oder would."
+    },
+    {
+      "id": "en-cd2-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "„What kind of smart are you?“ Write 4 sentences about your strengths and dreams. Use at least two conditional sentences type II (If I …, I would …) and one type I.",
+      "stichworte": [
+        { "aspekt": "If-Satz Typ II mit would / ’d", "woerter": ["would", "i'd", "i’d"] },
+        { "aspekt": "Simple past oder were im if-Teil", "woerter": ["if i were", "if i had", "if i could", "if i was", "if i lived", "if i won"] },
+        { "aspekt": "If-Satz Typ I mit will / ’ll", "woerter": ["will", "i'll", "i’ll"] },
+        { "aspekt": "Eine Stärke oder Fähigkeit", "woerter": ["good at", "i can", "talent", "strength", "smart", "creative", "sporty"] }
+      ],
+      "musterloesung": "I think I’m good at drawing and I’m quite creative. If I had more time, I would draw comics every day. If I were a famous artist, I would show my pictures in London. If I practise a lot this year, I will take part in the school art competition.",
+      "erklaerung": "Typ II für Träume, Typ I für realistische Pläne – so wird dein Text abwechslungsreich."
+    }
+  ]
+}

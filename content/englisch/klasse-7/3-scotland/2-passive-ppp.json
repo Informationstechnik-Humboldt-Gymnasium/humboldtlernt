@@ -1,0 +1,115 @@
+{
+  "id": "en-k7-passive",
+  "titel": "Kilts are made of tartan: the passive and the present perfect progressive",
+  "kurz": "Das Passiv (be + past participle, mit by-agent) und das present perfect progressive (have been + -ing) mit for und since.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Passivsätze im simple present und simple past bilden (is made, was built)" },
+    { "id": "lz2", "niveau": "H", "text": "Aktivsätze ins Passiv umformen und den Handelnden mit by angeben" },
+    { "id": "lz3", "niveau": "G", "text": "Das present perfect progressive bilden (has/have been + -ing)" },
+    { "id": "lz4", "niveau": "H", "text": "for (Zeitraum) und since (Zeitpunkt) richtig verwenden" }
+  ],
+  "verstehen": {
+    "einstieg": "„Edinburgh Castle wurde auf einem alten Vulkan gebaut.“ Wer hat es gebaut? Das ist hier gar nicht wichtig. Und „Ich warte schon seit einer Stunde auf den Bus!“ – das sagt man auf Englisch nicht im simple present.",
+    "abschnitte": [
+      {
+        "titel": "Das Passiv",
+        "text": "Im Passiv steht die **Sache oder Person im Mittelpunkt, mit der etwas geschieht**. Der Handelnde ist unwichtig oder unbekannt.\n\n**Form von be + past participle (3. Form)**\n\n- simple present: ``Haggis **is eaten** on Burns Night.``\n- simple past: ``The castle **was built** in the 12th century.``\n- Mehrzahl: ``Kilts **are made** of tartan.``\n- Verneinung/Frage: ``It wasn’t finished.`` ``Where was the photo taken?``\n\nSoll der Handelnde doch genannt werden, folgt er mit **by**: ``The poem was written by Robert Burns.``"
+      },
+      {
+        "titel": "Vom Aktiv ins Passiv",
+        "text": "``Millions of tourists visit Edinburgh every year.`` (Aktiv)\n\n1. Das Objekt (Edinburgh) wird Subjekt.\n2. Die Zeit bleibt gleich: visit (simple present) → **is visited**.\n3. Das alte Subjekt kommt mit **by** ans Ende – nur, wenn es wichtig ist.\n\n→ ``Edinburgh is visited by millions of tourists every year.``"
+      },
+      {
+        "titel": "Present perfect progressive",
+        "text": "**have/has been + -ing**: Eine Handlung hat in der Vergangenheit begonnen und **dauert bis jetzt an** (oder hat gerade aufgehört und man sieht noch die Folgen). Betont wird die **Dauer**.\n\n- ``I have been waiting for the bus for an hour.``\n- ``She has been learning Gaelic since January.``\n- ``Why are you so dirty? – We’ve been playing football.``\n- Frage: ``How long have you been living in Glasgow?``"
+      },
+      {
+        "titel": "for oder since?",
+        "text": "- **for** + **Zeitraum** (wie lange?): for two hours, for three years, for a long time\n- **since** + **Zeitpunkt** (seit wann?): since 9 o’clock, since Monday, since 2019, since I was ten\n\nIm Deutschen heißt beides „seit“!"
+      }
+    ],
+    "merksatz": "Passiv: be + 3. Form (is made, was built), Handelnder mit by. Present perfect progressive: have/has been + -ing für Handlungen, die bis jetzt andauern. for + Zeitraum, since + Zeitpunkt.",
+    "alltag": "Auf Lebensmitteln steht oft „Made in Scotland“ – das ist eine Kurzform des Passivs: It was made in Scotland."
+  },
+  "interaktiv": ["en-zeitenmaschine"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-pas-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Complete: ``Kilts ___ of tartan.``",
+      "optionen": [
+        { "text": "are made", "richtig": true },
+        { "text": "is made", "feedback": "Kilts ist Mehrzahl → are made." },
+        { "text": "are make", "feedback": "Im Passiv steht die 3. Form: made." },
+        { "text": "make", "feedback": "Die Kilts machen nichts – mit ihnen geschieht etwas: Passiv." }
+      ],
+      "erklaerung": "Passiv simple present: am/is/are + 3. Form."
+    },
+    {
+      "id": "en-pas-02", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Complete: ``The famous photo of Nessie ___ in 1934.``",
+      "optionen": [
+        { "text": "was taken", "richtig": true },
+        { "text": "is taken", "feedback": "1934 → Vergangenheit: was taken." },
+        { "text": "was took", "feedback": "Im Passiv steht die 3. Form: taken." },
+        { "text": "took", "feedback": "Das Foto hat nichts gemacht. Es wurde gemacht: Passiv." }
+      ],
+      "erklaerung": "Passiv simple past: was/were + 3. Form."
+    },
+    {
+      "id": "en-pas-03", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Change into the passive: ``Robert Burns wrote „Auld Lang Syne“.``",
+      "optionen": [
+        { "text": "„Auld Lang Syne“ was written by Robert Burns.", "richtig": true },
+        { "text": "„Auld Lang Syne“ is written by Robert Burns.", "feedback": "wrote ist simple past, also: was written." },
+        { "text": "Robert Burns was written „Auld Lang Syne“.", "feedback": "Das Objekt des Aktivsatzes (das Lied) wird im Passiv zum Subjekt." },
+        { "text": "„Auld Lang Syne“ was wrote from Robert Burns.", "feedback": "3. Form: written. Der Handelnde steht mit by." }
+      ],
+      "erklaerung": "Objekt wird Subjekt, Zeit bleibt gleich (wrote → was written), Handelnder mit by."
+    },
+    {
+      "id": "en-pas-04", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Which passive sentences are correct?",
+      "optionen": [
+        { "text": "English and Gaelic are spoken in Scotland.", "richtig": true },
+        { "text": "The castle was built on an old volcano.", "richtig": true },
+        { "text": "The windows were cleaned yesterday.", "richtig": true },
+        { "text": "Haggis is eat on Burns Night.", "feedback": "3. Form von eat: eaten." },
+        { "text": "The letters was sent last week.", "feedback": "letters ist Mehrzahl: were sent." }
+      ],
+      "erklaerung": "Form von be passend zum Subjekt und zur Zeit, dazu immer die 3. Form."
+    },
+    {
+      "id": "en-pas-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Complete: ``I’m so tired. I ___ for my exams all afternoon.``",
+      "optionen": [
+        { "text": "have been studying", "richtig": true },
+        { "text": "am studying", "feedback": "Das Lernen hat am Nachmittag begonnen und bis jetzt gedauert: present perfect progressive." },
+        { "text": "have been study", "feedback": "Nach been folgt die -ing-Form." },
+        { "text": "has been studying", "feedback": "I → have." }
+      ],
+      "erklaerung": "Dauer bis jetzt: have/has been + -ing."
+    },
+    {
+      "id": "en-pas-06", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "for or since?",
+      "paare": [
+        { "links": "… three years", "rechts": "for" },
+        { "links": "… last Monday", "rechts": "since" }
+      ],
+      "erklaerung": "for + Zeitraum (wie lange?), since + Zeitpunkt (seit wann?)."
+    },
+    {
+      "id": "en-pas-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Translate: „Wir leben seit 2015 in Glasgow.“",
+      "optionen": [
+        { "text": "We have been living in Glasgow since 2015.", "richtig": true },
+        { "text": "We live in Glasgow since 2015.", "feedback": "Typischer Fehler: Für etwas, das bis jetzt andauert, braucht man das present perfect (progressive)." },
+        { "text": "We have been living in Glasgow for 2015.", "feedback": "2015 ist ein Zeitpunkt → since." },
+        { "text": "We are living in Glasgow since 2015.", "feedback": "Mit since + Dauer bis jetzt: have been living." }
+      ],
+      "erklaerung": "„seit“ + Dauer bis jetzt → present perfect (progressive) mit since bzw. for. Auch „We have lived in Glasgow since 2015“ ist richtig."
+    }
+  ]
+}

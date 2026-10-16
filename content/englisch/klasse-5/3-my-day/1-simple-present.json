@@ -1,0 +1,114 @@
+{
+  "id": "en-k5-simple-present",
+  "titel": "My day: the simple present",
+  "kurz": "Über Gewohnheiten und Tagesabläufe sprechen: simple present mit he/she/it-s, Verneinung und Fragen mit do/does, Häufigkeitsadverbien.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Aussagen im simple present bilden und bei he/she/it das -s anhängen (auch Schreibweise: goes, watches, tries)" },
+    { "id": "lz2", "niveau": "G", "text": "Verneinungen mit don’t/doesn’t und Fragen mit do/does bilden und kurz antworten" },
+    { "id": "lz3", "niveau": "G", "text": "Häufigkeitsadverbien (always, usually, often, sometimes, never) an die richtige Stelle setzen" },
+    { "id": "lz4", "niveau": "H", "text": "Einen kurzen Text über den eigenen Tagesablauf mit Konnektoren schreiben" }
+  ],
+  "verstehen": {
+    "einstieg": "„Ich stehe jeden Tag um sieben auf. Meine Schwester trinkt nie Kaffee.“ Für Dinge, die regelmäßig passieren, hat das Englische eine eigene Zeitform: das simple present.",
+    "abschnitte": [
+      {
+        "titel": "Wann benutzt man das simple present?",
+        "text": "Für **Gewohnheiten** und Dinge, die **regelmäßig** oder **immer** so sind: ``I get up at seven every day.`` ``Water boils at 100 °C.`` Signalwörter: every day, on Mondays, always, usually, often, sometimes, never."
+      },
+      {
+        "titel": "he, she, it – das s muss mit",
+        "text": "Bei **he / she / it** (und bei einer Person oder einer Sache) bekommt das Verb ein **-s**: ``I play`` – ``she plays``.\n\nSchreibweise:\n\n- nach s, sh, ch, x, o: **-es**: goes, watches, washes, does\n- Konsonant + y: **-ies**: try → tries, study → studies (aber: play → plays)\n- have → **has**"
+      },
+      {
+        "titel": "Verneinung und Fragen",
+        "text": "Man braucht das Hilfsverb **do** bzw. **does**. Das Hauptverb steht dann in der Grundform – das -s wandert zu does:\n\n- ``I don’t like fish.`` ``He doesn’t like fish.`` (nicht: he doesn’t likes)\n- ``Do you play football?`` – ``Yes, I do.`` / ``No, I don’t.``\n- ``Does she walk to school?`` – ``Yes, she does.`` / ``No, she doesn’t.``\n- Fragewort davor: ``When does the film start?``"
+      },
+      {
+        "titel": "always, usually, often …",
+        "text": "Häufigkeitsadverbien stehen **vor dem Hauptverb**, aber **hinter** am/is/are:\n\n- ``I often play tennis.`` ``She never eats meat.``\n- ``He is always late.`` ``We are usually at home on Sundays.``\n\nVon „immer“ bis „nie“: always – usually – often – sometimes – never."
+      }
+    ],
+    "merksatz": "Simple present für Gewohnheiten. He, she, it – das s muss mit. Verneinung und Frage mit do/does + Grundform. Häufigkeitsadverbien vor das Verb, aber hinter am/is/are.",
+    "alltag": "Busfahrpläne und Stundenpläne stehen im simple present: „The bus leaves at 7.45. School starts at 8.“"
+  },
+  "interaktiv": ["en-zeitenmaschine"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-spr-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Complete: ``My dad ___ to work by bike.``",
+      "optionen": [
+        { "text": "goes", "richtig": true },
+        { "text": "go", "feedback": "My dad = he → das Verb bekommt ein s." },
+        { "text": "gos", "feedback": "Nach o schreibt man -es: goes." },
+        { "text": "is go", "feedback": "Im simple present braucht man kein is." }
+      ],
+      "erklaerung": "he/she/it → go + es = goes."
+    },
+    {
+      "id": "en-spr-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "What is the he/she/it form?",
+      "paare": [
+        { "links": "watch", "rechts": "watches" },
+        { "links": "study", "rechts": "studies" },
+        { "links": "play", "rechts": "plays" },
+        { "links": "have", "rechts": "has" }
+      ],
+      "extraRechts": ["plaies"],
+      "erklaerung": "Nach ch → -es; Konsonant + y → -ies; Vokal + y (play) → nur -s; have → has."
+    },
+    {
+      "id": "en-spr-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Which negative sentence is correct?",
+      "optionen": [
+        { "text": "Tom doesn’t like vegetables.", "richtig": true },
+        { "text": "Tom don’t like vegetables.", "feedback": "Tom = he → doesn’t." },
+        { "text": "Tom doesn’t likes vegetables.", "feedback": "Das -s steckt schon in doesn’t. Das Hauptverb bleibt in der Grundform." },
+        { "text": "Tom not likes vegetables.", "feedback": "Im simple present braucht die Verneinung do/does." }
+      ],
+      "erklaerung": "he/she/it: doesn’t + Grundform."
+    },
+    {
+      "id": "en-spr-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "``___ your sister play the guitar?`` – ``Yes, she ___.``",
+      "optionen": [
+        { "text": "Does … does", "richtig": true },
+        { "text": "Do … do", "feedback": "your sister = she → Does … / Yes, she does." },
+        { "text": "Does … plays", "feedback": "In der Kurzantwort wiederholt man das Hilfsverb: Yes, she does." },
+        { "text": "Is … is", "feedback": "Für Fragen mit Vollverben im simple present braucht man do/does." }
+      ],
+      "erklaerung": "Frage mit does, Kurzantwort mit does: Does she play …? – Yes, she does."
+    },
+    {
+      "id": "en-spr-05", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Put the words in the correct order.",
+      "elemente": ["My", "brother", "never", "eats", "breakfast."],
+      "erklaerung": "Das Häufigkeitsadverb (never) steht vor dem Hauptverb (eats)."
+    },
+    {
+      "id": "en-spr-06", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Which sentences are correct?",
+      "optionen": [
+        { "text": "She is always happy.", "richtig": true },
+        { "text": "We usually walk to school.", "richtig": true },
+        { "text": "I play often computer games.", "feedback": "often steht vor dem Hauptverb: I often play computer games." },
+        { "text": "He always is late.", "feedback": "Bei is steht das Adverb dahinter: He is always late." },
+        { "text": "They sometimes go swimming.", "richtig": true }
+      ],
+      "erklaerung": "Vor dem Hauptverb – aber hinter am, is, are."
+    },
+    {
+      "id": "en-spr-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Write about your school day (4–5 sentences). Use the simple present, at least one adverb of frequency and the connectives „and“, „but“ or „because“.",
+      "stichworte": [
+        { "aspekt": "Eine Uhrzeit oder Zeitangabe (at seven, in the morning …)", "woerter": ["o'clock", "o’clock", " at ", "morning", "afternoon", "evening", "half past", "quarter"] },
+        { "aspekt": "Ein Häufigkeitsadverb", "woerter": ["always", "usually", "often", "sometimes", "never"] },
+        { "aspekt": "Konnektoren and / but / because", "woerter": ["because", " but ", " and "] },
+        { "aspekt": "Tätigkeiten des Tages (get up, have breakfast, go to school …)", "woerter": ["get up", "breakfast", "go to school", "lunch", "homework", "dinner", "go to bed"] }
+      ],
+      "musterloesung": "I get up at seven o’clock and I have breakfast with my family. I usually go to school by bus, but on Fridays I walk. School finishes at half past two. In the afternoon I do my homework, because I want to play football later. I never go to bed before nine.",
+      "erklaerung": "Wichtig sind die richtigen Verbformen, das Adverb vor dem Verb und Konnektoren, die die Sätze verbinden."
+    }
+  ]
+}

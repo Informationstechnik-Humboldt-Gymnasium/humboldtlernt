@@ -1,0 +1,120 @@
+{
+  "id": "en-k8-us-school",
+  "titel": "High school life in the USA",
+  "kurz": "Aufbau des amerikanischen Schulsystems, Begriffe wie freshman und senior, Pflicht- und Wahlfächer, Homecoming, Prom und school spirit – im Vergleich zur eigenen Schule.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Den Aufbau des US-Schulsystems beschreiben (elementary, middle/junior high, high school; grades)" },
+    { "id": "lz2", "niveau": "G", "text": "Begriffe des High-School-Alltags erklären (freshman, senior, electives, prom, homecoming, school spirit)" },
+    { "id": "lz3", "niveau": "H", "text": "Amerikanischen und deutschen Schulalltag vergleichen und dabei Vor- und Nachteile abwägen" },
+    { "id": "lz4", "niveau": "H", "text": "Informationen sinngemäß ins Englische übertragen (Mediation statt Wort-für-Wort-Übersetzung)" }
+  ],
+  "verstehen": {
+    "einstieg": "In amerikanischen Filmen gibt es Spinde auf dem Flur, Cheerleader beim Football-Spiel und einen großen Ball am Ende des Schuljahres. Wie viel davon gehört wirklich zum Schulalltag in den USA?",
+    "abschnitte": [
+      {
+        "titel": "The school system",
+        "text": "Das System unterscheidet sich von Staat zu Staat etwas. Meist gilt:\n\n- **Elementary school**: Kindergarten bis Klasse 5\n- **Middle school** oder **junior high school**: Klassen 6 bis 8\n- **High school**: Klassen 9 bis 12. Alle besuchen dieselbe Schulform – es gibt keine Aufteilung wie in Gymnasium und Sekundarschule.\n\nDie Klassenstufen heißen **grades** (She is in 10th grade). In der High School heißen die Jahrgänge **freshman** (9), **sophomore** (10), **junior** (11) und **senior** (12). Noten sind Buchstaben von **A** (sehr gut) bis **F** (ungenügend)."
+      },
+      {
+        "titel": "A day at high school",
+        "text": "- Der Tag dauert oft von etwa 8 bis 15 Uhr. Viele fahren mit dem gelben **school bus**.\n- Neben **required/compulsory subjects** (Pflichtfächer) gibt es viele **electives** (Wahlfächer), z. B. Photography oder Cooking.\n- Schüler wechseln den Raum, nicht die Lehrkräfte; Bücher liegen im **locker**.\n- In vielen Schulen spricht man morgens den **Pledge of Allegiance** (Treuegelöbnis zur Flagge).\n- Nach dem Unterricht: **extracurricular activities** wie Sportteams, Theater, Band, Debattierclub."
+      },
+      {
+        "titel": "School spirit",
+        "text": "**School spirit** ist das Zusammengehörigkeitsgefühl und der Stolz auf die eigene Schule: Schulfarben, ein **mascot** (Maskottchen), Sportteams und **pep rallies** (Versammlungen, die vor einem Spiel Stimmung machen).\n\n- **Homecoming**: im Herbst; ein Football-Spiel, eine Parade und ein Tanzabend, zu dem auch ehemalige Schüler kommen\n- **Prom**: ein festlicher Ball am Ende der 11. oder 12. Klasse\n- **Yearbook**: Jahrbuch mit Fotos aller Schüler\n- **Graduation**: Abschlussfeier mit Hut und Robe (**cap and gown**)"
+      },
+      {
+        "titel": "Mediation",
+        "text": "Bei der **Sprachmittlung (mediation)** gibst du Informationen sinngemäß in einer anderen Sprache wieder – für eine bestimmte Person und Situation. Anders als bei einer Übersetzung:\n\n- nur das **Wichtige** auswählen\n- **umschreiben**, wenn dir ein Wort fehlt: ``Abitur`` → ``the final exams at the end of school in Germany``\n- **erklären**, was die Zielperson nicht kennen kann\n- die Sprache an die Person anpassen (z. B. einfacher für Kinder)"
+      }
+    ],
+    "merksatz": "US-Schule: elementary – middle/junior high – high school (Klassen 9–12: freshman, sophomore, junior, senior). Noten A–F, electives, lockers, extracurricular activities. School spirit: Schulfarben, Maskottchen, homecoming, prom. Mediation: sinngemäß, auswählen, umschreiben, erklären.",
+    "alltag": "Wer ein Austauschjahr in den USA macht, landet meist als junior oder senior an einer High School – und muss oft erst einmal lernen, was ein „pep rally“ ist."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-uss-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Match the high school years with the grades.",
+      "paare": [
+        { "links": "freshman", "rechts": "9th grade" },
+        { "links": "sophomore", "rechts": "10th grade" },
+        { "links": "junior", "rechts": "11th grade" },
+        { "links": "senior", "rechts": "12th grade" }
+      ],
+      "erklaerung": "Die vier High-School-Jahrgänge heißen freshman, sophomore, junior und senior."
+    },
+    {
+      "id": "en-uss-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Match the words with the explanations.",
+      "paare": [
+        { "links": "elective", "rechts": "a subject you can choose" },
+        { "links": "prom", "rechts": "a formal dance at the end of 11th or 12th grade" },
+        { "links": "homecoming", "rechts": "a fall celebration with a football game, a parade and a dance" },
+        { "links": "locker", "rechts": "a small cupboard where students keep their things" },
+        { "links": "yearbook", "rechts": "a book with photos of all the students of a year" }
+      ],
+      "erklaerung": "Diese Wörter gehören zum typischen High-School-Wortschatz."
+    },
+    {
+      "id": "en-uss-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Which statement about American schools is true?",
+      "optionen": [
+        { "text": "Most students go to the same type of high school from grade 9 to 12.", "richtig": true },
+        { "text": "After grade 4, students are split up into different types of schools like in Germany.", "feedback": "In den USA besuchen fast alle dieselbe High School." },
+        { "text": "The best grade in the USA is a 1.", "feedback": "Die beste Note ist ein A." },
+        { "text": "High school ends after 10th grade.", "feedback": "Die High School endet nach der 12. Klasse." }
+      ],
+      "erklaerung": "Es gibt keine Gliederung nach Schulformen wie in Deutschland. Unterschiede entstehen eher durch Kurse auf verschiedenen Niveaus."
+    },
+    {
+      "id": "en-uss-04", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Which things show „school spirit“?",
+      "optionen": [
+        { "text": "Students wear T-shirts in the school colors.", "richtig": true },
+        { "text": "There is a pep rally before the big game.", "richtig": true },
+        { "text": "The school has a mascot, for example an eagle.", "richtig": true },
+        { "text": "Students do their homework at home.", "feedback": "Das hat nichts mit dem Stolz auf die Schule zu tun." },
+        { "text": "The school bus is yellow.", "feedback": "Das gilt für fast alle Schulbusse – mit school spirit hat es nichts zu tun." }
+      ],
+      "erklaerung": "School spirit zeigt sich in Schulfarben, Maskottchen, Teams und gemeinsamen Events."
+    },
+    {
+      "id": "en-uss-05", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Your American exchange partner asks what „Wandertag“ means. Which answer is the best mediation?",
+      "optionen": [
+        { "text": "It’s a day when the whole class goes on a trip or a hike with the teacher instead of having lessons.", "richtig": true },
+        { "text": "It means „wander day“.", "feedback": "Wort für Wort übersetzt – das versteht niemand." },
+        { "text": "Wandertag is Wandertag.", "feedback": "Das erklärt nichts." },
+        { "text": "It’s a German holiday when nobody goes to school.", "feedback": "Das stimmt so nicht. Es ist ein Schultag mit Ausflug." }
+      ],
+      "erklaerung": "Mediation: Umschreiben und erklären, was die andere Person nicht kennen kann."
+    },
+    {
+      "id": "en-uss-06", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Which strategies are useful for mediation?",
+      "optionen": [
+        { "text": "Choose only the information the other person needs.", "richtig": true },
+        { "text": "Paraphrase words you don’t know.", "richtig": true },
+        { "text": "Explain cultural things the other person can’t know.", "richtig": true },
+        { "text": "Translate every word in the same order.", "feedback": "Das ist eine Übersetzung, keine Mediation – und oft schwer verständlich." },
+        { "text": "Leave out everything you can’t translate exactly.", "feedback": "Lieber umschreiben, als Wichtiges wegzulassen." }
+      ],
+      "erklaerung": "Auswählen, umschreiben, erklären – und an die Zielperson denken."
+    },
+    {
+      "id": "en-uss-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Would you like to go to an American high school for a year? Write a short statement (5–6 sentences). Compare it with your school, give at least two reasons and use linking words (first, also, however, but).",
+      "stichworte": [
+        { "aspekt": "Klare eigene Meinung", "woerter": ["i would like", "i'd like", "i’d like", "i wouldn't", "i wouldn’t", "i think", "in my opinion"] },
+        { "aspekt": "Vergleich mit der eigenen Schule", "woerter": ["my school", "in germany", "at our school", "than", "different"] },
+        { "aspekt": "Typische Merkmale der US-High-School", "woerter": ["elective", "club", "team", "school spirit", "prom", "homecoming", "locker", "football"] },
+        { "aspekt": "Verknüpfungswörter", "woerter": ["first", "also", "however", "but", "because", "on the other hand"] }
+      ],
+      "musterloesung": "I would like to spend a year at an American high school. First, there are many electives, so I could take Photography, which we don’t have at my school. Also, I love the idea of school spirit and the big football games. However, the school day is longer than in Germany, and I would miss my friends. But I think the experience would help me improve my English a lot.",
+      "erklaerung": "Ein Statement braucht eine klare Meinung, Gründe, einen Vergleich und Verknüpfungswörter. Jede gut begründete Meinung ist richtig."
+    }
+  ]
+}

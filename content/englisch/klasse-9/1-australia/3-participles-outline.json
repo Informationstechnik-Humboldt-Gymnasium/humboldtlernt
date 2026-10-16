@@ -1,0 +1,115 @@
+{
+  "id": "en-k9-participles",
+  "titel": "Participle constructions, „lassen“ and writing an outline",
+  "kurz": "Sätze mit Partizipien verkürzen, das deutsche „lassen“ richtig übersetzen (let, make, have something done, leave) und eine Inhaltsangabe (outline) schreiben.",
+  "reihenfolge": 3,
+  "lernziele": [
+    { "id": "lz1", "niveau": "H", "text": "Relativ- und Adverbialsätze durch Partizipialkonstruktionen ersetzen" },
+    { "id": "lz2", "niveau": "G", "text": "Das deutsche „lassen“ je nach Bedeutung mit let, make, have/get something done, leave oder keep übersetzen" },
+    { "id": "lz3", "niveau": "G", "text": "Die Merkmale einer outline (Inhaltsangabe) kennen" },
+    { "id": "lz4", "niveau": "H", "text": "Eine outline mit einleitendem Satz im simple present und ohne eigene Meinung schreiben" }
+  ],
+  "verstehen": {
+    "einstieg": "„Ich ließ mir die Haare schneiden“ – heißt das „I let my hair cut“? Nein! Und wie fasst man einen ganzen Film in fünf Sätzen zusammen, ohne zu sagen, wie man ihn fand?",
+    "abschnitte": [
+      {
+        "titel": "Participle constructions",
+        "text": "Partizipien machen Sätze kürzer und eleganter – typisch für geschriebenes Englisch.\n\n- **Present participle (-ing)** ersetzt einen aktiven Relativsatz: ``The girl **who is walking** along the fence …`` → ``The girl **walking** along the fence …``\n- **Past participle (3. Form)** ersetzt einen passiven Relativsatz: ``a film **which was made** in 2002`` → ``a film **made** in 2002``\n- Als **Adverbialsatz** (Zeit, Grund): ``**While she was walking** home, she saw a kangaroo.`` → ``**Walking** home, she saw a kangaroo.`` ``**Because he felt** tired, he stopped.`` → ``**Feeling** tired, he stopped.``\n- **Perfect participle** (vorzeitig): ``**Having escaped** from the camp, the girls started their journey.``\n\nWichtig: Das Subjekt des Partizips muss dasselbe sein wie im Hauptsatz."
+      },
+      {
+        "titel": "How to translate „lassen“",
+        "text": "- **let** sb do sth: erlauben – ``My parents let me go to the party.`` (Sie ließen mich gehen.)\n- **make** sb do sth: veranlassen, zwingen – ``The teacher made us rewrite the text.``\n- **have / get** sth **done**: machen lassen (von jemand anderem) – ``I had my hair cut.`` ``We got the car repaired.``\n- **leave**: zurücklassen, in Ruhe lassen – ``Leave me alone!`` ``I left my bag at school.``\n- **keep** sb waiting: warten lassen – ``Sorry to keep you waiting.``\n\nNach let und make steht die Grundform **ohne to**."
+      },
+      {
+        "titel": "Writing an outline",
+        "text": "Eine **outline** (Inhaltsangabe) fasst die wichtigsten Punkte eines Textes oder Films zusammen.\n\n- **Introductory sentence**: Textsorte, Titel, Autor/Regie, Jahr, Thema: ``The film „Rabbit-Proof Fence“, directed by Phillip Noyce and released in 2002, is about three Aboriginal girls who escape from a camp and walk home.``\n- **Simple present**\n- Nur die **wichtigsten** Handlungsschritte, in eigenen Worten\n- **Keine direkte Rede**, keine Zitate\n- **Keine eigene Meinung**, keine Wertung\n- Konnektoren: **at the beginning, then, after that, when, while, in the end**"
+      }
+    ],
+    "merksatz": "Partizipien verkürzen Sätze: walking = who is walking, made = which was made, having escaped = after they had escaped. lassen: let (erlauben), make (zwingen), have sth done (machen lassen), leave (zurücklassen), keep waiting. Outline: Einleitungssatz, simple present, eigene Worte, keine Zitate, keine Meinung.",
+    "alltag": "Auf Streaming-Plattformen steht unter jedem Film eine Mini-Outline. Sie verrät die Situation, aber nie, wie man den Film finden soll."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-pcl-01", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Shorten the sentence: ``The book, which was written by Doris Pilkington Garimara, tells a true story.``",
+      "optionen": [
+        { "text": "The book, written by Doris Pilkington Garimara, tells a true story.", "richtig": true },
+        { "text": "The book, writing by Doris Pilkington Garimara, tells a true story.", "feedback": "Das Buch wurde geschrieben (Passiv) → past participle: written." },
+        { "text": "The book, wrote by Doris Pilkington Garimara, tells a true story.", "feedback": "wrote ist simple past. Gebraucht wird die 3. Form: written." },
+        { "text": "The book, having written by Doris Pilkington Garimara, tells a true story.", "feedback": "having written wäre aktiv und vorzeitig. Hier ist es passiv: written." }
+      ],
+      "erklaerung": "Passiver Relativsatz (which was written) → past participle (written)."
+    },
+    {
+      "id": "en-pcl-02", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "What does this sentence mean? ``Feeling hungry, Molly looked for food.``",
+      "optionen": [
+        { "text": "Because she felt hungry, Molly looked for food.", "richtig": true },
+        { "text": "Molly looked for food, and then she felt hungry.", "feedback": "Das Partizip nennt hier den Grund, nicht eine spätere Handlung." },
+        { "text": "Somebody felt hungry, so Molly looked for food.", "feedback": "Das Partizip bezieht sich auf das Subjekt des Hauptsatzes: Molly." },
+        { "text": "Molly will feel hungry when she looks for food.", "feedback": "Der Satz steht in der Vergangenheit und nennt einen Grund." }
+      ],
+      "erklaerung": "Feeling hungry = Because she felt hungry."
+    },
+    {
+      "id": "en-pcl-03", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "How do you translate „lassen“ here?",
+      "paare": [
+        { "links": "Meine Eltern lassen mich bis 22 Uhr wegbleiben.", "rechts": "let" },
+        { "links": "Der Trainer ließ uns zehn Runden laufen.", "rechts": "make" },
+        { "links": "Ich lasse mein Fahrrad reparieren.", "rechts": "have … repaired" },
+        { "links": "Lass mich in Ruhe!", "rechts": "leave" }
+      ],
+      "extraRechts": ["keep"],
+      "erklaerung": "Erlauben → let, zwingen → make, machen lassen → have sth done, in Ruhe lassen → leave."
+    },
+    {
+      "id": "en-pcl-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Translate: „Ich ließ mir die Haare schneiden.“",
+      "optionen": [
+        { "text": "I had my hair cut.", "richtig": true },
+        { "text": "I let my hair cut.", "feedback": "let heißt erlauben. Für „machen lassen“ benutzt man have sth done." },
+        { "text": "I made my hair cut.", "feedback": "make sb do heißt jemanden zwingen." },
+        { "text": "I left my hair cut.", "feedback": "leave heißt zurücklassen." }
+      ],
+      "erklaerung": "have + Objekt + past participle: I had my hair cut."
+    },
+    {
+      "id": "en-pcl-05", "typ": "multi", "schwierigkeit": "leicht", "lernziel": "lz3",
+      "frage": "Which features belong to an outline?",
+      "optionen": [
+        { "text": "an introductory sentence with title, author or director and topic", "richtig": true },
+        { "text": "the simple present", "richtig": true },
+        { "text": "only the most important events", "richtig": true },
+        { "text": "lots of quotations from the text", "feedback": "In eine outline gehören keine Zitate, sondern eigene Worte." },
+        { "text": "your personal opinion at the end", "feedback": "Eine outline ist sachlich – ohne eigene Meinung." }
+      ],
+      "erklaerung": "Outline: knapp, sachlich, simple present, eigene Worte."
+    },
+    {
+      "id": "en-pcl-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Which is the best introductory sentence for an outline?",
+      "optionen": [
+        { "text": "The short story „The Last Bus“ by Kate Morgan, published in 2015, is about a boy who gets lost in Sydney at night.", "richtig": true },
+        { "text": "I really liked the short story „The Last Bus“ because it was exciting.", "feedback": "Eine outline enthält keine eigene Meinung." },
+        { "text": "Once upon a time there was a boy who got lost in Sydney.", "feedback": "Eine outline erzählt nicht nach, sondern fasst sachlich im simple present zusammen." },
+        { "text": "„Where am I?“, Tom shouted when he got off the bus.", "feedback": "Keine direkte Rede in einer outline." }
+      ],
+      "erklaerung": "Textsorte, Titel, Autor, Jahr und Thema in einem Satz."
+    },
+    {
+      "id": "en-pcl-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Write an outline (4–5 sentences) of a film, book or fairy tale you know well. Start with an introductory sentence and use the simple present. Don’t give your opinion.",
+      "stichworte": [
+        { "aspekt": "Einleitungssatz mit Textsorte/Titel und Thema", "woerter": ["is about", "deals with", "tells the story", "film", "novel", "story", "book", "fairy tale"] },
+        { "aspekt": "Simple present", "woerter": ["s ", "is ", "are "] },
+        { "aspekt": "Konnektoren der Handlungsfolge", "woerter": ["at the beginning", "then", "after that", "when", "while", "in the end", "finally"] },
+        { "aspekt": "Schluss der Handlung", "woerter": ["in the end", "finally", "at last"] }
+      ],
+      "musterloesung": "The fairy tale „Hansel and Gretel“ by the Brothers Grimm is about two children who are left in the forest by their parents. At the beginning, the children find their way home by following white stones. When they are left in the forest again, they find a house made of gingerbread. The witch who lives there wants to eat Hansel, but Gretel pushes her into the oven. In the end, the children find the witch’s treasure and return home to their father.",
+      "erklaerung": "Bewertet werden Einleitungssatz, simple present, klare Reihenfolge und Sachlichkeit."
+    }
+  ]
+}

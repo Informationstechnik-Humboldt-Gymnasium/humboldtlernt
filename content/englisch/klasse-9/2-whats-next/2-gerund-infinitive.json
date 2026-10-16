@@ -1,0 +1,116 @@
+{
+  "id": "en-k9-gerund-infinitive",
+  "titel": "Gerund or infinitive? And: I have been working …",
+  "kurz": "Verben mit Gerund, Verben mit to-Infinitiv und Verben, bei denen sich die Bedeutung ändert – dazu simple past, present perfect und present perfect progressive im Vergleich.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Verben, auf die ein to-Infinitiv folgt (want, decide, hope, plan, offer), von Verben mit Gerund unterscheiden" },
+    { "id": "lz2", "niveau": "H", "text": "Bedeutungsunterschiede bei stop, remember, try + Gerund oder Infinitiv erklären" },
+    { "id": "lz3", "niveau": "H", "text": "Simple past, present perfect und present perfect progressive passend zur Situation verwenden" }
+  ],
+  "verstehen": {
+    "einstieg": "„I stopped to smoke“ und „I stopped smoking“ – der eine raucht gleich eine Zigarette, der andere hat aufgehört. Ein kleines Wort, ein großer Unterschied.",
+    "abschnitte": [
+      {
+        "titel": "to-Infinitiv",
+        "text": "Nach diesen Verben steht der **to-Infinitiv**: **want**, **would like**, **decide**, **hope**, **plan**, **offer**, **promise**, **refuse** (sich weigern), **learn**, **agree**, **expect**, **manage** (schaffen)\n\n``I would like to work abroad.`` ``She decided to take a gap year.`` ``He managed to find a job.``\n\nAuch nach vielen Adjektiven: ``It’s important to be on time.`` ``I was surprised to hear that.``"
+      },
+      {
+        "titel": "Gerund",
+        "text": "Nach diesen Verben steht das **Gerund**: **enjoy**, **avoid**, **finish**, **mind**, **suggest**, **keep**, **consider** (in Erwägung ziehen), **imagine**, **can’t help** (nicht anders können), **give up** – und nach Präpositionen: ``I’m interested in working with children.``"
+      },
+      {
+        "titel": "Bedeutungsunterschiede",
+        "text": "- **stop doing**: aufhören zu tun – ``He stopped smoking.``\n- **stop to do**: anhalten, um zu tun – ``He stopped to buy a coffee.``\n- **remember doing**: sich erinnern, etwas getan zu haben – ``I remember meeting her in London.``\n- **remember to do**: daran denken, etwas zu tun – ``Remember to send your CV!``\n- **try doing**: etwas ausprobieren – ``Try restarting the computer.``\n- **try to do**: versuchen (sich bemühen) – ``I tried to call you, but nobody answered.``\n\nBei **like, love, hate, start, begin** sind meist beide Formen möglich, ohne großen Unterschied."
+      },
+      {
+        "titel": "Past simple – present perfect – present perfect progressive",
+        "text": "- **Simple past**: abgeschlossen, Zeitpunkt in der Vergangenheit – ``I did an internship last summer.``\n- **Present perfect**: Ergebnis oder Erfahrung bis jetzt, oft mit Anzahl – ``I have written three applications so far.``\n- **Present perfect progressive**: Dauer einer Tätigkeit bis jetzt – ``I have been working at the café for six months.``\n\nIm Lebenslauf und in Bewerbungen brauchst du alle drei."
+      }
+    ],
+    "merksatz": "to-Infinitiv nach want, would like, decide, hope, plan, manage. Gerund nach enjoy, avoid, finish, mind, suggest, consider und nach Präpositionen. stop/remember/try ändern die Bedeutung. Simple past: wann? Present perfect: wie viel bis jetzt? Present perfect progressive: wie lange schon?",
+    "alltag": "„Remember to bring your passport!“ steht auf vielen Reiseunterlagen. Wer „Remember bringing“ liest, soll sich nur erinnern, es eingepackt zu haben."
+  },
+  "interaktiv": ["en-zeitenmaschine"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-gin-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Complete: ``After school, I’d like ___ in Australia for a year.``",
+      "optionen": [
+        { "text": "to work", "richtig": true },
+        { "text": "working", "feedback": "Nach would like steht der to-Infinitiv." },
+        { "text": "work", "feedback": "Es fehlt to." },
+        { "text": "to working", "feedback": "Nach to steht hier die Grundform: to work." }
+      ],
+      "erklaerung": "would like + to-Infinitiv."
+    },
+    {
+      "id": "en-gin-02", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Gerund or to-infinitive? Match the verbs.",
+      "paare": [
+        { "links": "She decided …", "rechts": "to apply for the job." },
+        { "links": "He avoided …", "rechts": "talking about his weaknesses." },
+        { "links": "They managed …", "rechts": "to finish the project on time." },
+        { "links": "I’m considering …", "rechts": "taking a gap year." }
+      ],
+      "erklaerung": "decide, manage + to-Infinitiv; avoid, consider + Gerund."
+    },
+    {
+      "id": "en-gin-03", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Which sentences are correct?",
+      "optionen": [
+        { "text": "She suggested meeting after school.", "richtig": true },
+        { "text": "He refused to answer the question.", "richtig": true },
+        { "text": "I hope seeing you soon.", "feedback": "hope + to-Infinitiv: I hope to see you soon." },
+        { "text": "Would you mind waiting a moment?", "richtig": true },
+        { "text": "We plan visiting Canada.", "feedback": "plan + to-Infinitiv: We plan to visit Canada." }
+      ],
+      "erklaerung": "suggest und mind + Gerund, refuse, hope und plan + to-Infinitiv."
+    },
+    {
+      "id": "en-gin-04", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "„Remember to send the email!“ – What does this mean?",
+      "optionen": [
+        { "text": "Don’t forget to send the email.", "richtig": true },
+        { "text": "Think back to the moment when you sent the email.", "feedback": "Das wäre remember sending." },
+        { "text": "Stop sending emails.", "feedback": "Davon steht nichts im Satz." },
+        { "text": "Try sending the email again.", "feedback": "Das wäre try sending." }
+      ],
+      "erklaerung": "remember to do = an etwas denken, was man noch tun muss."
+    },
+    {
+      "id": "en-gin-05", "typ": "zuordnung", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Match the sentences with their meaning.",
+      "paare": [
+        { "links": "He stopped smoking.", "rechts": "He doesn’t smoke any more." },
+        { "links": "He stopped to smoke.", "rechts": "He stopped walking because he wanted to smoke." },
+        { "links": "I remember locking the door.", "rechts": "I know that I locked the door." },
+        { "links": "I tried to open the window.", "rechts": "I made an effort, but maybe I couldn’t do it." }
+      ],
+      "erklaerung": "stop doing = aufhören, stop to do = anhalten, um …; remember doing = sich erinnern; try to do = sich bemühen."
+    },
+    {
+      "id": "en-gin-06", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Complete: ``I ___ at the animal shelter since March, and I really enjoy it.``",
+      "optionen": [
+        { "text": "have been volunteering", "richtig": true },
+        { "text": "volunteered", "feedback": "since March und es dauert noch an → present perfect progressive." },
+        { "text": "am volunteering", "feedback": "Mit since + Dauer bis jetzt braucht man das present perfect (progressive)." },
+        { "text": "had volunteered", "feedback": "Das past perfect passt nicht – die Tätigkeit dauert bis jetzt." }
+      ],
+      "erklaerung": "Dauer bis jetzt mit since: have been + -ing."
+    },
+    {
+      "id": "en-gin-07", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Which sentence is correct?",
+      "optionen": [
+        { "text": "So far I have sent five applications, and last week I had my first interview.", "richtig": true },
+        { "text": "So far I sent five applications, and last week I have had my first interview.", "feedback": "so far (bis jetzt) → present perfect; last week → simple past. Hier ist es vertauscht." },
+        { "text": "So far I have been sending five applications, and last week I had my first interview.", "feedback": "Bei einer Anzahl (five) benutzt man das present perfect simple, nicht progressive." },
+        { "text": "So far I am sending five applications, and last week I had my first interview.", "feedback": "so far verlangt das present perfect." }
+      ],
+      "erklaerung": "Anzahl bis jetzt → present perfect simple; Zeitpunkt in der Vergangenheit → simple past."
+    }
+  ]
+}
