@@ -1,0 +1,34 @@
+{
+  "fach": "Englisch",
+  "kurz": "Englisch",
+  "reihenfolge": 3.6,
+  "beschreibung": "Englisch als erste Fremdsprache nach dem schulinternen Curriculum: Pflichtmodule mit Landeskunde (UK, USA, Australien), Grammatik und Wortschatz, Schreiben, Sprechen, Film- und Textanalyse.",
+  "quelle": "Schulinternes Curriculum Englisch, Sekundarstufe I, Humboldt-Gymnasium Berlin-Tegel (Synopse der Pflichtmodule, Stand 10/2019)",
+  "hinweis": "Jedes Themenfeld entspricht einem Pflichtmodul des Curriculums. Module, die das Curriculum als „in Konzeption“ führt (Kl. 5 Celebrations, Kl. 6 Lektüre statt Unit, Kl. 7 Stories and Histories, Kl. 10 Making an impact – Saving the Planet), sind noch nicht enthalten. Das Modul Media Mad kann in Klasse 9 oder 10 unterrichtet werden. Die Erklärungen sind auf Deutsch, Beispiele und Übungen auf Englisch.",
+  "stufen": [
+    {
+      "stufe": 5,
+      "name": "Klasse 5"
+    },
+    {
+      "stufe": 6,
+      "name": "Klasse 6"
+    },
+    {
+      "stufe": 7,
+      "name": "Klasse 7"
+    },
+    {
+      "stufe": 8,
+      "name": "Klasse 8"
+    },
+    {
+      "stufe": 9,
+      "name": "Klasse 9"
+    },
+    {
+      "stufe": 10,
+      "name": "Klasse 10"
+    }
+  ]
+}

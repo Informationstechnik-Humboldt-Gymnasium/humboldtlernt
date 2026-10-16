@@ -1,0 +1,119 @@
+{
+  "id": "en-k10-setting-devices",
+  "titel": "Setting, atmosphere and literary devices",
+  "kurz": "Wie Ort, Zeit und Sprache Stimmung erzeugen: setting und atmosphere, Bildsprache (simile, metaphor, personification, symbol), Klangmittel und foreshadowing – mit Wirkung.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Setting (Ort, Zeit, soziales Umfeld) und atmosphere/mood beschreiben" },
+    { "id": "lz2", "niveau": "G", "text": "Literarische Mittel erkennen und benennen (simile, metaphor, personification, symbol, alliteration, repetition, onomatopoeia, foreshadowing)" },
+    { "id": "lz3", "niveau": "H", "text": "Die Wirkung eines literarischen Mittels im Zusammenhang erklären" },
+    { "id": "lz4", "niveau": "H", "text": "Wortschatz zur Beschreibung von Atmosphäre gezielt verwenden" }
+  ],
+  "verstehen": {
+    "einstieg": "„The house stood at the end of the street like a tired old man, its windows staring blindly at the empty road.“ Noch ist nichts passiert – und trotzdem ahnst du, dass gleich etwas Unheimliches geschieht. Wie macht die Sprache das?",
+    "abschnitte": [
+      {
+        "titel": "Setting and atmosphere",
+        "text": "- **Setting**: **wo** (Ort, Landschaft, Raum) und **wann** (Zeit, Epoche, Tageszeit, Wetter) eine Geschichte spielt, auch das soziale Umfeld\n- **Atmosphere / mood**: die **Stimmung**, die beim Lesen entsteht – z. B. **gloomy** (düster), **threatening** (bedrohlich), **tense** (angespannt), **cheerful**, **peaceful**, **mysterious**, **melancholic**\n\nDas Setting spiegelt oft die Gefühle der Figuren: Gewitter bei einem Streit, Sonnenschein am glücklichen Ende. In Science-Fiction-Geschichten (z. B. über eine Zukunft mit perfekter Technik) zeigt das Setting oft, was der Autor an unserer Gesellschaft kritisiert."
+      },
+      {
+        "titel": "Imagery",
+        "text": "- **simile** (Vergleich mit like/as): ``Her voice was as cold as ice.`` ``He ran like the wind.``\n- **metaphor** (Vergleich ohne like/as, etwas „ist“ etwas anderes): ``The classroom was a zoo.``\n- **personification** (Dingen werden menschliche Eigenschaften gegeben): ``The wind whispered through the trees.``\n- **symbol**: ein Gegenstand steht für eine Idee – ein Käfig für fehlende Freiheit, eine Taube für Frieden"
+      },
+      {
+        "titel": "Sound and structure",
+        "text": "- **alliteration**: gleicher Anfangslaut – ``the silent, silver sea``\n- **repetition**: Wiederholung – betont, verstärkt Gefühle\n- **onomatopoeia**: lautmalende Wörter – ``bang``, ``buzz``, ``crash``\n- **rhetorical question**: Frage ohne erwartete Antwort\n- **foreshadowing**: Vorausdeutung – ein Hinweis auf etwas, das später passiert\n- **contrast**: Gegensätze, z. B. hell–dunkel, laut–still"
+      },
+      {
+        "titel": "Explaining the effect",
+        "text": "Ein Stilmittel zu benennen reicht nie. Erkläre immer die **Wirkung**:\n\n``The author uses a simile („as cold as ice“, l. 5) to show how distant and unfriendly the mother is. This creates a tense atmosphere and makes the reader feel sorry for the boy.``\n\nNützliche Verben: **emphasises**, **creates**, **suggests**, **underlines**, **highlights**, **conveys**"
+      }
+    ],
+    "merksatz": "Setting = wo, wann, in welchem Umfeld; atmosphere = Stimmung. Simile mit like/as, metaphor ohne, personification macht Dinge menschlich, symbol steht für eine Idee. Dazu alliteration, repetition, onomatopoeia, foreshadowing. Immer: Mittel + Beleg + Wirkung.",
+    "alltag": "Werbung, Songtexte und politische Reden benutzen dieselben Mittel – Alliterationen in Slogans, Wiederholungen in Reden, Metaphern in fast jedem Lied."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-set-01", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz2",
+      "frage": "Match the examples with the literary devices.",
+      "paare": [
+        { "links": "„He was as brave as a lion.“", "rechts": "simile" },
+        { "links": "„Time is a thief.“", "rechts": "metaphor" },
+        { "links": "„The old house groaned in the storm.“", "rechts": "personification" },
+        { "links": "„Peter picked a pair of purple pens.“", "rechts": "alliteration" },
+        { "links": "„Crash! The glass hit the floor.“", "rechts": "onomatopoeia" }
+      ],
+      "erklaerung": "Simile mit as/like, Metapher ohne; personification macht das Haus menschlich; gleiche Anfangslaute; lautmalendes crash."
+    },
+    {
+      "id": "en-set-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "What belongs to the **setting** of a story?",
+      "optionen": [
+        { "text": "the place and time in which the story takes place", "richtig": true },
+        { "text": "the most exciting moment of the story", "feedback": "Das ist der climax." },
+        { "text": "the person who tells the story", "feedback": "Das ist der narrator." },
+        { "text": "the message of the story", "feedback": "Das ist das Thema oder die Botschaft." }
+      ],
+      "erklaerung": "Setting: Ort, Zeit, Umfeld."
+    },
+    {
+      "id": "en-set-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "„Dark clouds hung low over the empty village. Not a single light was burning, and somewhere a door banged in the wind.“ Which word describes the atmosphere best?",
+      "optionen": [
+        { "text": "gloomy and threatening", "richtig": true },
+        { "text": "cheerful and lively", "feedback": "Dunkle Wolken, leeres Dorf, schlagende Tür – das ist nicht fröhlich." },
+        { "text": "peaceful and relaxed", "feedback": "Die Geräusche und die Dunkelheit wirken eher unruhig." },
+        { "text": "funny and silly", "feedback": "Nichts in der Beschreibung ist lustig." }
+      ],
+      "erklaerung": "Dunkelheit, Leere und ein unerklärliches Geräusch erzeugen eine düstere, bedrohliche Stimmung."
+    },
+    {
+      "id": "en-set-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "At the beginning of a story, a boy notices that the bridge he crosses every day has a small crack. At the end, the bridge collapses. What is the crack?",
+      "optionen": [
+        { "text": "foreshadowing", "richtig": true },
+        { "text": "onomatopoeia", "feedback": "Onomatopoeia sind lautmalende Wörter." },
+        { "text": "alliteration", "feedback": "Alliteration ist ein Klangmittel." },
+        { "text": "a rhetorical question", "feedback": "Es ist keine Frage, sondern ein Hinweis auf das spätere Ereignis." }
+      ],
+      "erklaerung": "Ein früher Hinweis auf ein späteres Ereignis heißt foreshadowing."
+    },
+    {
+      "id": "en-set-05", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "In a story, a girl keeps a bird in a small cage in her room. At the end, she opens the cage and leaves home to study abroad. What is the most convincing interpretation of the cage?",
+      "optionen": [
+        { "text": "It is a symbol of the girl’s own lack of freedom, which she overcomes at the end.", "richtig": true },
+        { "text": "It shows that the girl likes animals.", "feedback": "Das stimmt vielleicht, erklärt aber nicht, warum der Käfig am Ende so wichtig ist." },
+        { "text": "It is an example of alliteration.", "feedback": "Ein Gegenstand kann keine Alliteration sein." },
+        { "text": "It shows that the story takes place in a zoo.", "feedback": "Das Setting ist das Zimmer des Mädchens." }
+      ],
+      "erklaerung": "Der Käfig steht für Enge und Unfreiheit. Das Öffnen spiegelt den Aufbruch der Figur."
+    },
+    {
+      "id": "en-set-06", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Which sentences explain the **effect** of a device (and don’t just name it)?",
+      "optionen": [
+        { "text": "The repetition of „alone“ (ll. 3–5) emphasises how isolated the narrator feels.", "richtig": true },
+        { "text": "The personification of the storm (l. 8) makes nature seem angry and threatening.", "richtig": true },
+        { "text": "There is a metaphor in line 12.", "feedback": "Das benennt das Mittel nur, ohne die Wirkung zu erklären." },
+        { "text": "The author uses many adjectives.", "feedback": "Das ist eine Beobachtung, aber keine Deutung." },
+        { "text": "The simile „like a ghost“ (l. 2) suggests that the old man is pale and hardly noticed by others.", "richtig": true }
+      ],
+      "erklaerung": "Gute Analyse: Mittel + Beleg + Wirkung (emphasises, makes … seem, suggests)."
+    },
+    {
+      "id": "en-set-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Analyse this extract (3–4 sentences): name two literary devices, quote them and explain their effect on the atmosphere.\n\n„(1) The forest was silent, a dark wall around the little hut. (2) The trees bent over the roof like old women whispering secrets. (3) Inside, the fire was dying.“",
+      "stichworte": [
+        { "aspekt": "Metapher „a dark wall“ (l. 1)", "woerter": ["metaphor", "dark wall"] },
+        { "aspekt": "Simile/Personification „like old women whispering“ (l. 2)", "woerter": ["simile", "personification", "old women", "whispering"] },
+        { "aspekt": "Wirkung: bedrohlich, unheimlich, eingeschlossen", "woerter": ["threatening", "mysterious", "gloomy", "trapped", "creepy", "uneasy", "tense", "dark atmosphere"] },
+        { "aspekt": "Zeilenangaben", "woerter": ["(l.", "line"] }
+      ],
+      "musterloesung": "The metaphor „a dark wall“ (l. 1) shows that the forest surrounds the hut completely, so the people inside seem trapped. The simile „like old women whispering secrets“ (l. 2), which is also a personification, makes the trees seem alive and mysterious. Together with the „dying“ fire (l. 3), these devices create a gloomy and threatening atmosphere, and the reader expects that something bad will happen.",
+      "erklaerung": "Immer drei Schritte: Mittel benennen, mit Zeilenangabe belegen, Wirkung erklären."
+    }
+  ]
+}

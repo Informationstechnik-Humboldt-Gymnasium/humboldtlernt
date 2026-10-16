@@ -1,0 +1,119 @@
+{
+  "id": "en-k9-australia",
+  "titel": "Australia: First Australians, the Stolen Generations and life Down Under",
+  "kurz": "Die Geschichte der Aboriginal and Torres Strait Islander Peoples, Kolonisierung, Stolen Generations und Reconciliation – dazu Outback, School of the Air und Australian English.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Grundlegende Fakten zu Geografie und Lebensweise Australiens nennen (Canberra, Outback, School of the Air, Uluru)" },
+    { "id": "lz2", "niveau": "H", "text": "Die Geschichte der indigenen Bevölkerung und die Folgen der Kolonisierung erklären" },
+    { "id": "lz3", "niveau": "H", "text": "Die Stolen Generations, die National Apology und die Idee der Reconciliation erläutern" },
+    { "id": "lz4", "niveau": "G", "text": "Typische Wörter des Australian English verstehen" }
+  ],
+  "verstehen": {
+    "einstieg": "Für die einen ist der 26. Januar „Australia Day“ mit Feuerwerk und Grillfest. Für viele Aboriginal Australians ist er „Invasion Day“ oder „Survival Day“. Wie kann derselbe Tag so Verschiedenes bedeuten?",
+    "abschnitte": [
+      {
+        "titel": "The land and the people",
+        "text": "- Hauptstadt: **Canberra**; größte Städte: **Sydney** und **Melbourne**\n- Der größte Teil des Landes ist trockenes, dünn besiedeltes **Outback**. Die meisten Menschen leben an den Küsten.\n- Kinder auf weit entfernten Farmen lernen mit der **School of the Air**: früher per Funk, heute über das Internet. Ärztliche Hilfe kommt mit dem **Royal Flying Doctor Service** per Flugzeug.\n- **Uluru**, der große rote Felsen im Zentrum, ist ein heiliger Ort der Anangu. Seit 2019 darf er nicht mehr bestiegen werden."
+      },
+      {
+        "titel": "The First Australians",
+        "text": "Die **Aboriginal and Torres Strait Islander Peoples** leben seit Zehntausenden von Jahren in Australien – sie gehören zu den ältesten fortbestehenden Kulturen der Welt. Es gab Hunderte von Völkern mit eigenen Sprachen. Ihre Geschichten über die Entstehung der Welt, das Land und seine Regeln werden **the Dreaming** oder **Dreamtime stories** genannt.\n\n**1788** landete die **First Fleet** mit britischen Sträflingen und Soldaten in Sydney. Die Briten behandelten das Land, als gehöre es niemandem (**terra nullius**). Die indigenen Menschen verloren ihr Land; viele starben durch Gewalt und eingeschleppte Krankheiten."
+      },
+      {
+        "titel": "The Stolen Generations",
+        "text": "Etwa von **1910 bis in die 1970er-Jahre** nahmen staatliche Stellen und Kirchen zehntausende Kinder von Aboriginal and Torres Strait Islander Familien weg und brachten sie in Heime oder zu weißen Familien. Sie sollten ihre Sprache und Kultur vergessen und sich anpassen (**assimilation**). Diese Kinder nennt man die **Stolen Generations**. Viele litten ihr Leben lang unter der Trennung.\n\nDer Film **„Rabbit-Proof Fence“** (2002) erzählt die wahre Geschichte von drei Mädchen, die 1931 aus einem solchen Lager fliehen und zu Fuß den langen Weg nach Hause gehen – immer am Kaninchenzaun entlang.\n\nAm **13. Februar 2008** entschuldigte sich Premierminister Kevin Rudd im Parlament offiziell (**National Apology**). **Reconciliation** (Versöhnung) bedeutet, das Unrecht anzuerkennen und eine gerechte Zukunft für alle aufzubauen."
+      },
+      {
+        "titel": "Australian English",
+        "text": "- **G’day!** – Hallo! **mate** – Kumpel\n- **arvo** – afternoon, **brekkie** – breakfast, **barbie** – barbecue\n- **No worries!** – Kein Problem!\n- **Down Under** – Spitzname für Australien (und Neuseeland)"
+      }
+    ],
+    "merksatz": "Canberra ist die Hauptstadt, das Outback ist trocken und dünn besiedelt. Aboriginal and Torres Strait Islander Peoples leben seit Zehntausenden Jahren dort. 1788 First Fleet, Landverlust. Stolen Generations: Kinder wurden etwa 1910–1970er von ihren Familien getrennt; 2008 National Apology; Reconciliation.",
+    "alltag": "Bei vielen öffentlichen Veranstaltungen in Australien gibt es zu Beginn ein „Acknowledgement of Country“: Man würdigt die traditionellen Eigentümer des Landes."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-aus-01", "typ": "multi", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Which statements about Australia are true?",
+      "optionen": [
+        { "text": "The capital of Australia is Canberra.", "richtig": true },
+        { "text": "Most Australians live near the coast.", "richtig": true },
+        { "text": "Children on remote farms can learn with the School of the Air.", "richtig": true },
+        { "text": "The capital of Australia is Sydney.", "feedback": "Sydney ist die größte Stadt, Hauptstadt ist Canberra." },
+        { "text": "Tourists are encouraged to climb Uluru.", "feedback": "Uluru ist ein heiliger Ort. Seit 2019 ist das Besteigen verboten." }
+      ],
+      "erklaerung": "Canberra, Küstenstädte, School of the Air – und Respekt vor Uluru."
+    },
+    {
+      "id": "en-aus-02", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz4",
+      "frage": "Match the Australian English words with their meanings.",
+      "paare": [
+        { "links": "arvo", "rechts": "afternoon" },
+        { "links": "brekkie", "rechts": "breakfast" },
+        { "links": "barbie", "rechts": "barbecue" },
+        { "links": "No worries!", "rechts": "No problem!" }
+      ],
+      "erklaerung": "Australisches Englisch kürzt viele Wörter ab und hängt -ie oder -o an."
+    },
+    {
+      "id": "en-aus-03", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "What did the British colonists mean by „terra nullius“?",
+      "optionen": [
+        { "text": "They claimed that the land belonged to nobody, although Aboriginal people had lived there for thousands of years.", "richtig": true },
+        { "text": "It was the name of the first British ship.", "feedback": "Die erste Flotte hieß First Fleet. terra nullius ist ein Rechtsbegriff." },
+        { "text": "It was a treaty between the British and Aboriginal peoples.", "feedback": "Es gab keinen solchen Vertrag – genau das ist das Problem." },
+        { "text": "It is the Aboriginal name for Australia.", "feedback": "Es ist lateinisch und heißt „Niemandsland“." }
+      ],
+      "erklaerung": "Mit der Idee des „Niemandslands“ rechtfertigten die Briten die Inbesitznahme. Erst 1992 erklärte das höchste australische Gericht diese Vorstellung für falsch."
+    },
+    {
+      "id": "en-aus-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Who are the „Stolen Generations“?",
+      "optionen": [
+        { "text": "Aboriginal and Torres Strait Islander children who were taken from their families by the government and churches", "richtig": true },
+        { "text": "British prisoners who were sent to Australia", "feedback": "Das waren die convicts der First Fleet." },
+        { "text": "Young Australians who leave the country to work abroad", "feedback": "Der Begriff beschreibt ein Unrecht an indigenen Familien." },
+        { "text": "Children who were stolen by kangaroos in Dreamtime stories", "feedback": "Es geht um eine reale, staatliche Politik im 20. Jahrhundert." }
+      ],
+      "erklaerung": "Die Kinder sollten durch Assimilation ihre Kultur verlieren. Viele sahen ihre Familien nie wieder."
+    },
+    {
+      "id": "en-aus-05", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Put the events in chronological order.",
+      "elemente": [
+        "Aboriginal peoples live in Australia for tens of thousands of years.",
+        "The First Fleet arrives in Sydney.",
+        "Three girls escape from a camp and walk home along the rabbit-proof fence.",
+        "The Australian Prime Minister officially says sorry to the Stolen Generations.",
+        "Climbing Uluru is banned."
+      ],
+      "erklaerung": "Vor 1788 – 1788 – 1931 – 2008 – 2019."
+    },
+    {
+      "id": "en-aus-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "What does „reconciliation“ mean in the Australian context?",
+      "optionen": [
+        { "text": "Recognising past injustice and working together for a fair future for Indigenous and non-Indigenous Australians", "richtig": true },
+        { "text": "Forgetting the past so that everybody can be happy", "feedback": "Versöhnung heißt gerade, das Unrecht anzuerkennen – nicht es zu vergessen." },
+        { "text": "Sending Aboriginal children to boarding schools", "feedback": "Das war Teil des Unrechts, nicht der Versöhnung." },
+        { "text": "A national sport in Australia", "feedback": "Reconciliation heißt Versöhnung." }
+      ],
+      "erklaerung": "Die National Apology von 2008 war ein wichtiger Schritt der Reconciliation – aber viele Fragen sind bis heute offen."
+    },
+    {
+      "id": "en-aus-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz3",
+      "frage": "Explain in 4–5 English sentences why 26 January is a day of celebration for some Australians and a day of mourning for others.",
+      "stichworte": [
+        { "aspekt": "26 January 1788: Ankunft der First Fleet", "woerter": ["1788", "first fleet", "british", "arrived", "arrival"] },
+        { "aspekt": "Australia Day: Feier der Nation", "woerter": ["australia day", "celebrate", "celebration", "nation"] },
+        { "aspekt": "Für Aboriginal people: Beginn von Landverlust, Gewalt, Unrecht (Invasion/Survival Day)", "woerter": ["invasion", "survival", "lost", "land", "violence", "mourning", "injustice", "stolen"] },
+        { "aspekt": "Perspektivwechsel / Fazit", "woerter": ["for some", "for others", "different", "perspective", "point of view", "both"] }
+      ],
+      "musterloesung": "On 26 January 1788 the First Fleet arrived in Sydney, and the British took the land. For many Australians, Australia Day is a celebration of their nation with parties and fireworks. For many Aboriginal and Torres Strait Islander people, however, it marks the beginning of invasion, violence and the loss of their land. That is why some call it Invasion Day or Survival Day. The day shows that the same event can mean very different things from different points of view.",
+      "erklaerung": "Bewertet wird, ob du beide Perspektiven erklärst und den historischen Grund nennst."
+    }
+  ]
+}

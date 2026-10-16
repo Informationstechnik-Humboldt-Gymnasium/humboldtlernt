@@ -161,7 +161,7 @@ window.fetch = async function (url, opts) {
 // ---------------------------------------------------------------- Seitenrahmen (ersetzt views.js)
 function layout({ title, body, ohneNav, admin }) {
   document.title = (title ? title + ' · ' : '') + 'Lernseite – Testseite';
-  const klassen = ['', '7a', '8a', '9a', '10a'];
+  const klassen = ['', '5a', '6a', '7a', '8a', '9a', '10a'];
   const fachLinks = FAECHER.filter(f => f.stufen.length || SchulApp.funktionAn('sandbox')).map(f => \`<a href="/\${f.id}">\${esc(f.kurz)}</a>\`).join('');
   const angemeldet = SchulApp.banner();
   return \`

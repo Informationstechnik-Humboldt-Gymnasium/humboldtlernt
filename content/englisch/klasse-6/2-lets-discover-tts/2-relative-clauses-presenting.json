@@ -1,0 +1,118 @@
+{
+  "id": "en-k6-relative-clauses",
+  "titel": "The club which I like: relative clauses, presentations and emails",
+  "kurz": "Relativsätze mit who, which und that (auch ohne Relativpronomen), Phrasen für eine Präsentation über einen Schulclub und der Aufbau einer informellen E-Mail.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Relativsätze mit who (Personen), which (Dinge) und that bilden" },
+    { "id": "lz2", "niveau": "H", "text": "Erkennen, wann man das Relativpronomen weglassen kann (contact clauses)" },
+    { "id": "lz3", "niveau": "G", "text": "Eine kurze Präsentation mit typischen Phrasen gliedern (Begrüßung, Einleitung, Informationen, Aufruf, Schluss)" },
+    { "id": "lz4", "niveau": "G", "text": "Eine informelle E-Mail mit passender Anrede und Grußformel schreiben" }
+  ],
+  "verstehen": {
+    "einstieg": "Du sollst deiner Partnerklasse in England deinen Lieblings-Club an der Schule vorstellen – erst in einer kurzen Präsentation, dann in einer E-Mail. Wie verbindest du Sätze elegant, und wie fängst du an?",
+    "abschnitte": [
+      {
+        "titel": "who, which, that",
+        "text": "Relativsätze beschreiben ein Nomen genauer:\n\n- **who** für Personen: ``The girl who sits next to me is from Wales.``\n- **which** für Dinge und Tiere: ``The club which meets on Mondays is great.``\n- **that** für Personen und Dinge: ``It’s the book that I told you about.``\n\nAnders als im Deutschen stehen in diesen Relativsätzen **keine Kommas**."
+      },
+      {
+        "titel": "Contact clauses",
+        "text": "Ist das Relativpronomen **Objekt** des Relativsatzes (danach folgt ein neues Subjekt), kann man es weglassen:\n\n- ``The film (which) we saw was boring.`` → ``The film we saw was boring.``\n- ``The teacher (who) I like most is Mr Hill.``\n\nIst es **Subjekt** (danach folgt direkt ein Verb), muss es bleiben: ``The boy who lives next door …`` – hier geht es nicht ohne who."
+      },
+      {
+        "titel": "Giving a presentation",
+        "text": "- Begrüßung: **Hello and welcome to my presentation.**\n- Thema: **Today I’d like to tell you something about the drama club.**\n- Informationen: **The club meets every Wednesday after school.** **… is really interesting because …**\n- Aufruf: **You should join … because …**\n- Schluss: **Thank you for listening.** **I’m happy to answer your questions.**\n\nTipps: Sprich frei mit Stichwortkarten, schau dein Publikum an und zeig ein Bild."
+      },
+      {
+        "titel": "An informal email",
+        "text": "- Anrede: **Hi Sam,** / **Dear Sam,**\n- Einstieg: **Thanks for your email.** **How are you?**\n- Hauptteil: deine Informationen, in kurzen Absätzen\n- Schluss: **Write back soon.** **See you!**\n- Gruß: **Best wishes,** / **Love,** / **Bye for now,** + dein Name\n\nIn einer E-Mail an Freunde darfst du Kurzformen benutzen (I’m, don’t)."
+      }
+    ],
+    "merksatz": "who für Personen, which für Dinge, that für beides – ohne Komma. Ist das Relativpronomen Objekt, kann es wegfallen (contact clause). Präsentation: Begrüßung – Thema – Informationen – Aufruf – Dank. Informelle E-Mail: Hi/Dear …, Best wishes/Love.",
+    "alltag": "Viele britische Schulen stellen ihre after-school clubs am Anfang des Schuljahres auf einer „Clubs Fair“ vor – mit genau solchen Kurzpräsentationen."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-rcl-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Complete: ``That’s the teacher ___ runs the chess club.``",
+      "optionen": [
+        { "text": "who", "richtig": true },
+        { "text": "which", "feedback": "which benutzt man für Dinge und Tiere, nicht für Personen." },
+        { "text": "what", "feedback": "what ist kein Relativpronomen für Personen." },
+        { "text": "whose", "feedback": "whose heißt „dessen/deren“. Hier brauchst du who." }
+      ],
+      "erklaerung": "Person → who (oder that)."
+    },
+    {
+      "id": "en-rcl-02", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Complete: ``Football is the sport ___ most students at our school play.``",
+      "optionen": [
+        { "text": "which", "richtig": true },
+        { "text": "who", "feedback": "who steht für Personen. Football ist ein Ding." },
+        { "text": "where", "feedback": "where bezieht sich auf Orte." },
+        { "text": "what", "feedback": "Als Relativpronomen nach einem Nomen benutzt man which oder that." }
+      ],
+      "erklaerung": "Ding → which (oder that). Hier könnte man das Pronomen sogar weglassen, weil danach ein neues Subjekt folgt."
+    },
+    {
+      "id": "en-rcl-03", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "In which sentences can you leave out the relative pronoun?",
+      "optionen": [
+        { "text": "The club which I joined last year is fun.", "richtig": true },
+        { "text": "The girl who I met at the party is from Cardiff.", "richtig": true },
+        { "text": "The boy who sits behind me is funny.", "feedback": "who ist hier Subjekt (danach folgt direkt das Verb sits). Es muss stehen bleiben." },
+        { "text": "The bus that goes to Greenwich is late.", "feedback": "that ist Subjekt (danach folgt goes). Es muss stehen bleiben." }
+      ],
+      "erklaerung": "Weglassen geht, wenn nach dem Pronomen ein neues Subjekt kommt (I joined, I met)."
+    },
+    {
+      "id": "en-rcl-04", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Put the parts of a presentation in the right order.",
+      "elemente": [
+        "Hello and welcome to my presentation.",
+        "Today I’d like to tell you something about our photography club.",
+        "We meet every Thursday after school in Room 12, and we take photos around the school.",
+        "You should join us because it’s fun and you learn a lot.",
+        "Thank you for listening. I’m happy to answer your questions."
+      ],
+      "erklaerung": "Begrüßung – Thema – Informationen – Aufruf – Dank und Fragen."
+    },
+    {
+      "id": "en-rcl-05", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Which part of an informal email is it?",
+      "paare": [
+        { "links": "Hi Sam,", "rechts": "greeting" },
+        { "links": "Thanks for your email. It was great to hear from you.", "rechts": "opening" },
+        { "links": "Write back soon!", "rechts": "closing sentence" },
+        { "links": "Best wishes, Lena", "rechts": "signature" }
+      ],
+      "erklaerung": "greeting (Anrede), opening (Einstieg), closing sentence (Schlusssatz), signature (Gruß und Name)."
+    },
+    {
+      "id": "en-rcl-06", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz4",
+      "frage": "Which ending fits an email to your English friend?",
+      "optionen": [
+        { "text": "See you soon! Love, Mia", "richtig": true },
+        { "text": "Yours faithfully, Mia Schulz", "feedback": "Das ist eine sehr formelle Grußformel für offizielle Briefe an Unbekannte." },
+        { "text": "Mit freundlichen Grüßen, Mia", "feedback": "Die E-Mail ist auf Englisch – auch der Gruß." },
+        { "text": "Goodbye forever. Mia", "feedback": "Das klingt, als wolltest du nie wieder schreiben." }
+      ],
+      "erklaerung": "Informell: Love, Best wishes, See you, Bye for now."
+    },
+    {
+      "id": "en-rcl-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Write a short email (5–6 sentences) to your English friend Sam about a club at your school. Use an informal greeting and ending and at least one relative clause with who, which or that.",
+      "stichworte": [
+        { "aspekt": "Informelle Anrede", "woerter": ["hi ", "dear", "hello"] },
+        { "aspekt": "Relativsatz mit who / which / that", "woerter": ["who", "which", "that"] },
+        { "aspekt": "Informationen über den Club (when, where, what)", "woerter": ["club", "every", "after school", "meet"] },
+        { "aspekt": "Informeller Schluss und Gruß", "woerter": ["love", "best wishes", "write back", "see you", "bye"] }
+      ],
+      "musterloesung": "Hi Sam,\n\nThanks for your email. I want to tell you about the robot club which I joined this year. We meet every Tuesday after school in the computer room. Our teacher, who is really nice, helps us when our robots don’t work. Next month we have a competition. Is there a club at your school that you like?\n\nWrite back soon!\nBest wishes,\nLena",
+      "erklaerung": "Kurze Absätze, persönliche Fragen und eine freundliche Grußformel machen eine E-Mail lebendig."
+    }
+  ]
+}

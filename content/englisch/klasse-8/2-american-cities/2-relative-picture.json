@@ -1,0 +1,117 @@
+{
+  "id": "en-k8-picture-description",
+  "titel": "Describing pictures and non-defining relative clauses",
+  "kurz": "Notwendige und nicht notwendige Relativsätze unterscheiden (mit oder ohne Komma) und ein Bild oder Foto beschreiben, deuten und bewerten.",
+  "reihenfolge": 2,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Defining und non-defining relative clauses unterscheiden und richtig mit oder ohne Komma schreiben" },
+    { "id": "lz2", "niveau": "H", "text": "Wissen, dass that und das Weglassen des Relativpronomens nur in defining relative clauses möglich sind" },
+    { "id": "lz3", "niveau": "G", "text": "Ein Bild mit Phrasen der Bildbeschreibung (foreground, background, on the left …) beschreiben" },
+    { "id": "lz4", "niveau": "H", "text": "Die Wirkung eines Bildes beschreiben und persönlich Stellung nehmen" }
+  ],
+  "verstehen": {
+    "einstieg": "In der mündlichen Prüfung bekommst du ein Foto von New York: „Describe the picture.“ Wo fängst du an, wie ordnest du, was du siehst – und wie sagst du, wie das Bild auf dich wirkt?",
+    "abschnitte": [
+      {
+        "titel": "Defining relative clauses",
+        "text": "Ein **notwendiger** Relativsatz sagt, **welche** Person oder Sache gemeint ist. Ohne ihn wäre der Satz unklar. **Kein Komma.**\n\n``The girl who is standing next to the taxi is my cousin.``\n\nHier darf man auch **that** benutzen, und als Objekt kann das Pronomen wegfallen: ``The photo (that) I took in Times Square is great.``"
+      },
+      {
+        "titel": "Non-defining relative clauses",
+        "text": "Ein **nicht notwendiger** Relativsatz gibt nur **Zusatzinformationen** über etwas, das schon klar ist. Man setzt ihn in **Kommas**.\n\n``Central Park, which opened in the 1850s, is visited by millions of people every year.``\n``My uncle, who lives in Brooklyn, works as a taxi driver.``\n\nIn non-defining relative clauses: **kein that**, und das Pronomen darf **nie wegfallen**. Weitere Relativwörter: **whose** (dessen, deren), **where** (wo)."
+      },
+      {
+        "titel": "Describing a picture",
+        "text": "**1. Einleitung:** Was zeigt das Bild? ``The photo shows a busy street in New York.``\n\n**2. Beschreibung von außen nach innen oder von vorne nach hinten:**\n\n- **in the foreground** (im Vordergrund), **in the background**, **in the middle / in the centre**\n- **on the left / on the right**, **at the top / at the bottom**, **in the top left corner**\n- **next to**, **behind**, **in front of**\n- Für das, was im Bild passiert, benutzt man das **present progressive**: ``A man is waving at a taxi.``\n\n**3. Wirkung und Meinung:** ``The picture seems to show …`` ``It looks as if …`` ``The colours create a … atmosphere.`` ``I like the picture because …``"
+      }
+    ],
+    "merksatz": "Defining relative clause: welche Person/Sache? Kein Komma, that möglich, Pronomen als Objekt kann fehlen. Non-defining: Zusatzinformation in Kommas, kein that, nie weglassen. Bildbeschreibung: Überblick – Details mit foreground/background/on the left … im present progressive – Wirkung und Meinung.",
+    "alltag": "In der mündlichen Englischprüfung zum MSA ist die Bildbeschreibung ein fester Bestandteil. Mit den Phrasen aus diesem Thema bist du gut vorbereitet."
+  },
+  "interaktiv": ["en-bildbeschreibung"],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-rpd-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Which sentence needs commas?",
+      "optionen": [
+        { "text": "The Empire State Building which is 443 metres tall is in Manhattan.", "richtig": true },
+        { "text": "The bus which goes to the airport leaves at 6 a.m.", "feedback": "Hier sagt der Relativsatz, welcher Bus gemeint ist – also kein Komma." },
+        { "text": "People who live in big cities often walk a lot.", "feedback": "Der Relativsatz bestimmt, welche Menschen gemeint sind – kein Komma." },
+        { "text": "The film that we saw was set in New York.", "feedback": "Ein defining relative clause mit that – kein Komma." }
+      ],
+      "erklaerung": "Es gibt nur ein Empire State Building. Der Relativsatz ist eine Zusatzinformation: The Empire State Building, which is 443 metres tall, is in Manhattan."
+    },
+    {
+      "id": "en-rpd-02", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz2",
+      "frage": "Which sentences are correct?",
+      "optionen": [
+        { "text": "My sister, who lives in Queens, is a nurse.", "richtig": true },
+        { "text": "The guide we met yesterday was very funny.", "richtig": true },
+        { "text": "New York, that is also called the Big Apple, is huge.", "feedback": "In non-defining relative clauses steht kein that: New York, which is also called …" },
+        { "text": "Brooklyn Bridge, I walked across yesterday, is beautiful.", "feedback": "In non-defining relative clauses darf das Pronomen nicht fehlen: …, which I walked across yesterday, …" },
+        { "text": "That’s the man whose dog bit me.", "richtig": true }
+      ],
+      "erklaerung": "Weglassen und that gehen nur bei defining relative clauses."
+    },
+    {
+      "id": "en-rpd-03", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz3",
+      "frage": "Match the phrases with the German meaning.",
+      "paare": [
+        { "links": "in the foreground", "rechts": "im Vordergrund" },
+        { "links": "in the background", "rechts": "im Hintergrund" },
+        { "links": "in the top left corner", "rechts": "in der oberen linken Ecke" },
+        { "links": "at the bottom", "rechts": "unten" }
+      ],
+      "erklaerung": "Mit diesen Phrasen beschreibst du genau, wo etwas im Bild ist."
+    },
+    {
+      "id": "en-rpd-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Which sentence is best for describing what you can see in a photo?",
+      "optionen": [
+        { "text": "In the foreground, two girls are taking a selfie in front of a yellow cab.", "richtig": true },
+        { "text": "In the foreground, two girls take a selfie in front of a yellow cab.", "feedback": "Für das, was im Bild gerade passiert, benutzt man das present progressive." },
+        { "text": "In the foreground, two girls took a selfie in front of a yellow cab.", "feedback": "Bildbeschreibungen stehen in der Gegenwart." },
+        { "text": "On the foreground two girls are taking a selfie in front of a yellow cab.", "feedback": "Es heißt in the foreground." }
+      ],
+      "erklaerung": "Bildbeschreibung: present progressive und in the foreground/background."
+    },
+    {
+      "id": "en-rpd-05", "typ": "reihenfolge", "schwierigkeit": "mittel", "lernziel": "lz3",
+      "frage": "Put the parts of a picture description in a good order.",
+      "elemente": [
+        "The photo shows a busy street in Manhattan at night.",
+        "In the foreground, a yellow cab is waiting at a traffic light.",
+        "In the background, you can see huge skyscrapers with bright advertisements.",
+        "The bright colours and the many people create an exciting, hectic atmosphere.",
+        "I like the photo because it shows that New York never sleeps."
+      ],
+      "erklaerung": "Überblick – Vordergrund – Hintergrund – Wirkung – eigene Meinung."
+    },
+    {
+      "id": "en-rpd-06", "typ": "multi", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Which phrases help you describe the **effect** of a picture?",
+      "optionen": [
+        { "text": "The dark colours create a sad atmosphere.", "richtig": true },
+        { "text": "It looks as if the people are in a hurry.", "richtig": true },
+        { "text": "The picture seems to show that city life can be lonely.", "richtig": true },
+        { "text": "In the bottom right corner there is a dog.", "feedback": "Das beschreibt nur, wo etwas ist – nicht die Wirkung." },
+        { "text": "There are three cars on the left.", "feedback": "Das ist eine reine Beschreibung." }
+      ],
+      "erklaerung": "Wirkung: create … atmosphere, look as if, seem to show."
+    },
+    {
+      "id": "en-rpd-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Imagine a photo of Central Park on a sunny Sunday: families have picnics, a man is jogging, skyscrapers are in the background. Describe the photo (5–6 sentences): first say what it shows, then describe details, then the atmosphere and your opinion. Use one non-defining relative clause.",
+      "stichworte": [
+        { "aspekt": "Einleitung (The photo shows …)", "woerter": ["the photo shows", "the picture shows", "the photo was", "this photo"] },
+        { "aspekt": "Ortsangaben im Bild", "woerter": ["foreground", "background", "on the left", "on the right", "in the middle", "in the centre", "in the center"] },
+        { "aspekt": "Present progressive für Handlungen", "woerter": ["is jogging", "are having", "is ", "are "] },
+        { "aspekt": "Atmosphäre und Meinung", "woerter": ["atmosphere", "relaxed", "peaceful", "i like", "looks as if", "seems"] },
+        { "aspekt": "Non-defining relative clause (Komma + which/who)", "woerter": [", which", ", who"] }
+      ],
+      "musterloesung": "The photo shows Central Park in New York on a sunny Sunday. In the foreground, two families are having a picnic on the grass. On the left, a man is jogging along a path. In the background, you can see the skyscrapers of Manhattan, which form a big contrast to the green park. The bright sunlight creates a relaxed and peaceful atmosphere. I like the photo because it looks as if you can find quiet places even in a huge city.",
+      "erklaerung": "Eine gute Bildbeschreibung geht vom Überblick zu den Details und endet mit Wirkung und Meinung."
+    }
+  ]
+}

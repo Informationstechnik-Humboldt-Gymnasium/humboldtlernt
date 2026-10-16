@@ -1,0 +1,121 @@
+{
+  "id": "en-k9-characterization",
+  "titel": "Characters in fiction: characterization and character constellation",
+  "kurz": "Wie Autoren Figuren darstellen: direct und indirect characterization, round und flat, static und dynamic characters, Figurenkonstellation und Adjektive zur Personenbeschreibung.",
+  "reihenfolge": 1,
+  "lernziele": [
+    { "id": "lz1", "niveau": "G", "text": "Direct und indirect characterization unterscheiden" },
+    { "id": "lz2", "niveau": "G", "text": "Round/flat und static/dynamic characters unterscheiden" },
+    { "id": "lz3", "niveau": "G", "text": "Mit treffenden Adjektiven Charakterzüge und Beziehungen beschreiben und mit quantifiers abstufen" },
+    { "id": "lz4", "niveau": "H", "text": "Eine kurze Charakterisierung mit Belegen aus dem Text schreiben" }
+  ],
+  "verstehen": {
+    "einstieg": "„Max was selfish.“ – Das sagt der Erzähler direkt. „Max took the last piece of cake and didn’t even look at his little sister.“ – Hier zeigt die Handlung, wie Max ist. Welche Variante wirkt stärker?",
+    "abschnitte": [
+      {
+        "titel": "Direct and indirect characterization",
+        "text": "- **Direct characterization**: Der Erzähler oder eine andere Figur sagt direkt, wie eine Figur ist. ``Anna was shy and nervous.``\n- **Indirect characterization**: Wir schließen aus dem, was eine Figur **tut**, **sagt**, **denkt**, wie sie **aussieht** und wie **andere auf sie reagieren**. ``Anna looked at the floor and her hands were shaking when the teacher asked her name.``\n\nIndirekte Charakterisierung ist oft lebendiger, weil die Leser selbst Schlüsse ziehen."
+      },
+      {
+        "titel": "Types of characters",
+        "text": "- **round character**: vielschichtig, mit Stärken und Schwächen, oft überraschend – meist die Hauptfiguren\n- **flat character**: wenige, einfache Eigenschaften, oft Nebenfiguren (z. B. der immer strenge Hausmeister)\n- **dynamic character**: verändert sich im Lauf der Geschichte\n- **static character**: bleibt gleich\n- **protagonist**: Hauptfigur; **antagonist**: Gegenspieler\n\n**Character constellation**: Wie stehen die Figuren zueinander? Freunde, Gegner, Familie, Abhängigkeit – oft als Schaubild (graphic organizer) dargestellt."
+      },
+      {
+        "titel": "Words for characters and relationships",
+        "text": "- Charakter: **brave**, **honest**, **confident**, **generous**, **open-minded**, **selfish**, **arrogant**, **insecure**, **stubborn** (stur), **loyal**\n- Beziehungen: **close**, **loving**, **strained** (angespannt), **tense**, **complicated**, **distant**\n- **Quantifiers** machen Aussagen genauer: **extremely**, **very**, **quite**, **rather**, **a bit**, **not … at all** – ``He is rather shy at first, but extremely loyal.``"
+      },
+      {
+        "titel": "Writing a characterization",
+        "text": "1. **Einleitung**: Wer ist die Figur, welche Rolle spielt sie? (Name, Alter, Situation)\n2. **Hauptteil**: Charakterzüge – jeweils mit **Beleg** aus dem Text (Zitat mit Zeilenangabe oder Verweis): ``Max is selfish, which becomes clear when he takes the last piece of cake (l. 12).``\n3. **Schluss**: Hat sich die Figur verändert? Wie wirkt sie auf die Leser?\n\nCharakterisierungen schreibt man im **simple present**."
+      }
+    ],
+    "merksatz": "Direct characterization sagt, wie eine Figur ist; indirect zeigt es durch Handeln, Sprechen, Denken, Aussehen und Reaktionen anderer. Round/flat: vielschichtig/einfach; dynamic/static: verändert sich/bleibt gleich. Charakterisierung: Eigenschaft + Beleg, simple present.",
+    "alltag": "In Serien lernst du Figuren fast nur indirekt kennen – durch das, was sie tun. Kaum eine Figur sagt „Ich bin mutig“."
+  },
+  "interaktiv": [],
+  "vertiefung": [],
+  "uebungen": [
+    {
+      "id": "en-chr-01", "typ": "single", "schwierigkeit": "leicht", "lernziel": "lz1",
+      "frage": "Which sentence is an example of **direct** characterization?",
+      "optionen": [
+        { "text": "Ella was a generous girl who always shared everything.", "richtig": true },
+        { "text": "Ella gave her last sandwich to the new boy.", "feedback": "Hier zeigt eine Handlung, wie Ella ist – das ist indirekt." },
+        { "text": "„Take my jacket, you’re cold,“ Ella said.", "feedback": "Was Ella sagt, verrät ihren Charakter indirekt." },
+        { "text": "Everybody smiled when Ella came into the room.", "feedback": "Die Reaktion anderer charakterisiert Ella indirekt." }
+      ],
+      "erklaerung": "Direkt: Der Erzähler nennt die Eigenschaft (generous)."
+    },
+    {
+      "id": "en-chr-02", "typ": "multi", "schwierigkeit": "mittel", "lernziel": "lz1",
+      "frage": "Which sentences characterize Ben **indirectly**?",
+      "optionen": [
+        { "text": "Ben slammed the door and didn’t say a word all evening.", "richtig": true },
+        { "text": "„I don’t care what you think,“ Ben shouted.", "richtig": true },
+        { "text": "Ben was an angry young man.", "feedback": "Das ist direkte Charakterisierung." },
+        { "text": "The other students always stepped aside when Ben walked down the corridor.", "richtig": true },
+        { "text": "The narrator tells us that Ben is aggressive.", "feedback": "Das ist direkt." }
+      ],
+      "erklaerung": "Handlungen, Aussagen und Reaktionen anderer sind indirekte Charakterisierung."
+    },
+    {
+      "id": "en-chr-03", "typ": "zuordnung", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "Match the types of characters with the definitions.",
+      "paare": [
+        { "links": "round character", "rechts": "a complex character with strengths and weaknesses" },
+        { "links": "flat character", "rechts": "a simple character with only one or two traits" },
+        { "links": "dynamic character", "rechts": "a character who changes during the story" },
+        { "links": "antagonist", "rechts": "the opponent of the main character" }
+      ],
+      "extraRechts": ["the person who wrote the story"],
+      "erklaerung": "Die Person, die die Geschichte geschrieben hat, ist der author – keine Figur."
+    },
+    {
+      "id": "en-chr-04", "typ": "single", "schwierigkeit": "mittel", "lernziel": "lz2",
+      "frage": "At the beginning of a novel, Mia is afraid of everybody. At the end, she stands up to the bully in front of the whole school. What kind of character is Mia?",
+      "optionen": [
+        { "text": "a dynamic character", "richtig": true },
+        { "text": "a static character", "feedback": "Mia verändert sich deutlich – also nicht statisch." },
+        { "text": "a flat character", "feedback": "Eine Figur, die sich so entwickelt, ist eher vielschichtig." },
+        { "text": "the antagonist", "feedback": "Mia ist die Hauptfigur, der Bully wäre eher der antagonist." }
+      ],
+      "erklaerung": "Eine Figur, die sich im Lauf der Handlung verändert, ist dynamic."
+    },
+    {
+      "id": "en-chr-05", "typ": "zuordnung", "schwierigkeit": "leicht", "lernziel": "lz3",
+      "frage": "Match the adjectives with their German meaning.",
+      "paare": [
+        { "links": "stubborn", "rechts": "stur" },
+        { "links": "insecure", "rechts": "unsicher" },
+        { "links": "generous", "rechts": "großzügig" },
+        { "links": "strained (relationship)", "rechts": "angespannt" },
+        { "links": "loyal", "rechts": "treu" }
+      ],
+      "extraRechts": ["geizig"],
+      "erklaerung": "geizig heißt mean oder stingy."
+    },
+    {
+      "id": "en-chr-06", "typ": "single", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Which sentence from a characterization is best?",
+      "optionen": [
+        { "text": "Jack is very loyal, which becomes clear when he refuses to leave his injured friend behind (ll. 34–36).", "richtig": true },
+        { "text": "Jack is loyal.", "feedback": "Die Eigenschaft ist genannt, aber ohne Beleg aus dem Text." },
+        { "text": "Jack was loyal because he stayed with his friend.", "feedback": "Charakterisierungen stehen im simple present, und die Textstelle fehlt." },
+        { "text": "I like Jack because he is a nice guy.", "feedback": "Persönliche Meinung statt Analyse, ohne Beleg." }
+      ],
+      "erklaerung": "Eigenschaft + Beleg (Handlung mit Zeilenangabe), simple present."
+    },
+    {
+      "id": "en-chr-07", "typ": "text", "schwierigkeit": "schwer", "lernziel": "lz4",
+      "frage": "Read the extract and write a short characterization of Leo (4–5 sentences) with evidence from the text.\n\n„(1) Leo was always the last to arrive. (2) He slouched into the classroom, his hood still up, and dropped into the seat at the back. (3) When Mrs Patel asked for his homework, he just shrugged. (4) But when a younger boy dropped his books in the corridor later, Leo was the only one who stopped to help him pick them up.“",
+      "stichworte": [
+        { "aspekt": "Erster Eindruck: gleichgültig / desinteressiert / rebellisch", "woerter": ["uninterested", "lazy", "careless", "rebellious", "doesn't care", "doesn’t care", "indifferent", "unmotivated", "cool"] },
+        { "aspekt": "Zweite Seite: hilfsbereit / freundlich / kind", "woerter": ["helpful", "kind", "caring", "friendly", "nice"] },
+        { "aspekt": "Belege mit Zeilenangabe oder Verweis", "woerter": ["(l.", "line", "l. "] },
+        { "aspekt": "Fazit: vielschichtige Figur (round character)", "woerter": ["round", "complex", "more than", "different side", "two sides", "on the other hand"] }
+      ],
+      "musterloesung": "At first, Leo seems uninterested in school. He is always late (l. 1), keeps his hood up and sits at the back of the classroom (l. 2). When his teacher asks for his homework, he only shrugs (l. 3), which suggests that he doesn’t care. On the other hand, he is the only one who helps a younger boy pick up his books (l. 4), so he is actually kind and helpful. This shows that Leo is a round character with two different sides.",
+      "erklaerung": "Eine gute Charakterisierung zeigt verschiedene Seiten einer Figur und belegt jede Aussage am Text."
+    }
+  ]
+}
