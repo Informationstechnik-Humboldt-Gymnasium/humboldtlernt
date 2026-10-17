@@ -3,9 +3,10 @@
 // Rechnet nichts Chemisches selbst: Modell, Validierung und Erkennung kommen aus molekuel.js, die Aufgaben aus
 // aufgaben-molekuel.js. Hier liegen nur Zeiger-/Tastaturbedienung, Ansicht (Zoom/Verschieben), Verlauf (Rückgängig/
 // Wiederholen), Darstellung und das Speichern im Browser (LocalStorage, nur auf diesem Gerät).
+// Die 3D-Ansicht (ansicht-molekuel-3d.js) zeigt dasselbe Modell räumlich; gebaut wird nur in 2D.
 (function (root) {
   'use strict';
-  var CL = root.CL, U = CL.ui, C = CL.chemie, M = CL.molekuel, D = CL.daten, A = CL.molekuelAufgaben;
+  var CL = root.CL, U = CL.ui, C = CL.chemie, M = CL.molekuel, D = CL.daten, A = CL.molekuelAufgaben, D3 = CL.molekuel3d;
   var esc = U.esc, s = U.svg;
   var SPEICHER = 'chemielabor-molekuel';
   var BASIS = { w: 600, h: 380 }, ZOOM_MIN = 0.4, ZOOM_MAX = 3;
@@ -17,7 +18,7 @@
   };
   var st = {
     m: M.neu(), werkzeug: 'C', ordnung: 1, auswahl: null, verlauf: [], zukunft: [], ausBeispiel: false,
-    view: { s: 1, cx: 0, cy: 0 }, zeiger: {}, geste: null, modus: 'frei', aufgabe: null, erledigt: {}, gestartet: false,
+    view: { s: 1, cx: 0, cy: 0 }, zeiger: {}, geste: null, modus: 'frei', aufgabe: null, erledigt: {}, gestartet: false, dreiD: false,
   };
 
   // ------------------------------------------------------------ Speichern (LocalStorage, mit Fehlertoleranz)
@@ -99,9 +100,21 @@
       if (!a || !b) return;
       bindung(a, b, st.ordnung);
     });
-    U.$('mol-zoom-plus').addEventListener('click', function () { zoom(1.25); });
-    U.$('mol-zoom-minus').addEventListener('click', function () { zoom(0.8); });
-    U.$('mol-zoom-fit').addEventListener('click', function () { einpassen(); zeichne(true); });
+    U.$('mol-zoom-plus').addEventListener('click', function () { if (st.dreiD) D3.zoom(0.8); else zoom(1.25); });
+    U.$('mol-zoom-minus').addEventListener('click', function () { if (st.dreiD) D3.zoom(1.25); else zoom(0.8); });
+    U.$('mol-zoom-fit').addEventListener('click', function () { if (st.dreiD) D3.zuruecksetzen(); else { einpassen(); zeichne(true); } });
+    U.$('mol-ansicht-2d').addEventListener('click', function () { darstellung(false); });
+    U.$('mol-ansicht-3d').addEventListener('click', function () { darstellung(true); });
+    U.$('mol-3d-optionen').addEventListener('click', function (ev) {
+      var b = ev.target.closest('[data-option]');
+      if (b) { var an = b.getAttribute('aria-pressed') !== 'true'; b.setAttribute('aria-pressed', an); D3.option(b.dataset.option, an); }
+      if (ev.target.closest('#mol-3d-zurueck')) D3.zuruecksetzen();
+    });
+    if (!D3 || !D3.verfuegbar()) {
+      var k3 = U.$('mol-ansicht-3d');
+      k3.disabled = true; k3.title = 'Die 3D-Ansicht braucht WebGL. Dein Browser oder Gerät unterstützt das gerade nicht.';
+      U.$('mol-3d-fehlt').hidden = false;
+    }
     U.$('mol-modus-frei').addEventListener('click', function () { modus('frei'); });
     U.$('mol-modus-lernen').addEventListener('click', function () { modus('lernen'); });
     U.$('mol-aufgaben').addEventListener('click', function (ev) { var b = ev.target.closest('[data-aufgabe]'); if (b) aufgabeWaehlen(b.dataset.aufgabe); });
@@ -127,6 +140,23 @@
     if (!lade()) { st.m = M.beispiel('h2o'); st.ausBeispiel = true; }
     einpassen();
     geaendert(true);
+  }
+
+  /** Zwischen 2D (bauen) und 3D (ansehen) umschalten. */
+  function darstellung(dreiD) {
+    if (dreiD && !D3.start(U.$('mol-3d'), {
+      waehle: function (id) { st.auswahl = id ? { art: 'atom', id: id } : null; zeichne(); },
+      gedreht: function () { if (st.m.atome.length >= 3) root.LK.reach('mol-3d'); },
+    })) { U.$('mol-ansicht-3d').disabled = true; U.$('mol-3d-fehlt').hidden = false; toast('Die 3D-Ansicht lässt sich auf diesem Gerät nicht starten.', 'fehler'); return; }
+    st.dreiD = dreiD;
+    U.$('mol-ansicht-2d').setAttribute('aria-pressed', !dreiD);
+    U.$('mol-ansicht-3d').setAttribute('aria-pressed', dreiD);
+    U.$('mol-svg').toggleAttribute('hidden', dreiD);
+    U.$('mol-3d').toggleAttribute('hidden', !dreiD);
+    ['mol-3d-optionen', 'mol-hilfe-3d', 'mol-3d-etikett'].forEach(function (id) { U.$(id).hidden = !dreiD; });
+    U.$('mol-hilfe').hidden = dreiD;
+    D3.aktiv(dreiD);
+    zeichne();
   }
 
   function werkzeug(el) {
@@ -385,6 +415,7 @@
     svgEl.setAttribute('aria-label', 'Molecule Builder mit ' + m.atome.length + ' Atomen und ' + m.bindungen.length + ' Bindungen. ' +
       analyse.map(function (t) { return t.formel + ': ' + STATUS[t.status][0] + (t.name ? ' (' + t.name + ')' : ''); }).join('; '));
     knoepfe();
+    if (st.dreiD && !nurBild) D3.zeige(m, analyse, st.auswahl);
     if (nurBild) return;
 
     var opt = m.atome.map(function (a) { return '<option value="' + a.id + '">Atom ' + a.id + ' · ' + esc(C.element(a.el).name) + '</option>'; }).join('');
@@ -545,6 +576,8 @@
 
   U.ansichten.molekuel = {
     init: init,
+    zeigen: function () { if (st.dreiD) D3.aktiv(true); },
+    verstecken: function () { if (st.dreiD) D3.aktiv(false); },
     uebernehmen: function (d) {
       if (d.symbol && D.BAUKASTEN[d.symbol]) { werkzeug(d.symbol); toast('Werkzeug: ' + C.element(d.symbol).name + '. Tippe auf die Fläche, um ein Atom einzusetzen.'); }
     },

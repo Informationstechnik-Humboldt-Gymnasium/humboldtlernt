@@ -48,7 +48,8 @@ Lerneinheiten sie erledigt haben, und Lehrkräfte sehen den Fortschritt ihrer Kl
   und einer Wahrheitstabelle, die aus der Schaltung berechnet wird.
   Dritte Simulation: das **Atom- & Chemielabor** mit Periodensystem (alle 118 Elemente), Atom- und Isotopenbau,
   Energiestufen und Spektrallinien, Teilchenmodell der Aggregatzustände, Molecule Builder (Moleküle aus Atomen und
-  Bindungen bauen, Valenzprüfung in vier Stufen, Erkennung bekannter Stoffe, Lernmodus mit 8 Aufgaben) und
+  Bindungen bauen, Valenzprüfung in vier Stufen, Erkennung bekannter Stoffe, Lernmodus mit 8 Aufgaben, drehbare
+  3D-Ansicht nach dem Elektronenpaarabstoßungsmodell mit Three.js) und
   Formelrechner (molare Masse). Alle Module nutzen eine gemeinsame, dokumentierte Datengrundlage
   (`lessons/sandbox-chemielabor/DATEN.md`).
   Vierte Simulation: das **Netzwerk-Labor** (Network Builder): PCs, Server, Laptops, Smartphones, Switches, Access Points,

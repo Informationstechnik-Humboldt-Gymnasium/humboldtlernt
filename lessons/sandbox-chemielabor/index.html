@@ -288,6 +288,12 @@
       </div>
       <div class="mol-box">
         <svg id="mol-svg" viewBox="-300 -190 600 380" role="img" aria-label="Arbeitsfläche des Molecule Builders"></svg>
+        <canvas id="mol-3d" hidden role="img" tabindex="0" aria-label="3D-Modell der Moleküle auf der Fläche"></canvas>
+        <div class="seg mol-ansicht" role="group" aria-label="Darstellung">
+          <button type="button" id="mol-ansicht-2d" aria-pressed="true" title="Flache Zeichnung – hier wird gebaut">2D</button>
+          <button type="button" id="mol-ansicht-3d" aria-pressed="false" title="Räumliches Modell zum Drehen">3D</button>
+        </div>
+        <span class="wertart mol-etikett" id="mol-3d-etikett" hidden title="Winkel nach dem Elektronenpaarabstoßungsmodell, gemessen nur wo hinterlegt; Abstände und Atomgrößen nicht maßstäblich">Modell</span>
         <div class="mol-zoom" role="group" aria-label="Ansicht">
           <button type="button" id="mol-zoom-minus" aria-label="Verkleinern">−</button>
           <button type="button" id="mol-zoom-plus" aria-label="Vergrößern">+</button>
@@ -295,6 +301,14 @@
         </div>
         <div class="mol-toast" id="mol-toast" role="status" aria-live="polite"></div>
       </div>
+      <div class="row eng mol-3d-optionen" id="mol-3d-optionen" role="group" aria-label="3D-Ansicht" hidden>
+        <button type="button" data-option="symbole" aria-pressed="true">Symbole</button>
+        <button type="button" data-option="paare" aria-pressed="true">Freie Elektronenpaare</button>
+        <button type="button" data-option="auto" aria-pressed="false">Automatisch drehen</button>
+        <button type="button" id="mol-3d-zurueck">Ausrichtung zurücksetzen</button>
+      </div>
+      <p class="small muted" id="mol-hilfe-3d" hidden><b>3D-Ansicht:</b> Ziehen dreht das Modell, Mausrad oder zwei Finger zoomen, ein Atom antippen wählt es aus (Tastatur: Pfeiltasten drehen, + und − zoomen, 0 setzt zurück). Gebaut wird in der 2D-Ansicht. Die Winkel folgen dem Elektronenpaarabstoßungsmodell, gemessene Werte stehen nur dort, wo sie hinterlegt sind. Bindungslängen und Atomgrößen sind nicht maßstäblich. Blau: freie Elektronenpaare, orange Stäbchen: noch offene Bindungsmöglichkeiten.</p>
+      <p class="small hinweis" id="mol-3d-fehlt" hidden>Die 3D-Ansicht braucht WebGL. Auf diesem Gerät oder in diesem Browser ist das gerade nicht verfügbar – die 2D-Ansicht funktioniert wie gewohnt.</p>
       <p class="small muted" id="mol-hilfe"><b>Einsetzen:</b> Element wählen und auf die Fläche tippen oder aus der Leiste ziehen. Ist ein Atom ausgewählt, wird das neue Atom mit der gewählten Bindungsart daran gebunden. <b>Verbinden:</b> zwei Atome nacheinander antippen. <b>Bindung ändern:</b> Bindung antippen, dann Bindungsart wählen. <b>Verschieben:</b> Atom ziehen; leere Fläche ziehen verschiebt die Ansicht, Mausrad oder zwei Finger zoomen.</p>
       <div class="row">
         <select id="mol-beispiel" aria-label="Beispielmolekül laden"><option value="">Beispiel laden …</option></select>
@@ -329,7 +343,7 @@
             <li><b>Regelverletzung:</b> Ein Atom hat mehr Bindungen als erlaubt, oder eine Bindungsart ist für die Atome nicht möglich.</li>
             <li><b>Nicht abschließend beurteilbar:</b> Schwefel oder Phosphor haben mehr Bindungen als nach der einfachen Regel – das kommt in echten Verbindungen vor (z. B. SF₆, PCl₅), lässt sich mit diesem Modell aber nicht sicher bewerten.</li>
           </ul>
-          <p class="small muted">Vereinfachungen: feste Bindigkeiten, keine Formalladungen und keine geladenen Teilchen; Ausnahmen wie Kohlenstoffmonoxid werden nicht gebaut. Bindungswinkel nach dem Elektronenpaarabstoßungsmodell sind Modellwerte; gemessene Winkel stehen nur dort, wo sie hinterlegt sind. Die Zeichnung ist flach, echte Moleküle sind räumlich.</p>
+          <p class="small muted">Vereinfachungen: feste Bindigkeiten, keine Formalladungen und keine geladenen Teilchen; Ausnahmen wie Kohlenstoffmonoxid werden nicht gebaut. Bindungswinkel nach dem Elektronenpaarabstoßungsmodell sind Modellwerte; gemessene Winkel stehen nur dort, wo sie hinterlegt sind. Die Zeichnung ist flach, echte Moleküle sind räumlich – das zeigt die 3D-Ansicht.</p>
         </details>
         <details class="info"><summary>Und die Ionenbindung?</summary>
           <p class="small">Zwischen einem Metall und einem Nichtmetall teilen sich die Atome keine Elektronenpaare. Das Metallatom <b>gibt Elektronen ab</b>, das Nichtmetallatom <b>nimmt sie auf</b>: Na → Na⁺ + e⁻ und Cl + e⁻ → Cl⁻. Die entgegengesetzt geladenen Ionen ziehen sich an und bilden ein <b>Ionengitter</b> (z. B. Kochsalz NaCl). Es gibt dabei keine einzelnen Moleküle – darum baut der Baukasten nur Atombindungen. Probiere die Ionenbildung im Reiter „Atom“ aus.</p>
@@ -341,6 +355,13 @@
     <h2>Entdecke selbst</h2>
     <div class="task" data-goal="mol-ammoniak"><p class="task-q">Baue selbst (ohne Beispiel) ein Ammoniak-Molekül NH₃.</p></div>
     <div class="task" data-goal="mol-doppel"><p class="task-q">Baue ein Molekül mit einer Doppelbindung, das das Labor als bekannt erkennt.</p></div>
+    <div class="task" data-goal="mol-3d"><p class="task-q">Schalte auf <b>3D</b> und drehe ein Molekül mit mindestens drei Atomen einmal kräftig herum.</p></div>
+    <div class="task"><p class="task-q">Lade Methan und sieh es dir in 3D an. Welche Form bilden die vier H-Atome um das C-Atom?</p>
+      <div class="choices">
+        <button type="button" data-fb="Nein – so sieht es nur in der flachen Zeichnung aus. Dreh das Modell: Die H-Atome liegen nicht in einer Ebene.">Ein flaches Quadrat</button>
+        <button type="button" data-ok data-fb="Richtig: Die vier Bindungen zeigen in die Ecken eines Tetraeders. So sind sie mit 109,5° am weitesten voneinander entfernt.">Ein Tetraeder</button>
+        <button type="button" data-fb="Nein – eine Pyramide mit quadratischer Grundfläche hat fünf Ecken. Bei Methan sind alle vier H-Atome gleichwertig.">Eine Pyramide mit quadratischer Grundfläche</button>
+      </div><p class="fb"></p></div>
     <div class="task"><p class="task-q">Warum ist das Wassermolekül gewinkelt und nicht gerade?</p>
       <div class="choices">
         <button type="button" data-fb="Nein – die Wasserstoffatome stoßen sich zwar ab, aber das würde ein gerades Molekül ergeben.">Die H-Atome stoßen sich ab.</button>
@@ -399,6 +420,7 @@
 <script src="daten-stoffe.js"></script>
 <script src="chemie.js"></script>
 <script src="molekuel.js"></script>
+<script src="raum.js"></script>
 <script src="teilchen.js"></script>
 <script src="aufgaben-molekuel.js"></script>
 <script src="ui.js"></script>
@@ -407,6 +429,8 @@
 <script src="ansicht-isotope.js"></script>
 <script src="ansicht-energie.js"></script>
 <script src="ansicht-teilchen.js"></script>
+<script src="three.js"></script>
+<script src="ansicht-molekuel-3d.js"></script>
 <script src="ansicht-molekuel.js"></script>
 <script src="ansicht-formel.js"></script>
 <script src="labor.js"></script>

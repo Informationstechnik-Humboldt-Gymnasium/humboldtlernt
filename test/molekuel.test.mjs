@@ -2,6 +2,7 @@
 // Referenzprüfung, Valenzbewertung (gültig / unvollständig / Regelverletzung / nicht abschließend beurteilbar),
 // Summenformel, strukturelle Erkennung (unabhängig von der Lage), Molekül entfernen, Import, Lernaufgaben.
 // Undo/Redo arbeitet in der Oberfläche mit Modell-Kopien; getestet wird hier, dass kopie() unabhängige Stände liefert.
+// Ab Test 20: räumliche Anordnung für die 3D-Ansicht (raum.js) – Modellwinkel, gemessene Winkel, Ringe, Robustheit.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -11,10 +12,10 @@ import { fileURLToPath } from 'node:url';
 
 const DIR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../lessons/sandbox-chemielabor');
 const ctx = vm.createContext({});
-for (const f of ['daten-elemente.js', 'daten-nuklide.js', 'daten-stoffe.js', 'chemie.js', 'molekuel.js', 'aufgaben-molekuel.js']) {
+for (const f of ['daten-elemente.js', 'daten-nuklide.js', 'daten-stoffe.js', 'chemie.js', 'molekuel.js', 'aufgaben-molekuel.js', 'raum.js']) {
   vm.runInContext(fs.readFileSync(path.join(DIR, f), 'utf8'), ctx, { filename: f });
 }
-const { molekuel: M, molekuelAufgaben: A, daten: D } = ctx.CL;
+const { molekuel: M, molekuelAufgaben: A, daten: D, raum: R } = ctx.CL;
 const plain = x => JSON.parse(JSON.stringify(x));
 
 /** Molekül aus Elementliste und Bindungen [i, j, ordnung] bauen – nur über die öffentlichen Funktionen. */
@@ -308,4 +309,184 @@ test('19 · Robustheit: leere Fläche, gelöschte Atome, große Modelle', () => 
   const a = M.analyse(m);
   assert.ok(Date.now() - t0 < 1000);
   assert.equal(a.length, 1); assert.equal(a[0].status, 'unvollstaendig');
+});
+
+// ------------------------------------------------------------------ 3D-Ansicht (raum.js)
+const TETRA = Math.acos(-1 / 3) * 180 / Math.PI;
+/** Molekül mit 2D-Positionen bauen (für Ringe: so, wie man sie zeichnet). */
+function bauXY(atome, xy, bindungen) {
+  const m = M.neu();
+  const ids = atome.map((el, i) => M.atomHinzu(m, el, xy[i][0], xy[i][1]).id);
+  for (const [a, b, o] of bindungen) assert.ok(M.setzeBindung(m, ids[a], ids[b], o).ok);
+  return { m, ids };
+}
+/** Räumliche Daten + Hilfen: Position, Winkel an einem Atom, Bindungslängen. */
+function raum(m, optionen) {
+  const r = R.berechne(m, optionen), P = {};
+  r.atome.forEach(a => { P[a.id] = a.p; });
+  const winkelAn = id => {
+    const nb = M.nachbarn(m, id).map(x => x.id), out = [];
+    for (let i = 0; i < nb.length; i++) for (let j = i + 1; j < nb.length; j++) out.push(R.winkelAus(P[id], P[nb[i]], P[nb[j]]));
+    return out;
+  };
+  const abstand = (a, b) => Math.hypot(P[a][0] - P[b][0], P[a][1] - P[b][1], P[a][2] - P[b][2]);
+  return { r, P, winkelAn, abstand };
+}
+const nahe = (x, soll, tol, text) => assert.ok(Math.abs(x - soll) <= tol, `${text}: ${x.toFixed(2)} statt ${soll}`);
+
+test('20 · 3D: Modellwinkel nach dem Elektronenpaarabstoßungsmodell, schematische Bindungslängen', () => {
+  const ch4 = bau(...METHAN), w = raum(ch4.m);
+  assert.equal(w.winkelAn(ch4.ids[2]).length, 6);
+  w.winkelAn(ch4.ids[2]).forEach(x => nahe(x, TETRA, 0.05, 'CH₄'));
+  ch4.m.bindungen.forEach(b => nahe(w.abstand(b.a, b.b), R.L_H, 1e-9, 'C–H'));
+  const co2 = bau(...CO2), c = raum(co2.m);
+  nahe(c.winkelAn(co2.ids[1])[0], 180, 0.01, 'CO₂ linear');
+  co2.m.bindungen.forEach(b => nahe(c.abstand(b.a, b.b), R.L_SCHWER, 1e-9, 'C=O'));
+  const ch2o = M.beispiel('ch2o'), f = raum(ch2o);
+  f.winkelAn(ch2o.atome[0].id).forEach(x => nahe(x, 120, 0.05, 'Methanal trigonal-planar'));
+  const pcl5 = bau(['P', 'Cl', 'Cl', 'Cl', 'Cl', 'Cl'], [1, 2, 3, 4, 5].map(i => [0, i, 1])), p = raum(pcl5.m);
+  assert.deepEqual([...new Set(p.winkelAn(pcl5.ids[0]).map(Math.round))].sort((a, b) => a - b), [90, 120, 180], 'PCl₅ trigonal-bipyramidal');
+  const sf6 = bau(['S', 'F', 'F', 'F', 'F', 'F', 'F'], [1, 2, 3, 4, 5, 6].map(i => [0, i, 1])), s = raum(sf6.m);
+  assert.deepEqual([...new Set(s.winkelAn(sf6.ids[0]).map(Math.round))].sort((a, b) => a - b), [90, 180], 'SF₆ oktaedrisch');
+});
+
+test('21 · 3D: gemessene Winkel nur, wo sie im Datensatz stehen – sonst Modellwinkel', () => {
+  const wasser = bau(...WASSER);
+  raum(wasser.m).winkelAn(wasser.ids[0]).forEach(x => nahe(x, TETRA, 0.05, 'H₂O ohne Messwert'));
+  const mw = plain(R.messwinkel(M.analyse(wasser.m)));
+  assert.deepEqual(mw, { [wasser.ids[0]]: 104.5 });
+  nahe(raum(wasser.m, { winkel: mw }).winkelAn(wasser.ids[0])[0], 104.5, 0.01, 'H₂O gemessen');
+  const nh3 = bau(...AMMONIAK), wn = raum(nh3.m, { winkel: R.messwinkel(M.analyse(nh3.m)) });
+  wn.winkelAn(nh3.ids[1]).forEach(x => nahe(x, 106.7, 0.01, 'NH₃ gemessen'));
+  // Unbekannte Struktur ohne Messwert: keine Winkel
+  const ethanol = M.beispiel('c2h5oh');
+  assert.deepEqual(plain(R.messwinkel(M.analyse(ethanol))), {});
+  // Alle Datensatz-Moleküle mit Messwert: der angezeigte Winkel am Zentralatom ist genau der hinterlegte
+  for (const mol of D.MOLEKUELE.filter(x => x.winkel)) {
+    const m = M.beispiel(mol.id), mw2 = R.messwinkel(M.analyse(m)), ids = Object.keys(mw2).map(Number);
+    assert.equal(ids.length, 1, mol.id);
+    raum(m, { winkel: mw2 }).winkelAn(ids[0]).forEach(x => nahe(x, mol.winkel, 0.1, mol.id));
+  }
+});
+
+test('22 · 3D: freie Elektronenpaare und offene Bindungsmöglichkeiten', () => {
+  const zaehle = (m, art) => R.berechne(m).extras.filter(e => e.art === art).length;
+  assert.equal(zaehle(bau(...WASSER).m, 'paar'), 2);
+  assert.equal(zaehle(bau(...AMMONIAK).m, 'paar'), 1);
+  assert.equal(zaehle(bau(...METHAN).m, 'paar'), 0);
+  assert.equal(zaehle(bau(...CO2).m, 'paar'), 4, 'je zwei an den O-Atomen');
+  const so2 = bau(['O', 'S', 'O'], [[1, 0, 2], [1, 2, 2]]);
+  assert.equal(R.berechne(so2.m).extras.filter(e => e.atom === so2.ids[1] && e.art === 'paar').length, 1, 'S in SO₂: ein freies Paar');
+  const sf6 = bau(['S', 'F', 'F', 'F', 'F', 'F', 'F'], [1, 2, 3, 4, 5, 6].map(i => [0, i, 1]));
+  assert.equal(R.berechne(sf6.m).extras.filter(e => e.atom === sf6.ids[0]).length, 0, 'S in SF₆: keine freien Paare');
+  assert.equal(zaehle(bau(['C', 'H', 'H'], [[0, 1, 1], [0, 2, 1]]).m, 'offen'), 2, 'CH₂: zwei offene Bindungsmöglichkeiten');
+  assert.equal(zaehle(bau(['C'], []).m, 'offen'), 4);
+  // Richtungen sind Einheitsvektoren und zeigen nicht in eine Bindung hinein
+  const nh3 = bau(...AMMONIAK), w = raum(nh3.m);
+  for (const e of w.r.extras) {
+    nahe(Math.hypot(...e.richtung), 1, 1e-9, 'Einheitsvektor');
+    for (const nb of M.nachbarn(nh3.m, e.atom)) {
+      const p = w.P[e.atom], q = w.P[nb.id], d = Math.hypot(q[0] - p[0], q[1] - p[1], q[2] - p[2]);
+      const cos = ((q[0] - p[0]) * e.richtung[0] + (q[1] - p[1]) * e.richtung[1] + (q[2] - p[2]) * e.richtung[2]) / d;
+      assert.ok(cos < 0.5, 'Paar liegt nicht auf einer Bindung');
+    }
+  }
+});
+
+test('23 · 3D: Doppelbindungen eben, Ketten gestaffelt', () => {
+  const ethen = M.beispiel('c2h4'), w = raum(ethen);
+  const ids = ethen.atome.map(a => a.id), P = ids.map(id => w.P[id]);
+  const sub = (a, b) => [a[0] - b[0], a[1] - b[1], a[2] - b[2]];
+  const kreuz = (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]];
+  const n = kreuz(sub(P[1], P[0]), sub(P[2], P[0])), nl = Math.hypot(...n);
+  P.forEach((p, i) => nahe(Math.abs((sub(p, P[0])[0] * n[0] + sub(p, P[0])[1] * n[1] + sub(p, P[0])[2] * n[2]) / nl), 0, 1e-6, 'Ethen eben, Atom ' + i));
+  const doppel = w.r.bindungen.find(b => b.ordnung === 2);
+  nahe(Math.abs(doppel.normale[0] * n[0] + doppel.normale[1] * n[1] + doppel.normale[2] * n[2]) / nl, 0, 1e-6, 'Doppelstrich liegt in der Molekülebene');
+  // Ethan: gestaffelt → H–C–C–H-Diederwinkel 60° und 180°
+  const ethan = M.beispiel('c2h6'), e = raum(ethan), [c1, c2] = ethan.atome.filter(a => a.el === 'C').map(a => a.id);
+  const h1 = M.nachbarn(ethan, c1).map(x => x.id).filter(id => id !== c2), h2 = M.nachbarn(ethan, c2).map(x => x.id).filter(id => id !== c1);
+  const dieder = (a, b, c, d) => {
+    const b1 = sub(e.P[b], e.P[a]), b2 = sub(e.P[c], e.P[b]), b3 = sub(e.P[d], e.P[c]);
+    const n1 = kreuz(b1, b2), n2 = kreuz(b2, b3);
+    const x = n1[0] * n2[0] + n1[1] * n2[1] + n1[2] * n2[2], y = Math.hypot(...b2) * (b1[0] * n2[0] + b1[1] * n2[1] + b1[2] * n2[2]);
+    return Math.abs(Math.atan2(y, x) * 180 / Math.PI);
+  };
+  const werte = h1.flatMap(a => h2.map(b => Math.round(dieder(a, c1, c2, b))));
+  assert.ok(werte.every(x => x === 60 || x === 180), 'gestaffelt: ' + werte);
+  assert.ok(werte.includes(180));
+});
+
+test('24 · 3D: Ringe werden angenähert (Benzol eben, Cyclohexan gewellt, Cyclopropan 60°)', () => {
+  const kreis = (n, r, d = 0) => Array.from({ length: n }, (_, i) => [r * Math.cos(i * 2 * Math.PI / n) + d, r * Math.sin(i * 2 * Math.PI / n)]);
+  const ring = n => Array.from({ length: n }, (_, i) => [i, (i + 1) % n]);
+  const benzol = bauXY([...Array(6).fill('C'), ...Array(6).fill('H')], [...kreis(6, 70), ...kreis(6, 130)],
+    [...ring(6).map(([a, b], i) => [a, b, i % 2 ? 1 : 2]), ...Array.from({ length: 6 }, (_, i) => [i, 6 + i, 1])]);
+  const wb = raum(benzol.m);
+  benzol.ids.slice(0, 6).forEach(id => wb.winkelAn(id).forEach(x => nahe(x, 120, 1.5, 'Benzol')));
+  ring(6).forEach(([a, b]) => nahe(wb.abstand(benzol.ids[a], benzol.ids[b]), 1, 0.03, 'Benzol C–C'));
+  const hy = kreis(6, 70).flatMap(([x, y]) => [[x * 1.8 + 10, y * 1.8], [x * 1.8 - 10, y * 1.8]]);
+  const cyclo = bauXY([...Array(6).fill('C'), ...Array(12).fill('H')], [...kreis(6, 70), ...hy],
+    [...ring(6).map(([a, b]) => [a, b, 1]), ...Array.from({ length: 6 }, (_, i) => [[i, 6 + 2 * i, 1], [i, 7 + 2 * i, 1]]).flat()]);
+  const wc = raum(cyclo.m);
+  cyclo.ids.slice(0, 6).forEach(id => wc.winkelAn(id).forEach(x => nahe(x, TETRA, 5, 'Cyclohexan')));
+  const zs = cyclo.ids.slice(0, 6).map(id => wc.P[id][2]);
+  assert.ok(Math.max(...zs) - Math.min(...zs) > 0.3, 'Cyclohexan ist nicht eben');
+  const prop = bauXY(['C', 'C', 'C', 'H', 'H', 'H', 'H', 'H', 'H'], [[0, 0], [60, 0], [30, 50], [-40, -30], [-40, 30], [100, -30], [100, 30], [0, 90], [60, 90]],
+    [[0, 1, 1], [1, 2, 1], [2, 0, 1], [0, 3, 1], [0, 4, 1], [1, 5, 1], [1, 6, 1], [2, 7, 1], [2, 8, 1]]);
+  const wp = raum(prop.m);
+  nahe(R.winkelAus(wp.P[prop.ids[0]], wp.P[prop.ids[1]], wp.P[prop.ids[2]]), 60, 2, 'Cyclopropan');
+});
+
+test('25 · 3D: Robustheit – leere Fläche, Einzelatome, Regelverletzungen, 40 Atome, mehrere Moleküle', () => {
+  assert.deepEqual(plain(R.berechne(M.neu()).atome), []);
+  const endlich = r => r.atome.every(a => a.p.every(Number.isFinite)) && r.extras.every(e => e.richtung.every(Number.isFinite));
+  const ch5 = bau(['C', 'H', 'H', 'H', 'H', 'H', 'H', 'H'], [1, 2, 3, 4, 5, 6, 7].map(i => [0, i, 1]));
+  assert.equal(M.analyse(ch5.m)[0].status, 'verletzung');
+  assert.ok(endlich(R.berechne(ch5.m)), 'auch Regelverletzungen werden dargestellt');
+  const kette = M.neu();
+  for (let i = 0; i < M.MAX_ATOME; i++) M.atomHinzu(kette, i % 5 ? 'C' : 'O', i * 30, (i % 2) * 20);
+  for (let i = 1; i < M.MAX_ATOME; i++) M.setzeBindung(kette, kette.atome[i - 1].id, kette.atome[i].id, 1);
+  const t0 = Date.now(), rk = R.berechne(kette);
+  assert.ok(Date.now() - t0 < 500);
+  assert.ok(endlich(rk));
+  for (let i = 0; i < rk.atome.length; i++) for (let j = i + 1; j < rk.atome.length; j++) {
+    const p = rk.atome[i].p, q = rk.atome[j].p;
+    assert.ok(Math.hypot(p[0] - q[0], p[1] - q[1], p[2] - q[2]) > 0.5, 'Atome überlappen nicht');
+  }
+  // Zwei Moleküle nebeneinander, ohne sich zu berühren, in der Reihenfolge der Zeichnung
+  const zwei = M.beispiel('h2o', 300, 0);
+  const nh3 = M.beispiel('nh3', -300, 0);
+  const off = zwei.naechsteId;
+  nh3.atome.forEach(a => zwei.atome.push({ ...a, id: a.id + off }));
+  nh3.bindungen.forEach(b => zwei.bindungen.push({ a: b.a + off, b: b.b + off, ordnung: b.ordnung }));
+  zwei.naechsteId = off + nh3.naechsteId;
+  const rz = R.berechne(zwei), teile = M.teile(zwei);
+  const xMittel = ids => ids.reduce((s, id) => s + rz.atome.find(a => a.id === id).p[0], 0) / ids.length;
+  const [wasserIds, ammoniakIds] = teile[0].some(id => M.atomVon(zwei, id).el === 'O') ? teile : [teile[1], teile[0]];
+  assert.ok(xMittel(ammoniakIds) < xMittel(wasserIds), 'links gezeichnet = links im Raum');
+  for (const a of wasserIds) for (const b of ammoniakIds) {
+    const p = rz.atome.find(x => x.id === a).p, q = rz.atome.find(x => x.id === b).p;
+    assert.ok(Math.hypot(p[0] - q[0], p[1] - q[1], p[2] - q[2]) > 1, 'Moleküle getrennt');
+  }
+  // Alle Beispielmoleküle: endliche Werte, schematische Längen
+  for (const mol of D.MOLEKUELE) {
+    const m = M.beispiel(mol.id), w = raum(m, { winkel: R.messwinkel(M.analyse(m)) });
+    assert.ok(endlich(w.r), mol.id);
+    m.bindungen.forEach(b => nahe(w.abstand(b.a, b.b), M.atomVon(m, b.a).el === 'H' || M.atomVon(m, b.b).el === 'H' ? R.L_H : R.L_SCHWER, 1e-9, mol.id));
+  }
+});
+
+test('26 · 3D: Three.js liegt lokal mit Lizenz vor und wird vor der 3D-Ansicht geladen', () => {
+  const html = fs.readFileSync(path.join(DIR, 'index.html'), 'utf8');
+  const lade = f => html.indexOf(`<script src="${f}"></script>`);
+  for (const f of ['three.js', 'raum.js', 'ansicht-molekuel-3d.js']) assert.ok(lade(f) > 0, f + ' eingebunden');
+  assert.ok(lade('three.js') < lade('ansicht-molekuel-3d.js') && lade('molekuel.js') < lade('raum.js'));
+  assert.ok(!/src="https?:/.test(html), 'keine fremden Server');
+  const three = fs.readFileSync(path.join(DIR, 'three.js'), 'utf8');
+  assert.match(three.slice(0, 600), /SPDX-License-Identifier: MIT/);
+  assert.ok(!three.includes('are deprecated with r150+'), 'keine Konsolenwarnung beim Laden');
+  assert.match(fs.readFileSync(path.join(DIR, 'THREE-LIZENZ.txt'), 'utf8'), /Permission is hereby granted, free of charge/);
+  const c = vm.createContext({});
+  vm.runInContext(three, c);
+  assert.equal(c.THREE.REVISION, '160');
 });
