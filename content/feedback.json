@@ -1,0 +1,4 @@
+{
+  "_hinweis": "Empfänger der Feedback-Seite (/feedback). Auf dem Server kann FEEDBACK_AN in der .env die Adresse überschreiben. Die Adresse ist auf der Feedback-Seite sichtbar.",
+  "empfaenger": "philipp.konstantin.gomann@humboldtschule-berlin.eu"
+}

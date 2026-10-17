@@ -12,6 +12,9 @@ import * as fviews from './src/views-fach.js';
 import { content, visibleFaecher, getFach, getSimulation, visibleGrades, getGrade, gradeOf, topicsOfGrade, topicProgress } from './src/faecher.js';
 import { checkAnswer, revealSolution } from './src/exercises.js';
 import { ladeImpressum, impressumBody, datenschutzBody } from './src/rechtliches.js';
+import { feedbackBody } from './src/feedback.js';
+import { pruefeFeedback, mailText } from './public/feedback-kern.js';
+import { mailBereit, feedbackEmpfaenger, sendeFeedbackMail } from './src/mailer.js';
 
 const app = express();
 app.disable('x-powered-by');
@@ -140,7 +143,49 @@ app.post('/auth/logout', (req, res) => { req.session = null; res.redirect('/'); 
 // ---------------------------------------------------------------- Impressum und Datenschutz (ohne Anmeldung)
 
 app.get('/impressum', (req, res) => res.send(views.layout({ title: 'Impressum', user: req.user, body: impressumBody(ladeImpressum()) })));
-app.get('/datenschutz', (req, res) => res.send(views.layout({ title: 'Datenschutzerklärung', user: req.user, body: datenschutzBody(ladeImpressum()) })));
+app.get('/datenschutz', (req, res) => res.send(views.layout({ title: 'Datenschutzerklärung', user: req.user, body: datenschutzBody(ladeImpressum(), { feedbackAn: feedbackEmpfaenger() }) })));
+
+// ---------------------------------------------------------------- Feedback (Fehler melden, Ideen) per E-Mail
+
+const ROLLE = { student: 'Schüler/in', teacher: 'Lehrkraft', admin: 'Admin' };
+const absenderVon = u => (u ? { name: u.name || u.username, email: u.email || '', rolle: ROLLE[u.role] || u.role, klasse: u.klasse || '' } : null);
+
+app.get('/feedback', (req, res) => {
+  const modus = req.user && mailBereit() ? 'server' : 'mailto';
+  res.send(views.layout({
+    title: 'Feedback', user: req.user, modules: ['/static/feedback.js'],
+    body: feedbackBody({ modus, empfaenger: feedbackEmpfaenger(), absender: absenderVon(req.user), von: String(req.query.von || ''), seitenName: config.siteName }),
+  }));
+});
+
+// Gegen Missbrauch: höchstens 5 Nachrichten pro Konto und 40 insgesamt pro Stunde (nur im Arbeitsspeicher)
+const feedbackZeiten = new Map();
+const STUNDE = 60 * 60 * 1000;
+function feedbackErlaubt(uid, jetzt = Date.now()) {
+  const frisch = l => (l || []).filter(t => jetzt - t < STUNDE);
+  for (const [k, l] of feedbackZeiten) if (!frisch(l).length) feedbackZeiten.delete(k);
+  const eigene = frisch(feedbackZeiten.get(uid));
+  const alle = [...feedbackZeiten.values()].reduce((n, l) => n + frisch(l).length, 0);
+  if (eigene.length >= 5 || alle >= 40) return false;
+  feedbackZeiten.set(uid, [...eigene, jetzt]);
+  return true;
+}
+
+app.post('/api/feedback', requireLogin, async (req, res) => {
+  if (!mailBereit()) return res.status(503).json({ error: 'Der E-Mail-Versand ist auf diesem Server nicht eingerichtet. Du kannst die E-Mail aber selbst verschicken.', mailto: true });
+  const r = pruefeFeedback(req.body, { kontaktErlaubt: Boolean(req.user.email) });
+  if (!r.ok) return res.status(400).json({ error: r.fehler.join(' ') });
+  if (!feedbackErlaubt(req.user.id)) return res.status(429).json({ error: 'Du hast in der letzten Stunde schon mehrere Nachrichten geschickt. Bitte versuche es später noch einmal.' });
+  const absender = r.daten.kontakt ? absenderVon(req.user) : null;
+  const mail = mailText(r.daten, { absender, seitenName: config.siteName });
+  try {
+    await sendeFeedbackMail({ betreff: mail.betreff, text: mail.text, antwortAn: absender?.email });
+    res.json({ ok: true });
+  } catch (err) {
+    console.error('Feedback-Mail fehlgeschlagen:', err.message);
+    res.status(502).json({ error: 'Die E-Mail konnte gerade nicht verschickt werden. Du kannst sie aber selbst verschicken.', mailto: true });
+  }
+});
 
 // ---------------------------------------------------------------- Lerneinheiten
 
