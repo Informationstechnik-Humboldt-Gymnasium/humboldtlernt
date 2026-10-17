@@ -1,11 +1,12 @@
 import { config } from './config.js';
 import { visibleFaecher } from './faecher.js';
+import { FEHLERPROTOKOLL } from '../public/feedback-kern.js';
 
 export const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const fmtDate = s => s ? new Date(s.replace(' ', 'T') + 'Z').toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' }) : '';
 const roleName = { student: 'Schüler/in', teacher: 'Lehrkraft', admin: 'Admin' };
 
-export function layout({ title, user, body, wide = false, bare = false, scripts = [] }) {
+export function layout({ title, user, body, wide = false, bare = false, scripts = [], modules = [] }) {
   const nav = user ? `
     <a class="skip" href="#inhalt">Zum Inhalt springen</a>
     <nav class="top" aria-label="Hauptmenü">
@@ -24,14 +25,17 @@ export function layout({ title, user, body, wide = false, bare = false, scripts 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title ? `${title} · ${config.siteName}` : config.siteName)}</title>
 <link rel="stylesheet" href="/static/style.css">
+<script>${FEHLERPROTOKOLL}</script>
 </head>
 <body class="${bare ? 'bare' : ''}">
 ${nav}
 <main id="inhalt" class="${wide ? 'wide' : ''}">
 ${body}
 </main>
-<footer class="fuss"><a href="/impressum">Impressum</a><span aria-hidden="true">·</span><a href="/datenschutz">Datenschutz</a></footer>
+<footer class="fuss"><a href="/feedback" id="fb-link">Feedback &amp; Fehler melden</a><span aria-hidden="true">·</span><a href="/impressum">Impressum</a><span aria-hidden="true">·</span><a href="/datenschutz">Datenschutz</a></footer>
+<script>(function () { var a = document.getElementById('fb-link'); if (a && location.pathname.indexOf('/feedback') !== 0) a.href = '/feedback?von=' + encodeURIComponent(location.pathname + location.search); })();</script>
 ${scripts.map(s => `<script src="${esc(s)}" defer></script>`).join('\n')}
+${modules.map(s => `<script type="module" src="${esc(s)}"></script>`).join('\n')}
 </body>
 </html>`;
 }

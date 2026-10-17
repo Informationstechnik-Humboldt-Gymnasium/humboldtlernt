@@ -37,6 +37,19 @@ export const config = {
   dataDir: env('DATA_DIR', path.join(ROOT, 'data')),
   lessonsDir: env('LESSONS_DIR', path.join(ROOT, 'lessons')),
   contentDir: env('CONTENT_DIR', path.join(ROOT, 'content')),
+  // Feedback per E-Mail (siehe .env.example). Ohne SMTP_HOST bietet die Feedback-Seite nur „E-Mail-Programm öffnen“ an.
+  feedback: {
+    an: env('FEEDBACK_AN'),                                  // leer → content/feedback.json
+    smtp: {
+      host: env('SMTP_HOST'),
+      port: parseInt(env('SMTP_PORT', '587'), 10),
+      secure: bool('SMTP_SECURE'),                           // true nur für Port 465 (TLS von Anfang an)
+      requireTLS: bool('SMTP_REQUIRE_TLS', 'true'),          // sonst STARTTLS erzwingen – Passwort nie unverschlüsselt
+      user: env('SMTP_USER'),
+      pass: env('SMTP_PASS'),
+      from: env('SMTP_FROM'),
+    },
+  },
 };
 
 config.secureCookies = config.baseUrl.startsWith('https://');

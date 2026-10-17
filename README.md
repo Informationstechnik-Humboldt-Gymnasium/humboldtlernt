@@ -209,6 +209,21 @@ erika.beispiel@meine-schule.de;Erika Beispiel;10b
 Mit `ROSTER_REQUIRED=true` kommen nur Schüler/innen aus der Liste rein (Lehrkräfte und Admins immer).
 Mit `false` darf jedes IServ-Konto rein, die Liste ordnet dann nur die Klassen zu.
 
+### Feedback per E-Mail
+
+In der Fußzeile jeder Seite steht **„Feedback & Fehler melden“** (`/feedback`). Dort wählt man aus, worum es geht
+(Fehler, Inhalt falsch, Idee, Sonstiges), schreibt Betreff und Beschreibung und kann **freiwillig** Diagnosedaten
+(Browser, Bildschirm, letzte Fehlermeldungen der Seite) und – angemeldet – Name und E-Mail für eine Antwort mitschicken.
+Vor dem Senden sieht man genau den Text der E-Mail.
+
+- Empfänger: `content/feedback.json` (oder `FEEDBACK_AN` in der `.env`).
+- **Mit SMTP** (`SMTP_HOST`, `SMTP_USER`, `SMTP_PASS`, … in der `.env`, siehe `.env.example`) verschickt der Server die
+  Mail für angemeldete Personen selbst (höchstens 5 pro Person und 40 insgesamt pro Stunde). Das Passwort gehört nur
+  in die `.env`. Fehlt SMTP oder schlägt der Versand fehl, bereitet die Seite die E-Mail im eigenen E-Mail-Programm
+  vor (mailto) und bietet „Text kopieren“ an. Dasselbe gilt ohne Anmeldung und auf der Testseite.
+- Gespeichert wird nichts auf dem Server. Prüfung und Text der Mail: `public/feedback-kern.js`, Seite: `src/feedback.js`,
+  Bedienung: `public/feedback.js`, Versand: `src/mailer.js`.
+
 ---
 
 ## 5. Lerneinheiten erstellen
@@ -354,6 +369,8 @@ welche Lerneinheit wann erledigt wurde sowie jeder Übungsversuch (Antwort, rich
 Zeitpunkt). Lehrkräfte sehen pro Klasse nur den Fortschritt in Prozent. Keine Passwörter, keine Tracking-Dienste,
 keine externen Skripte (die Seite lädt nichts von fremden Servern).
 Der Login-Cookie ist technisch notwendig und läuft nach 12 Stunden ab.
+Feedback wird nur auf Wunsch per E-Mail verschickt (Diagnosedaten und Name nur mit Häkchen) und nicht gespeichert;
+die letzten Fehlermeldungen einer Seite liegen dafür nur im sessionStorage des Tabs.
 
 Für den Betrieb an einer Schule braucht ihr in der Regel die Zustimmung der Schulleitung,
 einen Eintrag ins Verzeichnis der Verarbeitungstätigkeiten und ggf. einen Vertrag zur
