@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vom Stimmzettel zur Sitzverteilung</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<style>
+  .pa { --c: var(--accent); }
+  .pa[data-p=a] { --c: var(--accent); } .pa[data-p=b] { --c: var(--pos); } .pa[data-p=c] { --c: var(--ok); }
+  .pa[data-p=d] { --c: var(--c3); } .pa[data-p=e] { --c: var(--neg); } .pa[data-p=f] { --c: var(--warn); }
+  .parteien { display: grid; gap: 10px; }
+  .partei { display: grid; grid-template-columns: 22px 1fr; gap: 2px 8px; align-items: center; }
+  .partei i { width: 18px; height: 18px; border-radius: 50%; background: var(--c); grid-row: span 2; }
+  .partei label { display: flex; justify-content: space-between; gap: 8px; font-size: .9rem; font-weight: 600; }
+  .partei output { font-variant-numeric: tabular-nums; color: var(--muted); font-weight: 400; }
+  .partei input[type=range] { accent-color: var(--c); height: 26px; }
+  .direkt { display: flex; gap: 8px; align-items: center; font-size: .85rem; margin-top: 2px; grid-column: 2; }
+  .direkt input { width: 56px; font: inherit; padding: 3px 6px; border-radius: 8px; border: 1px solid var(--border); background: var(--card); color: var(--text); }
+  table.erg { width: 100%; border-collapse: collapse; font-size: .86rem; margin-top: 10px; }
+  table.erg th, table.erg td { padding: 5px 4px; border-bottom: 1px solid var(--border); text-align: right; font-variant-numeric: tabular-nums; }
+  table.erg th:first-child, table.erg td:first-child { text-align: left; }
+  table.erg td.raus { color: var(--warn); }
+  .punkt { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--c); margin-right: 5px; }
+  svg circle.sitz { fill: var(--c); }
+  svg circle.leer { fill: var(--grid); }
+  .tabelle-wrap { overflow-x: auto; }
+</style>
+</head>
+<body>
+<h1>Vom Stimmzettel zur Sitzverteilung</h1>
+<p>Hier wählen sechs <b>erfundene</b> Parteien. Stelle mit den Reglern ein, wie viele Zweitstimmen sie bekommen. Das Modell prüft die Fünf-Prozent-Hürde und die Grundmandatsklausel und verteilt die Sitze nach dem Verfahren von Sainte-Laguë – wie bei der Bundestagswahl, aber vereinfacht ohne Länderlisten.</p>
+
+<div class="lk-grid">
+  <div class="lk-card">
+    <svg id="parlament" viewBox="-105 -105 210 112" role="img" aria-label="Sitzverteilung im Parlament"></svg>
+    <div class="readouts">
+      <div class="readout"><b id="sitzeGesamt">100</b><span>Sitze im Parlament</span></div>
+      <div class="readout"><b id="verloren">0 %</b><span>Stimmen ohne Sitz</span></div>
+      <div class="readout"><b id="mehrheit">51</b><span>Sitze für die Mehrheit</span></div>
+    </div>
+    <div class="tabelle-wrap"><table class="erg" aria-label="Ergebnis">
+      <thead><tr><th scope="col">Partei</th><th scope="col">Zweitstimmen</th><th scope="col">Hürde</th><th scope="col">Sitze</th><th scope="col">Sitzanteil</th></tr></thead>
+      <tbody id="tabelle"></tbody>
+    </table></div>
+  </div>
+  <div class="lk-card">
+    <div class="ctrl"><span>Größe des Parlaments</span>
+      <div class="seg" role="group" aria-label="Anzahl der Sitze">
+        <button type="button" data-sitze="100" aria-pressed="true">100 Sitze</button>
+        <button type="button" data-sitze="630" aria-pressed="false">630 Sitze (wie der Bundestag)</button>
+      </div>
+    </div>
+    <div class="parteien" id="parteien"></div>
+    <p class="small muted">Stimmen in Tausend. Nur Partei E kann im Modell Wahlkreise direkt gewinnen – so kannst du die Grundmandatsklausel testen.</p>
+    <button type="button" id="zurueck">Beispiel zurücksetzen</button>
+  </div>
+</div>
+
+<section class="lk-card tasks">
+  <h2>Entdecke selbst <span data-task-count></span></h2>
+  <div class="task" data-goal="huerde"><p class="task-q">Stelle eine Partei so ein, dass sie zwischen 4 % und 5 % der Zweitstimmen bekommt. Was passiert mit ihren Sitzen?</p></div>
+  <div class="task" data-goal="grundmandat"><p class="task-q">Bring Partei E mit weniger als 5 % trotzdem ins Parlament – über die Grundmandatsklausel.</p></div>
+  <div class="task" data-goal="mehrheit"><p class="task-q">Erzeuge ein Ergebnis, bei dem eine Partei mit <b>weniger als 50 %</b> der Stimmen <b>mehr als die Hälfte</b> der Sitze bekommt.</p></div>
+  <div class="task"><p class="task-q">Warum ist der Sitzanteil der Parteien im Parlament oft etwas größer als ihr Stimmenanteil?</p>
+    <div class="choices">
+      <button type="button" data-fb="Nein – jede Stimme zählt gleich viel. Der Grund liegt bei den Parteien unter der Hürde.">Große Parteien bekommen Bonussitze.</button>
+      <button type="button" data-ok data-fb="Genau: Die Sitze werden nur unter den Parteien verteilt, die die Hürde schaffen. Die Stimmen der anderen fallen weg.">Stimmen für Parteien unter der Hürde werden bei der Verteilung nicht berücksichtigt.</button>
+      <button type="button" data-fb="Nein – die Erststimmen entscheiden nicht über die Sitzverteilung der Parteien.">Die Erststimmen werden dazugezählt.</button>
+    </div><p class="fb"></p></div>
+  <div class="task"><p class="task-q">Bei der Bundestagswahl 2025 lag das BSW bei 4,98 %. Wie viele Sitze bekam es?</p>
+    <div class="choices">
+      <button type="button" data-ok data-fb="Richtig: Unter 5 % und ohne drei Direktmandate gibt es keine Sitze – auch wenn nur wenige tausend Stimmen fehlen.">keinen</button>
+      <button type="button" data-fb="Nein – 4,98 % liegt unter der Hürde. Es wird nicht aufgerundet.">etwa 31, also 4,98 % von 630</button>
+      <button type="button" data-fb="Nein – einen Mindestsitz gibt es nur für Parteien nationaler Minderheiten wie den SSW, die von der Hürde befreit sind.">einen Sitz als Ausgleich</button>
+    </div><p class="fb"></p></div>
+  <div class="all-done">Stark! Du weißt jetzt, wie aus Stimmen Sitze werden.</div>
+</section>
+
+<script src="../../static/lesson-kit.js"></script>
+<script src="wahl.js"></script>
+<script>
+(function () {
+  'use strict';
+  var WS = window.WS, $ = function (id) { return document.getElementById(id); };
+  var START = [['a', 'Partei A', 300], ['b', 'Partei B', 250], ['c', 'Partei C', 160], ['d', 'Partei D', 120], ['e', 'Partei E', 70], ['f', 'Partei F', 60]];
+  var parteien, sitze = 100, NS = 'http://www.w3.org/2000/svg';
+
+  function neu() {
+    parteien = START.map(function (p) { return { id: p[0], name: p[1], stimmen: p[2], direkt: 0 }; });
+    $('parteien').innerHTML = parteien.map(function (p) {
+      return '<div class="partei pa" data-p="' + p.id + '"><i aria-hidden="true"></i>' +
+        '<label for="s-' + p.id + '">' + p.name + ' <output id="o-' + p.id + '"></output></label>' +
+        '<input type="range" id="s-' + p.id + '" min="0" max="400" step="1" value="' + p.stimmen + '">' +
+        (p.id === 'e' ? '<span class="direkt"><label for="d-e">gewonnene Wahlkreise</label><input type="number" id="d-e" min="0" max="10" value="0"></span>' : '') + '</div>';
+    }).join('');
+    parteien.forEach(function (p) {
+      $('s-' + p.id).addEventListener('input', function () { p.stimmen = Number(this.value); rechne(); });
+    });
+    $('d-e').addEventListener('input', function () { parteien[4].direkt = Math.max(0, Math.min(10, Number(this.value) || 0)); rechne(); });
+    rechne();
+  }
+
+  /** Sitze als Halbrund: Reihen von innen nach außen, Sitze nach Winkel sortiert von links nach rechts vergeben. */
+  function halbrund(n) {
+    var reihen = n > 200 ? 12 : 6, r0 = 38, r1 = 98, pos = [], radien = [], summe = 0;
+    for (var i = 0; i < reihen; i++) { var r = r0 + (r1 - r0) * i / (reihen - 1); radien.push(r); summe += r; }
+    var pro = radien.map(function (r) { return Math.floor(n * r / summe); }), rest = n - pro.reduce(function (a, b) { return a + b; }, 0);
+    for (var k = reihen - 1; rest > 0; k = (k - 1 + reihen) % reihen, rest--) pro[k]++;
+    pro.forEach(function (m, i) {
+      for (var j = 0; j < m; j++) { var w = Math.PI - Math.PI * (m === 1 ? 0.5 : j / (m - 1)); pos.push({ x: radien[i] * Math.cos(w), y: -radien[i] * Math.sin(w), w: w }); }
+    });
+    pos.sort(function (a, b) { return b.w - a.w; });
+    return { pos: pos, r: n > 200 ? 2.6 : 4.4 };
+  }
+
+  function rechne() {
+    var e = WS.auswerten(parteien, sitze);
+    e.parteien.forEach(function (p) { $('o-' + p.id).textContent = p.stimmen + ' Tsd. · ' + LK.fmt(p.anteil * 100, 1) + ' %'; });
+    $('tabelle').innerHTML = e.parteien.map(function (p) {
+      var grund = p.anteil >= 0.05 ? '✓ über 5 %' : p.direkt >= 3 ? '✓ 3 Wahlkreise' : '✗ unter 5 %';
+      return '<tr class="pa" data-p="' + p.id + '"><td><span class="punkt" aria-hidden="true"></span>' + p.name + '</td><td>' + LK.fmt(p.anteil * 100, 1) + ' %</td>' +
+        '<td class="' + (p.drin ? '' : 'raus') + '">' + grund + '</td><td>' + p.sitze + '</td><td>' + LK.fmt(p.sitzanteil * 100, 1) + ' %</td></tr>';
+    }).join('');
+    $('verloren').textContent = LK.fmt(e.verloren * 100, 1) + ' %';
+    $('sitzeGesamt').textContent = sitze;
+    $('mehrheit').textContent = Math.floor(sitze / 2) + 1;
+    // Parlament zeichnen
+    var svg = $('parlament'), h = halbrund(sitze), k = 0;
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    e.parteien.forEach(function (p) {
+      for (var j = 0; j < p.sitze; j++, k++) {
+        var c = document.createElementNS(NS, 'circle'), q = h.pos[k];
+        c.setAttribute('cx', q.x.toFixed(1)); c.setAttribute('cy', q.y.toFixed(1)); c.setAttribute('r', h.r);
+        c.setAttribute('class', 'sitz pa'); c.setAttribute('data-p', p.id);
+        svg.appendChild(c);
+      }
+    });
+    svg.setAttribute('aria-label', 'Sitzverteilung: ' + e.parteien.map(function (p) { return p.name + ' ' + p.sitze + ' Sitze'; }).join(', '));
+    // Ziele
+    e.parteien.forEach(function (p) {
+      if (p.anteil >= 0.04 && p.anteil < 0.05 && !p.drin) LK.reach('huerde');
+      if (p.id === 'e' && p.anteil < 0.05 && p.direkt >= 3 && p.sitze > 0) LK.reach('grundmandat');
+      if (p.anteil < 0.5 && p.sitzanteil > 0.5) LK.reach('mehrheit');
+    });
+  }
+
+  document.querySelectorAll('[data-sitze]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      sitze = Number(b.dataset.sitze);
+      document.querySelectorAll('[data-sitze]').forEach(function (x) { x.setAttribute('aria-pressed', x === b); });
+      rechne();
+    });
+  });
+  $('zurueck').addEventListener('click', neu);
+  neu();
+  LK.check();
+})();
+</script>
+</body>
+</html>

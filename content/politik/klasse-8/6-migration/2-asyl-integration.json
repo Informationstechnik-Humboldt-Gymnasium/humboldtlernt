@@ -1,0 +1,242 @@
+{
+ "id": "pb-k8-asyl-integration",
+ "titel": "Asylrecht in Deutschland und Europa, Integration und Teilhabe",
+ "kurz": "Wer in Deutschland Schutz bekommt, wie das europäische Asylsystem funktioniert und was Integration bedeutet.",
+ "reihenfolge": 2,
+ "lernziele": [
+  {
+   "id": "lz1",
+   "niveau": "G",
+   "text": "Asylrecht, Flüchtlingsschutz und subsidiären Schutz unterscheiden"
+  },
+  {
+   "id": "lz2",
+   "niveau": "G",
+   "text": "Den Ablauf eines Asylverfahrens beschreiben"
+  },
+  {
+   "id": "lz3",
+   "niveau": "H",
+   "text": "Die Rolle der EU im Asylrecht erklären"
+  },
+  {
+   "id": "lz4",
+   "niveau": "H",
+   "text": "Integration und Teilhabe beschreiben und Positionen zur Migrationspolitik darstellen"
+  }
+ ],
+ "verstehen": {
+  "einstieg": "Ein Mädchen aus Afghanistan kommt neu in deine Klasse. Sie spricht noch wenig Deutsch. Was braucht sie, um hier gut anzukommen?",
+  "abschnitte": [
+   {
+    "titel": "Wer bekommt Schutz?",
+    "text": "- **Asylrecht (Art. 16a GG):** „Politisch Verfolgte genießen Asylrecht.“ Seit 1993 gilt es nicht für Menschen, die über einen sicheren Drittstaat einreisen – deshalb spielt es heute zahlenmäßig eine kleine Rolle.\n- **Flüchtlingsschutz** nach der **Genfer Flüchtlingskonvention** (1951): Schutz für Menschen, die wegen ihrer **Rasse** (so der Wortlaut), **Religion, Nationalität, politischen Überzeugung** oder **Zugehörigkeit zu einer bestimmten sozialen Gruppe** verfolgt werden.\n- **Subsidiärer Schutz:** für Menschen, denen im Herkunftsland ein ernsthafter Schaden droht, z. B. durch **Krieg**, Folter oder die Todesstrafe.\n- **Abschiebungsverbot:** z. B. bei lebensgefährlicher Krankheit ohne Behandlungsmöglichkeit.\n\nWer keinen Schutz erhält, muss Deutschland in der Regel verlassen."
+   },
+   {
+    "titel": "Das Asylverfahren und die EU",
+    "text": "In Deutschland entscheidet das **Bundesamt für Migration und Flüchtlinge (BAMF)**. Ablauf vereinfacht: Registrierung → Asylantrag → **persönliche Anhörung** → Entscheidung → bei Ablehnung Klage vor dem Verwaltungsgericht möglich.\n\nDie EU hat ein **Gemeinsames Europäisches Asylsystem (GEAS)**. Grundsätzlich ist nicht jedes Land zuständig, sondern meist der EU-Staat, über den jemand zuerst eingereist ist. Das belastet Staaten an den Außengrenzen wie Italien oder Griechenland besonders. Seit **Juni 2026** gilt ein reformiertes GEAS, u. a. mit Verfahren an den Außengrenzen und einem **Solidaritätsmechanismus** zwischen den Staaten. Ob es die Probleme löst, ist umstritten."
+   },
+   {
+    "titel": "Integration und Teilhabe",
+    "text": "**Integration** bedeutet, dass Zugewanderte gleichberechtigt am Leben in der Gesellschaft teilhaben können – in Schule, Arbeit, Nachbarschaft und Politik. Dazu gehören:\n\n- **Sprache**, z. B. in **Integrationskursen** (Sprachkurs und Orientierungskurs zu Geschichte, Recht und Werten),\n- **Bildung und Arbeit**, z. B. die Anerkennung ausländischer Berufsabschlüsse,\n- **soziale Kontakte** in Vereinen, Schule und Nachbarschaft,\n- **Einbürgerung**: Wer die Voraussetzungen erfüllt, kann in der Regel nach fünf Jahren rechtmäßigem Aufenthalt Deutsche oder Deutscher werden.\n\nIntegration gilt als Aufgabe für **beide Seiten**. Wie viel Zuwanderung Deutschland braucht oder verkraftet und welche Regeln gelten sollen, ist eines der am stärksten umstrittenen politischen Themen."
+   }
+  ],
+  "formeln": [],
+  "merksatz": "Schutz gibt es über das **Asylrecht** (Art. 16a GG), den **Flüchtlingsschutz** (Genfer Flüchtlingskonvention) und den **subsidiären Schutz** (z. B. bei Krieg). Über Anträge entscheidet das **BAMF**; die EU regelt im **GEAS**, welcher Staat zuständig ist.\n\n**Integration** heißt gleichberechtigte Teilhabe – durch Sprache, Bildung, Arbeit und Kontakte.",
+  "alltag": "Paten- oder Buddy-Programme an Schulen helfen neuen Mitschülerinnen und Mitschülern beim Ankommen – Sprache lernt man am schnellsten im Alltag."
+ },
+ "interaktiv": [],
+ "vertiefung": [],
+ "uebungen": [
+  {
+   "id": "pb-asy-01",
+   "typ": "zuordnung",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz1",
+   "frage": "Ordne die Schutzform zu.",
+   "paare": [
+    {
+     "links": "Ein Journalist wird wegen seiner regierungskritischen Artikel vom Staat verfolgt.",
+     "rechts": "Asyl bzw. Flüchtlingsschutz"
+    },
+    {
+     "links": "Eine Familie flieht vor einem Bürgerkrieg, wird aber nicht persönlich verfolgt.",
+     "rechts": "subsidiärer Schutz"
+    },
+    {
+     "links": "Ein Mann kann wegen einer lebensgefährlichen Krankheit in seinem Land nicht behandelt werden.",
+     "rechts": "Abschiebungsverbot"
+    }
+   ],
+   "erklaerung": "Persönliche Verfolgung → Asyl/Flüchtlingsschutz. Allgemeine Kriegsgefahr → subsidiärer Schutz. Besondere persönliche Gefahren → Abschiebungsverbot."
+  },
+  {
+   "id": "pb-asy-02",
+   "typ": "multi",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz1",
+   "frage": "Aus welchen Gründen gilt jemand nach der **Genfer Flüchtlingskonvention** als Flüchtling? Er wird verfolgt wegen …",
+   "optionen": [
+    {
+     "text": "seiner Religion",
+     "richtig": true
+    },
+    {
+     "text": "seiner politischen Überzeugung",
+     "richtig": true
+    },
+    {
+     "text": "seiner Nationalität",
+     "richtig": true
+    },
+    {
+     "text": "seines niedrigen Einkommens",
+     "feedback": "Armut allein ist kein Fluchtgrund im Sinne der Konvention."
+    },
+    {
+     "text": "schlechten Wetters",
+     "feedback": "Naturereignisse sind kein Verfolgungsgrund nach der Konvention."
+    }
+   ],
+   "erklaerung": "Die Konvention nennt Verfolgung wegen „Rasse“ (so der Wortlaut von 1951), Religion, Nationalität, Zugehörigkeit zu einer bestimmten sozialen Gruppe oder politischer Überzeugung."
+  },
+  {
+   "id": "pb-asy-03",
+   "typ": "reihenfolge",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz2",
+   "frage": "Bringe die Schritte eines Asylverfahrens in Deutschland in die richtige Reihenfolge.",
+   "elemente": [
+    "Registrierung nach der Ankunft",
+    "Stellen des Asylantrags beim BAMF",
+    "Persönliche Anhörung zu den Fluchtgründen",
+    "Entscheidung des BAMF",
+    "Bei Ablehnung: Klage vor dem Verwaltungsgericht möglich"
+   ],
+   "erklaerung": "Die Anhörung ist der wichtigste Schritt: Dort schildern die Antragsteller ihre Fluchtgründe."
+  },
+  {
+   "id": "pb-asy-04",
+   "typ": "single",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz3",
+   "frage": "Warum fühlen sich Staaten an den EU-Außengrenzen wie Italien oder Griechenland im europäischen Asylsystem oft besonders belastet?",
+   "optionen": [
+    {
+     "text": "Weil meist der EU-Staat zuständig ist, über den jemand zuerst eingereist ist.",
+     "richtig": true
+    },
+    {
+     "text": "Weil dort keine EU-Gesetze gelten.",
+     "feedback": "EU-Recht gilt in allen Mitgliedstaaten."
+    },
+    {
+     "text": "Weil Deutschland keine Asylanträge annimmt.",
+     "feedback": "Deutschland nimmt Anträge an und gehört seit Jahren zu den Ländern mit den meisten Anträgen in der EU."
+    },
+    {
+     "text": "Weil diese Staaten nicht in der EU sind.",
+     "feedback": "Italien und Griechenland sind EU-Mitglieder."
+    }
+   ],
+   "erklaerung": "Deshalb wird seit Jahren über eine gerechtere Verteilung gestritten. Die GEAS-Reform soll das mit einem Solidaritätsmechanismus verbessern."
+  },
+  {
+   "id": "pb-asy-05",
+   "typ": "multi",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz4",
+   "frage": "Was gehört zur **Integration**?",
+   "optionen": [
+    {
+     "text": "die deutsche Sprache lernen",
+     "richtig": true
+    },
+    {
+     "text": "eine Ausbildung oder Arbeit finden",
+     "richtig": true
+    },
+    {
+     "text": "Kontakte in Schule, Verein und Nachbarschaft",
+     "richtig": true
+    },
+    {
+     "text": "die eigene Muttersprache vollständig aufgeben",
+     "feedback": "Mehrsprachigkeit ist erlaubt und oft ein Vorteil. Integration heißt nicht, die Herkunft zu verleugnen."
+    }
+   ],
+   "erklaerung": "Integration ist ein Prozess, an dem Zugewanderte und Aufnahmegesellschaft beteiligt sind."
+  },
+  {
+   "id": "pb-asy-06",
+   "typ": "single",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz2",
+   "frage": "Ein Asylantrag wird vom BAMF abgelehnt. Was kann die Person im Rechtsstaat tun?",
+   "optionen": [
+    {
+     "text": "Sie kann vor dem Verwaltungsgericht klagen.",
+     "richtig": true
+    },
+    {
+     "text": "Nichts – die Entscheidung des BAMF ist endgültig.",
+     "feedback": "Gegen Entscheidungen von Behörden steht der Rechtsweg offen (Art. 19 Abs. 4 GG)."
+    },
+    {
+     "text": "Sie muss sich an den Bundespräsidenten wenden, der neu entscheidet.",
+     "feedback": "Der Bundespräsident entscheidet nicht über Asylanträge."
+    },
+    {
+     "text": "Sie kann beim Bundestag einen neuen Antrag stellen.",
+     "feedback": "Der Bundestag entscheidet keine Einzelfälle."
+    }
+   ],
+   "erklaerung": "Die Rechtsweggarantie gilt für jeden Menschen – auch für Menschen ohne deutsche Staatsangehörigkeit."
+  },
+  {
+   "id": "pb-asy-07",
+   "typ": "text",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz4",
+   "frage": "Migrationspolitik ist stark umstritten. Stelle zwei unterschiedliche Positionen zur Frage dar, ob Deutschland die Zuwanderung stärker begrenzen sollte, und nenne für jede ein Argument.",
+   "stichworte": [
+    {
+     "aspekt": "Position für stärkere Begrenzung mit Argument (z. B. Kosten, Wohnraum, Schulen, Überforderung der Kommunen, Kontrolle)",
+     "woerter": [
+      "begrenz",
+      "überford",
+      "ueberford",
+      "kommune",
+      "wohnraum",
+      "kosten",
+      "kontroll"
+     ]
+    },
+    {
+     "aspekt": "Position gegen stärkere Begrenzung mit Argument (z. B. Fachkräfte, Menschenrechte, Schutz, Arbeitsmarkt, Demografie)",
+     "woerter": [
+      "fachkr",
+      "menschenrecht",
+      "schutz",
+      "arbeitsmarkt",
+      "demograf",
+      "pflege"
+     ]
+    },
+    {
+     "aspekt": "Positionen werden als Positionen gekennzeichnet (z. B. „Befürworter“, „Kritiker“, „die einen … die anderen“)",
+     "woerter": [
+      "befürwort",
+      "befuerwort",
+      "kritiker",
+      "die einen",
+      "andere",
+      "manche"
+     ]
+    }
+   ],
+   "musterloesung": "Die **Befürworter** einer stärkeren **Begrenzung** argumentieren, dass viele **Kommunen** bei Wohnraum, Schulen und Kitas **überfordert** seien. **Kritiker** halten dagegen, dass Deutschland dringend **Fachkräfte** brauche und Menschen in Not ein Recht auf **Schutz** hätten.",
+   "erklaerung": "Hier geht es nicht um deine eigene Meinung, sondern darum, Positionen anderer fair und mit Argumenten wiederzugeben – eine wichtige Fähigkeit in der politischen Bildung."
+  }
+ ]
+}

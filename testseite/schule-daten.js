@@ -25,6 +25,7 @@
     { id: 'timp', name: 'TIMP' },
     { id: 'informatik', name: 'Informatik' },
     { id: 'englisch', name: 'Englisch' },
+    { id: 'politik', name: 'Politik' },
   ];
 
   // s = Schüler/in: [Benutzername, Vorname, Nachname, Klasse, weitere Lerngruppen, Status]
@@ -50,7 +51,7 @@
   // Lehrkräfte: [Benutzername, Vorname, Nachname, Kürzel, [[Klasse, Fach], …], Klassenleitung]
   var LEHRER = [
     ['sabine.keller', 'Sabine', 'Keller', 'KEL', [['9a', 'physik'], ['9b', 'physik'], ['9a', 'englisch']], '9a'],
-    ['murat.yilmaz', 'Murat', 'Yilmaz', 'YIL', [['9a', 'chemie'], ['9b', 'chemie'], ['10a', 'chemie']], null],
+    ['murat.yilmaz', 'Murat', 'Yilmaz', 'YIL', [['9a', 'chemie'], ['9b', 'chemie'], ['10a', 'chemie'], ['10a', 'politik']], null],
     ['julia.brandt', 'Julia', 'Brandt', 'BRA', [['9b', 'biologie'], ['10a', 'biologie'], ['9a', 'ethik']], '10a'],
     ['tobias.novak', 'Tobias', 'Novak', 'NOV', [['wp-timp-9', 'timp'], ['10a', 'physik'], ['wp-inf-10', 'informatik']], null],
   ];

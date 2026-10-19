@@ -1,7 +1,7 @@
 # humboldtlernt – Regeln für Claude-Sitzungen
 
 Lernplattform des Humboldt-Gymnasiums Berlin-Tegel (Node 20+, Express, SQLite, kein Build-Schritt).
-Fächer nach dem schulinternen Curriculum (SchiC): **Physik**, **Chemie**, **Biologie** und **Ethik** (ab Kl. 9 Ethik/Philosophie) (Kl. 7–10) sowie **Englisch** (Kl. 5–10), **TIMP** (Wahlpflicht, Kl. 8–9) und **Informatik** (Wahlpflicht, Kl. 10). Dazu die **Sandbox** mit freien Simulationen (Schaltkreis-, Logik-, Atom- & Chemie- und Netzwerk-Labor).
+Fächer nach dem schulinternen Curriculum (SchiC): **Physik**, **Chemie**, **Biologie** und **Ethik** (ab Kl. 9 Ethik/Philosophie) (Kl. 7–10) sowie **Englisch** (Kl. 5–10), **Politik** (Politische Bildung, Kl. 7–10), **TIMP** (Wahlpflicht, Kl. 8–9) und **Informatik** (Wahlpflicht, Kl. 10). Dazu die **Sandbox** mit freien Simulationen (Schaltkreis-, Logik-, Atom- & Chemie- und Netzwerk-Labor).
 Mehrere Personen arbeiten gleichzeitig mit eigenen Claude-Sitzungen am Repo. Halte dich deshalb genau an diese Regeln.
 
 ## Zusammenarbeit (wichtig)
@@ -61,6 +61,7 @@ Thema:
   - Biologie: Thema `bio-k<klasse>-<name>`, Übungen `bio-<kürzel>-01`. Themenfelder heißen wie im SchiC `1` bis `8` (Themenfeld 4 ist auf Kl. 7 und 10 verteilt).
   - Ethik: Thema `eth-k<klasse>-<name>`, Übungen `eth-<kürzel>-01`. Themenfelder heißen wie die Unterrichtsthemen im SchiC `1` bis `17` (7/8: 1–8, 9/10: 9–17; die Verteilung auf einzelne Klassen ist ein Vorschlag). Übungen prüfen Begriffe, Positionen und Argumentationsschritte – nie eine bestimmte Meinung als „richtig“; Stellungnahmen nur als `text` mit Stichworten zu Struktur und Begründung.
   - Englisch: Thema `en-k<klasse>-<name>`, Übungen `en-<kürzel>-01`. Themenfelder = Pflichtmodule des SchiC, `nummer` `<klasse>.<modul>` (z. B. `9.1` Australia). Erklärungen auf Deutsch mit englischen Beispielen, Aufgaben und Optionen auf Englisch; typografischer Apostroph (’) im Text, in `stichworte` beide Formen (' und ’) angeben. Literarische Beispieltexte selbst schreiben, keine Auszüge aus urheberrechtlich geschützten Werken.
+  - Politik: Thema `pb-k<klasse>-<name>`, Übungen `pb-<kürzel>-01`. Themenfelder `1` bis `8` in der Reihenfolge des SchiC (1–4 Projektwochen Kl. 7–10, 5–8 gesellschaftswissenschaftlicher Unterricht; Verteilung der Themenfelder 5/6 auf Kl. 7/8 und 7/8 auf Kl. 9/10 ist ein Vorschlag). **Beutelsbacher Konsens:** keine Partei, Person oder Position als richtig oder falsch darstellen; was umstritten ist, als umstritten mit mehreren Positionen zeigen; Stellungnahmen nur als `text` mit Stichworten zu Argumenten beider Seiten und Begründung. Aktuelle Zahlen (Sitze, Mindestlohn, Quoten) immer mit Jahr bzw. Stand und Quelle; die Bundestagsdaten in `lessons/pb-bundestag-3d/bundestag.js` sind das Wahlergebnis 2025, nicht der tagesaktuelle Stand. Erfundene Beispiele (Parteien A–F, Gesetzentwurf) als erfunden kennzeichnen. Tests in `test/politik.test.mjs`.
   - Informatik: Thema `inf-k10-<name>`, Übungen `inf-<kürzel>-01`. Themenfelder `1` bis `4` wie im SchiC (Informatiksysteme, Algorithmisches Problemlösen, Informationen und Daten, Datenbanken).
   - Neues Fach: eigenes Präfix, z. B. `geo-k8-…`.
   - Kürzel vorher mit `grep -r '"<präfix>-<kürzel>-' content` auf Eindeutigkeit prüfen.
@@ -94,7 +95,7 @@ Thema:
   - `<link rel="stylesheet" href="../../static/lesson-kit.css">`
   - `<script src="../../static/lesson-kit.js"></script>`
 - **Keine externen Ressourcen:** nur Vanilla-JS und SVG, nichts von fremden Servern (kein CDN, keine Web-Fonts).
-  - Einzige Ausnahme für 3D: **Three.js r160** liegt lokal als `lessons/sandbox-chemielabor/three.js` (MIT, Lizenz in `THREE-LIZENZ.txt`). Andere Lektionen binden genau diese Datei ein (`<script src="../sandbox-chemielabor/three.js"></script>`), keine zweite Kopie und keine andere Version. 3D nur, wo die dritte Dimension der Lernstoff ist (Molekülgeometrie, Gitter, Modelle in Bio); immer mit Etikett „Modell“, 2D-Ansicht als Ersatz ohne WebGL, nur bei Bedarf zeichnen (kein Dauer-Loop), Farben aus den CSS-Variablen lesen.
+  - Einzige Ausnahme für 3D: **Three.js r160** liegt lokal als `lessons/sandbox-chemielabor/three.js` (MIT, Lizenz in `THREE-LIZENZ.txt`). Andere Lektionen binden genau diese Datei ein (`<script src="../sandbox-chemielabor/three.js"></script>`), keine zweite Kopie und keine andere Version. 3D nur, wo die dritte Dimension der Lernstoff ist (Molekülgeometrie, Gitter, Modelle in Bio, Plenarsaal in Politik – `lessons/pb-bundestag-3d/`); immer mit Etikett „Modell“, 2D-Ansicht als Ersatz ohne WebGL, nur bei Bedarf zeichnen (kein Dauer-Loop), Farben aus den CSS-Variablen lesen.
 - **Layout:**
   - `<h1>`, kurze Anleitung
   - `.lk-grid`: links Simulation in `.lk-card`, rechts Einstellungen (`.ctrl`, `.row`, `.seg`, `.readouts`)

@@ -1,0 +1,206 @@
+{
+ "id": "pb-k8-migration",
+ "titel": "Migration: Formen und Ursachen",
+ "kurz": "Warum Menschen ihre Heimat verlassen, welche Formen von Migration es gibt und wie Migration Deutschland geprägt hat.",
+ "reihenfolge": 1,
+ "lernziele": [
+  {
+   "id": "lz1",
+   "niveau": "G",
+   "text": "Den Begriff Migration erklären und Formen unterscheiden"
+  },
+  {
+   "id": "lz2",
+   "niveau": "G",
+   "text": "Push- und Pull-Faktoren an Beispielen zuordnen"
+  },
+  {
+   "id": "lz3",
+   "niveau": "H",
+   "text": "Migration in der deutschen Geschichte an Beispielen beschreiben"
+  },
+  {
+   "id": "lz4",
+   "niveau": "H",
+   "text": "Flucht und Arbeitsmigration aus der Sicht von Betroffenen untersuchen"
+  }
+ ],
+ "verstehen": {
+  "einstieg": "Frag in deiner Klasse oder Familie: Wer hat Eltern, Großeltern oder Urgroßeltern, die irgendwann umgezogen sind – in eine andere Stadt oder ein anderes Land? Vermutlich sehr viele.",
+  "abschnitte": [
+   {
+    "titel": "Was ist Migration?",
+    "text": "**Migration** bedeutet, dass Menschen ihren Lebensmittelpunkt für längere Zeit an einen anderen Ort verlegen.\n\n- **Binnenmigration:** innerhalb eines Landes (z. B. von Sachsen nach Berlin).\n- **Internationale Migration:** über Staatsgrenzen hinweg.\n- **Freiwillige Migration:** z. B. für Arbeit, Studium oder um mit der Familie zusammenzuleben.\n- **Erzwungene Migration (Flucht):** vor Krieg, Verfolgung, Gewalt oder Naturkatastrophen.\n\nDie Grenzen sind nicht immer scharf: Auch Armut oder die Folgen des Klimawandels können Menschen zur Migration drängen."
+   },
+   {
+    "titel": "Push- und Pull-Faktoren",
+    "text": "Migrationsforscher unterscheiden zwei Gruppen von Gründen:\n\n- **Push-Faktoren** „drücken“ Menschen aus ihrer Heimat: Krieg, Verfolgung, Arbeitslosigkeit, Armut, Dürren.\n- **Pull-Faktoren** „ziehen“ Menschen an einen neuen Ort: Sicherheit, Arbeitsplätze, Bildung, Familie oder Freunde, die schon dort leben.\n\nMeist wirken mehrere Faktoren zusammen. Ob jemand auswandert, hängt auch davon ab, ob er sich die Reise leisten kann und ob Grenzen offen sind."
+   },
+   {
+    "titel": "Migration in der deutschen Geschichte",
+    "text": "- Ab **1685** nahm Brandenburg-Preußen mit dem Edikt von Potsdam verfolgte französische Protestanten (**Hugenotten**) auf – viele siedelten sich in Berlin an.\n- Im **19. Jahrhundert** wanderten Millionen Deutsche nach **Amerika** aus, vor allem wegen Armut.\n- Ab **1955** warb die Bundesrepublik **„Gastarbeiter“** an, z. B. aus Italien, Griechenland und der **Türkei** (Abkommen 1961). Die DDR holte **Vertragsarbeiter**, z. B. aus Vietnam.\n- Nach 1945 kamen Millionen **Vertriebene**, später **Spätaussiedler**, und in den letzten Jahren viele Geflüchtete, etwa aus **Syrien** und der **Ukraine**.\n\nDeutschland ist damit seit Langem ein Ein- und Auswanderungsland."
+   }
+  ],
+  "formeln": [],
+  "merksatz": "**Migration** ist die längerfristige Verlegung des Lebensmittelpunkts. Man unterscheidet freiwillige Migration und **Flucht**.\n\n**Push-Faktoren** treiben Menschen fort (Krieg, Armut), **Pull-Faktoren** ziehen sie an (Sicherheit, Arbeit, Familie). Migration hat Deutschland seit Jahrhunderten geprägt – von den Hugenotten bis heute.",
+  "alltag": "Viele Berliner Straßennamen und Gebäude wie der Französische Dom am Gendarmenmarkt erinnern an die Hugenotten."
+ },
+ "interaktiv": [],
+ "vertiefung": [],
+ "uebungen": [
+  {
+   "id": "pb-mig-01",
+   "typ": "zuordnung",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz1",
+   "frage": "Ordne die Beispiele der Form von Migration zu.",
+   "paare": [
+    {
+     "links": "Eine Familie zieht von Leipzig nach Hamburg, weil der Vater dort eine neue Stelle hat.",
+     "rechts": "Binnenmigration"
+    },
+    {
+     "links": "Eine Ärztin aus Indien nimmt eine Stelle in einem Berliner Krankenhaus an.",
+     "rechts": "internationale Arbeitsmigration"
+    },
+    {
+     "links": "Eine Familie flieht vor einem Krieg in ihrem Land.",
+     "rechts": "Flucht (erzwungene Migration)"
+    }
+   ],
+   "erklaerung": "Migration kann innerhalb eines Landes oder über Grenzen stattfinden, freiwillig oder erzwungen."
+  },
+  {
+   "id": "pb-mig-02",
+   "typ": "multi",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz2",
+   "frage": "Welche der folgenden Gründe sind **Pull-Faktoren**, ziehen Menschen also in ein Zielland?",
+   "optionen": [
+    {
+     "text": "gut bezahlte Arbeitsplätze im Zielland",
+     "richtig": true
+    },
+    {
+     "text": "Verwandte, die bereits im Zielland leben",
+     "richtig": true
+    },
+    {
+     "text": "Bürgerkrieg im Heimatland",
+     "feedback": "Krieg im Herkunftsland treibt Menschen fort – ein Push-Faktor."
+    },
+    {
+     "text": "Dürre und Missernten",
+     "feedback": "Das wirkt im Herkunftsland und ist ein Push-Faktor."
+    }
+   ],
+   "erklaerung": "Push-Faktoren wirken im Herkunftsland, Pull-Faktoren im Zielland."
+  },
+  {
+   "id": "pb-mig-03",
+   "typ": "single",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz1",
+   "frage": "Was unterscheidet **Flucht** von freiwilliger Migration?",
+   "optionen": [
+    {
+     "text": "Bei Flucht werden Menschen durch Krieg, Verfolgung oder Gewalt gezwungen, ihre Heimat zu verlassen.",
+     "richtig": true
+    },
+    {
+     "text": "Bei Flucht reist man immer mit dem Flugzeug.",
+     "feedback": "Das Verkehrsmittel spielt keine Rolle."
+    },
+    {
+     "text": "Flucht gibt es nur innerhalb Europas.",
+     "feedback": "Flucht gibt es weltweit; die meisten Geflüchteten bleiben sogar in Nachbarländern ihres Herkunftslands."
+    },
+    {
+     "text": "Bei Flucht kehrt man nach einem Monat zurück.",
+     "feedback": "Viele Geflüchtete können jahrelang nicht zurück."
+    }
+   ],
+   "erklaerung": "Der Unterschied liegt im Zwang. Er ist auch rechtlich wichtig, denn Geflüchtete haben besonderen Schutz."
+  },
+  {
+   "id": "pb-mig-04",
+   "typ": "reihenfolge",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz3",
+   "frage": "Bringe die Migrationsereignisse der deutschen Geschichte in die richtige zeitliche Reihenfolge.",
+   "elemente": [
+    "Aufnahme der Hugenotten in Brandenburg-Preußen",
+    "Massenauswanderung nach Amerika",
+    "Anwerbeabkommen für „Gastarbeiter“ mit Italien und der Türkei",
+    "Aufnahme vieler Geflüchteter aus der Ukraine"
+   ],
+   "erklaerung": "1685 – 19. Jahrhundert – 1955/1961 – ab 2022."
+  },
+  {
+   "id": "pb-mig-05",
+   "typ": "zahl",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz3",
+   "frage": "Die Bundesrepublik schloss 1955 das erste Anwerbeabkommen (mit Italien) und 1961 eines mit der Türkei. Wie viele Jahre liegen dazwischen?",
+   "loesung": 6,
+   "toleranz": 0,
+   "einheit": "Jahre",
+   "rechenweg": [
+    "1961 − 1955 = 6"
+   ],
+   "erklaerung": "Es folgten weitere Abkommen, z. B. mit Griechenland, Spanien, Portugal und dem damaligen Jugoslawien."
+  },
+  {
+   "id": "pb-mig-06",
+   "typ": "multi",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz2",
+   "frage": "Amir stammt aus einem Land mit hoher Arbeitslosigkeit. Sein Cousin lebt in Deutschland und erzählt von freien Stellen in der Pflege. Welche Faktoren wirken hier?",
+   "optionen": [
+    {
+     "text": "Push-Faktor: hohe Arbeitslosigkeit im Herkunftsland",
+     "richtig": true
+    },
+    {
+     "text": "Pull-Faktor: freie Stellen im Zielland",
+     "richtig": true
+    },
+    {
+     "text": "Pull-Faktor: Verwandte im Zielland",
+     "richtig": true
+    },
+    {
+     "text": "Push-Faktor: freie Stellen in der Pflege in Deutschland",
+     "feedback": "Freie Stellen im Zielland ziehen an – das ist ein Pull-Faktor."
+    }
+   ],
+   "erklaerung": "Meist wirken Push- und Pull-Faktoren zusammen. Netzwerke von Verwandten und Freunden sind oft besonders wichtig."
+  },
+  {
+   "id": "pb-mig-07",
+   "typ": "single",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz4",
+   "frage": "Eine Studie befragt Geflüchtete, warum sie nach Deutschland gekommen sind. Welche Antwort spricht für einen **Pull-Faktor**?",
+   "optionen": [
+    {
+     "text": "„Hier lebt schon mein Bruder, er kann mir am Anfang helfen.“",
+     "richtig": true
+    },
+    {
+     "text": "„In meiner Stadt wurde gekämpft, unser Haus ist zerstört.“",
+     "feedback": "Das ist ein Push-Faktor im Herkunftsland."
+    },
+    {
+     "text": "„Ich wurde wegen meiner politischen Meinung verfolgt.“",
+     "feedback": "Verfolgung im Herkunftsland ist ein Push-Faktor."
+    },
+    {
+     "text": "„Es gab keine Arbeit mehr in meinem Dorf.“",
+     "feedback": "Arbeitslosigkeit im Herkunftsland ist ein Push-Faktor."
+    }
+   ],
+   "erklaerung": "Beim Untersuchen von Interviews hilft die Frage: Bezieht sich der Grund auf das Herkunfts- oder das Zielland?"
+  }
+ ]
+}

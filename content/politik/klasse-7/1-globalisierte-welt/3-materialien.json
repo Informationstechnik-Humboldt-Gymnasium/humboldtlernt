@@ -1,0 +1,205 @@
+{
+ "id": "pb-k7-materialien",
+ "titel": "Schaubilder, Tabellen und Karikaturen untersuchen",
+ "kurz": "Mit festen Schritten Materialien beschreiben, deuten und beurteilen – und typische Tricks erkennen.",
+ "reihenfolge": 3,
+ "lernziele": [
+  {
+   "id": "lz1",
+   "niveau": "G",
+   "text": "Ein Schaubild oder eine Tabelle nach festen Schritten beschreiben"
+  },
+  {
+   "id": "lz2",
+   "niveau": "G",
+   "text": "Prozentangaben und absolute Zahlen unterscheiden und umrechnen"
+  },
+  {
+   "id": "lz3",
+   "niveau": "H",
+   "text": "Eine Karikatur beschreiben, deuten und beurteilen"
+  },
+  {
+   "id": "lz4",
+   "niveau": "H",
+   "text": "Irreführende Darstellungen erkennen"
+  }
+ ],
+ "verstehen": {
+  "einstieg": "Zwei Balken in einem Diagramm sehen aus, als sei der eine doppelt so hoch wie der andere. Doch die Zahlen daneben sind 52 und 48. Wie kann das sein?",
+  "abschnitte": [
+   {
+    "titel": "Schaubilder und Tabellen lesen",
+    "text": "Gehe immer in diesen Schritten vor:\n\n- **Thema:** Worum geht es? (Titel, Untertitel)\n- **Herkunft:** Wer hat die Daten erhoben? Aus welchem **Jahr** stammen sie?\n- **Darstellung:** Welche Art von Diagramm? Was zeigen die Achsen? Welche **Einheit** – Prozent, Euro, Millionen?\n- **Aussagen:** Was ist am größten, am kleinsten, was verändert sich?\n- **Bewertung:** Was zeigt das Material **nicht**? Ist die Darstellung fair?\n\n**Prozent und absolute Zahlen:** 30 % von 1 000 Befragten sind 300 Personen. Ein großer Prozentsatz kann wenige Menschen bedeuten, wenn die Gesamtzahl klein ist."
+   },
+   {
+    "titel": "Typische Tricks",
+    "text": "- **Abgeschnittene Achse:** Beginnt die y-Achse nicht bei 0, wirken kleine Unterschiede riesig.\n- **Ausgewählter Zeitraum:** Wer nur einen kurzen Zeitraum zeigt, kann einen Trend verstecken oder übertreiben.\n- **Fehlende Quelle oder Einheit:** Dann kann man nichts überprüfen.\n- **Kleine Stichprobe:** „80 % sind dafür“ – aber befragt wurden nur 10 Personen."
+   },
+   {
+    "titel": "Karikaturen untersuchen",
+    "text": "Eine **Karikatur** ist eine Zeichnung, die ein politisches Thema zugespitzt, übertrieben und oft witzig darstellt. Sie enthält immer eine Meinung der Zeichnerin oder des Zeichners.\n\n- **1. Beschreiben:** Was ist zu sehen? Personen, Gegenstände, Text, Sprechblasen.\n- **2. Deuten:** Wofür stehen die Figuren und **Symbole** (z. B. eine Waage für Gerechtigkeit, ein Schiff für einen Staat)? Auf welches aktuelle **Ereignis** bezieht sich die Karikatur? Was ist die **Aussage**?\n- **3. Beurteilen:** Ist die Aussage überzeugend? Welche Sicht fehlt? Wie siehst **du** das?"
+   }
+  ],
+  "formeln": [],
+  "merksatz": "Materialien untersucht man in Schritten: **Thema, Herkunft, Darstellung, Aussage, Bewertung**. Achte auf Einheit, Jahr, Quelle und Achsen.\n\nKarikaturen: **beschreiben – deuten – beurteilen**. Sie enthalten immer eine Meinung.",
+  "alltag": "Wenn dir ein Diagramm in einem Video sehr dramatisch vorkommt, schau zuerst auf die y-Achse und die Quelle."
+ },
+ "interaktiv": [],
+ "vertiefung": [],
+ "uebungen": [
+  {
+   "id": "pb-mat-01",
+   "typ": "reihenfolge",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz1",
+   "frage": "Bringe die Schritte zur Untersuchung eines Schaubilds in eine sinnvolle Reihenfolge.",
+   "elemente": [
+    "Thema und Titel erfassen",
+    "Quelle und Jahr der Daten prüfen",
+    "Diagrammart, Achsen und Einheit klären",
+    "Wichtige Aussagen formulieren",
+    "Darstellung und Aussagekraft bewerten"
+   ],
+   "erklaerung": "Erst klären, worum es geht und woher die Daten kommen, dann lesen und auswerten, zum Schluss kritisch bewerten."
+  },
+  {
+   "id": "pb-mat-02",
+   "typ": "zahl",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz2",
+   "frage": "In einer Umfrage wurden 1 200 Jugendliche befragt. 35 % sagen, dass sie Nachrichten vor allem über soziale Netzwerke erfahren. Wie viele Jugendliche sind das?",
+   "gegeben": "1 200 Befragte, 35 %",
+   "gesucht": "Anzahl",
+   "loesung": 420,
+   "toleranz": 0,
+   "einheit": "Personen",
+   "rechenweg": [
+    "35 % von 1 200 = 1 200 · 0,35",
+    "= 420"
+   ],
+   "erklaerung": "Prozentangaben beziehen sich immer auf eine Grundmenge – hier 1 200 Befragte."
+  },
+  {
+   "id": "pb-mat-03",
+   "typ": "zahl",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz2",
+   "frage": "In einer Klasse mit 25 Schülerinnen und Schülern sind 20 für einen Ausflug in den Bundestag. Wie viel Prozent sind das?",
+   "gegeben": "20 von 25",
+   "gesucht": "Anteil in Prozent",
+   "loesung": 80,
+   "toleranz": 0,
+   "einheit": "%",
+   "rechenweg": [
+    "20 von 25 = 20 : 25",
+    "= 0,8 = 80 %"
+   ],
+   "erklaerung": "Anteil = Teil : Ganzes. Mal 100 ergibt die Prozentzahl."
+  },
+  {
+   "id": "pb-mat-04",
+   "typ": "single",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz4",
+   "frage": "Ein Balkendiagramm zeigt Werte von 52 % und 48 %. Der erste Balken sieht trotzdem doppelt so hoch aus wie der zweite. Woran liegt das wahrscheinlich?",
+   "optionen": [
+    {
+     "text": "Die y-Achse beginnt nicht bei 0, sondern z. B. bei 44 %.",
+     "richtig": true
+    },
+    {
+     "text": "Das Diagramm ist falsch berechnet.",
+     "feedback": "Die Zahlen können stimmen – die Darstellung täuscht."
+    },
+    {
+     "text": "Prozentwerte kann man nicht in Balken darstellen.",
+     "feedback": "Doch, das geht gut – wenn die Achse bei 0 beginnt."
+    },
+    {
+     "text": "Der erste Wert ist tatsächlich doppelt so groß.",
+     "feedback": "52 ist nicht das Doppelte von 48."
+    }
+   ],
+   "erklaerung": "Eine abgeschnittene Achse vergrößert kleine Unterschiede optisch. Das ist einer der häufigsten Tricks."
+  },
+  {
+   "id": "pb-mat-05",
+   "typ": "zuordnung",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz3",
+   "frage": "Ordne den Arbeitsschritten bei einer Karikatur die passende Frage zu.",
+   "paare": [
+    {
+     "links": "Beschreiben",
+     "rechts": "Welche Personen, Gegenstände und Texte sind zu sehen?"
+    },
+    {
+     "links": "Deuten",
+     "rechts": "Wofür stehen die Symbole und was will die Zeichnerin aussagen?"
+    },
+    {
+     "links": "Beurteilen",
+     "rechts": "Ist die Aussage überzeugend und welche Sicht fehlt?"
+    }
+   ],
+   "erklaerung": "Erst genau hinsehen, dann entschlüsseln, dann kritisch Stellung nehmen."
+  },
+  {
+   "id": "pb-mat-06",
+   "typ": "single",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz3",
+   "frage": "In einer Karikatur sitzt eine kleine Erde auf einer riesigen Waage, auf der anderen Seite liegt ein Berg aus Einkaufstüten. Was ist die naheliegendste **Deutung**?",
+   "optionen": [
+    {
+     "text": "Der Konsum wiegt schwerer als der Schutz der Erde – die Zeichnerin kritisiert übermäßigen Konsum.",
+     "richtig": true
+    },
+    {
+     "text": "Die Erde ist sehr schwer.",
+     "feedback": "Das ist eine wörtliche Beschreibung, keine Deutung der Symbole."
+    },
+    {
+     "text": "Einkaufen ist gut für die Umwelt.",
+     "feedback": "Das widerspricht der Bildsprache: Die Tüten drücken die Waage herunter."
+    },
+    {
+     "text": "Die Karikatur hat keine Aussage, sie ist nur witzig.",
+     "feedback": "Karikaturen enthalten immer eine Meinung."
+    }
+   ],
+   "erklaerung": "Die Waage ist ein Symbol für Abwägen. Was schwerer wiegt, gilt als wichtiger. So wird Kritik an zu viel Konsum sichtbar."
+  },
+  {
+   "id": "pb-mat-07",
+   "typ": "multi",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz4",
+   "frage": "Woran erkennst du, dass eine Grafik in einem Social-Media-Beitrag mit Vorsicht zu genießen ist?",
+   "optionen": [
+    {
+     "text": "Es ist keine Quelle für die Daten angegeben.",
+     "richtig": true
+    },
+    {
+     "text": "Es fehlt die Angabe, wie viele Personen befragt wurden.",
+     "richtig": true
+    },
+    {
+     "text": "Die Achse beginnt weit über 0.",
+     "richtig": true
+    },
+    {
+     "text": "Die Grafik ist bunt gestaltet.",
+     "feedback": "Farben allein machen eine Grafik nicht unseriös."
+    },
+    {
+     "text": "Es ist ein Kreisdiagramm.",
+     "feedback": "Kreisdiagramme sind für Anteile gut geeignet."
+    }
+   ],
+   "erklaerung": "Fehlende Quelle, unklare Stichprobe und manipulierte Achsen sind Warnzeichen. Gestaltung allein sagt wenig."
+  }
+ ]
+}

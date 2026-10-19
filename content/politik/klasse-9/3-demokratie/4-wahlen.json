@@ -1,0 +1,233 @@
+{
+ "id": "pb-k9-wahlen",
+ "titel": "Wahlen zum Bundestag",
+ "kurz": "Wahlrechtsgrundsätze, Erst- und Zweitstimme, Fünf-Prozent-Hürde und wie aus Stimmen Sitze werden.",
+ "reihenfolge": 4,
+ "lernziele": [
+  {
+   "id": "lz1",
+   "niveau": "G",
+   "text": "Die Wahlrechtsgrundsätze nennen und erklären"
+  },
+  {
+   "id": "lz2",
+   "niveau": "G",
+   "text": "Die Bedeutung von Erst- und Zweitstimme unterscheiden"
+  },
+  {
+   "id": "lz3",
+   "niveau": "H",
+   "text": "Die Sitzverteilung mit Fünf-Prozent-Hürde berechnen"
+  },
+  {
+   "id": "lz4",
+   "niveau": "H",
+   "text": "Vor- und Nachteile von Regelungen des Wahlrechts beurteilen"
+  }
+ ],
+ "verstehen": {
+  "einstieg": "Bei der Bundestagswahl 2025 haben 23 Kandidatinnen und Kandidaten ihren Wahlkreis gewonnen – und trotzdem keinen Sitz im Bundestag bekommen. Wie kann das sein?",
+  "abschnitte": [
+   {
+    "titel": "Wahlrechtsgrundsätze",
+    "text": "Nach Artikel 38 GG werden die Abgeordneten in **allgemeiner, unmittelbarer, freier, gleicher und geheimer** Wahl gewählt:\n\n- **allgemein:** Alle deutschen Staatsangehörigen ab 18 dürfen wählen.\n- **unmittelbar:** Die Stimme geht direkt an Kandidaten oder Parteien, nicht an Wahlmänner.\n- **frei:** Niemand darf unter Druck gesetzt werden.\n- **gleich:** Jede Stimme zählt gleich viel.\n- **geheim:** Niemand darf erfahren, wie du gewählt hast.\n\nWahlalter: Bundestag **18**, Europawahl seit 2024 **16**, in Berlin bei den Wahlen zu den Bezirksverordnetenversammlungen ebenfalls **16**."
+   },
+   {
+    "titel": "Erststimme und Zweitstimme",
+    "text": "- Mit der **Erststimme** wählst du eine Person in deinem **Wahlkreis** (299 Wahlkreise).\n- Mit der **Zweitstimme** wählst du eine **Partei** (ihre Landesliste). Die Zweitstimme entscheidet, wie viele der **630 Sitze** eine Partei bekommt – sie ist die wichtigere Stimme.\n\nSeit der Wahlrechtsreform von 2023 gilt die **Zweitstimmendeckung**: Eine Partei bekommt nur so viele Sitze, wie ihr nach Zweitstimmen zustehen. Gewinnt sie in einem Land mehr Wahlkreise, gehen die Gewinner mit dem schwächsten Ergebnis leer aus. 2025 betraf das 23 Wahlkreissieger. Dafür gibt es keine Überhang- und Ausgleichsmandate mehr, und der Bundestag bleibt bei 630 Sitzen."
+   },
+   {
+    "titel": "Fünf-Prozent-Hürde und Sitzverteilung",
+    "text": "Sitze bekommen nur Parteien mit mindestens **5 % der Zweitstimmen** – oder mit mindestens **drei gewonnenen Wahlkreisen** (**Grundmandatsklausel**). Das Bundesverfassungsgericht hat 2024 entschieden, dass die Grundmandatsklausel bis zu einer Neuregelung weiter gilt. Parteien nationaler Minderheiten wie der **SSW** sind von der Hürde ausgenommen.\n\nDie Hürde soll eine **Zersplitterung** des Parlaments verhindern. Kritiker bemängeln, dass Stimmen für kleinere Parteien so „verloren“ gehen: 2025 scheiterten BSW (4,98 %) und FDP (4,3 %) knapp.\n\nDie Sitze werden anschließend **proportional** zu den Zweitstimmen der übrigen Parteien verteilt (Verfahren nach Sainte-Laguë/Schepers)."
+   }
+  ],
+  "formeln": [],
+  "merksatz": "Wahlen sind **allgemein, unmittelbar, frei, gleich und geheim** (Art. 38 GG). Die **Erststimme** wählt eine Person im Wahlkreis, die **Zweitstimme** eine Partei – sie entscheidet über die Sitzverteilung.\n\nIns Parlament kommen Parteien mit **5 %** der Zweitstimmen oder **drei Direktmandaten**. Seit 2025 bekommt ein Wahlkreissieger nur einen Sitz, wenn die Zweitstimmen seiner Partei ihn decken.",
+  "alltag": "Bei der Juniorwahl oder U18-Wahl können Schülerinnen und Schüler vor echten Wahlen probeweise abstimmen – die Ergebnisse werden veröffentlicht."
+ },
+ "interaktiv": [
+  "pb-wahlsystem"
+ ],
+ "vertiefung": [],
+ "uebungen": [
+  {
+   "id": "pb-whl-01",
+   "typ": "zuordnung",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz1",
+   "frage": "Welcher Wahlrechtsgrundsatz wird verletzt?",
+   "paare": [
+    {
+     "links": "Ein Chef verlangt, dass seine Angestellten ihm ihr Wahlfoto zeigen.",
+     "rechts": "geheim"
+    },
+    {
+     "links": "Die Stimmen von Hausbesitzern zählen doppelt.",
+     "rechts": "gleich"
+    },
+    {
+     "links": "Frauen dürfen nicht wählen.",
+     "rechts": "allgemein"
+    },
+    {
+     "links": "Wer nicht die Regierungspartei wählt, verliert seine Arbeit.",
+     "rechts": "frei"
+    }
+   ],
+   "erklaerung": "Alle fünf Grundsätze (allgemein, unmittelbar, frei, gleich, geheim) schützen die demokratische Wahl."
+  },
+  {
+   "id": "pb-whl-02",
+   "typ": "single",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz2",
+   "frage": "Welche Stimme entscheidet darüber, wie viele Sitze eine Partei im Bundestag bekommt?",
+   "optionen": [
+    {
+     "text": "die Zweitstimme",
+     "richtig": true
+    },
+    {
+     "text": "die Erststimme",
+     "feedback": "Mit der Erststimme wird eine Person im Wahlkreis gewählt. Die Sitzzahl der Parteien bestimmt die Zweitstimme."
+    },
+    {
+     "text": "beide Stimmen gleich",
+     "feedback": "Nein, die Zweitstimme ist für die Sitzverteilung entscheidend."
+    },
+    {
+     "text": "die Stimme des Bundespräsidenten",
+     "feedback": "Der Bundespräsident hat dabei keine besondere Stimme."
+    }
+   ],
+   "erklaerung": "Die Zweitstimme ist die wichtigere Stimme, auch wenn sie „zweite“ heißt."
+  },
+  {
+   "id": "pb-whl-03",
+   "typ": "multi",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz3",
+   "frage": "Bei einer Bundestagswahl erhalten die Parteien diese Zweitstimmen-Anteile. Welche Parteien ziehen ins Parlament ein (ohne Direktmandate)?",
+   "optionen": [
+    {
+     "text": "Partei A: 31,2 %",
+     "richtig": true
+    },
+    {
+     "text": "Partei B: 24,8 %",
+     "richtig": true
+    },
+    {
+     "text": "Partei C: 5,0 %",
+     "richtig": true
+    },
+    {
+     "text": "Partei D: 4,9 %",
+     "feedback": "4,9 % liegt unter der Fünf-Prozent-Hürde."
+    },
+    {
+     "text": "Partei E: 3,1 % (mit zwei gewonnenen Wahlkreisen)",
+     "feedback": "Für die Grundmandatsklausel braucht man drei gewonnene Wahlkreise."
+    }
+   ],
+   "erklaerung": "Genau 5,0 % reichen. Wer darunter liegt, braucht mindestens drei Direktmandate."
+  },
+  {
+   "id": "pb-whl-04",
+   "typ": "zahl",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz3",
+   "frage": "Drei Parteien schaffen den Einzug: A erhält 6 Mio., B 3 Mio. und C 1 Mio. Zweitstimmen. Es werden 100 Sitze verteilt. Wie viele Sitze bekommt Partei B (proportional)?",
+   "loesung": 30,
+   "toleranz": 0,
+   "einheit": "Sitze",
+   "rechenweg": [
+    "Gesamtstimmen: 6 + 3 + 1 = 10 Mio.",
+    "Anteil B: 3 : 10 = 30 %",
+    "30 % von 100 Sitzen = 30 Sitze"
+   ],
+   "erklaerung": "Die Sitze werden nur unter den Parteien verteilt, die die Hürde überwunden haben. Bei krummen Ergebnissen rundet das Sainte-Laguë-Verfahren fair."
+  },
+  {
+   "id": "pb-whl-05",
+   "typ": "zahl",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz3",
+   "frage": "Zusammen erhielten 2025 alle Parteien, die nicht in den Bundestag kamen, etwa 13,6 % der Zweitstimmen. Wie viel Prozent der Zweitstimmen hatten die Parteien im Bundestag zusammen? (ohne ungültige Stimmen)",
+   "loesung": 86.4,
+   "toleranz": 0.001,
+   "einheit": "%",
+   "rechenweg": [
+    "100 % − 13,6 % = 86,4 %"
+   ],
+   "erklaerung": "Die 630 Sitze werden auf Grundlage dieser 86,4 % verteilt. Deshalb hat eine Partei im Bundestag einen etwas größeren Sitzanteil als ihren Stimmenanteil."
+  },
+  {
+   "id": "pb-whl-06",
+   "typ": "single",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz2",
+   "frage": "Warum bekamen bei der Bundestagswahl 2025 23 Wahlkreissieger keinen Sitz?",
+   "optionen": [
+    {
+     "text": "Ihre Parteien hatten in dem jeweiligen Land mehr Wahlkreise gewonnen, als ihnen nach Zweitstimmen Sitze zustanden (Zweitstimmendeckung).",
+     "richtig": true
+    },
+    {
+     "text": "Sie hatten weniger als 5 % der Erststimmen.",
+     "feedback": "Wer einen Wahlkreis gewinnt, hat dort die meisten Erststimmen."
+    },
+    {
+     "text": "Ihre Parteien hatten die Fünf-Prozent-Hürde nicht geschafft.",
+     "feedback": "Es betraf vor allem CDU/CSU und AfD, die weit über 5 % lagen."
+    },
+    {
+     "text": "Sie waren zu jung.",
+     "feedback": "Das Alter spielte keine Rolle."
+    }
+   ],
+   "erklaerung": "Die Reform verhindert Überhangmandate, damit der Bundestag nicht immer größer wird. Kritiker bemängeln, dass manche Wahlkreise dadurch keinen direkt gewählten Abgeordneten haben."
+  },
+  {
+   "id": "pb-whl-07",
+   "typ": "text",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz4",
+   "frage": "Beurteile die Fünf-Prozent-Hürde: Nenne ein Argument dafür, eines dagegen und formuliere ein begründetes Urteil.",
+   "stichworte": [
+    {
+     "aspekt": "Argument dafür: Zersplitterung verhindern, stabile Regierung, Mehrheiten, Weimar",
+     "woerter": [
+      "zersplitter",
+      "stabil",
+      "mehrheit",
+      "weimar",
+      "regierungsbild"
+     ]
+    },
+    {
+     "aspekt": "Argument dagegen: Stimmen gehen verloren, Gleichheit der Wahl, kleine Parteien, Vielfalt",
+     "woerter": [
+      "verloren",
+      "gleich",
+      "klein",
+      "vielfalt",
+      "unterrepräsent",
+      "unterrepraesent"
+     ]
+    },
+    {
+     "aspekt": "Begründetes Urteil",
+     "woerter": [
+      "weil",
+      "deshalb",
+      "daher",
+      "denn"
+     ]
+    }
+   ],
+   "musterloesung": "Die Hürde verhindert eine **Zersplitterung** des Parlaments und erleichtert stabile **Mehrheit**en – eine Lehre aus Weimar. Andererseits gehen Millionen Stimmen **verloren**, und **kleine** Parteien haben es schwer, was die Gleichheit der Wahl einschränkt. Ich halte die Hürde für richtig / für zu hoch, **weil** ...",
+   "erklaerung": "Die Fünf-Prozent-Hürde wird in Politik und Wissenschaft unterschiedlich beurteilt; das Bundesverfassungsgericht hält sie für zulässig. Bewertet wird deine Begründung."
+  }
+ ]
+}

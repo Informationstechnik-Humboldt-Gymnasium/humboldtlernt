@@ -1,0 +1,226 @@
+{
+ "id": "pb-k8-grundrechte",
+ "titel": "Grund- und Bürgerrechte",
+ "kurz": "Welche Rechte das Grundgesetz jedem Menschen garantiert, was Bürgerrechte sind und was passiert, wenn Grundrechte gegeneinander stehen.",
+ "reihenfolge": 1,
+ "lernziele": [
+  {
+   "id": "lz1",
+   "niveau": "G",
+   "text": "Wichtige Grundrechte nennen und ihren Inhalt erklären"
+  },
+  {
+   "id": "lz2",
+   "niveau": "G",
+   "text": "Menschenrechte (Jedermannrechte) und Bürgerrechte (Deutschenrechte) unterscheiden"
+  },
+  {
+   "id": "lz3",
+   "niveau": "H",
+   "text": "Die Funktion der Grundrechte als Schutz vor dem Staat erläutern"
+  },
+  {
+   "id": "lz4",
+   "niveau": "H",
+   "text": "Konflikte zwischen Grundrechten aus verschiedenen Perspektiven untersuchen"
+  }
+ ],
+ "verstehen": {
+  "einstieg": "Die Polizei will dein Handy durchsuchen, nur weil du in der Nähe eines Tatorts warst. Darf sie das einfach so?",
+  "abschnitte": [
+   {
+    "titel": "Die Grundrechte im Grundgesetz",
+    "text": "Die **Grundrechte** stehen in den **Artikeln 1 bis 19** des Grundgesetzes – ganz vorne, weil sie besonders wichtig sind. Artikel 1 beginnt mit: **„Die Würde des Menschen ist unantastbar.“**\n\nBeispiele:\n\n- Art. 2: freie Entfaltung der Persönlichkeit, Recht auf Leben und körperliche Unversehrtheit\n- Art. 3: Gleichheit vor dem Gesetz, Gleichberechtigung, Diskriminierungsverbot\n- Art. 4: Glaubens- und Gewissensfreiheit\n- Art. 5: Meinungs-, Informations- und Pressefreiheit\n- Art. 8: Versammlungsfreiheit\n- Art. 10: Brief-, Post- und Fernmeldegeheimnis\n- Art. 13: Unverletzlichkeit der Wohnung"
+   },
+   {
+    "titel": "Menschenrechte und Bürgerrechte",
+    "text": "Die meisten Grundrechte gelten für **alle Menschen**, die sich in Deutschland aufhalten. Sie heißen **Menschenrechte** oder **Jedermannrechte** („Jeder hat das Recht …“).\n\nEinige gelten nur für **Deutsche**. Sie heißen **Bürgerrechte** oder **Deutschenrechte** („Alle Deutschen haben das Recht …“), zum Beispiel:\n\n- Art. 8: Versammlungsfreiheit\n- Art. 9: Vereinigungsfreiheit\n- Art. 11: Freizügigkeit im Bundesgebiet\n- Art. 12: Berufsfreiheit\n\nAuch das Wahlrecht zum Bundestag haben nur deutsche Staatsangehörige."
+   },
+   {
+    "titel": "Schutz vor dem Staat – und Grenzen",
+    "text": "Grundrechte sind vor allem **Abwehrrechte gegen den Staat**: Polizei, Behörden und Gesetzgeber müssen sie achten. Wer sich in seinen Grundrechten verletzt sieht, kann vor Gericht ziehen und zuletzt **Verfassungsbeschwerde** beim **Bundesverfassungsgericht** in Karlsruhe erheben.\n\nGrundrechte können durch Gesetze **eingeschränkt** werden – aber nie in ihrem **Wesensgehalt** (Art. 19). Die Menschenwürde und die Grundsätze von Art. 1 und Art. 20 dürfen nicht einmal durch eine Verfassungsänderung angetastet werden (**Ewigkeitsklausel**, Art. 79 Abs. 3).\n\nOft stehen Grundrechte gegeneinander, z. B. die **Pressefreiheit** einer Zeitung und das **Persönlichkeitsrecht** eines Menschen, über den berichtet wird. Dann müssen Gerichte **abwägen**."
+   }
+  ],
+  "formeln": [],
+  "merksatz": "Die **Grundrechte** (Art. 1–19 GG) schützen jeden Menschen vor Eingriffen des Staates. **Menschenrechte** gelten für alle, **Bürgerrechte** nur für Deutsche (z. B. Versammlungs- und Berufsfreiheit).\n\nGrundrechte können durch Gesetz begrenzt werden, aber nie in ihrem Wesensgehalt. Wer sich verletzt sieht, kann bis zum **Bundesverfassungsgericht** gehen.",
+  "alltag": "Für eine Handydurchsuchung braucht die Polizei in der Regel einen richterlichen Beschluss oder einen besonderen Grund, zum Beispiel Gefahr im Verzug. Das schützt dein Fernmeldegeheimnis und deine Privatsphäre."
+ },
+ "interaktiv": [],
+ "vertiefung": [],
+ "uebungen": [
+  {
+   "id": "pb-grr-01",
+   "typ": "single",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz1",
+   "frage": "Wie lautet der erste Satz des Grundgesetzes nach der Präambel (Artikel 1)?",
+   "optionen": [
+    {
+     "text": "„Die Würde des Menschen ist unantastbar.“",
+     "richtig": true
+    },
+    {
+     "text": "„Alle Menschen sind vor dem Gesetz gleich.“",
+     "feedback": "Das steht in Artikel 3."
+    },
+    {
+     "text": "„Jeder hat das Recht, seine Meinung frei zu äußern.“",
+     "feedback": "Das steht sinngemäß in Artikel 5."
+    },
+    {
+     "text": "„Die Bundesrepublik Deutschland ist ein demokratischer und sozialer Bundesstaat.“",
+     "feedback": "Das steht in Artikel 20."
+    }
+   ],
+   "erklaerung": "Die Menschenwürde ist das oberste Prinzip. Alle anderen Grundrechte bauen darauf auf."
+  },
+  {
+   "id": "pb-grr-02",
+   "typ": "zuordnung",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz1",
+   "frage": "Welches Grundrecht schützt die Situation? Ordne zu.",
+   "paare": [
+    {
+     "links": "Eine Gruppe Jugendlicher demonstriert friedlich für mehr Radwege.",
+     "rechts": "Versammlungsfreiheit (Art. 8)"
+    },
+    {
+     "links": "Ein Mädchen wird wegen ihrer Herkunft nicht in einen Verein aufgenommen.",
+     "rechts": "Gleichheit / Diskriminierungsverbot (Art. 3)"
+    },
+    {
+     "links": "Ein Schüler entscheidet sich, keiner Religion anzugehören.",
+     "rechts": "Glaubens- und Gewissensfreiheit (Art. 4)"
+    },
+    {
+     "links": "Die Polizei darf nicht ohne Weiteres eine Wohnung betreten.",
+     "rechts": "Unverletzlichkeit der Wohnung (Art. 13)"
+    }
+   ],
+   "erklaerung": "Grundrechte schützen ganz konkrete Situationen im Alltag."
+  },
+  {
+   "id": "pb-grr-03",
+   "typ": "multi",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz2",
+   "frage": "Welche Rechte sind **Bürgerrechte**, gelten im Grundgesetz also ausdrücklich nur für Deutsche?",
+   "optionen": [
+    {
+     "text": "Versammlungsfreiheit (Art. 8)",
+     "richtig": true
+    },
+    {
+     "text": "Berufsfreiheit (Art. 12)",
+     "richtig": true
+    },
+    {
+     "text": "Freizügigkeit im Bundesgebiet (Art. 11)",
+     "richtig": true
+    },
+    {
+     "text": "Menschenwürde (Art. 1)",
+     "feedback": "Die Menschenwürde gilt für jeden Menschen."
+    },
+    {
+     "text": "Glaubensfreiheit (Art. 4)",
+     "feedback": "Die Glaubensfreiheit ist ein Jedermannrecht."
+    }
+   ],
+   "erklaerung": "Man erkennt Bürgerrechte an der Formulierung „Alle Deutschen …“. Für Menschen aus anderen Ländern gelten in diesen Bereichen meist Gesetze, die ähnliche Freiheiten gewähren."
+  },
+  {
+   "id": "pb-grr-04",
+   "typ": "single",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz3",
+   "frage": "Warum nennt man Grundrechte **Abwehrrechte**?",
+   "optionen": [
+    {
+     "text": "Weil sie die Bürgerinnen und Bürger vor Eingriffen des Staates schützen.",
+     "richtig": true
+    },
+    {
+     "text": "Weil man mit ihnen Angriffe anderer Länder abwehrt.",
+     "feedback": "Für die Landesverteidigung sind andere Regeln zuständig."
+    },
+    {
+     "text": "Weil sie nur im Gerichtssaal gelten.",
+     "feedback": "Sie gelten überall, wo der Staat handelt."
+    },
+    {
+     "text": "Weil sie Pflichten der Bürger festlegen.",
+     "feedback": "Grundrechte sind Rechte der Menschen gegenüber dem Staat."
+    }
+   ],
+   "erklaerung": "Der Staat ist an die Grundrechte gebunden (Art. 1 Abs. 3 GG). Er darf nur auf Grundlage eines Gesetzes und verhältnismäßig in sie eingreifen."
+  },
+  {
+   "id": "pb-grr-05",
+   "typ": "reihenfolge",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz3",
+   "frage": "Jana meint, eine Behörde habe ihr Grundrecht verletzt. Bringe den Weg in die richtige Reihenfolge.",
+   "elemente": [
+    "Widerspruch bei der Behörde oder Klage beim zuständigen Gericht",
+    "Weitere Instanzen bis zum obersten Fachgericht durchlaufen",
+    "Verfassungsbeschwerde beim Bundesverfassungsgericht erheben",
+    "Das Bundesverfassungsgericht entscheidet, ob ein Grundrecht verletzt wurde"
+   ],
+   "erklaerung": "Die Verfassungsbeschwerde ist in der Regel erst möglich, wenn der normale Rechtsweg ausgeschöpft ist."
+  },
+  {
+   "id": "pb-grr-06",
+   "typ": "single",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz4",
+   "frage": "Eine Zeitung will Fotos einer bekannten Sängerin bei einem privaten Urlaub veröffentlichen. Welche Grundrechte stehen hier gegeneinander?",
+   "optionen": [
+    {
+     "text": "Die Pressefreiheit der Zeitung und das Persönlichkeitsrecht der Sängerin",
+     "richtig": true
+    },
+    {
+     "text": "Die Berufsfreiheit der Sängerin und die Versammlungsfreiheit",
+     "feedback": "Es geht nicht um eine Versammlung."
+    },
+    {
+     "text": "Die Glaubensfreiheit und die Gleichheit vor dem Gesetz",
+     "feedback": "Diese Rechte sind hier nicht betroffen."
+    },
+    {
+     "text": "Keine – die Zeitung darf immer alles veröffentlichen",
+     "feedback": "Auch die Pressefreiheit hat Grenzen, etwa das Persönlichkeitsrecht."
+    }
+   ],
+   "erklaerung": "Gerichte wägen ab: Gibt es ein berechtigtes öffentliches Interesse? Private Momente prominenter Menschen sind oft besonders geschützt."
+  },
+  {
+   "id": "pb-grr-07",
+   "typ": "single",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz1",
+   "frage": "Was regelt die **Ewigkeitsklausel** (Art. 79 Abs. 3 GG)?",
+   "optionen": [
+    {
+     "text": "Die Grundsätze von Art. 1 (Menschenwürde) und Art. 20 (u. a. Demokratie, Rechtsstaat, Bundesstaat) dürfen nicht einmal durch eine Verfassungsänderung abgeschafft werden.",
+     "richtig": true
+    },
+    {
+     "text": "Das Grundgesetz darf nie geändert werden.",
+     "feedback": "Das Grundgesetz wurde schon viele Male geändert – mit Zweidrittelmehrheit in Bundestag und Bundesrat."
+    },
+    {
+     "text": "Bundestagsabgeordnete bleiben für immer im Amt.",
+     "feedback": "Der Bundestag wird alle vier Jahre neu gewählt."
+    },
+    {
+     "text": "Gesetze gelten für immer und können nicht aufgehoben werden.",
+     "feedback": "Gesetze können jederzeit durch neue Gesetze geändert werden."
+    }
+   ],
+   "erklaerung": "Die Ewigkeitsklausel ist eine Lehre aus der Weimarer Republik und dem Nationalsozialismus: Die Grundlagen der Demokratie sollen nicht „legal“ abgeschafft werden können."
+  }
+ ]
+}

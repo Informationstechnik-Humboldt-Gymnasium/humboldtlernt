@@ -1,0 +1,208 @@
+{
+ "id": "pb-k9-gesetzgebung",
+ "titel": "Wie ein Gesetz entsteht: Bundestag, Bundesrat und Verfassungsorgane",
+ "kurz": "Der Weg eines Gesetzes von der Idee bis zur Verkündung – mit Bundesrat, Vermittlungsausschuss und Bundespräsident.",
+ "reihenfolge": 3,
+ "lernziele": [
+  {
+   "id": "lz1",
+   "niveau": "G",
+   "text": "Die Schritte des Gesetzgebungsverfahrens in die richtige Reihenfolge bringen"
+  },
+  {
+   "id": "lz2",
+   "niveau": "G",
+   "text": "Zusammensetzung und Aufgaben des Bundesrates beschreiben"
+  },
+  {
+   "id": "lz3",
+   "niveau": "H",
+   "text": "Einspruchs- und Zustimmungsgesetze unterscheiden"
+  },
+  {
+   "id": "lz4",
+   "niveau": "H",
+   "text": "Aufgaben von Bundespräsident und Bundesverfassungsgericht erklären"
+  }
+ ],
+ "verstehen": {
+  "einstieg": "Die Regierung will, dass Jugendliche schon mit 16 den Autoführerschein machen dürfen. Reicht es, wenn die Ministerin das ankündigt?",
+  "abschnitte": [
+   {
+    "titel": "Von der Idee zum Beschluss",
+    "text": "**Gesetzesinitiative:** Gesetzentwürfe können die **Bundesregierung**, der **Bundesrat** oder Abgeordnete aus der **Mitte des Bundestages** (eine Fraktion oder 5 % der Abgeordneten) einbringen. Die meisten kommen von der Regierung.\n\nIm Bundestag wird der Entwurf in **drei Lesungen** beraten:\n\n- **1. Lesung:** erste Aussprache, Überweisung an die **Ausschüsse**,\n- **Ausschüsse:** Fachleute der Fraktionen beraten Details, oft mit Anhörungen von Expertinnen und Verbänden,\n- **2. und 3. Lesung:** Änderungen, abschließende Debatte und **Abstimmung**."
+   },
+   {
+    "titel": "Der Bundesrat",
+    "text": "Über den **Bundesrat** wirken die **Länder** an der Gesetzgebung mit. Er besteht aus Mitgliedern der Landesregierungen. Jedes Land hat je nach Einwohnerzahl **3 bis 6 Stimmen**, zusammen **69**. Die Stimmen eines Landes müssen **einheitlich** abgegeben werden.\n\n- **Zustimmungsgesetze** (z. B. wenn Interessen der Länder besonders berührt sind oder bei Grundgesetzänderungen) brauchen die **Zustimmung** des Bundesrates. Ohne sie scheitert das Gesetz.\n- Bei **Einspruchsgesetzen** kann der Bundesrat Einspruch einlegen. Den kann der Bundestag aber **überstimmen**.\n\nSind Bundestag und Bundesrat uneinig, kann der **Vermittlungsausschuss** angerufen werden (je 16 Mitglieder aus Bundestag und Bundesrat). Er sucht einen Kompromiss."
+   },
+   {
+    "titel": "Ausfertigung und Kontrolle",
+    "text": "Ist das Gesetz beschlossen, unterzeichnet der Kanzler bzw. der zuständige Minister, danach prüft und **unterzeichnet der Bundespräsident** („Ausfertigung“). Er prüft dabei, ob das Gesetz ordnungsgemäß zustande gekommen und offensichtlich mit dem Grundgesetz vereinbar ist. Dann wird es im **Bundesgesetzblatt verkündet** und tritt in Kraft.\n\nDas **Bundesverfassungsgericht** in Karlsruhe kann auf Antrag prüfen, ob ein Gesetz mit dem Grundgesetz vereinbar ist, und es notfalls für **nichtig** erklären. Es ist der „Hüter der Verfassung“."
+   }
+  ],
+  "formeln": [],
+  "merksatz": "Gesetzentwürfe kommen von **Bundesregierung, Bundesrat oder Bundestag**. Der Bundestag berät in **drei Lesungen** und Ausschüssen und beschließt.\n\nDer **Bundesrat** (69 Stimmen) muss **Zustimmungsgesetzen** zustimmen; gegen **Einspruchsgesetze** kann er Einspruch einlegen, den der Bundestag überstimmen kann. Der **Bundespräsident** fertigt das Gesetz aus, das **Bundesverfassungsgericht** kann es überprüfen.",
+  "alltag": "Auf der Website des Bundestages kannst du jeden Gesetzentwurf mit allen Stationen verfolgen – vom ersten Entwurf bis zur Abstimmung."
+ },
+ "interaktiv": [
+  "pb-gesetzgebung"
+ ],
+ "vertiefung": [],
+ "uebungen": [
+  {
+   "id": "pb-ges-01",
+   "typ": "reihenfolge",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz1",
+   "frage": "Bringe die Stationen eines Bundesgesetzes in die richtige Reihenfolge.",
+   "elemente": [
+    "Die Bundesregierung beschließt einen Gesetzentwurf",
+    "Erste Lesung im Bundestag und Überweisung an die Ausschüsse",
+    "Beratung in den Ausschüssen",
+    "Zweite und dritte Lesung mit Abstimmung im Bundestag",
+    "Beratung im Bundesrat",
+    "Ausfertigung durch den Bundespräsidenten und Verkündung im Bundesgesetzblatt"
+   ],
+   "erklaerung": "Regierungsentwürfe gehen meist zuerst zur Stellungnahme an den Bundesrat. Vereinfacht ist die Reihenfolge aber: Entwurf, Bundestag, Bundesrat, Bundespräsident."
+  },
+  {
+   "id": "pb-ges-02",
+   "typ": "zahl",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz2",
+   "frage": "Wie viele Stimmen hat der Bundesrat insgesamt?",
+   "loesung": 69,
+   "toleranz": 0,
+   "einheit": "Stimmen",
+   "rechenweg": [
+    "4 Länder · 6 + 1 Land · 5 + 7 Länder · 4 + 4 Länder · 3",
+    "= 24 + 5 + 28 + 12 = 69"
+   ],
+   "erklaerung": "Große Länder wie Nordrhein-Westfalen haben 6 Stimmen, kleine wie Bremen 3. Berlin hat 4."
+  },
+  {
+   "id": "pb-ges-03",
+   "typ": "zahl",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz2",
+   "frage": "Ein Zustimmungsgesetz braucht im Bundesrat die absolute Mehrheit von 69 Stimmen. Wie viele Stimmen sind das?",
+   "loesung": 35,
+   "toleranz": 0,
+   "einheit": "Stimmen",
+   "rechenweg": [
+    "Hälfte von 69 = 34,5",
+    "mehr als die Hälfte: 35"
+   ],
+   "erklaerung": "Wer sich enthält, wirkt bei der absoluten Mehrheit wie eine Nein-Stimme."
+  },
+  {
+   "id": "pb-ges-04",
+   "typ": "single",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz3",
+   "frage": "Was passiert, wenn der Bundesrat einem **Zustimmungsgesetz** endgültig nicht zustimmt?",
+   "optionen": [
+    {
+     "text": "Das Gesetz ist gescheitert.",
+     "richtig": true
+    },
+    {
+     "text": "Der Bundestag kann den Bundesrat überstimmen.",
+     "feedback": "Das geht nur bei Einspruchsgesetzen."
+    },
+    {
+     "text": "Der Bundespräsident entscheidet.",
+     "feedback": "Der Bundespräsident prüft nur die Verfassungsmäßigkeit, er schlichtet keinen Streit."
+    },
+    {
+     "text": "Das Gesetz tritt trotzdem in Kraft.",
+     "feedback": "Ohne Zustimmung des Bundesrates kommt ein Zustimmungsgesetz nicht zustande."
+    }
+   ],
+   "erklaerung": "Vorher kann aber der Vermittlungsausschuss angerufen werden, um einen Kompromiss zu finden."
+  },
+  {
+   "id": "pb-ges-05",
+   "typ": "zuordnung",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz4",
+   "frage": "Ordne die Verfassungsorgane ihrer Aufgabe zu.",
+   "paare": [
+    {
+     "links": "Bundespräsident",
+     "rechts": "fertigt Gesetze aus und vertritt Deutschland völkerrechtlich"
+    },
+    {
+     "links": "Bundesverfassungsgericht",
+     "rechts": "prüft, ob Gesetze mit dem Grundgesetz vereinbar sind"
+    },
+    {
+     "links": "Bundesrat",
+     "rechts": "vertritt die Interessen der Länder in der Gesetzgebung"
+    },
+    {
+     "links": "Vermittlungsausschuss",
+     "rechts": "sucht einen Kompromiss zwischen Bundestag und Bundesrat"
+    }
+   ],
+   "erklaerung": "Jedes Organ hat eine eigene Rolle – so kontrollieren sie sich gegenseitig."
+  },
+  {
+   "id": "pb-ges-06",
+   "typ": "single",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz3",
+   "frage": "Der Bundesrat legt gegen ein **Einspruchsgesetz** mit der Mehrheit seiner Stimmen Einspruch ein. Was kann der Bundestag tun?",
+   "optionen": [
+    {
+     "text": "Den Einspruch mit der Mehrheit seiner Mitglieder (absolute Mehrheit) zurückweisen.",
+     "richtig": true
+    },
+    {
+     "text": "Nichts, das Gesetz ist gescheitert.",
+     "feedback": "Bei Einspruchsgesetzen hat der Bundestag das letzte Wort."
+    },
+    {
+     "text": "Den Bundesrat auflösen.",
+     "feedback": "Der Bundesrat kann nicht aufgelöst werden."
+    },
+    {
+     "text": "Das Bundesverfassungsgericht entscheiden lassen, wer recht hat.",
+     "feedback": "Das ist kein politischer Schiedsrichter für Mehrheiten, sondern prüft nur die Vereinbarkeit mit dem Grundgesetz."
+    }
+   ],
+   "erklaerung": "Hat der Bundesrat den Einspruch mit Zweidrittelmehrheit beschlossen, braucht der Bundestag zur Zurückweisung eine Zweidrittelmehrheit der Abstimmenden, mindestens aber die Mehrheit seiner Mitglieder."
+  },
+  {
+   "id": "pb-ges-07",
+   "typ": "multi",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz1",
+   "frage": "Wer darf einen Gesetzentwurf in den Bundestag einbringen?",
+   "optionen": [
+    {
+     "text": "die Bundesregierung",
+     "richtig": true
+    },
+    {
+     "text": "der Bundesrat",
+     "richtig": true
+    },
+    {
+     "text": "eine Fraktion oder 5 % der Abgeordneten",
+     "richtig": true
+    },
+    {
+     "text": "der Bundespräsident",
+     "feedback": "Der Bundespräsident hat kein Initiativrecht."
+    },
+    {
+     "text": "jede Bürgerin und jeder Bürger direkt",
+     "feedback": "Bürger können eine Petition einreichen, aber keinen Gesetzentwurf direkt einbringen."
+    }
+   ],
+   "erklaerung": "Das Initiativrecht steht in Art. 76 GG. Die meisten Entwürfe kommen von der Regierung, weil die Ministerien viel Fachwissen haben."
+  }
+ ]
+}

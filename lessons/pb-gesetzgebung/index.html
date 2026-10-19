@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wie ein Gesetz entsteht</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<style>
+  svg .knoten rect { fill: var(--card); stroke: var(--border); stroke-width: 1.5; }
+  svg .knoten text { font-size: 11px; font-weight: 600; }
+  svg .knoten.besucht rect { fill: var(--soft-accent); stroke: var(--accent); }
+  svg .knoten.jetzt rect { fill: var(--accent); stroke: var(--accent); }
+  svg .knoten.jetzt text { fill: var(--accent-text) !important; }
+  svg .knoten.ok rect { fill: var(--ok-soft); stroke: var(--ok); stroke-width: 2.5; }
+  svg .knoten.nein rect { fill: var(--warn-soft); stroke: var(--warn); stroke-width: 2.5; }
+  svg .knoten.aus { opacity: .3; }
+  svg .kante { fill: none; stroke: var(--muted); stroke-width: 1.4; marker-end: url(#pfeil); }
+  svg .kante.besucht { stroke: var(--accent); stroke-width: 2.6; }
+  svg .kante.aus { opacity: .25; }
+  svg #pfeil path { fill: var(--muted); }
+  .station { border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; margin: 10px 0; }
+  .station h3 { margin: 0 0 4px; font-size: 1rem; }
+  .wahl { display: grid; gap: 6px; margin-top: 8px; }
+  .wahl button { text-align: left; }
+  .ende-ok { background: var(--ok-soft); border-color: var(--ok); }
+  .ende-nein { background: var(--warn-soft); border-color: var(--warn); }
+  ol.protokoll { padding-left: 20px; margin: 6px 0 0; font-size: .86rem; color: var(--muted); }
+</style>
+</head>
+<body>
+<h1>Wie ein Gesetz entsteht</h1>
+<p>Ein erfundener Gesetzentwurf der Bundesregierung liegt im Bundestag. Du entscheidest an jeder Station, was passiert. Wähle zuerst, ob es ein <b>Einspruchsgesetz</b> oder ein <b>Zustimmungsgesetz</b> ist.</p>
+
+<div class="lk-grid">
+  <div class="lk-card">
+    <svg id="ablauf" viewBox="0 0 320 440" role="img" aria-label="Ablaufschema der Gesetzgebung">
+      <defs><marker id="pfeil" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z"/></marker></defs>
+      <g id="kanten"></g><g id="knoten"></g>
+    </svg>
+    <p class="small muted">Schema, vereinfacht nach Art. 76–78 und 82 GG. Nicht dargestellt: Stellungnahme des Bundesrats vor der Beratung im Bundestag und Fristen.</p>
+  </div>
+  <div class="lk-card">
+    <div class="ctrl"><span>Art des Gesetzes</span>
+      <div class="seg" role="group" aria-label="Art des Gesetzes">
+        <button type="button" data-art="einspruch" aria-pressed="true">Einspruchsgesetz</button>
+        <button type="button" data-art="zustimmung" aria-pressed="false">Zustimmungsgesetz</button>
+      </div>
+    </div>
+    <p class="small muted" id="artInfo"></p>
+    <div class="station" id="station" aria-live="polite"></div>
+    <details class="small"><summary>Bisheriger Weg</summary><ol class="protokoll" id="protokoll"></ol></details>
+    <div class="row" style="margin-top:10px"><button type="button" id="neu">Neuer Entwurf</button></div>
+  </div>
+</div>
+
+<section class="lk-card tasks">
+  <h2>Entdecke selbst <span data-task-count></span></h2>
+  <div class="task" data-goal="trotzEinspruch"><p class="task-q">Bring ein <b>Einspruchsgesetz</b> in Kraft, obwohl der Bundesrat Einspruch einlegt.</p></div>
+  <div class="task" data-goal="zustimmungScheitert"><p class="task-q">Lass ein <b>Zustimmungsgesetz</b> am Bundesrat scheitern.</p></div>
+  <div class="task" data-goal="kompromiss"><p class="task-q">Bring ein Gesetz mit einem Kompromiss aus dem <b>Vermittlungsausschuss</b> in Kraft.</p></div>
+  <div class="task"><p class="task-q">Wer hat bei einem <b>Einspruchsgesetz</b> das letzte Wort?</p>
+    <div class="choices">
+      <button type="button" data-ok data-fb="Richtig: Der Bundestag kann den Einspruch des Bundesrats mit der nötigen Mehrheit zurückweisen.">der Bundestag</button>
+      <button type="button" data-fb="Nein – beim Einspruchsgesetz kann der Bundesrat nur bremsen, der Bundestag kann ihn überstimmen.">der Bundesrat</button>
+      <button type="button" data-fb="Nein – der Bundespräsident prüft nur, ob das Gesetz ordnungsgemäß zustande kam und nicht offensichtlich verfassungswidrig ist.">der Bundespräsident</button>
+    </div><p class="fb"></p></div>
+  <div class="task"><p class="task-q">Warum gibt es überhaupt Zustimmungsgesetze?</p>
+    <div class="choices">
+      <button type="button" data-fb="Nein – mit Geschwindigkeit hat das nichts zu tun. Zustimmungsgesetze dauern oft eher länger.">Damit Gesetze schneller beschlossen werden.</button>
+      <button type="button" data-ok data-fb="Genau: Wenn ein Gesetz die Länder besonders betrifft – etwa ihre Verwaltung oder Finanzen – oder das Grundgesetz geändert wird, sollen die Länder nicht überstimmt werden können.">Weil manche Gesetze die Länder so stark betreffen, dass sie zustimmen müssen.</button>
+      <button type="button" data-fb="Nein – der Bundespräsident hat dabei keine besondere Rolle.">Damit der Bundespräsident mitentscheiden kann.</button>
+    </div><p class="fb"></p></div>
+  <div class="all-done">Super! Du kennst jetzt den Weg eines Gesetzes durch die Verfassungsorgane.</div>
+</section>
+
+<script src="../../static/lesson-kit.js"></script>
+<script src="gesetz.js"></script>
+<script>
+(function () {
+  'use strict';
+  var GG = window.GG, $ = function (id) { return document.getElementById(id); }, NS = 'http://www.w3.org/2000/svg';
+  var art = 'einspruch', z = GG.neu(art);
+  var KNOTEN = {
+    bundestag: { x: 10, y: 14, w: 150, t: 'Bundestag' },
+    bundesrat: { x: 10, y: 84, w: 150, t: 'Bundesrat' },
+    va: { x: 168, y: 140, w: 147, t: 'Vermittlungsausschuss' },
+    bundesrat2: { x: 10, y: 196, w: 150, t: 'Bundesrat (erneut)' },
+    zurueckweisen: { x: 168, y: 252, w: 147, t: 'Bundestag: Einspruch?' },
+    praesident: { x: 10, y: 308, w: 150, t: 'Bundespräsident' },
+    inkraft: { x: 10, y: 384, w: 150, t: 'In Kraft' },
+    gescheitert: { x: 168, y: 384, w: 147, t: 'Gescheitert' },
+  };
+  var KANTEN = [['bundestag', 'bundesrat'], ['bundesrat', 'va'], ['va', 'bundesrat2'], ['bundesrat', 'praesident'], ['bundesrat2', 'praesident'], ['bundesrat2', 'zurueckweisen'], ['zurueckweisen', 'praesident'], ['praesident', 'inkraft']];
+  var H = 38;
+  function mitte(k) { var n = KNOTEN[k]; return { x: n.x + n.w / 2, y: n.y + H / 2, l: n.x, r: n.x + n.w, o: n.y, u: n.y + H }; }
+  function pfad(a, b) {
+    var p = mitte(a), q = mitte(b);
+    if (a === 'bundesrat' && b === 'praesident') return 'M' + (p.l + 12) + ',' + p.u + ' L' + (q.l + 12) + ',' + q.o;
+    if (KNOTEN[a].x === KNOTEN[b].x) return 'M' + (p.x + 20) + ',' + p.u + ' L' + (q.x + 20) + ',' + q.o;
+    if (KNOTEN[b].x > KNOTEN[a].x) return 'M' + p.r + ',' + p.y + ' L' + q.x + ',' + p.y + ' L' + q.x + ',' + q.o;
+    return 'M' + p.x + ',' + p.u + ' L' + p.x + ',' + q.y + ' L' + q.r + ',' + q.y;
+  }
+  function zeichne() {
+    var kan = $('kanten'), kno = $('knoten'), endeOk = z.schritt === 'inkraft', endeNein = z.schritt === 'gescheitert';
+    kan.innerHTML = ''; kno.innerHTML = '';
+    KANTEN.forEach(function (k) {
+      var e = document.createElementNS(NS, 'path'), i = z.weg.indexOf(k[0]), besucht = i >= 0 && z.weg[i + 1] === k[1];
+      e.setAttribute('d', pfad(k[0], k[1]));
+      e.setAttribute('class', 'kante' + (besucht ? ' besucht' : '') + (art === 'zustimmung' && k.indexOf('zurueckweisen') >= 0 ? ' aus' : ''));
+      kan.appendChild(e);
+    });
+    Object.keys(KNOTEN).forEach(function (id) {
+      var n = KNOTEN[id], g = document.createElementNS(NS, 'g'), r = document.createElementNS(NS, 'rect'), t = document.createElementNS(NS, 'text');
+      var kl = 'knoten';
+      if (z.weg.indexOf(id) >= 0) kl += ' besucht';
+      if (id === z.schritt) kl += endeOk ? ' ok' : endeNein ? ' nein' : ' jetzt';
+      if (art === 'zustimmung' && id === 'zurueckweisen') kl += ' aus';
+      g.setAttribute('class', kl);
+      r.setAttribute('x', n.x); r.setAttribute('y', n.y); r.setAttribute('width', n.w); r.setAttribute('height', H); r.setAttribute('rx', 8);
+      t.setAttribute('x', n.x + n.w / 2); t.setAttribute('y', n.y + H / 2 + 4); t.setAttribute('text-anchor', 'middle'); t.textContent = n.t;
+      g.appendChild(r); g.appendChild(t); kno.appendChild(g);
+    });
+    $('ablauf').setAttribute('aria-label', 'Ablaufschema der Gesetzgebung. Aktuelle Station: ' + (KNOTEN[z.schritt] ? KNOTEN[z.schritt].t : z.schritt));
+    // Station
+    var s = GG.schritte(art)[z.schritt], st = $('station');
+    st.className = 'station' + (s.ende === 'inkraft' ? ' ende-ok' : s.ende === 'gescheitert' ? ' ende-nein' : '');
+    st.innerHTML = '<h3>' + (s.ende ? (s.ende === 'inkraft' ? 'Das Gesetz tritt in Kraft' : 'Das Gesetz ist gescheitert') : 'Station: ' + s.ort) + '</h3><p class="small">' +
+      (s.ende === 'gescheitert' && z.grund ? z.grund : s.text) + '</p>' +
+      (s.wahl ? '<div class="wahl">' + s.wahl.map(function (w) { return '<button type="button" data-w="' + w.id + '">' + w.text + '</button>'; }).join('') + '</div>' : '');
+    $('protokoll').innerHTML = z.wahlen.map(function (w) {
+      var teile = w.split(':'), sch = GG.schritte(art)[teile[0]], wa = sch.wahl.filter(function (x) { return x.id === teile[1]; })[0];
+      return '<li>' + sch.ort + ': ' + wa.text + '</li>';
+    }).join('') || '<li>noch keine Entscheidung</li>';
+    $('artInfo').textContent = art === 'zustimmung'
+      ? 'Zustimmungsgesetz: Der Bundesrat muss zustimmen, sonst scheitert das Gesetz – zum Beispiel bei Grundgesetzänderungen oder wenn Finanzen und Verwaltung der Länder besonders betroffen sind.'
+      : 'Einspruchsgesetz: Der Bundesrat kann Einspruch einlegen, der Bundestag kann ihn aber überstimmen. Das ist der Normalfall.';
+    // Ziele
+    if (z.schritt === 'inkraft' && art === 'einspruch' && z.wahlen.indexOf('bundesrat2:einspruch') >= 0) LK.reach('trotzEinspruch');
+    if (z.schritt === 'gescheitert' && art === 'zustimmung' && z.wahlen.some(function (w) { return /^bundesrat2?:verweigern$/.test(w); })) LK.reach('zustimmungScheitert');
+    if (z.schritt === 'inkraft' && z.wahlen.indexOf('va:kompromiss') >= 0) LK.reach('kompromiss');
+  }
+  $('station').addEventListener('click', function (ev) {
+    var b = ev.target.closest('[data-w]'); if (!b) return;
+    var n = GG.waehle(z, b.dataset.w); if (n) { z = n; zeichne(); var f = $('station').querySelector('button'); if (f) f.focus(); }
+  });
+  document.querySelectorAll('[data-art]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      art = b.dataset.art; z = GG.neu(art);
+      document.querySelectorAll('[data-art]').forEach(function (x) { x.setAttribute('aria-pressed', x === b); });
+      zeichne();
+    });
+  });
+  $('neu').addEventListener('click', function () { z = GG.neu(art); zeichne(); });
+  zeichne();
+  LK.check();
+})();
+</script>
+</body>
+</html>

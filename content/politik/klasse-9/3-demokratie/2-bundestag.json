@@ -1,0 +1,209 @@
+{
+ "id": "pb-k9-bundestag",
+ "titel": "Bundestag und Bundesregierung",
+ "kurz": "Wie der Bundestag zusammengesetzt ist, wie die Kanzlerin oder der Kanzler gewählt wird und wie das Parlament die Regierung kontrolliert.",
+ "reihenfolge": 2,
+ "lernziele": [
+  {
+   "id": "lz1",
+   "niveau": "G",
+   "text": "Aufgaben des Bundestages nennen"
+  },
+  {
+   "id": "lz2",
+   "niveau": "G",
+   "text": "Mehrheiten im Bundestag berechnen (einfache, absolute und Zweidrittelmehrheit)"
+  },
+  {
+   "id": "lz3",
+   "niveau": "H",
+   "text": "Die Wahl der Bundeskanzlerin oder des Bundeskanzlers und das konstruktive Misstrauensvotum erklären"
+  },
+  {
+   "id": "lz4",
+   "niveau": "H",
+   "text": "Die Rolle von Regierungsmehrheit und Opposition beschreiben"
+  }
+ ],
+ "verstehen": {
+  "einstieg": "Im 3D-Modell siehst du 630 Sitze. Wie viele davon braucht eine Regierung mindestens – und warum reicht manchmal sogar das nicht?",
+  "abschnitte": [
+   {
+    "titel": "Der Bundestag",
+    "text": "Der **Bundestag** ist das Parlament der Bundesrepublik und das einzige Verfassungsorgan, das direkt vom Volk gewählt wird – alle vier Jahre. Seit der Wahlrechtsreform hat er **630 Sitze**. Er tagt im **Reichstagsgebäude** in Berlin.\n\nSeine wichtigsten **Aufgaben**:\n\n- **Gesetze** beschließen,\n- den **Bundeskanzler** oder die Bundeskanzlerin wählen,\n- die **Regierung kontrollieren** (Anfragen, Regierungsbefragung, Untersuchungsausschüsse),\n- den **Haushalt** beschließen – also, wofür der Bund Geld ausgibt,\n- über **Einsätze der Bundeswehr** im Ausland entscheiden (Parlamentsarmee).\n\nAbgeordnete gleicher Partei bilden eine **Fraktion** (mindestens 5 % der Mitglieder, also 32 Abgeordnete)."
+   },
+   {
+    "titel": "Mehrheiten und Kanzlerwahl",
+    "text": "- **Einfache Mehrheit:** mehr Ja- als Nein-Stimmen der Anwesenden – für die meisten Gesetze.\n- **Absolute Mehrheit („Kanzlermehrheit“):** mehr als die Hälfte **aller Mitglieder**: bei 630 Sitzen **316 Stimmen**.\n- **Zweidrittelmehrheit:** für Änderungen des Grundgesetzes: **420 Stimmen**.\n\nDie Bundeskanzlerin oder der Bundeskanzler wird auf Vorschlag des Bundespräsidenten mit der **Kanzlermehrheit** gewählt (Art. 63). Meist bilden dafür mehrere Fraktionen eine **Koalition**. Weil die Wahl **geheim** ist, ist der Ausgang nicht sicher: Am 6. Mai 2025 erhielt Friedrich Merz im ersten Wahlgang 310 Stimmen – sechs zu wenig – und wurde erst im zweiten Wahlgang am selben Tag mit 325 Stimmen gewählt. Das war das erste Mal in der Geschichte der Bundesrepublik."
+   },
+   {
+    "titel": "Regierung, Opposition und Misstrauensvotum",
+    "text": "Die **Bundesregierung** besteht aus Kanzler und Ministern. Der Kanzler bestimmt die **Richtlinien der Politik** (Art. 65).\n\nDie Fraktionen, die nicht an der Regierung beteiligt sind, bilden die **Opposition**. Sie kontrolliert und kritisiert die Regierung und zeigt Alternativen auf.\n\nDer Bundestag kann den Kanzler nur abwählen, indem er mit Kanzlermehrheit **gleichzeitig einen Nachfolger wählt**: das **konstruktive Misstrauensvotum** (Art. 67). So soll es nie eine Zeit ohne handlungsfähige Regierung geben. Erfolgreich war es bisher einmal: 1982 wurde Helmut Kohl auf diesem Weg Nachfolger von Helmut Schmidt."
+   }
+  ],
+  "formeln": [],
+  "merksatz": "Der **Bundestag** (630 Sitze) beschließt Gesetze und den Haushalt, wählt den Kanzler und kontrolliert die Regierung.\n\n**Kanzlermehrheit:** mehr als die Hälfte aller Mitglieder (316). **Zweidrittelmehrheit** für Grundgesetzänderungen (420). Abwählen kann man den Kanzler nur durch das **konstruktive Misstrauensvotum**.",
+  "alltag": "Sitzungen des Bundestages kann man live im Internet verfolgen oder als Besuchergruppe auf der Tribüne erleben. Viele Schulklassen besuchen den Reichstag – die Anmeldung ist kostenlos."
+ },
+ "interaktiv": [
+  "pb-bundestag-3d"
+ ],
+ "vertiefung": [],
+ "uebungen": [
+  {
+   "id": "pb-btg-01",
+   "typ": "multi",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz1",
+   "frage": "Welche Aufgaben hat der **Bundestag**?",
+   "optionen": [
+    {
+     "text": "Gesetze beschließen",
+     "richtig": true
+    },
+    {
+     "text": "den Bundeskanzler wählen",
+     "richtig": true
+    },
+    {
+     "text": "die Bundesregierung kontrollieren",
+     "richtig": true
+    },
+    {
+     "text": "den Bundeshaushalt beschließen",
+     "richtig": true
+    },
+    {
+     "text": "Urteile in Strafprozessen sprechen",
+     "feedback": "Das ist Aufgabe der Gerichte (Judikative)."
+    },
+    {
+     "text": "den Bundespräsidenten allein wählen",
+     "feedback": "Den Bundespräsidenten wählt die Bundesversammlung: alle Bundestagsabgeordneten und ebenso viele Vertreter der Länder."
+    }
+   ],
+   "erklaerung": "Gesetzgebung, Wahl, Kontrolle und Haushalt sind die Kernaufgaben des Parlaments."
+  },
+  {
+   "id": "pb-btg-02",
+   "typ": "zahl",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz2",
+   "frage": "Der Bundestag hat 630 Mitglieder. Wie viele Stimmen braucht man mindestens für die **Kanzlermehrheit** (mehr als die Hälfte aller Mitglieder)?",
+   "loesung": 316,
+   "toleranz": 0,
+   "einheit": "Stimmen",
+   "rechenweg": [
+    "Hälfte von 630 = 315",
+    "mehr als die Hälfte: 315 + 1 = 316"
+   ],
+   "erklaerung": "Es zählen alle Mitglieder, nicht nur die Anwesenden. Fehlende Abgeordnete wirken also wie Nein-Stimmen."
+  },
+  {
+   "id": "pb-btg-03",
+   "typ": "zahl",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz2",
+   "frage": "Für eine Änderung des Grundgesetzes braucht man zwei Drittel der Mitglieder des Bundestages. Wie viele Stimmen sind das bei 630 Mitgliedern?",
+   "loesung": 420,
+   "toleranz": 0,
+   "einheit": "Stimmen",
+   "rechenweg": [
+    "630 · 2/3 = 420"
+   ],
+   "erklaerung": "Zusätzlich müssen zwei Drittel der Stimmen im Bundesrat zustimmen (46 von 69)."
+  },
+  {
+   "id": "pb-btg-04",
+   "typ": "zahl",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz2",
+   "frage": "Nach der Bundestagswahl 2025 hatte die CDU/CSU 208 Sitze und die SPD 120 Sitze. Wie viele Sitze hatte diese Koalition zusammen?",
+   "loesung": 328,
+   "toleranz": 0,
+   "einheit": "Sitze",
+   "rechenweg": [
+    "208 + 120 = 328"
+   ],
+   "erklaerung": "Das sind 12 Sitze mehr als die Kanzlermehrheit von 316. Wie die Kanzlerwahl 2025 zeigte, ist eine Mehrheit auf dem Papier bei geheimer Wahl trotzdem nicht sicher."
+  },
+  {
+   "id": "pb-btg-05",
+   "typ": "single",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz3",
+   "frage": "Wie kann der Bundestag einen Bundeskanzler abwählen?",
+   "optionen": [
+    {
+     "text": "Nur indem er mit Kanzlermehrheit gleichzeitig einen Nachfolger wählt (konstruktives Misstrauensvotum).",
+     "richtig": true
+    },
+    {
+     "text": "Mit einfacher Mehrheit, auch ohne Nachfolger.",
+     "feedback": "Das wäre ein „destruktives“ Misstrauensvotum. Das Grundgesetz schließt es bewusst aus."
+    },
+    {
+     "text": "Durch eine Volksabstimmung.",
+     "feedback": "Auf Bundesebene gibt es dafür keine Volksabstimmung."
+    },
+    {
+     "text": "Gar nicht, der Kanzler bleibt immer vier Jahre im Amt.",
+     "feedback": "Der Bundestag kann ihn mit dem konstruktiven Misstrauensvotum ersetzen."
+    }
+   ],
+   "erklaerung": "Damit lernte das Grundgesetz aus der Weimarer Republik, in der Regierungen oft gestürzt wurden, ohne dass eine neue Mehrheit bereitstand."
+  },
+  {
+   "id": "pb-btg-06",
+   "typ": "zuordnung",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz4",
+   "frage": "Ordne die Tätigkeit zu: Regierung oder Opposition?",
+   "paare": [
+    {
+     "links": "legt Gesetzentwürfe zur Umsetzung des Koalitionsvertrags vor",
+     "rechts": "Regierungsmehrheit"
+    },
+    {
+     "links": "stellt kritische Anfragen und zeigt Alternativen auf",
+     "rechts": "Opposition"
+    },
+    {
+     "links": "kann mit einem Viertel der Abgeordneten einen Untersuchungsausschuss erzwingen",
+     "rechts": "Opposition (Minderheitenrecht)"
+    },
+    {
+     "links": "bestimmt die Richtlinien der Politik",
+     "rechts": "Bundeskanzler"
+    }
+   ],
+   "erklaerung": "Die Opposition hat besondere Minderheitenrechte, damit sie die Regierung wirksam kontrollieren kann."
+  },
+  {
+   "id": "pb-btg-07",
+   "typ": "single",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz3",
+   "frage": "Bei der Kanzlerwahl am 6. Mai 2025 hatte die Koalition 328 Sitze, Friedrich Merz bekam im ersten Wahlgang aber nur 310 Stimmen. Was zeigt das?",
+   "optionen": [
+    {
+     "text": "Weil die Wahl geheim ist, sind Abgeordnete frei in ihrer Entscheidung – eine Koalitionsmehrheit garantiert die Wahl nicht.",
+     "richtig": true
+    },
+    {
+     "text": "Die Stimmen wurden falsch gezählt.",
+     "feedback": "Dafür gibt es keine Hinweise. Die geheime Wahl erlaubt abweichende Stimmen."
+    },
+    {
+     "text": "Merz war damit gewählt, weil er die meisten Stimmen hatte.",
+     "feedback": "Im ersten Wahlgang braucht man die Kanzlermehrheit von 316 Stimmen."
+    },
+    {
+     "text": "Die Opposition hat für Merz gestimmt.",
+     "feedback": "Wie einzelne Abgeordnete abgestimmt haben, ist wegen der geheimen Wahl nicht bekannt."
+    }
+   ],
+   "erklaerung": "Abgeordnete sind nach Art. 38 GG an Aufträge und Weisungen nicht gebunden und nur ihrem Gewissen unterworfen. Im zweiten Wahlgang erhielt Merz 325 Stimmen."
+  }
+ ]
+}

@@ -1,0 +1,258 @@
+{
+ "id": "pb-k9-partizipation",
+ "titel": "Partizipation: mitbestimmen in der Demokratie",
+ "kurz": "Wählen ist nicht alles: Parteien, Petitionen, Demonstrationen, Bürgerinitiativen und Volksentscheide.",
+ "reihenfolge": 5,
+ "lernziele": [
+  {
+   "id": "lz1",
+   "niveau": "G",
+   "text": "Formen politischer Beteiligung nennen und unterscheiden"
+  },
+  {
+   "id": "lz2",
+   "niveau": "G",
+   "text": "Die Aufgaben von Parteien beschreiben"
+  },
+  {
+   "id": "lz3",
+   "niveau": "H",
+   "text": "Direkte und repräsentative Demokratie vergleichen"
+  },
+  {
+   "id": "lz4",
+   "niveau": "H",
+   "text": "Beteiligungsmöglichkeiten für Jugendliche beurteilen"
+  }
+ ],
+ "verstehen": {
+  "einstieg": "An deiner Schule soll der Schulhof umgebaut werden. Wie kannst du erreichen, dass die Wünsche der Schülerinnen und Schüler berücksichtigt werden?",
+  "abschnitte": [
+   {
+    "titel": "Formen der Beteiligung",
+    "text": "Man unterscheidet:\n\n- **Wahlen** zu Parlamenten auf EU-, Bundes-, Landes- und Bezirksebene,\n- Mitarbeit in **Parteien** oder ihren Jugendorganisationen,\n- **Bürgerinitiativen** zu einem konkreten Anliegen,\n- **Petitionen**: Jeder hat das Recht, sich mit Bitten oder Beschwerden an das Parlament zu wenden (Art. 17 GG); beim Bundestag auch online,\n- **Demonstrationen** (Versammlungsfreiheit, Art. 8),\n- Engagement in **Vereinen, Verbänden, NGOs** oder der **Schülervertretung**,\n- **Volksbegehren und Volksentscheide** – in Deutschland auf Landes- und Kommunalebene.\n\nDazu kommen Formen wie das Teilen von Beiträgen oder Online-Kampagnen. Rechtswidrige Aktionen wie Sachbeschädigung sind keine legitime Beteiligung."
+   },
+   {
+    "titel": "Parteien",
+    "text": "Parteien wirken bei der **politischen Willensbildung** des Volkes mit (Art. 21 GG). Sie:\n\n- bündeln Interessen und entwickeln **Programme**,\n- stellen **Kandidatinnen und Kandidaten** für Wahlen auf,\n- bilden Regierung oder Opposition,\n- vermitteln zwischen Bürgern und Staat.\n\nIhre innere Ordnung muss demokratischen Grundsätzen entsprechen, und sie müssen über die Herkunft ihrer Mittel öffentlich Rechenschaft geben."
+   },
+   {
+    "titel": "Direkte oder repräsentative Demokratie?",
+    "text": "In der **repräsentativen Demokratie** wählt das Volk Vertreter, die die Entscheidungen treffen. Auf **Bundesebene** gibt es in Deutschland – anders als z. B. in der Schweiz – **keine Volksentscheide** über Gesetze.\n\nIn den **Ländern** gibt es sie: In **Berlin** können Bürgerinnen und Bürger über **Volksbegehren** und **Volksentscheide** selbst über Gesetze abstimmen, z. B. 2014 über die Bebauung des Tempelhofer Feldes.\n\nBefürworter direkter Demokratie betonen mehr Mitsprache und Legitimität. Kritiker verweisen darauf, dass komplexe Fragen schwer mit Ja oder Nein zu beantworten sind und gut organisierte Gruppen mehr Einfluss haben könnten."
+   }
+  ],
+  "formeln": [],
+  "merksatz": "**Partizipation** heißt Beteiligung: wählen, in Parteien mitarbeiten, Petitionen, Demonstrationen, Bürgerinitiativen, Vereine und – in den Ländern – **Volksentscheide**.\n\n**Parteien** wirken an der politischen Willensbildung mit (Art. 21 GG). Deutschland ist auf Bundesebene eine **repräsentative Demokratie**.",
+  "alltag": "Über die Schülervertretung (SV) und die Schulkonferenz könnt ihr in Berlin bei vielen Fragen eurer Schule mitbestimmen – zum Beispiel beim Umbau des Schulhofs."
+ },
+ "interaktiv": [],
+ "vertiefung": [],
+ "uebungen": [
+  {
+   "id": "pb-ptz-01",
+   "typ": "zuordnung",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz1",
+   "frage": "Ordne die Beispiele der Form der Beteiligung zu.",
+   "paare": [
+    {
+     "links": "Anwohner gründen eine Gruppe, um eine Ampel vor der Grundschule durchzusetzen.",
+     "rechts": "Bürgerinitiative"
+    },
+    {
+     "links": "Tausende unterschreiben online ein Anliegen an den Bundestag.",
+     "rechts": "Petition"
+    },
+    {
+     "links": "Schülerinnen und Schüler ziehen mit Plakaten friedlich durch die Stadt.",
+     "rechts": "Demonstration"
+    },
+    {
+     "links": "Die Berliner stimmen über ein Gesetz zum Tempelhofer Feld ab.",
+     "rechts": "Volksentscheid"
+    }
+   ],
+   "erklaerung": "Es gibt viele Wege, sich politisch zu beteiligen – nicht nur bei Wahlen."
+  },
+  {
+   "id": "pb-ptz-02",
+   "typ": "multi",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz2",
+   "frage": "Welche Aufgaben haben **Parteien** nach Art. 21 GG und in der Praxis?",
+   "optionen": [
+    {
+     "text": "an der politischen Willensbildung mitwirken",
+     "richtig": true
+    },
+    {
+     "text": "Kandidaten für Wahlen aufstellen",
+     "richtig": true
+    },
+    {
+     "text": "Programme mit politischen Zielen entwickeln",
+     "richtig": true
+    },
+    {
+     "text": "Urteile in Gerichtsverfahren sprechen",
+     "feedback": "Das ist Aufgabe unabhängiger Gerichte."
+    },
+    {
+     "text": "Gesetze ohne Parlament erlassen",
+     "feedback": "Gesetze beschließt das Parlament, nicht die Parteien selbst."
+    }
+   ],
+   "erklaerung": "Parteien sind das Bindeglied zwischen Gesellschaft und Staat."
+  },
+  {
+   "id": "pb-ptz-03",
+   "typ": "single",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz3",
+   "frage": "Welche Aussage über Volksentscheide in Deutschland ist richtig?",
+   "optionen": [
+    {
+     "text": "Auf Bundesebene gibt es keine Volksentscheide über Gesetze, in den Ländern wie Berlin aber schon.",
+     "richtig": true
+    },
+    {
+     "text": "Jedes Bundesgesetz muss durch einen Volksentscheid bestätigt werden.",
+     "feedback": "Bundesgesetze beschließen Bundestag und Bundesrat."
+    },
+    {
+     "text": "Volksentscheide sind in Deutschland verboten.",
+     "feedback": "Auf Landes- und Kommunalebene sind sie fester Bestandteil der Demokratie."
+    },
+    {
+     "text": "Volksentscheide gibt es nur in der Schweiz.",
+     "feedback": "Auch deutsche Länder kennen Volksbegehren und Volksentscheide."
+    }
+   ],
+   "erklaerung": "Ob es auch auf Bundesebene Volksentscheide geben sollte, wird seit Langem diskutiert."
+  },
+  {
+   "id": "pb-ptz-04",
+   "typ": "multi",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz3",
+   "frage": "Welche Merkmale gehören zur **repräsentativen** Demokratie?",
+   "optionen": [
+    {
+     "text": "Die Bürger wählen Abgeordnete, die für sie entscheiden.",
+     "richtig": true
+    },
+    {
+     "text": "Fachleute in Ausschüssen beraten Gesetze ausführlich, bevor das Parlament abstimmt.",
+     "richtig": true
+    },
+    {
+     "text": "Die Bürger stimmen selbst über jede Sachfrage ab.",
+     "feedback": "Das ist direkte Demokratie."
+    },
+    {
+     "text": "Ein Volksentscheid ersetzt das Parlament.",
+     "feedback": "Volksentscheide gehören zur direkten Demokratie."
+    }
+   ],
+   "erklaerung": "Viele Demokratien kombinieren beide Formen. In Deutschland überwiegt die repräsentative Demokratie."
+  },
+  {
+   "id": "pb-ptz-05",
+   "typ": "single",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz4",
+   "frage": "Ab welchem Alter dürfen Jugendliche in Berlin bei den Wahlen zu den Bezirksverordnetenversammlungen (BVV) wählen?",
+   "optionen": [
+    {
+     "text": "ab 16 Jahren",
+     "richtig": true
+    },
+    {
+     "text": "ab 14 Jahren",
+     "feedback": "Mit 14 darf man noch nicht wählen."
+    },
+    {
+     "text": "ab 18 Jahren",
+     "feedback": "Für die BVV-Wahlen in Berlin liegt das Wahlalter bei 16."
+    },
+    {
+     "text": "ab 21 Jahren",
+     "feedback": "Das Wahlalter liegt in Deutschland nie bei 21."
+    }
+   ],
+   "erklaerung": "Auch bei der Europawahl dürfen in Deutschland seit 2024 schon 16-Jährige wählen. Für die Bundestagswahl gilt 18."
+  },
+  {
+   "id": "pb-ptz-06",
+   "typ": "multi",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz4",
+   "frage": "Welche Möglichkeiten haben Jugendliche unter 16, sich politisch zu beteiligen?",
+   "optionen": [
+    {
+     "text": "in der Schülervertretung mitarbeiten",
+     "richtig": true
+    },
+    {
+     "text": "eine Petition einreichen oder unterschreiben",
+     "richtig": true
+    },
+    {
+     "text": "an einer genehmigten Demonstration teilnehmen",
+     "richtig": true
+    },
+    {
+     "text": "in einem Jugendparlament oder Jugendforum mitmachen",
+     "richtig": true
+    },
+    {
+     "text": "bei der Bundestagswahl abstimmen",
+     "feedback": "Dafür muss man 18 Jahre alt und deutsche Staatsangehörige sein."
+    }
+   ],
+   "erklaerung": "Das Petitionsrecht (Art. 17) und die Versammlungsfreiheit gelten unabhängig vom Alter."
+  },
+  {
+   "id": "pb-ptz-07",
+   "typ": "text",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz4",
+   "frage": "Sollte das Wahlalter für die Bundestagswahl auf 16 Jahre gesenkt werden? Nenne ein Argument dafür, eines dagegen und formuliere ein begründetes Urteil.",
+   "stichworte": [
+    {
+     "aspekt": "Argument dafür: Betroffenheit, Zukunft, Interesse, Beteiligung junger Menschen, Europawahl ab 16",
+     "woerter": [
+      "zukunft",
+      "betroff",
+      "beteilig",
+      "interess",
+      "europawahl",
+      "jung"
+     ]
+    },
+    {
+     "aspekt": "Argument dagegen: Reife, Volljährigkeit, Einheitlichkeit mit 18, Beeinflussbarkeit",
+     "woerter": [
+      "reif",
+      "volljähr",
+      "volljaehr",
+      "18",
+      "beeinfluss",
+      "erfahr"
+     ]
+    },
+    {
+     "aspekt": "Begründetes Urteil",
+     "woerter": [
+      "weil",
+      "deshalb",
+      "daher",
+      "denn"
+     ]
+    }
+   ],
+   "musterloesung": "Dafür spricht, dass Entscheidungen über Klima oder Rente vor allem die **Zukunft** junger Menschen **betreffen** und 16-Jährige schon bei der Europawahl wählen dürfen. Dagegen spricht, dass Rechte und Pflichten in Deutschland meist mit der **Volljährigkeit** mit **18** beginnen. Ich bin dafür / dagegen, **weil** ...",
+   "erklaerung": "Das Wahlalter ist zwischen den Parteien umstritten. Bewertet wird die Begründung, nicht die Position."
+  }
+ ]
+}
