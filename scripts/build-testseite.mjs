@@ -16,6 +16,7 @@ import path from 'node:path';
 import { ROOT, config } from '../src/config.js';
 import { loadAll } from '../src/faecher.js';
 import { ladeImpressum } from '../src/rechtliches.js';
+import { FEHLERPROTOKOLL } from '../public/feedback-kern.js';
 
 const out = process.argv[2] || path.join(ROOT, 'testseite.html');
 const read = f => fs.readFileSync(path.join(ROOT, f), 'utf8');
@@ -53,19 +54,23 @@ for (const slug of slugs) {
 
 // ---------------------------------------------------------------- Echten Code für den Browser zusammensetzen
 const asScript = f => read(f).split('\n').filter(l => !/^import\s/.test(l)).join('\n').replace(/^export\s+(?=(const|function|let|class|async)\b)/gm, '');
-const appCode = ['src/markup.js', 'src/exercises.js', 'src/progress.js', 'src/views-fach.js', 'src/rechtliches.js'].map(f => `// ---- ${f}\n${asScript(f)}`).join('\n\n');
+// Feedback: gleicher Kern und gleiche Seite wie auf dem Server; ohne Server wird die E-Mail im eigenen Programm vorbereitet
+const appCode = ['src/markup.js', 'src/exercises.js', 'src/progress.js', 'src/views-fach.js', 'src/rechtliches.js', 'public/feedback-kern.js', 'src/feedback.js', 'public/feedback.js'].map(f => `// ---- ${f}\n${asScript(f)}`).join('\n\n');
 // Schulsystem der Testseite (nur hier, nicht auf der echten Lernseite)
 const schule = ['testseite/vendor/argon2.umd.min.js', 'testseite/schule-daten.js', 'testseite/backend.js', 'testseite/ansichten.js', 'testseite/app.js']
   .map(f => `// ---- ${f}\n${read(f).replace(/<\/script/gi, '<\\/script')}`).join('\n\n');
 const uebung = read('public/uebung.js').replace(/^\(function \(\) \{/m, 'function initUebung() {').replace(/^\}\)\(\);\s*$/m, '}');
 
 const json = v => JSON.stringify(v).replace(/</g, '\\u003c');
+let feedbackAn = '';
+try { feedbackAn = JSON.parse(read('content/feedback.json')).empfaenger || ''; } catch { /* ohne Datei kein Empfänger */ }
 
 const shell = /* js */ `
 // ---------------------------------------------------------------- Testseite: Daten, Speicher, nachgebauter Server
 const FAECHER = ${json(faecher)};
 const LESSONS = ${json(lessons)};
 const IMPRESSUM = ${json(ladeImpressum())};
+const FEEDBACK_AN = ${json(feedbackAn)};
 const topicById = new Map(), exerciseById = new Map();
 for (const f of FAECHER) for (const g of f.stufen) for (const tf of g.themenfelder) for (const t of tf.topics) { topicById.set(t.id, t); for (const e of t.uebungen) exerciseById.set(e.id, e); }
 
@@ -175,7 +180,11 @@ function layout({ title, body, ohneNav, admin }) {
     <div class="nav-right">\${fachLinks}\${SchulApp.angemeldet() ? '' : '<span class="who">Gast' + (state.klasse ? ' · ' + esc(state.klasse) : '') + '</span>'}\${SchulApp.navRechts()}</div>
   </nav>\`}
   <main id="inhalt"\${admin ? ' class="admin-seite"' : ''}>\${SchulApp.meldungHtml()}\${body}</main>
-  <footer class="fuss"><a href="/impressum">Impressum</a><span aria-hidden="true">·</span><a href="/datenschutz">Datenschutz</a></footer>\`;
+  <footer class="fuss"><a href="\${fbLink()}">Feedback &amp; Fehler melden</a><span aria-hidden="true">·</span><a href="/impressum">Impressum</a><span aria-hidden="true">·</span><a href="/datenschutz">Datenschutz</a></footer>\`;
+}
+function fbLink() {
+  const hier = (location.hash.slice(1) || '/').split('?')[0];
+  return hier.startsWith('/feedback') ? '/feedback' : '/feedback?von=' + encodeURIComponent(hier);
 }
 
 // ---------------------------------------------------------------- Seiten
@@ -184,7 +193,11 @@ function page(p) {
   const s = sets(), parts = p.split('/').filter(Boolean);
   const lessonDone = new Set(LS().lessons);
   if (p === '/impressum') return layout({ title: 'Impressum', body: impressumBody(IMPRESSUM) });
-  if (p === '/datenschutz') return layout({ title: 'Datenschutzerklärung', body: datenschutzBody(IMPRESSUM) });
+  if (p === '/datenschutz') return layout({ title: 'Datenschutzerklärung', body: datenschutzBody(IMPRESSUM, { feedbackAn: FEEDBACK_AN }) });
+  if (p === '/feedback') {
+    const von = new URLSearchParams(location.hash.split('?')[1] || '').get('von') || '';
+    return layout({ title: 'Feedback', body: feedbackBody({ modus: 'mailto', empfaenger: FEEDBACK_AN, von, seitenName: 'Lernseite (Testseite)' }) });
+  }
   if (!parts.length) {
     const html = subjectPickerPage({ user: user(), faecher: FAECHER.filter(f => f.stufen.length || SchulApp.funktionAn('sandbox')), own: gradeOf(eigeneKlasse()), sets: s });
     const ich = SchulApp.ich();
@@ -260,6 +273,7 @@ async function render() {
   const r = document.getElementById('tReset');
   if (r) r.onclick = () => { if (confirm('Gesamten Test-Fortschritt löschen?')) { state = { attempts: [], understood: [], lessons: [], klasse: state.klasse }; save(); render(); } };
   initUebung();
+  initFeedback();
   SchulApp.nachRender();
   const m = app.querySelector('.meldung');
   if (m) m.focus({ preventScroll: true });
@@ -287,6 +301,7 @@ const html = `<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lernseite – Testseite</title>
+<script>${FEHLERPROTOKOLL}</script>
 <style>
 ${read('public/style.css')}
 .test-banner { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: center; justify-content: center; padding: 6px 16px; font-size: .85rem; background: var(--warn-soft); color: var(--warn); }

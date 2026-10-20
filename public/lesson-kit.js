@@ -7,6 +7,21 @@
 //              <button data-ok data-fb="Begründung">richtig</button><button data-fb="Warum falsch">…</button>
 //            </div><p class="fb"></p></div>
 //   Sind alle Aufgaben erledigt, meldet die Seite „erledigt“ an die Lernseite.
+// Fehlerprotokoll für die Feedback-Seite – gleicher Ablauf wie FEHLERPROTOKOLL in public/feedback-kern.js:
+// die letzten 8 JavaScript-Fehler (Uhrzeit, Seite, Meldung, Datei, Zeile) im sessionStorage dieses Tabs.
+(function () {
+  var k = 'lernseite-fehler';
+  function merke(t, d, l) {
+    try {
+      var a = JSON.parse(sessionStorage.getItem(k) || '[]');
+      a.push({ z: new Date().toTimeString().slice(0, 8), s: (location.pathname + location.hash).slice(0, 120), m: String(t || '').slice(0, 200), d: String(d || '').split('/').pop().split('?')[0].slice(0, 60), l: l || 0 });
+      sessionStorage.setItem(k, JSON.stringify(a.slice(-8)));
+    } catch (e) { /* kein Speicher */ }
+  }
+  window.addEventListener('error', function (e) { merke(e.message, e.filename, e.lineno); });
+  window.addEventListener('unhandledrejection', function (e) { var r = e.reason; merke('Promise: ' + (r && r.message ? r.message : r), '', 0); });
+})();
+
 (function () {
   'use strict';
   var inFrame = window.parent && window.parent !== window;

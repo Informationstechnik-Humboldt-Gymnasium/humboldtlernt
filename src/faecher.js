@@ -24,7 +24,7 @@ import { validateExercise, DIFFICULTIES } from './exercises.js';
 const ID = /^[a-z0-9][a-z0-9-]*$/;
 const readJson = f => JSON.parse(fs.readFileSync(f, 'utf8'));
 
-const RESERVED = new Set(['admin', 'api', 'auth', 'datenschutz', 'impressum', 'inhalt', 'lektion', 'static']);
+const RESERVED = new Set(['admin', 'api', 'auth', 'datenschutz', 'feedback', 'impressum', 'inhalt', 'lektion', 'static']);
 
 /**
  * Lädt ein Fach. `shared` (optional) sind die IDs-Tabellen aller Fächer, damit IDs fachübergreifend eindeutig bleiben.

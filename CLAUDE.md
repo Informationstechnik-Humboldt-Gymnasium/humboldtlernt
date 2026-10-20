@@ -117,7 +117,8 @@ Thema:
 
 - **Schulsystem der Testseite** (`testseite/`): simulierter IServ-Login, Rollen, Lehrer- und Adminbereich – nur in `testseite.html`, nicht in `server.js`. Daten nur über `testseite/backend.js` (`api(token, aktion, daten)`, Rechte in `RECHTE`), Oberfläche in `ansichten.js`/`app.js`, Tests in `test/testseite-schule.test.mjs`. Das gemeinsame Testpasswort nie im Klartext ablegen (nur Argon2id-Hashes in `schule-daten.js`). Grenzen: `testseite/SICHERHEIT.md`.
 
-- `/<fach>`-Routen stehen in `server.js` am Ende, feste Adressen (`/admin`, `/lektion`, `/inhalt`, `/api`, `/auth`, `/static`, `/impressum`, `/datenschutz`) haben Vorrang. Diese Namen sind als Fachordner verboten.
+- `/<fach>`-Routen stehen in `server.js` am Ende, feste Adressen (`/admin`, `/lektion`, `/inhalt`, `/api`, `/auth`, `/static`, `/impressum`, `/datenschutz`, `/feedback`) haben Vorrang. Diese Namen sind als Fachordner verboten.
 - **Impressum/Datenschutz:** Angaben in `content/impressum.json`, Texte in `src/rechtliches.js`. Wer ändert, was gespeichert wird (`src/db.js`, IServ-Anmeldung, Cookies, LocalStorage), passt die Datenschutzerklärung mit an.
+- **Feedback** (`/feedback`, Fußzeile): Kern ohne DOM in `public/feedback-kern.js` (Prüfung, Mailtext, Diagnosefelder – vom Server, Browser und der Testseite gemeinsam genutzt), Seite in `src/feedback.js`, Bedienung in `public/feedback.js`, SMTP-Versand in `src/mailer.js` (Zugang nur über `SMTP_*` in der `.env`, nie im Repo). Empfänger in `content/feedback.json`. Neue Diagnosefelder nur mit Eintrag in `DIAG_FELDER` **und** in der Datenschutzerklärung (Abschnitt 7). Tests in `test/feedback.test.mjs` und `test/server.test.mjs`.
 - Zahleneingaben: „13.734“ wird als Tausender- oder Dezimalpunkt gelesen, je nachdem was zur Lösung passt.
 - Der Workflow `.github/workflows/zip-und-testseite.yml` entpackt hochgeladene ZIPs auf `main` und veröffentlicht die Testseite. Nicht ändern ohne Absprache.

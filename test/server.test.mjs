@@ -6,11 +6,52 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import net from 'node:net';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PORT = 3900 + Math.floor(Math.random() * 90);
 const BASE = `http://localhost:${PORT}`;
-let server, dataDir;
+let server, dataDir, smtp;
+const SMTP_PORT = 2600 + Math.floor(Math.random() * 300);
+const mails = [];
+
+/** Minimaler Test-Mailserver (ohne TLS, ohne Anmeldung): nimmt Nachrichten an und merkt sie sich. */
+function testMailserver(port) {
+  const s = net.createServer(sock => {
+    let puffer = '', daten = false, mail = { an: [], roh: '' };
+    sock.write('220 test ESMTP\r\n');
+    sock.on('data', d => {
+      puffer += d.toString('latin1');
+      let i;
+      while ((i = daten ? puffer.indexOf('\r\n.\r\n') : puffer.indexOf('\r\n')) >= 0) {
+        if (daten) {
+          mail.roh = puffer.slice(0, i); puffer = puffer.slice(i + 5); daten = false;
+          mails.push(mail); mail = { an: [], roh: '' };
+          sock.write('250 OK\r\n'); continue;
+        }
+        const zeile = puffer.slice(0, i); puffer = puffer.slice(i + 2);
+        const cmd = zeile.slice(0, 4).toUpperCase();
+        if (cmd === 'EHLO' || cmd === 'HELO') sock.write('250-test\r\n250 8BITMIME\r\n');
+        else if (cmd === 'MAIL') { mail.von = zeile; sock.write('250 OK\r\n'); }
+        else if (cmd === 'RCPT') { mail.an.push(zeile); sock.write('250 OK\r\n'); }
+        else if (cmd === 'DATA') { daten = true; sock.write('354 weiter\r\n'); }
+        else if (cmd === 'QUIT') { sock.end('221 tschuess\r\n'); }
+        else sock.write('250 OK\r\n');
+      }
+    });
+  });
+  return new Promise(r => s.listen(port, '127.0.0.1', () => r(s)));
+}
+/** Kopfzeilen und Text einer Mail lesbar machen (Encoded Words, quoted-printable, base64). */
+function lesbar(roh) {
+  const [kopf, ...rest] = roh.split('\r\n\r\n');
+  const dekodiere = (zs, art, t) => Buffer.from(art.toUpperCase() === 'B' ? Buffer.from(t, 'base64') : Buffer.from(t.replace(/_/g, ' ').replace(/=([0-9A-F]{2})/gi, (_, h) => String.fromCharCode(parseInt(h, 16))), 'latin1')).toString(zs.toLowerCase() === 'utf-8' ? 'utf8' : 'latin1');
+  const k = kopf.replace(/\r\n[ \t]+/g, ' ').replace(/\?=\s+=\?/g, '?==?').replace(/=\?([^?]+)\?([BQ])\?([^?]*)\?=/gi, (_, zs, art, t) => dekodiere(zs, art, t));
+  let text = rest.join('\r\n\r\n');
+  if (/content-transfer-encoding: quoted-printable/i.test(k)) text = Buffer.from(text.replace(/=\r\n/g, '').replace(/=([0-9A-F]{2})/gi, (_, h) => String.fromCharCode(parseInt(h, 16))), 'latin1').toString('utf8');
+  else if (/content-transfer-encoding: base64/i.test(k)) text = Buffer.from(text, 'base64').toString('utf8');
+  return { kopf: k, text: text.replace(/\r\n/g, '\n') };
+}
 
 class Client {
   constructor() { this.cookies = new Map(); }
@@ -32,9 +73,12 @@ class Client {
 
 before(async () => {
   dataDir = fs.mkdtempSync(path.join(os.tmpdir(), 'lernseite-test-'));
+  smtp = await testMailserver(SMTP_PORT);
   server = spawn(process.execPath, ['server.js'], {
     cwd: ROOT,
-    env: { ...process.env, PORT: String(PORT), BASE_URL: BASE, DATA_DIR: dataDir, DEV_LOGIN: 'true', ROSTER_REQUIRED: 'true', SESSION_SECRET: 'test-secret-123', ISERV_URL: '', ISERV_CLIENT_ID: '', ISERV_CLIENT_SECRET: '' },
+    env: { ...process.env, PORT: String(PORT), BASE_URL: BASE, DATA_DIR: dataDir, DEV_LOGIN: 'true', ROSTER_REQUIRED: 'true', SESSION_SECRET: 'test-secret-123', ISERV_URL: '', ISERV_CLIENT_ID: '', ISERV_CLIENT_SECRET: '',
+      SMTP_HOST: '127.0.0.1', SMTP_PORT: String(SMTP_PORT), SMTP_SECURE: 'false', SMTP_REQUIRE_TLS: 'false', SMTP_USER: '', SMTP_PASS: '',
+      SMTP_FROM: 'lernseite@schule.de', FEEDBACK_AN: 'empfang@schule.de' },
     stdio: ['ignore', 'pipe', 'pipe'],
   });
   let log = '';
@@ -46,7 +90,7 @@ before(async () => {
   });
 });
 
-after(() => { server?.kill(); fs.rmSync(dataDir, { recursive: true, force: true }); });
+after(() => { server?.kill(); smtp?.close(); fs.rmSync(dataDir, { recursive: true, force: true }); });
 
 test('Ohne Anmeldung: Login-Seite, geschützte Seiten leiten um', async () => {
   const c = new Client();
@@ -279,4 +323,72 @@ test('Anfragen von fremden Seiten werden abgelehnt', async () => {
     method: 'POST', body: '{}', headers: { 'content-type': 'application/json', origin: 'https://evil.example', cookie: [...c.cookies].map(([k, v]) => `${k}=${v}`).join('; ') },
   });
   assert.equal(r.status, 403);
+});
+
+test('Feedback: Seite für alle, Versand per E-Mail nur angemeldet, anonym oder mit Namen, Diagnose nur auf Wunsch', async () => {
+  const gast = new Client();
+  const login = await (await gast.req('/')).text();
+  assert.match(login, /href="\/feedback" id="fb-link"/, 'Fußzeile verlinkt das Feedback');
+  assert.match(login, /lernseite-fehler/, 'Fehlerprotokoll auf jeder Seite');
+  const seiteGast = await (await gast.req('/feedback?von=/physik/9')).text();
+  assert.match(seiteGast, /data-modus="mailto"/, 'ohne Anmeldung: eigenes E-Mail-Programm');
+  assert.match(seiteGast, /value="\/physik\/9"/);
+  assert.match(seiteGast, /empfang@schule\.de/);
+  assert.doesNotMatch(seiteGast, /name="kontakt"/);
+  assert.equal((await gast.json('/api/feedback', { kategorie: 'fehler', betreff: 'x', beschreibung: 'y'.repeat(20) })).status, 401);
+
+  const roster = 'E-Mail;Name;Klasse\nfeed@schule.de;Fe Edback;8b';
+  const admin = await new Client().login('chef2', 'admin');
+  await admin.req('/admin/schuelerliste', { method: 'POST', body: new URLSearchParams({ csv: roster }), headers: { 'content-type': 'application/x-www-form-urlencoded' } });
+  const s = await new Client().login('feed', 'student', 'feed@schule.de');
+  const seite = await (await s.req('/feedback')).text();
+  assert.match(seite, /data-modus="server"/);
+  assert.match(seite, /name="kontakt"/);
+  assert.match(seite, /type="module" src="\/static\/feedback\.js"/);
+  assert.equal((await s.req('/static/feedback-kern.js')).status, 200);
+
+  // Ungültig → 400, nichts verschickt
+  const vorher = mails.length;
+  const bad = await s.json('/api/feedback', { kategorie: 'fehler', betreff: '', beschreibung: 'kurz' });
+  assert.equal(bad.status, 400);
+  assert.match((await bad.json()).error, /Betreff/);
+  assert.equal(mails.length, vorher);
+
+  // Anonym, ohne Diagnose
+  let r = await s.json('/api/feedback', { kategorie: 'fehler', betreff: 'Übung kaputt\r\nBcc: x@evil.de', beschreibung: 'Bei Übung 3 passiert nichts, wenn ich prüfe.', seite: '/physik/8', kontakt: false });
+  assert.equal(r.status, 200, await r.clone().text());
+  assert.deepEqual(await r.json(), { ok: true });
+  let m = lesbar(mails.at(-1).roh);
+  assert.match(mails.at(-1).an.join(), /empfang@schule\.de/);
+  assert.equal(mails.at(-1).an.length, 1, 'keine weiteren Empfänger');
+  assert.match(m.kopf, /Subject: \[Lernseite · Feedback\] Fehler melden: Übung kaputt Bcc: x@evil\.de/);
+  assert.doesNotMatch(m.kopf, /^Bcc:/mi);
+  assert.doesNotMatch(m.kopf, /Reply-To/i);
+  assert.match(m.text, /Absender: nicht angegeben \(anonym\)/);
+  assert.match(m.text, /Diagnosedaten: nicht mitgeschickt/);
+  assert.doesNotMatch(m.text, /Fe Edback|feed@schule/, 'ohne Häkchen kein Name');
+
+  // Mit Namen und Diagnose
+  r = await s.json('/api/feedback', { kategorie: 'idee', betreff: 'Mehr Chemie', beschreibung: 'Ein Labor für Säuren und Basen wäre toll.', kontakt: true,
+    diagnose: { browser: 'Testbrowser', fehler: '10:00:00 /x – kaputt (a.js:1)', passwort: 'geheim' } });
+  assert.equal(r.status, 200);
+  m = lesbar(mails.at(-1).roh);
+  assert.match(m.kopf, /Reply-To: feed@schule\.de/i);
+  assert.match(m.text, /Absender \(freigegeben\): Fe Edback <feed@schule\.de>, Schüler\/in, Klasse 8b/);
+  assert.match(m.text, /Browser: Testbrowser/);
+  assert.doesNotMatch(m.text, /geheim/, 'unbekannte Diagnosefelder fallen weg');
+
+  // Höchstens 5 pro Stunde und Person
+  for (let i = 0; i < 3; i++) assert.equal((await s.json('/api/feedback', { kategorie: 'sonstiges', betreff: 'Test ' + i, beschreibung: 'Noch eine Nachricht zum Test.' })).status, 200);
+  const zuviel = await s.json('/api/feedback', { kategorie: 'sonstiges', betreff: 'zu viel', beschreibung: 'Diese Nachricht ist eine zu viel.' });
+  assert.equal(zuviel.status, 429);
+
+  // Von fremden Seiten abgelehnt
+  const fremd = await fetch(BASE + '/api/feedback', { method: 'POST', body: '{}', headers: { 'content-type': 'application/json', origin: 'https://evil.example', cookie: [...s.cookies].map(([k, v]) => `${k}=${v}`).join('; ') } });
+  assert.equal(fremd.status, 403);
+
+  // Datenschutzerklärung nennt Feedback und Empfänger
+  const ds = await (await gast.req('/datenschutz')).text();
+  assert.match(ds, /id="feedback"/);
+  assert.match(ds, /empfang@schule\.de/);
 });
