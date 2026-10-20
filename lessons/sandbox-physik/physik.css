@@ -1,0 +1,222 @@
+/* Physik-Labor – Aussehen. Grundlage sind die Variablen und Bausteine aus lesson-kit.css (Karten, Knöpfe, .seg, .readouts).
+   Hier kommen nur das Gerüst und Farben für Kraftpfeile und Messkurven dazu (hell und dunkel). */
+:root {
+  --p-fg: #b4441f; --p-fn: #2f8a4c; --p-fz: #2563a8; --p-fr: #c27c0e; --p-fres: #8a4fd1; --p-v: #c4317a;
+  --p-koerper: #2563a8; --p-koerper-f: #dbe7f6; --p-boden: #d9d5c8; --p-strahl: #d08a00; --p-strahl2: #c4317a; --p-strahl3: #2f8a4c;
+  --p-glas: #c9def3; --p-spiegel: #6b6a64;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --p-fg: #f08a66; --p-fn: #5cc47c; --p-fz: #5b9be0; --p-fr: #e6a93c; --p-fres: #b18af0; --p-v: #f07aaf;
+    --p-koerper: #5b9be0; --p-koerper-f: #1e2a3a; --p-boden: #3a3934; --p-strahl: #f2b637; --p-strahl2: #f07aaf; --p-strahl3: #5cc47c;
+    --p-glas: #24384f; --p-spiegel: #a3a19a;
+  }
+}
+
+body.physiklabor { max-width: 1240px; margin: 0 auto; }
+.pl-kopf { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+.pl-pfad { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; font-size: .92rem; }
+.pl-pfad a { color: var(--accent); text-decoration: none; font-weight: 600; }
+.pl-pfad a:hover { text-decoration: underline; }
+.pl-pfad .trenner { color: var(--muted); }
+.pl-zurueck { white-space: nowrap; }
+button, .seg button { min-height: 40px; }
+button:disabled { opacity: .55; cursor: default; }
+
+/* Übersicht */
+.pl-uebersicht .einleitung { margin: 0 0 12px; max-width: 78ch; }
+.pl-filter { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: end; margin: 0 0 14px; }
+.pl-suche { display: grid; gap: 3px; flex: 1 1 240px; max-width: 380px; }
+.pl-suche input { font: inherit; padding: 8px 10px; border-radius: 9px; border: 1px solid var(--border); background: var(--card); color: var(--text); min-height: 40px; }
+.pl-filter-bereich { display: grid; gap: 3px; min-width: 0; }
+.pl-filter-bereich .seg { flex-wrap: wrap; }
+.pl-kacheln { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; }
+.pl-kachel { display: flex; flex-direction: column; gap: 6px; background: var(--card); color: var(--text); border: 1px solid var(--border);
+  border-radius: 12px; padding: 14px; text-decoration: none; transition: border-color .15s, transform .15s; }
+.pl-kachel:hover { border-color: var(--accent); transform: translateY(-1px); }
+.pl-kachel-icon svg { width: 72px; height: 48px; color: var(--accent); display: block; }
+.pl-kachel h2 { margin: 0; }
+.pl-kachel p { margin: 0; color: var(--muted); font-size: .9rem; }
+.pl-tag { align-self: flex-start; font-size: .75rem; font-weight: 700; padding: 2px 8px; border-radius: 999px; background: var(--soft-accent); color: var(--accent); }
+.pl-bezug { color: var(--muted); }
+.pl-kachel .oeffnen { margin-top: auto; padding-top: 4px; color: var(--accent); font-weight: 600; font-size: .9rem; }
+.pl-leer { padding: 12px; background: var(--card); border: 1px dashed var(--border); border-radius: 12px; }
+.pl-fuss { margin-top: 14px; }
+
+/* Gerüst einer Simulation */
+.pl-kopfzeile h1 { margin-bottom: 2px; }
+.pl-einleitung { margin: 0 0 10px; max-width: 80ch; }
+.pl-werkbank { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(270px, 1fr); gap: 14px; align-items: start; }
+.pl-unten { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 14px; margin-top: 14px; align-items: start; }
+@media (max-width: 860px) { .pl-werkbank, .pl-unten { grid-template-columns: 1fr; } }
+.pl-unten .lk-card + .lk-card, .pl-werkbank .lk-card + .lk-card { margin-top: 0; }
+.pl-lernmodus { margin-top: 14px; }
+.pl-buehne { padding: 10px; }
+.pl-seite h2 { margin-bottom: 10px; }
+.pl-flaeche { position: relative; }
+.pl-flaeche svg.pl-szene { max-height: 520px; }
+.pl-flaeche svg { touch-action: pan-y; }
+.pl-art { margin: 6px 2px 0; color: var(--muted); }
+.art-etikett { display: inline-block; font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; padding: 1px 7px; border-radius: 999px; border: 1px solid var(--border); color: var(--text); background: var(--bg); margin-right: 4px; }
+.pl-unter { display: flex; gap: 4px; overflow-x: auto; border-bottom: 1px solid var(--border); margin-bottom: 10px; scrollbar-width: thin; }
+.pl-unter button { border: 0; border-bottom: 3px solid transparent; border-radius: 8px 8px 0 0; background: none; white-space: nowrap; padding: 8px 12px; color: var(--muted); font-weight: 600; }
+.pl-unter button[aria-pressed=true] { color: var(--text); border-bottom-color: var(--accent); background: var(--card); }
+
+/* Steuerung */
+.pl-steuerung { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 8px; }
+.pl-start { min-width: 132px; font-weight: 650; }
+.pl-status { font-size: .85rem; color: var(--muted); padding: 2px 8px; border-radius: 999px; background: var(--bg); }
+.pl-status[data-zustand=laeuft] { color: var(--ok); background: var(--ok-soft); }
+.pl-status[data-zustand=fertig] { color: var(--accent); background: var(--soft-accent); }
+.pl-tempo { display: flex; align-items: center; gap: 6px; margin-left: auto; }
+.pl-tempo .seg button { padding: 6px 8px; font-size: .82rem; }
+@media (max-width: 520px) { .pl-tempo { margin-left: 0; } .pl-start { min-width: 0; } }
+.pl-reduziert { margin: 0 0 6px; }
+
+/* Messwerte */
+.pl-messwerte { grid-template-columns: repeat(auto-fit, minmax(118px, 1fr)); }
+.pl-messwerte .readout b { font-size: 1.05rem; white-space: nowrap; }
+.pl-messwerte .readout .einheit { font-weight: 500; font-size: .85rem; color: var(--muted); }
+.pl-messwerte .readout .name { display: block; hyphens: auto; overflow-wrap: break-word; }
+.pl-messwerte .readout.hervor { outline: 2px solid var(--accent); }
+.pl-hinweise:empty { display: none; }
+.pl-hinweise { margin-top: 8px; display: grid; gap: 6px; }
+.pl-hinweis { margin: 0; font-size: .88rem; padding: 7px 10px; border-radius: 9px; background: var(--soft-accent); }
+.pl-hinweis.warn { background: var(--warn-soft); color: var(--text); border-left: 3px solid var(--warn); }
+
+/* Einstellungen */
+.pl-gruppe + .pl-gruppe { border-top: 1px solid var(--border); padding-top: 10px; margin-top: 4px; }
+.pl-gruppe-titel { font-size: .85rem; font-weight: 700; margin: 0 0 6px; color: var(--muted); text-transform: uppercase; letter-spacing: .03em; }
+.pl-regler { margin: 0 0 12px; }
+.pl-regler-kopf { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.pl-regler-kopf label { font-size: .9rem; font-weight: 600; }
+.pl-regler.gesperrt { opacity: .55; }
+.pl-zahl { display: inline-flex; align-items: center; gap: 4px; }
+.pl-zahl input { width: 5.6em; font: inherit; font-size: .92rem; text-align: right; padding: 5px 7px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--accent); font-variant-numeric: tabular-nums; min-height: 34px; }
+.pl-zahl input[aria-invalid=true] { border-color: var(--warn); background: var(--warn-soft); color: var(--text); }
+.pl-zahl .einheit { font-size: .85rem; color: var(--muted); min-width: 2.2em; }
+.pl-fehler { margin: 2px 0 0; font-size: .82rem; color: var(--warn); }
+.pl-hilfe { margin: 0; }
+.pl-orte { margin-bottom: 6px; }
+.pl-orte .seg, .pl-seite .seg { flex-wrap: wrap; }
+.pl-orte button { padding: 6px 10px; font-size: .85rem; }
+.pl-schalter { margin: 0 6px 10px 0; }
+.pl-schalter::before { content: "○ "; }
+.pl-schalter[aria-pressed=true]::before { content: "● "; }
+.pl-knoepfe { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.pl-klein { font-size: .85rem; padding: 6px 10px; }
+
+/* Diagramm */
+.pl-diagramm-kopf { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 6px; }
+.pl-diagramm-kopf h2 { margin: 0; }
+svg.pl-diagramm { touch-action: pan-y; max-width: 600px; margin: 0 auto; }
+.pl-diagramm .val { font-size: 10.5px; }
+.pl-achse-titel { font-size: 11.5px; font-weight: 650; fill: var(--text); }
+.pl-achse-titel .gr, .pl-beschr .gr { font-style: italic; font-family: "Cambria Math", "STIX Two Math", Cambria, Georgia, serif; }
+.pl-achse-titel .idx, .pl-beschr .idx { font-size: 9px; }
+.pl-kurve { fill: none; stroke-width: 2.2; stroke-linejoin: round; stroke-linecap: round; }
+.pl-kurve.theorie { stroke-width: 1.6; stroke-dasharray: 5 4; }
+.pl-farbe-1 { stroke: var(--accent); fill: var(--accent); }
+.pl-farbe-2 { stroke: var(--pos); fill: var(--pos); }
+.pl-farbe-3 { stroke: var(--c3); fill: var(--c3); }
+path.pl-kurve, line.pl-kurve { fill: none; }
+.pl-punkt { stroke: var(--card); stroke-width: 1.2; }
+.pl-nulllinie { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 2 3; }
+.pl-legende-text { font-size: 10.5px; fill: var(--muted); }
+.pl-zeiger-linie { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 3 3; }
+.pl-zeiger-punkt { fill: var(--card); stroke: var(--text); stroke-width: 2; }
+.pl-zeiger-kasten { fill: var(--card); stroke: var(--border); }
+.pl-zeiger-text { font-size: 10.5px; font-variant-numeric: tabular-nums; }
+
+/* Szenen */
+.pl-beschr { font-size: 12.5px; font-weight: 600; fill: var(--text); }
+.pl-marke { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 4 4; }
+.pl-boden-flaeche { fill: var(--p-boden); }
+.pl-boden-linie { stroke: var(--line); stroke-width: 2; }
+.pl-kugel { fill: var(--p-koerper-f); stroke: var(--p-koerper); stroke-width: 2.5; }
+.pl-strobo { fill: none; stroke: var(--muted); stroke-width: 1.5; opacity: .8; }
+.pl-aufprall { fill: var(--warn); }
+.pl-pfeil line { stroke-width: 3; stroke-linecap: round; }
+.pl-pfeil polygon { stroke: none; }
+.pl-v line { stroke: var(--p-v); } .pl-v polygon { fill: var(--p-v); } .pl-v-text { fill: var(--p-v); }
+.pl-v.duenn line { stroke-width: 2; stroke-dasharray: 4 3; }
+.pf-g line { stroke: var(--p-fg); } .pf-g polygon, text.pf-g { fill: var(--p-fg); }
+.pf-n line { stroke: var(--p-fn); } .pf-n polygon, text.pf-n { fill: var(--p-fn); }
+.pf-z line { stroke: var(--p-fz); } .pf-z polygon, text.pf-z { fill: var(--p-fz); }
+.pf-r line { stroke: var(--p-fr); } .pf-r polygon, text.pf-r { fill: var(--p-fr); }
+.pf-res line { stroke: var(--p-fres); stroke-width: 4; } .pf-res polygon, text.pf-res { fill: var(--p-fres); }
+.pl-modell h2 { margin-bottom: 6px; }
+.pl-formeln { margin: 4px 0 8px; padding-left: 20px; }
+.pl-formeln li { margin: 2px 0; }
+.pl-modell details summary { cursor: pointer; font-weight: 600; font-size: .9rem; }
+.pl-legende-pfeile { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: .82rem; margin: 6px 0 0; }
+.pl-legende-pfeile span::before { content: ""; display: inline-block; width: 14px; height: 4px; border-radius: 2px; margin-right: 5px; vertical-align: middle; background: currentColor; }
+
+/* Lernmodus */
+.pl-lm-kopf { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; }
+.pl-lm-kopf h2 { margin: 0; }
+.pl-lm-stand { color: var(--ok); font-weight: 650; }
+.pl-aufgabe { border: 1px solid var(--border); border-radius: 10px; margin: 8px 0; background: var(--card); }
+.pl-aufgabe > summary { cursor: pointer; padding: 10px 12px; font-weight: 650; display: flex; gap: 8px; align-items: center; min-height: 44px; }
+.pl-aufgabe.geloest { border-color: var(--ok); }
+.pl-aufgabe.geloest > summary { background: var(--ok-soft); border-radius: 10px; }
+.pl-haken { color: var(--muted); width: 1em; }
+.pl-aufgabe.geloest .pl-haken { color: var(--ok); }
+.pl-aufgabe-innen { padding: 0 12px 12px; }
+.pl-frage { margin: 4px 0 8px; }
+.pl-schritt { border-left: 3px solid var(--border); padding: 4px 0 6px 10px; margin: 8px 0; }
+.pl-schritt.aktiv { border-left-color: var(--accent); }
+.pl-schritt-titel { font-size: .82rem; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; color: var(--muted); margin: 0 0 4px; }
+.pl-antwort { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.pl-antwort .choices { margin-top: 0; }
+.pl-vermutung { margin: 0; }
+.pl-fb.falsch { color: var(--warn); }
+.pl-hilfen { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.pl-hinweisliste { margin: 6px 0 0; padding-left: 20px; }
+.pl-hinweisliste:empty { display: none; }
+.pl-erklaerung { margin-top: 8px; padding: 8px 10px; border-radius: 9px; background: var(--ok-soft); }
+.pl-erklaerung p { margin: 0 0 4px; }
+
+/* Optik */
+.pl-achse-optik { stroke: var(--muted); stroke-width: 1; }
+.pl-linse { fill: var(--p-glas); stroke: var(--accent); stroke-width: 1.6; opacity: .9; }
+.pl-brennpunkt { fill: var(--text); }
+.pl-gegenstand line { stroke: var(--p-fz); } .pl-gegenstand polygon { fill: var(--p-fz); }
+.pl-bild line { stroke: var(--p-fg); } .pl-bild polygon { fill: var(--p-fg); }
+.pl-bild.virtuell line { stroke-dasharray: 5 4; }
+.pl-strahl { fill: none; stroke-width: 1.8; stroke-linecap: round; }
+.pl-strahl.verlaengert { stroke-width: 1.3; stroke-dasharray: 5 4; opacity: .85; }
+.pl-strahl.s1 { stroke: var(--p-strahl); } .pl-strahl.s2 { stroke: var(--p-strahl2); } .pl-strahl.s3 { stroke: var(--p-strahl3); }
+.pl-strahl.s0 { stroke: var(--muted); stroke-width: 1.2; }
+.pl-spiegel { stroke: var(--p-spiegel); stroke-width: 4; stroke-linecap: round; }
+.pl-spiegel-rueck { stroke: var(--p-spiegel); stroke-width: 1; }
+.pl-spiegel.gewaehlt { stroke: var(--accent); }
+.pl-ziehen { cursor: grab; touch-action: none; }
+.pl-ziehen:focus-visible { outline: none; }
+.pl-ziehen:focus-visible .pl-griff { stroke: var(--accent); stroke-width: 2; }
+.pl-griff { fill: transparent; stroke: none; }
+.pl-lampe { fill: var(--lamp); stroke: var(--line); stroke-width: 1.5; }
+.pl-licht { fill: none; stroke: var(--p-strahl); stroke-width: 2.4; stroke-linejoin: round; }
+.pl-lot { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 3 3; }
+.pl-tabelle { width: 100%; border-collapse: collapse; font-size: .88rem; font-variant-numeric: tabular-nums; margin-top: 6px; }
+.pl-tabelle th, .pl-tabelle td { text-align: right; padding: 3px 6px; border-bottom: 1px solid var(--border); }
+.pl-tabelle th:first-child, .pl-tabelle td:first-child { text-align: left; }
+.pl-energie { display: grid; gap: 4px; margin-top: 8px; }
+.pl-energie-zeile { display: grid; grid-template-columns: 9.5em 1fr 5.5em; gap: 8px; align-items: center; font-size: .85rem; }
+.pl-energie-zeile .balken { height: 12px; border-radius: 6px; background: var(--bg); overflow: hidden; }
+.pl-energie-zeile .balken i { display: block; height: 100%; width: 0; border-radius: 6px; }
+.pl-energie-zeile .wert { text-align: right; font-variant-numeric: tabular-nums; }
+.e-kin i { background: var(--p-v); } .e-pot i { background: var(--p-fn); } .e-ges i { background: var(--accent); } .e-waerme i { background: var(--p-fr); }
+.pl-feder { fill: none; stroke: var(--line); stroke-width: 2; stroke-linejoin: round; }
+.pl-decke { fill: var(--p-boden); stroke: var(--line); stroke-width: 1.5; }
+.pl-klotz { fill: var(--p-koerper-f); stroke: var(--p-koerper); stroke-width: 2.5; }
+.pl-chip { display: inline-block; font-size: .8rem; font-weight: 700; padding: 2px 9px; border-radius: 999px; background: var(--bg); }
+.pl-chip.haftet { color: var(--p-fn); } .pl-chip.gleitet { color: var(--p-fr); }
+@media (max-width: 520px) { body.physiklabor { padding: 10px; } .pl-energie-zeile { grid-template-columns: 7.5em 1fr 5em; } }
+/* Auf schmalen Bildschirmen werden die Zeichnungen verkleinert – Beschriftungen dort etwas größer setzen */
+@media (max-width: 520px) {
+  .pl-szene .pl-beschr { font-size: 16px; }
+  .pl-szene .val, .pl-szene .pl-achse-titel { font-size: 14px; }
+  .pl-diagramm .val { font-size: 12px; }
+  .pl-diagramm .pl-achse-titel { font-size: 13px; }
+}

@@ -256,7 +256,14 @@ test('Sandbox: Simulationsübersicht, Schaltkreis-Labor und Rückweg zur Fachüb
   assert.match(uebersicht, /href="\/sandbox\/logik"/);
   assert.match(uebersicht, /Logik-Labor/);
   assert.doesNotMatch(uebersicht, /⚡|🔀/, 'Schaltzeichen statt Emojis');
-  assert.equal((uebersicht.match(/<span class="sim-icon" aria-hidden="true"><svg/g) || []).length, 5);
+  assert.equal((uebersicht.match(/<span class="sim-icon" aria-hidden="true"><svg/g) || []).length, 6);
+  // Sechste Simulation: Physik-Labor
+  assert.match(uebersicht, /href="\/sandbox\/physiklabor"/);
+  const phy = await (await t.req('/sandbox/physiklabor')).text();
+  assert.match(phy, /src="\/inhalt\/sandbox-physik\/index\.html"/);
+  for (const f of ['index.html', 'kern.js', 'fall.js', 'ui.js', 'diagramm.js', 'labor.js', 'physik.css']) {
+    assert.equal((await t.req(`/inhalt/sandbox-physik/${f}`)).status, 200, f);
+  }
   // Fünfte Simulation: BioLab
   assert.match(uebersicht, /href="\/sandbox\/biolab"/);
   const bio = await (await t.req('/sandbox/biolab')).text();

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Physik-Labor</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<link rel="stylesheet" href="physik.css">
+</head>
+<body class="physiklabor">
+<header class="pl-kopf">
+  <nav class="pl-pfad" aria-label="Pfad">
+    <a href="#" id="pfad-sandbox" target="_top">Sandbox</a><span class="trenner" aria-hidden="true">›</span>
+    <a href="#" id="pfad-labor">Physik-Labor</a>
+    <span class="trenner" aria-hidden="true" id="pfad-trenner" hidden>›</span>
+    <span id="pfad-modul" aria-current="page"></span>
+  </nav>
+  <button type="button" class="pl-zurueck" id="zur-uebersicht" hidden>← Übersicht</button>
+</header>
+
+<main>
+  <section id="uebersicht" class="pl-uebersicht" aria-labelledby="ue-titel">
+    <h1 id="ue-titel">Physik-Labor</h1>
+    <p class="einleitung muted">Ein virtuelles Experimentierlabor für Mechanik, Schwingungen und Optik. Wähle eine Simulation, verändere die Größen selbst, miss nach und vergleiche mit der Rechnung. Im Lernmodus jeder Simulation findest du Aufgaben: erst vermuten, dann experimentieren, dann prüfen.</p>
+    <div class="pl-filter" role="search">
+      <label class="pl-suche"><span class="small">Suchen</span>
+        <input type="search" id="suche" placeholder="z. B. Reibung, Linse, Periodendauer" autocomplete="off">
+      </label>
+      <div class="pl-filter-bereich"><span class="small">Themengebiet</span><div id="filter-bereich"></div></div>
+      <span class="small muted" id="treffer" role="status"></span>
+    </div>
+    <div class="pl-kacheln" id="kacheln"></div>
+    <p id="keine-treffer" class="pl-leer" hidden>Keine Simulation passt zu deiner Suche. <button type="button" id="filter-zuruecksetzen">Filter zurücksetzen</button></p>
+    <p class="small muted pl-fuss">Alle Darstellungen sind Simulationen bzw. Schemata mit vereinfachten Modellen. Welche Vereinfachungen gelten, steht jeweils unter „Modell und Formeln“.</p>
+  </section>
+
+  <section id="m-fall" class="pl-modul" hidden aria-label="Freier Fall"></section>
+  <section id="m-wurf" class="pl-modul" hidden aria-label="Wurfbewegung"></section>
+  <section id="m-reibung" class="pl-modul" hidden aria-label="Kräfte und Reibung"></section>
+  <section id="m-feder" class="pl-modul" hidden aria-label="Federpendel"></section>
+  <section id="m-optik" class="pl-modul" hidden aria-label="Optik-Labor"></section>
+</main>
+
+<script src="../../static/lesson-kit.js"></script>
+<script src="kern.js"></script>
+<script src="fall.js"></script>
+<script src="wurf.js"></script>
+<script src="reibung.js"></script>
+<script src="feder.js"></script>
+<script src="optik.js"></script>
+<script src="katalog.js"></script>
+<script src="aufgaben.js"></script>
+<script src="ui.js"></script>
+<script src="diagramm.js"></script>
+<script src="modul-fall.js"></script>
+<script src="modul-wurf.js"></script>
+<script src="modul-reibung.js"></script>
+<script src="modul-feder.js"></script>
+<script src="modul-optik.js"></script>
+<script src="labor.js"></script>
+</body>
+</html>
