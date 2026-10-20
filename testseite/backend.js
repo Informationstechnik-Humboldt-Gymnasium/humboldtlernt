@@ -9,7 +9,7 @@
 (function (root) {
   'use strict';
 
-  var VERSION = 5;                       // Schema-Version der Datenbank (Migrationen unten)
+  var VERSION = 6;                       // Schema-Version der Datenbank (Migrationen unten)
   var SPEICHER_SCHLUESSEL = 'lernseite-schule-db';
   var CLIENT_ID = 'lernseite-testseite';
   var MIN = 60 * 1000, TAG = 24 * 60 * MIN;
@@ -170,6 +170,19 @@
         if (kel && d.klassen.some(function (k) { return k.id === '9a'; }) && !d.lehrerzuordnungen.some(function (z) { return z.lehrerId === kel.id && z.klasseId === '9a' && z.fachId === 'englisch'; })) {
           d.seq = (d.seq || 0) + 1;
           d.lehrerzuordnungen.push({ id: 'lz' + d.seq, lehrerId: kel.id, klasseId: '9a', fachId: 'englisch' });
+        }
+      },
+      6: function (d) {
+        // Version 6: neues Fach Politik (Kl. 7–10) und Politikunterricht von Murat Yilmaz in 10a
+        if (!d.faecher.some(function (f) { return f.id === 'politik'; })) {
+          var lb = [];
+          INH.topics.forEach(function (t) { if (t.fach === 'politik' && t.themenfeld && lb.indexOf(t.themenfeld) < 0) lb.push(t.themenfeld); });
+          d.faecher.push({ id: 'politik', name: 'Politik', aktiv: true, lernbereiche: lb });
+        }
+        var yil = d.users.find(function (u) { return u.username === 'murat.yilmaz' && u.rolle === 'teacher'; });
+        if (yil && d.klassen.some(function (k) { return k.id === '10a'; }) && !d.lehrerzuordnungen.some(function (z) { return z.lehrerId === yil.id && z.klasseId === '10a' && z.fachId === 'politik'; })) {
+          d.seq = (d.seq || 0) + 1;
+          d.lehrerzuordnungen.push({ id: 'lz' + d.seq, lehrerId: yil.id, klasseId: '10a', fachId: 'politik' });
         }
       },
     };

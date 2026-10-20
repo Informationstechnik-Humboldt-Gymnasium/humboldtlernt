@@ -1,0 +1,224 @@
+{
+ "id": "pb-k9-frieden",
+ "titel": "Friedenssicherung und Entwicklungspolitik",
+ "kurz": "Wie die Vereinten Nationen Frieden sichern sollen und was Entwicklungspolitik mit Frieden zu tun hat.",
+ "reihenfolge": 2,
+ "lernziele": [
+  {
+   "id": "lz1",
+   "niveau": "G",
+   "text": "Ziele und Organe der Vereinten Nationen beschreiben"
+  },
+  {
+   "id": "lz2",
+   "niveau": "G",
+   "text": "Negativen und positiven Frieden unterscheiden"
+  },
+  {
+   "id": "lz3",
+   "niveau": "H",
+   "text": "Ziele und Instrumente der Entwicklungspolitik erklären"
+  },
+  {
+   "id": "lz4",
+   "niveau": "H",
+   "text": "Möglichkeiten und Grenzen der UN beurteilen"
+  }
+ ],
+ "verstehen": {
+  "einstieg": "Ist schon Frieden, wenn nicht geschossen wird – auch wenn die Menschen hungern und keine Schule besuchen können?",
+  "abschnitte": [
+   {
+    "titel": "Die Vereinten Nationen",
+    "text": "Die **Vereinten Nationen (UN)** wurden **1945** nach dem Zweiten Weltkrieg gegründet. Fast alle Staaten der Welt sind Mitglied (**193**). Ihre Ziele: Weltfrieden sichern, Menschenrechte schützen, Zusammenarbeit fördern.\n\nDie **UN-Charta** verbietet Staaten, Gewalt gegen andere Staaten anzuwenden (**Gewaltverbot**). Ausnahmen sind Selbstverteidigung und Maßnahmen, die der Sicherheitsrat beschließt.\n\nWichtige Organe:\n\n- **Generalversammlung:** alle Mitgliedstaaten, jeder Staat eine Stimme,\n- **Sicherheitsrat:** 15 Mitglieder, davon **5 ständige** mit **Vetorecht** (China, Frankreich, Großbritannien, Russland, USA). Er kann verbindliche Beschlüsse fassen, z. B. Sanktionen oder **Friedensmissionen** („Blauhelme“),\n- **Generalsekretär**, **Internationaler Gerichtshof** in Den Haag."
+   },
+   {
+    "titel": "Negativer und positiver Frieden",
+    "text": "Der Friedensforscher **Johan Galtung** unterscheidet:\n\n- **Negativer Frieden:** Abwesenheit von Krieg und direkter Gewalt.\n- **Positiver Frieden:** Zusätzlich gibt es **Gerechtigkeit**, Sicherheit, Zugang zu Bildung und Gesundheit – also keine „strukturelle Gewalt“ wie Armut oder Unterdrückung.\n\nNach dieser Sicht reicht ein Waffenstillstand nicht. Dauerhafter Frieden braucht auch gute Lebensbedingungen."
+   },
+   {
+    "titel": "Entwicklungspolitik",
+    "text": "**Entwicklungspolitik** (auch Entwicklungszusammenarbeit) soll Lebensbedingungen in ärmeren Ländern verbessern und so auch Konflikten vorbeugen.\n\n- 2015 beschlossen die UN die **Agenda 2030** mit **17 Zielen für nachhaltige Entwicklung** (SDGs), z. B. kein Hunger, hochwertige Bildung, sauberes Wasser, Klimaschutz, Frieden.\n- Reiche Länder haben sich verpflichtet, **0,7 % ihres Bruttonationaleinkommens** für Entwicklungszusammenarbeit auszugeben. Nur wenige Länder erreichen das dauerhaft.\n- Instrumente sind z. B. Projekte für Bildung, Gesundheit und Landwirtschaft, Kredite, Schuldenerlass und **fairer Handel**.\n\nUmstritten ist, wie wirksam Entwicklungshilfe ist: Kritiker bemängeln Abhängigkeiten und Korruption, Befürworter verweisen auf Erfolge etwa bei Impfungen und Schulbesuch."
+   }
+  ],
+  "formeln": [],
+  "merksatz": "Die **UN** (gegründet 1945, 193 Mitglieder) sollen den Weltfrieden sichern. Der **Sicherheitsrat** hat 15 Mitglieder, 5 davon ständig mit **Vetorecht**.\n\n**Negativer Frieden** = kein Krieg, **positiver Frieden** = zusätzlich Gerechtigkeit und gute Lebensbedingungen. **Entwicklungspolitik** (Agenda 2030, 17 Ziele) soll Armut verringern und Konflikten vorbeugen.",
+  "alltag": "Die 17 Nachhaltigkeitsziele haben eigene bunte Symbole. Viele Schulen nutzen sie, um eigene Projekte – vom Schulgarten bis zur Partnerschule – einem Ziel zuzuordnen."
+ },
+ "interaktiv": [],
+ "vertiefung": [],
+ "uebungen": [
+  {
+   "id": "pb-frd-01",
+   "typ": "single",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz1",
+   "frage": "Wann wurden die Vereinten Nationen gegründet?",
+   "optionen": [
+    {
+     "text": "1945, nach dem Zweiten Weltkrieg",
+     "richtig": true
+    },
+    {
+     "text": "1919, nach dem Ersten Weltkrieg",
+     "feedback": "1919/1920 entstand der Völkerbund, der Vorläufer der UN."
+    },
+    {
+     "text": "1989, nach dem Mauerfall",
+     "feedback": "Die UN bestanden da schon lange."
+    },
+    {
+     "text": "2001",
+     "feedback": "Die UN sind viel älter."
+    }
+   ],
+   "erklaerung": "Die UN-Charta wurde 1945 in San Francisco unterzeichnet. Die Erfahrung zweier Weltkriege prägte ihre Ziele."
+  },
+  {
+   "id": "pb-frd-02",
+   "typ": "zahl",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz1",
+   "frage": "Wie viele **ständige** Mitglieder mit Vetorecht hat der UN-Sicherheitsrat?",
+   "loesung": 5,
+   "toleranz": 0,
+   "einheit": "Staaten",
+   "rechenweg": [
+    "China, Frankreich, Großbritannien, Russland, USA"
+   ],
+   "erklaerung": "Dazu kommen 10 nichtständige Mitglieder, die für zwei Jahre gewählt werden."
+  },
+  {
+   "id": "pb-frd-03",
+   "typ": "zuordnung",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz2",
+   "frage": "Negativer oder positiver Frieden? Ordne zu.",
+   "paare": [
+    {
+     "links": "In einer Region wird seit einem Jahr nicht mehr gekämpft, aber viele Kinder hungern.",
+     "rechts": "negativer Frieden"
+    },
+    {
+     "links": "Es gibt keinen Krieg, Kinder gehen zur Schule, und Gerichte arbeiten fair.",
+     "rechts": "positiver Frieden"
+    }
+   ],
+   "erklaerung": "Positiver Frieden umfasst mehr als die Abwesenheit von Krieg."
+  },
+  {
+   "id": "pb-frd-04",
+   "typ": "single",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz4",
+   "frage": "Warum kann der UN-Sicherheitsrat bei manchen Konflikten keine Beschlüsse fassen?",
+   "optionen": [
+    {
+     "text": "Weil jedes der fünf ständigen Mitglieder mit seinem Veto einen Beschluss verhindern kann.",
+     "richtig": true
+    },
+    {
+     "text": "Weil der Sicherheitsrat nur einmal im Jahr tagt.",
+     "feedback": "Der Sicherheitsrat kann jederzeit zusammentreten."
+    },
+    {
+     "text": "Weil die Generalversammlung jeden Beschluss genehmigen muss.",
+     "feedback": "Beschlüsse des Sicherheitsrats brauchen keine Genehmigung der Generalversammlung."
+    },
+    {
+     "text": "Weil die UN keine Konflikte behandeln dürfen.",
+     "feedback": "Friedenssicherung ist gerade eine Kernaufgabe der UN."
+    }
+   ],
+   "erklaerung": "Wenn ein ständiges Mitglied selbst oder ein Verbündeter beteiligt ist, wird ein Veto wahrscheinlich. Reformen des Sicherheitsrats werden seit Langem diskutiert."
+  },
+  {
+   "id": "pb-frd-05",
+   "typ": "zahl",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz3",
+   "frage": "Ein Land hat ein Bruttonationaleinkommen von 4 000 Milliarden Euro. Wie viele Milliarden Euro müsste es nach dem 0,7-%-Ziel für Entwicklungszusammenarbeit ausgeben?",
+   "loesung": 28,
+   "toleranz": 0,
+   "einheit": "Mrd. €",
+   "rechenweg": [
+    "0,7 % von 4 000 Mrd. € = 4 000 · 0,007",
+    "= 28 Mrd. €"
+   ],
+   "erklaerung": "Das Beispiel ist gerundet. Ob und wie viel ein Land ausgibt, entscheidet sein Parlament im Haushalt."
+  },
+  {
+   "id": "pb-frd-06",
+   "typ": "multi",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz3",
+   "frage": "Welche gehören zu den 17 Zielen der **Agenda 2030**?",
+   "optionen": [
+    {
+     "text": "kein Hunger",
+     "richtig": true
+    },
+    {
+     "text": "hochwertige Bildung",
+     "richtig": true
+    },
+    {
+     "text": "Maßnahmen zum Klimaschutz",
+     "richtig": true
+    },
+    {
+     "text": "Frieden, Gerechtigkeit und starke Institutionen",
+     "richtig": true
+    },
+    {
+     "text": "ein Auto für jede Familie",
+     "feedback": "Das ist kein Ziel der Agenda 2030."
+    }
+   ],
+   "erklaerung": "Die Ziele gelten für alle Länder, nicht nur für ärmere – auch Deutschland muss z. B. beim Klimaschutz liefern."
+  },
+  {
+   "id": "pb-frd-07",
+   "typ": "text",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz4",
+   "frage": "Die UN gelten manchen als „zahnloser Tiger“. Beurteile diese Aussage mit je einem Argument für und gegen die Wirksamkeit der UN.",
+   "stichworte": [
+    {
+     "aspekt": "Argument für Schwäche: Veto, Blockade, keine eigene Armee, Durchsetzung",
+     "woerter": [
+      "veto",
+      "blockier",
+      "armee",
+      "durchsetz",
+      "macht"
+     ]
+    },
+    {
+     "aspekt": "Argument für Wirksamkeit: Blauhelme, Hilfe, humanitär, Kinderhilfswerk, Gespräch, Forum",
+     "woerter": [
+      "blauhelm",
+      "hilf",
+      "humanit",
+      "unicef",
+      "forum",
+      "verhandl",
+      "gespräch",
+      "gespraech"
+     ]
+    },
+    {
+     "aspekt": "Begründetes Urteil",
+     "woerter": [
+      "weil",
+      "deshalb",
+      "daher",
+      "denn"
+     ]
+    }
+   ],
+   "musterloesung": "Für die Aussage spricht, dass der Sicherheitsrat durch das **Veto** oft **blockiert** ist und die UN keine eigene **Armee** haben. Dagegen spricht, dass **Blauhelme** in vielen Regionen Waffenstillstände sichern und UN-Organisationen Millionen Menschen **helfen**. Ich halte die Aussage für teilweise zutreffend, **weil** ...",
+   "erklaerung": "Bewertet wird die ausgewogene Darstellung und die Begründung deines Urteils."
+  }
+ ]
+}

@@ -1,0 +1,237 @@
+{
+ "id": "pb-k8-jugend-recht",
+ "titel": "Jugendliche im Recht: Geschäftsfähigkeit und Jugendstrafrecht",
+ "kurz": "Ab wann du was darfst, wofür du haftest und wie das Jugendstrafrecht funktioniert.",
+ "reihenfolge": 3,
+ "lernziele": [
+  {
+   "id": "lz1",
+   "niveau": "G",
+   "text": "Die Altersstufen der Geschäftsfähigkeit und der Strafmündigkeit nennen"
+  },
+  {
+   "id": "lz2",
+   "niveau": "G",
+   "text": "Den Taschengeldparagrafen auf Fälle anwenden"
+  },
+  {
+   "id": "lz3",
+   "niveau": "H",
+   "text": "Den Erziehungsgedanken des Jugendstrafrechts erklären"
+  },
+  {
+   "id": "lz4",
+   "niveau": "H",
+   "text": "Unterschiedliche Positionen zur Strafmündigkeit darstellen"
+  }
+ ],
+ "verstehen": {
+  "einstieg": "Mit 13 kaufst du dir von deinem Taschengeld ein Videospiel für 30 €. Deine Eltern sind dagegen und wollen das Geld zurück. Haben sie recht?",
+  "abschnitte": [
+   {
+    "titel": "Rechtsfähigkeit und Geschäftsfähigkeit",
+    "text": "**Rechtsfähig** ist jeder Mensch ab der Geburt: Du kannst z. B. etwas erben.\n\n**Geschäftsfähigkeit** heißt, selbst wirksam Verträge (z. B. Käufe) abschließen zu können:\n\n- **unter 7 Jahren:** geschäftsunfähig – Verträge sind unwirksam.\n- **7 bis 17 Jahre:** **beschränkt geschäftsfähig** – Verträge brauchen grundsätzlich die Zustimmung der Eltern.\n- **ab 18 Jahren:** voll geschäftsfähig (volljährig).\n\n**Taschengeldparagraf** (§ 110 BGB): Ein Kauf ist ohne Zustimmung wirksam, wenn er mit Geld **sofort vollständig bezahlt** wird, das dir für diesen Zweck oder zur freien Verfügung überlassen wurde – also mit deinem Taschengeld. Ratenkäufe und Abos fallen nicht darunter."
+   },
+   {
+    "titel": "Strafmündigkeit",
+    "text": "- **Unter 14 Jahren:** Kinder sind **strafunmündig** (§ 19 StGB). Sie können nicht bestraft werden. Das Jugendamt und die Familie sind gefragt, und für Schäden kann man unter Umständen trotzdem haften.\n- **14 bis 17 Jahre:** **Jugendliche**. Es gilt das **Jugendgerichtsgesetz (JGG)**.\n- **18 bis 20 Jahre:** **Heranwachsende**. Das Gericht prüft, ob Jugend- oder Erwachsenenstrafrecht angewendet wird – je nach Reife.\n- **ab 21 Jahren:** Erwachsenenstrafrecht."
+   },
+   {
+    "titel": "Erziehung statt Vergeltung",
+    "text": "Das Jugendstrafrecht folgt dem **Erziehungsgedanken**: Junge Menschen sollen lernen und künftig keine Straftaten mehr begehen. Mögliche Folgen sind gestuft:\n\n- **Erziehungsmaßregeln**, z. B. Weisungen wie Sozialstunden, ein Anti-Gewalt-Training oder ein Täter-Opfer-Ausgleich,\n- **Zuchtmittel**, z. B. Verwarnung, Auflagen oder **Jugendarrest** (höchstens vier Wochen),\n- **Jugendstrafe** in einer Jugendstrafanstalt bei schweren Taten.\n\nOb die Strafmündigkeit bei 14 Jahren richtig liegt, wird nach schweren Taten von Kindern immer wieder **diskutiert**: Manche fordern eine Absenkung, andere halten frühe Hilfe und Erziehung für wirksamer."
+   }
+  ],
+  "formeln": [],
+  "merksatz": "**Geschäftsfähigkeit:** unter 7 unfähig, **7–17 beschränkt** (Zustimmung der Eltern, Ausnahme **Taschengeldparagraf**), ab 18 voll.\n\n**Strafmündigkeit** ab **14**. Für 14- bis 17-Jährige gilt das Jugendstrafrecht mit dem **Erziehungsgedanken**, für 18- bis 20-Jährige oft auch.",
+  "alltag": "Ein Handyvertrag oder ein Abo mit monatlichen Zahlungen ist für Minderjährige ohne Zustimmung der Eltern unwirksam – auch wenn man auf „Ich bin 18“ geklickt hat."
+ },
+ "interaktiv": [],
+ "vertiefung": [],
+ "uebungen": [
+  {
+   "id": "pb-jur-01",
+   "typ": "zuordnung",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz1",
+   "frage": "Ordne den Altersstufen die richtige Bezeichnung zu.",
+   "paare": [
+    {
+     "links": "5 Jahre",
+     "rechts": "geschäftsunfähig"
+    },
+    {
+     "links": "12 Jahre",
+     "rechts": "beschränkt geschäftsfähig, strafunmündig"
+    },
+    {
+     "links": "15 Jahre",
+     "rechts": "beschränkt geschäftsfähig, strafmündig (Jugendstrafrecht)"
+    },
+    {
+     "links": "19 Jahre",
+     "rechts": "volljährig, Heranwachsender im Strafrecht"
+    }
+   ],
+   "erklaerung": "Geschäftsfähigkeit: Grenzen bei 7 und 18 Jahren. Strafrecht: Grenzen bei 14, 18 und 21 Jahren."
+  },
+  {
+   "id": "pb-jur-02",
+   "typ": "single",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz1",
+   "frage": "Ab welchem Alter ist man in Deutschland **strafmündig**?",
+   "optionen": [
+    {
+     "text": "ab 14 Jahren",
+     "richtig": true
+    },
+    {
+     "text": "ab 12 Jahren",
+     "feedback": "In Deutschland liegt die Grenze bei 14 Jahren (§ 19 StGB)."
+    },
+    {
+     "text": "ab 16 Jahren",
+     "feedback": "Mit 16 ist man schon seit zwei Jahren strafmündig."
+    },
+    {
+     "text": "ab 18 Jahren",
+     "feedback": "Mit 18 wird man volljährig; strafmündig ist man schon ab 14."
+    }
+   ],
+   "erklaerung": "Wer jünger als 14 ist, kann nicht bestraft werden. Andere Länder haben andere Grenzen."
+  },
+  {
+   "id": "pb-jur-03",
+   "typ": "multi",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz2",
+   "frage": "Der 13-jährige Ben kauft ohne Wissen seiner Eltern. Welche Käufe sind nach dem Taschengeldparagrafen **wirksam**?",
+   "optionen": [
+    {
+     "text": "Ein Comic für 8 €, sofort bar mit Taschengeld bezahlt",
+     "richtig": true
+    },
+    {
+     "text": "Ein Kinoticket für 9 €, bezahlt mit Geld, das ihm die Oma zur freien Verfügung geschenkt hat",
+     "richtig": true
+    },
+    {
+     "text": "Ein Handy für 300 €, das in zwölf Monatsraten bezahlt werden soll",
+     "feedback": "Ratenkäufe sind nicht sofort vollständig bezahlt – der Taschengeldparagraf greift nicht."
+    },
+    {
+     "text": "Ein Streaming-Abo mit monatlicher Abbuchung",
+     "feedback": "Laufende Verpflichtungen sind ohne Zustimmung der Eltern unwirksam."
+    }
+   ],
+   "erklaerung": "§ 110 BGB: Wirksam ist ein Vertrag, wenn er mit überlassenen Mitteln sofort vollständig bezahlt wird."
+  },
+  {
+   "id": "pb-jur-04",
+   "typ": "single",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz2",
+   "frage": "Lea (13) kauft von ihrem Taschengeld ein Videospiel für 30 € und bezahlt sofort. Ihre Eltern verlangen das Geld vom Geschäft zurück. Was gilt wahrscheinlich?",
+   "optionen": [
+    {
+     "text": "Der Kauf ist wirksam, wenn Lea das Taschengeld zur freien Verfügung bekommen hat und das Spiel für ihr Alter freigegeben ist.",
+     "richtig": true
+    },
+    {
+     "text": "Der Kauf ist immer unwirksam, weil Lea unter 18 ist.",
+     "feedback": "Der Taschengeldparagraf macht solche Käufe in der Regel wirksam."
+    },
+    {
+     "text": "Der Kauf ist wirksam, auch wenn das Spiel erst ab 18 freigegeben ist.",
+     "feedback": "Der Jugendschutz gilt zusätzlich: Ein Spiel ab 18 darf ihr gar nicht verkauft werden."
+    },
+    {
+     "text": "Die Eltern können das Geld zurückverlangen, weil 30 € zu viel sind.",
+     "feedback": "Eine feste Betragsgrenze gibt es nicht. Entscheidend ist, ob das Geld zur freien Verfügung überlassen wurde."
+    }
+   ],
+   "erklaerung": "Eltern können Taschengeld auch an Bedingungen knüpfen („nicht für Videospiele“). Dann wäre der Kauf nicht gedeckt."
+  },
+  {
+   "id": "pb-jur-05",
+   "typ": "single",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz3",
+   "frage": "Was ist das wichtigste Ziel des Jugendstrafrechts?",
+   "optionen": [
+    {
+     "text": "Junge Menschen sollen erzogen werden, damit sie keine weiteren Straftaten begehen.",
+     "richtig": true
+    },
+    {
+     "text": "Möglichst harte Strafen zur Abschreckung",
+     "feedback": "Abschreckung spielt eine Rolle, im Mittelpunkt steht aber der Erziehungsgedanke."
+    },
+    {
+     "text": "Rache für das Opfer",
+     "feedback": "Vergeltung ist nicht das Ziel. Das Opfer kann aber z. B. im Täter-Opfer-Ausgleich einbezogen werden."
+    },
+    {
+     "text": "Die Eltern zu bestrafen",
+     "feedback": "Bestraft wird, wenn überhaupt, der Jugendliche selbst – nicht die Eltern."
+    }
+   ],
+   "erklaerung": "Deshalb gibt es abgestufte Maßnahmen von Weisungen über Jugendarrest bis zur Jugendstrafe."
+  },
+  {
+   "id": "pb-jur-06",
+   "typ": "reihenfolge",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz3",
+   "frage": "Ordne die Maßnahmen des Jugendstrafrechts von der mildesten zur schwersten.",
+   "elemente": [
+    "Verwarnung",
+    "Weisung, z. B. Sozialstunden",
+    "Jugendarrest (bis zu vier Wochen)",
+    "Jugendstrafe in einer Jugendstrafanstalt"
+   ],
+   "erklaerung": "Das Gericht wählt die Maßnahme, die zur Tat und zum Jugendlichen passt – möglichst mild, aber so wirksam wie nötig."
+  },
+  {
+   "id": "pb-jur-07",
+   "typ": "text",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz4",
+   "frage": "Nach einer schweren Tat eines 13-Jährigen fordern manche, die Strafmündigkeit auf 12 Jahre zu senken. Stelle ein Argument dafür und eines dagegen dar und beziehe begründet Stellung.",
+   "stichworte": [
+    {
+     "aspekt": "Argument dafür: Abschreckung, Schutz der Opfer, Verantwortung, Gerechtigkeit",
+     "woerter": [
+      "abschreck",
+      "opfer",
+      "verantwort",
+      "gerecht",
+      "konsequen"
+     ]
+    },
+    {
+     "aspekt": "Argument dagegen: Reife, Erziehung, Hilfe, Kinder, Entwicklung",
+     "woerter": [
+      "reif",
+      "erzieh",
+      "hilfe",
+      "kind",
+      "entwickl",
+      "jugendamt"
+     ]
+    },
+    {
+     "aspekt": "Begründete Stellungnahme",
+     "woerter": [
+      "weil",
+      "deshalb",
+      "daher",
+      "denn"
+     ]
+    }
+   ],
+   "musterloesung": "Dafür spricht, dass schwere Taten Folgen haben sollten und die **Opfer** Gerechtigkeit erwarten. Dagegen spricht, dass 12-Jährige oft noch nicht die nötige **Reife** haben und frühe **Hilfe** durch Jugendamt und Familie wirksamer sein kann als Strafe. Ich bin dafür / dagegen, **weil** ...",
+   "erklaerung": "Die Frage ist politisch umstritten. Bewertet wird die faire Darstellung beider Seiten und die Begründung."
+  }
+ ]
+}

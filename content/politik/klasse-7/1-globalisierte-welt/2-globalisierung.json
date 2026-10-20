@@ -1,0 +1,236 @@
+{
+ "id": "pb-k7-globalisierung",
+ "titel": "Die Welt als globales Dorf: Konsum und globale Arbeitsteilung",
+ "kurz": "Wie ein T-Shirt um die Welt reist und welche Chancen und Risiken die globale Arbeitsteilung hat.",
+ "reihenfolge": 2,
+ "lernziele": [
+  {
+   "id": "lz1",
+   "niveau": "G",
+   "text": "Den Begriff Globalisierung erklären"
+  },
+  {
+   "id": "lz2",
+   "niveau": "G",
+   "text": "Globale Arbeitsteilung an einer Wertschöpfungskette beschreiben"
+  },
+  {
+   "id": "lz3",
+   "niveau": "H",
+   "text": "Chancen und Risiken der Globalisierung aus verschiedenen Perspektiven darstellen"
+  },
+  {
+   "id": "lz4",
+   "niveau": "H",
+   "text": "Handlungsmöglichkeiten als Verbraucher und in der Politik beurteilen"
+  }
+ ],
+ "verstehen": {
+  "einstieg": "Schau auf das Etikett deines T-Shirts oder deines Handys. Wo wurde es hergestellt? Und wie viele Länder waren wohl beteiligt, bis es bei dir ankam?",
+  "abschnitte": [
+   {
+    "titel": "Was ist Globalisierung?",
+    "text": "**Globalisierung** bezeichnet die zunehmende weltweite Verflechtung: Waren, Geld, Informationen und Menschen bewegen sich immer schneller und häufiger über Ländergrenzen hinweg.\n\nGründe dafür sind unter anderem:\n\n- günstiger **Transport** (Containerschiffe, Flugzeuge),\n- das **Internet** und digitale Kommunikation,\n- der Abbau von **Handelsschranken** wie Zöllen.\n\nMan spricht deshalb manchmal von der Welt als „globalem Dorf“: Ereignisse auf der anderen Seite der Erde betreffen uns direkt."
+   },
+   {
+    "titel": "Globale Arbeitsteilung am Beispiel T-Shirt",
+    "text": "Ein T-Shirt entsteht oft in vielen Schritten an verschiedenen Orten. Ein mögliches Beispiel:\n\n- **Baumwolle** wird angebaut, z. B. in Indien oder den USA.\n- Sie wird in einem anderen Land zu **Garn gesponnen und zu Stoff gewebt**, z. B. in China.\n- **Gefärbt und genäht** wird zum Beispiel in Bangladesch.\n- **Verkauft** wird das T-Shirt in Deutschland.\n\nJedes Land übernimmt den Schritt, den es am günstigsten oder am besten erledigen kann. Das nennt man **globale Arbeitsteilung**. Die Abfolge aller Schritte heißt **Wertschöpfungskette** oder Lieferkette."
+   },
+   {
+    "titel": "Chancen und Risiken",
+    "text": "Je nachdem, wen man fragt, fällt die Bewertung unterschiedlich aus.\n\n**Chancen** (häufig genannt):\n\n- günstigere Produkte und größere Auswahl,\n- Arbeitsplätze und wachsender Wohlstand in Schwellenländern,\n- Austausch von Wissen und Kultur.\n\n**Risiken** (häufig genannt):\n\n- niedrige Löhne und gefährliche Arbeitsbedingungen in manchen Produktionsländern – 2013 stürzte in Bangladesch die Textilfabrik Rana Plaza ein, mehr als 1 100 Menschen starben,\n- Umweltbelastung durch Transport und Produktion,\n- Abhängigkeit von langen Lieferketten (z. B. als in der Corona-Pandemie Teile fehlten),\n- Verlust von Arbeitsplätzen in Ländern, aus denen die Produktion abwandert.\n\nWas daraus folgen soll – etwa strengere Regeln für Unternehmen oder freierer Handel – ist politisch **umstritten**."
+   }
+  ],
+  "formeln": [],
+  "merksatz": "**Globalisierung** ist die weltweite Verflechtung von Wirtschaft, Politik und Kultur. Bei der **globalen Arbeitsteilung** entstehen Produkte in Schritten in verschiedenen Ländern.\n\nSie bringt **Chancen** (günstige Waren, Arbeitsplätze, Austausch) und **Risiken** (schlechte Arbeitsbedingungen, Umweltfolgen, Abhängigkeiten). Wie man damit umgeht, wird unterschiedlich beurteilt.",
+  "alltag": "Siegel wie „Fairtrade“ oder Angaben zur Herkunft zeigen, unter welchen Bedingungen etwas hergestellt wurde. Ob man darauf achtet, ist eine Konsumentscheidung – genau wie die Frage, ob man etwas länger nutzt oder gebraucht kauft."
+ },
+ "interaktiv": [],
+ "vertiefung": [],
+ "uebungen": [
+  {
+   "id": "pb-glo-01",
+   "typ": "single",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz1",
+   "frage": "Welche Beschreibung passt am besten zum Begriff **Globalisierung**?",
+   "optionen": [
+    {
+     "text": "Die zunehmende weltweite Verflechtung von Wirtschaft, Politik, Kommunikation und Kultur",
+     "richtig": true
+    },
+    {
+     "text": "Dass alle Länder dieselbe Regierung haben",
+     "feedback": "Es gibt keine Weltregierung. Staaten bleiben eigenständig, sind aber stärker verflochten."
+    },
+    {
+     "text": "Dass Produkte nur noch im eigenen Land hergestellt werden",
+     "feedback": "Das wäre das Gegenteil von globaler Arbeitsteilung."
+    },
+    {
+     "text": "Dass alle Menschen gleich viel verdienen",
+     "feedback": "Globalisierung sagt nichts über gleiche Einkommen aus – die Unterschiede sind weiterhin groß."
+    }
+   ],
+   "erklaerung": "Globalisierung beschreibt, wie Länder durch Handel, Internet, Reisen und Politik immer enger miteinander verbunden sind."
+  },
+  {
+   "id": "pb-glo-02",
+   "typ": "multi",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz1",
+   "frage": "Welche Entwicklungen haben die Globalisierung beschleunigt?",
+   "optionen": [
+    {
+     "text": "günstiger Transport mit großen Containerschiffen",
+     "richtig": true
+    },
+    {
+     "text": "das Internet und digitale Kommunikation",
+     "richtig": true
+    },
+    {
+     "text": "der Abbau von Zöllen und Handelsschranken",
+     "richtig": true
+    },
+    {
+     "text": "die Erfindung des Buchdrucks im 15. Jahrhundert",
+     "feedback": "Der Buchdruck war wichtig, erklärt aber nicht die heutige schnelle weltweite Verflechtung."
+    }
+   ],
+   "erklaerung": "Transport, Kommunikation und offener Handel sind die wichtigsten Antriebe der heutigen Globalisierung."
+  },
+  {
+   "id": "pb-glo-03",
+   "typ": "reihenfolge",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz2",
+   "frage": "Bringe die Schritte der Wertschöpfungskette eines T-Shirts in die richtige Reihenfolge.",
+   "elemente": [
+    "Baumwolle anbauen und ernten",
+    "Baumwolle zu Garn spinnen",
+    "Garn zu Stoff weben",
+    "Stoff färben und zuschneiden",
+    "T-Shirt nähen",
+    "T-Shirt im Geschäft verkaufen"
+   ],
+   "erklaerung": "Vom Rohstoff über die Verarbeitung bis zum Verkauf: Jeder Schritt kann in einem anderen Land stattfinden."
+  },
+  {
+   "id": "pb-glo-04",
+   "typ": "zahl",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz2",
+   "frage": "Ein T-Shirt kostet im Laden 20 €. Angenommen, 0,6 % des Preises gehen an die Näherinnen und Näher. Wie viel Cent sind das?",
+   "gegeben": "Ladenpreis 20 €, Lohnanteil 0,6 %",
+   "gesucht": "Lohnanteil in Cent",
+   "loesung": 12,
+   "toleranz": 0,
+   "einheit": "ct",
+   "rechenweg": [
+    "0,6 % von 20 € = 20 € · 0,006 = 0,12 €",
+    "0,12 € = 12 ct"
+   ],
+   "erklaerung": "Die Zahl ist ein angenommenes Beispiel. Untersuchungen zeigen aber, dass der Lohnanteil am Ladenpreis von Kleidung oft nur wenige Prozent oder weniger beträgt. Ein großer Teil geht an Handel, Marke, Transport und Material."
+  },
+  {
+   "id": "pb-glo-05",
+   "typ": "zuordnung",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz3",
+   "frage": "Ordne die Aussagen zu: Wer könnte das sagen?",
+   "paare": [
+    {
+     "links": "„Durch die Fabrik habe ich zum ersten Mal ein eigenes Einkommen.“",
+     "rechts": "Arbeiterin in einem Produktionsland"
+    },
+    {
+     "links": "„Unser Werk wurde geschlossen, die Produktion ist ins Ausland gegangen.“",
+     "rechts": "Arbeiter in einem Industrieland"
+    },
+    {
+     "links": "„Ich kann mir jede Saison neue Kleidung leisten.“",
+     "rechts": "Verbraucherin in Deutschland"
+    },
+    {
+     "links": "„Wir wollen dort produzieren, wo die Kosten am niedrigsten sind.“",
+     "rechts": "Unternehmen"
+    }
+   ],
+   "erklaerung": "Globalisierung wirkt sich auf verschiedene Gruppen unterschiedlich aus. Deshalb ist es wichtig, die Perspektiven der Betroffenen zu untersuchen."
+  },
+  {
+   "id": "pb-glo-06",
+   "typ": "multi",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz3",
+   "frage": "Welche der folgenden Punkte werden häufig als **Risiken** der Globalisierung genannt?",
+   "optionen": [
+    {
+     "text": "gefährliche Arbeitsbedingungen in manchen Produktionsländern",
+     "richtig": true
+    },
+    {
+     "text": "Abhängigkeit von langen Lieferketten, z. B. wenn Teile plötzlich fehlen",
+     "richtig": true
+    },
+    {
+     "text": "Umweltbelastung durch Transport über weite Strecken",
+     "richtig": true
+    },
+    {
+     "text": "eine größere Auswahl an Produkten",
+     "feedback": "Das wird meist als Chance gesehen."
+    },
+    {
+     "text": "neue Arbeitsplätze in Schwellenländern",
+     "feedback": "Das wird meist als Chance gesehen, auch wenn über die Arbeitsbedingungen gestritten wird."
+    }
+   ],
+   "erklaerung": "Ob die Chancen oder die Risiken überwiegen, ist umstritten. Wichtig ist, beide Seiten zu kennen und zu belegen."
+  },
+  {
+   "id": "pb-glo-07",
+   "typ": "text",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz4",
+   "frage": "Sollte es Gesetze geben, die Unternehmen verpflichten, auf faire Arbeitsbedingungen in ihren Lieferketten zu achten? Stelle ein Argument dafür und eines dagegen dar und formuliere ein begründetes eigenes Urteil.",
+   "stichworte": [
+    {
+     "aspekt": "Argument dafür: Menschenrechte, Arbeitsschutz, Verantwortung",
+     "woerter": [
+      "menschenrecht",
+      "arbeitsbeding",
+      "verantwort",
+      "schutz",
+      "sicher"
+     ]
+    },
+    {
+     "aspekt": "Argument dagegen: Kosten, Bürokratie, Preise, Wettbewerb",
+     "woerter": [
+      "kost",
+      "bürokrat",
+      "buerokrat",
+      "preis",
+      "wettbewerb",
+      "aufwand"
+     ]
+    },
+    {
+     "aspekt": "Begründetes eigenes Urteil",
+     "woerter": [
+      "weil",
+      "deshalb",
+      "daher",
+      "meiner meinung",
+      "ich finde",
+      "ich meine"
+     ]
+    }
+   ],
+   "musterloesung": "Dafür spricht, dass Unternehmen eine **Verantwortung** für die Menschen in ihrer Lieferkette haben und Unglücke wie Rana Plaza durch mehr Arbeitsschutz verhindert werden könnten. Dagegen spricht, dass solche Regeln viel **Bürokratie** und **Kosten** verursachen und Produkte teurer machen können. Ich finde ..., **weil** ...",
+   "erklaerung": "Die Frage wird in Politik und Wirtschaft kontrovers diskutiert. Bewertet wird, ob du beide Seiten fair darstellst und dein Urteil begründest – nicht, welche Seite du wählst."
+  }
+ ]
+}

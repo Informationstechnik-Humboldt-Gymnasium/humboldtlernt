@@ -1,0 +1,233 @@
+{
+ "id": "pb-k10-soziale-marktwirtschaft",
+ "titel": "Die Soziale Marktwirtschaft",
+ "kurz": "Freier Markt plus sozialer Ausgleich: die Idee der Sozialen Marktwirtschaft, ihre Säulen und der Vergleich mit der Planwirtschaft.",
+ "reihenfolge": 2,
+ "lernziele": [
+  {
+   "id": "lz1",
+   "niveau": "G",
+   "text": "Die Grundidee der Sozialen Marktwirtschaft erklären"
+  },
+  {
+   "id": "lz2",
+   "niveau": "G",
+   "text": "Die fünf Zweige der Sozialversicherung nennen"
+  },
+  {
+   "id": "lz3",
+   "niveau": "H",
+   "text": "Soziale Marktwirtschaft, freie Marktwirtschaft und Zentralverwaltungswirtschaft vergleichen"
+  },
+  {
+   "id": "lz4",
+   "niveau": "H",
+   "text": "Positionen zur Rolle des Staates in der Wirtschaft darstellen"
+  }
+ ],
+ "verstehen": {
+  "einstieg": "Auf deinem ersten Gehaltszettel im Ferienjob steht, dass Geld für „Rentenversicherung“ und „Krankenversicherung“ abgezogen wird. Warum eigentlich?",
+  "abschnitte": [
+   {
+    "titel": "Die Idee",
+    "text": "Nach dem Zweiten Weltkrieg wurde in der Bundesrepublik die **Soziale Marktwirtschaft** eingeführt. Den Begriff prägte der Ökonom **Alfred Müller-Armack**, durchgesetzt hat sie vor allem Wirtschaftsminister **Ludwig Erhard** (ab 1949, später Bundeskanzler).\n\nDie Grundidee: **Freiheit des Marktes** verbinden mit **sozialem Ausgleich**. Unternehmen und Verbraucher entscheiden frei, Preise bilden sich am Markt – aber der Staat setzt einen Rahmen, damit der Wettbewerb funktioniert und niemand ins Bodenlose fällt.\n\nIm Grundgesetz stehen dazu z. B. das **Sozialstaatsprinzip** (Art. 20) und der Satz **„Eigentum verpflichtet“** (Art. 14 Abs. 2)."
+   },
+   {
+    "titel": "Säulen der Sozialen Marktwirtschaft",
+    "text": "- **Wettbewerbspolitik:** Das Bundeskartellamt verhindert Kartelle und Monopole.\n- **Sozialpolitik:** die fünf Zweige der **Sozialversicherung** – Kranken- (1883), Unfall- (1884), Renten- (1889), Arbeitslosen- (1927) und Pflegeversicherung (1995). Beiträge zahlen meist Arbeitnehmer und Arbeitgeber gemeinsam. Dazu kommen Leistungen wie Kindergeld oder die Grundsicherung.\n- **Tarifautonomie** (Art. 9 Abs. 3): **Gewerkschaften** und **Arbeitgeberverbände** handeln Löhne ohne den Staat aus.\n- **Mindestlohn:** Seit 2015 gibt es einen gesetzlichen Mindestlohn. Seit 1. Januar 2026 beträgt er **13,90 €** pro Stunde, ab 2027 **14,60 €**.\n- **Konjunktur- und Umweltpolitik:** Der Staat versucht, Wirtschaftskrisen abzufedern und die Umwelt zu schützen."
+   },
+   {
+    "titel": "Im Vergleich und in der Diskussion",
+    "text": "- **Freie Marktwirtschaft:** Der Staat hält sich fast völlig heraus („laissez-faire“). Das kann zu großer Ungleichheit und Ausbeutung führen, wie in der frühen Industrialisierung.\n- **Zentralverwaltungswirtschaft (Planwirtschaft):** Der Staat plant, was, wie viel und zu welchem Preis produziert wird. So war es in der **DDR**. Folgen waren oft Mangel, lange Wartezeiten (z. B. viele Jahre auf ein Auto) und wenig Innovation.\n\nDie Soziale Marktwirtschaft liegt dazwischen. Wie viel Staat nötig ist, wird **politisch unterschiedlich** gesehen: Die einen wollen mehr Umverteilung und Schutz, die anderen weniger Abgaben und Regeln, damit sich Leistung und Unternehmertum mehr lohnen."
+   }
+  ],
+  "formeln": [],
+  "merksatz": "Die **Soziale Marktwirtschaft** verbindet die **Freiheit des Marktes** mit **sozialem Ausgleich** (Ludwig Erhard, Alfred Müller-Armack). Säulen sind Wettbewerbspolitik, die **fünf Sozialversicherungen**, Tarifautonomie und der **Mindestlohn** (13,90 € seit 2026).\n\nSie liegt zwischen **freier Marktwirtschaft** und **Planwirtschaft**. Wie viel Staat nötig ist, ist umstritten.",
+  "alltag": "Ab dem ersten Minijob oder Ferienjob lohnt sich ein Blick auf die Abrechnung: Dort siehst du, wie die Soziale Marktwirtschaft finanziert wird."
+ },
+ "interaktiv": [],
+ "vertiefung": [],
+ "uebungen": [
+  {
+   "id": "pb-som-01",
+   "typ": "single",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz1",
+   "frage": "Was ist die Grundidee der **Sozialen Marktwirtschaft**?",
+   "optionen": [
+    {
+     "text": "Freiheit des Marktes mit sozialem Ausgleich verbinden",
+     "richtig": true
+    },
+    {
+     "text": "Der Staat plant die gesamte Produktion.",
+     "feedback": "Das ist die Zentralverwaltungswirtschaft."
+    },
+    {
+     "text": "Der Staat greift überhaupt nicht in die Wirtschaft ein.",
+     "feedback": "Das ist die freie Marktwirtschaft."
+    },
+    {
+     "text": "Alle verdienen gleich viel.",
+     "feedback": "Unterschiedliche Einkommen sind erlaubt. Der Staat sorgt aber für eine soziale Absicherung."
+    }
+   ],
+   "erklaerung": "Markt wo möglich, Staat wo nötig – so wird die Idee oft zusammengefasst."
+  },
+  {
+   "id": "pb-som-02",
+   "typ": "multi",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz2",
+   "frage": "Welche gehören zu den **fünf Zweigen der Sozialversicherung**?",
+   "optionen": [
+    {
+     "text": "Krankenversicherung",
+     "richtig": true
+    },
+    {
+     "text": "Rentenversicherung",
+     "richtig": true
+    },
+    {
+     "text": "Arbeitslosenversicherung",
+     "richtig": true
+    },
+    {
+     "text": "Pflegeversicherung",
+     "richtig": true
+    },
+    {
+     "text": "Unfallversicherung",
+     "richtig": true
+    },
+    {
+     "text": "Handyversicherung",
+     "feedback": "Das ist eine freiwillige private Versicherung, keine Sozialversicherung."
+    }
+   ],
+   "erklaerung": "Die ersten Sozialversicherungen entstanden unter Reichskanzler Otto von Bismarck in den 1880er-Jahren."
+  },
+  {
+   "id": "pb-som-03",
+   "typ": "zahl",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz1",
+   "frage": "Ein Aushilfskoch arbeitet 2026 zum Mindestlohn von 13,90 € pro Stunde 120 Stunden im Monat. Wie viel verdient er brutto?",
+   "loesung": 1668,
+   "toleranz": 0,
+   "einheit": "€",
+   "rechenweg": [
+    "13,90 € · 120 = 1 668 €"
+   ],
+   "erklaerung": "Brutto bedeutet vor Abzug von Steuern und Sozialabgaben."
+  },
+  {
+   "id": "pb-som-04",
+   "typ": "zahl",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz1",
+   "frage": "Der Mindestlohn steigt von 13,90 € (2026) auf 14,60 € (2027). Um wie viel Prozent ist das? (auf eine Nachkommastelle)",
+   "loesung": 5.0,
+   "toleranz": 0.02,
+   "einheit": "%",
+   "rechenweg": [
+    "Erhöhung: 14,60 € − 13,90 € = 0,70 €",
+    "0,70 : 13,90 ≈ 0,0504",
+    "≈ 5,0 %"
+   ],
+   "erklaerung": "Die Höhe schlägt eine Kommission aus Gewerkschaften, Arbeitgebern und Wissenschaft vor."
+  },
+  {
+   "id": "pb-som-05",
+   "typ": "zuordnung",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz3",
+   "frage": "Ordne die Merkmale den Wirtschaftsordnungen zu.",
+   "paare": [
+    {
+     "links": "Eine staatliche Plankommission legt fest, wie viele Autos produziert werden.",
+     "rechts": "Zentralverwaltungswirtschaft"
+    },
+    {
+     "links": "Der Staat greift nicht ein, es gibt keinen Kündigungsschutz und keine Sozialversicherung.",
+     "rechts": "freie Marktwirtschaft"
+    },
+    {
+     "links": "Preise bilden sich am Markt, der Staat sichert Wettbewerb und soziale Absicherung.",
+     "rechts": "Soziale Marktwirtschaft"
+    }
+   ],
+   "erklaerung": "Die DDR war eine Zentralverwaltungswirtschaft, die Bundesrepublik setzte auf die Soziale Marktwirtschaft."
+  },
+  {
+   "id": "pb-som-06",
+   "typ": "single",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz3",
+   "frage": "Was bedeutet **Tarifautonomie**?",
+   "optionen": [
+    {
+     "text": "Gewerkschaften und Arbeitgeberverbände handeln Löhne und Arbeitsbedingungen eigenständig aus, ohne dass der Staat sie festlegt.",
+     "richtig": true
+    },
+    {
+     "text": "Der Staat legt alle Löhne fest.",
+     "feedback": "Gerade das soll die Tarifautonomie verhindern. Nur den Mindestlohn als Untergrenze regelt ein Gesetz."
+    },
+    {
+     "text": "Jeder Arbeitnehmer verhandelt immer allein mit seinem Chef.",
+     "feedback": "Tarifverträge werden kollektiv ausgehandelt."
+    },
+    {
+     "text": "Steuern werden automatisch erhoben.",
+     "feedback": "Mit Steuern hat die Tarifautonomie nichts zu tun."
+    }
+   ],
+   "erklaerung": "Grundlage ist die Koalitionsfreiheit in Art. 9 Abs. 3 GG. Streiks sind ein erlaubtes Mittel im Tarifkonflikt."
+  },
+  {
+   "id": "pb-som-07",
+   "typ": "text",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz4",
+   "frage": "Soll der Staat stärker in die Wirtschaft eingreifen, z. B. durch höhere Mindestlöhne und mehr Sozialleistungen? Stelle zwei Positionen mit je einem Argument dar und formuliere ein begründetes Urteil.",
+   "stichworte": [
+    {
+     "aspekt": "Position für mehr Staat mit Argument: Gerechtigkeit, Armut, Schutz, Ungleichheit",
+     "woerter": [
+      "gerecht",
+      "armut",
+      "schutz",
+      "ungleich",
+      "sozial"
+     ]
+    },
+    {
+     "aspekt": "Position für weniger Staat mit Argument: Arbeitsplätze, Kosten, Wettbewerb, Leistung, Abgaben, Bürokratie",
+     "woerter": [
+      "arbeitspl",
+      "kost",
+      "wettbewerb",
+      "leistung",
+      "abgab",
+      "steuer",
+      "bürokrat",
+      "buerokrat"
+     ]
+    },
+    {
+     "aspekt": "Begründetes Urteil",
+     "woerter": [
+      "weil",
+      "deshalb",
+      "daher",
+      "denn"
+     ]
+    }
+   ],
+   "musterloesung": "Befürworter eines stärkeren Staates argumentieren, dass höhere Mindestlöhne **Armut** verringern und für mehr **Gerechtigkeit** sorgen. Kritiker halten dagegen, dass höhere **Kosten** für Unternehmen **Arbeitsplätze** gefährden und höhere **Abgaben** Leistung weniger lohnend machen. Ich finde ..., **weil** ...",
+   "erklaerung": "Die Frage nach der richtigen Rolle des Staates steht im Zentrum vieler politischer Debatten. Bewertet wird die faire Darstellung und deine Begründung."
+  }
+ ]
+}

@@ -1,0 +1,240 @@
+{
+ "id": "pb-k8-rechtsstaat",
+ "titel": "Merkmale des Rechtsstaats",
+ "kurz": "Gewaltenteilung, Bindung an Recht und Gesetz und unabhängige Gerichte – was einen Rechtsstaat ausmacht.",
+ "reihenfolge": 2,
+ "lernziele": [
+  {
+   "id": "lz1",
+   "niveau": "G",
+   "text": "Die drei Staatsgewalten und ihre Organe nennen"
+  },
+  {
+   "id": "lz2",
+   "niveau": "G",
+   "text": "Grundsätze des Rechtsstaats an Beispielen erklären"
+  },
+  {
+   "id": "lz3",
+   "niveau": "H",
+   "text": "Strafrecht, Zivilrecht und öffentliches Recht unterscheiden"
+  },
+  {
+   "id": "lz4",
+   "niveau": "H",
+   "text": "Den Rechtsstaat von einem Unrechtsstaat abgrenzen"
+  }
+ ],
+ "verstehen": {
+  "einstieg": "Ein Minister findet ein Urteil falsch und ruft den Richter an, er solle es ändern. Was würdest du dazu sagen?",
+  "abschnitte": [
+   {
+    "titel": "Gewaltenteilung",
+    "text": "Im Rechtsstaat ist die Staatsgewalt auf **drei Gewalten** verteilt, die sich gegenseitig kontrollieren:\n\n- **Legislative** (gesetzgebende Gewalt): Bundestag und Bundesrat, in den Ländern die Landtage – in Berlin das Abgeordnetenhaus.\n- **Exekutive** (ausführende Gewalt): Bundesregierung, Landesregierungen, Verwaltung, Polizei.\n- **Judikative** (rechtsprechende Gewalt): die Gerichte.\n\nSo soll Machtmissbrauch verhindert werden. Die Idee geht auf den französischen Philosophen **Montesquieu** (18. Jahrhundert) zurück."
+   },
+   {
+    "titel": "Grundsätze des Rechtsstaats",
+    "text": "- **Bindung an Recht und Gesetz** (Art. 20 Abs. 3): Auch Regierung und Behörden müssen sich an die Gesetze halten.\n- **Unabhängige Gerichte** (Art. 97): Richterinnen und Richter sind nur dem Gesetz unterworfen und keine Weisungen schuldig.\n- **Rechtsweggarantie** (Art. 19 Abs. 4): Jeder kann gegen Maßnahmen des Staates vor Gericht ziehen.\n- **Keine Strafe ohne Gesetz** (Art. 103 Abs. 2): Bestraft wird nur, was vorher gesetzlich verboten war.\n- **Anspruch auf rechtliches Gehör** (Art. 103 Abs. 1) und **Unschuldsvermutung**: Jeder gilt als unschuldig, bis seine Schuld bewiesen ist.\n- **Grundrechte** gelten und können eingeklagt werden."
+   },
+   {
+    "titel": "Rechtsgebiete und Unrechtsstaat",
+    "text": "Man unterscheidet grob:\n\n- **Strafrecht:** Der Staat verfolgt Straftaten (z. B. Diebstahl). Ankläger ist die Staatsanwaltschaft.\n- **Zivilrecht (Privatrecht):** Streit zwischen Privatpersonen oder Firmen (z. B. ein kaputtes gekauftes Handy, Mietstreit).\n- **Öffentliches Recht:** Streit zwischen Bürgern und dem Staat (z. B. gegen eine Baugenehmigung).\n\nIn einem **Unrechtsstaat** fehlen diese Sicherungen: Die Macht ist in einer Hand, Gerichte sind nicht unabhängig, Menschen werden willkürlich verhaftet. Beispiele aus der deutschen Geschichte sind der **Nationalsozialismus** und – in anderer Form – die **SED-Diktatur in der DDR**."
+   }
+  ],
+  "formeln": [],
+  "merksatz": "Im **Rechtsstaat** ist die Macht auf **Legislative, Exekutive und Judikative** verteilt. Alle staatlichen Stellen sind an **Recht und Gesetz** gebunden, Gerichte sind **unabhängig**, jeder kann sich gerichtlich wehren, und es gibt **keine Strafe ohne Gesetz**.",
+  "alltag": "Wenn du mit einem gekauften Gerät Ärger hast, ist das ein Fall für das Zivilrecht. Verbraucherzentralen beraten, bevor man vor Gericht zieht."
+ },
+ "interaktiv": [],
+ "vertiefung": [],
+ "uebungen": [
+  {
+   "id": "pb-rst-01",
+   "typ": "zuordnung",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz1",
+   "frage": "Ordne die Organe den Staatsgewalten zu.",
+   "paare": [
+    {
+     "links": "Bundestag",
+     "rechts": "Legislative"
+    },
+    {
+     "links": "Polizei",
+     "rechts": "Exekutive"
+    },
+    {
+     "links": "Amtsgericht",
+     "rechts": "Judikative"
+    }
+   ],
+   "erklaerung": "Die Legislative macht Gesetze, die Exekutive führt sie aus, die Judikative spricht Recht."
+  },
+  {
+   "id": "pb-rst-02",
+   "typ": "single",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz1",
+   "frage": "Warum gibt es die Gewaltenteilung?",
+   "optionen": [
+    {
+     "text": "Damit sich die Gewalten gegenseitig kontrollieren und niemand zu viel Macht bekommt.",
+     "richtig": true
+    },
+    {
+     "text": "Damit Gesetze schneller beschlossen werden.",
+     "feedback": "Gewaltenteilung macht Entscheidungen eher langsamer, dafür sicherer vor Machtmissbrauch."
+    },
+    {
+     "text": "Damit die Polizei auch Urteile sprechen kann.",
+     "feedback": "Genau das soll verhindert werden: Urteile sprechen nur Gerichte."
+    },
+    {
+     "text": "Weil es in Deutschland drei Hauptstädte gibt.",
+     "feedback": "Deutschland hat eine Hauptstadt, Berlin."
+    }
+   ],
+   "erklaerung": "Gewaltenteilung ist ein Kernprinzip gegen Willkür. Der Gedanke stammt von Montesquieu."
+  },
+  {
+   "id": "pb-rst-03",
+   "typ": "single",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz2",
+   "frage": "Ein Minister ruft einen Richter an und verlangt, ein Urteil zu ändern. Gegen welchen Grundsatz verstößt das?",
+   "optionen": [
+    {
+     "text": "Gegen die Unabhängigkeit der Gerichte (Art. 97 GG)",
+     "richtig": true
+    },
+    {
+     "text": "Gegen die Pressefreiheit",
+     "feedback": "Es geht um den Einfluss der Regierung auf ein Gericht."
+    },
+    {
+     "text": "Gegen das Wahlrecht",
+     "feedback": "Wahlen spielen hier keine Rolle."
+    },
+    {
+     "text": "Gegen keinen – Minister dürfen Richtern Anweisungen geben.",
+     "feedback": "Richter sind nur dem Gesetz unterworfen und keinen Weisungen."
+    }
+   ],
+   "erklaerung": "Gegen ein Urteil kann man nur mit Rechtsmitteln vorgehen, zum Beispiel einer Berufung – nicht mit politischem Druck."
+  },
+  {
+   "id": "pb-rst-04",
+   "typ": "zuordnung",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz3",
+   "frage": "Welches Rechtsgebiet ist zuständig? Ordne zu.",
+   "paare": [
+    {
+     "links": "Ein Jugendlicher stiehlt im Supermarkt.",
+     "rechts": "Strafrecht"
+    },
+    {
+     "links": "Ein Vermieter und eine Mieterin streiten über die Nebenkosten.",
+     "rechts": "Zivilrecht"
+    },
+    {
+     "links": "Eine Familie klagt gegen die Ablehnung eines Schulplatzes durch das Bezirksamt.",
+     "rechts": "öffentliches Recht"
+    }
+   ],
+   "erklaerung": "Strafrecht: Staat verfolgt Straftaten. Zivilrecht: Streit zwischen Privaten. Öffentliches Recht: Streit mit dem Staat."
+  },
+  {
+   "id": "pb-rst-05",
+   "typ": "multi",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz2",
+   "frage": "Welche Aussagen beschreiben Grundsätze des Rechtsstaats richtig?",
+   "optionen": [
+    {
+     "text": "Niemand darf für eine Tat bestraft werden, die zur Tatzeit nicht verboten war.",
+     "richtig": true
+    },
+    {
+     "text": "Jeder gilt als unschuldig, bis seine Schuld bewiesen ist.",
+     "richtig": true
+    },
+    {
+     "text": "Auch die Regierung muss sich an die Gesetze halten.",
+     "richtig": true
+    },
+    {
+     "text": "Die Polizei darf Verdächtige ohne richterliche Kontrolle beliebig lange festhalten.",
+     "feedback": "Über eine Freiheitsentziehung muss ein Richter entscheiden – spätestens bis zum Ende des Tages nach der Festnahme (Art. 104 GG)."
+    }
+   ],
+   "erklaerung": "Diese Grundsätze schützen jeden Einzelnen vor staatlicher Willkür."
+  },
+  {
+   "id": "pb-rst-06",
+   "typ": "single",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz4",
+   "frage": "Woran erkennt man vor allem einen **Unrechtsstaat**?",
+   "optionen": [
+    {
+     "text": "Die Machthaber stehen über dem Recht, Gerichte sind nicht unabhängig, und Menschen können willkürlich verfolgt werden.",
+     "richtig": true
+    },
+    {
+     "text": "Es gibt viele Gesetze.",
+     "feedback": "Auch Rechtsstaaten haben viele Gesetze. Entscheidend ist, ob alle an das Recht gebunden sind."
+    },
+    {
+     "text": "Es gibt eine Polizei.",
+     "feedback": "Jeder Staat hat eine Polizei. Im Rechtsstaat ist sie an Gesetze gebunden und wird kontrolliert."
+    },
+    {
+     "text": "Es werden Steuern erhoben.",
+     "feedback": "Steuern gibt es in fast allen Staaten."
+    }
+   ],
+   "erklaerung": "Im Nationalsozialismus und in der DDR wurden Menschen ohne faire Verfahren verfolgt. Daraus zog das Grundgesetz Lehren."
+  },
+  {
+   "id": "pb-rst-07",
+   "typ": "text",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz2",
+   "frage": "Erkläre an einem selbst gewählten Beispiel, warum unabhängige Gerichte für einen Rechtsstaat wichtig sind.",
+   "stichworte": [
+    {
+     "aspekt": "Unabhängigkeit: keine Weisungen, nur dem Gesetz unterworfen",
+     "woerter": [
+      "unabhängig",
+      "unabhaengig",
+      "weisung",
+      "gesetz"
+     ]
+    },
+    {
+     "aspekt": "Schutz vor Willkür oder Machtmissbrauch des Staates",
+     "woerter": [
+      "willkür",
+      "willkuer",
+      "macht",
+      "missbrauch",
+      "kontroll"
+     ]
+    },
+    {
+     "aspekt": "Konkretes Beispiel",
+     "woerter": [
+      "zum beispiel",
+      "z. b.",
+      "z.b.",
+      "beispiel",
+      "etwa"
+     ]
+    }
+   ],
+   "musterloesung": "Gerichte sind **unabhängig** und nur dem **Gesetz** unterworfen. Das schützt vor **Willkür**: Wenn zum Beispiel eine Behörde einer Demonstration zu Unrecht verbietet, kann ein Gericht das Verbot aufheben – auch wenn die Regierung anders denkt. Ohne unabhängige Gerichte könnte die Regierung ihre **Macht** missbrauchen.",
+   "erklaerung": "Wichtig sind drei Bausteine: Was bedeutet Unabhängigkeit? Wovor schützt sie? Und ein passendes Beispiel."
+  }
+ ]
+}

@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Der Bundestag in 3D</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<style>
+  /* Fraktionsfarben (übliche Parteifarben in Grafiken) und Saalfarben – mit eigenen Werten für den Dunkelmodus */
+  :root {
+    --p-linke: #be3075; --p-spd: #e3000f; --p-gruene: #1aa037; --p-union: #2b2b2b; --p-afd: #009ee0; --p-ssw: #003c8f;
+    --saal-boden: #c9cfdc; --saal-stufe: #d9dde6; --saal-moebel: #8c8f96; --saal-wand: #eceae4; --saal-glas: #bfd7ea; --saal-rippe: #7d8a99; --saal-blass: #e6e4de;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --p-union: #8a8f98; --p-ssw: #4f7fd6;
+      --saal-boden: #2a2f3a; --saal-stufe: #343a47; --saal-moebel: #5c6068; --saal-wand: #2b2b29; --saal-glas: #6f8fb0; --saal-rippe: #8fa3bb; --saal-blass: #3a3a37;
+    }
+  }
+  .buehne { position: relative; }
+  #saal3d { display: block; width: 100%; border-radius: 10px; background: var(--bg); touch-action: none; cursor: grab; }
+  #saal3d:focus-visible, #saal2d:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  #saal2d { background: var(--bg); border-radius: 10px; }
+  .etikett { position: absolute; right: 8px; top: 8px; font-size: .72rem; color: var(--muted); background: var(--card); border: 1px solid var(--border); border-radius: 999px; padding: 1px 8px; }
+  .darstellung { position: absolute; left: 8px; top: 8px; background: var(--card); }
+  .darstellung button { min-width: 44px; font-weight: 700; }
+  .fraktionen { display: grid; gap: 6px; }
+  .fraktionen button { display: grid; grid-template-columns: 18px 1fr auto; align-items: center; gap: 8px; text-align: left; }
+  .fraktionen button[aria-pressed=true] { background: var(--soft-accent); color: var(--text); border-color: var(--accent); }
+  .fraktionen i { width: 16px; height: 16px; border-radius: 4px; display: inline-block; border: 1px solid var(--border); }
+  .fraktionen b { font-variant-numeric: tabular-nums; }
+  .balken { position: relative; height: 18px; border-radius: 9px; background: var(--grid); overflow: hidden; margin: 10px 0 4px; }
+  .balken span { position: absolute; left: 0; top: 0; bottom: 0; background: var(--accent); transition: width .2s; }
+  .balken .linie { position: absolute; top: -2px; bottom: -2px; width: 2px; background: var(--text); }
+  .balken-legende { display: flex; justify-content: space-between; font-size: .75rem; color: var(--muted); position: relative; height: 1.1em; }
+  .balken-legende span { position: absolute; transform: translateX(-50%); white-space: nowrap; }
+  .status { border-radius: 10px; padding: 8px 10px; margin-top: 10px; font-size: .9rem; background: var(--bg); }
+  .status.ok { background: var(--ok-soft); color: var(--ok); }
+  .info { min-height: 2.6em; }
+  .optionen { margin-top: 8px; gap: 6px; }
+  .optionen button { font-size: .85rem; padding: 6px 10px; }
+  svg .sitz { stroke: var(--card); stroke-width: .05; cursor: pointer; }
+  svg .sitz.blass { opacity: .18; }
+  svg .sitz.markiert { stroke: var(--text); stroke-width: .15; }
+  svg .lbl2d { fill: var(--muted) !important; }
+</style>
+</head>
+<body>
+<h1>Der Bundestag in 3D</h1>
+<p>Erkunde den Plenarsaal mit den 630 Sitzen nach der Bundestagswahl 2025. Ziehe, um den Saal zu drehen, und tippe einen Sitz an. Wähle rechts Fraktionen aus und prüfe, welche Mehrheiten sie zusammen <b>rechnerisch</b> erreichen würden.</p>
+
+<div class="lk-grid">
+  <div class="lk-card">
+    <div class="buehne" id="buehne">
+      <canvas id="saal3d" tabindex="0" role="img" aria-label="3D-Modell des Plenarsaals mit den Sitzen der Fraktionen"></canvas>
+      <svg id="saal2d" viewBox="-15.5 -16 31 21" role="img" aria-label="Sitzverteilung als Halbrund von oben" tabindex="0" hidden></svg>
+      <div class="seg darstellung" role="group" aria-label="Darstellung">
+        <button type="button" id="d3" aria-pressed="true">3D</button>
+        <button type="button" id="d2" aria-pressed="false">2D</button>
+      </div>
+      <span class="etikett" title="Sitzzahlen: amtliches Endergebnis der Bundestagswahl 2025. Sitzordnung und Saal vereinfacht.">Modell</span>
+    </div>
+    <div class="row optionen" id="optionen3d">
+      <div class="seg" role="group" aria-label="Blickwinkel">
+        <button type="button" data-ansicht="praesidium" aria-pressed="true">Vom Präsidium</button>
+        <button type="button" data-ansicht="tribuene" aria-pressed="false">Von der Tribüne</button>
+        <button type="button" data-ansicht="oben" aria-pressed="false">Von oben</button>
+      </div>
+      <button type="button" id="kuppel" aria-pressed="true">Kuppel</button>
+      <button type="button" id="schilder" aria-pressed="true">Beschriftungen</button>
+    </div>
+    <p class="small muted info" id="info" aria-live="polite">Tippe einen Sitz an, um zu sehen, zu welcher Fraktion er gehört.</p>
+    <p class="small muted" id="fehlt3d" hidden>Die 3D-Ansicht braucht WebGL. Auf diesem Gerät siehst du die Sitzverteilung als 2D-Halbrund.</p>
+    <details class="small"><summary>Was zeigt das Modell?</summary>
+      <p>Die <b>Sitzzahlen</b> stammen aus dem amtlichen Endergebnis der Bundestagswahl vom 23. Februar 2025. Während der Wahlperiode kann sich die Zahl der Fraktionsmitglieder durch Austritte ändern.</p>
+      <p>Die <b>Sitzordnung</b> ist vereinfacht: Von links nach rechts aus Sicht des Präsidiums sitzen Linke, SPD, Grüne, CDU/CSU und AfD. Der fraktionslose Abgeordnete des SSW ist im Modell hinten in der Mitte eingezeichnet. Die genaue Platzverteilung legt der Ältestenrat fest. Vom Präsidium aus gesehen sitzt links neben dem Rednerpult die Bundesregierung, rechts der Bundesrat.</p>
+      <p>Saal und Kuppel sind <b>schematisch</b> gezeichnet, nicht maßstabsgetreu. Die Farben sind die in Grafiken üblichen Farben der Parteien.</p>
+    </details>
+  </div>
+
+  <div>
+    <section class="lk-card">
+      <h2>Mehrheiten ausprobieren</h2>
+      <p class="small muted">Wähle Fraktionen aus. Das Modell rechnet nur – ob Parteien wirklich zusammenarbeiten, entscheiden sie selbst. Manche schließen eine Zusammenarbeit mit bestimmten Parteien ausdrücklich aus.</p>
+      <div class="fraktionen" id="fraktionen" role="group" aria-label="Fraktionen auswählen"></div>
+      <div class="balken" aria-hidden="true"><span id="balken"></span><i class="linie" id="linieK"></i><i class="linie" id="linieZ"></i></div>
+      <div class="balken-legende" aria-hidden="true"><span id="legK">316</span><span id="legZ">420</span></div>
+      <p class="small muted">Markierungen: <b>316</b> = Kanzlermehrheit (mehr als die Hälfte aller 630 Mitglieder), <b>420</b> = Zweidrittelmehrheit (z. B. für Grundgesetzänderungen).</p>
+      <div class="readouts">
+        <div class="readout"><b id="summe">0</b><span>Sitze ausgewählt</span></div>
+        <div class="readout"><b id="anteil">0 %</b><span>von 630 Sitzen</span></div>
+      </div>
+      <div class="status" id="status" aria-live="polite"></div>
+      <div class="row" style="margin-top:10px"><button type="button" id="leeren">Auswahl leeren</button></div>
+    </section>
+  </div>
+</div>
+
+<section class="lk-card tasks">
+  <h2>Entdecke selbst <span data-task-count></span></h2>
+  <div class="task" data-goal="sitz"><p class="task-q">Tippe im Saal einen Sitz an und finde heraus, zu welcher Fraktion er gehört.</p></div>
+  <div class="task" data-goal="drehen"><p class="task-q">Dreh den Saal so, dass du ihn von der Besuchertribüne aus siehst – mit der Hand oder dem Knopf „Von der Tribüne“.</p></div>
+  <div class="task" data-goal="kanzler"><p class="task-q">Wähle Fraktionen aus, die zusammen rechnerisch die <b>Kanzlermehrheit</b> von 316 Sitzen erreichen.</p></div>
+  <div class="task"><p class="task-q">Wie viele Sitze fehlen der größten Fraktion (CDU/CSU, 208 Sitze) allein zur Kanzlermehrheit?</p>
+    <div class="choices">
+      <button type="button" data-fb="Nein – 316 − 208 = 108. Mit 8 fehlenden Sitzen bräuchte sie viel mehr Abgeordnete.">8</button>
+      <button type="button" data-ok data-fb="Richtig: 316 − 208 = 108. Deshalb braucht sie einen Koalitionspartner.">108</button>
+      <button type="button" data-fb="Nein – 210 wäre ein Drittel der Sitze. Gesucht ist 316 − 208.">210</button>
+    </div><p class="fb"></p></div>
+  <div class="task"><p class="task-q">Kann irgendein Bündnis aus nur <b>zwei</b> Fraktionen eine Zweidrittelmehrheit (420 Sitze) erreichen, mit der man das Grundgesetz ändern könnte?</p>
+    <div class="choices">
+      <button type="button" data-fb="Rechne nach: Die beiden größten Fraktionen kommen zusammen auf 208 + 152 = 360 Sitze – zu wenig.">Ja</button>
+      <button type="button" data-ok data-fb="Richtig: Selbst die beiden größten Fraktionen haben zusammen nur 360 Sitze. Für eine Grundgesetzänderung braucht es also breite Bündnisse über zwei Fraktionen hinaus.">Nein</button>
+    </div><p class="fb"></p></div>
+  <div class="task" data-goal="zweidrittel"><p class="task-q">Stelle eine Auswahl zusammen, die rechnerisch eine <b>Zweidrittelmehrheit</b> erreicht.</p></div>
+  <div class="all-done">Super! Du kennst jetzt den Plenarsaal und die wichtigsten Mehrheiten im Bundestag.</div>
+</section>
+
+<script src="../../static/lesson-kit.js"></script>
+<script src="bundestag.js"></script>
+<script src="../sandbox-chemielabor/three.js"></script>
+<script src="plenarsaal.js"></script>
+<script>
+(function () {
+  'use strict';
+  var BT = window.BT, S = BT.schwellen(), F = BT.daten.FRAKTIONEN, G = BT.daten.GESAMT, $ = function (id) { return document.getElementById(id); };
+  var auswahl = {}, plan = BT.sitzplan(), dreiD = false, gedreht = 0, markiert2d = null;
+
+  // ---------------------------------------------------- Fraktionsliste und Mehrheiten
+  $('fraktionen').innerHTML = F.map(function (f) {
+    return '<button type="button" data-f="' + f.id + '" aria-pressed="false"><i style="background:var(--p-' + f.id + ')" aria-hidden="true"></i><span>' + f.name + '</span><b>' + f.sitze + '</b></button>';
+  }).join('');
+  $('fraktionen').addEventListener('click', function (ev) {
+    var b = ev.target.closest('[data-f]'); if (!b) return;
+    auswahl[b.dataset.f] = !auswahl[b.dataset.f];
+    b.setAttribute('aria-pressed', !!auswahl[b.dataset.f]);
+    aktualisiere();
+  });
+  $('leeren').addEventListener('click', function () {
+    auswahl = {};
+    document.querySelectorAll('#fraktionen [data-f]').forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+    aktualisiere();
+  });
+  $('linieK').style.left = (S.kanzler / G * 100) + '%';
+  $('linieZ').style.left = (S.zweidrittel / G * 100) + '%';
+  $('legK').style.left = (S.kanzler / G * 100) + '%';
+  $('legZ').style.left = (S.zweidrittel / G * 100) + '%';
+  $('legK').textContent = S.kanzler;
+  $('legZ').textContent = S.zweidrittel;
+
+  function aktualisiere() {
+    var ids = Object.keys(auswahl).filter(function (k) { return auswahl[k]; });
+    var r = BT.bewerte(ids);
+    $('summe').textContent = r.sitze;
+    $('anteil').textContent = LK.fmt(r.sitze / G * 100, 1) + ' %';
+    $('balken').style.width = (r.sitze / G * 100) + '%';
+    var st = $('status');
+    if (!ids.length) { st.className = 'status'; st.textContent = 'Noch keine Fraktion ausgewählt.'; }
+    else if (r.zweidrittel) { st.className = 'status ok'; st.textContent = 'Rechnerisch erreicht: Kanzlermehrheit und Zweidrittelmehrheit (' + r.sitze + ' von ' + G + ' Sitzen).'; }
+    else if (r.kanzler) { st.className = 'status ok'; st.textContent = 'Rechnerisch erreicht: Kanzlermehrheit (' + S.kanzler + '). Bis zur Zweidrittelmehrheit fehlen ' + r.fehlenZweidrittel + ' Sitze.'; }
+    else { st.className = 'status'; st.textContent = 'Bis zur Kanzlermehrheit fehlen ' + r.fehlenKanzler + ' Sitze.'; }
+    if (r.kanzler) LK.reach('kanzler');
+    if (r.zweidrittel) LK.reach('zweidrittel');
+    BT.saal3d.auswahl(auswahl);
+    zeichne2d();
+  }
+
+  function sitzInfo(s) {
+    if (!s) { $('info').textContent = 'Tippe einen Sitz an, um zu sehen, zu welcher Fraktion er gehört.'; return; }
+    var f = BT.fraktion(s.fraktion);
+    $('info').textContent = 'Dieser Sitz gehört zu: ' + f.name + ' (' + f.sitze + (f.sitze === 1 ? ' Sitz' : ' Sitze') + ', ' + LK.fmt(f.sitze / G * 100, 1) + ' %).';
+    LK.reach('sitz');
+  }
+
+  // ---------------------------------------------------- 2D-Halbrund (auch Ersatz ohne WebGL)
+  var NS = 'http://www.w3.org/2000/svg';
+  function zeichne2d() {
+    var svg = $('saal2d');
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    var irgendwas = Object.keys(auswahl).some(function (k) { return auswahl[k]; });
+    plan.sitze.forEach(function (s, k) {
+      var c = document.createElementNS(NS, 'circle');
+      // Von oben, Präsidium unten: links aus Sicht des Präsidiums (+x im Modell) = links im Bild
+      c.setAttribute('cx', (-s.x).toFixed(2)); c.setAttribute('cy', (-s.z).toFixed(2)); c.setAttribute('r', 0.3);
+      c.setAttribute('style', 'fill: var(--p-' + s.fraktion + ')');   // var() nur im style, nicht als Attribut
+      c.setAttribute('class', 'sitz' + (irgendwas && !auswahl[s.fraktion] ? ' blass' : '') + (markiert2d === k ? ' markiert' : ''));
+      c.dataset.k = k;
+      svg.appendChild(c);
+    });
+    [['Präsidium', 0, 3.6], ['Regierung', -3.6, 2.9], ['Bundesrat', 3.6, 2.9]].forEach(function (t) {
+      var e = document.createElementNS(NS, 'text');
+      e.setAttribute('x', t[1]); e.setAttribute('y', t[2]); e.setAttribute('text-anchor', 'middle'); e.setAttribute('class', 'lbl2d'); e.setAttribute('font-size', '0.9');
+      e.textContent = t[0]; svg.appendChild(e);
+    });
+  }
+  $('saal2d').addEventListener('click', function (ev) {
+    var c = ev.target.closest('[data-k]'); if (!c) return;
+    markiert2d = Number(c.dataset.k);
+    sitzInfo(plan.sitze[markiert2d]);
+    zeichne2d();
+  });
+
+  // ---------------------------------------------------- 3D
+  function darstellung(d) {
+    if (d && !BT.saal3d.start($('saal3d'), {
+      sitz: sitzInfo,
+      hover: function (s) { $('saal3d').title = s ? BT.fraktion(s.fraktion).name : ''; },
+      gedreht: function (w) { gedreht += w; if (gedreht > Math.PI / 2) LK.reach('drehen'); },
+    })) { d = false; $('d3').disabled = true; $('fehlt3d').hidden = false; }
+    dreiD = d;
+    $('d3').setAttribute('aria-pressed', d); $('d2').setAttribute('aria-pressed', !d);
+    $('saal3d').toggleAttribute('hidden', !d);
+    $('saal2d').toggleAttribute('hidden', d);
+    $('optionen3d').hidden = !d;
+    BT.saal3d.aktiv(d);
+    BT.saal3d.auswahl(auswahl);
+  }
+  $('d3').addEventListener('click', function () { darstellung(true); });
+  $('d2').addEventListener('click', function () { darstellung(false); });
+  document.querySelectorAll('[data-ansicht]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      BT.saal3d.ansicht(b.dataset.ansicht);
+      document.querySelectorAll('[data-ansicht]').forEach(function (x) { x.setAttribute('aria-pressed', x === b); });
+      if (b.dataset.ansicht === 'tribuene') LK.reach('drehen');
+    });
+  });
+  $('kuppel').addEventListener('click', function () { var an = this.getAttribute('aria-pressed') !== 'true'; this.setAttribute('aria-pressed', an); BT.saal3d.kuppel(an); });
+  $('schilder').addEventListener('click', function () { var an = this.getAttribute('aria-pressed') !== 'true'; this.setAttribute('aria-pressed', an); BT.saal3d.beschriftungen(an); });
+
+  zeichne2d();
+  darstellung(BT.saal3d.verfuegbar());
+  aktualisiere();
+  LK.check();
+})();
+</script>
+</body>
+</html>

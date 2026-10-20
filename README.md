@@ -34,6 +34,10 @@ Lerneinheiten sie erledigt haben, und Lehrkräfte sehen den Fortschritt ihrer Kl
   Schottland, USA, New York, Einwanderung, Australien, Bewerbung, Medien, Lektüre), Grammatik von to be bis
   sentence transformation, Schreiben, Bild-, Film- und Textanalyse: 39 Themen, 273 Übungen und 4 interaktive
   Erklärungen (Zeitenmaschine, Satzbaukasten, Kamera-Labor, Bild-Labor).
+- **Politik (Politische Bildung, Klasse 7–10) nach dem Schulcurriculum:** alle 8 Themenfelder (globalisierte Welt,
+  Armut und Reichtum, Rechtsstaat, Migration, Demokratie in Deutschland, Konflikte, Europa, Soziale Marktwirtschaft):
+  21 Themen, 147 Übungen und 4 interaktive Erklärungen – der **Bundestag in 3D** (Plenarsaal mit 630 Sitzen nach der
+  Wahl 2025, Mehrheiten ausprobieren), Wahlsystem, Gesetzgebung und Markt. Neutral nach dem Beutelsbacher Konsens.
 - **Informatik (Wahlpflicht Klasse 10) nach dem Schulcurriculum:** alle 4 Themenfelder (Informatiksysteme,
   algorithmisches Problemlösen mit Java und objektorientierter Modellierung, Informationen und Daten,
   Datenbanken mit SQL, Datenschutz und Datensicherheit): 21 Themen, 147 Übungen und 4 interaktive Erklärungen

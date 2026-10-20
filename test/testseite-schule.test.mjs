@@ -520,12 +520,25 @@ test('17 · Datenbank: Startdaten konsistent, Migration erhält Daten, Zurückse
   altV4.lehrerzuordnungen = altV4.lehrerzuordnungen.filter(z => z.fachId !== 'englisch');
   const sp6 = speicher(); sp6.setItem(ctx.SchulBackend.SPEICHER_SCHLUESSEL, JSON.stringify(altV4));
   const b5 = neu({ speicher: sp6 }).b, m5 = b5._db();
-  assert.equal(m5.version, 5);
+  assert.equal(m5.version, ctx.SchulBackend.VERSION);
   assert.ok(m5.faecher.some(f => f.id === 'englisch' && f.lernbereiche.length === 18), 'Englisch mit 18 Lernbereichen (Pflichtmodule)');
   const keller = m5.users.find(u => u.username === 'sabine.keller');
   assert.ok(m5.lehrerzuordnungen.some(z => z.lehrerId === keller.id && z.klasseId === '9a' && z.fachId === 'englisch'));
   assert.equal(m5.faecher.length, altV4.faecher.length + 1);
   assert.deepEqual(plain(b5._integritaet()), []);
+  // Version 6: Fach Politik und Politik-Zuordnung von Murat Yilmaz in 10a
+  const altV5 = JSON.parse(sp.getItem(ctx.SchulBackend.SPEICHER_SCHLUESSEL));
+  altV5.version = 5;
+  altV5.faecher = altV5.faecher.filter(f => f.id !== 'politik');
+  altV5.lehrerzuordnungen = altV5.lehrerzuordnungen.filter(z => z.fachId !== 'politik');
+  const sp7 = speicher(); sp7.setItem(ctx.SchulBackend.SPEICHER_SCHLUESSEL, JSON.stringify(altV5));
+  const b6 = neu({ speicher: sp7 }).b, m6 = b6._db();
+  assert.equal(m6.version, 6);
+  assert.ok(m6.faecher.some(f => f.id === 'politik' && f.lernbereiche.length === 8), 'Politik mit 8 Lernbereichen (Themenfelder)');
+  const yilmaz = m6.users.find(u => u.username === 'murat.yilmaz');
+  assert.ok(m6.lehrerzuordnungen.some(z => z.lehrerId === yilmaz.id && z.klasseId === '10a' && z.fachId === 'politik'));
+  assert.equal(m6.faecher.length, altV5.faecher.length + 1);
+  assert.deepEqual(plain(b6._integritaet()), []);
   assert.ok(m.audit.some(l => l.aktion === 'migration'));
   assert.deepEqual(plain(b2._integritaet()), []);
   // Zurücksetzen

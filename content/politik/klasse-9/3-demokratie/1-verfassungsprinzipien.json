@@ -1,0 +1,230 @@
+{
+ "id": "pb-k9-verfassungsprinzipien",
+ "titel": "Verfassungsprinzipien: die Grundpfeiler des Grundgesetzes",
+ "kurz": "Demokratie, Rechtsstaat, Sozialstaat, Bundesstaat und Republik – und wie sich die Demokratie gegen ihre Feinde schützt.",
+ "reihenfolge": 1,
+ "lernziele": [
+  {
+   "id": "lz1",
+   "niveau": "G",
+   "text": "Die fünf Verfassungsprinzipien aus Artikel 20 GG nennen und erklären"
+  },
+  {
+   "id": "lz2",
+   "niveau": "G",
+   "text": "Den Föderalismus an Beispielen beschreiben"
+  },
+  {
+   "id": "lz3",
+   "niveau": "H",
+   "text": "Das Prinzip der wehrhaften Demokratie erläutern"
+  },
+  {
+   "id": "lz4",
+   "niveau": "H",
+   "text": "Verfassungsprinzipien in aktuellen Fällen wiedererkennen"
+  }
+ ],
+ "verstehen": {
+  "einstieg": "Warum lernst du in Berlin teilweise etwas anderes als deine Cousine in Bayern – obwohl beide in Deutschland zur Schule gehen?",
+  "abschnitte": [
+   {
+    "titel": "Artikel 20: fünf Prinzipien",
+    "text": "Artikel 20 GG legt fest, wie der Staat aufgebaut ist:\n\n- **Demokratie:** „Alle Staatsgewalt geht vom Volke aus.“ Das Volk wählt seine Vertreter.\n- **Republik:** Staatsoberhaupt ist kein König, sondern ein auf Zeit gewählter **Bundespräsident**.\n- **Bundesstaat:** Deutschland besteht aus **16 Ländern** mit eigenen Parlamenten und Regierungen.\n- **Sozialstaat:** Der Staat sorgt für soziale Sicherheit und Ausgleich.\n- **Rechtsstaat:** Gewaltenteilung und Bindung aller an Recht und Gesetz.\n\nDiese Grundsätze stehen unter dem Schutz der **Ewigkeitsklausel** (Art. 79 Abs. 3): Sie dürfen nicht abgeschafft werden."
+   },
+   {
+    "titel": "Föderalismus: Bund und Länder",
+    "text": "Im **Bundesstaat** teilen sich Bund und Länder die Aufgaben:\n\n- Der **Bund** ist z. B. zuständig für Außenpolitik, Verteidigung und die Bundeswehr.\n- Die **Länder** sind vor allem für **Schule und Bildung**, Polizei und Kultur zuständig („Kulturhoheit“).\n\nÜber den **Bundesrat** wirken die Länder an der Gesetzgebung des Bundes mit.\n\nBefürworter loben, dass der Föderalismus Macht verteilt und Politik näher an die Menschen bringt. Kritiker bemängeln z. B. unterschiedliche Schulsysteme und langsame Entscheidungen."
+   },
+   {
+    "titel": "Die wehrhafte Demokratie",
+    "text": "Die Weimarer Republik wurde 1933 auch mit legalen Mitteln abgeschafft. Daraus zog das Grundgesetz eine Lehre: Die Demokratie soll sich gegen ihre Feinde **wehren** können (**wehrhafte** oder **streitbare Demokratie**). Instrumente sind:\n\n- die **Ewigkeitsklausel** (Art. 79 Abs. 3),\n- das **Parteiverbot** (Art. 21): Nur das **Bundesverfassungsgericht** kann eine Partei verbieten, wenn sie die freiheitliche demokratische Grundordnung beseitigen will,\n- die **Verwirkung von Grundrechten** (Art. 18),\n- der **Verfassungsschutz**, der verfassungsfeindliche Bestrebungen beobachtet,\n- das **Widerstandsrecht** (Art. 20 Abs. 4) als letztes Mittel.\n\nWo die Grenze zwischen legitimer Opposition und Verfassungsfeindlichkeit liegt, entscheiden im Streitfall Gerichte."
+   }
+  ],
+  "formeln": [],
+  "merksatz": "Artikel 20 GG: Deutschland ist **Demokratie, Republik, Bundesstaat, Sozialstaat und Rechtsstaat**. Diese Prinzipien schützt die **Ewigkeitsklausel**.\n\nAls **wehrhafte Demokratie** kann sich die Bundesrepublik gegen ihre Feinde wehren – etwa durch ein **Parteiverbot**, das nur das Bundesverfassungsgericht aussprechen darf.",
+  "alltag": "Dass du in Berlin nach der 6. Klasse aufs Gymnasium wechselst, in den meisten anderen Ländern aber schon nach der 4., ist eine Folge des Föderalismus: Bildung ist Ländersache."
+ },
+ "interaktiv": [],
+ "vertiefung": [],
+ "uebungen": [
+  {
+   "id": "pb-vfp-01",
+   "typ": "zuordnung",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz1",
+   "frage": "Ordne die Verfassungsprinzipien ihrer Beschreibung zu.",
+   "paare": [
+    {
+     "links": "Demokratie",
+     "rechts": "Alle Staatsgewalt geht vom Volke aus."
+    },
+    {
+     "links": "Republik",
+     "rechts": "Das Staatsoberhaupt wird auf Zeit gewählt."
+    },
+    {
+     "links": "Bundesstaat",
+     "rechts": "Der Staat besteht aus Ländern mit eigenen Parlamenten."
+    },
+    {
+     "links": "Sozialstaat",
+     "rechts": "Der Staat sorgt für soziale Sicherheit und Ausgleich."
+    },
+    {
+     "links": "Rechtsstaat",
+     "rechts": "Alle staatlichen Stellen sind an Recht und Gesetz gebunden."
+    }
+   ],
+   "erklaerung": "Diese fünf Prinzipien stehen in Artikel 20 GG."
+  },
+  {
+   "id": "pb-vfp-02",
+   "typ": "zahl",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz2",
+   "frage": "Aus wie vielen Ländern besteht die Bundesrepublik Deutschland?",
+   "loesung": 16,
+   "toleranz": 0,
+   "einheit": "Länder",
+   "rechenweg": [
+    "13 Flächenländer + 3 Stadtstaaten (Berlin, Hamburg, Bremen) = 16"
+   ],
+   "erklaerung": "Seit der Wiedervereinigung 1990 gibt es 16 Länder."
+  },
+  {
+   "id": "pb-vfp-03",
+   "typ": "multi",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz2",
+   "frage": "Wofür sind in Deutschland vor allem die **Länder** zuständig?",
+   "optionen": [
+    {
+     "text": "Schulgesetze und Lehrpläne",
+     "richtig": true
+    },
+    {
+     "text": "Polizei im Alltag",
+     "richtig": true
+    },
+    {
+     "text": "Bundeswehr und Verteidigung",
+     "feedback": "Verteidigung ist Sache des Bundes."
+    },
+    {
+     "text": "Außenpolitik und Botschaften",
+     "feedback": "Die Außenpolitik liegt beim Bund."
+    }
+   ],
+   "erklaerung": "Bildung und Polizei sind Ländersache, Verteidigung und Außenpolitik Bundessache. Es gibt aber auch eine Bundespolizei und Bundesprogramme für Schulen."
+  },
+  {
+   "id": "pb-vfp-04",
+   "typ": "single",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz3",
+   "frage": "Wer darf in Deutschland eine Partei verbieten?",
+   "optionen": [
+    {
+     "text": "Nur das Bundesverfassungsgericht",
+     "richtig": true
+    },
+    {
+     "text": "Die Bundesregierung",
+     "feedback": "Die Regierung kann ein Verbot beantragen, entscheiden darf aber nur das Bundesverfassungsgericht."
+    },
+    {
+     "text": "Der Bundestag mit einfacher Mehrheit",
+     "feedback": "Auch der Bundestag kann nur einen Antrag stellen."
+    },
+    {
+     "text": "Der Verfassungsschutz",
+     "feedback": "Der Verfassungsschutz beobachtet und sammelt Informationen, er entscheidet nicht über Verbote."
+    }
+   ],
+   "erklaerung": "Antrag stellen können Bundestag, Bundesrat und Bundesregierung. Die hohe Hürde soll verhindern, dass die Mehrheit unliebsame Konkurrenz einfach verbietet."
+  },
+  {
+   "id": "pb-vfp-05",
+   "typ": "single",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz3",
+   "frage": "Welche Erfahrung aus der Geschichte führte zur Idee der **wehrhaften Demokratie**?",
+   "optionen": [
+    {
+     "text": "Die Weimarer Republik wurde 1933 auch mit scheinbar legalen Mitteln von ihren Gegnern abgeschafft.",
+     "richtig": true
+    },
+    {
+     "text": "Die Französische Revolution",
+     "feedback": "Die Revolution war wichtig für Menschenrechte, aber nicht der Anlass für dieses Prinzip im Grundgesetz."
+    },
+    {
+     "text": "Die Gründung der EU",
+     "feedback": "Die EU entstand später und ist nicht der Grund."
+    },
+    {
+     "text": "Der Mauerfall 1989",
+     "feedback": "Das Grundgesetz von 1949 enthält das Prinzip schon von Anfang an."
+    }
+   ],
+   "erklaerung": "Mit dem Ermächtigungsgesetz 1933 entmachtete sich das Parlament selbst. Das Grundgesetz soll so etwas verhindern."
+  },
+  {
+   "id": "pb-vfp-06",
+   "typ": "zuordnung",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz4",
+   "frage": "Welches Verfassungsprinzip ist in dem Fall vor allem berührt?",
+   "paare": [
+    {
+     "links": "Ein Gericht hebt eine Entscheidung des Bezirksamts auf.",
+     "rechts": "Rechtsstaat"
+    },
+    {
+     "links": "Die Bürgerinnen und Bürger wählen ein neues Landesparlament.",
+     "rechts": "Demokratie"
+    },
+    {
+     "links": "Familien mit geringem Einkommen bekommen Wohngeld.",
+     "rechts": "Sozialstaat"
+    },
+    {
+     "links": "Bayern beschließt ein eigenes Schulgesetz.",
+     "rechts": "Bundesstaat"
+    }
+   ],
+   "erklaerung": "Die Prinzipien zeigen sich in vielen alltäglichen Entscheidungen."
+  },
+  {
+   "id": "pb-vfp-07",
+   "typ": "multi",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz3",
+   "frage": "Welche Instrumente gehören zur **wehrhaften Demokratie**?",
+   "optionen": [
+    {
+     "text": "Parteiverbot durch das Bundesverfassungsgericht",
+     "richtig": true
+    },
+    {
+     "text": "Ewigkeitsklausel (Art. 79 Abs. 3)",
+     "richtig": true
+    },
+    {
+     "text": "Beobachtung durch den Verfassungsschutz",
+     "richtig": true
+    },
+    {
+     "text": "Verbot jeder Kritik an der Regierung",
+     "feedback": "Kritik an der Regierung ist durch die Meinungsfreiheit geschützt und gehört zur Demokratie."
+    },
+    {
+     "text": "Abschaffung von Wahlen in Krisenzeiten",
+     "feedback": "Das wäre gerade das Gegenteil von Demokratie."
+    }
+   ],
+   "erklaerung": "Wehrhafte Demokratie schützt die Grundordnung, nicht eine bestimmte Regierung. Opposition und Kritik sind ausdrücklich erwünscht."
+  }
+ ]
+}

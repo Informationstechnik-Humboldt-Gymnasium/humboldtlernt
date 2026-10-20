@@ -1,0 +1,205 @@
+{
+ "id": "pb-k10-markt",
+ "titel": "Grundlagen der Marktwirtschaft: Angebot, Nachfrage und Preis",
+ "kurz": "Wie auf Märkten Preise entstehen, was Wettbewerb bewirkt und wo Märkte an Grenzen stoßen.",
+ "reihenfolge": 1,
+ "lernziele": [
+  {
+   "id": "lz1",
+   "niveau": "G",
+   "text": "Den Wirtschaftskreislauf zwischen Haushalten und Unternehmen beschreiben"
+  },
+  {
+   "id": "lz2",
+   "niveau": "G",
+   "text": "Erklären, wie sich Angebot und Nachfrage auf den Preis auswirken"
+  },
+  {
+   "id": "lz3",
+   "niveau": "H",
+   "text": "Den Gleichgewichtspreis bestimmen und Überschüsse erklären"
+  },
+  {
+   "id": "lz4",
+   "niveau": "H",
+   "text": "Funktionen des Wettbewerbs und Formen von Marktversagen erläutern"
+  }
+ ],
+ "verstehen": {
+  "einstieg": "Ein neues Spiel kommt heraus, und alle wollen es haben. Kurz danach ist es überall ausverkauft und wird im Internet teurer weiterverkauft. Warum?",
+  "abschnitte": [
+   {
+    "titel": "Haushalte, Unternehmen und Märkte",
+    "text": "In einer Marktwirtschaft treffen sich **Haushalte** (z. B. Familien) und **Unternehmen** auf **Märkten**:\n\n- Haushalte bieten ihre **Arbeit** an und bekommen dafür **Lohn**.\n- Mit dem Geld kaufen sie **Güter** (Waren und Dienstleistungen) von den Unternehmen.\n\nDiesen Austausch nennt man den **einfachen Wirtschaftskreislauf**: Güter und Arbeit fließen in die eine Richtung, Geld in die andere. Im erweiterten Kreislauf kommen Staat, Banken und Ausland dazu."
+   },
+   {
+    "titel": "Angebot, Nachfrage und Preis",
+    "text": "- Die **Nachfrage** ist die Menge, die Käufer zu einem bestimmten Preis kaufen wollen. Je **höher** der Preis, desto **weniger** wird meist nachgefragt.\n- Das **Angebot** ist die Menge, die Verkäufer zu einem Preis verkaufen wollen. Je **höher** der Preis, desto **mehr** wird meist angeboten.\n\nDer **Gleichgewichtspreis** ist der Preis, bei dem angebotene und nachgefragte Menge **gleich** sind. Liegt der Preis darüber, bleiben Waren liegen (**Angebotsüberhang**) und die Preise sinken. Liegt er darunter, ist die Ware schnell vergriffen (**Nachfrageüberhang**) und die Preise steigen.\n\nSo zeigt der Preis an, wie knapp ein Gut ist."
+   },
+   {
+    "titel": "Wettbewerb und seine Grenzen",
+    "text": "**Wettbewerb** zwingt Unternehmen, gute Produkte zu niedrigen Preisen anzubieten und neue Ideen zu entwickeln. Ohne Wettbewerb – bei einem **Monopol** – kann ein Anbieter die Preise diktieren. In Deutschland überwacht das **Bundeskartellamt** den Wettbewerb und verbietet z. B. Preisabsprachen (Kartelle).\n\nMärkte haben auch Grenzen (**Marktversagen**):\n\n- **Umweltschäden** tauchen im Preis oft nicht auf (z. B. CO₂-Ausstoß),\n- **öffentliche Güter** wie Straßenbeleuchtung oder Deiche würde kein Unternehmen freiwillig anbieten,\n- Menschen ohne Einkommen können auf dem Markt nichts nachfragen.\n\nDeshalb greift der Staat in allen Marktwirtschaften ein. **Wie stark**, ist politisch umstritten."
+   }
+  ],
+  "formeln": [],
+  "merksatz": "Haushalte und Unternehmen tauschen auf **Märkten** Arbeit, Güter und Geld (**Wirtschaftskreislauf**). Steigt der Preis, sinkt die **Nachfrage** und steigt das **Angebot**.\n\nIm **Gleichgewichtspreis** sind beide gleich groß. **Wettbewerb** sorgt für gute Preise und Ideen; bei **Marktversagen** greift der Staat ein.",
+  "alltag": "Bei Konzertkarten siehst du den Markt live: Ist die Nachfrage viel größer als das Angebot, sind die Karten in Minuten weg – und tauchen auf Weiterverkaufsplattformen zu viel höheren Preisen wieder auf."
+ },
+ "interaktiv": [
+  "pb-markt"
+ ],
+ "vertiefung": [],
+ "uebungen": [
+  {
+   "id": "pb-mkt-01",
+   "typ": "zuordnung",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz1",
+   "frage": "Ordne die Ströme im einfachen Wirtschaftskreislauf zu.",
+   "paare": [
+    {
+     "links": "Haushalte → Unternehmen",
+     "rechts": "Arbeitskraft und Geld für Güter"
+    },
+    {
+     "links": "Unternehmen → Haushalte",
+     "rechts": "Lohn und Güter"
+    }
+   ],
+   "erklaerung": "Güter und Arbeit fließen in die eine Richtung, Geld in die andere."
+  },
+  {
+   "id": "pb-mkt-02",
+   "typ": "single",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz2",
+   "frage": "Der Preis für Erdbeeren sinkt stark. Was passiert mit der **Nachfrage** in der Regel?",
+   "optionen": [
+    {
+     "text": "Sie steigt – bei niedrigerem Preis kaufen mehr Menschen Erdbeeren.",
+     "richtig": true
+    },
+    {
+     "text": "Sie sinkt.",
+     "feedback": "Bei sinkendem Preis wird ein Gut für mehr Menschen attraktiv."
+    },
+    {
+     "text": "Sie bleibt immer gleich.",
+     "feedback": "Der Preis beeinflusst, wie viel gekauft wird."
+    },
+    {
+     "text": "Es gibt keine Nachfrage mehr.",
+     "feedback": "Ein niedrigerer Preis führt eher zu mehr Nachfrage."
+    }
+   ],
+   "erklaerung": "Das ist das Gesetz der Nachfrage: Je niedriger der Preis, desto größer die nachgefragte Menge."
+  },
+  {
+   "id": "pb-mkt-03",
+   "typ": "multi",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz3",
+   "frage": "In welchen Fällen liegt ein **Angebotsüberhang** vor?",
+   "optionen": [
+    {
+     "text": "Am Ende des Markttags bleiben viele Kisten Tomaten übrig.",
+     "richtig": true
+    },
+    {
+     "text": "Ein Händler muss seine Winterjacken im Frühling stark reduzieren.",
+     "richtig": true
+    },
+    {
+     "text": "Die neue Spielkonsole ist schon am ersten Tag ausverkauft.",
+     "feedback": "Hier wird mehr nachgefragt als angeboten – ein Nachfrageüberhang."
+    }
+   ],
+   "erklaerung": "Bei einem Angebotsüberhang ist der Preis zu hoch, bei einem Nachfrageüberhang zu niedrig."
+  },
+  {
+   "id": "pb-mkt-04",
+   "typ": "zahl",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz3",
+   "frage": "Bei einem Preis von p Euro werden `N = 100 − 4p` Stück nachgefragt und `A = 6p` Stück angeboten. Bei welchem Preis liegt das Gleichgewicht?",
+   "loesung": 10,
+   "toleranz": 0,
+   "einheit": "€",
+   "rechenweg": [
+    "Gleichgewicht: N = A",
+    "100 − 4p = 6p",
+    "100 = 10p",
+    "p = 10 €"
+   ],
+   "erklaerung": "Bei 10 € werden 60 Stück angeboten und nachgefragt. Probier im interaktiven Modell aus, was bei anderen Preisen passiert."
+  },
+  {
+   "id": "pb-mkt-05",
+   "typ": "zahl",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz3",
+   "frage": "Im selben Beispiel (`N = 100 − 4p`, `A = 6p`) liegt der Preis bei 7 €. Wie groß ist der **Nachfrageüberhang** (nachgefragte minus angebotene Menge)?",
+   "loesung": 30,
+   "toleranz": 0,
+   "einheit": "Stück",
+   "rechenweg": [
+    "N = 100 − 4 · 7 = 72",
+    "A = 6 · 7 = 42",
+    "Überhang: 72 − 42 = 30 Stück"
+   ],
+   "erklaerung": "Weil mehr nachgefragt als angeboten wird, können Verkäufer höhere Preise verlangen – der Preis steigt Richtung Gleichgewicht."
+  },
+  {
+   "id": "pb-mkt-06",
+   "typ": "multi",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz4",
+   "frage": "Welche Beispiele sind Fälle von **Marktversagen**?",
+   "optionen": [
+    {
+     "text": "Eine Fabrik verschmutzt einen Fluss, ohne für den Schaden zu zahlen.",
+     "richtig": true
+    },
+    {
+     "text": "Kein Unternehmen baut freiwillig Deiche, weil niemand einzeln dafür zahlen würde.",
+     "richtig": true
+    },
+    {
+     "text": "Ein Anbieter ist der einzige im Land und verlangt sehr hohe Preise.",
+     "richtig": true
+    },
+    {
+     "text": "Eine Bäckerei senkt die Preise, weil nebenan eine zweite Bäckerei eröffnet.",
+     "feedback": "Das ist funktionierender Wettbewerb."
+    }
+   ],
+   "erklaerung": "Umweltschäden, öffentliche Güter und Monopole sind klassische Fälle, in denen der Markt allein kein gutes Ergebnis liefert."
+  },
+  {
+   "id": "pb-mkt-07",
+   "typ": "single",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz4",
+   "frage": "Mehrere große Tankstellenketten sprechen heimlich ihre Preise ab. Wer ist in Deutschland dafür zuständig, dagegen vorzugehen?",
+   "optionen": [
+    {
+     "text": "das Bundeskartellamt",
+     "richtig": true
+    },
+    {
+     "text": "der Bundespräsident",
+     "feedback": "Der Bundespräsident ist nicht für Wettbewerbsfragen zuständig."
+    },
+    {
+     "text": "die Verbraucher selbst, eine Behörde gibt es nicht",
+     "feedback": "Doch, das Bundeskartellamt kann Kartelle mit hohen Bußgeldern bestrafen."
+    },
+    {
+     "text": "die Europäische Zentralbank",
+     "feedback": "Die EZB ist für die Geldpolitik zuständig, nicht für Kartelle."
+    }
+   ],
+   "erklaerung": "Preisabsprachen schalten den Wettbewerb aus und schaden den Kunden. Deshalb sind Kartelle verboten."
+  }
+ ]
+}

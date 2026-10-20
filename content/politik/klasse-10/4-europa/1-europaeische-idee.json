@@ -1,0 +1,238 @@
+{
+ "id": "pb-k10-europaeische-idee",
+ "titel": "Die europäische Idee: von der Montanunion zur EU der 27",
+ "kurz": "Warum sich Europa nach zwei Weltkriegen zusammengeschlossen hat, wie die EU gewachsen ist und wohin sie sich entwickeln soll.",
+ "reihenfolge": 1,
+ "lernziele": [
+  {
+   "id": "lz1",
+   "niveau": "G",
+   "text": "Wichtige Stationen der europäischen Einigung in die richtige Reihenfolge bringen"
+  },
+  {
+   "id": "lz2",
+   "niveau": "G",
+   "text": "Motive der europäischen Einigung erklären"
+  },
+  {
+   "id": "lz3",
+   "niveau": "H",
+   "text": "Die Bedingungen für einen EU-Beitritt (Kopenhagener Kriterien) erläutern"
+  },
+  {
+   "id": "lz4",
+   "niveau": "H",
+   "text": "Positionen zur Zukunft der EU (Finalität) darstellen und beurteilen"
+  }
+ ],
+ "verstehen": {
+  "einstieg": "Deine Großeltern mussten an jeder Grenze in Europa ihren Pass zeigen und Geld wechseln. Du kannst heute mit dem Zug von Berlin nach Paris fahren, ohne kontrolliert zu werden, und überall mit Euro bezahlen. Wie kam es dazu?",
+  "abschnitte": [
+   {
+    "titel": "Frieden durch Zusammenarbeit",
+    "text": "Nach zwei Weltkriegen wollten europäische Politiker verhindern, dass sich die Staaten wieder bekriegen. Am **9. Mai 1950** schlug der französische Außenminister **Robert Schuman** vor, die Kohle- und Stahlindustrie – die Grundlage der Rüstung – gemeinsam zu verwalten (heute **Europatag**).\n\nDaraus entstand **1951** die **Montanunion** mit sechs Staaten: Belgien, die Bundesrepublik Deutschland, Frankreich, Italien, Luxemburg und die Niederlande.\n\nMotive der Einigung waren und sind:\n\n- **Frieden** und Versöhnung, vor allem zwischen Deutschland und Frankreich,\n- **Wohlstand** durch einen gemeinsamen Markt,\n- gemeinsame **Werte** wie Demokratie und Menschenrechte,\n- mehr **Gewicht in der Welt**."
+   },
+   {
+    "titel": "Stationen der Einigung",
+    "text": "- **1957:** Römische Verträge – Europäische Wirtschaftsgemeinschaft (EWG)\n- **1979:** erste Direktwahl des Europäischen Parlaments\n- **1985:** Schengener Abkommen – Abbau der Grenzkontrollen\n- **1992:** Vertrag von Maastricht – Gründung der **Europäischen Union**\n- **1993:** **Binnenmarkt** mit freiem Verkehr von Waren, Personen, Dienstleistungen und Kapital\n- **2002:** **Euro**-Bargeld\n- **2004:** Osterweiterung um zehn Staaten\n- **2009:** Vertrag von Lissabon tritt in Kraft\n- **2020:** **Brexit** – Großbritannien verlässt die EU, seitdem **27** Mitglieder\n\nDen Euro nutzen seit 2026 (Beitritt Bulgariens) **21** Staaten."
+   },
+   {
+    "titel": "Beitritt und Zukunft der EU",
+    "text": "Wer der EU beitreten will, muss die **Kopenhagener Kriterien** (1993) erfüllen:\n\n- **politisch:** stabile Demokratie, Rechtsstaat, Menschenrechte und Schutz von Minderheiten,\n- **wirtschaftlich:** funktionierende Marktwirtschaft, die dem Wettbewerb im Binnenmarkt standhält,\n- **Übernahme des EU-Rechts.**\n\nBeitrittskandidaten sind z. B. die Ukraine, Moldau und mehrere Staaten des westlichen Balkans.\n\nUmstritten ist die **Finalität** der EU – ihr „Endzustand“:\n\n- **geografisch:** Wo endet Europa, wie viele Staaten sollen noch beitreten?\n- **institutionell:** Soll die EU ein **Bundesstaat** werden („Vereinigte Staaten von Europa“), ein **Staatenbund** souveräner Staaten bleiben („Europa der Vaterländer“) – oder bleibt sie, was das Bundesverfassungsgericht einen **Staatenverbund** nennt, also etwas dazwischen?"
+   }
+  ],
+  "formeln": [],
+  "merksatz": "Die europäische Einigung begann **1951** mit der **Montanunion** – aus dem Wunsch nach **Frieden** und Wohlstand. Wichtige Stationen: Römische Verträge 1957, Maastricht 1992, Euro 2002, Osterweiterung 2004, Brexit 2020. Heute hat die EU **27** Mitglieder.\n\nBeitreten kann nur, wer die **Kopenhagener Kriterien** erfüllt. Ob die EU enger zusammenwachsen oder ein Bund souveräner Staaten bleiben soll, ist umstritten.",
+  "alltag": "Mit Erasmus+ kannst du schon als Schülerin oder Schüler an Austauschprogrammen in anderen EU-Ländern teilnehmen. Frag deine Schule danach."
+ },
+ "interaktiv": [],
+ "vertiefung": [],
+ "uebungen": [
+  {
+   "id": "pb-eui-01",
+   "typ": "reihenfolge",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz1",
+   "frage": "Bringe die Stationen der europäischen Einigung in die richtige Reihenfolge.",
+   "elemente": [
+    "Gründung der Montanunion",
+    "Römische Verträge (EWG)",
+    "Vertrag von Maastricht: Gründung der EU",
+    "Einführung des Euro-Bargelds",
+    "Austritt Großbritanniens (Brexit)"
+   ],
+   "erklaerung": "1951 – 1957 – 1992 – 2002 – 2020."
+  },
+  {
+   "id": "pb-eui-02",
+   "typ": "multi",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz2",
+   "frage": "Welche Motive standen hinter der europäischen Einigung nach 1945?",
+   "optionen": [
+    {
+     "text": "dauerhaften Frieden in Europa sichern",
+     "richtig": true
+    },
+    {
+     "text": "Wohlstand durch einen gemeinsamen Markt",
+     "richtig": true
+    },
+    {
+     "text": "Versöhnung zwischen Deutschland und Frankreich",
+     "richtig": true
+    },
+    {
+     "text": "eine gemeinsame Armee gegen die USA aufbauen",
+     "feedback": "Das war kein Motiv. Die westeuropäischen Staaten waren mit den USA verbündet."
+    },
+    {
+     "text": "alle Landessprachen durch eine Einheitssprache ersetzen",
+     "feedback": "Die EU hat 24 Amtssprachen und fördert die Vielfalt."
+    }
+   ],
+   "erklaerung": "Kohle und Stahl gemeinsam zu verwalten sollte einen neuen Krieg „nicht nur undenkbar, sondern materiell unmöglich“ machen – so Robert Schuman 1950."
+  },
+  {
+   "id": "pb-eui-03",
+   "typ": "zahl",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz1",
+   "frage": "Die Montanunion begann 1951 mit 6 Staaten. Vor dem Brexit hatte die EU 28 Mitglieder. Wie viele Staaten sind in dieser Zeit insgesamt hinzugekommen?",
+   "loesung": 22,
+   "toleranz": 0,
+   "einheit": "Staaten",
+   "rechenweg": [
+    "28 − 6 = 22"
+   ],
+   "erklaerung": "Nach dem Austritt Großbritanniens 2020 hat die EU heute 27 Mitglieder."
+  },
+  {
+   "id": "pb-eui-04",
+   "typ": "multi",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz3",
+   "frage": "Welche Bedingungen gehören zu den **Kopenhagener Kriterien** für einen EU-Beitritt?",
+   "optionen": [
+    {
+     "text": "stabile Demokratie und Rechtsstaatlichkeit",
+     "richtig": true
+    },
+    {
+     "text": "Schutz der Menschenrechte und von Minderheiten",
+     "richtig": true
+    },
+    {
+     "text": "eine funktionierende Marktwirtschaft",
+     "richtig": true
+    },
+    {
+     "text": "Übernahme des gemeinsamen EU-Rechts",
+     "richtig": true
+    },
+    {
+     "text": "eine Bevölkerung von mindestens 10 Millionen Menschen",
+     "feedback": "Eine Mindestgröße gibt es nicht – Malta und Luxemburg sind EU-Mitglieder."
+    },
+    {
+     "text": "die christliche Religion als Staatsreligion",
+     "feedback": "Religion ist kein Kriterium. Die EU ist der Religionsfreiheit verpflichtet."
+    }
+   ],
+   "erklaerung": "Die Kriterien sollen sicherstellen, dass neue Mitglieder die Werte und Regeln der EU teilen."
+  },
+  {
+   "id": "pb-eui-05",
+   "typ": "zuordnung",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz4",
+   "frage": "Ordne die Vorstellungen zur Zukunft der EU zu.",
+   "paare": [
+    {
+     "links": "Die EU soll eine gemeinsame Regierung und ein starkes Parlament bekommen, ähnlich wie die USA.",
+     "rechts": "Bundesstaat"
+    },
+    {
+     "links": "Die Staaten bleiben souverän und arbeiten nur dort zusammen, wo es für alle nützlich ist.",
+     "rechts": "Staatenbund"
+    },
+    {
+     "links": "Die Staaten übertragen einzelne Befugnisse an die EU, bleiben aber eigenständige Staaten.",
+     "rechts": "Staatenverbund"
+    }
+   ],
+   "erklaerung": "Diese Vorstellungen stehen sich in der Debatte über die Finalität der EU gegenüber."
+  },
+  {
+   "id": "pb-eui-06",
+   "typ": "single",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz4",
+   "frage": "Was meint die Debatte über die **geografische Finalität** der EU?",
+   "optionen": [
+    {
+     "text": "Die Frage, wo die Grenzen Europas liegen und welche Staaten noch beitreten sollen",
+     "richtig": true
+    },
+    {
+     "text": "Die Frage, welche Hauptstadt die EU hat",
+     "feedback": "Darum geht es nicht. Wichtige EU-Organe sitzen u. a. in Brüssel, Straßburg und Luxemburg."
+    },
+    {
+     "text": "Die Frage, ob die EU eine eigene Währung haben soll",
+     "feedback": "Das betrifft die Wirtschafts- und Währungsunion, nicht die geografische Finalität."
+    },
+    {
+     "text": "Die Frage, wie hoch die Alpen sind",
+     "feedback": "Es geht um politische, nicht um natürliche Grenzen."
+    }
+   ],
+   "erklaerung": "Mit jeder Erweiterung stellt sich die Frage neu, auch weil eine größere EU schwerer Entscheidungen treffen kann. Man spricht vom Spannungsfeld „Erweiterung oder Vertiefung“."
+  },
+  {
+   "id": "pb-eui-07",
+   "typ": "text",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz4",
+   "frage": "Soll die EU weitere Staaten wie die Ukraine aufnehmen? Stelle ein Argument dafür und eines dagegen dar und formuliere ein begründetes Urteil.",
+   "stichworte": [
+    {
+     "aspekt": "Argument dafür: Frieden, Sicherheit, Werte, Demokratie stärken, Solidarität, Markt",
+     "woerter": [
+      "frieden",
+      "sicherheit",
+      "wert",
+      "demokrat",
+      "solidar",
+      "markt",
+      "stabil"
+     ]
+    },
+    {
+     "aspekt": "Argument dagegen: Kosten, Handlungsfähigkeit, Einstimmigkeit, Korruption, Rechtsstaat noch nicht erfüllt, Agrarsubventionen",
+     "woerter": [
+      "kost",
+      "handlungsfäh",
+      "handlungsfaeh",
+      "einstimm",
+      "korruption",
+      "kriterien",
+      "reform",
+      "subvention"
+     ]
+    },
+    {
+     "aspekt": "Begründetes Urteil",
+     "woerter": [
+      "weil",
+      "deshalb",
+      "daher",
+      "denn"
+     ]
+    }
+   ],
+   "musterloesung": "Dafür spricht, dass eine Aufnahme **Frieden** und **Demokratie** in Osteuropa stärken könnte. Dagegen spricht, dass die EU mit mehr Mitgliedern schwerer **handlungsfähig** wird, solange viele Entscheidungen **einstimmig** fallen müssen, und dass die **Kosten** hoch wären. Ich bin dafür / dagegen / dafür unter Bedingungen, **weil** ...",
+   "erklaerung": "Erweiterungsfragen sind politisch umstritten. Bewertet wird die faire Darstellung beider Seiten und deine Begründung."
+  }
+ ]
+}

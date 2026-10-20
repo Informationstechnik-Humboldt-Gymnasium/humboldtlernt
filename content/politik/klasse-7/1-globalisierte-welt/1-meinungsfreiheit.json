@@ -1,0 +1,238 @@
+{
+ "id": "pb-k7-meinungsfreiheit",
+ "titel": "Meinungs- und Informationsfreiheit in der digitalen Gesellschaft",
+ "kurz": "Was Artikel 5 des Grundgesetzes schützt, wo die Grenzen liegen und wie du Informationen im Netz prüfst.",
+ "reihenfolge": 1,
+ "lernziele": [
+  {
+   "id": "lz1",
+   "niveau": "G",
+   "text": "Meinungs-, Informations- und Pressefreiheit nach Artikel 5 GG beschreiben"
+  },
+  {
+   "id": "lz2",
+   "niveau": "G",
+   "text": "Grenzen der Meinungsfreiheit an Beispielen erklären"
+  },
+  {
+   "id": "lz3",
+   "niveau": "H",
+   "text": "Meinungen von Tatsachenbehauptungen unterscheiden"
+  },
+  {
+   "id": "lz4",
+   "niveau": "H",
+   "text": "Informationen aus dem Netz nach vorgegebenen Schritten prüfen"
+  }
+ ],
+ "verstehen": {
+  "einstieg": "Du postest in deinem Klassenchat, dass du das neue Schulessen furchtbar findest. Darfst du das? Und darfst du auch schreiben, dass der Koch Essen von gestern aufwärmt, wenn du das gar nicht weißt?",
+  "abschnitte": [
+   {
+    "titel": "Was Artikel 5 schützt",
+    "text": "Artikel 5 des Grundgesetzes (GG) garantiert mehrere Freiheiten:\n\n- **Meinungsfreiheit:** Jeder darf seine Meinung in Wort, Schrift und Bild frei sagen und verbreiten – auch im Netz.\n- **Informationsfreiheit:** Jeder darf sich aus allgemein zugänglichen Quellen (Zeitungen, Internet, Fernsehen) ungehindert informieren.\n- **Pressefreiheit und Freiheit der Berichterstattung** durch Rundfunk und Film.\n\nDort steht auch: **„Eine Zensur findet nicht statt.“** Der Staat darf Texte also nicht vor der Veröffentlichung prüfen und verbieten.\n\nIn einer Demokratie sind diese Freiheiten besonders wichtig: Nur wer sich frei informieren und äußern kann, kann bei Wahlen und Debatten mitentscheiden."
+   },
+   {
+    "titel": "Grenzen der Meinungsfreiheit",
+    "text": "Grundrechte gelten nicht grenzenlos. Artikel 5 Absatz 2 nennt Schranken: die **allgemeinen Gesetze**, den **Jugendschutz** und das **Recht der persönlichen Ehre**. Strafbar sind zum Beispiel:\n\n- **Beleidigung** (§ 185 Strafgesetzbuch),\n- **Verleumdung** – bewusst falsche Behauptungen, die jemanden schlecht machen,\n- **Volksverhetzung** (§ 130 StGB) – zum Beispiel zum Hass gegen eine Gruppe aufstacheln.\n\nDas gilt online genauso wie offline. Wo genau die Grenze liegt, entscheiden im Streitfall Gerichte. Sie wägen ab: Die Meinungsfreiheit hat dabei ein hohes Gewicht, auch für scharfe oder unbequeme Meinungen."
+   },
+   {
+    "titel": "Meinung oder Tatsache?",
+    "text": "Eine **Meinung** ist eine Bewertung: „Das Schulessen schmeckt furchtbar.“ Sie kann nicht wahr oder falsch sein.\n\nEine **Tatsachenbehauptung** lässt sich überprüfen: „Der Koch wärmt Essen von gestern auf.“ Sie ist entweder wahr oder falsch. **Bewusst falsche Tatsachenbehauptungen** sind nicht durch die Meinungsfreiheit geschützt.\n\nIm Netz verbreiten sich falsche Behauptungen oft schnell (**Desinformation**, „Fake News“). Prüfe deshalb, bevor du teilst:\n\n- **Wer** steht hinter der Information? Gibt es ein Impressum?\n- **Wann** ist sie erschienen?\n- Werden **Belege oder Quellen** genannt?\n- Berichten **andere, unabhängige Quellen** dasselbe?\n- Will der Beitrag vor allem **Gefühle** wie Wut oder Angst auslösen?"
+   }
+  ],
+  "formeln": [],
+  "merksatz": "Artikel 5 GG schützt **Meinungs-, Informations- und Pressefreiheit**; eine Zensur findet nicht statt. Grenzen setzen die allgemeinen Gesetze, der Jugendschutz und das Recht der persönlichen Ehre.\n\nMeinungen sind Bewertungen, **Tatsachenbehauptungen** kann man prüfen. Vor dem Teilen gilt: Quelle, Datum, Belege und eine zweite Quelle checken.",
+  "alltag": "Ein Screenshot einer angeblichen Nachricht macht im Klassenchat die Runde? Such die Meldung auf einer bekannten Nachrichtenseite. Findest du sie dort nicht, teile sie lieber nicht weiter."
+ },
+ "interaktiv": [],
+ "vertiefung": [],
+ "uebungen": [
+  {
+   "id": "pb-mfr-01",
+   "typ": "single",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz1",
+   "frage": "Was bedeutet der Satz „Eine Zensur findet nicht statt“ in Artikel 5 GG?",
+   "optionen": [
+    {
+     "text": "Der Staat darf Texte, Filme oder Beiträge nicht vor ihrer Veröffentlichung prüfen und verbieten.",
+     "richtig": true
+    },
+    {
+     "text": "Jeder darf alles über jeden behaupten.",
+     "feedback": "Nein – es gibt Grenzen, z. B. Beleidigung oder Verleumdung. Die werden aber erst nach der Veröffentlichung verfolgt."
+    },
+    {
+     "text": "Zeitungen dürfen keine Meinungen drucken.",
+     "feedback": "Im Gegenteil: Die Pressefreiheit schützt gerade auch Meinungen."
+    },
+    {
+     "text": "Soziale Netzwerke dürfen keine Beiträge löschen.",
+     "feedback": "Darum geht es in dem Satz nicht. Zensur meint eine Vorab-Kontrolle durch den Staat."
+    }
+   ],
+   "erklaerung": "Zensur heißt Vorab-Kontrolle durch den Staat. Sie ist verboten. Wer Gesetze verletzt, kann aber nachträglich zur Verantwortung gezogen werden."
+  },
+  {
+   "id": "pb-mfr-02",
+   "typ": "zuordnung",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz1",
+   "frage": "Ordne zu: Welches Grundrecht aus Artikel 5 GG ist gemeint?",
+   "paare": [
+    {
+     "links": "Mia schreibt in ihrem Blog, dass sie das neue Handyverbot an ihrer Schule falsch findet.",
+     "rechts": "Meinungsfreiheit"
+    },
+    {
+     "links": "Tom liest Nachrichten auf mehreren Online-Zeitungen, um sich ein Bild zu machen.",
+     "rechts": "Informationsfreiheit"
+    },
+    {
+     "links": "Eine Zeitung deckt auf, dass ein Bürgermeister Aufträge an Freunde vergeben hat.",
+     "rechts": "Pressefreiheit"
+    }
+   ],
+   "erklaerung": "Meinungsfreiheit schützt das Äußern, Informationsfreiheit das Sich-Informieren und Pressefreiheit die Arbeit von Journalistinnen und Journalisten."
+  },
+  {
+   "id": "pb-mfr-03",
+   "typ": "multi",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz2",
+   "frage": "Welche Äußerungen sind **nicht** mehr durch die Meinungsfreiheit gedeckt?",
+   "optionen": [
+    {
+     "text": "Eine Mitschülerin im Klassenchat mit Schimpfwörtern beleidigen",
+     "richtig": true
+    },
+    {
+     "text": "Bewusst das falsche Gerücht verbreiten, ein Lehrer habe gestohlen",
+     "richtig": true
+    },
+    {
+     "text": "Im Netz zu Hass und Gewalt gegen eine religiöse Gruppe aufrufen",
+     "richtig": true
+    },
+    {
+     "text": "Schreiben, dass man die Politik der Bundesregierung schlecht findet",
+     "feedback": "Kritik an der Regierung ist ausdrücklich geschützt – auch scharfe Kritik."
+    },
+    {
+     "text": "Einen Film in einer Bewertung als „langweilig und missraten“ bezeichnen",
+     "feedback": "Das ist eine Meinung über ein Werk und erlaubt."
+    }
+   ],
+   "erklaerung": "Beleidigung, Verleumdung (bewusst falsche, rufschädigende Behauptungen) und Volksverhetzung sind strafbar – online wie offline. Kritik und Werturteile sind dagegen geschützt."
+  },
+  {
+   "id": "pb-mfr-04",
+   "typ": "multi",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz3",
+   "frage": "Welche Aussagen sind **Tatsachenbehauptungen** (also überprüfbar)?",
+   "optionen": [
+    {
+     "text": "„Das Konzert gestern hat drei Stunden gedauert.“",
+     "richtig": true
+    },
+    {
+     "text": "„Die Stadt hat die Eintrittspreise im Freibad erhöht.“",
+     "richtig": true
+    },
+    {
+     "text": "„Das Konzert gestern war das beste des Jahres.“",
+     "feedback": "„Das beste“ ist eine Bewertung – also eine Meinung."
+    },
+    {
+     "text": "„Die neuen Eintrittspreise sind unverschämt.“",
+     "feedback": "„Unverschämt“ ist ein Werturteil, keine überprüfbare Tatsache."
+    }
+   ],
+   "erklaerung": "Tatsachenbehauptungen kann man überprüfen (Dauer, Preise). Meinungen sind Bewertungen („das beste“, „unverschämt“)."
+  },
+  {
+   "id": "pb-mfr-05",
+   "typ": "reihenfolge",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz4",
+   "frage": "Du siehst einen Beitrag mit einer überraschenden Nachricht. Bringe die Prüfschritte in eine sinnvolle Reihenfolge.",
+   "elemente": [
+    "Innehalten und den Beitrag nicht sofort teilen",
+    "Absender prüfen: Wer steht dahinter, gibt es ein Impressum?",
+    "Datum und genannte Belege prüfen",
+    "Nachsehen, ob unabhängige Quellen dasselbe berichten",
+    "Entscheiden, ob man den Beitrag teilt"
+   ],
+   "erklaerung": "Erst stoppen, dann Quelle, Datum und Belege prüfen und mit anderen Quellen vergleichen. Erst danach entscheiden."
+  },
+  {
+   "id": "pb-mfr-06",
+   "typ": "single",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz4",
+   "frage": "Ein Video zeigt angeblich „heute“ überflutete Straßen in Berlin. Was ist der **stärkste** Hinweis darauf, dass es eine Falschmeldung sein könnte?",
+   "optionen": [
+    {
+     "text": "Die Rückwärtssuche nach dem Bild zeigt, dass das Video schon vor fünf Jahren in einem anderen Land hochgeladen wurde.",
+     "richtig": true
+    },
+    {
+     "text": "Das Video hat sehr viele Likes.",
+     "feedback": "Viele Likes sagen nichts über die Wahrheit. Falschmeldungen verbreiten sich oft besonders schnell."
+    },
+    {
+     "text": "Der Beitrag ist in Großbuchstaben geschrieben.",
+     "feedback": "Das kann ein Warnzeichen für Stimmungsmache sein, ist aber kein Beweis."
+    },
+    {
+     "text": "Ein Freund hat es geteilt.",
+     "feedback": "Auch Freunde teilen manchmal ungeprüfte Inhalte."
+    }
+   ],
+   "erklaerung": "Alte Bilder in neuem Zusammenhang sind eine häufige Form von Desinformation. Eine Bilder-Rückwärtssuche zeigt, wann und wo ein Bild zuerst erschien."
+  },
+  {
+   "id": "pb-mfr-07",
+   "typ": "text",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz2",
+   "frage": "Ein Schüler sagt: „Meinungsfreiheit heißt, dass ich im Netz alles schreiben darf.“ Nimm Stellung: Erkläre, was die Meinungsfreiheit schützt, nenne eine Grenze mit Beispiel und begründe dein Urteil.",
+   "stichworte": [
+    {
+     "aspekt": "Was geschützt ist: eigene Meinung, Kritik, Bewertungen",
+     "woerter": [
+      "meinung",
+      "kritik",
+      "bewert",
+      "äußern",
+      "aeussern"
+     ]
+    },
+    {
+     "aspekt": "Eine Grenze mit Beispiel: Beleidigung, Verleumdung, Volksverhetzung, Ehre, Jugendschutz",
+     "woerter": [
+      "beleidig",
+      "verleumd",
+      "volksverhetz",
+      "ehre",
+      "jugendschutz",
+      "gesetz"
+     ]
+    },
+    {
+     "aspekt": "Begründetes Urteil: weil / deshalb / denn",
+     "woerter": [
+      "weil",
+      "deshalb",
+      "denn",
+      "daher"
+     ]
+    }
+   ],
+   "musterloesung": "Die Aussage stimmt nur zum Teil. Die Meinungsfreiheit schützt, dass ich meine **Meinung** sagen und auch scharfe **Kritik** üben darf. Sie hat aber Grenzen: Wer jemanden **beleidigt** oder falsche Gerüchte verbreitet, macht sich strafbar. Ich finde die Grenzen richtig, **weil** auch die Würde und die **Ehre** anderer Menschen geschützt werden müssen.",
+   "erklaerung": "Eine gute Stellungnahme erklärt zuerst den Begriff, nennt dann eine Grenze mit Beispiel und kommt zu einem begründeten Urteil. Welches Urteil du triffst, ist deine Sache – es muss nur begründet sein."
+  }
+ ]
+}

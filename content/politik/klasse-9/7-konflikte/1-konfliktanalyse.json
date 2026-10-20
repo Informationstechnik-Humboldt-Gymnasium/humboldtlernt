@@ -1,0 +1,234 @@
+{
+ "id": "pb-k9-konfliktanalyse",
+ "titel": "Konflikte analysieren",
+ "kurz": "Mit einem festen Schema Konflikte untersuchen: Gegenstand, Beteiligte, Interessen, Ursachen und Lösungswege.",
+ "reihenfolge": 1,
+ "lernziele": [
+  {
+   "id": "lz1",
+   "niveau": "G",
+   "text": "Die Schritte einer Konfliktanalyse nennen"
+  },
+  {
+   "id": "lz2",
+   "niveau": "G",
+   "text": "Konfliktarten unterscheiden"
+  },
+  {
+   "id": "lz3",
+   "niveau": "H",
+   "text": "Einen Konflikt am Fallbeispiel mit dem Schema untersuchen"
+  },
+  {
+   "id": "lz4",
+   "niveau": "H",
+   "text": "Wege der friedlichen Konfliktlösung vergleichen"
+  }
+ ],
+ "verstehen": {
+  "einstieg": "Zwei Länder liegen am selben Fluss. Das obere baut einen riesigen Staudamm für Strom. Das untere fürchtet, dass ihm das Wasser für die Landwirtschaft fehlt. Wie könnte man so einen Streit untersuchen – und lösen?",
+  "abschnitte": [
+   {
+    "titel": "Das Analyseschema",
+    "text": "Um einen Konflikt sachlich zu untersuchen, helfen feste Fragen:\n\n- **Konfliktgegenstand:** Worum geht es? (Land, Wasser, Macht, Werte …)\n- **Beteiligte (Akteure):** Wer ist beteiligt, direkt und indirekt?\n- **Interessen und Ziele:** Was wollen die Beteiligten – und warum?\n- **Ursachen und Hintergründe:** Wie ist der Konflikt entstanden? Welche Geschichte hat er?\n- **Verlauf und Mittel:** Wie wird der Konflikt ausgetragen – mit Verhandlungen, Druck, Gewalt?\n- **Lösungsmöglichkeiten:** Welche Wege gibt es, und welche Interessen berücksichtigen sie?\n- **Bewertung:** Wie beurteilst du die Lösungsvorschläge?\n\nWichtig: Erst **beschreiben und erklären**, dann **urteilen**. Und immer die Sicht **aller** Beteiligten darstellen."
+   },
+   {
+    "titel": "Konfliktarten",
+    "text": "- **Interessenkonflikt:** Die Beteiligten wollen dasselbe knappe Gut (z. B. Wasser).\n- **Verteilungskonflikt:** Streit um die Verteilung von Geld, Land oder Ressourcen.\n- **Wertekonflikt:** Unterschiedliche Überzeugungen, z. B. religiöse oder weltanschauliche.\n- **Machtkonflikt:** Streit darum, wer bestimmt.\n- **Identitätskonflikt:** Gruppen fühlen sich in ihrer Identität bedroht.\n\nReale Konflikte wie der **Nahostkonflikt** verbinden meist mehrere Arten. Gerade bei solchen Konflikten ist es wichtig, Quellen kritisch zu prüfen und Perspektiven sorgfältig zu unterscheiden."
+   },
+   {
+    "titel": "Fallbeispiel: der Streit ums Nilwasser",
+    "text": "Äthiopien baut seit 2011 am Blauen Nil den **Grand Ethiopian Renaissance Dam**, das größte Wasserkraftwerk Afrikas. Äthiopien will damit **Strom** für Millionen Menschen erzeugen.\n\n**Ägypten** bezieht den größten Teil seines Wassers aus dem Nil und fürchtet um seine **Wasserversorgung**, besonders in Dürrejahren. Auch der **Sudan** ist betroffen.\n\nStreitpunkte sind vor allem, wie schnell der Stausee gefüllt wird und wie viel Wasser in trockenen Jahren abgegeben wird. Es gab Verhandlungen, auch mit Vermittlung der **Afrikanischen Union**. Der Fall zeigt einen typischen **Interessenkonflikt** um eine knappe Ressource."
+   }
+  ],
+  "formeln": [],
+  "merksatz": "Konfliktanalyse: **Gegenstand – Beteiligte – Interessen – Ursachen – Verlauf – Lösungen – Bewertung**. Erst beschreiben und erklären, dann urteilen.\n\nKonfliktarten: **Interessen-, Verteilungs-, Werte-, Macht- und Identitätskonflikte**. Friedliche Lösungen sind z. B. Verhandlung, Vermittlung und Gerichte.",
+  "alltag": "Das Schema hilft auch im Alltag: Bei einem Streit in der Klasse zuerst fragen, worum es eigentlich geht und was jede Seite will – nicht sofort, wer schuld ist."
+ },
+ "interaktiv": [],
+ "vertiefung": [],
+ "uebungen": [
+  {
+   "id": "pb-kfa-01",
+   "typ": "reihenfolge",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz1",
+   "frage": "Bringe die Schritte der Konfliktanalyse in eine sinnvolle Reihenfolge.",
+   "elemente": [
+    "Konfliktgegenstand bestimmen",
+    "Beteiligte und ihre Interessen ermitteln",
+    "Ursachen und Hintergründe klären",
+    "Verlauf und eingesetzte Mittel beschreiben",
+    "Lösungsmöglichkeiten untersuchen",
+    "Lösungen beurteilen"
+   ],
+   "erklaerung": "Das Urteil steht am Ende – erst muss man den Konflikt verstanden haben."
+  },
+  {
+   "id": "pb-kfa-02",
+   "typ": "zuordnung",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz2",
+   "frage": "Ordne die Konflikte der passenden Konfliktart zu.",
+   "paare": [
+    {
+     "links": "Zwei Staaten streiten um das Wasser eines gemeinsamen Flusses.",
+     "rechts": "Interessenkonflikt"
+    },
+    {
+     "links": "Gruppen streiten, ob ein religiöses Symbol in öffentlichen Gebäuden hängen darf.",
+     "rechts": "Wertekonflikt"
+    },
+    {
+     "links": "Parteien streiten, wer nach der Wahl die Regierung bildet.",
+     "rechts": "Machtkonflikt"
+    }
+   ],
+   "erklaerung": "Viele Konflikte haben mehrere Seiten, meist überwiegt aber eine Art."
+  },
+  {
+   "id": "pb-kfa-03",
+   "typ": "single",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz3",
+   "frage": "Was ist im Nil-Konflikt das wichtigste **Interesse Äthiopiens**?",
+   "optionen": [
+    {
+     "text": "Mit dem Staudamm Strom für die eigene Bevölkerung und Wirtschaft erzeugen",
+     "richtig": true
+    },
+    {
+     "text": "Ägypten das Wasser vollständig abschneiden",
+     "feedback": "Das ist nicht das erklärte Ziel. Strittig ist, wie viel Wasser in Dürrejahren abfließt."
+    },
+    {
+     "text": "Den Nil zu einem Touristenziel machen",
+     "feedback": "Der Damm dient vor allem der Stromerzeugung."
+    },
+    {
+     "text": "Den Sudan erobern",
+     "feedback": "Darum geht es in dem Konflikt nicht."
+    }
+   ],
+   "erklaerung": "In der Konfliktanalyse fragt man nach den erklärten Zielen und den dahinterliegenden Interessen jeder Seite."
+  },
+  {
+   "id": "pb-kfa-04",
+   "typ": "single",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz3",
+   "frage": "Warum fürchtet **Ägypten** den Staudamm?",
+   "optionen": [
+    {
+     "text": "Weil das Land den größten Teil seines Wassers aus dem Nil bezieht und um seine Versorgung in Dürrejahren fürchtet.",
+     "richtig": true
+    },
+    {
+     "text": "Weil Ägypten selbst keinen Strom braucht.",
+     "feedback": "Es geht um Wasser, nicht um Strom."
+    },
+    {
+     "text": "Weil der Damm in Ägypten steht.",
+     "feedback": "Der Damm steht in Äthiopien am Blauen Nil, flussaufwärts."
+    },
+    {
+     "text": "Weil der Nil durch den Damm salzig wird.",
+     "feedback": "Das ist kein zentraler Streitpunkt."
+    }
+   ],
+   "erklaerung": "Wer flussabwärts liegt, ist von den Entscheidungen flussaufwärts abhängig. Das macht den Konflikt so schwierig."
+  },
+  {
+   "id": "pb-kfa-05",
+   "typ": "zuordnung",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz4",
+   "frage": "Ordne die Formen der Konfliktlösung zu.",
+   "paare": [
+    {
+     "links": "Die Streitparteien suchen direkt eine Einigung.",
+     "rechts": "Verhandlung"
+    },
+    {
+     "links": "Eine neutrale dritte Partei hilft, ohne zu entscheiden.",
+     "rechts": "Vermittlung (Mediation)"
+    },
+    {
+     "links": "Ein Gericht trifft eine verbindliche Entscheidung.",
+     "rechts": "gerichtliche Entscheidung"
+    }
+   ],
+   "erklaerung": "Je mehr die Beteiligten selbst zur Lösung beitragen, desto eher wird sie oft akzeptiert."
+  },
+  {
+   "id": "pb-kfa-06",
+   "typ": "multi",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz3",
+   "frage": "Welche Regeln helfen, einen Konflikt **fair** zu analysieren?",
+   "optionen": [
+    {
+     "text": "die Sicht aller Beteiligten darstellen",
+     "richtig": true
+    },
+    {
+     "text": "Quellen prüfen und Herkunft angeben",
+     "richtig": true
+    },
+    {
+     "text": "erst beschreiben und erklären, dann urteilen",
+     "richtig": true
+    },
+    {
+     "text": "sich zuerst auf eine Seite festlegen und dann Belege dafür suchen",
+     "feedback": "So entsteht eine einseitige Darstellung."
+    },
+    {
+     "text": "nur Quellen einer Konfliktpartei verwenden",
+     "feedback": "Gerade in Konflikten verbreiten alle Seiten auch Propaganda. Mehrere Quellen sind nötig."
+    }
+   ],
+   "erklaerung": "Bei stark umstrittenen Konflikten wie dem Nahostkonflikt ist eine sorgfältige, mehrperspektivische Analyse besonders wichtig."
+  },
+  {
+   "id": "pb-kfa-07",
+   "typ": "text",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz4",
+   "frage": "Schlage für den Streit um das Nilwasser eine Lösung vor. Erkläre, wie sie die Interessen beider Seiten berücksichtigt, und nenne eine Schwierigkeit.",
+   "stichworte": [
+    {
+     "aspekt": "Lösungsvorschlag: Vertrag, Abkommen, Verhandlung, Vermittlung, Regeln für die Wasserabgabe",
+     "woerter": [
+      "vertrag",
+      "abkommen",
+      "verhandl",
+      "vermittl",
+      "regel",
+      "vereinbar"
+     ]
+    },
+    {
+     "aspekt": "Berücksichtigung beider Seiten: Strom für Äthiopien und Wasser für Ägypten",
+     "woerter": [
+      "strom",
+      "wasser"
+     ]
+    },
+    {
+     "aspekt": "Eine Schwierigkeit: Vertrauen, Kontrolle, Dürre, Durchsetzung",
+     "woerter": [
+      "vertrauen",
+      "kontroll",
+      "dürre",
+      "duerre",
+      "durchsetz",
+      "misstrau"
+     ]
+    }
+   ],
+   "musterloesung": "Ein **Vertrag** könnte festlegen, wie viel **Wasser** Äthiopien in Dürrejahren mindestens abgeben muss. So kann Äthiopien weiter **Strom** erzeugen, und Ägypten ist abgesichert. Schwierig ist, dass beide Seiten einander **vertrauen** und die Einhaltung **kontrolliert** werden muss.",
+   "erklaerung": "Gute Lösungen berücksichtigen die Kerninteressen aller Beteiligten und benennen offen, was ihre Umsetzung schwierig macht."
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+  "fach": "Politik",
+  "kurz": "Politik",
+  "reihenfolge": 3.55,
+  "beschreibung": "Politische Bildung nach dem schulinternen Curriculum: Gesellschaft, Recht, Demokratie, Europa und Wirtschaft verstehen, Materialien untersuchen, Positionen darstellen und zu einem begründeten eigenen Urteil kommen.",
+  "quelle": "Schulinternes Curriculum Politische Bildung (Fachkonferenz 5.3.2019), Humboldt-Gymnasium Berlin-Tegel",
+  "hinweis": "Politische Bildung findet am Humboldt-Gymnasium vor allem in einer jährlichen Projektwoche statt (Themenfelder 1–4). Die Themenfelder 5–8 werden im gesellschaftswissenschaftlichen Unterricht behandelt und sind im Curriculum Doppeljahrgängen (7/8 und 9/10) zugeordnet; die Verteilung auf einzelne Klassen hier ist ein Vorschlag. Die Lernseite folgt dem Beutelsbacher Konsens: Was in Politik und Wissenschaft umstritten ist, erscheint auch hier als umstritten – geübt werden Begriffe, Verfahren und Argumente, nicht eine bestimmte Meinung.",
+  "stufen": [
+    {
+      "stufe": 7,
+      "name": "Klasse 7"
+    },
+    {
+      "stufe": 8,
+      "name": "Klasse 8"
+    },
+    {
+      "stufe": 9,
+      "name": "Klasse 9"
+    },
+    {
+      "stufe": 10,
+      "name": "Klasse 10"
+    }
+  ]
+}

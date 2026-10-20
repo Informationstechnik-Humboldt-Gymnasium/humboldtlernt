@@ -1,0 +1,221 @@
+{
+ "id": "pb-k10-eu-entscheidungen",
+ "titel": "Wer entscheidet in der EU? Institutionen und Gesetzgebung",
+ "kurz": "Parlament, Rat, Kommission und Europäischer Rat – wie in der EU Gesetze entstehen und was Verordnungen und Richtlinien unterscheidet.",
+ "reihenfolge": 2,
+ "lernziele": [
+  {
+   "id": "lz1",
+   "niveau": "G",
+   "text": "Die wichtigsten EU-Institutionen und ihre Aufgaben nennen"
+  },
+  {
+   "id": "lz2",
+   "niveau": "G",
+   "text": "Das ordentliche Gesetzgebungsverfahren beschreiben"
+  },
+  {
+   "id": "lz3",
+   "niveau": "H",
+   "text": "Verordnungen und Richtlinien unterscheiden und Beispiele zuordnen"
+  },
+  {
+   "id": "lz4",
+   "niveau": "H",
+   "text": "Die demokratische Legitimation der EU beurteilen"
+  }
+ ],
+ "verstehen": {
+  "einstieg": "Seit Ende 2024 müssen neue Handys, Tablets und Kopfhörer in der EU mit einem USB-C-Kabel geladen werden können. Wer hat das eigentlich beschlossen – und warum gilt es auch in Deutschland?",
+  "abschnitte": [
+   {
+    "titel": "Die wichtigsten Institutionen",
+    "text": "- **Europäisches Parlament:** wird alle fünf Jahre direkt von den Bürgerinnen und Bürgern gewählt (zuletzt 2024). Es hat **720** Abgeordnete, Deutschland stellt als größtes Land **96**. Es beschließt Gesetze und den Haushalt mit und kontrolliert die Kommission.\n- **Rat der EU** (Ministerrat): die zuständigen **Fachministerinnen und -minister** der 27 Staaten. Er beschließt Gesetze gemeinsam mit dem Parlament.\n- **Europäische Kommission:** je ein Mitglied pro Staat. Sie **schlägt Gesetze vor** (Initiativrecht) und überwacht als „**Hüterin der Verträge**“, dass EU-Recht eingehalten wird. Präsidentin ist Ursula von der Leyen.\n- **Europäischer Rat:** die **Staats- und Regierungschefs**. Er legt die großen politischen Ziele fest, beschließt aber keine Gesetze.\n- **Gerichtshof der EU** (EuGH) in Luxemburg: sorgt dafür, dass EU-Recht überall gleich ausgelegt wird."
+   },
+   {
+    "titel": "Wie ein EU-Gesetz entsteht",
+    "text": "Im **ordentlichen Gesetzgebungsverfahren**:\n\n- Die **Kommission** macht einen Vorschlag.\n- **Parlament** und **Rat** beraten ihn – gleichberechtigt – in bis zu drei Lesungen und verhandeln oft direkt miteinander.\n- Ein Gesetz ist beschlossen, wenn **beide** zustimmen.\n\nIm Rat gilt meist die **qualifizierte Mehrheit**: Zustimmen müssen **55 % der Mitgliedstaaten** (mindestens 15), die zusammen mindestens **65 % der EU-Bevölkerung** vertreten. In manchen Bereichen, z. B. Außenpolitik und Steuern, ist **Einstimmigkeit** nötig – dann kann ein einzelner Staat blockieren."
+   },
+   {
+    "titel": "Verordnung oder Richtlinie?",
+    "text": "- Eine **Verordnung** gilt **unmittelbar** in allen Mitgliedstaaten, wie ein nationales Gesetz. Beispiel: die **Datenschutz-Grundverordnung (DSGVO)** seit 2018.\n- Eine **Richtlinie** gibt ein **Ziel** vor. Die Staaten müssen sie innerhalb einer Frist **in eigenes Recht umsetzen** und können über den Weg selbst entscheiden. Beispiel: die Regel zum einheitlichen **Ladekabel**.\n\nViele Gesetze, die in Deutschland gelten, gehen auf Entscheidungen der EU zurück. Kritiker sprechen von einem **Demokratiedefizit**, weil die Kommission nicht direkt gewählt wird. Befürworter verweisen darauf, dass das Parlament direkt gewählt ist und im Rat demokratisch gewählte Regierungen sitzen."
+   }
+  ],
+  "formeln": [],
+  "merksatz": "Die **Kommission** schlägt Gesetze vor, **Parlament** (720 Abgeordnete, direkt gewählt) und **Rat** (Fachminister) beschließen sie gemeinsam. Der **Europäische Rat** (Staats- und Regierungschefs) setzt die Ziele, der **EuGH** sichert die einheitliche Auslegung.\n\n**Verordnungen** gelten unmittelbar, **Richtlinien** müssen in nationales Recht umgesetzt werden.",
+  "alltag": "Dass du in anderen EU-Ländern ohne Zusatzkosten mit deinem Handy telefonieren und surfen kannst („Roaming wie zu Hause“), regelt eine EU-Verordnung."
+ },
+ "interaktiv": [],
+ "vertiefung": [],
+ "uebungen": [
+  {
+   "id": "pb-eue-01",
+   "typ": "zuordnung",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz1",
+   "frage": "Ordne die EU-Institutionen ihrer wichtigsten Aufgabe zu.",
+   "paare": [
+    {
+     "links": "Europäische Kommission",
+     "rechts": "schlägt Gesetze vor"
+    },
+    {
+     "links": "Europäisches Parlament",
+     "rechts": "beschließt Gesetze, direkt gewählt"
+    },
+    {
+     "links": "Rat der EU",
+     "rechts": "beschließt Gesetze, Fachminister der Staaten"
+    },
+    {
+     "links": "Europäischer Rat",
+     "rechts": "legt die großen politischen Ziele fest"
+    },
+    {
+     "links": "Gerichtshof der EU",
+     "rechts": "legt EU-Recht einheitlich aus"
+    }
+   ],
+   "erklaerung": "Rat der EU und Europäischer Rat werden oft verwechselt: Im einen sitzen Fachminister, im anderen die Staats- und Regierungschefs."
+  },
+  {
+   "id": "pb-eue-02",
+   "typ": "zahl",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz1",
+   "frage": "Das Europäische Parlament hat 720 Abgeordnete, 96 kommen aus Deutschland. Wie viel Prozent sind das? (auf ganze Prozent gerundet)",
+   "loesung": 13,
+   "toleranz": 0.04,
+   "einheit": "%",
+   "rechenweg": [
+    "96 : 720 ≈ 0,133",
+    "≈ 13 %"
+   ],
+   "erklaerung": "Kleinere Staaten haben im Verhältnis zu ihrer Einwohnerzahl mehr Abgeordnete (degressive Proportionalität). Malta hat z. B. 6."
+  },
+  {
+   "id": "pb-eue-03",
+   "typ": "reihenfolge",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz2",
+   "frage": "Bringe die Schritte des ordentlichen Gesetzgebungsverfahrens in die richtige Reihenfolge.",
+   "elemente": [
+    "Die Kommission legt einen Gesetzesvorschlag vor",
+    "Parlament und Rat beraten den Vorschlag",
+    "Parlament und Rat verhandeln einen Kompromiss",
+    "Parlament und Rat stimmen beide zu",
+    "Das Gesetz wird im Amtsblatt der EU veröffentlicht"
+   ],
+   "erklaerung": "Ohne Zustimmung beider gesetzgebender Organe kommt kein Gesetz zustande."
+  },
+  {
+   "id": "pb-eue-04",
+   "typ": "zahl",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz2",
+   "frage": "Für die qualifizierte Mehrheit im Rat müssen mindestens 55 % der 27 Mitgliedstaaten zustimmen. Wie viele Staaten sind das mindestens?",
+   "loesung": 15,
+   "toleranz": 0,
+   "einheit": "Staaten",
+   "rechenweg": [
+    "55 % von 27 = 14,85",
+    "aufrunden: 15 Staaten"
+   ],
+   "erklaerung": "Zusätzlich müssen diese Staaten mindestens 65 % der EU-Bevölkerung vertreten. So zählen sowohl die Zahl der Staaten als auch ihre Größe."
+  },
+  {
+   "id": "pb-eue-05",
+   "typ": "multi",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz3",
+   "frage": "Welche Aussagen treffen auf eine EU-**Richtlinie** zu?",
+   "optionen": [
+    {
+     "text": "Sie muss von den Mitgliedstaaten in nationales Recht umgesetzt werden.",
+     "richtig": true
+    },
+    {
+     "text": "Sie gibt ein Ziel vor, den Weg können die Staaten selbst wählen.",
+     "richtig": true
+    },
+    {
+     "text": "Sie gilt unmittelbar in allen Mitgliedstaaten.",
+     "feedback": "Das gilt für Verordnungen."
+    },
+    {
+     "text": "Die Datenschutz-Grundverordnung ist ein Beispiel.",
+     "feedback": "Die DSGVO ist – wie der Name sagt – eine Verordnung."
+    }
+   ],
+   "erklaerung": "Mit Richtlinien bleibt den Staaten mehr Spielraum, mit Verordnungen gilt überall dieselbe Regel."
+  },
+  {
+   "id": "pb-eue-06",
+   "typ": "single",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz2",
+   "frage": "In der EU-Außenpolitik gilt meist das Prinzip der **Einstimmigkeit**. Was folgt daraus?",
+   "optionen": [
+    {
+     "text": "Ein einzelner Mitgliedstaat kann eine Entscheidung blockieren.",
+     "richtig": true
+    },
+    {
+     "text": "Das Europäische Parlament entscheidet allein.",
+     "feedback": "In der Außenpolitik haben die Staaten im Rat das entscheidende Wort."
+    },
+    {
+     "text": "Entscheidungen fallen besonders schnell.",
+     "feedback": "Einstimmigkeit macht Entscheidungen meist langsamer."
+    },
+    {
+     "text": "Große Staaten können kleine überstimmen.",
+     "feedback": "Bei Einstimmigkeit kann gerade niemand überstimmt werden."
+    }
+   ],
+   "erklaerung": "Ob mehr Bereiche mit Mehrheit entschieden werden sollten, ist umstritten: Es würde die EU handlungsfähiger machen, aber die Staaten verlören Einfluss."
+  },
+  {
+   "id": "pb-eue-07",
+   "typ": "text",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz4",
+   "frage": "Kritiker sprechen von einem „Demokratiedefizit“ der EU. Erkläre, was damit gemeint ist, nenne ein Gegenargument und formuliere ein begründetes Urteil.",
+   "stichworte": [
+    {
+     "aspekt": "Kritik: Kommission nicht direkt gewählt, Bürgerferne, komplizierte Verfahren, schwache Öffentlichkeit",
+     "woerter": [
+      "kommission",
+      "nicht direkt",
+      "bürgerfern",
+      "buergerfern",
+      "kompliziert",
+      "undurchsichtig",
+      "fern"
+     ]
+    },
+    {
+     "aspekt": "Gegenargument: Parlament direkt gewählt, Regierungen im Rat gewählt, Mitentscheidung",
+     "woerter": [
+      "parlament",
+      "gewählt",
+      "gewaehlt",
+      "rat",
+      "regierung"
+     ]
+    },
+    {
+     "aspekt": "Begründetes Urteil",
+     "woerter": [
+      "weil",
+      "deshalb",
+      "daher",
+      "denn"
+     ]
+    }
+   ],
+   "musterloesung": "Gemeint ist, dass die **Kommission**, die Gesetze vorschlägt, nicht direkt gewählt wird und viele Entscheidungen den Menschen **fern** wirken. Dagegen spricht, dass das **Parlament** direkt **gewählt** wird und im **Rat** demokratisch gewählte Regierungen sitzen. Ich halte die Kritik für berechtigt / übertrieben, **weil** ...",
+   "erklaerung": "Bewertet wird, ob du den Begriff erklärst, ein Gegenargument nennst und dein Urteil begründest."
+  }
+ ]
+}

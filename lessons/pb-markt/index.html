@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Angebot, Nachfrage und Preis</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<style>
+  .nachfrage { fill: none; stroke: var(--neg); stroke-width: 3; }
+  .angebot { fill: none; stroke: var(--pos); stroke-width: 3; }
+  .preislinie { stroke: var(--text); stroke-width: 1.5; stroke-dasharray: 5 4; }
+  .luecke { stroke: var(--warn); stroke-width: 6; stroke-linecap: round; opacity: .55; }
+  .gg { fill: var(--ok); stroke: var(--card); stroke-width: 2; }
+  .gg-hilfe { stroke: var(--ok); stroke-width: 1; stroke-dasharray: 3 3; }
+  .punkt-n { fill: var(--neg); } .punkt-a { fill: var(--pos); }
+  .leg-n { color: var(--neg); font-weight: 700; } .leg-a { color: var(--pos); font-weight: 700; }
+  .lage { border-radius: 10px; padding: 8px 10px; margin-top: 10px; font-size: .9rem; background: var(--bg); }
+  .lage.ok { background: var(--ok-soft); color: var(--ok); }
+  .lage.warn { background: var(--warn-soft); color: var(--warn); }
+  .szenarien { display: flex; flex-wrap: wrap; gap: 6px; }
+  .szenarien button { font-size: .86rem; padding: 6px 10px; }
+</style>
+</head>
+<body>
+<h1>Angebot, Nachfrage und Preis</h1>
+<p>Am Beispiel eines Markts für Speiseeis: Stelle den <span class="f">Preis</span> ein und beobachte, wie viel Eis die Käufer wollen (<span class="leg-n">Nachfrage</span>) und die Eisdielen verkaufen möchten (<span class="leg-a">Angebot</span>). Verschiebe die Kurven mit den Ereignissen rechts.</p>
+
+<div class="lk-grid">
+  <div class="lk-card">
+    <svg id="diagramm" viewBox="0 0 420 300" role="img" aria-label="Preis-Mengen-Diagramm mit Angebots- und Nachfragekurve"></svg>
+    <p class="small muted">Modell mit geraden Kurven. Echte Märkte reagieren nicht so gleichmäßig, die Richtung der Effekte stimmt aber.</p>
+  </div>
+  <div class="lk-card">
+    <div class="ctrl"><span>Preis pro Kugel <output id="preisOut"></output></span>
+      <input type="range" id="preis" min="0" max="20" step="0.5" value="13" aria-label="Preis in Euro (Modell)"></div>
+    <div class="ctrl"><span>Nachfrage verschieben <output id="dnOut"></output></span>
+      <input type="range" id="dn" min="-40" max="40" step="5" value="0" aria-label="Nachfrage verschieben"></div>
+    <div class="ctrl"><span>Angebot verschieben <output id="daOut"></output></span>
+      <input type="range" id="da" min="-40" max="40" step="5" value="0" aria-label="Angebot verschieben"></div>
+    <div class="szenarien" role="group" aria-label="Ereignisse">
+      <button type="button" data-sz="hitze">Hitzewelle</button>
+      <button type="button" data-sz="regen">Verregneter Sommer</button>
+      <button type="button" data-sz="milch">Milch wird teurer</button>
+      <button type="button" data-sz="eisdiele">Neue Eisdielen</button>
+      <button type="button" data-sz="null">Zurücksetzen</button>
+    </div>
+    <div class="readouts">
+      <div class="readout"><b id="rN">–</b><span>nachgefragt (Kugeln/Tag)</span></div>
+      <div class="readout"><b id="rA">–</b><span>angeboten (Kugeln/Tag)</span></div>
+      <div class="readout"><b id="rGG">–</b><span>Gleichgewichtspreis</span></div>
+    </div>
+    <div class="lage" id="lage" aria-live="polite"></div>
+    <div class="row" style="margin-top:10px"><button type="button" id="einpendeln" class="primary">Markt reagieren lassen</button></div>
+  </div>
+</div>
+
+<section class="lk-card tasks">
+  <h2>Entdecke selbst <span data-task-count></span></h2>
+  <div class="task" data-goal="gleichgewicht"><p class="task-q">Finde mit dem Preisregler den Gleichgewichtspreis, bei dem angebotene und nachgefragte Menge gleich sind.</p></div>
+  <div class="task" data-goal="mangel"><p class="task-q">Stelle einen Preis ein, bei dem ein deutlicher <b>Nachfrageüberhang</b> entsteht (mindestens 20 Kugeln).</p></div>
+  <div class="task" data-goal="hitze"><p class="task-q">Löse eine Hitzewelle aus und finde den <b>neuen</b> Gleichgewichtspreis.</p></div>
+  <div class="task"><p class="task-q">Milch wird teurer, die Eisdielen bieten bei jedem Preis weniger Eis an. Was passiert mit dem Gleichgewichtspreis?</p>
+    <div class="choices">
+      <button type="button" data-ok data-fb="Richtig: Das Angebot sinkt, Eis wird knapper – der Gleichgewichtspreis steigt, verkauft wird weniger.">Er steigt.</button>
+      <button type="button" data-fb="Nein – probier „Milch wird teurer“ aus: Die Angebotskurve verschiebt sich nach links, der Schnittpunkt wandert nach oben.">Er sinkt.</button>
+      <button type="button" data-fb="Nein – wenn sich eine Kurve verschiebt, ändert sich auch der Schnittpunkt.">Er bleibt gleich.</button>
+    </div><p class="fb"></p></div>
+  <div class="task"><p class="task-q">Der Staat legt einen Höchstpreis <b>unter</b> dem Gleichgewichtspreis fest. Was ist die Folge im Modell?</p>
+    <div class="choices">
+      <button type="button" data-fb="Nein – bei einem niedrigeren Preis wollen mehr Menschen kaufen, aber weniger wird angeboten.">Ein Angebotsüberhang: Es bleibt Ware übrig.</button>
+      <button type="button" data-ok data-fb="Genau: Viele wollen zu diesem Preis kaufen, aber es wird zu wenig angeboten – es entsteht Mangel. Ob Höchstpreise trotzdem sinnvoll sind, etwa zum Schutz von Menschen mit wenig Geld, wird politisch diskutiert.">Ein Nachfrageüberhang: Die Ware wird knapp.</button>
+      <button type="button" data-fb="Nein – der Höchstpreis verhindert gerade, dass sich der Gleichgewichtspreis einstellt.">Nichts, der Markt bleibt im Gleichgewicht.</button>
+    </div><p class="fb"></p></div>
+  <div class="all-done">Prima! Du hast verstanden, wie Angebot und Nachfrage den Preis bestimmen.</div>
+</section>
+
+<script src="../../static/lesson-kit.js"></script>
+<script src="markt.js"></script>
+<script>
+(function () {
+  'use strict';
+  var MK = window.MK, $ = function (id) { return document.getElementById(id); }, NS = 'http://www.w3.org/2000/svg';
+  var m = Object.assign({}, MK.STANDARD), preis = 13, timer = null;
+  var X0 = 50, Y0 = 260, BX = 350, BY = 230, QMAX = 140, PMAX = 20;
+  var px = function (q) { return X0 + q / QMAX * BX; }, py = function (p) { return Y0 - p / PMAX * BY; };
+  var reduziert = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function el(tag, attrs, parent) { var e = document.createElementNS(NS, tag); Object.keys(attrs).forEach(function (k) { if (k === 'text') e.textContent = attrs[k]; else e.setAttribute(k, attrs[k]); }); (parent || $('diagramm')).appendChild(e); return e; }
+  function kurve(f, cls) {
+    var d = '';
+    for (var p = 0; p <= PMAX + 1e-9; p += 0.25) { var q = f(m, p); if (q > QMAX) continue; d += (d ? ' L' : 'M') + px(q).toFixed(1) + ',' + py(p).toFixed(1); }
+    el('path', { d: d, class: cls });
+  }
+  function zeichne() {
+    var svg = $('diagramm'); while (svg.firstChild) svg.removeChild(svg.firstChild);
+    for (var g = 0; g <= PMAX; g += 5) { el('line', { x1: X0, y1: py(g), x2: X0 + BX, y2: py(g), class: 'gridline' }); el('text', { x: X0 - 8, y: py(g) + 4, 'text-anchor': 'end', class: 'val', text: g }); }
+    for (var q = 0; q <= QMAX; q += 20) { el('line', { x1: px(q), y1: Y0, x2: px(q), y2: Y0 - BY, class: 'gridline' }); el('text', { x: px(q), y: Y0 + 16, 'text-anchor': 'middle', class: 'val', text: q }); }
+    el('line', { x1: X0, y1: Y0, x2: X0 + BX, y2: Y0, class: 'axis' }); el('line', { x1: X0, y1: Y0, x2: X0, y2: Y0 - BY, class: 'axis' });
+    el('text', { x: X0 + BX, y: Y0 + 34, 'text-anchor': 'end', class: 'lbl', text: 'Menge (Kugeln pro Tag)' });
+    el('text', { x: 6, y: py(PMAX) - 12, class: 'lbl', text: 'Preis (Modell-€)' });
+    kurve(MK.nachfrage, 'nachfrage'); kurve(MK.angebot, 'angebot');
+    var gg = MK.gleichgewicht(m), l = MK.lage(m, preis);
+    el('line', { x1: px(gg.menge), y1: Y0, x2: px(gg.menge), y2: py(gg.preis), class: 'gg-hilfe' });
+    el('line', { x1: X0, y1: py(gg.preis), x2: px(gg.menge), y2: py(gg.preis), class: 'gg-hilfe' });
+    el('line', { x1: X0, y1: py(preis), x2: X0 + BX, y2: py(preis), class: 'preislinie' });
+    if (l.ueberhang > 0.5) el('line', { x1: px(Math.min(l.nachfrage, QMAX)), y1: py(preis), x2: px(Math.min(l.angebot, QMAX)), y2: py(preis), class: 'luecke' });
+    el('circle', { cx: px(Math.min(l.nachfrage, QMAX)), cy: py(preis), r: 5, class: 'punkt-n' });
+    el('circle', { cx: px(Math.min(l.angebot, QMAX)), cy: py(preis), r: 5, class: 'punkt-a' });
+    el('circle', { cx: px(gg.menge), cy: py(gg.preis), r: 6, class: 'gg' });
+    $('diagramm').setAttribute('aria-label', 'Preis-Mengen-Diagramm. Bei ' + LK.fmt(preis, 2) + ' € werden ' + LK.fmt(l.nachfrage, 0) + ' Kugeln nachgefragt und ' + LK.fmt(l.angebot, 0) + ' angeboten. Gleichgewicht bei ' + LK.fmt(gg.preis, 2) + ' €.');
+    // Anzeigen
+    $('preisOut').textContent = LK.fmt(preis, 2) + ' €';
+    $('dnOut').textContent = (m.dN > 0 ? '+' : '') + m.dN;
+    $('daOut').textContent = (m.dA > 0 ? '+' : '') + m.dA;
+    $('rN').textContent = LK.fmt(l.nachfrage, 0);
+    $('rA').textContent = LK.fmt(l.angebot, 0);
+    $('rGG').textContent = LK.fmt(gg.preis, 2) + ' €';
+    var lg = $('lage'), nah = Math.abs(preis - gg.preis) <= 0.25;
+    if (nah) { lg.className = 'lage ok'; lg.textContent = 'Gleichgewicht: Angebot und Nachfrage sind (fast) gleich groß. Verkauft werden etwa ' + LK.fmt(gg.menge, 0) + ' Kugeln.'; }
+    else if (l.art === 'nachfrageueberhang') { lg.className = 'lage warn'; lg.textContent = 'Nachfrageüberhang: ' + LK.fmt(l.ueberhang, 0) + ' Kugeln zu wenig. Eis ist schnell ausverkauft – die Eisdielen können den Preis erhöhen.'; }
+    else { lg.className = 'lage warn'; lg.textContent = 'Angebotsüberhang: ' + LK.fmt(l.ueberhang, 0) + ' Kugeln bleiben übrig. Die Eisdielen müssen den Preis senken, um mehr zu verkaufen.'; }
+    // Ziele
+    if (nah && m.dN === 0 && m.dA === 0) LK.reach('gleichgewicht');
+    if (l.art === 'nachfrageueberhang' && l.ueberhang >= 20) LK.reach('mangel');
+    if (nah && m.dN > 0) LK.reach('hitze');
+  }
+  function setzePreis(p) { preis = Math.max(0, Math.min(PMAX, p)); $('preis').value = preis; zeichne(); }
+  $('preis').addEventListener('input', function () { stopp(); preis = Number(this.value); zeichne(); });
+  $('dn').addEventListener('input', function () { m.dN = Number(this.value); zeichne(); });
+  $('da').addEventListener('input', function () { m.dA = Number(this.value); zeichne(); });
+  var SZ = { hitze: [30, null], regen: [-30, null], milch: [null, -30], eisdiele: [null, 30], null: [0, 0] };
+  document.querySelectorAll('[data-sz]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var s = SZ[b.dataset.sz];
+      if (s[0] !== null) { m.dN = s[0]; $('dn').value = s[0]; }
+      if (s[1] !== null) { m.dA = s[1]; $('da').value = s[1]; }
+      zeichne();
+    });
+  });
+  function stopp() { if (timer) { clearInterval(timer); timer = null; } }
+  $('einpendeln').addEventListener('click', function () {
+    stopp();
+    var ziel = MK.gleichgewicht(m).preis;
+    if (reduziert) { setzePreis(Math.round(ziel * 4) / 4); return; }
+    timer = setInterval(function () {
+      var p = MK.schritt(m, preis, 0.015);
+      if (Math.abs(p - ziel) < 0.05) { stopp(); p = ziel; }
+      preis = p; $('preis').value = p; zeichne();
+    }, 50);
+  });
+  zeichne();
+  LK.check();
+})();
+</script>
+</body>
+</html>

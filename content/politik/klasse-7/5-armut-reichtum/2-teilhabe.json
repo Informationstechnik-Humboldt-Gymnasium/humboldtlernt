@@ -1,0 +1,243 @@
+{
+ "id": "pb-k7-teilhabe",
+ "titel": "Soziale Ungleichheit und Teilhabechancen",
+ "kurz": "Warum Herkunft über Chancen mitentscheidet, was der Sozialstaat tut und wie unterschiedlich man Gerechtigkeit verstehen kann.",
+ "reihenfolge": 2,
+ "lernziele": [
+  {
+   "id": "lz1",
+   "niveau": "G",
+   "text": "Soziale Ungleichheit und Teilhabe an Beispielen beschreiben"
+  },
+  {
+   "id": "lz2",
+   "niveau": "G",
+   "text": "Maßnahmen des Sozialstaats zur Förderung von Teilhabe nennen"
+  },
+  {
+   "id": "lz3",
+   "niveau": "H",
+   "text": "Verschiedene Gerechtigkeitsvorstellungen unterscheiden"
+  },
+  {
+   "id": "lz4",
+   "niveau": "H",
+   "text": "Eine Position zu Ungleichheit begründet darstellen"
+  }
+ ],
+ "verstehen": {
+  "einstieg": "Zwei Kinder sind gleich begabt. Das eine hat Eltern, die bei den Hausaufgaben helfen und Nachhilfe bezahlen können, das andere nicht. Haben beide die gleichen Chancen?",
+  "abschnitte": [
+   {
+    "titel": "Soziale Ungleichheit",
+    "text": "**Soziale Ungleichheit** heißt: Menschen haben ungleichen Zugang zu wichtigen Gütern wie **Einkommen, Vermögen, Bildung, Gesundheit** oder **Ansehen**.\n\n**Teilhabe** bedeutet, am Leben der Gesellschaft teilnehmen zu können: zur Schule gehen, Freunde treffen, Sport treiben, mitreden und mitbestimmen.\n\nStudien zeigen seit Jahren: In Deutschland hängt der Bildungserfolg stark davon ab, welchen Bildungsabschluss und welches Einkommen die Eltern haben. Kinder aus Akademikerfamilien beginnen zum Beispiel deutlich häufiger ein Studium."
+   },
+   {
+    "titel": "Was der Sozialstaat tut",
+    "text": "Das Grundgesetz bestimmt, dass Deutschland ein **Sozialstaat** ist (Artikel 20). Der Staat soll für sozialen Ausgleich sorgen. Beispiele:\n\n- **kostenlose Schule** und Lernmittel in vielen Bundesländern,\n- **Kindergeld** für alle Familien,\n- **BAföG** für Schülerinnen, Schüler und Studierende mit geringem Einkommen,\n- das **Bildungs- und Teilhabepaket**: Zuschüsse z. B. für Klassenfahrten, Schulbedarf, Mittagessen, Nachhilfe und Sportverein für Familien mit wenig Geld,\n- die **Grundsicherung** für Menschen, die nicht genug für den Lebensunterhalt haben.\n\nDas Geld dafür kommt vor allem aus Steuern und Sozialabgaben."
+   },
+   {
+    "titel": "Was ist gerecht?",
+    "text": "Darüber, wie viel Ungleichheit gerecht ist, gibt es **unterschiedliche Positionen**:\n\n- **Leistungsgerechtigkeit:** Wer mehr leistet, soll mehr bekommen.\n- **Bedarfsgerechtigkeit:** Jeder soll bekommen, was er zum Leben braucht.\n- **Chancengerechtigkeit:** Alle sollen die gleichen Startchancen haben – was sie daraus machen, liegt bei ihnen.\n\nParteien und Verbände gewichten diese Vorstellungen verschieden. Daraus ergeben sich unterschiedliche Vorschläge, etwa zu Steuern, Sozialleistungen oder Bildung."
+   }
+  ],
+  "formeln": [],
+  "merksatz": "**Soziale Ungleichheit** ist der ungleiche Zugang zu Einkommen, Vermögen, Bildung und Gesundheit. **Teilhabe** heißt, am gesellschaftlichen Leben teilnehmen zu können.\n\nDer **Sozialstaat** (Art. 20 GG) gleicht aus, z. B. mit Kindergeld, BAföG oder dem Bildungs- und Teilhabepaket. Was gerecht ist, wird unterschiedlich gesehen: **Leistungs-, Bedarfs- und Chancengerechtigkeit**.",
+  "alltag": "Frag bei der Schulsozialarbeit nach, welche Unterstützungsangebote es an deiner Schule gibt – zum Beispiel kostenlose Lernhilfe."
+ },
+ "interaktiv": [],
+ "vertiefung": [],
+ "uebungen": [
+  {
+   "id": "pb-tlh-01",
+   "typ": "multi",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz1",
+   "frage": "Welche Güter sind in einer Gesellschaft oft **ungleich** verteilt?",
+   "optionen": [
+    {
+     "text": "Einkommen und Vermögen",
+     "richtig": true
+    },
+    {
+     "text": "Bildungschancen",
+     "richtig": true
+    },
+    {
+     "text": "Gesundheit und Lebenserwartung",
+     "richtig": true
+    },
+    {
+     "text": "die Anzahl der Stunden eines Tages",
+     "feedback": "Der Tag hat für alle 24 Stunden."
+    }
+   ],
+   "erklaerung": "Soziale Ungleichheit zeigt sich bei Geld, Bildung, Gesundheit und auch bei Ansehen und Einfluss."
+  },
+  {
+   "id": "pb-tlh-02",
+   "typ": "zuordnung",
+   "schwierigkeit": "leicht",
+   "lernziel": "lz2",
+   "frage": "Ordne die Hilfe dem passenden Zweck zu.",
+   "paare": [
+    {
+     "links": "Bildungs- und Teilhabepaket",
+     "rechts": "Zuschuss zu Klassenfahrt und Sportverein bei geringem Einkommen"
+    },
+    {
+     "links": "BAföG",
+     "rechts": "Unterstützung für Schülerinnen, Schüler und Studierende in Ausbildung"
+    },
+    {
+     "links": "Kindergeld",
+     "rechts": "monatliche Zahlung für alle Familien mit Kindern"
+    }
+   ],
+   "erklaerung": "Der Sozialstaat unterstützt auf verschiedene Weise. Manche Leistungen bekommen alle, andere nur Menschen mit geringem Einkommen."
+  },
+  {
+   "id": "pb-tlh-03",
+   "typ": "single",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz2",
+   "frage": "Wo ist im Grundgesetz festgelegt, dass Deutschland ein Sozialstaat ist?",
+   "optionen": [
+    {
+     "text": "In Artikel 20 („demokratischer und sozialer Bundesstaat“)",
+     "richtig": true
+    },
+    {
+     "text": "In Artikel 1 (Menschenwürde)",
+     "feedback": "Artikel 1 schützt die Menschenwürde. Das Sozialstaatsprinzip steht in Artikel 20."
+    },
+    {
+     "text": "Gar nicht, das steht nur in Gesetzen",
+     "feedback": "Doch, es ist ein Verfassungsprinzip in Artikel 20."
+    },
+    {
+     "text": "In der Präambel",
+     "feedback": "Die Präambel nennt Ziele wie Frieden und Einheit, das Sozialstaatsprinzip steht in Artikel 20."
+    }
+   ],
+   "erklaerung": "Artikel 20 Absatz 1 GG: „Die Bundesrepublik Deutschland ist ein demokratischer und sozialer Bundesstaat.“"
+  },
+  {
+   "id": "pb-tlh-04",
+   "typ": "zuordnung",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz3",
+   "frage": "Ordne die Aussagen den Gerechtigkeitsvorstellungen zu.",
+   "paare": [
+    {
+     "links": "„Wer härter arbeitet, soll auch mehr verdienen.“",
+     "rechts": "Leistungsgerechtigkeit"
+    },
+    {
+     "links": "„Wer krank ist und nicht arbeiten kann, soll trotzdem gut leben können.“",
+     "rechts": "Bedarfsgerechtigkeit"
+    },
+    {
+     "links": "„Jedes Kind soll unabhängig vom Elternhaus die gleichen Startchancen haben.“",
+     "rechts": "Chancengerechtigkeit"
+    }
+   ],
+   "erklaerung": "Alle drei Vorstellungen haben gute Gründe. In der Politik wird darüber gestritten, wie man sie gewichtet."
+  },
+  {
+   "id": "pb-tlh-05",
+   "typ": "single",
+   "schwierigkeit": "mittel",
+   "lernziel": "lz1",
+   "frage": "Was zeigen Studien zum Bildungserfolg in Deutschland seit Jahren?",
+   "optionen": [
+    {
+     "text": "Der Bildungserfolg hängt stark vom Bildungsabschluss und Einkommen der Eltern ab.",
+     "richtig": true
+    },
+    {
+     "text": "Alle Kinder haben exakt die gleichen Chancen.",
+     "feedback": "Die Studien zeigen deutliche Unterschiede nach Herkunft."
+    },
+    {
+     "text": "Nur die Noten in der Grundschule zählen.",
+     "feedback": "Es geht um den Einfluss des Elternhauses auf den ganzen Bildungsweg."
+    },
+    {
+     "text": "Kinder aus Akademikerfamilien studieren seltener.",
+     "feedback": "Es ist umgekehrt: Sie beginnen deutlich häufiger ein Studium."
+    }
+   ],
+   "erklaerung": "Wie man diese Ungleichheit verringern kann – etwa durch Ganztagsschulen, frühe Förderung oder mehr Geld für Schulen in schwierigen Lagen –, wird politisch diskutiert."
+  },
+  {
+   "id": "pb-tlh-06",
+   "typ": "single",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz3",
+   "frage": "Ein Politiker sagt: „Wir sollten nicht alle Ergebnisse gleich machen, aber dafür sorgen, dass jedes Kind die gleichen Startbedingungen hat.“ Welche Gerechtigkeitsvorstellung vertritt er vor allem?",
+   "optionen": [
+    {
+     "text": "Chancengerechtigkeit",
+     "richtig": true
+    },
+    {
+     "text": "Bedarfsgerechtigkeit",
+     "feedback": "Ihm geht es nicht darum, dass jeder das Nötige bekommt, sondern um gleiche Startbedingungen."
+    },
+    {
+     "text": "Leistungsgerechtigkeit",
+     "feedback": "Leistung spielt mit, sein Schwerpunkt liegt aber auf gleichen Chancen am Anfang."
+    },
+    {
+     "text": "Ergebnisgleichheit",
+     "feedback": "Die lehnt er ausdrücklich ab („nicht alle Ergebnisse gleich machen“)."
+    }
+   ],
+   "erklaerung": "Chancengerechtigkeit zielt auf gleiche Startchancen. Was jemand daraus macht, darf unterschiedlich ausfallen."
+  },
+  {
+   "id": "pb-tlh-07",
+   "typ": "text",
+   "schwierigkeit": "schwer",
+   "lernziel": "lz4",
+   "frage": "Sollte die Schule für alle Schülerinnen und Schüler kostenlose Nachhilfe anbieten? Nenne ein Argument dafür, eines dagegen und formuliere dein begründetes Urteil.",
+   "stichworte": [
+    {
+     "aspekt": "Argument dafür: Chancengleichheit, Herkunft, Förderung",
+     "woerter": [
+      "chancen",
+      "herkunft",
+      "eltern",
+      "förder",
+      "foerder",
+      "gerecht"
+     ]
+    },
+    {
+     "aspekt": "Argument dagegen: Kosten, Steuergeld, Personal, Lehrkräftemangel",
+     "woerter": [
+      "kost",
+      "geld",
+      "steuer",
+      "personal",
+      "lehrkräft",
+      "lehrkraeft",
+      "lehrer"
+     ]
+    },
+    {
+     "aspekt": "Begründetes Urteil",
+     "woerter": [
+      "weil",
+      "deshalb",
+      "daher",
+      "denn"
+     ]
+    }
+   ],
+   "musterloesung": "Dafür spricht, dass Kinder unabhängig vom Geld der **Eltern** gefördert würden – das stärkt die **Chancen**gerechtigkeit. Dagegen spricht, dass das viel **Geld** und zusätzliches **Personal** kostet, das gerade knapp ist. Ich halte es für sinnvoll / nicht sinnvoll, **weil** ...",
+   "erklaerung": "Bewertet wird, ob du Argumente beider Seiten nennst und dein Urteil begründest. Beide Urteile sind möglich."
+  }
+ ]
+}
