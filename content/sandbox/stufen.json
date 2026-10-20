@@ -44,6 +44,14 @@
       "untertitel": "Virtuelles Mikroskop mit Präparaten, Mikroorganismen, Viren, Zellbiologie mit Diffusion und Osmose, Herz, Atmung, Verdauung und Nerven sowie DNA und Erbgänge.",
       "bereich": "Biologie",
       "icon": "mikroskop"
+    },
+    {
+      "id": "physiklabor",
+      "lesson": "sandbox-physik",
+      "titel": "Physik-Labor",
+      "untertitel": "Freier Fall mit und ohne Luftwiderstand, Wurfbewegung, Kräfte mit Haft- und Gleitreibung, Federpendel und Optik mit Linsen und Spiegeln – mit Messwerten, Diagrammen und Experimentieraufgaben.",
+      "bereich": "Mechanik & Optik",
+      "icon": "wurfparabel"
     }
   ]
 }

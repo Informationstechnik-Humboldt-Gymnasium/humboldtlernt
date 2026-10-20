@@ -66,6 +66,12 @@ Lerneinheiten sie erledigt haben, und Lehrkräfte sehen den Fortschritt ihrer Kl
   Größenvergleich), Viren (Modelle, Vermehrungszyklen, Vergleich mit Bakterien), Zellbiologie (Pflanzen-/Tierzelle,
   Diffusion, Osmose), Anatomie (Herz und Kreislauf, Atmung, Verdauung, Nervensystem) und Genetik (DNA-Modell, Erbgänge).
   Alle Bilder sind gezeichnete Schemata oder Modelle und als solche gekennzeichnet. Direktlinks wie `/sandbox/biolab#viren/zyklus`.
+  Sechste Simulation: das **Physik-Labor** (`/sandbox/physiklabor`) mit Übersicht, Suche und Themenfilter und fünf Versuchen:
+  freier Fall (ideal nach den Bewegungsgleichungen, mit Luftwiderstand numerisch), Wurfbewegung (waagerecht/schräg,
+  Vergleichsbahnen), Kräfte und Reibung (Haft- und Gleitreibung, beschriftete Kraftpfeile), Federpendel (Dämpfung,
+  Energie, gemessene und berechnete Periodendauer) und Optik-Labor (Sammel-/Zerstreuungslinse mit Hauptstrahlen,
+  ebener Spiegel, Strahlengang mit verschiebbaren Spiegeln). Messwerte, Diagramme zum Ablesen und ein Lernmodus
+  (Vermutung → Experiment → Ergebnis prüfen, gestufte Hinweise). Direktlinks wie `/sandbox/physiklabor#optik/spiegel`.
 - **Nur auf der Testseite (GitHub Pages):** ein simuliertes Schul-, Rollen- und Aufgabensystem mit simuliertem
   IServ-Login, Schüler-, Lehrer- und Adminbereich (Aufgaben, Abgaben, Feedback, Mitteilungen, Konten, Protokoll).
   Es läuft ohne Server im Browser und berührt die echte Lernseite nicht – siehe `testseite/README.md` und `testseite/SICHERHEIT.md`.

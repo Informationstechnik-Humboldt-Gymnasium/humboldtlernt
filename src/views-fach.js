@@ -101,6 +101,13 @@ const SIM_SYMBOLE = {
     <path d="M23.5 19 L22 23" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
     <path d="M17 26 H35 M33 6 C44 10 44 26 38 30 V36 M24 36 H46" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
   </svg>`,
+  // Wurfparabel: Koordinatenachsen, gestrichelte Bahn, Körper mit Geschwindigkeitspfeil
+  wurfparabel: `<svg viewBox="0 0 64 40" width="64" height="40" focusable="false">
+    <path d="M6 36 H60 M6 36 V4" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M8 34 Q28 -6 54 35" stroke="currentColor" stroke-width="2" stroke-dasharray="3 3" fill="none"/>
+    <circle cx="33" cy="13" r="3.5" fill="currentColor"/>
+    <path d="M33 13 L45 13 M41 10 L45 13 L41 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </svg>`,
 };
 const simSymbol = icon => SIM_SYMBOLE[icon] || esc(icon);
 
