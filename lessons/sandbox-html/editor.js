@@ -619,6 +619,7 @@
       if (m) { m.a = ta.selectionStart; m.e = ta.selectionEnd; m.sx = ta.scrollLeft; m.sy = ta.scrollTop; }
       if (!modelle[name]) modelle[name] = neuesModell(name, text, sprache);
       m = modelle[name];
+      blitz = null;                                                 // Hervorhebung gehört zur vorigen Datei
       if (text != null && text !== m.text) { m.text = text; m.starts = null; }
       m.sprache = sprache || m.sprache;
       schliesseListe();

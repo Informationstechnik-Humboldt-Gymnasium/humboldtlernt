@@ -249,7 +249,7 @@
     var b = e.target.closest('[data-aktion]');
     if (b && b.dataset.aktion === 'umbenennen') umbenennen(li.dataset.name);
     else if (b && b.dataset.aktion === 'loeschen') loeschen(li.dataset.name);
-    else oeffneDatei(li.dataset.name);
+    else { oeffneDatei(li.dataset.name); if (schmalSeite()) zeigeSeitenleiste(null); }   // als Überlagerung: Platz freigeben
   });
   $('dateien').addEventListener('keydown', function (e) {
     var li = e.target.closest('.hs-datei'); if (!li || e.target.closest('input') || e.target !== li) return;
@@ -688,7 +688,7 @@
     editor.neuZeichnen();
     setTimeout(function () { setzeAufteilung(ansicht.aufteilung[layout()]); }, 0);
   }
-  function schmalSeite() { return document.documentElement.clientWidth <= 760; }
+  function schmalSeite() { return document.documentElement.clientWidth <= 1024; }   // wie @media (max-width: 1024px) in sandbox.css
   $('a-explorer').addEventListener('click', function () { zeigeSeitenleiste(this.getAttribute('aria-pressed') === 'true' ? null : 'explorer'); });
   $('a-einstellungen').addEventListener('click', function () { zeigeSeitenleiste(this.getAttribute('aria-pressed') === 'true' ? null : 'einstellungen'); });
   arbeit.addEventListener('pointerdown', function () { if (schmalSeite() && app.dataset.seite === 'auf') zeigeSeitenleiste(null); });
