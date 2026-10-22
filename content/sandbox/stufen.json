@@ -52,6 +52,14 @@
       "untertitel": "Freier Fall mit und ohne Luftwiderstand, Wurfbewegung, Kräfte mit Haft- und Gleitreibung, Federpendel und Optik mit Linsen und Spiegeln – mit Messwerten, Diagrammen und Experimentieraufgaben.",
       "bereich": "Mechanik & Optik",
       "icon": "wurfparabel"
+    },
+    {
+      "id": "html",
+      "lesson": "sandbox-html",
+      "titel": "HTML-Sandbox",
+      "untertitel": "Schreibe eigene Webseiten mit HTML, CSS und JavaScript in einem Editor wie VS Code – mit Live-Vorschau, Konsole und Inspektor, der vom Ergebnis direkt zum passenden Code springt.",
+      "bereich": "Webentwicklung",
+      "icon": "html"
     }
   ]
 }

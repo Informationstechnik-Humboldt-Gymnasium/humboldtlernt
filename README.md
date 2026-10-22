@@ -72,6 +72,11 @@ Lerneinheiten sie erledigt haben, und Lehrkräfte sehen den Fortschritt ihrer Kl
   Energie, gemessene und berechnete Periodendauer) und Optik-Labor (Sammel-/Zerstreuungslinse mit Hauptstrahlen,
   ebener Spiegel, Strahlengang mit verschiebbaren Spiegeln). Messwerte, Diagramme zum Ablesen und ein Lernmodus
   (Vermutung → Experiment → Ergebnis prüfen, gestufte Hinweise). Direktlinks wie `/sandbox/physiklabor#optik/spiegel`.
+  Siebte Simulation: die **HTML-Sandbox** (`/sandbox/html`), ein Editor im Stil von VS Code mit Live-Vorschau:
+  Explorer mit Projekten und Dateien, Tabs, Syntax-Hervorhebung, Autovervollständigung, Emmet, Formatieren, Suchen/Ersetzen,
+  Minimap, Konsole und Inspektor (Klick in der Vorschau springt zum Code, der das Element erzeugt). Die Vorschau läuft
+  abgeschottet im `<iframe sandbox>`. Speichern im Browser, ZIP und Teilen-Link mit dem Code im `#`-Teil der Adresse.
+  Der Editor ist selbst geschrieben, ohne CDN (`lessons/sandbox-html/LIESMICH.md`).
 - **Nur auf der Testseite (GitHub Pages):** ein simuliertes Schul-, Rollen- und Aufgabensystem mit simuliertem
   IServ-Login, Schüler-, Lehrer- und Adminbereich (Aufgaben, Abgaben, Feedback, Mitteilungen, Konten, Protokoll).
   Es läuft ohne Server im Browser und berührt die echte Lernseite nicht – siehe `testseite/README.md` und `testseite/SICHERHEIT.md`.

@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HTML-Sandbox</title>
+<link rel="stylesheet" href="../../static/lesson-kit.css">
+<link rel="stylesheet" href="sandbox.css">
+</head>
+<body class="hs" data-thema="dunkel">
+<!--
+  HTML-Sandbox: Editor im Stil von VS Code mit Live-Vorschau.
+  Aufbau (Dateien in diesem Ordner, siehe LIESMICH.md):
+    quelltext.js       HTML-/CSS-Parser mit Positionen, Vorschau-Dokument, Schleifenschutz (ohne DOM)
+    werkzeuge.js       Formatieren, Emmet, Kommentare (ohne DOM)
+    hervorheben.js     Syntax-Hervorhebung (ohne DOM)
+    vorschlaege.js     Autovervollständigung (ohne DOM)
+    packen.js          Dateinamen, ZIP, Teilen-Link (ohne DOM)
+    vorlage.js         Startvorlagen
+    preview-bridge.js  Skript, das in der Vorschau läuft (Konsole, Fehler, Inspektor)
+    editor.js          Code-Editor
+    ide.js             Oberfläche: Explorer, Tabs, Splitter, Vorschau, Konsole, Speichern, Teilen, Hilfe
+-->
+<div class="hs-app" id="app">
+  <header class="hs-titel">
+    <nav class="hs-pfad" aria-label="Pfad">
+      <a href="#" id="pfad-sandbox" target="_top">Sandbox</a><span class="hs-pfad-trenner" aria-hidden="true">›</span><span aria-current="page">HTML-Sandbox</span>
+    </nav>
+    <div class="hs-werkzeuge" role="toolbar" aria-label="Werkzeuge">
+      <button type="button" class="hs-knopf hs-primaer" id="b-ausfuehren" title="Vorschau neu erzeugen (Strg+Eingabe)"><span class="hs-i" data-icon="play"></span><span class="hs-l">Ausführen</span></button>
+      <button type="button" class="hs-knopf" id="b-auto" aria-pressed="true" title="Vorschau beim Tippen automatisch aktualisieren"><span class="hs-i" data-icon="auto"></span><span class="hs-l">Auto</span></button>
+      <button type="button" class="hs-knopf" id="b-inspektor" aria-pressed="false" title="Inspektor: Element in der Vorschau anklicken, um zum Code zu springen (Strg+Umschalt+C)"><span class="hs-i" data-icon="inspektor"></span><span class="hs-l">Inspektor</span></button>
+      <span class="hs-trenn" aria-hidden="true"></span>
+      <button type="button" class="hs-knopf" id="b-layout" title="Anordnung: nebeneinander / übereinander"><span class="hs-i" data-icon="neben"></span><span class="hs-l">Anordnung</span></button>
+      <button type="button" class="hs-knopf" id="b-thema" title="Helles oder dunkles Design"><span class="hs-i" data-icon="mond"></span><span class="hs-l">Design</span></button>
+      <span class="hs-trenn" aria-hidden="true"></span>
+      <button type="button" class="hs-knopf" id="b-teilen" title="Teilen-Link erzeugen (der Code steht im Link)"><span class="hs-i" data-icon="teilen"></span><span class="hs-l">Teilen</span></button>
+      <button type="button" class="hs-knopf" id="b-zip" title="Projekt als ZIP herunterladen"><span class="hs-i" data-icon="laden"></span><span class="hs-l">ZIP</span></button>
+      <button type="button" class="hs-knopf" id="b-oeffnen" title="Datei öffnen (.html, .css, .js, Bilder oder .zip)"><span class="hs-i" data-icon="oeffnen"></span><span class="hs-l">Öffnen</span></button>
+      <button type="button" class="hs-knopf" id="b-reset" title="Projekt auf die Startvorlage zurücksetzen"><span class="hs-i" data-icon="reset"></span><span class="hs-l">Zurücksetzen</span></button>
+      <button type="button" class="hs-knopf" id="b-hilfe" title="Hilfe und Tastenkürzel" aria-label="Hilfe"><span class="hs-i" data-icon="hilfe"></span></button>
+      <input type="file" id="datei-eingabe" multiple accept=".html,.htm,.css,.js,.svg,.txt,.md,.json,.png,.jpg,.jpeg,.gif,.webp,.zip" hidden>
+    </div>
+  </header>
+
+  <div class="hs-mitte">
+    <nav class="hs-aktivitaet" aria-label="Seitenleiste">
+      <button type="button" id="a-explorer" aria-pressed="true" title="Explorer" aria-label="Explorer"><span class="hs-i" data-icon="dateien"></span></button>
+      <button type="button" id="a-einstellungen" aria-pressed="false" title="Einstellungen" aria-label="Einstellungen"><span class="hs-i" data-icon="zahnrad"></span></button>
+      <span class="hs-platz"></span>
+      <button type="button" id="a-hilfe" title="Hilfe" aria-label="Hilfe"><span class="hs-i" data-icon="hilfe"></span></button>
+    </nav>
+
+    <aside class="hs-seite" id="seitenleiste" aria-label="Seitenleiste">
+      <section id="p-explorer" aria-labelledby="explorer-titel">
+        <div class="hs-seite-kopf">
+          <h2 id="explorer-titel">Explorer</h2>
+          <button type="button" class="hs-mini" id="d-neu" title="Neue Datei" aria-label="Neue Datei"><span class="hs-i" data-icon="plus"></span></button>
+          <button type="button" class="hs-mini" id="d-hochladen" title="Datei öffnen" aria-label="Datei öffnen"><span class="hs-i" data-icon="oeffnen"></span></button>
+        </div>
+        <div class="hs-projekt">
+          <label class="hs-projekt-wahl"><span>Projekt</span><select id="projekt-wahl"></select></label>
+          <div class="hs-projekt-knoepfe">
+            <button type="button" class="hs-mini" id="pr-neu" title="Neues Projekt" aria-label="Neues Projekt"><span class="hs-i" data-icon="plus"></span></button>
+            <button type="button" class="hs-mini" id="pr-umbenennen" title="Projekt umbenennen" aria-label="Projekt umbenennen"><span class="hs-i" data-icon="stift"></span></button>
+            <button type="button" class="hs-mini" id="pr-loeschen" title="Projekt löschen" aria-label="Projekt löschen"><span class="hs-i" data-icon="muell"></span></button>
+          </div>
+        </div>
+        <ul class="hs-dateien" id="dateien" aria-label="Dateien"></ul>
+        <p class="hs-seite-hinweis">Alles wird nur in deinem Browser gespeichert.</p>
+      </section>
+
+      <section id="p-einstellungen" aria-labelledby="einst-titel" hidden>
+        <div class="hs-seite-kopf"><h2 id="einst-titel">Einstellungen</h2></div>
+        <div class="hs-einst">
+          <label class="hs-einst-zeile"><span>Design</span>
+            <select id="e-thema"><option value="dunkel">Dunkel (VS Code)</option><option value="hell">Hell</option></select></label>
+          <label class="hs-einst-zeile"><span>Schriftgröße <output id="e-schrift-wert">14</output> px</span>
+            <input type="range" id="e-schrift" min="11" max="22" step="1" value="14"></label>
+          <label class="hs-einst-zeile"><span>Einrückung</span>
+            <select id="e-tab"><option value="2">2 Leerzeichen</option><option value="4">4 Leerzeichen</option></select></label>
+          <label class="hs-einst-haken"><input type="checkbox" id="e-minimap" checked> Minimap anzeigen</label>
+          <label class="hs-einst-haken"><input type="checkbox" id="e-schliessen" checked> Klammern und Tags automatisch schließen</label>
+          <label class="hs-einst-haken"><input type="checkbox" id="e-auto" checked> Vorschau automatisch aktualisieren</label>
+          <label class="hs-einst-haken"><input type="checkbox" id="e-mitlaufen" checked> Element unter dem Cursor in der Vorschau hervorheben</label>
+          <label class="hs-einst-haken"><input type="checkbox" id="e-leeren" checked> Konsole bei jedem Lauf leeren</label>
+        </div>
+      </section>
+    </aside>
+
+    <main class="hs-arbeit" id="arbeit" data-layout="neben">
+      <section class="hs-fenster hs-vorschau" id="f-vorschau" aria-label="Vorschau">
+        <div class="hs-fenster-kopf">
+          <span class="hs-fenster-titel">Vorschau</span>
+          <label class="hs-seite-wahl" title="Angezeigte HTML-Seite"><span class="hs-unsichtbar">Angezeigte Seite</span><select id="seite-wahl"></select></label>
+          <span class="hs-vorschau-titel" id="vorschau-titel"></span>
+          <span class="hs-platz"></span>
+          <button type="button" class="hs-mini" id="v-inspektor" aria-pressed="false" title="Inspektor (Strg+Umschalt+C)" aria-label="Inspektor"><span class="hs-i" data-icon="inspektor"></span></button>
+          <button type="button" class="hs-mini" id="v-neu" title="Vorschau neu laden" aria-label="Vorschau neu laden"><span class="hs-i" data-icon="neu"></span></button>
+          <button type="button" class="hs-mini" id="v-voll" aria-pressed="false" title="Vorschau im Vollbild" aria-label="Vorschau im Vollbild"><span class="hs-i" data-icon="voll"></span></button>
+        </div>
+        <div class="hs-vorschau-rahmen" id="vorschau-rahmen">
+          <iframe id="vorschau" title="Vorschau deiner Seite" sandbox="allow-scripts allow-forms allow-modals"></iframe>
+          <div class="hs-angehalten" id="angehalten" hidden>
+            <p><strong>Die Vorschau ist angehalten.</strong> Beim letzten Mal ist sie nicht fertig geworden – vielleicht eine Endlosschleife. Prüfe deinen Code und starte dann neu.</p>
+            <button type="button" class="hs-knopf hs-primaer" id="v-trotzdem">Trotzdem ausführen</button>
+          </div>
+        </div>
+        <div class="hs-info" id="element-info" hidden></div>
+      </section>
+
+      <div class="hs-trenner" id="trenner" role="separator" tabindex="0" aria-orientation="vertical" aria-valuemin="15" aria-valuemax="85" aria-valuenow="50" aria-label="Breite von Vorschau und Editor ändern (Pfeiltasten, Doppelklick: 50 zu 50)" title="Ziehen zum Ändern der Größe, Doppelklick: 50 zu 50"></div>
+
+      <section class="hs-fenster hs-editor" id="f-editor" aria-label="Code-Editor">
+        <div class="hs-tabs-kopf">
+          <div class="hs-tabs" id="tabs" role="tablist" aria-label="Geöffnete Dateien"></div>
+          <button type="button" class="hs-mini" id="e-format" title="Code formatieren (Umschalt+Alt+F)" aria-label="Code formatieren"><span class="hs-i" data-icon="format"></span></button>
+          <button type="button" class="hs-mini" id="e-suche" title="Suchen und Ersetzen (Strg+F, Strg+H)" aria-label="Suchen"><span class="hs-i" data-icon="lupe"></span></button>
+          <button type="button" class="hs-mini" id="e-voll" aria-pressed="false" title="Editor im Vollbild" aria-label="Editor im Vollbild"><span class="hs-i" data-icon="voll"></span></button>
+        </div>
+        <div class="hs-editor-flaeche" id="editor"></div>
+        <div class="hs-bild" id="bild-ansicht" hidden></div>
+        <section class="hs-konsole" id="konsole" aria-label="Konsole">
+          <div class="hs-konsole-kopf">
+            <button type="button" class="hs-konsole-auf" id="k-auf" aria-expanded="true" aria-controls="k-koerper"><span class="hs-pfeil" aria-hidden="true">▾</span> Konsole</button>
+            <span class="hs-zahlen" id="k-zahlen"></span>
+            <span class="hs-platz"></span>
+            <button type="button" class="hs-mini" id="k-leeren" title="Konsole leeren" aria-label="Konsole leeren"><span class="hs-i" data-icon="muell"></span></button>
+          </div>
+          <div class="hs-konsole-koerper" id="k-koerper">
+            <div class="hs-konsole-liste" id="k-liste" role="log" aria-live="polite"></div>
+            <form class="hs-konsole-eingabe" id="k-form" autocomplete="off">
+              <span aria-hidden="true">›</span>
+              <input type="text" id="k-eingabe" placeholder="JavaScript in der Vorschau ausführen, z. B. document.title" aria-label="JavaScript in der Vorschau ausführen" spellcheck="false">
+            </form>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <footer class="hs-status" id="status">
+    <button type="button" class="hs-status-teil" id="s-probleme" title="Konsole öffnen"><span>✕ <span id="s-fehler">0</span> &nbsp;⚠ <span id="s-warn">0</span></span></button>
+    <span class="hs-status-teil hs-status-projekt" id="s-projekt"></span>
+    <span class="hs-status-teil hs-status-inspektor" id="s-inspektor" hidden>Inspektor aktiv</span>
+    <span class="hs-platz"></span>
+    <span class="hs-status-teil" id="s-pos">Zeile 1, Spalte 1</span>
+    <span class="hs-status-teil hs-status-breit" id="s-tab">Leerzeichen: 2</span>
+    <span class="hs-status-teil hs-status-breit">UTF-8</span>
+    <span class="hs-status-teil" id="s-sprache">HTML</span>
+    <span class="hs-status-teil" id="s-speicher">✓ Gespeichert</span>
+  </footer>
+</div>
+
+<div class="hs-dialog-huelle" id="dialog" hidden>
+  <div class="hs-dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-titel">
+    <h2 id="dialog-titel"></h2>
+    <div class="hs-dialog-inhalt" id="dialog-inhalt"></div>
+    <div class="hs-dialog-knoepfe" id="dialog-knoepfe"></div>
+  </div>
+</div>
+<div class="hs-toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="../../static/lesson-kit.js"></script>
+<script src="quelltext.js"></script>
+<script src="werkzeuge.js"></script>
+<script src="hervorheben.js"></script>
+<script src="vorschlaege.js"></script>
+<script src="packen.js"></script>
+<script src="vorlage.js"></script>
+<script src="preview-bridge.js"></script>
+<script src="editor.js"></script>
+<script src="ide.js"></script>
+</body>
+</html>
