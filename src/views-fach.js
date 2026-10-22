@@ -108,6 +108,10 @@ const SIM_SYMBOLE = {
     <circle cx="33" cy="13" r="3.5" fill="currentColor"/>
     <path d="M33 13 L45 13 M41 10 L45 13 L41 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
   </svg>`,
+  // HTML: spitze Klammern mit Schrägstrich (</>)
+  html: `<svg viewBox="0 0 64 40" width="64" height="40" focusable="false">
+    <path d="M22 9 L9 20 L22 31 M42 9 L55 20 L42 31 M36 6 L28 34" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </svg>`,
 };
 const simSymbol = icon => SIM_SYMBOLE[icon] || esc(icon);
 
