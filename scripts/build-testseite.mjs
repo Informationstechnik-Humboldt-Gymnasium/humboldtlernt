@@ -164,7 +164,7 @@ window.fetch = async function (url, opts) {
 };
 
 // ---------------------------------------------------------------- Seitenrahmen (ersetzt views.js)
-function layout({ title, body, ohneNav, admin }) {
+function layout({ title, body, ohneNav, admin, wide, bare }) {
   document.title = (title ? title + ' · ' : '') + 'Lernseite – Testseite';
   const klassen = ['', '5a', '6a', '7a', '8a', '9a', '10a'];
   const fachLinks = FAECHER.filter(f => f.stufen.length || SchulApp.funktionAn('sandbox')).map(f => \`<a href="/\${f.id}">\${esc(f.kurz)}</a>\`).join('');
@@ -179,7 +179,7 @@ function layout({ title, body, ohneNav, admin }) {
     <a class="brand" href="/">Lernseite</a>
     <div class="nav-right">\${fachLinks}\${SchulApp.angemeldet() ? '' : '<span class="who">Gast' + (state.klasse ? ' · ' + esc(state.klasse) : '') + '</span>'}\${SchulApp.navRechts()}</div>
   </nav>\`}
-  <main id="inhalt"\${admin ? ' class="admin-seite"' : ''}>\${SchulApp.meldungHtml()}\${body}</main>
+  <main id="inhalt"\${admin || wide || bare ? ' class="' + [admin && 'admin-seite', wide && 'wide', bare && 'bare'].filter(Boolean).join(' ') + '"' : ''}>\${SchulApp.meldungHtml()}\${body}</main>
   <footer class="fuss"><a href="\${fbLink()}">Feedback &amp; Fehler melden</a><span aria-hidden="true">·</span><a href="/impressum">Impressum</a><span aria-hidden="true">·</span><a href="/datenschutz">Datenschutz</a></footer>\`;
 }
 function fbLink() {
@@ -308,6 +308,7 @@ ${read('public/style.css')}
 .test-banner select { font: inherit; padding: 2px 6px; border-radius: 6px; border: 1px solid var(--border); background: var(--card); color: var(--text); }
 .test-banner .link { color: var(--warn); text-decoration: underline; }
 #lesson { height: calc(100vh - 150px); }
+main.bare { padding: 0; }   /* Simulationen: volle Breite wie auf der Lernseite (wide/bare aus views-fach.js) */
 ${read('testseite/schule.css')}
 </style>
 </head>

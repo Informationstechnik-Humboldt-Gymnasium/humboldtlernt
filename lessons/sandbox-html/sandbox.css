@@ -130,7 +130,8 @@ body.hs[data-thema="hell"] .hs-dsym-js { color: #b3a700; }
 /* Tabs */
 .hs-tabs-kopf { display: flex; align-items: stretch; min-height: 35px; background: var(--hs-tabs); border-bottom: 1px solid var(--hs-rand); }
 .hs-tabs-kopf > .hs-mini { align-self: center; }
-.hs-tabs { flex: 1; min-width: 0; display: flex; overflow-x: auto; scrollbar-width: thin; }
+.hs-tabs { flex: 1; min-width: 0; display: flex; overflow-x: auto; scrollbar-width: none; }
+.hs-tabs::-webkit-scrollbar { display: none; }
 .hs-tab { flex: none; display: flex; align-items: center; gap: 6px; height: 35px; padding: 0 4px 0 10px; border-right: 1px solid var(--hs-rand); border-top: 1px solid transparent; background: var(--hs-tab); color: var(--hs-muted); cursor: pointer; white-space: nowrap; font-size: 12.5px; user-select: none; }
 .hs-tab:hover { color: var(--hs-text); }
 .hs-tab[aria-selected="true"] { background: var(--hs-editor); color: var(--hs-text-hell); border-top-color: var(--hs-akzent); margin-bottom: -1px; }
@@ -250,6 +251,17 @@ body.hs[data-thema="hell"] .ed-treffer-akt { background: rgba(166, 98, 0, .25); 
 
 /* ---------------------------------------------------------------- schmale Bildschirme */
 @media (max-width: 1100px) { .hs-werkzeuge .hs-l { display: none; } .hs-werkzeuge #b-ausfuehren .hs-l { display: inline; } }
+/* Tablet (z. B. iPad hochkant): Seitenleiste legt sich über die Arbeitsfläche, damit Vorschau und Editor Platz haben */
+@media (max-width: 1024px) {
+  .hs-seite { position: absolute; left: 44px; top: 0; bottom: 0; z-index: 20; width: min(260px, calc(100% - 60px)); box-shadow: 4px 0 16px var(--hs-schatten); }
+}
+/* Touch ohne Maus: Knöpfe im Explorer immer zeigen, größere Ziele */
+@media (hover: none) {
+  .hs-datei { height: 32px; }
+  .hs-datei .hs-mini { opacity: 1; width: 30px; height: 30px; }
+  .hs .hs-tab-zu { opacity: 1; }
+  .hs .hs-mini { min-width: 30px; min-height: 30px; }
+}
 @media (max-width: 760px) {
   .hs-seite { position: absolute; left: 44px; top: 0; bottom: 0; z-index: 20; width: min(260px, calc(100% - 60px)); box-shadow: 4px 0 16px var(--hs-schatten); }
   .hs-status-breit, .hs-status-projekt { display: none; }
